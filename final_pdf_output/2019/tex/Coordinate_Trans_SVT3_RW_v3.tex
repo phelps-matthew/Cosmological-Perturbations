@@ -1,0 +1,223 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Coordinate Transformation SVT3 RW v3}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)(\tilde g_{\mu\nu} + f_{\mu\nu})dx^\mu dx^\nu = (g_{\mu\nu} +h_{\mu\nu}) dx^\mu dx^\nu
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,\frac{1}{1-kr^2}, r^2, r^2\sin^2\theta\right),\qquad \tilde \Gamma^{\lambda}_{\alpha\beta} = \delta^\lambda_i \delta^j_\alpha \delta^k_\beta \tilde \Gamma^{i}_{jk}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$f_{\mu\nu}(SVT3)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+f_{00} &=& -2\phi
+\nonumber\\
+f_{0i} &=& B_i + \tilde\nabla_i B
+\nonumber\\
+f_{ij} &=& -2\tilde g_{ij} \psi + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}
+\nonumber\\
+\tilde g^{ij} f_{ij} &=& -6\psi + 2\tilde\nabla^k\tilde\nabla_k E
+\nonumber\\
+\tilde g^{\mu\nu} f_{\mu\nu} &=& 2\phi-6\psi + 2\tilde\nabla^k\tilde\nabla_k E
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$SVT3(f_{\mu\nu})$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\phi &=& -\tfrac{1}{2} f_{00}
+\label{phif}
+\\ \nonumber\\
+\tilde\nabla_a\tilde\nabla^a B &=& \tilde\nabla^a f_{0a}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a -2k)B_i &=& (\tilde\nabla_a\tilde\nabla^a -2k)f_{0i} -\tilde\nabla_i \tilde\nabla^a f_{0a}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a +3 k)\psi &=& \frac{1}{4}\left[\tilde\nabla^a\tilde\nabla^b f_{ab}-(\tilde\nabla_a\tilde\nabla^a+2k) (\tilde g^{bc}f_{bc})\right]
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a +3 k)\tilde\nabla_b\tilde\nabla^b E &=& \frac{3}{4}\left[ \tilde\nabla^a\tilde\nabla^b f_{ab} -\frac{1}{3}\tilde\nabla_a\tilde\nabla^a (\tilde g^{bc}f_{bc})\right]
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k) E_i &=&
+(\tilde\nabla_a\tilde\nabla^a -2k)\tilde\nabla^b f_{ib} - \tilde\nabla_i \tilde\nabla^a\tilde\nabla^b f_{ab}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)(2E_{ij})
+&=& 
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b-3k)f_{ij}
++ \tfrac12 \tilde\nabla_i\tilde\nabla_j\big[ \tilde\nabla^a\tilde\nabla^b f_{ab} + (\tilde\nabla_a\tilde\nabla^a +4k)(\tilde g^{bc}f_{bc})\big]
+\nonumber\\
+&&
++\tfrac12 \tilde g_{ij} \big[ (\tilde\nabla_a\tilde\nabla^a-4k)\tilde\nabla^b\tilde\nabla^c f_{bc}-(\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b -2k \tilde\nabla_a\tilde\nabla^a +4k^2)(\tilde g^{bc}f_{bc})\big]
+\nonumber\\
+&&
+-(\tilde\nabla_a\tilde\nabla^a -3k)(\tilde\nabla_i\tilde\nabla^b f_{jb} + \tilde\nabla_j \tilde\nabla^b f_{ib})
+\label{ftt}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We mix time derivative notation a bit, using $\partial_0$ upon $f_{\mu\nu}$ and dot upon $\Omega$ and SVT3 quantities. 
+\begin{eqnarray}
+(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \phi +\psi + \dot B - \ddot E] &=& (\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b (\partial_0 f_{0b})
+-\tfrac14 (\tilde\nabla_a\tilde\nabla^a +2k-\partial_0^2)\tilde\nabla_b\tilde\nabla^b(\tilde g^{cd}f_{cd})
+\nonumber\\
+&&+\tfrac14 (\tilde\nabla_a\tilde\nabla^a-3\partial_0^2)\tilde\nabla^b\tilde\nabla^c f_{bc}
+-\tfrac12 (\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b f_{00}
+\\ \nonumber\\
+%
+(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)] &=& 
+-\dot\Omega \Omega^{-1}(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b f_{0b}
++\tfrac14 (\tilde\nabla_a\tilde\nabla^a+3\dot\Omega \Omega^{-1}\partial_0)\tilde\nabla^b\tilde\nabla^c f_{bc}
+\nonumber\\
+&& -\tfrac14 (\tilde\nabla_a\tilde\nabla^a +2k + \dot\Omega \Omega^{-1} \partial_0)\tilde\nabla_b\tilde\nabla^b (\tilde g^{cd}f_{cd})
+\\ \nonumber\\
+%
+(\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k)[B_i -\dot E_i] &=& (\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k)f_{0i}
+-(\tilde\nabla_a\tilde\nabla^a-2k)\tilde\nabla^b (\partial_0 f_{ib})
+\nonumber\\
+&&
+-\tilde\nabla_i (\tilde\nabla_a\tilde\nabla^a+4k)\tilde\nabla^b f_{0b}
++\tilde\nabla_i \tilde\nabla^a \tilde\nabla^b (\partial_0 f_{ab})
+\\ \nonumber\\
+%
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)[2E_{ij}]
+&=& 
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b-3k)f_{ij}
++ \tfrac12 \tilde\nabla_i\tilde\nabla_j\big[ \tilde\nabla^a\tilde\nabla^b f_{ab} + (\tilde\nabla_a\tilde\nabla^a +4k)(\tilde g^{bc}f_{bc})\big]
+\nonumber\\
+&&
++\tfrac12 \tilde g_{ij} \big[ (\tilde\nabla_a\tilde\nabla^a-4k)\tilde\nabla^b\tilde\nabla^c f_{bc}-(\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b -2k \tilde\nabla_a\tilde\nabla^a +4k^2)(\tilde g^{bc}f_{bc})\big]
+\nonumber\\
+&&
+-(\tilde\nabla_a\tilde\nabla^a -3k)(\tilde\nabla_i\tilde\nabla^b f_{jb} + \tilde\nabla_j \tilde\nabla^b f_{ib})
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$f_{(1,3)}\to f_{4}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We use $U=\delta^\mu_0$, $U_\mu = -\delta_\mu^0$ and $P_{\mu\nu} = (g_{\mu\nu} + U_\mu U_\nu)$ to transform from $3+1$ to a covariant $4$ index. 
+\begin{eqnarray}
+&&(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \phi +\psi + \dot B - \ddot E] =
+\nonumber\\
+&& - \tfrac{1}{2} k \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f -  \tfrac{1}{2} k U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f + \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f^{\gamma \zeta } \nonumber \\ 
+&& -  \tfrac{1}{4} \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f + 3 k U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } - 2 k U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } + \tfrac{1}{4} \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } \nonumber \\ 
+&& + k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  \tfrac{3}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\gamma \zeta } + \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\eta }f_{\alpha }{}^{\eta } \nonumber \\ 
+&& + \tfrac{5}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } -  \tfrac{3}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }f_{\alpha \beta } + \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& + \tfrac{5}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } -  \tfrac{3}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } -  \tfrac{3}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } \nonumber \\ 
+&& -  \tfrac{3}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } + \tfrac{3}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta }
+\\ \nonumber\\
+&&(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)]=
+\nonumber\\
+ && - \tfrac{1}{2} k \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f -  \tfrac{1}{2} k U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f + \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f^{\gamma \zeta } \nonumber \\ 
+ && -  \tfrac{1}{4} \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f - 3 k U^{\alpha } U^{\beta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\gamma }f_{\beta }{}^{\gamma } -  \tfrac{1}{2} k U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } \nonumber \\ 
+ && -  \tfrac{1}{4} U^{\alpha } U^{\beta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }f + \tfrac{1}{4} \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+ && - 3 k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\zeta }f_{\beta \gamma } -  \tfrac{1}{2} k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } \nonumber \\ 
+ && + \tfrac{3}{4} U^{\alpha } U^{\beta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f^{\gamma \zeta } -  \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f \nonumber \\ 
+ && -  \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f + \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\eta }f_{\alpha }{}^{\eta } \nonumber \\ 
+ && -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }f_{\beta }{}^{\eta } + \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } \nonumber \\ 
+ && -  \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }f_{\alpha \beta } + \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } -  U^{\alpha } U^{\beta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }f_{\beta }{}^{\gamma } \nonumber \\ 
+ && + \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } + \tfrac{3}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\gamma }f_{\beta }{}^{\eta } \nonumber \\ 
+ && + \tfrac{3}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\beta }{}^{\eta } -  \tfrac{5}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }\tilde{\nabla}_{\zeta }f_{\beta \gamma } \nonumber \\ 
+ && -  \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } U^{\kappa } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}_{\kappa }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }f_{\beta \gamma }
+\\ \nonumber\\
+&&(\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k)[B_i -\dot E_i]=
+\nonumber\\
+&&-4 k^2 f_{\mu \alpha } U^{\alpha } - 4 k^2 f_{\alpha \beta } U^{\alpha } U^{\beta } U_{\mu } + 2 k U^{\alpha } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f_{\mu }{}^{\beta } + 2 k U^{\alpha } U^{\beta } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& + 2 k U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\mu \alpha } -  U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\alpha }f_{\mu }{}^{\zeta } + U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }f_{\mu \alpha } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\zeta }f_{\alpha }{}^{\zeta } -  U^{\alpha } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f_{\mu }{}^{\beta } + U^{\alpha } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f_{\mu \alpha } \nonumber \\ 
+&& -  U^{\alpha } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } + 2 k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } \nonumber \\ 
+&& + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }f_{\alpha \beta } -  U^{\alpha } U^{\beta } U_{\mu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } + U^{\alpha } U^{\beta } U_{\mu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } \tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } - 2 k U^{\alpha } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } \nonumber \\ 
+&& - 2 k U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } + U^{\alpha } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\beta \gamma } + U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\zeta } \nonumber \\ 
+&& + U^{\alpha } U^{\beta } U^{\gamma } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\zeta } + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta }
+\\ \nonumber\\
+&&(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)[2E_{ij}]=
+\nonumber\\
+&&6 k^2 f_{\mu \nu } - 2 k^2 f \tilde{g}_{\mu \nu } - 2 k^2 f_{\alpha \beta } \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } + 6 k^2 f_{\nu \alpha } U^{\alpha } U_{\mu } + 6 k^2 f_{\mu \alpha } U^{\alpha } U_{\nu } - 2 k^2 f U_{\mu } U_{\nu } \nonumber \\ 
+&& + 4 k^2 f_{\alpha \beta } U^{\alpha } U^{\beta } U_{\mu } U_{\nu } - 5 k \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f_{\mu \nu } + k \tilde{g}_{\mu \nu } \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f + k U_{\mu } U_{\nu } \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f + 3 k U^{\alpha } U_{\nu } \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\beta }f_{\mu }{}^{\beta } \nonumber \\ 
+&& + 3 k U^{\alpha } U_{\mu } \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\beta }f_{\nu }{}^{\beta } + \tfrac{1}{2} U^{\alpha } U_{\mu } \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f + \tfrac{1}{2} U^{\alpha } U_{\mu } \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f^{\beta \gamma } - 2 k \tilde{g}_{\mu \nu } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } \nonumber \\ 
+&& - 2 k U_{\mu } U_{\nu } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } - 5 k U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f_{\mu \nu } + k \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f + 3 k U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+&& + U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\mu \nu } -  \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f + \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f^{\gamma \zeta } \nonumber \\ 
+&& + U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f^{\gamma \zeta } -  U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\nu }{}^{\gamma } -  U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }f_{\mu }{}^{\gamma } \nonumber \\ 
+&& - 5 k U^{\alpha } U_{\nu } \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f_{\mu \alpha } - 5 k U^{\alpha } U_{\mu } \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f_{\nu \alpha } + \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f_{\mu \nu } -  \tfrac{1}{2} \tilde{g}_{\mu \nu } \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f \nonumber \\ 
+&& -  \tfrac{1}{2} U_{\mu } U_{\nu } \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f -  \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\alpha }f_{\nu }{}^{\alpha } -  \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\alpha }f_{\mu }{}^{\alpha } - 2 k \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& + 4 k U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } - 2 k \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } - 2 k U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& - 2 k U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\mu \alpha } - 2 k U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\nu \alpha } -  U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }f_{\mu }{}^{\zeta } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }f_{\nu }{}^{\zeta } + U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }f_{\mu \alpha } + U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }f_{\nu \alpha } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\zeta }f_{\alpha }{}^{\zeta } -  U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\zeta }f_{\alpha }{}^{\zeta } + k \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& - 4 k U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } -  U^{\alpha } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\beta }f_{\mu }{}^{\beta } -  U^{\alpha } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\beta }f_{\nu }{}^{\beta } \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{g}_{\mu \nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } + \tfrac{1}{2} U_{\mu } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } + U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f_{\mu \nu } \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f -  \tfrac{1}{2} U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f + U^{\alpha } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f_{\mu \alpha } \nonumber \\ 
+&& + U^{\alpha } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f_{\nu \alpha } -  U^{\alpha } U_{\nu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } -  U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\nu \alpha } \nonumber \\ 
+&& -  U^{\alpha } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } -  U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }f_{\mu \alpha } + 2 k U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\nu }f_{\alpha \beta } \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }f_{\alpha }{}^{\zeta } \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\zeta } + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }f_{\alpha \beta } \nonumber \\ 
+&& -  k \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } + 2 k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f_{\mu \nu } -  \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\eta }f_{\alpha }{}^{\eta } -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\eta }f_{\alpha }{}^{\eta } \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\eta } \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }f_{\alpha \beta } + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }f_{\alpha \beta } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\nu \alpha } -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }f_{\mu \alpha } + \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& -  \tfrac{3}{2} U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } + \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } -  \tfrac{1}{2} \tilde{g}_{\mu \nu } U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } -  U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } U_{\nu } \tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } U_{\mu } \tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U_{\mu } U_{\nu } \tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } U_{\mu } \tilde{\nabla}_{\eta }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } + 3 k \tilde{\nabla}_{\mu }\tilde{\nabla}_{\alpha }f_{\nu }{}^{\alpha } + 2 k U^{\alpha } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f + \tfrac{1}{2} U^{\alpha } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f^{\beta \gamma } + 3 k U^{\alpha } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } \nonumber \\ 
+&& + 3 k U^{\alpha } U^{\beta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\beta }f_{\nu \alpha } + 5 k U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }f_{\alpha }{}^{\zeta } + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\zeta } \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }f_{\alpha \beta } + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } U_{\nu } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } + 2 k U^{\alpha } U^{\beta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }f_{\alpha \beta } \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f + \tfrac{1}{2} \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } + \tfrac{1}{2} U^{\alpha } U^{\beta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f + \tfrac{1}{2} U^{\alpha } U^{\beta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\gamma } + \tfrac{1}{2} U^{\alpha } U^{\beta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } \nonumber \\ 
+&& + 3 k \tilde{\nabla}_{\nu }\tilde{\nabla}_{\alpha }f_{\mu }{}^{\alpha } + 2 k U^{\alpha } U_{\mu } \tilde{\nabla}_{\nu }\tilde{\nabla}_{\alpha }f + 3 k U^{\alpha } U_{\mu } \tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } + 3 k U^{\alpha } U^{\beta } \tilde{\nabla}_{\nu }\tilde{\nabla}_{\beta }f_{\mu \alpha } \nonumber \\ 
+&& + 3 k U^{\alpha } U^{\beta } U^{\gamma } U_{\mu } \tilde{\nabla}_{\nu }\tilde{\nabla}_{\gamma }f_{\alpha \beta } + 2 k \tilde{\nabla}_{\nu }\tilde{\nabla}_{\mu }f
+\end{eqnarray}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\gamma$ Alternative}
+\begin{eqnarray}
+(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ -\dot\Omega^{-1}\Omega \psi+ B-\dot E] &=& 
+(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b f_{0b}
+-\tfrac14 (\dot\Omega^{-1}\Omega\tilde\nabla_a\tilde\nabla^a+3\partial_0)\tilde\nabla^b\tilde\nabla^c f_{bc}
+\nonumber\\
+&& +\tfrac14\left[\dot\Omega^{-1}\Omega (\tilde\nabla_a\tilde\nabla^a +2k) + \partial_0\right]\tilde\nabla_b\tilde\nabla^b (\tilde g^{cd}f_{cd})
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVTD in Max. Sym. Space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right)\chi &=& \frac{1}{2(D-1)}\left[ \nabla^\alpha\nabla^\beta h_{\alpha\beta}  -\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)h\right]
+\\ \nonumber\\
+\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D-1}\right) \nabla_\beta\nabla^\beta F &=& \frac{D}{2(D-1)}\left( \nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{1}{D}\nabla_\alpha\nabla^\alpha h\right)
+\\ \nonumber\\
+\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)\left(\nabla_\beta\nabla^\beta + \frac{R}{D}\right) F_\mu
+&=& \left(\nabla_\alpha\nabla^\alpha+\frac{R}{D}\right)\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \nabla^\alpha\nabla^\beta h_{\alpha\beta},
+\end{eqnarray}
+\end{appendices}
+\end{document}

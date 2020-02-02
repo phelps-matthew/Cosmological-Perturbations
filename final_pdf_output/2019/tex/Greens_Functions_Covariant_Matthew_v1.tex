@@ -1,0 +1,537 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+%\numberwithin{equation}{subsection}
+\title{Covariant Green's Functions }
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+\section{Flat Space $D=2$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Scalar}
+Restricting to $D=2$ we apply the Laplacian to the scalar $f$
+\begin{equation}
+\nabla_j \nabla^j f = \left( \frac{\partial^2}{\partial_x ^2} + \frac{\partial^2}{\partial_y^2} \right)f.
+\end{equation}
+Take coordinate transformation $x^i \to x'^i$ affected by
+\begin{equation}
+	\begin{pmatrix}
+		x\\y
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		r\cos\theta\\ r\sin\theta	
+	\end{pmatrix}.
+\end{equation}
+As a scalar $f(x,y) \to f(r,\theta)$. The partial derivatives transform as
+\begin{equation}
+ \frac{\partial}{\partial x} \to \frac{dr}{dx} \frac{\partial}{\partial r} + \frac{d\theta}{dx}\frac{\partial}{\partial \theta}.
+\end{equation}
+To determine the Jacobian of transformation, we calculate the total variations
+\begin{equation}
+	\begin{pmatrix}
+		dx\\dy
+	\end{pmatrix}
+	= 
+	\begin{pmatrix}
+		\frac{\partial x}{\partial r}dr&\frac{\partial x}{\partial \theta} d\theta \\ \frac{\partial y}{\partial r} dr&\frac{\partial y}{\partial \theta} d\theta	
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		\cos\theta dr&-r\sin\theta d\theta \\ \sin\theta dr&r\cos\theta d\theta	
+	\end{pmatrix}
+	= 
+	\begin{pmatrix}
+		\cos\theta&-r\sin\theta  \\ \sin\theta&r\cos\theta.
+	\end{pmatrix}
+	\begin{pmatrix}
+		dr\\d\theta
+	\end{pmatrix}
+\end{equation}
+With the Jacobian $J$ as,
+\begin{equation}
+	J =
+	\begin{pmatrix}
+		\frac{\partial x}{\partial r}&\frac{\partial x}{\partial \theta} \\[6pt]  \frac{\partial y}{\partial r} &\frac{\partial y}{\partial \theta} 	
+	\end{pmatrix}
+	\equiv
+	\begin{pmatrix}
+		a&b\\c&d
+	\end{pmatrix},
+\end{equation}
+we recall the inverse of a $2\times 2$ matrix is
+\begin{equation}
+ J^{-1} = \frac{1}{\text{Det}(J)} 
+	\begin{pmatrix}
+		d&-b\\-c& a
+	\end{pmatrix}
+	=\frac{1}{r}
+	\begin{pmatrix}
+	r\cos\theta & r\sin\theta \\ -\sin\theta & \cos\theta
+	\end{pmatrix}
+	= 
+	\begin{pmatrix}
+		\cos\theta & \sin\theta \\[6pt] - \frac{\sin\theta}{r} & \frac{\cos\theta}{r}
+	\end{pmatrix},
+\end{equation}
+and hence we calculate $dx'^i$
+\begin{equation}
+	\begin{pmatrix}
+		dr\\ d\theta
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	\frac{\partial r}{\partial x} &\frac{\partial r}{\partial y} \\[6pt]
+	\frac{\partial \theta}{\partial x} & \frac{\partial \theta}{\partial y}
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		\cos\theta & \sin\theta \\[6pt] - \frac{\sin\theta}{r} & \frac{\cos\theta}{r}
+	\end{pmatrix}
+	\begin{pmatrix}
+		dx\\ dy
+	\end{pmatrix}.
+\end{equation}
+With partial derivatives in hand, the polar Laplacian then takes then form
+\begin{equation}
+	\nabla_j \nabla^j f(r,\theta) = \left( \frac{ \partial^2}{\partial r^2} + \frac{1}{r} \frac{\partial}{\partial r} + \frac{1}{r^2} \frac{\partial^2}{\partial \theta^2} \right)
+f(r,\theta).
+\end{equation}
+Regarding the line element, we have in Cartesian coordinates
+\begin{equation}
+ds^2 = \delta_{ij} dx^i dx^j,
+\end{equation}
+and polar coordinates,
+\begin{equation}
+ds^2 = g_{ij} dx^i dx^j = dr^2 + r^2 d\theta^2.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Vector}
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Covariant Transformation}
+Taking $A_i$ as a $2$ dimensional vector, under coordinate transformation $x^i\to x'^i$ it transforms as
+\begin{equation}
+A_i \to A'_i = \frac{\partial x^j}{\partial x'^i}A_j.
+\end{equation}
+Defining $B_{ij}$ as 
+\begin{equation}
+B_{ij} = \frac{\partial}{\partial x^i} A_j
+\end{equation}
+under coordinate transformation $x^i \to x'^i$ it follows
+\begin{equation}
+B_{ij} \to B'_{ij} = \frac{\partial x^k}{\partial x'^i} \frac{\partial x^l}{\partial x'^j}B_{kl} =  \frac{\partial x^k}{\partial x'^i} \frac{\partial x^l}{\partial x'^j}
+\frac{\partial}{\partial x^k}A_l
+\end{equation}
+To express $B_{ij}'$ in terms of $A'_i$, we make use of the identity
+\begin{equation}
+A_i = \delta^j_i A_j = \frac{\partial x^j}{\partial x^i} A_j = \frac{\partial x'^l}{\partial x^i}\frac{\partial x^j}{\partial x'^l} A_j = \frac{\partial x'^l}{\partial x^i}A'_l.
+\end{equation}
+Inserting the identity into $B'_i$ and expressing derivatives in terms of the $x'$ coordinate system, we have
+We would like to express the partial derivatives in terms of the $x'$ coordinate system and as such use the chain rule
+\begin{align*}
+ B'_{ij} &= \frac{\partial x^k}{\partial x'^i} \frac{\partial x^l}{\partial x'^j}
+\frac{\partial}{\partial x^k}A_l\\
+ &= \frac{\partial x^k}{\partial x'^i} \frac{\partial x^l}{\partial x'^j}
+\frac{\partial}{\partial x^k}\left( \frac{\partial x'^p}{\partial x^l} A'_p\right)\\
+&= \frac{\partial x^k}{\partial x'^i} \frac{\partial x^l}{\partial x'^j}
+\frac{\partial x'^q}{\partial x^k}\frac{\partial}{\partial x'^q}\left( \frac{\partial x'^p}{\partial x^l} A'_p\right)\\
+&= \frac{\partial x^l}{\partial x'^j}
+\frac{\partial}{\partial x'^i}\left( \frac{\partial x'^p}{\partial x^l} A'_p\right)\\
+&= \frac{\partial}{\partial x'^i}A'_j +  \frac{\partial x^l}{\partial x'^j}\left(\frac{\partial }{\partial x'^i}\frac{\partial x'^p}{\partial x^l}\right) A'_p\\
+&= \frac{\partial}{\partial x'^i}A'_j - \frac{\partial x'^p}{\partial x^l} \frac{\partial^2 x^l}{\partial x'^i \partial x'^j} A'_p.
+\end{align*}
+From 
+\begin{equation}
+g_{ij} = \frac{\partial x^m}{\partial x'^i}\frac{\partial x^n}{\partial x'^j}\delta_{mn},
+\end{equation}
+we recall that the affine connection may be expressed as
+\begin{equation}
+\Gamma^{k}_{ij} = \frac{\partial x'^k}{\partial x^l} \frac{\partial^2 x^l}{\partial x'^i \partial x'^j}.
+\end{equation}
+Hence $B'_{ij}$ may be expressed as
+\begin{align*}
+B'_{ij} &=  \frac{\partial}{\partial x'^i}A'_j - \frac{\partial x'^p}{\partial x^l} \frac{\partial^2 x^l}{\partial x'^i \partial x'^j} A'_p\\
+&=  \frac{\partial}{\partial x'^i}A'_j -\Gamma^p_{ij} A'_p\\
+&= \nabla_i A'_j.
+\end{align*}
+While the above example was performed for one covariant derivative, the same process applies any general tensor composed of derivatives. The procedure simply entails re-expressing all Cartesian derivatives $\partial_i$ in terms of covariant derivatives $\nabla_i$. 
+\\ \\
+As a result, we may determine the transformation of the Laplacian of a vector under $x^i\to x'^i$ as
+\begin{equation}
+J_i = \partial_j \partial^j A_i \to J'_i = \nabla_j \nabla^j A'_i,
+\end{equation}
+with covariant derivatives understood as being defined relative to metric $g_{ij}$ belonging to the $x'$ coordinate system. 
+\\ \\
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Cartesian Green's Function}
+Given the equation
+\begin{equation}
+\partial_j \partial^j A_i = J_i,
+\end{equation}
+we may form a solution for $A_i$ as
+\begin{equation}
+A_i = \int d^2x'\ G(\vect x,\vect x') J_i(\vect x'),
+\end{equation}
+where
+\begin{equation}
+\partial_j \partial^j G(\vect x,\vect x') = \delta(\vect x-\vect x').\label{20}
+\end{equation}
+With the differential operator $\mathcal L = \partial_j \partial^j$ being translation invariant, and with $\delta(\vect x-\vect x')$ being translation invariant under $\vect x \to \vect x+\vect a$, $x'\to \vect x'+\vect a$, it follows that $G(\vect x,\vect x')$ must take the same form, i.e. be a function only of the difference $\vect x-\vect x'$. If the above argument does not hold, we then assume $G(\vect x,\vect x')$ to be of the form $G(|\vect x-\vect x'|)$. 
+\\ \\
+To determine the form of $D=2$ Green's function of the Laplacian, integrate \eqref{20} over a region of radius $a$ centered at $x'$,
+\begin{align}
+	&\int_{r<a} d^2x\  \partial_j \partial^j G(|\vect x-\vect x'|) = 1\nonumber\\
+	&\oint_{r=a} dS_j\ \partial^j  G(|\vect x-\vect x'|)= 1\nonumber\\
+	&\oint_{x^2+y^2=a}  \left( -dy \vecth x + dx \vecth y\right) \cdot \left(\frac{\partial G(|\vect x-\vect x'|)}{\partial x} \vecth x +
+\frac{G(|\vect x-\vect x'|)}{\partial y}\vecth y\right)=1.\label{21}
+\end{align}
+Noting that 
+\begin{equation}
+\frac{\partial f(|\vect r-\vect r'|)}{\partial r} = \frac{\partial f(|\vect r-\vect r'|)}{\partial (r-r')},
+\end{equation}
+it will be convenient to solve \eqref{21} in polar coordinates,
+\begin{align*}
+& \oint_{r=a} d\theta \ r \sin\theta\ \vecth r \cdot \left(\frac{\partial G(|\vect r-\vect r'|)}{\partial (r-r')} \vecth r +
+\frac{G(|\vect r-\vect r'|)}{\partial \theta }\vecth \theta \right)=1\\
+& a\oint_{r=a} d\theta \ \sin\theta \frac{\partial G(|\vect r-\vect r'|)}{\partial (r-r')}=1\\
+&2\pi a \frac{\partial G(\tilde r)}{\partial \tilde r}\bigg|_{\tilde r=a} =  2\pi a \frac{\partial G(|\vect r-\vect r'|)}{\partial (r-r')}\bigg|_{|r-r'| =a} =1.
+\end{align*}
+In the last step, we have shifted the origin to $\vect r_2$, in which $|\vect r-\vect r'| = \tilde r$. The solution to
+\begin{equation}
+ \frac{\partial G(|\vect r-\vect r'|)}{\partial (r-r')}\bigg|_{|r-r'| =a} =\frac{1}{2\pi a}
+\end{equation}
+for arbitrary $a$ may be found by integration to be
+\begin{equation}
+G(|\vect r-\vect r'|) = \frac{1}{2\pi} \ln (|\vect r-\vect r'|).
+\end{equation}
+Accordingly, the solution $A_i$ is 
+\begin{equation}
+A_i(x) = \frac{1}{2\pi} \int d^2y\ \ln(|x- y|) J_i(y).
+\end{equation}
+\\ \\
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Coordinate Transformation}
+As a vector, $A_i$, under coordinate transformation $x\to x'$, must obey
+\begin{equation}
+A_i \to A_i' = \frac{\partial x^j}{\partial x'^i}A_j\label{26}.
+\end{equation}
+%The tensor properties of 
+%\[
+% 	\frac{1}{2\pi} \int d^2y\ \ln(|x- y|) J_i(y)
+%\]
+%lie within $J_i$, and we note that the index $i$ here is with respect to the same coordinate system as $A_i$. It is only the position argument $y$ of $J_i(y)$ that integrated over the region $d^2y$. Considering the Green's function solution is an integral operator over $J_i$, its tensor properties under coordinate transformation must be equivalent to that of $A_i$. Namely, the integral operator does not change the orientation of vector $J_i$ in coordinate space - it only integrates the value of $J_i$ against $G(x,y)$ to find the contribution at a given point $x$. As such, we expect the integral to transform under coordinate change $x\to x'$ as
+%\begin{align*}
+% 	\frac{1}{2\pi} \int d^2y\ \ln(|x- y|) J_i(y) &\to  \frac{1}{2\pi} \int d^2x'\ \ln(|x- y|) \left( \frac{\partial x^j}{\partial x'^i}J_j(y)\right)\\
+%&=\frac{\partial x^j}{\partial x'^i}\left( \frac{1}{2\pi} \int d^2x'\ \ln(|x- y|) J_j(y)\right)\\
+%&= \frac{\partial x^j}{\partial x'^i}A_j(x). 
+%\end{align*}
+\\ 
+To compare a Cartesian and polar system specifically, we note that in Cartesian coordinates, the Green's solution to $A_i$ is
+\begin{align*}
+A_x &= \frac{1}{2\pi} \int d^2z\ \ln(|x- z|) J_x(z)\\
+A_y &= \frac{1}{2\pi} \int d^2z\ \ln(|x- z|) J_y(z),
+\end{align*}
+where we integrate over $z$ for clarity. According to transformation \eqref{26}, the components in the polar basis are related via
+\begin{align}
+A_r(x) &= \frac{\partial x^j}{\partial r}A_j(x) = \frac{\partial x}{\partial r}A_x+\frac{\partial y}{\partial r}A_y = \cos\theta A_x + \sin\theta A_y\nonumber\\
+&= \frac{1}{2\pi} \cos\theta  \int d^2z\ \ln(|x- z|) J_x(z)+ \frac{1}{2\pi} \sin\theta  \int d^2z\ \ln(|x- z|) J_y(z) \label{27}
+\end{align}
+\begin{align}
+A_\theta(x) &= \frac{\partial x^j}{\partial \theta}A_j(x) = \frac{\partial x}{\partial \theta}A_x+\frac{\partial y}{\partial \theta }A_y = -r\sin\theta A_x + r\cos\theta A_y\nonumber\\
+&=  -\frac{1}{2\pi} r\sin\theta  \int d^2z\ \ln(|x- z|) J_x(z)+\frac{1}{2\pi} r\cos\theta  \int d^2z\ \ln(|x- z|) J_y(z) \label{28}
+\end{align}
+We may also express $J_x$ and $J_y$ in the polar basis via
+\[
+	J_i = \frac{\partial x'^j}{\partial x^i}J'_j
+\]
+to obtain
+\begin{equation}
+J_x = \frac{\partial r}{\partial x}J_r + \frac{\partial \theta}{\partial x} J_\theta = \cos\theta J_r - \frac{\sin\theta}{r} J_\theta
+\end{equation}
+\begin{equation}
+J_y = \frac{\partial r}{\partial y}J_r + \frac{\partial \theta}{\partial y} J_\theta = \sin\theta J_r + \frac{\cos\theta}{r} J_\theta.
+\end{equation}
+Inserting these back into \eqref{27} and \eqref{28} yields
+\begin{align}
+A_r &= \frac{1}{2\pi} \cos^2\theta  \int d^2z\ \ln(|x- z|) J_r(z) - \frac{1}{2\pi} \left(\frac{\sin\theta \cos\theta}{r}\right) \int d^2z\ \ln(|x- z|) J_\theta(z)\\
+&\quad+ \frac{1}{2\pi} \sin^2\theta \int d^2z\ \ln(|x- z|) J_r(z) + \frac{1}{2\pi} \left(\frac{\sin\theta\cos\theta}{r}\right)  \int d^2z\ \ln(|x- z|) J_\theta(z)\\
+&= \frac{1}{2\pi}  \int d^2z\ \ln(|x- z|) J_r (z)
+\end{align}
+
+\begin{align}
+A_\theta &= -\frac{1}{2\pi} r\sin\theta\cos\theta  \int d^2z\ \ln(|x- z|) J_r(z) + \frac{1}{2\pi} \sin^2\theta \int d^2z\ \ln(|x- z|) J_\theta(z)\\
+&\quad+ \frac{1}{2\pi}r\sin\theta\cos\theta \int d^2z\ \ln(|x- z|) J_r(z) + \frac{1}{2\pi}\cos^2\theta  \int d^2z\ \ln(|x- z|) J_\theta(z)\\
+&= \frac{1}{2\pi}  \int d^2z\ \ln(|x- z|) J_\theta (z).
+\end{align}
+From these coordinate transformation, we find that in a polar coordinate system the solution to $A_i$ is given as
+\begin{equation}
+A_r(r) = \frac{1}{2\pi}  \int d^2z\ \ln(|r- z|) J_r (z),\qquad A_\theta(r)=\frac{1}{2\pi}  \int d^2z\ \ln(|r- z|) J_\theta (z).
+\end{equation}
+Since these solutions are merely coordinate transformations from the known Cartesian solutions, it must be that they satisfy the covariant differential equation 
+\begin{equation}
+\nabla_j \nabla^j A_i(r) = J_i(r),
+\end{equation}
+since this equation is itself derived via a coordinate transformation from Cartesian to polar. 
+\\
+\\
+To verify the solution, we note the covariant box acting on a vector may be decomposed into Christoffels as
+\begin{align}
+g^{jk}\nabla_j \nabla_k A_i={}&\left( g^{jk} \partial_{j}\partial_{k}
+-  \Gamma^{m}{}_{jk} g^{jk} \partial_{m}\right)A_{i}
++A_{m} \Gamma^{m}{}_{kn} \Gamma^{n}{}_{ji} g^{jk}
+ + A_{m} \Gamma^{m}{}_{ni} \Gamma^{n}{}_{jk} g^{jk}
+\nonumber\\
+& -  A_{m} g^{jk} \partial_{j}\Gamma^{m}{}_{ki}
+ -  2\Gamma^{m}{}_{ji} g^{jk} \partial_{k}A_{m}.
+\end{align}
+The Christoffels evaluate to
+\begin{equation}
+\Gamma^r_{\theta\theta} = -r,\qquad \Gamma^{\theta}_{r\theta} = \frac{1}{r},\qquad \Gamma^r_{rr} = \Gamma^\theta_{rr} = \Gamma^{r}_{r\theta} = \Gamma^{\theta}_{\theta\theta} = 0.
+\end{equation}
+We may then evaluate the components of $J_i(r)$ as 
+\begin{align}
+J_r &= - A_{r} r^{-2} + r^{-1} \frac{\partial}{\partial r}A_{r} + \frac{\partial^2}{\partial r^2}A_{r} - 2 r^{-3} \frac{\partial}{\partial \theta}A_{\theta} + r^{-2}  \frac{\partial^2}{\partial \theta^2}A_{r}\nonumber\\
+&= (\nabla_j \nabla^j)A_r - r^{-2} A_r - 2r^{-3}\frac{\partial}{\partial \theta}A_\theta
+\end{align}
+\begin{align}
+J_\theta &= - r^{-1} \frac{\partial}{\partial r} A_{\theta} + \frac{\partial^2}{\partial r^2} A_{\theta} + 2 r^{-1} \frac{\partial}{\partial \theta}A_{r} + r^{-2}\frac{\partial^2}{\partial \theta^2}A_{\theta}\nonumber\\
+&= (\nabla_j \nabla^j) A_\theta - 2r^{-1} \frac{\partial}{\partial r} A_\theta + 2 r^{-1} \frac{\partial}{\partial \theta}A_r
+\end{align}
+where $(\nabla_j \nabla^j)$ denotes the scalar covariant box in polar coordinates (i.e. compute $\nabla_j \nabla^j A$, then set $A=A_i$). \\ \\
+However, here we note $J_r$ is coupled to $A_r$ and $A_\theta$ (and likewise for $J_\theta$). Substitution of the $A_i$ given in (37) would appear to yield an inconsistent equation. 
+
+\section{Summary of Poisson's Curved Space Green's Functions}
+\subsection{Two Point Bitensors}
+Bitensors are tensors of two spacetime points. Primed indices denoted coordinates with respect to $x'$, while unprimed indices denoted coordinates with respect to $x$. For example
+\begin{equation}
+T_{\alpha\beta'}(x,x').
+\end{equation}
+Such a tensor has transformation rule under $x\to \tilde x$
+\begin{equation}
+T_{\alpha\beta'} \to T_{\tilde\alpha \beta'} = \frac{\partial x^\rho}{\partial \tilde x^\alpha}T_{\alpha\beta'}
+\end{equation}
+and under $x' \to \hat x$,
+\begin{equation}
+T_{\alpha\beta'} \to T_{\alpha \hat\beta'} = \frac{\partial x'^\rho}{\partial \hat x'^\beta}T_{\alpha\beta'}.
+\end{equation}
+In the Poison's construction of Green's functions, the bitensors are evaluated on the unique geodesic defined as the set of points $x$ linked to $x'$ that belong within the normal convex neighborhood of $x'$. 
+\subsection{Parallel Propogator}
+On a geodesic linking $x$ to $x'$, introduce the orthonormal basis $e^\mu_a$, which satisfy
+\begin{equation}
+g_{\mu\nu}e^\mu_ae^\nu_b = \eta_{ab},
+\end{equation}
+and which obey
+\begin{equation}
+\frac{D e^\mu_a}{d\lambda} = 0.
+\end{equation}
+The parallel propogator which takes a vector at point $x$ and propogates along the manifold to point $x'$ is defined as
+\begin{equation}
+g^\alpha{}_{\alpha'}(x,x') = e^\alpha_a(x)e^a_{\alpha'}(x').
+\end{equation}
+For example:
+\begin{equation}
+A^{\alpha'}(x') = g^{\alpha'}{}_\alpha (x',x)A^{\alpha}.
+\end{equation}
+These orthonormal basis vectors which have both coordinate and Lorentz index are equivalent to tetrads (vierbeins). 
+\subsection{Dirac Distribution in Curved Space}
+Poisson defines the invariant Dirac functional as
+\begin{equation}
+\int_V f(x)\delta_4(x,x')\sqrt{-g}d^4x = f(x'),\quad \int_{V'} f(x')\delta_4(x,x')\sqrt{-g'}d^4x' = f(x).
+\end{equation}
+This implies the various equivalent forms:
+\begin{equation}
+\delta_4(x,x') = \frac{\delta_4(x-x')}{\sqrt{-g}}=\frac{\delta_4(x-x')}{\sqrt{-g'}}
+=(gg')^{1/4} \delta_4(x-x').
+\end{equation}
+When acted upon by a covariant derivative, it obeys
+\begin{equation}
+\nabla_\alpha(g^\alpha{}_{\alpha'}(x,x')\delta_4(x,x')) = -\partial_{\alpha'} \delta_4(x,x')
+\end{equation}
+\begin{equation}
+\nabla_{\alpha'}(g^{\alpha'}{}_{\alpha}(x,x')\delta_4(x,x')) = -\partial_{\alpha} \delta_4(x,x')
+\end{equation}
+\subsection{Flat Space Greens Functions}
+\subsection{Curved Space Greens Functions}
+\subsubsection*{Scalar}
+\begin{equation}
+(\nabla_\alpha \nabla^\alpha - \xi R)\Phi(x) = -4\pi \mu(x)
+\end{equation}
+\begin{equation}
+\Phi(x) = \int G(x,x')u(x')\sqrt{-g'}d^4x'
+\end{equation}
+\subsubsection*{Vector}
+See Poisson Paper.
+\newpage
+\section{Potential Application}
+\subsubsection{SVT Basis}
+In terms of the SVT decomposition
+\begin{align}
+	ds^2 &= -(g_{\mu\nu}^{(0)}+h_{\mu\nu})dx^\mu dx^\nu \nonumber \\
+	&= (1+2\phi)d\tau^2 - 2(\nabla_i B + B_i)dtdx^i -[(1-2\psi \gamma_{ij})+2\nabla_i \nabla_j E + \nabla _i E_j + \nabla_j E_i + 2E_{ij}]dx^idx^j,
+\end{align}
+$\delta W_{\mu\nu}$ takes the form 
+\begin{align}
+\delta W_{00}={}&-2 k \nabla_{a}\nabla^{a}\dot{B}
+ + 2 k \nabla_{a}\nabla^{a}\ddot{E}
+ + \tfrac{8}{3} k^2 \nabla_{a}\nabla^{a}E
+ - 2 k \nabla_{a}\nabla^{a}\phi
+ - 2 k \nabla_{a}\nabla^{a}\psi
+ -  \tfrac{2}{3} k \nabla_{b}\nabla_{a}\nabla^{b}\nabla^{a}E\nonumber\\
+& -  \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\dot{B}
+ + \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\ddot{E}
+ + \tfrac{2}{3} k \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}E
+ -  \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\phi\nonumber\\
+& -  \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\psi,
+\\
+\delta W_{0i}={}&\tfrac{4}{3} k \nabla_{a}\nabla^{a}\nabla_{i}\dot{E}
+ - 2 k \nabla_{i}\ddot{B}
+ + 2 k \nabla_{i}\dddot{E}
+ - 4 k^2 \nabla_{i}\dot{E}
+ - 2 k \nabla_{i}\dot{\phi}
+ - 2 k \nabla_{i}\dot{\psi}
+ -  \tfrac{2}{3} \nabla_{i}\nabla_{a}\nabla^{a}\ddot{B}\nonumber\\
+& + \tfrac{2}{3} \nabla_{i}\nabla_{a}\nabla^{a}\dddot{E}
+ -  \tfrac{4}{3} k \nabla_{i}\nabla_{a}\nabla^{a}\dot{E}
+ -  \tfrac{2}{3} \nabla_{i}\nabla_{a}\nabla^{a}\dot{\phi}
+ -  \tfrac{2}{3} \nabla_{i}\nabla_{a}\nabla^{a}\dot{\psi}
+\nonumber\\
+&-2 k^2 B_{i}
+ -  k \ddot{B}_{i}
+ + k \dddot{E}_{i}
+ + 2 k^2 \dot{E}_{i}
+ -  \tfrac{1}{2} \nabla_{a}\nabla^{a}\ddot{B}_{i}
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}\dddot{E}_{i}
+ + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}B_{i}\nonumber\\
+& -  \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\dot{E}_{i},
+\\
+\delta W_{ij}={}&- \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}\dot{B}
+ + \tfrac{1}{3} g_{ij} \nabla_{a}\nabla^{a}\dddot{B}
+ -  \tfrac{1}{3} g_{ij} \nabla_{a}\nabla^{a}\overset{\text{...}.}{E}
+ + \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}\ddot{E}
+ + \tfrac{1}{3} g_{ij} \nabla_{a}\nabla^{a}\ddot{\phi}\nonumber\\
+& + \tfrac{1}{3} g_{ij} \nabla_{a}\nabla^{a}\ddot{\psi}
+ + \tfrac{20}{3} k^2 g_{ij} \nabla_{a}\nabla^{a}E
+ -  \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}\phi
+ -  \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}\psi
+ + \tfrac{4}{3} k \nabla_{a}\nabla_{j}\nabla^{a}\nabla_{i}E\nonumber\\
+& -  \tfrac{4}{3} k g_{ij} \nabla_{b}\nabla_{a}\nabla^{b}\nabla^{a}E
+ -  \tfrac{1}{3} g_{ij} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\dot{B}
+ + \tfrac{1}{3} g_{ij} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\ddot{E}
+ + \tfrac{4}{3} k g_{ij} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}E\nonumber\\
+& -  \tfrac{1}{3} g_{ij} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\phi
+ -  \tfrac{1}{3} g_{ij} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\psi
+ + 2 k \nabla_{j}\nabla_{a}\nabla^{a}\nabla_{i}E
+ -  \nabla_{j}\nabla_{i}\dddot{B}
+ + \nabla_{j}\nabla_{i}\overset{\text{...}.}{E}\nonumber\\
+& -  \nabla_{j}\nabla_{i}\ddot{\phi}
+ -  \nabla_{j}\nabla_{i}\ddot{\psi}
+ -  \tfrac{40}{3} k^2 \nabla_{j}\nabla_{i}E
+ + \tfrac{1}{3} \nabla_{j}\nabla_{i}\nabla_{a}\nabla^{a}\dot{B}
+ -  \tfrac{1}{3} \nabla_{j}\nabla_{i}\nabla_{a}\nabla^{a}\ddot{E}\nonumber\\
+& -  \tfrac{10}{3} k \nabla_{j}\nabla_{i}\nabla_{a}\nabla^{a}E
+ + \tfrac{1}{3} \nabla_{j}\nabla_{i}\nabla_{a}\nabla^{a}\phi
+ + \tfrac{1}{3} \nabla_{j}\nabla_{i}\nabla_{a}\nabla^{a}\psi
+\nonumber\\
+& +k \nabla_{a}\nabla^{a}\nabla_{i}E_{j}
+ + k \nabla_{a}\nabla^{a}\nabla_{j}E_{i}
+ -  k \nabla_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \nabla_{i}\dddot{B}_{j}
+ + \tfrac{1}{2} \nabla_{i}\overset{\text{...}.}{E}_{j}
+ + k \nabla_{i}\ddot{E}_{j}
+ - 4 k^2 \nabla_{i}E_{j}\nonumber\\
+& + \tfrac{1}{2} \nabla_{i}\nabla_{a}\nabla^{a}\dot{B}_{j}
+ -  \tfrac{1}{2} \nabla_{i}\nabla_{a}\nabla^{a}\ddot{E}_{j}
+ -  k \nabla_{i}\nabla_{a}\nabla^{a}E_{j}
+ -  k \nabla_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \nabla_{j}\dddot{B}_{i}
+ + \tfrac{1}{2} \nabla_{j}\overset{\text{...}.}{E}_{i}\nonumber\\
+& + k \nabla_{j}\ddot{E}_{i}
+ - 4 k^2 \nabla_{j}E_{i}
+ + \tfrac{1}{2} \nabla_{j}\nabla_{a}\nabla^{a}\dot{B}_{i}
+ -  \tfrac{1}{2} \nabla_{j}\nabla_{a}\nabla^{a}\ddot{E}_{i}
+ -  k \nabla_{j}\nabla_{a}\nabla^{a}E_{i}
+\nonumber\\
+& +\overset{\text{...}.}{E}_{ij}
+ + 8 k \ddot{E}_{ij}
+ + 4 k^2 E_{ij}
+ - 2 \nabla_{a}\nabla^{a}\ddot{E}_{ij}
+ - 4 k \nabla_{a}\nabla^{a}E_{ij}
+ + \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}E_{ij}.
+\end{align}
+Note that the trace $h$ vanishes as expected, since our metric is of RW form with $\Omega(x)=1$, which we know may be expressed in conformal to flat form (with $W_{\mu\nu}^{(0)}$ thereby vanishing).
+\subsubsection{Conformal Transformation}
+Under general conformal transformation $g_{\mu\nu}\to \Omega^2(x)g_{\mu\nu}$, the perturbed Bach tensor transforms as
+\begin{equation}
+\delta W_{\mu\nu} \to \Omega^{-2}(x) \delta W_{\mu\nu}.
+\end{equation}
+Hence, we can express $\delta W_{\mu\nu}$ in the proper RW form with metric
+\begin{equation}
+ds^2 = -\Omega(\tau)^2\left[ -(1+h_{00})d\tau^2 + (g_{ij}+h_{ij})dx^i dx^j\right],
+\end{equation}
+by multiplying the net results above by $\Omega^{-2}(\tau)$. 
+\subsubsection{Projected Components}
+Based on the Energy Momentum Tensor section, we can simplify the equation $\delta W_{\mu\nu} = \delta T_{\mu\nu}$ by looking at each SO(3) sector viz.
+\begin{align}
+\bar \rho &= \rho
+\nonumber\\
+\bar Q_i & = Q_i
+\nonumber\\
+\bar\pi_{ij}^{T\theta} &= \pi_{ij}^{T\theta}.
+\end{align}
+where
+\begin{align}
+\rho &= \delta W_{00}
+\nonumber \\
+Q_i &= -\delta W_{0i} - \nabla_i \int d^3x' \sqrt g\ A(x,x') \nabla^j \delta W_{0j}
+\nonumber\\
+\pi_{ij}^{T\theta} &= \delta W_{ij}^{T\theta}.
+\end{align}
+Again, we set to zero the surfrace terms generated by integration by parts. Reading off the scalar, vector, and tensor components from (ref 100) according to (ref 101) yields for $\delta T_{\mu\nu} = \delta W_{\mu\nu}$:
+\begin{align}
+\bar \rho={}&-2 k \nabla_{a}\nabla^{a}\dot{B}
+ + 2 k \nabla_{a}\nabla^{a}\ddot{E}
+ + \tfrac{8}{3} k^2 \nabla_{a}\nabla^{a}E
+ - 2 k \nabla_{a}\nabla^{a}\phi
+ - 2 k \nabla_{a}\nabla^{a}\psi
+ -  \tfrac{2}{3} k \nabla_{b}\nabla_{a}\nabla^{b}\nabla^{a}E\nonumber\\
+& -  \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\dot{B}
+ + \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\ddot{E}
+ + \tfrac{2}{3} k \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}E
+ -  \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\phi\nonumber\\
+& -  \tfrac{2}{3} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\psi,
+\nonumber\\
+\bar Q_i={}& -2 k^2 B_{i}
+ -  k \ddot{B}_{i}
+ + k \dddot{E}_{i}
+ + 2 k^2 \dot{E}_{i}
+ -  \tfrac{1}{2} \nabla_{a}\nabla^{a}\ddot{B}_{i}
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}\dddot{E}_{i}
+ + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}B_{i}\nonumber\\
+& -  \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}\dot{E}_{i},
+\nonumber\\
+\bar \pi_{ij}^{T\theta}={}& \overset{\text{...}.}{E}_{ij}
+ + 8 k \ddot{E}_{ij}
+ + 4 k^2 E_{ij}
+ - 2 \nabla_{a}\nabla^{a}\ddot{E}_{ij}
+ - 4 k \nabla_{a}\nabla^{a}E_{ij}
+ + \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}E_{ij}.
+\end{align}
+Under conformal transformation each SO(3) section simply scales as $\Omega^{-2}(\tau)$. 
+\newpage
+\section*{References}
+Poisson, Eric, Adam Pound, and Ian Vega. "The motion of point particles in curved spacetime." Living Reviews in Relativity 14.1 (2011): 7.\\ \\
+DeWitt, Bryce S., and Robert W. Brehme. "Radiation damping in a gravitational field." Annals of Physics 9.2 (1960): 220-259.\\ \\
+Allen, Bruce, and Michael Turyn. "An evaluation of the graviton propagator in de Sitter space." Nuclear Physics B 292 (1987): 813-852.\\ \\
+Fröb, Markus B., and Mojtaba Taslimi Tehrani. "Green’s functions and Hadamard parametrices for vector and tensor fields in general linear covariant gauges." Physical Review D 97.2 (2018): 025022. \\ \\
+Hobbs, J. M. "A vierbein formalism of radiation damping." Annals of Physics 47.1 (1968): 141-165.
+
+
+\end{document}

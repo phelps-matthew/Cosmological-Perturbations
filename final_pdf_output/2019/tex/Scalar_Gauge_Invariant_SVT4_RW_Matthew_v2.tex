@@ -1,0 +1,129 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Scalar Gauge Invariant RW SVT4 v2}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)(\tilde g_{\mu\nu} + f_{\mu\nu})dx^\mu dx^\nu = (g_{\mu\nu} +h_{\mu\nu}) dx^\mu dx^\nu
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,\frac{1}{1-kr^2}, r^2, r^2\sin^2\theta\right),\qquad \tilde \Gamma^{\lambda}_{\alpha\beta} = \delta^\lambda_i \delta^j_\alpha \delta^k_\beta \tilde \Gamma^{i}_{jk}
+\\ \nonumber\\
+f_{\mu\nu} &=& -2\tilde g_{\mu\nu}\chi + 2\tilde\nabla_\mu\tilde\nabla_\nu F + \tilde\nabla_\mu F_\nu + \tilde\nabla_\nu F_{\mu} +2F_{\mu\nu}
+\nonumber\\
+\tilde g^{\mu\nu}f_{\mu\nu} &\equiv&f = -8\chi + 2 \tilde\nabla_\alpha\tilde\nabla^\alpha F
+\\ \nonumber\\
+f_{00} &=& -2\phi
+\nonumber\\
+f_{0i} &=& B_i + \tilde\nabla_i B
+\nonumber\\
+f_{ij} &=& -2\tilde g_{ij} \psi + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}
+\nonumber\\
+\tilde g^{ij} f_{ij} &=& -6\psi + 2\tilde\nabla^k\tilde\nabla_k E
+\nonumber\\
+\tilde g^{\mu\nu} f_{\mu\nu} &=& 2\phi-6\psi + 2\tilde\nabla^k\tilde\nabla_k E
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$SVT3\to SVT4$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Gauge Invariant Scalar:
+\begin{eqnarray}
+(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)] &=& 
+-\dot\Omega \Omega^{-1}(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b f_{0b}
++\tfrac14 (\tilde\nabla_a\tilde\nabla^a+3\dot\Omega \Omega^{-1}\partial_0)\tilde\nabla^b\tilde\nabla^c f_{bc}
+\nonumber\\
+&& -\tfrac14 (\tilde\nabla_a\tilde\nabla^a +2k + \dot\Omega \Omega^{-1} \partial_0)\tilde\nabla_b\tilde\nabla^b (\tilde g^{cd}f_{cd})
+\label{gamma1}
+\end{eqnarray}
+Using $U_\mu$ and $P_{\mu\nu}$ we may construct the covariant (with respect to $\tilde g_{\mu\nu}$) $4D$ extension of the RHS of \eqref{gamma1}.
+\begin{eqnarray}
+U_\mu &=& -\delta_\mu^0,\qquad U^\mu = \delta^\mu_0,\qquad P_{\mu\nu} = (\tilde g_{\mu\nu} + U_{\mu}U_{\nu})
+\\ \nonumber\\
+&&
+-\dot\Omega \Omega^{-1}(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b f_{0b}
++\tfrac14 (\tilde\nabla_a\tilde\nabla^a+3\dot\Omega \Omega^{-1}\partial_0)\tilde\nabla^b\tilde\nabla^c f_{bc}
+\nonumber\\
+&& -\tfrac14 (\tilde\nabla_a\tilde\nabla^a +2k + \dot\Omega \Omega^{-1} \partial_0)\tilde\nabla_b\tilde\nabla^b (\tilde g^{cd}f_{cd})
+\nonumber\\
+&&=
+\nonumber\\
+&& - \tfrac{1}{2} k \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f -  \tfrac{1}{4} \dot{\Omega} U^{\alpha } \Omega^{-1} \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }f + \tfrac{3}{4} \dot{\Omega} U^{\alpha } \Omega^{-1} \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }f^{\beta \gamma } - 3 k \dot{\Omega} U^{\alpha } \Omega^{-1} \tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } \nonumber \\ 
+&& -  \tfrac{1}{2} k U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f + \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f^{\gamma \zeta } -  \tfrac{1}{4} \tilde{\nabla}_{\beta }\tilde{\nabla}^{\beta }\tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }f \nonumber \\ 
+&& - 3 k \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \tilde{\nabla}_{\gamma }f_{\alpha \beta } -  \tfrac{1}{4} \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f + \tfrac{1}{2} \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\zeta }f_{\alpha }{}^{\zeta } \nonumber \\ 
+&& -  \tfrac{1}{2} k U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta } -  \dot{\Omega} U^{\alpha } \Omega^{-1} \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta } + \tfrac{1}{4} \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f^{\alpha \beta } -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+&& -  \tfrac{1}{4} \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \tilde{\nabla}_{\gamma }\tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }f_{\alpha \beta } -  \tfrac{1}{2} k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }f \nonumber \\ 
+&& + \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\eta }f_{\alpha }{}^{\eta } -  \tfrac{1}{4} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}_{\eta }\tilde{\nabla}^{\eta }f_{\alpha \beta } + \tfrac{1}{2} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\beta }\tilde{\nabla}_{\gamma }f_{\alpha }{}^{\gamma } \nonumber \\ 
+&& -  \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta } -  \tfrac{1}{4} U^{\alpha } U^{\beta } \tilde{\nabla}_{\zeta }\tilde{\nabla}^{\zeta }\tilde{\nabla}_{\gamma }\tilde{\nabla}^{\gamma }f_{\alpha \beta }  -  \tfrac{1}{2} \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } \Omega^{-1} \tilde{\nabla}_{\eta }\tilde{\nabla}_{\zeta }\tilde{\nabla}_{\gamma }f_{\alpha \beta }
+\label{gamma2}
+\end{eqnarray} 
+As a verification, applying the $3+1$ splitting to the RHS of \eqref{gamma2} yields the LHS. Evaluating $f_{\mu\nu}$ in terms of SVT4 quantities, \eqref{gamma2} can be expressed in terms of $\chi$, $Q_\alpha = \tilde\nabla_\alpha F + F_\alpha$, and $F_{\mu\nu}$:
+\begin{eqnarray}
+&&(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)]=
+\nonumber\\
+&&3 k \nabla_{\alpha }\nabla^{\alpha }\chi + 3 k U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }\chi + \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }\chi + 2 U^{\alpha } U^{\beta } \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla_{\alpha }\chi \nonumber \\ 
+&& + U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \nabla_{\zeta }\nabla_{\gamma }\nabla_{\beta }\nabla_{\alpha }\chi -3 k \dot{\Omega} U^{\alpha } \Omega^{-1} \nabla_{\beta }\nabla^{\beta }Q_{\alpha } - 3 k \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \nabla_{\gamma }\nabla_{\beta }Q_{\alpha } \nonumber \\ 
+&& -  \dot{\Omega} U^{\alpha } \Omega^{-1} \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }Q_{\alpha } - 2 \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \nabla_{\zeta }\nabla^{\zeta }\nabla_{\gamma }\nabla_{\beta }Q_{\alpha } \nonumber \\ 
+&& -  \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } \Omega^{-1} \nabla_{\eta }\nabla_{\zeta }\nabla_{\gamma }\nabla_{\beta }Q_{\alpha }-6 k \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \nabla_{\gamma }F_{\alpha \beta } -  k U^{\alpha } U^{\beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta } \nonumber \\ 
+&& -  k U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \nabla_{\zeta }\nabla_{\gamma }F_{\alpha \beta } -  \tfrac{5}{2} \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } \Omega^{-1} \nabla_{\zeta }\nabla^{\zeta }\nabla_{\gamma }F_{\alpha \beta } -  \tfrac{1}{2} U^{\alpha } U^{\beta } \nabla_{\zeta }\nabla^{\zeta }\nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta } \nonumber \\ 
+&& -  \dot{\Omega} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } U^{\eta } \Omega^{-1} \nabla_{\eta }\nabla_{\zeta }\nabla_{\gamma }F_{\alpha \beta } -  \tfrac{1}{2} U^{\alpha } U^{\beta } U^{\gamma } U^{\zeta } \nabla_{\eta }\nabla^{\eta }\nabla_{\zeta }\nabla_{\gamma }F_{\alpha \beta }.
+\label{gamma3}
+\end{eqnarray}
+Finally, performing a $3+1$ split upon \eqref{gamma3} and setting $U^\alpha Q_\alpha = Q_0$, we have
+\begin{eqnarray}
+&&(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)]
+\nonumber\\
+&=& 3 k \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi + \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi -3 k \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}^{b}Q_0 -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}Q_0+\tfrac{3}{2} \overset{...}{F}_{00}{} \dot{\Omega} \Omega^{-1} \nonumber \\ 
+&& - 6 k \dot{F}_{00}{} \dot{\Omega} \Omega^{-1} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{F}_{00}{} -  \tfrac{5}{2} \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F}_{00}{} -  k \tilde{\nabla}_{a}\tilde{\nabla}^{a}F_{00}{} -  \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}F_{00}{}
+\label{gamma4}
+\end{eqnarray}
+Factorizing \eqref{gamma4} yields 
+\begin{eqnarray}
+&&(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)] =
+\nonumber\\
+&&(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b(\chi - \dot\Omega \Omega^{-1} Q_0)
+-\tfrac12 \left( \tilde\nabla_a\tilde\nabla^a +2k - \partial_0^2\right) \tilde\nabla_b\tilde\nabla^b F_{00}
+-\tfrac12 \dot\Omega\Omega^{-1}\left( 5\tilde\nabla_a\tilde\nabla^a\partial_0 + 12k \partial_0 -3\partial_0^3\right)F_{00}
+\nonumber\\
+\phantom{}
+\end{eqnarray}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Gauge Transformations}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{eqnarray}
+	x'^\mu = x^\mu - \epsilon^\mu(x) &\implies&  h'_{\mu\nu} = h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+	\label{gaugetrans}
+	\\ \nonumber\\
+	f_{\mu} &=& \Omega^2 \epsilon_\mu,\qquad f^\mu = \epsilon^\mu
+	\\ \nonumber\\
+	\Delta_\epsilon\left[ f_{\mu\nu} \right]  &=& \tilde\nabla_{\alpha }f_{\beta } + \tilde\nabla_{\beta }f_{\alpha } + 2 f^{\gamma } \tilde g_{\alpha \beta } \Omega^{-1} \tilde\nabla_{\gamma }\Omega 
+	\\ \nonumber\\
+	\Delta_\epsilon\left[ \tilde g^{\mu\nu} f_{\mu\nu} \right] &=&   
+	2 \tilde{\nabla}_{\alpha }f^{\alpha } + 8 f^{\alpha } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega 
+	\\ \nonumber\\
+	\Delta_\epsilon\left[ \tilde f_{00} \right] &=&  2\dot f_0 + 2f_0 \Omega^{-1}\dot \Omega
+	\\ \nonumber\\
+	\Delta_\epsilon\left[ \tilde f_{0i} \right]  &=&  \dot f_i + \tilde\nabla_i f_0
+	\\ \nonumber\\
+	\Delta_\epsilon\left[ \tilde f_{ij}  \right]  &=& \tilde\nabla_{i }f_{j } + \tilde\nabla_{j}f_{i} - 2\tilde g_{ij} f_0 \Omega^{-1}\dot \Omega
+	\\ \nonumber\\
+	\Delta_\epsilon\left[ \tilde f \right]  &=&  -2\dot f_0 + 2\tilde\nabla^k f_k -8 f_0 \Omega^{-1}\dot \Omega
+	\end{eqnarray}
+\end{appendices}
+\end{document}

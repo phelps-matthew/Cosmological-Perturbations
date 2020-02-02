@@ -1,0 +1,286 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{SVT3 RW Radiation, Conformal Flat $k=0$}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Four Velocity: Conformal Flat $\Omega(\tau)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& -dt^2 + a(t)^2( dx^2 + dy^2+dz^2),\qquad \frac{dx^i}{dt} = 0
+\\ \nonumber\\
+d\tau^2 &=& -ds^2 = dt^2\left[ 1- a^2(t)\left(\left(\frac{dx}{dt}\right)^2 - \left(\frac{dy}{dt}\right)^2-\left(\frac{dz}{dt}\right)^2\right)\right] = dt^2
+\\ \nonumber\\
+U^\mu &=& \frac{dx^\mu}{d\tau} = \delta^\mu_0
+\\ \nonumber\\
+dp &=& \frac{dt}{a(t)},\qquad p = \int_{t_0}^t \frac{dt}{a(t)}
+\\ \nonumber\\
+ds^2 &=& a^2(p)\left( -dp^2 + dx^2+dy^2+dz^2\right),\qquad \frac{dx^i}{dp} = \frac{dx^i}{dt}\frac{dt}{dp} = 0
+\\ \nonumber\\
+d\tau^2 &=& a^2(p) dp^2\left[ 1- \left(\frac{dx}{dp}\right)^2 - \left(\frac{dy}{dp}\right)^2-\left(\frac{dz}{dp}\right)^2\right] = a^2(p)dp^2
+\\ \nonumber\\
+U^\mu &=& \frac{dx^\mu}{d\tau} = \frac{dx^\mu}{dp}\frac{dp}{d\tau} = \frac{1}{a(p)}\delta^\mu_0
+\\ \nonumber\\
+U_\mu &=& -a(p)\delta_\mu^0
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background: Conformal Flat $\Omega(\tau)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+	ds^2 &=& \Omega^2(\tau)(-d\tau^2 + \tilde g_{ij} dx^i dx^j + f_{\mu\nu} dx^\mu dx^\nu)
+	\label{geom}
+	\\ \nonumber\\
+	\tilde g_{ij} &=& \text{diag}(1,1,1)\quad\text{or}\quad \text{diag}(1,r^2,r^2\sin^2\theta)
+	\\ \nonumber\\
+	G^{(0)}_{00}&=& -3 \frac{\dot\Omega^2}{\Omega^2},\qquad
+	G^{(0)}_{0i} = 0,\qquad
+	G^{(0)}_{ij} = \tilde g_{ij} \left[2\frac{\ddot\Omega}{\Omega}-\frac{\dot\Omega^2}{\Omega^2}\right]
+	\\ \nonumber\\
+	\kappa^2_4 T_{\mu\nu}^{(0)} &=&  p(4 U_\mu U_\nu + \Omega^2\tilde g_{\mu\nu})\qquad\qquad  \text{[Evaluated in \eqref{geom} coordinates, $U^\mu = \Omega^{-1}\delta^\mu_0$]}
+	\\ \nonumber\\
+	\Delta^{(0)}_{\mu\nu} &\equiv& G_{\mu\nu}^{(0)}+\kappa^2_4 T_{\mu\nu}^{(0)}=0
+	\\ \nonumber\\
+	\Delta^{(0)}_{00} &=& -3 \frac{\dot\Omega^2}{\Omega^2}+3\Omega^2 p\quad \implies\quad
+	\boxed{ p = \frac{\dot\Omega^2}{\Omega^4}}
+	\\ \nonumber\\
+	\Delta^{(0)}_{ij} &=& 2\tilde g_{ij} \frac{\ddot \Omega}{\Omega} - \frac{\dot\Omega^2}{\Omega^2} +\Omega^2 p 
+	\\ \nonumber\\
+	\Delta^{(0)} &=& \Omega^{-2}(-\Delta^{(0)}_{00} + \tilde g^{ab}\Delta^{(0)}_{ab})  = \Omega^{-2}(-G^{(0)}_{00} + \tilde g^{ab}G^{(0)}_{ab})
+	\nonumber\\
+	&=& 6\frac{\ddot\Omega}{\Omega^3},\quad\implies\quad \ddot\Omega = 0,\quad\implies\quad \boxed{\Omega = A+B\tau}\quad\implies\quad \boxed{ p = \frac{B^2}{(A+B\tau)^4}}
+	\label{p1}
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fluctuations: Conformal Flat $\Omega(\tau)=\tau/2$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For $\Omega = \tau/2$, we have from \eqref{p1} $A=0$, $B=1/2$ such that $p = 4\tau^{-4}$.
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)(-d\tau^2 + \tilde g_{ij} dx^i dx^j + f_{\mu\nu} dx^\mu dx^\nu)
+\\ \nonumber\\
+\tilde g_{ij} &=& \text{diag}(1,1,1)\quad\text{or}\quad \text{diag}(1,r^2,r^2\sin^2\theta)
+\\ \nonumber\\
+f_{00} &=& -2\phi,\qquad f_{0i}= \tilde \nabla_i B + B_i,\qquad 
+f_{ij} = -2 \tilde g_{ij}\psi + 2\tilde\nabla_i\tilde \nabla_j E + \tilde \nabla_i E_j + \tilde \nabla_j E_i + 2E_{ij}
+\\ \nonumber\\
+\delta U_i &=& V_i + \tilde\nabla_i V,\qquad \tilde g^{ij}\tilde\nabla_i V_j = 0
+\\ \nonumber\\
+\kappa^2_4 \delta T_{\mu\nu} &=& \delta p(4 U_\mu U_\nu + \Omega^2\tilde g_{\mu\nu})+ 4\tau^{-4}\left(
+4 \delta U_\mu U_\nu + 4U_\mu \delta U_\nu + \Omega^2 f_{\mu\nu}\right),\qquad U^\mu= \Omega^{-1}\delta^\mu_0
+\\ \nonumber\\
+\kappa^2_4 \delta T_{00} &=& -16 \delta U_{0}{} \tau^{-3} + \tfrac{3}{4} \delta p \tau^2 - 2 \tau^{-2} \phi 
+\\ \nonumber\\
+\kappa^2_4 \delta T_{0i} &=&\tau^{-2} \tilde{\nabla}_{i}B - 8 \tau^{-3} \tilde{\nabla}_{i}V
+-8 V_{i} \tau^{-3} + B_{i} \tau^{-2}
+\\ \nonumber\\
+\kappa^2_4 \delta T_{ij} &=& \tfrac{1}{4} \tilde{g}_{ij} \delta p \tau^2 - 2 \tilde{g}_{ij} \tau^{-2} \psi + 2 \tau^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
++\tau^{-2} \tilde{\nabla}_{i}E_{j} + \tau^{-2} \tilde{\nabla}_{j}E_{i}+2 E_{ij} \tau^{-2}
+\\ \nonumber\\
+\Omega^{-2} (\tilde g^{ab} \kappa^2_4 \delta T_{ab}) &=& 3\delta p -24\tau^{-4}\psi + 8\tau^{-4}\tilde\nabla_a\tilde\nabla^a E
+\\ \nonumber\\
+\kappa^2_4g^{\mu\nu}\delta T_{\mu\nu} &=& 64 \delta U_{0}{} \tau^{-5} + 8 \tau^{-4} \phi - 24 \tau^{-4} \psi + 8 \tau^{-4} \tilde{\nabla}_{s}\tilde{\nabla}^{s}E
+\\ \nonumber\\
+\delta G_{00} &=& 6 \dot{\psi} \tau^{-1} + 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\ \nonumber\\
+\delta G_{0i} &=&- \tau^{-2} \tilde{\nabla}_{i}B - 2 \tilde{\nabla}_{i}\dot{\psi} - 2 \tau^{-1} \tilde{\nabla}_{i}\phi 
+- B_{i} \tau^{-2} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i} -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\ \nonumber\\
+\delta G_{ij}&=&-2 \overset{..}{\psi} \tilde{g}_{ij}
+- 2 \dot{\phi} \tilde{g}_{ij} \tau^{-1}
+- 4 \dot{\psi} \tilde{g}_{ij} \tau^{-1}
++ 2 \tilde{g}_{ij} \tau^{-2} \phi
++ 2 \tilde{g}_{ij} \tau^{-2} \psi
+- 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B\nonumber\\
+&& -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}
++ 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+-  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi\nonumber\\
+&& + 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B}
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{..}{E}
+- 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E}
+- 2 \tau^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi
+\nonumber\\
+&&+\tau^{-1} \tilde{\nabla}_{i}B_{j}
++ \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+-  \tfrac{1}{2} \tilde{\nabla}_{i}\overset{..}{E}_{j}
+-  \tau^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
+-  \tau^{-2} \tilde{\nabla}_{i}E_{j}
++ \tau^{-1} \tilde{\nabla}_{j}B_{i}
++ \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}
+-  \tfrac{1}{2} \tilde{\nabla}_{j}\overset{..}{E}_{i}\nonumber\\
+&& -  \tau^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
+-  \tau^{-2} \tilde{\nabla}_{j}E_{i}
+- \overset{..}{E}_{ij}
+- 2 E_{ij} \tau^{-2}
+- 2 \dot{E}_{ij} \tau^{-1}
++ \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\ \nonumber\\
+\Omega^{-2}\tilde g^{ab}\delta G_{ab} &=&
+-24 \dot{\phi} \tau^{-3}
+- 48 \dot{\psi} \tau^{-3}
+- 24 \overset{..}{\psi} \tau^{-2}
++ 24 \tau^{-4} \phi
++ 24 \tau^{-4} \psi
+- 16 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
+\nonumber\\
+&& + 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}
++ 16 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+- 8 \tau^{-4} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\ \nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu}&=& \Omega^{-2}(-\delta G_{00} + \tilde g^{ab}\delta G_{ab})
+\nonumber\\
+&=& -24 \dot{\phi} \tau^{-3}
+- 72 \dot{\psi} \tau^{-3}
+- 24 \overset{..}{\psi} \tau^{-2}
++ 24 \tau^{-4} \phi
++ 24 \tau^{-4} \psi
+- 24 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}\nonumber\\
+&& + 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}
++ 24 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+- 8 \tau^{-4} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ 16 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+\end{eqnarray}
+
+
+%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations: Conformal Flat $\Omega(\tau)=\tau/2$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu} &=& \delta G_{\mu\nu} + \kappa^2_4 \delta T_{\mu\nu}
+\\ \nonumber\\
+\Delta_{00} &=&-16 \delta U_{0}{} \tau^{-3} + 6 \dot{\psi} \tau^{-1} + \tfrac{3}{4} \delta p \tau^2 - 2 \tau^{-2} \phi + 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\ \nonumber\\
+\Delta_{0i} &=& -2 \tilde{\nabla}_{i}\dot{\psi} - 8 \tau^{-3} \tilde{\nabla}_{i}V - 2 \tau^{-1} \tilde{\nabla}_{i}\phi 
+-8 V_{i} \tau^{-3} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i} -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\ \nonumber\\
+\Delta_{ij} &=& 
+-2 \overset{..}{\psi} \tilde{g}_{ij}
+- 2 \dot{\phi} \tilde{g}_{ij} \tau^{-1}
+- 4 \dot{\psi} \tilde{g}_{ij} \tau^{-1}
++ \tfrac{1}{4} \tilde{g}_{ij} \delta p \tau^2
++ 2 \tilde{g}_{ij} \tau^{-2} \phi
+- 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B\nonumber\\
+&& -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}
++ 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+-  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi\nonumber\\
+&& + 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B}
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{..}{E}
+- 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E}
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi 
+\nonumber\\
+&& +\tau^{-1} \tilde{\nabla}_{i}B_{j}
++ \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+-  \tfrac{1}{2} \tilde{\nabla}_{i}\overset{..}{E}_{j}
+-  \tau^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
++ \tau^{-1} \tilde{\nabla}_{j}B_{i}
++ \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}
+-  \tfrac{1}{2} \tilde{\nabla}_{j}\overset{..}{E}_{i}
+-  \tau^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
+\nonumber\\
+&&- \overset{..}{E}_{ij}
+- 2 \dot{E}_{ij} \tau^{-1}
++ \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\ \nonumber\\
+\Omega^{-2}\tilde g^{ab}\Delta_{ab} &=& 
+3 \delta p
+- 24 \dot{\phi} \tau^{-3}
+- 48 \dot{\psi} \tau^{-3}
+- 24 \overset{..}{\psi} \tau^{-2}
++ 24 \tau^{-4} \phi
+- 16 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}\nonumber\\
+&& + 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}
++ 16 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu} &=& 
+64 \delta U_{0}{} \tau^{-5}
+- 24 \dot{\phi} \tau^{-3}
+- 72 \dot{\psi} \tau^{-3}
+- 24 \overset{..}{\psi} \tau^{-2}
++ 32 \tau^{-4} \phi
+- 24 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}\nonumber\\
+&& + 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}
++ 24 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+- 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ 16 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (Simplified): Conformal Flat $\Omega(\tau)=\tau/2$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\alpha &=& \phi+\psi+\dot B -\ddot E,\qquad \gamma = -\left(\frac{\Omega}{\dot\Omega}\right) \psi + B-\dot E
+\\ \nonumber\\
+\Delta_{00} &=&-16 \delta U_{0}{} \tau^{-3} - 6 \dot{\gamma} \tau^{-2} + 6 \alpha \tau^{-2} + \tfrac{3}{4} \delta p \tau^2 - 8 \tau^{-2} \phi - 12 \tau^{-2} \psi + 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma 
+\\ \nonumber\\
+\Delta_{0i} &=& 2 \tau^{-1} \tilde{\nabla}_{i}\dot{\gamma} - 2 \tau^{-1} \tilde{\nabla}_{i}\alpha - 8 \tau^{-3} \tilde{\nabla}_{i}V + 4 \tau^{-1} \tilde{\nabla}_{i}\psi 
+-8 V_{i} \tau^{-3} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i} -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\ \nonumber\\
+\Delta_{ij} &=& 
+-2 \dot{\gamma} \tilde{g}_{ij} \tau^{-2}
++ 2 \tilde{g}_{ij} \alpha \tau^{-2}
++ 2 \overset{..}{\gamma} \tilde{g}_{ij} \tau^{-1}
+- 2 \dot{\alpha} \tilde{g}_{ij} \tau^{-1}
++ \tfrac{1}{4} \tilde{g}_{ij} \delta p \tau^2
+- 4 \tilde{g}_{ij} \tau^{-2} \psi
+-  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha\nonumber\\
+&& - 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\alpha
++ 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\gamma
+\nonumber\\
+&& +\tau^{-1} \tilde{\nabla}_{i}B_{j}
++ \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+-  \tfrac{1}{2} \tilde{\nabla}_{i}\overset{..}{E}_{j}
+-  \tau^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
++ \tau^{-1} \tilde{\nabla}_{j}B_{i}
++ \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}
+-  \tfrac{1}{2} \tilde{\nabla}_{j}\overset{..}{E}_{i}
+-  \tau^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
+\nonumber\\
+&&- \overset{..}{E}_{ij}
+- 2 \dot{E}_{ij} \tau^{-1}
++ \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\ \nonumber\\
+\Omega^{-2}\tilde g^{ab}\Delta_{ab} &=& 
+3 \delta p - 24 \dot{\gamma} \tau^{-4} + 24 \alpha \tau^{-4} + 24 \overset{..}{\gamma} \tau^{-3} - 24 \dot{\alpha} \tau^{-3} - 48 \tau^{-4} \psi - 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - 16 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma 
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu} &=& 
+64 \delta U_{0}{} \tau^{-5} + 24 \overset{..}{\gamma} \tau^{-3} - 24 \dot{\alpha} \tau^{-3} + 32 \tau^{-4} \phi - 8 \tau^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - 24 \tau^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma 
+\end{eqnarray}
+\end{document}

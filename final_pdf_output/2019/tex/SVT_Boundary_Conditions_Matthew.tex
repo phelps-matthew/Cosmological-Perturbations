@@ -1,0 +1,59 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{SVT Boundary Conditions}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+Taking $h_{0i}$ as an example, if we decompose $h_{0i}$ according to the identity
+\begin{eqnarray}
+h_{0i} &=& \underbrace{ h_{0i} - \nabla_i \int D \nabla^j h_{0j}}_{B_i} + \nabla_i\underbrace{  \int D \nabla^j h_{0j}}_{B},
+\end{eqnarray}
+then naturally it follows that
+\begin{eqnarray}
+\nabla^k B_k = 0,\qquad \nabla^k h_{0k} = \nabla^k \nabla_k B.
+\end{eqnarray}
+Thus a decomposition into transverse and longitudinal components appears to have been satisfied, and proper behavior of $B$ only requires that $\int D \nabla^j h_{ij}$ does not diverge. \\ \\
+By directly taking $B= \int D \nabla^j h_{0j}$, it would seem we do not have to specify any specific behavior of $B$ on the boundary to achieve decomposition.
+\\ \\
+However, in using Green's identity
+\begin{eqnarray}
+(\nabla_i\nabla^i D)B &=& D(\nabla_i\nabla^i B) + \nabla^i[ (\nabla_i D)B - D(\nabla_i B)]
+\\ \nonumber\\
+B &=& \int D(\nabla_i\nabla^i B) + \oint dS^i [ (\nabla_i D)B - D(\nabla_i B)],
+\end{eqnarray}
+we see that since $\nabla_i \nabla^i B = \nabla^i h_{0i}$ and since we have defined $B=\int D \nabla^j h_{0j}$ it must follow that
+\begin{eqnarray}
+B &=& B + \oint dS^i [ (\nabla_i D)B - D(\nabla_i B)]
+\\ \nonumber\\
+\implies 0&=& \oint dS^i [ (\nabla_i D)B - D(\nabla_i B)].
+\end{eqnarray}
+Put in different terms, Green's identity allows us to decompose any scalar into harmonic and non-harmonic parts (harmonic according to math convention, meaning $\nabla^2 f(x) = 0$)
+\begin{eqnarray}
+B &=& \underbrace{\int D(\nabla_i\nabla^i B)}_{B^{NH}} + \underbrace{\oint dS^i [ (\nabla_i D)B - D(\nabla_i B)]}_{B^H}.
+\end{eqnarray} 
+We see that our initial definition of $B$ via $B=\int D \nabla^j h_{0j}$ is in fact the non-harmonic projection $B^{NH}$ by virtue of $\nabla^2 B = \nabla^j h_{0j}$. Thus such a definition automatically enforces that $B$ vanish on the boundary. 
+\\ \\
+Given the integral relation for $\psi$ (according to a definition that never requires an integration by parts) and its derivative relation,
+\begin{eqnarray}
+\psi &=& \frac{1}{4} \left[ \int D \nabla^l h_{kl} - g^{ab}h_{ab}\right]
+\\ \nonumber\\
+\nabla^2 \psi &=& \frac{1}{4} \nabla^2 \left[ \nabla^l h_{kl} - g^{ab}h_{ab}\right],
+\end{eqnarray}
+we see that $\psi \ne \int D \nabla^2 \psi$, and thus is not required to vanish on the boundary. However, if we define the integral relation for $\psi$ as 
+\begin{eqnarray}
+\psi &=& \frac{1}{4} \left[ \int D (\nabla^l h_{kl} - g^{ab}h_{ab}) \right],
+\end{eqnarray}
+then it does follow that $\psi$ is nonharmonic, namely $\psi = \int D \nabla^2 \psi$ and thus must vanish on the boundary. 
+\\ \\
+The tradeoff between having an $E_{ij}$ that is automatically transverse + traceless but not itself gauge invariant, vs an $E_{ij}$ that is automatically gauge invariant but requires integration by parts to be transverse and traceless is discussed below (2.9) in the decomposition paper.
+\end{document}

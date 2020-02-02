@@ -1,0 +1,190 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+
+\title{$\delta W_{\mu\nu} = \delta T_{\mu\nu}$ (SVT) Matthew v2}
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+According to (E6), via orthogonal projection to the four velocity $U^\mu$, we may decompose a rank 2 $T_{\mu\nu}$ as
+\begin{equation}
+T_{\mu\nu} = (\rho+p)U_\mu U_\nu + p g_{\mu\nu} + U_\mu q_\nu + U_\nu q_\mu + \pi_{\mu\nu}
+\end{equation}
+where
+\begin{equation}
+	U^\mu q_{\mu} = 0,\qquad U^\nu \pi_{\mu\nu} = 0,\qquad \pi_{\mu\nu} = \pi_{\nu\mu},\qquad g^{\mu\nu}\pi_{\mu\nu} =U^\mu U^\nu \pi_{\mu\nu} = 0.
+\end{equation}
+We will expand the above $T_{\mu\nu}$ up to first order as
+\begin{equation}
+	T_{\mu\nu} = T_{\mu\nu}^{(0)} + \delta T_{\mu\nu}.
+\end{equation}
+For a flat background viz. $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$, it follows that $W_{\mu\nu}^{(0)} = T_{\mu\nu}^{(0)} = 0$. Hence the full $T_{\mu\nu}$ of (3) will be entirely first order. The first order quantities will be defined according to 
+\begin{equation}
+\rho^{(1)} = \delta \rho,\qquad p^{(1)} = \delta p,\qquad U^{(1)} = \delta U,\qquad q_\mu^{(1)} = q_\mu,\qquad \pi_{\mu\nu}^{(1)} = \pi_{\mu\nu}.
+\end{equation}
+where the scalars, vectors, and tensors are defined in terms of flat projectors as
+\begin{align}
+	\delta \rho =&{}  U_{(0)}^\sigma U_{(0)}^\tau \delta T_{\sigma\tau},\qquad \delta p =  \frac{1}{3} P_{(0)}^{\sigma\tau} \delta T_{\sigma\tau},\qquad
+	q_\mu = -P_\mu{}^\sigma U_{(0)}^{\tau}\delta T_{\sigma\tau}\nonumber\\
+	\pi_{\mu\nu} =&{} \bigg[ \frac12 P_\mu{}^\sigma P_\nu{}^\tau + \frac12 P_{\nu}{}^\sigma  P_\mu{}^\tau- \frac13 P_{\mu\nu}^{(0)}P_{(0)}^{\sigma\tau}\bigg]\delta T_{\sigma\tau}.
+\end{align}
+Now the fluctuation goes as
+\begin{equation}
+	\delta T_{\mu\nu} = (\delta \rho + \delta p)U^{(0)}_{\mu}U^{(0)}_{\nu} + g_{\mu\nu}^{(0)}\delta p  + U_\mu^{(0)}q_\nu + U_\nu^{(0)}q_\mu + \pi_{\mu\nu}.
+\end{equation}
+Since we will shortly be conformally transforming to the Roberston Walker background, the coordinates are taken as comoving, i.e. $\frac{ dx^i}{dt} = 0$, and thus the four velocity is
+\begin{equation}
+	U_{(0)}^\mu =  \delta^\mu_0,\qquad U_\mu^{(0)} =- \delta_\mu^0
+\end{equation}
+in which $\delta T_{\mu\nu}$ becomes
+\begin{equation}
+	\delta T_{\mu\nu} = (\delta \rho + \delta p)\delta^0_\mu \delta^0_\nu +  \eta_{\mu\nu}\delta p - \Omega \delta^0_\mu q_\nu -\Omega\delta^0_\nu q_\mu + \pi_{\mu\nu},
+\end{equation}
+\begin{equation}
+\delta T_{00} =\delta \rho
+\end{equation}
+\begin{equation}
+\delta T_{0i} = -q_i
+\end{equation}
+\begin{equation}
+\delta T_{ij} =  \delta_{ij} \delta p + \pi_{ij}.
+\end{equation}
+To bring $\delta T_{\mu\nu}$ closer to form of $\delta W_{\mu\nu}$ in the SVT basis, we follow appendix E and introduce
+\begin{equation}
+	Q = \int d^3y D^3(x-y) \tilde\nabla^i_y q_i
+\end{equation}
+such that
+\begin{equation}
+	 q_i = Q_i + \tilde\nabla_i Q,\qquad \tilde\nabla^i Q_i = 0.
+\end{equation}
+For $\pi_{\mu\nu}$, we recall that (evalauted in the geoemetry of (20)) it obeys 
+\begin{equation}
+	g^{\mu\nu}\pi_{\mu\nu} = U^\mu U^\nu \pi_{\mu\nu} = 0.
+\end{equation} 
+Via (E21), we may decompose the five component $\pi_{\mu\nu}$ into a transverse traceless $\pi_{ij}$, a divergenceless $\pi_i$, and a scalar $\pi$ as
+\begin{equation}
+	\pi_{ij} = -\frac{2}{3} \delta_{ij}\tilde\nabla^k \tilde\nabla_k \pi  + 2\tilde\nabla_i\tilde\nabla_j \pi + \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta},
+\end{equation}
+where we have restricted to $D=3$ according to $U^\mu U^\nu \pi_{\mu\nu} = 0$. Now $\delta T_{\mu\nu}$ can be expressed in the SVT form as
+\begin{align}
+\delta T_{00}  &= \Omega^{-2} \delta \rho,
+\nonumber\\	
+\delta T_{0i} &= -\Omega^{-2} ( Q_i + \tilde\nabla_i Q),
+\nonumber\\	
+\delta T_{ij}  &= \Omega^{-2}\bigg[ \delta_{ij} \delta p -\frac{2}{3} \delta_{ij}\tilde\nabla^k \tilde\nabla_k \pi + 2\tilde\nabla_i\tilde\nabla_j \pi + \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta}\bigg]
+\end{align} 
+Such a $\delta T_{\mu\nu}$ must be gauge invariant since $T^{(0)}_{\mu\nu} = 0$. In addition, it must be covariantly conserved and traceless, conditions which when imposed yield the following constraints:
+\begin{align}
+ \delta \rho =&{} 3\delta p\\
+-\partial_t\rho = &{} \tilde\nabla_i \tilde\nabla^i Q\\
+0 = &{} \partial_t (Q^i + \tilde\nabla^i Q) + \tilde\nabla^i \delta p +\frac43 \tilde\nabla^i \tilde\nabla^k \tilde\nabla_k \pi + \tilde\nabla_k \tilde\nabla^k \pi^i.
+\end{align}
+To bring $\delta T_{\mu\nu}$ closer to form of $\delta W_{\mu\nu}$ in the SVT basis, we follow appendix E and introduce
+\begin{equation}
+	Q = \int d^3y D^3(x-y) \tilde\nabla^i_y q_i
+\end{equation}
+such that
+\begin{equation}
+	 q_i = Q_i + \tilde\nabla_i Q,\qquad \tilde\nabla^i Q_i = 0.
+\end{equation}
+For $\pi_{\mu\nu}$, we recall that (evalauted in the geoemetry of (20)) it obeys 
+\begin{equation}
+	g^{\mu\nu}\pi_{\mu\nu} = U^\mu U^\nu \pi_{\mu\nu} = 0.
+\end{equation} 
+Via (E21), we may decompose the five component $\pi_{\mu\nu}$ into a transverse traceless $\pi_{ij}$, a divergenceless $\pi_i$, and a scalar $\pi$ as
+\begin{equation}
+	\pi_{ij} = -\frac{2}{3} \delta_{ij}\tilde\nabla^k \tilde\nabla_k \pi  + 2\tilde\nabla_i\tilde\nabla_j \pi + \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta},
+\end{equation}
+where we have restricted to $D=3$ according to $U^\mu U^\nu \pi_{\mu\nu} = 0$. Now (24-26) can be expressed in the SVT form as
+\begin{align}
+\delta T_{00}  &= \delta \rho,
+\nonumber\\	
+\delta T_{0i} &= - ( Q_i + \tilde\nabla_i Q),
+\nonumber\\	
+\delta T_{ij}  &=\delta_{ij} \delta p -\frac{2}{3} \delta_{ij}\tilde\nabla^k \tilde\nabla_k \pi + 2\tilde\nabla_i\tilde\nabla_j \pi + \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta}
+\end{align} 
+From (20), it follows
+\begin{equation}
+Q = -\int d^3y D^3(\mathbf x-\mathbf y) \partial_t \delta \rho.
+\end{equation}
+Applying $\tilde\nabla_i$ to (19) and inserting (17-18) yields
+\begin{equation}
+	0 = -\partial_t^2 \delta \rho + \frac13 \tilde\nabla_k\tilde\nabla^k \delta\rho + \frac43 \tilde\nabla^l \tilde\nabla_l \tilde\nabla^k \tilde\nabla_k \pi
+\end{equation}
+in which we may solve for $\pi$ as
+\begin{equation}
+\pi = \frac34 \int d^3y D^3(\mathbf x-\mathbf y) \bigg[ \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \delta \rho - \frac13\delta\rho\bigg].
+\end{equation}
+Now we insert $Q$ and $\pi$ back into (19) and solve for $Q_i$ and $\pi_i$
+\begin{equation}
+Q_i = - \tilde\nabla_k \tilde\nabla^k \int dt\  \pi_i 
+\end{equation}
+\begin{equation}
+\pi_i = - \int d^3y D^3(\mathbf x-\mathbf y) \partial_t Q_i.
+\end{equation}
+Lastly, we peform a conformal transformation $g_{\mu\nu} \to \Omega^2(x) g_{\mu\nu}$ such that we are working within the background geometry $ds^2 = - \Omega^2 \eta_{\mu\nu} dx^\mu dx^\nu$. Under such a conformal transformation, $\delta T_{\mu\nu}$ transform as $\delta T_{\mu\nu} \to \Omega^{-2} \delta T_{\mu\nu}$. 
+Finally, we can express $\delta T_{\mu\nu}$ in terms of 5 components consisting of $\delta \rho$, $\pi_i$ and $\pi_{ij}^{T\theta}$ as
+\begin{align}
+\delta T_{00}  &= \Omega^{-2} \delta \rho,
+\nonumber\\	
+\delta T_{0i} &= \Omega^{-2} \bigg[ \tilde\nabla_k \tilde\nabla^k \int dt\  \pi_i  + \tilde\nabla_i  \int d^3y D^3(\mathbf x-\mathbf y) \partial_t \delta \rho\bigg],
+\nonumber\\	
+\delta T_{ij}  &= \Omega^{-2}\bigg[ 
+\frac12 \delta_{ij} \delta\rho - \frac12 \delta_{ij} \int d^3y D^3(\mathbf x-\mathbf y) \partial_t^2 \delta \rho \nonumber\\
+&\quad +\frac32 \tilde\nabla_i\tilde\nabla_j \int d^3y D^3(\mathbf x-\mathbf y) \bigg( \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \delta \rho - \frac13\delta\rho\bigg)
++ \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta}\bigg].
+\end{align}
+This is to be contrasted with the S.V.T. decomposition of $\delta W_{\mu\nu}$:
+\begin{align}
+\delta W_{00}  &= -\frac{2}{3\Omega^2}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \Psi,
+\nonumber\\	
+\delta W_{0i} &=  -\frac{2}{3\Omega^2}\tilde{\nabla}_i\tilde{\nabla}_\ell \tilde{\nabla}^\ell \partial_t\Psi
+	+\frac{1}{2\Omega^2}\left[\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \mathcal Q_i -  \tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \partial_t^2\mathcal Q_i \right],
+\nonumber\\	
+\delta W_{ij}  &= \frac{1}{3\Omega^2}\bigg{[} \delta_{ij}\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell  \partial_t^2\Psi +\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \tilde{\nabla}_i\tilde{\nabla}_j \Psi
+- \delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \Psi -3\tilde{\nabla}_i\tilde{\nabla}_j \partial_t^2 \Psi \bigg{] }
+\nonumber\\
+&{}\ +\frac{1}{2\Omega^2}\left[ \tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \tilde{\nabla}_i   \partial_t\mathcal Q_j+ \tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \tilde{\nabla}_j \partial_t \mathcal Q_i - \tilde{\nabla}_i\partial_t^3 \mathcal Q_j-\tilde{\nabla}_j\partial_t^3 \mathcal Q_i \right]
+\nonumber\\
+&{}\ +\frac{1}{\Omega^2}\left[\tilde{\nabla}_\ell\tilde{\nabla}^\ell-\partial_t^2\right]^2E_{ij}.
+\end{align}
+where $\delta W_{\mu\nu}$ has been carried out in the perturbed geometry
+\begin{align}
+ds^2 =&{} - g_{\mu\nu}dx^\mu dx^\nu= -\Omega^2(\eta_{\mu\nu}+f_{\mu\nu})dx^\mu dx^\nu \nonumber\\
+=\ &{} \Omega^2(x)\bigg[ (1+2\phi)dt^2 - 2(\tilde\nabla_i B+ B_i)dtdx^i - [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i 
++ 2 E_{ij}]dx^idx^j\bigg].
+\end{align}
+and where we have defined
+\begin{equation}
+	\Psi = \phi + \psi +\dot{B}-\ddot{E},\qquad \mathcal Q_i = B_i - \dot{E}_i.
+\end{equation}
+If we further define
+\begin{align}
+\delta\bar \rho &=  -\frac{2}{3}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell \Psi\nonumber\\
+\bar \pi_i &= \frac12\big( \tilde\nabla_\ell \tilde\nabla^\ell - \partial_t^2\big) \partial_t \mathcal Q_i\nonumber\\
+\bar \pi_{ij}^{T\theta} &= \big(\tilde{\nabla}_\ell\tilde{\nabla}^\ell-\partial_t^2\big)^2E_{ij},
+\end{align}
+then $\delta W_{\mu\nu}$ takes the form
+\begin{align}
+\delta W_{00}  &= \Omega^{-2} \delta \bar \rho,
+\nonumber\\	
+\delta W_{0i} &= \Omega^{-2} \bigg[ \tilde\nabla_k \tilde\nabla^k \int dt\  \bar \pi_i  + \tilde\nabla_i  \int d^3y D^3(\mathbf x-\mathbf y) \partial_t \delta \bar\rho\bigg],
+\nonumber\\	
+\delta W_{ij}  &= \Omega^{-2}\bigg[ 
+\frac12 \delta_{ij} \delta\bar \rho - \frac12 \delta_{ij} \int d^3y D^3(\mathbf x-\mathbf y) \partial_t^2 \delta \bar \rho \nonumber\\
+&\quad +\frac32 \tilde\nabla_i\tilde\nabla_j \int d^3y D^3(\mathbf x-\mathbf y) \bigg( \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \delta \bar \rho - \frac13\delta\bar\rho\bigg)
++ \tilde\nabla_i \bar\pi_j + \tilde\nabla_j \bar\pi_i + \bar\pi_{ij}^{T\theta}\bigg],
+\end{align}
+which exactly parallels that of $\delta T_{\mu\nu}$. Solving in seqential order with $\delta W_{00} = \delta T_{00}$, then $\delta W_{0i} = \delta T_{0i}$, and finally $\delta W_{ij} = \delta T_{ij}$, it follows that
+\begin{equation}
+	\delta \bar \rho  = \delta \rho,\qquad \bar \pi_i = \pi_i,\qquad \bar \pi_{ij}^{T\theta} = \pi_{ij}^{T\theta}.
+\end{equation}
+Scalars equate to scalars, vectors to vectors, and tensors to tensors, but here we did not make any assumptions in doing so - the equations themselves decouple exactly this way. Finally, we express the equations in their original definitions as
+\begin{align}
+\delta \rho &=  -\frac{2}{3}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell(\phi + \psi +\dot{B}-\ddot{E})\nonumber\\
+\pi_i &=  \frac12\big( \tilde\nabla_\ell \tilde\nabla^\ell - \partial_t^2\big) \partial_t (B_i - \dot{E}_i)\nonumber\\
+\pi_{ij}^{T\theta} &=  \big(\tilde{\nabla}_\ell\tilde{\nabla}^\ell-\partial_t^2\big)^2E_{ij}.
+\end{align}
+\end{document}

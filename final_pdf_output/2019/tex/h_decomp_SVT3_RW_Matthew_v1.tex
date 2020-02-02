@@ -1,0 +1,48 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$h_{ij}$ Decomposition v1}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h^{T\theta}_{ij}=2E_{ij}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Evaluated in a maximally 3-symmetric background, $R_{ij} = -2k g_{ij}$, we may express the transverse-traceless component of $h_{ij}$ as
+\begin{eqnarray}
+(\nabla^2-2k)(\nabla^2-3k)h_{ij}^{T\theta}
+&=&(\nabla^2-2k)(\nabla^2-3k)h_{ij}-\nabla^2 \nabla_i \nabla^l h_{jl} - \nabla^2 \nabla_j \nabla^l h_{il}+3k\nabla_j \nabla^l h_{il}+3k\nabla_i \nabla^l h_{jl}
+\nonumber\\
+&&+\tfrac12 \nabla_i\nabla_j \nabla^k \nabla^l h_{kl}+\tfrac12 g_{ij} \nabla^2 \nabla^k \nabla^l h_{kl}
+-2k g_{ij} \nabla^l \nabla^k h_{kl}+ \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)(g^{ab}h_{ab})
+\nonumber\\
+&& -\tfrac12 g_{ij}\nabla^2(\nabla^2-3k)(g^{ab}h_{ab})-\tfrac12 g_{ij} k (\nabla^2+4k)(g^{ab}h_{ab}).
+\label{htt}
+\end{eqnarray}
+Substituting
+\begin{eqnarray}
+h_{ij} &=& -2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j +\nabla_j E_i + 2E_{ij},
+\nonumber\\
+g^{ab}h_{ab} &=& -6 \psi + 2 \nabla_a\nabla^a E,
+\end{eqnarray}
+we find the right hand side of \eqref{htt} evaluates to
+\begin{eqnarray}
+(\nabla^2-2k)(\nabla^2-3k)h_{ij}^{T\theta} &=& (\nabla^2-2k)(\nabla^2-3k)(2E_{ij}).
+\end{eqnarray}
+To test gauge invariance, we take
+\begin{eqnarray}
+h_{ij} &=& \nabla_i\epsilon_j +\nabla_j \epsilon_i,\qquad (g^{ab}h_{ab})= 2\nabla_a \epsilon^a,
+\\ \nonumber\\
+\epsilon_i &=& \nabla_i L + L_i,\qquad \nabla^i L_i = 0,
+\end{eqnarray}
+and substitute into the RHS of \eqref{htt}. The result vanishes, confirming gauge invariance.
+
+\end{document}

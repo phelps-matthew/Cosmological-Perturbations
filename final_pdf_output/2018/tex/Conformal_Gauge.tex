@@ -1,0 +1,162 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+
+\title{Conformal Gauge Thoughts}
+\date{}
+\begin{document}
+\maketitle
+As we have seen from the APM paper, the fluctuation equations have remarkable simplification in the conformal theory. This is credited to not just the conformal invariance but also due to the fact that all relavent cosmological backgrounds may be written in conformal to flat form. In these notes, we aim towards gaining an understanding of the proper choice of gauge by first examining the procedure used to obain the simplified equations. Then we find the most general conformal gauge and relate our results. In the following we will always take $g_{\mu\nu}$ to be flat, i.e. with vanishing $R_{\lambda\mu\nu\kappa}$. 
+\section*{The Gauge We Utilize}
+\noindent
+Due to the conformal symmtery of the Bach tensor, under conformal transformation $g_{\mu\nu}\to \bar g_{\mu\nu} = \Omega^2 g_{\mu\nu}$ the fluctuations obey
+\begin{equation}
+	\delta \bar W_{\mu\nu}(\bar K_{\mu\nu}) = \Omega^{-2}\delta W_{\mu\nu}(K_{\mu\nu}).
+\end{equation}
+As we can see, the problem has already immediately been reduced to solving $\delta W_{\mu\nu}(K_{\mu\nu})$, for if we know this we can trivially find $\delta\bar W_{\mu\nu}$. 
+ Since $g^{(0)}_{\mu\nu}$ is flat, the trace dependent terms vanish and $\delta W_{\mu\nu}$ is evaluted to be:
+\begin{align}
+\delta W_{\mu\nu} &= 
+\tfrac{1}{2} {\nabla}_{\beta}{\nabla}^{\beta}{\nabla}_{\alpha}{\nabla}^{\alpha}K_{\mu \nu} + \tfrac{1}{6} g_{\mu \nu} {\nabla}_{g}{\nabla}^{g}{\nabla}_{\beta}{\nabla}_{\alpha}K^{\alpha \beta} -  \tfrac{1}{2} {\nabla}_{\mu}{\nabla}_{\beta}{\nabla}^{\beta}{\nabla}_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} {\nabla}_{\nu}{\nabla}_{\beta}{\nabla}^{\beta}{\nabla}_{\alpha}K_{\mu}{}^{\alpha}\nonumber  \\
+&\quad+ \tfrac{1}{3} {\nabla}_{\nu}{\nabla}_{\mu}{\nabla}_{\beta}{\nabla}_{\alpha}K^{\alpha \beta}.
+\end{align}
+To facilitate simplification even further, let us evaluate this in the Minkowski background, i.e.  $g^{(0)}_{\mu\nu}=\eta_{\mu\nu}$ in which $\delta W_{\mu\nu}$ becomes
+\begin{equation}
+\delta W_{\mu\nu} = 
+\tfrac{1}{2} {\partial}_{\beta}{\partial}^{\beta}{\partial}_{\alpha}{\partial}^{\alpha}K_{\mu \nu} + \tfrac{1}{6} g_{\mu \nu} {\partial}_{g}{\partial}^{g}{\partial}_{\beta}{\partial}_{\alpha}K^{\alpha \beta} -  \tfrac{1}{2} {\partial}_{\mu}{\partial}_{\beta}{\partial}^{\beta}{\partial}_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} {\partial}_{\nu}{\partial}_{\beta}{\partial}^{\beta}{\partial}_{\alpha}K_{\mu}{}^{\alpha} + \tfrac{1}{3} {\partial}_{\nu}{\partial}_{\mu}{\partial}_{\beta}{\partial}_{\alpha}K^{\alpha \beta}.
+\end{equation}
+Use of the transverse gauge $\partial_\mu K^{\mu\nu} = 0$ brings this to
+\begin{equation}
+	\delta W_{\mu\nu} =\tfrac12\partial_\alpha \partial^\alpha \partial_\beta\partial^\beta K_{\mu\nu}.
+\end{equation}
+ The solution is readily solved using the Green's function $\frac12\partial_\alpha \partial^\alpha \partial_\beta\partial^\beta D(\xi,\xi') = \delta (\xi-\xi')$, i.e.
+\begin{equation}
+	K_{\mu\nu}(\xi) = \int d^4\xi' \sqrt{-g} \ D(\xi,\xi')\delta W_{\mu\nu}(\xi').
+\end{equation}
+As written, (4) has been evaluted in the Cartesian Minkowski coordinate system (denote these coordinates as $\xi^\mu$). To find  what such an equation looks like in an arbitrary coordinate system, we perform a coordinate transformation $\xi^\mu \to x^\mu$, in which the first order Bach tensor becomes
+\begin{align}
+ 0 &= \frac{\partial x^\sigma}{\partial \xi^\mu}\frac{\partial x^\rho}{\partial \xi^\nu}\big(\delta W_{\sigma\rho} - \tfrac12 \nabla_\alpha \nabla^\alpha \nabla_\beta \nabla^\beta K_{\sigma\rho} \big)
+ \end{align}
+ where $K_{\sigma\rho}$ and $\delta W_{\sigma\rho}$ are tensors in the $x^\mu$ coordinate system and $\nabla_\alpha$ represent covariant derivatives with respect to the arbitrary (flat) $g_{\mu\nu}^{(0)}$, and  with Christoffel terms taking the form
+ \begin{equation}
+ \Gamma^\lambda_{\mu\nu} =  \frac{\partial x^\lambda}{\partial \xi^\alpha} \frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}.
+ \end{equation}
+ Thus, by only starting with (4), we have covariantly expressed the fluctuation equation in an abritrary coordinate system as
+ \begin{equation}
+ \delta W_{\mu\nu} = \tfrac12 \nabla_\alpha \nabla^\alpha \nabla_\beta \nabla^\beta K_{\mu\nu}.
+ \end{equation}
+ If we peformed the same coordinate transformation on our gauge, we would find an anlogous result but now in the covariant form
+ \begin{align}
+ 	0&= \frac{\partial \xi^\nu}{\partial x^\mu}\nabla_\alpha K^{\alpha\mu}\\
+ 	\to 0&=\nabla_\mu K^{\mu\nu}.
+\end{align}
+In application of the gauge $\nabla_\mu K^{\mu\nu}=0$, inspection of (2) shows the result is consistent even in the non-Minkowski $g_{\mu\nu}^{(0)}$. If the solution of $K_{\mu\nu}$ is known in Minkowski coordinates $\xi^\mu$, its solution in arbitrary coordinates is
+\begin{equation}
+	K_{\mu\nu}(x) =  \frac{\partial \xi^\sigma}{\partial x^\mu}\frac{\partial \xi^\rho}{\partial x^\nu}\int d^4\xi' \sqrt{-g} \ D(\xi,\xi')\delta W_{\sigma\rho}(\xi').
+\end{equation}
+\\ 
+
+If we now take the geometry to be conformal to flat, i.e. $\bar g_{\mu\nu}^{(0)} = \Omega^2 g_{\mu\nu}^{(0)}$, via (1) we can immediately write down
+\begin{equation} 
+	 \delta \bar W_{\mu\nu} = \tfrac12 \Omega^{-2} \nabla_\alpha \nabla^\alpha \nabla_\beta \nabla^\beta K_{\mu\nu},
+\end{equation}
+where covariant derivatives $\nabla_\alpha$ are with respect to the background $g_{\mu\nu}^{(0)}$. It worth noting that our gauge condition $\nabla_\mu K^{\mu\nu} = 0$ has \emph{not} changed, for this was precisely the gauge condition that covariantly diagonalized the equations in the non conformal background, i.e. with respect to $g_{\mu\nu}^{(0)}$. Put another way, if we expressed $\delta \bar W_{\mu\nu}$ in terms of unbarred $K_{\mu\nu}$, $\Omega$ and corvariant  derivatives  $\nabla_\alpha$ with respect to $g_{\mu\nu}^{(0)}$, then the correct gauge which would yield (12) must be $\nabla_\mu K^{\mu\nu} = 0$. In addition, we must recover (8) in the limit $\Omega\to1$.  While the gauge choice $\nabla_\mu K^{\mu\nu}=0$ does not change, it is relevant to ask what form the gauge may take with respect to the conformal background $\bar g_{\mu\nu}^{(0)}$. We construct such a gauge as follows:
+\begin{align}
+	\bar \nabla_\mu \bar K^{\mu\nu}\big|_{\nabla_\mu K^{\mu\nu} = 0} &= (\Omega^{-2}\nabla_\mu K^{\mu\nu} + 4\Omega^{-3} K^{\mu\nu}\partial_\mu \Omega)\big|_{\nabla_\mu K^{\mu\nu} = 0}\nonumber \\
+	&=4\Omega^{-3} K^{\mu\nu}\partial_\mu \Omega
+\end{align}
+and thus
+\begin{equation}
+	\bar \nabla_\mu \bar K^{\mu\nu}= 4\Omega^{-1} \bar K^{\mu\nu}\partial_\mu \Omega.
+\end{equation}
+ This familiar choice of gauge covariantly diagonalizes the equations of motion in any coordinate system. However, it interesting to note that this gauge is not conformally invariant. That is, use of the ``conformal gauge''
+ \begin{equation}
+  \bar \nabla_\mu \bar K^{\mu\nu}- \tfrac12 \bar K^{\mu\nu} \bar g_{(0)}^{\alpha\beta}\partial_\mu \bar g^{(0)}_{\alpha\beta}=0
+ \end{equation}
+ in fact does not covariantly diagonalize the equations in an arbitrary coordinate system. Some confusion may arise because the conformal gauge (15) actually reduces to (14) if we restrict ourselves to a conforml to Minkowski background. And thus at first glance it may appear that we should like to use (15) as it contains the extra conformal symmetry. However, as eluded to earlier, the proper choice of gauge must be the one that simplifies the equations of motion in the \emph{non conformal} background, as utiliziation of this gauge is gauranteed to preserve diagonialzation when moving to a conformal background. Hence, conformal invariance of a gauge is not a requirement at all. Moreover, as we show in the next section, construction of the most general conformal invariant gauge naturally leads to the transverse gauge when evaluated in a Minkowski background. 
+\newpage
+\section*{Conformal Invariant Gauges}
+In constructing a general gauge for $K^{\mu\nu}$, we are restricted to combinations of $g^{\mu\nu}$, $K^{\mu\nu}$, and $\partial_\alpha$ that yield a vector. Denoting such a vector as $A^\nu$, the most general form for the gauge $A^\nu = 0$ is
+\begin{equation}
+ A^\nu = B\partial_\mu K^{\mu\nu}+ CK^{\mu\nu} g^{\alpha\beta}\partial_\mu g_{\alpha\beta} +D K^{\mu\alpha}g^{\nu\beta}\partial_{\mu}g_{\alpha\beta}+EK^{\nu\alpha}g^{\mu\beta}\partial_\mu g_{\alpha\beta}+FK^{\mu\alpha}g^{\nu\beta}\partial_\beta g_{\mu\alpha}.
+\end{equation}
+ To be as general as possible, we could add derivatives of the above such as $\partial_\alpha\partial^\alpha A^{\nu}$ or $\partial^\nu \partial_\alpha A^\alpha$. However,  this would lead to a recursive definition in $\partial_\mu K^{\mu\nu}$ and therefore we limit the development to first derivatives only. In addition, our gauge will only be applied to conformal flat geometries and so will not include any trace terms, i.e. $h^\alpha{}_\alpha$, since the trace dependence vanishes in the equations of motion. Lastly, for the sake of simplicity, we avoid gauges such as the synchronous gauge (particularly because such a gauge could never be covariant).\\ \\
+Under a conformal transformation, (16) transforms as
+\begin{align}
+ A^\nu \to \bar A^\nu &= \Omega^{-2}(B\partial_\mu K^{\mu\nu}+ CK^{\mu\nu} g^{\alpha\beta}\partial_\mu g_{\alpha\beta} + D K^{\mu\alpha}g^{\nu\beta}\partial_{\mu}g_{\alpha\beta}+EK^{\nu\alpha}g^{\mu\beta}\partial_\mu g_{\alpha\beta}+FK^{\mu\alpha}g^{\nu\beta}\partial_\beta g_{\mu\alpha})\nonumber \\
+ &\quad + \Omega^{-3}K^{\mu\nu}\partial_\mu \Omega ( -2B + 8C +2D +2E).
+\end{align}
+In applying the condition
+\begin{equation}
+(-2B+8C+2D+2E) = 0,
+\end{equation}
+the gauge then becomes conformally invariant. 
+\\ \\
+If we want to express our gauge in terms of the transverse vector, we start by taking $A^\nu_{(1)}= \nabla_\mu K^{\mu\nu}$ and determine the coefficients to be
+\begin{align}
+\nabla_\mu K^{\mu\nu} &=\partial_\mu K^{\mu\nu} + K^{\alpha\mu} g^{\nu\rho} \partial_\mu g_{\alpha\rho} - \frac12 K^{\alpha\mu} g^{\nu\rho}\partial_\rho g_{\alpha\mu}
++ \frac12 K^{\alpha\nu} g^{\mu\rho}\partial_\alpha g_{\mu\rho}\nonumber \\
+&= A^{\nu}\bigg|_{B=1,\ C=\tfrac12,\ D=1,\ E=0,\ F = -\tfrac12}.
+\end{align}
+Now, any such gauge that involves a transverse term $\nabla_\mu K^{\mu\nu}$ and a general $A^\nu$ can be written as
+\begin{align}
+	0&=\nabla_\mu K^{\mu\nu} + A^\mu\nonumber \\
+& = A_{(1)}^\nu + A_{(2)}^\nu\nonumber \\
+&= A^{\nu}\bigg|_{B_1=1,\ C_1=\tfrac12,\ D_1=1,\ E_1=0,\ F_1 = -\tfrac12} + A^\nu \bigg|_{B_2,C_2,D_2,E_2,F_2}
+\end{align}
+According to (17), in order for this vector to be conformally invariant we need to cofficients to obey
+\begin{align}
+	0&=	-2(1+B_2) + 8 (\tfrac12+C_2) + 2(1+D_2) + 2E_2\nonumber \\
+	&= 2-B_2 + 4C_2 + D_2 + E_2
+\end{align}
+It is convenient to drop the $B$ term (and dropping the ${}_2$ indicies), in which the coefficient condition is
+\begin{equation}
+4C + D + E = -2.
+\end{equation}
+Thus, without loss of generality, the most general gauge can be written as
+\begin{equation}
+	A^\nu  =\nabla_\mu K^{\mu\nu}+ CK^{\mu\nu} g^{\alpha\beta}\partial_\mu g_{\alpha\beta} +D K^{\mu\alpha}g^{\nu\beta}\partial_{\mu}g_{\alpha\beta}+EK^{\nu\alpha}g^{\mu\beta}\partial_\mu g_{\alpha\beta}+FK^{\mu\alpha}g^{\nu\beta}\partial_\beta g_{\mu\alpha},
+\end{equation}
+and can be made conformally invariant by applying (22). 
+A quick check on the coefficients ``conformal gauge'' as referenced in the paper
+\begin{equation}
+   \nabla_\mu  K^{\mu\nu}- \tfrac12 K^{\mu\nu}  g_{(0)}^{\alpha\beta}\partial_\mu g^{(0)}_{\alpha\beta}=0
+\end{equation}
+show that taking $C=-\tfrac12$, $D=E=F=0$ satisfies (22). An example of a different conformal invariant gauge could be
+\begin{equation}
+	A^\nu  =\nabla_\mu K^{\mu\nu} -K^{\mu\nu} g^{\alpha\beta}\partial_\mu g_{\alpha\beta} + K^{\mu\alpha}g^{\nu\beta}\partial_{\mu}g_{\alpha\beta}+K^{\nu\alpha}g^{\mu\beta}\partial_\mu g_{\alpha\beta}+K^{\mu\alpha}g^{\nu\beta}\partial_\beta g_{\mu\alpha}.
+\end{equation}
+\\
+
+It is interesting to note the properties of the gauge in the conformal to Minkowski background $\bar g^{(0)}_{\mu\nu} = \Omega^2\eta_{\mu\nu}$. In this background, the gauge becomes
+\begin{equation}
+	\bar A^\nu  =\bar \nabla_\mu \bar K^{\mu\nu}+ \Omega^{-1}\bar K^{\mu\nu}\partial_\mu \Omega ( 8C +2D +2E)
+\end{equation}
+In maintaining the coefficient condition (22) that retains the conformal invariance, namely $8C+2D+2E=-4$, we find that the gauge reduces to
+\begin{equation}
+	\bar A^\nu =\bar \nabla_\mu \bar K^{\mu\nu} -4\Omega^{-1}\bar K^{\mu\nu}\partial_\mu \Omega.
+\end{equation}
+We recognize this familiar form as the gauge that diagonalized the equations of motion in a conformal to flat geometry. 
+If we evaluate (21) in terms of the unbarred quantities, we arrive at
+\begin{equation}
+	A^\nu = \nabla_\mu K^{\mu\nu} =0.
+\end{equation}
+It may seem strange that we are brought back to the transverse gauge again. However, this begins to make more sense if we consider the following:
+\\ \\
+In a purely Minkowski background, the only possible covariant choice of gauge is $\nabla_\mu K^{\mu\nu} = 0$. Recall that in constructing a gauge, we are limited to combinations of $K^{\mu\nu}$, $\eta^{\mu\nu}$ and $\partial_\alpha$. Any trace terms are prohibited in the flat (or conformal to flat) background. In forming various combinations that result in a gauge vector $A^\nu$, all derivatives onto $\eta_{\mu\nu}$ must vanish and thus we can only have derivatives onto $K_{\mu\nu}$. In addition, the only constant that preseves covariance is zero. Thus if we desire any such gauge that maintains the form of equations of motion in any coordinate system, the transverse gauge appears to be the unique choice. 
+\\ \\
+From a different perspective, when we work in Minkowski coordinates, equations and gauge conditions can always be naturally expressed in covariant form. Hence, gauges or simplification of equations will always retain their form even when we transform into a non-linear coordinate system. Since $\partial_\mu K^{\mu\nu}$ is the only gauge condition that can be used in a Minkowski background, it makes sense that our general conformal invariant gauge should then reduce exactly to it. 
+\\ \\
+
+To summarize, the procedure to simplify the equations of motion would be to start with $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$, find the gauge that simplifies the fluctuation equations, express this gauge in covariant form, and find what the \emph{same} gauge looks like with respect to a conformal to flat, $\bar g_{\mu\nu}^{(0)} = \Omega^2 g_{\mu\nu}^{(0)}$ background. With this method, the fluctuation equations will always maintain their most simplified in not only a covariant manner, but also under conformal transformations.
+\newpage
+\section*{Appendix}
+\begin{align}
+\nabla_\nu K^{\mu\nu} &= \partial_\nu K^{\mu\nu} + \Gamma^\mu_{\nu\alpha}K^{\alpha\nu} + \Gamma^\nu_{\nu\alpha}K^{\alpha\mu}\nonumber \\
+&= \partial_\nu K^{\mu\nu} + \frac12 g^{\mu\rho}(\partial_\nu g_{\alpha\rho} + \partial_\alpha g_{\nu\rho}-\partial_\rho g_{\alpha\nu})K^{\alpha\nu}
++ \frac12 g^{\nu\rho}(\partial_\nu g_{\alpha\rho}+\partial_\alpha g_{\nu\rho} - \partial_{\rho}g_{\alpha\nu})K^{\alpha\mu}\nonumber\\
+&= \partial_\nu K^{\mu\nu} + K^{\alpha\nu} g^{\mu\rho} \partial_\nu g_{\alpha\rho} - \frac12 K^{\alpha\nu} g^{\mu\rho}\partial_\rho g_{\alpha\nu}
++ \frac12 K^{\alpha\mu} g^{\nu\rho}\partial_\alpha g_{\nu\rho}
+\end{align}
+\end{document}

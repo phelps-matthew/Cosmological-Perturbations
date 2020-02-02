@@ -1,0 +1,146 @@
+\documentclass[10pt,letterpaper]{article}
+% Here are the following hotkeys/shortcuts that I typically use
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage{mathtools} 
+\usepackage{enumitem} % List environment 
+\usepackage{amssymb}
+\newcommand{\plr}[1]{\left(#1\right)} % encloses the argument using stretchable parentheses
+\newcommand{\clr}[1]{\left\{#1\right\}} % encloses the argument using stretchable curly brackets
+\newcommand{\blr}[1]{\left[#1\right]} % encloses the argument using stretchable square brackets
+\newcommand{\elr}[1]{\left.#1\right|} % encloses the argument with evaluated at bar
+\newcommand{\pfrac}[2]{\plr{\frac{#1}{#2}}} % enclosed fraction in parentheses
+\newcommand{\bfrac}[2]{\blr{\frac{#1}{#2}}} % enclosed fraction in square brackets
+\newcommand{\benum}{\begin{enumerate}} % begin enumerate
+\newcommand{\eenum}{\end{enumerate}} % end enumerate
+\newcommand{\be}{\begin{equation}} % begin equation
+\newcommand{\ee}{\end{equation}} % end equation
+\def\ba#1\ea{\begin{align*}#1\end{align*}} % begin / end align
+\newcommand{\vect}[1]{\mathbf{#1}} % bold face vector
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}} % unit bold face vector 
+\newcommand{\del}{\nabla} % Del operator 
+\newcommand{\bpm}{\begin{pmatrix}} % Begin parenthesis matrix
+\newcommand{\epm}{\end{pmatrix}} % End parenthesis matrix
+\newcommand{\pd}{\partial}
+\newcommand{\ep}{\epsilon}
+\newcommand{\hu}{\mathcal H}
+\allowdisplaybreaks
+\title{Perturbed Curvature Quantities}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+\begin{align}
+\delta R_{\lambda\mu\nu\kappa}={}&h^{\alpha}{}_{\lambda} R_{\alpha \mu \nu \kappa}
+ -  \tfrac{1}{2} \nabla_{\kappa}\nabla_{\lambda}h_{\mu \nu}
+ + \tfrac{1}{2} \nabla_{\kappa}\nabla_{\mu}h_{\nu \lambda}
+ + \tfrac{1}{2} \nabla_{\kappa}\nabla_{\nu}h_{\mu \lambda}
+ -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\kappa}h_{\mu \lambda}
+ + \tfrac{1}{2} \nabla_{\nu}\nabla_{\lambda}h_{\kappa \mu}\nonumber\\
+& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h_{\kappa \lambda}.
+\end{align}
+\be
+	\delta R_{\mu\nu} = \tfrac{1}{2} g^{\alpha \beta} (\nabla_{\alpha}\nabla_{\beta}h_{\mu \nu} -  \nabla_{\alpha}\nabla_{\mu}h_{\beta \nu} -  \nabla_{\alpha}\nabla_{\nu}h_{\beta \mu} + \nabla_{\nu}\nabla_{\mu}h_{\alpha \beta})
+\ee
+\begin{align}
+W^{1}_{\mu\nu}={}&\tfrac{1}{2} g_{\mu \nu} R^2
+ - 2 R R_{\mu \nu}
+ + 2 g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R
+ - 2 \nabla_{\nu}\nabla_{\mu}R.
+\end{align}
+\begin{align}
+W^2_{\mu\nu}={}&\tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta}
+ - 2 R^{\alpha \beta} R_{\alpha \mu \beta \nu}
+ + \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R
+ + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu}
+ -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha}
+ -  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha}.
+\end{align}
+\section*{No Bianchi, No Explicit Commutations}
+29 Terms
+\begin{align}
+\delta W^1_{\mu\nu}={}&\tfrac{1}{2} h_{\mu \nu} R^2
+ -  g_{\mu \nu} h^{\alpha \beta} R R_{\alpha \beta}
+ + 2 h^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu}
+ -  R \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+ + 2 h_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R\nonumber\\
+& + g_{\mu \nu} R \nabla_{\alpha}\nabla^{\alpha}h
+ - 2 R_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
+ + R \nabla_{\alpha}\nabla_{\mu}h_{\nu}{}^{\alpha}
+ + R \nabla_{\alpha}\nabla_{\nu}h_{\mu}{}^{\alpha}
+ -  \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}R\nonumber\\
+& + g_{\mu \nu} \nabla_{\alpha}h \nabla^{\alpha}R
+ - 2 g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}h_{\alpha}{}^{\beta}
+ -  g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+ + 2 R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\nonumber\\
+& - 2 g_{\mu \nu} h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R
+ + 2 g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
+ - 2 g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}h_{\alpha \beta}
+ - 2 g_{\mu \nu} h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta}\nonumber\\
+& - 2 g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+ - 4 g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}h^{\alpha \beta}
+ + \nabla^{\alpha}R \nabla_{\mu}h_{\nu \alpha}
+ + 2 \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}h^{\alpha \beta}\nonumber\\
+& + \nabla^{\alpha}R \nabla_{\nu}h_{\mu \alpha}
+ + 2 \nabla_{\mu}h^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta}
+ + 2 R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}h_{\alpha \beta}
+ + 2 h^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta}
+ -  R \nabla_{\nu}\nabla_{\mu}h\nonumber\\
+& - 2 \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
+ + 2 \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}.
+\end{align}
+62 Terms
+\begin{align}
+\delta W^2_{\mu\nu}={}&\tfrac{1}{2} h_{\mu \nu} R^2
+ -  g_{\mu \nu} h^{\alpha \beta} R R_{\alpha \beta}
+ + 2 h^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu}
+ -  R \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+ + 2 h_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R\nonumber\\
+& + g_{\mu \nu} R \nabla_{\alpha}\nabla^{\alpha}h
+ - 2 R_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
+ + R \nabla_{\alpha}\nabla_{\mu}h_{\nu}{}^{\alpha}
+ + R \nabla_{\alpha}\nabla_{\nu}h_{\mu}{}^{\alpha}
+ -  \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}R\nonumber\\
+& + g_{\mu \nu} \nabla_{\alpha}h \nabla^{\alpha}R
+ - 2 g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}h_{\alpha}{}^{\beta}
+ -  g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+ + 2 R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\nonumber\\
+& - 2 g_{\mu \nu} h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R
+ + 2 g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
+ - 2 g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}h_{\alpha \beta}
+ - 2 g_{\mu \nu} h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta}\nonumber\\
+& - 2 g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+ - 4 g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}h^{\alpha \beta}
+ + \nabla^{\alpha}R \nabla_{\mu}h_{\nu \alpha}
+ + 2 \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}h^{\alpha \beta}\nonumber\\
+& + \nabla^{\alpha}R \nabla_{\nu}h_{\mu \alpha}
+ + 2 \nabla_{\mu}h^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta}
+ + 2 R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}h_{\alpha \beta}
+ + 2 h^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta}
+ -  R \nabla_{\nu}\nabla_{\mu}h\nonumber\\
+& - 2 \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
+ + 2 \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}.
+\end{align}
+%
+\begin{eqnarray}
+\nabla_{\kappa}\nabla_{\nu}T_{\lambda \mu}=\nabla_{\nu}\nabla_{\kappa}T_{\lambda \mu}+R_{\lambda\sigma\nu\kappa}T^{\sigma}_{\phantom{\sigma}\mu}-R_{\sigma\mu\nu\kappa}T_{\lambda}^{\phantom{\lambda}\sigma}
+\label{AP41}
+\end{eqnarray}
+%
+obeyed by any rank two tensor, so that we can write $W^{\mu\nu}$ as 
+%                                                                               
+\begin{eqnarray}
+W^{\mu \nu}&=&
+-\frac{1}{6}g^{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}
++\nabla_{\beta}\nabla^{\beta}R^{\mu\nu}                    
+ -\frac{1}{3}\nabla_{\mu}\nabla_{\nu}R^{\alpha}_{\phantom{\alpha}\alpha}  
+ -R^{\beta}_{\phantom{\beta}\sigma} R^{\sigma}_{\phantom{\sigma}\mu\beta\nu}   
+  \nonumber\\
+ &-&R^{\beta}_{\phantom{\beta}\sigma} R^{\sigma}_{\phantom{\sigma}\nu\beta\mu}  
++\frac{1}{2}g^{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}                                            
++\frac{2}{3}R^{\alpha}_{\phantom{\alpha}\alpha}R^{\mu\nu}                              
+-\frac{1}{6}g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})^2
+\label{AP42}
+\end{eqnarray}                                 
+%
+Perturbing $W^{\mu\nu}$ about metric $g_{\mu\nu}+h_{\mu\nu}$ with background metric $g_{\mu\nu}$ and fluctuation $h_{\mu\nu}$ gives (following a machine calculation)
+\end{document}

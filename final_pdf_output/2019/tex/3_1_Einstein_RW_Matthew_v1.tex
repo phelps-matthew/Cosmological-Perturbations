@@ -1,0 +1,257 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$3+1$ Decomposition of $ G_{\mu\nu}=-\kappa^2_4 T_{\mu\nu}$ in RW}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+
+Given the maximal symmetry of the 3-space, it may be that the fluctuation equations can be simplified under a $3+1$ decomposition. We evaluate in a static RW geometry $\Omega(\tau)=1$. If the equations simplify in this geometry, afterward we can then try to generalize to arbitrary $\Omega(\tau)$. 
+\\ \\
+Separately, we also look at the $4D$ SVT decomposition within the static RW geometry. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Given the maximal symmetry of the 3-space, 
+\begin{eqnarray}
+ds^2 &=&(g_{\mu\nu}^{(0)} + h_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\
+&=& \left[ -dt^2 + \frac{dr^2}{1-kr^2} + r^2d\Omega^2 + h_{\mu\nu}dx^\mu dx^\nu\right]
+\label{geom}
+\end{eqnarray}
+By conditions of homogeneity and isotropy of the background, the background EM tensor must take the form
+\begin{eqnarray}
+T_{\mu\nu}^{(0)} &=& [\rho(\tau)+p(\tau)]U^{(0)}_\mu U^{(0)}_\nu + p(\tau)g_{\mu\nu}^{(0)}
+\label{perfectfluid}
+\end{eqnarray}
+with background four velocity
+\begin{eqnarray}
+U_\mu^{(0)} = -\delta^0_\mu,\qquad U^\mu_{(0)} = \delta_0^\mu.
+\end{eqnarray}
+Via the background field equations, we will find that $\rho$ and $p$ are constant in the static geometry, though for the purposes of this document we do not yet explicitly make use of the background equations.
+\\ \\
+Since the 3-space has maximally symmetry, it may be beneficial to project the fluctuation equations parallel and orthogonal to the background four velocity $g_{\mu\nu}^{(0)}U_{(0)}^\mu U_{(0)}^\nu = -1$, via the projector
+\begin{eqnarray}
+P_{\mu\nu} = g_{\mu\nu}^{(0)} + U_\mu^{(0)} U_\nu^{(0)}
+\label{proj}
+\end{eqnarray}
+with properties
+\begin{eqnarray}
+U_\mu^{(0)} P^{\mu\nu} = 0,\qquad P_{\mu\nu}P^{\mu\nu} = g_{\mu\nu} P^{\mu\nu}=3,\qquad P_{\mu\sigma}P^\sigma{}_\nu = P_{\mu\nu}. 
+\end{eqnarray}
+Projecting onto an arbitrary rank 2 tensor $T_{\mu\nu}$ we have
+\begin{eqnarray}
+T_{\mu\nu} &=& (\rho + p)U_\mu^{(0)} U_\nu^{(0)} + p g_{\mu\nu}^{(0)} + q_\mu U_\nu^{(0)} + q_\nu U_\mu{(0)} + \pi_{\mu\nu},
+\end{eqnarray}
+where
+\begin{eqnarray}
+\rho&=&U^\sigma_{(0)}U^\tau_{(0)}T_{\sigma\tau} = T_{00},\qquad p = \frac13 P^{\sigma\tau}T_{\sigma\tau}\qquad q_\mu = -P_\mu{}^\sigma U^\tau_{(0)} T_{\sigma\tau}
+\nonumber\\
+\pi_{\mu\nu} &=&\left[\frac12 P_{\mu}{}^\sigma P_\nu{}^\tau + \frac12 P_\nu{}^\sigma P_\mu{}^\tau -\frac13 P_{\mu\nu}P^{\sigma\tau}\right]T_{\sigma\tau}
+\end{eqnarray}
+which obey
+\begin{eqnarray}
+U^\mu_{(0)} q_\mu = 0,\qquad U^\nu_{(0)} \pi_{\mu\nu} = 0,\qquad \pi_{\mu\nu} = \pi_{\nu\mu},\qquad g^{\mu\nu}_{(0)}\pi_{\mu\nu} = P^{\mu\nu}\pi_{\mu\nu}= 0
+\end{eqnarray}
+With the most general perturbed EM tensor consisting not only of perturbations of the perfect fluid background but also vector and tensor perturbations, we may utilize projector \eqref{proj} to express any perturbed EM tensor as
+\begin{eqnarray}
+\delta T_{\mu\nu} &=& (\delta\bar\rho + \delta  \bar p)U_\mu^{(0)} U_\nu^{(0)} + \delta \bar p g_{\mu\nu}^{(0)} + \bar q_\mu U_\nu^{(0)} + \bar q_\nu U_\mu^{(0)} + \bar \pi_{\mu\nu}.
+\end{eqnarray}
+Comparison to the background perfect fluid \eqref{perfectfluid}, we see that $\delta \rho$ and $\delta p$ represent perturbations of the background, while $q_\mu$ and $\pi_{\mu\nu}$ are first order quantities without any respective background component. 
+\\ \\
+Hence, in the geometry of \eqref{geom}, the background and fluctuation field equations obey
+\begin{eqnarray}
+ G_{\mu\nu}^{(0)}&=& -\kappa^2_4  T_{\mu\nu}^{(0)}
+\nonumber\\
+R_{\mu\nu}^{(0)}-\frac12 g_{\mu\nu}^{(0)} R^{(0)} &=& -\kappa^2_4 \left[  (\rho(\tau)+p(\tau))U^{(0)}_\mu U^{(0)}_\nu + p(\tau)g_{\mu\nu}^{(0)}\right]
+\label{gt}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{\mu\nu} &=& -\kappa^2_4 \delta T_{\mu\nu}
+\nonumber\\
+\delta R_{\mu\nu} - \frac12 g_{\mu\nu} g^{\alpha\beta}\delta R_{\alpha\beta} - \frac12 h_{\mu\nu} R
++ \frac12 g_{\mu\nu}h^{\alpha\beta} R_{\alpha\beta} &=&
+-\kappa_4^2\left[ (\delta\rho + \delta  p)U_\mu^{(0)} U_\nu^{(0)} + \delta p g_{\mu\nu}^{(0)} + q_\mu U_\nu^{(0)} + q_\nu U_\mu^{(0)} + \pi_{\mu\nu}\right]
+\nonumber\\
+\label{dgdt}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$3+1$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We decompose $h_{\mu\nu}$ according to
+\begin{eqnarray}
+h_{\mu\nu} &=&  (\delta\rho + \delta p)U_\mu^{(0)} U_\nu^{(0)} + \delta p g_{\mu\nu}^{(0)} +q_\mu U_\nu^{(0)} +q_\nu U_\mu^{(0)} +  \pi_{\mu\nu}.
+\end{eqnarray}
+We will evaluate each projected component of $\delta G_{\mu\nu}$ and $\delta T_{\mu\nu}$. From the gauge invariance of $\delta G_{\mu\nu} = -\kappa^2_4\delta T_{\mu\nu}$, the $3+1$ projected equations will be gauge invariant. 
+\\ \\
+First we substitute the symmetric 3-space forms of the curvature terms into \eqref{dgdt}, via
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& (P_{\mu\nu}P_{\lambda\kappa}-P_{\lambda\nu}P_{\mu\kappa})k,
+\nonumber\\
+R_{\mu\nu} &=& -2 P_{\mu\nu}k,
+\nonumber\\
+R&=& -6k.
+\end{eqnarray}
+Now we compose each projected sector:
+\begin{eqnarray}
+U^\sigma_{(0)}U^\tau_{(0)}\delta G_{\sigma\tau} &=& -\kappa^2_4 U^\sigma_{(0)}U^\tau_{(0)}\delta T_{\sigma\tau}
+\end{eqnarray}
+\begin{eqnarray}
+3 k \delta p + 3 k \delta \rho + \nabla_{\alpha}\nabla^{\alpha}\delta p -  \tfrac{1}{2} \nabla_{\beta}\nabla_{\alpha}\pi^{\alpha \beta} + U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}\delta p &=& -\kappa^2_4 \bar \delta \rho
+\end{eqnarray}
+
+\begin{eqnarray}
+ \frac13 P^{\sigma\tau}\delta G_{\sigma\tau}&=& -\kappa^2_4  \frac13 P^{\sigma\tau}\delta T_{\sigma\tau}
+\end{eqnarray}
+\begin{eqnarray}
+ - \tfrac{1}{3} \nabla_{\alpha}\nabla^{\alpha}\delta p + \tfrac{1}{3} \nabla_{\alpha}\nabla^{\alpha}\delta \rho + \tfrac{2}{3} U^{\alpha} \nabla_{\alpha}\nabla_{\beta}q^{\beta} + \tfrac{1}{6} \nabla_{\beta}\nabla_{\alpha}\pi^{\alpha \beta} + \tfrac{2}{3} U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}\delta p + \tfrac{1}{3} U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}\delta \rho&=& -\kappa^2_4 \delta \bar p
+\end{eqnarray}
+
+\begin{eqnarray}
+-P_\mu{}^\sigma U^\tau_{(0)} \delta G_{\sigma\tau} &=& - \kappa^2_4 P_\mu{}^\sigma U^\tau_{(0)} \delta T_{\sigma\tau}
+\end{eqnarray}
+\begin{eqnarray}
+&&2 k q_{\mu}
++ \tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}q_{\mu}
++ \tfrac{1}{2} U^{\alpha} \nabla_{\alpha}\nabla_{\beta}\pi_{\mu}{}^{\beta}
+-  \tfrac{1}{2} U^{\alpha} U_{\mu} \nabla_{\alpha}\nabla_{\beta}q^{\beta}
+-  U^{\alpha} U^{\beta} U_{\mu} \nabla_{\beta}\nabla_{\alpha}\delta p\nonumber\\
+&& + \tfrac{1}{2} U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}q_{\mu}
+-  U^{\alpha} \nabla_{\mu}\nabla_{\alpha}\delta p
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}q^{\alpha} = \bar q_\mu 
+\end{eqnarray}
+
+\begin{eqnarray}
+\left[\frac12 P_{\mu}{}^\sigma P_\nu{}^\tau + \frac12 P_\nu{}^\sigma P_\mu{}^\tau -\frac13 P_{\mu\nu}P^{\sigma\tau}\right]\delta G_{\sigma\tau} &=& -\kappa^2_4 \left[\frac12 P_{\mu}{}^\sigma P_\nu{}^\tau + \frac12 P_\nu{}^\sigma P_\mu{}^\tau -\frac13 P_{\mu\nu}P^{\sigma\tau}\right]\delta T_{\sigma\tau}
+\end{eqnarray}
+\begin{eqnarray}
+&&\tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}\pi_{\mu \nu}
+-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}\delta p
+-  \tfrac{1}{6} U_{\mu} U_{\nu} \nabla_{\alpha}\nabla^{\alpha}\delta p
++ \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}\delta \rho
++ \tfrac{1}{6} U_{\mu} U_{\nu} \nabla_{\alpha}\nabla^{\alpha}\delta \rho\nonumber\\
+&& + \tfrac{1}{3} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}\pi^{\alpha \beta}
++ \tfrac{1}{3} U_{\mu} U_{\nu} \nabla_{\beta}\nabla_{\alpha}\pi^{\alpha \beta}
+-  \tfrac{1}{2} U^{\alpha} U_{\nu} \nabla_{\beta}\nabla_{\alpha}\pi_{\mu}{}^{\beta}
+-  \tfrac{1}{2} U^{\alpha} U_{\mu} \nabla_{\beta}\nabla_{\alpha}\pi_{\nu}{}^{\beta}\nonumber\\
+&& -  \tfrac{1}{6} g_{\mu \nu} U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}\delta p
++ \tfrac{1}{3} U^{\alpha} U^{\beta} U_{\mu} U_{\nu} \nabla_{\beta}\nabla_{\alpha}\delta p
++ \tfrac{1}{3} g_{\mu \nu} U^{\alpha} \nabla_{\beta}\nabla_{\alpha}q^{\beta}\nonumber\\
+&& + \tfrac{1}{3} U^{\alpha} U_{\mu} U_{\nu} \nabla_{\beta}\nabla_{\alpha}q^{\beta}
+-  \tfrac{1}{2} U^{\alpha} U^{\beta} U_{\nu} \nabla_{\beta}\nabla_{\alpha}q_{\mu}
+-  \tfrac{1}{2} U^{\alpha} U^{\beta} U_{\mu} \nabla_{\beta}\nabla_{\alpha}q_{\nu}\nonumber\\
+&& + \tfrac{1}{6} g_{\mu \nu} U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}\delta \rho
+-  \tfrac{1}{3} U^{\alpha} U^{\beta} U_{\mu} U_{\nu} \nabla_{\beta}\nabla_{\alpha}\delta \rho
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}\pi_{\nu}{}^{\alpha}
++ \tfrac{1}{2} U^{\alpha} U_{\nu} \nabla_{\mu}\nabla_{\alpha}\delta p\nonumber\\
+&& -  \tfrac{1}{2} U^{\alpha} \nabla_{\mu}\nabla_{\alpha}q_{\nu}
+-  \tfrac{1}{2} U^{\alpha} U_{\nu} \nabla_{\mu}\nabla_{\alpha}\delta \rho
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}\pi_{\mu}{}^{\alpha}
++ \tfrac{1}{2} U^{\alpha} U_{\mu} \nabla_{\nu}\nabla_{\alpha}\delta p
+-  \tfrac{1}{2} U^{\alpha} \nabla_{\nu}\nabla_{\alpha}q_{\mu}\nonumber\\
+&& -  \tfrac{1}{2} U^{\alpha} U_{\mu} \nabla_{\nu}\nabla_{\alpha}\delta \rho
++ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}\delta p
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}\delta \rho = -\kappa^2_4 \bar \pi_{\mu\nu} 
+\end{eqnarray}
+\\ \\
+We may note that the scalar equations for $\delta \bar\rho$ and $\delta \bar p$ involve only the transverse components of $q_\mu$ and $\pi_{\mu\nu}$. In the $3+1$ splitting, we have a total of 10 projected equations. There is a redundancy in these equations due to the Bianchi and conservation laws. Thus, among these 10 equations, we need to reduce to six independent equations. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{4D SVT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Within the geometry
+\begin{eqnarray}
+ds^2 &=& \left[ -dt^2 + \frac{dr^2}{1-kr^2} + r^2d\Omega^2 + h_{\mu\nu}dx^\mu dx^\nu\right]
+\end{eqnarray}
+we take $h_{\mu\nu}$ as the 4D SVT decomposition
+\begin{eqnarray}
+h_{\mu\nu} &=& -2 g_{\mu\nu}\psi + 2\nabla_\mu\nabla_\nu E +\nabla_\mu E_\nu + \nabla_\nu E_\mu + 2E_{\mu\nu}.
+\end{eqnarray}
+Inserting the above into \eqref{dgdt}, we have for the perturbed Einstein tensor
+\begin{eqnarray}
+\delta G_{\mu\nu} &=&- E_{\mu \nu} R
++ E^{\alpha \beta} g_{\mu \nu} R_{\alpha \beta}
++ E_{\nu}{}^{\alpha} R_{\mu \alpha}
++ E_{\mu}{}^{\alpha} R_{\nu \alpha}
+- 2 E^{\alpha \beta} R_{\mu \alpha \nu \beta}
+-  \tfrac{1}{2} E^{\alpha} g_{\mu \nu} \nabla_{\alpha}R\nonumber\\
+&& + \nabla_{\alpha}\nabla^{\alpha}E_{\mu \nu}
++ 2 g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}\psi
+-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}R \nabla^{\alpha}E
++ \tfrac{1}{2} E^{\alpha} \nabla_{\beta}R_{\mu \alpha \nu}{}^{\beta}
++ \tfrac{1}{2} E^{\alpha} \nabla_{\beta}R_{\mu}{}^{\beta}{}_{\nu \alpha}\nonumber\\
+&& + \nabla^{\alpha}E \nabla_{\beta}R_{\mu}{}^{\beta}{}_{\nu \alpha}
++ R_{\mu \alpha \nu \beta} \nabla^{\beta}\nabla^{\alpha}E
+-  R_{\mu \beta \nu \alpha} \nabla^{\beta}\nabla^{\alpha}E
++ R_{\nu \alpha} \nabla_{\mu}E^{\alpha}
+-  \tfrac{1}{2} R \nabla_{\mu}E_{\nu}\nonumber\\
+&& + \tfrac{1}{2} E^{\alpha} \nabla_{\mu}R_{\nu \alpha}
++ R_{\nu \alpha} \nabla_{\mu}\nabla^{\alpha}E
++ R_{\mu \alpha} \nabla_{\nu}E^{\alpha}
+-  \tfrac{1}{2} R \nabla_{\nu}E_{\mu}
++ \tfrac{1}{2} E^{\alpha} \nabla_{\nu}R_{\mu \alpha}
++ \nabla^{\alpha}E \nabla_{\nu}R_{\mu \alpha}\nonumber\\
+&& + R_{\mu \alpha} \nabla_{\nu}\nabla^{\alpha}E
+-  R \nabla_{\nu}\nabla_{\mu}E
+- 2 \nabla_{\nu}\nabla_{\mu}\psi
+\end{eqnarray}
+with trace
+\begin{eqnarray}
+g^{\alpha\beta}\delta G_{\alpha\beta}&=& 4 E^{\alpha \beta} R_{\alpha \beta}
+-  E^{\alpha} \nabla_{\alpha}R
+-  R \nabla_{\alpha}\nabla^{\alpha}E
++ 6 \nabla_{\alpha}\nabla^{\alpha}\psi
+-  \nabla_{\alpha}R \nabla^{\alpha}E
++ 2 R_{\alpha \beta} \nabla^{\beta}E^{\alpha}\nonumber\\
+&& + 2 R_{\alpha \beta} \nabla^{\beta}\nabla^{\alpha}E.
+\end{eqnarray}
+If we substitute the symmetric 3-space forms of the curvature terms into the above, via
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& (P_{\mu\nu}P_{\lambda\kappa}-P_{\lambda\nu}P_{\mu\kappa})k,
+\nonumber\\
+R_{\mu\nu} &=& -2 P_{\mu\nu}k,
+\nonumber\\
+R&=& -6k
+\end{eqnarray}
+we are left with
+\begin{eqnarray}
+\delta G_{\mu\nu}&=&-4 k E_{\nu \alpha} U^{\alpha} U_{\mu}
+- 4 k E_{\mu \alpha} U^{\alpha} U_{\nu}
++ \nabla_{\alpha}\nabla^{\alpha}E_{\mu \nu}
++ 2 g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}\psi
+- 2 k U^{\alpha} U_{\nu} \nabla_{\mu}E_{\alpha}\nonumber\\
+&& + k \nabla_{\mu}E_{\nu}
+- 2 k U^{\alpha} U_{\nu} \nabla_{\mu}\nabla_{\alpha}E
+- 2 k U^{\alpha} U_{\mu} \nabla_{\nu}E_{\alpha}
++ k \nabla_{\nu}E_{\mu}
+- 2 k U^{\alpha} U_{\mu} \nabla_{\nu}\nabla_{\alpha}E\nonumber\\
+&& + 2 k \nabla_{\nu}\nabla_{\mu}E
+- 2 \nabla_{\nu}\nabla_{\mu}\psi
+\end{eqnarray}
+and trace
+\begin{eqnarray}
+g^{\alpha\beta}\delta G_{\alpha\beta}&=&-8 k E_{\alpha \beta} U^{\alpha} U^{\beta}
++ 2 k \nabla_{\alpha}\nabla^{\alpha}E
++ 6 \nabla_{\alpha}\nabla^{\alpha}\psi
+- 4 k U^{\alpha} U^{\beta} \nabla_{\beta}E_{\alpha}
+- 4 k U^{\alpha} U^{\beta} \nabla_{\beta}\nabla_{\alpha}E.
+\end{eqnarray}
+For a $\delta T_{\mu\nu}$ that is similarly decomposed we have
+\begin{eqnarray}
+\delta T_{\mu\nu}&=& -2 g_{\mu\nu}\bar\psi + 2\nabla_\mu\nabla_\nu \bar E +\nabla_\mu \bar E_\nu + \nabla_\nu \bar E_\mu + 2\bar E_{\mu\nu},
+\end{eqnarray}
+with trace 
+\begin{eqnarray}
+g^{\alpha\beta}\delta T_{\alpha\beta} &=& -8\bar\psi + 2\nabla^2 \bar E.
+\end{eqnarray}
+Though in flat space the trace allowed us to simplify the remaining equations, it remains to see if one can do so in the static RW geometry. 
+\end{document}

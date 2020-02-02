@@ -1,0 +1,429 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Special Gauge Trace Matthew v6}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+
+\section*{Special $K_{\mu\nu}$ Gauge for Trace}
+The perturbed Einstein tensor $\delta  G_{\mu\nu}( h_{\mu\nu})$ evaluated in the metric decomposed to first order 
+\begin{equation}
+g_{\mu\nu} = g^{(0)}_{\mu\nu} + g^{(1)}_{\mu\nu} = \Omega^2(\tau)(\eta_{\mu\nu}+h_{\mu\nu})
+\end{equation}
+is calculated as 
+\begin{align}
+\delta G_{\mu\nu}={}&\eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}h_{\mu \nu}
+ -  \eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} h_{\gamma \zeta} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega
+ + \eta^{\alpha \beta} h_{\mu \nu} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega\nonumber\\
+& + \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\alpha}h_{\mu \nu}
+ - 2 \eta^{\alpha \beta} h_{\mu \nu} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\mu}h_{\nu \alpha}
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\nu}h_{\mu \alpha}\nonumber\\
+& + 2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\zeta}h_{\beta \gamma}
+ + \tfrac{1}{2} \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \partial_{\zeta}\partial_{\beta}h_{\alpha \gamma}
+ + 2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} h_{\alpha \gamma} \Omega^{-1} \partial_{\zeta}\partial_{\beta}\Omega\nonumber\\
+& -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\mu}h_{\nu \beta}
+ -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\nu}h_{\mu \beta}- \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}h \partial_{\beta}\Omega -  \tfrac{1}{2} \eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}h\nonumber \\
+& + \tfrac{1}{2} \partial_{\nu}\partial_{\mu}h.
+\end{align}
+Now we split $h_{\mu\nu}$ into its traceless and trace components, i.e.
+\begin{equation}
+	h_{\mu\nu} = K_{\mu\nu} + \frac 14 \eta_{\mu\nu}h
+\end{equation}
+where $h = \eta^{\mu\nu}h_{\mu\nu}$. With this substitution, (2) takes the form
+\begin{align}
+\delta G_{\mu\nu}={}&-2 \eta^{\alpha \beta} K_{\mu \beta} \Omega^{-1} \partial_{\alpha}\partial_{\nu}\Omega
+ + \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}K_{\mu \nu}
+ -  \eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} K_{\gamma \zeta} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega\nonumber\\
+& + \eta^{\alpha \beta} K_{\mu \nu} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega
+ + \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\alpha}K_{\mu \nu}
+ + 2 \eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} K_{\gamma \zeta} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega\nonumber\\
+& - 2 \eta^{\alpha \beta} K_{\mu \nu} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega
+ + 2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\zeta}K_{\beta \gamma}
+ + \tfrac{1}{2} \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \partial_{\zeta}\partial_{\beta}K_{\alpha \gamma}\nonumber\\
+& -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\mu}K_{\nu \beta}
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\mu}\partial_{\beta}K_{\nu \alpha}
+ -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\nu}K_{\mu \beta}
+ + 2 \eta^{\alpha \beta} K_{\mu \beta} \Omega^{-1} \partial_{\nu}\partial_{\alpha}\Omega\nonumber\\
+& -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\nu}\partial_{\beta}K_{\mu \alpha}
++\tfrac{3}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}h
+ -  \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}h \partial_{\beta}\Omega
+ -  \tfrac{1}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}h\nonumber\\
+ &-  \tfrac{1}{8} \partial_{\mu}\partial_{\nu}h
+-  \tfrac{1}{4} \Omega^{-1} \partial_{\mu}\Omega \partial_{\nu}h
+ -  \tfrac{1}{4} \Omega^{-1} \partial_{\mu}h \partial_{\nu}\Omega
+ + \tfrac{3}{8} \partial_{\nu}\partial_{\mu}h.
+\end{align}
+Now we impose a generalized gauge of the form
+\begin{equation}
+	\eta^{\alpha\beta}\partial_{\alpha}K_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}K_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu h + R \Omega^{-1} h \partial_\nu \Omega.
+\end{equation}
+For a strictly time dependent conformal factor $\Omega(\tau)$, we find the flucuation trace takes the form 
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-4 \Omega^{-4} \dot{\Omega}^2
+ + 5 J \Omega^{-4} \dot{\Omega}^2
+ + J^2 \Omega^{-4} \dot{\Omega}^2
+ + 8 \Omega^{-3} \ddot{\Omega}
+ + J \Omega^{-3} \ddot{\Omega}) K_{00}
+ + (-5 R \Omega^{-4} \dot{\Omega}^2\nonumber\\
+& -  J R \Omega^{-4} \dot{\Omega}^2
+ -  R \Omega^{-3} \ddot{\Omega}
+ -  \tfrac{3}{4} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + P \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \Omega^{-3} \dot{\Omega} \partial_{0}
+ - 6 P \Omega^{-3} \dot{\Omega} \partial_{0}\nonumber\\
+& -  J P \Omega^{-3} \dot{\Omega} \partial_{0}
+ -  R \Omega^{-3} \dot{\Omega} \partial_{0}) h.
+\end{align}
+In the deSitter background, we take $\Omega(\tau) = \frac{1}{H\tau}$, in which the trace reduces to 
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(12 H^2
+ + 7 H^2 J
+ + H^2 J^2) K_{00}
+ + (-7 H^2 R
+ -  H^2 J R
+ -  \tfrac{3}{4} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + H^2 P \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \tfrac{3}{2} H^2 \tau \partial_{0}
+ + 6 H^2 P \tau \partial_{0}
+ + H^2 J P \tau \partial_{0}
+ + H^2 R \tau \partial_{0}) h.
+\end{align}
+Here in deSitter we may take $J=-3$ or $J=-4$ to allow the trace of the perturbation to be proportional to $h$. The rest of $\delta G_{\mu\nu}$ in deSitter is:
+\begin{align}
+\delta G_{00}={}&(- \tfrac{3}{2} J \tau^{-2}
+ -  \tfrac{1}{2} J^2 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tau^{-1} \partial_{0}
+ -  J \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{3}{2} R \tau^{-2}
+ + \tfrac{1}{2} J R \tau^{-2}\nonumber\\
+& + \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{4} \tau^{-1} \partial_{0}
+ - 2 P \tau^{-1} \partial_{0}
+ -  \tfrac{1}{2} J P \tau^{-1} \partial_{0}
+ + \tfrac{1}{2} R \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{0} \partial_{0}\nonumber\\
+& -  P \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&(- \tau^{-1} \partial_{1}
+ -  \tfrac{1}{2} J \tau^{-1} \partial_{1}) K_{00}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} J \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} J \tau^{-1} \partial_{0}) K_{01}
+ + (\tfrac{1}{4} \tau^{-1} \partial_{1}\nonumber\\
+& + \tfrac{1}{2} R \tau^{-1} \partial_{1}
+ + \tfrac{1}{4} \partial_{1} \partial_{0}
+ -  P \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&(3 \tau^{-2}
+ + \tfrac{5}{2} J \tau^{-2}
+ + \tfrac{1}{2} J^2 \tau^{-2}) K_{00}
+ + (-2 \tau^{-1} \partial_{1}
+ -  J \tau^{-1} \partial_{1}) K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& + \tau^{-1} \partial_{0}) K_{11}
+ + (- \tfrac{5}{2} R \tau^{-2}
+ -  \tfrac{1}{2} J R \tau^{-2}
+ -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{4} \tau^{-1} \partial_{0}\nonumber\\
+& + 2 P \tau^{-1} \partial_{0}
+ + \tfrac{1}{2} J P \tau^{-1} \partial_{0}
+ + \tfrac{1}{2} R \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{1} \partial_{1}
+ -  P \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&(- \tau^{-1} \partial_{2}
+ -  \tfrac{1}{2} J \tau^{-1} \partial_{2}) K_{01}
+ + (- \tau^{-1} \partial_{1}
+ -  \tfrac{1}{2} J \tau^{-1} \partial_{1}) K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& + \tau^{-1} \partial_{0}) K_{12}
+ + (\tfrac{1}{4} \partial_{2} \partial_{1}
+ -  P \partial_{2} \partial_{1}) h.
+\end{align}
+\\ \\
+Since the trace simplifies completely particularly in deSitter, we will try to simplify the equations most in deSitter, and then find their form in the general $\Omega(\tau)$. Within deSitter, for $J=-3$ and arbitrary $P$, $R$, we have
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-4 H^2 R
+ -  \tfrac{3}{4} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + H^2 P \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{3}{2} H^2 \tau \partial_{0}
+ + 3 H^2 P \tau \partial_{0}
+ + H^2 R \tau \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{00}={}&(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{4} \tau^{-1} \partial_{0}
+ -  \tfrac{1}{2} P \tau^{-1} \partial_{0}\nonumber\\
+& + \tfrac{1}{2} R \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{0} \partial_{0}
+ -  P \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tfrac{1}{2} \tau^{-1} \partial_{1} K_{00}
+ + (\tfrac{3}{2} \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \tau^{-1} \partial_{0}) K_{01}
+ + (\tfrac{1}{4} \tau^{-1} \partial_{1}
+ + \tfrac{1}{2} R \tau^{-1} \partial_{1}
+ + \tfrac{1}{4} \partial_{1} \partial_{0}\nonumber\\
+& -  P \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (- R \tau^{-2}
+ -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \tfrac{1}{4} \tau^{-1} \partial_{0}
+ + \tfrac{1}{2} P \tau^{-1} \partial_{0}
+ + \tfrac{1}{2} R \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{1} \partial_{1}
+ -  P \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tfrac{1}{2} \tau^{-1} \partial_{2} K_{01}
+ + \tfrac{1}{2} \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}
+ + (\tfrac{1}{4} \partial_{2} \partial_{1}
+ -  P \partial_{2} \partial_{1}) h.
+\end{align}
+Within deSitter, for $J=-4$ and arbitrary $P$, $R$, we have
+ \begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-3 H^2 R
+ -  \tfrac{3}{4} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + H^2 P \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{3}{2} H^2 \tau \partial_{0}
+ + 2 H^2 P \tau \partial_{0}
+ + H^2 R \tau \partial_{0}) h.
+\end{align}
+ \begin{align}
+\delta G_{00}={}&(-2 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \tau^{-1} \partial_{0}) K_{00}
+ + (- \tfrac{1}{2} R \tau^{-2}
+ + \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{4} \tau^{-1} \partial_{0}\nonumber\\
+& + \tfrac{1}{2} R \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{0} \partial_{0}
+ -  P \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tau^{-1} \partial_{1} K_{00}
+ + (\tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{01}
+ + (\tfrac{1}{4} \tau^{-1} \partial_{1}
+ + \tfrac{1}{2} R \tau^{-1} \partial_{1}
+ + \tfrac{1}{4} \partial_{1} \partial_{0}\nonumber\\
+& -  P \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-2} K_{00}
+ + 2 \tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (- \tfrac{1}{2} R \tau^{-2}
+ -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& + \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{4} \tau^{-1} \partial_{0}
+ + \tfrac{1}{2} R \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{1} \partial_{1}
+ -  P \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tau^{-1} \partial_{2} K_{01}
+ + \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}
+ + (\tfrac{1}{4} \partial_{2} \partial_{1}
+ -  P \partial_{2} \partial_{1}) h.
+\end{align}
+It appears that a simplifying choice for $J=-3$ would be $P=\tfrac14$ and $R=-\tfrac12$. 
+With these coefficients $\delta G_{\mu\nu}$ becomes
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(2 H^2
+ -  \tfrac{1}{2} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{5}{4} H^2 \tau \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{00}={}&(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{8} \tau^{-1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tfrac{1}{2} \tau^{-1} \partial_{1} K_{00}
+ + (\tfrac{3}{2} \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \tau^{-1} \partial_{0}) K_{01}.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{1}{2} \tau^{-2}
+ -  \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{3}{8} \tau^{-1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tfrac{1}{2} \tau^{-1} \partial_{2} K_{01}
+ + \tfrac{1}{2} \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}.
+\end{align}
+It appears that a simplifying choice for $J=-4$ would be again $P=\tfrac14$ and $R=-\tfrac12$. 
+With these coefficients $\delta G_{\mu\nu}$ becomes
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(\tfrac{3}{2} H^2
+ -  \tfrac{1}{2} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{3}{2} H^2 \tau \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{00}={}&(-2 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{1}{4} \tau^{-2}
+ + \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} \tau^{-1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tau^{-1} \partial_{1} K_{00}
+ + (\tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{01}.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-2} K_{00}
+ + 2 \tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{1}{4} \tau^{-2}
+ -  \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \tfrac{1}{2} \tau^{-1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tau^{-1} \partial_{2} K_{01}
+ + \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}.
+\end{align}
+Going back to arbitrary $\Omega(\tau)$, we calculate for $J=-3$, $P=\tfrac14$, and $R=-\tfrac12$:
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-10 \Omega^{-4} \dot{\Omega}^2
+ + 5 \Omega^{-3} \ddot{\Omega}) K_{00}
+ + (\Omega^{-4} \dot{\Omega}^2
+ + \tfrac{1}{2} \Omega^{-3} \ddot{\Omega}
+ -  \tfrac{1}{2} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{5}{4} \Omega^{-3} \dot{\Omega} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{00}={}&(3 \Omega^{-2} \dot{\Omega}^2
+ -  \tfrac{3}{2} \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ - 2 \Omega^{-1} \dot{\Omega} \partial_{0}) K_{00}
+ + (- \tfrac{1}{2} \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{4} \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \tfrac{3}{8} \Omega^{-1} \dot{\Omega} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&- \tfrac{1}{2} \Omega^{-1} \dot{\Omega} \partial_{1} K_{00}
+ + (\tfrac{1}{2} \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{2} \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{3}{2} \Omega^{-1} \dot{\Omega} \partial_{0}) K_{01}.
+\end{align}
+\begin{align}
+\delta G_{11}={}&(- \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{2} \Omega^{-1} \ddot{\Omega}) K_{00}
+ -  \Omega^{-1} \dot{\Omega} \partial_{1} K_{01}
+ + (- \Omega^{-2} \dot{\Omega}^2
+ + 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \Omega^{-1} \dot{\Omega} \partial_{0}) K_{11}
+ + (\tfrac{1}{4} \Omega^{-1} \ddot{\Omega}
+ -  \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{8} \Omega^{-1} \dot{\Omega} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&- \tfrac{1}{2} \Omega^{-1} \dot{\Omega} \partial_{2} K_{01}
+ -  \tfrac{1}{2} \Omega^{-1} \dot{\Omega} \partial_{1} K_{02}
+ + (- \Omega^{-2} \dot{\Omega}^2
+ + 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \Omega^{-1} \dot{\Omega} \partial_{0}) K_{12}.
+\end{align}
+For arbitrary $\Omega(\tau)$, we calculate for $J=-4$, $P=\tfrac14$, and $R=-\tfrac12$:
+\begin{align}
+\Omega^{-2}\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-8 \Omega^{-4} \dot{\Omega}^2
+ + 4 \Omega^{-3} \ddot{\Omega}) K_{00}
+ + (\tfrac{1}{2} \Omega^{-4} \dot{\Omega}^2
+ + \tfrac{1}{2} \Omega^{-3} \ddot{\Omega}
+ -  \tfrac{1}{2} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \Omega^{-3} \dot{\Omega} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{00}={}&(2 \Omega^{-2} \dot{\Omega}^2
+ - 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ - 3 \Omega^{-1} \dot{\Omega} \partial_{0}) K_{00}
+ + (- \tfrac{1}{4} \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{4} \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \tfrac{1}{2} \Omega^{-1} \dot{\Omega} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&- \Omega^{-1} \dot{\Omega} \partial_{1} K_{00}
+ + (\Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ - 2 \Omega^{-1} \dot{\Omega} \partial_{0}) K_{01}.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\Omega^{-2} \dot{\Omega}^2 K_{00}
+ - 2 \Omega^{-1} \dot{\Omega} \partial_{1} K_{01}
+ + (- \Omega^{-2} \dot{\Omega}^2
+ + 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \Omega^{-1} \dot{\Omega} \partial_{0}) K_{11}\nonumber\\
+& + (- \tfrac{1}{4} \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{4} \Omega^{-1} \ddot{\Omega}
+ -  \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} \Omega^{-1} \dot{\Omega} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&- \Omega^{-1} \dot{\Omega} \partial_{2} K_{01}
+ -  \Omega^{-1} \dot{\Omega} \partial_{1} K_{02}
+ + (- \Omega^{-2} \dot{\Omega}^2
+ + 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \Omega^{-1} \dot{\Omega} \partial_{0}) K_{12}.
+\end{align}
+\end{document}

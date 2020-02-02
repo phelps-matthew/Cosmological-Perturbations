@@ -1,0 +1,201 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{RW Coordinate Transformations}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{RW $k=-L^{-2}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& -dt^2 + a(t)^2 \left[ \frac{1}{1-kr^2}dr^2 + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2\right]
+\\ \nonumber\\
+k&=& -L^{-2},\qquad p=\frac{\tau}{L} = \frac{1}{L}\int \frac{dt}{a(t)},\qquad \sinh \chi = \frac{r}{L}
+\\ \nonumber\\
+\implies ds^2 &=& a(p)^2\left[ -dp^2 + d\chi^2 + \sinh^2{\chi} (d\theta^2 + \sin^2\theta d\phi^2)\right]
+\label{chids2}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\Omega(X^2)=\Omega(T^2-R^2)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+ds^2 &=& a(p)^2\left[ -dp^2 + d\chi^2 + \sinh^2{\chi} (d\theta^2 + \sin^2\theta d\phi^2)\right]
+\label{ds2p2}
+\\ \nonumber\\
+T&=& e^p \cosh\chi,\qquad R = e^p \sinh\chi,\qquad X^2 \equiv T^2-R^2
+\\ \nonumber\\
+\implies p &=& \frac{1}{2}\ln(X^2),\qquad \frac{r^2}{L^2} = \frac{R^2}{X^2}
+\nonumber\\
+\implies ds^2 &=& \frac{a\left(\tfrac12 \ln X^2\right)^2}{X^2}\left[ -dT^2 + dR^2 + R^2d\theta^2 + R^2\sin^2\theta d\phi^2\right]
+\label{ds2TR}
+\\ \nonumber\\
+\Omega(X^2)^2 &=& \frac{a\left(\tfrac12 \ln X^2\right)^2}{X^2}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Transformation Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For convenience, we denote $r_l \equiv \frac{r}{L}$.
+\begin{eqnarray}
+\frac{\partial T}{\partial p} &=& T,\qquad \frac{\partial R}{\partial p} = R,\qquad
+\frac{\partial T}{\partial r_l} = \frac{RX}{T},\qquad \frac{\partial R}{\partial r_l} = X
+\\ \nonumber\\
+\frac{\partial}{\partial p} &=& \frac{\partial T}{\partial p}\frac{\partial}{\partial T} + \frac{\partial R}{\partial p}\frac{\partial}{\partial R} = T\frac{\partial}{\partial T} + R\frac{\partial}{\partial R}
+\\ \nonumber\\
+\frac{\partial}{\partial r_l} &=& \frac{\partial T}{\partial r_l}\frac{\partial}{\partial T} + \frac{\partial R}{\partial r_l}\frac{\partial}{\partial R} = \left(\frac{RX}{T}\right)\frac{\partial}{\partial T} + X\frac{\partial}{\partial R}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Tensor Component Transformation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We take $L=1$ such that $r/L=r$ and transform from the coordinates from \eqref{ds2p2} to \eqref{ds2TR}. (See \eqref{htrans} for transformation behavior).
+\begin{eqnarray}
+x^\mu (p,r,\theta,\phi) &\to& x'^\mu (T,R,\theta,\phi)
+\\ \nonumber\\
+h_{\mu\nu} &=& \frac{\partial x'^\alpha}{\partial x^\mu }\frac{\partial x'^\beta}{\partial x^\nu} h'_{\alpha\beta}
+\\ \nonumber\\
+h_{00} &=&  T^2 h'_{00} +2 TR h'_{0r} + R^2 h'_{rr}
+\nonumber\\
+h_{0r} &=& RX h'_{00} + X(T+R)h'_{0r}
+\nonumber\\
+h_{0\theta} &=&T h'_{0\theta} + Rh'_{r\theta}
+\nonumber\\
+h_{0\phi} &=&Th'_{0\phi} + R h'_{r\phi}
+\nonumber\\
+h_{rr} &=&  \left(\frac{R^2X^2}{T^2}\right)h'_{00} + 2X^2\left(\frac{R}{T}\right)h'_{0r}+X^2 h'_{rr}
+\nonumber\\
+h_{r\theta} &=&  \left(\frac{RX}{T}\right) h'_{00} + Xh'_{r\theta}
+\nonumber\\
+h_{r\phi} &=& \left(\frac{RX}{T}\right) h'_{00} + Xh'_{r\phi}
+\nonumber\\
+h_{\theta\phi} &=& h'_{\theta\phi}
+\nonumber\\
+h_{\theta\theta} &=& h'_{\theta\theta}
+\nonumber\\
+h_{\phi\phi} &=& h'_{\phi\phi}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\Omega(p',r')$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+ds^2 &=& a(p)^2\left[ -dp^2 + d\chi^2 + \sinh^2{\chi} (d\theta^2 + \sin^2\theta d\phi^2)\right]
+\label{ds2p}
+\\ \nonumber\\
+p' + r' &=& \tanh\left[\frac{p+\chi}{2}\right],\quad p'-r' = \tanh\left[ \frac{p-\chi}{2}\right],
+\quad p' = \frac{\sinh p }{\cosh p+\cosh\chi},\quad r' = \frac{\sinh\chi}{\cosh p + \cosh\chi}
+\\ \nonumber\\
+\implies p &=& \tanh^{-1}(p'+r')+\tanh^{-1}(p'-r'),\qquad \chi = \tanh^{-1}(p'+r')-\tanh^{-1}(p'-r')
+\\ \nonumber\\
+\frac{r}{L} &=& \frac{2r'}{\left[(1-(p'+r')^2)(1-(p'-r')^2)\right]^{1/2}}
+\\ \nonumber\\
+\implies ds^2 &=& \frac{4L^2 a(p',r')^2}{[1-(p'+r')^2][1-(p'-r')^2]}\left[ -dp'^2 + dr'^2 + r'^2 d\theta^2 + r'^2 \sin^2\theta d\phi^2\right]
+\label{ds2rppp}
+\\ \nonumber\\
+\Omega(p',r')^2 &=&  \frac{4L^2 a(p',r')^2}{[1-(p'+r')^2][1-(p'-r')^2]}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Transformation Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For convenience, we denote $r_l \equiv \frac{r}{L}$.
+\begin{eqnarray}
+\frac{\partial p'}{\partial p} &=& \frac{1+(1+r_l^2)^{1/2}\cosh(p)}{\left[(1+r_l^2)^{1/2}+\cosh (p)\right]^2} = \frac12 \left[1-(p'^2+r'^2)\right] = \frac{1}{2}n(x')
+\\ \nonumber\\
+\frac{\partial r'}{\partial p} &=& -\frac{r_l \sinh (p) }{\left[(1+r_l^2)^{1/2}+\cosh (p)\right]^2}= -p'r'
+\\ \nonumber\\
+\frac{\partial p'}{\partial r_l} &=&\frac{\partial p'}{\partial \chi}\frac{\partial \chi}{\partial r_l}
+= - \frac{r_l\sinh p}{(1+r_l^2)^{1/2}\left[(1+r_l^2)^{1/2}+\cosh p\right]^2}
+= -\frac{p'r'\left[ 1-(p'+r')^2\right]^{1/2}\left[1-(p'-r')^2\right]^{1/2}}{1-(p'^2-r'^2)}
+\nonumber\\
+&=& -p'r'm(x')
+\\ \nonumber\\
+\frac{\partial r'}{\partial r_l} &=&\frac{\partial r'}{\partial \chi}\frac{\partial \chi}{\partial r_l} = 
+\frac{1+(1+r_l^2)^{1/2}\cosh p}{(1+r_l^2)^{1/2}\left[(1+r_l^2)^{1/2}+\cosh p\right]^2}
+= \frac{1}{2}\frac{[1-(p'^2+r'^2)]\left[ 1-(p'+r')^2\right]^{1/2}\left[1-(p'-r')^2\right]^{1/2}}{1-(p'^2-r'^2)}
+\nonumber\\
+&=&\frac{1}{2}m(x')n(x')
+\\ \nonumber\\
+\frac{\partial}{\partial p} &=& \frac{\partial p'}{\partial p}\frac{\partial}{\partial p'} + \frac{\partial r'}{\partial p}\frac{\partial}{\partial r'}
+= \frac{1}{2}n(x')\frac{\partial}{\partial p'} - p'r' \frac{\partial}{\partial r'}
+\\ \nonumber\\
+\frac{\partial}{\partial r_l} &=& \frac{\partial p'}{\partial r_l}\frac{\partial}{\partial p'} + \frac{\partial r'}{\partial r_l}\frac{\partial}{\partial r'}
+= -p'r'm(x')\frac{\partial}{\partial p'} + \frac{1}{2}m(x')n(x') \frac{\partial}{\partial r'}
+\\ \nonumber\\
+m(x')&\equiv& \frac{\left[ 1-(p'+r')^2\right]^{1/2}\left[1-(p'-r')^2\right]^{1/2}}{1-(p'^2-r'^2)}
+\\ \nonumber\\
+n(x')&\equiv& 1-(p'^2+r'^2)
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Tensor Component Transformation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We take $L=1$ such that $r/L=r$ and transform from the coordinates from \eqref{ds2p} to \eqref{ds2rppp}. (See \eqref{htrans} for transformation behavior).
+\begin{eqnarray}
+x^\mu (p,r,\theta,\phi) &\to& x'^\mu (p',r',\theta,\phi)
+\\ \nonumber\\
+h_{\mu\nu} &=& \frac{\partial x'^\alpha}{\partial x^\mu }\frac{\partial x'^\beta}{\partial x^\nu} h'_{\alpha\beta}
+\\ \nonumber\\
+h_{00} &=&  \tfrac14 n(x')^2 h'_{00} -p'r' h'_{0r} + p'^2 r'^2 h'_{rr}
+\nonumber\\
+h_{0r} &=& -\tfrac12 p'r'm(x')n(x') h'_{00} + \tfrac12 n(x')\left(\tfrac{1}{2}m(x')n(x')-p'r'm(x')\right)h'_{0r}
+\nonumber\\
+h_{0\theta} &=&\tfrac12 n(x') h'_{0\theta} -p'r' h'_{r\theta}
+\nonumber\\
+h_{0\phi} &=&\tfrac12 n(x') h'_{0\phi} -p'r' h'_{r\phi}
+\nonumber\\
+h_{rr} &=& p'^2 r'^2 m(x')^2 h'_{00} -p'r'm(x')^2n(x'))h'_{0r}+\tfrac14 m(x')^2n(x')^2 h'_{rr}
+\nonumber\\
+h_{r\theta} &=&  -p'r'm(x') h'_{00} + \tfrac12 m(x')n(x') h'_{r\theta}
+\nonumber\\
+h_{r\phi} &=&  -p'r'm(x') h'_{00} + \tfrac12 m(x')n(x') h'_{r\phi}
+\nonumber\\
+h_{\theta\phi} &=& h'_{\theta\phi}
+\nonumber\\
+h_{\theta\theta} &=& h'_{\theta\theta}
+\nonumber\\
+h_{\phi\phi} &=& h'_{\phi\phi}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+	\section{$h_{\mu\nu}$ Coordinate Transformation}
+	We transform from $x^\mu (p,r,\theta,\phi) \to x'^\mu (T,R,\theta,\phi)$. This also serves as a template for transforming from $x^\mu (p,r,\theta,\phi) \to x'^\mu (p',r',\theta,\phi)$.
+	\begin{eqnarray}
+	h_{\mu\nu} &=& \frac{\partial x'^\alpha}{\partial x^\mu }\frac{\partial x'^\beta}{\partial x^\nu} h'_{\alpha\beta}
+	\\ \nonumber\\
+	h_{00} &=& \left( \frac{\partial T}{\partial p}\right)^2 h'_{00} + 2 \left(\frac{\partial T}{\partial p}\right)\left(\frac{\partial R}{\partial p}\right) h'_{0r} + \left(\frac{\partial R}{\partial p}\right)^2 h'_{rr}
+	\nonumber\\
+	h_{0r} &=& \left( \frac{\partial T}{\partial p}\right)\left( \frac{\partial T}{\partial r}\right)h'_{00} + \left[\left( \frac{\partial T}{\partial p}\right)\left( \frac{\partial T}{\partial r}\right)+\left( \frac{\partial T}{\partial p}\right)\left( \frac{\partial R}{\partial r}\right)\right]h'_{0r}
+	\nonumber\\
+	h_{0\theta} &=& \left( \frac{\partial T}{\partial p}\right)h'_{0\theta} + \left( \frac{\partial R}{\partial p}\right)h'_{r\theta}
+	\nonumber\\
+	h_{0\phi} &=& \left( \frac{\partial T}{\partial p}\right)h'_{0\phi} + \left( \frac{\partial R}{\partial p}\right)h'_{r\phi}
+	\nonumber\\
+	h_{rr} &=& \left( \frac{\partial T}{\partial r}\right)^2 h'_{00} + 2\left( \frac{\partial T}{\partial r}\right)\left( \frac{\partial R}{\partial r}\right)h'_{0r} + \left( \frac{\partial R}{\partial r}\right)^2 h'_{rr}
+	\nonumber\\
+	h_{r\theta} &=& \left( \frac{\partial T}{\partial r}\right)h'_{00} + \left( \frac{\partial R}{\partial r}\right)h'_{r\theta}
+	\nonumber\\
+	h_{r\phi} &=& \left( \frac{\partial T}{\partial r}\right)h'_{00} + \left( \frac{\partial R}{\partial r}\right)h'_{r\phi}
+	\nonumber\\
+	h_{\theta\phi} &=& h'_{\theta\phi}
+	\nonumber\\
+	h_{\theta\theta} &=& h'_{\theta\theta}
+	\nonumber\\
+	h_{\phi\phi} &=& h'_{\phi\phi}
+	\label{htrans}
+	\end{eqnarray}
+\end{appendices}
+\end{document}

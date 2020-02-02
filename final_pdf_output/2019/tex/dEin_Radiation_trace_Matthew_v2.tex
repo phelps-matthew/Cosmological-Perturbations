@@ -1,0 +1,97 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$g^{\mu\nu}\delta G_{\mu\nu}$ Radiation v2}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conformal Flat $\Omega(x)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& (g_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu = \Omega^2(x)(\tilde g_{\mu\nu} + f_{\mu\nu})dx^\mu dx^\nu
+\label{geom1}\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,1,r^2,r^2\sin^2\theta\right)\qquad \tilde \Gamma^{\lambda}_{\alpha\beta} = \delta^\lambda_i \delta^j_\alpha \delta^k_\beta \tilde \Gamma^{i}_{jk}
+\end{eqnarray}
+All subsequent equations hold for any flat $\tilde g_{\mu\nu}$, i.e. any $\tilde g_{\mu\nu}$ such that the corresponding curvature tensors vanish. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$G_{\mu\nu}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+G_{\mu\nu} &=& R_{\mu\nu} - \tfrac12 g_{\mu\nu} R
+\\ \nonumber\\
+g^{\mu\nu}G_{\mu\nu} &=& -R
+\nonumber\\
+&=& - \tilde{R} \Omega^{-2} - 6 \Omega^{-3} \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }\Omega 
+\nonumber\\
+&=& 6 \overset{..}{\Omega} \Omega^{-3} - 6 \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega 
+\label{Gtr}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\delta(g^{\mu\nu}G_{\mu\nu})$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We calculate $\delta (g^{\mu\nu}G_{\mu\nu}) = -h^{\mu\nu}G_{\mu\nu}^{(0)} + g^{\mu\nu}\delta G_{\mu\nu}$ as this is the perturbed equation that follows directly from \eqref{Gtr}. Additional remarks on the trace are in \hyperref[sec:Remark on Trace]{Trace Gauge Invariance}.
+\begin{eqnarray}
+\delta(g^{\mu\nu} G_{\mu\nu})&=& -6 \dot{\phi} \dot{\Omega} \Omega^{-3} - 18 \dot{\psi} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \phi \Omega^{-3} - 6 \overset{..}{\psi} \Omega^{-2} - 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} \nonumber \\ 
+&& + 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} + 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi + 4 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi - 12 \psi \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \nonumber \\ 
+&& - 12 \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}B - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{B} - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\phi + 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\psi \nonumber \\ 
+&& + 6 \Omega^{-3} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}E + 12 \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}E-12 B^{a} \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} - 6 \dot{B}^{a} \Omega^{-3} \tilde{\nabla}_{a}\Omega \nonumber \\ 
+&& + 6 \Omega^{-3} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E_{a} + 12 \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}E^{a}+12 E^{ab} \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega 
+\label{dG}
+\end{eqnarray}
+We substitute the gauge invariants and null trace condition ($g^{\mu\nu} G_{\mu\nu}=0\implies \tilde\nabla_a\tilde\nabla^a \Omega = \ddot\Omega$),
+\begin{eqnarray}
+\alpha &=& \phi + \psi +\dot B - \ddot E,\qquad \gamma = \psi -\Omega^{-1}[(B-\dot E)\dot\Omega - (\tilde\nabla_a E + E_a)\tilde\nabla^a \Omega],
+\nonumber\\
+Q_i&=& B_i - \dot E_i,\qquad E_{ij}.
+\end{eqnarray}
+The perturbed trace $\delta(g^{\mu\nu} G_{\mu\nu})$ is then expressed entirely in terms of the gauge invariants as
+\begin{eqnarray}
+\delta(g^{\mu\nu} G_{\mu\nu})&=& -6 \dot{\alpha} \dot{\Omega} \Omega^{-3} - 12 \dot{\gamma} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \alpha \Omega^{-3} - 6 \overset{..}{\gamma} \Omega^{-2} - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha + 6 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma \nonumber \\ 
+&& - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\alpha + 12 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\gamma -12 Q^{a} \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} - 6 \dot{Q}^{a} \Omega^{-3} \tilde{\nabla}_{a}\Omega +12 E^{ab} \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega.
+\label{dGtr1}
+\end{eqnarray}
+Defining the gauge invariants instead as
+\begin{eqnarray}
+\alpha &=& \phi + \psi +\dot B - \ddot E,\qquad \gamma =\phi- \psi+\dot B - \ddot E + 2\Omega^{-1}[(B-\dot E)\dot\Omega - (\tilde\nabla_a E + E_a)\tilde\nabla^a \Omega],
+\nonumber\\
+Q_i&=& B_i - \dot E_i,\qquad E_{ij}.
+\end{eqnarray}
+then \eqref{dG} becomes
+\begin{eqnarray}
+\delta(g^{\mu\nu} G_{\mu\nu})&=& -12 \dot{\alpha} \dot{\Omega} \Omega^{-3} + 6 \dot{\gamma} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \alpha \Omega^{-3} - 3 \overset{..}{\alpha} \Omega^{-2} + 3 \overset{..}{\gamma} \Omega^{-2} + \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - 3 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma \nonumber \\ 
+&& - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\gamma -12 Q^{a} \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} - 6 \dot{Q}^{a} \Omega^{-3} \tilde{\nabla}_{a}\Omega +12 E^{ab} \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega .
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Trace Gauge Invariance}
+\label{sec:Remark on Trace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+With the transformation of the first order $\delta G_{\mu\nu}$ behaving as
+\begin{eqnarray}
+\Delta_\epsilon[\delta G_{\mu\nu}] &=& G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda + G^\lambda{}_\nu \nabla_\mu \epsilon_\lambda + \nabla_\lambda G_{\mu\nu} \epsilon^\lambda,
+\label{eptr1}
+\end{eqnarray}
+upon taking the trace, we have
+\begin{eqnarray}
+g^{\mu\nu}\Delta_{\epsilon}[\delta G_{\mu\nu}] &=& 2 G^{\lambda\mu} \nabla_\mu \epsilon_\lambda + \nabla_\lambda G^\mu{}_\mu \epsilon^\lambda. 
+\end{eqnarray}
+The above indicates that a vanishing $G^\mu{}_\mu$ alone does not ensure $g^{\mu\nu}\delta G_{\mu\nu}$ is gauge invariant. However, we may subtract from \eqref{eptr1} the contribution $h^{\mu\nu}G_{\mu\nu}$, which transforms as
+\begin{eqnarray}
+G_{\mu\nu}\Delta_\epsilon[h^{\mu\nu}] &=& 2 G^{\lambda\mu} \nabla_\mu \epsilon_\lambda.
+\end{eqnarray}
+Thus the quantity that is invariant under gauge transformation (assuming only that $G^\lambda{}_\lambda = 0$) is in fact
+\begin{eqnarray}
+\Delta_\epsilon[ \delta(g^{\mu\nu} G_{\mu\nu})]=\Delta_\epsilon[ -h^{\mu\nu}G_{\mu\nu} + g^{\mu\nu}\delta G_{\mu\nu}] = 0. 
+\end{eqnarray}
+If the background trace vanishes, it must be the perturbation of the full trace (and not just $g^{\mu\nu} \delta G_{\mu\nu}$) that is then gauge invariant. 
+\end{document}

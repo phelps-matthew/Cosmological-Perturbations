@@ -1,0 +1,454 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Gravitational Invariants}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In a Minkowski background, the two gravitational gauge invariants are $\delta R$ and $\delta R_{\mu\nu}$. With the Bianchi identities, this yields 6 independent gauge invariants, which are taken as $\delta G$ and $\delta G_{\mu\nu}^{T\theta}$.
+\\ \\
+In a dS$_4$, $\delta R$, $\delta R_{\mu\nu}$, and $\delta G_{\mu\nu}$ are not gauge invariant. However, we may construct a gravitational gauge invariant $\Delta_{\mu\nu} = \delta G_{\mu\nu} - 3kh_{\mu\nu}$. Being conserved, the 6 components are analogously $\Delta$ and $\Delta_{\mu\nu}^{T\theta}$. 
+\\ \\
+By virtue of $\delta G_{\mu\nu} = \delta T_{\mu\nu}$, Einstein gravity does not impose any equation of motion upon the gravitational gauge invariants - it merely equates gravitational gauge invariants to matter gauge invariants.
+\\ \\
+In conformal gravity, the gravitational invariants are dynamic. In a Minkowski background, the gravitational invariant obeys
+\begin{eqnarray}
+\delta W_{\mu\nu} &=& \nabla^2 \delta G_{\mu\nu}^{T\theta}
+\nonumber\\ \nonumber\\
+\to \nabla^2 \delta G_{\mu\nu}^{T\theta} &=& \delta T_{\mu\nu}
+\end{eqnarray}
+In a dS$_4$ background, we have determined
+\begin{eqnarray}
+\delta W_{\mu\nu} &=& (\nabla^2-4k) \Delta_{\mu\nu}^{T\theta}
+\nonumber\\ \nonumber\\
+\to (\nabla^2-4k) \Delta_{\mu\nu}^{T\theta} &=& \delta T_{\mu\nu}
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Minkowski}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{eqnarray}
+ds^2 &=& (\eta_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\ \nonumber\\
+\delta W_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+\nonumber\\\nonumber\\
+\delta G_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
+\nonumber\\\nonumber\\
+\delta G &=&  \nabla^\alpha \nabla^\beta h_{\alpha\beta} - \nabla_\alpha\nabla^\alpha h
+\nonumber\\\nonumber\\
+\delta G^{T\theta}_{\mu\nu} &=& \delta G_{\mu\nu} - \frac{1}{3}g_{\mu\nu}\delta G + \frac{1}{3}\nabla_\mu\nabla_\nu \int D \delta G
+\nonumber\\ \nonumber\\
+\nabla^2\delta  G^{T\theta}_{\mu\nu} &=& \nabla^2 \delta G_{\mu\nu} + \frac{1}{3}\left[ 
+\nabla_\mu\nabla_\nu - g_{\mu\nu}\nabla^2\right]\delta G
+\nonumber\\ \nonumber\\
+\nabla^2 \delta G_{\mu\nu}^{T\theta} 
+&=& \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+\nonumber\\
+&=& \delta W_{\mu\nu}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Transformation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Under $x^\mu \to x'^{\mu} = x^\mu -\epsilon^\mu(x)$,
+
+\begin{eqnarray}
+\delta \bar W_{\mu\nu} &=& \delta W_{\mu\nu} + W^{(0)}_{\rho\mu}g^{\lambda\rho} \nabla_\nu \epsilon_\lambda + W^{(0)}_{\rho\nu}g^{\lambda\rho} \nabla_\mu \epsilon_\lambda + \epsilon^\lambda\nabla_\lambda W^{(0)}_{\mu\nu} 
+\nonumber\\
+&=&\delta W_{\mu\nu}
+\nonumber\\\nonumber\\
+\delta \bar G_{\mu\nu} &=& \delta G_{\mu\nu} + G^{(0)}_{\rho\mu}g^{\lambda\rho} \nabla_\nu \epsilon_\lambda + G^{(0)}_{\rho\nu}g^{\lambda\rho} \nabla_\mu \epsilon_\lambda + \epsilon^\lambda\nabla_\lambda G^{(0)}_{\mu\nu} 
+\nonumber\\
+&=&\delta G_{\mu\nu}
+\end{eqnarray}
+
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{dS${}_4$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+G^{(0)}_{\mu\nu} &=& 3kg_{\mu\nu}
+\nonumber\\
+R^{(0)}_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R^{(0)}_{\mu\kappa} &=& -3k g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R^{(0)}&=& -12 k
+\nonumber\\ \nonumber\\
+ds^2 &=& (g_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\ \nonumber\\
+\delta W_{\mu\nu}&=&4 k^2 h_{\mu \nu}
+-  k^2 g_{\mu \nu} h
+- 3 k \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
++ \tfrac{1}{2} k g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
++ k g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\nonumber\\
+&& + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} k \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+-  \tfrac{1}{2} k \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ k \nabla_{\nu}\nabla_{\mu}h\nonumber\\
+&& + \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}.
+\nonumber\\ \nonumber\\
+\delta G_{\mu\nu}&=& 2 k h_{\mu \nu}
+-  \tfrac{1}{2} k g_{\mu \nu} h
++ \tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
+\nonumber\\ \nonumber\\
+\delta G &=&  \nabla^\alpha \nabla^\beta h_{\alpha\beta} - \nabla_\alpha\nabla^\alpha h
+\nonumber\\\nonumber\\
+\Delta_{\mu\nu} &=& \delta G_{\mu\nu}-3k h_{\mu\nu}
+\nonumber\\ \nonumber\\
+\Delta &=& \delta G-3k h
+\nonumber\\\nonumber\\
+\Delta^{T\theta}_{\mu\nu} &=&  \Delta_{\mu\nu} - \frac{1}{3}g_{\mu\nu} \Delta + \frac{1}{3}\left( \nabla_\mu\nabla_\nu +kg_{\mu\nu}\right)\int D \Delta
+\nonumber\\ \nonumber\\
+(\nabla^2 -4k)\Delta^{T\theta}_{\mu\nu} &=& (\nabla^2 -4k)\Delta_{\mu\nu} +
+\frac{1}{3}\left[ \nabla_\mu\nabla_\nu + 3k g_{\mu\nu} - g_{\mu\nu}\nabla^2\right] \Delta
+\nonumber\\ \nonumber\\
+(\nabla^2 -4k)\Delta^{T\theta}_{\mu\nu} &=& 
+4 k^2 h_{\mu \nu}
+-  k^2 g_{\mu \nu} h
+- 3 k \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
++ \tfrac{1}{2} k g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
++ k g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\nonumber\\
+&& + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} k \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+-  \tfrac{1}{2} k \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ k \nabla_{\nu}\nabla_{\mu}h\nonumber\\
+&& + \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+\nonumber\\
+&=& \delta W_{\mu\nu}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Transformation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Background:
+\begin{eqnarray}
+G^{(0)}_{\mu\nu} &=& 3kg_{\mu\nu}
+\end{eqnarray}
+
+Gravitational Invariant:
+\begin{eqnarray}
+\Delta_{\mu\nu} &=& \delta G_{\mu\nu} - 3kh_{\mu\nu}
+\end{eqnarray}
+
+Under $x^\mu \to x'^{\mu} = x^\mu -\epsilon^\mu(x)$,
+
+\begin{eqnarray}
+\delta \bar W_{\mu\nu} &=& \delta W_{\mu\nu} + W^{(0)}_{\rho\mu}g^{\lambda\rho} \nabla_\nu \epsilon_\lambda + W^{(0)}_{\rho\nu}g^{\lambda\rho} \nabla_\mu \epsilon_\lambda + \epsilon^\lambda\nabla_\lambda W^{(0)}_{\mu\nu} 
+\nonumber\\
+&=&0
+\nonumber\\\nonumber\\
+\delta \bar G_{\mu\nu} &=& \delta G_{\mu\nu} + G^{(0)}_{\rho\mu}g^{\lambda\rho} \nabla_\nu \epsilon_\lambda + G^{(0)}_{\rho\nu}g^{\lambda\rho} \nabla_\mu \epsilon_\lambda + \epsilon^\lambda\nabla_\lambda G^{(0)}_{\mu\nu} 
+\nonumber\\
+&=&\delta G_{\mu\nu} + 3k(\nabla_\nu\epsilon_\mu + \nabla_\mu\epsilon_\nu)
+\nonumber\\\nonumber\\
+\bar\Delta _{\mu\nu} &=& \delta G_{\mu\nu} + 3k(\nabla_\nu\epsilon_\mu+\nabla_\mu\epsilon_\nu) -3kh_{\mu\nu} - 3k(\nabla_\nu\epsilon_\mu+\nabla_\mu\epsilon_\nu) 
+\nonumber\\
+&=& \Delta_{\mu\nu} 
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conformal to Flat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& (\tilde g_{\mu\nu} + \delta \tilde g_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\
+&=&\Omega^2(x)(\eta_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\ \nonumber\\
+\delta \tilde W_{\mu\nu} &=& \Omega^{-2} \delta W_{\mu\nu}
+\nonumber\\
+&=& \Omega^{-2}\nabla^2 \delta G^{T\theta}_{\mu\nu}
+\end{eqnarray}
+To be continued.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conformal to Flat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In a conformal metric $\tilde g_{\mu\nu} = \Omega^2(x) g_{\mu\nu}$, the Einstein tensor transforms as
+\begin{eqnarray}
+\tilde G_{\mu\nu}(\tilde g_{\mu\nu}) &=& G_{\mu\nu}(g_{\mu\nu}) + S_{\mu\nu}(g_{\mu\nu})
+\nonumber\\
+&=& G_{\mu\nu}+\Omega^{-1}\left( -2 g_{\mu\nu}\nabla_\alpha \nabla^\alpha \Omega + 2\nabla_\mu \nabla_\nu \Omega\right) +
+\Omega^{-2}\left(  g_{\mu\nu} \nabla_\alpha \Omega \nabla^\alpha \Omega - 4 \nabla_\mu \Omega \nabla_\nu \Omega\right)
+\nonumber\\ \nonumber\\
+\tilde S_{\mu\nu}(\tilde g_{\mu\nu}) &=& \Omega^{-1}\left( -2 \tilde g_{\mu\nu}\tilde\nabla_\alpha \tilde\nabla^\alpha \Omega + 2\tilde\nabla_\mu\tilde\nabla_\nu \Omega\right) + 3\Omega^{-2} \tilde g_{\mu\nu} \tilde\nabla_\alpha \Omega \tilde\nabla^\alpha \Omega
+\nonumber\\
+&=& \Omega^{-1}\left( -2 g_{\mu\nu}\nabla_\alpha \nabla^\alpha \Omega + 2\nabla_\mu \nabla_\nu \Omega\right) +
+\Omega^{-2}\left(  g_{\mu\nu} \nabla_\alpha \Omega \nabla^\alpha \Omega - 4 \nabla_\mu \Omega \nabla_\nu \Omega\right)
+\nonumber\\ \nonumber\\
+ds^2 &=& \Omega^2(x)( g_{\mu\nu} + h_{\mu\nu})
+\nonumber\\ \nonumber\\
+\delta \tilde G_{\mu\nu} &=& \delta G_{\mu\nu} + \delta S_{\mu\nu}
+\nonumber\\
+&=& \delta G_{\mu\nu} -2 h_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega
++ \Omega^{-1} \nabla_{\alpha}\Omega \nabla^{\alpha}h_{\mu \nu}
+-   g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\Omega \nabla^{\alpha}h
++ h_{\mu \nu} \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega\nonumber\\
+&& + 2  g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\beta}h^{\alpha \beta}
+-   g_{\mu \nu} h^{\alpha \beta} \Omega^{-2} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega
++ 2  g_{\mu \nu} h_{\alpha \beta} \Omega^{-1} \nabla^{\beta}\nabla^{\alpha}\Omega\nonumber\\
+&& -  \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\mu}h_{\nu}{}^{\alpha}
+-  \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\nu}h_{\mu}{}^{\alpha}.
+\end{eqnarray}
+Note that in the transformation of $G_{\mu\nu}$, all curvature tensors ($R_{\mu\nu}$, $R$) are contained within $G_{\mu\nu}$ and not $S_{\mu\nu}$. 
+\begin{eqnarray}
+ds^2 &=& \Omega^2(x)(\eta_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\ \nonumber\\
+\delta \tilde W_{\mu\nu}&=&\Omega^{-2} \delta W_{\mu\nu}
+\nonumber\\
+&=& \Omega^{-2} \nabla^2 \delta G_{\mu\nu}^{T\theta}
+\end{eqnarray}
+
+\begin{eqnarray}
+G_{\mu\nu} &=& U_\mu U_\nu (-2H^2 + 2\dot H)+ g_{\mu\nu}(H^2+2\dot H)
+\end{eqnarray}
+\begin{eqnarray}
+\Delta_\epsilon G_{\mu\nu} &=& G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda + G^\lambda{}_\nu \nabla_\mu \epsilon_\lambda + \epsilon^\lambda\nabla_\lambda G_{\mu\nu} 
+\end{eqnarray}
+\begin{eqnarray}
+\nabla_\mu \epsilon_\lambda &=& \Omega^2 \nabla_\mu f_\lambda + \Omega(f_\lambda \nabla_\mu - f_\mu \nabla_\lambda + g_{\mu\lambda}f^\rho \nabla_\rho)\Omega
+\end{eqnarray}
+\begin{eqnarray}
+\tilde \nabla^\mu \tilde G_{\mu\nu} &=& \Omega^{-2}\nabla^\mu \tilde G_{\mu\nu} +\Omega^{-3}\left( 
+2\tilde G_{\mu\nu}\nabla^\mu \Omega - \tilde G \nabla_\nu \Omega\right)
+\nonumber\\
+&=& \Omega^{-2}\nabla^\mu  G_{\mu\nu} +\Omega^{-3}\left( 
+2 G_{\mu\nu}\nabla^\mu \Omega -  G \nabla_\nu \Omega\right)
++\Omega^{-2}\nabla^\mu  S_{\mu\nu} +\Omega^{-3}\left( 
+2 S_{\mu\nu}\nabla^\mu \Omega - S \nabla_\nu \Omega\right)
+\end{eqnarray}
+Taking $G_{\mu\nu} = 0$,
+\begin{eqnarray}
+\tilde \nabla^\mu \tilde G_{\mu\nu} &=& \Omega^{-2}\nabla^\mu  S_{\mu\nu} +\Omega^{-3}\left( 
+2 S_{\mu\nu}\nabla^\mu \Omega - S \nabla_\nu \Omega\right)
+\nonumber\\
+&=&0
+\nonumber\\
+\to  \quad\nabla^\mu S_{\mu\nu} &=& \Omega^{-1}\left( S\nabla_\nu \Omega - 2S_{\mu\nu}\nabla^\mu \Omega\right) 
+\end{eqnarray}
+\begin{eqnarray}
+\tilde T_{\mu\nu} &=& \tilde S_{\mu\nu}
+\nonumber\\
+\tilde U_{\mu}\tilde U_{\nu}(\tilde\rho+\tilde p) + \tilde g_{\mu\nu} \tilde p &=&  \Omega^{-1}\left( -2 \tilde g_{\mu\nu}\tilde\nabla_\alpha \tilde\nabla^\alpha \Omega + 2\tilde\nabla_\mu\tilde\nabla_\nu \Omega\right) + 3\Omega^{-2} \tilde g_{\mu\nu} \tilde\nabla_\alpha \Omega \tilde\nabla^\alpha \Omega
+\end{eqnarray}
+\begin{eqnarray}
+\Delta^{T\theta}_{\mu\nu} &=& \Delta_{\mu\nu} -\frac13 \tilde g_{\mu\nu}\Delta +\frac13 \left[ \tilde\nabla_\mu\tilde\nabla_\nu + \Omega^{-1}(\tilde\nabla_\mu\Omega \tilde\nabla_\nu + \tilde\nabla_\nu\Omega \tilde\nabla_\mu) -\Omega^{-1}\tilde g_{\mu\nu} \tilde\nabla^\alpha \Omega \tilde\nabla_\alpha \right]\int g^{1/2} D(x,x') \Omega^2 \Delta
+\end{eqnarray}
+\begin{eqnarray}
+\left( \Omega^2 \tilde\nabla_\alpha \tilde\nabla^\alpha - 2\Omega \nabla^\alpha \Omega \tilde\nabla_\alpha \right) D(x,x') &=&g^{-1/2}\delta^4(x-x')
+\end{eqnarray}
+\begin{eqnarray}
+\nabla^\mu \delta G_{\mu\nu}^{T\theta} &=&0
+\nonumber\\
+\Rightarrow\quad  \Omega^2 \tilde\nabla^\mu \Delta_{\mu\nu}^{T\theta} - 2\Omega \tilde\nabla^\mu \Omega \Delta_{\mu\nu} &=& 0
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Conformal Laplacian}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& g_{\mu\nu} dx^\mu dx^\nu = \Omega^2(x) \tilde g_{\mu\nu} dx^\mu dx^\nu
+\\ \nonumber\\
+A \nabla_\alpha \nabla^\alpha \chi + B R^\alpha{}_\alpha \chi
+&=& B R^\alpha{}_\alpha \chi \Omega^{-2} + A \Omega^{-2} \nabla_{\alpha }\nabla^{\alpha }\chi + 6 B \chi \Omega^{-3} \nabla_{\alpha }\nabla^{\alpha }\Omega + 2 A \Omega^{-3} \nabla_{\alpha }\Omega \nabla^{\alpha }\chi 
+\nonumber\\ \\
+\Omega^{F}\left[A \tilde\nabla_\alpha\tilde\nabla^\alpha( \Omega^H \chi) + B R^\alpha{}_\alpha (\Omega^H \chi)\right]
+&=& B R^\alpha{}_\alpha \chi \Omega^{F + H}
++ A \Omega^{F + H} \nabla_{\alpha }\nabla^{\alpha }\chi
++ A H \chi \Omega^{-1 + F + H} \nabla_{\alpha }\nabla^{\alpha }\Omega
+\nonumber\\
+&&
++ 2 A H \Omega^{-1 + F + H} \nabla_{\alpha }\Omega \nabla^{\alpha }\chi -  A H \chi \Omega^{-2 + F + H} \nabla_{\alpha }\Omega \nabla^{\alpha }\Omega
+\nonumber\\
+&&
++ A H^2 \chi \Omega^{-2 + F + H} \nabla_{\alpha }\Omega \nabla^{\alpha }\Omega
+\\ \nonumber\\
+\implies && H=1,\qquad F=-3,\qquad A=6B
+\\ \nonumber\\
+6 \nabla_\alpha \nabla^\alpha \chi + R^\alpha{}_\alpha \chi
+&=& \Omega^{-3} \left[ 6 \tilde \nabla_\alpha \tilde \nabla^\alpha (\Omega\chi) + R^\alpha{}_\alpha (\Omega \chi) \right]
+\end{eqnarray}
+In dimension $D$,
+\begin{eqnarray}
+\frac{4(D-1)}{D-2} \nabla_\alpha\nabla^\alpha \chi + R^\alpha{}_\alpha \chi
+= \Omega^{-\left(\frac{D+2}{2}\right)}\left[
+\frac{4(D-1)}{D-2}\tilde\nabla_\alpha\tilde\nabla^\alpha \left( \Omega^{\frac{D-2}{2}}\chi\right)
++R^\alpha{}_\alpha \left( \Omega^{\frac{D-2}{2}}\chi\right)
+\right]
+\end{eqnarray}
+\newpage
+\begin{appendices}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h_{\mu\nu}^{T\theta}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Minkowski}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1} \nabla_\mu\nabla_\nu  \int D \nabla^\sigma W_\sigma
+-\frac{1}{D-1}\nabla_\mu\nabla_\nu  \int D h
+\label{decompmin}
+\end{eqnarray}
+with scalar Green's function
+\begin{eqnarray}
+ \nabla^\sigma \nabla_\sigma D(x,x') &=& \delta^4(x-x').
+\end{eqnarray}
+Taking the trace of \eqref{decompmin}, we find
+\begin{eqnarray}
+h &=& h.
+\end{eqnarray}
+As for the transverse component we find  a condition upon vector $W_\nu$
+\begin{eqnarray}
+\nabla^\sigma h_{\nu\sigma}&=& \nabla^\sigma\nabla_\sigma W_\nu.
+\end{eqnarray}
+The particular integral solution for $W_\nu$ is
+\begin{eqnarray}
+W_\nu &=& \int D \nabla^\sigma h_{\mu\sigma}.
+\end{eqnarray}
+If decompose a $T_{\mu\nu}$ that is apriori transverse, then with $W_\mu =0$ the decomposition reduces to
+\begin{eqnarray}
+T^{T\theta}_{\mu\nu} &=& T_{\mu\nu} - \frac{g_{\mu\nu}}{D-1}T + \frac{1}{D-1}\nabla_\mu\nabla_\nu \int D T
+\label{consmin}
+\end{eqnarray}
+To bring into a local form, we apply the box operator
+\begin{eqnarray}
+\nabla^2 T^{T\theta}_{\mu\nu} &=& \nabla^2 T_{\mu\nu} + \frac{1}{D-1}\left[ 
+\nabla_\mu\nabla_\nu - g_{\mu\nu}\nabla^2\right]T
+\label{boxconsmin}
+\end{eqnarray}
+%
+%
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maximally Symmetric}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Curvature Tensors:
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R_{\mu\kappa} &=& k(1-D)g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R&=& kD(1-D) 
+\end{eqnarray}
+Covariant Commutation:
+\begin{eqnarray}
+[\nabla^\sigma \nabla_\nu] W_\sigma &=& -R_{\nu}{}^\sigma W_\sigma = -\frac{R}{D}W_\nu
+\nonumber\\
+{[}\nabla^\mu \nabla_\mu, \nabla_\nu] V &=& -R_{\nu}{}^\mu \nabla_\mu V = -\frac{R}{D}\nabla_\nu V
+\nonumber\\
+{[}\nabla^2,\nabla_\mu\nabla_\nu]V &=& \frac{2 g_{\mu\nu}R}{D(D-1)}\nabla^2 V - \frac{2R}{D-1}\nabla_\mu\nabla_\nu V
+\label{comms}
+\end{eqnarray}
+Decomposition:
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{ g_{\mu\nu}R}{D(D-1)}\right) \int D \nabla^\sigma W_\sigma
+-\frac{1}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{g_{\mu\nu}R}{D(D-1)}\right) \int D h
+\label{decomp}
+\end{eqnarray}
+with scalar Green's function
+\begin{eqnarray}
+\left( \nabla^\sigma \nabla_\sigma  - \frac{R}{D-1}\right) D(x,x') &=& g^{-1/2} \delta^4(x-x').
+\end{eqnarray}
+Taking the trace of \eqref{decomp}, we find
+\begin{eqnarray}
+h &=& h.
+\end{eqnarray}
+As for the transverse component we find, upon applying covariant commutations \eqref{comms}, a condition upon vector $W_\nu$
+\begin{eqnarray}
+\nabla^\sigma h_{\nu\sigma}&=& \nabla^\sigma\nabla_\sigma W_\nu.
+\end{eqnarray}
+With the box operator mixing indices of $W_\nu$, the particular integral solution for $W_\nu$ involves a bi-tensor Green's function $F_{\sigma\rho'}$ which obeys
+\begin{eqnarray}
+\nabla^\alpha\nabla_\alpha F_{\sigma\rho'}(x,x') &=& g_{\sigma\rho'}g^{-1/2} \delta^4(x-x')
+\end{eqnarray}
+\begin{eqnarray}
+W_\nu &=& \int F_\nu{}^{\rho'}\nabla^{\sigma'}h_{\rho'\sigma'}.
+\end{eqnarray}
+If a tensor $T_{\mu\nu}$ is apriori transverse, then we again may set $W_\mu =0$ to find for a conserved tensor, the decomposition
+\begin{eqnarray}
+T^{T\theta}_{\mu\nu} &=&  T_{\mu\nu} - \frac{g_{\mu\nu}}{D-1} T + \frac{1}{D-1}\left( \nabla_\mu\nabla_\nu - \frac{g_{\mu\nu}R}{D(D-1)}\right)\int D T.
+\label{Ttt1}
+\end{eqnarray}
+We see that to retain transversality, we cannot simply just extract the trace in a trivial way.  
+\\ \\
+To form a second order equation for $T^{T\theta}_{\mu\nu}$ that is absent of the non-local integral, we need to apply a specific box operator. Acting upon a scalar $V$, the desired operator is given below with commutation relation
+\begin{eqnarray}
+\left( \nabla^2 + \frac{R}{D-1}\right) \left(\nabla_\mu\nabla_\nu - \frac{Rg_{\mu\nu}}{D(D-1)}\right)V &=& \left(\nabla_\mu\nabla_\nu + \frac{Rg_{\mu\nu}}{D(D-1)}\right)\left( \nabla^2 - \frac{R}{D-1}\right)V,
+\end{eqnarray}
+which may be verified using \eqref{comms}.
+\\ \\
+Now applying this operator to \eqref{Ttt1}, we find
+\begin{eqnarray}
+\left( \nabla^2 + \frac{R}{D-1}\right) T^{T\theta}_{\mu\nu} &=& \left( \nabla^2 + \frac{R}{D-1}\right) T_{\mu\nu} - \frac{g_{\mu\nu}}{D-1}\left( \nabla^2 + \frac{R}{D-1}\right)T
+\nonumber\\
+&&
++ \frac{1}{D-1}\left( \nabla_\mu\nabla_\nu + \frac{g_{\mu\nu}R}{D(D-1)}\right)T.
+\end{eqnarray}
+Expressed in terms of curvature constant $R = -kD(D-1)$, the above becomes
+\begin{eqnarray}
+(\nabla^2 -Dk)T^{T\theta}_{\mu\nu} &=& (\nabla^2 -Dk)T_{\mu\nu} +
+\frac{1}{D-1}\left[ \nabla_\mu\nabla_\nu + (D-1)k g_{\mu\nu} - g_{\mu\nu}\nabla^2\right] T.
+\label{Ttt2}
+\end{eqnarray}
+\end{appendices}
+\end{document}

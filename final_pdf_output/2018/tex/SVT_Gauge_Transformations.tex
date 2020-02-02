@@ -1,0 +1,157 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+
+\title{SVT Gauge Transformation}
+\date{}
+\begin{document}
+\maketitle
+\noindent S.V.T. decomposition:
+\begin{align}
+	ds^2 &= -(g_{\mu\nu}^{(0)}+h_{\mu\nu})\nonumber \\
+	&= \Omega^2(x)\{(1+2\phi)dt^2 - 2(\tilde\nabla_i B + B_i)dtdx^i -[(1-2\psi \gamma_{ij})+2\tilde\nabla_i\tilde \nabla_j E + \tilde\nabla _i E_j +\tilde \nabla_j E_i + 2E_{ij}]dx^idx^j\}.
+\end{align}
+For reference,
+\begin{align}
+	g_{00} &=-\Omega^2 	&h_{00} &=\Omega^2( -2\phi)\\
+	 g_{0i} &=0  &h_{0i} &= \Omega^2(\tilde\nabla_i B + B_i)\\
+	 g_{ij} &=\Omega^2 \gamma_{ij}  &h_{ij} &= \Omega^2(-2\psi \gamma_{ij} + 
+	2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla _i E_j + \tilde\nabla_j E_i + 2E_{ij})
+	\end{align}
+Under coordinate transformation $x^\mu \to \bar x^\mu = x^\mu + \epsilon^\mu$, the metric perturbation transforms as
+\begin{equation}
+	\bar h_{\mu\nu}(x) = h_{\mu\nu}(x) - \nabla_\mu \epsilon_\nu - \nabla_\nu \epsilon_\mu.
+\end{equation}
+Using $\epsilon_{\alpha} = g_{\alpha\beta}\epsilon^\beta$, we rewrite this as
+\begin{align}
+	\bar h_{\mu\nu}(x) &= h_{\mu\nu}(x) - g_{\alpha\nu}\nabla_\mu \epsilon^\alpha - g_{\alpha\mu}\nabla_\nu \epsilon^\alpha\\
+	&= h_{\mu\nu} - [g_{\alpha\nu}\partial_\mu \epsilon^\alpha + \tfrac12(\partial_\mu g_{\nu\beta} + \partial_\beta g_{\mu\nu} - \partial_\nu g_{\mu\beta})\epsilon^\beta ]-[g_{\alpha\mu}\partial_\nu \epsilon^\alpha + \tfrac12(\partial_\nu g_{\mu\beta} + \partial_\beta g_{\mu\nu} - \partial_\mu g_{\nu\beta})\epsilon^\beta ]\\
+	&= h_{\mu\nu} - g_{\alpha\nu}\partial_\mu \epsilon^\alpha - g_{\alpha\mu}\partial_\nu \epsilon^\alpha -\epsilon^\beta \partial_\beta g_{\mu\nu} 
+\end{align}
+To facilitate the S.V.T. decomposition, we decompose the coordinate transformation $\epsilon^\mu$ as
+\[
+	\epsilon^0 = T,\qquad \epsilon^i = \tilde\nabla^i L + L^i,\qquad \tilde\nabla^i L_i = 0
+\]
+where $\tilde\nabla$ denotes the covariant derivative with respect to the 3-space metric $\gamma_{ij}$. The transformations go as:
+\begin{align}
+	\bar h_{00} &=  h_{00} + 2\Omega^2 \dot T + 2\Omega \epsilon^\alpha \nabla_\alpha \Omega\\
+	-2\bar\phi &= -2 \phi +2\dot T +2 \Omega^{-1}\epsilon^\alpha \nabla_\alpha \Omega\\
+	\bar\phi &= \phi - \dot T - \Omega^{-1}\epsilon^\alpha \nabla_\alpha \Omega
+\end{align}
+\begin{align}
+	 \bar h_{0i} &=  h_{0i} -\Omega^2 \gamma_{ij} \partial_0 (\tilde\nabla^j L + L^j) + \Omega^2 \partial_i T\\
+	\tilde \nabla_i \bar B + \bar B_i &= \tilde\nabla_i B + B_i - \tilde\nabla_i \dot L - \dot L_i + \tilde\nabla_i T\\
+	\bar B &= B - \dot L + T\\
+	\bar B_i &= B_i - \dot L_i
+\end{align}
+\begin{align}
+	 \bar h_{ij} &=  h_{ij} -\Omega^2 \gamma_{jk}\partial_i(\tilde\nabla^k L + L^k) - \Omega^2 \gamma_{ik} \partial_j (\tilde\nabla^k L + L^k)
+	- \Omega^2 (\tilde\nabla^k L +L^k)\partial_k \gamma_{ij}-2\Omega \gamma_{ij}  \epsilon^\alpha \nabla_\alpha \Omega\\
+	\Omega^{-2}\bar h_{ij} &=\Omega^{-2}h_{ij} - \gamma_{jk}\partial_i(\gamma^{kl}\tilde\nabla_l L + \gamma^{kl}L^l) - \gamma_{ik} \partial_j (\gamma^{kl}\tilde\nabla_l L + \gamma^{kl}L^l)
+	- (\gamma^{kl}\tilde\nabla_l L +\gamma^{kl}L_l)\partial_k \gamma_{ij}\nonumber\\
+	&\quad -2\Omega^{-1} \gamma_{ij}  \epsilon^\alpha \nabla_\alpha \Omega\\
+	&= \Omega^{-2} h_{ij} -2 \partial_i \partial_j L - \partial_i L_j -\partial_j L_i - \gamma_{jk} (\partial_i \gamma^{kl})\partial_l L- \gamma_{ik}( \partial_j \gamma^{kl})\partial_l L
+	-\gamma^{kl}(\partial_k \gamma_{ij})\partial_l L\nonumber\\
+	&\quad - \gamma_{jk} (\partial_i \gamma^{kl})L_l- \gamma_{ik}( \partial_j \gamma^{kl})L_l  -2\Omega^{-1} \gamma_{ij}  \epsilon^\alpha \nabla_\alpha \Omega
+	-\gamma^{kl}(\partial_k \gamma_{ij})L_l
+\end{align}
+Using the expression
+\[
+	\gamma_{jk}\partial_i \gamma^{kl} = -\gamma^{kl}\partial_i \gamma_{jk} 
+\]
+$\bar h_{ij}$ can be expressed as
+\begin{align}
+	\Omega^{-2}\bar h_{ij}&= \Omega^{-2} h_{ij} -2 \partial_i \partial_j L - \partial_i L_j -\partial_j L_i + \gamma^{kl} (\partial_i \gamma_{jk})\partial_l L+ \gamma^{kl}( \partial_j \gamma_{ik})\partial_l L
+	-\gamma^{kl}(\partial_k \gamma_{ij})\partial_l L\\
+	&\quad + \gamma^{kl} (\partial_i \gamma_{jk})L_l+ \gamma^{kl}( \partial_j \gamma_{ik})L_l-\gamma^{kl}(\partial_k \gamma_{ij})L_l
+	 -2\Omega^{-1} \gamma_{ij}  \epsilon^\alpha \nabla_\alpha \Omega.
+\end{align}
+Noting the covariant derivative relation,
+\begin{equation}
+	\tilde\nabla_i A_j = \partial_i A_j -\tfrac12 \gamma^{kl}(\partial_i \gamma_{jk} + \partial_{j}\gamma_{ik} - \partial_k \gamma_{ij})A_l
+\end{equation}
+ $\bar h_{ij}$ becomes
+\begin{equation}
+\Omega^{-2}\bar h_{ij} = \Omega^{-2} h_{ij} - 2\tilde\nabla_i\tilde\nabla_j L - \tilde\nabla_i L_j -\tilde\nabla_j L_i -2\Omega^{-1}\gamma_{ij}\epsilon^\alpha \nabla_\alpha\Omega .
+\end{equation}
+Equating the scalar pieces:
+\begin{align}
+	-2\bar \psi \gamma_{ij} + 
+	2\tilde\nabla_i\tilde\nabla_j \bar E   &= -2\psi \gamma_{ij} + 
+	2\tilde\nabla_i\tilde\nabla_j E - 2\tilde\nabla_i\tilde\nabla_j L-2\Omega^{-1}\gamma_{ij}\epsilon^\alpha \nabla_\alpha\Omega 
+\end{align}
+\begin{equation}
+	\bar\psi = \psi + \Omega^{-1}\gamma_{ij}\epsilon^\alpha \nabla_\alpha\Omega
+\end{equation}
+\begin{equation}
+	\bar E = E - L.
+\end{equation}
+Equating the vector pieces:
+\begin{equation}
+	\tilde\nabla _i \bar E_j + \tilde\nabla_j \bar E_i =\tilde\nabla _i E_j + \tilde\nabla_j E_i   - \tilde\nabla_i L_j -\tilde\nabla_j L_i 
+\end{equation}
+\begin{equation}
+	\bar E_i = E_i - L_i.
+\end{equation}
+Equating the tensor pieces:
+\begin{equation}
+\bar E_{ij} = E_{ij}.
+\end{equation}
+Altogether:
+\begin{align}
+	\bar\phi &= \phi - \dot T - \Omega^{-1}\epsilon^\alpha \nabla_\alpha \Omega\\
+	 \bar\psi &= \psi + \Omega^{-1}\epsilon^\alpha \nabla_\alpha\Omega\\
+	\bar B &= B - \dot L + T\\
+	\bar B_i &= B_i - \dot L_i\\
+	\bar E &= E - L\\
+	 \bar E_i &= E_i - L_i  \\
+	 \bar E_{ij} &= E_{ij}
+\end{align}
+In order to have arrived at the following equations, it was necessary that $\bar \gamma_{ij}$ = $\gamma_{ij}$. Since $\gamma_{ij}$ is the zeroth order background, it must be gauge invariant on its own. This can also be seen from
+\begin{align}
+	\bar g_{\mu\nu}(x) &= g_{\mu\nu}(x) - \nabla_\mu \epsilon_\nu - \nabla_\nu\epsilon_\mu\\
+	\bar g_{\mu\nu}^{(0)}(x) + \bar h_{\mu\nu} &= g^{(0)}_{\mu\nu}(x)+h_{\mu\nu}  - \nabla_\mu \epsilon_\nu - \nabla_\nu\epsilon_\mu
+\end{align}
+and hence to zeroth order
+\begin{equation}
+	\bar g^{(0)}_{\mu\nu} = g^{(0)}_{\mu\nu}.
+\end{equation}
+Lastly, we note that the gauge transformations as calculated above make no imposition upon the form of $\gamma_{ij}$ or $\Omega(x)$. 
+\\ \\ \\ \\
+$-h_{\mu\nu}dx^{\mu}dx^{\nu}$, we have
+
+
+$\Gamma^0_{00}=\Omega^{-1}\partial_0\Omega$, $\Gamma^i_{00}=\Omega^{-1}\delta^{ij}\partial_j\Omega$.
+
+
+Thus under gauge $h_{00}\rightarrow h_{00} +2\partial_0\epsilon_0-2\Gamma^0_{00}\epsilon_0
+-2\Gamma^i_{00}\epsilon_i$
+
+
+i.e. $h_{00}\rightarrow h_{00} +2\partial_0\epsilon_0-2\epsilon_0\Omega^{-1}\partial_0\Omega
+-2\epsilon_i\Omega^{-1}\delta^{ij}\partial_j\Omega$
+
+
+Thus define $\epsilon_0=-\Omega^2 T$, $\epsilon_i=\Omega^2(L_i+\partial_iL)$, $\delta^{ij}\partial_jL_i=0$
+
+
+and we get 
+
+$\phi=\Omega^{-2}h_{00}/2\rightarrow \phi -\partial_0T-2T\Omega^{-1}\partial_0\Omega +T\Omega^{-1}\partial_0\Omega-
+(L_i+\partial_iL)\Omega^{-1}\delta^{ij}\partial_j\Omega$
+
+i.e.
+
+$\phi\rightarrow \phi -\partial_0T-T\Omega^{-1}\partial_0\Omega -
+(L_i+\partial_iL)\Omega^{-1}\delta^{ij}\partial_j\Omega$
+
+We now raise with the full  $ds^2=\Omega^2[dt^2-\delta_{ij}dx^idx^j]=-g_{\mu\nu}dx^{\mu}dx^{\nu}$ and define
+
+$\epsilon^0=g^{0\mu}\epsilon_{\mu}=T,~~ \epsilon^i=g^{i\mu}\epsilon_{\mu}=\delta^{ij}(L_i+\partial_iL)$
+
+and can thus write
+
+$\phi\rightarrow \phi -\partial_0T-\Omega^{-1}\epsilon^{\mu}\partial_{\mu}\Omega$
+
+Philip
+\end{document}

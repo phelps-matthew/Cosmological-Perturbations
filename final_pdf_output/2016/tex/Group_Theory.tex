@@ -1,0 +1,66 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Group Theory Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent A group is defined as a set of elements that 
+\\
+1. Are closed under composition (multiplication)
+\\
+2. Contain all inverses\\
+3. Associative\\
+4. Existence of identity\\
+\\
+If a group is parameterized by continuous parameters (such as $\theta$ in 2D rotations), then this is a Lie group. If two elements of a Lie group commute, the group is said to be abelian. Otherwise, non-abelian.
+\\ \\
+Infinitesimal transformations can be found by taking derivatives with respect to the continuous parameters. These infinitesimal generators form a group as well, and if elements under commutation lie within the vector space spanned by the group, then they are said for form a Lie algebra. \\
+\\ 
+Most often we take groups to be transformations acting on a vector space $V$. On such group is the general linear group
+which consists of all \emph{invertible} linear operators acting on a space $V$
+\[
+	GL(V) \subset \mathcal L(V).
+\] 
+For a vector space with scalar field $C$ and dimension $n$, then $GL(V)$ may be represented by a subset of invertable
+$n\times n$ matrices denoted
+\[
+	GL(n,C) \subset M_n(C).
+\]
+For $C=\mathbb C, \mathbb R$, we have the complex general linear group and real general linear group in $n$ dimensions respectively.\\
+\\ 
+If our vector space is equipped with a non-degenerate hermitian form (defined via an ``inner product"), there exist an important subset of $GL(V)$ called isometries, Isom$(V)$ which by definition preserve the inner product. For $T\in$ Isom$(V)$, 
+\[
+	(Tu,Tw) = (u,w)\  \forall u,w\in V.
+\]
+These form a group.
+\\ \\
+We can show that for a vector space in $n$ dimensions with an inner product space ($(v,v) >0\ \forall v\ne 0$), $T$ consists of all $n\times n$ matrices such that
+\[
+	T^{-1} = T^\dag
+\]
+where for real vector spaces this simplifies to $T^{-1} = T^T$. These groups correspond to $U(n)$ and $O(n)$
+respectively. If we further restrict to matrices with determinant equal to unity, then we have $SU(n)$ and $SO(n)$
+which are important subgroups. 
+\\ **Real vector space nd hermitian forms are symmetric, called a metric**
+\\
+\\
+For the Minkowski metric, the group Isom$(V)$ can be shown to be transformations that satisfy
+\[
+	T_\mu{}^\rho T_\nu{}^\sigma \eta_{\rho\sigma} = \eta_{\mu \nu}
+\]
+i.e. Lorentz transformations denoted as $O(n-1,1)$. The restricted Lorentz group in four dimensions
+$SO(3,1)_\sigma$ is the restriction that for $A\in O(3,1)$
+\[
+	|A| = 1,\quad A_{11}>0.
+\]
+This preserves the orientation of space and time. Also, any element $A\in SO(3,1)_\sigma$ can be expressed as a rotation and a Lorentz boost $R'L$ where
+\[
+	R' = \bpm R&0\\0&1\epm
+\]
+for $R \in SO(3)$. 
+ If we add the parity and time reversal transformations to the $SO(3,1)_\sigma$ group, we recover the full $O(3,1)$ group. 
+\end{document}

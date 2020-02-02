@@ -1,0 +1,86 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{SVT Decomposition}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+The most general form we may take for our perturbation to the FRW metric is
+\[
+	ds^2 = a^2(\tau)\blr{ -d\tau^2 + \gamma_{ij}dx^idx^j + h_{\mu\nu}dx^\mu dx^\nu}.
+\]
+Seperating out $h_{\mu\nu}$ into space and time components,
+ \[
+ 	ds^2 = a^2(\tau)\blr{-(1+\psi)d\tau^2 +w_i dx^id\tau + \plr{ \phi \gamma_{ij}+S_{ij}}}.
+\]
+Here we have taken the trace of $h_{ij}$ and placed it in $\phi$ so that $S_{ij}$ is a symmetric traceless tensor. Given the 3 vector $w_i$, we may decompose it into its scalar (curl-free) and vector (divergence-free) components
+\ba
+	w_i &= w_i^{(S)}+w_i^{(V)}
+\ea
+where 
+\[
+	w_i^{(S)} = \del_i w
+\]
+\[
+	\del^i w_i^{(V)} = 0.
+\]
+Our symmetric traceless tensor $S_{ij}$ may also be broken up accordingly
+\[
+	S_{ij} = S_{ij}^{(S)}+S_{ij}^{(V)}+S_{ij}^{(T)}
+\]
+where
+\[
+	S_{ij}^{(S)} = \plr{ \del_i\del_j - \frac13 \delta_{ij} \del^2}S
+\]
+\[
+	S_{ij}^{(V)} = \frac12 \plr{ \del_i S_j + \del_j S_i},\qquad \del^i S_i = 0
+\]
+\[
+	\del^i S_{ij}^{(T)} = 0.
+\]
+Note that the vector $S_i$ is divergence-less, which is as we expect for a true vector, and that $S_{ij}^T$ is transverse. Additionally, the actual scalar, vector, and tensor functions are not unique. If we put all these together, our metric takes the form
+\[
+	ds^2 = a(\tau^2)\clr{ -(1+\psi)d\tau^2 + (\del_i w + w_i)dx^i d\tau + \blr{ \phi \gamma_{ij} + 
+	\plr{\del_i\del_j-\frac13 \delta_{ij}\del^2}S + \frac12\plr{ \del_iS_j + \del_j S_i} + S_{ij}^T}}.
+\]
+Mode superscripts have been dropped, so we make take a vector like $w_i$ to be a true vector $\del^i w_i = 0$. Counting the degrees of freedom, we have 4 scalar fields $(\psi,w,S,\phi)$, 2 two-component vectors $(w_i, S_i)$, and one traceless transverse symmetric tensor $S_{ij}^T$, $4+4+2=10$. 
+\ba
+	h_{00} &= -\psi\\
+	h_{0i} &= \del_i w+w_i\\
+	h_{ij} &= \phi \gamma_{ij} + 
+	\plr{\del_i\del_j-\frac13 \delta_{ij}\del^2}S + \frac12\plr{ \del_iS_j + \del_j S_i} + S_{ij}^T
+\ea
+In flat space $h =\psi+3\phi$ and
+\[
+	\delta R_{\mu\nu} = \frac12 \plr{ \pd_\lambda \pd^\lambda h_{\mu\nu} - \pd_\mu \pd^\lambda h_{\nu\lambda} - 
+	\pd_\nu \pd^\lambda h_{\mu\lambda} +\pd_\mu\pd_\nu h^\lambda{}_\lambda}
+\]
+\ba
+	\delta R_{00} &= \frac12 \plr{ \pd^\lambda \pd_\lambda h_{00} -2\pd_0 \pd^\lambda h_{0\lambda} + \ddot h}\\
+	&= \frac12 \blr{ -\pd_i \pd^i \psi -2\pd_0 ( \del^2 w + \pd^i w_i) +2\ddot \phi}
+\ea
+Under the transverse or synchronous gauge, we see that $\delta R_{00}$ relates scalars. 
+\[
+	G_{\mu\nu} = R_{\mu\nu} - \frac12 g_{\mu\nu}R
+\]
+\[
+	\delta G_{\mu\nu} = \delta R_{\mu\nu} - \frac12 h_{\mu\nu}R - \frac12 g_{\mu\nu}\plr{
+	h_{\alpha\beta}R^{\alpha\beta} + g^{\alpha\beta}\delta R_{\alpha\beta}}
+\]
+\[
+	\delta G^{\mu}_{\nu} = \delta( g^{\mu\lambda}G_{\lambda\nu}) = h^{\mu\lambda}G_{\lambda\nu}
+	+ g^{\mu\lambda}\delta G_{\lambda\nu}
+\]
+Synchronous:
+\[
+	\delta G^0{}_0 = g^{00}\delta G_{00} = -a^{-2}(\tau)\delta G_{00}
+\]
+\[	
+	\delta G_{00} = \delta R_{00} - \frac12 h_{00}R + \frac12 a^2(\tau)\plr{ h_{\alpha\beta}R^{\alpha\beta}
+	+g^{\alpha\beta}\delta R_{\alpha\beta}}
+\]
+\\
+$h_{\mu\nu}$ is not trace-free. In conformal gravity, we may do the standard perscription with perturbations involving $h_{\mu\nu}$ and we will find that the fluctation equations do not depend on the trace, $h$. Equivalently, we may instead work with traceless ``gauge'' $K_{\mu\nu}$. What we cannot do within the code is remove the trace terms $h$, and then use the full gauge $h_{\mu\nu}$. However, we can do the substitution $h_{\mu\nu} \to K_{\mu\nu}$ without problems. 
+\end{document}

@@ -1,0 +1,121 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+%\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{de Sitter Geometries}
+\date{}
+\begin{document} 
+	\maketitle
+	\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+de Sitter space can be described as a submanifold embedded in a higher dimension Minskowski space. Working in $D=4$, take the $D+1$ Minkowski space defined as
+\begin{eqnarray}
+ds^2 = -dx_0^2 + dx_1^2 + dx_2^2 + dx_3^2 + dx_4^2.
+\label{min5}
+\end{eqnarray}
+Now let us constrain our coordinates to a hyperboloid
+\begin{eqnarray}
+-x_0^2 + x_1^2 + x_2^2 + x_3^2 + x_4^2 = \alpha^2.
+\label{hyper}
+\end{eqnarray}
+Taking the differential of \eqref{hyper},  we may relate $dx_4$ to the remaining coordinates
+\begin{eqnarray}
+f(x_0,x_1,x_2,x_3,x_4) &=& \alpha^2
+\nonumber\\
+df &=& \frac{\partial f}{\partial x_\mu}dx^\mu =0
+\nonumber\\
+\Rightarrow\quad x_4 dx_4 &=&x_0 dx_0-\mathbf x\cdot d\mathbf x 
+\nonumber\\
+\Rightarrow\quad dx_4^2 &=& \frac{(x_0 dx_0-\mathbf x\cdot d\mathbf x)^2}{x_4^2}
+\nonumber\\
+\Rightarrow\quad dx_4^2 &=& \frac{(x_0 dx_0 -\mathbf x\cdot d\mathbf x)^2}{\alpha^2+x_0^2 -\mathbf x^2}.
+\end{eqnarray}
+Hence we may express \eqref{min5} in terms of four coordinates
+\begin{eqnarray}
+ds^2 &=& -dx_0^2 + (d\mathbf x)^2 + \frac{x_0^2 dx_0^2 + (\mathbf x\cdot d\mathbf x)^2 - 2x_0 dx_0 (\mathbf x\cdot d\mathbf x)}{\alpha^2 + x_0^2 -\mathbf x^2}
+\nonumber\\
+&=& \frac{1}{\alpha^2 + x_0^2-\mathbf x^2}\left[ 
+-dx_0^2(\alpha^2-\mathbf x^2) + dx_1^2(\alpha^2 +x_0^2 + x_1^2-\mathbf x^2) + ... -2 x_0 dx_0(\mathbf x\cdot d\mathbf x)\right].
+\label{ds2}
+\end{eqnarray}
+Before proceeding, it is also worth noting how the curvature tensors are related to $\alpha^2$ in a $D=4$ maximally symmetric space
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& \frac{1}{\alpha^2}( g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R_{\mu\kappa}&=& -3/\alpha^2 g_{\mu\kappa}
+\nonumber\\
+R &=& -12/\alpha^2
+\label{curverel}
+\end{eqnarray}
+Going back to the rather complicated line element, we may choose coordinates
+\begin{eqnarray}
+x_0 &=& \alpha \sinh(t/\alpha)
+\nonumber\\
+x_1 &=& \alpha\cosh(t/\alpha)\cos\chi
+\nonumber\\
+x_2 &=& \alpha\cosh(t/\alpha)\sin\chi\cos\theta
+\nonumber\\
+x_3&=& \alpha\cosh(t/\alpha)\sin\chi\sin\theta\cos\phi,
+\end{eqnarray}
+which brings \eqref{ds2} to
+\begin{eqnarray}
+ds^2 &=& -dt^2 + \alpha^2 \cosh^2(t/\alpha) d\chi^2 + \alpha^2 \cosh^2(t/\alpha)\sin^2\chi (d\theta^2 + \sin^2d\phi^2).
+\end{eqnarray}
+We may bring the de Sitter line element into a conformal flat form by first choosing coordinates
+\begin{eqnarray}
+x_0 &=& \alpha\sinh(t/\alpha)+ e^{t/\alpha}\mathbf x\cdot\mathbf x/2\alpha
+\nonumber\\
+x_1 &=& \alpha\cosh(t/\alpha)- e^{t/\alpha}\mathbf x\cdot\mathbf x/2\alpha
+\nonumber\\
+x_2 &=& e^{t/\alpha}X_1
+\nonumber\\
+x_3&=& e^{t/\alpha}X_2,
+\end{eqnarray}
+in which the line element becomes
+\begin{eqnarray}
+ds^2 &=& -dt^2 + e^{2t/\alpha} (d\mathbf X)^2.
+\label{ds1}
+\end{eqnarray}
+We see that this looks like $k=0$ RW with $a(t) = e^{2t/\alpha}$. To bring to conformal form, take
+\begin{eqnarray}
+dt &=& e^{t/\alpha}d\tau
+\nonumber\\
+d\tau &=& \int dt e^{-t/\alpha}
+\nonumber\\
+\tau&=& -\alpha e^{-t/\alpha} + C
+\nonumber\\
+\tau &=& -\alpha e^{-t/\alpha} + \tau_{\infty}
+\nonumber\\
+\frac{\alpha^2}{(\tau-\tau_{\infty})^2} &=& e^{2t/\alpha}.
+\label{coord1}
+\end{eqnarray}
+If time in both the $\tau$ and $t$ coordinates has the same infinitesimal direction (i.e positive $dt \Rightarrow +d\tau$) then coordinate time $\tau$ will be negative for $t>0$. 
+\\ \\
+From \eqref{coord1}, we may express \eqref{ds1} as 
+\begin{eqnarray}
+ds^2 &=& \frac{\alpha^2}{(\tau-\tau_{\infty})^2} \left[ -d\tau^2 + d\mathbf X^2 \right].
+\end{eqnarray}
+If we further define time coordinate $p = \tau-\tau_{\infty}$, then we may write the line element more conveniently as
+\begin{eqnarray}
+ds^2 = \frac{\alpha^2}{p^2}\left[ -dp^2 + d\mathbf X^2 \right].
+\end{eqnarray}
+Using curvature relations \eqref{curverel}, we may express the Einstein tensor as 
+\begin{eqnarray}
+G_{\mu\nu} &=& R_{\mu\nu} - \frac{1}{2}g_{\mu\nu} R
+\nonumber\\
+&=& \frac{3}{\alpha^2}g_{\mu\nu}.
+\end{eqnarray}
+Hence if we define a background $T_{\mu\nu}$ according to $-\kappa^2_4 T_{\mu\nu} =\frac{3}{\alpha^2} g_{\mu\nu}$, then it follows that the perturbation of the background $T_{\mu\nu}$ yields
+\begin{eqnarray}
+-\kappa^2_4\delta T_{\mu\nu} &=& \frac{3}{\alpha^2} h_{\mu\nu}
+\end{eqnarray}
+\begin{eqnarray}
+-3(\dot\beta -\alpha) &=& \tau \nabla^2 \beta
+\nonumber\\
+-3\tau (\ddot \beta - \dot\alpha) + 12(\dot\beta-\alpha) &=& \tau^2 \nabla^2\alpha - 3\tau \nabla^2\beta
+\end{eqnarray}
+\end{document}

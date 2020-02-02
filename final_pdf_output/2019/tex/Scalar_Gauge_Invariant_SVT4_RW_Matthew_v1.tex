@@ -1,0 +1,244 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Scalar Gauge Invariant RW SVT4 v1}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)\left(-d\tau^2 +\tilde g_{ij} dx^i dx^j\right),\qquad R_{ij} = -2k \tilde g_{ij}
+\label{geom2}
+\\ \nonumber\\
+R_{\lambda\mu\nu\kappa} &=&- \tfrac{1}{6} g_{\lambda \nu } g_{\mu \kappa } R + \tfrac{1}{6} g_{\lambda \kappa } g_{\mu \nu } R -  \tfrac{1}{2} g_{\mu \nu } R_{\lambda \kappa } + \tfrac{1}{2} g_{\mu \kappa } R_{\lambda \nu } + \tfrac{1}{2} g_{\lambda \nu } R_{\mu \kappa } -  \tfrac{1}{2} g_{\lambda \kappa } R_{\mu \nu }
+\\ \nonumber\\
+R_{\mu\nu} &=& (A+B)U_\mu U_\nu + g_{\mu\nu}B,\qquad R=3B-A
+\label{Ricci}
+\\ \nonumber\\
+G_{\mu\nu}&=& \tfrac{1}{2} A g_{\mu \nu } -  \tfrac{1}{2} B g_{\mu \nu } + A U_{\mu } U_{\nu } + B U_{\mu } U_{\nu }
+\\  \nonumber\\ 
+g^{\mu\nu}G_{\mu\nu}&=& A - 3 B
+\\ \nonumber\\
+T_{\mu\nu} &=& (\rho+p)U_\mu U_\nu +  p g_{\mu\nu}
+\\ \nonumber\\
+g^{\mu\nu}T_{\mu\nu} &=& 3p-\rho
+\\ \nonumber\\
+\Delta_{\mu\nu}^{(0)}&=&\tfrac{1}{2} A g_{\mu \nu } -  \tfrac{1}{2} B g_{\mu \nu } + g_{\mu \nu } p + A U_{\mu } U_{\nu } + B U_{\mu } U_{\nu } + p U_{\mu } U_{\nu } + U_{\mu } U_{\nu } \rho 
+\label{Delta}
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu}^{(0)}&=& A - 3 B + 3 p -  \rho 
+\label{Delta4tr}
+\\ \nonumber\\
+A &=& -\tfrac12 (3p+\rho)
+\nonumber\\
+&=& -3 \dot{\Omega}^2 \Omega^{-4} + 3 \overset{..}{\Omega} \Omega^{-3}
+\\ \nonumber\\
+B&=& \tfrac12(p-\rho)
+\nonumber\\
+&=& - \dot{\Omega}^2 \Omega^{-4} -  \overset{..}{\Omega} \Omega^{-3} - 2 k \Omega^{-2}
+\\ \nonumber\\
+\rho &=& \tfrac{1}{2} (- A - 3 B)
+\nonumber\\
+&=& 3 \dot{\Omega}^2 \Omega^{-4} + 3 k \Omega^{-2}
+\\ \nonumber\\
+p &=& \tfrac{1}{2} (- A + B)
+\nonumber\\
+&=& \dot{\Omega}^2 \Omega^{-4} - 2 \overset{..}{\Omega} \Omega^{-3} -  k \Omega^{-2}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Identities}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\nabla_\alpha R &=& 3\nabla_\alpha B - \nabla_\alpha A
+\\ \nonumber\\
+&=& -2\nabla_\alpha A - (A+B)(U^\beta \nabla_\alpha U_\beta -2U_\alpha\nabla_\beta U^\beta)
+\\ \nonumber\\
+&=& 2\nabla_\alpha B + 2U_\alpha U^\beta (\nabla_\beta A + \nabla_\beta B)+2(A+B)U_\alpha \nabla_\beta U^\beta
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%
+\section{Trace $g^{\mu\nu}\Delta_{\mu\nu}$}
+%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+ds^2 &=& ( g_{\mu\nu}+ h_{\mu\nu}) dx^\mu dx^\nu
+\\ \nonumber\\
+h_{\mu\nu} &=& -2 g_{\mu\nu}\chi + 2\nabla_\mu \nabla_\nu F +\nabla_\mu F_\nu +\nabla_\nu F_\mu+ 2F_{\mu\nu}
+\label{svt}
+\\ \nonumber\\
+g^{\mu\nu} F_{\mu\nu} &=&0,\qquad \nabla^\mu F_{\mu\nu} = 0,\qquad \nabla^\mu F_\mu=0 
+\\ \nonumber\\
+U^\mu \delta U_\mu &=& \tfrac12 U^\mu U^\nu h_{\mu\nu},\qquad U^\mu U_\mu = -1
+\\ \nonumber\\
+Q_\mu  &\equiv& F_\mu + \nabla_\mu F
+\\ \nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu}&=& 6 \nabla_{\alpha }\nabla^{\alpha }\chi - R \nabla_{\alpha }Q^{\alpha } -  Q^{\alpha } \nabla_{\alpha }R + 2 R_{\alpha \beta } \nabla^{\beta }Q^{\alpha }+4 F^{\alpha \beta } R_{\alpha \beta }
+\\  \nonumber\\ 
+g^{\mu\nu}\delta T_{\mu\nu}&=& 3 \delta p -  \delta \rho - 2 R \chi +R \nabla_{\alpha }Q^{\alpha } - 2 R_{\alpha \beta } \nabla^{\beta }Q^{\alpha }-2 F^{\alpha \beta } R_{\alpha \beta }
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p -  \delta \rho - 2 R \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi - Q^{\alpha } \nabla_{\alpha }R+2 F^{\alpha \beta } R_{\alpha \beta }
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$L^{-2}$ Scalars}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Let $S_2$ be a linear superposition of all scalars with dimension $L^{-2}$,
+\begin{eqnarray}
+S_2 &=& A_1 \nabla^\alpha\nabla^\beta h_{\alpha\beta} + A_2 \nabla_\alpha\nabla^\alpha h + A_3 Rh + A_4 R^{\alpha\beta}h_{\alpha\beta}
+\\ \nonumber\\
+&=&  -2 (4 A_{3}{} + A_{4}{}) R \chi - 2 (A_{1}{} + 4 A_{2}{}) \nabla_{\alpha }\nabla^{\alpha }\chi +2 A_{3}{} R \nabla_{\alpha }Q^{\alpha } -  A_{1}{} Q^{\alpha } \nabla_{\alpha }R \nonumber \\ 
+&& + 2 (A_{1}{} + A_{2}{}) \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }Q^{\alpha } + 2 (- A_{1}{} + A_{4}{}) R_{\alpha \beta } \nabla^{\beta }Q^{\alpha }+2 A_{4}{} F^{\alpha \beta } R_{\alpha \beta }.
+\label{S2}
+\end{eqnarray}
+Setting $\{A_1,A_2,A_3,A_4\} = \{1,-1,0,1\}$ we have
+\begin{eqnarray}
+S_2^{ \{1,-1,0,1\}} &=&  h_{\alpha \beta } R^{\alpha \beta } -  \nabla_{\alpha }\nabla^{\alpha }h + \nabla^{\alpha }\nabla^{\beta }h_{\alpha \beta }
+\\ \nonumber
+&=& 6 \nabla_{\alpha }\nabla^{\alpha }\chi -2 R \chi - Q^{\alpha } \nabla_{\alpha }R+2 F^{\alpha \beta } R_{\alpha \beta }.
+\end{eqnarray}
+This combination was chosen because in a maximally symmetric space, it follows that
+\begin{eqnarray}
+S_2^{ \{1,-1,0,1\}} &=& 6 \nabla_{\alpha }\nabla^{\alpha }\chi -2 R \chi,
+\end{eqnarray}
+which aligns with the gauge invariant scalar found in \emph{TT\_Projection\_Curved\_v4}. However, if our background does not possess maximal symmetry, the combination $h_{\alpha \beta } R^{\alpha \beta } -  \nabla_{\alpha }\nabla^{\alpha }h + \nabla^{\alpha }\nabla^{\beta }h_{\alpha \beta }$ is not gauge invariant. Specifically, it transforms as 
+\begin{eqnarray}
+(h_{\alpha \beta } R^{\alpha \beta } -  \nabla_{\alpha }\nabla^{\alpha }h + \nabla^{\alpha }\nabla^{\beta }h_{\alpha \beta }) \to (h_{\alpha \beta } R^{\alpha \beta } -  \nabla_{\alpha }\nabla^{\alpha }h + \nabla^{\alpha }\nabla^{\beta }h_{\alpha \beta }) - \epsilon^{\alpha } \nabla_{\alpha }R.
+\end{eqnarray}
+Now, since we also note that
+\begin{eqnarray}
+g^{\mu\nu}\Delta_{\mu\nu} - (3\delta p -\delta \rho) &=& - 2 R \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi - Q^{\alpha } \nabla_{\alpha }R+2 F^{\alpha \beta } R_{\alpha \beta }
+\\ \nonumber\\
+&=& h_{\alpha \beta } R^{\alpha \beta } -  \nabla_{\alpha }\nabla^{\alpha }h + \nabla^{\alpha }\nabla^{\beta }h_{\alpha \beta },
+\end{eqnarray}
+we conclude from the gauge invariance of $\Delta_{\mu\nu}$ that 
+\begin{eqnarray}
+(3\delta p -\delta \rho) \to (3\delta p - \delta \rho) +   \epsilon^{\alpha } \nabla_{\alpha }R.
+\end{eqnarray}
+\\ \\
+By analyzing the gauge transformation of the general $S_2$, we conclude that is there does not exist a scalar of order $L^{-2}$ that is gauge invariant. 
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$L^{-4}$ Scalars}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+From Asanka's \emph{SVT\_in\_RW\_full}, we see that we must go to fourth order derivatives to find the SVT3 scalar gauge invariants. 
+If such a gauge invariant is fourth order, i.e. $L^{-4}$, then it must reduce to a factorized expression of $6\nabla_\alpha\nabla^\alpha \chi -2R\chi$ within the maximally symmetric limit. Analogous to $S_2$, we find that there are 18 possible scalars with dimension $L^{-4}$. 
+
+\begin{eqnarray}
+A_{1}{}\qquad&
+h \nabla_{\alpha }\nabla^{\alpha }R\qquad&
+2 \nabla_{\alpha }\epsilon^{\alpha } \nabla_{\beta }\nabla^{\beta }R
+\nonumber\\
+A_{2}{}\qquad&
+R \nabla_{\alpha }\nabla^{\alpha }h\qquad&
+2 R \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\epsilon^{\alpha }
+\nonumber\\
+A_{3}{}\qquad&
+h^{\sigma \rho } \nabla_{\alpha }\nabla^{\alpha }R_{\sigma \rho }\qquad&
+2 \nabla^{\beta }\epsilon^{\alpha } \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta }
+\nonumber\\
+A_{4}{}\qquad&
+R_{\sigma \rho } \nabla_{\alpha }\nabla^{\alpha }h^{\sigma \rho }\qquad&
+(- \tfrac{2}{3} R^2 + 2 R_{\beta \gamma } R^{\beta \gamma }) \nabla_{\alpha }\epsilon^{\alpha } + (\tfrac{8}{3} R R_{\alpha \beta } - 6 R_{\alpha }{}^{\gamma } R_{\beta \gamma }) \nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+\qquad& &
+ + \tfrac{1}{6} \epsilon^{\alpha } \bigl(R \nabla_{\alpha }R -  R_{\alpha \beta } \nabla^{\beta }R + 6 R^{\beta \gamma } (\nabla_{\alpha }R_{\beta \gamma } -  \nabla_{\gamma }R_{\alpha \beta })\bigr) + 2 R_{\alpha \gamma } \nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{5}{}\qquad&
+\nabla_{\sigma }h^{\alpha \beta } \nabla^{\sigma }R_{\alpha \beta }\qquad&
+2 \nabla_{\gamma }R_{\alpha \beta } \nabla^{\gamma }\nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{6}{}\qquad&
+\nabla_{\alpha }h \nabla^{\alpha }R\qquad&
+2 \nabla_{\alpha }\nabla_{\beta }\epsilon^{\beta } \nabla^{\alpha }R
+\nonumber\\
+A_{7}{}\qquad&
+\nabla_{\alpha }\nabla^{\alpha }\nabla_{\beta }\nabla^{\beta }h\qquad&
+2 \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\epsilon^{\alpha }
+\nonumber\\
+A_{8}{}\qquad&
+\nabla_{\alpha }\nabla^{\alpha }\nabla_{\sigma }\nabla_{\rho }h^{\sigma \rho }\qquad&
+\tfrac{2}{3} (R^2 - 3 R_{\beta \gamma } R^{\beta \gamma }) \nabla_{\alpha }\epsilon^{\alpha } -  \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }\epsilon_{\alpha }
+\nonumber\\
+\qquad & &
+ + \epsilon^{\alpha } \bigl(- \tfrac{1}{6} R \nabla_{\alpha }R -  \nabla_{\alpha }\nabla_{\beta }\nabla^{\beta }R + \tfrac{7}{6} R_{\alpha \beta } \nabla^{\beta }R + R^{\beta \gamma } (- \nabla_{\alpha }R_{\beta \gamma } + \nabla_{\gamma }R_{\alpha \beta })\bigr)
+\nonumber\\
+& & + \nabla^{\beta }\epsilon^{\alpha } \bigl(- \tfrac{8}{3} R R_{\alpha \beta } + 6 R_{\alpha }{}^{\gamma } R_{\beta \gamma } - 2 (\nabla_{\beta }\nabla_{\alpha }R + \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta })\bigr) + 2 \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\epsilon^{\alpha }
+\nonumber\\
+& &
+- 2 R_{\alpha \gamma } \nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\epsilon^{\alpha } - 4 \nabla_{\gamma }R_{\alpha \beta } \nabla^{\gamma }\nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{9}{}\qquad&
+h R^2\qquad&
+2 R^2 \nabla_{\alpha }\epsilon^{\alpha }
+\nonumber\\
+A_{10}{}\qquad&
+h^{\alpha \beta } R R_{\alpha \beta }\qquad&
+2 R R_{\alpha \beta } \nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{11}{}\qquad&
+R \nabla_{\alpha }\nabla_{\beta }h^{\alpha \beta }\qquad&
+- \epsilon^{\alpha } R \nabla_{\alpha }R + 2 R \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\epsilon^{\alpha } - 2 R R_{\alpha \beta } \nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{12}{}\qquad&
+h R_{\alpha \beta } R^{\alpha \beta }\qquad&
+2 R_{\beta \gamma } R^{\beta \gamma } \nabla_{\alpha }\epsilon^{\alpha }
+\nonumber\\
+A_{13}{}\qquad&
+R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }h\qquad&
+2 R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }\nabla_{\gamma }\epsilon^{\gamma }
+\nonumber\\
+A_{14}{}\qquad&
+h^{\alpha \beta } R_{\alpha \gamma } R_{\beta }{}^{\gamma }\qquad&
+2 R_{\alpha }{}^{\gamma } R_{\beta \gamma } \nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{15}{}\qquad&
+\nabla_{\alpha }R \nabla_{\beta }h^{\alpha \beta }\qquad&
+\nabla_{\alpha }\nabla_{\beta }\epsilon^{\beta } \nabla^{\alpha }R + \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }\epsilon_{\alpha } -  \epsilon^{\alpha } R_{\alpha \beta } \nabla^{\beta }R
+\nonumber\\
+A_{16}{}\qquad&
+h^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }R\qquad&
+2 \nabla_{\beta }\nabla_{\alpha }R \nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{17}{}\qquad&
+R^{\alpha \beta } \nabla_{\beta }\nabla_{\gamma }h_{\alpha }{}^{\gamma }\qquad&
+R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }\nabla_{\gamma }\epsilon^{\gamma } -  R_{\alpha }{}^{\gamma } R_{\beta \gamma } \nabla^{\beta }\epsilon^{\alpha } -  \epsilon^{\alpha } R^{\beta \gamma } \nabla_{\gamma }R_{\alpha \beta } + R_{\alpha \gamma } \nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\epsilon^{\alpha }
+\nonumber\\
+A_{18}{}\qquad&
+\nabla_{\beta }R_{\alpha \gamma } \nabla^{\gamma }h^{\alpha \beta }\qquad&
+(\nabla_{\alpha }R_{\beta \gamma } + \nabla_{\beta }R_{\alpha \gamma }) \nabla^{\gamma }\nabla^{\beta }\epsilon^{\alpha }
+\end{eqnarray}
+\newpage
+\begin{eqnarray}
+S_4&=& (A_{15}{} + 2 A_{6}{}) \nabla_{\alpha }\nabla_{\beta }\epsilon^{\beta } \nabla^{\alpha }R + (2 A_{13}{} + A_{17}{}) R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }\nabla_{\gamma }\epsilon^{\gamma } + (A_{15}{} -  A_{8}{}) \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }\epsilon_{\alpha } \nonumber \\ 
+&& + \nabla_{\alpha }\epsilon^{\alpha } \bigl(\tfrac{2}{3} (- A_{4}{} + A_{8}{} + 3 A_{9}{}) R^2 + 2 (A_{12}{} + A_{4}{} -  A_{8}{}) R_{\beta \gamma } R^{\beta \gamma } + 2 A_{1}{} \nabla_{\beta }\nabla^{\beta }R\bigr) \nonumber \\ 
+&& + 2 (A_{11}{} + A_{2}{}) R \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\epsilon^{\alpha } \nonumber \\ 
+&& + \tfrac{1}{6} \epsilon^{\alpha } \Bigl((-6 A_{11}{} + A_{4}{} -  A_{8}{}) R \nabla_{\alpha }R - 6 A_{8}{} \nabla_{\alpha }\nabla_{\beta }\nabla^{\beta }R -  (6 A_{15}{} + A_{4}{} - 7 A_{8}{}) R_{\alpha \beta } \nabla^{\beta }R \nonumber\\
+&& + 6 R^{\beta \gamma } \bigl((A_{4}{} -  A_{8}{}) \nabla_{\alpha }R_{\beta \gamma } -  (A_{17}{} + A_{4}{} -  A_{8}{}) \nabla_{\gamma }R_{\alpha \beta }\bigr)\Bigr) \nonumber \\ 
+&& + \nabla^{\beta }\epsilon^{\alpha } \bigl(\tfrac{2}{3} (3 A_{10}{} - 3 A_{11}{} + 4 A_{4}{} - 4 A_{8}{}) R R_{\alpha \beta } + (2 A_{14}{} -  A_{17}{} - 6 A_{4}{} + 6 A_{8}{}) R_{\alpha }{}^{\gamma } R_{\beta \gamma } + 2 (A_{16}{} -  A_{8}{}) \nabla_{\beta }\nabla_{\alpha }R \nonumber\\
+&&+ 2 (A_{3}{} -  A_{8}{}) \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta }\bigr) \nonumber \\ 
+&& + 2 (A_{7}{} + A_{8}{}) \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\epsilon^{\alpha } + (A_{17}{} + 2 A_{4}{} - 2 A_{8}{}) R_{\alpha \gamma } \nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\epsilon^{\alpha } \nonumber \\ 
+&& + \bigl(A_{18}{} (\nabla_{\alpha }R_{\beta \gamma } + \nabla_{\beta }R_{\alpha \gamma }) + 2 (A_{5}{} - 2 A_{8}{}) \nabla_{\gamma }R_{\alpha \beta }\bigr) \nabla^{\gamma }\nabla^{\beta }\epsilon^{\alpha }
+\end{eqnarray}
+
+\end{document}

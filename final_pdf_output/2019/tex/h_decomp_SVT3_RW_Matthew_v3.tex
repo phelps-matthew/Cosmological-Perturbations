@@ -1,0 +1,179 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$h_{\mu\nu}$ SVT3 Decomposition v3}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)(\tilde g_{\mu\nu} + f_{\mu\nu})dx^\mu dx^\nu = (g_{\mu\nu} +h_{\mu\nu}) dx^\mu dx^\nu
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,\frac{1}{1-kr^2}, r^2, r^2\sin^2\theta\right),\qquad \tilde \Gamma^{\lambda}_{\alpha\beta} = \delta^\lambda_i \delta^j_\alpha \delta^k_\beta \tilde \Gamma^{i}_{jk}
+\\ \nonumber\\
+x'^\mu = x^\mu - \epsilon^\mu(x) &\implies&  h'_{\mu\nu} = h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+\label{gaugetrans}
+\\ \nonumber\\
+f_{\mu} &=& \Omega^2 \epsilon_\mu,\qquad f^\mu = \epsilon^\mu
+\\ \nonumber\\
+\Delta_\epsilon\left[ f_{\mu\nu} \right]  &=& \tilde\nabla_{\alpha }f_{\beta } + \tilde\nabla_{\beta }f_{\alpha } + 2 f^{\gamma } \tilde g_{\alpha \beta } \Omega^{-1} \tilde\nabla_{\gamma }\Omega 
+\\ \nonumber\\
+\Delta_\epsilon\left[ \tilde g^{\mu\nu} f_{\mu\nu} \right] &=&   
+2 \tilde{\nabla}_{\alpha }f^{\alpha } + 8 f^{\alpha } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega 
+\\ \nonumber\\
+\Delta_\epsilon\left[ \tilde f_{00} \right] &=&  2\dot f_0 + 2f_0 \Omega^{-1}\dot \Omega
+\\ \nonumber\\
+\Delta_\epsilon\left[ \tilde f_{0i} \right]  &=&  \dot f_i + \tilde\nabla_i f_0
+\\ \nonumber\\
+\Delta_\epsilon\left[ \tilde f_{ij}  \right]  &=& \tilde\nabla_{i }f_{j } + \tilde\nabla_{j}f_{i} - 2\tilde g_{ij} f_0 \Omega^{-1}\dot \Omega
+\\ \nonumber\\
+\Delta_\epsilon\left[ \tilde f \right]  &=&  -2\dot f_0 + 2\tilde\nabla^k f_k -8 f_0 \Omega^{-1}\dot \Omega
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$f_{\mu\nu}(SVT3)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+f_{00} &=& -2\phi
+ \nonumber\\
+f_{0i} &=& B_i + \tilde\nabla_i B
+\nonumber\\
+f_{ij} &=& -2\tilde g_{ij} \psi + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}
+ \nonumber\\
+\tilde g^{ij} f_{ij} &=& -6\psi + 2\tilde\nabla^k\tilde\nabla_k E
+ \nonumber\\
+\tilde g^{\mu\nu} f_{\mu\nu} &=& 2\phi-6\psi + 2\tilde\nabla^k\tilde\nabla_k E
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$SVT3(f_{\mu\nu})$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\phi &=& -\tfrac{1}{2} f_{00}
+\label{phif}
+\\ \nonumber\\
+\tilde\nabla_a\tilde\nabla^a B &=& \tilde\nabla^a f_{0a}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a -2k)B_i &=& (\tilde\nabla_a\tilde\nabla^a -2k)f_{0i} -\tilde\nabla_i \tilde\nabla^a f_{0a}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a +3 k)\psi &=& \frac{1}{4}\left[\tilde\nabla^a\tilde\nabla^b f_{ab}-(\tilde\nabla_a\tilde\nabla^a+2k) (\tilde g^{bc}f_{bc})\right]
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a +3 k)\tilde\nabla_b\tilde\nabla^b E &=& \frac{3}{4}\left[ \tilde\nabla^a\tilde\nabla^b f_{ab} -\frac{1}{3}\tilde\nabla_a\tilde\nabla^a (\tilde g^{bc}f_{bc})\right]
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k) E_i &=&
+(\tilde\nabla_a\tilde\nabla^a -2k)\tilde\nabla^b f_{ib} - \tilde\nabla_i \tilde\nabla^a\tilde\nabla^b f_{ab}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)(2E_{ij})
+&=& 
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b-3k)f_{ij}
++ \tfrac12 \tilde\nabla_i\tilde\nabla_j\big[ \tilde\nabla^a\tilde\nabla^b f_{ab} + (\tilde\nabla_a\tilde\nabla^a +4k)(\tilde g^{bc}f_{bc})\big]
+\nonumber\\
+&&
++\tfrac12 \tilde g_{ij} \big[ (\tilde\nabla_a\tilde\nabla^a-4k)\tilde\nabla^b\tilde\nabla^c f_{bc}-(\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b -2k \tilde\nabla_a\tilde\nabla^a +4k^2)(\tilde g^{bc}f_{bc})\big]
+\nonumber\\
+&&
+-(\tilde\nabla_a\tilde\nabla^a -3k)(\tilde\nabla_i\tilde\nabla^b f_{jb} + \tilde\nabla_j \tilde\nabla^b f_{ib})
+\label{ftt}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Transformation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Under gauge transformation \eqref{gaugetrans}, the SVT3 quantities \eqref{phif}-\eqref{ftt} transform as
+\begin{eqnarray}
+\Delta_\epsilon\left[ \phi \right]&=&  \dot{\Omega} \Omega^{-1} (\tilde{\nabla}_{a}\tilde{\nabla}^{a}+3k)f_{0}{}
+\\ \nonumber\\
+\Delta_\epsilon\left[ \tilde\nabla_a\tilde\nabla^a B \right] &=& \tilde{\nabla}_{a}\dot{f}^{a} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}f_{0}{}
+\\ \nonumber\\
+\Delta_\epsilon\left[ (\tilde\nabla_a\tilde\nabla^a -2k)B_i \right] &=& (\tilde{\nabla}_{a}\tilde{\nabla}^{a}-2k)\dot{f}_{i} -  \tilde{\nabla}_{i}\tilde{\nabla}_{a}\dot{f}^{a}
+\\ \nonumber\\
+\Delta_\epsilon\left[(\tilde\nabla_a\tilde\nabla^a +3 k)\psi \right] &=& - \dot{f}_{0}{} -  \dot{\Omega} f_{0}{} \Omega^{-1}
+\\ \nonumber\\
+\Delta_\epsilon\left[ (\tilde\nabla_a\tilde\nabla^a +3 k)\tilde\nabla_b\tilde\nabla^b E \right] &=&(\tilde{\nabla}_{b}\tilde{\nabla}^{b}+3k)\tilde{\nabla}_{a}f^{a}
+\\ \nonumber\\
+\Delta_\epsilon\left[(\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k) E_i \right] &=& (\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k)f_{i} -  \tilde{\nabla}_{i}(\tilde{\nabla}_{b}\tilde{\nabla}^{b}+4k)\tilde{\nabla}_{a}f^{a}
+\\ \nonumber\\
+\Delta_\epsilon\left[(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)(2E_{ij}) \right] &=& 0
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We mix time derivative notation a bit, using $\partial_0$ upon $f_{\mu\nu}$ and dot upon $\Omega$ and SVT3 quantities. 
+\begin{eqnarray}
+(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \phi +\psi + \dot B - \ddot E] &=& (\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b (\partial_0 f_{0b})
+-\tfrac14 (\tilde\nabla_a\tilde\nabla^a +2k-\partial_0^2)\tilde\nabla_b\tilde\nabla^b(\tilde g^{cd}f_{cd})
+\nonumber\\
+&&+\tfrac14 (\tilde\nabla_a\tilde\nabla^a-3\partial_0^2)\tilde\nabla^b\tilde\nabla^c f_{bc}
+ -\tfrac12 (\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b f_{00}
+ \\ \nonumber\\
+ %
+ (\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ \psi-\dot \Omega \Omega^{-1}(B-\dot E)] &=& 
+ -\dot\Omega \Omega^{-1}(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b f_{0b}
+ +\tfrac14 (\tilde\nabla_a\tilde\nabla^a+3\dot\Omega \Omega^{-1}\partial_0)\tilde\nabla^b\tilde\nabla^c f_{bc}
+ \nonumber\\
+ && -\tfrac14 (\tilde\nabla_a\tilde\nabla^a +2k + \dot\Omega \Omega^{-1} \partial_0)\tilde\nabla_b\tilde\nabla^b (\tilde g^{cd}f_{cd})
+ \\ \nonumber\\
+ %
+ (\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k)[B_i -\dot E_i] &=& (\tilde\nabla_a\tilde\nabla^a +2 k)(\tilde\nabla_b\tilde\nabla^b-2k)f_{0i}
+ -(\tilde\nabla_a\tilde\nabla^a-2k)\tilde\nabla^b (\partial_0 f_{ib})
+ \nonumber\\
+ &&
+ -\tilde\nabla_i (\tilde\nabla_a\tilde\nabla^a+4k)\tilde\nabla^b f_{0b}
+ +\tilde\nabla_i \tilde\nabla^a \tilde\nabla^b (\partial_0 f_{ab})
+ \\ \nonumber\\
+ %
+ (\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)[2E_{ij}]
+ &=& 
+ (\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b-3k)f_{ij}
+ + \tfrac12 \tilde\nabla_i\tilde\nabla_j\big[ \tilde\nabla^a\tilde\nabla^b f_{ab} + (\tilde\nabla_a\tilde\nabla^a +4k)(\tilde g^{bc}f_{bc})\big]
+ \nonumber\\
+ &&
+ +\tfrac12 \tilde g_{ij} \big[ (\tilde\nabla_a\tilde\nabla^a-4k)\tilde\nabla^b\tilde\nabla^c f_{bc}-(\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b -2k \tilde\nabla_a\tilde\nabla^a +4k^2)(\tilde g^{bc}f_{bc})\big]
+ \nonumber\\
+ &&
+ -(\tilde\nabla_a\tilde\nabla^a -3k)(\tilde\nabla_i\tilde\nabla^b f_{jb} + \tilde\nabla_j \tilde\nabla^b f_{ib})
+\end{eqnarray}
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{$\gamma$ Alternative}
+	\begin{eqnarray}
+	 (\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla_b\tilde\nabla^b[ -\dot\Omega^{-1}\Omega \psi+ B-\dot E] &=& 
+	(\tilde\nabla_a\tilde\nabla^a + 3k)\tilde\nabla^b f_{0b}
+	-\tfrac14 (\dot\Omega^{-1}\Omega\tilde\nabla_a\tilde\nabla^a+3\partial_0)\tilde\nabla^b\tilde\nabla^c f_{bc}
+	\nonumber\\
+	&& +\tfrac14\left[\dot\Omega^{-1}\Omega (\tilde\nabla_a\tilde\nabla^a +2k) + \partial_0\right]\tilde\nabla_b\tilde\nabla^b (\tilde g^{cd}f_{cd})
+	\end{eqnarray}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{SVTD in Max. Sym. Space}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{eqnarray}
+	\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right)\chi &=& \frac{1}{2(D-1)}\left[ \nabla^\alpha\nabla^\beta h_{\alpha\beta}  -\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)h\right]
+	\\ \nonumber\\
+	\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D-1}\right) \nabla_\beta\nabla^\beta F &=& \frac{D}{2(D-1)}\left( \nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{1}{D}\nabla_\alpha\nabla^\alpha h\right)
+	\\ \nonumber\\
+	\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)\left(\nabla_\beta\nabla^\beta + \frac{R}{D}\right) F_\mu
+	&=& \left(\nabla_\alpha\nabla^\alpha+\frac{R}{D}\right)\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \nabla^\alpha\nabla^\beta h_{\alpha\beta},
+	\end{eqnarray}
+\end{appendices}
+\end{document}

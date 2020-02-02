@@ -1,0 +1,167 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+\[
+	W_{\mu\nu}^{(1)} = 2 g_{\mu\nu} \plr{ R^\alpha{}_\alpha}^{;\beta}{}_{;\beta} - 2\plr{ R^\alpha{}_\alpha}_{;\mu;\nu} - 2 R^\alpha{}_\alpha R_{\mu\nu}+\frac12 g_{\mu\nu}\plr{ R^\alpha{}_\alpha}^2
+\]
+\[
+	W_{\mu\nu}^{(2)} = \frac12 g_{\mu\nu}\plr{ R^\alpha{}_\alpha}^{;\beta}{}_{;\beta} + R_{\mu\nu}{}^{;\beta}{}_{;\beta} - R_{\mu\beta;\nu}{}^{;\beta}
+- R_{\nu\beta;\mu}{}^{;\beta}-2R_{\mu\beta}R_\nu{}^\beta + \frac12 g_{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}
+\]
+\[
+	\delta R_{\mu\nu} = \frac12 g^{\lambda\rho}\blr{ (\delta g_{\lambda\rho})_{;\mu;\nu} - (\delta g_{\rho\mu})_{;\nu;\lambda} - (\delta g_{\rho\nu})_{;\mu;\lambda} +(\delta g_{\mu\nu})_{;\rho;\lambda}}
+\]
+\[
+	\del^\beta \del_\nu A_{\mu\beta}  - \del_\nu \del^\beta A_{\mu\beta} = A^{\sigma\beta}R_{\mu\sigma\nu\beta} - A_\mu{}^\sigma R_{\sigma\nu}
+\]
+\[
+	\del^\beta \del_\nu A_{\mu\beta}  = \del_\nu \del^\beta A_{\mu\beta}+ A^{\sigma\beta}R_{\mu\sigma\nu\beta} - A_\mu{}^\sigma R_{\sigma\nu}
+\]
+\[
+	W_{\mu\nu}^{(2)new} = \frac12 g_{\mu\nu}\plr{ R^\alpha{}_\alpha}^{;\beta}{}_{;\beta} + R_{\mu\nu}{}^{;\beta}{}_{;\beta} - R_{\mu\beta;}{}^{;\beta}{}_{;\nu}
+- R_{\nu\beta}{}^{;\beta}{}_{;\mu}-2R^{\sigma\beta}R_{\mu\sigma\nu\beta} + \frac12 g_{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}
+\]
+Scalar
+\ba
+	\delta[\del_\beta \del^\beta A] &=  \del_\beta\delta[\del^\beta A]+ \delta\Gamma^\beta_{\beta\alpha}\del^\alpha A \\
+&= \del_\beta ( \delta g^{\alpha\beta} \del_\alpha A + g^{\alpha\beta} \del_\alpha \delta A) +  \delta\Gamma^\beta_{\beta\alpha}\del^\alpha A \\
+&= \del_\beta \del^\beta \delta A + \delta g^{\alpha\beta} \del_\beta \del_\alpha A + \del_\beta \delta g^{\alpha\beta} \del_\alpha A +  \delta\Gamma^\beta_{\beta\alpha}\del^\alpha A\\
+&= \del_\beta \del^\beta \delta A + \delta g^{\alpha\beta} \del_\beta \del_\alpha A + \del_\beta \delta g^{\alpha\beta} \del_\alpha A + \frac12 g^{\beta\rho}\plr{\del_\beta \delta g_{\rho\alpha}+\del_\alpha  \delta g_{\rho\beta} - \del_\rho \delta g_{\alpha\beta}}\del^\alpha A\\
+&=\del_\beta \del^\beta \delta A + \delta g^{\alpha\beta} \del_\beta \del_\alpha A -g^{\alpha\gamma}g^{\beta\rho} \del_\rho \delta g_{\alpha\beta} \del_\gamma A + \frac12 g^{\alpha\gamma}g^{\beta\rho}\del_\alpha  \delta g_{\rho\beta}\del_\gamma A\\
+&=\del_\beta \del^\beta \delta A -h^{\alpha\beta} \del_\beta \del_\alpha A -g^{\alpha\gamma}g^{\beta\rho} \del_\rho h_{\alpha\beta} \del_\gamma A + \frac12 g^{\alpha\gamma}g^{\beta\rho}\del_\alpha  h_{\rho\beta}\del_\gamma A
+\ea
+
+\ba
+	\delta[\del_{\nu}\del_\mu A] &= \del_\nu \del_\mu \delta A - \delta \Gamma^\lambda_{\nu \mu}\del_\lambda A\\
+&=  \del_\nu \del_\mu \delta A - \frac12 g^{\lambda\rho}\plr{ \del_\nu h_{\mu\rho}+\del_\mu h_{\nu\rho}-\del_\rho h_{\mu\nu}}\del_\lambda A
+\ea
+\\ \\
+\[
+	\delta\Gamma^\lambda_{\mu\nu} = \frac12 g^{\lambda\rho}[\del_\nu h_{\rho\mu}+\del_\mu h_{\rho\nu}-\del_\rho h_{\mu\nu}]
+\]
+\[
+	\delta R_{\mu\nu} = \frac12 g^{\lambda\rho}\blr{ (\delta g_{\lambda\rho})_{;\mu;\nu} - (\delta g_{\rho\mu})_{;\nu;\lambda} - (\delta g_{\rho\nu})_{;\mu;\lambda} +(\delta g_{\mu\nu})_{;\rho;\lambda}}
+\]
+\[
+	R^\lambda{}_{\mu\nu\kappa} = \pd_\kappa \Gamma^\lambda_{\mu\nu} - \pd_\nu \Gamma^\lambda_{\mu\kappa} + \Gamma^\eta_{\mu\nu}\Gamma^\lambda_{\kappa\eta} - \Gamma^\eta_{\mu\kappa}\Gamma^\lambda_{\nu\eta}
+\]
+\ba
+	\delta R^\lambda{}_{\mu\nu\kappa} &= \pd_\kappa(\delta \Gamma^\lambda_{\mu\nu}) - \pd_\nu(\delta \Gamma^\lambda_{\mu\kappa}) + \delta \Gamma^\eta_{\mu\nu}\Gamma^\lambda_{\kappa\eta} + \Gamma^\eta_{\mu\nu}\delta \Gamma^\lambda_{\kappa\eta}- \delta \Gamma^\eta_{\mu\kappa}\Gamma^\lambda_{\nu\eta}-\Gamma^\eta_{\mu\kappa}\delta\Gamma^\lambda_{\nu\eta}\\
+	&=\del_\kappa(\delta \Gamma^\lambda_{\mu\nu})-\del_\nu(\delta \Gamma^\lambda_{\mu\kappa})
+\ea
+\[
+	\del_\kappa(\delta \Gamma^\lambda_{\mu\nu})=  \pd_\kappa(\delta \Gamma^\lambda_{\mu\nu}) + \Gamma^\lambda_{\kappa\eta}\delta \Gamma^\eta_{\mu\nu}
+		-\Gamma^\eta_{\mu\kappa}\delta\Gamma^\lambda_{\nu\eta}-\Gamma^\eta_{\nu\kappa}\delta\Gamma^\lambda_{\mu\eta}
+\]
+\[
+	\del_\nu(\delta \Gamma^\lambda_{\mu\kappa})=  \pd_\nu(\delta \Gamma^\lambda_{\mu\kappa}) +\Gamma^\lambda_{\nu\eta} \delta \Gamma^\eta_{\mu\kappa}
+		-\Gamma^\eta_{\mu\nu}\delta\Gamma^\lambda_{\kappa\eta}-\Gamma^\eta_{\nu\kappa}\delta\Gamma^\lambda_{\mu\eta}
+\]
+\[
+	\delta R^\lambda{}_{\mu\nu\kappa} = \del_\kappa(\delta \Gamma^\lambda_{\mu\nu})-\del_\nu(\delta \Gamma^\lambda_{\mu\kappa})
+\]
+\[
+	\delta\Gamma^\lambda_{\mu\nu} = \frac12 g^{\lambda\rho}[\del_\nu h_{\rho\mu}+\del_\mu h_{\rho\nu}-\del_\rho h_{\mu\nu}]
+\]
+\[
+	\delta\Gamma^\lambda_{\mu\kappa} = \frac12 g^{\lambda\rho}[\del_\kappa h_{\rho\mu}+\del_\mu h_{\rho\kappa}-\del_\rho h_{\mu\kappa}]
+\]
+\\
+\ba
+	\delta R^\lambda{}_{\mu\nu\kappa} &= \frac12 g^{\lambda\rho}[\del_\kappa\del_\nu h_{\rho\mu}+\del_\kappa\del_\mu h_{\rho\nu}-\del_\kappa\del_\rho h_{\mu\nu}]\\
+	&\quad-\frac12 g^{\lambda\rho}[\del_\nu\del_\kappa h_{\rho\mu}+\del_\nu\del_\mu h_{\rho\kappa}-\del_\nu\del_\rho h_{\mu\kappa}]\\
+ &=\del_\kappa\del_\nu h^\lambda{}_{\mu}+\del_\kappa\del_\mu h^\lambda{}_{\nu}-\del_\kappa\del^\lambda h_{\mu\nu}
+	-\del_\nu\del_\kappa h^\lambda{}_{\mu}-\del_\nu\del_\mu h^\lambda{}_{\kappa}+\del_\nu\del^\lambda h_{\mu\kappa}
+\ea
+\[
+	\del_\nu\del_\kappa h^{\lambda}{}_\mu 
+\]
+\ba
+	\delta R_{\rho\mu\nu\kappa} &=[\del_\kappa\del_\nu h_{\rho\mu}+\del_\kappa\del_\mu h_{\rho\nu}-\del_\kappa\del_\rho h_{\mu\nu}]\\
+	&\quad - [\del_\nu\del_\kappa h_{\rho\mu}+\del_\nu\del_\mu h_{\rho\kappa}-\del_\nu\del_\rho h_{\mu\kappa}]
+\ea
+\[
+	\delta(R_{\alpha\mu\beta\nu}) = \delta(g_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu}) = h_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu} + g_{\alpha\lambda}
+\delta R^{\lambda}{}_{\mu\beta\nu}
+\]
+\[
+	h_{\alpha\lambda} R^\lambda{}_{\mu\beta\nu} = h^\lambda{}_\mu R_{\alpha\lambda\beta\nu} - \del_\nu \del_\beta h_{\alpha\nu} + \del_\beta\del_\nu h_{\alpha\mu}
+\]
+\[
+	\delta R_{\alpha\mu\beta\nu} =  \del_\nu\del_\beta h_{\alpha\mu}+\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}
+	-\del_\beta\del_\nu h_{\alpha\mu}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}
+\]
+\ba
+	\delta R_{\alpha\mu\beta\nu} &=[\del_\nu\del_\beta h_{\alpha\mu}+\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}]\\
+	&\quad - [\del_\beta\del_\nu h_{\alpha\mu}+\del_\beta\del_\mu h_{\alpha\nu}-\del_\beta\del_\alpha h_{\mu\nu}]\\
+&= \del_\nu\del_\beta h_{\alpha\mu}+\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}
+	-\del_\beta\del_\nu h_{\alpha\mu}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}
+\ea
+\[
+	h_{\alpha\lambda} R^\lambda{}_{\mu\beta\nu} = h^\lambda{}_\mu R_{\alpha\lambda\beta\nu} - \del_\nu \del_\beta h_{\alpha\nu} + \del_\beta\del_\nu h_{\alpha\mu}
+\]
+\[
+	R^{\mu\kappa}\delta R_{\rho\mu\nu\kappa} =R^{\mu\kappa}\plr{ \del_\kappa\del_\nu h_{\rho\mu}+\del_\kappa\del_\mu h_{\rho\nu}-\del_\kappa\del_\rho h_{\mu\nu} - \del_\nu\del_\kappa h_{\rho\mu}-\del_\nu\del_\mu h_{\rho\kappa}+\del_\nu\del_\rho h_{\mu\kappa}}
+\]
+\[
+	\delta(R_{\alpha\mu\beta\nu}) = \delta(g_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu}) = h_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu} + g_{\alpha\lambda}
+\delta R^{\lambda}{}_{\mu\beta\nu}
+\]
+\\ \\
+\[
+	h_{\alpha\lambda} R^\lambda{}_{\mu\beta\nu} = h^\lambda{}_\mu R_{\alpha\lambda\beta\nu} - \del_\nu \del_\beta h_{\alpha\mu} + \del_\beta\del_\nu h_{\alpha\mu}
+\]
+\\ \\
+\ba
+	g_{\alpha\lambda}\delta R^\lambda{}_{\mu\beta\nu} &=  \del_\nu\del_\beta h_{\alpha\mu}+\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}
+	-\del_\beta\del_\nu h_{\alpha\mu}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}\\
+	&= \del_{\nu}\del_\mu h_{\alpha\beta} - \del_\nu \del_\alpha h_{\mu\beta} - \del_\mu\del_\beta h_{\alpha\nu} + \del_\beta \del_\alpha h_{\mu\nu}
++h^{\gamma}{}_\nu R_{\alpha\gamma\beta\mu} + h^\gamma{}_\mu R_{\alpha\gamma\beta\mu} + h^\gamma{}_\alpha R_{\mu\gamma\beta\nu}+h^\gamma{}_\alpha R_{\nu\gamma\beta\mu}
+\ea
+\ba
+	 h_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu} + g_{\alpha\lambda}
+\delta R^{\lambda}{}_{\mu\beta\nu} &= \quad  h^\lambda{}_\mu R_{\alpha\lambda\beta\nu} 
+ - \del_\nu \del_\beta h_{\alpha\mu} + \del_\beta\del_\nu h_{\alpha\mu}\\ &\quad + \del_\nu\del_\beta h_{\alpha\mu}+\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}
+	-\del_\beta\del_\nu h_{\alpha\mu}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}\\
+&=   h^\lambda{}_\mu R_{\alpha\lambda\beta\nu}  +\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}
+\ea
+\\ \\
+\[
+	R^{\mu\nu}\delta R_{\alpha\mu\beta\nu} =  h^\lambda{}_\mu R_{\alpha\lambda\beta\nu}  +\frac12\plr{\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}}
+\]
+\newpage
+\[
+	W_{\mu\nu}^{(1)} = 2 g_{\mu\nu} \plr{ R^\alpha{}_\alpha}^{;\beta}{}_{;\beta} - 2\plr{ R^\alpha{}_\alpha}_{;\mu;\nu} - 2 R^\alpha{}_\alpha R_{\mu\nu}+\frac12 g_{\mu\nu}\plr{ R^\alpha{}_\alpha}^2
+\]
+\[
+	W_{\mu\nu}^{(2)} = \frac12 g_{\mu\nu}\plr{ R^\alpha{}_\alpha}^{;\beta}{}_{;\beta} + R_{\mu\nu}{}^{;\beta}{}_{;\beta} - R_{\mu\beta;\nu}{}^{;\beta}
+- R_{\nu\beta;\mu}{}^{;\beta}-2R_{\mu\beta}R_\nu{}^\beta + \frac12 g_{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}
+\]
+\[
+	W_{\mu\nu}^{(2)new} = \frac12 g_{\mu\nu}\plr{ R^\alpha{}_\alpha}^{;\beta}{}_{;\beta} + R_{\mu\nu}{}^{;\beta}{}_{;\beta}-(R^\alpha{}_\alpha)_{;\mu;\nu}-2R^{\sigma\beta}R_{\mu\sigma\nu\beta} + \frac12 g_{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}
+\]
+\\
+\[
+	\delta R^\lambda{}_{\mu\nu\kappa} = \del_\kappa(\delta \Gamma^\lambda_{\mu\nu})-\del_\nu(\delta \Gamma^\lambda_{\mu\kappa})
+\]
+\ba
+	\delta(R_{\alpha\mu\beta\nu}) &= \delta(g_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu}) = h_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu} + g_{\alpha\lambda}
+\delta R^{\lambda}{}_{\mu\beta\nu}\\
+&=  h_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu} + \frac12\plr{ \del_\nu\del_\beta h_{\alpha\mu}+\del_\nu\del_\mu h_{\alpha\beta}-\del_\nu\del_\alpha h_{\mu\beta}
+	-\del_\beta\del_\nu h_{\alpha\mu}-\del_\beta\del_\mu h_{\alpha\nu}+\del_\beta\del_\alpha h_{\mu\nu}}\\
+&= h_{\alpha\lambda}R^\lambda{}_{\mu\beta\nu} +\frac12[ \del_{\nu}\del_\mu h_{\alpha\beta} - \del_\nu \del_\alpha h_{\mu\beta} - \del_\mu\del_\beta h_{\alpha\nu} + \del_\beta \del_\alpha h_{\mu\nu}\\ &\qquad\qquad\qquad\qquad
+-h_{\mu\lambda}R^\lambda{}_{\alpha\beta\nu}-h_{\nu\lambda}R^\lambda{}_{\alpha\beta\mu} - h_{\alpha\lambda}(R^\lambda{}_{\nu\beta\mu}+R^\lambda{}_{\mu\beta\nu})]\\
+&= \frac12[ \del_{\nu}\del_\mu h_{\alpha\beta} - \del_\nu \del_\alpha h_{\mu\beta} - \del_\mu\del_\beta h_{\alpha\nu} + \del_\beta \del_\alpha h_{\mu\nu}\\ &\qquad\qquad\qquad\qquad
+-h_{\mu\lambda}R^\lambda{}_{\alpha\beta\nu}-h_{\nu\lambda}R^\lambda{}_{\alpha\beta\mu} - h_{\alpha\lambda}(R^\lambda{}_{\nu\beta\mu}-R^\lambda{}_{\mu\beta\nu})]\\
+\ea
+\ba
+	\del_\beta\del_\alpha \del_\mu\del_\nu V - \del_\mu \del_\nu \del_\alpha\del_\beta V&= R_{\nu\sigma\mu\alpha} \del_\beta \del^\sigma V - R_{\sigma\beta\mu\alpha}\del^\sigma\del_\nu V+ \del_\alpha (R_{\nu\sigma\mu\beta} \del^\sigma V)\\
+&\quad + R_{\nu\sigma\alpha\beta}\del_\mu \del^\sigma V - R_{\sigma\mu\alpha\beta} \del ^\sigma \del_\nu V+\del_{\mu}(R_{\sigma \beta\alpha\nu}\del^\sigma V) 
+\ea
+
+\end{document}

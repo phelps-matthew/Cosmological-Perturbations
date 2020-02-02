@@ -1,0 +1,276 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{TT Projection Curved Space v4}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Curved Space TT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%
+\subsection{SVT Decomposition}
+%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi
+\\  \nonumber\\
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}.
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h
+\label{chi}\\ \nonumber\\
+F &=& \int g^{1/2} D(x,x') \nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}\int g^{1/2} D(x,x') h
+\\ \nonumber\\
+F_{\mu} &=& W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma
+\nonumber\\
+2F_{\mu\nu} &=& 2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu} - h_{\mu\nu} 
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Conditions upon $W_\mu$ and $\Psi$}
+%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Psi &=& \int g^{1/2} D(x,x') h
+\\ \nonumber\\
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\ \nonumber\\
+\frac{2(D-1)}{D}\nabla_\alpha\nabla^\alpha \nabla^\sigma W_\sigma - \nabla^\alpha R W_\alpha - 2R^{\alpha\beta} \nabla_\alpha W_{\beta} &=& 
+\nabla^\alpha\nabla^\beta h_{\alpha\beta} - \frac{1}{(D-1)}\left[ \tfrac12 \nabla^\alpha R \nabla_\alpha + R^{\alpha\beta}\nabla_\alpha\nabla_\beta\right]\Psi
+\label{con2}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Isolating $\chi$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+According to \eqref{chi},
+\begin{eqnarray}
+\nabla^\sigma W_\sigma &=& D\left( \chi + \frac{1}{2(D-1)}h\right),
+\end{eqnarray}
+if we can find a derivative operator that acts upon $\nabla^\sigma W_\sigma$ to yield a relation proportional to \eqref{con2}, then we may be able to express derivatives onto $\chi$ as a function of $h_{\mu\nu}$. To fully invert $\chi$, we also require any $\Psi$ dependent term to be pre-fixed by a covariant box, $\nabla_\alpha\nabla^\alpha \Psi$. Inspection of \eqref{con2} shows no foreseeable path to finding a relation meeting these requirements. 
+
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$h_{\mu\nu}(\chi,F,F_\mu)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\nabla^\alpha\nabla^\beta h_{\alpha\beta} &=& - 2 \nabla_{\alpha }\nabla^{\alpha }\chi + 2 \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F -  \nabla_{\alpha }R \nabla^{\alpha }F - 2 R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }F - F^{\alpha } \nabla_{\alpha }R - 2 R_{\alpha \beta } \nabla^{\beta }F^{\alpha }
+\\ \nonumber\\
+\nabla_\alpha\nabla^\alpha h &=& -8 \nabla_{\alpha }\nabla^{\alpha }\chi + 2 \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F
+\\ \nonumber\\
+\nabla_\sigma\nabla^\sigma\nabla^\alpha\nabla^\beta h_{\alpha\beta} &=&
+ - \tfrac{1}{12} F^{\alpha } R \nabla_{\alpha }R + \tfrac{3}{2} F^{\alpha } R^{\beta \gamma } \nabla_{\alpha }R_{\beta \gamma } -  \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }F_{\alpha } -  \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }F -  F^{\alpha } \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }R \nonumber \\ 
+&& -  \nabla^{\alpha }F \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }R - 2 \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }\chi + \tfrac{4}{3} R R_{\alpha \beta } \nabla^{\beta }F^{\alpha } - 3 R_{\alpha }{}^{\gamma } R_{\beta \gamma } \nabla^{\beta }F^{\alpha } - 2 \nabla_{\beta }\nabla_{\alpha }R \nabla^{\beta }F^{\alpha } \nonumber \\ 
+&& + \tfrac{5}{12} F^{\alpha } R_{\alpha \beta } \nabla^{\beta }R - 2 \nabla_{\beta }\nabla_{\alpha }R \nabla^{\beta }\nabla^{\alpha }F -  \tfrac{3}{2} F^{\alpha } R^{\beta \gamma } \nabla_{\gamma }R_{\alpha \beta } - 2 \nabla^{\beta }F^{\alpha } \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta } \nonumber \\ 
+&& - 2 \nabla^{\beta }\nabla^{\alpha }F \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta } - 2 R^{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla_{\alpha }F + 2 \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F - 3 R_{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }\nabla^{\beta }F^{\alpha } \nonumber \\ 
+&& - 4 \nabla_{\gamma }\nabla_{\beta }\nabla_{\alpha }F \nabla^{\gamma }R^{\alpha \beta } + R_{\alpha \gamma } \nabla^{\gamma }\nabla_{\beta }\nabla^{\beta }F^{\alpha } + 2 \nabla_{\beta }R_{\alpha \gamma } \nabla^{\gamma }\nabla^{\beta }F^{\alpha } - 6 \nabla_{\gamma }R_{\alpha \beta } \nabla^{\gamma }\nabla^{\beta }F^{\alpha }
+\end{eqnarray}
+%
+%
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Max. Symmetric Space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi
+\\  \nonumber\\
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}.
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h
+\\ \nonumber\\
+F &=& \int g^{1/2} D(x,x') \nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}\int g^{1/2} D(x,x') h
+\\ \nonumber\\
+F_{\mu} &=& W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma
+\nonumber\\
+2F_{\mu\nu} &=& 2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu} - h_{\mu\nu} 
+\end{eqnarray}
+In a space of maximal symmetry defined by
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R_{\mu\kappa} &=& k(1-D)g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R&=& kD(1-D), 
+\end{eqnarray}
+the conditions upon $W_\mu$ and $\Psi$ reduce to
+\begin{eqnarray}
+\Psi &=& \int g^{1/2} D(x,x') h
+\\ \nonumber \\
+\left(\nabla_\alpha\nabla^\alpha-\frac{R}{D}\right) W_\nu + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla^\alpha W_\alpha  &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{R}{D(D-1)}\nabla_\nu \Psi
+\label{maxsymcon1}
+\\ \nonumber\\
+\frac{2(D-1)}{D}\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right) \nabla^\sigma W_\sigma &=& 
+\nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{R}{D(D-1)}\nabla_\alpha \nabla^\alpha \Psi
+\label{maxsymcon4}
+\end{eqnarray}
+
+From \eqref{maxsymcon4}, we may determine $\chi$ and $F$ as
+\begin{eqnarray}
+\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right)\chi &=& \frac{1}{2(D-1)}\left[ \nabla^\alpha\nabla^\beta h_{\alpha\beta}  -\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)h\right]
+\\ \nonumber\\
+\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D-1}\right) \nabla_\beta\nabla^\beta F &=& \frac{D}{2(D-1)}\left( \nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{1}{D}\nabla_\alpha\nabla^\alpha h\right).
+\end{eqnarray}
+To determine $F_\mu$ we apply $(\nabla_\alpha\nabla^\alpha + \frac{R}{D})$ to \eqref{maxsymcon1} to obtain the relation
+\begin{eqnarray}
+\left(\nabla_\alpha\nabla^\alpha + \frac{R}{D}\right)\nabla^\sigma h_{\sigma\mu} - \frac{R}{D(D-1)}\nabla_\mu h
+&=& \left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)\left(\nabla_\beta\nabla^\beta + \frac{R}{D}\right) W_\mu + \frac{D-2}{D}\nabla_\mu \nabla_\alpha\nabla^\alpha \nabla^\sigma W_\sigma.
+\nonumber\\
+\end{eqnarray}
+As a result, we may obtain $F_{\mu}$ via
+\begin{eqnarray}
+\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)\left(\nabla_\beta\nabla^\beta + \frac{R}{D}\right) F_\mu
+&=& \left(\nabla_\alpha\nabla^\alpha+\frac{R}{D}\right)\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \nabla^\alpha\nabla^\beta h_{\alpha\beta}.
+\end{eqnarray}
+With aide from the Bach tensor in $D=4$, we may determine $F_{\mu\nu}$ in terms of $K_{\mu\nu} = h_{\mu\nu} -\tfrac14 g_{\mu\nu}h$ as
+\begin{eqnarray}
+ \left(\nabla_\alpha\nabla^\alpha + \frac{R}{6}\right)\left(\nabla_\beta\nabla^\beta +\frac{R}{3}\right)F_{\mu\nu}&=& \delta W_{\mu\nu}(K_{\mu\nu}).
+ \label{htt4}
+\end{eqnarray}
+In $D=3$ we have
+\begin{eqnarray}
+2\left(\nabla^2+\frac{R}{3}\right)\left(\nabla^2+\frac{R}{2}\right)F_{ij}^{T\theta}
+&=&(\nabla^2-2k)(\nabla^2-3k)h_{ij}-\nabla^2 \nabla_i \nabla^l h_{jl} - \nabla^2 \nabla_j \nabla^l h_{il}+3k\nabla_j \nabla^l h_{il}+3k\nabla_i \nabla^l h_{jl}
+\nonumber\\
+&&+\tfrac12 \nabla_i\nabla_j \nabla^k \nabla^l h_{kl}+\tfrac12 g_{ij} \nabla^2 \nabla^k \nabla^l h_{kl}
+-2k g_{ij} \nabla^l \nabla^k h_{kl}+ \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)(g^{ab}h_{ab})
+\nonumber\\
+&& -\tfrac12 g_{ij}\nabla^2(\nabla^2-3k)(g^{ab}h_{ab})-\tfrac12 g_{ij} k (\nabla^2+4k)(g^{ab}h_{ab}).
+\label{htt3}
+\end{eqnarray}
+%%%%%%%%%%%%%
+\subsection{Summary}
+%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right)\chi &=& \frac{1}{2(D-1)}\left[ \nabla^\alpha\nabla^\beta h_{\alpha\beta}  -\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)h\right]
+\\ \nonumber\\
+\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D-1}\right) \nabla_\beta\nabla^\beta F &=& \frac{D}{2(D-1)}\left( \nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{1}{D}\nabla_\alpha\nabla^\alpha h\right)
+\\ \nonumber\\
+\left(\nabla_\alpha\nabla^\alpha - \frac{R}{D}\right)\left(\nabla_\beta\nabla^\beta + \frac{R}{D}\right) F_\mu
+&=& \left(\nabla_\alpha\nabla^\alpha+\frac{R}{D}\right)\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \nabla^\alpha\nabla^\beta h_{\alpha\beta},
+\end{eqnarray}
+with $F_{\mu\nu}$ given in terms of $h_{\mu\nu}$ in $D=3$ and $D=4$ according to \eqref{htt3} and \eqref{htt4} respectively. 
+%
+%
+\newpage
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Curved Space TT Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Assume $h_{\mu\nu}$ to be of the form:
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \underbrace{\left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right)}_{W_{\mu\nu}} + \underbrace{\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi}_{S_{\mu\nu}}
+\label{decomph}
+\end{eqnarray}
+Taking the trace of \eqref{decomph}, we find the vector sector $W_{\mu\nu}$ is decoupled from the trace and $\Psi$ can easily be inverted,
+\begin{eqnarray}
+g^{\mu\nu}W_{\mu\nu} &=& 0
+\\ \nonumber\\
+g^{\mu\nu}S_{\mu\nu} &=& \nabla_\alpha\nabla^\alpha \Psi = h
+\qquad
+\to \Psi = \int g^{1/2} D(x,x') h
+\label{psih}
+\end{eqnarray}
+Taking the divergence of \eqref{decomph}, we have
+\begin{eqnarray}
+\nabla^\mu h_{\mu\nu} &=& \nabla^\mu W_{\mu\nu} + \nabla^\mu S_{\mu\nu}(h)
+\label{treq1}
+\end{eqnarray}
+By substituting \eqref{psih}, the above serves to define an equation for $W_{\mu}$ in terms of $h$ and $h_{\mu\nu}$, namely
+\begin{eqnarray}
+\nabla_\alpha \nabla^\alpha W_\nu +\nabla^\alpha \nabla_\nu W_\alpha - \frac{2}{D}\nabla_\nu\nabla^\alpha W_\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\int g^{1/2} D(x,x') h
+\label{treq2}
+\end{eqnarray}
+Commuting derivatives, \eqref{treq2} can be expressed in the equivalent forms,
+\begin{eqnarray}
+\left[g_{\nu\alpha} \nabla_\beta \nabla^\beta +\nabla_\alpha \nabla_\nu - \frac{2}{D}\nabla_\nu\nabla_\alpha\right] W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\int g^{1/2} D(x,x') h,
+\label{treq3}
+\\ \nonumber\\
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha
+&=& \nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}R_{\nu\alpha}\nabla^\alpha \int g^{1/2} D(x,x') h.
+\label{treq4}
+\end{eqnarray}
+Similar to \eqref{fgreen}, the requisite Green's function that solves $W_\alpha$ is a bi-tensor defined as
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]D^{\alpha\gamma'} &=& g^{\alpha\gamma'} g^{-1/2} \delta^{(D)}(x,x').
+\end{eqnarray}
+Hence, $W_\mu$ takes the form
+\begin{eqnarray}
+W_{\mu} &=& \int g^{1/2} D_\mu{}^{\sigma'} \left[ \nabla^{\rho'} h_{\sigma'\rho'}-
+\frac{1}{D-1}R_{\sigma'\rho'}\nabla^{\rho'} \int g^{1/2} D(x',x'') h\right].
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVTD Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+Starting with 
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi,
+\label{hdecomp3}
+\end{eqnarray}
+we decompose $W_{\mu}$ into transverse and longitudinal components viz.
+\begin{eqnarray}
+W_{\mu} &=& \underbrace{W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma}_{F_{\mu}} + \nabla_\mu \underbrace{ \int g^{1/2}D(x,x')\nabla^\sigma W_\sigma}_{H}.
+\end{eqnarray}
+Setting $h_{\mu\nu}^{T\theta} = 2F_{\mu\nu}$, \eqref{hdecomp3} becomes
+\begin{eqnarray}
+h_{\mu\nu}&=& 2F_{\mu\nu} + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2 \nabla_\mu\nabla_\nu H - \frac{2}{D}g_{\mu\nu}\nabla_\alpha \nabla^\alpha H +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi.
+\end{eqnarray}
+Upon further defining
+\begin{eqnarray}
+F &=& H - \frac{1}{2(D-1)} \Psi
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla_\alpha\nabla^\alpha H - \frac{1}{2(D-1)}\nabla_\alpha\nabla^\alpha \Psi,
+\end{eqnarray}
+we may express \eqref{hdecomp3} as the desired SVTD form:
+\begin{eqnarray}
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}.
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h
+\\ \nonumber\\
+F &=& \int g^{1/2} D(x,x') \nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}\int g^{1/2} D(x,x') h
+\\ \nonumber\\
+F_{\mu} &=& W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma
+\\ \nonumber\\
+2F_{\mu\nu} &=& 2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu} - h_{\mu\nu} 
+\end{eqnarray}
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\\nonumber \\
+\frac{2(D-1)}{D}\nabla_\alpha\nabla^\alpha \nabla^\sigma W_\sigma - \nabla^\alpha R W_\alpha - 2R^{\alpha\beta} \nabla_\alpha W_{\beta} &=& 
+\nabla^\alpha\nabla^\beta h_{\alpha\beta} - \frac{1}{(D-1)}\left[ \tfrac12 \nabla^\alpha R \nabla_\alpha + R^{\alpha\beta}\nabla_\alpha\nabla_\beta\right]\Psi
+\end{eqnarray}
+
+\end{appendices}
+
+\end{document}

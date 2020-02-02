@@ -1,0 +1,937 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\addbibresource{3Space_Gauge_Trans_Matthew_v4.bib}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{3-Space Einstein Tensor Gauge Dependence v5}
+%\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%
+\section{Covariant Decomposition}
+%%%%%%%%%%%%%%%
+\subsection{Geometry} 
+\label{S1}
+Within the geometry of 
+\begin{eqnarray}
+ds^2 = (g_{ij}^{(0)} + h_{ij})dx^i dx^j 
+\end{eqnarray}
+with maximally symmetric background
+\begin{eqnarray}
+g_{ij}^{(0)} = \begin{pmatrix} \frac{1}{1-kr^2} &0&0\\ 0&r^2&0\\0&0&r^2\sin^2\theta\end{pmatrix}
+\end{eqnarray}
+assume the metric perturbation can be (covariant) SVT decomposed as
+\begin{eqnarray}
+h_{ij} = -2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij},
+\label{svt}
+\end{eqnarray}
+with 3-trace
+\begin{eqnarray}
+h = -6 \psi + 2\nabla^a\nabla_a E.
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%
+\subsection{Background $G^{(0)}_{ij} = - \kappa^2_3 T^{(0)}_{ij}$}
+\begin{eqnarray}
+G^{(0)}_{ij} &=& - \kappa^2_3 T^{(0)}_{ij}
+\nonumber\\
+k g_{ij} &=& - \kappa^2_3 \Lambda g_{ij}
+\nonumber\\
+\to\quad  \Lambda &=& -\frac{k}{\kappa^2_3}
+\label{lambdakappa}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Perturbed $\delta G_{\mu\nu} =-\kappa^2_3 \delta T_{\mu\nu}$}
+We choose to perturb only the background $T_{\mu\nu}^{(0)}$ to yield
+\begin{eqnarray}
+-\kappa_3^2 \delta T_{ij} = k h_{ij}.
+\end{eqnarray}
+
+The perturbed Einstein equations  $\delta G_{\mu\nu} =-\kappa_3^2 \delta T_{\mu\nu}$ then take the form
+\begin{eqnarray}
+&&- \tfrac{1}{2} h_{ij} R
++ \tfrac{1}{2} g_{ij} h^{ab} R_{ab}
++ \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{ij}
+-  \tfrac{1}{2} g_{ij} \nabla_{a}\nabla^{a}h
+-  \tfrac{1}{2} \nabla_{a}\nabla_{i}h_{j}{}^{a}
+-  \tfrac{1}{2} \nabla_{a}\nabla_{j}h_{i}{}^{a}\nonumber\\
+&& + \tfrac{1}{2} g_{ij} \nabla_{b}\nabla_{a}h^{ab}
++ \tfrac{1}{2} \nabla_{i}\nabla_{j}h = k h_{ij}.
+\end{eqnarray}
+
+In SVT terms this evaluates to:
+\begin{eqnarray}
+&&\nabla_{a}\nabla^{a}E_{ij}
+ +g_{ij} \nabla_{a}\nabla^{a}\psi
+ + k \nabla_{i}E_{j}
+ + k \nabla_{j}E_{i}
+ + 2 k \nabla_{j}\nabla_{i}E
+ -  \nabla_{j}\nabla_{i}\psi =
+\nonumber \\
+&& k (-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij}),
+\end{eqnarray}
+which may be simplified as
+\begin{eqnarray}\boxed{
+(\nabla_a \nabla^a-2k)E_{ij} + g_{ij}\nabla_a \nabla^a \psi - \nabla_j\nabla_i \psi+2k g_{ij}\psi = 0.
+\label{dgdt}}
+\end{eqnarray}
+Taking the trace gives the solution for $\psi$
+\begin{eqnarray}\boxed{
+(\nabla_a \nabla^a + 3k)\psi = 0
+\label{dgdttr}}
+\end{eqnarray} 
+\\ \\
+Useful equations:
+%Under gauge transformation 
+%\begin{eqnarray}
+%h_{ij} \to \bar h_{ij} = h_{ij} + \nabla_i \epsilon _j + \nabla_j \epsilon_i
+%\end{eqnarray}
+%with $\epsilon_i = \nabla_i L + L_i$ and $\nabla^i L_i = 0$,
+%we find that $h_{ij}$ transforms as 
+%\begin{eqnarray}
+%&&-2 g_{ij}\bar \psi + 2\nabla_i\nabla_j \bar E + \nabla_i \bar E_j + \nabla_j \bar E_i + 2\bar E_{ij} =
+%\nonumber\\
+%&&-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij} + 2 \nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i.
+%\end{eqnarray}
+%Taking the trace of the above, we have
+%\begin{eqnarray}
+%-6 \bar\psi  +2\nabla^i \nabla_i \bar E = -6\psi + 2\nabla^i\nabla_i E + 2\nabla^i\nabla_i L
+%\end{eqnarray}
+%\begin{eqnarray}
+%\bar\psi &=&\psi
+%\nonumber\\
+%\bar E &=& E-L
+%\nonumber\\
+%\bar E_i &=& E_i - L_i
+%\nonumber\\
+%\bar E_{ij} &=& E_{ij}
+%\end{eqnarray}
+\begin{eqnarray}
+\nabla^j h_{ij} = -2\nabla_i \psi + 2\nabla_i \nabla^a\nabla_a E +4k\nabla_i E + \nabla^a \nabla_a E_i + 2k E_i
+\end{eqnarray}
+\begin{eqnarray}
+\nabla^i \nabla^j h_{ij} = -2\nabla^i \nabla_i \psi + 2\nabla^i\nabla_i \nabla^j\nabla_j E + 4k \nabla_i \nabla^i E
+\label{hijdt}
+\end{eqnarray}
+\begin{eqnarray}
+\nabla^j \delta G_{ij} =  -2k\nabla_i \psi + (2k^2+k\nabla_a\nabla^a )E_i + 2k( \nabla_i \nabla^a\nabla_a E + 2k \nabla_i E)
+\end{eqnarray}
+\begin{eqnarray}
+\nabla^i \nabla^j \delta G_{ij} = -2k\nabla^a \nabla_a \psi + 2k \nabla^a\nabla_a\nabla^b \nabla_b E + 4k^2\nabla_a\nabla^a E
+\end{eqnarray}
+
+The covariant Bianchi identity $\delta (\nabla^j G_{ij}) =0 $ reduces to 
+\begin{eqnarray}
+\nabla^j \delta G_{ij} - k \nabla^j h_{ij} = 0.
+\end{eqnarray}
+
+%%%%%%%%%%%%%%
+\subsection{Gauge Structure}
+\label{Gauge Transformations}
+Under coordinate transformation $x^i \to \bar x^i = x^i - \epsilon^i (x)$ in the RW geometry we decompose $\epsilon_i(x)$ into longitudinal and transverse components viz
+\begin{eqnarray}
+\epsilon_i &=&  \underbrace{\epsilon_i - \nabla_i \int D \nabla^j \epsilon_j}_{L_i} + \nabla_i \underbrace{\int D\nabla^j \epsilon_j}_{L}
+\end{eqnarray}
+\begin{eqnarray}
+\nabla_i \epsilon_j = \nabla_i L_j + \nabla_i\nabla_j L
+\end{eqnarray}
+For the metric
+\begin{eqnarray}
+\Delta_\epsilon h_{ij} &=& \nabla_i \epsilon_j + \nabla_j \epsilon_i
+\nonumber\\
+&=& \nabla_i L_j + \nabla_j L_i + 2\nabla_i\nabla_j L
+\end{eqnarray}
+Now form the gauge transformation equation
+\begin{eqnarray}
+-2\bar\psi g_{ij} + 2\nabla_i \nabla_j \bar E + \nabla_i \bar E_j +\nabla_j \bar E_i + 2\bar E_{ij}
+&=& -2\psi g_{ij} + 2\nabla_i \nabla_j  E + \nabla_i  E_j +\nabla_j E_i + 2 E_{ij}
+\nonumber\\
+&&+ \nabla_i L_j + \nabla_j L_i + 2\nabla_i\nabla_j L
+\label{gauge1}
+\end{eqnarray}
+The trace of \eqref{gauge1} yields
+\begin{eqnarray}
+-6\bar\psi + 2\nabla_a\nabla^a \bar E &=& -6\psi + 2\nabla_a\nabla^a E + 2\nabla_a \nabla^a L.
+\label{gaugetr}
+\end{eqnarray}
+Using \eqref{hijdt}, the double transverse component of \eqref{gauge1} yields
+\begin{eqnarray}
+-2\nabla_a\nabla^a\bar \psi + 2\nabla_a\nabla^a\nabla_b\nabla^b \bar E + 4k \nabla_a\nabla^a \bar E&=& -2\nabla_a\nabla^a\psi + 2\nabla_a\nabla^a\nabla_b\nabla^b (E+L) + 4k \nabla_a\nabla^a (E+L).
+\end{eqnarray}
+Using \eqref{gaugetr} to eliminate $\psi$ in the above, we arrive at an equation in terms of $E$ and $L$
+\begin{eqnarray}
+\tfrac23 \nabla^4\bar E + k\nabla^2\bar E &=& \tfrac23 \nabla^4 (E+L) + k\nabla^2 (E+L).
+\end{eqnarray}
+For quantities $\bar E$, $E$, and $L$ that vanish on the boundary, we may integrate the associated Green's function by parts to show $\bar E = E+L$. Substitution into \eqref{gaugetr} then yields $\bar\psi = \psi$. The remaining transverse component of \eqref{gauge1} is then
+\begin{eqnarray}
+\nabla_a\nabla^a \bar E_i &=& \nabla_a\nabla^a(E_i+L_i).
+\end{eqnarray}
+With $\bar E_i$, $E_i$, and $L_i$ vanishing on the boundary we have $\bar E_i = E_i + L_i$. In summary,
+\begin{eqnarray}
+\bar \psi &=& \psi
+\nonumber\\
+\bar E &=& E+L
+\nonumber\\
+\bar E_i &=& E_i + L_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}.
+\end{eqnarray}
+As $E_i$ and $E$ are not gauge invariant, the field equations $\delta G_{\mu\nu} = -\kappa^2_3 \delta T_{\mu\nu}$ can only depend on $\psi$ and $E_{ij}$, which agrees with \eqref{dgdt}. With the six components of $h_{ij}$ we are free to make three coordinate transformation to reduce $h_{ij}$ to three gauge invariant components, i.e. $\psi$ and $E_{ij}$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{3-Space Scalar Eigenfunctions}
+In order for $E_{ij}$ and $\psi$ to decouple from \eqref{dgdt}, we assess whether every solution to
+\begin{eqnarray}
+(\nabla_a\nabla^a +3k)\psi=0
+\end{eqnarray}
+obeys
+\begin{eqnarray}
+\nabla_i \nabla_j \psi \overset{!}{=}-kg_{ij}\psi.
+\end{eqnarray}
+Thus we first seek to find the general solution to curved space harmonic eigenfunction
+\begin{eqnarray}
+(g^{ij}\nabla_i \nabla_j +\lambda^2 )\psi=0
+\end{eqnarray}
+where $\lambda^2 = 3k$. Evaluating the above in the 3-space geometry, we find
+\begin{eqnarray}
+\frac{1}{r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial \psi}{\partial r}\right) -3kr \frac{\partial \psi}{\partial r}-kr^2\frac{\partial^2 \psi}{\partial r^2}
++\frac{1}{r^2}\left[ \frac{1}{\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial \psi}{\partial \theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2\psi}{\partial \phi^2}\right]+\lambda^2\psi=0.
+\end{eqnarray}
+Noting the angular portion of the Laplacian, we take as solution $\psi = f_l(r) Y^l_m(\theta,\phi)$ to find a radial equation of 
+\begin{eqnarray}
+r^2\frac{d^2 f}{dr^2} + 2r\frac{d f}{dr} - 3kr^3 \frac{df}{dr}-kr^4 \frac{d^2 f}{dr^2}+[\lambda^2 r^2-l(l+1)]f_l(r)=0.
+\label{radial1}
+\end{eqnarray}
+We may rewrite the above as
+\begin{eqnarray}
+\left[ (1-kr^2)\frac{d^2}{dr^2}+ \left(\frac{2}{r}-3kr\right)\frac{d}{dr}-\frac{l(l+1)}{r^2}+\lambda^2 \right]f_l(r)=0.
+\label{radial2}
+\end{eqnarray}
+This coincides with \cite{mannheim1988energy} eq. (19), with the exception that $\lambda^2$ is not a separation constant in our case, but rather assumes the value of $\lambda^2=3k$. 
+\\ \\
+To touch basis with \cite{bander1966group} (which was used a reference within \cite{mannheim1988energy}),
+we substitute $r=\sinh\chi$, and use the following relations
+\begin{eqnarray}
+&& \cosh^2\chi-\sinh^2\chi = 1,\qquad \cosh^2\chi = 1+\sinh^2\chi,\qquad \sinh^2\chi = \cosh^2\chi -1
+\nonumber\\ \nonumber\\
+&&r= \sinh\chi,\qquad \cosh^2\chi = 1+r^2
+\nonumber\\ \nonumber\\
+&&\frac{d\cosh\chi}{d\sinh\chi} = \frac{\sinh\chi}{\cosh\chi},\qquad \frac{d\sinh\chi}{d\cosh\chi}= \frac{\cosh\chi}{\sinh\chi}
+\nonumber\\ \nonumber\\
+&&\frac{d}{d\sinh\chi} = \frac{\sinh \chi}{\cosh\chi}\frac{d}{d\cosh\chi}
+\nonumber\\ \nonumber\\
+&& \frac{d^2}{d\sinh\chi^2}  = \frac{1}{\cosh^3\chi}\frac{d}{d\cosh\chi}+ \frac{\sinh^2\chi}{\cosh^2\chi}\frac{d^2}{d\cosh^2\chi},
+\end{eqnarray}
+to show that \eqref{radial2} may be expressed as
+\begin{eqnarray}
+\left(\sinh^2\chi \frac{d^2}{d\cosh^2\chi} + 3\cosh\chi\frac{d}{d\cosh\chi}-\frac{l(l+1)}{\sinh^2\chi}+\lambda^2 \right)f_l(r)=0.
+\label{radial3}
+\end{eqnarray}
+Within [1], the authors solve a radial equation of the form
+\begin{eqnarray}
+\left[\sinh^2\theta \frac{d^2}{d\cosh^2\theta} + f\cosh\theta \frac{d}{d\cosh\theta}-\frac{\alpha(\alpha+f-2)}{\sinh^2\theta} + N^2 + \left(\frac{f-1}{2}\right)^2\right]Z_{N,\alpha}^{(f)}(\theta)=0,
+\end{eqnarray}
+which corresponds to our \eqref{radial3} by
+\begin{eqnarray}
+f=3,\qquad \alpha=l,\qquad N^2+1 = \lambda^2.
+\end{eqnarray}
+\subsection{Hyperbolic Geometry $k=-1$}
+However, in \cite{bander1966group} Bander requires $N$ to be real to meet their condition of continuity and a boundary condition of ``smallest possible growth at infinity''. This proves problematic for when we assume hyperbolic geometry viz. \begin{eqnarray}
+\lambda^2&=&3k=-3
+\nonumber\\ 
+\to\quad N&=&2i.
+\end{eqnarray}
+\\ 
+The lack of solutions for $\lambda^2=-3$ is confirmed in a second manner in reference to \cite{Harrison1967}, where it is shown that separable radial solutions to 
+\begin{eqnarray}
+(\nabla_a\nabla^a + \lambda^2)\psi=0
+\end{eqnarray}
+that are regular at the origin have an eigenspectrum of
+\begin{eqnarray}
+k&=&0,\qquad \lambda^2 = \gamma^2,\qquad \gamma^2\ge 0
+\nonumber\\
+k&=&1,\qquad \lambda^2=\gamma(\gamma+2),\qquad \gamma=1,2,3,..
+\nonumber\\
+k&=&-1,\qquad \lambda^2=\gamma^2+1,\qquad \gamma^2\ge 0.
+\label{eigens}
+\end{eqnarray}
+As such, we require $\lambda^2 \ge 0$. As an aside, we also see the spectrum is discrete for the closed $k=1$ geometry. 
+
+\subsection{Spherical Geometry $k=1$}
+For $\lambda^2 = 3$, we fall into the allowed range of eigenspectrum \eqref{eigens} and we may utilize the radial solutions given in \cite{mannheim1988energy} as
+\begin{eqnarray}
+f_l(r) = \left[ \frac{\pi}{2}2^2(2^2-1^2)...(2^2-l^2)\right]^{-1/2}\sin^l\chi\left(\frac{d}{d\cos\chi}\right)^{l+1}\cos( 2\chi).
+\end{eqnarray}
+where $r=\sin\chi$. Since the geometry is bounded, the separation constant takes on discrete values, and the angular momentum may only take on the two values of $l=0,1$ \cite{mannheimgrg}. Hence we may evaluate $f_l(r)$ for these two cases directly, in which we find:
+\begin{eqnarray}
+f_0(r)&=& \sqrt{\frac{2}{\pi}} (1-r^2)^{1/2}
+\nonumber\\
+f_1(r) &=& \sqrt{\frac{8}{3\pi}}r.
+\end{eqnarray}
+The relevant spherical harmonics are:
+\begin{eqnarray}
+Y^0_0 &=& \sqrt{\frac{1}{4\pi}},\qquad m=0
+\nonumber\\
+Y^1_{-1} &=& \sqrt{\frac{3}{8\pi}} \sin\theta e^{-i\phi} 
+\nonumber\\
+Y^1_0 &=& \sqrt{\frac{3}{4\pi}}\cos\theta
+\nonumber\\
+Y^1_1 &=& -\sqrt{\frac{3}{8\pi}} \sin\theta e^{i\phi} 
+\end{eqnarray}
+Thus the general solution $\psi$ may be expressed as
+\begin{eqnarray}
+\psi &=&  \sum_{l}\sum_m C_{lm}f_l(r)Y^l_m(\theta,\phi)
+\nonumber\\
+&=& C_{00}\frac{1}{\sqrt 2 \pi}(1-r^2)^{1/2} + \sqrt{\frac{8}{3\pi}} r \sum_{m=-1,0,1} C_{1m}  Y^1_m(\theta,\phi)
+\label{psisol}
+\end{eqnarray}
+\\ \\
+Recall that our purpose is to find if the solution \eqref{psisol} above also satisfies
+\begin{eqnarray}
+(\nabla_i\nabla_j +k g_{ij})\psi=0
+\label{psitesteq}
+\end{eqnarray}
+We evaluate \eqref{psitesteq} component by component, taking $k=1$
+\begin{eqnarray}
+&&\left[ \frac{1}{1-r^2}- \left(\frac{r}{1-r^2}\right)\frac{\partial}{\partial r} + \frac{\partial^2}{\partial r^2}\right]\psi
+=0
+\nonumber\\
+&& \left[ r^2+r(1-r^2)\frac{\partial}{\partial r}+\frac{\partial^2}{\partial\theta^2}\right]\psi =0
+\nonumber\\
+&& \left[ r^2\sin^2\theta+r(1-r^2)\sin^2\theta\frac{\partial}{\partial r} + \sin\theta\cos\theta \frac{\partial}{\partial\theta} + \frac{\partial^2}{\partial \phi^2}\right]\psi=0
+\nonumber\\
+&& \left[ \frac{\partial^2}{\partial\theta\partial r}-\frac{1}{r}\frac{\partial}{\partial \theta}\right]\psi=0
+\nonumber\\
+&& \left[ \frac{\partial^2}{\partial\phi\partial r}-\frac{1}{r}\frac{\partial}{\partial \phi}\right]\psi=0
+\nonumber\\
+&& \left[ \frac{\partial^2}{\partial\theta\partial\phi}-\frac{\cos\theta}{\sin\theta}\frac{\partial}{\partial \phi}\right]\psi =0
+\end{eqnarray}
+Finally we substitute solution \eqref{psisol} into the above to find in fact that every component vanishes. 
+\\
+\\Thus we conclude that for any $\psi$ that obeys
+\begin{eqnarray}
+(\nabla_a\nabla^a+3)\psi=0
+\end{eqnarray}
+within a spherical geometry given by the $k=1$ 
+\begin{eqnarray}
+ds^2 = \frac{1}{1-r^2}dr^2+r^2d\theta^2 +r^2\sin^2\theta d\phi^2,
+\end{eqnarray}
+must also obey
+\begin{eqnarray}
+(\nabla_i\nabla_j +k g_{ij})\psi=0,
+\end{eqnarray}
+to thereby yield a field equation for $\Delta_{ij}$ only involving the tensor component $E_{ij}$ via
+\begin{eqnarray}
+(\nabla_a\nabla^a -2)E_{ij} =0. 
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\section{Conformal to Flat}
+
+The 3-space of constant curvature can be expressed in the conformal flat form as in \eqref{dscf}
+
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\rho)\left( d\rho^2 + \rho^2 d\Omega^2\right)
+\nonumber\\
+&=& \frac{4}{\left(1+k \rho^2\right)^2}\left( d\rho^2 + \rho^2 d\Omega^2\right)
+\label{cfbg}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%
+\subsection{Background $G^{(0)}_{ij} = -\kappa^2_3 T_{ij}^{(0)}$}
+From \eqref{gbg} we see since $G_{\mu\nu}$ vanishes in a flat geometry, the background equation is given as
+\begin{eqnarray}
+ g_{ij}( \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega -\Omega^{-1} \nabla_{a}\nabla^{a}\Omega)+  \Omega^{-1} \nabla_{i}\nabla_{j}\Omega - 2 \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega 
+= -\kappa_3^2 \Lambda \Omega^2 g_{ij}. 
+\label{dgtbg}
+\end{eqnarray}
+Taking the trace
+\begin{eqnarray}
+-2\Omega^{-1} \nabla_a\nabla^a \Omega + \Omega^{-2} \nabla_a\Omega \nabla^a\Omega = -3\kappa_3^2 \Lambda \Omega^2.
+\end{eqnarray}
+In the covariant formulation, we saw from \eqref{lambdakappa} that $-\kappa^2_3\Lambda = k$, a constant relation independent of choice of coordinate system. As such we expect the above to obey
+\begin{eqnarray}
+-2\Omega^{-1} \nabla_a\nabla^a \Omega + \Omega^{-2} \nabla_a\Omega \nabla^a\Omega = 3\Omega^2 k
+\end{eqnarray}
+Calculation of the above indeed yields
+\begin{eqnarray}
+-2\Omega^{-1} \nabla_a\nabla^a \Omega + \Omega^{-2} \nabla_a\Omega \nabla^a\Omega = \frac{12k}{(1+k\rho^2)^2} = 3\Omega^2 k
+\end{eqnarray}
+
+The two background equations that will prove useful are:
+\begin{eqnarray}
+-\tfrac{2}{3} \Omega^{-1}\nabla_a \nabla^a \Omega + \tfrac{1}{3}\Omega^{-2}\nabla_a\Omega \nabla^a\Omega &=& \Omega^2 k
+\label{bg1}
+\\
+g_{ij}( \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega -\Omega^{-1} \nabla_{a}\nabla^{a}\Omega)+  \Omega^{-1} \nabla_{i}\nabla_{j}\Omega - 2 \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega 
+&=& k \Omega^2 g_{ij}.
+\label{bg2}
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection{$\delta G_{\mu\nu} = -\kappa^2_3 \delta T_{\mu\nu}$}
+Within geometry
+\begin{eqnarray}
+ds^2 = \Omega^2(\rho)(g_{ij} + f_{ij})dx^idx^j,\qquad f_{ij} = -2\tilde g_{ij}\psi + 2\tilde\nabla_i\tilde\nabla_j E,
++\tilde\nabla_i E_j+\tilde\nabla_j E_i + 2E_{ij}
+\end{eqnarray}
+ the perturbed Einstein tensor takes the form (with $ \nabla$ denoting flat space derivative)
+
+\begin{eqnarray}
+\delta G_{ij}&=&g_{ij} \nabla_{a}\nabla^{a}\psi
+ + g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}\nabla_{a}E
+ - 2 g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla_{b}\nabla_{a}E \nabla^{b}\Omega\nonumber\\
+&& + 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}\nabla^{a}E
+ + \Omega^{-1} \nabla_{i}\Omega \nabla_{j}\psi
+ + \Omega^{-1} \nabla_{i}\psi \nabla_{j}\Omega
+ - 2 \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}\nabla_{i}E\nonumber\\
+&& + 2 \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}\nabla_{i}E
+ -  \nabla_{j}\nabla_{i}\psi
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}\nabla_{a}E
+\nonumber\\ \nonumber\\
+&&+g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}E_{a}
+ - 2 g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\Omega \nabla^{b}E^{a}
+ + 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}E^{a}\nonumber\\
+&& -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{i}E_{j}
+ + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{i}E_{j}
+ -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}E_{i}
+ + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}E_{i}\nonumber\\
+&& -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}E_{a}
+\nonumber \\ \nonumber\\
+&&+\nabla_{a}\nabla^{a}E_{ij}
+ - 2 E_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
+ + \Omega^{-1} \nabla_{a}E_{ij} \nabla^{a}\Omega
+ + 2 E_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\nonumber\\
+&& + 2 E^{ab} g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega
+ - 2 E_{ab} g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{i}E_{ja}
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}E_{ia}.
+\label{dgcfsvt}\\
+\nonumber\\ \nonumber\\
+-\kappa_3^2 \delta T_{ij} &=& -\kappa^2_3 \Lambda \Omega^2 h_{ij}
+\nonumber\\
+&=& k \Omega^2 (-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij})
+\nonumber\\ \nonumber\\
+-\kappa_3^2 g^{ij} \delta T_{ij} &=& k\Omega^2(-6\psi + 2\nabla_a\nabla^a E)
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%
+%\subsection{$\delta G_{\mu\nu} = -\kappa^2_3 \delta T_{\mu\nu}$ Simplifications}
+%From \eqref{dgtbg} we have two equations at our disposal
+%\begin{eqnarray}
+% 3\Omega^2k &=& -2\Omega^{-1}\nabla_a\nabla^a \Omega + \Omega^{-2} \nabla_a\Omega \nabla^a\Omega
+%\nonumber\\
+%\Omega^2 kg_{ij} &=& \Omega^{-1}\left(  \nabla_i\nabla_j \Omega - g_{ij}\nabla_a\nabla^a\Omega\right)  + \Omega^{-2} \left( g_{ij} \nabla_a\Omega\nabla^a\Omega -2 \nabla_i \Omega\nabla_j\Omega\right) 
+%\end{eqnarray}
+%It will be easiest to transform $\delta T_{ij}$ and then make simplifications to the field equations.
+%\begin{eqnarray}
+%-\kappa^2_3\delta T_{ij}&=& k \Omega^2 (-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij})
+%\nonumber\\
+%&=& a
+%\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Structure}
+Within the conformal flat geometry of \eqref{cfbg} under coordinate transformation $x^i \to \bar x^i = x^i - \epsilon^i (x)$ we take the general $\epsilon_i(x)$ as $\epsilon_i = \Omega^2 f_i$ with
+\begin{eqnarray}
+f_i &=&  \underbrace{f_i - \tilde\nabla_i \int D \tilde\nabla^j f_j}_{L_i} + \tilde\nabla_i \underbrace{\int D\tilde \nabla^j f_j}_{L}
+\end{eqnarray}
+It will be helpful to calculate $\nabla_i \epsilon_j$ in terms of $f_i$,
+\begin{eqnarray}
+\nabla_i \epsilon_j &=& \partial_i \epsilon_j - \Gamma^k_{ij} \epsilon_k
+\nonumber\\
+&=& \partial_i \epsilon_j - \epsilon_k \left[ \tilde \Gamma^{k}_{ij} + \Omega^{-1}( \delta^k_i \partial_j +\delta^k_j \partial_i -  g_{ij}  g^{kl}\partial_l)\Omega\right])
+\nonumber\\
+&=& \Omega^2 \nabla_i f_j -\Omega( f_i\tilde\nabla_j\Omega - f_j\tilde\nabla_i \Omega - \tilde g_{ij} f_k\tilde\nabla^k\Omega)
+\end{eqnarray}
+It then follows 
+\begin{eqnarray}
+\Delta_\epsilon h_{ij} &=& \nabla_i \epsilon_j + \nabla_j\epsilon_i
+\nonumber\\
+&=& \Omega^2 (\tilde\nabla_i f_j + \tilde\nabla_j f_i + 2\Omega^{-1}\tilde g_{ij}f_k \tilde\nabla^k\Omega )
+\nonumber\\
+&=&\Omega^2 (\tilde\nabla_i f_j + \tilde\nabla_j f_i +\Omega^{-2}\tilde g_{ij}f_k \tilde\nabla^k\Omega^{2} ).
+\end{eqnarray}
+The transformation of $f_{ij}$ is then
+\begin{eqnarray}
+\bar f_{ij} &=& f_{ij} + \tilde\nabla_i L_j + \tilde\nabla_j L_i + 2\tilde \nabla_i\tilde\nabla_j L + \Omega^{-2}
+\tilde g_{ij}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega^2
+\label{gauge2}
+\end{eqnarray}
+Instead of taking the trace and transverse components of \eqref{gauge2} as we did for the covariant case, since we know the projectors in flat space, we can instead make use of the defining conditions for SVT quantities and find their gauge structure. Enforcing the SVT quantities vanish on the spatial boundary at infinity, we use the decomposition defined in APM-CPII (66)
+and solve the gauge transformation of $\psi$
+\begin{eqnarray}
+\bar\psi &=& \psi - \Omega^{-1}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega.
+\end{eqnarray}
+Substituting the above into $\tilde\nabla^i\tilde\nabla^j \bar f_{ij}$ yields the relation for $\bar E$
+\begin{eqnarray}
+\bar E &= E + L.
+\end{eqnarray}
+Then substitution of $\bar E$ into the $\tilde\nabla^j \bar f_{ij}$ yields the expression for $\bar E_i$
+\begin{eqnarray}
+\bar E_i &=& E_i + L_i.
+\end{eqnarray}
+In summary
+\begin{eqnarray}
+\bar\psi &=& \psi - \Omega^{-1}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega
+\nonumber\\
+\bar E&=& E+L
+\nonumber\\
+\bar E_i &=& E_i + L_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}
+\end{eqnarray}
+We find two gauge invariant quantities
+\begin{eqnarray}
+\bar \psi + \Omega^{-1}(\tilde\nabla_k \bar E + \bar E_k)\tilde\nabla^k \Omega
+&=& \psi + \Omega^{-1}(\tilde\nabla_k  E +  E_k)\tilde\nabla^k \Omega
+\nonumber\\
+\bar E_{ij} &=& E_{ij}
+\end{eqnarray}
+We will denote
+\begin{eqnarray}
+\Psi \equiv \psi + \Omega^{-1}(\tilde\nabla_k  E +  E_k)\tilde\nabla^k \Omega.
+\label{bpsi}
+\end{eqnarray}
+%\begin{eqnarray}
+%f_{\mu\nu}&=&\underbrace{\left[ f_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu - \frac12 g_{\mu\nu}(f-\nabla^\sigma W_\sigma) + \frac12 \nabla_\mu \nabla_\nu \int D(f+\nabla^\sigma W_\sigma) \right]}_{2E^{T\theta}_{\mu\nu}}
+%\nonumber\\
+%&& + \nabla_\mu \underbrace{\left(W_\nu - \nabla_\nu \int D \nabla^\sigma W_\sigma\right)}_{E_\nu}+
+%\nabla_\nu \underbrace{\left(W_\mu - \nabla_\mu \int D \nabla^\sigma W_\sigma\right)}_{E_\mu}
+% \nonumber\\
+%&&
+%-2 g_{\mu\nu}\underbrace{(\tfrac14\nabla^\sigma W_\sigma-\tfrac14f)}_{\psi}
+%+2\nabla_\mu\nabla_\nu \underbrace{\int D (\tfrac34 \nabla^\sigma  W_{\sigma}-\tfrac14 f )}_{E}
+%\end{eqnarray}
+%where
+%\begin{eqnarray}
+%W_\mu = \int D \nabla^\rho f_{\rho\mu}.
+%\end{eqnarray}
+%We make use of the following quantities
+%\begin{eqnarray}
+%\Delta_\epsilon f_{ij} &=&  \tilde\nabla_i L_j + \tilde\nabla_j L_i + 2\tilde \nabla_i\tilde\nabla_j L + \Omega^{-2}
+%\tilde g_{ij}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega^2
+%\nonumber\\
+% \Delta_\epsilon ( \tilde\nabla^j f_{ij})&=& 2\tilde\nabla^2 \tilde\nabla_i L + \tilde\nabla^2 L_i + \tilde\nabla_i 
+%[ \Omega^{-2}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega^2]
+%\nonumber\\
+%\Delta_\epsilon W_i &=& \int D \tilde\nabla^2 (2\tilde\nabla_i L + L_i)+\int D \tilde\nabla_i 
+%[ \Omega^{-2}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega^2]
+%\nonumber\\
+%\Delta_\epsilon (\tilde g^{ij}f_{ij}) &=& 2\tilde\nabla^2 L+3 \Omega^{-2}(\tilde\nabla_k L + L_k)\tilde\nabla^k \Omega^2
+%\end{eqnarray}
+%If we restrict the gauge quantities $L_i$ and $L$ to vanish on the boundary, then we may form
+%\begin{eqnarray}
+%\bar\psi&=& \psi -\tfrac12 \tilde\nabla^2 L+\tfrac14 \tilde\nabla^i \int D \tilde\nabla^2 (2\tilde\nabla_i L + L_i)
+%\nonumber\\
+%\bar E&=& E + \int D\left(\tfrac34 \tilde\nabla^i \int D\tilde\nabla^2(2\tilde\nabla_i L + L_i) -\tfrac12 \tilde\nabla^2 L\right)
+%\nonumber\\
+%\bar E_i &=& E_i + \int D\tilde\nabla^2 (\tfrac43 \tilde\nabla_i L + L_i) - \tilde\nabla_i \int D \tilde\nabla^j \int D\tilde\nabla^2 (\tfrac43 \tilde\nabla_j L + L_j)
+%\nonumber\\
+%\bar E_{ij} &=& E_{ij} +\tilde\nabla_i \tilde\nabla_j L + \tfrac12\tilde\nabla_i L_j + \tfrac12\tilde\nabla_j L_i
+%-\tfrac12\tilde\nabla_i \int D\tilde\nabla^2 (2\tilde\nabla_j L + L_j) - \tfrac12\tilde\nabla_j \int D \tilde\nabla^2 (2\tilde\nabla_i L + L_i)
+%\nonumber\\
+%&&-\tfrac14 g_{ij}\left( 2 \tilde\nabla^2 L - \tilde\nabla^k \int D \tilde\nabla^2( 2\tilde\nabla_k L + L_k)\right)
+%\nonumber\\
+%&& + \tfrac14 \tilde\nabla_i \tilde\nabla_j \int D \left( 2\tilde\nabla^2 L + \tilde\nabla^k \int D \tilde\nabla^2 (2\tilde\nabla_k L +L_k)\right)
+%\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\delta G_{\mu\nu} = -\kappa^2_3 \delta T_{\mu\nu}$ Simplification to Gauge Invariant Form}
+First we transform $\delta T_{\mu\nu}$ using the background equations
+\begin{eqnarray}
+-\kappa^2_3 \Lambda \delta T_{ij} &=& k\Omega^2 (-2g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j
++\nabla_j E_i + 2E_{ij})
+\nonumber\\
+&=& -2 g_{ij}( \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega -\Omega^{-1} \nabla_{a}\nabla^{a}\Omega)\psi -2  \Omega^{-1} \nabla_{i}\nabla_{j}\Omega\psi + 4 \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega \psi
+\nonumber\\
+&&-\tfrac{4}{3} \Omega^{-1}\nabla_a \nabla^a \Omega \nabla_i\nabla_j E + \tfrac{2}{3}\Omega^{-2}\nabla_a\Omega \nabla^a\Omega\nabla_i\nabla_j E
+\nonumber\\
+&&-\tfrac{2}{3} \Omega^{-1}\nabla_a \nabla^a \Omega (\nabla_i E_j + \nabla_j E_i) + \tfrac{1}{3}\Omega^{-2}\nabla_a\Omega \nabla^a\Omega (\nabla_i E_j + \nabla_j E_i)
+\nonumber\\
+&&
+-\tfrac{4}{3} \Omega^{-1}\nabla_a \nabla^a \Omega E_{ij} + \tfrac{2}{3}\Omega^{-2}\nabla_a\Omega \nabla^a\Omega E_{ij}
+\end{eqnarray}
+Now forming $\Delta_{ij} \equiv \delta G_{ij} + \kappa^2_3\delta T_{ij} = 0$
+\begin{eqnarray}
+\Delta_{ij}&=&g_{ij} \nabla_{a}\nabla^{a}\psi
+- 2 g_{ij} \psi \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ 2 g_{ij} \psi \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega
++ g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}\nabla_{a}E\nonumber\\
+&& - 2 g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla_{b}\nabla_{a}E \nabla^{b}\Omega
++ 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}\nabla^{a}E
++ \Omega^{-1} \nabla_{i}\Omega \nabla_{j}\psi
++ \Omega^{-1} \nabla_{i}\psi \nabla_{j}\Omega\nonumber\\
+&& - 4 \psi \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega
+-  \tfrac{2}{3} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}\nabla_{i}E
++ \tfrac{4}{3} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}\nabla_{i}E
+-  \nabla_{j}\nabla_{i}\psi\nonumber\\
+&& + 2 \psi \Omega^{-1} \nabla_{j}\nabla_{i}\Omega
+-  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}\nabla_{a}E
+\nonumber\\
+&&+g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}E_{a}
+- 2 g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\Omega \nabla^{b}E^{a}
++ 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}E^{a}\nonumber\\
+&& -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}E_{a}
+- \tfrac{1}{3} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega(\nabla_{i}E_{j}+\nabla_j E_i)
+\nonumber\\
+&&
++ \tfrac{2}{3} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega (\nabla_{i}E_{j}+\nabla_j E_i)
+\nonumber\\
+&&+\nabla_{a}\nabla^{a}E_{ij}
+-  \tfrac{2}{3} E_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ \Omega^{-1} \nabla_{a}E_{ij} \nabla^{a}\Omega
++ \tfrac{4}{3} E_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\nonumber\\
+&& + 2 E^{ab} g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega
+- 2 E_{ab} g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
+-  \Omega^{-1} \nabla^{a}\Omega \nabla_{i}E_{ja}
+-  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}E_{ia}.
+\end{eqnarray}
+
+To facilitate simplification into gauge invariant components, we make substitution 
+\begin{eqnarray}
+\psi &=& \Psi - \Omega^{-1}(\tilde\nabla_k  E +  E_k)\tilde\nabla^k \Omega
+\end{eqnarray}
+in which $\Delta_{ij}$ then becomes
+\begin{eqnarray}
+\Delta_{ij}&=&g_{ij} \nabla_{a}\nabla^{a}\Psi
+- 2 \Psi g_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ 2 \Psi g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega
++ \Omega^{-1} \nabla_{i}\Omega \nabla_{j}\Psi
++ \Omega^{-1} \nabla_{i}\Psi \nabla_{j}\Omega\nonumber\\
+&& - 4 \Psi \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega
+-  \nabla_{j}\nabla_{i}\Psi
++ 2 \Psi \Omega^{-1} \nabla_{j}\nabla_{i}\Omega
+\label{Dgs1} \\
+\nonumber\\
+&&
++3 g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}E \nabla_{b}\nabla^{b}\Omega
+-  g_{ij} \Omega^{-1} \nabla^{a}E \nabla_{b}\nabla^{b}\nabla_{a}\Omega
+- 4 g_{ij} \Omega^{-3} \nabla_{a}\Omega \nabla^{a}E \nabla_{b}\Omega \nabla^{b}\Omega\nonumber\\
+&& + 2 g_{ij} \Omega^{-2} \nabla^{a}E \nabla_{b}\nabla_{a}\Omega \nabla^{b}\Omega
++ \Omega^{-1} \nabla^{a}\nabla_{j}E \nabla_{i}\nabla_{a}\Omega
++ 8 \Omega^{-3} \nabla_{a}\Omega \nabla^{a}E \nabla_{i}\Omega \nabla_{j}\Omega\nonumber\\
+&& - 2 \Omega^{-2} \nabla^{a}\Omega \nabla_{i}\nabla_{a}E \nabla_{j}\Omega
+- 2 \Omega^{-2} \nabla^{a}E \nabla_{i}\nabla_{a}\Omega \nabla_{j}\Omega
+- 2 \Omega^{-2} \nabla^{a}\Omega \nabla_{i}\Omega \nabla_{j}\nabla_{a}E\nonumber\\
+&& + \Omega^{-1} \nabla^{a}\nabla_{i}E \nabla_{j}\nabla_{a}\Omega
+- 2 \Omega^{-2} \nabla^{a}E \nabla_{i}\Omega \nabla_{j}\nabla_{a}\Omega
+-  \tfrac{2}{3} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}\nabla_{i}E\nonumber\\
+&& + \tfrac{4}{3} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}\nabla_{i}E
+- 3 \Omega^{-2} \nabla_{a}\Omega \nabla^{a}E \nabla_{j}\nabla_{i}\Omega
++ \Omega^{-1} \nabla^{a}E \nabla_{j}\nabla_{i}\nabla_{a}\Omega
+\label{Dgs2} \\
+\nonumber\\
+&&+3 E^{a} g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\nabla^{b}\Omega
+-  E^{a} g_{ij} \Omega^{-1} \nabla_{b}\nabla^{b}\nabla_{a}\Omega
+- 4 E^{a} g_{ij} \Omega^{-3} \nabla_{a}\Omega \nabla_{b}\Omega \nabla^{b}\Omega\nonumber\\
+&& + 2 E^{a} g_{ij} \Omega^{-2} \nabla_{b}\nabla_{a}\Omega \nabla^{b}\Omega
+-  \tfrac{1}{3} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{i}E_{j}
++ \tfrac{2}{3} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{i}E_{j}\nonumber\\
+&& - 2 \Omega^{-2} \nabla_{a}\Omega \nabla_{i}\Omega \nabla_{j}E^{a}
++ \Omega^{-1} \nabla_{i}\nabla_{a}\Omega \nabla_{j}E^{a}
+-  \tfrac{1}{3} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}E_{i}\nonumber\\
+&& + \tfrac{2}{3} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}E_{i}
+- 2 \Omega^{-2} \nabla_{a}\Omega \nabla_{i}E^{a} \nabla_{j}\Omega
++ 8 E^{a} \Omega^{-3} \nabla_{a}\Omega \nabla_{i}\Omega \nabla_{j}\Omega\nonumber\\
+&& - 2 E^{a} \Omega^{-2} \nabla_{i}\nabla_{a}\Omega \nabla_{j}\Omega
++ \Omega^{-1} \nabla_{i}E^{a} \nabla_{j}\nabla_{a}\Omega
+- 2 E^{a} \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\nabla_{a}\Omega\nonumber\\
+&& - 3 E^{a} \Omega^{-2} \nabla_{a}\Omega \nabla_{j}\nabla_{i}\Omega
++ E^{a} \Omega^{-1} \nabla_{j}\nabla_{i}\nabla_{a}\Omega.
+\label{Dgv1} \\
+\nonumber\\
+&&+\nabla_{a}\nabla^{a}E_{ij}
+ -  \tfrac{2}{3} E_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
+ + \Omega^{-1} \nabla_{a}E_{ij} \nabla^{a}\Omega
+ + \tfrac{4}{3} E_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\nonumber\\
+&& + 2 E^{ab} g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega
+ - 2 E_{ab} g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{i}E_{ja}
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}E_{ia}.
+\end{eqnarray}
+Inputting the explicit form of $\Omega(\rho)$, expanding covariant derivatives, and evaluating component by component we find that \eqref{Dgs2} and \eqref{Dgv1} vanish identically. To show an example of the interplay between contracted vector quantities like $E^{a} g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\nabla^{b}\Omega$ and free vectors such as $\Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}E_{i}$, we first isolate the free vector contribution to $\Delta_{ij}$:
+\begin{eqnarray}
+\Delta_{ij}^{(V_1)}&=& \left(-\tfrac13  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ \tfrac23\Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\right) (\nabla_{i}E_{j}+\nabla_j E_i)
+\nonumber\\
+&=&\left( \frac{2k}{1-k\rho^2}\right) (\nabla_{i}E_{j}+\nabla_j E_i)
+\label{Dgv12}
+\end{eqnarray}
+The remaining contracted vector contribution to $\Delta_{ij}^{(V)} = \Delta_{ij}^{(V_1)}+\Delta_{ij}^{(V_2)}$ is 
+\begin{eqnarray}
+\Delta_{ij}^{(V_2)}&=&3 E^{a} g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\nabla^{b}\Omega
+-  E^{a} g_{ij} \Omega^{-1} \nabla_{b}\nabla^{b}\nabla_{a}\Omega
+- 4 E^{a} g_{ij} \Omega^{-3} \nabla_{a}\Omega \nabla_{b}\Omega \nabla^{b}\Omega
++ 2 E^{a} g_{ij} \Omega^{-2} \nabla_{b}\nabla_{a}\Omega \nabla^{b}\Omega
+\nonumber\\
+&& - 2 \Omega^{-2} \nabla_{a}\Omega \nabla_{i}\Omega \nabla_{j}E^{a}
++ \Omega^{-1} \nabla_{i}\nabla_{a}\Omega \nabla_{j}E^{a}
+- 2 \Omega^{-2} \nabla_{a}\Omega \nabla_{i}E^{a} \nabla_{j}\Omega
++ 8 E^{a} \Omega^{-3} \nabla_{a}\Omega \nabla_{i}\Omega \nabla_{j}\Omega\nonumber\\
+&& - 2 E^{a} \Omega^{-2} \nabla_{i}\nabla_{a}\Omega \nabla_{j}\Omega
++ \Omega^{-1} \nabla_{i}E^{a} \nabla_{j}\nabla_{a}\Omega
+- 2 E^{a} \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\nabla_{a}\Omega - 3 E^{a} \Omega^{-2} \nabla_{a}\Omega \nabla_{j}\nabla_{i}\Omega
+\nonumber\\
+&&+ E^{a} \Omega^{-1} \nabla_{j}\nabla_{i}\nabla_{a}\Omega.
+\label{Dgvv2}
+\end{eqnarray}
+Evaluating \eqref{Dgvv2} component by component we find
+\begin{eqnarray}
+\Delta_{rr}^{(V_2)}&=& -\left(\frac{4k}{1+k\rho^2}\right)\partial_r E_r
+\nonumber\\
+\Delta_{\theta\theta}^{(V_2)}&=& -\left(\frac{4k}{1+k\rho^2}\right)(rE_r+\partial_\theta E_\theta)
+\nonumber\\
+\Delta_{\phi\phi}^{(V_2)}&=&-\left(\frac{4k}{1+k\rho^2}\right) ( r\sin^2\theta E_r+\sin\theta\cos\theta E_\theta +\partial_\phi E_\phi)
+\nonumber\\
+\Delta_{r\theta}^{(V_2)}&=& \left(\frac{2k}{1+k\rho^2}\right)\left(\frac{2E_\theta}{r}-\partial_r E_\theta - \partial_\theta E_r\right)
+\nonumber\\
+\Delta_{r\phi}^{(V_2)}&=& \left(\frac{2k}{1+k\rho^2}\right)\left(\frac{2E_\phi}{r}-\partial_r E_\phi - \partial_\phi E_r\right)
+\nonumber\\
+\Delta_{\theta\phi}^{(V_2)}&=& \left(\frac{2k}{1+k\rho^2}\right)\left( 2\sin^{-1}\theta\cos\theta E_\phi - \partial_\theta E_\phi - \partial_\phi E_\theta\right)
+\label{Dgv22}
+\end{eqnarray}
+
+Comparison of \eqref{Dgv22} to \eqref{Dgv12} illustrates the vanishing of the entire vector portion $\Delta^{(V)}_{ij}$. When evaluated component by component, the remaining scalar piece \eqref{Dgs2} similarly vanishes, and thus we are left with the gauge invariant form
+\begin{eqnarray}
+\Delta_{ij}&=&g_{ij} \nabla_{a}\nabla^{a}\Psi
+- 2 \Psi g_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ 2 \Psi g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega
++ \Omega^{-1} \nabla_{i}\Omega \nabla_{j}\Psi
++ \Omega^{-1} \nabla_{i}\Psi \nabla_{j}\Omega\nonumber\\
+&& - 4 \Psi \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega
+-  \nabla_{j}\nabla_{i}\Psi
++ 2 \Psi \Omega^{-1} \nabla_{j}\nabla_{i}\Omega
+\nonumber\\
+&&+\nabla_{a}\nabla^{a}E_{ij}
+-  \tfrac{2}{3} E_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ \Omega^{-1} \nabla_{a}E_{ij} \nabla^{a}\Omega
++ \tfrac{4}{3} E_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\nonumber\\
+&& + 2 E^{ab} g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega
+- 2 E_{ab} g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
+-  \Omega^{-1} \nabla^{a}\Omega \nabla_{i}E_{ja}
+-  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}E_{ia}.
+\label{Dgcf}
+\end{eqnarray}
+
+Taking the trace of the above, we find
+\begin{eqnarray}
+g^{ij}\Delta_{ij}&=&3 \nabla_{a}\nabla^{a}\Psi
+- 6 \Psi \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
++ 2 \Omega^{-1} \nabla_{a}\Omega \nabla^{a}\Psi
++ 2 \Psi \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega
+-  \nabla^{a}\nabla_{a}\Psi\nonumber\\
+&& + 2 \Psi \Omega^{-1} \nabla^{a}\nabla_{a}\Omega
+- 6 E_{ab} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
++ 6 E_{ab} \Omega^{-1} \nabla^{b}\nabla^{a}\Omega.
+\end{eqnarray}
+
+As \eqref{Dgcf} is already transverse, we may form the transverse traceless component of $\Delta_{ij}$ by 
+\begin{eqnarray}
+ \Delta_{ij}^{T\theta} &=& \Delta_{ij} - \frac12 g_{ij} g^{kl}\Delta_{kl}+ \frac12 \left[ \nabla_i\nabla_j +kg_{ij}\right]\int F g^{kl}\Delta_{kl}
+\end{eqnarray}
+where 
+\begin{eqnarray}
+(\nabla_a\nabla^a +3k)F(x,x')= g^{-1/2}\delta^3(x-x')
+\end{eqnarray}
+
+\newpage
+\begin{appendices}
+\section{Conformal to Flat Maximal 3-Space}
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\rho)\left( d\rho^2 + \rho^2 d\Omega^2\right)
+\nonumber\\
+&=& \frac{4}{\left(1+k\rho^2\right)^2}\left( d\rho^2 + \rho^2 d\Omega^2\right)
+\nonumber\\
+&=& \frac{dr^2}{1-kr^2} + r^2 d\Omega^2
+\label{dscf}
+\end{eqnarray}
+The relevant transformations are:
+\begin{eqnarray}
+\rho(r) &=& \frac{r}{1+\left(1-kr^2\right)^{1/2}},\qquad \Omega^2(r) = \left[1+\left(1-kr^2\right)^{1/2}\right]
+\nonumber\\
+r(\rho) &=& \frac{2\rho}{1+k\rho^2},\qquad \Omega^2(\rho) = \frac{4}{\left(1+k\rho^2\right)^2}
+\end{eqnarray}
+
+
+
+%%%%%%%%%%%%%%%
+%\subsection{$k<0$}
+%The 3-space of constant curvature can be expressed in the conformal flat form (using $-k = 1/L^2$) as
+%\begin{eqnarray}
+%ds^2 &=& \Omega^2(\rho)\left( d\rho^2 + \rho^2 d\Omega^2\right)\\
+%&=& \frac{4}{\left(1-\rho^2/L^2\right)^2}\left( d\rho^2 + \rho^2 d\Omega^2\right)\\
+%&=& \frac{dr^2}{1+r^2/L^2} + r^2 d\Omega^2
+%\end{eqnarray}
+%The relevant transformations are:
+%\begin{eqnarray}
+%\rho(r) &=& \frac{r}{1+\left(1+r^2/L^2\right)^{1/2}},\qquad \Omega^2(r) = \left(1+\left[1+r^2/L^2\right)^{1/2}\right]^2
+%\nonumber\\
+%r(\rho) &=& \frac{2\rho}{1-\rho^2/L^2},\qquad \Omega^2(\rho) = \frac{4}{\left(1-\rho^2/L^2\right)^2}
+%\end{eqnarray}
+%
+%%%%%%%%%%
+%\subsection{$k>0$}
+%Now instead we set $k = 1/L^2$ to express the line element as
+%\begin{eqnarray}
+%ds^2 &=& \Omega^2(\rho)\left( d\rho^2 + \rho^2 d\Omega^2\right)\\
+%&=& \frac{4}{\left(1+\rho^2/L^2\right)^2}\left( d\rho^2 + \rho^2 d\Omega^2\right)
+%\label{k>0cf}\\
+%&=& \frac{dr^2}{1-r^2/L^2} + r^2 d\Omega^2
+%\end{eqnarray}
+%The relevant transformations are:
+%\begin{eqnarray}
+%\rho(r) &=& \frac{r}{1+\left(1-r^2/L^2\right)^{1/2}},\qquad \Omega^2(r) = \left[1+\left(1-r^2/L^2\right)^{1/2}\right]
+%\nonumber\\
+%r(\rho) &=& \frac{2\rho}{1+\rho^2/L^2},\qquad \Omega^2(\rho) = \frac{4}{\left(1+\rho^2/L^2\right)^2}
+%\end{eqnarray}
+%After calculation, we see that solutions to positive/negative geometries are affected by $L^2 \to - L^2$. This is not quite the case in 4D comoving RW, where we must make use of trigonometric and hyperbolic transformations depending on the sign of the curvature.
+
+
+%%%%%%%%%%%%%%
+\section{$\delta G_{ij}$ Under Conformal Transformation}
+Although the Riemann tensor transforms the same under conformal transformation, viz.
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &\to& \Omega^2 R_{\lambda\mu\nu\kappa} + \Omega\left ( -g_{\mu\nu}\nabla_\lambda \nabla_\kappa \Omega
++ g_{\lambda\nu}\nabla_\mu\nabla_\kappa \Omega + g_{\mu\kappa} \nabla_\nu\nabla_\lambda \Omega - g_{\lambda\kappa} \nabla_\mu\nabla_\nu \Omega \right)
+\nonumber\\
+&&\qquad+ 2g_{\mu\nu} \nabla_\kappa\Omega \nabla_\lambda\Omega - 2g_{\lambda\nu} \nabla_\kappa\Omega \nabla_\mu\Omega - 2g_{\mu\kappa}
+\nabla_\lambda\Omega \nabla_\nu\Omega + 2g_{\lambda\kappa} \nabla_\mu \Omega \nabla_\nu\Omega
+\nonumber\\
+&&\qquad + (g_{\lambda\nu} g_{\mu\kappa}-g_{\lambda\kappa}g_{\mu\nu})\nabla^\rho \Omega \nabla_\rho \Omega
+\end{eqnarray}
+its contractions do depend on the dimension under consideration. For $D=3$ $\mu,\nu = 1,2,3$ the Ricci tensor and scalar transform as
+\begin{eqnarray}
+R_{\mu\nu} &\to& R_{\mu \nu} + g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega +  \Omega^{-1} \nabla_{\mu}\nabla_{\nu}\Omega - 2 \Omega^{-2} \nabla_{\mu}\Omega \nabla_{\nu}\Omega
+\nonumber\\ \nonumber\\
+R &\to&  \Omega^{-2}R + 4 \Omega^{-3} \nabla_{\alpha}\nabla^{\alpha}\Omega - 2 \Omega^{-4} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega
+\end{eqnarray}
+and thus the Einstein tensor transforms as
+\begin{eqnarray}
+G_{\mu\nu} &\to& G_{\mu\nu} +  g_{\mu \nu}( \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega -\Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega)+  \Omega^{-1} \nabla_{\mu}\nabla_{\nu}\Omega - 2 \Omega^{-2} \nabla_{\mu}\Omega \nabla_{\nu}\Omega
+\label{gbg}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta \Gamma^\lambda_{\mu\nu} &=& \tfrac12 g^{\lambda\rho}\left[ \nabla_\mu h_{\nu\rho} + \nabla_\nu h_{\mu\rho} - \nabla_\rho h_{\mu\nu} \right]
+\nonumber\\
+\nabla_\mu \nabla_\nu \Omega  &=& \partial_\mu \nabla_\nu \Omega  - \Gamma^\lambda_{\mu\nu} \nabla_\lambda\Omega
+\nonumber\\
+\delta (\nabla_\mu \nabla_\nu \Omega) &=& -\tfrac12 \nabla^\rho \Omega (\nabla_\mu h_{\rho\nu} + \nabla_\nu h_{\mu\rho} - \nabla_\rho h_{\mu\nu})
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{\mu\nu} \to \delta G_{\mu\nu} + \delta S_{\mu\nu}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
+\nonumber\\ \nonumber\\
+\delta S_{\mu\nu} &=&- h_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega
+ + \tfrac{1}{2} \Omega^{-1} \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}\Omega
+ -  \tfrac{1}{2} g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}h \nabla^{\alpha}\Omega
+ + h_{\mu \nu} \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega\nonumber\\
+&& + g_{\mu \nu} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\beta}h_{\alpha}{}^{\beta}
+ -  g_{\mu \nu} h_{\alpha \beta} \Omega^{-2} \nabla^{\alpha}\Omega \nabla^{\beta}\Omega
+ + g_{\mu \nu} h_{\alpha \beta} \Omega^{-1} \nabla^{\beta}\nabla^{\alpha}\Omega\nonumber\\
+&& -  \tfrac{1}{2} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\mu}h_{\nu \alpha}
+ -  \tfrac{1}{2} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\nu}h_{\mu \alpha}.
+\end{eqnarray}
+
+%\begin{eqnarray}
+%\delta G_{ij}&=&g_{ij} \nabla_{a}\nabla^{a}\psi
+% + g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}\nabla_{a}E
+% - 2 g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla_{b}\nabla_{a}E \nabla^{b}\Omega
+%\nonumber\\
+%&& + 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}\nabla^{a}E
+% + \Omega^{-1} \nabla_{i}\Omega \nabla_{j}\psi
+% + \Omega^{-1} \nabla_{i}\psi \nabla_{j}\Omega
+% - 2 \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}\nabla_{i}E
+%\nonumber\\
+%&& + 2 \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}\nabla_{i}E
+% -  \nabla_{j}\nabla_{i}\psi
+% -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}\nabla_{a}E
+%\nonumber\\ \nonumber\\
+%&&+g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}E_{a}
+% - 2 g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\Omega \nabla^{b}E^{a}
+% + 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}E^{a}\nonumber\\
+%&& -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{i}E_{j}
+% + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{i}E_{j}
+% -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}E_{i}
+% + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}E_{i}\nonumber\\
+%&& -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}E_{a}
+%\nonumber\\ \nonumber\\
+%&&+\nabla_{a}\nabla^{a}E_{ij}
+% - 2 E_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
+% + \Omega^{-1} \nabla_{a}E_{ij} \nabla^{a}\Omega
+% + 2 E_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\nonumber\\
+%&& + 2 E^{ab} g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega
+% - 2 E_{ab} g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
+% -  \Omega^{-1} \nabla^{a}\Omega \nabla_{i}E_{ja}
+% -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}E_{ia}.
+%\end{eqnarray}
+
+%%%%%%%%%%%%%%
+\section{Maximal 3-Space Geometric Quantities}
+Geometry
+\begin{eqnarray}
+ds^2 = g_{ij}dx^idx^j = \left( \frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2\right):
+\end{eqnarray}
+
+\begin{eqnarray}
+R_{ijkl} = k(g_{jk}g_{il}-g_{ik}g_{jl}),\qquad R_{ij} = -2kg_{ij},\qquad R = -6k
+\end{eqnarray}
+
+\begin{eqnarray}
+G_{ij} &=& R_{ij} - \frac12 g_{ij} R = -2k g_{ij} -\frac12 g_{ij}(-6k) =k g_{ij}
+\nonumber\\{}
+g^{ij}G_{ij} &=& R-\frac32 R = -\frac12 R = 3k
+\end{eqnarray}
+
+\begin{eqnarray}
+[\nabla_i,\nabla_j]V_k =- V_l R^l{}_{jki}= -V_l ( k(g_{jk}g^{l}{}_i - g^l{}_k g_{ij})) = k(g_{ij} V_k - g_{jk}V_i)
+\label{covcom}
+\end{eqnarray}
+
+\begin{eqnarray}
+[\nabla_a \nabla^a ,\nabla_i] E &=& 2k\nabla_i E
+\nonumber\\{}
+[\nabla^j,\nabla_i]\nabla_j E &=& 2k\nabla_i E
+\nonumber\\{}
+ [\nabla_a\nabla^a,\nabla_i\nabla_j]E &=& -2kg_{ij}\nabla_a\nabla^a E + 6k\nabla_i\nabla_j E
+\nonumber\\{}
+[\nabla_a \nabla^a, \nabla_i] E_j &=& 2k(\nabla_i E_j + \nabla_j E_i)
+\nonumber\\{}
+[\nabla^i,\nabla_j]E_i &=& 2kE_j
+\nonumber\\{}
+[\nabla^i,\nabla_a\nabla^a]E_{ij} &=& 0
+\end{eqnarray}
+
+\begin{eqnarray}
+\Gamma^r_{rr} &=& \frac{kr}{1-kr^2},\qquad \Gamma^r_{\theta\theta} = -r(1-kr^2),\qquad \Gamma^r_{\phi\phi} = -r(1-kr^2)\sin^2\theta
+\nonumber\\
+\Gamma^\theta_{r\theta} &=& \Gamma^{\phi}_{r\phi} = \frac{1}{r},\qquad \Gamma^{\theta}_{\phi\phi} = -\sin\theta\cos\theta, \qquad \Gamma^{\phi}_{\theta\phi} = \cot\theta,\quad\text{with all others zero}
+\end{eqnarray}
+
+\end{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\printbibliography
+
+\end{document}

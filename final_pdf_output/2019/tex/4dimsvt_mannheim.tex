@@ -1,0 +1,191 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Four-Dimensional SVT}
+\date{}
+\begin{document} 
+	\maketitle
+	\noindent 
+	%%%%%%%%%%%%%%%%%%%%%
+
+\section{Four-Dimensional SVT}
+$\overset{"."}{x8}_{0}{}_{i}$
+In (E23) in the big paper we worked out an SVT decomposition in any dimension. 
+%
+$$
+h_{\mu\nu}=-2g_{\mu\nu}\psi+2\nabla_{\mu}\nabla_{\nu}E
++ \nabla_{\mu}E_{\nu}+\nabla_{\nu}E_{\mu}+2E_{\mu\nu}~~~~~~(E23)$$
+%
+Thus we can use it in four dimensions and everything will be manifestly covariant since the standard three dimensional SVT is not manifestly covariant. In the following I will work in flat space but use the covariant $\nabla_{\mu}$ notation.
+
+It is more convenient to convert back to the original $W_{\mu}$ and trace $h$ rather than use the $F_{\mu}$ and $F$ given in (E18)
+%
+$$F={D \over 2(D-1)}\int d^DyD^{(D)}(x-y)\nabla^{\mu}W_{\mu}~~~~~~(A)$$
+%
+$$F_{\mu}=W_{\mu}-\nabla_{\mu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}~~~~~(B)$$
+%
+Inserting these expressions into (E21) gives (in any dimension $D$)
+%
+$$h_{\mu\nu}=h_{\mu\nu}^{T\theta}+\nabla_{\nu}W_{\mu}+\nabla_{\mu}W_{\nu}+{2-D \over D-1}\nabla_{\mu}\nabla_{\nu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}~~~$$
+%
+$$-{g_{\mu\nu}\over D-1}(\nabla^{\alpha}W_{\alpha}-h)-{\nabla_{\mu}\nabla_{\nu} \over D-1}\int d^DyD^{(D)}(x-y)h~~~~~(C)$$
+%
+
+
+Taking the trace of both sides yields $h=h$, just as it should, while applying $\nabla^{\nu}$ yields
+%
+$$\nabla^{\alpha}h_{\alpha\mu}=\nabla^2W_{\mu}~~~~(D)$$
+%
+It is (D) that thus fixes $W_{\nu}$. We can understand the structure of (C). We start with an initial $h_{\mu\nu}$ and in order to construct from it a quantity $h_{\mu\nu}^{T\theta}$ that obeys the $D+1$ conditions $\nabla^{\nu}h_{\mu\nu}^{T\theta}=0$, $g^{\mu\nu}h_{\mu\nu}^{T\theta}=0$ we need to supply $D+1$ pieces of information, thus $h$ and the $D$-dimensional $W_{\mu}$, all of which can be expressed in terms of functions of $h_{\mu\nu}$.
+
+Now though we had used integrals to go from $F_{\mu}$ to $W_{\mu}$, we shall now ignore this completely and start from scratch with (C) where $W_{\mu}$ is defined in (D).
+
+Applying $\nabla^2$ to (C) yields
+%
+$$\nabla^2h_{\mu\nu}=\nabla^2h_{\mu\nu}^{T\theta}+\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}+\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+{2-D \over D-1}\nabla_{\mu}\nabla_{\nu}\nabla^{\alpha}W_{\alpha}~~~~$$
+%
+$$+{g_{\mu\nu}\over D-1}(\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h)-{\nabla_{\mu}\nabla_{\nu} \over D-1}h~~~~~(E)$$
+%
+We thus obtain
+%
+$$\nabla^2h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h=\nabla^2h_{\mu\nu}^{T\theta}+{2-D \over D-1}\nabla_{\mu}\nabla_{\nu}[\nabla^{\alpha}W_{\alpha}-h]~~~~$$
+%
+$$-{g_{\mu\nu}\over D-1}(\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h)~~~~~(F)$$
+%
+Now $\nabla^2h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h$ and $\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h$ are both gauge invariant (the first term is equal to $\delta R_{\mu\nu}/2$ and the second to $-\delta R$). Now since
+%
+$$\nabla^2[\nabla^{\alpha}W_{\alpha}-h]=\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h~~~~~(G)$$
+%
+we define
+%
+$$\nabla^{\alpha}W_{\alpha}-h=\int d^DyD^{(D)}(x-y)[\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h]~~~~(H)$$
+%
+in order to make  $\nabla^2h_{\mu\nu}^{T\theta}$ be gauge invariant, though we could be a little more general and set
+%
+$$\nabla^{\alpha}W_{\alpha}-h=\int d^DyD^{(D)}(x-y)[\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h]+A~~~~~(I)$$
+%
+where $A$ is any function that obeys $\nabla^2A=0$, with $A$ being introduced should the integral in (I) not converge.
+
+We can relate the SVT terms in (E22) to $W_{\mu}$ and $h$ as
+%
+$$2\psi={1 \over (D-1)}[\nabla^{\alpha}W_{\alpha}-h],~~~~2E={1 \over D-1}\int d^DyD^{(D)}(x-y)[D\nabla^{\alpha}W_{\alpha}-h]$$
+$$E_{\mu}=W_{\mu}-\nabla_{\mu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha},~~~~~2E_{\mu\nu}=h_{\mu\nu}^{T\theta}~~~~~(J)$$
+%
+and check that (C) agrees with  (E23).
+
+
+
+With (J)  we can now write (F) as 
+%
+$$\delta R_{\mu\nu}={1 \over 2}[2\nabla^2E_{\mu\nu}+2(2-D)\nabla_{\mu}\nabla_{\nu}\psi-2g_{\mu\nu}\nabla^2\psi],~~~~~\delta R=2(1-D)\nabla^2\psi~~~~~(K)$$
+%
+with the Einstein tensor being given by 
+%
+$$\delta G_{\mu\nu}=\delta R_{\mu\nu}-{1 \over 2}g_{\mu\nu}g^{\alpha\beta}\delta R_{\alpha\beta}=\nabla^2E_{\mu\nu}+(2-D)\nabla_{\mu}\nabla_{\nu}\psi+(D-2)g_{\mu\nu}\nabla^2\psi~~~~~(L)$$
+%
+As we see, only $E_{\mu\nu}$ and $\psi$ are observable, so it did not matter that $E$ and $E_{\mu}$ were given as integrals. In regard to $\psi$ we establish that
+%
+$$\nabla^2\psi={1 \over 2(D-1)}\nabla^2[\nabla^{\alpha}W_{\alpha}-h]={1 \over 2(D-1)}[\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla^2h]~~~~~(M)$$
+%
+is gauge invariant. Thus depending on how we integrate (M) will determine whether $\psi$ itself is gauge invariant, i.e. will determine where $\nabla^2E_{\mu\nu}$ is gauge invariant, or whether only $\nabla^2E_{\mu\nu}+(2-D)\nabla_{\mu}\nabla_{\nu}\psi$ is gauge invariant. Though with $A=0$, $\nabla^2E_{\mu\nu}$ is gauge invariant. (We would not be able to show that $E_{\mu\nu}$ itself is gauge invariant since we would get integrals that we would have to integrate by parts, and we would not be able to do so for large gauge transformations -- and if we first make large gauge transformations in order to get rid of divergent surface terms we could not make them again, and the resulting finite integrals would then only have invariance under small gauge transformations.)
+
+However even if only $\nabla^2E_{\mu\nu}+(2-D)\nabla_{\mu}\nabla_{\nu}\psi$ is gauge invariant, it follows that $\nabla^4E_{\mu\nu}$ is gauge invariant since $\nabla^2\psi$ is. Since the gauge invariant $\delta W_{\mu\nu}$ is a fourth-order derivative quantity, and since it only contains five degrees of freedom because of its tracelessness, it must be given by $\nabla^4E_{\mu\nu}$ alone. In fact, direct evaluation of Eq. (24) in the big paper gives 
+%
+$$\delta W_{\mu\nu}=\nabla^4E_{\mu\nu}~~~~~(N)$$
+% 
+with all other terms in (E23) dropping out. This is a lot simpler than Eq. (75) in the big paper.
+\newpage
+March 18, 2017
+
+
+Four-dimensional decomposition theorem
+
+
+In perturbations there are two effects, the introduction of a new source, $\bar{T}_{\mu\nu}$, and a modification $\delta T_{\mu\nu}$ of the background source due to the introduction of $\bar{T}_{\mu\nu}$. Consider the flat background case where there is no background source ($T_{\mu\nu}=0$).  Since $\bar{T}_{\mu\nu}$ is a tensor we can expand it as
+
+%
+
+$$
+\bar{T}_{\mu\nu}=-2g_{\mu\nu}\bar{\psi}+2\nabla_{\mu}\nabla_{\nu}\bar{E}
++ \nabla_{\mu}\bar{E}_{\nu}+\nabla_{\nu}\bar{E}_{\mu}+2\bar{E}_{\mu\nu}~~~~~~(A)$$
+
+%
+
+where to lowest order the derivatives and metric $g_{\mu\nu}$ are associated with the background. Now $\bar{T}_{\mu\nu}$ is gauge invariant and covariantly conserved, and thus can only depend on the gauge invariant $\bar{E}_{\mu\nu}$ and $\bar{\psi}$, and to be conserved thus must be of the form
+
+%
+
+$$\bar{T}_{\mu\nu}=-2(g_{\mu\nu}\nabla^2-\nabla_{\mu}\nabla_{\nu})\bar{\psi}+2\bar{E}_{\mu\nu}~~~~~~(B)$$
+
+%
+
+The perturbed Einstein equations in $D=4$ thus take the form
+
+%
+
+$$\nabla^2E_{\mu\nu}+2[g_{\mu\nu}\nabla^2-\nabla_{\mu}\nabla_{\nu}]\psi=-2(g_{\mu\nu}\nabla^2-\nabla_{\mu}\nabla_{\nu})\bar{\psi}+2\bar{E}_{\mu\nu}~~~~~(C)$$
+
+%
+
+with trace
+
+%
+
+$$6\nabla^2\psi=-6\nabla^2\bar{\psi}~~~~~(D)$$
+
+%
+
+Now (D) would only fix $\psi+\bar{\psi}$ up to a harmonic function of the form $e^{ig_{\mu\nu}k^{\mu}k^{\nu}}=e^{i\bar{k}\cdot \bar{x}-i\omega t}$, since a harmonic function obeys $\nabla^2e^{ik_{\mu}k^{\nu}}=0$.  However, we can exclude such a possibility since $\bar{\psi}$ is the cause of $\psi$, i.e. without introducing the perturbation the geometry would remain flat. Thus it must be the case that $\psi=-\bar{\psi}$, and on inserting into (C) this gives us the decomposition theorem relation 
+
+%
+
+$$\nabla^2E_{\mu\nu}=2\bar{E}_{\mu\nu}~~~~(E)$$
+
+%
+
+Thus to get the decomposition theorem we need to introduce a new source $\bar{T}_{\mu\nu}$ and see what $\delta T_{\mu\nu}$ it causes.
+
+
+We need to generalize this result to a Robertson-Walker background.
+
+
+Note that because we used the four-dimensional decomposition (A) we did not need to appeal to any three-dimensional boundary conditions.
+
+
+=====
+\newpage
+\section{RW Wave Eq}
+Consider the equation $\nabla^2\psi=0$ in $K=+1$ RW. With $r=\sin\chi$ we have a wave equation of the form 
+%
+$${1 \over \sin^2\chi}{\partial \over \partial \chi}\left[\sin^2\chi{\partial \psi\over \partial \chi}\right]-{\ell(\ell+1)\psi\over \sin^2\chi}=0$$
+%
+Here $\chi$ ranges between $0$ and $\pi/2$. We need a function that vanishes at the boundary $r=1$, i.e. at $\chi=\pi/2$. Thus $\psi$ has to behave as some power of $\cos\chi$ near the boundary. But we also need $\psi$ not to blow up at $\chi=0$. So if we take $\psi$ to behave as $\chi^n$ at small $\chi$ we find that $n(n+1)=\ell(\ell+1)$. This has two solutions $\psi \sim \chi^{\ell}$, $\psi \sim \chi^{-\ell-1}$. The second one blows up, but  the first one does not. So first let us try $\ell=0$. There are immediately two exact solutions to the wave equation $\psi=1$, $\psi=\cos\chi/\sin\chi$. The first behaves as $\chi^0$, the second as $\chi^{-1}$. Unfortunately the $\psi=1$ solution is not bounded at $\chi=\pi/2$. 
+
+For $\ell=1$ there is immediately an exact  solution $\psi=1/\sin^2\chi$, and it behaves as $1/\chi^2$ near $\chi=0$, and blows up at $\chi=0$. However the second solution the one that is to behave at $\chi^1$ is well-behaved at $\chi=0$, i.e. the  solution behaves as $\sin\chi$ near $\chi=0$. So we need to find it to see how it behaves at $\chi=\pi/2$. For $\ell=1$ we find that near $\chi=\pi/2$ the solution should behave as $\cos\chi+(5/6)\cos^3\chi$. Thus the wave equation has a solution that is bounded at $\chi=\pi/2$. A behavior that meets both the $\chi=0$ and $\chi=\pi/2$ limits would be something like $\sin\chi\cos\chi+....$. So let us try to find the exact solution for $\ell=1$.
+\\ 
+\\
+The solutions given in my GRG 20, 201 (1988) coincide with the solutions that behave as $\chi^{-\ell-1}$. See if you can get mathemnatica to find the solutions that behave as $\chi^{\ell}$.
+\\ \\
+To find second solution set $\psi=f/\sin^2\chi$. Since we know that with $f=1$ we already have a solution, the equation for $f$ can only contain derivatives of $f$, and no $f$ term without derivatives. Find
+%
+$$f^{\prime\prime}-2{\cos\chi \over \sin\chi}f^{\prime}=0$$ 
+%
+with solution
+%
+$$f=-{1 \over 2}\cos\chi\sin\chi+{1\over 2}\chi$$
+%
+%
+$$\psi=-{\cos\chi \over 2\sin\chi}+{\chi\over 2\sin^2\chi}$$
+%
+and you can check directly that it satisfies the wave equation with $\ell=1$. Unlike the $1/\sin^2\chi$ solution this solution is well-behaved at $\chi=0$, vanishing as $\chi^1$ just as it should. However, at $\chi=\pi/2$ it behaves as $\pi/4$ and does not converge. The reason I missed it before is because since $1/\sin^2\chi$ satisfies the wave equation the term that is linear in $\chi$ has a coefficient that satisfies the wave equation and is thus leading at $\chi=\pi/2$.
+
+Thus for both $\ell=0$ and $\ell=1$ we see that one solution is well-behaved at $\chi=0$ and diverges at $\chi=\pi/2$, while the second solution is well-behaved or zero at $\chi=\pi/2$ and blows up at $\chi=0$. So we have no solution that is finite at $\chi=0$ and vanishes at $\chi=\pi/2$.
+
+Nonetheless, the $\ell=0$ $\cos\chi/\sin\chi$ solution cannot be suppressed by an asymptotic boundary condition. It can only be suppressed by a finiteness condition at the origin. For $k=-1$ there is an $\ell=1$ solution $1/\sinh^2\chi=1/r^2$. For $k=-1$ the asymptotic boundary is at $r=\infty$, so this solution is not suppressed by an asymptotic boundary condition. It does however diverge at $r=0$ and can be excluded on those grounds. Thus for non-zero $k$ we do not get a decomposition theorem if we impose an asymptotic boundary condition.
+
+\end{document}

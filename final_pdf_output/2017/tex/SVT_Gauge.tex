@@ -1,0 +1,241 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{SVT Gauge Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\noindent Conformal to flat perturbed line element
+\[
+	ds^2 = \Omega^2\clr{ -(1+2\phi)d\tau^2 + (\pd_i B+B_i)dx^id\tau + [(1-2\psi)\delta_{ij}+2\pd_i\pd_j E + \pd_i E_j+\pd_j E_i + 2E_{ij}]dx^i dx^j}
+\]
+where
+\[
+	\pd_i B^i = \pd_i E^i = 0,\qquad \pd_i E^{ij} = 0,\qquad \delta_{ij}E^{ij} = 0.
+\]
+\
+\\
+\textbf{Minkowski Background}
+\\ \\
+\\
+Under coordinate transformation $x^\mu \to x'^\mu = x^\mu + \ep^\mu(x)$, the metric transforms as
+\[
+	g'^{\mu\nu}(x') = \frac{\pd x'^\mu}{\pd x^\lambda}\frac{\pd x'^\nu}{\pd x^\rho} g^{\lambda\rho}(x)
+\]
+which leads us to first order
+\[
+	h'_{\mu\nu} = h_{\mu\nu} - \pd_\mu \ep_\nu -\pd_\nu \ep_\nu.
+\]
+Let us define 
+\[
+	\ep_\mu = (\alpha, \pd_i \ep + \ep_i)
+\]
+where the spatial vector has been decomposed into scalar ($\pd_i \ep$) and transverse ($\pd_i \ep^i = 0$) components. Now we form the transformations:
+\[
+	h_{00}' = h_{00} -2\dot\alpha
+\]
+\[
+	\phi' = \phi +\dot\alpha
+\]
+\\
+\[
+	h_{0i}' = h_{0i} - \pd_i \dot\ep - \pd_i \alpha - \dot \ep_i
+\]
+\[
+	B' = B -\dot\ep - \alpha
+\]
+\[
+	B_i' = B_i - \dot \ep_i
+\]
+\\
+\[
+	h_{ij}' = h_{ij} -2\pd_i \pd_j \ep - \pd_j \ep_i-\pd_i\ep_j
+\]
+\[
+	\psi' = \psi
+\]
+\[
+	E' = E -\ep
+\]
+\[
+	E_i' = E_i - \ep_i
+\]
+\[
+	E_{ij}' = E_{ij}.
+\]
+\\
+Linear combinations of the perturbations can form gauge invariant quantities:
+\[
+	\phi_B = \phi + \dot B - \ddot E
+\]
+\[
+	\psi_B = \psi
+\]
+\[
+	(F_i)_B = \dot E_i - B_i
+\]
+\[
+	(E_{ij})_B = E_{ij}
+\]
+\\ \\
+\textbf{K=0 RW background} \\ \\
+\[
+	\phi' = \phi - \dot\alpha - \pfrac{\dot a}{a}\alpha
+\]
+\[
+	B' = B + \alpha - \dot \ep
+\]
+\[
+	B'_i = B_i - \dot \ep_i
+\]
+\[
+	\psi' = \psi + \pfrac{\dot a}{a}\alpha
+\]
+\[
+	E' = E-\ep
+\]
+\[ 
+	E'_i = E_i - \ep_i
+\]
+\[ 
+	E'_{ij} = E_{ij}
+\]
+Gauge Invariant Combinations are now:
+\[
+	\phi_B = \phi + \frac{\dot a}{a}\plr{ B-\dot E} + (\dot B - \ddot E)
+\]
+\[
+	\psi_B = \psi - \frac{\dot a}{a}(B-\dot E)
+\]
+\[
+	F_i = \dot E_i - B_i
+\]
+\[
+	E_{ij} = E_{ij}
+\]
+\textbf{Equation Decomposition}\\ \\
+\\ 
+\textit{Bianchi Identities:}
+\\
+First lets see how they decouple using only Bianchi identities and the decomposition of $\delta G_{\mu\nu}$. The $\nu = 0$ component of the Bianchi identity $\eta^{\mu\alpha}\pd_\alpha \delta G_{\mu\nu}$ gives
+\[
+	-\pd_0 \delta G_{00} +\delta^{ij}\del_j \delta G_{0i} = 0.
+\]
+Expressed in terms of the $\delta G_{\mu\nu}$ decomposition, this is
+\[
+	2\dot{\bar\phi} + \del^2\bar B = 0.
+\]
+Time Bianchi:
+\be
+	\boxed{\del^2 \bar B = -2\dot{\bar \phi}}.
+\ee
+Now set $\nu = i$, the Bianchi identity gives
+\[
+	-\pd_0 \delta G_{0i} + \delta^{jk} \del_j \delta G_{ik} =0.
+\]
+Space Bianchi:
+\be
+	\boxed{-(\del_i \dot{\bar B} + \dot{\bar{ B_i}}) -2 \del_i \bar{\psi} + 2 \del_i \del^2 \bar E + \del^2 \bar E_i =0 }
+\ee
+For later use we will also take the divergence of the above:
+\[
+	-\del^2 (2\bar\psi +\dot{\bar B} - 2\del^2 \bar E)=0.
+\]
+\\ 
+\textit{Decompositions:}\\
+Now let us equate decompositions in $\delta G_{\mu\nu}$ to that of $h_{\mu\nu}$. Start with $\delta G_{00}$
+\be
+	\delta G_{00}:\quad \boxed{\bar \phi = \del^2 \psi} \quad\text{or}\quad \boxed{\del^2\bar B = -2\del^2 \dot\psi}
+\ee
+Another scalar to solve for is the trace $\eta^{\mu\nu} \delta G_{\mu\nu}$
+\[
+	2\bar\phi - 6\bar \psi + 2\del^2 \bar E = 2\del^2 \psi +2(\del^2-3\pd_0\pd_0)\psi - 2\del^2 (\phi +\dot B - \ddot E) .
+\]
+Substituting eq. (3) we arrive at
+\be
+	\boxed{-6\bar\psi + 2\del^2 \bar E = -6 \ddot \psi+2\del^2\psi - 2\del^2 (\phi +\dot B - \ddot E)}
+\ee
+To relate vectors to vectors, we look at $\delta G_{0i}$ and its Laplacian,
+\[
+	\delta G_{0i}:\quad \del_i \bar B +\bar B_i = -2\del_i \dot \psi + \frac12 \del^2(B_i-\dot E_i)
+\]
+\[
+	\del_i \del^2 \bar B + \del^2 \bar B_i = -2 \del_i \del^2 \dot \psi + \frac12 \del^4 (B_i - \dot E_i).
+\]
+Now substitute eq. (3)  into the above, giving
+\be
+	\boxed{\del^2 \bar B_i = \frac12 \del^4(B_i - \dot E_i)}
+\ee
+Now for the spatial components $\delta G_{ij}$ we have
+\ba
+	& -2\bar \psi \delta_{ij} + 2 \del_i\del_j \bar E + \del_i \bar E_j +\del_j \bar E_i + 2\bar E_{ij} =\\
+	&\qquad-2 \ddot \psi \delta_{ij} - (\del_i\del_j - \delta_{ij} \del^2)\psi + (\del_i\del_j - \del^2 \delta_{ij})(\phi+\dot B - \ddot E) + \frac12 \del_i (\dot B_j-\ddot E_j)+\frac12 \del_j (\dot B_i - \ddot E_i) + \Box E_{ij}.
+\ea
+We may form a scalar by taking $\delta^{ij}\delta G_{ij}$ or $\del^i\del^j \delta G_{ij}$. The former is the trace equation, while the later is
+\be
+	\boxed{-2\del^2\bar \psi + 2\del^4 \bar E = -2 \del^2 \ddot \psi }.
+\ee
+This is equivalent to the equation we found for the divergence of the Bianchi space identity. We can try to form a vector by taking the divergence $\del^j\delta G_{ij}$
+\[
+	-2\del_i \bar \psi + 2\del_i \del^2 \bar E + \del^2 \bar E_i = -2\ddot \del_i \psi+\frac12 \del^2(\dot B_i - \ddot E_i)
+\]
+If we further take the Laplacian we can subtitute eq. (6) in to give
+\be
+	\boxed{\del^4 \bar E_i = \frac12 \del^4 (\dot B_i -\ddot E_i)}
+\ee
+In order to equate tensor components, scalar and vector parts must cancel. For the vector portions to cancel according to eq. (7), we must take $\del^4 \delta G_{ij}$. This gives
+\ba
+	& -2\del^4 \bar \psi \delta_{ij} + 2 \del_i\del_j \del^4\bar E + \del_i\del^4 \bar E_j +\del_j \del^4 \bar E_i + 2\del^4\bar E_{ij} =\\
+	&\qquad-2\del^4 \ddot \psi \delta_{ij} - (\del_i\del_j - \delta_{ij} \del^2)\del^4\psi + (\del_i\del_j - \del^2 \delta_{ij})\del^4(\phi+\dot B - \ddot E) + \frac12 \del_i \del^4(\dot B_j-\ddot E_j)+\frac12 \del_j \del^4 (\dot B_i - \ddot E_i) + \del^4\Box E_{ij}
+\ea
+in which the vector portion of the equation is 
+\[
+	\del_i\del^4 \bar E_j + \del_j \del^4 \bar E_i =  \frac12 \del_i \del^4(\dot B_j-\ddot E_j)+\frac12 \del_j \del^4 (\dot B_i - \ddot E_i).
+\]
+This is satisfied by eq. (7) and hence the vectors will drop out. 
+However, the scalar portions 
+\[
+	-2\del^4 \bar \psi \delta_{ij} + 2 \del_i\del_j \del^4\bar E = -2\del^4 \ddot \psi \delta_{ij} - (\del_i\del_j - \delta_{ij} \del^2)\del^4\psi + (\del_i\del_j - \del^2 \delta_{ij})\del^4(\phi+\dot B - \ddot E)
+\]
+will not cancel using substitutions eq. (4) and (6). Thus I am not sure how to relate tensor components to each other. 
+\\ \\ \\
+\noindent \textbf{Pure Gauge/ Gauge Definition}
+\\ \\
+After decomposing the metric into SVT as
+\[
+	ds^2 = -(1+2\phi)d\tau^2 + (\pd_i B+B_i)dx^id\tau + [(1-2\psi)\delta_{ij}+2\pd_i\pd_j E + \pd_i E_j+\pd_j E_i + 2E_{ij}]dx^i dx^j
+\]
+there exist transformations that leave the metric invariant. These are
+\[
+	B \to B + p
+\]
+\[
+	B_i \to B_i - \del_i p
+\]
+\[
+	E\to E+q
+\]
+\[
+	E_i\to E_i - \del_i q + 2r_i
+\]
+\[
+	E_{ij} \to E_{ij} - \del_i r_j - \del_j r_i.
+\]
+In order to preserve transverness in $B_i$, $E_i$ and $E_{ij}$ we require
+\[
+	\del^2 p = 0
+\]
+\[
+	\del^2 q= 0
+\]
+\[
+	\del^2 r_i = 0
+\]
+\[
+	\del^i r_i = 0.
+\]
+The above total to four indepedent components, as expected from the four gauge depedent coordinate transformations. In forming the decomposition of the metric, we choose scalars, vectors, and tensors such that $q$, $p$, and $r_i$ are zero, or in other words $B' = B+p$ etc. 
+
+\end{document}

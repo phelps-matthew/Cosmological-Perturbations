@@ -1,0 +1,226 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Flat Cosmological Fluctuation Equations}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\noindent We work to first order with Minkowski background:
+\[
+	g_{\mu\nu} = g_{\mu\nu}^{(0)} + g_{\mu\nu}^{(1)} = \eta_{\mu\nu} + h_{\mu\nu}.
+\]
+In 3+1 splitting, we define vector tangent to 3-surfaces of consant (zero) curvature:
+\[
+	n_{\mu} = (-1,0,0,0),\quad n_\mu n^\mu = -1.
+\]
+Tensors are raised/lowered using the induced metric
+\[
+	\gamma_{\mu\nu} = \delta_{ij},\qquad \gamma_{0\mu} = 0.
+\]
+The fluctuation equations in Minkowski standard gravity are:
+\[
+	\delta G_{\mu\nu} = -\frac12 \pd_\alpha \pd^\alpha \delta g_{\mu\nu} + \frac 12 \pd_\alpha \pd_\mu \delta g_{\nu}{}^\alpha +\frac12
+	\pd_\alpha\pd_\nu \delta g_\mu{}^\alpha + \frac12 g_{\mu\nu} \pd^\alpha\pd_\alpha \delta g^\gamma{}_\gamma
+	-\frac12 g_{\mu\nu} \pd_\gamma \pd^\alpha \delta g_\alpha{}^\gamma -\frac12 \pd_\mu\pd_\nu \delta g^\alpha{}_\alpha
+\]
+
+The fluctuation equations in Minkowski conformal gravity are:
+\ba
+	\delta W_{\mu\nu} &= \frac12 \pd_\beta \pd^\beta \pd_\alpha \pd^\alpha \delta g_{\mu\nu} + \frac16 g_{\mu\nu} \pd_\gamma \pd^\gamma \pd_\alpha \pd_\beta \delta g^{\alpha\beta} -\frac16 g_{\mu\nu}\pd_\gamma \pd^\gamma \pd_\beta \pd^\beta \delta g^\alpha{}_\alpha-\frac12 \pd_\beta \pd^\beta\pd_\mu \pd_\alpha \delta g_\nu{}^\alpha\\
+	&\quad  -\frac12 \pd_\beta \pd^\beta \pd_\nu\pd_\alpha \delta g_\mu{}^\alpha + \frac13 \pd_\mu \pd_\nu \pd_\alpha \pd_\beta \delta g^{\alpha\beta}+\frac16 \pd_\mu\pd_\nu \pd_\beta \pd^\beta \delta g^\alpha{}_\alpha.
+\ea
+
+\section*{Standard Gravity}
+\subsection*{Newton Gauge}
+Gauge:
+\[
+	h_{\mu\nu} = -2 \phi n_\mu n_\nu - 2\psi\gamma_{\mu\nu} 
+\]
+\[
+	ds^2 =  -(1+2\phi)dt^2 + \delta_{ij}(1-2\psi)dx^i dx^j
+\]
+Fluctuation Equations:
+\ba
+\delta G_{00} &= 2 \del^2 \psi\\
+\delta G_{0i} &= 2\del_i \dot\psi\\
+\delta G_{ij} & = \del_{i}\del_j(\psi - \phi) + \delta_{ij}( 2\ddot{\psi} + \del^2 \phi - \del^2 \psi)
+\ea
+\section*{Conformal Gravity}
+\subsection*{Newton Gauge}
+Gauge:
+\[
+	h_{\mu\nu} = -2 \phi n_\mu n_\nu - 2\psi\gamma_{\mu\nu} 
+\]
+\[
+	ds^2 =  -(1+2\phi)dt^2 + \delta_{ij}(1-2\psi)dx^i dx^j
+\]
+Fluctuation Equations:
+\ba
+	\delta W_{00} &= \frac 23\del^4(\phi+\psi)\\
+	\delta W_{0i} &= \frac 23 \del_i\del^2( \dot \phi + \dot\psi)\\
+	\delta W_{ij} & = \del_i \del_j ( \ddot \phi + \ddot \psi - \frac13 \del^2 \phi - \frac13 \del^2 \psi)-\frac13 \delta_{ij}\del^2 ( \ddot \phi + \ddot \psi - \del^2 \phi - \del^2 \psi)
+\ea
+%\section*{Standard Gravity}
+%\subsection*{Tensor Mode}
+%We now look at tensor perturbations without a choice of gauge\\\ \\
+%Gauge: 
+%\[
+%	h_{\mu\nu} = 2E_{\mu\nu}
+%\]
+%\[
+%	ds^2 =  -dt^2 + (\delta_{ij} +2E_{ij})dx^i dx^j
+%\]
+%where
+%\[
+%	n^\mu n^\nu E_{\mu\nu} =0, \qquad \bar \del^\mu E_{\mu\nu} = 0.
+%\]
+%Fluctuation Equations:
+%\ba
+%	\delta G^{(T)}_{ij} &= \ddot E_{ij} - \del^2 E_{ij} = -\Box^2E_{ij}=0
+%\ea
+%
+%\section*{Conformal Gravity}
+%\subsection*{Tensor Mode}
+%Gauge: 
+%\[
+%	h_{\mu\nu} = 2E_{\mu\nu}
+%\]
+%\[
+%	ds^2 =  -dt^2 + (\delta_{ij} +2E_{ij})dx^i dx^j
+%\]
+%where
+%\[
+%	n^\mu n^\nu E_{\mu\nu} =0, \qquad \bar \del^\mu E_{\mu\nu} = 0.
+%\]
+%Fluctuation Equations:
+%\ba
+%	\delta W^{(T)}_{ij} &=  - \ddddot E_{ij} + 2 \del^2 \ddot E_{ij} - \del^4 E_{ij} = -\bar \del_\alpha \bar \del^\alpha \bar 	\del_\beta \bar \del^\beta E_{ij}
+%\ea
+%\\
+%\section*{Supplementary}
+%\subsection*{Ricci Tensor}
+%Gauge: 
+%\[
+%	h_{\mu\nu} = -2\phi n_{\mu}n_\nu  - (B_\nu + \bar \del_\nu B)n_\mu-(B_\mu + \bar \del_\mu B)n_\nu -2\gamma_{\mu\nu}\psi + \bar\del_\mu E_\nu + \bar\del_\nu E_{\mu} + 2\bar \del_\mu \bar \del_\nu E+2E_{\mu\nu}
+%\]
+%\[
+%	ds^2 =  -(1+2\phi)dt^2 + 2(B_i+\del_i B)dx^i dt + \blr{-2 \delta_{ij} \psi + (\del_i E_j + \del_j E_i) + 2\del_i \del_j E + 2E_{ij}}dx^i dx^j
+%\]
+%where
+%\[
+%	\bar\del_\mu = (0,\del_i),\qquad  n^\mu B_\mu = 0,\qquad n^\mu n^\nu E_{\mu\nu} =0, \qquad \bar\del^\mu B_\mu = 0, \qquad \bar\del^\mu E_\mu = 0, \qquad \bar \del^\mu E_{\mu\nu} = 0.
+%\]
+%Fluctuation Equations:
+%\ba
+%	\delta R_{00} &=  3\ddot \psi + \del^2 (\phi + \dot B - \ddot E)\\
+%	\delta R_{0i} &= -\frac12 \del^2 (B_i + \dot E_i) + 2\del_i \dot\psi\\
+%	\delta R_{ij} &= -\delta_{ij}(\ddot \psi - \del^2 \psi) +\del_i\del_j ( -\phi +\psi -\dot B + \ddot E)
+%					 -\frac12 \del_i (\dot B_j - \ddot E_j) -\frac12 \del_j(\dot B_i - \ddot E_i)
+%					 + \ddot E_{ij} - \del^2 E_{ij} 
+%\ea
+%Separation of the Riemann tensor into spin parts:
+%\ba
+%	\delta R^{(S)}_{00} &= \delta R_{00} = 3\ddot \psi + \del^2 (\phi + \dot B - \ddot E)\\
+%	\delta R^{(S)}_{0i} &=  2\del_i \dot\psi\\
+%	\delta R^{(V)}_{0i} &=  -\frac12 \del^2 (B_i + \dot E_i)\\
+%	\delta R^{(S)}_{ij} &=  -\delta_{ij}(\ddot \psi - \del^2 \psi) +\del_i\del_j ( -\phi +\psi -\dot B + \ddot E)\\
+%	\delta R^{(V)}_{ij} &= -\frac12 \del_i (\dot B_j - \ddot E_j) -\frac12 \del_j(\dot B_i - \ddot E_i)\\
+%	\delta R^{(T)}_{ij} &=  \ddot E_{ij} - \del^2 E_{ij}.
+%\ea
+
+\section*{Standard Gravity}
+\subsection*{No Gauge}
+We now look at full perturbations without a choice of gauge, separating them into their spin parts.\\ \\
+Gauge: 
+\[
+	h_{\mu\nu} = -2\phi n_{\mu}n_\nu  - (B_\nu + \bar \del_\nu B)n_\mu-(B_\mu + \bar \del_\mu B)n_\nu -2\gamma_{\mu\nu}\psi + \bar\del_\mu E_\nu + \bar\del_\nu E_{\mu} + 2\bar \del_\mu \bar \del_\nu E+2E_{\mu\nu}
+\]
+\[
+	ds^2 =  -(1+2\phi)dt^2 + 2(B_i+\del_i B)dx^i dt + \blr{-2 \delta_{ij} \psi + (\del_i E_j + \del_j E_i) + 2\del_i \del_j E + 2E_{ij}}dx^i dx^j
+\]
+where
+\[
+	\bar\del_\mu = (0,\del_i),\qquad  n^\mu B_\mu = 0,\qquad n^\mu n^\nu E_{\mu\nu} =0, \qquad \bar\del^\mu B_\mu = 0, \qquad \bar\del^\mu E_\mu = 0, \qquad \bar \del^\mu E_{\mu\nu} = 0.
+\]
+Fluctuation Equations:
+\ba
+	\delta G_{00} &=  2 \del^2\psi\\
+	\delta G_{0i} &= 2\del_i \dot\psi - \frac12 \del^2 B_i + \frac12 \del^2 \dot E_i\\
+	\delta G_{ij} &= 2\delta_{ij}\ddot \psi + (\delta_{ij}\del^2-\del_i\del_j)(\phi -\psi +\dot B -\ddot E) 
+						-\frac12 ( \del_i \dot B_j + \del_j \dot B_i) +\frac12 (\del_i \ddot E + \del_j \ddot E_i)
+						+ \ddot E_{ij} - \del^2 E_{ij}
+\ea
+We see that the Einstein tensor itself separates into linear combinations of different spin tensors:
+\ba
+	\delta G^{(S)}_{00} &= \delta G_{00}  =2 \del^2 \psi\\
+	\delta G^{(S)}_{0i} &=  2\del_i \dot\psi \\
+	\delta G^{(V)}_{0i} &=  - \frac12 \del^2 B_i + \frac12 \del^2 \dot E_i\\
+	\delta G^{(S)}_{ij} &= 2\delta_{ij}\ddot \psi + (\delta_{ij}\del^2-\del_i\del_j)(\phi -\psi +\dot B -\ddot E)  \\
+	\delta G^{(V)}_{ij} &=-\frac12 ( \del_i \dot B_j + \del_j \dot B_i) +\frac12 (\del_i \ddot E + \del_j \ddot E_i)\\
+	\delta G^{(T)}_{ij} &= \ddot E_{ij} - \del^2 E_{ij}
+\ea
+
+\section*{Conformal Gravity}
+\subsection*{No Gauge}
+Gauge: 
+\[
+	h_{\mu\nu} = -2\phi n_{\mu}n_\nu  - (B_\nu + \bar \del_\nu B)n_\mu-(B_\mu + \bar \del_\mu B)n_\nu -2\gamma_{\mu\nu}\psi + \bar\del_\mu E_\nu + \bar\del_\nu E_{\mu} + 2\bar \del_\mu \bar \del_\nu E+2E_{\mu\nu}
+\]
+\[
+	ds^2 =  -(1+2\phi)dt^2 + 2(B_i+\del_i B)dx^i dt + \blr{-2 \delta_{ij} \psi + (\del_i E_j + \del_j E_i) + 2\del_i \del_j E + 2E_{ij}}dx^i dx^j
+\]
+where
+\[
+	\bar\del_\mu = (0,\del_i),\qquad  n^\mu B_\mu = 0,\qquad n^\mu n^\nu E_{\mu\nu} =0, \qquad \bar\del^\mu B_\mu = 0, \qquad \bar\del^\mu E_\mu = 0, \qquad \bar \del^\mu E_{\mu\nu} = 0.
+\]
+Fluctuation Equations:
+\ba
+	\delta W_{00} &=  \frac23 \del^4 ( \phi + \psi +\dot B -\ddot E)\\
+	\delta W_{0i} &= \frac23 \del_i \del^2 (\dot \phi + \dot \psi + \ddot B - \dddot E)+\frac12 \del^2 ( \ddot B_i -\dddot E_i - \del^2 B_i + \del^2 \dot E_i)\\
+	\delta W_{ij} &= \frac13 \delta_{ij} \del^2 \plr{-\ddot \phi - \ddot \psi - \dddot B + \ddddot E + \del^2(\phi +\psi + \dot B - \ddot E)} + \del_i \del_j \plr{ \ddot \phi + \ddot \psi + \dddot B - \ddddot E -\frac13\del^2( \phi + \psi + \dot B - \ddot E)}\\
+	&\qquad +\frac12 \del_i \plr{ \dddot B_j - \dddot E_j - \del^2( \dot B_j - \ddot E_j)} + \frac12 \del_j \plr{\dddot B_i - \ddddot E_i - \del^2 (\dot B_i - \ddot E_i)}\\
+	&\qquad - \ddddot E_{ij} + 2 \del^2 \ddot E_{ij} - \del^4 E_{ij}
+\ea
+Again, the Weyl tensor itself separates into linear combinations of different spin tensors:
+\ba
+	\delta W^{(S)}_{00} &= \delta W_{00} =  \frac23 \del^4 ( \phi + \psi +\dot B -\ddot E)\\
+	\delta W^{(S)}_{0i} &=  \frac23 \del_i \del^2 (\dot \phi + \dot \psi + \ddot B - \dddot E)\\
+	\delta W^{(V)}_{0i} &=  \frac12 \del^2 ( \ddot B_i -\dddot E_i - \del^2 B_i + \del^2 \dot E_i)\\
+	\delta W^{(S)}_{ij} &=  \frac13 \delta_{ij} \del^2 \plr{-\ddot \phi - \ddot \psi - \dddot B + \ddddot E + \del^2(\phi +\psi + \dot B - \ddot E)} + \del_i \del_j \plr{ \ddot \phi + \ddot \psi + \dddot B - \ddddot E -\frac13\del^2( \phi + \psi + \dot B - \ddot E)}\\
+	\delta W^{(V)}_{ij} &=\frac12 \del_i \plr{ \dddot B_j - \dddot E_j - \del^2( \dot B_j - \ddot E_j)} + \frac12 \del_j \plr{\dddot B_i - \ddddot E_i - \del^2 (\dot B_i - \ddot E_i)}\\
+	\delta W^{(T)}_{ij} &=  - \ddddot E_{ij} + 2 \del^2 \ddot E_{ij} - \del^4 E_{ij} = -\bar \del_\alpha \bar \del^\alpha \bar \del_\beta \bar \del^\beta E_{ij}.
+\ea
+\\
+\section*{Supplementary}
+\subsection*{Ricci Tensor}
+Gauge: 
+\[
+	h_{\mu\nu} = -2\phi n_{\mu}n_\nu  - (B_\nu + \bar \del_\nu B)n_\mu-(B_\mu + \bar \del_\mu B)n_\nu -2\gamma_{\mu\nu}\psi + \bar\del_\mu E_\nu + \bar\del_\nu E_{\mu} + 2\bar \del_\mu \bar \del_\nu E+2E_{\mu\nu}
+\]
+\[
+	ds^2 =  -(1+2\phi)dt^2 + 2(B_i+\del_i B)dx^i dt + \blr{-2 \delta_{ij} \psi + (\del_i E_j + \del_j E_i) + 2\del_i \del_j E + 2E_{ij}}dx^i dx^j
+\]
+where
+\[
+	\bar\del_\mu = (0,\del_i),\qquad  n^\mu B_\mu = 0,\qquad n^\mu n^\nu E_{\mu\nu} =0, \qquad \bar\del^\mu B_\mu = 0, \qquad \bar\del^\mu E_\mu = 0, \qquad \bar \del^\mu E_{\mu\nu} = 0.
+\]
+Fluctuation Equations:
+\ba
+	\delta R_{00} &=  3\ddot \psi + \del^2 (\phi + \dot B - \ddot E)\\
+	\delta R_{0i} &= -\frac12 \del^2 (B_i + \dot E_i) + 2\del_i \dot\psi\\
+	\delta R_{ij} &= -\delta_{ij}(\ddot \psi - \del^2 \psi) +\del_i\del_j ( -\phi +\psi -\dot B + \ddot E)
+					 -\frac12 \del_i (\dot B_j - \ddot E_j) -\frac12 \del_j(\dot B_i - \ddot E_i)
+					 + \ddot E_{ij} - \del^2 E_{ij} 
+\ea
+Separation of the Riemann tensor into spin parts:
+\ba
+	\delta R^{(S)}_{00} &= \delta R_{00} = 3\ddot \psi + \del^2 (\phi + \dot B - \ddot E)\\
+	\delta R^{(S)}_{0i} &=  2\del_i \dot\psi\\
+	\delta R^{(V)}_{0i} &=  -\frac12 \del^2 (B_i + \dot E_i)\\
+	\delta R^{(S)}_{ij} &=  -\delta_{ij}(\ddot \psi - \del^2 \psi) +\del_i\del_j ( -\phi +\psi -\dot B + \ddot E)\\
+	\delta R^{(V)}_{ij} &= -\frac12 \del_i (\dot B_j - \ddot E_j) -\frac12 \del_j(\dot B_i - \ddot E_i)\\
+	\delta R^{(T)}_{ij} &=  \ddot E_{ij} - \del^2 E_{ij}.
+\ea
+\end{document}

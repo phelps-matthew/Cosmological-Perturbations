@@ -1,0 +1,399 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{SVT3 dS${}_4$ Conformal Einstein}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+The SVT separation of field equations $\delta G_{\mu\nu} = -\kappa^2_4 \delta T_{\mu\nu}$ in dS${}_4$ are computed in three cases:
+\\ i.) general solutions, ii.) particular solutions, iii). trivial solutions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+G^{(0)}_{\mu\nu} &=& 3\alpha^2 g_{\mu\nu}
+\\
+R^{(0)}_{\lambda\mu\nu\kappa} &=& \alpha^2 (g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa}),
+\qquad
+R^{(0)}_{\mu\kappa} = -3\alpha^2 g_{\mu\kappa},
+\qquad
+R^{(0)}= -12 \alpha^2,
+\\ \nonumber\\
+ds^2 &=& \Omega^2(\tau)[\tilde g_{\mu\nu}+ f_{\mu\nu}] dx^\mu dx^\nu,\qquad
+\Omega^2(\tau) = \frac{1}{(\alpha\tau)^2}
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}(-1,1,1,1)\quad\text{or}\quad \text{diag}(-1,1,r^2,r^2\sin^2\theta)
+\\ \nonumber\\
+f_{00} &=& -2\phi,\qquad f_{0i}= \tilde \nabla_i B + B_i,\qquad 
+f_{ij} = -2 \tilde g_{ij}\psi + 2\tilde\nabla_i\tilde \nabla_j E + \tilde \nabla_i E_j + \tilde \nabla_j E_i + 2E_{ij}
+\\ \nonumber\\
+\delta G_{00} &=&-6 \dot{\psi} \tau^{-1} - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B + 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\ \nonumber\\
+\delta G_{0i} &=&3 \tau^{-2} \tilde{\nabla}_{i}B
+- 2 \tilde{\nabla}_{i}\dot{\psi}
++ 2 \tau^{-1} \tilde{\nabla}_{i}\phi
++3 B_{i} \tau^{-2}
++ \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i}
+-  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\ \nonumber\\
+\delta G_{ij}&=&-2 \ddot{\psi} \tilde{g}_{ij}
++ 2 \dot{\phi} \tilde{g}_{ij} \tau^{-1}
++ 4 \dot{\psi} \tilde{g}_{ij} \tau^{-1}
+- 6 \tilde{g}_{ij} \tau^{-2} \phi
+- 6 \tilde{g}_{ij} \tau^{-2} \psi
++ 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B\nonumber\\
+&& -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
+- 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+-  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi\nonumber\\
+&& - 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B}
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\ddot{E}
++ 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E}
++ 6 \tau^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi
+\nonumber\\
+&&- \tau^{-1} \tilde{\nabla}_{i}B_{j}
++ \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+-  \tfrac{1}{2} \tilde{\nabla}_{i}\ddot{E}_{j}
++ \tau^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
++ 3 \tau^{-2} \tilde{\nabla}_{i}E_{j}
+-  \tau^{-1} \tilde{\nabla}_{j}B_{i}
++ \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}\nonumber\\
+&& -  \tfrac{1}{2} \tilde{\nabla}_{j}\ddot{E}_{i}
++ \tau^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
++ 3 \tau^{-2} \tilde{\nabla}_{j}E_{i}
+- \ddot{E}_{ij}
++ 6 E_{ij} \tau^{-2}
++ 2 \dot{E}_{ij} \tau^{-1}
++ \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\ \nonumber\\
+\delta G&=& \Omega^{-2}(-\delta G_{00} + \tilde g^{ab}\delta G_{ab})
+\nonumber\\
+&=&\alpha^2( 6 \dot{\phi} \tau
++ 18 \dot{\psi} \tau
+- 6 \ddot{\psi} \tau^2
+- 18 \phi
+- 18 \psi
++ 6 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
++ 2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}\nonumber\\
+&& - 6 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
++ 6 \tilde{\nabla}_{a}\tilde{\nabla}^{a}E
+- 2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ 4 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi)
+\\ \nonumber\\
+\Omega^{-2}\tilde g^{ab}\delta G_{ab} &=& \alpha^2\big(
+6 \dot{\phi} \tau
++ 12 \dot{\psi} \tau
+- 6 \overset{..}{\psi} \tau^2
+- 18 \phi
+- 18 \psi
++ 4 \tau \tilde \nabla_{a}\tilde \nabla^{a}B
+- 2 \tau^2 \tilde \nabla_{a}\tilde \nabla^{a}\dot{B}
++ 2 \tau^2 \tilde \nabla_{a}\tilde \nabla^{a}\overset{..}{E}\nonumber\\
+&& - 4 \tau \tilde \nabla_{a}\tilde \nabla^{a}\dot{E}
++ 6 \tilde \nabla_{a}\tilde \nabla^{a}E
+- 2 \tau^2 \tilde \nabla_{a}\tilde \nabla^{a}\phi
++ 2 \tau^2 \tilde \nabla_{a}\tilde \nabla^{a}\psi\big)
+\\ \nonumber \\
+-\kappa_4^2 \delta T_{\mu\nu} &=& 3\alpha^2\Omega^2 f_{\mu\nu} 
+\\ \nonumber\\
+-\kappa^2_4\delta T_{00} &=& -6\tau^{-2}\phi,\qquad 
+\\ \nonumber\\
+-\kappa^2_4\delta T_{0i}&=& 3\tau^{-2}(\tilde \nabla_i B + B_i)
+\\ \nonumber\\
+-\kappa^2_4\delta T_{ij} &=& \tau^{-2}\big(-6 \tilde g_{ij}\psi + 6\tilde\nabla_i\tilde \nabla_j E + 3\tilde \nabla_i E_j + 3\tilde \nabla_j E_i + 6E_{ij}\big)
+\\ \nonumber\\
+-\kappa^2_4 \delta T &=& \alpha^2 \big(6\phi-18\psi+6\tilde\nabla_a\tilde\nabla^a E \big)
+\\ \nonumber\\
+-\kappa^2_4\Omega^{-2}\tilde g^{ab} \delta T_{ab} &=& \alpha^2\big(-18\psi + 6\tilde\nabla_a\tilde \nabla^a E\big)
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (Mathematica)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\eta &=& \phi+ \frac{\dot\Omega}{\Omega}(B-\dot E)+(\dot B-\ddot E)
+\ =\  \phi-\tau^{-1}(B-\dot E)+(\dot B-\ddot E)
+\\ \nonumber\\ 
+\xi &=& \psi - \frac{\dot\Omega}{\Omega}(B-\dot E)
+\ =\  \psi + \tau^{-1} (B-\dot E)
+\\ \nonumber\\
+\Delta_{\mu\nu} &\equiv& \delta G_{\mu\nu} +\kappa^2_4\delta T_{\mu\nu}\ =0
+\\ \nonumber\\
+\Delta_{00} &=& 6 \eta \tau^{-2} - 6 \dot{\xi} \tau^{-1} - 2 \tilde\nabla_{a}\tilde\nabla^{a}\xi 
+\\ \nonumber\\
+\Delta_{0i} &=& 2 \tau^{-1} \tilde\nabla_{i}\eta - 2 \tilde\nabla_{i}\dot{\xi}+\tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}B_{i} -  \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}_{i}
+\\ \nonumber\\
+\Delta_{ij} &=&-2 \overset{..}{\xi} \tilde g_{ij}
+- 6 \eta \tilde g_{ij} \tau^{-2}
++ 2 \dot{\eta} \tilde g_{ij} \tau^{-1}
++ 4 \dot{\xi} \tilde g_{ij} \tau^{-1}
+-  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\eta
++ \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\xi
++ \tilde\nabla_{j}\tilde\nabla_{i}\eta\nonumber\\
+&& -  \tilde\nabla_{j}\tilde\nabla_{i}\xi - \tau^{-1} \tilde\nabla_{i}B_{j}
++ \tfrac{1}{2} \tilde\nabla_{i}\dot{B}_{j}
+-  \tfrac{1}{2} \tilde\nabla_{i}\overset{..}{E}_{j}
++ \tau^{-1} \tilde\nabla_{i}\dot{E}_{j}
+-  \tau^{-1} \tilde\nabla_{j}B_{i}
++ \tfrac{1}{2} \tilde\nabla_{j}\dot{B}_{i}
+\nonumber\\
+&&-  \tfrac{1}{2} \tilde\nabla_{j}\overset{..}{E}_{i} + \tau^{-1} \tilde\nabla_{j}\dot{E}_{i}
+- \overset{..}{E}_{ij}
++ 2 \dot{E}_{ij} \tau^{-1}
++ \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}
+\\ \nonumber\\
+\Delta &=& \Omega^{-2}(-\Delta_{00} + \tilde g^{ab}\Delta_{ab})
+\nonumber\\
+&=&-24 \eta + 6 \dot{\eta} \tau + 18 \dot{\xi} \tau - 6 \overset{..}{\xi} \tau^2 - 2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\eta + 4 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\xi 
+\\ \nonumber\\
+\Omega^{-2}\tilde g^{ab}\Delta_{ab} &=& 
+-18 \eta + 6 \dot{\eta} \tau + 12 \dot{\xi} \tau - 6 \overset{..}{\xi} \tau^2 - 2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\eta + 2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\xi 
+\end{eqnarray}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (Simplified)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\Delta_{00} &=& \frac{6}{\tau}\left( \frac{\eta}{\tau} - \dot\xi\right) -2 \tilde\nabla_a\tilde\nabla^a\xi
+\label{D00}
+\\ \nonumber\\
+\Delta_{0i} &=& 2\tilde\nabla_i \left( \frac{\eta}{\tau} - \dot\xi\right) 
++\tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}(B_{i}-\dot E_{i})
+\label{D0i}
+\\ \nonumber\\
+\Delta_{ij} &=& g_{ij} \left[ 2 \frac{d}{d\tau}\left( \frac{\eta}{\tau} - \dot\xi\right) - \frac{4}{\tau}\left( \frac{\eta}{\tau} - \dot\xi\right) - \tilde\nabla_a\tilde\nabla^a (\eta-\xi)\right]
++\tilde\nabla_i\tilde\nabla_j (\eta-\xi)  
+\nonumber\\
+&& - \frac{1}{\tau}\tilde\nabla_i (B_j-\dot E_j) - \frac{1}{\tau} \tilde\nabla_j (B_i-\dot E_i) + \frac12 \tilde\nabla_i (\dot B_j - \ddot E_j) + \frac12 \tilde\nabla_j (\dot B_i -\ddot E_j) 
+\nonumber\\
+&& - \ddot E_{ij} + \frac{2}{\tau} \dot E_{ij} + \tilde\nabla_a\tilde\nabla^a E_{ij} 
+\\ \nonumber \\
+\Delta &=&  
+6\tau^2 \frac{d}{d\tau}\left( \frac{\eta}{\tau} - \dot\xi\right) - 18\tau \left( \frac{\eta}{\tau} - \dot\xi\right)
+-2\tau^2 \tilde\nabla_a\tilde\nabla^a (\eta-2\xi) 
+\\ \nonumber \\
+\Omega^{-2}\tilde g^{ab}\Delta_{ab} &=&  
+ 6\tau^2 \frac{d}{d\tau}\left( \frac{\eta}{\tau} - \dot\xi\right) - 12\tau \left( \frac{\eta}{\tau} - \dot\xi\right)
+-2\tau^2 \tilde\nabla_a\tilde\nabla^a (\eta-\xi) 
+\\ \nonumber \\
+\tilde g^{ab}\Delta_{ab} &=&  
+6\frac{d}{d\tau}\left( \frac{\eta}{\tau} - \dot\xi\right) - \frac{12}{\tau} \left( \frac{\eta}{\tau} - \dot\xi\right)
+-2 \tilde\nabla_a\tilde\nabla^a (\eta-\xi) 
+\\ \nonumber \\
+\tilde\nabla^i \tilde\nabla^j \Delta_{ij}&=& 2 \tilde\nabla_a\tilde\nabla^a \left[ \frac{d}{d\tau}\left(\frac{\eta}{\tau}-\dot\xi\right)\right] -\frac{4}{\tau} \tilde\nabla_a\tilde\nabla^a 
+\left(\frac{\eta}{\tau} - \dot\xi\right)
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT Separation (General)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Scalar, Vector}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\left(\frac{\eta}{\tau} - \dot\xi \right) &=& \frac{\tau}{3} \tilde\nabla_a\tilde\nabla^a \xi
+\label{scalar1}
+\\ \nonumber\\
+\tilde\nabla_a\tilde\nabla^a\left( \frac{\eta}{\tau} - \dot\xi\right) &=& 0
+\label{scalar2}
+\\ \nonumber\\
+\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^a (B_i-\dot E_i) &=&0
+\label{vect1}
+\end{eqnarray}
+The scalar equations from the 3-trace and $\tilde\nabla^i\tilde\nabla^j \Delta_{ij}$ are formed by linear combinations of \eqref{scalar1} and \eqref{scalar2}.
+%
+%
+%%%%%%%%%%%%%%%%%%%
+\subsection{Tensor}
+%%%%%%%%%%%%%%%%%%%
+%
+To isolate $E_{ij}$, we evaluate $\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b \Delta_{ij}^{T\theta}$. To shorten notation, denote $\tilde \nabla^2 = \tilde\nabla_a\tilde\nabla^a$ and $\tilde \nabla^4 =\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b$. 
+\begin{eqnarray}
+\tilde\nabla^4 \Delta_{ij}^{T\theta} &=&
+\tilde\nabla^4 \Delta_{ij} - \tilde\nabla^2( \tilde\nabla_i \tilde\nabla^k\Delta_{kj} + \tilde\nabla_j \tilde\nabla^k \Delta_{ki})
++\frac{1}{2}g_{ij}( \tilde\nabla^4 \tilde g^{kl}\Delta_{kl}-\tilde\nabla^2\tilde\nabla^k \tilde\nabla^l \Delta_{kl})
+\nonumber\\
+&&+\frac12 \tilde\nabla_i\tilde\nabla_j(\tilde\nabla^2\tilde g^{kl}\Delta_{kl}+\tilde\nabla^k\tilde\nabla^l \Delta_{kl}).
+\end{eqnarray}
+The result is:
+\begin{eqnarray}
+\tilde\nabla^4 \Delta^{T\theta}_{ij} &=& \tilde\nabla^4\left(
+\tilde\nabla^2 E_{ij} +\frac{2}{\tau} \tilde\nabla^2 \dot E_{ij} -\ddot E_{ij} \right)
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fluctuation Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\left(\frac{\eta}{\tau}-\dot\xi\right) -\frac{\tau}{3}\tilde\nabla_a\tilde\nabla^a \xi &=&0
+\\ \nonumber\\
+\tilde\nabla_a\tilde\nabla^a \left( \frac{\eta}{\tau}-\dot\xi\right) &=&0
+\\ \nonumber\\
+\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^a (B_i-\dot E_i) &=&0
+\\ \nonumber\\
+\tilde\nabla^4\left(
+\tilde\nabla^2 E_{ij} +\frac{2}{\tau} \tilde\nabla^2 \dot E_{ij} -\ddot E_{ij} \right) &=& 0
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{2nd Order SVT Separation (Particular)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To obtain a separation for $E_{ij}$ that is second order without coupling $B_i$ and $E_i$ to scalars $\eta$ and $\xi$, we first require
+\begin{eqnarray}
+\tilde \nabla_i (B_j-\dot E_j) = 0.
+\label{conditions1}
+\end{eqnarray}
+From \eqref{D0i} it follows
+\begin{eqnarray}
+\tilde\nabla_i \left( \frac{\eta}{\tau}-\dot\xi\right) = 0.
+\label{condition2}
+\end{eqnarray}
+Using \eqref{scalar1} and \eqref{condition2} this brings $\Delta_{ij}$ to the form
+\begin{eqnarray}
+\Delta_{ij} &=& \frac{1}{3} \tilde g_{ij}\tilde\nabla_a\tilde\nabla^a (\xi-\tau\dot\xi) + \tilde\nabla_i\tilde\nabla_j (\xi+\tau\dot\xi)
+- \ddot E_{ij} + \frac{2}{\tau} \dot E_{ij} + \tilde\nabla_a\tilde\nabla^a E_{ij}.
+\end{eqnarray}
+The trace of the above yields $\tilde\nabla_a\tilde\nabla^a \xi = 0$, which from \eqref{scalar1} implies $\eta/\tau-\dot\xi = 0$. Hence $\tilde\nabla_i (B_j-\dot E_j)=0 \implies (\eta/\tau-\dot\xi)=0$. The separation requirement is
+\begin{eqnarray}
+\tilde\nabla_i\tilde\nabla_j (\xi+\tau\dot \xi) = 0,
+\end{eqnarray}
+for an $\xi$ that obeys
+\begin{eqnarray}
+\tilde\nabla_a\tilde\nabla^a \xi = 0.
+\end{eqnarray}
+Taking $\xi$ to be separable in time and space, $\xi = f(t)g(\mathbf r)$ the requirement is
+\begin{eqnarray}
+(f+\tau\dot f) \tilde\nabla_i \tilde\nabla_j g(\mathbf r) =0,\qquad \tilde\nabla_a\tilde\nabla^a g(\mathbf r) =0.
+\end{eqnarray}
+Two possibilities:
+\begin{eqnarray}
+f+\tau\dot f=0&\implies& f(\tau)=\tau
+\nonumber\\
+\tilde\nabla_i\tilde\nabla_j g(\mathbf r) =0\quad\text{and}\quad \tilde\nabla_a\tilde\nabla^a g(\mathbf r)=0
+&\implies& g(\mathbf r) = x+y+z.
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fluctuation Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Solution 1:
+\begin{eqnarray}
+\xi = \eta&=& \frac{\tau}{r}
+\nonumber\\
+\tilde \nabla_i (B_j-\dot E_j) &=& 0
+\nonumber\\
+- \ddot E_{ij} + \frac{2}{\tau} \dot E_{ij} + \tilde\nabla_a\tilde\nabla^a E_{ij}  &=& 0.
+\end{eqnarray}
+Solution 2:
+\begin{eqnarray}
+\xi = f(\tau)g(\mathbf r),\qquad \eta &=& h(\tau)k(\mathbf r)
+\nonumber\\
+\frac{h(\tau)}{\tau} = \dot f(\tau),\qquad k(\mathbf r)= h(\mathbf r) &=& x+y+z
+\nonumber\\
+\tilde \nabla_i (B_j-\dot E_j) &=& 0
+\nonumber\\
+- \ddot E_{ij} + \frac{2}{\tau} \dot E_{ij} + \tilde\nabla_a\tilde\nabla^a E_{ij}  &=& 0.
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trivial Separation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Asymptotically Vanishing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Restricting to solutions that vanish on the boundary entails $\phi = \int D \nabla^2\phi$. From $\tilde\nabla^i \Delta_{0i}$ we find $\eta/\tau=\dot\xi$, whereby from $\Delta_{00}$ it must follow that
+\begin{eqnarray}
+\tilde\nabla_a\tilde\nabla^a\xi = 0.
+\end{eqnarray}
+By restricting to asymptotically vanishing solutions, this means
+\begin{eqnarray}
+\eta=\xi&=&0
+\nonumber\\
+B_i-\dot E_i&=&0
+\nonumber\\
+- \ddot E_{ij} + \frac{2}{\tau} \dot E_{ij} + \tilde\nabla_a\tilde\nabla^a E_{ij}  &=& 0.
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{No Asymptotic Constraints}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let us instead impose the trivial constraints
+\begin{eqnarray}
+\frac{\eta}{\tau} -\dot\xi = 0,\qquad \eta-\xi=0,\qquad B_i-\dot E_i=0.
+\end{eqnarray}
+Taking $\xi$ to be separable in time and space, $\xi = f(t)g(\mathbf r)$, the above constraints imply $f(\tau)=\tau$,
+\begin{eqnarray}
+\xi = \tau g(\mathbf r). 
+\end{eqnarray}
+From $\Delta_{00}$, such a $g(\mathbf r )$ must obey
+\begin{eqnarray}
+\tilde\nabla_a\tilde\nabla^a g(\mathbf r) = 0.
+\end{eqnarray}
+For a solution that is well behaved asymptotically (but not at the origin) we may take $\xi = \tau/r$. Hence the trivial solutions are the same as Solution 1 of the previous particular separation. 
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Fluctuation Equations}
+\begin{eqnarray}
+\xi = \eta&=& \frac{\tau}{r}
+\nonumber\\
+B_j-\dot E_j &=& 0
+\nonumber\\
+- \ddot E_{ij} + \frac{2}{\tau} \dot E_{ij} + \tilde\nabla_a\tilde\nabla^a E_{ij}  &=& 0.
+\end{eqnarray}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Gauge Transformations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{eqnarray}
+%x'^\mu &=& x^\mu - \epsilon^\mu(x),\qquad \epsilon_\mu = \Omega^2\ell_\mu,\qquad \ell_\mu = L_\mu + \tilde\nabla_\mu L
+%\\ \nonumber
+%\nabla_\mu \epsilon_\nu &=& \Omega^2 \tilde\nabla_\mu \ell_\nu - \frac12 \left(
+%\ell_\mu \tilde\nabla_\nu - \ell_\nu \tilde\nabla_\mu - \tilde g_{\mu\nu} \ell^\rho \tilde\nabla_\rho\right)\Omega^2
+%\\ \nonumber\\
+%f'_{\mu\nu} &=& f_{\mu\nu} + \tilde\nabla_\mu \ell_\nu +\tilde\nabla_\nu \ell_\mu + 2\Omega^{-1} \tilde g_{\mu\nu} \ell^\rho \tilde\nabla_\rho \Omega
+%\nonumber\\
+%&=& f_{\mu\nu} + \tilde\nabla_\mu \ell_\nu +\tilde\nabla_\nu \ell_\mu + 2\tau^{-1} \tilde g_{\mu\nu}U^\rho \ell_\rho
+%\\ \nonumber\\
+%\chi &=& \frac{1}{6} \left( \tilde\nabla^\sigma W_\sigma - f\right)
+%\\ \nonumber\\
+%F &=& \frac{1}{6} \int D(4\tilde\nabla^\sigma W_\sigma -f)
+%\\ \nonumber\\
+%E_\mu &=& W_\mu -\tilde\nabla_\mu \int D \tilde\nabla^\sigma W_\sigma
+%\\ \nonumber\\
+%2E_{\mu\nu} &=& h_{\mu\nu} - \tilde\nabla_\mu W_\nu -\tilde\nabla_\nu W_\mu + \frac23 \tilde\nabla_\mu\tilde\nabla_\nu \int D \tilde\nabla^\sigma W_\sigma
+%+\frac{g_{\mu\nu}}{3} (\tilde\nabla^\sigma W_\sigma -h) + \frac{\tilde\nabla_\mu\tilde\nabla_\nu}{3}\int D f 
+%\\ \nonumber\\ 
+%\tilde\nabla^\mu f'_{\mu\nu} &=& \tilde\nabla^\mu f_{\mu\nu} + \tilde\nabla_\alpha\tilde\nabla^\alpha L_\nu + 2\tilde\nabla_\alpha\tilde\nabla^\alpha \tilde\nabla_\nu L +
+%2  \tau^{-2}  U_{\nu}U^{\alpha}L_\alpha + 2 \tau^{-1} U^{\alpha}\nabla_{\nu}L_{\alpha}
+%\nonumber\\
+%&&+  2  \tau^{-2}  U_{\nu}\dot L + 2 \tau^{-1}\nabla_{\nu}\dot L
+%\\ \nonumber\\
+%W'_\nu &=& W_\nu +L_\nu + 2\tilde\nabla_\nu L + \int D(x-x') (2  \tau^{-2}  U_{\nu}U^{\alpha}L_\alpha + 2 \tau^{-1} U^{\alpha}\nabla_{\nu}L_{\alpha}+ 2  \tau^{-2}  U_{\nu}\dot L + 2 \tau^{-1}\nabla_{\nu}\dot L)
+%\end{eqnarray}
+
+
+\end{document}

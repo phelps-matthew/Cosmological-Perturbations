@@ -1,0 +1,292 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{RW SVT4 $k\ne 0$ v6}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)\left(-d\tau^2 +\tilde g_{ij} dx^i dx^j\right),\qquad R_{ij} = -2k \tilde g_{ij}
+\label{geom2}
+\\ \nonumber\\
+R_{\lambda\mu\nu\kappa} &=&- \tfrac{1}{6} g_{\lambda \nu } g_{\mu \kappa } R + \tfrac{1}{6} g_{\lambda \kappa } g_{\mu \nu } R -  \tfrac{1}{2} g_{\mu \nu } R_{\lambda \kappa } + \tfrac{1}{2} g_{\mu \kappa } R_{\lambda \nu } + \tfrac{1}{2} g_{\lambda \nu } R_{\mu \kappa } -  \tfrac{1}{2} g_{\lambda \kappa } R_{\mu \nu }
+\\ \nonumber\\
+R_{\mu\nu} &=& (A+B)U_\mu U_\nu + g_{\mu\nu}B,\qquad R=3B-A
+\label{Ricci}
+\\ \nonumber\\
+G_{\mu\nu}&=& \tfrac{1}{2} A g_{\mu \nu } -  \tfrac{1}{2} B g_{\mu \nu } + A U_{\mu } U_{\nu } + B U_{\mu } U_{\nu }
+\\  \nonumber\\ 
+g^{\mu\nu}G_{\mu\nu}&=& A - 3 B
+\\ \nonumber\\
+T_{\mu\nu} &=& (\rho+p)U_\mu U_\nu +  p g_{\mu\nu}
+\\ \nonumber\\
+g^{\mu\nu}T_{\mu\nu} &=& 3p-\rho
+\\ \nonumber\\
+\Delta_{\mu\nu}^{(0)}&=&\tfrac{1}{2} A g_{\mu \nu } -  \tfrac{1}{2} B g_{\mu \nu } + g_{\mu \nu } p + A U_{\mu } U_{\nu } + B U_{\mu } U_{\nu } + p U_{\mu } U_{\nu } + U_{\mu } U_{\nu } \rho 
+\label{Delta}
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu}^{(0)}&=& A - 3 B + 3 p -  \rho 
+\label{Delta4tr}
+\\ \nonumber\\
+A &=& -\tfrac12 (3p+\rho)
+\nonumber\\
+&=& -3 \dot{\Omega}^2 \Omega^{-4} + 3 \overset{..}{\Omega} \Omega^{-3}
+\\ \nonumber\\
+B&=& \tfrac12(p-\rho)
+\nonumber\\
+&=& - \dot{\Omega}^2 \Omega^{-4} -  \overset{..}{\Omega} \Omega^{-3} - 2 k \Omega^{-2}
+\\ \nonumber\\
+\rho &=& \tfrac{1}{2} (- A - 3 B)
+\nonumber\\
+&=& 3 \dot{\Omega}^2 \Omega^{-4} + 3 k \Omega^{-2}
+\\ \nonumber\\
+p &=& \tfrac{1}{2} (- A + B)
+\nonumber\\
+&=& \dot{\Omega}^2 \Omega^{-4} - 2 \overset{..}{\Omega} \Omega^{-3} -  k \Omega^{-2}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%
+\subsection{Identities}
+%%%%%%%%%%%%%%%%%
+$A$ and $B$ are functions only of coordinate $x^0$. 
+\begin{eqnarray}
+U^\alpha U^\beta \nabla_\alpha F\nabla_\beta A &=& -\nabla^\alpha F \nabla_\alpha A
+\\ \nonumber\\
+F^\alpha U_\alpha U^\beta \nabla_\beta A &=& -F^\alpha \nabla_\alpha A
+\\ \nonumber\\
+U^\alpha\nabla_\alpha U^\mu &=& 0
+\\ \nonumber\\
+\nabla_\mu U_\nu &=& \dot\Omega \Omega^{-2}(g_{\mu\nu} + U_{\mu}U_\nu)
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& ( g_{\mu\nu}+ h_{\mu\nu}) dx^\mu dx^\nu
+\\ \nonumber\\
+h_{\mu\nu} &=& -2 g_{\mu\nu}\chi + 2\nabla_\mu \nabla_\nu F +\nabla_\mu F_\nu +\nabla_\nu F_\mu+ 2F_{\mu\nu}
+\label{svt}
+\\ \nonumber\\
+g^{\mu\nu} F_{\mu\nu} &=&0,\qquad \nabla^\mu F_{\mu\nu} = 0,\qquad \nabla^\mu F_\mu=0 
+\\ \nonumber\\
+U^\mu \delta U_\mu &=& \tfrac12 U^\mu U^\nu h_{\mu\nu},\qquad U^\mu U_\mu = -1
+\\ \nonumber\\
+\delta U_{\mu} &=& (V_\mu + \nabla_\mu V) + U_\mu U^\alpha(V_\alpha + \nabla_\alpha V)-U_\mu\left(\tfrac12 U^\alpha U^\beta h_{\alpha\beta}\right)
+\\ \nonumber\\
+\delta T_{\mu\nu}&=& \delta p g_{\mu \nu } + \delta p U_{\mu } U_{\nu } + \delta \rho U_{\mu } U_{\nu } - 2 g_{\mu \nu } p \chi + 2 p \nabla_{\nu }\nabla_{\mu }F+\delta U_{\nu } p U_{\mu } + \delta U_{\mu } p U_{\nu } + \delta U_{\nu } U_{\mu } \rho \nonumber \\ 
+&& + \delta U_{\mu } U_{\nu } \rho + p \nabla_{\mu }F_{\nu } + p \nabla_{\nu }F_{\mu }+2 F_{\mu \nu } p
+\\  \nonumber\\ 
+g^{\mu\nu}\delta T_{\mu\nu}&=& 3 \delta p -  \delta \rho - 6 p \chi + 2 \rho \chi + 2 p \nabla_{\alpha }\nabla^{\alpha }F + 2 p U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }F + 2 U^{\alpha } U^{\beta } \rho \nabla_{\beta }\nabla_{\alpha }F+2 p U^{\alpha } U^{\beta } \nabla_{\beta }F_{\alpha } \nonumber \\ 
+&& + 2 U^{\alpha } U^{\beta } \rho \nabla_{\beta }F_{\alpha }+2 F_{\alpha \beta } p U^{\alpha } U^{\beta } + 2 F_{\alpha \beta } U^{\alpha } U^{\beta } \rho 
+\nonumber\\  \\ 
+\delta G_{\mu\nu}&=& 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi + \tfrac{2}{3} g_{\mu \nu } \nabla_{\alpha }F \nabla^{\alpha }A + \tfrac{1}{2} U_{\mu } U_{\nu } \nabla_{\alpha }F \nabla^{\alpha }A + \tfrac{1}{2} U_{\mu } U_{\nu } \nabla_{\alpha }F \nabla^{\alpha }B + \tfrac{1}{2} A U_{\nu } \nabla_{\alpha }U_{\mu } \nabla^{\alpha }F \nonumber \\ 
+&& + \tfrac{1}{2} B U_{\nu } \nabla_{\alpha }U_{\mu } \nabla^{\alpha }F + \tfrac{1}{2} A U_{\mu } \nabla_{\alpha }U_{\nu } \nabla^{\alpha }F + \tfrac{1}{2} B U_{\mu } \nabla_{\alpha }U_{\nu } \nabla^{\alpha }F -  \tfrac{1}{2} A g_{\mu \nu } U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& -  \tfrac{1}{2} B g_{\mu \nu } U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } + \tfrac{1}{2} U^{\alpha } U_{\nu } \nabla_{\alpha }F \nabla_{\mu }A + \tfrac{1}{2} U^{\alpha } U_{\nu } \nabla_{\alpha }F \nabla_{\mu }B + \tfrac{1}{2} A U_{\nu } \nabla^{\alpha }F \nabla_{\mu }U_{\alpha } \nonumber \\ 
+&& + \tfrac{1}{2} B U_{\nu } \nabla^{\alpha }F \nabla_{\mu }U_{\alpha } + \tfrac{1}{2} A U^{\alpha } \nabla_{\alpha }F \nabla_{\mu }U_{\nu } + \tfrac{1}{2} B U^{\alpha } \nabla_{\alpha }F \nabla_{\mu }U_{\nu } + A U^{\alpha } U_{\nu } \nabla_{\mu }\nabla_{\alpha }F \nonumber \\ 
+&& + B U^{\alpha } U_{\nu } \nabla_{\mu }\nabla_{\alpha }F -  \tfrac{1}{2} U^{\alpha } U_{\mu } \nabla_{\alpha }A \nabla_{\nu }F -  \tfrac{1}{2} U^{\alpha } U_{\mu } \nabla_{\alpha }B \nabla_{\nu }F -  \tfrac{1}{2} A U_{\mu } \nabla_{\alpha }U^{\alpha } \nabla_{\nu }F \nonumber \\ 
+&& -  \tfrac{1}{2} B U_{\mu } \nabla_{\alpha }U^{\alpha } \nabla_{\nu }F -  \tfrac{1}{6} \nabla_{\mu }A \nabla_{\nu }F + \tfrac{1}{2} \nabla_{\mu }B \nabla_{\nu }F + A U^{\alpha } U_{\mu } \nabla_{\nu }\nabla_{\alpha }F + B U^{\alpha } U_{\mu } \nabla_{\nu }\nabla_{\alpha }F \nonumber \\ 
+&& + A \nabla_{\nu }\nabla_{\mu }F -  B \nabla_{\nu }\nabla_{\mu }F - 2 \nabla_{\nu }\nabla_{\mu }\chi +\tfrac{2}{3} F^{\alpha } g_{\mu \nu } \nabla_{\alpha }A -  \tfrac{1}{4} F_{\nu } U^{\alpha } U_{\mu } \nabla_{\alpha }A -  \tfrac{1}{4} F_{\mu } U^{\alpha } U_{\nu } \nabla_{\alpha }A \nonumber \\ 
+&& + \tfrac{1}{2} F^{\alpha } U_{\mu } U_{\nu } \nabla_{\alpha }A -  \tfrac{1}{4} F_{\nu } U^{\alpha } U_{\mu } \nabla_{\alpha }B -  \tfrac{1}{4} F_{\mu } U^{\alpha } U_{\nu } \nabla_{\alpha }B + \tfrac{1}{2} F^{\alpha } U_{\mu } U_{\nu } \nabla_{\alpha }B -  \tfrac{1}{4} A F_{\nu } U_{\mu } \nabla_{\alpha }U^{\alpha } \nonumber \\ 
+&& -  \tfrac{1}{4} B F_{\nu } U_{\mu } \nabla_{\alpha }U^{\alpha } -  \tfrac{1}{4} A F_{\mu } U_{\nu } \nabla_{\alpha }U^{\alpha } -  \tfrac{1}{4} B F_{\mu } U_{\nu } \nabla_{\alpha }U^{\alpha } + \tfrac{1}{2} A F^{\alpha } U_{\nu } \nabla_{\alpha }U_{\mu } + \tfrac{1}{2} B F^{\alpha } U_{\nu } \nabla_{\alpha }U_{\mu } \nonumber \\ 
+&& + \tfrac{1}{2} A F^{\alpha } U_{\mu } \nabla_{\alpha }U_{\nu } + \tfrac{1}{2} B F^{\alpha } U_{\mu } \nabla_{\alpha }U_{\nu } -  \tfrac{1}{2} A F^{\alpha } g_{\mu \nu } U_{\alpha } \nabla_{\beta }U^{\beta } -  \tfrac{1}{2} B F^{\alpha } g_{\mu \nu } U_{\alpha } \nabla_{\beta }U^{\beta } -  \tfrac{1}{12} F_{\nu } \nabla_{\mu }A \nonumber \\ 
+&& + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\nu } \nabla_{\mu }A + \tfrac{1}{4} F_{\nu } \nabla_{\mu }B + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\nu } \nabla_{\mu }B + A U^{\alpha } U_{\nu } \nabla_{\mu }F_{\alpha } + B U^{\alpha } U_{\nu } \nabla_{\mu }F_{\alpha } \nonumber \\ 
+&& + \tfrac{1}{2} A \nabla_{\mu }F_{\nu } -  \tfrac{1}{2} B \nabla_{\mu }F_{\nu } + \tfrac{1}{4} A F^{\alpha } U_{\nu } \nabla_{\mu }U_{\alpha } + \tfrac{1}{4} B F^{\alpha } U_{\nu } \nabla_{\mu }U_{\alpha } + \tfrac{1}{4} A F^{\alpha } U_{\alpha } \nabla_{\mu }U_{\nu } \nonumber \\ 
+&& + \tfrac{1}{4} B F^{\alpha } U_{\alpha } \nabla_{\mu }U_{\nu } -  \tfrac{1}{12} F_{\mu } \nabla_{\nu }A + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\mu } \nabla_{\nu }A + \tfrac{1}{4} F_{\mu } \nabla_{\nu }B + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\mu } \nabla_{\nu }B \nonumber \\ 
+&& + A U^{\alpha } U_{\mu } \nabla_{\nu }F_{\alpha } + B U^{\alpha } U_{\mu } \nabla_{\nu }F_{\alpha } + \tfrac{1}{2} A \nabla_{\nu }F_{\mu } -  \tfrac{1}{2} B \nabla_{\nu }F_{\mu } + \tfrac{1}{4} A F^{\alpha } U_{\mu } \nabla_{\nu }U_{\alpha } \nonumber \\ 
+&& + \tfrac{1}{4} B F^{\alpha } U_{\mu } \nabla_{\nu }U_{\alpha } + \tfrac{1}{4} A F^{\alpha } U_{\alpha } \nabla_{\nu }U_{\mu } + \tfrac{1}{4} B F^{\alpha } U_{\alpha } \nabla_{\nu }U_{\mu }+\tfrac{4}{3} A F_{\mu \nu } + 2 A F_{\nu \alpha } U^{\alpha } U_{\mu } \nonumber \\ 
+&& + 2 B F_{\nu \alpha } U^{\alpha } U_{\mu } + 2 A F_{\mu \alpha } U^{\alpha } U_{\nu } + 2 B F_{\mu \alpha } U^{\alpha } U_{\nu } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\delta G_{\mu\nu}&=& A \nabla_{\alpha }\nabla^{\alpha }F -  B \nabla_{\alpha }\nabla^{\alpha }F + 6 \nabla_{\alpha }\nabla^{\alpha }\chi + 2 \nabla_{\alpha }F \nabla^{\alpha }A - 2 A U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } - 2 B U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& + 2 A U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }F + 2 B U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }F + A U^{\alpha } \nabla_{\beta }U_{\alpha } \nabla^{\beta }F + B U^{\alpha } \nabla_{\beta }U_{\alpha } \nabla^{\beta }F+2 F^{\alpha } \nabla_{\alpha }A \nonumber \\ 
+&& + A F^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta } + B F^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta } + 2 A U^{\alpha } U^{\beta } \nabla_{\beta }F_{\alpha } + 2 B U^{\alpha } U^{\beta } \nabla_{\beta }F_{\alpha } - 2 A F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& - 2 B F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta }+4 A F_{\alpha \beta } U^{\alpha } U^{\beta } + 4 B F_{\alpha \beta } U^{\alpha } U^{\beta }
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu}&=& \delta p g_{\mu \nu } + \delta p U_{\mu } U_{\nu } + \delta \rho U_{\mu } U_{\nu } + A g_{\mu \nu } \chi -  B g_{\mu \nu } \chi + 2 A U_{\mu } U_{\nu } \chi + 2 B U_{\mu } U_{\nu } \chi - 2 A U^{\alpha } U_{\mu } U_{\nu } \nabla_{\alpha }V \nonumber \\ 
+&& - 2 B U^{\alpha } U_{\mu } U_{\nu } \nabla_{\alpha }V + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi + \tfrac{2}{3} g_{\mu \nu } \nabla_{\alpha }F \nabla^{\alpha }A + \tfrac{1}{2} U_{\mu } U_{\nu } \nabla_{\alpha }F \nabla^{\alpha }A \nonumber \\ 
+&& + \tfrac{1}{2} U_{\mu } U_{\nu } \nabla_{\alpha }F \nabla^{\alpha }B + \tfrac{1}{2} A U_{\nu } \nabla_{\alpha }U_{\mu } \nabla^{\alpha }F + \tfrac{1}{2} B U_{\nu } \nabla_{\alpha }U_{\mu } \nabla^{\alpha }F + \tfrac{1}{2} A U_{\mu } \nabla_{\alpha }U_{\nu } \nabla^{\alpha }F \nonumber \\ 
+&& + \tfrac{1}{2} B U_{\mu } \nabla_{\alpha }U_{\nu } \nabla^{\alpha }F -  \tfrac{1}{2} A g_{\mu \nu } U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } -  \tfrac{1}{2} B g_{\mu \nu } U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& + 2 A U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \nabla_{\beta }\nabla_{\alpha }F + 2 B U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \nabla_{\beta }\nabla_{\alpha }F + \tfrac{1}{2} U^{\alpha } U_{\nu } \nabla_{\alpha }F \nabla_{\mu }A + \tfrac{1}{2} U^{\alpha } U_{\nu } \nabla_{\alpha }F \nabla_{\mu }B \nonumber \\ 
+&& + \tfrac{1}{2} A U_{\nu } \nabla^{\alpha }F \nabla_{\mu }U_{\alpha } + \tfrac{1}{2} B U_{\nu } \nabla^{\alpha }F \nabla_{\mu }U_{\alpha } + \tfrac{1}{2} A U^{\alpha } \nabla_{\alpha }F \nabla_{\mu }U_{\nu } + \tfrac{1}{2} B U^{\alpha } \nabla_{\alpha }F \nabla_{\mu }U_{\nu } \nonumber \\ 
+&& -  A U_{\nu } \nabla_{\mu }V -  B U_{\nu } \nabla_{\mu }V + A U^{\alpha } U_{\nu } \nabla_{\mu }\nabla_{\alpha }F + B U^{\alpha } U_{\nu } \nabla_{\mu }\nabla_{\alpha }F -  \tfrac{1}{2} U^{\alpha } U_{\mu } \nabla_{\alpha }A \nabla_{\nu }F \nonumber \\ 
+&& -  \tfrac{1}{2} U^{\alpha } U_{\mu } \nabla_{\alpha }B \nabla_{\nu }F -  \tfrac{1}{2} A U_{\mu } \nabla_{\alpha }U^{\alpha } \nabla_{\nu }F -  \tfrac{1}{2} B U_{\mu } \nabla_{\alpha }U^{\alpha } \nabla_{\nu }F -  \tfrac{1}{6} \nabla_{\mu }A \nabla_{\nu }F + \tfrac{1}{2} \nabla_{\mu }B \nabla_{\nu }F \nonumber \\ 
+&& -  A U_{\mu } \nabla_{\nu }V -  B U_{\mu } \nabla_{\nu }V + A U^{\alpha } U_{\mu } \nabla_{\nu }\nabla_{\alpha }F + B U^{\alpha } U_{\mu } \nabla_{\nu }\nabla_{\alpha }F - 2 \nabla_{\nu }\nabla_{\mu }\chi -2 A U^{\alpha } U_{\mu } U_{\nu } V_{\alpha } \nonumber \\ 
+&& - 2 B U^{\alpha } U_{\mu } U_{\nu } V_{\alpha } -  A U_{\nu } V_{\mu } -  B U_{\nu } V_{\mu } -  A U_{\mu } V_{\nu } -  B U_{\mu } V_{\nu } + \tfrac{2}{3} F^{\alpha } g_{\mu \nu } \nabla_{\alpha }A -  \tfrac{1}{4} F_{\nu } U^{\alpha } U_{\mu } \nabla_{\alpha }A \nonumber \\ 
+&& -  \tfrac{1}{4} F_{\mu } U^{\alpha } U_{\nu } \nabla_{\alpha }A + \tfrac{1}{2} F^{\alpha } U_{\mu } U_{\nu } \nabla_{\alpha }A -  \tfrac{1}{4} F_{\nu } U^{\alpha } U_{\mu } \nabla_{\alpha }B -  \tfrac{1}{4} F_{\mu } U^{\alpha } U_{\nu } \nabla_{\alpha }B + \tfrac{1}{2} F^{\alpha } U_{\mu } U_{\nu } \nabla_{\alpha }B \nonumber \\ 
+&& -  \tfrac{1}{4} A F_{\nu } U_{\mu } \nabla_{\alpha }U^{\alpha } -  \tfrac{1}{4} B F_{\nu } U_{\mu } \nabla_{\alpha }U^{\alpha } -  \tfrac{1}{4} A F_{\mu } U_{\nu } \nabla_{\alpha }U^{\alpha } -  \tfrac{1}{4} B F_{\mu } U_{\nu } \nabla_{\alpha }U^{\alpha } + \tfrac{1}{2} A F^{\alpha } U_{\nu } \nabla_{\alpha }U_{\mu } \nonumber \\ 
+&& + \tfrac{1}{2} B F^{\alpha } U_{\nu } \nabla_{\alpha }U_{\mu } + \tfrac{1}{2} A F^{\alpha } U_{\mu } \nabla_{\alpha }U_{\nu } + \tfrac{1}{2} B F^{\alpha } U_{\mu } \nabla_{\alpha }U_{\nu } + 2 A U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \nabla_{\beta }F_{\alpha } \nonumber \\ 
+&& + 2 B U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \nabla_{\beta }F_{\alpha } -  \tfrac{1}{2} A F^{\alpha } g_{\mu \nu } U_{\alpha } \nabla_{\beta }U^{\beta } -  \tfrac{1}{2} B F^{\alpha } g_{\mu \nu } U_{\alpha } \nabla_{\beta }U^{\beta } -  \tfrac{1}{12} F_{\nu } \nabla_{\mu }A \nonumber \\ 
+&& + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\nu } \nabla_{\mu }A + \tfrac{1}{4} F_{\nu } \nabla_{\mu }B + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\nu } \nabla_{\mu }B + A U^{\alpha } U_{\nu } \nabla_{\mu }F_{\alpha } + B U^{\alpha } U_{\nu } \nabla_{\mu }F_{\alpha } \nonumber \\ 
+&& + \tfrac{1}{4} A F^{\alpha } U_{\nu } \nabla_{\mu }U_{\alpha } + \tfrac{1}{4} B F^{\alpha } U_{\nu } \nabla_{\mu }U_{\alpha } + \tfrac{1}{4} A F^{\alpha } U_{\alpha } \nabla_{\mu }U_{\nu } + \tfrac{1}{4} B F^{\alpha } U_{\alpha } \nabla_{\mu }U_{\nu } -  \tfrac{1}{12} F_{\mu } \nabla_{\nu }A \nonumber \\ 
+&& + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\mu } \nabla_{\nu }A + \tfrac{1}{4} F_{\mu } \nabla_{\nu }B + \tfrac{1}{4} F^{\alpha } U_{\alpha } U_{\mu } \nabla_{\nu }B + A U^{\alpha } U_{\mu } \nabla_{\nu }F_{\alpha } + B U^{\alpha } U_{\mu } \nabla_{\nu }F_{\alpha } \nonumber \\ 
+&& + \tfrac{1}{4} A F^{\alpha } U_{\mu } \nabla_{\nu }U_{\alpha } + \tfrac{1}{4} B F^{\alpha } U_{\mu } \nabla_{\nu }U_{\alpha } + \tfrac{1}{4} A F^{\alpha } U_{\alpha } \nabla_{\nu }U_{\mu } + \tfrac{1}{4} B F^{\alpha } U_{\alpha } \nabla_{\nu }U_{\mu }+\tfrac{1}{3} A F_{\mu \nu } + B F_{\mu \nu } \nonumber \\ 
+&& + 2 A F_{\nu \alpha } U^{\alpha } U_{\mu } + 2 B F_{\nu \alpha } U^{\alpha } U_{\mu } + 2 A F_{\mu \alpha } U^{\alpha } U_{\nu } + 2 B F_{\mu \alpha } U^{\alpha } U_{\nu } + 2 A F_{\alpha \beta } U^{\alpha } U^{\beta } U_{\mu } U_{\nu } \nonumber \\ 
+&& + 2 B F_{\alpha \beta } U^{\alpha } U^{\beta } U_{\mu } U_{\nu } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p -  \delta \rho + 2 A \chi - 6 B \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi + 2 \nabla_{\alpha }F \nabla^{\alpha }A - 2 A U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } - 2 B U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& + A U^{\alpha } \nabla_{\beta }U_{\alpha } \nabla^{\beta }F + B U^{\alpha } \nabla_{\beta }U_{\alpha } \nabla^{\beta }F+2 F^{\alpha } \nabla_{\alpha }A + A F^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta } + B F^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta } \nonumber \\ 
+&& - 2 A F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta } - 2 B F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta }+2 A F_{\alpha \beta } U^{\alpha } U^{\beta } + 2 B F_{\alpha \beta } U^{\alpha } U^{\beta }
+\\ \nonumber\\
+U^\mu U^\nu \Delta_{\mu\nu}&=& \delta \rho + A \chi + 3 B \chi - 2 \nabla_{\alpha }\nabla^{\alpha }\chi + A U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } + B U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } - 2 U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }\chi \nonumber \\ 
+&& -  A U^{\alpha } \nabla_{\beta }U_{\alpha } \nabla^{\beta }F -  B U^{\alpha } \nabla_{\beta }U_{\alpha } \nabla^{\beta }F- A F^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta } -  B F^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta } + A F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& + B F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta }- \tfrac{5}{3} A F_{\alpha \beta } U^{\alpha } U^{\beta } -  B F_{\alpha \beta } U^{\alpha } U^{\beta } + U^{\alpha } U^{\beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta }
+\\  \nonumber\\ 
+(U^\mu U^\nu+g^{\mu\nu})\Delta_{\mu\nu}&=& 3 \delta p + 3 A \chi - 3 B \chi + 4 \nabla_{\alpha }\nabla^{\alpha }\chi + 2 \nabla_{\alpha }F \nabla^{\alpha }A -  A U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } -  B U^{\alpha } \nabla_{\alpha }F \nabla_{\beta }U^{\beta } \nonumber \\ 
+&& - 2 U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }\chi +2 F^{\alpha } \nabla_{\alpha }A -  A F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta } -  B F^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta }+\tfrac{1}{3} A F_{\alpha \beta } U^{\alpha } U^{\beta } \nonumber \\ 
+&& + B F_{\alpha \beta } U^{\alpha } U^{\beta } + U^{\alpha } U^{\beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta }
+\end{eqnarray}
+%
+%
+%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (G.I. Form)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+(Q_\mu  &\equiv& F_\mu + \nabla_\mu F)
+\\ \nonumber\\
+\delta \rho^{GI}{} &=& \delta \rho+ (A + B)( Q^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta }-Q^{\alpha } U^{\beta } \nabla_{\alpha }U_{\beta })
+\label{rhogi}
+\\ \nonumber\\
+\delta p^{GI}{} &=& \delta p + \tfrac{2}{3} Q^{\alpha } \nabla_{\alpha }A -  \tfrac{1}{3} (A+B) Q^{\alpha } U_{\alpha } \nabla_{\beta }U^{\beta } 
+\label{pgi}
+\\ \nonumber\\
+V^{GI}&=& V-U^\alpha Q_\alpha,\qquad \chi,\quad F_{\mu\nu}\quad V_\mu
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\Delta(A,B)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu}&=& (g_{\mu \nu } + U_{\mu } U_{\nu }) \delta p^{GI}{} + U_{\mu } U_{\nu } \delta \rho^{GI}{} + \bigl((A -  B) g_{\mu \nu } + 2 (A + B) U_{\mu } U_{\nu }\bigr) \chi \nonumber \\ 
+&& - 2 (A + B) U_{\mu } U_{\nu } U^{\alpha } \nabla_{\alpha }V^{GI}{} + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi -  (A + B) U_{\nu } \nabla_{\mu }V^{GI}{} -  (A + B) U_{\mu } \nabla_{\nu }V^{GI}{} \nonumber \\ 
+&& - 2 \nabla_{\nu }\nabla_{\mu }\chi -2 (A + B) U_{\mu } U_{\nu } U^{\alpha } V_{\alpha } -  (A + B) U_{\nu } V_{\mu } \nonumber \\ 
+&& -  (A + B) U_{\mu } V_{\nu }+2 (A + B) U_{\mu } U_{\nu } U^{\alpha } U^{\beta } F_{\alpha \beta } + 2 (A + B) U_{\nu } U^{\alpha } F_{\mu \alpha } + (\tfrac{1}{3} A + B) F_{\mu \nu } \nonumber \\ 
+&& + 2 (A + B) U_{\mu } U^{\alpha } F_{\nu \alpha } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} -  \delta \rho^{GI}{} + 2 (A - 3 B) \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi +2 (A + B) U^{\alpha } U^{\beta } F_{\alpha \beta }
+\end{eqnarray}
+\\ \\
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\Delta(\rho,p)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu}&=& (g_{\mu \nu } + U_{\mu } U_{\nu }) \delta p^{GI}{} + U_{\mu } U_{\nu } \delta \rho^{GI}{} + \bigl(-2 p g_{\mu \nu } - 2 (p + \rho) U_{\mu } U_{\nu }\bigr) \chi + 2 (p + \rho) U_{\mu } U_{\nu } U^{\alpha } \nabla_{\alpha }V^{GI}{} \nonumber \\ 
+&& + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi + (p + \rho) U_{\nu } \nabla_{\mu }V^{GI}{} + (p + \rho) U_{\mu } \nabla_{\nu }V^{GI}{} - 2 \nabla_{\nu }\nabla_{\mu }\chi +2 (p + \rho) U_{\mu } U_{\nu } U^{\alpha } V_{\alpha } \nonumber \\ 
+&& + (p + \rho) U_{\nu } V_{\mu } + (p + \rho) U_{\mu } V_{\nu }-2 (p + \rho) U_{\mu } U_{\nu } U^{\alpha } U^{\beta } F_{\alpha \beta } - 2 (p + \rho) U_{\nu } U^{\alpha } F_{\mu \alpha } -  \tfrac{2}{3} \rho F_{\mu \nu } \nonumber \\ 
+&& - 2 (p + \rho) U_{\mu } U^{\alpha } F_{\nu \alpha } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} -  \delta \rho^{GI}{} + (-6 p + 2 \rho) \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi -2 (p + \rho) U^{\alpha } U^{\beta } F_{\alpha \beta }
+\end{eqnarray}
+\\ \\
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\Delta(\Omega,k)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu}&=& (g_{\mu \nu } + U_{\mu } U_{\nu }) \delta p^{GI}{} + U_{\mu } U_{\nu } \delta \rho^{GI}{} \nonumber \\ 
+&& + \Bigl(\Omega^{-4} \bigl(-2 \dot{\Omega}^2 + 2 \Omega (2 \overset{..}{\Omega} + k \Omega)\bigr) g_{\mu \nu } - 4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } U_{\nu }\Bigr) \chi \nonumber \\ 
+&& + 4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } U_{\nu } U^{\alpha } \nabla_{\alpha }V^{GI}{} + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi \nonumber \\ 
+&& + 2 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\nu } \nabla_{\mu }V^{GI}{} + 2 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } \nabla_{\nu }V^{GI}{} \nonumber \\ 
+&& - 2 \nabla_{\nu }\nabla_{\mu }\chi +4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } U_{\nu } U^{\alpha } V_{\alpha } + 2 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\nu } V_{\mu } \nonumber \\ 
+&& + 2 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } V_{\nu }-4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } U_{\nu } U^{\alpha } U^{\beta } F_{\alpha \beta } \nonumber \\ 
+&& - 4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\nu } U^{\alpha } F_{\mu \alpha } - 2 \Omega^{-4} (\dot{\Omega}^2 + k \Omega^2) F_{\mu \nu } \nonumber \\ 
+&& - 4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U_{\mu } U^{\alpha } F_{\nu \alpha } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} -  \delta \rho^{GI}{} + 12 \Omega^{-3} (\overset{..}{\Omega} + k \Omega) \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi -4 \Omega^{-4} \bigl(2 \dot{\Omega}^2 + \Omega (- \overset{..}{\Omega} + k \Omega)\bigr) U^{\alpha } U^{\beta } F_{\alpha \beta }
+\end{eqnarray}
+\\ 
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Separation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu}&=& (g_{\mu \nu } + U_{\mu } U_{\nu }) \delta p^{GI}{} + U_{\mu } U_{\nu } \delta \rho^{GI}{} + \bigl(-2 p g_{\mu \nu } - 2 (p + \rho) U_{\mu } U_{\nu }\bigr) \chi + 2 (p + \rho) U_{\mu } U_{\nu } U^{\alpha } \nabla_{\alpha }V^{GI}{} \nonumber \\ 
+&& + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi + (p + \rho) U_{\nu } \nabla_{\mu }V^{GI}{} + (p + \rho) U_{\mu } \nabla_{\nu }V^{GI}{} - 2 \nabla_{\nu }\nabla_{\mu }\chi +2 (p + \rho) U_{\mu } U_{\nu } U^{\alpha } V_{\alpha } \nonumber \\ 
+&& + (p + \rho) U_{\nu } V_{\mu } + (p + \rho) U_{\mu } V_{\nu }-2 (p + \rho) U_{\mu } U_{\nu } U^{\alpha } U^{\beta } F_{\alpha \beta } - 2 (p + \rho) U_{\nu } U^{\alpha } F_{\mu \alpha } -  \tfrac{2}{3} \rho F_{\mu \nu } \nonumber \\ 
+&& - 2 (p + \rho) U_{\mu } U^{\alpha } F_{\nu \alpha } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} -  \delta \rho^{GI}{} + (-6 p + 2 \rho) \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi -2 (p + \rho) U^{\alpha } U^{\beta } F_{\alpha \beta }
+\\ \nonumber\\
+U^\mu U^\nu \Delta_{\mu\nu}&=& \delta \rho^{GI}{} - 2 \rho \chi - 2 \nabla_{\alpha }\nabla^{\alpha }\chi - 2 U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }\chi +\tfrac{2}{3} (3 p + 2 \rho) U^{\alpha } U^{\beta } F_{\alpha \beta } + U^{\alpha } U^{\beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta }
+\\  \nonumber\\ 
+(g^{\mu\nu}+U^\mu U^\nu)\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} - 6 p \chi + 4 \nabla_{\alpha }\nabla^{\alpha }\chi - 2 U^{\alpha } U^{\beta } \nabla_{\beta }\nabla_{\alpha }\chi - \tfrac{2}{3} \rho U^{\alpha } U^{\beta } F_{\alpha \beta } + U^{\alpha } U^{\beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta }
+\end{eqnarray}
+%
+%
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Validation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{deSitter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+ds^2 &=& \frac{1}{H^2\tau^2}\left(-d\tau^2 + \delta^{ij}dx^idx^j\right)
+\\ \nonumber\\
+\Omega &=& \frac{1}{H\tau},\qquad \dot\Omega = -\frac{1}{H\tau^2},\qquad \ddot \Omega =\frac{2}{H\tau^3}
+\\ \nonumber\\
+\delta \rho^{GI} &=& \delta \rho,\qquad \delta p^{GI} = \delta p
+\\ \nonumber\\
+\Delta_{\mu\nu}&=& \delta \rho^{GI}{} U_{\mu } U_{\nu } + \delta p^{GI}{} (g_{\mu \nu } + U_{\mu } U_{\nu }) + 6 H^2 g_{\mu \nu } \chi + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi - 2 \nabla_{\nu }\nabla_{\mu }\chi -2 H^2 F_{\mu \nu } \nonumber \\ 
+&& + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\label{dsDelta}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} -  \delta \rho^{GI}{} + 24 H^2 \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi 
+\label{dsDeltatr}
+\end{eqnarray}
+In $dS_4$, we have $\rho=-p=const.$, such that $T_{\mu\nu} = p g_{\mu\nu}$ and $\delta T_{\mu\nu} = ph_{\mu\nu}$. For $\Omega(\tau) = (H\tau)^{-1}$, it follows that $p=\dot{\Omega}^2 \Omega^{-4} - 2 \overset{..}{\Omega} \Omega^{-3}=-3H^2$. Setting $\delta \rho = \delta p = 0$, \eqref{dsDelta} and \eqref{dsDeltatr} become
+\begin{eqnarray}
+\Delta_{\mu\nu}&=& 6 H^2 g_{\mu \nu } \chi + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi - 2 \nabla_{\nu }\nabla_{\mu }\chi -2 H^2 F_{\mu \nu } + \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 24 H^2 \chi + 6 \nabla_{\alpha }\nabla^{\alpha }\chi 
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\delta(\nabla_\mu G^{\mu\nu})&=& \tfrac{1}{2} G^{\nu }{}_{\alpha } \nabla^{\alpha }h -  h^{\nu \alpha } \nabla_{\beta }G_{\alpha }{}^{\beta } -  h^{\alpha \beta } \nabla_{\beta }G^{\nu }{}_{\alpha } -  G^{\nu \alpha } \nabla_{\beta }h_{\alpha }{}^{\beta } + g^{\beta \gamma } g^{\nu \alpha } \nabla_{\gamma }\delta G_{\alpha \beta } -  \tfrac{1}{2} G^{\alpha \beta } \nabla^{\nu }h_{\alpha \beta }
+\nonumber\\
+&=&0
+\\ \nonumber\\
+\delta(\nabla_\mu \Delta^{\mu\nu}) &=& \delta(\nabla_\mu T^{\mu\nu})
+\end{eqnarray}
+\end{document}

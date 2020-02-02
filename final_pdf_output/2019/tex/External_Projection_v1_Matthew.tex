@@ -1,0 +1,117 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+ \usepackage{braket}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+%\numberwithin{equation}{subsection}
+\title{External Projection v1}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{$\delta G_{ij}$}
+Within the geometry of 
+\begin{equation}
+ds^2 = -(g_{ij} + h_{ij})dx^i dx^j 
+\end{equation}
+with maximally symmetric background
+\begin{equation}
+g_{ij} = \begin{pmatrix} \frac{1}{1-kr^2} &0&0\\ 0&r^2&0\\0&0&r^2\sin^2\theta\end{pmatrix}
+\end{equation}
+assume the metric perturbation can be (covariant) SVT decomposed as
+\begin{equation}
+h_{ij} = -2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij},
+\end{equation}
+with 3-trace
+\begin{equation}
+h = -6 \psi + 2\nabla^a\nabla_a E.
+\end{equation}
+The three dimensional Einstein background field equations take the form $G_{\mu\nu}^{(0)} = T_{\mu\nu}^{(0)}$. Since the background is maximally symmetric, the solution to the zeroth order Einstein equations yields energy momentum tensor $T_{\mu\nu}^{(0)} = \Lambda g_{\mu\nu}^{(0)} = k g_{\mu\nu}^{(0)}$.
+\\ \\
+The perturbed Einstein equations then take the form,
+\begin{align}
+\delta G_{ij} &= \delta T_{ij}\\
+&= -k h_{ij} 
+\end{align}
+Evaluate the Einstein tensor in terms of (3) yields
+\begin{align}
+\delta G_{ij}={}&\tfrac{1}{2} \nabla_{a}\nabla^{a}h_{ij}
+ -  \tfrac{1}{2} g_{ij} \nabla_{a}\nabla^{a}h
+ + \tfrac{1}{2} g_{ij} \nabla_{b}\nabla_{a}h^{ab}
+ -  \tfrac{1}{2} \nabla_{i}\nabla_{a}h_{j}{}^{a}
+ -  \tfrac{1}{2} \nabla_{j}\nabla_{a}h_{i}{}^{a}
+ + \tfrac{1}{2} \nabla_{j}\nabla_{i}h,
+\end{align}
+which takes the SVT form
+\begin{align}
+\delta G_{ij}={}&\nabla_{a}\nabla^{a}E_{ij}
+ + g_{ij} \nabla_{a}\nabla^{a}\psi
+ + k \nabla_{i}E_{j}
+ + k \nabla_{j}E_{i}
+ + 2 k \nabla_{j}\nabla_{i}E
+ -  \nabla_{j}\nabla_{i}\psi.
+\end{align}
+Composing the field equation $\delta G_{\mu\nu} = \delta T_{\mu\nu}$ yields
+\begin{align}
+\nabla_{a}\nabla^{a}E_{ij}
+ + g_{ij} \nabla_{a}\nabla^{a}\psi
+ + k \nabla_{i}E_{j}
+ + k \nabla_{j}E_{i}
+ + 2 k \nabla_{j}\nabla_{i}E
+ -  \nabla_{j}\nabla_{i}\psi =\\
+\quad k (-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij}),
+\end{align}
+which may be simplified as
+\begin{equation}
+(\nabla_a \nabla^a-2k)E_{ij} + g_{ij}\nabla_a \nabla^a \psi - \nabla_j\nabla_i \psi+2k g_{ij}\psi = 0.
+\end{equation}
+Taking the trace gives the solution for $\psi$
+\begin{equation}
+(\nabla_a \nabla^a + 3k)\psi = 0
+\end{equation}
+Under gauge transformation 
+\begin{equation}
+h_{ij} \to \bar h_{ij} = h_{ij} + \nabla_i \epsilon _j + \nabla_j \epsilon_i
+\end{equation}
+with $\epsilon_i = \nabla_i L + L_i$ and $\nabla^i L_i = 0$,
+we find that $h_{ij}$ transforms as 
+\begin{align}
+&-2 g_{ij}\bar \psi + 2\nabla_i\nabla_j \bar E + \nabla_i \bar E_j + \nabla_j \bar E_i + 2\bar E_{ij} =\\ 
+&\quad-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij} + 2 \nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i.
+\end{align}
+Taking the trace of the above, we have
+\begin{equation}
+-6 \bar\psi  +2\nabla^i \nabla_i \bar E = -6\psi + 2\nabla^i\nabla_i E + 2\nabla^i\nabla_i L
+\end{equation}
+\begin{align}
+\bar\psi &= \psi\\
+\bar E &= E-L\\
+\bar E_i &= E_i - L_i\\
+\bar E_{ij} &= E_{ij}
+\end{align}
+\begin{equation}
+\nabla^i \nabla^j h_{ij} = -2\nabla^i \nabla_i \psi + 2\nabla^i\nabla_i \nabla^j\nabla_j E + 2k \nabla_i \nabla^i E
+\end{equation}
+\begin{equation}
+\nabla^j \delta G_{ij} =  -2k\nabla_i \psi + k(\nabla^a\nabla_a + 2k)E_i + 2k \nabla^a\nabla_a \nabla_i E 
+\end{equation}
+\begin{equation}
+\nabla^i \nabla^j \delta G_{ij} = -2k\nabla^a \nabla_a \psi + 2k \nabla^a\nabla_a(\nabla^b \nabla_b + 2k)E
+\end{equation}
+\section*{Appendix}
+\begin{equation}
+[\nabla_i,\nabla_j]V_k = V_m R^m{}_{kij}= k (g_{ki}g^{m}{}_j - g^m{}_{i}g_{kj})V_m = 
+\end{equation}
+Christoffels for 
+\begin{equation}
+ds^2 = -g_{\mu\nu}dx^\mu dx^\nu = \left(dt^2- \frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2\right)
+\end{equation}
+\begin{align*}
+\Gamma^r_{rr} &= \frac{kr}{1-kr^2},\quad \Gamma^r_{\theta\theta} = -r(1-kr^2),\quad \Gamma^r_{\phi\phi} = -r(1-kr^2)\sin^2\theta\\
+\Gamma^\theta_{r\theta} &= \Gamma^{\phi}_{r\phi} = \frac{1}{r},\quad \Gamma^{\theta}_{\phi\phi} = -\sin\theta\cos\theta, \quad \Gamma^{\phi}_{\theta\phi} = \cot\theta,
+\end{align*}
+with all others zero. 
+\end{document}

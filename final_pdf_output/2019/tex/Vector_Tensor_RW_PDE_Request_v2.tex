@@ -1,0 +1,333 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Vector, Tensor RW PDE's}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Vector $\sinh\chi$ RW }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\phi &=& -\frac12 h_{00}
+\\ \nonumber\\
+B &=& \int d^3y D^{(3)}(\mathbf x - \mathbf y) \tilde\nabla^k_y \tilde\nabla_k^y h_{0k}
+\\ \nonumber\\
+B_i &=& \int d^3y D^{(3)}(\mathbf x - \mathbf y)\left[ \tilde\nabla^k_y \tilde\nabla_k^y h_{0i}
+- \tilde\nabla_i^y \tilde\nabla^k_y h_{0k} \right]
+\\ \nonumber\\
+E_i &=& \int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)
+\left[ \tilde\nabla^k_z \tilde\nabla_k^z \tilde\nabla^j_z h_{ij}-\tilde\nabla_i^z \tilde\nabla^k_z \tilde\nabla^l_z h_{kl} \right]
+\end{eqnarray}
+
+
+
+
+
+
+\begin{eqnarray}
+\tilde g_{ij} &=&\text{Diag}\left(1,\sinh^2\chi,\sinh^2\chi\sin^2\theta\right)
+\\ \nonumber\\
+A^i &=& \tilde\nabla_a\tilde\nabla^a B^i
+\\ \nonumber\\
+\tilde\nabla_a B^a&=& \frac{B_{2} \cos\theta}{\sin\theta \sinh^2\chi} + \frac{2 B_{1} \cosh\chi}{\sinh\chi} + \partial_{1}B_{1} + \frac{\partial_{2}B_{2}}{\sinh^2\chi} + \frac{\partial_{3}B_{3}}{\sin^2\theta \sinh^2\chi}=0
+\\ \nonumber\\
+A^1&=& B_{1} \left(-2 -  \frac{2}{\sinh^2\chi}\right) -  \frac{2 B_{2} \cos\theta \cosh\chi}{\sin\theta \sinh^3\chi} + \frac{2 \cosh\chi \partial_{1}B_{1}}{\sinh\chi} + \partial_{1}\partial_{1}B_{1} + \frac{\cos\theta \partial_{2}B_{1}}{\sin\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \partial_{2}B_{2}}{\sinh^3\chi} + \frac{\partial_{2}\partial_{2}B_{1}}{\sinh^2\chi} -  \frac{2 \cosh\chi \partial_{3}B_{3}}{\sin^2\theta \sinh^3\chi} + \frac{\partial_{3}\partial_{3}B_{1}}{\sin^2\theta \sinh^2\chi}
+\\ \nonumber\\
+A^2&=& B_{2} \left(- \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{2}{\sinh^2\chi}\right) + \frac{\partial_{1}\partial_{1}B_{2}}{\sinh^2\chi} + \frac{2 \cosh\chi \partial_{2}B_{1}}{\sinh^3\chi} + \frac{\cos\theta \partial_{2}B_{2}}{\sin\theta \sinh^4\chi} + \frac{\partial_{2}\partial_{2}B_{2}}{\sinh^4\chi} \nonumber \\ 
+&& -  \frac{2 \cos\theta \partial_{3}B_{3}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{3}\partial_{3}B_{2}}{\sin^2\theta \sinh^4\chi}
+\\ \nonumber\\
+A^3&=& - \frac{2 B_{3}}{\sin^2\theta \sinh^2\chi} + \frac{\partial_{1}\partial_{1}B_{3}}{\sin^2\theta \sinh^2\chi} -  \frac{\cos\theta \partial_{2}B_{3}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{2}\partial_{2}B_{3}}{\sin^2\theta \sinh^4\chi} + \frac{2 \cosh\chi \partial_{3}B_{1}}{\sin^2\theta \sinh^3\chi} \nonumber \\ 
+&& + \frac{2 \cos\theta \partial_{3}B_{2}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{3}\partial_{3}B_{3}}{\sin^4\theta \sinh^4\chi}
+\end{eqnarray}
+With imposition of trace and transverse conditions:
+\begin{eqnarray}
+A^1&=& B_{1} \left(2 + \frac{2}{\sinh^2\chi}\right) + \frac{4 \cosh\chi \partial_{1}B_{1}}{\sinh\chi} + \partial_{1}\partial_{1}B_{1} + \frac{\cos\theta \partial_{2}B_{1}}{\sin\theta \sinh^2\chi} + \frac{\partial_{2}\partial_{2}B_{1}}{\sinh^2\chi} + \frac{\partial_{3}\partial_{3}B_{1}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^2&=& B_{2} \left(- \frac{2}{\sinh^4\chi} + \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{2}{\sinh^2\chi}\right) + \frac{4 B_{1} \cos\theta \cosh\chi}{\sin\theta \sinh^3\chi} + \frac{2 \cos\theta \partial_{1}B_{1}}{\sin\theta \sinh^2\chi} + \frac{\partial_{1}\partial_{1}B_{2}}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \partial_{2}B_{1}}{\sinh^3\chi} + \frac{3 \cos\theta \partial_{2}B_{2}}{\sin\theta \sinh^4\chi} + \frac{\partial_{2}\partial_{2}B_{2}}{\sinh^4\chi} + \frac{\partial_{3}\partial_{3}B_{2}}{\sin^2\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^3&=& - \frac{2 B_{3}}{\sin^2\theta \sinh^2\chi} + \frac{\partial_{1}\partial_{1}B_{3}}{\sin^2\theta \sinh^2\chi} -  \frac{\cos\theta \partial_{2}B_{3}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{2}\partial_{2}B_{3}}{\sin^2\theta \sinh^4\chi} + \frac{2 \cosh\chi \partial_{3}B_{1}}{\sin^2\theta \sinh^3\chi} \nonumber \\ 
+&& + \frac{2 \cos\theta \partial_{3}B_{2}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{3}\partial_{3}B_{3}}{\sin^4\theta \sinh^4\chi}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$B_i = g_i(\chi)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde\nabla_a B^a&=& g'_{1} + \frac{g_{2} \cos\theta}{\sin\theta \sinh^2\chi} + \frac{2 g_{1} \cosh\chi}{\sinh\chi}=0
+\\ \nonumber\\
+A^1&=& g''_{1} + g_{1} \Bigl(-2 -  \frac{2}{\sinh^2\chi}\Bigr) -  \frac{2 g_{2} \cos\theta \cosh\chi}{\sin\theta \sinh^3\chi} + \frac{2 \cosh\chi g'_{1}}{\sinh\chi}
+\\ \nonumber\\
+&&\text{Substituting $g_2$}
+\\ \nonumber\\
+A^1&=& \cos\theta g''_{1} + g_{1} \Bigl[\frac{\sin^2\theta (-8 -  \frac{8}{\sinh^2\chi})}{\cos\theta} + \cos\theta \Bigl( -2 -  \frac{4}{\sinh^2\chi}\Bigr) + \frac{4 + \frac{4}{\sinh^2\chi}}{\cos\theta}\Bigr] \nonumber \\ 
+&& + g'_{1} \Bigl(\frac{2 \cosh\chi}{\cos\theta \sinh\chi} + \frac{2 \cos\theta \cosh\chi}{\sinh\chi} -  \frac{4 \cosh\chi \sin^2\theta}{\cos\theta \sinh\chi}\Bigr)
+\\ \nonumber\\
+A^2&=& g_{2} \Bigl(- \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{2}{\sinh^2\chi}\Bigr) + \frac{g''_{2}}{\sinh^2\chi}
+\\ \nonumber\\
+A^3&=& - \frac{2 g_{3}}{\sin^2\theta \sinh^2\chi} + \frac{g''_{3}}{\sin^2\theta \sinh^2\chi}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$B_i = h_i(\chi)\cos\theta$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde\nabla_a B^a&=& \cos\theta h'_{1} + h_{2} \left(\frac{1}{\sin\theta \sinh^2\chi} -  \frac{2 \sin\theta}{\sinh^2\chi}\right) + \frac{2 h_{1} \cos\theta \cosh\chi}{\sinh\chi}=0
+\\ \nonumber\\
+A^1&=& \cos\theta h''_{1} + h_{2} \left(- \frac{2 \cosh\chi}{\sin\theta \sinh^3\chi} + \frac{4 \cosh\chi \sin\theta}{\sinh^3\chi}\right) + h_{1} \cos\theta \left(-2 -  \frac{4}{\sinh^2\chi}\right) + \frac{2 \cos\theta \cosh\chi h'_{1}}{\sinh\chi}
+\\ \nonumber\\
+&&\text{Substituting $h_2$}
+\\ \nonumber\\
+A^1&=& \cos\theta h''_{1} \nonumber \\ 
+&& + h_{1} \Bigl(-2 \cos\theta -  \frac{4 \cos\theta}{-1 + 2 \sin^2\theta} + \frac{8 \cos\theta \sin^2\theta}{-1 + 2 \sin^2\theta} -  \frac{4 \cos\theta}{\sinh^2\chi} -  \frac{4 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi} + \frac{8 \cos\theta \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi}\Bigr) \nonumber \\ 
+&& + h'_{1} \Bigl(\frac{2 \cos\theta \cosh\chi}{\sinh\chi} -  \frac{2 \cos\theta \cosh\chi}{(-1 + 2 \sin^2\theta) \sinh\chi} + \frac{4 \cos\theta \cosh\chi \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh\chi}\Bigr)
+\\ \nonumber\\
+A^2&=& h_{2} \Bigl[\cos\theta \bigl(- \frac{2}{\sinh^4\chi} -  \frac{2}{\sinh^2\chi}\bigr) -  \frac{\cos\theta}{\sin^2\theta \sinh^4\chi}\Bigr] -  \frac{2 h_{1} \cosh\chi \sin\theta}{\sinh^3\chi} + \frac{\cos\theta h''_{2}}{\sinh^2\chi}
+\\ \nonumber\\
+A^3&=& - \frac{2 h_{3} \cos\theta}{\sin^2\theta \sinh^2\chi} + \frac{\cos\theta h''_{3}}{\sin^2\theta \sinh^2\chi}
+\end{eqnarray}
+%
+%
+%
+%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Tensor $\sinh\chi$ RW }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde g_{ij} &=&\text{Diag}\left(1,\sinh^2\chi,\sinh^2\chi\sin^2\theta\right)
+\\ \nonumber\\
+A^{ij} &=& \tilde\nabla_a\tilde\nabla^a E^{ij}
+\\ \nonumber\\
+\tilde g^{ab}E_{ab}&=& E_{11} + \frac{E_{22}}{\sinh^2\chi} + \frac{E_{33}}{\sin^2\theta \sinh^2\chi} =0
+\\ \nonumber\\
+\tilde\nabla_a E^{a 1}&=& - \frac{\cosh\chi E_{22}}{\sinh^3\chi} -  \frac{\cosh\chi E_{33}}{\sin^2\theta \sinh^3\chi} + \frac{\cos\theta E_{12}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi E_{11}}{\sinh\chi} + \partial_{1}E_{11} + \frac{\partial_{2}E_{12}}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{\partial_{3}E_{13}}{\sin^2\theta \sinh^2\chi}=0
+\\ \nonumber\\
+\tilde\nabla_a E^{a 2}&=& - \frac{\cos\theta E_{33}}{\sin^3\theta \sinh^4\chi} + \frac{\cos\theta E_{22}}{\sin\theta \sinh^4\chi} + \frac{2 \cosh\chi E_{12}}{\sinh^3\chi} + \frac{\partial_{1}E_{12}}{\sinh^2\chi} + \frac{\partial_{2}E_{22}}{\sinh^4\chi} + \frac{\partial_{3}E_{23}}{\sin^2\theta \sinh^4\chi}
+\\ \nonumber\\
+\tilde\nabla_a E^{a 3}&=& \frac{\cos\theta E_{23}}{\sin^3\theta \sinh^4\chi} + \frac{2 \cosh\chi E_{13}}{\sin^2\theta \sinh^3\chi} + \frac{\partial_{1}E_{13}}{\sin^2\theta \sinh^2\chi} + \frac{\partial_{2}E_{23}}{\sin^2\theta \sinh^4\chi} + \frac{\partial_{3}E_{33}}{\sin^4\theta \sinh^4\chi}
+\\ \nonumber\\
+A^{11}&=& E_{11} \left(-4 -  \frac{4}{\sinh^2\chi}\right) + E_{22} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right) + \frac{E_{33} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right)}{\sin^2\theta} \nonumber \\ 
+&& -  \frac{4 \cos\theta \cosh\chi E_{12}}{\sin\theta \sinh^3\chi} + \frac{2 \cosh\chi \partial_{1}E_{11}}{\sinh\chi} + \partial_{1}\partial_{1}E_{11} + \frac{\cos\theta \partial_{2}E_{11}}{\sin\theta \sinh^2\chi} -  \frac{4 \cosh\chi \partial_{2}E_{12}}{\sinh^3\chi} + \frac{\partial_{2}\partial_{2}E_{11}}{\sinh^2\chi} \nonumber \\ 
+&& -  \frac{4 \cosh\chi \partial_{3}E_{13}}{\sin^2\theta \sinh^3\chi} + \frac{\partial_{3}\partial_{3}E_{11}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^{22}&=& E_{33} \left(\frac{2}{\sin^4\theta \sinh^6\chi} -  \frac{2}{\sin^2\theta \sinh^6\chi}\right) + E_{22} \left(\frac{2}{\sinh^6\chi} -  \frac{2}{\sin^2\theta \sinh^6\chi} -  \frac{2}{\sinh^4\chi}\right) \nonumber \\ 
+&& + E_{11} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right) -  \frac{2 \cosh\chi \partial_{1}E_{22}}{\sinh^5\chi} + \frac{\partial_{1}\partial_{1}E_{22}}{\sinh^4\chi} + \frac{4 \cosh\chi \partial_{2}E_{12}}{\sinh^5\chi} + \frac{\cos\theta \partial_{2}E_{22}}{\sin\theta \sinh^6\chi} \nonumber \\ 
+&& + \frac{\partial_{2}\partial_{2}E_{22}}{\sinh^6\chi} -  \frac{4 \cos\theta \partial_{3}E_{23}}{\sin^3\theta \sinh^6\chi} + \frac{\partial_{3}\partial_{3}E_{22}}{\sin^2\theta \sinh^6\chi}
+\\  \nonumber\\ 
+A^{33}&=& E_{22} \left(\frac{2}{\sin^4\theta \sinh^6\chi} -  \frac{2}{\sin^2\theta \sinh^6\chi}\right) + E_{33} \left(\frac{2}{\sin^6\theta \sinh^6\chi} -  \frac{2}{\sin^4\theta \sinh^4\chi}\right) \nonumber \\ 
+&& + \frac{E_{11} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right)}{\sin^2\theta} + \frac{4 \cos\theta \cosh\chi E_{12}}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cosh\chi \partial_{1}E_{33}}{\sin^4\theta \sinh^5\chi} + \frac{\partial_{1}\partial_{1}E_{33}}{\sin^4\theta \sinh^4\chi} \nonumber \\ 
+&& -  \frac{3 \cos\theta \partial_{2}E_{33}}{\sin^5\theta \sinh^6\chi} + \frac{\partial_{2}\partial_{2}E_{33}}{\sin^4\theta \sinh^6\chi} + \frac{4 \cosh\chi \partial_{3}E_{13}}{\sin^4\theta \sinh^5\chi} + \frac{4 \cos\theta \partial_{3}E_{23}}{\sin^5\theta \sinh^6\chi} + \frac{\partial_{3}\partial_{3}E_{33}}{\sin^6\theta \sinh^6\chi}
+\\  \nonumber\\ 
+A^{12}&=& E_{12} \left(- \frac{4}{\sinh^4\chi} -  \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{6}{\sinh^2\chi}\right) + \frac{2 \cos\theta \cosh\chi E_{33}}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cos\theta \cosh\chi E_{22}}{\sin\theta \sinh^5\chi} \nonumber \\ 
+&& + \frac{\partial_{1}\partial_{1}E_{12}}{\sinh^2\chi} + \frac{2 \cosh\chi \partial_{2}E_{11}}{\sinh^3\chi} + \frac{\cos\theta \partial_{2}E_{12}}{\sin\theta \sinh^4\chi} -  \frac{2 \cosh\chi \partial_{2}E_{22}}{\sinh^5\chi} + \frac{\partial_{2}\partial_{2}E_{12}}{\sinh^4\chi} -  \frac{2 \cos\theta \partial_{3}E_{13}}{\sin^3\theta \sinh^4\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \partial_{3}E_{23}}{\sin^2\theta \sinh^5\chi} + \frac{\partial_{3}\partial_{3}E_{12}}{\sin^2\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{13}&=& \frac{E_{13} \left(- \frac{4}{\sinh^4\chi} -  \frac{6}{\sinh^2\chi}\right)}{\sin^2\theta} -  \frac{2 \cos\theta \cosh\chi E_{23}}{\sin^3\theta \sinh^5\chi} + \frac{\partial_{1}\partial_{1}E_{13}}{\sin^2\theta \sinh^2\chi} -  \frac{\cos\theta \partial_{2}E_{13}}{\sin^3\theta \sinh^4\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \partial_{2}E_{23}}{\sin^2\theta \sinh^5\chi} + \frac{\partial_{2}\partial_{2}E_{13}}{\sin^2\theta \sinh^4\chi} + \frac{2 \cosh\chi \partial_{3}E_{11}}{\sin^2\theta \sinh^3\chi} + \frac{2 \cos\theta \partial_{3}E_{12}}{\sin^3\theta \sinh^4\chi} -  \frac{2 \cosh\chi \partial_{3}E_{33}}{\sin^4\theta \sinh^5\chi} \nonumber \\ 
+&& + \frac{\partial_{3}\partial_{3}E_{13}}{\sin^4\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{23}&=& E_{23} \left(\frac{\frac{4}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi}}{\sin^2\theta} -  \frac{3}{\sin^4\theta \sinh^6\chi}\right) -  \frac{4 \cos\theta \cosh\chi E_{13}}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cosh\chi \partial_{1}E_{23}}{\sin^2\theta \sinh^5\chi} \nonumber \\ 
+&& + \frac{\partial_{1}\partial_{1}E_{23}}{\sin^2\theta \sinh^4\chi} + \frac{2 \cosh\chi \partial_{2}E_{13}}{\sin^2\theta \sinh^5\chi} -  \frac{\cos\theta \partial_{2}E_{23}}{\sin^3\theta \sinh^6\chi} + \frac{\partial_{2}\partial_{2}E_{23}}{\sin^2\theta \sinh^6\chi} + \frac{2 \cosh\chi \partial_{3}E_{12}}{\sin^2\theta \sinh^5\chi} \nonumber \\ 
+&& + \frac{2 \cos\theta \partial_{3}E_{22}}{\sin^3\theta \sinh^6\chi} -  \frac{2 \cos\theta \partial_{3}E_{33}}{\sin^5\theta \sinh^6\chi} + \frac{\partial_{3}\partial_{3}E_{23}}{\sin^4\theta \sinh^6\chi}
+\end{eqnarray}
+With imposition of trace and transverse conditions:
+\begin{eqnarray}
+A^{11}&=& E_{11} \left(6 + \frac{6}{\sinh^2\chi}\right) + \frac{6 \cosh\chi \partial_{1}E_{11}}{\sinh\chi} + \partial_{1}\partial_{1}E_{11} + \frac{\cos\theta \partial_{2}E_{11}}{\sin\theta \sinh^2\chi} + \frac{\partial_{2}\partial_{2}E_{11}}{\sinh^2\chi} + \frac{\partial_{3}\partial_{3}E_{11}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^{22}&=& \frac{4 E_{22}}{\sinh^6\chi} -  \frac{4 E_{22}}{\sin^2\theta \sinh^6\chi} + \frac{4 E_{11}}{\sinh^4\chi} -  \frac{2 E_{22}}{\sinh^4\chi} -  \frac{2 E_{11}}{\sin^2\theta \sinh^4\chi} + \frac{2 E_{11}}{\sinh^2\chi} -  \frac{2 \cosh\chi \partial_{1}E_{22}}{\sinh^5\chi} \nonumber \\ 
+&& + \frac{\partial_{1}\partial_{1}E_{22}}{\sinh^4\chi} + \frac{4 \cosh\chi \partial_{2}E_{12}}{\sinh^5\chi} + \frac{\cos\theta \partial_{2}E_{22}}{\sin\theta \sinh^6\chi} + \frac{\partial_{2}\partial_{2}E_{22}}{\sinh^6\chi} -  \frac{4 \cos\theta \partial_{3}E_{23}}{\sin^3\theta \sinh^6\chi} + \frac{\partial_{3}\partial_{3}E_{22}}{\sin^2\theta \sinh^6\chi}
+\\  \nonumber\\ 
+A^{33}&=& \frac{E_{33} \left(\frac{2}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi}\right)}{\sin^4\theta} + E_{11} \left(\frac{2}{\sin^4\theta \sinh^4\chi} + \frac{2}{\sin^2\theta \sinh^2\chi}\right) -  \frac{4 \cos\theta \cosh\chi E_{12}}{\sin^3\theta \sinh^5\chi} \nonumber \\ 
+&& -  \frac{4 \cos\theta \partial_{1}E_{12}}{\sin^3\theta \sinh^4\chi} -  \frac{2 \cosh\chi \partial_{1}E_{33}}{\sin^4\theta \sinh^5\chi} + \frac{\partial_{1}\partial_{1}E_{33}}{\sin^4\theta \sinh^4\chi} + \frac{4 \cos\theta \partial_{2}E_{11}}{\sin^3\theta \sinh^4\chi} + \frac{\cos\theta \partial_{2}E_{33}}{\sin^5\theta \sinh^6\chi} \nonumber \\ 
+&& + \frac{\partial_{2}\partial_{2}E_{33}}{\sin^4\theta \sinh^6\chi} + \frac{4 \cosh\chi \partial_{3}E_{13}}{\sin^4\theta \sinh^5\chi} + \frac{\partial_{3}\partial_{3}E_{33}}{\sin^6\theta \sinh^6\chi}
+\\  \nonumber\\ 
+A^{12}&=& E_{12} \left(- \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{2}{\sinh^2\chi}\right) + \frac{2 \cosh\chi \partial_{1}E_{12}}{\sinh^3\chi} + \frac{\partial_{1}\partial_{1}E_{12}}{\sinh^2\chi} + \frac{2 \cosh\chi \partial_{2}E_{11}}{\sinh^3\chi} \nonumber \\ 
+&& + \frac{\cos\theta \partial_{2}E_{12}}{\sin\theta \sinh^4\chi} + \frac{\partial_{2}\partial_{2}E_{12}}{\sinh^4\chi} -  \frac{2 \cos\theta \partial_{3}E_{13}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{3}\partial_{3}E_{12}}{\sin^2\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{13}&=& - \frac{2 E_{13}}{\sin^2\theta \sinh^2\chi} + \frac{2 \cosh\chi \partial_{1}E_{13}}{\sin^2\theta \sinh^3\chi} + \frac{\partial_{1}\partial_{1}E_{13}}{\sin^2\theta \sinh^2\chi} -  \frac{\cos\theta \partial_{2}E_{13}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{2}\partial_{2}E_{13}}{\sin^2\theta \sinh^4\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \partial_{3}E_{11}}{\sin^2\theta \sinh^3\chi} + \frac{2 \cos\theta \partial_{3}E_{12}}{\sin^3\theta \sinh^4\chi} + \frac{\partial_{3}\partial_{3}E_{13}}{\sin^4\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{23}&=& E_{23} \left(\frac{\frac{2}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi}}{\sin^2\theta} -  \frac{1}{\sin^4\theta \sinh^6\chi}\right) + \frac{2 \cos\theta \partial_{1}E_{13}}{\sin^3\theta \sinh^4\chi} -  \frac{2 \cosh\chi \partial_{1}E_{23}}{\sin^2\theta \sinh^5\chi} + \frac{\partial_{1}\partial_{1}E_{23}}{\sin^2\theta \sinh^4\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \partial_{2}E_{13}}{\sin^2\theta \sinh^5\chi} + \frac{\cos\theta \partial_{2}E_{23}}{\sin^3\theta \sinh^6\chi} + \frac{\partial_{2}\partial_{2}E_{23}}{\sin^2\theta \sinh^6\chi} + \frac{2 \cosh\chi \partial_{3}E_{12}}{\sin^2\theta \sinh^5\chi} + \frac{2 \cos\theta \partial_{3}E_{22}}{\sin^3\theta \sinh^6\chi} \nonumber \\ 
+&& + \frac{\partial_{3}\partial_{3}E_{23}}{\sin^4\theta \sinh^6\chi}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$E_{ij} = g_{ij}(\chi)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde g^{ab}E_{ab}&=& g_{11} + \frac{g_{22}}{\sinh^2\chi} + \frac{g_{33}}{\sin^2\theta \sinh^2\chi} =0
+\\ \nonumber\\
+\tilde\nabla_a E^{a 1}&=& g'_{11} -  \frac{\cosh\chi g_{22}}{\sinh^3\chi} -  \frac{\cosh\chi g_{33}}{\sin^2\theta \sinh^3\chi} + \frac{\cos\theta g_{12}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi g_{11}}{\sinh\chi}
+\\  \nonumber\\ 
+\tilde\nabla_a E^{a 2}&=& - \frac{\cos\theta g_{33}}{\sin^3\theta \sinh^4\chi} + \frac{\cos\theta g_{22}}{\sin\theta \sinh^4\chi} + \frac{2 \cosh\chi g_{12}}{\sinh^3\chi} + \frac{g'_{12}}{\sinh^2\chi}
+\\  \nonumber\\ 
+\tilde\nabla_a E^{a 3}&=& \frac{\cos\theta g_{23}}{\sin^3\theta \sinh^4\chi} + \frac{2 \cosh\chi g_{13}}{\sin^2\theta \sinh^3\chi} + \frac{g'_{13}}{\sin^2\theta \sinh^2\chi}
+\end{eqnarray}
+Without imposing trace or transverse conditions:
+\begin{eqnarray}
+A^{11}&=& g''_{11} + g_{11} \left(-4 -  \frac{4}{\sinh^2\chi}\right) + g_{22} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right) + \frac{g_{33} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right)}{\sin^2\theta} \nonumber \\ 
+&& -  \frac{4 \cos\theta \cosh\chi g_{12}}{\sin\theta \sinh^3\chi} + \frac{2 \cosh\chi g'_{11}}{\sinh\chi}
+\\  \nonumber\\ 
+A^{22}&=& g_{33} \left(\frac{2}{\sin^4\theta \sinh^6\chi} -  \frac{2}{\sin^2\theta \sinh^6\chi}\right) + g_{22} \left(\frac{2}{\sinh^6\chi} -  \frac{2}{\sin^2\theta \sinh^6\chi} -  \frac{2}{\sinh^4\chi}\right) \nonumber \\ 
+&& + g_{11} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right) -  \frac{2 \cosh\chi g'_{22}}{\sinh^5\chi} + \frac{g''_{22}}{\sinh^4\chi}
+\\  \nonumber\\ 
+A^{33}&=& g_{22} \left(\frac{2}{\sin^4\theta \sinh^6\chi} -  \frac{2}{\sin^2\theta \sinh^6\chi}\right) + g_{33} \left(\frac{2}{\sin^6\theta \sinh^6\chi} -  \frac{2}{\sin^4\theta \sinh^4\chi}\right) \nonumber \\ 
+&& + \frac{g_{11} \left(\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}\right)}{\sin^2\theta} -  \frac{2 \cosh\chi g'_{33}}{\sin^4\theta \sinh^5\chi} + \frac{4 \cos\theta \cosh\chi g_{12}}{\sin^3\theta \sinh^5\chi} + \frac{g''_{33}}{\sin^4\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{12}&=& g_{12} \left(- \frac{4}{\sinh^4\chi} -  \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{6}{\sinh^2\chi}\right) + \frac{2 \cos\theta \cosh\chi g_{33}}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cos\theta \cosh\chi g_{22}}{\sin\theta \sinh^5\chi} + \frac{g''_{12}}{\sinh^2\chi}
+\\  \nonumber\\ 
+A^{13}&=& \frac{g_{13} \left(- \frac{4}{\sinh^4\chi} -  \frac{6}{\sinh^2\chi}\right)}{\sin^2\theta} -  \frac{2 \cos\theta \cosh\chi g_{23}}{\sin^3\theta \sinh^5\chi} + \frac{g''_{13}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^{23}&=& g_{23} \left(\frac{\frac{4}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi}}{\sin^2\theta} -  \frac{3}{\sin^4\theta \sinh^6\chi}\right) -  \frac{4 \cos\theta \cosh\chi g_{13}}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cosh\chi g'_{23}}{\sin^2\theta \sinh^5\chi} + \frac{g''_{23}}{\sin^2\theta \sinh^4\chi}
+\end{eqnarray}
+With imposition of trace and transverse conditions:
+\begin{eqnarray}
+A^{11}&=& g''_{11} + g_{11} (6 + \frac{6}{\sinh^2\chi}) + \frac{6 \cosh\chi g'_{11}}{\sinh\chi}
+\\  \nonumber\\ 
+A^{22}&=& g_{22} (\frac{4}{\sinh^6\chi} -  \frac{4}{\sin^2\theta \sinh^6\chi} -  \frac{2}{\sinh^4\chi}) + g_{11} (\frac{4}{\sinh^4\chi} -  \frac{2}{\sin^2\theta \sinh^4\chi} + \frac{2}{\sinh^2\chi}) \nonumber \\ 
+&& -  \frac{2 \cosh\chi g'_{22}}{\sinh^5\chi} + \frac{g''_{22}}{\sinh^4\chi}
+\\  \nonumber\\ 
+A^{33}&=& \frac{g_{33} (\frac{2}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi})}{\sin^4\theta} + g_{11} (- \frac{\frac{8}{\sinh^4\chi} + \frac{10}{\sinh^2\chi}}{\sin^2\theta} -  \frac{2}{\sin^4\theta \sinh^4\chi}) -  \frac{2 \cosh\chi g'_{33}}{\sin^4\theta \sinh^5\chi} \nonumber \\ 
+&& + \frac{g''_{33}}{\sin^4\theta \sinh^4\chi} -  \frac{4 \cosh\chi g'_{11}}{\sin^2\theta \sinh^3\chi}
+\\  \nonumber\\ 
+A^{12}&=& g_{12} (- \frac{1}{\sin^2\theta \sinh^4\chi} -  \frac{2}{\sinh^2\chi}) + \frac{2 \cosh\chi g'_{12}}{\sinh^3\chi} + \frac{g''_{12}}{\sinh^2\chi}
+\\  \nonumber\\ 
+A^{13}&=& \frac{2 \cosh\chi g'_{13}}{\sin^2\theta \sinh^3\chi} + \frac{g''_{13}}{\sin^2\theta \sinh^2\chi} -  \frac{2 g_{13}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^{23}&=& g_{23} (\frac{\frac{4}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi}}{\sin^2\theta} -  \frac{3}{\sin^4\theta \sinh^6\chi}) -  \frac{4 \cos\theta \cosh\chi g_{13}}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cosh\chi g'_{23}}{\sin^2\theta \sinh^5\chi} + \frac{g''_{23}}{\sin^2\theta \sinh^4\chi}
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$E_{ij} = h_{ij}(\chi)\cos\theta$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde g^{ab}E_{ab}&=& h_{11} + \frac{h_{22}}{\sinh^2\chi} + \frac{h_{33}}{\sin^2\theta \sinh^2\chi} =0
+\\ \nonumber\\
+\tilde\nabla_a E^{a 1}&=& \cos\theta h'_{11} + h_{12} \left(\frac{1}{\sin\theta \sinh^2\chi} -  \frac{2 \sin\theta}{\sinh^2\chi}\right) -  \frac{\cos\theta \cosh\chi h_{22}}{\sinh^3\chi} -  \frac{\cos\theta \cosh\chi h_{33}}{\sin^2\theta \sinh^3\chi} \nonumber \\ 
+&& + \frac{2 \cos\theta \cosh\chi h_{11}}{\sinh\chi}
+\\  \nonumber\\ 
+\tilde\nabla_a E^{a 2}&=& h_{33} \left(- \frac{1}{\sin^3\theta \sinh^4\chi} + \frac{1}{\sin\theta \sinh^4\chi}\right) + h_{22} \left(\frac{1}{\sin\theta \sinh^4\chi} -  \frac{2 \sin\theta}{\sinh^4\chi}\right) + \frac{2 \cos\theta \cosh\chi h_{12}}{\sinh^3\chi} \nonumber \\ 
+&& + \frac{\cos\theta h'_{12}}{\sinh^2\chi}
+\\  \nonumber\\ 
+\tilde\nabla_a E^{a 3}&=& h_{23} \left(\frac{1}{\sin^3\theta \sinh^4\chi} -  \frac{2}{\sin\theta \sinh^4\chi}\right) + \frac{2 \cos\theta \cosh\chi h_{13}}{\sin^2\theta \sinh^3\chi} + \frac{\cos\theta h'_{13}}{\sin^2\theta \sinh^2\chi}
+\end{eqnarray}
+Without imposing trace or transverse conditions:
+\begin{eqnarray}
+A^{11}&=& \cos\theta h''_{11} + h_{12} (- \frac{4 \cosh\chi}{\sin\theta \sinh^3\chi} + \frac{8 \cosh\chi \sin\theta}{\sinh^3\chi}) + \cos\theta h_{11} (-4 -  \frac{6}{\sinh^2\chi}) \nonumber \\ 
+&& + \cos\theta h_{22} (\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}) + \frac{\cos\theta h_{33} (\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi})}{\sin^2\theta} + \frac{2 \cos\theta \cosh\chi h'_{11}}{\sinh\chi}
+\\  \nonumber\\ 
+A^{22}&=& h_{33} (\frac{2 \cos\theta}{\sin^4\theta \sinh^6\chi} -  \frac{2 \cos\theta}{\sin^2\theta \sinh^6\chi}) + h_{22} (- \frac{2 \cos\theta}{\sin^2\theta \sinh^6\chi} -  \frac{2 \cos\theta}{\sinh^4\chi}) \nonumber \\ 
+&& + \cos\theta h_{11} (\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}) -  \frac{2 \cos\theta \cosh\chi h'_{22}}{\sinh^5\chi} -  \frac{4 \cosh\chi h_{12} \sin\theta}{\sinh^5\chi} + \frac{\cos\theta h''_{22}}{\sinh^4\chi}
+\\  \nonumber\\ 
+A^{33}&=& h_{33} \bigl(\frac{\cos\theta (\frac{2}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi})}{\sin^4\theta} + \frac{2 \cos\theta}{\sin^6\theta \sinh^6\chi}\bigr) + h_{12} (\frac{4 \cosh\chi}{\sin^3\theta \sinh^5\chi} -  \frac{4 \cosh\chi}{\sin\theta \sinh^5\chi}) \nonumber \\ 
+&& + \frac{\cos\theta h_{11} (\frac{2}{\sinh^4\chi} + \frac{2}{\sinh^2\chi})}{\sin^2\theta} + \frac{2 \cos^3\theta h_{22}}{\sin^4\theta \sinh^6\chi} -  \frac{2 \cos\theta \cosh\chi h'_{33}}{\sin^4\theta \sinh^5\chi} + \frac{\cos\theta h''_{33}}{\sin^4\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{12}&=& h_{33} (\frac{2 \cosh\chi}{\sin^3\theta \sinh^5\chi} -  \frac{2 \cosh\chi}{\sin\theta \sinh^5\chi}) + h_{22} (- \frac{2 \cosh\chi}{\sin\theta \sinh^5\chi} + \frac{4 \cosh\chi \sin\theta}{\sinh^5\chi}) \nonumber \\ 
+&& + h_{12} \bigl(\cos\theta (- \frac{6}{\sinh^4\chi} -  \frac{6}{\sinh^2\chi}) -  \frac{\cos\theta}{\sin^2\theta \sinh^4\chi}\bigr) -  \frac{2 \cosh\chi h_{11} \sin\theta}{\sinh^3\chi} + \frac{\cos\theta h''_{12}}{\sinh^2\chi}
+\\  \nonumber\\ 
+A^{13}&=& h_{23} (- \frac{2 \cosh\chi}{\sin^3\theta \sinh^5\chi} + \frac{4 \cosh\chi}{\sin\theta \sinh^5\chi}) + \frac{\cos\theta h_{13} (- \frac{4}{\sinh^4\chi} -  \frac{6}{\sinh^2\chi})}{\sin^2\theta} + \frac{\cos\theta h''_{13}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^{23}&=& h_{23} \bigl(\frac{\cos\theta (\frac{4}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi})}{\sin^2\theta} -  \frac{3 \cos\theta}{\sin^4\theta \sinh^6\chi}\bigr) + h_{13} (- \frac{4 \cosh\chi}{\sin^3\theta \sinh^5\chi} + \frac{2 \cosh\chi}{\sin\theta \sinh^5\chi}) \nonumber \\ 
+&& -  \frac{2 \cos\theta \cosh\chi h'_{23}}{\sin^2\theta \sinh^5\chi} + \frac{\cos\theta h''_{23}}{\sin^2\theta \sinh^4\chi}
+\end{eqnarray}
+With imposition of trace and transverse conditions:
+\begin{eqnarray}
+A^{11}&=& \cos\theta h''_{11} \nonumber \\ 
+&& + h_{11} \bigl(-6 \cos\theta -  \frac{12 \cos\theta}{-1 + 2 \sin^2\theta} + \frac{24 \cos\theta \sin^2\theta}{-1 + 2 \sin^2\theta} -  \frac{8 \cos\theta}{\sinh^2\chi} -  \frac{12 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi} + \frac{24 \cos\theta \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi}\bigr) \nonumber \\ 
+&& + h'_{11} \bigl(\frac{2 \cos\theta \cosh\chi}{\sinh\chi} -  \frac{4 \cos\theta \cosh\chi}{(-1 + 2 \sin^2\theta) \sinh\chi} + \frac{8 \cos\theta \cosh\chi \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh\chi}\bigr)
+\\  \nonumber\\ 
+A^{22}&=& h_{22} \bigl(\cos\theta (\frac{2}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi}) -  \frac{4 \cos\theta}{\sin^2\theta \sinh^6\chi}\bigr) \nonumber \\ 
+&& + h_{11} \bigl(\cos\theta (\frac{4}{\sinh^4\chi} + \frac{2}{\sinh^2\chi}) -  \frac{2 \cos\theta}{\sin^2\theta \sinh^4\chi}\bigr) -  \frac{2 \cos\theta \cosh\chi h'_{22}}{\sinh^5\chi} -  \frac{4 \cosh\chi h_{12} \sin\theta}{\sinh^5\chi} \nonumber \\ 
+&& + \frac{\cos\theta h''_{22}}{\sinh^4\chi}
+\\  \nonumber\\ 
+A^{33}&=& h_{33} \bigl(\frac{\frac{2 \cos\theta}{\sinh^6\chi} -  \frac{2 \cos^3\theta}{\sinh^6\chi}}{\sin^6\theta} + \frac{\cos\theta (\frac{2}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi})}{\sin^4\theta}\bigr) \nonumber \\ 
+&& + h'_{11} \bigl(- \frac{4 \cos\theta \cosh\chi}{(-1 + 2 \sin^2\theta) \sinh^3\chi} + \frac{4 \cos\theta \cosh\chi}{\sin^2\theta (-1 + 2 \sin^2\theta) \sinh^3\chi}\bigr) \nonumber \\ 
+&& + h_{11} \bigl(- \frac{2 \cos^3\theta}{\sin^4\theta \sinh^4\chi} + \frac{2 \cos\theta}{\sin^2\theta \sinh^4\chi} -  \frac{12 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^4\chi} 
+\nonumber\\
+&&+ \frac{12 \cos\theta}{\sin^2\theta (-1 + 2 \sin^2\theta) \sinh^4\chi} + \frac{2 \cos\theta}{\sin^2\theta \sinh^2\chi} -  \frac{12 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi} + \frac{12 \cos\theta}{\sin^2\theta (-1 + 2 \sin^2\theta) \sinh^2\chi}\bigr) \nonumber \\ 
+&& -  \frac{2 \cos\theta \cosh\chi h'_{33}}{\sin^4\theta \sinh^5\chi} + \frac{\cos\theta h''_{33}}{\sin^4\theta \sinh^4\chi}
+\\  \nonumber\\ 
+A^{12}&=& h_{33} \bigl(\frac{2 \cosh\chi}{\sin^3\theta \sinh^5\chi} + \frac{2 \cosh\chi}{\sin^3\theta (-1 + 2 \sin^2\theta) \sinh^5\chi} -  \frac{8 \cosh\chi}{\sin\theta (-1 + 2 \sin^2\theta) \sinh^5\chi} + \frac{6 \cosh\chi \sin\theta}{(-1 + 2 \sin^2\theta) \sinh^5\chi}\bigr) \nonumber \\ 
+&& + h'_{12} \bigl(- \frac{2 \cos\theta \cosh\chi}{(-1 + 2 \sin^2\theta) \sinh^3\chi} + \frac{6 \cos\theta \cosh\chi \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh^3\chi}\bigr) \nonumber \\ 
+&& + h_{12} \bigl(- \frac{6 \cos\theta}{\sinh^4\chi} -  \frac{\cos\theta}{\sin^2\theta \sinh^4\chi} -  \frac{4 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^4\chi} \nonumber\\
+&& + \frac{12 \cos\theta \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh^4\chi} -  \frac{6 \cos\theta}{\sinh^2\chi} -  \frac{4 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi} + \frac{12 \cos\theta \sin^2\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi}\bigr) \nonumber \\ 
+&& + \frac{\cos\theta h''_{12}}{\sinh^2\chi}
+\\  \nonumber\\ 
+A^{13}&=& h'_{13} \bigl(\frac{4 \cos\theta \cosh\chi}{(-1 + 2 \sin^2\theta) \sinh^3\chi} -  \frac{2 \cos\theta \cosh\chi}{\sin^2\theta (-1 + 2 \sin^2\theta) \sinh^3\chi}\bigr) \nonumber \\ 
+&& + h_{13} \bigl(- \frac{4 \cos\theta}{\sin^2\theta \sinh^4\chi} + \frac{8 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^4\chi} -  \frac{4 \cos\theta}{\sin^2\theta (-1 + 2 \sin^2\theta) \sinh^4\chi} \nonumber\\
+&& -  \frac{6 \cos\theta}{\sin^2\theta \sinh^2\chi} + \frac{8 \cos\theta}{(-1 + 2 \sin^2\theta) \sinh^2\chi} -  \frac{4 \cos\theta}{\sin^2\theta (-1 + 2 \sin^2\theta) \sinh^2\chi}\bigr) \nonumber \\ 
+&& + \frac{\cos\theta h''_{13}}{\sin^2\theta \sinh^2\chi}
+\\  \nonumber\\ 
+A^{23}&=& h_{23} \bigl(\frac{\cos\theta (\frac{4}{\sinh^6\chi} -  \frac{2}{\sinh^4\chi})}{\sin^2\theta} -  \frac{3 \cos\theta}{\sin^4\theta \sinh^6\chi}\bigr) + h_{13} (- \frac{4 \cosh\chi}{\sin^3\theta \sinh^5\chi} + \frac{2 \cosh\chi}{\sin\theta \sinh^5\chi}) \nonumber \\ 
+&& -  \frac{2 \cos\theta \cosh\chi h'_{23}}{\sin^2\theta \sinh^5\chi} + \frac{\cos\theta h''_{23}}{\sin^2\theta \sinh^4\chi}
+\end{eqnarray}
+%
+%
+%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Contravariance}
+The program is currently setup such that covariant components are the default form; for example $E^{ij} = \tilde g^{ik} \tilde g^{j\ell}E_{k\ell}$. In the polar $\chi$ coordinates, the calcluations for $A^i$ and $A^{ij}$ go as
+\begin{eqnarray}
+\tilde\nabla_a\tilde\nabla^a B^{i}&=& - \frac{2 B_{2} \cos\theta \cosh\chi \tilde{g}^{i1}}{\sin\theta \sinh^3\chi} + \frac{B_{2} \tilde{g}^{i2}}{\sinh^2\chi} + \frac{B_{3} \tilde{g}^{i3}}{\sinh^2\chi} + \frac{B_{3} \tilde{g}^{i3}}{\sin^2\theta \sinh^2\chi} -  \frac{B_{2} \tilde{g}^{i2} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{B_{3} \tilde{g}^{i3} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{2 B_{1} \tilde{g}^{i1} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 B_{2} \tilde{g}^{i2} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 B_{3} \tilde{g}^{i3} (1 + \sinh^2\chi)}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \tilde{g}^{i1} \partial_{1}B_{1}}{\sinh\chi} + \tilde{g}^{i1} \partial_{1}\partial_{1}B_{1} + \tilde{g}^{i2} \partial_{1}\partial_{1}B_{2} + \tilde{g}^{i3} \partial_{1}\partial_{1}B_{3} + \frac{\cos\theta \tilde{g}^{i1} \partial_{2}B_{1}}{\sin\theta \sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \tilde{g}^{i2} \partial_{2}B_{1}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \partial_{2}B_{2}}{\sinh^3\chi} + \frac{\cos\theta \tilde{g}^{i2} \partial_{2}B_{2}}{\sin\theta \sinh^2\chi} -  \frac{\cos\theta \tilde{g}^{i3} \partial_{2}B_{3}}{\sin\theta \sinh^2\chi} + \frac{\tilde{g}^{i1} \partial_{2}\partial_{2}B_{1}}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{\tilde{g}^{i2} \partial_{2}\partial_{2}B_{2}}{\sinh^2\chi} + \frac{\tilde{g}^{i3} \partial_{2}\partial_{2}B_{3}}{\sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i3} \partial_{3}B_{1}}{\sinh\chi} + \frac{2 \cos\theta \tilde{g}^{i3} \partial_{3}B_{2}}{\sin\theta \sinh^2\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \partial_{3}B_{3}}{\sin^2\theta \sinh^3\chi} \nonumber \\ 
+&& -  \frac{2 \cos\theta \tilde{g}^{i2} \partial_{3}B_{3}}{\sin^3\theta \sinh^2\chi} + \frac{\tilde{g}^{i1} \partial_{3}\partial_{3}B_{1}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i2} \partial_{3}\partial_{3}B_{2}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i3} \partial_{3}\partial_{3}B_{3}}{\sin^2\theta \sinh^2\chi}
+\end{eqnarray}
+\begin{eqnarray}
+\tilde\nabla_a\tilde\nabla^a E^{ij}&=& \frac{2 \cos\theta \cosh\chi E_{33} \tilde{g}^{i2} \tilde{g}^{j1}}{\sin^3\theta \sinh^3\chi} + \frac{2 \cos\theta \cosh\chi E_{33} \tilde{g}^{i1} \tilde{g}^{j2}}{\sin^3\theta \sinh^3\chi} -  \frac{2 \cos\theta \cosh\chi E_{12} \tilde{g}^{i1} \tilde{g}^{j1}}{\sin\theta \sinh^3\chi} \nonumber \\ 
+&& -  \frac{2 \cos\theta \cosh\chi E_{21} \tilde{g}^{i1} \tilde{g}^{j1}}{\sin\theta \sinh^3\chi} -  \frac{2 \cos\theta \cosh\chi E_{22} \tilde{g}^{i2} \tilde{g}^{j1}}{\sin\theta \sinh^3\chi} -  \frac{2 \cos\theta \cosh\chi E_{23} \tilde{g}^{i3} \tilde{g}^{j1}}{\sin\theta \sinh^3\chi} \nonumber \\ 
+&& -  \frac{2 \cos\theta \cosh\chi E_{22} \tilde{g}^{i1} \tilde{g}^{j2}}{\sin\theta \sinh^3\chi} -  \frac{2 \cos\theta \cosh\chi E_{32} \tilde{g}^{i1} \tilde{g}^{j3}}{\sin\theta \sinh^3\chi} + \frac{E_{21} \tilde{g}^{i2} \tilde{g}^{j1}}{\sinh^2\chi} + \frac{E_{31} \tilde{g}^{i3} \tilde{g}^{j1}}{\sinh^2\chi} + \frac{E_{12} \tilde{g}^{i1} \tilde{g}^{j2}}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{2 E_{22} \tilde{g}^{i2} \tilde{g}^{j2}}{\sinh^2\chi} + \frac{2 E_{32} \tilde{g}^{i3} \tilde{g}^{j2}}{\sinh^2\chi} + \frac{E_{13} \tilde{g}^{i1} \tilde{g}^{j3}}{\sinh^2\chi} + \frac{2 E_{23} \tilde{g}^{i2} \tilde{g}^{j3}}{\sinh^2\chi} + \frac{2 E_{33} \tilde{g}^{i3} \tilde{g}^{j3}}{\sinh^2\chi} + \frac{E_{31} \tilde{g}^{i3} \tilde{g}^{j1}}{\sin^2\theta \sinh^2\chi} \nonumber \\ 
+&& + \frac{E_{32} \tilde{g}^{i3} \tilde{g}^{j2}}{\sin^2\theta \sinh^2\chi} + \frac{E_{13} \tilde{g}^{i1} \tilde{g}^{j3}}{\sin^2\theta \sinh^2\chi} + \frac{E_{23} \tilde{g}^{i2} \tilde{g}^{j3}}{\sin^2\theta \sinh^2\chi} + \frac{2 E_{33} \tilde{g}^{i3} \tilde{g}^{j3}}{\sin^2\theta \sinh^2\chi} + \frac{2 E_{22} \tilde{g}^{i3} \tilde{g}^{j3} (1 -  \sin^2\theta)}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{2 E_{33} \tilde{g}^{i2} \tilde{g}^{j2} (1 -  \sin^2\theta)}{\sin^4\theta \sinh^2\chi} -  \frac{E_{21} \tilde{g}^{i2} \tilde{g}^{j1} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{E_{31} \tilde{g}^{i3} \tilde{g}^{j1} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{E_{12} \tilde{g}^{i1} \tilde{g}^{j2} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{2 E_{22} \tilde{g}^{i2} \tilde{g}^{j2} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{2 E_{23} \tilde{g}^{i3} \tilde{g}^{j2} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 E_{32} \tilde{g}^{i3} \tilde{g}^{j2} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{E_{13} \tilde{g}^{i1} \tilde{g}^{j3} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{2 E_{23} \tilde{g}^{i2} \tilde{g}^{j3} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 E_{32} \tilde{g}^{i2} \tilde{g}^{j3} (1 -  \sin^2\theta)}{\sin^2\theta \sinh^2\chi} -  \frac{2 \cos\theta \cosh\chi E_{13} \tilde{g}^{i3} \tilde{g}^{j2}}{\sin\theta \sinh\chi} -  \frac{2 \cos\theta \cosh\chi E_{31} \tilde{g}^{i3} \tilde{g}^{j2}}{\sin\theta \sinh\chi} \nonumber \\ 
+&& -  \frac{2 \cos\theta \cosh\chi E_{13} \tilde{g}^{i2} \tilde{g}^{j3}}{\sin\theta \sinh\chi} -  \frac{2 \cos\theta \cosh\chi E_{31} \tilde{g}^{i2} \tilde{g}^{j3}}{\sin\theta \sinh\chi} + \frac{2 \cos\theta \cosh\chi E_{12} \tilde{g}^{i3} \tilde{g}^{j3} \sin\theta}{\sinh\chi} \nonumber \\ 
+&& + \frac{2 \cos\theta \cosh\chi E_{21} \tilde{g}^{i3} \tilde{g}^{j3} \sin\theta}{\sinh\chi} + 2 E_{11} \tilde{g}^{i2} \tilde{g}^{j2} (1 + \sinh^2\chi) + 2 E_{11} \tilde{g}^{i3} \tilde{g}^{j3} \sin^2\theta (1 + \sinh^2\chi) \nonumber \\ 
+&& + \frac{2 E_{22} \tilde{g}^{i1} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sinh^4\chi} + \frac{2 E_{33} \tilde{g}^{i1} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sin^2\theta \sinh^4\chi} -  \frac{4 E_{11} \tilde{g}^{i1} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 E_{12} \tilde{g}^{i2} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{4 E_{21} \tilde{g}^{i2} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 E_{13} \tilde{g}^{i3} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sinh^2\chi} \nonumber \\ 
+&& -  \frac{4 E_{31} \tilde{g}^{i3} \tilde{g}^{j1} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{4 E_{12} \tilde{g}^{i1} \tilde{g}^{j2} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 E_{21} \tilde{g}^{i1} \tilde{g}^{j2} (1 + \sinh^2\chi)}{\sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 E_{22} \tilde{g}^{i2} \tilde{g}^{j2} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 E_{32} \tilde{g}^{i3} \tilde{g}^{j2} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{4 E_{13} \tilde{g}^{i1} \tilde{g}^{j3} (1 + \sinh^2\chi)}{\sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 E_{31} \tilde{g}^{i1} \tilde{g}^{j3} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 E_{23} \tilde{g}^{i2} \tilde{g}^{j3} (1 + \sinh^2\chi)}{\sinh^2\chi} -  \frac{2 E_{33} \tilde{g}^{i3} \tilde{g}^{j3} (1 + \sinh^2\chi)}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j1} \partial_{1}E_{11}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j2} \partial_{1}E_{22}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j3} \partial_{1}E_{23}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j2} \partial_{1}E_{32}}{\sinh\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j3} \partial_{1}E_{33}}{\sinh\chi} + \tilde{g}^{i1} \tilde{g}^{j1} \partial_{1}\partial_{1}E_{11} + \tilde{g}^{i1} \tilde{g}^{j2} \partial_{1}\partial_{1}E_{12} + \tilde{g}^{i1} \tilde{g}^{j3} \partial_{1}\partial_{1}E_{13} + \tilde{g}^{i2} \tilde{g}^{j1} \partial_{1}\partial_{1}E_{21} \nonumber \\ 
+&& + \tilde{g}^{i2} \tilde{g}^{j2} \partial_{1}\partial_{1}E_{22} + \tilde{g}^{i2} \tilde{g}^{j3} \partial_{1}\partial_{1}E_{23} + \tilde{g}^{i3} \tilde{g}^{j1} \partial_{1}\partial_{1}E_{31} + \tilde{g}^{i3} \tilde{g}^{j2} \partial_{1}\partial_{1}E_{32} + \tilde{g}^{i3} \tilde{g}^{j3} \partial_{1}\partial_{1}E_{33} \nonumber \\ 
+&& + \frac{\cos\theta \tilde{g}^{i1} \tilde{g}^{j1} \partial_{2}E_{11}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j1} \partial_{2}E_{11}}{\sinh\chi} + \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j2} \partial_{2}E_{11}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j1} \partial_{2}E_{12}}{\sinh^3\chi} \nonumber \\ 
+&& + \frac{\cos\theta \tilde{g}^{i1} \tilde{g}^{j2} \partial_{2}E_{12}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j2} \partial_{2}E_{12}}{\sinh\chi} -  \frac{\cos\theta \tilde{g}^{i1} \tilde{g}^{j3} \partial_{2}E_{13}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j3} \partial_{2}E_{13}}{\sinh\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j1} \partial_{2}E_{21}}{\sinh^3\chi} + \frac{\cos\theta \tilde{g}^{i2} \tilde{g}^{j1} \partial_{2}E_{21}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j2} \partial_{2}E_{21}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j1} \partial_{2}E_{22}}{\sinh^3\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j2} \partial_{2}E_{22}}{\sinh^3\chi} + \frac{\cos\theta \tilde{g}^{i2} \tilde{g}^{j2} \partial_{2}E_{22}}{\sin\theta \sinh^2\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j3} \partial_{2}E_{23}}{\sinh^3\chi} -  \frac{\cos\theta \tilde{g}^{i2} \tilde{g}^{j3} \partial_{2}E_{23}}{\sin\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{\cos\theta \tilde{g}^{i3} \tilde{g}^{j1} \partial_{2}E_{31}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j2} \partial_{2}E_{31}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j1} \partial_{2}E_{32}}{\sinh^3\chi} -  \frac{\cos\theta \tilde{g}^{i3} \tilde{g}^{j2} \partial_{2}E_{32}}{\sin\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{3 \cos\theta \tilde{g}^{i3} \tilde{g}^{j3} \partial_{2}E_{33}}{\sin\theta \sinh^2\chi} + \frac{\tilde{g}^{i1} \tilde{g}^{j1} \partial_{2}\partial_{2}E_{11}}{\sinh^2\chi} + \frac{\tilde{g}^{i1} \tilde{g}^{j2} \partial_{2}\partial_{2}E_{12}}{\sinh^2\chi} + \frac{\tilde{g}^{i1} \tilde{g}^{j3} \partial_{2}\partial_{2}E_{13}}{\sinh^2\chi} + \frac{\tilde{g}^{i2} \tilde{g}^{j1} \partial_{2}\partial_{2}E_{21}}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{\tilde{g}^{i2} \tilde{g}^{j2} \partial_{2}\partial_{2}E_{22}}{\sinh^2\chi} + \frac{\tilde{g}^{i2} \tilde{g}^{j3} \partial_{2}\partial_{2}E_{23}}{\sinh^2\chi} + \frac{\tilde{g}^{i3} \tilde{g}^{j1} \partial_{2}\partial_{2}E_{31}}{\sinh^2\chi} + \frac{\tilde{g}^{i3} \tilde{g}^{j2} \partial_{2}\partial_{2}E_{32}}{\sinh^2\chi} + \frac{\tilde{g}^{i3} \tilde{g}^{j3} \partial_{2}\partial_{2}E_{33}}{\sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j1} \partial_{3}E_{11}}{\sinh\chi} + \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j3} \partial_{3}E_{11}}{\sinh\chi} + \frac{2 \cos\theta \tilde{g}^{i1} \tilde{g}^{j3} \partial_{3}E_{12}}{\sin\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j2} \partial_{3}E_{12}}{\sinh\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j1} \partial_{3}E_{13}}{\sin^2\theta \sinh^3\chi} -  \frac{2 \cos\theta \tilde{g}^{i1} \tilde{g}^{j2} \partial_{3}E_{13}}{\sin^3\theta \sinh^2\chi} + \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j3} \partial_{3}E_{13}}{\sinh\chi} + \frac{2 \cos\theta \tilde{g}^{i3} \tilde{g}^{j1} \partial_{3}E_{21}}{\sin\theta \sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j3} \partial_{3}E_{21}}{\sinh\chi} + \frac{2 \cos\theta \tilde{g}^{i3} \tilde{g}^{j2} \partial_{3}E_{22}}{\sin\theta \sinh^2\chi} + \frac{2 \cos\theta \tilde{g}^{i2} \tilde{g}^{j3} \partial_{3}E_{22}}{\sin\theta \sinh^2\chi} -  \frac{2 \cosh\chi \tilde{g}^{i2} \tilde{g}^{j1} \partial_{3}E_{23}}{\sin^2\theta \sinh^3\chi} \nonumber \\ 
+&& -  \frac{2 \cos\theta \tilde{g}^{i2} \tilde{g}^{j2} \partial_{3}E_{23}}{\sin^3\theta \sinh^2\chi} + \frac{2 \cos\theta \tilde{g}^{i3} \tilde{g}^{j3} \partial_{3}E_{23}}{\sin\theta \sinh^2\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j1} \partial_{3}E_{31}}{\sin^2\theta \sinh^3\chi} -  \frac{2 \cos\theta \tilde{g}^{i2} \tilde{g}^{j1} \partial_{3}E_{31}}{\sin^3\theta \sinh^2\chi} \nonumber \\ 
+&& + \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j3} \partial_{3}E_{31}}{\sinh\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j2} \partial_{3}E_{32}}{\sin^2\theta \sinh^3\chi} -  \frac{2 \cos\theta \tilde{g}^{i2} \tilde{g}^{j2} \partial_{3}E_{32}}{\sin^3\theta \sinh^2\chi} + \frac{2 \cos\theta \tilde{g}^{i3} \tilde{g}^{j3} \partial_{3}E_{32}}{\sin\theta \sinh^2\chi} \nonumber \\ 
+&& -  \frac{2 \cosh\chi \tilde{g}^{i3} \tilde{g}^{j1} \partial_{3}E_{33}}{\sin^2\theta \sinh^3\chi} -  \frac{2 \cosh\chi \tilde{g}^{i1} \tilde{g}^{j3} \partial_{3}E_{33}}{\sin^2\theta \sinh^3\chi} -  \frac{2 \cos\theta \tilde{g}^{i3} \tilde{g}^{j2} \partial_{3}E_{33}}{\sin^3\theta \sinh^2\chi} -  \frac{2 \cos\theta \tilde{g}^{i2} \tilde{g}^{j3} \partial_{3}E_{33}}{\sin^3\theta \sinh^2\chi} \nonumber \\ 
+&& + \frac{\tilde{g}^{i1} \tilde{g}^{j1} \partial_{3}\partial_{3}E_{11}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i1} \tilde{g}^{j2} \partial_{3}\partial_{3}E_{12}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i1} \tilde{g}^{j3} \partial_{3}\partial_{3}E_{13}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i2} \tilde{g}^{j1} \partial_{3}\partial_{3}E_{21}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i2} \tilde{g}^{j2} \partial_{3}\partial_{3}E_{22}}{\sin^2\theta \sinh^2\chi} \nonumber \\ 
+&& + \frac{\tilde{g}^{i2} \tilde{g}^{j3} \partial_{3}\partial_{3}E_{23}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i3} \tilde{g}^{j1} \partial_{3}\partial_{3}E_{31}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i3} \tilde{g}^{j2} \partial_{3}\partial_{3}E_{32}}{\sin^2\theta \sinh^2\chi} + \frac{\tilde{g}^{i3} \tilde{g}^{j3} \partial_{3}\partial_{3}E_{33}}{\sin^2\theta \sinh^2\chi}
+\end{eqnarray}
+
+\end{appendices}
+\end{document}

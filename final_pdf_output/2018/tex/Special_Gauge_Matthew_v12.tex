@@ -1,0 +1,244 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Special Gauge Matthew v12}
+\date{}
+\begin{document}
+\maketitle
+\section*{Setup}
+Metric decomposed to first order:
+\begin{equation}
+g_{\mu\nu} = g^{(0)}_{\mu\nu} + g^{(1)}_{\mu\nu} = \Omega^2(\tau)(\eta_{\mu\nu}+f_{\mu\nu}).
+\end{equation}
+We then split $f_{\mu\nu}$ into its traceless and trace components, i.e.
+\begin{equation}
+	f_{\mu\nu} = k_{\mu\nu} + \frac 14 \eta_{\mu\nu}f
+\end{equation}
+where $f = \eta^{\mu\nu}f_{\mu\nu}$. The fluctuations then take the form
+\begin{align}
+\delta G_{\mu\nu}={}&\eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}k_{\mu \nu}
+ -  \tfrac{1}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}f \partial_{\beta}\Omega
+ -  \eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} k_{\gamma \zeta} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega\nonumber\\
+& + \eta^{\alpha \beta} k_{\mu \nu} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega
+ + \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\alpha}k_{\mu \nu}
+ -  \tfrac{1}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}f
+ + 2 \eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} k_{\gamma \zeta} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega\nonumber\\
+& - 2 \eta^{\alpha \beta} k_{\mu \nu} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\mu}k_{\nu \alpha}
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\nu}k_{\mu \alpha}
+ + 2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\zeta}k_{\beta \gamma}\nonumber\\
+& + \tfrac{1}{2} \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \partial_{\zeta}\partial_{\beta}k_{\alpha \gamma}
+ -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\mu}k_{\nu \beta}
+ -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\nu}k_{\mu \beta}
+ -  \tfrac{1}{4} \Omega^{-1} \partial_{\mu}\Omega \partial_{\nu}f\nonumber\\
+& -  \tfrac{1}{4} \Omega^{-1} \partial_{\mu}f \partial_{\nu}\Omega
+ + \tfrac{1}{4} \partial_{\nu}\partial_{\mu}f.
+\end{align}
+We impose a generalized gauge of the form
+\begin{equation}
+	\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu f + R \Omega^{-1} f \partial_\nu \Omega.
+\end{equation}
+ and take
+\begin{equation}
+	J=-4,\qquad R = 2P-\frac32.
+\end{equation}
+\\
+\section*{ $\Omega(\tau):$\  $k_{\mu\nu}$, $f$}
+\begin{align}
+\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-8 \Omega^{-2} \dot{\Omega}^2
+ + 4 \Omega^{-1} \ddot{\Omega}) k_{00}
+ + (\tfrac{3}{2} \Omega^{-2} \dot{\Omega}^2
+ - 2 P \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{3}{2} \Omega^{-1} \ddot{\Omega}
+ - 2 P \Omega^{-1} \ddot{\Omega}
+ -  \tfrac{3}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& + P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \Omega^{-1} \dot{\Omega} \partial_{0}
+ - 4 P \Omega^{-1} \dot{\Omega} \partial_{0}) f.
+\nonumber \\ 
+={}&(-8 \Omega^{-2} \dot{\Omega}^2
+ + 4 \Omega^{-1} \ddot{\Omega}) k_{00} +(P-\tfrac34) \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{2} f)
+\end{align}
+\begin{align}
+\delta G_{00}={}&(2 \Omega^{-2} \dot{\Omega}^2
+ - 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ - 3 \Omega^{-1} \dot{\Omega} \partial_{0}) k_{00}
+ + (- \tfrac{3}{4} \Omega^{-2} \dot{\Omega}^2
+ + P \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{3}{4} \Omega^{-1} \ddot{\Omega}\nonumber\\
+& -  P \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  P \Omega^{-1} \dot{\Omega} \partial_{0}
+ + \tfrac{1}{4} \partial_{0} \partial_{0}
+ -  P \partial_{0} \partial_{0}) f.
+\end{align}
+\begin{align}
+\delta G_{0i}={}&- \Omega^{-1} \dot{\Omega} \partial_{i} k_{00}
+ + (\Omega^{-2} \dot{\Omega}^2
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ - 2 \Omega^{-1} \dot{\Omega} \partial_{0}) k_{0i}
+ + (\tfrac{1}{2} \Omega^{-1} \dot{\Omega} \partial_{i}
+ -  P \Omega^{-1} \dot{\Omega} \partial_{i}\nonumber\\
+& + \tfrac{1}{4} \partial_{i} \partial_{0}
+ -  P \partial_{i} \partial_{0}) f.
+\end{align}
+\begin{align}
+\delta G_{ij}={}&\delta_{ij}\Omega^{-2} \dot{\Omega}^2 k_{00}
+- \Omega^{-1} \dot{\Omega} \partial_{j} k_{0i}
+ -  \Omega^{-1} \dot{\Omega} \partial_{i} k_{0j}
+ + (- \Omega^{-2} \dot{\Omega}^2
+ + 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \Omega^{-1} \dot{\Omega} \partial_{0}) k_{ij}\nonumber\\
+& +\delta_{ij}(- \tfrac{3}{4} \Omega^{-2} \dot{\Omega}^2
+ + P \Omega^{-2} \dot{\Omega}^2
+ + \tfrac{3}{4} \Omega^{-1} \ddot{\Omega}
+ -  P \Omega^{-1} \ddot{\Omega}
+ -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \Omega^{-1} \dot{\Omega} \partial_{0}\nonumber\\
+& -  P \Omega^{-1} \dot{\Omega} \partial_{0})f
+ + (\tfrac{1}{4} \partial_{i} \partial_{j}
+ -  P \partial_{i} \partial_{j}) f.
+\end{align}
+\\
+\section*{$\Omega(\tau)=\tfrac{1}{H\tau}:$\  $k_{\mu\nu}$, $f$}
+Now set $\Omega(\tau) = \frac{1}{H\tau}$, with the fluctuations being evaluated as
+\begin{equation}
+\eta^{\mu\nu}\delta G_{\mu\nu} =(P-\tfrac34) \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{2} f)
+\end{equation}
+\begin{align}
+\delta G_{00}={}&(-2 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \tau^{-1} \partial_{0}) k_{00}
+ + (\tfrac{3}{4} \tau^{-2}
+ -  P \tau^{-2}
+ + \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& + P \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{0} \partial_{0}
+ -  P \partial_{0} \partial_{0}) f.
+\end{align}
+\begin{align}
+\delta G_{0i}={}&\tau^{-1} \partial_{i} k_{00}
+ + (\tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) k_{0i}
+ + (- \tfrac{1}{2} \tau^{-1} \partial_{i}
+ + P \tau^{-1} \partial_{i}
+ + \tfrac{1}{4} \partial_{i} \partial_{0}\nonumber\\
+& -  P \partial_{i} \partial_{0}) f.
+\end{align}
+\begin{align}
+\delta G_{ij}={}&\delta_{ij}\tau^{-2} k_{00}
+ +\tau^{-1} \partial_{j} k_{0i}
+ + \tau^{-1} \partial_{i} k_{0j}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) k_{ij}
+ + \delta_{ij}(\tfrac{3}{4} \tau^{-2}
+ -  P \tau^{-2}\nonumber\\
+& -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tau^{-1} \partial_{0}
+ + P \tau^{-1} \partial_{0})f
+ + (\tfrac{1}{4} \partial_{i} \partial_{j}
+ -  P \partial_{i} \partial_{j}) f.
+\end{align}
+\\ \\
+\noindent Now we will further express our results in terms of 
+\begin{equation}
+	K_{\mu\nu} = \Omega^2 k_{\mu\nu}\qquad\text{and}\qquad
+	h = \Omega^2 f
+\end{equation}
+\section*{$\Omega(\tau):$\  $K_{\mu\nu}$, $h$}
+Working with a time dependent conformal factor, $\Omega(\tau)$, the fluctuations are evaluated as 
+\begin{align}
+\eta^{\mu\nu}\delta G_{\mu\nu}={}&(-8 \Omega^{-4} \dot{\Omega}^2 + 4 \Omega^{-3} \ddot{\Omega}) K_{00} + (- \tfrac{3}{4} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + P \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}) h
+ \nonumber \\
+={}&\Omega^{-2}(-8 \Omega^{-2} \dot{\Omega}^2
+ + 4 \Omega^{-1} \ddot{\Omega}) K_{00} +(P-\tfrac34) \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta h
+\end{align}
+\begin{align}
+\delta G_{00}={}&(5 \Omega^{-4} \dot{\Omega}^2
+ -  \Omega^{-3} \ddot{\Omega}
+ + \tfrac{1}{2} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \Omega^{-3} \dot{\Omega} \partial_{0}) K_{00}
+ + (- \tfrac{3}{4} \Omega^{-4} \dot{\Omega}^2
+ + \tfrac{3}{4} \Omega^{-3} \ddot{\Omega}\nonumber\\
+& + \tfrac{1}{4} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + P \Omega^{-3} \dot{\Omega} \partial_{0}
+ + \tfrac{1}{4} \Omega^{-2} \partial_{0} \partial_{0}
+ -  P \Omega^{-2} \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{0i}={}&- \Omega^{-3} \dot{\Omega} \partial_{i} K_{00}
+ + (2 \Omega^{-4} \dot{\Omega}^2
+ + \Omega^{-3} \ddot{\Omega}
+ + \tfrac{1}{2} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}) K_{0i}
+ + (P \Omega^{-3} \dot{\Omega} \partial_{i}
+ + \tfrac{1}{4} \Omega^{-2} \partial_{i} \partial_{0}\nonumber\\
+& -  P \Omega^{-2} \partial_{i} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{ij}={}&\delta_{ij}\Omega^{-4} \dot{\Omega}^2 K_{00}
+ - \Omega^{-3} \dot{\Omega} \partial_{j} K_{0i}
+ -  \Omega^{-3} \dot{\Omega} \partial_{i} K_{0j}
+ + (-2 \Omega^{-4} \dot{\Omega}^2
+ + 3 \Omega^{-3} \ddot{\Omega}
+ + \tfrac{1}{2} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \Omega^{-3} \dot{\Omega} \partial_{0}) K_{ij}\nonumber\\
+& + \delta_{ij}(- \tfrac{5}{4} \Omega^{-4} \dot{\Omega}^2
+ + \tfrac{1}{4} \Omega^{-3} \ddot{\Omega}
+ -  \tfrac{1}{4} \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} P \Omega^{-2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + P \Omega^{-3} \dot{\Omega} \partial_{0})h
+ + (\tfrac{1}{4} \Omega^{-2} \partial_{i} \partial_{j}\nonumber\\
+& -  P \Omega^{-2} \partial_{i} \partial_{j}) h.
+\end{align}
+\section*{$\Omega(\tau)=\tfrac{1}{H\tau}:$\  $K_{\mu\nu}$, $h$}
+Now set $\Omega(\tau) = \frac{1}{H\tau}$, with the fluctuations being evaluated as
+\begin{align}
+\eta^{\mu\nu}\delta G_{\mu\nu} =&{}
+(- \tfrac{3}{4} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + H^2 P \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}) h\nonumber\\
+=&{}(P-\tfrac34) \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta h
+\end{align}
+\begin{align}
+\delta G_{00}={}&(3 H^2
+ + \tfrac{1}{2} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + H^2 \tau \partial_{0}) K_{00}
+ + (\tfrac{3}{4} H^2
+ + \tfrac{1}{4} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} H^2 P \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  H^2 P \tau \partial_{0}
+ + \tfrac{1}{4} H^2 \tau^2 \partial_{0} \partial_{0}
+ -  H^2 P \tau^2 \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{0i}={}&H^2 \tau \partial_{i} K_{00}
+ + (4 H^2
+ + \tfrac{1}{2} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}) K_{0i}
+ + (- H^2 P \tau \partial_{i}
+ + \tfrac{1}{4} H^2 \tau^2 \partial_{i} \partial_{0}\nonumber\\
+& -  H^2 P \tau^2 \partial_{i} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{ij}={}&\delta_{ij} H^2 K_{00}
+ + H^2 \tau \partial_{j} K_{0i}
+ + H^2 \tau \partial_{i} K_{0j}
+ + (4 H^2
+ + \tfrac{1}{2} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  H^2 \tau \partial_{0}) K_{ij}\nonumber\\
+&
+ + \delta_{ij}(- \tfrac{3}{4} H^2 -  \tfrac{1}{4} H^2 \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} H^2 P \tau^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  H^2 P \tau \partial_{0})h
+ + (\tfrac{1}{4} H^2 \tau^2 \partial_{i} \partial_{j}
+ -  H^2 P \tau^2 \partial_{i} \partial_{j}) h.
+\end{align}
+\end{document}

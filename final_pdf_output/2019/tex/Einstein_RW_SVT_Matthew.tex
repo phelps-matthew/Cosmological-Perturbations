@@ -1,0 +1,427 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+
+\title{Einstein RW SVT}
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+Within a metric with 3-space curvature $k$, the perturbed Einstein tensor takes the form
+\begin{align}
+\delta G_{00}={}&4 k h_{00}
+ + k h
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{00}
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}h
+ -  \tfrac{1}{2} \nabla_{b}\nabla_{a}h^{ab},
+\\
+\delta G_{0i}={}&2 k h_{0i}
+ -  \tfrac{1}{2} \nabla_{a}\dot{h}_{i}{}^{a}
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{0i}
+ + \tfrac{1}{2} \nabla_{i}\dot{h}_{00}
+ + \tfrac{1}{2} \nabla_{i}\dot{h}
+ -  \tfrac{1}{2} \nabla_{i}\nabla_{a}h_{0}{}^{a},
+\\
+\delta G_{ij}={}&- \tfrac{1}{2} \ddot{h}_{ij}
+ + \tfrac{1}{2} \ddot{h}_{00} g_{ij}
+ + \tfrac{1}{2} \ddot{h} g_{ij}
+ -  g_{ij} \nabla_{a}\dot{h}_{0}{}^{a}
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{ij}
+ -  \tfrac{1}{2} g_{ij} \nabla_{a}\nabla^{a}h
+ + \tfrac{1}{2} g_{ij} \nabla_{b}\nabla_{a}h^{ab}\nonumber\\
+& + \tfrac{1}{2} \nabla_{i}\dot{h}_{j0}
+ -  \tfrac{1}{2} \nabla_{i}\nabla_{a}h_{j}{}^{a}
+ + \tfrac{1}{2} \nabla_{j}\dot{h}_{i0}
+ -  \tfrac{1}{2} \nabla_{j}\nabla_{a}h_{i}{}^{a}
+ + \tfrac{1}{2} \nabla_{j}\nabla_{i}h.
+\end{align}
+
+\begin{align}
+\delta G_{00}={}&-6 k \phi
+ - 6 k \psi
+ - 2 \nabla_{a}\nabla^{a}\psi,
+\\
+\delta G_{0i}={}&2 k B_{i}
+ -  k \dot{E}_{i}
+ + \tfrac{1}{2} \nabla_{a}\nabla^{a}B_{i}
+ -  \tfrac{1}{2} \nabla_{a}\nabla^{a}\dot{E}_{i}
+ + 3 k \nabla_{i}B
+ - 2 k \nabla_{i}\dot{E}
+ - 2 \nabla_{i}\dot{\psi}.,
+\\
+\delta G_{ij}={}&- \ddot{E}_{ij}
+ - 2 \ddot{\psi} g_{ij}
+ -  g_{ij} \nabla_{a}\nabla^{a}\dot{B}
+ + g_{ij} \nabla_{a}\nabla^{a}\ddot{E}
+ + \nabla_{a}\nabla^{a}E_{ij}
+ -  g_{ij} \nabla_{a}\nabla^{a}\phi
+ + g_{ij} \nabla_{a}\nabla^{a}\psi\nonumber\\
+& + \tfrac{1}{2} \nabla_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \nabla_{i}\ddot{E}_{j}
+ + k \nabla_{i}E_{j}
+ + \tfrac{1}{2} \nabla_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \nabla_{j}\ddot{E}_{i}
+ + k \nabla_{j}E_{i}
+ + \nabla_{j}\nabla_{i}\dot{B}
+ -  \nabla_{j}\nabla_{i}\ddot{E}\nonumber\\
+& + 2 k \nabla_{j}\nabla_{i}E
+ + \nabla_{j}\nabla_{i}\phi
+ -  \nabla_{j}\nabla_{i}\psi.
+\end{align}
+Under general conformal transformation $g_{\mu\nu}\to \Omega^2(x)g_{\mu\nu}$, the  Einstein tensor transforms as
+\begin{align}
+G_{\mu\nu} &\to G_{\mu\nu} + S_{\mu\nu}
+\nonumber\\
+&\qquad= G_{\mu\nu} +
+\Omega^{-1}\left( -2g_{\mu\nu}\nabla^\lambda \nabla_\lambda \Omega + 2\nabla_\mu \nabla_\nu \Omega\right) +
+\Omega^{-2}\left( g_{\mu\nu} \nabla_\lambda \Omega \nabla^\lambda \Omega - 4 \nabla_\mu \Omega \nabla_\nu \Omega\right).
+\end{align}
+Perturbing the above to first order yields the transformation of $\delta G_{\mu\nu}$:
+\begin{equation}
+\delta G_{\mu\nu} \to \delta G_{\mu\nu} + \delta S_{\mu\nu},
+\end{equation}
+where
+\begin{align}
+\delta S_{\mu\nu}={}&-2 h_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega
+ + \Omega^{-1} \nabla_{\alpha}\Omega \nabla^{\alpha}h_{\mu \nu}
+ -  g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\Omega \nabla^{\alpha}h
+ + h_{\mu \nu} \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega\nonumber\\
+& + 2 g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\beta}h^{\alpha \beta}
+ -  g_{\mu \nu} h^{\alpha \beta} \Omega^{-2} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega
+ + 2 g_{\mu \nu} h_{\alpha \beta} \Omega^{-1} \nabla^{\beta}\nabla^{\alpha}\Omega\nonumber\\
+& -  \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\mu}h_{\nu}{}^{\alpha}
+ -  \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\nu}h_{\mu}{}^{\alpha}.
+\end{align}
+Note that in the transformation of $G_{\mu\nu}$, all curvature tensors ($R_{\mu\nu}$, $R$) are contained within $G_{\mu\nu}$ and not $S_{\mu\nu}$. Likewise, the first order perturbation $\delta S_{\mu\nu}$ does not include any zeroth order background curvature tensors and hence has no dependence upon the 3-space curvature $k$ (unless spatial covariant derivatives are commuted, of course). 
+\\ \\
+Taking $\Omega(t)$, $\delta S_{\mu\nu}$ takes the form under the 3+1 splitting:
+\begin{align}
+\delta S_{00}={}&- \dot{h}_{00} \dot{\Omega} \Omega^{-1}
+ -  \dot{h} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \nabla_{a}h_{0}{}^{a},
+\\
+\delta S_{0i}={}&- \dot{\Omega}^2 h_{0i} \Omega^{-2}
+ + 2 \ddot{\Omega} h_{0i} \Omega^{-1}
+ + \dot{\Omega} \Omega^{-1} \nabla_{i}h_{00},
+\\
+\delta S_{ij}={}&- \dot{\Omega}^2 h_{ij} \Omega^{-2}
+ -  \dot{\Omega}^2 g_{ij} h_{00} \Omega^{-2}
+ -  \dot{h}_{ij} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{h}_{00} \dot{\Omega} g_{ij} \Omega^{-1}
+ + \dot{h} \dot{\Omega} g_{ij} \Omega^{-1}
+ + 2 \ddot{\Omega} h_{ij} \Omega^{-1}\nonumber\\
+& + 2 \ddot{\Omega} g_{ij} h_{00} \Omega^{-1}
+ - 2 \dot{\Omega} g_{ij} \Omega^{-1} \nabla_{a}h_{0}{}^{a}
+ + \dot{\Omega} \Omega^{-1} \nabla_{i}h_{0j}
+ + \dot{\Omega} \Omega^{-1} \nabla_{j}h_{0i}.
+\end{align}
+\begin{align}
+\delta S_{00}={}&6 \dot{\psi} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \nabla_{a}\nabla^{a}B
+ - 2 \dot{\Omega} \Omega^{-1} \nabla_{a}\nabla^{a}\dot{E},
+\\
+\delta S_{0i}={}&- B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+ -  \dot{\Omega}^2 \Omega^{-2} \nabla_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \nabla_{i}B
+ - 2 \dot{\Omega} \Omega^{-1} \nabla_{i}\phi,
+\\
+\delta S_{ij}={}&-2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ + 2 \dot{\Omega}^2 g_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 g_{ij} \psi \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+ - 2 \dot{\phi} \dot{\Omega} g_{ij} \Omega^{-1}\nonumber\\
+& - 4 \dot{\psi} \dot{\Omega} g_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} g_{ij} \phi \Omega^{-1}
+ - 4 \ddot{\Omega} g_{ij} \psi \Omega^{-1}
+ - 2 \dot{\Omega} g_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}B
+ + 2 \dot{\Omega} g_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\dot{E}\nonumber\\
+& + \dot{\Omega} \Omega^{-1} \nabla_{i}B_{j}
+ -  \dot{\Omega} \Omega^{-1} \nabla_{i}\dot{E}_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \nabla_{i}E_{j}
+ + 2 \ddot{\Omega} \Omega^{-1} \nabla_{i}E_{j}
+ + \dot{\Omega} \Omega^{-1} \nabla_{j}B_{i}\nonumber\\
+& -  \dot{\Omega} \Omega^{-1} \nabla_{j}\dot{E}_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \nabla_{j}E_{i}
+ + 2 \ddot{\Omega} \Omega^{-1} \nabla_{j}E_{i}
+ + 2 \dot{\Omega} \Omega^{-1} \nabla_{j}\nabla_{i}B
+ - 2 \dot{\Omega} \Omega^{-1} \nabla_{j}\nabla_{i}\dot{E}\nonumber\\
+& - 2 \dot{\Omega}^2 \Omega^{-2} \nabla_{j}\nabla_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \nabla_{j}\nabla_{i}E.
+\end{align}
+
+\section{Longitudinal Decomposition}
+Conjecture: The longitudinal component of a rank $n$ tensor is given by derivatives onto rank $m-1$ tensors. 
+\\ \\
+We expect this to be true since transverse and longitudinal conditions are those involving projections parallel or orthogonal to the normal derivative. Hence any projection decomposition requires derivatives, which, in order to maintain the net rank of a given tensor, means the derivatives must act on a tensors of lesser rank. Based only upon this conjecture, we may show another method to derive the transverse and longitudinal components. First we posit the form of the longitudinal component, project out any transverse components, then integrate to solve in terms of the original tensor. 
+\\ \\
+\subsubsection{Rank 1 Tensor In Curved Space}
+For a rank 1 tensor $A_\nu$ we express the longitudunal component in terms of a derivative onto a scalar $A$
+\begin{equation}
+A_\nu^L = \nabla_\nu A.
+\end{equation}
+Now project out the transverse component, 
+\begin{equation}
+\nabla^\nu A_\nu = \nabla_\nu \nabla^\nu A.
+\end{equation}
+Solving for $A$, we have
+\begin{equation}
+A = \int d^Dx'\sqrt{g}\  D(x,x') \nabla^\mu A_\mu,
+\end{equation}
+where we have introduced the curved space propogator
+\begin{equation}
+\nabla_\mu \nabla^\mu D(x,x') = g^{-1/2} \delta^D(x-x').
+\end{equation}
+Thus we have
+\begin{equation}
+A_\nu^L = \nabla_\nu \int d^Dx'\sqrt{g}\ D(x,x') \nabla^\mu A_\mu,
+\end{equation}
+and the transverse component is just the remaining part,
+\begin{equation}
+A_\nu^T = A_\nu - A_\nu^L.
+\end{equation}
+Lastly, we may construct a longitudinal projector $\Pi_{\mu\nu}^L$,
+\begin{equation}
+\Pi_{\mu\nu}^L = \nabla_\mu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\nu
+\end{equation}
+\subsubsection{Rank 2 Tensor In Minkowski Space}
+For a rank 2 tensor (in Minkowski background), we posit
+\begin{equation}
+h^L_{\mu\nu} = \partial_\mu V_\nu + \partial_\nu V_\mu,
+\end{equation}
+where $V^{\mu}$ remains to be determined in terms of $h^{\mu\nu}$.
+Now project out the transverse components of $h^{\mu\nu}$, noting $h^{\mu\nu}_T$ can make no contribution,
+\begin{equation}
+\partial_\nu h^{\mu\nu} = \partial_\nu \partial^\mu V^\nu + \partial_\nu \partial^\nu V^\mu,
+\end{equation}
+\begin{equation}
+\partial_\mu \partial_\nu h^{\mu\nu} = \partial_\mu\partial_\nu \partial^\mu V^\nu + \partial_\mu\partial_\nu \partial^\nu V^\mu
+= 2 \partial_\mu \partial^\mu \partial_\nu V^\nu.
+\end{equation}
+From $\partial_\mu\partial_\nu h^{\mu\nu}$, solve for $\partial_\nu V^\nu$,
+\begin{equation}
+\partial_\nu V^\nu = \frac12 \int d^3y D(x-y) \partial_\sigma\partial_\rho h^{\sigma\rho}
+= \frac12\left[ \partial_\sigma \int d^3y D(x-y)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(x-y) \partial_\rho h^{\sigma\rho}\right],
+\end{equation}
+where we use the flat space propagator
+\begin{equation}
+\partial_\nu \partial^\nu D(x-x') = \delta(x-x').
+\end{equation}
+Insert $\partial_\nu V^\nu$ back into $\partial_\nu h^{\mu\nu}$
+\begin{equation}
+\partial_\nu h^{\mu\nu} =  \frac12 \partial^\mu\left[ \partial_\sigma \int d^3y D(x-y)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(x-y) \partial_\rho h^{\sigma\rho}\right] + \partial_\nu \partial^\nu V^\mu,
+\end{equation}
+and solve for $V^\mu$,
+\begin{align}
+V^\mu &= \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} -  \frac12\int d^3y D(x-y) \partial^\mu \left[ \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(y-z) \partial_\rho h^{\sigma\rho}\right]\\
+&=  \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} -  \frac12
+\partial^\mu \int d^3y D(x-y)\left[ \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(y-z) \partial_\rho h^{\sigma\rho}\right]\\
+&\qquad
+-\frac12 \int dS^\mu D(x-y)\left[ \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(y-z) \partial_\rho h^{\sigma\rho}\right].
+\end{align}
+Dropping surface terms, $V^\mu$ takes the form
+\begin{align}
+V^\mu &= \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} -  \frac12
+\partial^\mu \int d^3y D(x-y) \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}.
+\end{align}
+Now using $V^\mu$, we can  construct $h^{\mu\nu}_L = \partial^\mu V^\nu + \partial^\nu V^\mu$, 
+\begin{align}
+h^{\mu\nu}_L &= \partial^\mu \int d^3y D(x-y)\partial_\sigma h^{\sigma\nu} + \partial^\nu \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} 
+\\
+&\qquad -  
+\partial^\mu\partial^\nu \int d^3y D(x-y) \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
+\end{align}
+Lastly, we can express this in terms of the longitudinal projector
+\begin{align}
+L_{\mu\nu\sigma\rho} &= \partial_\mu \int d^4x'\ D(x-x') \eta_{\nu\rho}\partial_\sigma + \partial_\nu \int d^4x'\ D(x-x') \eta_{\mu\sigma}\partial_\tau
+\\
+&\qquad - \partial_\nu\partial_\mu \int d^4x'\ D(x-x') \partial_\sigma \int d^4x''\ D(x-x'') \partial_\rho.
+\end{align}
+\subsubsection{Rank 2 Tensor In Maximally Symmetric Space}
+In a maximally symmetric space of constant curvature, we have the curvature relations
+\begin{equation}
+R_{\lambda\mu\nu\kappa} = k(g_{\mu\nu}g_{\lambda\kappa} - g_{\lambda\nu}g_{\mu\kappa}),
+\qquad R_{\mu\nu} = -(D-1)k g_{\mu\nu},\qquad  R = -D(D-1)k.
+\end{equation}
+It is convenient to express the curvature tensors in terms of $R$, via
+\begin{equation}
+\qquad R_{\mu\nu} = \frac{R}{D}g_{\mu\nu},\qquad \nabla_\mu R = 0.
+\end{equation}
+We posit the longitudinal component of $h^{\mu\nu}$ may be expressed as derivatives onto vectors,
+\begin{equation}
+h^{\mu\nu}_L = \nabla^\mu V^\nu  + \nabla^\nu V^\mu,
+\end{equation}
+where $V^{\mu}$ remains to be determined in terms of $h^{\mu\nu}$.
+Now project out the transverse components of $h^{\mu\nu}$,
+\begin{equation}
+\nabla_\nu h^{\mu\nu} = \nabla_\nu \nabla^\mu V^\nu + \nabla_\nu \nabla^\nu V^\mu
+= \left(\nabla_\nu\nabla^\nu - \frac{R}{D}\right)V^\mu + \nabla^\mu \nabla_\nu V^\nu 
+\end{equation}
+\begin{align}
+\nabla_\mu\nabla_\nu h^{\mu\nu} &= \nabla_\mu\nabla_\nu( \nabla^\mu V^\nu + \nabla^\nu V^\mu)
+\nonumber\\
+& = 
+ 2 \nabla_\mu \nabla^\mu \nabla_\nu V^\nu - 2(\nabla^\mu R_{\mu\nu})V^\nu - 2 R_{\mu\nu} \nabla^\mu V^\nu
+\nonumber\\
+&
+=  2\left(
+\nabla_\mu \nabla^\mu - \frac{R}{D}\right) \nabla_\nu V^\nu.
+\end{align}
+From $\nabla_\mu\nabla_\nu h^{\mu\nu}$, solve for $\nabla_\nu V^\nu$
+\begin{equation}
+\nabla_\nu V^\nu = \frac12 \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma\nabla_\rho h^{\sigma\rho},
+\end{equation}
+where we have introduced the curved space scalar propagator
+\begin{equation}
+\left( \nabla_\nu \nabla^\nu -\frac{R}{D} \right)D(x,x') = g^{-1/2} \delta^D(x-x').
+\end{equation}
+Now insert $\nabla_\nu V^\nu$ back into $\nabla_\nu h^{\mu\nu}$
+\begin{align}
+\left(\nabla_\nu\nabla^\nu - \frac{R}{D}\right)V^\mu&= \nabla_\nu h^{\mu\nu} -\nabla^\mu \nabla_\nu V^\nu 
+\nonumber\\
+&=  \nabla_\nu h^{\mu\nu} - \frac12 \nabla^\mu  \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma\nabla_\rho h^{\sigma\rho}.
+\end{align}
+Solving for $V^\mu$,
+\begin{equation}
+V^{\mu} =   \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma h^{\mu\sigma} - \frac12
+  \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\mu   \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla_\sigma\nabla_\rho h^{\sigma\rho}.
+\end{equation}
+Performing integration by parts and dropping the surface integrals (see sections below), we can bring $V^\mu$ to the form
+\begin{equation}
+V^{\mu} =   \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma h^{\mu\sigma} - \frac12\nabla^\mu 
+  \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma   \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla_\rho h^{\sigma\rho}.
+\end{equation}
+Now we can construct the longitudinal tensor $h^{\mu\nu}_L = \nabla^\mu V^\nu + \nabla^\nu V^\mu$, 
+\begin{align}
+  h^{\mu\nu}_L&=\nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu} + \nabla^\nu \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\\
+&\qquad -  
+ \frac12(\nabla^\mu\nabla^\nu+\nabla^\nu\nabla^\mu) \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+To verify, let us confirm $\nabla_\nu h^{\mu\nu}_L = \nabla_\nu h^{\mu\nu}$,
+\begin{align}
+\nabla_\nu h^{\mu\nu}_L &= \nabla_\nu \nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu}
++ \nabla_\sigma h^{\sigma\mu} + \frac{R}{D}  \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\\
+&\qquad - \frac12( \nabla_\nu \nabla^\mu \nabla^\nu + \nabla_\nu \nabla^\nu \nabla^\mu)  \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+Noting the commutation relation
+\begin{equation}
+ \frac12( \nabla_\nu \nabla^\mu \nabla^\nu + \nabla_\nu \nabla^\nu \nabla^\mu)f(x) = 
+\nabla^\mu \left[\left(\nabla_\nu\nabla^\nu - \frac{R}{D}\right)f(x)\right],
+\end{equation}
+we can express the longitudinal tensor as
+\begin{align}
+\nabla_\nu h^{\mu\nu}_L &= \nabla_\nu \nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu}
++ \nabla_\sigma h^{\sigma\mu} + \frac{R}{D}  \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\nonumber
+\\ &\qquad 
+- \nabla^\mu \nabla_\sigma \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+Taking another commutation relation
+\begin{equation}
+\nabla^\mu \nabla_\sigma A^\sigma(x) = \nabla_\sigma\nabla^\mu A^\sigma(x) + \frac{R}{D}A^\mu(x),
+\end{equation}
+we are finally left with
+\begin{equation}
+\nabla_\nu h^{\mu\nu}_L = \nabla_\nu h^{\mu\nu}.
+\end{equation}
+Lastly, we cast the longitudinal component into the form a projector
+\begin{align}
+L_{\mu\nu\sigma\rho} &= \nabla_\mu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\nu}\nabla_\rho 
++ \nabla_\nu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\mu}\nabla_\rho 
+\nonumber\\
+&\qquad - \frac12(\nabla_\mu\nabla_\nu+\nabla_\nu\nabla_\mu) \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho. 
+\end{align}
+It follows that the transverse projector is just what remains,
+\begin{align}
+T_{\mu\nu\sigma\rho} &= g_{\mu\sigma}g_{\nu\rho}- \nabla_\mu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\nu}\nabla_\rho 
+- \nabla_\nu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\mu}\nabla_\rho 
+\nonumber\\
+&\qquad + \frac12(\nabla_\mu\nabla_\nu+\nabla_\nu\nabla_\mu) \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho. 
+\end{align}
+\emph{Still need to confirm that the above actually behave as projectors, i.e. $L_{\mu\nu\sigma\rho}L^{\sigma\rho}{}_{\alpha\beta} = L_{\mu\nu\alpha\beta}$, etc.}
+\subsection{$q_i$ SVT Decomposition}
+To deconstruct the curved space $q_i = -T_{0i}$, we generate a transverse $Q_i$ and a scalar $Q$ defined as
+\begin{equation}
+Q =  \int d^3x' \sqrt{g}\ D^3_V(x,x')\nabla_k q^k,
+\end{equation}
+\begin{equation}
+Q_i = q_i - \nabla_i Q,
+\end{equation}
+where it is necessary to introduce the curved space propogator
+\begin{equation}
+\nabla_i \nabla^i D^3_V(x,x') = g^{-1/2}\delta^3(x-x').
+\end{equation}
+\subsection{$\pi_{ij}$ SVT Decomposition }
+We will deconstruct the traceless $\pi_{ij}$. Restricting to spatial components means we work in a maximally symmetric 3-space with metric $g_{ij}$. 
+Based on the above we have
+\begin{equation}
+\pi_{ij} = \pi_{ij}^{T} + \pi^L_{ij}.
+\end{equation}
+The traceless transverse $\pi_{ij}^T$ has only two components. The longitudinal part can be expressed in terms of a transverse vector and a scalar. Let us recall its form:
+\begin{align}
+  \pi^{ij}_L&=\nabla^i \int d^3x' \sqrt{g}\ D^3_T(x,x')\nabla_k \pi^{jk} + \nabla^j \int d^3x' \sqrt{g}\  D^3_T(x,x')\nabla_k \pi^{ik} 
+\\
+&\qquad -  
+ \frac12(\nabla^i\nabla^j+\nabla^j\nabla^i) \int d^3x'\sqrt{g}\  D^3_T(x,x') \nabla_k \int d^3x'' \sqrt{g}\ D^3_T(x',x'')\nabla_l \pi^{kl},
+\end{align}
+with scalar propogator
+\begin{equation}
+\left( \nabla_i \nabla^i -\frac{R}{3} \right)D^3_{T}(x,x') = g^{-1/2} \delta^3(x-x').
+\end{equation}
+The longitudinal contribution suggest a form that can be expressed in terms of 3-vectors $W^i$ as
+\begin{equation}
+\pi^{ij}_L = \nabla^i W^j + \nabla^j W^i - \frac12(\nabla^i\nabla^j+\nabla^j\nabla^i) \int d^3x'\sqrt{g}\  D^3_T(x,x') \nabla_k W^k,
+\end{equation}
+where
+\begin{equation}
+W^{i} =    \int d^3x'\sqrt{g}\  D^3_T(x,x') \nabla_k \pi^{ik}.
+\end{equation}
+Such a $W_i$ is not generally transverse, and thus we decompose $W^i$ into transverse and longitudinal components as outlined in (ref section).
+\begin{equation}
+W_i = W_i^T + \nabla_i \int d^3x' \sqrt{g}\ D_V^3(x,x')\nabla_k W^k,
+\end{equation}
+where we used the curved space propogator introduced for vectors,
+\begin{equation}
+\nabla_i \nabla^i D^3_V(x,x') = g^{-1/2}\delta^3(x-x').
+\end{equation}
+Thus we may now express $\pi_{ij}^L$ as
+\begin{equation}
+\pi_{ij}^L =  \nabla_i W_j^T + \nabla_j W_i^T + 2\nabla_i\nabla_j W
+\end{equation}
+where
+\begin{equation}
+W^{i} =    \int d^3x'\sqrt{g}\  D^3_T(x,x') \nabla_k \pi^{ik}.
+\end{equation}
+\begin{equation}
+W =  \nabla_i \int d^3x' \sqrt{g}\ D_V^3(x,x')\nabla_k W^k,
+\end{equation}
+\begin{equation}
+W_i^T = W_i - \nabla_i W.
+\end{equation}
+\subsection{$h_{ij}$ SVT Decomposition}
+In order to construct an $h^L_{\mu\nu}$ that is traceless, we must yet introduce another propagator,
+\begin{equation}
+\left(\nabla_\nu \nabla^\nu - \frac{R}{D-1}\right)D^D_S(x,x') = g^{-1/2}\delta^D(x-x').
+\end{equation}
+Then we can construct a longitudinal traceless $h^{L\theta}_{\mu\nu}$ as
+\begin{equation}
+h_{\mu\nu}^{L\theta} = h_{\mu\nu}^L - \frac{1}{D-1}g_{\mu\nu} h^L + \frac{1}{D-1}\left( \nabla_\mu\nabla_\nu + \right)
+\end{equation}
+which obeys
+\begin{equation}
+g^{\mu\nu}h^{L\theta}_{\mu\nu} = 0,\qquad \nabla^\mu h^{L\theta}_{\mu\nu}= \nabla^\mu h^{L}_{\mu\nu},
+\qquad \nabla^\nu h^{L\theta}_{\mu\nu}= \nabla^\nu h^{L}_{\mu\nu},
+\end{equation}
+i.e., the 
+\subsection{surface terms}
+\subsection{Covariant integration by parts}
+\end{document}

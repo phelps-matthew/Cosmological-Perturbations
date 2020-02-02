@@ -1,0 +1,99 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$g^{\mu\nu}\delta W^{(1)}_{\mu\nu}$ v3}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generalized RW Geometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We use the following geometry which facilitates easy computation by either taking $k=0$ or $\Omega(x) = \Omega(\tau)$ depending, on the desired coordinates (conformal flat or conformal comoving respectively). 
+\begin{eqnarray}
+ds^2 &=& (g_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu = \Omega^2(x)(\tilde g_{\mu\nu} + f_{\mu\nu})dx^\mu dx^\nu
+\label{geom1}\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,\frac{1}{1-kr^2},r^2,r^2\sin^2\theta\right)\qquad \tilde \Gamma^{\lambda}_{\alpha\beta} = \delta^\lambda_i \delta^j_\alpha \delta^k_\beta \tilde \Gamma^{i}_{jk}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$W_1$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As evaluated in the background geometry of \eqref{geom1}:
+\begin{eqnarray}
+g^{\mu\nu}W_{\mu\nu}^{(1)}&=& 6 \nabla_{\alpha }\nabla^{\alpha }R
+\nonumber\\
+&=& 
+6 \Omega^{-4} \tilde \nabla_{\alpha }\tilde \nabla^{\alpha }\tilde R - 12 \tilde R \Omega^{-5} \tilde \nabla_{\alpha }\tilde \nabla^{\alpha }\Omega - 12 \Omega^{-5} \tilde \nabla_{\alpha }\tilde R \tilde \nabla^{\alpha }\Omega + 12 \tilde R \Omega^{-6} \tilde \nabla_{\alpha }\Omega \tilde \nabla^{\alpha }\Omega- 144 \Omega^{-6} \tilde \nabla_{\alpha }\tilde \nabla_{\beta }\tilde \nabla^{\beta }\Omega \tilde \nabla^{\alpha }\Omega\nonumber\\
+&&  - 108 \Omega^{-6} \tilde \nabla_{\alpha }\tilde \nabla^{\alpha }\Omega \tilde \nabla_{\beta }\tilde \nabla^{\beta }\Omega + 216 \Omega^{-7} \tilde \nabla_{\alpha }\Omega \tilde \nabla^{\alpha }\Omega \tilde \nabla_{\beta }\tilde \nabla^{\beta }\Omega + 36 \Omega^{-5} \tilde \nabla_{\beta }\tilde \nabla^{\beta }\tilde \nabla_{\alpha }\tilde \nabla^{\alpha }\Omega
+\nonumber\\
+&=&36\Omega^{-5}\bigg[ \overset{....}{\Omega} - 2 k \overset{..}{\Omega} + 6 \overset{..}{\Omega} \dot{\Omega}^2 \Omega^{-2} - 3 \overset{..}{\Omega}^2 \Omega^{-1} - 4 \overset{...}{\Omega} \dot{\Omega} \Omega^{-1} + 2 k \dot{\Omega}^2 \Omega^{-1} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\Omega} + 4 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega} \nonumber \\ 
+&& - 6 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega + 6 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega + 4 \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\overset{..}{\Omega} - 6 \overset{..}{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega + 6 k \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \nonumber \\ 
+&& + \tilde{\nabla}_{b}\tilde{\nabla}_{a}\tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega - 3 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 6 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega - 4 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega \bigg]
+\label{W1tr}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$g^{\mu\nu}\delta W_{\mu\nu}^{(1)}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We set $k=0$ and substitute the gauge invariants and null trace condition ($g^{\mu\nu} W^{(1)}_{\mu\nu}=0$),
+\begin{eqnarray}
+\alpha &=& \phi + \psi +\dot B - \ddot E,\qquad \gamma = \psi -\Omega^{-1}[(B-\dot E)\dot\Omega - (\tilde\nabla_a E + E_a)\tilde\nabla^a \Omega],
+\nonumber\\
+Q_i&=& B_i - \dot E_i,\qquad E_{ij}.
+\\\nonumber\\
+\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b\Omega &=& - \overset{....}{\Omega} - 6 \overset{..}{\Omega} \dot{\Omega}^2 \Omega^{-2} + 3 \overset{..}{\Omega}^2 \Omega^{-1} + 4 \overset{...}{\Omega} \dot{\Omega} \Omega^{-1} + 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\Omega} - 4 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega} - 2 k \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \nonumber \\ 
+&& + 6 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 6 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 4 \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\overset{..}{\Omega} + 6 \overset{..}{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \nonumber \\ 
+&& + 3 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega - 6 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 4 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega 
+\\\nonumber\\
+\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b\dot\Omega &=&  - \overset{.....}{\Omega} + 12 \overset{..}{\Omega} \dot{\Omega}^3 \Omega^{-3} - 15 \overset{..}{\Omega}^2 \dot{\Omega} \Omega^{-2} - 10 \overset{...}{\Omega} \dot{\Omega}^2 \Omega^{-2} + 10 \overset{...}{\Omega} \overset{..}{\Omega} \Omega^{-1} + 4 \overset{....}{\Omega} \dot{\Omega} \Omega^{-1} + 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{...}{\Omega} \nonumber \\ 
+&& - 4 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\Omega} + 10 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega} - 10 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega} - 12 \dot{\Omega}^3 \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \nonumber \\ 
+&& + 18 \overset{..}{\Omega} \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 6 \overset{...}{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 4 \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\overset{...}{\Omega} - 4 \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}\overset{..}{\Omega} + 4 \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\overset{..}{\Omega} \nonumber \\ 
+&& + 12 \overset{..}{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{\Omega} - 12 \overset{..}{\Omega} \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega + 6 \overset{...}{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega - 6 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\dot{\Omega} \nonumber \\ 
+&& + 6 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega - 3 \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega - 12 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{\Omega} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega \nonumber \\ 
+&& + 12 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 4 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\dot{\Omega} + 4 \Omega^{-1} \tilde{\nabla}^{a}\dot{\Omega} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega \nonumber \\ 
+&& - 4 \dot{\Omega} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega.
+\end{eqnarray}
+The perturbed trace $g^{\mu\nu} \delta W^{(1)}_{\mu\nu}$ can then be expressed entirely in terms of the gauge invariants as
+\begin{eqnarray}
+g^{\mu\nu}\delta W^{(1)}_{\mu\nu}&=& \overset{..}{\alpha} (144 \dot{\Omega}^2 \Omega^{-6} - 144 \overset{..}{\Omega} \Omega^{-5}) - 36 \overset{...}{\alpha} \dot{\Omega} \Omega^{-5} - 36 \overset{....}{\gamma} \Omega^{-4} - 12 \Omega^{-4} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\alpha} + 72 \Omega^{-4} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\gamma} \nonumber \\ 
+&& + 60 \dot{\Omega} \Omega^{-5} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\alpha} - 36 \Omega^{-5} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\overset{..}{\alpha} + (288 \Omega^{-5} \tilde{\nabla}_{a}\dot{\Omega} - 576 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\Omega) \tilde{\nabla}^{a}\dot{\gamma} \nonumber \\ 
+&& - 288 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\gamma \tilde{\nabla}^{a}\dot{\Omega} + \tilde{\nabla}_{a}\alpha (72 \Omega^{-5} \tilde{\nabla}^{a}\overset{..}{\Omega} + 144 \dot{\Omega} \Omega^{-6} \tilde{\nabla}^{a}\dot{\Omega}) \nonumber \\ 
+&& + \alpha (-864 \overset{..}{\Omega} \dot{\Omega}^2 \Omega^{-7} + 432 \overset{..}{\Omega}^2 \Omega^{-6} + 576 \overset{...}{\Omega} \dot{\Omega} \Omega^{-6} - 144 \overset{....}{\Omega} \Omega^{-5} + 144 \Omega^{-5} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\Omega} - 288 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega}\nonumber\\
+&& + 432 \dot{\Omega}^2 \Omega^{-7} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 432 \overset{..}{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 288 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\overset{..}{\Omega} + 432 \overset{..}{\Omega} \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega) \nonumber \\ 
+&& + \dot{\alpha} (-216 \dot{\Omega}^3 \Omega^{-7} + 648 \overset{..}{\Omega} \dot{\Omega} \Omega^{-6} - 216 \overset{...}{\Omega} \Omega^{-5} + 72 \Omega^{-5} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\Omega} - 216 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 144 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{\Omega}\nonumber\\
+&& + 216 \dot{\Omega} \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega) \nonumber \\ 
+&& + \dot{\gamma} (-432 \dot{\Omega}^3 \Omega^{-7} + 432 \overset{..}{\Omega} \dot{\Omega} \Omega^{-6} - 144 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega - 288 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{\Omega} + 432 \dot{\Omega} \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega) \nonumber \\ 
+&& + \overset{..}{\gamma} (216 \dot{\Omega}^2 \Omega^{-6} - 144 \Omega^{-5} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega + 72 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega) + 24 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\alpha \nonumber \\ 
+&& - 72 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\gamma + \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha (-24 \dot{\Omega}^2 \Omega^{-6} + 96 \overset{..}{\Omega} \Omega^{-5} - 24 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega) \nonumber \\ 
+&& + \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma (72 \dot{\Omega}^2 \Omega^{-6} - 144 \overset{..}{\Omega} \Omega^{-5} + 144 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega) + 12 \Omega^{-5} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\alpha \nonumber \\ 
+&& + 12 \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - 36 \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma - 144 \Omega^{-6} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}\alpha \tilde{\nabla}^{b}\Omega \nonumber \\ 
+&& + 288 \Omega^{-6} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}\gamma \tilde{\nabla}^{b}\Omega \nonumber \\ 
+&& + \tilde{\nabla}^{a}\alpha (-216 \dot{\Omega}^2 \Omega^{-7} \tilde{\nabla}_{a}\Omega - 72 \overset{..}{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\Omega - 216 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 72 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega \nonumber\\
+&& + 216 \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}\Omega - 144 \Omega^{-6} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\Omega) \nonumber \\ 
+&& + \tilde{\nabla}^{a}\gamma (432 \dot{\Omega}^2 \Omega^{-7} \tilde{\nabla}_{a}\Omega - 144 \overset{..}{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\Omega + 144 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega - 432 \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}\Omega + 288 \Omega^{-6} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\Omega) \nonumber \\ 
+&& + 72 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}\alpha - 144 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}\gamma -36 \overset{...}{Q}^{a} \Omega^{-5} \tilde{\nabla}_{a}\Omega \nonumber \\ 
+&& + \overset{..}{Q}^{a} (-144 \Omega^{-5} \tilde{\nabla}_{a}\dot{\Omega} + 144 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\Omega) + 36 \Omega^{-5} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\dot{Q}_{a} + 72 \Omega^{-5} \tilde{\nabla}^{a}\dot{\Omega} \tilde{\nabla}_{b}\tilde{\nabla}^{b}Q_{a} \nonumber \\ 
+&& + (-144 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega + 72 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega) \tilde{\nabla}^{b}\dot{Q}^{a} - 288 \Omega^{-6} \tilde{\nabla}^{a}\dot{\Omega} \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}Q_{a} \nonumber \\ 
+&& + 144 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{b}Q^{a} \nonumber \\ 
+&& + Q^{a} (-144 \Omega^{-5} \tilde{\nabla}_{a}\overset{...}{\Omega} + 432 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\overset{..}{\Omega} - 432 \dot{\Omega}^2 \Omega^{-7} \tilde{\nabla}_{a}\dot{\Omega} + 432 \overset{..}{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\dot{\Omega} - 432 \overset{..}{\Omega} \dot{\Omega} \Omega^{-7} \tilde{\nabla}_{a}\Omega + 144 \overset{...}{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\Omega \nonumber\\
+&& - 144 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\dot{\Omega} - 432 \Omega^{-6} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 432 \dot{\Omega} \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 144 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\dot{\Omega} - 144 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega \nonumber\\
+&& + 432 \Omega^{-7} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}\Omega - 288 \Omega^{-6} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{b}\Omega) \nonumber \\ 
+&& + \dot{Q}^{a} (-216 \Omega^{-5} \tilde{\nabla}_{a}\overset{..}{\Omega} + 432 \dot{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\dot{\Omega} - 216 \dot{\Omega}^2 \Omega^{-7} \tilde{\nabla}_{a}\Omega + 216 \overset{..}{\Omega} \Omega^{-6} \tilde{\nabla}_{a}\Omega - 216 \Omega^{-6} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega \nonumber\\
+&& + 72 \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega + 216 \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}\Omega - 144 \Omega^{-6} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\Omega)+72 \overset{..}{E}_{ab} \Omega^{-5} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega \nonumber \\ 
+&& + \dot{E}_{ab} (144 \Omega^{-5} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\dot{\Omega} - 288 \dot{\Omega} \Omega^{-6} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega) - 72 \Omega^{-5} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{c}\tilde{\nabla}^{c}E_{ab} \nonumber \\ 
+&& + E_{ab} (-288 \Omega^{-6} \tilde{\nabla}^{a}\overset{..}{\Omega} \tilde{\nabla}^{b}\Omega + 432 \overset{..}{\Omega} \Omega^{-7} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega + 144 \Omega^{-5} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\overset{..}{\Omega} - 288 \dot{\Omega} \Omega^{-6} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\dot{\Omega} + 432 \dot{\Omega}^2 \Omega^{-7} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega \nonumber\\
+&&- 432 \overset{..}{\Omega} \Omega^{-6} \tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega - 432 \Omega^{-7} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega \tilde{\nabla}_{c}\tilde{\nabla}^{c}\Omega) \nonumber \\ 
+&& + 288 E_{ac} \Omega^{-6} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega + 288 \Omega^{-6} \tilde{\nabla}_{a}E_{bc} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{c}\tilde{\nabla}^{b}\Omega \nonumber \\ 
+&& + E_{bc} (432 \Omega^{-6} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}^{c}\tilde{\nabla}^{b}\Omega - 432 \Omega^{-7} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{c}\tilde{\nabla}^{b}\Omega + 288 \Omega^{-6} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{c}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\Omega - 144 \Omega^{-5} \tilde{\nabla}^{c}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega) \nonumber \\ 
+&& - 144 \Omega^{-5} \tilde{\nabla}_{c}E_{ab} \tilde{\nabla}^{c}\tilde{\nabla}^{b}\tilde{\nabla}^{a}\Omega.
+\label{dw1tr}
+\end{eqnarray}
+
+\end{document}

@@ -1,0 +1,78 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Gauged Perturbed Einstein Factorization}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle 
+\noindent For $\Omega(t)$,
+and  
+in gauge $P=1/2$, $J=0$, $R=-1$
+\[
+	\eta^{\alpha\beta} \pd_\alpha h_{\nu\beta} = \frac12\Omega^2 \pd_\nu h - \Omega h \pd_\nu \Omega
+\]
+\ba
+	\delta G_{00} 	&=  \frac12 \Box(\Omega^{-2}h_{00}) -\frac12 \Omega^{-4}\pd_0(h_{00}\pd_0(\Omega^2))+6\Omega^{-4}h_{00}(\pd_0 \Omega)^2-\frac14 \Box h + \frac14 \Omega^2h\Box (\Omega^{-2}) \\
+	\delta G_{ij} &=  \frac12 \Box(\Omega^{-2} h_{ij})-\frac12 \Omega^{-4}\pd_0(h_{ij}\pd_0(\Omega^2))-3\Omega^{-3}h_{ij}\Box\Omega + 2\Omega^{-4}h_{ij}(\pd_0 \Omega)^2-\frac14 \Omega^{-2}\Box(\Omega^2 h)-\delta_{ij}\Omega^{-1}h_{00}\Box(\Omega^{-1})\\
+	\delta G_{0i} &=  \frac12 \Box(\Omega^{-2} h_{0i})-\frac12 \Omega^{-4}\pd_0(h_{0i}\pd_0(\Omega^2))-2\Omega^{-3}h_{0i}\Box \Omega + 3 \Omega^{-4}h_{0i}(\pd_0 \Omega)^2-\frac14 h \Omega^{2}\Box(\Omega^{-2})
+\ea
+\\ \\
+In gauge $P=1$, $J=R=0$:
+\[
+	\eta^{\alpha\beta} \pd_\alpha h_{\nu\beta} = \Omega^2 \pd_\nu h
+\]
+
+\ba
+	\delta G_{00} 	&=  \blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0 + 2\Omega^{-4} (\pd_0\Omega)^2}h_{00} - \frac12 \pd_0\pd_0 h\\
+	\delta G_{ij} &=   \blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0-2\Omega^{-4} (\pd_0\Omega)^2
+	+3\Omega^{-3} \pd_0\pd_0\Omega}h_{ij} + \delta_{ij}\blr{\Omega^{-3}\pd_0\pd_0\Omega - 2\Omega^{-4}(\pd_0\Omega)^2}h_{00} -\frac12
+\pd_i\pd_j h\\
+	\delta G_{0i} &=\blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0-\Omega^{-4} (\pd_0\Omega)^2
+	+2\Omega^{-3} \pd_0\pd_0\Omega}h_{0i}  -\frac12
+\pd_0\pd_i h
+\ea
+%\\ \phantom{}
+%\hrule
+%\phantom{}
+%Details:
+%\ba
+%	\delta G_{\mu\nu} &= \frac12 \Omega^{-2} \eta^{\alpha\beta}\pd_\alpha\pd_\beta h_{\mu\nu} - \frac12 \pd_\mu \pd_\nu h+
+%	\Omega^{-3}\pd_0 \Omega \pd_0 h_{\mu\nu} - 2\Omega^{-4}\eta_{\mu\nu} h_{00}(\pd_0 \Omega)^2\\
+%	&\qquad + \Omega^{-4}\delta^0_\nu h_{0\mu}(\pd_0 \Omega)^2 - 2\Omega^{-4}h_{\mu\nu}(\pd_0 \Omega)^2 +
+%	\Omega^{-4} \delta^0_\mu h_{0\nu}(\pd_0\Omega)^2 + \Omega^{-3}\eta_{\mu\nu}h_{00}\pd_0\pd_0 \Omega \\
+%	&\qquad - \Omega^{-3}\delta^0_\nu h_{0\mu} \pd_0\pd_0\Omega + 3\Omega^{-3}h_{\mu\nu}\pd_0\pd_0 \Omega
+%	-\Omega^{-3}\delta^0_\mu h_{0\nu} \pd_0\pd_0 \Omega
+%\ea
+%\ba
+%	\delta G_{00} &= \frac12 \Omega^{-2} \Box h_{00} - \frac12 \pd_0\pd_0 h+
+%	\Omega^{-3}\pd_0 \Omega \pd_0 h_{00} + 2\Omega^{-4}h_{00}(\pd_0 \Omega)^2 \\
+%	&= \blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0 + 2\Omega^{-4} (\pd_0\Omega)^2}h_{00} - \frac12 \pd_0\pd_0 h
+%\ea
+%\indent For $i = j$,
+%\ba
+%	\delta G_{ij} &= \frac12 \Omega^{-2}\Box h_{ij} - \frac12 \pd_i \pd_j h+
+%	\Omega^{-3}\pd_0 \Omega \pd_0 h_{ij} - 2\Omega^{-4} h_{00}(\pd_0 \Omega)^2- 2\Omega^{-4}h_{ij}(\pd_0 \Omega)^2+ \Omega^{-3}h_{00}\pd_0\pd_0 \Omega+ 3\Omega^{-3}h_{ij}\pd_0\pd_0 \Omega\\
+%	&=  \blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0-2\Omega^{-4} (\pd_0\Omega)^2
+%	+3\Omega^{-3} \pd_0\pd_0\Omega}h_{ij} + \blr{\Omega^{-3}\pd_0\pd_0\Omega - 2\Omega^{-4}(\pd_0\Omega)^2}h_{00} -\frac12
+%\pd_i\pd_j h
+%\ea
+%\indent For $i \ne j$,
+%\ba
+%	\delta G_{ij} &= \frac12 \Omega^{-2}\Box h_{ij} - \frac12 \pd_i \pd_j h+
+%	\Omega^{-3}\pd_0 \Omega \pd_0 h_{ij}- 2\Omega^{-4}h_{ij}(\pd_0 \Omega)^2+ 3\Omega^{-3}h_{ij}\pd_0\pd_0 \Omega\\
+%	&=  \blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0-2\Omega^{-4} (\pd_0\Omega)^2
+%	+3\Omega^{-3} \pd_0\pd_0\Omega}h_{ij}  -\frac12
+%\pd_i\pd_j h
+%\ea
+%\indent For $\mu\nu = 0i$,
+%\ba
+%	\delta G_{0i} &= \frac12 \Omega^{-2}\Box h_{ij} - \frac12 \pd_0 \pd_i h+
+%	\Omega^{-3}\pd_0 \Omega \pd_0 h_{0i}- \Omega^{-4}h_{0i}(\pd_0 \Omega)^2+2\Omega^{-3}h_{0i}\pd_0\pd_0 \Omega\\
+%	&=  \blr{\frac12 \Omega^{-2}\Box +\Omega^{-3} \pd_0\Omega \pd_0-\Omega^{-4} (\pd_0\Omega)^2
+%	+2\Omega^{-3} \pd_0\pd_0\Omega}h_{0i}  -\frac12
+%\pd_0\pd_i h
+%\ea
+
+\end{document}

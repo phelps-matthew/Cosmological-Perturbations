@@ -1,0 +1,133 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Bach CF SVT4 v1}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+In a maximally symmetric background, the Bach tensor can be used to construct a fourth order covariant equation that relates $F_{\mu\nu}$ in terms of $h_{\mu\nu}$. Here we do the same, generalized now to an arbitrary conformal flat background geometry. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& ( g_{\mu\nu}+ h_{\mu\nu}) dx^\mu dx^\nu
+\\ \nonumber\\
+R_{\lambda\mu\nu\kappa} &=&- \tfrac{1}{6} g_{\lambda \nu } g_{\mu \kappa } R + \tfrac{1}{6} g_{\lambda \kappa } g_{\mu \nu } R -  \tfrac{1}{2} g_{\mu \nu } R_{\lambda \kappa } + \tfrac{1}{2} g_{\mu \kappa } R_{\lambda \nu } + \tfrac{1}{2} g_{\lambda \nu } R_{\mu \kappa } -  \tfrac{1}{2} g_{\lambda \kappa } R_{\mu \nu }
+\\ \nonumber\\
+W_{\mu\nu} &=& 0
+\\ \nonumber\\
+g^{\mu\nu}\delta W_{\mu\nu} &=& h_{\mu\nu}W^{\mu\nu} = 0
+\\  \nonumber\\ 
+h_{\mu\nu} &=& -2 g_{\mu\nu}\chi + 2\nabla_\mu \nabla_\nu F +\nabla_\mu F_\nu +\nabla_\nu F_\mu+ 2F_{\mu\nu}
+\\ \nonumber\\
+K_{\mu\nu} &=& h_{\mu\nu} - \tfrac14 g_{\mu\nu} g^{\alpha\beta}h_{\alpha\beta}
+\nonumber\\
+&=&-\tfrac12 g_{\mu\nu}\nabla_\alpha\nabla^\alpha F + 2\nabla_\mu \nabla_\nu F +\nabla_\mu F_\nu +\nabla_\nu F_\mu+ 2F_{\mu\nu}
+\\ \nonumber\\
+g^{\mu\nu} F_{\mu\nu} &=&0,\qquad \nabla^\mu F_{\mu\nu} = 0,\qquad \nabla^\mu F_\mu=0 
+\\ \nonumber\\
+\delta W_{\mu\nu}&=& \tfrac{1}{9} K_{\mu \nu } R^2 -  \tfrac{1}{2} g_{\mu \nu } K^{\alpha \beta } R R_{\alpha \beta } -  \tfrac{1}{2} K_{\mu \nu } R_{\alpha \beta } R^{\alpha \beta } + g_{\mu \nu } K^{\alpha \beta } R_{\alpha }{}^{\gamma } R_{\beta \gamma } -  \tfrac{1}{3} K_{\nu }{}^{\alpha } R R_{\mu \alpha } \nonumber \\ 
+&& + K_{\nu }{}^{\alpha } R_{\alpha \beta } R_{\mu }{}^{\beta } + \tfrac{1}{3} K^{\alpha \beta } R_{\alpha \beta } R_{\mu \nu } + K^{\alpha \beta } R_{\mu \alpha } R_{\nu \beta } -  \tfrac{1}{3} K_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }R + R_{\nu }{}^{\alpha } \nabla_{\alpha }\nabla_{\beta }K_{\mu }{}^{\beta } \nonumber \\ 
+&& + R_{\mu }{}^{\alpha } \nabla_{\alpha }\nabla_{\beta }K_{\nu }{}^{\beta } -  \tfrac{1}{2} \nabla_{\alpha }K_{\mu \nu } \nabla^{\alpha }R + \tfrac{1}{6} g_{\mu \nu } \nabla^{\alpha }R \nabla_{\beta }K_{\alpha }{}^{\beta } - 2 \nabla_{\alpha }K^{\alpha \beta } \nabla_{\beta }R_{\mu \nu } \nonumber \\ 
+&& + \tfrac{1}{3} g_{\mu \nu } R \nabla_{\beta }\nabla_{\alpha }K^{\alpha \beta } -  \tfrac{2}{3} R_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }K^{\alpha \beta } -  R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }K_{\mu \nu } + \tfrac{1}{6} g_{\mu \nu } K^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }R \nonumber \\ 
+&& -  K^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }R_{\mu \nu } + R_{\nu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }K_{\mu \alpha } + R_{\mu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }K_{\nu \alpha } + K_{\nu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }R_{\mu \alpha } + K_{\mu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } \nonumber \\ 
+&& + \tfrac{1}{2} \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }K_{\mu \nu } -  g_{\mu \nu } R^{\alpha \beta } \nabla_{\beta }\nabla_{\gamma }K_{\alpha }{}^{\gamma } + \nabla_{\alpha }R_{\nu \beta } \nabla^{\beta }K_{\mu }{}^{\alpha } + \nabla_{\beta }R_{\nu \alpha } \nabla^{\beta }K_{\mu }{}^{\alpha } \nonumber \\ 
+&& + \nabla_{\alpha }R_{\mu \beta } \nabla^{\beta }K_{\nu }{}^{\alpha } + \nabla_{\beta }R_{\mu \alpha } \nabla^{\beta }K_{\nu }{}^{\alpha } -  \tfrac{1}{3} g_{\mu \nu } R^{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }K_{\alpha \beta } -  \tfrac{1}{3} g_{\mu \nu } K^{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta } \nonumber \\ 
+&& + \tfrac{1}{6} g_{\mu \nu } \nabla_{\gamma }\nabla^{\gamma }\nabla_{\beta }\nabla_{\alpha }K^{\alpha \beta } -  \tfrac{2}{3} g_{\mu \nu } \nabla_{\gamma }R_{\alpha \beta } \nabla^{\gamma }K^{\alpha \beta } -  \nabla_{\beta }R_{\nu \alpha } \nabla_{\mu }K^{\alpha \beta } + \tfrac{1}{6} \nabla^{\alpha }R \nabla_{\mu }K_{\nu \alpha } \nonumber \\ 
+&& + \tfrac{1}{2} \nabla_{\alpha }K^{\alpha \beta } \nabla_{\mu }R_{\nu \beta } -  \tfrac{1}{3} R \nabla_{\mu }\nabla_{\alpha }K_{\nu }{}^{\alpha } -  \tfrac{1}{2} R_{\nu }{}^{\alpha } \nabla_{\mu }\nabla_{\beta }K_{\alpha }{}^{\beta } + R^{\alpha \beta } \nabla_{\mu }\nabla_{\beta }K_{\nu \alpha } \nonumber \\ 
+&& -  \tfrac{1}{2} \nabla_{\mu }\nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }K_{\nu }{}^{\alpha } -  \nabla_{\beta }R_{\mu \alpha } \nabla_{\nu }K^{\alpha \beta } + \tfrac{1}{3} \nabla_{\mu }R_{\alpha \beta } \nabla_{\nu }K^{\alpha \beta } + \tfrac{1}{6} \nabla^{\alpha }R \nabla_{\nu }K_{\mu \alpha } \nonumber \\ 
+&& + \tfrac{1}{3} \nabla_{\mu }K^{\alpha \beta } \nabla_{\nu }R_{\alpha \beta } + \tfrac{1}{2} \nabla_{\alpha }K^{\alpha \beta } \nabla_{\nu }R_{\mu \beta } -  \tfrac{1}{3} R \nabla_{\nu }\nabla_{\alpha }K_{\mu }{}^{\alpha } -  \tfrac{1}{2} R_{\mu }{}^{\alpha } \nabla_{\nu }\nabla_{\beta }K_{\alpha }{}^{\beta } \nonumber \\ 
+&& + R^{\alpha \beta } \nabla_{\nu }\nabla_{\beta }K_{\mu \alpha } -  \tfrac{1}{2} \nabla_{\nu }\nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }K_{\mu }{}^{\alpha } -  \tfrac{2}{3} R^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }K_{\alpha \beta } + \tfrac{1}{3} K^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }R_{\alpha \beta } \nonumber \\ 
+&& + \tfrac{1}{3} \nabla_{\nu }\nabla_{\mu }\nabla_{\beta }\nabla_{\alpha }K^{\alpha \beta }
+\label{dw54rw}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%
+\section{SVT4}
+%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\delta W_{\mu\nu} &=& X_{\mu\nu}(F) + Y_{\mu\nu}(F_\alpha) + Z_{\mu\nu}(F_{\alpha\beta})
+\\ \nonumber\\
+%
+X_{\mu\nu}&=& \tfrac{5}{36} g_{\mu \nu } R^2 \nabla_{\alpha }\nabla^{\alpha }F -  \tfrac{1}{6} R R_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }F + \tfrac{5}{36} g_{\mu \nu } R \nabla_{\alpha }R \nabla^{\alpha }F -  \tfrac{1}{6} R_{\mu \nu } \nabla_{\alpha }R \nabla^{\alpha }F \nonumber \\ 
+&& -  \tfrac{5}{6} g_{\mu \nu } R^{\beta \gamma } \nabla_{\alpha }R_{\beta \gamma } \nabla^{\alpha }F + \tfrac{1}{2} R_{\nu }{}^{\beta } \nabla_{\alpha }R_{\mu \beta } \nabla^{\alpha }F + \tfrac{1}{3} R \nabla_{\alpha }R_{\mu \nu } \nabla^{\alpha }F + 2 R_{\nu }{}^{\beta } \nabla^{\alpha }F \nabla_{\beta }R_{\mu \alpha } \nonumber \\ 
+&& + 2 R_{\mu }{}^{\beta } \nabla^{\alpha }F \nabla_{\beta }R_{\nu \alpha } -  \tfrac{7}{18} g_{\mu \nu } R R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }F -  \nabla^{\alpha }\nabla_{\nu }F \nabla_{\beta }\nabla_{\alpha }R_{\mu }{}^{\beta } + \tfrac{1}{2} R_{\mu }{}^{\alpha } R_{\nu \alpha } \nabla_{\beta }\nabla^{\beta }F \nonumber \\ 
+&& -  \tfrac{1}{12} g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }F \nabla_{\beta }\nabla^{\beta }R + \nabla^{\alpha }\nabla_{\nu }F \nabla_{\beta }\nabla^{\beta }R_{\mu \alpha } + \tfrac{1}{2} \nabla_{\alpha }\nabla^{\alpha }F \nabla_{\beta }\nabla^{\beta }R_{\mu \nu } + \nabla^{\alpha }\nabla_{\mu }F \nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } \nonumber \\ 
+&& + \tfrac{1}{6} g_{\mu \nu } \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }F -  \nabla^{\alpha }R_{\mu \nu } \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }F -  \tfrac{1}{12} g_{\mu \nu } \nabla^{\alpha }F \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }R \nonumber \\ 
+&& + \tfrac{1}{2} \nabla^{\alpha }F \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }R_{\mu \nu } -  \tfrac{5}{36} g_{\mu \nu } R_{\alpha \beta } \nabla^{\alpha }F \nabla^{\beta }R -  \nabla_{\beta }\nabla_{\alpha }R_{\mu \nu } \nabla^{\beta }\nabla^{\alpha }F + \tfrac{1}{3} g_{\mu \nu } R^{\beta \gamma } \nabla^{\alpha }F \nabla_{\gamma }R_{\alpha \beta } \nonumber \\ 
+&& + \tfrac{7}{6} g_{\mu \nu } R_{\alpha }{}^{\gamma } R^{\alpha \beta } \nabla_{\gamma }\nabla_{\beta }F + \tfrac{1}{3} g_{\mu \nu } \nabla^{\beta }\nabla^{\alpha }F \nabla_{\gamma }\nabla_{\beta }R_{\alpha }{}^{\gamma } -  \tfrac{5}{12} g_{\mu \nu } R_{\alpha \beta } R^{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }F \nonumber \\ 
+&& -  \tfrac{1}{6} R_{\nu \alpha } \nabla^{\alpha }R \nabla_{\mu }F -  \tfrac{1}{2} R^{\alpha \beta } \nabla_{\beta }R_{\nu \alpha } \nabla_{\mu }F -  \tfrac{1}{3} R_{\nu \alpha } \nabla^{\alpha }F \nabla_{\mu }R -  \tfrac{7}{6} R \nabla^{\alpha }F \nabla_{\mu }R_{\nu \alpha } \nonumber \\ 
+&& + \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }F \nabla_{\mu }R_{\nu }{}^{\alpha } + 2 R_{\alpha }{}^{\beta } \nabla^{\alpha }F \nabla_{\mu }R_{\nu \beta } -  \tfrac{5}{6} R R_{\nu }{}^{\alpha } \nabla_{\mu }\nabla_{\alpha }F + \tfrac{5}{2} R_{\alpha }{}^{\beta } R_{\nu }{}^{\alpha } \nabla_{\mu }\nabla_{\beta }F \nonumber \\ 
+&& + \nabla^{\beta }\nabla^{\alpha }F \nabla_{\mu }\nabla_{\beta }R_{\nu \alpha } + \tfrac{1}{2} \nabla^{\alpha }F \nabla_{\mu }\nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } -  \tfrac{1}{2} R_{\mu \alpha } \nabla^{\alpha }R \nabla_{\nu }F + \tfrac{17}{36} R \nabla_{\mu }R \nabla_{\nu }F \nonumber \\ 
+&& -  R^{\alpha \beta } \nabla_{\mu }R_{\alpha \beta } \nabla_{\nu }F -  \tfrac{1}{12} \nabla_{\mu }\nabla_{\alpha }\nabla^{\alpha }R \nabla_{\nu }F + \tfrac{1}{12} R_{\mu \alpha } \nabla^{\alpha }F \nabla_{\nu }R + \tfrac{1}{36} R \nabla_{\mu }F \nabla_{\nu }R \nonumber \\ 
+&& -  \tfrac{1}{2} R_{\mu }{}^{\beta } \nabla^{\alpha }F \nabla_{\nu }R_{\alpha \beta } -  \tfrac{1}{6} R \nabla^{\alpha }F \nabla_{\nu }R_{\mu \alpha } + \tfrac{1}{2} R_{\alpha }{}^{\beta } \nabla^{\alpha }F \nabla_{\nu }R_{\mu \beta } + \tfrac{1}{6} R R_{\mu }{}^{\alpha } \nabla_{\nu }\nabla_{\alpha }F \nonumber \\ 
+&& -  \tfrac{1}{3} \nabla^{\alpha }\nabla_{\mu }F \nabla_{\nu }\nabla_{\alpha }R -  \tfrac{1}{6} \nabla_{\mu }R \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }F -  \tfrac{1}{2} R_{\alpha }{}^{\beta } R_{\mu }{}^{\alpha } \nabla_{\nu }\nabla_{\beta }F + \tfrac{1}{6} R^2 \nabla_{\nu }\nabla_{\mu }F \nonumber \\ 
+&& -  \tfrac{1}{2} R_{\alpha \beta } R^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }F -  \tfrac{1}{3} \nabla_{\alpha }\nabla^{\alpha }R \nabla_{\nu }\nabla_{\mu }F -  \tfrac{1}{6} \nabla_{\alpha }\nabla^{\alpha }F \nabla_{\nu }\nabla_{\mu }R -  \tfrac{1}{3} \nabla^{\alpha }F \nabla_{\nu }\nabla_{\mu }\nabla_{\alpha }R
+\\ \nonumber\\
+%
+Y_{\mu\nu}&=& - \tfrac{1}{36} F^{\alpha } g_{\mu \nu } R \nabla_{\alpha }R -  \tfrac{1}{6} F^{\alpha } R_{\mu \nu } \nabla_{\alpha }R -  \tfrac{1}{4} F^{\alpha } R_{\nu }{}^{\beta } \nabla_{\alpha }R_{\mu \beta } + \tfrac{1}{2} F^{\alpha } R \nabla_{\alpha }R_{\mu \nu } -  \tfrac{1}{4} F^{\alpha } R_{\mu }{}^{\beta } \nabla_{\alpha }R_{\nu \beta } \nonumber \\ 
+&& + \tfrac{1}{4} R R_{\nu \alpha } \nabla^{\alpha }F_{\mu } -  \tfrac{1}{4} R_{\alpha \beta } R_{\nu }{}^{\beta } \nabla^{\alpha }F_{\mu } + \tfrac{1}{4} R R_{\mu \alpha } \nabla^{\alpha }F_{\nu } -  \tfrac{1}{4} R_{\alpha \beta } R_{\mu }{}^{\beta } \nabla^{\alpha }F_{\nu } -  \tfrac{5}{24} F_{\nu } R_{\mu \alpha } \nabla^{\alpha }R \nonumber \\ 
+&& -  \tfrac{1}{24} F_{\mu } R_{\nu \alpha } \nabla^{\alpha }R -  \tfrac{1}{4} F_{\nu } R^{\alpha \beta } \nabla_{\beta }R_{\mu \alpha } + \tfrac{3}{4} F^{\alpha } R_{\nu }{}^{\beta } \nabla_{\beta }R_{\mu \alpha } -  \tfrac{1}{4} F_{\mu } R^{\alpha \beta } \nabla_{\beta }R_{\nu \alpha } + \tfrac{3}{4} F^{\alpha } R_{\mu }{}^{\beta } \nabla_{\beta }R_{\nu \alpha } \nonumber \\ 
+&& -  \tfrac{1}{2} \nabla^{\alpha }F_{\nu } \nabla_{\beta }\nabla_{\alpha }R_{\mu }{}^{\beta } -  \tfrac{1}{2} \nabla^{\alpha }F_{\mu } \nabla_{\beta }\nabla_{\alpha }R_{\nu }{}^{\beta } + \tfrac{1}{6} g_{\mu \nu } \nabla^{\alpha }R \nabla_{\beta }\nabla^{\beta }F_{\alpha } -  \nabla_{\alpha }R_{\mu \nu } \nabla_{\beta }\nabla^{\beta }F^{\alpha } \nonumber \\ 
+&& -  \tfrac{1}{12} F^{\alpha } g_{\mu \nu } \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }R + \tfrac{1}{2} F^{\alpha } \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }R_{\mu \nu } + \tfrac{1}{2} R_{\nu \alpha } \nabla_{\beta }\nabla^{\beta }\nabla^{\alpha }F_{\mu } + \tfrac{1}{2} R_{\mu \alpha } \nabla_{\beta }\nabla^{\beta }\nabla^{\alpha }F_{\nu } \nonumber \\ 
+&& -  \tfrac{7}{18} g_{\mu \nu } R R_{\alpha \beta } \nabla^{\beta }F^{\alpha } + \tfrac{7}{6} g_{\mu \nu } R_{\alpha }{}^{\gamma } R_{\beta \gamma } \nabla^{\beta }F^{\alpha } -  R_{\alpha \beta } R_{\mu \nu } \nabla^{\beta }F^{\alpha } + \tfrac{1}{2} R_{\mu \beta } R_{\nu \alpha } \nabla^{\beta }F^{\alpha } \nonumber \\ 
+&& + \tfrac{1}{2} R_{\mu \alpha } R_{\nu \beta } \nabla^{\beta }F^{\alpha } -  \nabla_{\beta }\nabla_{\alpha }R_{\mu \nu } \nabla^{\beta }F^{\alpha } -  \tfrac{1}{2} R_{\nu \beta } \nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F_{\mu } -  \tfrac{1}{2} R_{\mu \beta } \nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F_{\nu } \nonumber \\ 
+&& -  \tfrac{1}{2} F^{\alpha } g_{\mu \nu } R^{\beta \gamma } \nabla_{\gamma }R_{\alpha \beta } + \tfrac{1}{3} g_{\mu \nu } \nabla^{\beta }F^{\alpha } \nabla_{\gamma }\nabla_{\beta }R_{\alpha }{}^{\gamma } -  \tfrac{3}{4} R R_{\nu \alpha } \nabla_{\mu }F^{\alpha } + \tfrac{9}{4} R_{\alpha \beta } R_{\nu }{}^{\beta } \nabla_{\mu }F^{\alpha } \nonumber \\ 
+&& + \nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } \nabla_{\mu }F^{\alpha } + \tfrac{1}{12} R^2 \nabla_{\mu }F_{\nu } -  \tfrac{1}{4} R_{\alpha \beta } R^{\alpha \beta } \nabla_{\mu }F_{\nu } -  \tfrac{1}{6} \nabla_{\alpha }\nabla^{\alpha }R \nabla_{\mu }F_{\nu } + \tfrac{7}{24} F_{\nu } R \nabla_{\mu }R \nonumber \\ 
+&& -  \tfrac{1}{2} F^{\alpha } R_{\nu \alpha } \nabla_{\mu }R -  \tfrac{1}{12} \nabla_{\alpha }\nabla^{\alpha }F_{\nu } \nabla_{\mu }R -  \tfrac{1}{2} F_{\nu } R^{\alpha \beta } \nabla_{\mu }R_{\alpha \beta } + \tfrac{3}{2} F^{\alpha } R_{\nu }{}^{\beta } \nabla_{\mu }R_{\alpha \beta } -  \tfrac{3}{4} F^{\alpha } R \nabla_{\mu }R_{\nu \alpha } \nonumber \\ 
+&& + \tfrac{1}{2} \nabla_{\beta }\nabla^{\beta }F^{\alpha } \nabla_{\mu }R_{\nu \alpha } + \tfrac{5}{4} F^{\alpha } R_{\alpha }{}^{\beta } \nabla_{\mu }R_{\nu \beta } + \tfrac{1}{6} \nabla^{\alpha }F_{\nu } \nabla_{\mu }\nabla_{\alpha }R -  \tfrac{1}{24} F_{\nu } \nabla_{\mu }\nabla_{\alpha }\nabla^{\alpha }R \nonumber \\ 
+&& + \tfrac{1}{2} \nabla^{\beta }F^{\alpha } \nabla_{\mu }\nabla_{\beta }R_{\nu \alpha } + \tfrac{1}{4} F^{\alpha } \nabla_{\mu }\nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } -  \tfrac{3}{4} R R_{\mu \alpha } \nabla_{\nu }F^{\alpha } + \tfrac{9}{4} R_{\alpha \beta } R_{\mu }{}^{\beta } \nabla_{\nu }F^{\alpha } \nonumber \\ 
+&& + \nabla_{\beta }\nabla^{\beta }R_{\mu \alpha } \nabla_{\nu }F^{\alpha } -  \tfrac{1}{3} \nabla_{\mu }\nabla_{\alpha }R \nabla_{\nu }F^{\alpha } + \tfrac{1}{12} R^2 \nabla_{\nu }F_{\mu } -  \tfrac{1}{4} R_{\alpha \beta } R^{\alpha \beta } \nabla_{\nu }F_{\mu } -  \tfrac{1}{6} \nabla_{\alpha }\nabla^{\alpha }R \nabla_{\nu }F_{\mu } \nonumber \\ 
+&& + \tfrac{17}{72} F_{\mu } R \nabla_{\nu }R -  \tfrac{1}{3} F^{\alpha } R_{\mu \alpha } \nabla_{\nu }R -  \tfrac{1}{12} \nabla_{\alpha }\nabla^{\alpha }F_{\mu } \nabla_{\nu }R -  \tfrac{1}{2} F_{\mu } R^{\alpha \beta } \nabla_{\nu }R_{\alpha \beta } + \tfrac{3}{2} F^{\alpha } R_{\mu }{}^{\beta } \nabla_{\nu }R_{\alpha \beta } \nonumber \\ 
+&& -  \tfrac{3}{4} F^{\alpha } R \nabla_{\nu }R_{\mu \alpha } + \tfrac{1}{2} \nabla_{\beta }\nabla^{\beta }F^{\alpha } \nabla_{\nu }R_{\mu \alpha } + \tfrac{5}{4} F^{\alpha } R_{\alpha }{}^{\beta } \nabla_{\nu }R_{\mu \beta } + \tfrac{1}{6} \nabla^{\alpha }F_{\mu } \nabla_{\nu }\nabla_{\alpha }R \nonumber \\ 
+&& -  \tfrac{1}{3} \nabla_{\mu }F^{\alpha } \nabla_{\nu }\nabla_{\alpha }R -  \tfrac{1}{24} F_{\mu } \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }R + \tfrac{1}{2} \nabla^{\beta }F^{\alpha } \nabla_{\nu }\nabla_{\beta }R_{\mu \alpha } + \tfrac{1}{4} F^{\alpha } \nabla_{\nu }\nabla_{\beta }\nabla^{\beta }R_{\mu \alpha } \nonumber \\ 
+&& -  \tfrac{1}{3} F^{\alpha } \nabla_{\nu }\nabla_{\mu }\nabla_{\alpha }R
+\\ \nonumber\\
+Z_{\mu\nu}&=& \tfrac{2}{9} F_{\mu \nu } R^2 -  F^{\alpha \beta } g_{\mu \nu } R R_{\alpha \beta } -  F_{\mu \nu } R_{\alpha \beta } R^{\alpha \beta } + 2 F^{\alpha \beta } g_{\mu \nu } R_{\alpha }{}^{\gamma } R_{\beta \gamma } -  \tfrac{2}{3} F_{\nu }{}^{\alpha } R R_{\mu \alpha } + 2 F_{\nu }{}^{\alpha } R_{\alpha \beta } R_{\mu }{}^{\beta } \nonumber \\ 
+&& + \tfrac{2}{3} F^{\alpha \beta } R_{\alpha \beta } R_{\mu \nu } + 2 F^{\alpha \beta } R_{\mu \alpha } R_{\nu \beta } -  \tfrac{2}{3} F_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }R -  \nabla_{\alpha }F_{\mu \nu } \nabla^{\alpha }R - 2 R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }F_{\mu \nu } \nonumber \\ 
+&& + \tfrac{1}{3} F^{\alpha \beta } g_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }R - 2 F^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }R_{\mu \nu } + 2 R_{\nu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }F_{\mu \alpha } + 2 R_{\mu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }F_{\nu \alpha } \nonumber \\ 
+&& + 2 F_{\nu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }R_{\mu \alpha } + 2 F_{\mu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } + \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu } + 2 \nabla_{\alpha }R_{\nu \beta } \nabla^{\beta }F_{\mu }{}^{\alpha } \nonumber \\ 
+&& + 2 \nabla_{\beta }R_{\nu \alpha } \nabla^{\beta }F_{\mu }{}^{\alpha } + 2 \nabla_{\alpha }R_{\mu \beta } \nabla^{\beta }F_{\nu }{}^{\alpha } + 2 \nabla_{\beta }R_{\mu \alpha } \nabla^{\beta }F_{\nu }{}^{\alpha } -  \tfrac{2}{3} g_{\mu \nu } R^{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta } \nonumber \\ 
+&& -  \tfrac{2}{3} F^{\alpha \beta } g_{\mu \nu } \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta } -  \tfrac{4}{3} g_{\mu \nu } \nabla_{\gamma }R_{\alpha \beta } \nabla^{\gamma }F^{\alpha \beta } - 2 \nabla_{\beta }R_{\nu \alpha } \nabla_{\mu }F^{\alpha \beta } + \tfrac{1}{3} \nabla^{\alpha }R \nabla_{\mu }F_{\nu \alpha } \nonumber \\ 
+&& + 2 R^{\alpha \beta } \nabla_{\mu }\nabla_{\beta }F_{\nu \alpha } - 2 \nabla_{\beta }R_{\mu \alpha } \nabla_{\nu }F^{\alpha \beta } + \tfrac{2}{3} \nabla_{\mu }R_{\alpha \beta } \nabla_{\nu }F^{\alpha \beta } + \tfrac{1}{3} \nabla^{\alpha }R \nabla_{\nu }F_{\mu \alpha } + \tfrac{2}{3} \nabla_{\mu }F^{\alpha \beta } \nabla_{\nu }R_{\alpha \beta } \nonumber \\ 
+&& + 2 R^{\alpha \beta } \nabla_{\nu }\nabla_{\beta }F_{\mu \alpha } -  \tfrac{4}{3} R^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }F_{\alpha \beta } + \tfrac{2}{3} F^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }R_{\alpha \beta }
+\end{eqnarray}
+When evaluated in an arbitrary conformal to flat geometry, we find $X_{\mu\nu}(F)$ and $Y_{\mu\nu}(F_\alpha)$ vanish (as to be expected by D.O.F. counting). Thus we are left with $\delta W_{\mu\nu}= Z_{\mu\nu}(F_{\alpha\beta})$:
+\begin{eqnarray}
+\delta W_{\mu\nu}&=& \tfrac{2}{9} F_{\mu \nu } R^2 -  F^{\alpha \beta } g_{\mu \nu } R R_{\alpha \beta } -  F_{\mu \nu } R_{\alpha \beta } R^{\alpha \beta } + 2 F^{\alpha \beta } g_{\mu \nu } R_{\alpha }{}^{\gamma } R_{\beta \gamma } -  \tfrac{2}{3} F_{\nu }{}^{\alpha } R R_{\mu \alpha } + 2 F_{\nu }{}^{\alpha } R_{\alpha \beta } R_{\mu }{}^{\beta } \nonumber \\ 
+&& + \tfrac{2}{3} F^{\alpha \beta } R_{\alpha \beta } R_{\mu \nu } + 2 F^{\alpha \beta } R_{\mu \alpha } R_{\nu \beta } -  \tfrac{2}{3} F_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }R -  \nabla_{\alpha }F_{\mu \nu } \nabla^{\alpha }R - 2 R^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }F_{\mu \nu } \nonumber \\ 
+&& + \tfrac{1}{3} F^{\alpha \beta } g_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }R - 2 F^{\alpha \beta } \nabla_{\beta }\nabla_{\alpha }R_{\mu \nu } + 2 R_{\nu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }F_{\mu \alpha } + 2 R_{\mu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }F_{\nu \alpha } \nonumber \\ 
+&& + 2 F_{\nu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }R_{\mu \alpha } + 2 F_{\mu }{}^{\alpha } \nabla_{\beta }\nabla^{\beta }R_{\nu \alpha } + \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu } + 2 \nabla_{\alpha }R_{\nu \beta } \nabla^{\beta }F_{\mu }{}^{\alpha } \nonumber \\ 
+&& + 2 \nabla_{\beta }R_{\nu \alpha } \nabla^{\beta }F_{\mu }{}^{\alpha } + 2 \nabla_{\alpha }R_{\mu \beta } \nabla^{\beta }F_{\nu }{}^{\alpha } + 2 \nabla_{\beta }R_{\mu \alpha } \nabla^{\beta }F_{\nu }{}^{\alpha } -  \tfrac{2}{3} g_{\mu \nu } R^{\alpha \beta } \nabla_{\gamma }\nabla^{\gamma }F_{\alpha \beta } \nonumber \\ 
+&& -  \tfrac{2}{3} F^{\alpha \beta } g_{\mu \nu } \nabla_{\gamma }\nabla^{\gamma }R_{\alpha \beta } -  \tfrac{4}{3} g_{\mu \nu } \nabla_{\gamma }R_{\alpha \beta } \nabla^{\gamma }F^{\alpha \beta } - 2 \nabla_{\beta }R_{\nu \alpha } \nabla_{\mu }F^{\alpha \beta } + \tfrac{1}{3} \nabla^{\alpha }R \nabla_{\mu }F_{\nu \alpha } \nonumber \\ 
+&& + 2 R^{\alpha \beta } \nabla_{\mu }\nabla_{\beta }F_{\nu \alpha } - 2 \nabla_{\beta }R_{\mu \alpha } \nabla_{\nu }F^{\alpha \beta } + \tfrac{2}{3} \nabla_{\mu }R_{\alpha \beta } \nabla_{\nu }F^{\alpha \beta } + \tfrac{1}{3} \nabla^{\alpha }R \nabla_{\nu }F_{\mu \alpha } + \tfrac{2}{3} \nabla_{\mu }F^{\alpha \beta } \nabla_{\nu }R_{\alpha \beta } \nonumber \\ 
+&& + 2 R^{\alpha \beta } \nabla_{\nu }\nabla_{\beta }F_{\mu \alpha } -  \tfrac{4}{3} R^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }F_{\alpha \beta } + \tfrac{2}{3} F^{\alpha \beta } \nabla_{\nu }\nabla_{\mu }R_{\alpha \beta }.
+\label{dwtensor}
+\end{eqnarray}
+Consequently, we may express $F_{\mu\nu}$ as a function of $h_{\mu\nu}$ by equating \eqref{dwtensor} to \eqref{dw54rw}.
+\\ \\
+If the background is maximally symmetric then \eqref{dwtensor} becomes
+\begin{eqnarray}
+\delta W_{\mu\nu} &=& \tfrac{1}{18} F_{\mu \nu } R^2 + \tfrac{1}{2} R \nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu } + \nabla_{\beta }\nabla^{\beta }\nabla_{\alpha }\nabla^{\alpha }F_{\mu \nu }
+\\ \nonumber\\
+&=& \left(\nabla_\alpha\nabla^\alpha + \frac{R}{6}\right)\left(\nabla_\beta\nabla^\beta +\frac{R}{3}\right)F_{\mu\nu}.
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Comments}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Equation \eqref{dwtensor} is the lowest derivative order relation between $F_{\mu\nu}$ and $h_{\mu\nu}$ (without integrals) in a conformal flat background. Equation \eqref{dwtensor} is also gauge invariant, with the Bach tensor vanishing in a conformal flat background.
+\\ \\
+In the limit of maximal symmetry, we recover the most reduced relation between $F_{\mu\nu}$ and $h_{\mu\nu}$, one that we had previously determined by applying appropriate derivatives to the $h_{\mu\nu}^{T\theta}$ integral decomposition.
+
+\end{document}

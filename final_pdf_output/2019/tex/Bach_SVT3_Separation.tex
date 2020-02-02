@@ -1,0 +1,69 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Bach SVT3 Separation}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(x)[\tilde g_{\mu\nu}+ f_{\mu\nu}] dx^\mu dx^\nu
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,1,1,1\right)\qquad (\text{or some coordinate transformation of this})
+\\ \nonumber\\
+f_{00} &=& -2\phi,\qquad f_{0i} = \tilde\nabla_i B + B_i,\qquad f_{ij} = -2\psi \tilde g_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + 
+\tilde\nabla_i E_j +\tilde\nabla_j E_i + 2E_{ij}
+\label{svt}
+\\ \nonumber\\
+\delta W_{\mu\nu} &=&0
+\\ \nonumber\\
+\Omega^2\delta W_{00}&=& - \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} + \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} -  \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi -  \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\  \nonumber\\ 
+\Omega^2\delta W_{0i}&=& - \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{B} + \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{...}{E} -  \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\phi} -  \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\psi}- \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{B}_{i} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{...}{E}_{i} \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i} -  \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\  \nonumber\\ 
+\Omega^2\delta W_{ij}&=& \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{...}{B} -  \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{....}{E} + \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\phi} + \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{\psi} -  \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} \nonumber \\ 
+&& + \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} -  \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi -  \tfrac{1}{3} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{...}{B} + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{....}{E} -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{..}{\phi} \nonumber \\ 
+&& -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{..}{\psi} + \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} -  \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} + \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi + \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi - \tfrac{1}{2} \tilde{\nabla}_{i}\overset{...}{B}_{j} \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{\nabla}_{i}\overset{....}{E}_{j} + \tfrac{1}{2} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}_{j} -  \tfrac{1}{2} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{j} -  \tfrac{1}{2} \tilde{\nabla}_{j}\overset{...}{B}_{i} + \tfrac{1}{2} \tilde{\nabla}_{j}\overset{....}{E}_{i} + \tfrac{1}{2} \tilde{\nabla}_{j}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}_{i} \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{\nabla}_{j}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{i}+\overset{....}{E}_{ij} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{ij} + \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\  \nonumber\\ 
+g^{\mu\nu}\delta W_{\mu\nu}&=& 0
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Separation}
+%%%%%%%%%%%%%%%%%%%%
+%
+%
+Scalar equation:
+\begin{eqnarray}
+ \delta W_{00} &=&- \tfrac{2}{3} \Omega^{-2}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(\phi+\psi+\dot{B}-\overset{..}{E})
+\end{eqnarray}
+Vector Equation:
+\begin{eqnarray}
+\tilde\nabla_a\tilde\nabla^a(\Omega^2 \delta W_{0i}) - \tilde\nabla_i \tilde\nabla^a(\Omega^2  \delta W_{0a})&=&- \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(\overset{..}{B}_{i}-\overset{...}{E}_{i}) + \tfrac{1}{2} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(B_{i} -\dot{E}_{i})
+\end{eqnarray}
+Tensor Equation:
+\begin{eqnarray}
+&&\tilde\nabla_a \tilde\nabla^a \big[ \tilde\nabla_b \tilde\nabla^b \delta (\Omega^2 W_{ij})- \tilde\nabla_i \tilde\nabla^l(\Omega^2  \delta W_{jl}) -  \tilde\nabla_j \tilde\nabla^l(\Omega^2  \delta W_{il})\big]+\tfrac12 g_{ij}\tilde\nabla_a \tilde\nabla^a\big[  \tilde\nabla^k \tilde\nabla^l(\Omega^2  \delta W_{kl})-\tilde\nabla_b \tilde\nabla^b(\Omega^2 \tilde g^{ab}\delta W_{ab})\big]
+\nonumber\\
+&&+\tfrac12 \tilde\nabla_i\tilde\nabla_j \big[ \tilde\nabla^k \tilde\nabla^l(\Omega^2  \delta W_{kl}) + \tilde\nabla_a \tilde\nabla^a(\Omega^2 \tilde g^{ab}\delta W_{ab})\big] 
+\nonumber\\
+&&=\tilde\nabla_a \tilde\nabla^a \tilde\nabla_b \tilde\nabla^b\left[\tilde\nabla_c \tilde\nabla^c - \partial_t^2\right]^2E_{ij}
+\end{eqnarray}
+
+\end{document}

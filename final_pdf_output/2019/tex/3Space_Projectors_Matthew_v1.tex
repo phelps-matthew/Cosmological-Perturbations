@@ -1,0 +1,818 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{3-Space Projectors v1}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Flat $\delta G_{ij}$} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\delta G_{00} &=& \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{00} + \tfrac{1}{2} \nabla_{a}\nabla^{a}h -  \tfrac{1}{2} \nabla_{b}\nabla_{a}h^{ab}
+\nonumber\\
+&=& -2\nabla_a\nabla^a \psi
+\nonumber\\ \nonumber\\
+%%
+\delta G_{0i}&=&- \tfrac{1}{2} \nabla_{a}\dot{h}_{i}{}^{a} + \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{0i} + \tfrac{1}{2} \nabla_{i}\dot{h}_{00} + \tfrac{1}{2} \nabla_{i}\dot{h} -  \tfrac{1}{2} \nabla_{i}\nabla_{a}h_{0}{}^{a}
+\nonumber\\
+&=& -2\nabla_i \dot \psi + \tfrac12 \nabla_a\nabla^a B_i - \tfrac12 \nabla_a \nabla^a \dot E_i
+\nonumber\\ \nonumber\\
+%%
+\delta G_{ij} &=& - \tfrac{1}{2} \ddot{h}_{ij} + \tfrac{1}{2} \ddot{h}_{00} g_{ij} + \tfrac{1}{2} \ddot{h} g_{ij} -  g_{ij} \nabla_{a}\dot{h}_{0}{}^{a} + \tfrac{1}{2} \nabla_{a}\nabla^{a}h_{ij} -  \tfrac{1}{2} g_{ij} \nabla_{a}\nabla^{a}h + \tfrac{1}{2} g_{ij} \nabla_{b}\nabla_{a}h^{ab} + \tfrac{1}{2} \nabla_{i}\dot{h}_{j0} 
+\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{i}\nabla_{a}h_{j}{}^{a} + \tfrac{1}{2} \nabla_{j}\dot{h}_{i0} -  \tfrac{1}{2} \nabla_{j}\nabla_{a}h_{i}{}^{a} + \tfrac{1}{2} \nabla_{j}\nabla_{i}h
+\nonumber\\
+&=& -2 \ddot{\psi} g_{ij} -  g_{ij} \nabla_{a}\nabla^{a}\dot{B} + g_{ij} \nabla_{a}\nabla^{a}\ddot{E} -  g_{ij} \nabla_{a}\nabla^{a}\phi + g_{ij} \nabla_{a}\nabla^{a}\psi + \nabla_{j}\nabla_{i}\dot{B} -  \nabla_{j}\nabla_{i}\ddot{E} + \nabla_{j}\nabla_{i}\phi -  \nabla_{j}\nabla_{i}\psi
+\nonumber\\
+&&+\tfrac{1}{2} \nabla_{i}\dot{B}_{j} -  \tfrac{1}{2} \nabla_{i}\ddot{E}_{j} + \tfrac{1}{2} \nabla_{j}\dot{B}_{i} -  \tfrac{1}{2} \nabla_{j}\ddot{E}_{i}- \ddot{E}_{ij} + \nabla_{a}\nabla^{a}E_{ij}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{3+1 Projectors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Recall the flat 3+1 projector
+\begin{equation}
+P_{\mu\nu} = \eta_{\mu\nu}+U_{\mu}U_{\nu},\qquad U_{\mu} = -\delta^0_\mu,\qquad U^\mu = \delta^\mu_0.
+\end{equation}
+In terms of the the flat space projectors, the splitting of the 3+1 components goes as
+\begin{equation}
+\rho = U^\sigma U^\tau T_{\sigma\tau} = T_{00} ,\qquad q_{i} = -P_i{}^\sigma U^\tau T_{\sigma\tau} = -T_{0i},\qquad
+\pi_{\mu\nu} = \left[ \frac12 P_\mu{}^\sigma P_\nu{}^\tau + \frac12 P_\nu{}^\sigma P_\mu{}^\tau - \frac13 P_{\mu\nu}P^{\sigma\tau}\right]T_{\sigma\tau},
+\end{equation}
+in which it follows 
+\begin{equation}
+\pi_{\mu\nu} = \pi_{ij} = T_{ij} -\frac13 \delta_{ij} \delta^{kl}T_{kl}.
+\end{equation}
+We recall the definition of $Q_i$ as
+\begin{equation}
+Q_i = q_i - \tilde\nabla_i \int d^3y\ D(x-y)\tilde\nabla^i q_i.
+\end{equation}
+This may be alternatively expressed as
+\begin{equation}
+Q_i = -T_{0i} + \tilde\nabla_i \int d^3y\ D(x-y)\tilde\nabla^j T_{0j}
+\end{equation}
+Noting that $\pi_{ij}$ is already traceless by construction, we may project out its transverse part and define $\pi^{T\theta}_{ij}$ as
+\begin{align}
+\pi_{ij}^{T\theta} &= \pi_{ij} - \tilde\nabla_i \int d^3y\ D(x-y) \tilde\nabla^k \pi_{jk} - \tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla^k \pi_{ik}
+\nonumber\\
+&\qquad
++\tilde\nabla_i\tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla_k\ \int d^3z\ D(y-z) \tilde\nabla_l \pi^{kl}.
+\end{align}
+Substituting in $\pi_{ij} = T_{ij} -\frac13 \delta_{ij} \delta^{kl}T_{kl}$, we have
+\begin{align}
+\pi_{ij}^{T\theta} &=\left(T_{ij} -\frac13 \delta_{ij} \delta^{kl}T_{kl}\right) - \tilde\nabla_i \int d^3y\ D(x-y) \tilde\nabla^k \left(T_{jk} -\frac13 \delta_{jk} \delta^{mn}T_{mn}\right)
+\nonumber\\
+&\qquad
+ - \tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla^k \left(T_{ik} -\frac13 \delta_{ik} \delta^{mn}T_{mn}\right)
+\nonumber\\
+&\qquad
++\tilde\nabla_i\tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla_k\ \int d^3z\ D(y-z) \tilde\nabla_l \left(T^{kl} -\frac13 \delta^{kl} \delta^{mn}T_{mn}\right).
+\end{align}
+In total, we may express relations (19) explicitly in terms of the components of the tensors as the following:
+\begin{align}
+ \bar \rho - \rho &= \delta W_{00} - \delta T_{00}\\
+ \bar Q_i - Q_i & = -(\delta W_{0i}-\delta T_{0i}) + \tilde\nabla_i \int d^3y\ D(x-y)\tilde\nabla^j( \delta W_{0j}-\delta T_{0j})
+\\
+\bar \pi^{T\theta}_{ij} - \pi_{ij}^{T\theta}&= \left[\delta W_{ij} -\delta T_{ij} -\frac13 \delta_{ij} \delta^{kl}\left(\delta W_{kl}-\delta T_{kl}\right)\right] 
+\nonumber\\
+&- \tilde\nabla_i \int d^3y\ D(x-y) \tilde\nabla^k \left[\delta W_{jk}-\delta T_{jk} 
+-\frac13 \delta_{jk} \delta^{mn}\left(\delta W_{mn}-\delta T_{mn}\right)\right]
+\nonumber\\
+&\qquad
+ - \tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla^k \left[\delta W_{ij} -\delta T_{ik} -\frac13 \delta_{ik} \delta^{mn}\left(\delta W_{mn} -\delta T_{mn}\right)\right]
+\nonumber\\
+&\qquad
++\tilde\nabla_i\tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla_k\ \int d^3z\ D(y-z) \tilde\nabla_l \left[\delta W_{kl}-\delta T^{kl} -\frac13 \delta^{kl} \delta^{mn}\left(\delta W_{mn}-\delta T_{mn}\right)\right].
+\end{align}
+
+\begin{eqnarray}
+h_{\mu\nu}^T = h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu + \nabla_\mu \nabla_\nu \int D \nabla^\sigma W_\sigma 
+\end{eqnarray}
+
+\begin{eqnarray}
+W_\mu = \int D \nabla^\sigma h_{\sigma\mu}
+\end{eqnarray}
+
+\begin{eqnarray}
+h_{\mu\nu}^{T\theta}&=&h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu -\frac12 g_{\mu\nu}(h-\nabla^\sigma W_\sigma) + \frac12 \nabla_\mu \nabla_\nu \int D(h+\nabla^\sigma W_\sigma)
+\end{eqnarray}
+
+\begin{eqnarray}
+h_{\mu\nu}&=&\underbrace{\left[ h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu - \frac12 g_{\mu\nu}(h-\nabla^\sigma W_\sigma) + \frac12 \nabla_\mu \nabla_\nu \int D(h+\nabla^\sigma W_\sigma) \right]}_{h^{T\theta}_{\mu\nu}}
+\nonumber\\
+&& + \nabla_\mu W_\nu + \nabla_\nu W_\mu + \frac12 g_{\mu\nu}(h-\nabla^\sigma W_\sigma) - \frac12 \nabla_\mu \nabla_\nu \int D(h+\nabla^\sigma W_\sigma)
+\end{eqnarray}
+
+if $h=0$ then
+
+\begin{eqnarray}
+h_{\mu\nu}&=&\underbrace{ \left[ h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu + \frac12 g_{\mu\nu}\nabla^\sigma W_\sigma + \frac12 \nabla_\mu \nabla_\nu \int D\nabla^\sigma W_\sigma \right] }_{h^{T\theta}_{\mu\nu}}
+\nonumber\\
+&& + \nabla_\mu \underbrace{\left(W_\nu - \nabla_\nu \int D \nabla^\sigma W_{\sigma}\right)}_{V_\nu^T}
+		+ \nabla_\nu \underbrace{\left(W_\mu - \nabla_\mu \int D \nabla^\sigma W_{\sigma}\right)}_{V_\mu^T}
+\nonumber\\
+&& +\nabla_\mu \nabla_\nu \underbrace{ \left( \frac32 \int D \nabla^\sigma W_\sigma\right)}_{2V}
+- g_{\mu\nu}\underbrace{\left(\frac 12 \nabla^\sigma W_\sigma\right)}_{\frac23 \nabla^\alpha \nabla_\alpha V}
+\end{eqnarray}
+
+\begin{eqnarray}
+h_{\mu\nu} = g_{\mu\nu} p + h^{T\theta}_{\mu\nu} + \nabla_\mu V_\nu^T + \nabla_\nu V_\mu^T
++ 2\nabla_\mu \nabla_\nu V - \frac23 g_{\mu\nu}\nabla_\alpha \nabla^\alpha V
+\end{eqnarray}
+
+\begin{eqnarray}
+V_{\mu} = W_\mu - \frac14 \nabla_\mu \int D \nabla^\sigma W_\sigma
+\end{eqnarray}
+
+\begin{eqnarray}
+\nabla_\mu V_\nu + \nabla_\nu V_\mu -\frac23 \nabla^\sigma V_\sigma = \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac12 g_{\mu\nu}\nabla^\sigma W_\sigma - \frac12 \nabla_\mu \nabla_\nu \int D\nabla^\sigma W_\sigma 
+\end{eqnarray}
+
+\begin{eqnarray}
+g_{\mu\nu} = P_{\mu\nu}- U_\mu U_\nu ,\qquad P_{\mu\nu} = g_{\mu\nu} + U_\mu U_\nu 
+\end{eqnarray}
+
+For a little more simplicity, we assume a $T_{\mu\nu}$ that is symmetric. 
+
+\begin{eqnarray}
+T_{\mu\nu} &=& g_{\mu}{}^\rho g_{\nu}{}^\sigma T_{\rho\sigma}
+\nonumber\\
+&=& ( P_\mu{}^\rho-U_\mu U^\rho)(P_\nu{}^\sigma - U_\nu U^\sigma)T_{\rho\sigma}
+\nonumber\\
+&=& (P_{\mu}{}^\rho P_\nu{}^\sigma - P_\mu{}^\rho U_\nu U^\sigma - P_{\nu}{}^\sigma U_\mu U^\rho
++U_\mu U_\nu U^\rho U^\sigma)T_{\rho\sigma}
+\nonumber\\
+&=& U_\mu U_\nu \underbrace{U^\rho U^\sigma T_{\rho\sigma}}_{\rho} +  U_\mu U_\nu \underbrace{\left( \tfrac13 P^{\rho\sigma}T_{\rho\sigma}\right)}_{p}
++ \underbrace{\left( P_{\mu\nu}-U_\mu U_\nu\right)}_{g_{\mu\nu}} \underbrace{\left(\tfrac13 P^{\rho\sigma}T_{\rho\sigma} \right)}_{p}
+\nonumber\\
+&&
+- U_\mu \underbrace{P_\nu{}^\sigma U^\rho T_{\rho\sigma}}_{-q_\nu} - U_\nu \underbrace{P_\mu{}^\rho U^\sigma T_{\rho\sigma}}_{-q_\mu}
+\nonumber\\
+&& \underbrace{ \left( P_\mu{}^\rho P_\nu{}^\sigma - \tfrac13 P_{\mu\nu} P^{\rho\sigma}\right) T_{\rho\sigma}}_{\pi_{\mu\nu} }
+\end{eqnarray}
+
+\begin{eqnarray}
+ U^\rho U^\sigma T_{\rho\sigma} &=& T_{00} = \rho 
+\nonumber\\
+ \frac13 P^{\rho\sigma}T_{\rho\sigma} &=& \frac13 g^{ij}T_{ij} = p 
+\nonumber\\
+- U_\mu P_\nu{}^\sigma U^\rho T_{\rho\sigma} &=& S_{\mu\nu} = T_{0i} = U_\mu q_\nu
+\nonumber\\
+- U_\nu P_\mu{}^\sigma U^\rho T_{\rho\sigma} &=& S_{\mu\nu} =  T_{i0} = U_\nu q_\mu 
+\nonumber\\
+ \left( P_\mu{}^\rho P_\nu{}^\sigma - \tfrac13 P_{\mu\nu} P^{\rho\sigma}\right) T_{\rho\sigma}
+&=& T_{ij} - \frac13 g_{ij} g^{kl}T_{kl} = \pi_{ij} 
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+Flat Einstein
+\begin{eqnarray}
+\delta G_{\mu\nu} &=& \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}h_{\mu \nu} -  \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}h -  \tfrac{1}{2} \nabla_{\beta}\nabla_{\mu}h_{\nu}{}^{\beta} -  \tfrac{1}{2} \nabla_{\beta}\nabla_{\nu}h_{\mu}{}^{\beta} + \tfrac{1}{2} g_{\mu \nu} \nabla_{\zeta}\nabla_{\beta}h^{\beta \zeta} + \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
+\nonumber\\
+&=& \bigg[ \tfrac12 g^{\sigma}{}_\mu g^\rho{}_\nu  \nabla_\alpha\nabla^\alpha - \tfrac12 g_{\mu\nu}g^{\sigma\rho}  \nabla_\alpha \nabla^\alpha 
+- \tfrac12 g^{\rho}{}_\nu    \nabla^\sigma \nabla_\mu 
+- \tfrac12 g^{\sigma}{}_\mu \nabla^\rho \nabla_\nu 
+\nonumber\\
+&& +\tfrac 12 g_{\mu\nu} \nabla^\sigma \nabla^\rho + \tfrac12 g^{\sigma\rho} \nabla_\mu \nabla_\nu \bigg] h_{\sigma\rho} 
+\nonumber\\
+&=& \mathcal{\hat L}^{\sigma\rho}{}_{\mu\nu} h_{\sigma\rho}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{00} &=& \mathcal{\hat L}^{\sigma\rho}{}_{00} h_{\sigma\rho}
+\nonumber\\
+&=& \tfrac12 \nabla_a \nabla^a(h_{00}+h) - \tfrac12 \nabla^a\nabla^b h_{ab}
+\nonumber\\
+&=& \nabla^2 p - \tfrac23 \nabla^4 V
+\nonumber\\ \nonumber\\\
+\delta G_{0i} &=& \mathcal{\hat L}^{\sigma\rho}{}_{0i} h_{\sigma\rho}
+\nonumber\\
+&=& -\tfrac12 \nabla^a \dot h_{ia} + \tfrac12 \nabla^2 h_{0i}+ \tfrac12 \nabla_i \dot{h_{00}} +\tfrac12 \nabla_i \dot h
+-\tfrac12 \nabla_i \nabla^a h_{0a}
+\nonumber\\
+&=& \nabla_i \left( \dot p - \tfrac23 \nabla^2 \dot V\right) +\tfrac12 \nabla^2(Q_i-\dot V_i)
+\nonumber\\ \nonumber\\
+\delta G_{ij} &=& \mathcal{\hat L}^{\sigma\rho}{}_{ij} h_{\sigma\rho}
+\nonumber\\
+&=& \tfrac12 (\nabla^2 - \partial_t^2)h_{ij} + \tfrac12 g_{ij}(\ddot h_{00} +\ddot h) +\tfrac12 g_{ij} \nabla^2 h
++ \tfrac12 \nabla_i\nabla_j h -g_{ij} \nabla^a \dot h_{0a}
+\nonumber\\
+&& + \tfrac12  g_{ij} \nabla^a \nabla^b h_{ab} + \tfrac12 (\nabla_i \dot h_{j0}+\nabla_j \dot h_{i0})
+-\tfrac12(\nabla_i \nabla^a h_{ja} + \nabla_j \nabla^a h_{ia})
+\nonumber\\
+&=& g_{ij}( \ddot p - \tfrac23 \nabla^2 \ddot V) - \tfrac12 g_{ij} \nabla^2 (p-\tfrac23 \nabla^2 V) +
+\tfrac12 g_{ij}\nabla^2( \rho - 2\dot Q + 2\ddot V)
+\nonumber\\
+&& + \tfrac12 \nabla_i\nabla_j (p-\tfrac23 \nabla^2 V) -\tfrac12 \nabla_i\nabla_j (\rho-2\dot Q+2\ddot V)
+\nonumber\\
+&&+ \tfrac12 \nabla_i (\dot Q_j -\ddot V_j) + \tfrac12 \nabla_j (\dot Q_i - \ddot V_i) - \ddot V_{ij} + \nabla^2 V_{ij}
+\end{eqnarray}
+
+\begin{eqnarray}
+&&\ddot{p} g_{ij} + \tfrac{1}{3} g_{ij} \nabla_{a}\nabla^{a}\ddot{V} -  g_{ij} \nabla_{a}\nabla^{a}\dot{Q} -  \tfrac{1}{2} g_{ij} \nabla_{a}\nabla^{a}p + \tfrac{1}{2} g_{ij} \nabla_{a}\nabla^{a}\rho 
+\\ && + \tfrac{1}{3} g_{ij} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}V -  \nabla_{j}\nabla_{i}\ddot{V} + \nabla_{j}\nabla_{i}\dot{Q} + \tfrac{1}{2} \nabla_{j}\nabla_{i}p -  \tfrac{1}{2} \nabla_{j}\nabla_{i}\rho -  \tfrac{1}{3} \nabla_{j}\nabla_{i}\nabla_{a}\nabla^{a}V
+\end{eqnarray}
+
+
+
+
+%\begin{eqnarray}
+%\delta G_{0i}&=& \mathcal{\hat L}^{\sigma\rho}{}_{0i} h_{\sigma\rho}
+%\nonumber\\
+% && \tfrac12 g^{\sigma}{}_\mu g^\rho{}_\nu  \nabla_\alpha\nabla^\alpha - \tfrac12 g_{\mu\nu}g^{\sigma\rho}  \nabla_\alpha \nabla^\alpha 
+%- \tfrac12 g^{\rho}{}_\nu    \nabla^\sigma \nabla_\mu 
+%- \tfrac12 g^{\sigma}{}_\mu \nabla^\rho \nabla_\nu 
+%\nonumber\\
+%&& +\tfrac 12 g_{\mu\nu} \nabla^\sigma \nabla^\rho + \tfrac12 g^{\sigma\rho} \nabla_\mu \nabla_\nu \bigg
+%\end{eqnarray}
+
+Conformal Part
+
+\begin{eqnarray}
+\delta G^{\Omega(x)}_{\mu\nu} &=& 
+-2 h_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega -  g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\Omega \nabla^{\alpha}h + \Omega^{-1} \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}\Omega + h_{\mu \nu} \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega + 2 g_{\mu \nu} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\beta}h_{\alpha}{}^{\beta}
+\nonumber\\
+&&
+ -  g_{\mu \nu} h_{\alpha \beta} \Omega^{-2} \nabla^{\alpha}\Omega \nabla^{\beta}\Omega 
++ 2 g_{\mu \nu} h_{\alpha \beta} \Omega^{-1} \nabla^{\beta}\nabla^{\alpha}\Omega -  \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\mu}h_{\nu \alpha} -  \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\nu}h_{\mu \alpha}
+\nonumber\\
+&=&
+\Omega^{-1} \bigg[ -2 g^{\sigma}{}_\mu g^\rho{}_\nu \nabla_\alpha \nabla^\alpha \Omega - g_{\mu\nu}g^{\sigma\rho}\nabla_\alpha \Omega \nabla^\alpha + g^{\sigma}{}_\mu g^\rho{}_\nu \nabla_\alpha \Omega \nabla^\alpha 
++ 2 g_{\mu\nu} \nabla^\sigma \Omega \nabla^\rho + 2 g_{\mu\nu} \nabla^\sigma \nabla^\rho 
+\nonumber\\
+&&
+- g^{\rho}{}_\nu \nabla^\sigma \Omega \nabla_\mu - g^{\sigma}{}_\mu \nabla^\rho \Omega \nabla_\nu\bigg]
++ \Omega^{-2}\bigg[  g^{\sigma}{}_\mu g^\rho{}_\nu \nabla_\alpha\Omega \nabla^\alpha\Omega
+- g_{\mu\nu} \nabla^\rho \Omega\nabla^\sigma\Omega \bigg] h_{\sigma\rho}
+\nonumber\\
+&=& \mathcal{\hat J}^{\sigma\rho}{}_{\mu\nu} h_{\sigma\rho}
+\end{eqnarray}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\delta G_{\mu\nu}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Bianchi Identity $\nabla^\mu \delta G_{\mu\nu} = 0$
+\begin{eqnarray}
+\dot \rho &=& \nabla^2 Q
+\nonumber\\
+\dot Q_i + \nabla_i \dot Q &=& \nabla_i p + \tfrac43 \nabla^2 \nabla_i V + \nabla^2 V_i
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{00} &=& \nabla^2 ( p -\tfrac23 \nabla^2 V)
+\nonumber\\ \nonumber\\
+\delta G_{0i} &=& \nabla_i (\dot p -\tfrac23 \nabla^2 \dot V) + \tfrac12 \nabla^2 (Q_i - \dot V_i)
+\nonumber\\ \nonumber\\
+\delta G_{ij} &=& g_{ij}( \ddot p - \tfrac23 \nabla^2 \ddot V) - \tfrac12 g_{ij} \nabla^2 (p-\tfrac23 \nabla^2 V) +
+\tfrac12 g_{ij}\nabla^2( \rho - 2\dot Q + 2\ddot V)
+\nonumber\\
+&& + \tfrac12 \nabla_i\nabla_j (p-\tfrac23 \nabla^2 V) -\tfrac12 \nabla_i\nabla_j (\rho-2\dot Q+2\ddot V)
+\nonumber\\
+&&+ \tfrac12 \nabla_i (\dot Q_j -\ddot V_j) + \tfrac12 \nabla_j (\dot Q_i - \ddot V_i) - \ddot V_{ij} + \nabla^2 V_{ij}
+\nonumber\\ \nonumber\\
+g^{ij}\delta G_{ij} &=& 3(\ddot p - \tfrac23 \nabla^2 \ddot V) - \nabla^2 (p-\tfrac23 \nabla^2 V) + \nabla^2 (\rho-2\dot Q+2\ddot V)
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge Invariance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Under $x^\mu \to x^\mu - \epsilon^\mu(x)$
+\begin{eqnarray}
+\Delta_\epsilon g_{\mu\nu} = \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+\end{eqnarray}
+where
+\begin{eqnarray}
+\epsilon_0 = -T,\qquad \epsilon_i = \underbrace{ \epsilon_i - \nabla_i \int D \nabla^j \epsilon_j}_{L_i} + 
+\nabla_i \underbrace{ \int D \nabla^j \epsilon_j}_{L} 
+\end{eqnarray}
+\begin{eqnarray}
+\Delta_\epsilon g_{00} &=& -2\dot T
+\nonumber\\
+\Delta_\epsilon g_{0i} &=& -\nabla_i T + \dot L_i + \nabla_i \dot L
+\nonumber\\
+\Delta_\epsilon g_{ij} &=& 2\nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i 
+\end{eqnarray}
+
+\begin{eqnarray}
+\bar\rho &=& \rho - 2\dot T
+\nonumber\\
+\bar Q_i +\nabla_i \bar Q &=& Q_i + \nabla_i Q + \nabla_i (\dot L-T) + \dot L_i
+\nonumber\\
+ g_{ij}\bar p + 2\nabla_i \nabla_j \bar V -\tfrac23 g_{ij}\nabla^2 \bar V + \nabla_i\bar V_j+
+\nabla_j \bar V_i + \bar V_{ij} &=&  g_{ij} p + 2\nabla_i \nabla_j V -\tfrac23 g_{ij}\nabla^2 V + \nabla_i V_j + 
+\nabla_j  V_i +  V_{ij}
+\nonumber\\
+&& +  2\nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i 
+\end{eqnarray}
+
+\begin{eqnarray}
+\bar\rho &=& \rho -2\dot T
+\nonumber\\
+\bar Q &=& Q + \dot L-T
+\nonumber\\
+\bar Q_i &=& Q_i +\dot L_i
+\nonumber\\
+\bar V_i &=& V_i + L_i
+\nonumber\\
+\bar p &=& p +\frac23 \nabla^2 L 
+\nonumber\\
+\bar V &=& V + L
+\nonumber\\
+\bar V_{ij} &=& V_{ij}
+\end{eqnarray}
+
+\begin{eqnarray}
+\rho - 2\dot Q + 2\ddot V,\qquad p - \tfrac23 \nabla^2 V,\qquad Q_i -\dot V_i,\qquad V_{ij}
+\end{eqnarray}
+
+\begin{eqnarray}
+\underbrace{\bar h_{00}}_{\bar\rho} &=& \underbrace{h_{00}}_{\rho} - 2\dot T
+\nonumber\\
+\underbrace{\int D \nabla^j \bar h_{0j}}_{\bar Q} &=& \underbrace{\int D \nabla^j h_{0j}}_Q + \underbrace{\int D \nabla^2(\dot L-T)}_{(\dot L-T)^L}
+\nonumber\\
+\underbrace{\bar h_{0i} - \nabla_i \int D \nabla^j \bar h_{0j}}_{\bar Q_i} &=&
+\underbrace{h_{0i} - \nabla_i \int D \nabla^j  h_{0j}}_{Q_i} +\dot L_i +\underbrace{ \nabla_i(\dot L -T)
+-\nabla_i \int D \nabla^2(\dot L-T)}_{\nabla_i (\dot L-T)^T}
+\nonumber\\
+\underbrace{g^{ij}\bar h_{ij}}_{3\bar p} &=& \underbrace{g^{ij} h_{ij}}_{3p} + 2\nabla^2 L
+\nonumber\\
+\underbrace{\frac34 \int D \nabla^k \bar W_k}_{\bar V} &=&\underbrace{ \frac34 \int D \nabla^k W_k }_{V}
++ \frac34 \int D \nabla^k \int D \nabla^2(\tfrac43 \nabla_k  L +  L_k )
+\nonumber\\
+\underbrace{\bar W_i - \nabla_i \int D \nabla^j \bar W_j}_{\bar V_i}
+&=&
+\underbrace{ W_i - \nabla_i \int D \nabla^j W_j}_{ V_i}
++ \int D\nabla^2 (\tfrac43 \nabla_i L + L_i) - \nabla_i \int D \nabla^j \int D\nabla^2 (\tfrac43 \nabla_j L + L_j)
+\end{eqnarray}
+
+\begin{eqnarray}
+\Delta_\epsilon k_{ij} &=& 2\nabla_i \nabla_j L - \tfrac23 g_{ij}\nabla^2 L + \nabla_i L_j + \nabla_j L_i
+\nonumber\\
+\Delta_\epsilon \nabla^j k_{ij} &=& \nabla^2(\tfrac43 \nabla_i  L +  L_i )
+\nonumber\\
+\Delta_\epsilon W_i &=& \int D \nabla^{j}k_{ij} = \int D\nabla^2 (\tfrac43 \nabla_i L + L_i)
+\end{eqnarray}
+
+\begin{eqnarray}
+\bar V_{ij}-V_{ij} &=&\Delta_\epsilon\left[ k_{ij} - \nabla_i W_j - \nabla_j W_i +\tfrac12 g_{ij} \nabla^k W_k
++\tfrac12 \nabla_i\nabla_j \int D \nabla^k W_k\right]
+\nonumber\\
+&=& 2\nabla_i \nabla_j L - \tfrac23 g_{ij}\nabla^2 L + \nabla_i L_j + \nabla_j L_i
+-\nabla_i \int D\nabla^2 (\tfrac43 \nabla_j L + L_j)-\nabla_j \int D\nabla^2 (\tfrac43 \nabla_i L + L_i)
+\nonumber\\
+&&+\tfrac12 g_{ij} \nabla^k \int D\nabla^2 (\tfrac43 \nabla_k L + L_k) +\tfrac12 \nabla_i\nabla_j 
+\int D \nabla^k \int D\nabla^2 (\tfrac43 \nabla_k L + L_k)
+\end{eqnarray}
+
+\begin{eqnarray}
+\bar \rho &=& \rho - 2\dot T
+\nonumber\\
+\bar p &=& p +\frac23 \nabla^2 L
+\nonumber\\
+\bar Q &=& Q + \int D \nabla^2(\dot L-T)
+\nonumber\\
+\bar Q_i &=& Q_i +\dot L_i +  \nabla_i(\dot L -T)
+-\nabla_i \int D \nabla^2(\dot L-T)
+\nonumber\\
+\bar V &=& V + \frac34 \int D \nabla^k \int D \nabla^2(\tfrac43 \nabla_k  L +  L_k )
+\nonumber\\
+\bar V_i &=& V_i + \int D\nabla^2 (\tfrac43 \nabla_i L + L_i) - \nabla_i \int D \nabla^j \int D\nabla^2 (\tfrac43 \nabla_j L + L_j)
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bach Tensor}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+W_{\mu\nu} &=& - \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R_{\mu}{}^{\alpha} R_{\nu \alpha} 
+\nonumber\\
+&&- \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R -  \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} + 2 \nabla_{\beta}\nabla_{\alpha}R_{\mu}{}^{\alpha}{}_{\nu}{}^{\beta} + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R
+\nonumber\\ \nonumber\\
+&=& - \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta} -  \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}R
+\nonumber\\ \nonumber\\
+&=& - \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R_{\mu}{}^{\alpha} R_{\nu \alpha} 
+\nonumber\\ 
+&&-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\alpha}\nabla_{\mu}R_{\nu}{}^{\alpha} -  \nabla_{\alpha}\nabla_{\nu}R_{\mu}{}^{\alpha} + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R
+\nonumber\\ \nonumber\\
+\nabla_\alpha \nabla^\alpha G^{T\theta}_{\mu\nu} &=&
+\nabla_\alpha \nabla^\alpha G_{\mu\nu} -\tfrac13 g_{\mu\nu} \nabla_\rho \nabla^\rho g^{\alpha\beta} G_{\alpha\beta} +\tfrac13 \nabla_\mu\nabla_\nu g^{\alpha\beta}G_{\alpha\beta}
+\nonumber\\
+&=& \nabla_\alpha \nabla^\alpha R_{\mu\nu} - \tfrac16 g_{\mu\nu}\nabla_\alpha \nabla^\alpha R -\tfrac13 \nabla_\mu \nabla_\nu R
+\nonumber\\ \nonumber\\
+\text{remaining} &=&  -\tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta}
+\nonumber\\ \nonumber\\
+&=&  - \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R_{\mu}{}^{\alpha} R_{\nu \alpha} 
+\nonumber\\
+&& -  \nabla_{\alpha}\nabla_{\mu}R_{\nu}{}^{\alpha} -  \nabla_{\alpha}\nabla_{\nu}R_{\mu}{}^{\alpha} + \nabla_\mu \nabla_\nu R
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Einstein Related to Weyl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+I_G &=& \int d^4x \sqrt g \left( G_{\mu\nu}G^{\mu\nu} -\tfrac13 (g^{\alpha\beta}G_{\alpha\beta})^2 \right)
+\nonumber\\
+&=& I_{G_2} - \frac13 I_{G_1}= \int d^4x \sqrt{g}  G_{\mu\nu}G^{\mu\nu} - \frac13 \int d^4x \sqrt{g} (g^{\alpha\beta} G_{\alpha\beta})^2
+\end{eqnarray}
+Recalling
+\begin{eqnarray}
+\delta(\sqrt g) = \frac12 \sqrt g g^{\mu\nu} \delta g_{\mu\nu} 
+\end{eqnarray}
+we have
+\begin{eqnarray}
+W_{(2)}^{\mu\nu} &=& \frac{1}{\sqrt g} \frac{\delta I_{G_2}}{\delta g_{\mu\nu} } = \frac12 g^{\mu\nu} G_{\alpha\beta}G^{\alpha\beta} +\frac{\delta}{\delta g_{\mu\nu}}\left(G_{\alpha\beta}G^{\alpha\beta}\right)
+\nonumber\\ \nonumber\\
+\frac{\delta}{\delta g_{\mu\nu}}\left(G_{\alpha\beta}G^{\alpha\beta}\right)&=&
+-2\delta g_{\mu\nu} G^\mu{}_\alpha G^{\nu\alpha} + 2 \delta G_{\mu\nu} G^{\mu\nu}
+\end{eqnarray}
+
+\begin{eqnarray}
+2G^{\mu\nu}\delta G_{\mu\nu} &=& 2G^{\mu\nu}(\delta R_{\mu\nu} -\tfrac12 \delta g_{\mu\nu} R + \tfrac12 g_{\mu\nu}\delta g_{\alpha\beta}R^{\alpha\beta} -\tfrac12 g_{\mu\nu}  g^{\alpha\beta}\delta R_{\alpha\beta})
+\nonumber\\
+&=&2\underbrace{(G^{\mu\nu} -\tfrac12 g_{\alpha\beta}G^{\alpha\beta} g^{\mu\nu})}_{\bar G^{\mu\nu}}\delta R_{\mu\nu} +( 
+ g_{\alpha\beta}G^{\alpha\beta}R^{\mu\nu}-G^{\mu\nu} R) \delta g_{\mu\nu}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta R_{\mu\nu} &=& \nabla_\nu \delta \Gamma^\lambda_{\mu\lambda} - \nabla_\lambda \delta \Gamma^\lambda_{\mu\nu} 
+\nonumber\\
+\delta \Gamma^\lambda_{\mu\nu}&=& \tfrac12 g^{\lambda\rho}[\nabla_\nu \delta g_{\mu\rho} + \nabla_\mu \delta g_{\nu\rho} - \nabla_\rho \delta g_{\mu\nu}]
+\end{eqnarray}
+
+\begin{eqnarray}
+2\bar G^{\mu\nu}\delta R_{\mu\nu} &=& 2 \left[ \nabla_\nu (\bar G^{\mu\nu}\delta \Gamma^\lambda_{\mu\lambda}) - \nabla_\nu \bar G^{\mu\nu} \delta \Gamma^\lambda_{\mu\lambda}
+-\nabla_\lambda (\bar G^{\mu\nu}\delta \Gamma^\lambda_{\mu\nu}) + \nabla_\lambda \bar G^{\mu\nu} \delta \Gamma^\lambda_{\mu\nu}\right]
+\nonumber\\
+&=& \nabla_\alpha \nabla^\mu \bar G^{\alpha\nu} - \nabla_\alpha\nabla^\alpha \bar G^{\mu\nu}
+-\nabla^\nu \nabla_\alpha \bar G^{\mu\alpha} + \nabla^\mu \nabla_\alpha \bar G^{\nu\alpha}
+\nonumber\\
+&=& \left( g^{\mu\nu} \nabla_\alpha\nabla_\beta \bar G^{\alpha\beta} - \nabla_\alpha \nabla^\nu \bar G^{\mu\alpha} - \nabla_\alpha \nabla^\mu \bar G^{\alpha\nu} + \nabla_\alpha\nabla^\alpha \bar G^{\mu\nu}\right)\delta g_{\mu\nu}
+\end{eqnarray}
+
+Hence we have for $W_{(2)}^{\mu\nu}$
+\begin{eqnarray}
+W_{(2)}^{\mu\nu} &=& \frac{\delta}{\delta g_{\mu\nu}} \int d^4x \sqrt g G^{\mu\nu} G_{\mu\nu} 
+\nonumber\\
+ &=&\int d^4x \sqrt g \bigg( \frac12 g^{\mu\nu} G_{\alpha\beta}G^{\alpha\beta}
+-2G^{\mu}{}_\alpha G^{\nu\alpha} +g_{\alpha\beta}G^{\alpha\beta}R^{\mu\nu}-G^{\mu\nu} R
+\nonumber\\
+&&
++g^{\mu\nu} \nabla_\alpha\nabla^\beta \bar G^{\alpha\beta} - \nabla_\alpha \nabla^\nu \bar G^{\mu\alpha} - \nabla_\alpha \nabla^\mu \bar G^{\alpha\nu} + \nabla_\alpha\nabla^\alpha \bar G^{\mu\nu}\bigg)
+\delta g_{\mu\nu}
+\nonumber\\
+&=&  \frac12 g^{\mu\nu} G_{\alpha\beta}G^{\alpha\beta}
+-2G^{\mu}{}_\alpha G^{\nu\alpha} +g_{\alpha\beta}G^{\alpha\beta}R^{\mu\nu}-G^{\mu\nu} R - g^{\mu\nu} \nabla_\alpha \nabla^\alpha G + \nabla^\mu \nabla^\nu G
+\nonumber\\
+&& + \nabla_\alpha\nabla^\alpha G^{\mu\nu} - \nabla_\alpha \nabla^\mu G^{\alpha\nu} - \nabla_\alpha\nabla^\nu G^{\mu\alpha}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta (g^{\alpha\beta}G_{\alpha\beta})^2 = -2g^{\alpha\beta}G_{\alpha\beta} G^{\mu\nu} \delta g_{\mu\nu} +2g^{\alpha\beta}G_{\alpha\beta}  g^{\mu\nu} \delta G_{\mu\nu} 
+\end{eqnarray}
+
+\begin{eqnarray}
+2 G  g^{\mu\nu} \delta G_{\mu\nu} &=& 
+-2 G  g^{\mu\nu}\delta R_{\mu\nu} +( 4G R^{\mu\nu}-G g^{\mu\nu} R) \delta g_{\mu\nu}
+\end{eqnarray}
+
+\begin{eqnarray}
+-2G g^{\mu\nu} \delta R_{\mu\nu} &=& (-2 \nabla_\alpha \nabla^\alpha G + 2\nabla^\mu \nabla^\nu G)\delta g_{\mu\nu}
+\end{eqnarray}
+
+And for $W_{(1)}^{\mu\nu}$
+\begin{eqnarray}
+W_{(1)}^{\mu\nu} &=& \frac{\delta}{\delta g_{\mu\nu}} \int d^4x \sqrt g (g^{\alpha\beta}G_{\alpha\beta})^2
+\nonumber\\
+&=& \int d^4x \sqrt g \left(\tfrac12 g^{\mu\nu} G^2 -2 G G^{\mu\nu} + 4G R^{\mu\nu} - g^{\mu\nu}G R
+-2\nabla_\alpha \nabla^\alpha G + 2\nabla^\mu \nabla^\nu G \right)\delta g_{\mu\nu}
+\end{eqnarray}
+
+\begin{eqnarray}
+W^{\mu\nu}_{(1)} = \tfrac12 g^{\mu\nu} G^2 -2 G G^{\mu\nu} + 4G R^{\mu\nu} - g^{\mu\nu}G R
+-2\nabla_\alpha \nabla^\alpha G + 2\nabla^\mu \nabla^\nu G
+\end{eqnarray}
+
+\begin{eqnarray}
+W^{\mu\nu}_{(2)}&=&  \frac12 g^{\mu\nu} G_{\alpha\beta}G^{\alpha\beta}
+-2G^{\mu}{}_\alpha G^{\nu\alpha} +g_{\alpha\beta}G^{\alpha\beta}R^{\mu\nu}-G^{\mu\nu} R - g^{\mu\nu} \nabla_\alpha \nabla^\alpha G + \nabla^\mu \nabla^\nu G
+\nonumber\\
+&& + \nabla_\alpha\nabla^\alpha G^{\mu\nu} - \nabla_\alpha \nabla^\mu G^{\alpha\nu} - \nabla_\alpha\nabla^\nu G^{\mu\alpha}
+\end{eqnarray}
+
+\begin{eqnarray}
+W^{(2)}_{\mu\nu} - \tfrac13 W^{(1)}_{\mu\nu}&=& 
+\tfrac12 g_{\mu\nu} G^{\alpha\beta}G_{\alpha\beta} - 2 G_{\mu\alpha}G_{\nu}{}^\alpha - \tfrac13 G R_{\mu\nu}-R G_{\mu\nu}+\tfrac23 G G_{\mu\nu} -\tfrac16 g_{\mu\nu} G^2
+\nonumber\\
+&&
+-\tfrac13 g_{\mu\nu} \nabla_\alpha\nabla^\alpha G + \tfrac13 \nabla_\mu\nabla_\nu G + \nabla_\alpha\nabla^\alpha G_{\mu\nu} - \nabla^\alpha \nabla_\mu G_{\alpha\nu}-\nabla^\alpha \nabla_\nu G_{\mu\alpha}
+\end{eqnarray}
+
+\begin{eqnarray}
+h_{\mu\nu}^{T\theta}&=&h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu -\frac12 g_{\mu\nu}(h-\nabla^\sigma W_\sigma) +\frac12 \left[\nabla_\mu \nabla_\nu -\frac16 R g_{\mu\nu} \right]\int D(h+\nabla^\sigma W_\sigma)
+\end{eqnarray}
+
+\begin{eqnarray}
+\nabla^2 G_{\mu\nu}^{T\theta}&=&\nabla^2 G_{\mu\nu}-\frac13 g_{\mu\nu}\nabla^2 G+\frac13 \nabla^2  \left[\nabla_\mu \nabla_\nu -\frac{1}{12} R g_{\mu\nu} \right]\int D G 
+\end{eqnarray}
+
+\begin{eqnarray}
+\nabla^\mu W_{\mu\nu} &=& G^{\alpha\beta}\nabla_\nu G_{\alpha\beta} -2G_{\mu\alpha}\nabla^\mu G_{\nu}{}^\alpha
+-\tfrac13\nabla^\mu G R_{\mu\nu} -\tfrac16G \nabla_\nu R - \nabla^\mu R G_{\mu\nu} + \tfrac23 \nabla^\mu G G_{\mu\nu} 
+\nonumber\\
+&&
+-\tfrac13 G\nabla_\nu G - \tfrac13 \nabla^\mu \nabla^2 G + \tfrac13 \nabla^2 \nabla_\nu G + \nabla^\mu \nabla^2 G_{\mu\nu} - \nabla^\mu \nabla^\alpha\nabla_\mu G_{\alpha\nu} - \nabla^\mu \nabla^\alpha\nabla_\nu G_{\mu\alpha}
+\end{eqnarray}
+If $R=const$
+\begin{eqnarray}
+\nabla^\mu W_{\mu\nu} &=& G^{\alpha\beta}\nabla_\nu G_{\alpha\beta} -2G_{\mu\alpha}\nabla^\mu G_{\nu}{}^\alpha
++ \nabla^\mu \nabla^2 G_{\mu\nu} - \nabla^\mu \nabla^\alpha\nabla_\mu G_{\alpha\nu} - \nabla^\mu \nabla^\alpha\nabla_\nu G_{\mu\alpha}
+\end{eqnarray}
+
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{New Result}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+\Delta_{\mu\nu} &=& R_{\mu\nu} - \tfrac16 g_{\mu\nu} R
+\\ \nonumber\\
+g^{\alpha\beta}\Delta_{\alpha\beta} &=& \tfrac13 R
+\\ \nonumber\\
+W_{\mu\nu} &=& \tfrac{1}{2} g_{\mu \nu } \Delta_{\alpha \beta } \Delta^{\alpha \beta } + \Delta_{\mu \nu } \Delta - 2 \Delta^{\alpha \beta } R_{\mu \alpha \nu \beta } + \nabla_{\alpha }\nabla^{\alpha }\Delta_{\mu \nu } -  \nabla_{\nu }\nabla_{\mu }\Delta 
+\\ \nonumber\\
+&=& \tfrac{1}{2} g_{\mu \nu } \Delta_{\alpha \beta } \Delta^{\alpha \beta } - 2 \Delta_{\mu }{}^{\alpha } \Delta_{\nu \alpha } + \nabla_{\alpha }\nabla^{\alpha }\Delta_{\mu \nu } -  \nabla_{\alpha }\nabla_{\mu }\Delta_{\nu }{}^{\alpha } -  \nabla_{\alpha }\nabla_{\nu }\Delta_{\mu }{}^{\alpha } + \nabla_{\nu }\nabla_{\mu }\Delta 
+\end{eqnarray}
+Working in a conformal to flat geometry, we also have
+\begin{eqnarray}
+W_{\mu\nu} &=& \tfrac{1}{2} g_{\mu \nu } \Delta_{\alpha \beta } \Delta^{\alpha \beta } + \Delta_{\mu \nu } \Delta -  \tfrac{1}{3} \Delta_{\mu \nu } R + \tfrac{1}{3} g_{\mu \nu } \Delta R -  g_{\mu \nu } \Delta^{\alpha \beta } R_{\alpha \beta } + \Delta_{\nu }{}^{\alpha } R_{\mu \alpha } -  \Delta R_{\mu \nu } + \Delta_{\mu }{}^{\alpha } R_{\nu \alpha }
+\nonumber\\
+&& + \nabla_{\alpha }\nabla^{\alpha }\Delta_{\mu \nu } -  \nabla_{\nu }\nabla_{\mu }\Delta 
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT Traditional Form}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Applied to 3 dimensions.
+\begin{eqnarray}
+h_{\mu\nu}&=&\underbrace{\left[ h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu - \frac12 g_{\mu\nu}(h-\nabla^\sigma W_\sigma) + \frac12 \nabla_\mu \nabla_\nu \int D(h+\nabla^\sigma W_\sigma) \right]}_{2E^{T\theta}_{\mu\nu}}
+\nonumber\\
+&& + \nabla_\mu \underbrace{\left(W_\nu - \nabla_\nu \int D \nabla^\sigma W_\sigma\right)}_{E_\nu}+
+\nabla_\nu \underbrace{\left(W_\mu - \nabla_\mu \int D \nabla^\sigma W_\sigma\right)}_{E_\mu}
+ \nonumber\\
+&&
+-2 g_{\mu\nu}\underbrace{(\tfrac14\nabla^\sigma W_\sigma-\tfrac14h)}_{\psi}
++2\nabla_\mu\nabla_\nu \underbrace{\int D (\tfrac34 \nabla^\sigma  W_{\sigma}-\tfrac14 h )}_{E}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Invariance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Under $x^\mu \to x^\mu - \epsilon^\mu(x)$
+\begin{eqnarray}
+\Delta_\epsilon h_{\mu\nu} = \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+\end{eqnarray}
+where
+\begin{eqnarray}
+\epsilon_0 = -T,\qquad \epsilon_i = \underbrace{ \epsilon_i - \nabla_i \int D \nabla^j \epsilon_j}_{L_i} + 
+\nabla_i \underbrace{ \int D \nabla^j \epsilon_j}_{L} 
+\end{eqnarray}
+\begin{eqnarray}
+\Delta_\epsilon h_{00} &=& -2\dot T
+\nonumber\\
+\Delta_\epsilon h_{0i} &=& -\nabla_i T + \dot L_i + \nabla_i \dot L
+\nonumber\\
+\Delta_\epsilon h_{ij} &=& 2\nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i 
+\nonumber\\
+ \Delta_\epsilon (\nabla^j h_{ij})&=& 2\nabla^2 \nabla_i L + \nabla^2 L_i
+\nonumber\\
+\Delta_\epsilon W_i &=& \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+\Delta_\epsilon (g^{ij}h_{ij}) &=& 2\nabla^2 L
+\end{eqnarray}
+
+\begin{eqnarray}
+\Delta_\epsilon
+\end{eqnarray}
+
+\begin{eqnarray}
+\underbrace{\bar h_{00}}_{-2\bar\phi } &=& \underbrace{h_{00}}_{-2\phi} - 2\dot T
+\nonumber\\
+\underbrace{\int D \nabla^j \bar h_{0j}}_{\bar B} &=& \underbrace{\int D \nabla^j h_{0j}}_B + \underbrace{\int D \nabla^2(\dot L-T)}_{(\dot L-T)^L}
+\nonumber\\
+\underbrace{\bar h_{0i} - \nabla_i \int D \nabla^j \bar h_{0j}}_{\bar B_i} &=&
+\underbrace{h_{0i} - \nabla_i \int D \nabla^j  h_{0j}}_{B_i} +\dot L_i +\underbrace{ \nabla_i(\dot L -T)
+-\nabla_i \int D \nabla^2(\dot L-T)}_{\nabla_i (\dot L-T)^T}
+\nonumber\\
+\underbrace{\tfrac14 \nabla^i \bar W_i - \tfrac14 g^{ij}\bar h_{ij}}_{\bar\psi} &=& \underbrace{ \tfrac14 \nabla^i W_i - \tfrac14 g^{ij}h_{ij}}_{\psi} - \tfrac12 \nabla^2 L+  \tfrac14 \nabla^i \int D \nabla^2( 2\nabla_i L + L_i) 
+\nonumber\\
+\underbrace{\int D(\tfrac34 \nabla^i \bar W_i - \tfrac14 g^{ij}\bar  h_{ij})}_{\bar E} &=&
+\underbrace{\int D(\tfrac34 \nabla^i W_i - \tfrac14 g^{ij}h_{ij})}_{ E} 
+ + \int D \left( \tfrac34 \nabla^i \int D \nabla^2 (2\nabla_i L + L_i) - \tfrac12 \nabla^2 L\right)
+\nonumber\\
+\underbrace{\bar W_i - \nabla_i \int D \nabla^j \bar W_j}_{\bar E_i}
+&=&
+\underbrace{ W_i - \nabla_i \int D \nabla^j W_j}_{ E_i}
++ \int D\nabla^2 (\tfrac43 \nabla_i L + L_i) - \nabla_i \int D \nabla^j \int D\nabla^2 (\tfrac43 \nabla_j L + L_j)
+\nonumber\\
+2\bar E_{ij} - 2E_{ij} &=& 2\nabla_i \nabla_j L + \nabla_i L_j + \nabla_j L_i
+-\nabla_i \int D\nabla^2 (2\nabla_j L + L_j) - \nabla_j \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+&&-\tfrac12 g_{ij}\left( 2 \nabla^2 L - \nabla^k \int D \nabla^2( 2\nabla_k L + L_k)\right)
+\nonumber\\
+&& + \tfrac12 \nabla_i \nabla_j \int D \left( 2\nabla^2 L + \nabla^k \int D \nabla^2 (2\nabla_k L +L_k)\right)
+\label{svtgauge1}
+\end{eqnarray}
+We may also include the trace condition
+\begin{eqnarray}
+-6\bar \psi + 2\nabla^2 \bar E &=& -6 \psi + 2\nabla^2 E +2 \nabla^2 L
+\end{eqnarray}
+
+From integrating the identity
+\begin{eqnarray}
+\nabla^2 D \phi = D\nabla^2 \phi + \nabla_i \left( \nabla^i \phi D - \nabla^i D \phi\right),
+\end{eqnarray}
+we may decompose a general scalar $\phi$ into its harmonic (T) and non-harmonic (L) pieces viz
+\begin{eqnarray}
+\phi =\underbrace{\int_V D \nabla^2 \phi}_{\phi^L} + \underbrace{\oint_{\partial V} dS_i \left( D \nabla^i \phi - \nabla^i D \phi\right)}_{\phi^T}.
+\label{phidecomp}
+\end{eqnarray}
+The harmonic $\phi^T$ is defined only upon the boundary surface with $\nabla^2 \phi^T$ vanishing identically for any $\phi$ and with $\nabla^2 \phi^L=0$ only vanishing for $\phi^L=0$. 
+From \eqref{phidecomp} we see that if we require
+\begin{enumerate}
+\item $\phi(x) =0 $\quad\text{for}\quad $x\in \partial V$
+\item $\nabla_i D(x,y)= 0$ \quad\text{for}\quad $x\in \partial V$
+\end{enumerate}
+then we may always use $\phi = \int D\nabla^2 \phi$. By definition of the Green's function equation
+\begin{eqnarray}
+\nabla^2 D(x,y) = \delta(x-y)
+\end{eqnarray}
+we may add to $D(x,y)$ a two-point function $F(x,y)$ that satisfies $\nabla^2 F(x,y) = 0$ (i.e. a harmonic $F$). Such an $F$ must also be entirely defined on the boundary and thus we may use this freedom to construct a $D(x,y)$ such that $\nabla_i D(x,y)=0$ for $x\in \partial V$. 
+\\ \\
+The above conditions correspond to Dirichlet boundary conditions, however we may instead impose Neumann boundary conditions and use $F$ to construct a Green's function that vanishes on the boundary itself. As expected from a PDE, the solution of the general $\nabla^2 \phi = \rho$ has to include boundary conditions.
+\\ \\
+Rexpressing \eqref{svtgauge1}
+\begin{eqnarray}
+\bar\phi &=& \phi+ \dot T
+\nonumber\\
+\bar B &=& B + \int D \nabla^2(\dot L-T)
+\nonumber\\
+\bar B_i &=& B_i + \dot L_i + \nabla_i (\dot L-T) - \nabla_i \int D \nabla^2(\dot L-T)
+\nonumber\\
+\bar\psi&=& \psi -\tfrac12 \nabla^2 L+\tfrac14 \nabla^i \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+\bar E&=& E + \int D\left(\tfrac34 \nabla^i \int D\nabla^2(2\nabla_i L + L_i) -\tfrac12 \nabla^2 L\right)
+\nonumber\\
+\bar E_i &=& E_i + \int D\nabla^2 (\tfrac43 \nabla_i L + L_i) - \nabla_i \int D \nabla^j \int D\nabla^2 (\tfrac43 \nabla_j L + L_j)
+\nonumber\\
+\bar E_{ij} &=& E_{ij} +\nabla_i \nabla_j L + \tfrac12\nabla_i L_j + \tfrac12\nabla_j L_i
+-\tfrac12\nabla_i \int D\nabla^2 (2\nabla_j L + L_j) - \tfrac12\nabla_j \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+&&-\tfrac14 g_{ij}\left( 2 \nabla^2 L - \nabla^k \int D \nabla^2( 2\nabla_k L + L_k)\right)
+\nonumber\\
+&& + \tfrac14 \nabla_i \nabla_j \int D \left( 2\nabla^2 L + \nabla^k \int D \nabla^2 (2\nabla_k L +L_k)\right)
+\end{eqnarray}
+If we now restrict to gauge transformations that vanish asymptotically, we may then utilize $\phi = \int D \nabla^2 \phi$ 
+and the gauge structure becomes the familiar
+\begin{eqnarray}
+\bar\phi  &=& \phi + \dot T
+\nonumber\\
+\bar B &=& B + \dot L - T
+\nonumber\\
+\bar \psi &=& \psi
+\nonumber\\
+\bar E &=& E + L
+\nonumber\\
+\bar B_i &=& B_i + \dot L_i
+\nonumber\\
+\bar E_i &=& E_i + \dot L_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}
+\end{eqnarray}
+with gauge invariant quantities
+\begin{eqnarray}
+\bar\psi = \psi,\qquad \bar \phi + \dot{\bar B} - \ddot{\bar E} = \phi + \dot B - \ddot E,
+\qquad \bar B_i - \dot{\bar E}_i = B_i - \dot E_i,\qquad \bar E_{ij} = E_{ij}.
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{00} &=& -2 \nabla^2 \psi
+\nonumber\\ \nonumber\\
+\delta G_{0i} &=& -2\nabla_i \dot\psi + \tfrac12 \nabla^2 (B_i-\dot E_i)
+\nonumber\\ \nonumber\\
+\delta G_{ij} &=& -2g_{ij}\ddot \psi+g_{ij} \nabla^2\psi - \nabla_i\nabla_j \psi
+-g_{ij}\nabla^2(\phi + \dot B - \ddot E) + \nabla_i\nabla_j (\phi +\dot B - \ddot E)
+\nonumber\\
+&& + \tfrac12 \nabla_i (\dot B_j - \ddot E_j) + \tfrac12\nabla_j (\dot B_i - \ddot E_i) +\nabla^2 E_{ij} - \ddot E_{ij}
+\nonumber\\ \nonumber\\
+g^{ij} \delta G_{ij} &=& -6\ddot \psi + 2\nabla^2 \psi - 2\nabla^2(\phi +\dot B-\ddot E)
+\end{eqnarray}
+For the Weyl case, in taking the transverse vector component of $\delta W_{0i}$, we will incur terms that depend on the boundary as
+\begin{eqnarray}
+\nabla^2\Psi - \int D \nabla^4 \Psi = \oint dS^i \left[\nabla_i D \nabla^2\Psi - D\nabla_i\nabla^2\Psi\right]
+\end{eqnarray}
+whereby we see that is must be $\nabla^2\Psi$ that vanishes on the boundary rather than $\Psi$ itself. 
+\end{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Curved Space Transverse Projector}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recall the flat space transverse projector
+%
+\begin{eqnarray}
+h^T_{\mu\nu} &=& h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu + \nabla_\mu\nabla_\nu \int D \nabla_\sigma W^\sigma 
+\end{eqnarray}
+where $W_\mu = \int D \nabla^\sigma h_{\mu\sigma}$ and we define $D$ as the Green's function that obeys
+\begin{eqnarray}
+\nabla_\alpha\nabla^\alpha D(x,x') &=& \sqrt{g} \delta^3(x-x')
+\end{eqnarray}
+%
+To generalize this to curved space, we must introduce a two index Green's function $D_{\mu\alpha'}(x,x')$ (i.e. a bi-tensor). In this way, $W_\mu$ will be defined as
+\begin{eqnarray}
+W_\mu = \int D_{\mu}{}^{\sigma'}(x,x') \nabla^{\rho'} h_{\sigma'\rho'}.
+\end{eqnarray}
+For a manifold with non-vanishing Riemann tensor, Vierbiens are position dependent. 
+\begin{eqnarray}
+h_{\mu\nu}^T &=& h_{\mu\nu} - \nabla_\mu W_\nu - \nabla_\nu W_\mu + \nabla_\mu\nabla_\nu \int D_{\sigma'}{}^{\rho''} \nabla_{\rho''}W_{\sigma''}
+\end{eqnarray}
+
+\begin{eqnarray}
+\nabla^\sigma \nabla_\mu W_{\sigma} &=& \nabla_\mu \nabla^\sigma W_\sigma - R_\mu{}^\sigma W_\sigma
+\nonumber\\
+\nabla^\sigma \nabla_\mu \nabla_\sigma A &=& \nabla_\mu \nabla^\sigma\nabla_\sigma A - R_\mu{}^\sigma \nabla_\sigma A
+\end{eqnarray}
+
+\begin{eqnarray}
+h_{\mu\nu}^{T}&=& h_{\mu\nu}-\nabla_\mu W_\nu - \nabla_\nu W_\mu + \nabla_\mu\nabla_\nu \int D \nabla^{\sigma'}W_{\sigma'}
+\end{eqnarray}
+
+\begin{eqnarray}
+(\nabla_\alpha\nabla^\alpha - \frac{R}{D})D_\sigma{}^{\rho'}(x,x') &=& g_{\sigma}{}^{\rho'} \sqrt{g} \delta^3(x,x')
+\end{eqnarray}
+
+Now using
+\begin{eqnarray}
+g^{\kappa}{}_{\rho'} g^{\rho'}{}_\sigma &=& \delta^\kappa{}_\sigma
+\nonumber\\
+g^{\sigma}{}_{\rho'} g^{\rho'}{}_\sigma &=& D
+\end{eqnarray}
+%
+we may relate the two index $D_{\sigma}{}^{\rho'}$ to a scalar $D(x,x')$ by
+\begin{eqnarray}
+g^{\sigma}{}_{\rho'} D_{\sigma}{}^{\rho'} &\equiv& D D(x,x')
+\end{eqnarray}
+%
+such that $D(x,x')$ obeys
+\begin{eqnarray}
+(\nabla_\alpha\nabla^\alpha - \frac{R}{D}) &=& \sqrt g \delta^3(x,x')
+\end{eqnarray}
+
+\begin{eqnarray}
+W_\mu = \int D_\mu{}^{\rho'}(x,x')\nabla^{\sigma'}h_{\rho'\sigma'}
+\end{eqnarray}
+
+\begin{eqnarray}
+h^T_{\mu\nu} &=& h_{\mu\nu}-\nabla_\mu W_\nu -\nabla_\nu W_\mu + \nabla_\mu\nabla_\nu \int D \nabla^{\sigma'}W_{\sigma'}
+\end{eqnarray}
+
+\begin{eqnarray}
+h^T &=& g^{\rho\sigma}h^T_{\rho\sigma}
+\nonumber\\
+&=& h-2\nabla^\sigma W_\sigma + \nabla_\alpha \nabla^\alpha \int D \nabla^{\sigma'}W_{\sigma'}
+\end{eqnarray}
+
+\begin{eqnarray}
+h_{\mu\nu}^{T\theta} &=& h^T_{\mu\nu} - \frac{1}{d-1} g_{\mu\nu}h^T + \frac{1}{d-1}\left[\nabla_\mu\nabla_\nu - g_{\mu\nu}\frac{R}{d(d-1)}\right] \int F h^T 
+\end{eqnarray}
+%
+For the special case that $h_{\mu\nu}$ is apriori transverse, then it follows that $W_\mu =0$ and $h^T = h$ and thus the transverse traceless component takes the simple form
+
+\begin{eqnarray}
+h_{\mu\nu}^{T\theta} &=& h_{\mu\nu} - \frac{1}{d-1}g_{\mu\nu} h
++ \frac{1}{d-1}\left[\nabla_\mu\nabla_\nu - g_{\mu\nu}\frac{R}{d(d-1)}\right] \int F h^T 
+\end{eqnarray}
+
+\begin{eqnarray}
+h^{T\theta}_{\mu\nu} &=& h_{\mu\nu}-\nabla_\mu W_\nu -\nabla_\nu W_\mu + \nabla_\mu\nabla_\nu \int D \nabla^{\sigma'}W_{\sigma'} - \frac{1}{d-1} g_{\mu\nu}
+\end{eqnarray}
+
+
+
+\begin{eqnarray}
+h_{\mu\nu} &=& \underbrace{h_{\mu\nu}^T}_{h_{\mu\nu}^{TT}+h_{\mu\nu}^{TNT}} 
++\underbrace{h_{\mu\nu}^L}_{h_{\mu\nu}^{LT}+h_{\mu\nu}^{LNT}} 
+\end{eqnarray}
+
+\end{document}

@@ -1,0 +1,271 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{TT Projection Curved Space v3}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Curved Space TT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Summary}
+%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi
+\\  \nonumber\\
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}.
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h
+\\ \nonumber\\
+F &=& \int g^{1/2} D(x,x') \nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}\int g^{1/2} D(x,x') h
+\\ \nonumber\\
+F_{\mu} &=& W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma
+\nonumber\\
+2F_{\mu\nu} &=& 2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu} - h_{\mu\nu} 
+\end{eqnarray}
+Conditions upon $W_\mu$ and $\Psi$:
+\begin{eqnarray}
+\Psi &=& \int g^{1/2} D(x,x') h
+\\ \nonumber\\
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\\nonumber \\
+\nabla_\alpha\nabla^\alpha W_\nu + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla^\alpha W_\alpha - R_{\nu\alpha}W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\\nonumber \\
+\nabla_\alpha \nabla^\alpha W_\nu +\nabla^\alpha \nabla_\nu W_\alpha - \frac{2}{D}\nabla_\nu\nabla^\alpha W_\alpha&=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\ \nonumber\\
+\frac{2(D-1)}{D}\nabla_\alpha\nabla^\alpha \nabla^\sigma W_\sigma - \nabla^\alpha R W_\alpha - 2R^{\alpha\beta} \nabla_\alpha W_{\beta} &=& 
+\nabla^\alpha\nabla^\beta h_{\alpha\beta} - \frac{1}{(D-1)}\left[ \tfrac12 \nabla^\alpha R \nabla_\alpha + R^{\alpha\beta}\nabla_\alpha\nabla_\beta\right]\Psi
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TT Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Assume $h_{\mu\nu}$ to be of the form:
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \underbrace{\left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right)}_{W_{\mu\nu}} + \underbrace{\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi}_{S_{\mu\nu}}
+\label{decomph}
+\end{eqnarray}
+Taking the trace of \eqref{decomph}, we find the vector sector $W_{\mu\nu}$ is decoupled from the trace and $\Psi$ can easily be inverted,
+\begin{eqnarray}
+g^{\mu\nu}W_{\mu\nu} &=& 0
+\\ \nonumber\\
+g^{\mu\nu}S_{\mu\nu} &=& \nabla_\alpha\nabla^\alpha \Psi = h
+\qquad
+\to \Psi = \int g^{1/2} D(x,x') h
+\label{psih}
+\end{eqnarray}
+Taking the divergence of \eqref{decomph}, we have
+\begin{eqnarray}
+\nabla^\mu h_{\mu\nu} &=& \nabla^\mu W_{\mu\nu} + \nabla^\mu S_{\mu\nu}(h)
+\label{treq1}
+\end{eqnarray}
+By substituting \eqref{psih}, the above serves to define an equation for $W_{\mu}$ in terms of $h$ and $h_{\mu\nu}$, namely
+\begin{eqnarray}
+\nabla_\alpha \nabla^\alpha W_\nu +\nabla^\alpha \nabla_\nu W_\alpha - \frac{2}{D}\nabla_\nu\nabla^\alpha W_\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\int g^{1/2} D(x,x') h
+\label{treq2}
+\end{eqnarray}
+Commuting derivatives, \eqref{treq2} can be expressed in the equivalent forms,
+\begin{eqnarray}
+\left[g_{\nu\alpha} \nabla_\beta \nabla^\beta +\nabla_\alpha \nabla_\nu - \frac{2}{D}\nabla_\nu\nabla_\alpha\right] W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\int g^{1/2} D(x,x') h,
+\label{treq3}
+\\ \nonumber\\
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha
+&=& \nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}R_{\nu\alpha}\nabla^\alpha \int g^{1/2} D(x,x') h.
+\label{treq4}
+\end{eqnarray}
+Similar to \eqref{fgreen}, the requisite Green's function that solves $W_\alpha$ is a bi-tensor defined as
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]D^{\alpha\gamma'} &=& g^{\alpha\gamma'} g^{-1/2} \delta^{(D)}(x,x').
+\end{eqnarray}
+Hence, $W_\mu$ takes the form
+\begin{eqnarray}
+W_{\mu} &=& \int g^{1/2} D_\mu{}^{\sigma'} \left[ \nabla^{\rho'} h_{\sigma'\rho'}-
+ \frac{1}{D-1}R_{\sigma'\rho'}\nabla^{\rho'} \int g^{1/2} D(x',x'') h\right].
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SVTD Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+Starting with 
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi,
+\label{hdecomp3}
+\end{eqnarray}
+we decompose $W_{\mu}$ into transverse and longitudinal components viz.
+\begin{eqnarray}
+W_{\mu} &=& \underbrace{W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma}_{F_{\mu}} + \nabla_\mu \underbrace{ \int g^{1/2}D(x,x')\nabla^\sigma W_\sigma}_{H}.
+\end{eqnarray}
+Setting $h_{\mu\nu}^{T\theta} = 2F_{\mu\nu}$, \eqref{hdecomp3} becomes
+\begin{eqnarray}
+h_{\mu\nu}&=& 2F_{\mu\nu} + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2 \nabla_\mu\nabla_\nu H - \frac{2}{D}g_{\mu\nu}\nabla_\alpha \nabla^\alpha H +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi.
+\end{eqnarray}
+Upon further defining
+\begin{eqnarray}
+F &=& H - \frac{1}{2(D-1)} \Psi
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla_\alpha\nabla^\alpha H - \frac{1}{2(D-1)}\nabla_\alpha\nabla^\alpha \Psi,
+\end{eqnarray}
+we may express \eqref{hdecomp3} as the desired SVTD form:
+\begin{eqnarray}
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}.
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h
+\\ \nonumber\\
+F &=& \int g^{1/2} D(x,x') \nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}\int g^{1/2} D(x,x') h
+\\ \nonumber\\
+F_{\mu} &=& W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma
+\\ \nonumber\\
+2F_{\mu\nu} &=& 2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu} - h_{\mu\nu} 
+\end{eqnarray}
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\\nonumber \\
+\frac{2(D-1)}{D}\nabla_\alpha\nabla^\alpha \nabla^\sigma W_\sigma - \nabla^\alpha R W_\alpha - 2R^{\alpha\beta} \nabla_\alpha W_{\beta} &=& 
+\nabla^\alpha\nabla^\beta h_{\alpha\beta} - \frac{1}{(D-1)}\left[ \tfrac12 \nabla^\alpha R \nabla_\alpha + R^{\alpha\beta}\nabla_\alpha\nabla_\beta\right]\Psi
+\end{eqnarray}
+%
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Curved TT in Max. Symmetric Space (Incomplete)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi
+\\  \nonumber\\
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}.
+\\ \nonumber\\
+\chi &=& \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h
+\\ \nonumber\\
+F &=& \int g^{1/2} D(x,x') \nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}\int g^{1/2} D(x,x') h
+\\ \nonumber\\
+F_{\mu} &=& W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma
+\nonumber\\
+2F_{\mu\nu} &=& 2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu} - h_{\mu\nu} 
+\end{eqnarray}
+In a space of maximal symmetry defined by
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R_{\mu\kappa} &=& k(1-D)g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R&=& kD(1-D), 
+\end{eqnarray}
+the conditions upon $W_\mu$ and $\Psi$ reduce to
+\begin{eqnarray}
+\Psi &=& \int g^{1/2} D(x,x') h
+\\ \nonumber \\
+\left(\nabla_\alpha\nabla^\alpha-\frac{R}{D}\right) W_\nu + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla^\alpha W_\alpha  &=&
+\nabla^\alpha h_{\alpha\nu} - \frac{R}{D(D-1)}\nabla_\nu \Psi
+\\\nonumber \\
+\nabla_\alpha \nabla^\alpha W_\nu +\nabla^\alpha \nabla_\nu W_\alpha - \frac{2}{D}\nabla_\nu\nabla^\alpha W_\alpha&=&
+\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}\left(\nabla_\nu \nabla_\alpha\nabla^\alpha - \nabla_\alpha\nabla^\alpha \nabla_\nu\right)
+\Psi
+\\ \nonumber\\
+\frac{2(D-1)}{D}\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right) \nabla^\sigma W_\sigma &=& 
+\nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{R}{D(D-1)}\nabla_\alpha \nabla^\alpha \Psi
+\label{maxsymcon4}
+\end{eqnarray}
+
+From \eqref{maxsymcon4}, we may determine $\chi$ and $F$ as
+\begin{eqnarray}
+\left( \nabla_\alpha\nabla^\alpha -\frac{R}{D-1}\right)\chi &=& \frac{1}{2(D-1)}\left( \nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{R}{D(D-1)}h\right)
+\\ \nonumber\\
+\nabla_\alpha\nabla^\alpha F &=& \frac{D}{2(D-1)}\left( \nabla^\alpha\nabla^\beta h_{\alpha\beta}  - \frac{R}{D(D-1)}h-\frac{D-1}{D(D-1)}h\right)
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Curved TT in Minkowski}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \left(\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha\right) +\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\Psi,
+\label{hdecomp3}
+\end{eqnarray}
+In a Minkowski geometry, the defining equation for $W_{\mu}$ reduces to
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha\right]W^\alpha
+&=& \nabla^\alpha h_{\alpha\nu} 
+\\ \nonumber\\
+W_{\mu} &=& \int g^{1/2} D_\mu{}^{\sigma'} \nabla^{\rho'} h_{\sigma'\rho'}
+\\ \nonumber\\
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha \right]D^{\alpha\gamma'} &=& g^{\alpha\gamma'}  \delta^{(D)}(x,x')
+\\ \nonumber\\
+\nabla_\alpha\nabla^\alpha \Psi &=& h
+\\ \nonumber\\
+\Psi &=& \int g^{1/2}D(x,x')h
+\\ \nonumber\\
+\nabla_\alpha \nabla^\alpha D(x,x') &=& g^{-1/2}\delta^{(D)} (x-x')
+\end{eqnarray}
+
+Decompose $W_{\mu}$ into transverse and longitudinal components viz.
+\begin{eqnarray}
+W_{\mu} &=& \underbrace{W_{\mu} -\nabla_\mu \int g^{1/2} D(x,x')\nabla^{\sigma}W_\sigma}_{F_{\mu}} + \nabla_\mu \underbrace{ \int g^{1/2}D(x,x')\nabla^\sigma W_\sigma}_{H}.
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Maximally Symmetric Space TT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{ g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') \nabla^\sigma W_\sigma
+-\frac{1}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') h
+\label{decomphmax}
+\end{eqnarray}
+\begin{eqnarray}
+\left( \nabla_\alpha \nabla^\alpha - \frac{R}{D-1}\right)D(x,x') &=& g^{-1/2}\delta^{(D)} (x-x')
+\\ \nonumber\\
+\nabla^\mu h_{\mu\nu} &=& \left( \nabla_\alpha\nabla^\alpha-\frac{R}{D} \right) W_\nu
+\end{eqnarray}
+With the covariant operator $(\nabla^2-R/D)$ mixing indices of $W_\nu$, the particular integral solution for $W_\nu$ involves a bi-tensor Green's function $D_{\sigma\rho'}$ which obeys
+\begin{eqnarray}
+\left( \nabla^\alpha\nabla_\alpha -\frac{R}{D}\right) D_{\sigma\rho'}(x,x') &=& g_{\sigma\rho'}g^{-1/2} \delta^4(x-x').
+\label{fgreen}
+\end{eqnarray}
+Here $g_{\sigma\rho'}$ represents a parallel propagator, defined in terms of Vierbeins $e_\mu^a$:
+\begin{eqnarray}
+g^{\alpha'}{}_{\beta}(x,x') &=& e^{\alpha'}_a(x') e_{\beta}^a(x),\qquad g_{\mu\nu} = \eta_{ab}e_{\mu}^ae_\nu^b.
+\end{eqnarray}
+In terms of \eqref{fgreen}, $W_\nu$ has particular solution
+\begin{eqnarray}
+W_\nu &=& g^{1/2}\int D_\nu{}^{\rho'}(x,x')\nabla^{\sigma'}h_{\rho'\sigma'}.
+\end{eqnarray}
+%
+%
+
+
+
+\newpage
+
+\end{document}

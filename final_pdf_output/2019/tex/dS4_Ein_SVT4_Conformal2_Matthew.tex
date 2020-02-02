@@ -1,0 +1,117 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{SVT4 dS${}_4$ Conformal(2) Einstein}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+G^{(0)}_{\mu\nu} &=& 3H^{2} g_{\mu\nu}
+\\
+R^{(0)}_{\lambda\mu\nu\kappa} &=& H^{2} (g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa}),
+\qquad
+R^{(0)}_{\mu\kappa} = -3 H^{2} g_{\mu\kappa},
+\qquad
+R^{(0)}= -12 H^{2},
+\\ \nonumber\\
+ds^2 &=& \Omega^2(\tau)[\tilde g_{\mu\nu}+ f_{\mu\nu}] dx^\mu dx^\nu,\qquad
+\Omega(\tau) = \frac{1}{1-H\tau} = e^{Ht},\qquad \tau(t=0) = 0
+\label{geom}
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}(-1,1,1,1)\quad\text{or}\quad \text{diag}(-1,1,r^2,r^2\sin^2\theta)
+\\ \nonumber\\
+f_{\mu\nu} &=& -2\tilde g_{\mu\nu} \chi + 2\tilde\nabla_\mu\tilde\nabla_\nu F + \tilde\nabla_\mu E_\nu + \tilde\nabla_\nu E_\mu + 2E_{\mu\nu}
+\label{svt}
+\\ \nonumber\\
+\tilde\nabla_\mu \Omega &=&  \dot\Omega \delta^0_\mu ,\qquad \Omega = \frac{1}{1-H\tau},
+\qquad \dot \Omega = \frac{H}{(1-H\tau)^2},\qquad \ddot\Omega = \frac{2H^2}{(1-H\tau)^3}
+\\ \nonumber\\
+\delta G_{00}&=& 6 H \dot{\chi} (1 -  H \tau)^{-1} + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi +2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}- \overset{..}{E}_{00}{} \nonumber \\ 
+&& + 2 H \dot{E}_{00}{} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{00}{}
+\\  \nonumber\\ 
+\delta G_{0i}&=& 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\overset{..}{F} + 6 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{i}\dot{F} - 2 \tilde{\nabla}_{i}\dot{\chi} \nonumber \\ 
+&& + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\chi +3 H^2 \dot{E}_{i} (1 -  H \tau)^{-2} + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\dot{E}_{0}{} \nonumber \\ 
+&& + 3 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{i}E_{0}{}- \overset{..}{E}_{0i}{} + 6 H^2 E_{0i}{} (1 -  H \tau)^{-2} - 4 H \dot{E}_{0i}{} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0i}{} \nonumber \\ 
+&& + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}E_{00}{}
+\\  \nonumber\\ 
+\delta G_{ij}&=& -2 \overset{..}{\chi} \tilde{g}_{ij} + 6 H^2 \overset{..}{F} \tilde{g}_{ij} (1 -  H \tau)^{-2} + 2 H \overset{...}{F} \tilde{g}_{ij} (1 -  H \tau)^{-1} - 2 H \dot{\chi} \tilde{g}_{ij} (1 -  H \tau)^{-1} \nonumber \\ 
+&& - 2 H \tilde{g}_{ij} (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 2 \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{F} \nonumber \\ 
+&& + 6 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}F - 2 \tilde{\nabla}_{j}\tilde{\nabla}_{i}\chi +6 H^2 \dot{E}_{0}{} \tilde{g}_{ij} (1 -  H \tau)^{-2} + 2 H \overset{..}{E}_{0}{} \tilde{g}_{ij} (1 -  H \tau)^{-1} \nonumber \\ 
+&& - 2 H \tilde{g}_{ij} (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{} + 3 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{i}E_{j} + 3 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{j}E_{i} \nonumber \\ 
+&& + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E_{0}{}- \overset{..}{E}_{ij} + 6 H^2 E_{ij} (1 -  H \tau)^{-2} + 6 H^2 E_{00}{} \tilde{g}_{ij} (1 -  H \tau)^{-2} \nonumber \\ 
+&& - 2 H \dot{E}_{ij} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}E_{0}{}_{j} - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}E_{0i}{}
+\\ \nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu}  &=&  6 H \overset{...}{F} + 18 H^2 \overset{..}{F} - 6 \overset{..}{\chi} - 12 H \dot{\chi} - 6 H^2 \overset{...}{F} \tau + 12 H \overset{..}{\chi} \tau + 12 H^2 \dot{\chi} \tau - 6 H^2 \overset{..}{\chi} \tau^2 - 6 H \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} \nonumber \\ 
+&& + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 6 H^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}F + 6 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi - 12 H \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi + 6 H^2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi +6 H \overset{..}{E}_{0}{} \nonumber \\ 
+&& + 24 H^2 \dot{E}_{0}{} - 6 H^2 \overset{..}{E}_{0}{} \tau - 6 H \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{} + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}+24 H^2 E_{00}{}
+\\ \nonumber\\ 
+-\kappa^2_4 \delta T_{00}&=& 6 H^2 \overset{..}{F} (1 -  H \tau)^{-2} + 6 H^2 (1 -  H \tau)^{-2} \chi +6 H^2 \dot{E}_{0}{} (1 -  H \tau)^{-2}+6 H^2 E_{00}{} (1 -  H \tau)^{-2}
+\\  \nonumber\\ 
+-\kappa^2_4\delta T_{0i}&=& 6 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{i}\dot{F}+3 H^2 \dot{E}_{i} (1 -  H \tau)^{-2} + 3 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{i}E_{0}{}+6 H^2 E_{0i}{} (1 -  H \tau)^{-2}
+\\  \nonumber\\ 
+-\kappa^2_4 \delta T_{ij}&=& -6 H^2 \tilde{g}_{ij} (1 -  H \tau)^{-2} \chi + 6 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}F+3 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{i}E_{j} \nonumber \\ 
+&& + 3 H^2 (1 -  H \tau)^{-2} \tilde{\nabla}_{j}E_{i}+6 H^2 E_{ij} (1 -  H \tau)^{-2}
+\\ \nonumber\\
+-\kappa^2_4 g^{\mu\nu}\delta T_{\mu\nu} &=& -6 H^2 \overset{..}{F} - 24 H^2 \chi + 6 H^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}F
+\end{eqnarray}
+%
+%
+%
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\Delta_{\mu\nu} &\equiv& \delta G_{\mu\nu} +\kappa^2_4\delta T_{\mu\nu}\ =0
+\\ \nonumber\\
+\Delta_{00}&=& -6 H^2 \overset{..}{F} (1 -  H \tau)^{-2} + 6 H \dot{\chi} (1 -  H \tau)^{-1} - 6 H^2 (1 -  H \tau)^{-2} \chi + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} \nonumber \\ 
+&& - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi -6 H^2 \dot{E}_{0}{} (1 -  H \tau)^{-2} + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}- \overset{..}{E}_{00}{} - 6 H^2 E_{00}{} (1 -  H \tau)^{-2} \nonumber \\ 
+&& + 2 H \dot{E}_{00}{} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{0i}&=& 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\overset{..}{F} - 2 \tilde{\nabla}_{i}\dot{\chi} + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\chi +2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\dot{E}_{0}{}- \overset{..}{E}_{0i}{} \nonumber \\ 
+&& - 4 H \dot{E}_{0i}{} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0i}{} + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{ij}&=& -2 \overset{..}{\chi} \tilde{g}_{ij} + 6 H^2 \overset{..}{F} \tilde{g}_{ij} (1 -  H \tau)^{-2} + 2 H \overset{...}{F} \tilde{g}_{ij} (1 -  H \tau)^{-1} - 2 H \dot{\chi} \tilde{g}_{ij} (1 -  H \tau)^{-1} \nonumber \\ 
+&& + 6 H^2 \tilde{g}_{ij} (1 -  H \tau)^{-2} \chi - 2 H \tilde{g}_{ij} (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 2 \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{F} \nonumber \\ 
+&& - 2 \tilde{\nabla}_{j}\tilde{\nabla}_{i}\chi +6 H^2 \dot{E}_{0}{} \tilde{g}_{ij} (1 -  H \tau)^{-2} + 2 H \overset{..}{E}_{0}{} \tilde{g}_{ij} (1 -  H \tau)^{-1} - 2 H \tilde{g}_{ij} (1 -  H \tau)^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{} \nonumber \\ 
+&& + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E_{0}{}- \overset{..}{E}_{ij} + 6 H^2 E_{00}{} \tilde{g}_{ij} (1 -  H \tau)^{-2} - 2 H \dot{E}_{ij} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} \nonumber \\ 
+&& - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}E_{0}{}_{j} - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}E_{0i}{}
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu} &=&6 H \overset{...}{F} + 24 H^2 \overset{..}{F} - 6 \overset{..}{\chi} - 12 H \dot{\chi} - 6 H^2 \overset{...}{F} \tau + 12 H \overset{..}{\chi} \tau + 12 H^2 \dot{\chi} \tau - 6 H^2 \overset{..}{\chi} \tau^2 + 24 H^2 \chi \nonumber \\ 
+&& - 6 H \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 6 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi - 12 H \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi + 6 H^2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi +6 H \overset{..}{E}_{0}{} \nonumber \\ 
+&& + 24 H^2 \dot{E}_{0}{} - 6 H^2 \overset{..}{E}_{0}{} \tau - 6 H \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{} + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}+24 H^2 E_{00}{}
+\end{eqnarray}
+%
+%
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (G.I. Form)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\alpha &=& \dot\Omega \Omega^{-1} \dot F + \dot\Omega \Omega^{-1}E_0 - \chi 
+= H \dot{F} (1 -  H \tau)^{-1} + H E_{0}{} (1 -  H \tau)^{-1} -  \chi 
+\\ \nonumber\\
+\Delta_{00}&=& 6 H^2 \alpha (1 -  H \tau)^{-2} - 6 H \dot{\alpha} (1 -  H \tau)^{-1} + 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - \overset{..}{E}_{00}{} - 6 H^2 E_{00}{} (1 -  H \tau)^{-2} \nonumber \\ 
+&& + 2 H \dot{E}_{00}{} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{0i}&=& 2 \tilde{\nabla}_{i}\dot{\alpha} - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}\alpha - \overset{..}{E}_{0i}{} - 4 H \dot{E}_{0i}{} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0i}{} + 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{ij}&=& 2 \overset{..}{\alpha} \tilde{g}_{ij} - 6 H^2 \tilde{g}_{ij} \alpha (1 -  H \tau)^{-2} + 2 H \dot{\alpha} \tilde{g}_{ij} (1 -  H \tau)^{-1} - 2 \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha + 2 \tilde{\nabla}_{j}\tilde{\nabla}_{i}\alpha - \overset{..}{E}_{ij} \nonumber \\ 
+&& + 6 H^2 E_{00}{} \tilde{g}_{ij} (1 -  H \tau)^{-2} - 2 H \dot{E}_{ij} (1 -  H \tau)^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{i}E_{0}{}_{j} \nonumber \\ 
+&& - 2 H (1 -  H \tau)^{-1} \tilde{\nabla}_{j}E_{0i}{}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 6 \overset{..}{\alpha} + 12 H \dot{\alpha} - 24 H^2 \alpha - 12 H \overset{..}{\alpha} \tau - 12 H^2 \dot{\alpha} \tau + 6 H^2 \overset{..}{\alpha} \tau^2 - 6 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha + 12 H \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha \nonumber \\ 
+&& - 6 H^2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha +24 H^2 E_{00}{}
+\end{eqnarray}
+\end{document}

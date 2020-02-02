@@ -1,0 +1,189 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{TT Projection RW}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+Projections onto the transverse components of $\Delta_{ij}$ and $\Delta_{0i}$ are applied within the RW geometry
+\begin{eqnarray}
+ds^2 &=& -dt^2 + a^2(t)\left( \frac{dr^2}{1-kr^2} + r^2d\theta^2 + r^2\sin^2\theta d\phi^2\right) = -dt^2 + a(t)^2 g_{ij} dx^i dx^j,
+\end{eqnarray}
+in order to investigate if it is possible to obtain SVT separation at a lesser derivative order. 
+\\ \\ Separation into scalar, vector, and tensor sectors is found and given as
+\begin{eqnarray}
+(\nabla^2-2k)(\nabla^2-3k)\Delta_{ij}^{T\theta}&=& -6 k^2 \overset{..}{E}_{ij} - 12 k^3 E_{ij} - 12 k^2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1} + 5 k \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{ij} + 10 k \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{ij} + 16 k^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} \nonumber \\ 
+&& -  \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{ij} - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{ij} - 7 k \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} + \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\nonumber\\
+\phantom{}
+\label{sept}
+ \\ \nonumber\\
+(\nabla^2-2k)\Delta_{0i}^T &=& -2 k^2 Q_{i} + 8 k \dot{\Omega}^2 V_{i} \Omega^{-3} - 4 k \overset{..}{\Omega} V_{i} \Omega^{-2} + 4 k^2 V_{i} \Omega^{-1} - 4 \dot{\Omega}^2 \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}V_{i} + 2 \overset{..}{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}V_{i} \nonumber \\ 
+&& - 2 k \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}V_{i} + \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}Q_{i}
+\label{sepv}
+\end{eqnarray}
+Combined with $\Delta_{00}$ and $g^{ij}\Delta_{ij}$, \eqref{sept} and \eqref{sepv} serve as alternative separation equations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h_{\mu\nu}$ General Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Curvature Tensors:
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R_{\mu\kappa} &=& k(1-D)g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R&=& kD(1-D) 
+\end{eqnarray}
+Covariant Commutation:
+\begin{eqnarray}
+[\nabla^\sigma \nabla_\nu] W_\sigma &=& -R_{\nu}{}^\sigma W_\sigma = -\frac{R}{D}W_\nu
+\nonumber\\
+{[}\nabla^\mu \nabla_\mu, \nabla_\nu] V &=& -R_{\nu}{}^\mu \nabla_\mu V = -\frac{R}{D}\nabla_\nu V
+\nonumber\\
+{[}\nabla^2,\nabla_\mu\nabla_\nu]V &=& \frac{2 g_{\mu\nu}R}{D(D-1)}\nabla^2 V - \frac{2R}{D-1}\nabla_\mu\nabla_\nu V
+\label{comms}
+\end{eqnarray}
+Decomposition:
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{ g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') \nabla^\sigma W_\sigma
+-\frac{1}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') h
+\label{decomph}
+\end{eqnarray}
+\begin{eqnarray}
+\left( \nabla_\alpha \nabla^\alpha - \frac{R}{D-1}\right)D(x,x') &=& g^{-1/2}\delta^4 (x-x')
+\nonumber\\ \nonumber\\
+\nabla^\mu h_{\mu\nu} &=& \left( \nabla_\alpha\nabla^\alpha-\frac{R}{D} \right) W_\nu
+\end{eqnarray}
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$D=3$ Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For $D=3$, we have
+\begin{eqnarray}
+h_{ij}^{T\theta} &=& h_{ij} - \nabla_i W_j - \nabla_j W_i + \frac{g_{ij}}{2}(\nabla^k W_k - h) +\frac{1}{2}(\nabla_i\nabla_j +kg_{ij})\int D (\nabla^k W_k+h)
+\label{htt}
+\end{eqnarray}
+where 
+\begin{eqnarray}
+\left( \nabla_a \nabla^a+ 3k \right)D(x,x') &=& g^{-1/2}\delta^3 (x-x')
+\nonumber\\ \nonumber\\
+\nabla^\ell h_{k\ell} &=& \left( \nabla_a\nabla^a+2k \right) W_k.
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h^{T\theta}_{ij}$ Projection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The idea is to find differential operators that will bring \eqref{htt} into a local form. This entails finding operators that commute through covariant derivatives outside the integrals but still retain the correct form to act on the Green's functions. 
+\\ \\
+Commutators:
+\begin{eqnarray}
+[\nabla^2 \nabla_i,\nabla_i\nabla^2 ]A_j &=& 2k(\nabla_i A_j + \nabla_j A_i - g_{ij}\nabla^k A_k)
+\\ \nonumber\\
+\phantom{} [\nabla^2 \nabla_i,\nabla^i\nabla^2 ]A_i &=& -2k\nabla^k A_k
+\\ \nonumber\\
+\phantom{}[\nabla^2 \nabla_i\nabla_j,\nabla_i\nabla_j \nabla^2]S &=& 2k(3\nabla_i\nabla_j S- g_{ij} \nabla^2 S)
+\end{eqnarray}
+Useful relations:
+\begin{eqnarray}
+(\nabla^2-3k)(\nabla_i\nabla_j + k g_{ij})&=&(\nabla_i\nabla_j-kg_{ij})(\nabla^2+3k)
+\\ \nonumber\\
+(\nabla^2-2k)(\nabla^2-3k)(\nabla_i W_j + \nabla_j W_i) &=& -4kg_{ij}(2\nabla^2+k)\nabla^k W_k
++\nabla_j \nabla^2(\nabla^2+2k)W_i + k\nabla_j(\nabla^2+2k)W_i
+\nonumber\\
+&&
++\nabla_i \nabla^2(\nabla^2+2k)W_j + k\nabla_i(\nabla^2+2k)W_j
+\\ \nonumber\\
+\nabla_i \nabla^2(\nabla^2+2k)W_j&=&  \nabla^2\nabla_i (\nabla^2+2k)W_j -2k\nabla_j(\nabla^2+2k)W_i - 2k\nabla_i(\nabla^2+2k)W_j
+\nonumber\\
+&&+2k g_{ij}(\nabla^2+4k)\nabla^k W_k
+\\ \nonumber\\
+(\nabla^2-2k)(\nabla^2-3k)(\nabla_i W_j + \nabla_j W_i)&=&
+\nabla^2\nabla_i (\nabla^2+2k)W_j + \nabla^2 \nabla_j (\nabla^2+2k)W_i
+-3k \nabla_j (\nabla^2+2k)W_i -3k \nabla_i (\nabla^2+2k)W_j
+\nonumber\\
+&&-4k g_{ij}\nabla^2 \nabla^k W_k + 12 k^2 g_{ij} \nabla^k W_k
+\\ \nonumber\\
+(\nabla^2+4k)\nabla^k W_k &=& \nabla^k\nabla^l h_{kl}
+\end{eqnarray}
+\begin{eqnarray}
+&&(\nabla^2-2k)(\nabla^2-3k)\left[\frac{g_{ij}}{2}(\nabla^k W_k - h) +\frac{1}{2}(\nabla_i\nabla_j +kg_{ij})\int D (\nabla^k W_k+h)\right]
+\nonumber\\
+=&& \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)\nabla^k W_k + \tfrac12 g_{ij} \nabla^2(\nabla^2+4k)\nabla^k W_k
+\nonumber\\
+&&-6k g_{ij} \nabla^2 \nabla^k W_k + 4k^2 g_{ij} \nabla^k W_k + \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)h -\tfrac12 g_{ij} \nabla^4 h
++k g_{ij} \nabla^2 h -2k^2 g_{ij} h
+\end{eqnarray}
+\\ \\
+Result:
+\begin{eqnarray}
+(\nabla^2-2k)(\nabla^2-3k)h_{ij}^{T\theta}&=&
+(\nabla^2-2k)(\nabla^2-3k)h_{ij}-  \nabla^2\nabla_i (\nabla^2+2k)W_j - \nabla^2 \nabla_j (\nabla^2+2k)W_i
++3k \nabla_j (\nabla^2+2k)W_i
+\nonumber\\
+&&+3k \nabla_i (\nabla^2+2k)W_j
++ \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)\nabla^k W_k + \tfrac12 g_{ij} \nabla^2(\nabla^2+4k)\nabla^k W_k
+\nonumber\\
+&& -2k g_{ij}(\nabla^2+4k)\nabla^k W_k+ \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)h -\tfrac12 g_{ij}\nabla^2(\nabla^2-3k)h-\tfrac12 k (\nabla^2+4k)h
+\\ \nonumber\\
+=&& (\nabla^2-2k)(\nabla^2-3k)h_{ij}-\nabla^2 \nabla_i \nabla^l h_{jl} - \nabla^2 \nabla_j \nabla^l h_{il}+3k\nabla_j \nabla^l h_{il}+3k\nabla_i \nabla^l h_{jl}
+\nonumber\\
+&&+\tfrac12 \nabla_i\nabla_j \nabla^k \nabla^l h_{kl}+\tfrac12 g_{ij} \nabla^2 \nabla^k \nabla^l h_{kl}
+-2k g_{ij} \nabla^l \nabla^k h_{kl}+ \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)h
+\nonumber\\
+&& -\tfrac12 g_{ij}\nabla^2(\nabla^2-3k)h-\tfrac12 g_{ij} k (\nabla^2+4k)h
+\label{phtt}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\Delta^{T\theta}_{ij}$ Projection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Now we use \eqref{phtt} as applied to the particular tensor $\Delta_{ij}$, i.e.:
+\begin{eqnarray}
+(\nabla^2-2k)(\nabla^2-3k)\Delta_{ij}^{T\theta}&=&
+ (\nabla^2-2k)(\nabla^2-3k)\Delta_{ij}-\nabla^2 \nabla_i \nabla^l \Delta_{jl} - \nabla^2 \nabla_j \nabla^l \Delta_{il}+3k\nabla_j \nabla^l \Delta_{il}+3k\nabla_i \nabla^l \Delta_{jl}
+\nonumber\\
+&&+\tfrac12 \nabla_i\nabla_j \nabla^k \nabla^l \Delta_{kl}+\tfrac12 g_{ij} \nabla^2 \nabla^k \nabla^l \Delta_{kl}
+-2k g_{ij} \nabla^l \nabla^k \Delta_{kl}+ \tfrac12 \nabla_i \nabla_j (\nabla^2+4k)\Delta
+\nonumber\\
+&& -\tfrac12 g_{ij}\nabla^2(\nabla^2-3k)\Delta-\tfrac12 g_{ij} k (\nabla^2+4k)\Delta,
+\end{eqnarray}
+where $\Delta$ is the 3-trace $\Delta=g^{ab}\Delta_{ab}$. 
+\\ \\
+Inputting the explicit form of $\Delta_{ij}$, we find 
+\begin{eqnarray}
+(\nabla^2-2k)(\nabla^2-3k)\Delta_{ij}^{T\theta}&=& -6 k^2 \overset{..}{E}_{ij} - 12 k^3 E_{ij} - 12 k^2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1} + 5 k \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{ij} + 10 k \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{ij} + 16 k^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} \nonumber \\ 
+&& -  \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E}_{ij} - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{ij} - 7 k \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} + \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}.
+\nonumber\\
+\phantom{}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\Delta^{T}_{0i}$ Projection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For a vector, the transverse component may be expressed as
+\begin{eqnarray}
+\Delta_{0i}^T &=& \Delta_{0i}- \nabla_i \int A \nabla^k \Delta_{0k}
+\end{eqnarray}
+where 
+\begin{eqnarray}
+\nabla_a\nabla^a A(x,x') = g^{-1/2}\delta(x-x').
+\end{eqnarray}
+To bring this into a local form, we apply 
+\begin{eqnarray}
+(\nabla^2-2k)\Delta_{0i}^T &=& (\nabla^2-2k)\Delta_{0i} - \nabla_i \nabla^k \Delta_{0k}.
+\end{eqnarray}
+Inputting the explicit form of $\Delta_{0i}$, we find
+\begin{eqnarray}
+(\nabla^2-2k)\Delta_{0i}^T &=& -2 k^2 Q_{i} + 8 k \dot{\Omega}^2 V_{i} \Omega^{-3} - 4 k \overset{..}{\Omega} V_{i} \Omega^{-2} + 4 k^2 V_{i} \Omega^{-1} - 4 \dot{\Omega}^2 \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}V_{i} + 2 \overset{..}{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}V_{i} \nonumber \\ 
+&& - 2 k \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}V_{i} + \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}Q_{i}.
+\end{eqnarray}
+\end{document}

@@ -1,0 +1,570 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor,enumerate,cite}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+%\usepackage[sorting=none]{biblatex}
+%\addbibresource{Asymptotic_SVT_v1.bib}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Asymptotic SVT}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Summary}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[i.]
+\item Within decomposition \eqref{svtdecomp1}, gauge invariance of SVT metric quantities themselves requires $\epsilon^\mu$ to vanish asymptotically
+\item SVT fluctuation equations are gauge invariant without any imposition of asymptotic conditions
+\item SVT separation of $\delta G_{\mu\nu}$ is not possible, even with asymptotically vanishing metric components. However, taking the flat $\delta G_{\mu\nu} = -\kappa^2_4\delta T_{\mu\nu}$ we find that we can allow a SVT separation. 
+\item SVT separation of $\delta W_{\mu\nu}$ is possible, given asymptotically vanishing boundary conditions
+\end{enumerate}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General $h_{\mu\nu}$ Decomposition} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+Working within a Minkowski background, we may decompose $h_{\mu\nu}$ according to:
+\begin{eqnarray}
+h_{00} &=& -2\phi
+\nonumber\\
+h_{0i}&=& \underbrace{h_{0i}-\nabla_i \int D \nabla^j h_{0j}}_{B_i} + \nabla_i \underbrace{\int D\nabla^j h_{0j}}_{B}
+\nonumber\\
+h_{ij}&=&\underbrace{\left[ h_{ij} - \nabla_i W_j - \nabla_j W_i - \frac12 g_{ij}(g^{ab}h_{ab}-\nabla^k W_k) + \frac12 \nabla_i \nabla_j \int D(g^{ab}h_{ab}+\nabla^k W_k) \right]}_{2E^{T\theta}_{ij}}
+\nonumber\\
+&& + \nabla_i \underbrace{\left(W_j - \nabla_j \int D \nabla^k W_k\right)}_{E_j}+
+\nabla_j \underbrace{\left(W_i - \nabla_i \int D \nabla^k W_k\right)}_{E_i}
+\nonumber\\=
+&&
+-2 g_{ij}\underbrace{(\tfrac14\nabla^k W_k-\tfrac14 g^{ab}h_{ab} )}_{\psi}
++2\nabla_i\nabla_j \underbrace{\int D (\tfrac34 \nabla^k  W_{k}-\tfrac14 g^{ab}h_{ab} )}_{E}
+\label{svtdecomp1}
+\end{eqnarray}
+where
+\begin{eqnarray}
+W_k = \int D \nabla^l h_{kl}.
+\end{eqnarray}
+Expression \eqref{svtdecomp1} can be viewed as a mathematical identity - the sum of all decompositions of $h_{\mu\nu}$ must always equal $h_{\mu\nu}$ itself. Here transversality follows for arbitrary boundary conditions and requires no integration by parts.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Invariance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+Under $x^\mu \to x^\mu - \epsilon^\mu(x)$
+\begin{eqnarray}
+\Delta_\epsilon h_{\mu\nu} = \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+\end{eqnarray}
+where
+\begin{eqnarray}
+\epsilon_0 = -T,\qquad \epsilon_i = \underbrace{ \epsilon_i - \nabla_i \int D \nabla^j \epsilon_j}_{L_i} + 
+\nabla_i \underbrace{ \int D \nabla^j \epsilon_j}_{L} 
+\end{eqnarray}
+The Lie derivatives of $h_{\mu\nu}$ and related quantities are:
+\begin{eqnarray}
+\Delta_\epsilon h_{00} &=& -2\dot T
+\nonumber\\
+\Delta_\epsilon h_{0i} &=& -\nabla_i T + \dot L_i + \nabla_i \dot L
+\nonumber\\
+\Delta_\epsilon h_{ij} &=& 2\nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i 
+\nonumber\\
+\Delta_\epsilon (\nabla^j h_{ij})&=& \nabla^2(2 \nabla_i L + L_i)
+\nonumber\\
+\Delta_\epsilon W_i &=& \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+\Delta_\epsilon (g^{ij}h_{ij}) &=& 2\nabla^2 L
+\end{eqnarray}
+To correctly find how the corresponding SVT quantities transform under infinitesimal coordinate changes, we directly use their defining equations from \eqref{svtdecomp1}. 
+\begin{eqnarray}
+\underbrace{\bar h_{00}}_{-2\bar\phi } &=& \underbrace{h_{00}}_{-2\phi} - 2\dot T
+\nonumber\\
+%
+\underbrace{\int D \nabla^j \bar h_{0j}}_{\bar B} &=& \underbrace{\int D \nabla^j h_{0j}}_B + \int D \nabla^2(\dot L-T)
+\nonumber\\
+%
+\underbrace{\bar h_{0i} - \nabla_i \int D \nabla^j \bar h_{0j}}_{\bar B_i} &=&
+\underbrace{h_{0i} - \nabla_i \int D \nabla^j  h_{0j}}_{B_i} +\dot L_i + \nabla_i(\dot L -T)
+	-\nabla_i \int D \nabla^2(\dot L-T)
+\nonumber\\
+%
+\underbrace{\tfrac14 \nabla^k \bar W_k - \tfrac14 g^{ab}\bar h_{ab}}_{\bar\psi} &=& \underbrace{ \tfrac14 \nabla^k W_k - \tfrac14 g^{ab}h_{ab}}_{\psi} - \tfrac12 \nabla^2 L+  \tfrac14 \nabla^k \int D \nabla^2( 2\nabla_k L + L_k) 
+\nonumber\\
+\underbrace{\int D(\tfrac34 \nabla^k \bar W_k - \tfrac14 g^{ab}\bar h_{ab})}_{\bar E} &=&
+\underbrace{\int D(\tfrac34 \nabla^k W_k - \tfrac14 g^{ab}h_{ab})}_{ E} 
++ \int D \left( \tfrac34 \nabla^k \int D \nabla^2 (2\nabla_k L + L_k) - \tfrac12 \nabla^2 L\right)
+\nonumber\\
+%
+\underbrace{\bar W_i - \nabla_i \int D \nabla^k \bar W_k}_{\bar E_i}
+&=&
+\underbrace{ W_i - \nabla_i \int D \nabla^k W_k}_{ E_i}
++ \int D\nabla^2 (2 \nabla_i L + L_i) - \nabla_i \int D \nabla^k \int D\nabla^2 (2 \nabla_k L + L_k)
+\nonumber\\
+2\bar E_{ij} - 2E_{ij} &=&2\nabla_i \nabla_j L + \nabla_i L_j + \nabla_j L_i
+-\nabla_i \int D\nabla^2 (2\nabla_j L + L_j) - \nabla_j \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+&&-\tfrac12 g_{ij}\left( 2 \nabla^2 L - \nabla^k \int D \nabla^2( 2\nabla_k L + L_k)\right)
+\nonumber\\
+&& + \nabla_i \nabla_j \int D \left( \nabla^2 L +\tfrac12 \nabla^k \int D \nabla^2 (2\nabla_k L +L_k)\right)
+\label{svtgauge1}
+\end{eqnarray}
+We may also include the trace condition
+\begin{eqnarray}
+-6\bar \psi + 2\nabla^2 \bar E &=& -6 \psi + 2\nabla^2 E +2 \nabla^2 L.
+\end{eqnarray}
+
+From integrating the identity
+\begin{eqnarray}
+\nabla^2 D \phi = D\nabla^2 \phi + \nabla_i \left( \nabla^i \phi D - \nabla^i D \phi\right),
+\end{eqnarray}
+we may decompose a general scalar $\phi$ into its harmonic (T) and non-harmonic (L) pieces viz
+\begin{eqnarray}
+\phi =\underbrace{\int_V D \nabla^2 \phi}_{\phi^L} + \underbrace{\oint_{\partial V} dS_i \left( D \nabla^i \phi - \nabla^i D \phi\right)}_{\phi^T}.
+\label{phidecomp}
+\end{eqnarray}
+The harmonic $\phi^T$ is defined entirely as a surface integral with $\nabla^2 \phi^T$ vanishing identically for any $\phi$ and with $\nabla^2 \phi^L=0$ only vanishing for $\phi^L=0$ (this condition on $\phi^L$ is the key to a transverse decomposition and seems to be absent from literature, but found in [1]). 
+From \eqref{phidecomp} we see that if we require
+\begin{enumerate}
+	\item $\phi(x) =0 $\quad\text{for}\quad $x\in \partial V$
+	\item $\nabla_i D(x,y)= 0$ \quad\text{for}\quad $x\in \partial V$
+\end{enumerate}
+then we may always use $\phi = \int D\nabla^2 \phi$. 
+\\ 
+Rexpressing \eqref{svtgauge1},
+\begin{eqnarray}
+\bar\phi &=& \phi+ \dot T
+\nonumber\\
+\bar B &=& B + \int D \nabla^2(\dot L-T)
+\nonumber\\
+\bar B_i &=& B_i + \dot L_i + \nabla_i (\dot L-T) - \nabla_i \int D \nabla^2(\dot L-T)
+\nonumber\\
+\bar\psi&=& \psi -\tfrac12 \nabla^2 L+\tfrac14 \nabla^i \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+\bar E&=& E + \int D\left(\tfrac34 \nabla^k \int D\nabla^2(2\nabla_k L + L_k) -\tfrac12 \nabla^2 L\right)
+\nonumber\\
+\bar E_i &=& E_i + \int D\nabla^2 (2 \nabla_i L + L_i) - \nabla_i \int D \nabla^k \int D\nabla^2 (2 \nabla_k L + L_k)
+\nonumber\\
+\bar E_{ij} &=& E_{ij} +\nabla_i \nabla_j L + \tfrac12\nabla_i L_j+ \tfrac12\nabla_j L_i
+-\tfrac12\nabla_i \int D\nabla^2 (2\nabla_j L + L_j) - \tfrac12\nabla_j \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+&&-\tfrac14 g_{ij}\left( 2 \nabla^2 L - \nabla^k \int D \nabla^2( 2\nabla_k L + L_k)\right)
+ + \tfrac12 \nabla_i \nabla_j \int D \left( \nabla^2 L +\tfrac12 \nabla^k \int D \nabla^2 (2\nabla_k L +L_k)\right)
+\nonumber\\
+\label{svtgauge2}
+\end{eqnarray}
+If we now restrict to gauge transformations that vanish asymptotically, we may then utilize $f = \int D \nabla^2 f $ and since every integral gauge term in \eqref{svtgauge2} involves $\int D\nabla^2$, the gauge structure becomes the familiar
+\begin{eqnarray}
+\bar\phi  &=& \phi + \dot T
+\nonumber\\
+\bar B &=& B + \dot L - T
+\nonumber\\
+\bar \psi &=& \psi
+\nonumber\\
+\bar E &=& E + L
+\nonumber\\
+\bar B_i &=& B_i + \dot L_i
+\nonumber\\
+\bar E_i &=& E_i + \dot L_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}
+\end{eqnarray}
+with gauge invariant quantities
+\begin{eqnarray}
+\bar\psi = \psi,\qquad \bar \phi + \dot{\bar B} - \ddot{\bar E} = \phi + \dot B - \ddot E,
+\qquad \bar B_i - \dot{\bar E}_i = B_i - \dot E_i,\qquad \bar E_{ij} = E_{ij}.
+\end{eqnarray}
+\\ \\
+However, if instead impose no constraint upon the gauge term $\epsilon_\mu$, then we can only form gauge invariant quantities by applying derivatives and taking linear combinations of the SVT variables. In forming 2nd order gauge invariant quantities, we find ourselves reconstructing $\delta G_{\mu\nu}$, which is not surprising as the flat $\delta G_{\mu\nu}$ is manifestly gauge invariant and also 2nd order. Specifically, we find the gauge invariant combinations
+\begin{eqnarray}
+&&\nabla^2\bar\psi = \nabla^2 \psi
+\label{dg00gi}\\ \nonumber\\
+&&-2\nabla_i \dot{\bar\psi} + \tfrac12 \nabla^2 (\bar B_i-\dot{\bar E}_i) =  -2\nabla_i \dot\psi + \tfrac12 \nabla^2 (B_i-\dot E_i)
+\label{dg0igi}\\ \nonumber\\
+&&-2g_{ij}\ddot{\bar\psi} - \nabla_i\nabla_j \bar\psi
+-g_{ij}\nabla^2(\bar\phi + \dot{\bar B} - \ddot{\bar E}) + \nabla_i\nabla_j (\bar\phi +\dot{\bar B} - \ddot{\bar E})
++ \tfrac12 \nabla_i (\dot{\bar B}_j - \ddot{\bar{E}}_j) + \tfrac12\nabla_j (\dot{\bar{B}}_i - \ddot{\bar{E}}_i) +\nabla^2 \bar E_{ij} - \ddot{\bar E}_{ij}
+\nonumber\\
+&&=-2g_{ij}\ddot \psi - \nabla_i\nabla_j \psi
+-g_{ij}\nabla^2(\phi + \dot B - \ddot E) + \nabla_i\nabla_j (\phi +\dot B - \ddot E)
++ \tfrac12 \nabla_i (\dot B_j - \ddot E_j) + \tfrac12\nabla_j (\dot B_i - \ddot E_i) +\nabla^2 E_{ij} - \ddot E_{ij}
+\nonumber\\ \label{dgijgi}\\ \nonumber\\
+&&3\ddot{\bar\psi} + \nabla^2(\bar \phi+\dot{\bar B}-\ddot{\bar E}) = 3\ddot{\psi} + \nabla^2(\phi+\dot B-\ddot E),
+\label{dgtrgi}
+\end{eqnarray}
+which may readily be compared to $\delta G_{\mu\nu}$ itself:
+\begin{eqnarray}
+\delta G_{00} &=& -2 \nabla^2 \psi
+\nonumber\\ \nonumber\\
+\delta G_{0i} &=& -2\nabla_i \dot\psi + \tfrac12 \nabla^2 (B_i-\dot E_i)
+\nonumber\\ \nonumber\\
+\delta G_{ij} &=& -2g_{ij}\ddot \psi+g_{ij} \nabla^2\psi - \nabla_i\nabla_j \psi
+-g_{ij}\nabla^2(\phi + \dot B - \ddot E) + \nabla_i\nabla_j (\phi +\dot B - \ddot E)
+\nonumber\\
+&& + \tfrac12 \nabla_i (\dot B_j - \ddot E_j) + \tfrac12\nabla_j (\dot B_i - \ddot E_i) +\nabla^2 E_{ij} - \ddot E_{ij}
+\nonumber\\ \nonumber\\
+g^{ij} \delta G_{ij} &=& -6\ddot \psi + 2\nabla^2 \psi - 2\nabla^2(\phi +\dot B-\ddot E)
+\end{eqnarray}
+\\ \\
+We note that within $\delta G_{ij}$, the only term that is independently gauge invariant is $\nabla^2 \psi$. The gauge invariance of the tensor quantity $\nabla^2 E_{ij}-\ddot E_{ij}$ necessarily requires contributions from $\psi$, $\phi+\dot B-\ddot E$ and $B_i-\dot E_i$. 
+\\ \\ Some useful boundary-free forms of SVT quantities:
+\begin{eqnarray}
+\phi + \dot B - \ddot E &=& \dot T + \int D \nabla^2(\ddot L-\dot T) -
+\int D \left( \tfrac34 \nabla^k \int D \nabla^2 (2\nabla_k \ddot L + \ddot L_k)-\tfrac12 \nabla^2\ddot L\right)
+\nonumber\\
+B_i-\dot E_i &=& \dot L_i + \nabla_i(\dot L-T)-\nabla_i\int D (\nabla^2( \dot L-T)
+-\int D\nabla^2 (2\nabla_i \dot L +\dot L_i)
+ +\nabla_i \int D\nabla^k \int D \nabla^2(2\nabla_k\dot L+L_k)
+ \nonumber\\
+\end{eqnarray} 
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Projection $\delta G_{ij}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+Following a 3+1 decomposition of $\delta G_{\mu\nu}$, we apply projectors upon $\delta G_{0i}$ and $\delta G_{ij}$ to form scalar, transverse vector, and transverse traceless tensor quantities. Totaling six independent equations (10-4=6 from Bianchi), these are:
+\begin{eqnarray}
+\rho &=& \delta G_{00}
+\label{rho}\\
+p &=& \tfrac13g^{ij} \delta G_{ij}
+\label{p}\\
+\mathcal Q_i &=& \delta G_{0i}-\nabla_i \int D \nabla^k \delta G_{0k}
+\label{Qi}\\
+\delta G_{ij}^{T\theta} &=& \delta G_{ij} - \nabla_i W_j - \nabla_j W_i - \frac12 g_{ij}(g^{ab}\delta G_{ab}-\nabla^k W_k) + \frac12 \nabla_i \nabla_j \int D(g^{ab}\delta G_{ab}+\nabla^k W_k)
+\label{dgtt}
+\end{eqnarray}
+where 
+\begin{eqnarray}
+W_i = \int D \nabla^k \delta G_{ik}.
+\end{eqnarray}
+Comparing \eqref{rho} and \eqref{p} with \eqref{dg00gi} and \eqref{dgtrgi}, we see that $\rho$ and $p$ are already gauge invariant. 
+\\ \\
+As for the transverse vector $\mathcal Q_i$, we substitute in the perturbed Einstein tensor to find
+\begin{eqnarray}
+\mathcal Q_i&=& \tfrac12 \nabla^2 (B_i-\dot E_i) +\left( -2\nabla_i \dot\psi  +\nabla_i \int D (2\nabla^2 \dot \psi)\right)
+\end{eqnarray}
+If we were to impose conditions for metric components to vanish on the spatial surface at infinity, then we see that $\nabla_i \int D(2\nabla^2\dot\psi)\to 2\nabla_i\dot\psi$ to thus permit 
+\begin{eqnarray}
+\boxed{\mathcal Q_i = \tfrac12 \nabla^2(B_i-\dot E_i)}.
+\end{eqnarray}
+\\ \\
+For the transverse traceless $\delta G_{ij}^{T\theta}$, we see it has dependence upon the gauge invariant $p = \tfrac13 g^{ab}\delta G_{ab}$. The term $W_i$ evaluates to
+\begin{eqnarray}
+W_i = \int D [-2\nabla_i \ddot\psi+\tfrac12 \nabla^2(\dot B_i-\ddot E_i)].
+\end{eqnarray}
+It is not of much merit to rexpress \eqref{dgtt} explicitly in terms of the metric components, but we may note that if the metric components are to vanish on the surface, then we may re-express some integrals as
+\begin{eqnarray}
+W_i &=& \tfrac12 (\dot B_i-\ddot E_i) + \int D (-2\nabla_i\ddot \psi)
+\nonumber\\
+\nabla^k W_k &=& \nabla^k \int D(-2\nabla_k \ddot\psi)
+\nonumber\\
+\nabla_i\nabla_j\int D(g^{ab}\delta G_{ab}) &=& 2\nabla_i\nabla_j \psi -2\nabla_i\nabla_j(\phi+\dot B-\ddot E)
++\nabla_i\nabla_j \int D (-6\ddot \psi).
+\end{eqnarray}
+Substituting the above integral forms into \eqref{dgtt} and performing additional integration by parts, we find \eqref{dgtt} evaluates to:
+\begin{eqnarray}
+\delta G_{ij}^{T\theta} &=& g_{ij}\ddot\psi - g_{ij}\nabla^k\int D \nabla_k\ddot\psi - 3\nabla_i\nabla_j \int D \ddot\psi
+-\nabla_i\nabla_j \int D \nabla^k\int D\nabla_k\ddot\psi
+\nonumber\\
+&&+2\nabla_i\int D \nabla_j\ddot \psi + 2\nabla_j\int D\nabla_i \ddot\psi + \nabla^2 E_{ij} - \ddot E_{ij} 
+\end{eqnarray}
+Using
+\begin{eqnarray}
+\nabla^k\int D \nabla_k \ddot \psi = \ddot\psi -\int \nabla^k(D\nabla_k\ddot\psi)=\ddot\psi,
+\end{eqnarray}
+(where the second equality follows from $D$ vanishing on the surface, as discussed in \eqref{phidecomp}),
+we may simplify $\delta G_{\mu\nu}^{T\theta}$ to the more compact
+\begin{eqnarray}
+\boxed{\delta G_{ij}^{T\theta} \ =\  2\nabla_i\int \nabla_j(D\ddot\psi)+2\nabla_j\int \nabla_i(D\ddot\psi)+\nabla^2 E_{ij} -\ddot E_{ij}}
+\label{dgtts}
+\end{eqnarray}
+One can verify that \eqref{dgtts} is both transverse and traceless. However, even with a $\psi$ that vanished asymptotically, we see $\delta G^{T\theta}_{ij}$ still depends on $\ddot\psi$. 
+\\ \\
+In an attempt to reconcile this with \cite{Einrw}, we find that in flat space $\Omega=1$ and $k=0$, the vector equation reduces to
+\begin{eqnarray}
+\delta G_{0i} &=& -\kappa^2_4 \delta T_{0i}
+\nonumber\\
+-2\nabla_i \dot\psi +\tfrac12\nabla^2(B_i-\dot E_i) &=& 0.
+\end{eqnarray}
+Taking the divergence leads us to 
+\begin{eqnarray}
+-2\nabla^2 \dot\psi &=& 0.
+\end{eqnarray}
+Since we have already imposed that $\psi$ must vanish on the boundary, then by virtue of
+\begin{eqnarray}
+\psi &=& \int D \nabla^2\psi + \oint dS^i[ \nabla_i D \psi - D\nabla_i \psi]
+\end{eqnarray}
+it must be that $\psi$ is strictly longitudinal and thus $\nabla^2\psi = 0$ implies $\psi = 0$. In this way we will find that the tranverse tensor sector of $\delta G^{T\theta}_{ij} = -\kappa^2_4\delta T^{T\theta}_{ij}$ relies only upon metric quantity $E_{ij}$ via
+\begin{eqnarray}
+\delta G_{ij} &=& -\kappa^2_4 \delta T_{ij}
+\nonumber\\
+\nabla^2 E_{ij} + \ddot E_{ij} &=& 0.
+\end{eqnarray}
+The reason why such a $\delta T_{0i}$ must be zero is because we perturbed only the perfect fluid background with no zero order ``heat conduction" term such as $q_\mu$. It is curious actually that the flat space limit of \cite{Einrw} includes $\delta \rho$ and $\delta p$, even though $T_{\mu\nu}^{(0)}= 0$. We see here that $\delta G_{ij}$ itself does not undergo SVT separation, but when coupled to $\delta T_{\mu\nu}$, it may, depending on the form of $\delta T_{\mu\nu}$. Continuing an analysis for all of the flat $\delta G_{\mu\nu} = -\kappa^2_4 \delta T_{\mu\nu}$ we in fact that for localized fluctuations, all metric perturbations vanish leaving only 
+\begin{eqnarray}
+\nabla^2E_{ij} - \ddot E_{ij} &=& 0. 
+\end{eqnarray}
+This serves as alternate method to arrive at such a result without imposing residual gauge invariance. 
+\\ \\
+*A helpful relation
+\begin{eqnarray}
+\nabla_i\int \nabla_j(D\ddot\psi) = \nabla_i\int D\nabla_j\ddot\psi  -\nabla_i\nabla_j\int D \ddot\psi 
+\end{eqnarray}
+%
+\subsection{Relation to 3D RW $\delta G_{ij}$}
+If strictly work in dimension $d=3$, then \eqref{dgtts} becomes
+\begin{eqnarray}
+\delta G_{ij}^{T\theta} &=& \nabla^2 E_{ij}.
+\end{eqnarray}
+To touch basis with our result in \cite{3space}, we note that if we use projection \eqref{dgtt} to construct the transverse traceless component of $\delta G_{ij}$ (given as eq. 1.9 in \cite{3space}), we find
+\begin{eqnarray}
+\delta G_{ij}^{T\theta} &=& \nabla^2 E_{ij}.
+\end{eqnarray}
+In the generalization to curved RW space, the transverse traceless projection of $\delta G_{ij}$ yields a scalar term of
+\begin{eqnarray}
+\int D (\nabla^2+3k)\psi.
+\end{eqnarray}
+Given a Green's function that obeys $(\nabla^2+3k)D(x-y) = \delta(x-y)$, if one is able to perform a similar integration by parts akin to flat space so as to invoke a surface term via
+\begin{eqnarray}
+\int D(\nabla^2+3k)\psi = \psi+\int \nabla^i[f_i(\psi,D)],
+\end{eqnarray}
+then granted $\psi$ vanishes on the surface it follows that for arbitrary $k$, 
+\begin{eqnarray}
+\delta G_{ij}^{T\theta} &=& (\nabla^2-2k)E_{ij}.
+\end{eqnarray}
+
+%      
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bach Projection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+The flat perturbed Bach tensor is
+\begin{eqnarray}
+\delta W_{00}  &=& -\tfrac{2}{3}\nabla^4 \Psi,
+\nonumber\\	
+\delta W_{0i} &=&  -\tfrac{2}{3}\nabla_i\nabla^2 \partial_t\Psi
++\tfrac{1}{2}\left(\nabla^4 Q_i -  \nabla^2 \partial_t^2 Q_i \right),
+\nonumber\\	
+\delta W_{ij}  &=& \tfrac{1}{3}\bigg( \delta_{ij}\nabla^2 \partial_t^2\Psi + \nabla_i\nabla_j\nabla^2 \Psi
+- \delta_{ij}\nabla^4 \Psi -3\nabla_i\nabla_j \partial_t^2 \Psi \bigg)
+\nonumber\\
+&& +\tfrac{1}{2}\left( \nabla^2\nabla_i   \partial_t Q_j+ \nabla^2 \nabla_j \partial_t Q_i - \nabla_i\partial_t^3 Q_j-\nabla_j\partial_t^3 Q_i \right)
+ +\left(\nabla^2-\partial_t^2\right)^2E_{ij}
+\nonumber\\
+g^{ab}\delta W_{ab}&=& -\tfrac23 \nabla^4 \Psi
+\end{eqnarray}
+where for brevity we have defined
+\begin{eqnarray}
+\Psi \equiv \phi + \psi +\dot{B}-\ddot{E},\qquad Q_i \equiv B_i - \dot{E}_i.
+\end{eqnarray}
+Following the same procedure as in the perturbed Eistein tensor, we apply projectors to form scalar, transverse vector, and transverse traceless tensor quantities:
+\begin{eqnarray}
+\rho &=& \delta W_{00}
+\label{rhow}\\
+p &=& \tfrac13 g^{ij} \delta W_{ij}
+\label{pw}\\
+\mathcal Q_i &=& \delta W_{0i}-\nabla_i \int D \nabla^k \delta W_{0k}
+\label{Qiw}\\
+\delta W_{ij}^{T\theta} &=& \delta W_{ij} - \nabla_i W_j - \nabla_j W_i - \frac12 g_{ij}(g^{ab}\delta W_{ab}-\nabla^k W_k) + \frac12 \nabla_i \nabla_j \int D(g^{ab}\delta W_{ab}+\nabla^k W_k)
+\label{dwtt}
+\end{eqnarray}
+Since the Bach tensor is traceless, it follows that 
+\begin{eqnarray}
+\rho - 3p = 0,
+\end{eqnarray}
+leaving only one scalar.
+\\ \\
+The transverse vector equates to
+\begin{eqnarray}
+ \mathcal Q_i &=& -\tfrac{2}{3}\nabla_i\nabla^2 \partial_t\Psi
++\tfrac{1}{2}\left(\nabla^4 Q_i -  \nabla^2 \partial_t^2 Q_i \right)
+-\nabla_i \int D\left[ -\tfrac{2}{3}\nabla^4 \partial_t\Psi \right].
+\end{eqnarray}
+As a fourth order theory, we are free to impose two boundary conditions on the surface, similar to what was done when we varied the Weyl action where we required $\delta g_{\mu\nu}$ and $\nabla^\alpha \delta g_{\mu\nu}$ to vanish on stationary paths. In anticipation of the transverse tensor, we impose the boundary conditions
+\begin{eqnarray}
+\text{for}\quad x\in \partial V\qquad \nabla^2 \Psi(x) =0,\qquad
+\nabla_i \Psi(x)=0,\qquad
+\nabla^2 Q_i(x)=0,\qquad 
+Q_i(x) =0,
+\label{bcdw}
+\end{eqnarray}
+to then see that $\mathcal Q_i$ becomes
+\begin{eqnarray}
+\boxed{
+\mathcal Q_i = \tfrac{1}{2}\left(\nabla^4 Q_i -  \nabla^2 \partial_t^2 Q_i \right)}.
+\end{eqnarray}
+\\ 
+As for the transverse traceless tensor, its projection onto $\delta W_{ij}$ is
+\begin{eqnarray}
+\delta W_{ij}^{T\theta} &=& \delta W_{ij} - \nabla_i W_j - \nabla_j W_i - \frac12 g_{ij}(g^{ab}\delta W_{ab}-\nabla^k W_k) + \frac12 \nabla_i \nabla_j \int D(g^{ab}\delta W_{ab}+\nabla^k W_k)
+\label{dwtt}
+\end{eqnarray}
+where $W_i = \int D\nabla^k\delta W_{ik}$. Evaluating $W_i$ explicitly, we find
+\begin{eqnarray}
+W_i &=& -\tfrac23 \int D \nabla^2\nabla_i \ddot\psi+\tfrac12 \int D\nabla^2(\nabla^2\dot{Q}_i-\dddot Q_i)
+\end{eqnarray}
+If no boundary conditions are imposed, then \eqref{dwtt} will be comprised of non-local integrals. However, if the fluctuations are to obey boundary conditions defined by \eqref{bcdw}, then $W_i$ will simplify to the form
+\begin{eqnarray}
+W_i = -\tfrac23 \nabla_i \ddot\psi + \tfrac12 \nabla^2\dot Q_i -\tfrac12 \dddot Q_i,
+\end{eqnarray}
+and upon forming $\delta W_{ij}^{T\theta}$ according to \eqref{dwtt}, we find that all scalars cancel, leaving 
+\begin{eqnarray}
+\boxed{
+\delta W_{ij}^{T\theta} = (\nabla^2-\partial_t^2)^2E_{ij}}.
+\end{eqnarray}
+
+\newpage
+\begin{appendices}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Boundary Conditions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+\phi =\underbrace{\int_V D \nabla^2 \phi}_{\phi^L} + \underbrace{\oint_{\partial V} dS_i \left( D \nabla^i \phi - \nabla^i D \phi\right)}_{\phi^T}.
+\label{phidecomp}
+\end{eqnarray}
+By definition of the Green's function equation
+\begin{eqnarray}
+\nabla^2 D(x,y) = \delta(x-y)
+\end{eqnarray}
+we may add to $D(x,y)$ a two-point function $F(x,y)$ that satisfies $\nabla^2 F(x,y) = 0$ (i.e. a harmonic $F$). Such an $F$ must also be entirely defined as a surface integral and  we may use this freedom in $F$ to construct a $D(x,y)$ such that $D(x,y)=0$ for $x\in \partial V$. 
+\\ \\
+The above conditions correspond to Dirichlet boundary conditions, however we may instead impose Neumann boundary conditions and use $F$ to construct a Green's function who's derivative vanishes on the boundary itself. As expected from a PDE, the solution of the general $\nabla^2 \phi = \rho$ depends on the choice of boundary conditions.
+\\ \\
+Also of note is that it appears we must make an ansatz that the fluctuations (and the gauge terms) are separable in space and time, i.e. $\psi(x,t) = f(t)g(x)$. Without this assumption, spatial boundary conditions cannot be maintained for fluctuations involving time derivatives, which are prevelant in $\delta G_{\mu\nu}$. 
+\\ \\
+In the fourth order theory, the higher order necessitates more boundary conditions than the standard 2nd order PDE. In this article, we elected to impose the boundary conditions (and thus their corresponding metric forms)
+\begin{eqnarray}
+\text{for}\quad x\in \partial V\qquad \nabla^2 \Psi(x) =0; && \nabla^a\nabla^b h_{ab} - g^{ab}h_{ab}=0
+\nonumber\\
+\nabla_i \Psi(x)=0; && \nabla_i\nabla^k\int D \nabla^l h_{kl} - \nabla^i(g^{ab}h_{ab})=0
+\nonumber\\
+\nabla^2 Q_i(x)=0; && \nabla^2 h_{0i}-\nabla_i\nabla^k h_{0k} -\nabla^k \dot h_{ik} - \nabla_i\nabla^k \int D\nabla^l \dot h_{kl}=0
+\nonumber\\
+Q_i(x) =0; && h_{0i}-\nabla_i\int D\nabla^k h_{0k}-\int D\nabla^k \dot h_{ik}-\nabla_i \int D\nabla^k \int D \nabla^l \dot h_{kl}=0,
+\label{bcdw2}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{APM SVT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{eqnarray}
+h_{ij} &=& \underbrace{ h_{ij} - \nabla_i W_j - \nabla_j W_i + \nabla_i \int D\nabla_j  V + \nabla_j\int D\nabla_i V-\tfrac12 g_{ij}(g^{ab}h_{ab}-V) + \tfrac12 \nabla_i\nabla_j \int D (g^{ab}h_{ab}-3V)}_{h_{ij}^{T\theta}}
+\nonumber\\
+&&+\nabla_i \underbrace{\left( W_j - \int D\nabla_j V\right)}_{E_j} + \nabla_j \underbrace{\left(W_i -\int D\nabla_i V\right)}_{E_i}-2g_{ij}\underbrace{ \left( \tfrac14 V-\tfrac14 g^{ab}h_{ab}\right)}_{\psi}
+\nonumber\\
+&&+2\nabla_i\nabla_j \underbrace{\left( \tfrac34 \int D V - \tfrac14 \int D g^{ab}h_{ab}\right)}_{E}
+\label{APMdecomp}
+\end{eqnarray}
+where
+\begin{eqnarray}
+W_i &\equiv& \int D \nabla^k h_{ik}
+\nonumber\\
+V &\equiv& \int D \nabla^k \nabla^l h_{kl}
+\end{eqnarray}
+In checking that $h_{ij}^{T\theta}$ is indeed transverse, we find
+\begin{eqnarray}
+\nabla^j h_{ij}^{T\theta} &=& -\nabla^j\nabla_i W_j + \nabla^j\nabla_i\int D\nabla_j V
+\nonumber\\
+&=& -\nabla^j \nabla_i \left( \int D \nabla^k h_{jk} - \int D \nabla_j \int D \nabla^k\nabla^l h_{kl}\right)
+\nonumber\\
+&=& \nabla_i \int \nabla^k(D \nabla^l h_{kl}) - \nabla_i \int \nabla^j\left[D\nabla_j\int D\nabla^k \nabla^l h_{kl}\right]
+\end{eqnarray}
+Recalling that both $D$ and $\psi$ are to vanish on the surface, we find that after appropriate integration by parts, $h_{ij}^{T\theta}$ is indeed transverse. This may be contrasted with \eqref{svtdecomp1}, where transversality follows for arbitrary boundary conditions and requires no integration by parts. 
+\\ \\
+To compare to \cite{APM}, we first note the identities for integrating the flat space Green's functions by parts:
+%
+\begin{eqnarray}
+\nabla_\mu \int D f &=& -\int \nabla_\mu(Df)+\int D(\nabla_\mu f)
+\nonumber\\
+\nabla^\alpha \int D g_\alpha &=&  -\int \nabla^\alpha(Dg_\alpha) + \int D\nabla^\alpha g_\alpha
+\nonumber\\
+\nabla_\mu\int D\underbrace{\nabla^\alpha\int D g_\alpha}_{f} &=& \int\nabla_\mu\left[ D\int \nabla^\alpha (D g_\alpha)\right]
+-\int \nabla_\mu \left[ D\int D \nabla^\alpha g_\alpha\right]
+\nonumber\\
+&& + \int D\left[ \nabla_\mu \int D \nabla^\alpha g_\alpha\right] - \int D\left[ \nabla_\mu \int 
+\nabla^\alpha(Dg_\alpha)\right]
+\label{greensparts}
+\end{eqnarray}
+For fluctuations that vanish on the surface, we may utilize \eqref{greensparts} to find the relation
+\begin{eqnarray}
+\nabla_\mu \int D \nabla^\alpha \int D \nabla^\beta h_{\alpha\beta}=\int D\nabla_\mu \int D\nabla^\alpha\nabla^\beta h_{\alpha\beta}
+- \int \nabla_\mu \left(D\int D \nabla^\alpha\nabla^\beta h_{\alpha\beta}\right).
+\label{Evapm1}
+\end{eqnarray}	
+Comparing \eqref{Evapm1} to (E22) within \cite{APM}, we find a difference in the definition of $E_\mu$. The first equality within (E22), however is in agreement with $E_i$ as defined in \eqref{svtdecomp1}. Similarly, we find that $\psi$ as defined by the first equality in (E22) agrees the $\psi$ defined in \eqref{svtdecomp1}, with only the form after integration by parts at odds. 
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Redefinition of SVT for Gauge Invariance}
+Using
+\begin{eqnarray}
+\nabla^k\int D \nabla^l h_{kl} &=& -\int \nabla^k(D\nabla^l h_{kl}) + \int D \nabla^k\nabla^l h_{kl}
+= \int D\nabla^k\nabla^lh_{kl},
+\end{eqnarray}
+let us redefine $\psi$ as
+\begin{eqnarray}
+\psi = \tfrac14 \int D \nabla^k\nabla^l h_{kl} -\tfrac14\int D \nabla^2 h.
+\end{eqnarray}
+Maintaining consistency of the identity that $h_{\mu\nu} = h^{SVT}_{\mu\nu}$, we require a new decomposition similar to \eqref{APMdecomp} of the form
+\begin{eqnarray}
+h_{ij} &=& \underbrace{ h_{ij} - \nabla_i W_j - \nabla_j W_i + \nabla_i \int D\nabla_j  V + \nabla_j\int D\nabla_i V-\tfrac12 g_{ij}\left(\int D \nabla^2 g^{ab}h_{ab}-V\right) + \tfrac12 \nabla_i\nabla_j \int D \left(\int D \nabla^2 g^{ab}h_{ab}-3V\right)}_{h_{ij}^{T\theta}}
+\nonumber\\
+&&+\nabla_i \underbrace{\left( W_j - \int D\nabla_j V\right)}_{E_j} + \nabla_j \underbrace{\left(W_i -\int D\nabla_i V\right)}_{E_i}-2g_{ij}\underbrace{ \left( \tfrac14 V-\tfrac14 \int D\nabla^2 g^{ab}h_{ab}\right)}_{\psi}
+\nonumber\\
+&&+2\nabla_i\nabla_j \underbrace{\left( \tfrac34 \int D V - \tfrac14 \int D \int D\nabla^2 g^{ab}h_{ab}\right)}_{E}
+\label{APMdecomp2}
+\end{eqnarray}
+where again
+\begin{eqnarray}
+W_i &\equiv& \int D \nabla^k h_{ik}
+\nonumber\\
+V &\equiv& \int D \nabla^k \nabla^l h_{kl}
+\end{eqnarray}
+Not that the redifinition of $\psi$ only affects terms proportional to $g_{ij}$. While \eqref{APMdecomp2} is an identity, in taking the trace of $h_{ij}^{T\theta}$, we see that
+\begin{eqnarray}
+g^{ij}h^{T\theta}_{ij} &=& g^{ab}h_{ab} - \int D \nabla^2 g^{ab}h_{ab}.
+\end{eqnarray}
+Thus only if the metric fluctuations vanish on the boundary will $h_{ij}^{T\theta}$ indeed be traceless. However, the benefit of such a $\psi$ is that it is gauge invariant for all gauge transformations and not just those restricted asymptotically.
+\\ \\
+It may also be noted that such a redefinition of $\psi$ imposes that it must be strictly longitudinal (non-harmonic): $\nabla^2\psi = 0$ if and only if $\psi$ itself is zero. Requiring $\psi$ vanish on the boundary is equivalent to making it longitudinal, and therefore its change under gauge transformation will also be strictly longitudinal to thus intrinsically vanish asymptotically. 
+\\ \\
+Continuing this idea to the quantity $\phi+\dot B -\ddot E$, because $E$ necessarily involves an unavoidable double integer (even for $E$ vanishing asymptotically) we find that the appropriate definition to allow manifest gauge invariance is
+\begin{eqnarray}
+\phi &=& -\tfrac12 \int D\int D \nabla^4  h_{00}
+\nonumber\\
+B &=& \int D\int D \nabla^2\nabla^k h_{0k}
+\nonumber\\
+E &=& \int D\int D \left( \tfrac34\nabla^k\nabla^l h_{kl}-\tfrac14 \nabla^2 g^{ab}h_{ab}\right).
+\end{eqnarray}
+Defined in this manner, it follows that for all gauge transformations
+\begin{eqnarray}
+ \bar \phi + \dot{\bar B} - \ddot{\bar E} = \phi + \dot B - \ddot E
+\end{eqnarray}
+To construct an $E_{ij}$ that is manifestly gauge invariant, it appears we must define $h^{T\theta}_{ij} \propto \int D \nabla^2 h_{ij} + ...$, thereby expressing $h_{ij}$ solely in terms of integral relations. Such a construction is only possible in given the fluctuations $h_{\mu\nu}$ vanish on the boundary themselves. However it remains a little unclear then how one could actually express the metric as $h_{ij} = -2\psi g_{ij} + 2\nabla_i\nabla_j E + \nabla_i E_j+\nabla_j E_i + 2E_{ij}$ as the derivatives of terms like $E_i$ are pre-defined under integrals. 
+\end{appendices}
+%
+\newpage
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{asymptotic_svt}{}
+\bibliographystyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

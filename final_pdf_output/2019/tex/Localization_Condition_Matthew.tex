@@ -1,0 +1,210 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor,enumerate,cite}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\allowdisplaybreaks
+%\usepackage[sorting=none]{biblatex}
+%\addbibresource{Asymptotic_SVT_v1.bib}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Localization of SVT Modes}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Summary}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We find that requiring all SVT modes to obey the non-harmonic condition \eqref{localcondition} constrains the allowed gauge fields $\epsilon^\mu(x)$. Upon imposing these constraints, we recover the familiar gauge invariant combinations $\psi$, $\phi + \dot B-\ddot E$, and $E_{ij}$ despite that each $\phi$, $\dot B$, and $\ddot E$ independently transforms non-locally. All results assume a Minkowski background.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Localization Condition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+By integrating the identity
+\begin{eqnarray}
+\nabla^2 D \phi &=& D\nabla^2 \phi + \nabla^i[D\nabla_i\phi-\nabla_i D\phi],
+\end{eqnarray}
+we may decompose a general function $\phi$ into a harmonic and strictly non-harmonic function, viz
+\begin{eqnarray}
+\phi =\underbrace{\int_V D \nabla^2 \phi}_{\phi^{NH}} + \underbrace{\oint_{\partial V} dS_i \left( D \nabla^i \phi - \nabla^i D \phi\right)}_{\phi^H}.
+\label{phidecomp}
+\end{eqnarray}
+With $\nabla^2 \phi = \nabla^2 \phi^{NH}$, the only $\nabla^2\phi^{NH}$ that vanishes is if $\phi^{NH}$ itself vanishes; the harmonic $\nabla^2\phi^H$ vanishes identically. From \eqref{phidecomp} we see that if $\phi$ and $D$ were to vanish on the boundary surface, then such a $\phi$ will be non-harmonic and will obey
+\begin{eqnarray}
+\phi &=&\int D \nabla^2\phi
+\label{localcondition}
+\end{eqnarray}
+In order to construct a Green's function that vanishes on the surface, we note that by definition of the Green's function equation
+\begin{eqnarray}
+\nabla^2 D(x,y) = \delta(x-y)
+\end{eqnarray}
+we may add to $D(x,y)$ a two-point function $F(x,y)$ that satisfies $\nabla^2 F(x,y) = 0$ (i.e. a harmonic $F$). Such an $F$ must also be entirely defined as a surface integral and  we may use this freedom in $F$ to construct a $D(x,y)$ such that $D(x,y)=0$ for $x\in \partial V$. If instead we wanted to impose $\nabla^i\phi$ to vanish on the surface, we would need to find an $F(x,y)$ such that $\nabla^i F(x,xy)=0$ for $x\in\partial V$. The two scenarios correspond to Dirichlet and Neumann boundary conditions, respectively, and \eqref{phidecomp} can be seen as the fundamental solution to Laplace's equation. Further discussion can be found in Jackson Electrodynamics. 
+\\ \\
+We will use \eqref{phidecomp} as our defining condition for localization, i.e. a condition upon the SVT modes that requires their vanishing on the boundary. This can also be considered as a requirement that all SVT quantities are strictly non-harmonic. 
+%
+%
+%
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h_{\mu\nu}$ Decomposition and Gauge Transformations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Working within a Minkowski background, we may decompose $h_{\mu\nu}$ according to
+\begin{eqnarray}
+h_{00} &=& -2\phi
+\nonumber\\
+h_{0i}&=& \underbrace{h_{0i}-\nabla_i \int D \nabla^j h_{0j}}_{B_i} + \nabla_i \underbrace{\int D\nabla^j h_{0j}}_{B}
+\nonumber\\
+h_{ij}&=&\underbrace{\left[ h_{ij} - \nabla_i W_j - \nabla_j W_i - \frac12 g_{ij}(g^{ab}h_{ab}-\nabla^k W_k) + \frac12 \nabla_i \nabla_j \int D(g^{ab}h_{ab}+\nabla^k W_k) \right]}_{2E^{T\theta}_{ij}}
+\nonumber\\
+&& + \nabla_i \underbrace{\left(W_j - \nabla_j \int D \nabla^k W_k\right)}_{E_j}+
+\nabla_j \underbrace{\left(W_i - \nabla_i \int D \nabla^k W_k\right)}_{E_i}
+\nonumber\\=
+&&
+-2 g_{ij}\underbrace{(\tfrac14\nabla^k W_k-\tfrac14 g^{ab}h_{ab} )}_{\psi}
++2\nabla_i\nabla_j \underbrace{\int D (\tfrac34 \nabla^k  W_{k}-\tfrac14 g^{ab}h_{ab} )}_{E}
+\label{svtdecomp1}
+\end{eqnarray}
+where
+\begin{eqnarray}
+W_k = \int D \nabla^l h_{kl}.
+\end{eqnarray}
+Expression \eqref{svtdecomp1} can be viewed as a mathematical identity - the sum of all decompositions of $h_{\mu\nu}$ must always equal $h_{\mu\nu}$ itself. The advantage of this form is that traceless and transversality follows for arbitrary boundary conditions and requires no integration by parts. 
+\\ \\
+To find how the corresponding SVT quantities transform under infinitesimal coordinate changes, we directly use their defining equations from \eqref{svtdecomp1}. 
+\begin{eqnarray}
+\underbrace{\bar h_{00}}_{-2\bar\phi } &=& \underbrace{h_{00}}_{-2\phi} - 2\dot T
+\nonumber\\
+%
+\underbrace{\int D \nabla^j \bar h_{0j}}_{\bar B} &=& \underbrace{\int D \nabla^j h_{0j}}_B + \int D \nabla^2(\dot L-T)
+\nonumber\\
+%
+\underbrace{\bar h_{0i} - \nabla_i \int D \nabla^j \bar h_{0j}}_{\bar B_i} &=&
+\underbrace{h_{0i} - \nabla_i \int D \nabla^j  h_{0j}}_{B_i} +\dot L_i + \nabla_i(\dot L -T)
+-\nabla_i \int D \nabla^2(\dot L-T)
+\nonumber\\
+%
+\underbrace{\tfrac14 \nabla^k \bar W_k - \tfrac14 g^{ab}\bar h_{ab}}_{\bar\psi} &=& \underbrace{ \tfrac14 \nabla^k W_k - \tfrac14 g^{ab}h_{ab}}_{\psi} - \tfrac12 \nabla^2 L+  \tfrac14 \nabla^k \int D \nabla^2( 2\nabla_k L + L_k) 
+\nonumber\\
+\underbrace{\int D(\tfrac34 \nabla^k \bar W_k - \tfrac14 g^{ab}\bar h_{ab})}_{\bar E} &=&
+\underbrace{\int D(\tfrac34 \nabla^k W_k - \tfrac14 g^{ab}h_{ab})}_{ E} 
++ \int D \left( \tfrac34 \nabla^k \int D \nabla^2 (2\nabla_k L + L_k) - \tfrac12 \nabla^2 L\right)
+\nonumber\\
+%
+\underbrace{\bar W_i - \nabla_i \int D \nabla^k \bar W_k}_{\bar E_i}
+&=&
+\underbrace{ W_i - \nabla_i \int D \nabla^k W_k}_{ E_i}
++ \int D\nabla^2 (2 \nabla_i L + L_i) - \nabla_i \int D \nabla^k \int D\nabla^2 (2 \nabla_k L + L_k)
+\nonumber\\
+2\bar E_{ij} - 2E_{ij} &=&2\nabla_i \nabla_j L + \nabla_i L_j + \nabla_j L_i
+-\nabla_i \int D\nabla^2 (2\nabla_j L + L_j) - \nabla_j \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+&&-\tfrac12 g_{ij}\left( 2 \nabla^2 L - \nabla^k \int D \nabla^2( 2\nabla_k L + L_k)\right)
+\nonumber\\
+&& + \nabla_i \nabla_j \int D \left( \nabla^2 L +\tfrac12 \nabla^k \int D \nabla^2 (2\nabla_k L +L_k)\right),
+\label{svtgauge1}
+\end{eqnarray}
+where the coordinate transformation and some useful Lie derivatives are defined as:
+\begin{eqnarray}
+x^\mu \to x^\mu - \epsilon^\mu(x)
+\end{eqnarray}
+\begin{eqnarray}
+\Delta_\epsilon h_{\mu\nu} = \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+\end{eqnarray}
+
+\begin{eqnarray}
+\epsilon_0 = -T,\qquad \epsilon_i = \underbrace{ \epsilon_i - \nabla_i \int D \nabla^j \epsilon_j}_{L_i} + 
+\nabla_i \underbrace{ \int D \nabla^j \epsilon_j}_{L} 
+\end{eqnarray}
+
+\begin{eqnarray}
+\Delta_\epsilon h_{00} &=& -2\dot T
+\nonumber\\
+\Delta_\epsilon h_{0i} &=& -\nabla_i T + \dot L_i + \nabla_i \dot L
+\nonumber\\
+\Delta_\epsilon h_{ij} &=& 2\nabla_i\nabla_j L + \nabla_i L_j + \nabla_j L_i 
+\nonumber\\
+\Delta_\epsilon (\nabla^j h_{ij})&=& \nabla^2(2 \nabla_i L + L_i)
+\nonumber\\
+\Delta_\epsilon W_i &=& \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+\Delta_\epsilon (g^{ij}h_{ij}) &=& 2\nabla^2 L
+\end{eqnarray}
+
+Rewriting \eqref{svtgauge1}, we have:
+\begin{eqnarray}
+\bar\phi &=& \phi+ \dot T
+\label{phisvt}
+\\
+\bar B &=& B + \int D \nabla^2(\dot L-T)
+\\
+\label{Bsvt}
+\bar B_i &=& B_i + \dot L_i + \nabla_i (\dot L-T) - \nabla_i \int D \nabla^2(\dot L-T)
+\\
+\label{Bisvt}
+\bar\psi&=& \psi -\tfrac12 \nabla^2 L+\tfrac14 \nabla^k \int D \nabla^2 (2\nabla_k L + L_k)
+\\
+\label{psisvt}
+\bar E&=& E + \int D\left(\tfrac34 \nabla^k \int D\nabla^2(2\nabla_k L + L_k) -\tfrac12 \nabla^2 L\right)
+\\
+\label{Esvt}
+\bar E_i &=& E_i + \int D\nabla^2 (2 \nabla_i L + L_i) - \nabla_i \int D \nabla^k \int D\nabla^2 (2 \nabla_k L + L_k)
+\\
+\label{Eisvt}
+\bar E_{ij} &=& E_{ij} +\nabla_i \nabla_j L + \tfrac12\nabla_i L_j+ \tfrac12\nabla_j L_i
+-\tfrac12\nabla_i \int D\nabla^2 (2\nabla_j L + L_j) - \tfrac12\nabla_j \int D \nabla^2 (2\nabla_i L + L_i)
+\nonumber\\
+&&-\tfrac14 g_{ij}\left( 2 \nabla^2 L - \nabla^k \int D \nabla^2( 2\nabla_k L + L_k)\right)
++ \tfrac12 \nabla_i \nabla_j \int D \left( \nabla^2 L +\tfrac12 \nabla^k \int D \nabla^2 (2\nabla_k L +L_k)\right)
+\nonumber\\
+\label{Etsvt}
+\end{eqnarray}
+In this decomposition, neither $\psi$ nor $E_{ij}$ alone are gauge invariant. For general modes that need not be localized, gauge invariant quantities will necessarily involve combinations of 2nd order derivatives, with forms that parallel the components of $\delta G_{\mu\nu}$. 
+\\ \\
+We now constrain the SVT modes to be localized by imposing \eqref{localcondition}. To retain localization after gauge transformation, we require the transformed modes to obey the same localization condition. For example, take the transformation $\bar \phi =\phi + \dot T$ and impose our localization condition:
+\begin{eqnarray}
+\bar \phi &=& \int D \nabla^2 \bar \phi
+\nonumber\\
+\phi + \dot T &=& \int D \nabla^2 \phi + \int D \nabla^2 \dot T
+\nonumber\\
+\to\quad \dot T &=& \int D \nabla^2 \dot T
+\end{eqnarray}
+Hence for a $\phi$ that is already localized, any $T$ that obeys the above will ensure that $\bar\phi$ also vanishes asymptotically on the spatial boundary. Collecting the constraints upon the gauge variables from $\bar \phi$, $\bar \psi$, $\bar B_i$, $\bar E_i$ and $\bar E_{ij}$ we find the following:
+\begin{eqnarray}
+\dot T &=& \int D \nabla^2 \dot T
+\label{phia}
+\\
+2\nabla^2 L &=& \nabla^k \int D \nabla^2 (2\nabla_k L + L_k)
+\label{psia}
+\\
+\dot L_i+\nabla_i(\dot L-T) - \nabla_i \int D \nabla^2(\dot L-T) &=& \int D \nabla^2 \dot L_i
+\label{Bia}
+\\ 
+\nabla_i \int D \nabla^2 L &=& \int D \nabla^2 \nabla_i L
+\label{Eia}
+\\
+\nabla_i \nabla_j L +\tfrac12 (\nabla_i L_j + \nabla_j L_i) - \tfrac12 \nabla_i \int D \nabla^2 L_j -\tfrac12 \nabla_j \int D\nabla^2 L_i
+&=& \nabla_i \int D \nabla^2 \nabla_j L + \nabla_j \int D \nabla^2 \nabla_i L - \nabla_i\nabla_j \int D \nabla^2 L
+ \nonumber\\
+\label{Eta}
+\end{eqnarray}
+To see how one can use the gauge constraints, we note that upon inserting \eqref{psia} into \eqref{Etsvt} and using \eqref{Eta}, we find that $E_{ij}$ is gauge invariant. Repeating usage of the constraints \eqref{phia}-\eqref{Eta} we find the familiar four gauge invariant combinations
+\begin{eqnarray}
+\bar \phi + \dot{\bar B}-\ddot{\bar E} &=& \phi + \dot B-\ddot E
+\nonumber\\
+\bar \psi &=& \psi
+\nonumber\\
+\bar B_i - \dot{\bar E}_i &=& B_i - \dot E_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}.
+\end{eqnarray}
+Despite that each SVT mode invariably transforms into a mode with non-local integrals over the gauge fields, we have found that constraining all SVT modes to be localized allowed us to form quantities that are gauge invariant without the need to resort to applying combinations of differential operators, as is necessarily the case for the most general \eqref{phisvt}-\eqref{Etsvt}. 
+\\ \\
+We may also note that requiring all gauge fields $T$, $L$, and $L_i$ themselves to vanish on the spatial surface, i.e. $\epsilon = \int D \nabla^2 \epsilon$, does serve as a particular solution to all constraints \eqref{phia}-\eqref{Eta}, though it is not a necessary criteria. 
+\end{document}

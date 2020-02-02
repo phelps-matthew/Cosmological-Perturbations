@@ -1,0 +1,162 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Fourier Transform of SVT}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle 
+In a flat background of $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$, Lie derivatives of $\delta G_{\mu\nu}$ vanish thus making $\delta G_{\mu\nu}$ gauge invariant all on its own. We will decompose $\delta G_{\mu\nu}$ by S.V.T. via the metric
+\[
+	ds^2 = -(1+2\phi)d\tau^2 + 2(B_i + \pd_i B)d\tau dx^i + \blr{ (1-2\psi)\delta_{ij} + 2\pd_i \pd_j E + \pd_i E_j + \pd_j E_i + 2E_{ij}}dx^idx^j.
+\]
+The perturbed Einstein tensor can be expressed in terms of the following gauge invariant quantities:
+\ba
+	\Psi &= \psi\\
+	\Phi &= \phi + \dot B - \ddot E\\
+	Q_i &= \dot E_i - B_i\\
+	E_{ij} &= E_{ij}.
+\ea
+The perturbed tensor is then 
+\begin{align}
+	\delta G_{00} &= -2\del^2 \Psi \\
+	\delta G_{0i}  &= -2\pd_i \dot \Psi - \frac12 \del^2Q_i \\
+	\delta G_{ij} &= -2\ddot \Psi \delta_{ij} + (\del^2\delta_{ij}-\pd_i \pd_j)(\Psi - \Phi) - \frac12\plr{\pd_i \dot Q_j+\pd_j \dot Q_i}  + \Box E_{ij}.
+\end{align}
+The gauge invariant variables are subject to the constraints
+\be
+	\pd^i Q_i = 0,\qquad \pd^i E_{ij} = 0,\qquad \delta^{ij}E_{ij} = 0.
+\ee
+We may also decompose $\delta T_{\mu\nu}$ in a manner exactly analogous to $\delta g_{\mu\nu}$, where perturbed variables are denoted with bars. Since the zeroth order terms in $T_{\mu\nu}$ vanish, all first order terms are all automatically gauge invariant. In addition to the Einstein equation, we have the conservation of energy
+\[
+	\pd^\mu \delta T_{\mu\nu} = 0
+\]
+yielding the two equations
+\be
+	-2\dot{\bar{\phi}} - \del^2 \bar B = 0
+\ee
+\be
+	-(\dot{\bar{B}}_i + \pd_i \dot{\bar B}) - 2\pd_i \bar\psi + 2\pd_i \del^2\bar E + \del^2 \bar{E}_i = 0
+\ee
+Let us represent each of the perturbed variables in terms of its Fourier decomposition, i.e.
+\begin{align}
+	\Psi(x,t) &= \int d^3k\  e^{ikx} \hat \Psi(k,t)\\
+	\Phi(x,t) &= \int d^3k\  e^{ikx} \hat \Phi(k,t)\\
+	Q_i(x,t)&= \int d^3k\  e^{ikx} \hat Q_i(k,t)\\
+	E_{ij}(x,t) &= \int d^3k\  e^{ikx} \hat E_{ij}(k,t)
+\end{align}
+where the transformed quantities are defined as usual, for example
+\[
+	\hat \Psi(k,t) = \int d^3x\ e^{-ikx} \Psi(x,t).
+\]
+Now if we substitute (9) and (10) into the constraint equations we have
+\[
+	\int d^3k\  e^{ikx} ik^i \hat Q_i(k,t) = 0, \qquad \int d^3k\  e^{ikx} ik^i \hat E_{ij}(k,t) = 0,\qquad \int d^3k\  e^{ikx} \delta^{ij} \hat E_{ij}(k,t) = 0
+\]
+For arbitrary $k$, it should then follow that the constraints can be expressed as
+\be
+	k^i \hat Q_i = 0,\qquad k^i \hat E_{ij} = 0,\qquad \delta^{ij}\hat E_{ij} =0.
+\ee
+Next we will substitute (7-10) into $\delta G_{\mu\nu} = \delta T_{\mu\nu}$. This yields
+\ba
+	\delta G_{00}-\delta T_{00} &= \int d^3k\ e^{ikx} \blr{ 2 k^2 \hat\Psi - \delta \hat T_{00}} = 0\\
+	\delta G_{0i}-\delta T_{0i} &= \int d^3k\ e^{ikx} \blr{ -2 ik_i \dot{\hat  \Psi} +\frac12 k^2 \hat Q_i- \delta \hat T_{0i}} = 0\\
+	\delta G_{ij}-\delta T_{ij} &= \int d^3k\ e^{ikx} \blr{ -2 \ddot{\hat \Psi} \delta_{ij} - (k^2 \delta_{ij} - k_ik_j)(\hat \Psi - \hat \Phi)
+	-\frac12\plr{ ik_i \dot{\hat Q}_j + ik_j \dot{\hat {Q}}_i} - k^2 \hat E_{ij} - \ddot {\hat{E}}_{ij}-\delta \hat T_{ij}}=0
+\ea
+Again, operating under the assumption that the inverse Fourier transform of zero is zero, we directly evaluate the integrand to zero, yielding the following new set of equations
+\begin{align}
+	&2k^2 \hat \Psi = -2\hat{\bar \phi} \\
+	 -&2 ik_i \dot{\hat  \Psi} +\frac12 k^2 \hat Q_i= \hat{\bar B}_i+ik_i \hat{\bar B}\\
+	  -&2 \ddot{\hat \Psi} \delta_{ij} - (k^2 \delta_{ij} - k_ik_j)(\hat \Psi - \hat \Phi)
+	-\frac12\plr{ ik_i \dot{\hat Q}_j + ik_j \dot{\hat {Q}}_i} - k^2 \hat E_{ij} - \ddot {\hat{E}}_{ij}=-2\hat{\bar \psi}\delta_{ij} - 2k_ik_j \hat{\bar E} + ik_i \hat{\bar E}_j + ik_j \hat{\bar E}_i + 2\hat{\bar E}_{ij}\\
+ -&6\ddot{\hat \Psi} - 2k^2(\Psi-\Phi) = -6\bar\psi - 2k^2\bar E
+\end{align}
+where we have included the spatial trace as the last equation. We also have the $k$-space conservation equations
+\begin{align}
+	&-2\dot{\hat{\bar{\phi}}} + k^2 \hat{\bar B} = 0\\
+&-(\dot{\hat{\bar{B}}}_i + ik_i \dot{\hat{\bar B}}) - 2ik_i \hat{\bar\psi} - 2ik_ik^2\hat{\bar E} - k^2 \hat{\bar{E}}_i = 0.
+\end{align}
+When looking to decompose the equations in $k$ \emph{space} in terms of S.V.T., we first look at $\delta G_{0i}$ and must assess whether $k_i \hat \Psi$ is orthogonal to $\hat Q_i$ and $\hat{\bar B}_i$. The most straightforward test is to take their scalar product
+\[
+	k^i \hat \Psi \hat Q_i = 0
+\]
+where we have used the constraint eq (11). Clearly then $k_i\hat \Psi$ lies along $k_i$ and $Q_i$ is orthogonal to it. Since $\hat{\bar B}_i$ follows the same constraint equation as $\hat Q_i$, it is also orthogonal to $k_i\hat\Psi$. Alternatively, we may choose to apply $k^i$ to eq (13) in which we arrive at the same decomposition. The result is the decomposition of scalar and vector equations:
+\begin{align}
+-&2\dot{\hat\Psi} = \hat{\bar B}\\
+&\dot{\hat{\bar B}} + 2\hat{\bar \psi} + 2k^2 \hat{\bar E} = 0\\
+&\frac12 k^2 \hat{Q}_i = \hat{\bar B}_i\\
+&\dot{\hat{\bar B}}_i + k^2\hat{\bar E}_i = 0
+\end{align}
+\\ \\
+Before looking at the spatial piece $\delta G_{ij}$, we can try to solve eq (18) and compare it to the solution obtained in Mannheim SVTsolution.pdf. The solution to (18) is
+\[
+	-2\hat\Psi = \int dt\ \hat{\bar B} + \hat{h}(k).
+\]
+Having solved for $\hat \Psi$ we can now construct $\Psi(x,t)$ as
+\[
+	-2\Psi(x,t) = -2\int d^3k\ e^{ikx}\hat\Psi
+ = \int d^3k e^{ikx}\blr{ \int dt\ \hat{\bar B} + \hat{h}(k)}= \int dt\ \bar B + h(x)
+\]
+thus
+\be
+	-2\Psi(x,t) =  \int dt\ \bar B + h(x).
+\ee
+Compare this to the equation calculated in SVTsolution.pdf (recall $\Psi = \psi$)
+\be
+	-2\psi(x,t) = \int dt\ \bar B + \alpha_j x_j \int dt\ f(t) + \int dt\ g(t) + h(x)
+\ee
+where $\del^2 h(x) = 0$. 
+\\ \\
+To try to make the discrepancy more transparent, we note that the equation one obtains from solving in position space is
+\be
+	-2\del^2 \dot \psi = \del^2 \bar B
+\ee
+in which it follows
+\[
+	-2\dot \psi = \bar B + A(x,t)
+\]
+where $\del^2 A(x,t) = 0$. The solution is then
+\be
+	-2\psi(x,t) = \int dt\ \bar B + \int dt\  A(x,t) + h(x).
+\ee
+\\ 
+However, if we transform (24) into Fourier components we get
+\[
+	-2k^2 \hat \Psi = k^2 \hat{\bar B}
+\]
+which reduces to
+\[
+	-2\hat \Psi = \hat{\bar B}
+\]
+with the solution given in eq. (22).
+%In continuing the analysis to $\delta G_{ij}$, we first apply $k^ik^j$ to eq (14) to obtain the scalar equation
+%\be
+%	-2\ddot{\hat \Psi}k^2-(\hat\Psi-\hat\Phi)k^4 = -2\hat{\bar \psi}k^2 + 2k^4 E
+%\ee
+\\
+\\
+%It is worth noting that while the Fourier components at arbitrary $k$ of $\pd_i\Psi$ and $Q_i$ are orthogonal, it is not true of the actual functions of space themselves:
+%\[
+%	\pd^i \Psi Q_i \ne 0.
+%\]
+Related to this problem is that there seems to reside an ambiguity when we consider a vector that is both longitudinal and transverse at the same time, as in the vector $\pd_i A$ where 
+\[
+	\del^2 A = 0.
+\]
+Decomposing $A$ into its Fourier transform we see
+\[
+	\del^2 \int d^3k\ e^{ikx} \hat A(k,t) = -\int d^3k\ e^{ikx} k^2 \hat A(k,t) =0
+\]
+and hence
+\[
+	k^2 \hat A = 0
+\]
+which for arbitrary $k$ implies that $\hat A = 0$. The problem then is that if we try to construct $A(x,t)$ via
+\[
+	A(x,t) = \int d^3k\ e^{ikx}\hat A(k,t)
+\]
+we find that $A(x,t) =0$ which we know is not the general solution of Laplace's equation. 
+
+\end{document}

@@ -1,0 +1,153 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+%\numberwithin{equation}{subsection}
+\title{Covariant Green's Functions v2 }
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary of Poisson's Curved Space Green's Functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Two Point Bitensors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Bitensor fields are tensors of two spacetime points. Primed indices denoted basis vectors with respect to the $x'$ coordinate system, while unprimed indices denoted coordinates with respect to the $x$ coordinate system.
+\\ \\
+Take $T_{\alpha\beta'}(x,x')$ for example. 
+Such a tensor has transformation rule under $x\to \tilde x$
+\begin{equation}
+T_{\alpha\beta'} \to T_{\tilde\alpha \beta'} = \frac{\partial x^\rho}{\partial \tilde x^\alpha}T_{\alpha\beta'}
+\end{equation}
+and under $x' \to \hat x$,
+\begin{equation}
+T_{\alpha\beta'} \to T_{\alpha \hat\beta'} = \frac{\partial x'^\rho}{\partial \hat x'^\beta}T_{\alpha\beta'}.
+\end{equation}
+In Poisson's construction of Green's functions, the bitensors are evaluated on the unique geodesic defined as the set of points $x$ linked to $x'$ that belong within the normal convex neighborhood of $x'$. (Given smooth manifold with affine connection, the local existence and uniqueness theorem states there exists a unique geodesic connecting two points on the manifold).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Parallel Propagator}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+On a geodesic linking $x$ to $x'$ parametrized by $\lambda$, introduce the orthonormal basis vectors $e^\mu_a$, which satisfy
+\begin{equation}
+g_{\mu\nu}e^\mu_ae^\nu_b = \eta_{ab},
+\end{equation}
+and which obey
+\begin{equation}
+\frac{D e^\mu_a}{d\lambda} = 0.
+\end{equation}
+These orthonormal basis vectors which have both coordinate and Lorentz index are equivalent to tetrads (vierbeins). 
+\\ \\
+The parallel propagator which takes a vector at point $x$ and propagates it along the manifold to point $x'$ is defined as
+\begin{equation}
+g^\alpha{}_{\alpha'}(x,x') = e^\alpha_a(x)e^a_{\alpha'}(x').
+\label{pp}
+\end{equation}
+To motivate this, we may decompose $A^\mu(z)$ according to 
+\begin{eqnarray}
+A^\mu &=& A^a e^{\mu}_a,
+\end{eqnarray}
+with components obeying
+\begin{eqnarray}
+A^a &=& A^\mu e_\mu^a = A^{\mu'} e_{\mu'}^a.
+\end{eqnarray}
+Under parallel transport, by definition, the components $A^a$ are held constant. Hence we may express
+\begin{eqnarray}
+A^\mu(x) &=& (A^{\alpha'}(x') e_{\alpha'}^a(x'))e_a^\mu(x)
+\nonumber\\
+&=& g^{\mu}{}_{\alpha'}(x,x')A^{\alpha'}(x')
+\end{eqnarray}
+Hence the bitensor $g^{\mu}{}_{\alpha'}(x,x')$ acts a the parallel propagator transporting $A'^\mu$ from $x'$ to $x$. We can similarly show the inverse relation, which takes $A^\mu$ from $x$ to $x'$,
+\begin{eqnarray}
+A^{\mu'}(x')&=& g^{\mu'}{}_{\alpha}(x',x)A^{\alpha}(x).
+\end{eqnarray}
+From \eqref{pp} we have the identities
+\begin{eqnarray}
+g^{\alpha}{}_{\alpha'}g^{\alpha'}{}_\beta &=& \delta^\alpha{}_\beta,\qquad g^{\alpha'}{}_\alpha g^\alpha{}_{\beta}' = \delta^{\alpha'}{}_{\beta'}
+\nonumber\\
+g_\alpha{}^{\alpha'}(x,x') &=& g^{\alpha'}{}_\alpha(x',x),\qquad g_{\alpha'}{}^\alpha(x',x)=g^{\alpha}{}_{\alpha'}(x,x')
+\end{eqnarray}
+When evaluated at coincidence (i.e. $\lim_{x\to x'} T(x,x') \equiv [T]$)
+\begin{eqnarray}
+[g^\alpha{}_{\beta'}]= \delta^{\alpha'}{}_{\beta'}.
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dirac Distribution in Curved Space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Poisson defines the invariant Dirac functional as
+\begin{equation}
+\int_V f(x)\delta_4(x,x')\sqrt{-g}d^4x = f(x'),\quad \int_{V'} f(x')\delta_4(x,x')\sqrt{-g'}d^4x' = f(x),
+\end{equation}
+with $x\in V$ and $x' \in V'$. 
+This implies the various equivalent forms:
+\begin{equation}
+\delta_4(x,x') = \frac{\delta_4(x-x')}{(-g)^{1/2}}=\frac{\delta_4(x-x')}{(-g')^{1/2}}
+=(gg')^{1/4} \delta_4(x-x'),
+\end{equation}
+where 
+\begin{eqnarray}
+\delta_4(x-x') = \delta(x_0-x'_0)\delta(x_1-x'_1)\delta(x_2-x'_2)\delta(x_3-x'_3)
+\end{eqnarray}
+and
+\begin{eqnarray}
+(-g)^{1/2} &=& (-\text{det}[g_{\mu\nu}(x)])^{1/2},\qquad  (-g')^{1/2} = (-\text{det}[g'_{\mu\nu}(x')])^{1/2}.
+\end{eqnarray}
+We can also show that the determinant of the parallel propagator obeys
+\begin{eqnarray}
+\text{det}[g^{\alpha}{}_{\alpha'}] &=& \frac{ (-g')^{1/2}}{(-g)^{1/2}}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{TT Curved Space Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From (14.41) in MAP decomposition paper, the equation governing $W_\mu$ must be
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]W^\alpha
+&=& \nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}R_{\nu\alpha}\nabla^\alpha \int g^{1/2} D(x,x') h.
+\label{treq4}
+\end{eqnarray}
+We see that the requisite Green's function that solves $W_\alpha$ is a bi-tensor $D^{\alpha\gamma'}$, defined according to
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]D^{\alpha\gamma'}(x,x') &=& g_{\nu}{}^{\gamma'}(x,x') (-g')^{-1/2} \delta^{(D)}(x-x'),
+\end{eqnarray}
+where 
+\begin{eqnarray}
+g_{\nu}{}^{\gamma'} &=& e_\nu^a(x)e_a^{\gamma'}(x),\qquad (-g)^{1/2} = (-\text{det}[g_{\mu\nu}(x)])^{1/2},\qquad  (-g')^{1/2} = (-\text{det}[g'_{\mu\nu}(x')])^{1/2}.
+\end{eqnarray}
+Hence, $W_\nu$ takes the form
+\begin{eqnarray}
+W_{\nu} &=& \int d^4x' (-g')^{1/2} D_\nu{}^{\sigma'} \left[ \nabla^{\rho'} h_{\sigma'\rho'}-
+\frac{1}{D-1}R_{\sigma'\rho'}\nabla^{\rho'} \int d^4x'' (-g'')^{1/2} D(x',x'') h\right].
+\end{eqnarray}
+Schematically, we can see that given an arbitrary differential operator $\mathcal L$ acting on a vector,
+\begin{eqnarray}
+\mathcal L_{\nu\alpha}(x)W^\alpha(x) &=& V_\nu (x),
+\end{eqnarray}
+and a bitensor Greens function $D^{\alpha\gamma'}$ that obeys
+\begin{eqnarray}
+\mathcal L_{\nu\alpha}(x)D^{\alpha\gamma'}(x,x') &=&  g_{\nu}{}^{\gamma'}(x,x') (-g')^{-1/2} \delta^{(D)}(x-x'),
+\end{eqnarray}
+then the action of $\mathcal L$ upon the integral solution takes the form
+\begin{eqnarray}
+\mathcal L_{\nu\alpha}(x) W^\alpha &=& \mathcal L_{\nu\alpha}(x) \int d^4x' (-g')^{1/2}D^{\alpha\gamma'}(x,x')V_{\gamma'}(x')
+\nonumber\\
+  &=& \int d^4x' \delta^{(D)}(x-x')\underbrace{ \left( g_{\nu}{}^{\gamma'}(x,x') V_{\gamma'}(x')\right)}_{\text{Parallel propagation of $V_{\gamma'}(x')$ to $V_\nu(x)$}}
+\nonumber\\
+&=& V_\nu(x).
+\end{eqnarray}
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{References}
+Poisson, Eric, Adam Pound, and Ian Vega. "The motion of point particles in curved spacetime." Living Reviews in Relativity 14.1 (2011): 7.\\ \\
+DeWitt, Bryce S., and Robert W. Brehme. "Radiation damping in a gravitational field." Annals of Physics 9.2 (1960): 220-259.\\ \\
+Allen, Bruce, and Michael Turyn. "An evaluation of the graviton propagator in de Sitter space." Nuclear Physics B 292 (1987): 813-852.\\ \\
+Fröb, Markus B., and Mojtaba Taslimi Tehrani. "Green’s functions and Hadamard parametrices for vector and tensor fields in general linear covariant gauges." Physical Review D 97.2 (2018): 025022. \\ \\
+Hobbs, J. M. "A vierbein formalism of radiation damping." Annals of Physics 47.1 (1968): 141-165.
+
+
+\end{document}

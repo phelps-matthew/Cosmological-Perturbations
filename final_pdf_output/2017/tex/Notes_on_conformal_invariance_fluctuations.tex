@@ -1,0 +1,265 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+\newcommand{\hu}{\mathcal H}
+
+\title{Notes on the Conformal Invariance of Fluctuations}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\section*{Conformal properties of $G_{\mu\nu}$ and $W_{\mu\nu}$}
+\noindent Under conformal transformation
+\[
+	g_{\mu\nu} \to \bar g_{\mu\nu}=\Omega^2 g_{\mu\nu} ,
+\]
+the Ricci  tensor  transforms as
+\[
+	R_{\mu\nu}(g_{\mu\nu})\to \bar R_{\mu\nu}(\bar g_{\mu\nu})= R_{\mu\nu}(g_{\mu\nu}) +\tilde S_{\mu\nu}(g_{\mu\nu}) 
+\]
+where $\tilde S_{\mu\nu}$ involves terms with covariant derivatives of $\Omega$. It follows that the Ricci scalar transforms as
+\[
+	g^{\alpha\beta}R_{\alpha\beta}(g_{\mu\nu})\to \bar R(\bar g_{\mu\nu})=\Omega^{-2}[R(g_{\mu\nu})  +g^{\alpha\beta}\tilde S_{\alpha\beta}(g_{\mu\nu})] 
+\]
+and thus
+\[
+	g_{\mu\nu}R \to \bar g_{\mu\nu}\bar R= g_{\mu\nu}R + S'_{\mu\nu}.
+\]
+The Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac12 g_{\mu\nu}R$ must then transform as
+\[
+	G_{\mu\nu}(g_{\mu\nu}) \to \bar G_{\mu\nu}(\bar g_{\mu\nu}) =G_{\mu\nu}(g_{\mu\nu})+ S_{\mu\nu}(g_{\mu\nu})
+\]
+where again $S_{\mu\nu}$ is some arbitrary tensor of $\Omega$ and $g_{\mu\nu}$. Now expanding to first order in the gravitational
+perturbation
+\[
+	g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}
+\]
+we have 
+\ba
+	\bar G_{\mu\nu}(\bar g^{(0)}_{\mu\nu}+ \bar h_{\mu\nu}) &= \bar G_{\mu\nu}^{(0)}(\bar g^{(0)}_{\mu\nu}) + \delta \bar G_{\mu\nu}(\bar h_{\mu\nu})\\
+	&=G^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+ \delta G_{\mu\nu}(h_{\mu\nu}) + S^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu}) + \delta S_{\mu\nu}(h_{\mu\nu}).
+\ea
+Now looking at the first order contribution,
+\[
+	 \delta \bar G_{\mu\nu}(\bar h_{\mu\nu}) =  \delta G_{\mu\nu}(h_{\mu\nu}) + \delta S_{\mu\nu}(h_{\mu\nu}),
+\]
+we note that diagonality in $\bar h_{\mu\nu}$ of  $\delta \bar G_{\mu\nu}(\bar h_{\mu\nu})$ requires the sum of $ \delta G_{\mu\nu}(h_{\mu\nu})$ and $\delta S_{\mu\nu}(h_{\mu\nu})$ to be diagonal in $h_{\mu\nu}$. 
+\\ \\
+Specifically, we may calculate $S_{\mu\nu}$ to be
+\[
+	S_{\mu\nu} = \Omega^{-1}( g_{\mu\nu} \del_\alpha \del^\alpha \Omega + 2\del_\nu\del_\mu \Omega) + \Omega^{-2}( g_{\mu\nu}\del_\alpha \Omega \del^\alpha\Omega - 4\del_\mu\Omega \del_\nu\Omega)
+\]
+and expanding to first order (here $g_{\mu\nu} = g^{(0)}_{\mu\nu}$)
+\ba
+	\delta S_{\mu\nu} &= \Omega^{-1}[-g_{\mu\nu}\del_\alpha\Omega\del_\beta h^{\alpha\beta}+\frac12 g^{\alpha\beta}g_{\mu\nu}\del_\alpha\Omega \del_\beta
+h^\gamma{}_\gamma+g^{\alpha\beta}\del_\alpha\Omega \del_\beta h_{\mu\nu}-g_{\mu\nu}h^{\alpha\beta}\del_\beta\del_\alpha \Omega\\
+&\qquad\quad 
++g^{\alpha\beta}h_{\mu\nu}\del_\beta\del_\alpha \Omega - \del_\alpha \Omega \del_\mu h^\alpha{}_\nu - \del_\alpha \Omega\del_\nu h^{\alpha}{}_\mu]\\
+&\quad + \Omega^{-2}[ g^{\alpha\beta}h_{\mu\nu} \del_\alpha\Omega \del_\beta\Omega - g_{\mu\nu} h^{\alpha\beta}\del_\alpha\Omega \del_\beta\Omega].
+\ea
+In the conformal to flat case, $\delta S_{\mu\nu}$ simplifies to
+\ba
+	\delta S_{\mu\nu} &= \Omega^{-1}[\frac12 \eta^{\alpha\beta}\eta^{\gamma\eta}\eta_{\mu\nu}\pd_\alpha\Omega \pd_\beta h_{\gamma\eta}+\eta^{\alpha\beta}
+\pd_\alpha \Omega \pd_\beta h_{\mu\nu} + \eta^{\alpha\beta}h_{\mu\nu}\pd_\beta\pd_\alpha\Omega\\
+&\qquad\quad 
+-\eta^{\alpha\beta}\eta^{\gamma\eta}\eta_{\mu\nu}\pd_\alpha\Omega \pd_\eta h_{\beta\gamma} - \eta^{\alpha\beta}\eta^{\gamma\eta}\eta_{\mu\nu}h_{\alpha\gamma}\pd_\eta \pd_\beta \Omega - \eta^{\alpha\beta}\pd_\alpha\Omega \pd_\mu h_{\nu\beta} - \eta^{\alpha\beta}\pd_\alpha \Omega \pd_\nu h_{\mu\beta}]\\
+&\quad + \Omega^{-2}[ \eta^{\alpha\beta}h_{\mu\nu} \pd_\alpha\Omega \pd_\beta\Omega - \eta^{\alpha\gamma}\eta^{\beta\eta}\eta_{\mu\nu} h^{\gamma\eta}\pd_\alpha\Omega \pd_\beta\Omega].
+\ea
+In the harmonic gauge, the extra term $\delta S_{\mu\nu}(g_{\mu\nu})$ does not vanish, and thus does not yield
+\[
+	\delta \bar G_{\mu\nu}(\bar h_{\mu\nu}) = \delta G_{\mu\nu}(h_{\mu\nu}).
+\]
+If the harmonic gauge did in fact cause $\delta S_{\mu\nu}$ to vanish, then we would be able to use the conformally transformed harmonic condition directly within $\delta \bar G_{\mu\nu}(\bar h_{\mu\nu})$ to obain (nearly) diagonal equations of motion (or just as diagonal as can be found using harmonic in the flat fluctuations).
+\\ \\ \\
+In $C^2$ theory, however, we have
+\[
+	W_{\mu\nu} \to \bar W_{\mu\nu}(\bar g_{\mu\nu})  = \Omega^{-2}W_{\mu\nu}(g_{\mu\nu})
+\]
+and thus
+\[
+	\bar W_{\mu\nu}(\bar g_{\mu\nu}) =  \Omega^{-2}W_{\mu\nu}(\Omega^{-2}\bar g_{\mu\nu}).
+\]
+Taking the first order fluctuations in the same manner as above, we arrive at
+\[
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(\Omega^{-2}\bar h_{\mu\nu}).
+\]
+Hence if the fluctuations  $\delta W_{\mu\nu}(h_{\mu\nu})$ are diagonal in $h_{\mu\nu}$, it immediately follows they will remain so under conformal transformations. 
+\\ \\ \\
+\section*{Trace Considerations}
+We can continue to use conformal invariance to determine the trace depedendent properties of $W_{\mu\nu}$. Taking $h$ as a first order perturbation in the metric and using the conformal invariance, we find up to first order 
+\ba
+	W_{\mu\nu}\plr{g^{(0)}_{\mu\nu} + \frac h4 g^{(0)}_{\mu\nu}} &=W_{\mu\nu}\blr{\plr{1+\frac h4}g^{(0)}_{\mu\nu} }= W_{\mu\nu}^{(0)}(g^{(0)}_{\mu\nu}) +\delta W_{\mu\nu}\plr{\frac h4g^{(0)}_{\mu\nu}} \\
+&=\plr{1-\frac h4}W_{\mu\nu}(g^{(0)}_{\mu\nu}),
+\ea
+and hence
+\be
+	-\frac h4 W_{\mu\nu}(g_{\mu\nu}^{(0)}) = \delta W_{\mu\nu}\plr{\frac h4 g^{(0)}_{\mu\nu}}.
+\ee
+Now, decomposing $h_{\mu\nu}$ into a trace and trace free components
+\[
+	h_{\mu\nu} = K_{\mu\nu} + g_{\mu\nu}\frac h4
+\]
+(where $g^{(0)\mu\nu}K_{\mu\nu} = 0$, $h= g^{(0)\mu\nu}h_{\mu\nu}$), substitute the above in, again keeping only first order terms
+\be
+	\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}\plr{K_{\mu\nu}+\frac h4g^{(0)}_{\mu\nu}}= \delta W_{\mu\nu}(K_{\mu\nu}) +\delta W_{\mu\nu}\plr{\frac h4g^{(0)}_{\mu\nu}}.
+\ee
+If we work in a background that is conformal to flat, then (1) will vanish which implies from (2) that
+\[
+	\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}(K_{\mu\nu}).
+\]
+\\ \\
+We may also find a relationship in the trace of entire fluctuation $\delta W_{\mu\nu}$. The tracelessness of $W_{\mu\nu}$ implies
+\[
+	g^{\mu\nu}W_{\mu\nu}(g_{\mu\nu}) = \plr{ g^{(0)\mu\nu}-h^{\mu\nu}}\plr{ W^{(0)}_{\mu\nu}+ \delta W_{\mu\nu}}=0.
+\]
+To first order,
+\[
+	-h^{\mu\nu}W^{(0)}_{\mu\nu} + g^{(0)\mu\nu}\delta W_{\mu\nu} = 0
+\]
+and thus
+\be
+	g^{(0)\mu\nu}\delta W_{\mu\nu}(h_{\mu\nu}) = h^{\mu\nu}W_{\mu\nu}(g^{(0)}_{\mu\nu}).
+\ee
+Once again, in a conformal to flat background, the trace of the fluctuations will vanish. 
+\\ \\ \\
+\section*{SVT Decomposition of $\delta W_{\mu\nu}$}
+Under conformal transformation $g_{\mu\nu} \to \bar{g}_{\mu\nu} = \Omega^2 g_{\mu\nu}$, $W_{\mu\nu}$ transforms as
+\[
+	\bar W_{\mu\nu}(\bar g_{\mu\nu}) =  \Omega^{-2}W_{\mu\nu}(g_{\mu\nu}).
+\]
+Perturbing the metric, 
+\[
+	\bar g_{\mu\nu} = \bar g^{(0)}_{\mu\nu} + \bar h_{\mu\nu} = \Omega^2 g^{(0)}_{\mu\nu} + \Omega^2 h_{\mu\nu}
+\]
+it follows that to first order
+\be
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(h_{\mu\nu}).
+\ee
+Under an infinitesimal oordinate transformation $x^\mu \to x'^\mu = x^\mu + \ep^\mu(x)$, the perturbed tensor $\delta W_{\mu\nu}$ transforms as
+\[
+	\delta W_{\mu\nu}(h_{\mu\nu}) \to \delta W'_{\mu\nu}(h'_{\mu\nu}) = \delta W_{\mu\nu}(h_{\mu\nu}) - \delta W_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu})
+\]
+At the same time, we also consider the transformation of the entire $W_{\mu\nu}$ under the infinitesimal coordinate transformation
+\be
+	W_{\mu\nu} \to W_{\mu\nu}' = W_{\mu\nu} - \mathcal{L}_e( W_{\mu\nu})
+\ee
+where the Lie derivative $\mathcal L_e$ for the rank 2 tensor is
+\[
+	 \mathcal{L}_e( W_{\mu\nu}) = W^{\lambda}{}_\mu \ep_{\lambda;\nu} + W^{\lambda}{}_\nu \ep_{\lambda;\mu} + W_{\mu\nu;\lambda}\ep^\lambda.
+\]
+Defining $\delta W_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu}) \equiv \delta W_{\mu\nu}(\ep)$, if we expand eq (5) to first order (that is $g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}$), we get
+\[
+	W_{\mu\nu} \to W_{\mu\nu}' = W^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+ \delta W_{\mu\nu}(h_{\mu\nu})- \mathcal{L}_e( W_{\mu\nu})
+\]
+and conclude that
+\[
+	 \delta W_{\mu\nu}(\ep) =  \mathcal{L}_e( W_{\mu\nu}) = W^{\lambda}{}_\mu \ep_{\lambda;\nu} + W^{\lambda}_\nu \ep_{\lambda;\mu} + W_{\mu\nu;\lambda}\ep^\lambda.
+\]
+Hence, in any background that is conformal to flat, the Lie derivative vanishes and thus $\delta W_{\mu\nu}$ must be gauge invariant. As such, it must always be possible to express $\delta W_{\mu\nu}$ in terms of 5 gauge invariant quantities (10 symmetric components - 4 coordinate transformation - 1 traceless condition = 5). This is shown below. Alternatively, we may also fix the gauge, as we have done to make $\delta W_{\mu\nu}$ diagonal in its indicies. 
+\\ \\
+Now decomposing $h_{\mu\nu}$ according to 
+\[
+	ds^2 = \Omega^2\clr{ -(1+2\phi)d\tau^2 + (\del_i +B_i)dx^id\tau + [(1-2\psi)\delta_{ij}+2\del_i\del_j E + \del_i E_j+\del_j E_i + 2E_{ij}]dx^i dx^j}
+\]
+we have in flat space $\delta W_{\mu\nu}(h_{\mu\nu})$ in arbitrary coordinate system
+\\
+\\
+\textbf{Scalars:}
+\ba
+	\delta W_{00} & = -\frac{2}{3\Omega^2}\del^4 (\phi + \psi - (E'-B)')\\
+	\delta W_{0i} &=  -\frac{2}{3\Omega^2}\del^4\dot(\phi + \psi - (E'-B)')\\
+	\delta W_{ij} & = \frac{1}{3\Omega^2}\big[ g_{ij}\del^2 \ddot (\phi + \psi - (E'-B)') + \del^2 \del_i\del_j (\phi + \psi - (E'-B)') \\
+	&\qquad - g_{ij}\del^4(\phi + \psi - (E'-B)') -3\del_i\del_j \ddot (\phi + \psi - (E'-B)')\big]
+\ea
+\textbf{Vectors:}
+\ba
+	\delta W_{0i} &=  \frac{1}{2\Omega^2}\blr{ \del^4 (B_i - E'_i) - \del^2 (B_i - E'_i)''} \\
+	\delta W_{ij} & = \frac{1}{2\Omega^2}\blr{ \del^2 \del_i   (B_j - E'_j)'+ \del^2 \del_j (B_i - E'_i)' - \del_i(B_j - E'_j)''-\del_j(B_i - E'_i)''}
+\ea
+\textbf{Tensors:}
+\ba
+	\delta W_{ij} & = \frac{1}{\Omega^2}\plr{E_{ij}-2\del^2\ddot E_{ij}+\del^4E_{ij}}
+\ea
+\noindent According to eq. (4), we may find $\delta W_{\mu\nu}$ based on a conformal to flat background by simply multiplying the above by a factor of $\Omega^{-2}$. 
+\\ \\
+Under coordinate transformation $x^\mu \to \tilde x^\mu = x^\mu + \ep^\mu$ where $\ep^\mu = (T,\pd^i L + L^i)$ the SVT quantities in the RW $K=0$ background transform as ($\mathcal H = \frac{\dot\Omega}{\Omega}$)
+\be
+	\tilde \phi = \phi - T' -\hu T
+\ee
+\be
+	\tilde \psi = \psi +\hu T
+\ee
+\be
+	\tilde E = E - L
+\ee
+\be
+	\tilde B = B + T - L'
+\ee
+\be
+	\tilde B_i = B_i - L_i'
+\ee
+\be
+	\tilde E_i = E_i - L_i
+\ee
+\be
+	\tilde E_{ij} = E_{ij}
+\ee
+in which the gauge invariant combinations are
+\be
+	\Phi = \phi -\hu (E'-B) - (E' - B)'
+\ee
+\be
+	\Psi = \psi + \hu(E'-B)
+\ee
+\be
+	\mathcal Q_i = B_i - E_i'
+\ee
+\be
+	E_{ij} = E_{ij}.
+\ee
+and, importantly for the Weyl tensor
+\be
+	\Sigma = \Phi + \Psi  = \phi + \psi - (E'-B)'.
+\ee
+Now, if we generalize the conformal factor $\Omega(\tau) \to \Omega(x)$ we can calculate the gauge transformations by effectively sending 
+\[
+	T\hu \to \tilde H = \frac{\ep^\mu \pd_\mu \Omega}{\Omega} = T\hu + (\pd^i L + L^i)\frac{\pd_i\Omega}{\Omega}.
+\]
+That this is true can be seen from the first order contrubtion of $\Omega(x^\mu + \ep^\mu)$. As such, the analogous SVT quantities under the coordinate transformation are
+\be
+	\tilde \phi = \phi - T' -\tilde H 
+\ee
+\be
+	\tilde \psi = \psi +\tilde H
+\ee
+\be
+	\tilde E = E - L
+\ee
+\be
+	\tilde B = B + T - L'
+\ee
+\be
+	\tilde B_i = B_i - L_i'
+\ee
+\be
+	\tilde E_i = E_i - L_i
+\ee
+\be
+	\tilde E_{ij} = E_{ij}
+\ee
+The gauge invariant combinations can then only possibly differ from that of RW for those involving $\psi$ and $\phi$ and in the Weyl case we only care about 
+\be
+	\Sigma = \phi + \psi - (E'-B)'.
+\ee
+But we note that the $\tilde H$ terms drop out identically, and thus in the general conformal case and thus the same form for $\Sigma$ remains invariant. Thus the gauge invariant quantities for any conformal factor are:
+\be
+	\Sigma = \phi + \psi - (E'-B)'
+\ee
+\be
+	\mathcal Q_i = B_i - E_i'
+\ee
+\be
+	E_{ij} = E_{ij}.
+\ee
+This brings us to 5 independent components in total, as mentioned above, and the gauge invariant combinations within $\delta W_{\mu\nu}$ drop out very clearly.
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{TT Projection Curved Space v1}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h_{\mu\nu}$ General Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+At present, I'm unable to express the general curved space decomposition for $h_{\mu\nu}$ in terms of scalar propagators.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maximally Symmetric Space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{ g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') \nabla^\sigma W_\sigma
+-\frac{1}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') h
+\label{decomphmax}
+\end{eqnarray}
+\begin{eqnarray}
+\left( \nabla_\alpha \nabla^\alpha - \frac{R}{D-1}\right)D(x,x') &=& g^{-1/2}\delta^4 (x-x')
+\nonumber\\ \nonumber\\
+\nabla^\mu h_{\mu\nu} &=& \left( \nabla_\alpha\nabla^\alpha-\frac{R}{D} \right) W_\nu
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Curved Space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+Below is a generalization of the decomposition above. When the space is maximally symmetric, we expect to be able to bring the decomposition to the form of \eqref{decomphmax}.
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}A_1(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1}A_2\left( B_3 \nabla_\mu\nabla_\nu -B_1\frac{ g_{\mu\nu}R}{D(D-1)}+B_2 R_{\mu\nu}\right) \int D(x,x') \nabla^\sigma W_\sigma
+\nonumber\\
+&&-\frac{1}{D-1}A_3\left( C_3\nabla_\mu\nabla_\nu -C_1\frac{g_{\mu\nu}R}{D(D-1)}+C_2 R_{\mu\nu}\right) \int D(x,x') h
+\label{decomph}
+\end{eqnarray}
+We take $D=4$ and define
+\begin{eqnarray}
+J(x) &=&  \int D(x,x') \nabla^\sigma W_\sigma
+\nonumber\\
+K(x)&=&\int D(x,x') h.
+\end{eqnarray}
+The transverse and trace conditions are
+\begin{eqnarray}
+\nabla_{\alpha }h_{\nu }{}^{\alpha }&=& - R_{\nu \alpha } W^{\alpha }  + \nabla_{\alpha }\nabla^{\alpha }W_{\nu } -  \tfrac{2}{3} A_{2}{} B_{2}{} R_{\nu \alpha } \nabla^{\alpha }J(x) + \tfrac{2}{3} A_{2}{} B_{3}{} R_{\nu \alpha } \nabla^{\alpha }J(x) \nonumber \\ 
+&& -  \tfrac{1}{3} A_{3}{} C_{2}{} R_{\nu \alpha } \nabla^{\alpha }K(x) + \tfrac{1}{3} A_{3}{} C_{3}{} R_{\nu \alpha } \nabla^{\alpha }K(x) + \tfrac{1}{18} A_{2}{} B_{1}{} R \nabla_{\nu }J(x) + \tfrac{1}{36} A_{3}{} C_{1}{} R \nabla_{\nu }K(x) \nonumber \\ 
+&& + \tfrac{1}{3} A_{1}{} \nabla_{\nu }h + \tfrac{1}{18} A_{2}{} B_{1}{} J(x) \nabla_{\nu }R -  \tfrac{1}{3} A_{2}{} B_{2}{} J(x) \nabla_{\nu }R + \tfrac{1}{36} A_{3}{} C_{1}{} K(x) \nabla_{\nu }R -  \tfrac{1}{6} A_{3}{} C_{2}{} K(x) \nabla_{\nu }R \nonumber \\ 
+&& + \nabla_{\nu }\nabla_{\alpha }W^{\alpha } -  \tfrac{1}{3} A_{1}{} \nabla_{\nu }\nabla_{\alpha }W^{\alpha } -  \tfrac{2}{3} A_{2}{} B_{3}{} \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }J(x) -  \tfrac{1}{3} A_{3}{} C_{3}{} \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }K(x)
+\end{eqnarray}
+\begin{eqnarray}
+h&=& \tfrac{4}{3} A_{1}{} h + \tfrac{2}{9} A_{2}{} B_{1}{} J(x) R -  \tfrac{2}{3} A_{2}{} B_{2}{} J(x) R + \tfrac{1}{9} A_{3}{} C_{1}{} K(x) R -  \tfrac{1}{3} A_{3}{} C_{2}{} K(x) R + 2 \nabla_{\alpha }W^{\alpha } \nonumber \\ 
+&& -  \tfrac{4}{3} A_{1}{} \nabla_{\alpha }W^{\alpha } -  \tfrac{2}{3} A_{2}{} B_{3}{} \nabla_{\alpha }\nabla^{\alpha }J(x) -  \tfrac{1}{3} A_{3}{} C_{3}{} \nabla_{\alpha }\nabla^{\alpha }K(x)
+\end{eqnarray}
+%
+%
+\\ \\
+\eqref{decomphmax} corresponds to $A_1=A_2=A_3=1$, $B_3=B_1=C_3=C_1=1$, $B_2=C_2=0$:
+\begin{eqnarray}
+  \nabla_{\alpha }h_{\nu }{}^{\alpha }&=& - R_{\nu \alpha } W^{\alpha }  + \nabla_{\alpha }\nabla^{\alpha }W_{\nu } + \tfrac{2}{3} R_{\nu \alpha } \nabla^{\alpha }J(x) + \tfrac{1}{3} R_{\nu \alpha } \nabla^{\alpha }K(x) + \tfrac{1}{18} R \nabla_{\nu }J(x) \nonumber \\ 
+&& + \tfrac{1}{36} R \nabla_{\nu }K(x) + \tfrac{1}{3} \nabla_{\nu }h + \tfrac{1}{18} J(x) \nabla_{\nu }R + \tfrac{1}{36} K(x) \nabla_{\nu }R + \tfrac{2}{3} \nabla_{\nu }\nabla_{\alpha }W^{\alpha } -  \tfrac{2}{3} \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }J(x) \nonumber \\ 
+&& -  \tfrac{1}{3} \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }K(x)
+\end{eqnarray}
+\begin{eqnarray}
+h&=& -  \tfrac{2}{3} J(x) R -  \tfrac{1}{3} K(x) R - 2 \nabla_{\alpha }W^{\alpha } + 2 \nabla_{\alpha }\nabla^{\alpha }J(x) + \nabla_{\alpha }\nabla^{\alpha }K(x)
+\end{eqnarray}
+\\ \\
+If we straight forwardly covariantize the flat space decomposition this corresponds to $A_1=A_2=A_3=1$, $B_3=C_3=1$, $B_2=C_2=B_1=C_1=0$:
+\begin{eqnarray}
+ \nabla_{\alpha }h_{\nu }{}^{\alpha } &=& - R_{\nu \alpha } W^{\alpha }+ \nabla_{\alpha }\nabla^{\alpha }W_{\nu } + \tfrac{2}{3} R_{\nu \alpha } \nabla^{\alpha }J(x) + \tfrac{1}{3} R_{\nu \alpha } \nabla^{\alpha }K(x) + \tfrac{1}{3} \nabla_{\nu }h + \tfrac{2}{3} \nabla_{\nu }\nabla_{\alpha }W^{\alpha } \nonumber \\ 
+&& -  \tfrac{2}{3} \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }J(x) -  \tfrac{1}{3} \nabla_{\nu }\nabla_{\alpha }\nabla^{\alpha }K(x)
+\end{eqnarray}
+\begin{eqnarray}
+h&=& - 2 \nabla_{\alpha }W^{\alpha } + 2 \nabla_{\alpha }\nabla^{\alpha }J(x) + \nabla_{\alpha }\nabla^{\alpha }K(x)
+\end{eqnarray}
+\end{document}

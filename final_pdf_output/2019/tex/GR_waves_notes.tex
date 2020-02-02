@@ -1,0 +1,1291 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\usepackage{hyperref}
+\numberwithin{equation}{subsection}
+
+\title{Notes on Gravitational Waves}
+\author{}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Matter Action for $S(x)$ and $\psi_{\frac12}(x)$}
+The most general curved space conformally invariant matter action for a fermion $\psi(x)$ and here a real spin-zero scalar field $S(x)$ is
+\begin{equation}
+	I_{\rm M} = -\int d^4x(-g)^{1/2} \left[ \frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi\right]\label{GRW1}.
+\end{equation}
+\subsection{Definitions}
+Definitions:
+\begin{align}
+\gamma^\mu(x) &= V^\mu_a(x)\hat \gamma ^a
+\nonumber\\
+\Gamma_\mu(x) &= \frac{1}{8}\left( [\gamma^\nu(x),\partial_\mu\gamma_\nu(x)] -[\gamma^\nu(x),\gamma_\sigma(x)]\Gamma^\sigma_{\mu\nu} \right)
+\nonumber\\
+ds^2 &= -(dx^0)^2 + \delta_{ij}dx^idx^j = \eta_{ab}dx^a dx^b
+\nonumber\\
+-2\eta^{ab} &= \hat \gamma^a \hat \gamma^b + \hat \gamma^b \hat\gamma^a 
+\nonumber\\
+\bar\psi &= \psi^\dagger \hat D
+\nonumber\\
+\hat \gamma^{a\dagger} &= \hat D \hat\gamma^a \hat D^{-1}
+\end{align}
+Hermiticty is implied, in that
+\begin{align}
+i\bar\psi \gamma^\mu(x)[\partial_\mu+ \Gamma_\mu(x)]\psi &= \frac{i}{2} \bar \psi\gamma^\mu(x)[\partial_\mu + \Gamma_{\mu}(x)]\psi - \frac{i}{2}
+\bar\psi[\overset{\leftarrow}\partial_\mu +\Gamma_\mu(x)]\gamma^\mu(x)\psi
+\nonumber\\
+&= \frac{i}{2}\bar\psi\gamma^\mu(x)[\partial_\mu+\Gamma_\mu(x)]\psi + \rm{h.c.} 
+\end{align}
+and
+\begin{align}
+i\bar\psi\gamma_\mu(x)[\partial_\nu+\Gamma_\nu(x)]\psi &= \frac{i}{4}\bar\psi \gamma_\mu(x)[\partial_\nu + \Gamma_\nu(x)]\psi +
+\frac{i}{4} \bar\psi \gamma_\nu(x)[\partial_\mu + \Gamma_\mu(x)]\psi + \rm{h.c.}
+\end{align}
+\subsection{Conformal Invariance}
+Note that under $g_{\mu\nu}\to e^{2\alpha(x)}g_{\mu\nu}$ we have (see \ref{A2})
+\begin{equation}
+S(x) \to e^{-\alpha(x)}S(x),\qquad \psi(x)\to e^{-3\alpha(x)/2}\psi(x),\qquad \bar \psi(x)\to e^{-3\alpha(x)/2}\bar\psi(x).
+\end{equation}
+As for the determinant in $D$ dimensions,
+\begin{equation}
+	\rm{det}[g_{\mu\nu}]\to \rm{det}[e^{2\alpha}g_{\mu\nu}] = e^{2D\alpha}det[g_{\mu\nu}]
+\end{equation}
+whereby
+\begin{equation}
+	(-g^{1/2}) \to e^{D\alpha(x)}(-g^{1/2}),
+\end{equation}
+and thus for $D=4$ it will suffice to show that each term in 
+\begin{equation}
+\mathcal L =  \frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi
+\end{equation}
+must transform as $e^{-4\alpha(x)}$. Looking at the first two terms, we have
+\begin{align}
+\frac12 g^{\mu\nu}\nabla_\mu S\nabla_\nu S &\to   \frac12 g^{\mu\nu}e^{-2\alpha} \left( e^{-\alpha} \nabla_\mu S - S e^{-\alpha}\nabla_\mu \alpha \right)\left( e^{-\alpha} \nabla_\nu S - S e^{-\alpha}\nabla_\nu \alpha \right)\\
+&=  \frac12 g^{\mu\nu}e^{-4\alpha} \left( \nabla_\mu S\nabla_\nu S + S^2 \nabla_\mu\alpha\nabla_\nu\alpha -S \nabla_\nu S \nabla_\mu \alpha - S\nabla_\nu S\nabla_\mu \alpha \right)
+\nonumber\\
+&= e^{-4\alpha}\left( \frac{1}{2} \nabla_\mu S\nabla^\mu S + \frac{1}{2} S^2 \nabla_\lambda \alpha \nabla^\lambda\alpha - S \nabla_\lambda S\nabla^\lambda \alpha \right) 
+\end{align}
+and (see \ref{GRA13})
+\begin{equation}
+-\frac{1}{12} S^2 R^\mu{}_\mu \to e^{-4\alpha}\left(-\frac{1}{12} S^2 R^\mu{}_\mu -\frac12 S^2 \nabla_\lambda\alpha \nabla^\lambda \alpha -\frac12 S^2 \nabla_\lambda
+\nabla^\lambda \alpha \right).
+\end{equation}
+What remains from these two is infact a total derivative, noting that
+\begin{align}
+-\frac12 \nabla_\lambda ( S^2 \nabla^\lambda \alpha ) &= -\frac12 S^2 \nabla_\lambda \nabla^\lambda \alpha - S\nabla_\lambda S\nabla^\alpha \alpha
+\nonumber\\
+&= -\frac{1}{2}(-g)^{1/2} \partial_\lambda \left[ (-g)^{-1/2}S^2\partial^\lambda \alpha \right].
+\end{align}
+Variation of this term with respect to the relevent fields ($\delta g_{\mu\nu}$ and $\delta S$ here) allow it to vanish when evaluated on the boundary. Hence, under conformal transformations the contribution of this term will not affect the equations of motion (as with any total divergence). 
+\\ \\
+\noindent
+For the fermion kinetic energy term, hermiticity has been implied with the full expression being
+\begin{align}
+i\bar\psi \gamma^\mu(x)[\partial_\mu+ \Gamma_\mu(x)]\psi &\equiv \frac{i}{2} \bar \psi\gamma^\mu(x)[\partial_\mu + \Gamma_{\mu}(x)]\psi - \frac{i}{2}
+\bar\psi[\overset{\leftarrow}\partial_\mu +\Gamma_\mu(x)]\gamma^\mu(x)\psi.
+\end{align}
+Under conformal transformation we have 
+\begin{align}
+g_{\mu\nu} = V^{a}_\mu V^b_\nu \eta_{ab} &\to \Omega^2 g_{\mu\nu}
+\nonumber\\
+&= 
+\end{align}
+\subsection{Trace}
+Allowing the parameter $\epsilon \in (-1,1)$ to represent conformal and massive conformal gravity respectively, the energy momentum tensor evaluates to
+\begin{align}
+	T_{\mu\nu} =&{}
+	 \epsilon\bigg[ -\frac23 \nabla_\mu S\nabla_\nu S + \frac16 g_{\mu\nu} \nabla_\alpha S\nabla^\alpha S + \frac13
+	S \nabla_\mu \nabla_\nu S -\frac13 g_{\mu\nu} S\nabla_\alpha\nabla^\alpha S+ \frac16 S^2\left( R_{\mu\nu} - \frac12 g_{\mu\nu}R\right)\bigg] - g_{\mu\nu}\lambda S^4
+\nonumber\\
+&{} +\frac12 \left[ i\bar\psi \gamma_\mu(\partial_\nu +\Gamma_\nu)\psi +  i\bar\psi \gamma_\nu(\partial_\mu +\Gamma_\mu)\psi\right].
+\end{align}
+The trace of this for arbitrary $S(x)$ is
+\begin{equation}
+	g^{\mu\nu} T_{\mu\nu} = \epsilon\left( - S \nabla_\alpha \nabla^\alpha S - \frac16 S^2 R\right) - 4\lambda S^4 + i \bar\psi \gamma^\mu(\partial_\mu
+	+\Gamma_\mu)\psi.
+\end{equation}
+The equations of motion for the fields are
+\begin{equation}
+	\epsilon\left( -\nabla_\alpha \nabla^\alpha S -\frac16 S R\right) - 4\lambda S^3 + \xi \bar\psi\psi = 0
+\end{equation}
+\begin{equation}
+i\gamma^\mu(\partial_\mu +\Gamma_\mu)\psi - \xi S\psi = 0.
+\end{equation}
+Substituting these into (13) we find that it is traceless.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spontaneously Broken $T_{\mu\nu}$}
+The energy momentum tensor, from variation of $I_M$ is
+\begin{align}
+	T_{\mu\nu} =&{}
+	 \epsilon\bigg[ -\frac23 \nabla_\mu S\nabla_\nu S + \frac16 g_{\mu\nu} \nabla_\alpha S\nabla^\alpha S + \frac13
+	S \nabla_\mu \nabla_\nu S -\frac13 g_{\mu\nu} S\nabla_\alpha\nabla^\alpha S+ \frac16 S^2\left( R_{\mu\nu} - \frac12 g_{\mu\nu}R\right)\bigg] - g_{\mu\nu}\lambda S^4
+\nonumber\\
+&{} +  i\bar\psi \gamma_\mu(\partial_\nu +\Gamma_\nu)\psi,
+\end{align}
+where the kinetic fermion term includes an implicit $\text{h.c.}$ part.  
+The equations of motion for the fields are
+\begin{equation}
+	\epsilon\left( -\nabla_\alpha \nabla^\alpha S -\frac16 S R\right) - 4\lambda S^3 + \xi \bar\psi\psi = 0
+\end{equation}
+\begin{equation}
+i\gamma^\mu(\partial_\mu +\Gamma_\mu)\psi - \xi S\psi = 0.
+\end{equation}
+\subsection{Tracelessness}
+Consider an arbitrary action
+\begin{equation}
+	I = \int d^4x (-g)^{1/2} C(x),
+\end{equation}
+where $C(x)$ is a general coordinate scalar. Variation of this action with respect to the metric yields the tensor $C_{\mu\nu}$, defined as
+\begin{equation} 
+\frac{\delta I}{\delta g^{\mu\nu}} = \int d^4x (-g)^{1/2} C_{\mu\nu} \delta g^{\mu\nu}.
+\end{equation} 
+Under conformal transformation, 
+\begin{equation}
+\delta g^{\mu\nu} \to e^{-2\alpha}\delta g^{\mu\nu}\qquad (-g)^{1/2} \to e^{4\alpha}(-g)^{1/2},
+\end{equation}
+and hence, to retain conformal invariance it must follow that
+\begin{equation}
+C_{\mu\nu} \to e^{-2\alpha}C_{\mu\nu}.
+\end{equation}
+In maintaining the generality of $C(x)$, $C_{\mu\nu}$ here could represent the energy momentum tensor due to curvature or matter. Now, let us decompose the general $C_{\mu\nu}$ into a trace-free and traceless component via
+\begin{equation}
+C_{\mu\nu} = C^{\theta}_{\mu\nu} + \frac14 g_{\mu\nu}\left( g^{\alpha\beta} C_{\alpha\beta}\right).
+\end{equation}
+Under conformal transformation, denoting transformed quantities with bars and $C = g^{\alpha\beta}C_{\alpha\beta}$, we find the traceless sector transforms into
+\begin{equation}
+\bar C_{\mu\nu}^\theta = \bar C_{\mu\nu}- \frac14 \bar g_{\mu\nu} \bar C = e^{-2\alpha}C_{\mu\nu} - \frac14 e^{2\alpha} g_{\mu\nu} C
+\end{equation}
+in which it is apparent that $\bar g^{\mu\nu} \bar C^\theta_{\mu\nu} = e^{-2\alpha}g^{\mu\nu}C_{\mu\nu}= 0$, i.e. tracelessness is preserved as expected.
+\begin{equation}
+	\bar g^{\mu\nu} \bar C_{\mu\nu}^\theta = 
+\end{equation}
+\begin{equation}
+	\bar C_{\mu\nu}^\theta = e^{-2\alpha} C_{\mu\nu}^\theta + \frac14 (e^{2\alpha} - e^{-2\alpha})g_{\mu\nu} C
+\end{equation}
+\subsection{Massive Conformal Gravity}
+The action used in MCG is 
+\begin{equation}
+I = I_G+I_M
+\end{equation}
+where
+\begin{equation}
+I_{\rm G} = \frac{c^3}{16\pi G} \int d^4x(-g)^{1/2} \left[ \phi^2 R^{\alpha}{}_\alpha + 6 \nabla_\mu \phi \nabla^\mu \phi - 2\Lambda_G \phi^4 - \frac{\alpha^2}{2}C^{\lambda\mu\nu\kappa}C_{\lambda\mu\nu\kappa}\right]
+\end{equation}
+\begin{equation}
+I_{\rm M} = -\frac{1}{c}\int d^4x (-g)^{1/2} \left[ \frac12 \nabla^\mu S \nabla_\mu S + \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi +hS\bar\psi\psi\right].
+\end{equation}
+Compare this to CG where
+\begin{equation}
+I_{\rm G} = -\alpha_g \int d^4x (-g)^{1/2} C^{\lambda\mu\nu\kappa}C_{\lambda\mu\nu\kappa}
+\end{equation}
+\begin{equation}
+	I_{\rm M} = -\int d^4x(-g)^{1/2} \left[ \frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi\right].
+\end{equation}
+\section{Wave Equation in Minkowski Background}
+In the transverse gauge $\partial_\nu K^{\mu\nu} = 0$ in the Minkowski background the vacuum equation of motion for the traceless $K_{\mu\nu}$ is
+\begin{equation}
+\delta W_{\mu\nu} = \eta^{\alpha\beta} \eta^{\sigma\rho}\partial_\alpha\partial_\beta\partial_\sigma\partial_\rho K_{\mu\nu} =0.
+\end{equation}
+The momentum eigenstate solutions take the form 
+\begin{equation}
+K_{\mu\nu} = A_{\mu\nu}e^{ikx} + n_\alpha x^\alpha B_{\mu\nu} e^{ikx} +\text{c.c.}\label{202}
+\end{equation}
+where $n_\alpha = (1,0,0,0)$ and $k^\mu k_{\mu} = 0$. Following the transverse condition, the solution must obey
+\begin{equation}
+0=\left(ik^\nu A_{\mu\nu}e^{ikx} + n^\nu B_{\mu\nu}\right)e^{ikx}
++ \left( ik^\nu B_{\mu\nu}\right) n_\alpha x^\alpha  e^{ikx}+ \text{c.c.}\label{203}
+\end{equation}
+In addition to the tracelessness condition, to satisfy all $x$ (noting that $e^{ikx}$ and $te^{ikx}$ are linearly independent), we set each coefficient preceding the space-time dependent function of \eqref{203} to zero, viz.
+\begin{equation}
+A^\mu{}_\mu = 0,\qquad B^\mu{}_\mu=0,\qquad ik^\nu A_{\mu\nu} + n^\nu B_{\mu\nu}= 0,\qquad i k^\nu B_{\mu\nu} = 0.
+\end{equation}
+We have a total of $10$ conditions upon the 20 total components of $A_{\mu\nu}$ and $B_{\mu\nu}$. 
+It is easy to check that these conditions (and also their implied conjugate expressions) satisfy our choice of transverse coordinate system and retain the tracelessness of $K_{\mu\nu}$. 
+Under infinitesimal coordinate transformation $x^\mu \to x^\mu + \epsilon^\mu(x)$, $K_{\mu\nu}$ transforms as
+\begin{equation}
+	K_{\mu\nu}' = K_{\mu\nu} - \partial_\mu \epsilon_\nu - \partial_\nu\epsilon_\mu + \frac12 g_{\mu\nu} \partial_\rho \epsilon^\rho.
+\end{equation}
+We denote the change in $K_{\mu\nu}$ (Lie derivative) as the tensor
+\begin{equation}
+\Delta K_{\mu\nu} = - \partial_\mu \epsilon_\nu - \partial_\nu\epsilon_\mu + \frac12 g_{\mu\nu} \partial_\rho \epsilon^\rho.\label{207}
+\end{equation}
+As we look for residual symmetry, we note that $\Delta K_{\mu\nu}$ is manifestly traceless and also must obey the transverse condition $\partial_\nu \Delta K^{\mu\nu}=0$, viz.
+\begin{equation}
+	0=-\partial_\nu \partial^\mu \epsilon^\nu - \partial_\nu \partial^\nu \epsilon^\mu + \frac12 \partial^\mu \partial_\rho \epsilon^\rho =
+	-\partial_\nu \partial^\nu \epsilon^\mu - \frac12 \partial^\mu \partial_\nu \epsilon^\nu .\label{208}
+\end{equation}
+As a guess for the form of $\epsilon^\mu(x)$, lets try
+\begin{equation}
+\epsilon^\mu(x) = i A^\mu e^{ikx} + iB^\mu n_\alpha x^\alpha e^{ikx} + \text{c.c.}
+\end{equation}
+We then have the following relations:
+\begin{equation}
+\partial^\nu \epsilon^\mu = - k^\nu\left(A^\mu e^{ikx} + B^\mu n_\alpha x^\alpha e^{ikx}\right)+ 
+i n^\nu \left(  B^\mu  e^{ikx} \right)+ \text{c.c.}
+\end{equation}
+\begin{equation}
+\partial_\nu \partial^\nu \epsilon^\mu = -2k_\nu n^\nu \left(B^\mu  e^{ikx}\right)+\text{c.c.}
+\end{equation}
+\begin{equation}
+\partial_\mu \partial^\nu \epsilon^\mu = -i k_\mu k^\nu\left(A^\mu e^{ikx} +  B^\mu n_\alpha x^\alpha e^{ikx}\right)
+- (k^\nu n_\mu+k_\mu n^\nu)\left[ B^\mu e^{ikx}\right] + \text{c.c.}
+\end{equation}
+\begin{equation}
+\partial_\beta \partial^\beta (n_\alpha x^\alpha e^{ikx}) = 2i n_\alpha k^\alpha e^{ikx}.
+\end{equation}
+The transverse condition per \eqref{208} then takes the form
+\begin{align}
+0 {}&= 2k_\nu n^\nu \left(B^\mu  e^{ikx}\right)+\frac12 i k_\nu k^\mu\left(A^\nu e^{ikx} +  B^\nu n_\alpha x^\alpha e^{ikx}\right)
++\frac12 (k^\mu n_\nu+k_\nu n^\mu)\left[ B^\nu e^{ikx}\right]+ \text{c.c.}\ .
+\end{align}
+To hold for arbitrary $x$, we have the two separate conditions,
+\begin{equation}
+2k_\nu n^\nu B^\mu +\frac12 ik_\nu k^\mu A^\nu + \frac12 (k^\mu n_\nu+k_\nu n^\mu)B^\nu=0,\qquad \frac12 ik_\nu k^\mu B^\nu=0.\label{2019}
+\end{equation}
+For arbitrary $k^\mu$, the second condition in \ref{2019} implies $k_\nu B^\nu = 0$. As such, the remaining condition is
+\begin{equation}
+2k_\nu n^\nu B^\mu + \frac12 k^\mu n_\nu B^\nu + \frac12 i k_\nu k^\mu A^\nu = 0.
+\end{equation}
+This brings us to $5$ conditions upon $8$ total components of $A_\mu$ and $B_\mu$. Hence we expect to be able to reduce the $10$ components from $A_{\mu\nu}$ and $B_{\mu\nu}$ by 3.  
+Let us take a wave propagating in the $z$ direction, with wavevector
+\begin{equation}
+k^\mu = (k,0,0,k),\qquad k_\mu = (-k,0,0,k).
+\end{equation}
+It will be useful to determine the components of the $\Delta K_{\mu\nu}$ transverse conditions resulting from this waveform:
+\begin{equation}
+B_0 = -B_3,\qquad B_0 = \frac{i}{5}k(A_0+A_3),\qquad B_1 = B_2 = 0.
+\end{equation}
+In addition, for this waveform, the transverse relations for the tensor polarizations $A_{\mu\nu}$ and $B_{\mu\nu}$ take the form
+\begin{equation}
+B_{0\mu} = -B_{3\mu},\qquad A_{00}+2A_{03}+A_{33} = 0,\qquad ik(A_{\mu 0}+ A_{\mu 3}) = B_{0\mu}.
+\end{equation}
+The form for the transformation (Lie derivative) onto $K_{\mu\nu}$ is
+\begin{align}
+\Delta K_{\mu\nu} &= \left[ k_\nu A_\mu + k_\mu A_\nu - i \left( n_\nu B_\mu + n_\mu B_\nu\right) 
+-\frac12 g_{\mu\nu} A^\alpha k_\alpha + \frac{i}{2} g_{\mu\nu}n_\alpha B^\alpha \right]e^{ikx}
+\nonumber\\
+&\qquad + \bigg[ k_\nu B_\mu + k_\mu B_\nu \bigg] n_\alpha x^\alpha e^{ikx}.
+\end{align}
+Again, it will be useful to evaluate this for different components:
+\begin{align}
+\Delta K_{00} &=\left[ -2 kA_0 -4i B_0\right]e^{ikx} - \left[2kB_0\right] n_\alpha x^\alpha e^{ikx}
+\end{align}
+\begin{align}
+\Delta K_{01} &=  -k A_1 e^{ikx},\qquad \Delta K_{02} =  -k A_2 e^{ikx}
+\end{align}
+\begin{align}
+\Delta K_{03} &= \left[ -2 kA_3 +4i B_3\right]e^{ikx} - \left[2kB_3\right] n_\alpha x^\alpha e^{ikx}
+\end{align}
+\begin{align}
+\Delta K_{11} = \Delta K_{22} =  [-2iB_0] e^{ikx},\qquad \Delta K_{12} = 0,\qquad \Delta K_{13} = [kA_1]e^{ikx}
+\end{align}
+\begin{align}
+\Delta K_{33} = \left[ 2kA_3 - 2iB_3\right]e^{ikx} + [2kB_3]n_\alpha x^\alpha e^{ikx}
+\end{align}
+We would like to impose some sort of synchronous condition whereby $B_{0\mu} = 0$ and $A_{0\mu} = 0$. We may choose variables $A_1$ and $A_2$ such that $A'_{01}$ and $A'_{02}$ are made to vanish. However, we encounter difficulty making a component such as $B_{01}$ vanish, since $B'_{01} = B_{01}$. Hence $B_{01}$ cannot be made to vanish by gauge transformation unless we are able to show that, from the transverse condition, $A_{01} = -A_{13}$. However, both $A'_{01}$ and $A'_{13}$ are affected only by $A_1$ and thus cannot both be made equivalent to each other. In other words $A_{01} + A_{13} = A'_{01} + A'_{13}$. 
+
+
+\newpage
+The transverse condition on $B^\mu$ entails $B^\mu = \lambda k^\mu$, ($\lambda \in \mathbb C$) with $B^\mu$ either being identically zero ($\lambda = 0$) or being proportional to $k^\mu$. Substituting this form for $B^\mu$ into the above and utilitizing $n_\mu = (1,0,0,0)$, we obtain
+\begin{align}
+0={}&2 \lambda k^0k^\mu + \frac12 \lambda k^0 k^\mu + \frac12 i k_\nu A^\nu k^\mu 
+\nonumber\\
+={}&k^\mu\left( \frac52\lambda k^0 + \frac12 i k_\nu A^\nu\right),
+\end{align}
+which reduces to the condition
+\begin{equation}
+ \lambda = -\frac{i}{5 k^0} k_\nu A^\nu,
+\end{equation}
+and thus
+\begin{equation}
+B^\mu = -\frac{i}{5 k^0} k_\nu A^\nu k^\mu.
+\end{equation}
+The gauge transformation $\epsilon^\mu$ now takes the form
+\begin{equation}
+\epsilon^\mu = i A^\mu e^{ikx} + \frac{1}{5k^0}k^\mu A^\beta k_\beta  n_\alpha x^\alpha e^{ikx}+\text{c.c}.
+\end{equation}
+As a check on our result, we form the transverse condition $\partial_\mu \Delta K^{\mu\nu}=0$, 
+\begin{equation}
+\partial_\alpha \epsilon^\alpha =  -\frac{4}{5} A^\alpha k_\alpha e^{ikx}+\text{c.c},\qquad \partial^\mu \partial_\alpha \epsilon^\alpha = -\frac{4i}{5}k^\mu A^\alpha 
+k_\alpha e^{ikx}+\text{c.c},\qquad \partial_\alpha\partial^\alpha \epsilon^\mu = \frac{2i}{5} k^\mu A^\alpha k_\alpha  e^{ikx}+\text{c.c}.
+\end{equation}
+We see that the relation \ref{208} holds, i.e.
+\begin{equation}
+-\partial_\nu \partial^\nu \epsilon^\mu - \frac12 \partial^\mu \partial_\nu \epsilon^\nu =0.
+\end{equation}
+Now the Lie derivative of $K_{\mu\nu}$ takes the form
+\begin{align}
+\Delta K_{\mu\nu} &= \left[ k_\nu A_\mu + k_\mu A_\nu - \frac{1}{5 k^0}\left(k_\mu n_\nu +k_\nu n_\mu\right) A^\alpha k_\alpha - \frac{2}{5}\eta_{\mu\nu} A^\alpha k_\alpha \right] e^{ikx} -\left[ \frac{2i}{5k^0}k_\mu k_\nu A^\alpha k_\alpha \right]n_\beta x^\beta e^{ikx}
+\nonumber\\
+&\quad + \text{c.c.}
+\end{align}
+By inspection we confirm $\eta^{\mu\nu}\Delta K_{\mu\nu} =0$ and $\partial_\alpha \partial^\alpha \partial_\beta \partial^\beta \Delta K_{\mu\nu} = 0$, with $\Delta K_{\mu\nu}$ thus representing an isometry of the equation of motion. Since $A_\mu$ is arbitrary, we are allowed to make 4 further coordinate conditions upon the new tensor $K'_{\mu\nu} = K_{\mu\nu} + \Delta K_{\mu\nu}$. 
+\\ \\
+If we propagate a wave along the $z$ axis, taking $|k^3| = k^0 = k$, then the only component of $\Delta K_{\mu\nu}$ that is invariant is $\Delta K_{12}$. However, if we impose the condition $A^\alpha k_\alpha = 0$, then two gauge invariant components remain: $\Delta K_{11}$ and $\Delta K_{12}$. 
+\newpage
+Now either $\lambda =0$ and $k_\nu A^\nu = 0$ or we must have the nontrivial $\lambda = \frac{i}{3k_0} k_\nu A^\nu$. The nontrivial solution implies $B^\mu \propto A^\mu$,
+which would then couple both the $A_{\mu\nu}$ and $B_{\mu\nu}$ modes of \eqref{202}, permitting a nonvanishing asymptotic contribution of $A_{\mu\nu}$ at large $t$. 
+ Though we may not be able to exclude the nontrivial solution explicity, since our goal is only to find a residual gauge condition, we will proceed with the more straightforward solution of $\lambda = 0$ and $k_\nu A^\nu = 0$. Such a choice indicates that $B^\mu = 0$, and while this may seem restrictive, we note that the conditions of tranverse, synchronous, and tracelessness leaves the $B_{\mu\nu}$ of \eqref{202} with $10-4-3-1 = 2$ unique components - just enough to represent a spin-2 gravitational wave, and hence we expect the two components of $B_{\mu\nu}$ to remain invariant under the residual gauge transformation.
+ \\ \\
+ \noindent
+Thus we may state our conditions on $A^\mu$ and $B^\mu$ as
+\begin{equation}
+	A^\mu =\lambda k^\mu,\qquad B^\mu = 0,
+\end{equation}
+in which our gauge transformation takes the form
+\begin{equation}
+\epsilon^\mu(x) = iA^\mu e^{ikx} + \text{c.c.}\ ,
+\end{equation}
+of which the Lie derivative piece of $K_{\mu\nu}$ becomes
+\begin{equation}
+\Delta K_{\mu\nu} =  k_\nu A_\mu e^{ikx} + k_\mu A_\nu e^{ikx} + \text{c.c.}\ .
+\end{equation}
+Under coordinate transformation $x^\mu \to x'^\mu =  x^\mu + \epsilon^\mu(x)$, it then follows that the transformation $K_{\mu\nu} \to K'_{\mu\nu}$ is affected via
+\begin{equation}
+A_{\mu\nu} e^{ikx} + n_\alpha x^\alpha B_{\mu\nu}e^{ikx} +\text{c.c.} \to A'_{\mu\nu} e^{ikx} + n_\alpha x^\alpha B_{\mu\nu}e^{ikx}+\text{c.c.}\ ,
+\end{equation}
+where 
+\begin{equation}
+A'_{\mu\nu} = A_{\mu\nu} +\lambda  k_\nu k_\mu  + \lambda k_\mu k_\nu.
+\end{equation}
+Explicitly, under the (residual) coordinate transformation 
+\begin{equation}
+x^\mu \to x^\mu + \epsilon^\mu(x) = iA^\mu e^{ikx} + \text{c.c.}\ ,
+\end{equation}
+$K_{\mu\nu}$ transforms as
+\begin{equation}
+K_{\mu\nu} \to A'_{\mu\nu}e^{ikx} + n_\alpha x^\alpha B_{\mu\nu} e^{ikx}  + \text{c.c.}.
+\end{equation}
+If we count the number of components, we note that the transverse traceless $A_{\mu\nu}$ has 5 components, with the choice of arbitrary $\lambda$ bringing it to 4. As for $B_{\mu\nu}$, since it is tranverse, traceless, and synchronous, we have 2 total components. Thus $K_{\mu\nu}$ would appear to have 6 physical degrees of freedom. However, we know from S.V.T. that we may only have 5 gauge invariant quantities.
+\\ \\
+\subsection{SVT Decomposition}
+In fact, looking at the SVT decomposition of both $\delta W_{\mu\nu}$ and $\delta T_{\mu\nu}$, we recall the result
+\begin{align}
+\delta \rho &=  -\frac{2}{3}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^\ell(\phi + \psi +\dot{B}-\ddot{E})\nonumber\\
+\pi_i &=  \frac12\big( \tilde\nabla_\ell \tilde\nabla^\ell - \partial_t^2\big) \partial_t (B_i - \dot{E}_i)\nonumber\\
+\pi_{ij}^{T\theta} &=  \big(\tilde{\nabla}_\ell\tilde{\nabla}^\ell-\partial_t^2\big)^2E_{ij}.
+\end{align}
+Taking $\delta T_{\mu\nu} = 0$, here we see that $B_i - \dot E_i$ and $E_{ij}$ both obey the massless Klein Gordan equation and thus have radiative solutions. The $B_i - \dot E_i$ represent components of helicity $(\pm 1)$, while the $E_{ij}$ represent the traditional waves of helicity $(\pm 2)$. Meanwhile, the scalar modes obey a fourth order Poisson like equation. Based on the SVT results, we should be able to show that plane wave solutions to the $\Box K_{\mu\nu} = 0$ equation should only contain 4 gauge invariant quantities, with 2 of them actually belonging to vector modes. 
+\\ \\
+\begin{align}
+K_{\mu\nu} = h_{\mu\nu} - \frac14 \eta_{\mu\nu} h.
+\end{align}
+The tranverse condition of $\partial^\nu K_{\mu\nu} = 0$ leads to
+\begin{equation}
+\partial^\nu h_{\mu\nu} = \frac14 \partial_\mu h.
+\end{equation}
+Setting $\mu = 0$, we have
+\begin{equation}
+-\dot h_{00} + \nabla^i h_{0i} = \frac14 \dot h,
+\end{equation}
+or
+\begin{equation}
+2\dot \phi + \tilde\nabla_a \tilde\nabla^a B = \frac12 \dot\phi - \frac32\dot \psi + \frac12  \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot E.
+\end{equation}
+Rearranging
+\begin{equation}
+\frac32 \dot \phi + \frac32 \dot \psi +  \tilde{\nabla}_{a}\tilde{\nabla}^{a}( B - \tfrac12 \dot E) = 0.
+\end{equation}
+Now for $\mu =i$, we have
+\begin{equation}
+-\dot h_{i0} + \tilde\nabla^a h_{ia} = \frac14 \tilde\nabla_i h,
+\end{equation}
+or
+\begin{equation}
+-\dot B_i - \tilde\nabla_i \dot B -2 \tilde\nabla_i \psi + 2 \tilde\nabla_i  \tilde{\nabla}_{a}\tilde{\nabla}^{a}E + \tilde{\nabla}_{a}\tilde{\nabla}^{a} E_i
+= \frac12 \tilde\nabla_i \phi - \frac32 \tilde\nabla_i \psi + \frac12  \tilde\nabla_i\tilde{\nabla}_{a}\tilde{\nabla}^{a} E.
+\end{equation}
+Rearranging
+\begin{equation}
+ \tilde\nabla_i \left( \frac12 \phi + \frac12  \psi + \dot B-\frac32   \tilde{\nabla}_{a}\tilde{\nabla}^{a} E \right) + \dot B_i -   \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_i =0
+\end{equation}
+Thus our two conditions are
+\begin{equation}
+\frac32 \dot \phi + \frac32 \dot \psi +  \tilde{\nabla}_{a}\tilde{\nabla}^{a}( B - \tfrac12 \dot E) = 0.
+\end{equation}
+\begin{equation}
+ \tilde\nabla_i \left( \frac12 \phi + \frac12  \psi + \dot B-\frac32   \tilde{\nabla}_{a}\tilde{\nabla}^{a} E \right) + \dot B_i -   \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_i =0
+\end{equation}
+\subsection{SVT Decomposition}
+Bach:
+\begin{eqnarray}
+\delta W_{00}  &=& -\frac{2}{3} \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b (\phi + \psi +\dot{B}-\ddot{E}),
+\nonumber\\	
+\delta W_{0i} &=&  -\frac{2}{3}\tilde{\nabla}_i\tilde{\nabla}_a\tilde{\nabla}^a\partial_t(\phi +\psi +\dot{B}-\ddot{E})
+	+\frac{1}{2}\left[ \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b(B_i - \dot{E}_i) -   \tilde{\nabla}_a\tilde{\nabla}^a \partial_t^2(B_i - \dot{E}_i)\right],
+\nonumber\\	
+\delta W_{ij}  &=& \frac{1}{3}\bigg{[} \delta_{ij}\tilde{\nabla}_a\tilde{\nabla}^a  \partial_t^2(\phi+ \psi+\dot{B}-\ddot{E}) +\tilde{\nabla}_a\tilde{\nabla}^a \tilde{\nabla}_i\tilde{\nabla}_j (\phi + \psi +\dot{B}-\ddot{E}) 
+\nonumber\\
+&&- \delta_{ij} \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b(\phi + \psi +\dot{B}-\ddot{E}) -3\tilde{\nabla}_i\tilde{\nabla}_j \partial_t^2(\phi + \psi +\dot{B}-\ddot{E})\bigg{] }
+\nonumber\\
+&&+\frac{1}{2}\left[ \tilde{\nabla}_{a}\tilde{\nabla}^a \tilde{\nabla}_i   \partial_t(B_j - \dot{E}_j)+\tilde{\nabla}_{a}\tilde{\nabla}^a \tilde{\nabla}_j \partial_t(B_i - \dot{E}_i) - \tilde{\nabla}_i\partial_t^3(B_j - \dot{E}_j)-\tilde{\nabla}_j\partial_t^3(B_i - \dot{E}_i)\right]
+\nonumber\\
+&&+\left[\tilde{\nabla}_a\tilde{\nabla}^a-\partial_t^2\right]^2E_{ij}.
+\end{eqnarray}
+\\ \\
+Einstein:
+\begin{align}
+\delta G_{00} \quad=\quad& -2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+\nonumber\\
+\delta G_{0i} \quad=\quad&  - 2 \tilde{\nabla}_{i}\partial_t \psi+\tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\left(B_{i} -\dot{E}_{i}\right)
+\nonumber \\
+\delta G_{ij}\quad=\quad&
+ (- 2 \gamma_{ij}\partial_t^2 \psi 
++ \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}
+ - \tilde{\nabla}_{j}\tilde{\nabla}_{i})\psi
+ +( -  \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}
+ + \tilde{\nabla}_{j}\tilde{\nabla}_{i})\left(\phi+\dot{B}-\ddot E\right)
+\nonumber\\
+& + \tfrac{1}{2} \tilde{\nabla}_{i}\partial_t\left(B_{j}-\dot E_j\right)
+ + \tfrac{1}{2} \tilde{\nabla}_{j}\partial_t\left({B}_{i}-\dot E_i\right)
+ +(- \partial_t^2+ \tilde{\nabla}_{a}\tilde{\nabla}^{a}){E}_{ij}
+\end{align}
+\subsection{3+1 Decomposition}
+\begin{equation}
+h_{ab} = \eta_{ab} + u_au_b
+\end{equation}
+\begin{equation}
+\eta_{ab} =
+	\begin{pmatrix}
+	 -1&0&0&0\\ 0&1&0&0\\ 0&0&1&0 \\ 0&0&0&1
+	\end{pmatrix},\qquad
+h_{ab} =
+	\begin{pmatrix}
+	 0&0&0&0\\ 0&2&0&0\\ 0&0&2&0 \\ 0&0&0&2
+	\end{pmatrix}
+\end{equation}
+\begin{align}
+	T_{ab} &= u_a u_b \rho + h_{ab}p + u_a q_b + u_b q_a + \pi_{ab}
+\nonumber\\
+	&= (\rho + p)u_au_b + pg_{ab} + u_a q_b + u_b q_a + \pi_{ab}
+\end{align} 
+\begin{equation}
+T_{ab} =
+	\begin{pmatrix}
+	 \rho&-q_1&-q_2&-q_3 \\
+	-q_1& 2p+\pi_{11}&\pi_{12}&\pi_{13}\\
+	-q_2 & \pi_{12} & 2p + \pi_{22}& \pi_{23}\\
+	-q_3 & \pi_{13} &\pi_{23} & 2p + \pi_{33}
+	\end{pmatrix}
+\end{equation}
+\begin{align}
+	\rho &= u^cu^dT_{cd}\\
+	p &= \frac13 h^{cd}T_{cd}\\
+	q_a &  = -h^b{}_a{} u^c  T_{bc} \\
+	\pi_{ab} &=  \bigg[ \frac12 h^c{}_a h^d{}_b+\frac12 h^c{}_b h^d{}_a - \frac13 h_{ab}h^{cd}\bigg] T_{cd}.
+\end{align}
+\begin{equation}
+	T_{ab} = -2\phi u_a u_b - (B_b + \nabla_b B)u_a - (B_a+\nabla_a B)u_b - 2\gamma_{ab} \psi + \nabla_a E_b + \nabla _b E_a +
+	+2E_{ab}.
+\end{equation}
+\section{$\nabla^\mu F_{\mu\nu}$ Decomposition}
+\subsection{Gauge Invariant SVT}
+Take the Maxwell equations with source $J_{\mu}$
+\begin{equation}
+	\nabla^\nu F_{\mu\nu} = \nabla ^\nu\nabla_\nu A_\mu - \nabla^\nu \nabla_\mu A_\nu =  -J_\mu.
+\end{equation}
+Now decompose $J_{\mu}$, first via the 3+1 split, and then into its longitudinal and transverse components, 
+\begin{equation}
+J_{\mu} = (J^0, J_i^T+ \tilde\nabla_i J).
+\end{equation}
+This must be conserved as
+\begin{equation}
+ \nabla^\mu J_{\mu} = 0.
+\end{equation}
+Which means (in flat space)
+\begin{align}
+\dot J_0 &= \tilde\nabla^i J_i\\
+\dot J_0&= \tilde\nabla_a \tilde\nabla^a J.
+\end{align}
+We may similarly decompose $A^\mu$ as
+\begin{equation}
+A_\mu = (A^0, A_i^T + \tilde\nabla_i A).
+\end{equation}
+For $\partial^\nu F_{\mu\nu}$ it follows
+\begin{align}
+J_\mu &= -\dot F_{\mu 0} + \tilde\nabla^i F_{\mu i}
+\nonumber \\
+&=  - \tilde\nabla_\mu \dot A_0 + \ddot A_\mu + \tilde\nabla^i \tilde\nabla_\mu A_i^T + \tilde\nabla_\mu \tilde\nabla_a\tilde\nabla^a A  - \tilde\nabla_a \tilde\nabla^a A_\mu
+\nonumber \\
+&= - \tilde\nabla_\mu \dot A_0 + \ddot A_\mu  + \tilde\nabla_\mu \tilde\nabla_a\tilde\nabla^a A  - \tilde\nabla_a \tilde\nabla^a A_\mu
+\end{align}
+For $\mu = 0$ we have
+\begin{equation}
+J_0 = \tilde\nabla_a \tilde\nabla^a\left( \dot A - A_0\right ).
+\end{equation}
+For $\mu = i$ it follows that
+\begin{align}
+J_i &= -\tilde\nabla_i \dot A_0 + \ddot A_i^T + \tilde\nabla_i \ddot A + \tilde\nabla_i \tilde\nabla_a\tilde\nabla^a A - \tilde\nabla_a\tilde\nabla^a A_i^T - \tilde\nabla_i \tilde\nabla_a\tilde\nabla^a A
+\nonumber\\
+J_i^T + \tilde\nabla_i J &= \tilde\nabla_i \left( -\dot A_0 + \ddot A\right) + \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_i^T.
+\end{align}
+It follows that
+\begin{equation}
+J = \ddot A - A_0 =\int d^3x \ D(\mathbf x - \mathbf y) \tilde\nabla_a^y \tilde\nabla^a_y \dot J_0,
+\end{equation}
+and 
+\begin{equation}
+J_i^T =  \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_i^T.
+\end{equation}
+Setting $J_\mu = 0$, this leaves us with the two equations
+\begin{equation}
+\boxed{
+\tilde\nabla_a \tilde\nabla^a \left(\dot A - A_0\right) = 0,\qquad   \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_i^T=0.}
+\end{equation}
+With the allowed gauge transformation being of the form
+\begin{equation}
+A_{\mu} \to A_{\mu} + \nabla_\mu \chi,
+\end{equation}
+we decompose it as
+\begin{equation}
+A_0 \to A_0 + \dot \chi,\qquad A^T_i \to A^T_i,\qquad A \to A + \chi.
+\end{equation}
+Hence the combination $\dot A - A_0$ we found is in fact gauge invariant. Thus we have 3 physical components. 
+\subsection{Tranvserse Gauge SVT}
+To reconcile this with setting a gauge explicitly, we calculate the decomposed EM equation of motion according to the condition
+\begin{equation}
+	\nabla^\mu A_\mu = 0.
+\end{equation}
+The above decomposes just like $\nabla^\mu J_{\mu}$, viz.
+\begin{equation}
+\dot A_0 = \tilde\nabla_a \tilde\nabla^a A.
+\end{equation}
+The equation of motion in this gauge is 
+\begin{equation}
+ \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_\mu=J_{\mu}
+\end{equation}
+which decomposes as
+\begin{equation}
+ \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_0=J_{0}
+\end{equation}
+and
+\begin{equation}
+ \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_i^T +  \tilde\nabla_i\left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A=J_i.
+\end{equation}
+Substituting the gauge condition $\ddot A_0 = \tilde\nabla_a\tilde\nabla^a \dot A$ into $J_0$, we recover the gauge invariant scalar equation
+\begin{equation}
+\tilde\nabla_a \tilde\nabla^a \left(\dot A - A_0\right) = J_0.
+\end{equation}
+We also see that we recover the gauge invariant transverse equation if we decompose the source as $J_i = J_i^T + \tilde\nabla_i J$. Hence, in this simple case we have used the gauge condition to reexpress the equations of motion in a gauge invariant manner, showing equivalence to the "gauge-free" SVT decomposition.
+\section{$W_{\mu\nu}$ Decomposition}
+\subsection{SVT Decomposition of Entire $\delta W_{\mu\nu} = \delta T_{\mu\nu}$}
+Via the 3+1 projection followed by a helicity decomposition, we may express an arbitrary traceless, transverse, symmetric rank 2 tensor as
+\begin{align}
+\delta T_{00}  &= \rho,
+\nonumber\\	
+\delta T_{0i} &= -Q_i  + \tilde\nabla_i  \int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \rho,
+\nonumber\\	
+\delta T_{ij}  &= 
+\frac12 \delta_{ij} \rho - \frac12 \delta_{ij} \int d^3y D^3(\mathbf x-\mathbf y) \partial_t^2 \rho +\frac32 \tilde\nabla_i\tilde\nabla_j \int d^3y D^3(\mathbf x-\mathbf y) \bigg( \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \rho - \frac13\rho\bigg) 
+\nonumber\\
+&\quad -\tilde\nabla_i \int d^3y D^3(\mathbf x - \mathbf y) \partial_0 Q_j - \tilde\nabla_j \int d^3y D^3(\mathbf x - \mathbf y) \partial_0 Q_i + \pi_{ij}^{T\theta}.
+\end{align}
+We may equivalently express $\delta W_{\mu\nu}$ in terms of the analogous barred perturbation quantities ($\bar \rho$, $\bar Q_i$, $\bar E_{ij}$) as
+\begin{align}
+\delta W_{00}  &= \bar\rho,
+\nonumber\\	
+\delta W_{0i} &= -\bar Q_i  + \tilde\nabla_i  \int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \bar\rho,
+\nonumber\\	
+\delta W_{ij}  &= 
+\frac12 \delta_{ij} \bar\rho - \frac12 \delta_{ij} \int d^3y D^3(\mathbf x-\mathbf y) \partial_t^2 \bar\rho +\frac32 \tilde\nabla_i\tilde\nabla_j \int d^3y D^3(\mathbf x-\mathbf y) \bigg( \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \bar\rho - \frac13\bar\rho\bigg) 
+\nonumber\\
+&\quad -\tilde\nabla_i \int d^3y D^3(\mathbf x - \mathbf y) \partial_0  \bar Q_j - \tilde\nabla_j \int d^3y D^3(\mathbf x - \mathbf y) \partial_0 \bar Q_i + \bar \pi_{ij}^{T\theta}.
+\end{align}
+Then, the fluctuation equation $\delta W_{\mu\nu} = \delta T_{\mu\nu}$ then entails
+\begin{align}
+\bar \rho &= \rho
+\nonumber\\
+\bar Q_i &= Q_i
+\nonumber\\
+\bar \pi_{ij}^{T\theta} &= \pi_{ij}^{T\theta}.
+\end{align}
+The $\delta W_{00} = \delta T_{00}$ fixes $\rho$, allowing $\delta W_{0i} = \delta T_{0i}$ to fix $Q_i$, thereby leading to $\bar\pi_{ij}^{T\theta} = \pi_{ij}^{T\theta}$ without having to apply transverse projections or deal with additional homogenous solutions such as $\tilde\nabla_i\tilde\nabla_j \tilde\nabla_a\tilde\nabla^a \chi = 0$. This is also why the fluctuations equations have been expressed in terms of $Q_i$ rather than $\pi_i$, as the equation of $\pi_i$ necessarily leads to 
+\begin{equation}
+\tilde\nabla_a\tilde\nabla^a \bar \pi_i = \tilde\nabla_a \tilde\nabla^a \pi_i,
+\end{equation}
+which only permits equivalence of $\bar\pi_i = \pi_i$ under assumptions upon the boundary conditions of the perturbations. 
+\\ \\
+Upon carrying through the same analogous helicity decomposition on $K_{\mu\nu}$, we find that the helicity components of $\delta W_{\mu\nu}$ take the form
+\begin{align}
+\bar \rho &= -\frac{2}{3} \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b (\phi + \psi +\partial_0{B}-\partial_0^2{E}) 
+\nonumber\\
+\bar Q_i &= -\frac{1}{2} \tilde{\nabla}_a\tilde{\nabla}^a\left(-\partial_0^2+\tilde{\nabla}_b\tilde{\nabla}^b\right)(B_i - \partial_0{E}_i)
+\nonumber \\
+\bar \pi_{ij}^{T\theta} &= \left(-\partial_0^2 + \tilde\nabla_a\tilde\nabla^a\right)^2 E_{ij}.
+\end{align}
+\subsection{Transverse Gauge SVT}
+Here we will analyze the equations for $\delta W_{\mu\nu}$ within the transverse gauge, now with respect to the helicity decomposition. Results are calculated within the Minkowski background $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$. The traceless $K_{\mu\nu}$ is given as
+\begin{equation}
+K_{\mu\nu} = h_{\mu\nu} - \frac14 \eta_{\mu\nu} h,
+\end{equation}
+where 
+\begin{equation}
+h = -h_{00}+ \delta^{ij}h_{ij} = 2\phi - 6\psi + 2\tilde\nabla_a \tilde\nabla^a E.
+\end{equation}
+Imposing the transverse gauge 
+\begin{equation}
+\partial^\nu K_{\mu\nu} = 0
+\end{equation}
+leads to the simplified fluctuation equation
+\begin{equation}
+\delta W_{\mu\nu} = \frac12 \left( - \partial_0^2 +  \tilde\nabla_a\tilde\nabla^a\right)^2 K_{\mu\nu} .
+\end{equation}
+Evaluated in terms of the helicity components, we have
+\begin{align}
+\delta W_{00}&{}=\frac12\left( - \partial_0^2 +  \tilde\nabla_a\tilde\nabla^a\right)^2 \left[ -\frac32 \phi - \frac32 \psi + \frac12  \tilde\nabla_b\tilde\nabla^b  E\right]
+\nonumber\\
+\delta W_{0i}&{} = \frac12\left( - \partial_0^2 +  \tilde\nabla_a\tilde\nabla^a\right)^2 \left[ \tilde\nabla_i B + B_i\right]
+\nonumber\\
+\delta W_{ij}&{} = \frac12 \left( - \partial_0^2 +  \tilde\nabla_a\tilde\nabla^a\right)^2 \left[ \delta_{ij}\left( - \frac12 \phi - \frac12 \psi -\frac12  \tilde\nabla_b\tilde\nabla^b E \right)
++ 2 \tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}\right].
+\end{align}
+Inspection of the transverse condition yields the four conditions
+\begin{equation}
+\partial^0K_{00} + \tilde\nabla^i K_{0i}=0,\qquad \partial^0K_{0i} + \tilde\nabla^j K_{ij} = 0.
+\end{equation}
+The first condition evaluates to (noting $\partial^0 K_{00} = -\dot K_{00}$),
+\begin{align}
+0=&{} 2\dot\phi - \frac14 \dot h +  \tilde\nabla_a\tilde\nabla^a B
+\nonumber\\
+=&\frac32 \dot\phi + \frac32 \dot \psi +  \tilde\nabla_a\tilde\nabla^a B - \frac12  \tilde\nabla_a\tilde\nabla^a \dot E
+\end{align}
+The remaining spatial transverse condition takes the form
+\begin{align}
+0 =&{}- \dot B_i - \tilde\nabla_i \dot B -2\tilde\nabla_i \psi + 2\tilde\nabla_i  \tilde\nabla_a\tilde\nabla^a E +  \tilde\nabla_a\tilde\nabla^a E_i - \frac14 \tilde\nabla_i h
+\nonumber\\
+=& \tilde\nabla_i\left( -\frac12 \phi - \frac12 \psi - \dot B + \frac32  \tilde\nabla_a\tilde\nabla^a E\right) - \dot B_i +  \tilde\nabla_a\tilde\nabla^a E_i.
+\end{align}
+Let us denote the two simplified scalar conditions as
+\begin{equation}
+ S_1 \equiv \dot\phi + \dot\psi + \frac23 \tilde\nabla_a\tilde\nabla^a B - \frac13 \tilde\nabla_a\tilde\nabla^a \dot E =0,
+\qquad
+S_2 \equiv \tilde\nabla_a\tilde\nabla^a \left( \phi + \psi + 2\dot B - 3\tilde\nabla_b\tilde\nabla^b E\right) =0.
+\end{equation}
+We are free to form combinations of $S_1$ and $S_2$ that yield quantities that are gauge invariant. Such a gauge invariant quantity will be equivalent to that found from the usual "gauge-free" S.V.T. decomposition. To show this, take the explicit relation:
+\begin{equation}
+0=\frac98 \partial_0^3 S_1 - \frac{15}{8} \tilde\nabla_a\tilde\nabla^a\partial_0 S_1+\frac{1}{8} \tilde\nabla_a\tilde\nabla^a S_2    -\frac38 \partial_0^2 S_2 .
+\end{equation}
+Substitution of $S_1$ and $S_2$ into the above yields
+\begin{align}
+0={}& \left(\frac98 \partial_0^4 \phi - \frac94  \tilde\nabla_a\tilde\nabla^a \partial_0^2 \phi + \frac18  \tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b \phi\right) + \left(\frac98 \partial_0^4 \psi - \frac94  \tilde\nabla_a\tilde\nabla^a \partial_0^2 \psi + \frac18  \tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b \psi\right)
+\nonumber\\
+& - \tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b \partial_0 B 
++\left( -\frac38 \tilde\nabla_a\tilde\nabla^a \partial_0^4 E - \frac38 \tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b\tilde\nabla_c\tilde\nabla^c E + \frac74
+\tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b\partial_0^2 E\right)
+\nonumber\\
+={}&\left(-\partial_0^2+\tilde\nabla_a\tilde\nabla^a\right)^2
+\left[ \frac98 \phi + \frac98\psi  -\frac38 \tilde\nabla_b\tilde\nabla^b E \right]
+ -\tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b\left( \phi + \psi +\partial_0 B - \partial_0^2 E\right).
+\end{align}
+Hence we arrive at
+\begin{equation}
+\frac12 \left(-\partial_0^2+\tilde\nabla_a\tilde\nabla^a\right)^2
+\left[ -\frac32 \phi - \frac32\psi  +\frac12 \tilde\nabla_b\tilde\nabla^b E \right]=-\frac{2}{3}\tilde\nabla_a\tilde\nabla^a \tilde\nabla_b\tilde\nabla^b\left( \phi + \psi +\partial_0 B - \partial_0^2 E\right)
+\end{equation}
+For the vector component, we again look at the spatial piece of the transverse gauge condition
+\begin{equation}
+V_i \equiv  \tilde\nabla_i\left( -\frac12 \phi - \frac12 \psi - \dot B + \frac32  \tilde\nabla_a\tilde\nabla^a E\right) - \dot B_i +  \tilde\nabla_a\tilde\nabla^a E_i = 0.
+\end{equation}
+The longitudinal component of $V_i$ is defined as $\tilde\nabla_i V$, where
+\begin{equation}
+V = \int d^3y\ D^{(3)}(\mathbf x - \mathbf y)\tilde\nabla_y^i V_i = -\frac12 \phi - \frac12 \psi - \dot B + \frac32  \tilde\nabla_a\tilde\nabla^a E.
+\end{equation}
+In the above we assumed that (see A.1)
+\begin{align}
+0=&{}\int d^3y \tilde\nabla_i^y \tilde\nabla^i_y \left[ D^{(3)}(\mathbf x - \mathbf y) \left( -\frac12 \phi - \frac12 \psi - \dot B + \frac32  \tilde\nabla_a\tilde\nabla^a E\right)\right] 
+\nonumber\\
+=&{} \int dS_i \tilde\nabla^i_y \left[ D^{(3)}(\mathbf x - \mathbf y) \left( -\frac12 \phi - \frac12 \psi - \dot B + \frac32  \tilde\nabla_a\tilde\nabla^a E\right) \right]. 
+\end{align}
+Since $V_i$ is to be identically zero, it follows from the definition of $V$ that that $V$ itself should also vanish. This leads to a gauge condition on the tranverse vectors of the form
+\begin{equation}
+\dot B_i = \tilde\nabla_a \tilde\nabla^a E_i.
+\end{equation}
+With this gauge condition in hand, we look at the tranverse component of $\delta W_{0i}$,
+\begin{equation}
+\delta W_{0i}^T= \frac12\left( - \partial_0^2 +  \tilde\nabla_a\tilde\nabla^a\right)^2 B_i = \frac{1}{2}\left( \partial_0^4 - \tilde\nabla_a\tilde\nabla^a \partial_0^2
++ \tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b\right) B_i.
+\end{equation}
+Substitution of the vector gauge condition $\ddot B_i =\tilde\nabla_a \tilde\nabla^a\dot E_i$ then yields
+\begin{equation}
+\boxed{
+\bar Q_i=-\frac{1}{2} \tilde{\nabla}_a\tilde{\nabla}^a\left(-\partial_0^2+\tilde{\nabla}_b\tilde{\nabla}^b\right)(B_i - \partial_0{E}_i)}
+\end{equation}
+Lastly, we see that the tensor mode already obeys the appropriate gauge invariant SVT equations, with
+\begin{equation}
+\boxed{
+\bar\pi_{ij} =  \left(-\partial_0^2 + \tilde\nabla_a\tilde\nabla^a\right)^2 E_{ij}}.
+\end{equation}
+Through use of the gauge conditions, we have brought the tranverse $\nabla^\mu K_{\mu\nu}$ into the equivalent gauge invariant form as from the SVT decomposition.
+\subsection{Helicity Components}
+Here we will decompose the spatial part of the dynamical fields according to the $e^{i\mathbf k \mathbf x}$ basis (Fourier transform). Such a basis representation assumes the inverse Fourier transform exists, which may be true given certain conditions on our functions (such as belonging to $L^2[-\infty,\infty]$ and $\lim_{\mathbf x\to\infty}f(\mathbf x,t) = 0$). We need to explicitly show whether or not it is reasonable to expect these conditions to hold physically, but for the proceeding calculations we assume our functions are well behaved enough. In the Fourier basis, we take the direction of spatial propogation along the $z$ axis, i.e. $\mathbf k = (0,0,k_3)$
+\subsubsection{$\nabla^\mu F_{\mu\nu} = 0$}
+In the gauge-invariant formulation, we decomposed $A_{\mu}$ as
+\begin{equation}
+A_\mu = (A_0, A_i^T + \tilde\nabla_i A).
+\end{equation}
+Fourier transforming, this becomes
+\begin{equation}
+\tilde A_{\mu}(\mathbf k,t) = 
+\begin{pmatrix}
+\tilde A_0 \\ \tilde A^T_1 \\ \tilde A^T_2 \\ -i \mathbf k \tilde A
+\end{pmatrix},
+\end{equation}
+where the transverse condition $\tilde\nabla^i  A_i^T$ leads to $i \mathbf k \tilde A_3 = 0$. Now we apply a rotation matrix about the direction of propagation:
+\begin{equation}
+\begin{pmatrix}
+1&0&0&0\\
+0&\cos\theta&-\sin\theta&0\\
+0&\sin\theta&\cos\theta&0\\
+0&0&0&1
+\end{pmatrix}
+\begin{pmatrix}
+\tilde A_0 \\ \tilde A^T_1 \\ \tilde A^T_2 \\ -i \mathbf k \tilde A
+\end{pmatrix}
+=
+\begin{pmatrix}
+\tilde A_0 \\ \cos\theta \tilde A^T_1 -\sin\theta \tilde A^T_2\\ \sin\theta \tilde A_1^T +\cos\theta \tilde A^T_2 \\ -i \mathbf k \tilde A
+\end{pmatrix}.
+\end{equation}
+As expected, the scalars $\tilde A_0$ and $\tilde A$ transform as objects with helicity 0. However, the tranverse components transform in the helicity basis as
+\begin{equation}
+A_+ = \left(\tilde A_1^T + i\tilde A_2^T\right) \to e^{i\theta} A_+,\qquad A_- = \left(\tilde A_1^T - i\tilde A_2^T\right)\to e^{-i\theta} A_-,
+\end{equation}
+i.e. as objects with helicity $\pm1$. We recall that in the SVT decomposition, the equations of motion take the form
+\begin{equation}
+\tilde\nabla_a \tilde\nabla^a \left(\dot A - A_0\right) = 0,\qquad   \left(\partial_0^2 - \tilde\nabla_a\tilde\nabla^a\right)A_i^T=0.
+\end{equation}
+The scalar equation is Laplace's equation $\nabla^2\phi$ for the electric potential $\phi$ within a source free region. Whereas the solutions to the transverse equation consist of massless, spin 1, left and right handed circularly polarized photons propogating along the $k_\mu = (-k,0,0, k)$ direction
+\begin{equation}
+\boxed{
+A_i^T = C\begin{pmatrix}1\\i\\0\end{pmatrix} e^{ikx} + C^*\begin{pmatrix}1\\-i\\0\end{pmatrix} e^{-ikx}}
+\end{equation}
+where $k_\mu k^\mu = 0$.
+\\
+\subsubsection{$\delta W_{\mu\nu} = 0$}
+The source free equations of motion in the gauge-invariant SVT formulation are
+\begin{align}
+0=\bar \rho &= -\frac{2}{3} \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b (\phi + \psi +\partial_0{B}-\partial_0^2{E}) 
+\nonumber\\
+0=\bar Q_i &= -\frac{1}{2} \tilde{\nabla}_a\tilde{\nabla}^a\left(-\partial_0^2+\tilde{\nabla}_b\tilde{\nabla}^b\right)(B_i - \partial_0{E}_i)
+\nonumber \\
+0=\bar \pi_{ij}^{T\theta} &= \left(-\partial_0^2 + \tilde\nabla_a\tilde\nabla^a\right)^2 E_{ij},
+\end{align}
+Note that $\bar \rho = \delta W_{00}$, which transforms as an SO(3) scalar, whereas $\bar Q_i  = \delta W_{0i}^T$ transforms as an SO(3) 3 vector, and lastly $\bar \pi_{ij}^{T\theta}$ transforms as an SO(3) tensor. It follows then that $\bar \rho$ transforms as a spin 0 object with helicity 0, an object which follows the fourth order source free Laplace equation
+\begin{equation}
+\boxed{
+ -\frac{2}{3} \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b (\phi + \psi +\dot{B}-\ddot{E}) =0}.
+\end{equation}
+As for the tranverse $\bar Q_i$, we note that application of our rotation matrix to $\delta W_{0i}^T$ proceeds in the same manner as the $A_i^T$ vector for the source free Maxwell equation. Thus, we will have (omitting the overbars)
+\begin{equation}
+ Q_+ = \left(\tilde Q_1^T + i\tilde Q_2^T\right) \to e^{i\theta}  Q_+,\qquad  Q_- = \left(\tilde Q_1^T - i\tilde Q_2^T\right)\to e^{-i\theta}  Q_-.
+\end{equation}
+The spin 1, helicity $\pm 1$ vector components admit plane wave solutions of the form
+\begin{equation}
+\boxed{\left(B_i - \dot E_i\right) = C\begin{pmatrix}1\\i\\0\end{pmatrix} e^{ikx} + C^*\begin{pmatrix}1\\-i\\0\end{pmatrix} e^{-ikx}},
+\end{equation} 
+again with $k_\mu = (-k,0,0,k)$, $k_\mu k^\mu = 0$. While plane waves do satisfy the equation of motion, the presence of the extra $\tilde\nabla_a\tilde\nabla^a$ term  will yield more general solutions. 
+\\ \\
+For the tensor component, the tranverse condition yields $\tilde \pi_{3i} = 0$. A rotation along the $z$ axis is effectively applied as $R_{i}{}^{k}\pi_{kl} R^{l}{}_{j} = \pi_{ij}'$, 
+\begin{equation}
+\begin{pmatrix}
+\cos\theta&-\sin\theta\\
+\sin\theta&\cos\theta\\
+\end{pmatrix}
+\begin{pmatrix}
+\tilde\pi_{11}& \tilde\pi_{12}\\
+\tilde\pi_{12}&-\tilde\pi_{11}\\
+\end{pmatrix}
+\begin{pmatrix}
+\cos\theta&\sin\theta\\
+-\sin\theta&\cos\theta\\
+\end{pmatrix}
+= 
+\begin{pmatrix}
+\tilde\pi_{11}\cos(2\theta) - \tilde\pi_{12}\sin(2\theta) & \tilde\pi_{11}\sin(2\theta) + \tilde\pi_{12}\cos(2\theta)
+\\
+\tilde\pi_{11}\sin(2\theta) + \tilde\pi_{12}\cos(2\theta) & - \tilde\pi_{11}\cos(2\theta) + \tilde\pi_{12}\sin(2\theta).
+\end{pmatrix}
+\end{equation}
+The transformations are
+\begin{equation}
+\tilde\pi_{11}' = \tilde\pi_{11}\cos(2\theta) - \tilde\pi_{12}\sin(2\theta),\qquad \tilde\pi_{12}' =  \tilde\pi_{11}\sin(2\theta) + \tilde\pi_{12}\cos(2\theta).
+\end{equation}
+In the helicity basis it follows that
+\begin{equation}
+\pi_+ = \tilde\pi_{11} + i \tilde\pi_{12} \to e^{i2\theta}\pi_+,\qquad 
+\pi_- = \tilde\pi_{11} - i \tilde\pi_{12} \to e^{-i2\theta}\pi_-.
+\end{equation}
+This transformation, along with the equation of motion
+\begin{equation}
+\left(-\partial_0^2 + \tilde\nabla_a\tilde\nabla^a\right)^2 E_{ij}=0,
+\end{equation}
+indicate that the tranverse $E_{ij}$ represent massless spin 2, helicity $\pm 2$ waves. The solution to the $\Box^2$ wave equation for a given $k$ is 
+\begin{equation}
+\boxed{
+E_{ij} = C\begin{pmatrix} 1&i\\i&-1\end{pmatrix} e^{ikx} + C\begin{pmatrix} 1&i\\i&-1\end{pmatrix}  n_\alpha x^\alpha e^{ikx}
++C^*\begin{pmatrix} 1&-i\\-i&-1\end{pmatrix} e^{-ikx} + C^*\begin{pmatrix} 1&-i\\-i&-1\end{pmatrix}  n_\alpha x^\alpha e^{-ikx}},
+\end{equation}
+where $n_{\alpha} = (1,0,0,0)$ and $k_\mu k^\mu  =0$.
+\subsection{Boundary Conditions}
+Under infinitesimal coordinate transformation $x^\mu \to \bar x^\mu = x^\mu + \epsilon^\mu(x)$
+where
+\[
+	\epsilon^0 = T,\qquad \epsilon^i = \tilde\nabla^i L + L^i,\qquad \tilde\nabla^i L_i = 0,
+\]
+it follows that $h_{0i}$ transforms as 
+\begin{align}
+ \bar h_{0i} &=  h_{0i} -  (\tilde\nabla_i \dot L + L_i) +  \partial_i T
+\end{align}
+which evaluates to
+\begin{equation}
+	\tilde \nabla_i \bar B + \bar B_i = \tilde\nabla_i B + B_i - \tilde\nabla_i \dot L - \dot L_i + \tilde\nabla_i T.
+\end{equation}
+or
+\begin{equation}
+\tilde\nabla_i \bar B + \bar B_i = \tilde\nabla_i(B - \dot L + T) + B_i.
+\end{equation}
+Since an arbitrary gradient of a scalar such as $\tilde\nabla_i T$ could in fact be transverse, we cannot immediately separate scalars to scalars and vectors to vectors. If we take the divergence, we arrive at
+\begin{equation}
+\tilde\nabla_a \tilde\nabla^a \bar B = \tilde\nabla_a \tilde\nabla^a (B-\dot L + T),
+\end{equation}
+in which we may define $\bar B$ as
+\begin{align}
+\bar B&= \int d^3y\ D^3(\mathbf x - \mathbf y)\tilde\nabla_a^y \tilde\nabla^a_y(B-\dot L + T)
+\nonumber\\
+&= \int d^3y\  \tilde\nabla_a^y \tilde\nabla^a_y\left[ D^3(\mathbf x - \mathbf y)(B-\dot L + T)\right]\\
+&\quad + \int d^3y \  \tilde\nabla_a^y\left[  D^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T)-\tilde\nabla^a_y D^3(\mathbf x - \mathbf y)(B-\dot L + T)\right]
+\nonumber\\
+&= B-\dot L + T +\int dS_a\   D^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T) - \int dS_a\  \tilde\nabla^a_y D^3(\mathbf x - \mathbf y)(B-\dot L + T)
+\nonumber\\
+&= B - \dot L + T + \chi.
+\end{align}
+The surface term takes the form
+\begin{align}
+\chi &=  \int dS_a\   D^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T) - \int dS_a\  \tilde\nabla^a_y D^3(\mathbf x - \mathbf y)(B-\dot L + T).
+\end{align}
+The discussion in Jackson Electrodynamics pg. 39 suggests that a given Green's function $D(\mathbf x, \mathbf y)$, may be defined up to an arbitrary function 
+$F(\mathbf x, \mathbf y)$ which satisfies $\nabla^2 F(\mathbf x, \mathbf y) = 0$. It is then suggested that the freedom in $F(\mathbf x, \mathbf y)$ may be used to formulate the solution for $\bar B$ in terms of either Dirichlet or Neumann boundary conditions by finding an $F(\mathbf x, \mathbf y)$ such that
+\begin{equation}
+D(\mathbf x, \mathbf y) = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S,\qquad \text{or}\qquad \tilde\nabla_a D(\mathbf x, \mathbf y) = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S.
+\end{equation}
+Let us assume we were able to find an $F(\mathbf x,\mathbf y)$ that allows for Dirichlet boundary conditions, i.e.
+\begin{equation}
+D(\mathbf x, \mathbf y) = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S,
+\end{equation}
+then in order to arrive at the desired equation of
+\begin{equation}
+\bar B = B - \dot L + T
+\end{equation}
+we must require that 
+\begin{equation}
+B - \dot L + T = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S,
+\end{equation}
+with $S$ being the asymptotic boundary surface at infinity. Imposing such a boundary condition would seem to allow better constraints when expanding the perturbation functions in momentum space viz.
+\begin{equation}
+B(t,x) = \int d^3k\ e^{ikx} \tilde B(t,k).
+\end{equation}
+For example, an equation such as
+\begin{equation}
+\tilde\nabla_a \tilde\nabla^a (B-E) = 0,
+\end{equation}
+leads to
+\begin{equation}
+\int d^3k\ e^{ikx} k^2 [-\tilde B(t,k)+\tilde E(t,k)] = 0.
+\end{equation}
+Without boundary conditions, either $\tilde B(t,k) = \tilde E(t,k)$ or $\tilde B(t,k)=\tilde E(t,k)+\delta(k)$ (or perhaps $k^n \delta(k)$ for $n>-2$). However, the requirement that $B(t,x)$ and $E(t,x)$ vanish at spatial infinity excludes the possible $\delta(k)$ solutions and thus yields $\tilde B(t,k) = \tilde E(t,k)$ and consequently $B(t,x) = E(t,x)$.
+\\ \\
+As an aside, we take the Laplacian of the boundary term $\chi$, which evaluates to
+\begin{align}
+\tilde\nabla_b^x\tilde\nabla^b_x \chi &=  \int dS_a\   \tilde\nabla^a_y \delta^3(\mathbf x - \mathbf y)(B-\dot L + T) + \int dS_a\  \delta^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T)
+\nonumber \\
+&= -\tilde\nabla^a_x \int dS_a\ \delta^3(\mathbf x- \mathbf y)(B-\dot L + T)+ \int dS_a\  \delta^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T)
+\end{align}
+The quantity $\nabla^2 \chi$ is only supported asymptotically, but even if $\mathbf x$ is evaluated at a point on the infinite surface, the two surface terms will mutually cancel. Therfore, for all $\mathbf x$ such a $\chi$ obeys 
+\begin{equation}
+\tilde\nabla_a\tilde\nabla^a \chi = 0.
+\end{equation}
+\textbf{Still need to consider freedom up to arbitrary functions of time $f(t)$ and boundary condition at $t=\infty$}.
+\\ \\
+Updated Summary: We can establish the gauge transformations for SVT variables as indicated APM by imposing that we work with gauge transformations that vanish on the boundary. No constraint upon the gauge variables themselves need be imposed if one begins with the transformed definitions of the SVT variables. However, taking $\bar h_{\mu\nu} = h_{\mu\nu}$ as the starting point, requires that the metric fluctuations also vanish on the boundary. 
+\\ \\
+The first method thus presents with a situation such as
+\begin{equation}
+\bar B = B + \int D \nabla^2 (T-\dot L) = B+T-\dot L + \oint dS^i( D\nabla_i(T-\dot L) - \nabla_i D(T-\dot L))
+= B + T+\dot L +  (T-\dot L)^T
+\end{equation} 
+Hence, no condition on $B$ is required as this equation was derived from a definition and not a differential equation.
+\\ \\
+For an example of the second method,  we have 
+\begin{equation}
+\nabla^2 \bar B = \nabla^2 (B+T-\dot L).
+\end{equation}
+Integrating over the Green's function,
+\begin{equation}
+\bar B = B + T -\dot L + \bar B^T + (B+T-\dot L)^T
+\end{equation}
+where the transverse components can be expressed as a surface integral. Here the solution $\bar B$ depends on the boundary conditions of $\bar B$ as well as $B$, $T$, and $\dot L$. 
+In this form, we see that the solution for $\bar B$ necessarily involves its boundary conditions, as would be expected from a well posed PDE. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge Dependence of $h_{\mu\nu}$ in SVT}
+We start with what define the SVT basis:
+\begin{equation}
+\phi = -\frac12 h_{00}\qquad B = \int d^3y D(x-y) \nabla^i h_{0i},\qquad B_i = h_{0i} - \nabla_i B
+\end{equation}
+\begin{equation}
+\psi = \frac14 \int d^3y D(x-y) \nabla^i \nabla^j h_{ij} - \frac14 \delta^{ij} h_{ij}
+\end{equation}
+\begin{equation}
+E = \int d^3y D(x-y)\left[ \frac34 \int d^3z D(y-z)\nabla^i \nabla^j h_{ij} - \frac14 \delta^{ij} h_{ij}\right]
+\end{equation}
+\begin{equation}
+E_i = \int d^3y D(x-y)\left[ \nabla^i h_{ij} - \nabla_i\int d^3z D(y-z)\nabla^j \nabla^k h_{jk}\right]
+\end{equation}
+Under infinitesimal coordinate transformation $x^\mu \to x^\mu + \epsilon^\mu (x)$, the metric perturbation transforms as
+\begin{equation}
+h_{\mu\nu} \to h_{\mu\nu} - \nabla_\nu \epsilon_\mu - \nabla_\mu \epsilon_\nu.
+\end{equation}
+To illuminate the gauge dependence, we also elect to decompose the gauge transformation $\epsilon^\mu(x)$ itself according to
+\begin{equation}
+\epsilon_0 = -T,\qquad \epsilon_i = L_i + \nabla_i L\quad \text{where}\quad  L = \int d^3y D(x-y) \nabla^i \epsilon_i,\qquad 
+L_i = \epsilon_i - \nabla_i L
+\end{equation}
+\begin{equation}
+\bar\phi = -\frac12 \bar h_{00} = -\frac12 \left( h_{00}+2\dot T\right)
+\end{equation}
+\begin{align}
+\bar B = B +  \int d^3y D(x-y) \nabla^2 (T-\dot L)
+\end{align}
+\begin{equation}
+\bar B_i = B_i + \nabla_i T - (\dot L_i + \nabla_i \dot L) - \nabla_i  \int d^3y D(x-y) \nabla^2 (T-\dot L)
+\end{equation}
+\begin{align}
+\bar \psi &=  \frac14 \int d^3y D(x-y) \nabla^i \nabla^j \bar h_{ij} - \frac14 \delta^{ij} \bar h_{ij}\\
+&= \psi +\frac14 \int d^3y D(x-y) (-2 \nabla^4 L) - \frac14 (-2\nabla^2 L)\\
+&= \psi -\frac12 \int d^3y D(x-y) \nabla^4 L + \frac12 \nabla^2 L
+%&= \psi + \frac12(\nabla^2 L)^{(T)}
+\end{align}
+\begin{align}
+\bar E &= E +  \int d^3y D(x-y)\left[ -\frac32 \int d^3z D(y-z) \nabla^4 L + \frac12 \nabla^2 L\right]
+\end{align}
+\begin{equation}
+\bar E_i = E_i +  \int d^3y D(x-y)\left[ -\nabla^2 L_i-2\nabla_i \nabla^2 L +2 \nabla_i  \int d^3z D(y-z) \nabla^4 L\right]
+\end{equation}
+\\ \\
+How to show $B = B^L$?
+\begin{equation}
+h_{0i} = h_{0i}^T + h_{0i}^L = \left( h_{0i} - \nabla_i \int D \nabla^j h_{0j}\right) +\nabla_i \int D \nabla^j h_{0j}
+\end{equation}
+\begin{equation}
+h_{0i}^L = \nabla_i  \int D \nabla^j h_{0j} = \nabla_i B
+\end{equation}
+\begin{equation}
+B = B^L + B^T =  \int D \nabla^2 B + \oint dS^i(D \nabla_i B - \nabla_i D B)
+\end{equation}
+The divergence of a longitudinal vector may only vanish given the total vector itself is identically zero, i.e.
+\begin{equation}
+\nabla^2 B =0 \implies \nabla^i h_{0i} = 0\implies B = 0.
+\end{equation}
+More generically, given any definition of a function $\chi(\phi)$ 
+\begin{equation}
+\chi = \int D \phi
+\end{equation}
+it follows that
+\begin{equation}
+\nabla^2 \chi = \phi.
+\end{equation}
+Hence any such $\chi$ that is harmonic, i.e. $\nabla^2 \chi = 0$ necessarily implies $\phi = 0$ to then imply $\chi = 0$. In this way, any general quantity defined as 
+\begin{equation}
+\int D \phi 
+\end{equation}
+will intrinsically be non-harmonic (longitudinal). 
+\begin{equation}
+\psi = \frac{1}{4} \int D (\nabla^i \nabla^j f_{ij} - \nabla^2 \delta^{ij}f_{ij})
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT of Entire $\delta G_{\mu\nu}$}
+Via orthogonal projection to the four velocity $U^\mu$, we may decompose a rank 2 $T_{\mu\nu}$ as
+\begin{equation}
+T_{\mu\nu} = (\rho+p)U_\mu U_\nu + p g_{\mu\nu} + U_\mu q_\nu + U_\nu q_\mu + \pi_{\mu\nu}
+\end{equation}
+where
+\begin{equation}
+	U^\mu q_{\mu} = 0,\qquad U^\nu \pi_{\mu\nu} = 0,\qquad \pi_{\mu\nu} = \pi_{\nu\mu},\qquad g^{\mu\nu}\pi_{\mu\nu} =U^\mu U^\nu \pi_{\mu\nu} = 0.
+\end{equation}
+Given $ T_{0i} = -q_i$, let us decompose the $q_i$ into longitudinal and transverse parts by introducing the scalar
+\begin{equation}
+Q = \int d^3y\ D(x-y)\tilde\nabla^i q_i.
+\end{equation}
+Now we can form the transverse piece as
+\begin{equation}
+q_i -  \tilde\nabla_i Q = Q_i,
+\end{equation}
+with it following that $\tilde\nabla^i Q_i = 0$. Additionally, we may decompose the 5 component $\pi_{\mu\nu}$ into a transverse traceless $\pi_{ij}$, a divergenceless $\pi_i$, and a scalar $\pi$ as
+\begin{equation}
+	\pi_{ij} = -\frac{2}{3} \delta_{ij}\tilde\nabla^k \tilde\nabla_k \pi  + 2\tilde\nabla_i\tilde\nabla_j \pi + \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta}.
+\end{equation}
+Now $ T_{\mu\nu}$ can be expressed in the SVT form as
+\begin{align}
+ T_{00}  &= \rho,
+\nonumber\\	
+ T_{0i} &= -Q_i - \tilde\nabla_i Q,
+\nonumber\\	
+ T_{ij}  &= \delta_{ij}  p -\frac{2}{3} \delta_{ij}\tilde\nabla^k \tilde\nabla_k \pi + 2\tilde\nabla_i\tilde\nabla_j \pi + \tilde\nabla_i \pi_j + \tilde\nabla_j \pi_i + \pi_{ij}^{T\theta}.
+\end{align} 
+Such a $ T_{\mu\nu}$ must be covariantly conserved and thus must obey the four conditions
+\begin{align}
+-\partial_t\rho = &{} \tilde\nabla_i \tilde\nabla^i Q\\
+0 = &{} \partial_t (Q^i + \tilde\nabla^i Q) + \tilde\nabla^i  p +\frac43 \tilde\nabla^i \tilde\nabla^k \tilde\nabla_k \pi + \tilde\nabla_k \tilde\nabla^k \pi^i.
+\end{align}
+From the first condition, we may express $Q$ in terms of $\rho$ as
+\begin{equation}
+Q = -\int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \rho.
+\end{equation}
+We may extract a scalar condition from the second transverse condition, which takes the form
+\begin{equation}
+0 = \tilde\nabla_a\tilde\nabla^a (\partial_t Q +  p + \frac43 \tilde\nabla_b\tilde\nabla^b \pi).
+\end{equation}
+This allows expression of $\pi$ as
+\begin{equation}
+\pi = \frac34 \int d^3y\ D(x-y) \left[ \int d^3z\ D(y-z) \partial_t ^2 \rho - p\right].
+\end{equation}
+Substitution of $\pi$ back into the transverse condition then yields a vector condition
+\begin{equation}
+0=\partial_t Q_i + \tilde\nabla_a\tilde\nabla^a \pi_i,
+\end{equation}
+from which we may solve $\pi_i$ as
+\begin{equation}
+\pi_i = -\int d^3y\ D(x-y)\partial_t Q_i.
+\end{equation}
+In total, we may express $T_{\mu\nu}$ in terms of $\rho$, $p$, $Q_i$ and $\pi_{ij}^{T\theta}$ totally 6 components:
+\begin{align}
+ T_{00}  &= \rho,
+\nonumber\\	
+ T_{0i} &= -Q_i + \tilde\nabla_i \int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \rho,
+\nonumber\\	
+ T_{ij}  &= \frac32 \left( \delta_{ij}p - \tilde\nabla_i \tilde\nabla_j \int d^3y\ D(x-y) p\right) - \frac12 \int d^3y\ D(x-y) \delta_{ij} \partial_t^2 \rho 
+\nonumber\\
+&\quad {}+  \frac32
+\tilde\nabla_i\tilde\nabla_j  \int d^3y\ D(x-y) \int d^3z\ D(y-z) \partial_t^2 \rho - \tilde\nabla_i  \int d^3y\ D(x-y) \partial_t Q_j
+\nonumber \\
+&\quad{}
+- \tilde\nabla_j  \int d^3y\ D(x-y) \partial_t Q_i + \pi_{ij}^{T\theta}.
+\end{align} 
+Likewise we may express a general $G_{\mu\nu}$ in terms of the barred quantities 
+\begin{align}
+ G_{00}  &= \bar \rho,
+\nonumber\\	
+ G_{0i} &= -\bar Q_i + \tilde\nabla_i \int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \bar \rho,
+\nonumber\\	
+ G_{ij}  &= \frac32 \left( \delta_{ij}\bar p - \tilde\nabla_i \tilde\nabla_j \int d^3y\ D(x-y) \bar p\right) - \frac12 \int d^3y\ D(x-y) \delta_{ij} \partial_t^2 \bar \rho 
+\nonumber\\
+&\quad {}+  \frac32
+\tilde\nabla_i\tilde\nabla_j  \int d^3y\ D(x-y) \int d^3z\ D(y-z) \partial_t^2 \bar \rho - \tilde\nabla_i  \int d^3y\ D(x-y) \partial_t \bar Q_j
+\nonumber \\
+&\quad{}
+- \tilde\nabla_j  \int d^3y\ D(x-y) \partial_t \bar Q_i + \bar \pi_{ij}^{T\theta}.
+\end{align} 
+Solving for $G_{00} = T_{00}$ fixes $\rho$, and $G_{0i} = T_{0i}$ fixes $Q_i$ viz.
+\begin{equation}
+\bar\rho = \rho,\qquad
+\bar Q_i = Q_i. 
+\end{equation}
+However, the remaining spatial equation $G_{ij} = T_{ij}$ does not yet simplify and takes the form
+\begin{equation}
+ \frac32 \left( \delta_{ij}\bar p - \tilde\nabla_i \tilde\nabla_j \int d^3y\ D(x-y) \bar p\right) + \bar\pi_{ij}^{T\theta} = 
+\frac32 \left( \delta_{ij} p - \tilde\nabla_i \tilde\nabla_j \int d^3y\ D(x-y) p \right) + \pi_{ij}^{T\theta}. 
+\end{equation}
+However, if we take the trace of the above equation, we arrive at
+\begin{equation}
+\bar p = p.
+\end{equation}
+Thus the spatial equation $G_{ij} = T_{ij}$ will in fact decouple, and we can express the entire $G_{\mu\nu} = T_{\mu\nu}$ field equation in terms of irreducible SO(3) equations as
+\begin{align}
+\bar \rho& = \rho
+\nonumber\\
+\bar p &= p
+\nonumber\\
+\bar Q_i &= Q_i
+\nonumber\\
+\bar \pi_{ij}^{T\theta} &= \pi_{ij}^{T\theta}.
+\end{align}
+For a $T_{\mu\nu}$ that is traceless, as is the case for conformal gravity, we have the scalar condition $\rho = 3p$. This eliminates one scalar equation leaving 5 components as expected. 
+\\ \\
+We can try to express the above SVT relations in terms of the actual tensor components. Recall the flat 3+1 projector
+\begin{equation}
+P_{\mu\nu} = \eta_{\mu\nu}+U_{\mu}U_{\nu},\qquad U_{\mu} = -\delta^0_\mu,\qquad U^\mu = \delta^\mu_0.
+\end{equation}
+In terms of the the flat space projectors, the splitting of the 3+1 components goes as
+\begin{equation}
+\rho = U^\sigma U^\tau T_{\sigma\tau} = T_{00} ,\qquad p = \frac13 P^{\sigma\tau}T_{\sigma\tau}=\frac13 \delta^{ij}T_{ij},\qquad q_{i} = -P_i{}^\sigma U^\tau T_{\sigma\tau} = -T_{0i}
+\end{equation}
+and 
+\begin{equation}
+\pi_{\mu\nu} = \left[ \frac12 P_\mu{}^\sigma P_\nu{}^\tau + \frac12 P_\nu{}^\sigma P_\mu{}^\tau - \frac13 P_{\mu\nu}P^{\sigma\tau}\right]T_{\sigma\tau},
+\end{equation}
+in which it follows 
+\begin{equation}
+\pi_{ij} = T_{ij} -\frac13 \delta_{ij} \delta^{kl}T_{kl}.
+\end{equation}
+We recall the definition of $Q_i$ as
+\begin{equation}
+Q_i = q_i - \tilde\nabla_i \int d^3y\ D(x-y)\tilde\nabla^i q_i.
+\end{equation}
+This may be alternatively expressed as
+\begin{equation}
+Q_i = -T_{0i} + \tilde\nabla_i \int d^3y\ D(x-y)\tilde\nabla^j T_{0j}
+\end{equation}
+Noting that $\pi_{ij}$ is already traceless by construction, we may project out its transverse part and define $\pi^{T\theta}_{ij}$ as
+\begin{align}
+\pi_{ij}^{T\theta} &= \pi_{ij} - \tilde\nabla_i \int d^3y\ D(x-y) \tilde\nabla^k \pi_{jk} - \tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla^k \pi_{ik}
+\nonumber\\
+&\qquad
++\tilde\nabla_i\tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla_k\ \int d^3z\ D(y-z) \tilde\nabla_l \pi^{kl}.
+\end{align}
+Substituting in our definition of $\pi_{ij}$ we have
+\begin{align}
+\pi_{ij}^{T\theta} &=\left(T_{ij} -\frac13 \delta_{ij} \delta^{kl}T_{kl}\right) - \tilde\nabla_i \int d^3y\ D(x-y) \tilde\nabla^k \left(T_{jk} -\frac13 \delta_{jk} \delta^{mn}T_{mn}\right)
+\nonumber\\
+&\qquad
+ - \tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla^k \left(T_{ik} -\frac13 \delta_{ik} \delta^{mn}T_{mn}\right)
+\nonumber\\
+&\qquad
++\tilde\nabla_i\tilde\nabla_j \int d^3y\ D(x-y) \tilde\nabla_k\ \int d^3z\ D(y-z) \tilde\nabla_l \left(T^{kl} -\frac13 \delta^{kl} \delta^{mn}T_{mn}\right).
+\end{align}
+Using \eqref{GRA14}, we may show that under a conformal transformation, $\delta G_{\mu\nu}$ evaluated in a flat background transforms as
+\begin{equation}
+\delta G_{\mu\nu} \to \delta G_{\mu\nu} + \delta S_{\mu\nu}
+\end{equation}
+where
+\begin{align}
+\delta S_{\mu\nu}={}&2 \eta_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\beta}h^{\alpha \beta}
+ + \eta^{\alpha \beta} \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\beta}h_{\mu \nu}
+ -  \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \nabla_{\alpha}h \nabla_{\beta}\Omega\nonumber\\
+& -  \eta_{\mu \nu} h^{\alpha \beta} \Omega^{-2} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega
+ + \eta^{\alpha \beta} h_{\mu \nu} \Omega^{-2} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega
+ + 2 \eta_{\mu \nu} h^{\alpha \beta} \Omega^{-1} \nabla_{\beta}\nabla_{\alpha}\Omega\nonumber\\
+& - 2 \eta^{\alpha \beta} h_{\mu \nu} \Omega^{-1} \nabla_{\beta}\nabla_{\alpha}\Omega
+ -  \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\mu}h_{\nu}{}^{\alpha}
+ -  \Omega^{-1} \nabla_{\alpha}\Omega \nabla_{\nu}h_{\mu}{}^{\alpha}.
+\end{align}
+
+
+
+
+
+
+
+
+\newpage
+\appendix
+\section{Appendix}
+\subsection{Curvature Tensors Under Conformal Transformation}
+Curvature tensors (in Weinberg convention) transform under conformal transformation $g_{\mu\nu}\to \Omega^2(x)g_{\mu\nu} = e^{2\alpha(x)}g_{\mu\nu}$  as 
+\begin{align}
+R_{\lambda\mu\nu\kappa} &\to \Omega^2 R_{\lambda\mu\nu\kappa} + \Omega\left ( -g_{\mu\nu}\nabla_\lambda \nabla_\kappa \Omega
++ g_{\lambda\nu}\nabla_\mu\nabla_\kappa \Omega + g_{\mu\kappa} \nabla_\nu\nabla_\lambda \Omega - g_{\lambda\kappa} \nabla_\mu\nabla_\nu \Omega \right)
+\nonumber\\
+&\qquad+ 2g_{\mu\nu} \nabla_\kappa\Omega \nabla_\lambda\Omega - 2g_{\lambda\nu} \nabla_\kappa\Omega \nabla_\mu\Omega - 2g_{\mu\kappa}
+\nabla_\lambda\Omega \nabla_\nu\Omega + 2g_{\lambda\kappa} \nabla_\mu \Omega \nabla_\nu\Omega
+\nonumber\\
+&\qquad + (g_{\lambda\nu} g_{\mu\kappa}-g_{\lambda\kappa}g_{\mu\nu})\nabla^\rho \Omega \nabla_\rho \Omega
+\nonumber\\
+&= e^{2\alpha}\bigg[ R_{\lambda\mu\nu\kappa} + (g_{\mu\kappa}g_{\lambda\nu} - g_{\lambda\kappa}g_{\mu\nu})\nabla_\rho\alpha \nabla^\rho\alpha+
+g_{\mu\nu} \nabla_\kappa\alpha \nabla_\lambda\alpha - g_{\lambda\nu} \nabla_\kappa\alpha \nabla_\mu\alpha - g_{\mu\kappa} \nabla_\lambda\alpha
+\nabla_\nu\alpha 
+\nonumber\\
+&\qquad + g_{\kappa\lambda}\nabla_\mu\alpha\nabla_\nu\alpha - g_{\mu\nu}\nabla_\lambda\nabla_\kappa \alpha + g_{\lambda\nu} \nabla_\mu\nabla_\kappa\alpha + g_{\mu\kappa}\nabla_\nu\nabla_\lambda \alpha -
+g_{\kappa\lambda}\nabla_\mu\nabla_\nu\alpha\bigg]
+ \label{GRA11} \\
+{}
+\nonumber\\
+R_{\mu\nu} &\to R_{\mu\nu} + \Omega^{-2} g_{\mu\nu}\nabla_\lambda \Omega \nabla^\lambda \Omega
+	-4 \Omega^{-2} \nabla_\mu \Omega \nabla_\nu \Omega + \Omega^{-1} g_{\mu\nu}\nabla_\lambda \nabla^\lambda \Omega + 2\Omega^{-1}
+	\nabla_\mu \nabla_\nu \Omega
+\nonumber\\
+&= R_{\mu\nu} + 2 g_{\mu\nu}\nabla_\lambda \alpha \nabla^\lambda\alpha - 2 \nabla_\mu\alpha \nabla_\nu \alpha +  g_{\mu\nu} \nabla_\lambda \nabla^\lambda
+\alpha + 2\nabla_\mu \nabla_\nu \alpha 
+\label{GRA12} \\ 
+{}
+\nonumber\\
+R^\alpha{}_\alpha &\to \Omega^{-2}R^{\alpha}{}_\alpha + 6\Omega^{-3}\nabla_\lambda \nabla^\lambda \Omega
+\nonumber\\
+&= e^{-2\alpha} R^{\alpha}{}_\alpha + 6 e^{-2\alpha}\nabla_\lambda\alpha \nabla^\lambda\alpha + 6 e^{-2\alpha}\nabla_\lambda \nabla^\lambda \alpha.
+\label{GRA13}
+\end{align}
+Using the curvature tensors we may form the transformation of the Einstein tensor
+\begin{equation}
+G_{\mu\nu} \to G_{\mu\nu} + \Omega^{-1}\left( -2g_{\mu\nu}\nabla^\lambda \nabla_\lambda \Omega + 2\nabla_\mu \nabla_\nu \Omega\right) +
+\Omega^{-2}\left( g_{\mu\nu} \nabla_\lambda \Omega \nabla^\lambda \Omega - 4 \nabla_\mu \Omega \nabla_\nu \Omega\right)\label{GRA14}
+\end{equation}
+\subsection{Fields Under Conformal Transformation}\label{A2}
+Under local conformal transformation $g_{\mu\nu} \to e^{2\alpha(x)}g_{\mu\nu}$, the infinitesimal distance between two points also transforms as
+\begin{equation}
+	ds^2 = g_{\mu\nu}dx^\mu dx^\nu \to e^{2\alpha(x)} ds^2,
+\end{equation}
+and hence the unit of length $L$ scales as $L \to e^{\alpha(x)}L$ (note that scale transformation can be achieved from Weyl rescaling or from coordinate conformal transformations - the resulting transformation on length $L$ is the same). Therefore, determination of the length dimensions of our fields will specify their conformal weight. Noting that the canonical conjugate momentum $\pi$ of a field $\phi$ is 
+\begin{equation}
+\pi = \frac{\partial \mathcal L}{\partial \dot \phi},
+\end{equation}
+a conveneint method to finding the length dimension can be obtained from the quantized canonical commutation relations
+\begin{equation}
+	[\phi(\mathbf x),\pi(\mathbf x')] = i \delta^{(3)}(\mathbf x - \mathbf x'),
+\end{equation}
+and hence $\phi \pi \sim L^{-3}$. For the scalar field $S(x)$, the relevant conjugate momentum is 
+\begin{equation}
+	\pi = \frac{\partial}{\partial \dot S} \left(-\frac12 \eta^{\mu\nu} \partial_\mu S \partial_\nu S \right) = 
+\frac{\partial}{\partial \dot S}\left(\frac12\dot S^2- \frac12 \delta^{ij} \partial_i S \partial_j S\right) = \dot S.
+\end{equation}
+Therefore, we find $S\sim L^{-1}$ and hence
+\begin{equation}
+	S(x)\to e^{-\alpha(x)} S(x).
+\end{equation} 
+For the Dirac spinor $\psi(x)$ we note the relevant piece
+\begin{equation}
+	i\bar \psi\gamma^\mu(x) \partial_\mu \psi \propto \bar \psi \gamma^0(x) \dot \psi.
+\end{equation}
+Recalling $\bar\psi = \psi^\dagger \gamma^0$ and $(\gamma^0)^2=-1$ we have
+\begin{equation}
+	\pi = -i \psi^\dagger,
+\end{equation}
+and hence $\psi \psi^\dagger \sim L^{-3}$. Therefore $\psi \sim L^{-3/2}$ and 
+\begin{equation}
+\psi(x) \to e^{-3 \alpha(x)/2} \psi(x).
+\end{equation}
+\subsection{Equivalence Principle}
+According to Weinberg (4.5.8), the Christoffel symbol in the $x'^\mu$ coordinates is related to that in the $x^\mu$ coordinates as
+\begin{equation}
+\Gamma'^\lambda_{\mu\nu} = \frac{\partial x'^\lambda}{\partial x^\rho}\frac{\partial x^\tau }{\partial x'^\mu }\frac{\partial x^\sigma }{\partial x'^\nu}\Gamma^{\rho}_{\tau\sigma}
+-\frac{\partial x^\rho}{\partial x'^\nu}\frac{\partial x^\sigma }{\partial x'^\mu}\frac{\partial^2 x'^\lambda }{\partial x^\rho \partial x^\sigma}\label{GRA31}.
+\end{equation}
+Let us define the coordinate relation $x'(x)$ as
+\begin{equation}
+x'^\lambda = x^\lambda + \frac12(x^\mu-P^\mu)( x^\nu-P^\mu) \left(\Gamma^\lambda_{\mu\nu}\right)_P\label{GRA32}
+\end{equation}
+where $P^\mu$ denotes an arbitrary coordinate point. 
+Now evaluate the derivatives:
+\begin{equation}
+\frac{\partial x'^\lambda}{\partial x^\rho} = \delta^\lambda_\rho + (x^\alpha-P^\alpha) \left(\Gamma^\lambda_{\alpha\rho}\right)_P
+\end{equation}
+\begin{equation}
+\frac{\partial}{\partial x^\sigma}\left(\frac{\partial x'^\lambda}{\partial x^\rho} \right)= \left(\Gamma^\lambda_{\sigma\rho}\right)_P.
+\end{equation}
+Substituting these derivatives into \ref{GRA31} we obtain
+\begin{equation} 
+\Gamma'^\lambda_{\mu\nu}(x'(x))  = \frac{\partial x^\tau }{\partial x'^\mu }\frac{\partial x^\sigma }{\partial x'^\nu}\Gamma^{\lambda}_{\tau\sigma}
++   (x^\alpha-P^\alpha) \left(\Gamma^\lambda_{\alpha\rho}\right)_P\frac{\partial x^\tau }{\partial x'^\mu }\frac{\partial x^\sigma }{\partial x'^\nu}\Gamma^{\rho}_{\tau\sigma}
+-\frac{\partial x^\rho}{\partial x'^\nu}\frac{\partial x^\sigma }{\partial x'^\mu} \left(\Gamma^\lambda_{\sigma\rho}\right)_P.
+\end{equation}
+Now we evaluate at $P^\mu$, and find 
+\begin{equation}
+	\Gamma'^\lambda_{\mu\nu}(x'(P)) = 0.
+\end{equation}
+Hence, at any given point $P^\mu$, we may always work in coordinates defined as \ref{GRA32} such that the Christoffel symbol vanishes, i.e. the local effects of gravitation are absent. 
+\end{document}

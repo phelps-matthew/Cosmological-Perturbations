@@ -1,0 +1,33 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage{mathtools} 
+\usepackage{enumitem} % List environment 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Weyl Gauge Matthew}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+\section*{Result After Applying Gauge Condition}
+\ \\
+Gauge Condition:
+\begin{equation}
+	\bar \nabla^\mu \bar K_{\mu\nu} =4\Omega^{-1}\bar K_{\mu\nu}\bar \nabla^\mu \Omega
+\end{equation}
+\begin{align}
+	\delta  W_{\mu\nu}(K_{\mu\nu})&= 
+- 48\Omega^{-7} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega \nabla_{\rho}\Omega \nabla_{\sigma}K_{\mu \nu} + 24\Omega^{-6} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\alpha}\Omega \nabla_{\rho}\nabla_{\beta}\Omega \nabla_{\sigma}K_{\mu \nu} \nonumber\\
+& + 60\Omega^{-8} g^{\alpha \beta} g^{\rho \sigma} K_{\mu \nu} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega \nabla_{\rho}\Omega \nabla_{\sigma}\Omega - 4\Omega^{-5} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\rho}\nabla_{\alpha}\Omega \nabla_{\sigma}\nabla_{\beta}K_{\mu \nu} \nonumber \\
+&+ 6\Omega^{-6} g^{\alpha \beta} g^{\rho \sigma} K_{\mu \nu} \nabla_{\rho}\nabla_{\alpha}\Omega \nabla_{\sigma}\nabla_{\beta}\Omega + 12\Omega^{-6} g^{\alpha \rho} g^{\beta \sigma} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega \nabla_{\sigma}\nabla_{\rho}K_{\mu \nu}\nonumber\\
+& + 6 \Omega^{-6}g^{\alpha \beta} g^{\rho \sigma} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega \nabla_{\sigma}\nabla_{\rho}K_{\mu \nu} - 2\Omega^{-5} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\beta}\nabla_{\alpha}\Omega \nabla_{\sigma}\nabla_{\rho}K_{\mu \nu}  \nonumber \\
+&+ 12\Omega^{-6} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\alpha}\Omega \nabla_{\beta}K_{\mu \nu} \nabla_{\sigma}\nabla_{\rho}\Omega -  48\Omega^{-7} g^{\alpha \rho} g^{\beta \sigma} K_{\mu \nu} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega \nabla_{\sigma}\nabla_{\rho}\Omega\nonumber\\
+ &-  24\Omega^{-7} g^{\alpha \beta} g^{\rho \sigma} K_{\mu \nu} \nabla_{\alpha}\Omega \nabla_{\beta}\Omega \nabla_{\sigma}\nabla_{\rho}\Omega  + 3\Omega^{-6} g^{\alpha \beta} g^{\rho \sigma} K_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}\Omega \nabla_{\sigma}\nabla_{\rho}\Omega\nonumber\\
+ &- 4\Omega^{-5} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\alpha}\Omega \nabla_{\sigma}\nabla_{\rho}\nabla_{\beta}K_{\mu \nu}- 4 \Omega^{-5}g^{\alpha \beta} g^{\rho \sigma} \nabla_{\alpha}K_{\mu \nu} \nabla_{\sigma}\nabla_{\rho}\nabla_{\beta}\Omega\nonumber \\
+ & + 12\Omega^{-6} g^{\alpha \beta} g^{\rho \sigma} K_{\mu \nu} \nabla_{\alpha}\Omega \nabla_{\sigma}\nabla_{\rho}\nabla_{\beta}\Omega + \tfrac{1}{2}\Omega^{-4} g^{\alpha \beta} g^{\rho \sigma} \nabla_{\sigma}\nabla_{\rho}\nabla_{\beta}\nabla_{\alpha}K_{\mu \nu}\nonumber \\
+ &-  \Omega^{-5}g^{\alpha \beta} g^{\rho \sigma} K_{\mu \nu} \nabla_{\sigma}\nabla_{\rho}\nabla_{\beta}\nabla_{\alpha}\Omega \nonumber \\
+&= \frac12 \Omega^{-2} g^{\sigma\rho}g^{\alpha\beta}\nabla_\sigma\nabla_\rho\nabla_\alpha \nabla_\beta (\Omega^{-2}K_{\mu\nu}) 
+\end{align}
+
+\end{document}

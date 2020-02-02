@@ -1,0 +1,644 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+ \usepackage{braket}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+%\numberwithin{equation}{subsection}
+\title{Coordinate Transformations RW $k<0$ v5 }
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+\section*{Discrepancy}
+Via coordinate transformation, we can map the line elements
+\begin{align}
+ds^2 &= \Omega^2(T,R)(dT^2 - dX^2-dY^2 -dZ^2)\nonumber\\
+ds^2 &= \Omega^2(p',r')(dp'^2 - dx'^2-dy'^2 -dz'^2),
+\end{align}
+to the same comoving RW geometry (taken with scale factor $a=L^2(t^2+d^2)$)
+\begin{equation}
+ds^2 =  dt^2 - a(t)^2 \left(  \frac{dr^2}{1+r^2/L^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2 \right).
+\end{equation}
+For the explicit example of $K^{(cm)}_{\phi\phi}$, we may simplify the procedure by performing a single coordinate transformation, viz.
+\begin{equation}
+K_{\phi\phi}^{(cm)} = \frac{\partial x^\alpha}{\partial \phi}\frac{\partial x^\beta}{\partial \phi}K_{\alpha\beta}
+\end{equation}
+where $K_{\alpha\beta}$ is defined in terms of either the $T,R$ or $p',r'$ coordinate system. These respectively calculate to
+\begin{equation}
+K_{\phi\phi}^{(cm)} = \frac{\partial X}{\partial \phi}\frac{\partial X}{\partial \phi}K_{11}+.. \approx R^2 \sin^2\theta \sin^2\phi K_{11} \sim u^2 K_{11}
+\end{equation}
+and
+\begin{equation}
+K_{\phi\phi}^{(cm)} = \frac{\partial x'}{\partial \phi}\frac{\partial x'}{\partial \phi}K_{11}+.. \approx r'^2 \sin^2\theta \sin^2\phi K_{11} \sim \frac{1}{u^2} K_{11}.
+\end{equation}
+The equivalence of $K^{(cm)}_{\phi\phi}$ starting from either coordinate system would imply
+\begin{equation}
+u^2 \Omega^2(T,R) T  e^{ik(R\cos\theta -T)} = \frac{1}{u^2} \Omega^2(p',r')p' e^{ik(r'\cos\theta - p')},
+\end{equation}
+but the LHS and RHS behave asymptotically as
+\begin{equation}
+u^3 \ne u^2.
+\end{equation}
+\section*{Fluctuation Equation Solution}
+If we take the conformal gauge 
+\begin{align}
+\nabla_\nu K^{\mu\nu} - \frac12 K^{\mu\nu} \Omega^{-2}g_{(0)}^{\alpha\beta}\partial_\nu g^{(0)}_{\alpha\beta} &= 0,
+\end{align}
+within the geometry of
+\begin{equation}
+ds^2 = -\Omega^2( \eta_{\mu\nu}+k_{\mu\nu})dx^\mu dx^\nu = -(g_{\mu\nu}^{(0)} +  K_{\mu\nu})dx^\mu dx^\nu,
+\end{equation}
+then as outlined in APM (55), the conformal gauge condition may be expressed in the covariant form
+\begin{equation}
+\nabla_{\nu} K^{\mu\nu} = 4\Omega^{-1}K^{\mu\nu}\partial_\nu \Omega.
+\end{equation}
+The above form transforms conformally only if the background is Minkowski, and is also equivalent to
+\begin{equation}
+\partial_\nu k^{\mu\nu} =0.
+\end{equation}
+Evaluating $\delta W_{\mu\nu}$ in the geometry of (9) using covariant gauge (10) then yields
+\begin{equation}
+\delta W_{\mu\nu} = \frac12 \Omega^{-2} \eta^{\sigma\rho}\eta^{\alpha\beta} \partial_\sigma\partial_\rho \partial_\alpha\partial_\beta(\Omega^{-2}K_{\mu\nu}) = \frac12 \Omega^{-2} \eta^{\sigma\rho}\eta^{\alpha\beta} \partial_\sigma\partial_\rho \partial_\alpha\partial_\beta k_{\mu\nu}.
+\end{equation}
+The momentum eigenstate solution for $\Box^2 k_{\mu\nu}=0$ is then
+\begin{equation} 
+k_{\mu\nu} = A_{\mu\nu} e^{ikx} + B_{\mu\nu} n_\alpha x^\alpha e^{ikx}.
+\end{equation}
+As our gauge condition is covariant, if it is satisfied in $r'$, $p'$ coordinates, then it must also be satisfied in $T$, $R$ coordinates. 
+\subsection*{Original Coordinates for $K_{\phi\phi}$}
+Transformations and Asymptotics:
+\begin{equation}
+p' = \frac{u}{(1+u^2)^{1/2}+(1+v^2)^{1/2}}\sim 1,\qquad r' = \frac{v}{(1+u^2)^{1/2}+(1+v^2)^{1/2}}\sim \frac1u
+\end{equation}
+\begin{equation}
+\Omega^2(p',r') = \frac{4 L^2 a^2}{(1-(p'+r')^2)(1-(p'-r')^2)} = d^2(1+u^2)\left[ (1+u^2)^{1/2}+(1+v^2)^{1/2}\right]^2\sim d^2 u^4
+\end{equation}
+\begin{equation}
+\sin(k(z'-p')) \approx -\sin(k) + \frac{k\cos(k)}{u}(v\cos\theta+(1+v^2)^{1/2})
+\end{equation}
+\\ \\
+Within background geometry
+\begin{equation}
+ds^2 = \Omega^2(p',r')(dp'^2 - dx'^2-dy'^2 -dz'^2),
+\end{equation}
+the leading order solution for $K_{\mu\nu}$ behaves as
+\begin{equation} 
+K_{\mu\nu} \approx \Omega^2(p',r') p' B_{\mu\nu} e^{ik(z'-p')} \sim u^4.
+\end{equation}
+Within a polar (P) geometry of 
+\begin{equation}
+ds^2 = \Omega^2(p',r')(dp'^2 - dr'^2 - r'^2 d\theta^2-r'^2\sin^2\theta d\phi^2),
+\end{equation}
+the angular tensor $K_{\phi\phi} \equiv K^{(P)}_{33}$ is related to the Minkowski tensor via
+\begin{equation}
+K^{(P)}_{33} = \Omega^2(p',r')\left[-K_{11} r'^2 \sin ^2(\theta ) \cos (2 \phi )-2 K_{12} r'^2 \sin ^2(\theta ) \sin (\phi ) \cos (\phi )\right].
+\end{equation}
+Hence, for the purely angular sector, the leader order solution for $K_{\mu\nu}$ now behaves as
+\begin{equation} 
+K^{(P)}_{33} \approx \Omega^2(p',r') r'^2 K_{11} = \Omega^2(p',r') r'^2 p' B_{\mu\nu} e^{ik(z'-p')} \sim u^2.
+\end{equation}
+Transforming now to the comoving (cm) geometry of 
+\begin{align}
+ds^2 &=  dt^2 - a(t)^2 \left(  \frac{dr^2}{1+r^2/L^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2 \right)\nonumber\\
+&= d^2 \left[ du^2 - (1+u^2)\left( \frac{dv^2}{1+v^2} + v^2 d\Omega^2\right)\right] ,
+\end{align}
+the angular coordinates are unaffected and thus $K_{33}^{(cm)}$ is to behave as
+\begin{equation} 
+\boxed{
+K^{(cm)}_{33} = K^{(P)}_{33} \sim u^2}.
+\end{equation}
+\subsection*{New Coordinates for $K_{\phi\phi}$}
+Transformations and Asymptotics:
+\begin{align}
+T = \left[u+(1+u^2)^{1/2}\right]( 1+v^2)^{1/2}\sim u,\qquad R = \left[u+(1+u^2)^{1/2}\right]v\sim u
+\end{align}
+\begin{equation}
+\Omega^2(T,R) = \frac{L^2 a^2}{T^2-R^2} = d^2\frac{(1+u^2)}{(u+(1+u^2)^{1/2})^2}\sim d^2
+\end{equation}
+\begin{equation}
+\sin(k(Z-T)) \approx \sin\left[ 2 k u \left( v\cos\theta - (1+v^2)^{1/2}\right)\right]
+\end{equation}
+\\ \\
+Within background geometry
+\begin{equation}
+ds^2 = \Omega^2(T,R)(dT^2 - dX^2-dY^2 -dZ^2),
+\end{equation}
+the leading order solution for $K_{\mu\nu}$ behaves as
+\begin{equation} 
+K_{\mu\nu} \approx \Omega^2(T,R) T B_{\mu\nu} e^{ik(Z-T)} \sim u
+\end{equation}
+Within a polar (P) geometry of 
+\begin{equation}
+ds^2 = \Omega^2(T,R)(dT^2 - dR^2 - R^2 d\theta^2-R^2\sin^2\theta d\phi^2),
+\end{equation}
+the angular tensor $K_{\phi\phi} \equiv K^{(P)}_{33}$ is related to the Minkowski tensor via
+\begin{equation}
+K^{(P)}_{33} = \Omega^2(T,R)\left[-K_{11}R^2 \sin ^2(\theta ) \cos (2 \phi )-2 K_{12} R^2 \sin ^2(\theta ) \sin (\phi ) \cos (\phi )\right].
+\end{equation}
+Hence, for the purely angular sector, the leader order solution for $K_{\mu\nu}$ now behaves as
+\begin{equation} 
+K^{(P)}_{33} \approx \Omega^2(T,R) R^2 K_{11} = \Omega^2(T,R) R^2 T B_{\mu\nu} e^{ik(Z-T)} \sim u^3.
+\end{equation}
+Transforming now to the comoving (cm) geometry of 
+\begin{align}
+ds^2 &=  dt^2 - a(t)^2 \left(  \frac{dr^2}{1+r^2/L^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2 \right)\nonumber\\
+&= d^2 \left[ du^2 - (1+u^2)\left( \frac{dv^2}{1+v^2} + v^2 d\Omega^2\right)\right] ,
+\end{align}
+the angular coordinates are unaffected and thus $K_{33}^{(cm)}$ is to behave as
+\begin{equation} 
+\boxed{
+K^{(cm)}_{33} = K^{(P)}_{33} \sim u^3}.
+\end{equation}
+
+\newpage
+\section*{Previous Work (v4)}
+\section*{Summary}
+In the radiation dominated early universe with scale factor $L^2 a^2(t) =(d^2+t^2)$, the leading order large time behavior for $K_{\mu\nu}$ as evaluated in the comoving $k<0$ R.W. background takes the form:
+\begin{align}
+K^{(cm)}_{00} &\sim 1 \nonumber\\
+K^{(cm)}_{01} &\sim \frac{d}{L}(u) \nonumber\\
+K^{(cm)}_{02} &\sim d(u) \nonumber\\
+K^{(cm)}_{03} &\sim d(u) \nonumber\\
+K^{(cm)}_{11} &\sim \frac{d^2}{L^2}(u^2) \nonumber\\
+K^{(cm)}_{22} &\sim d^2(u^2) \nonumber\\
+K^{(cm)}_{33} &\sim d^2(u^2) \nonumber\\
+K^{(cm)}_{12} &\sim \frac{d^2}{L}(u^2) \nonumber\\
+K^{(cm)}_{13} &\sim \frac{d^2}{L}(u^2) \nonumber\\
+K^{(cm)}_{23} &\sim d^2(u^2),
+\end{align}
+where $u = t/d$. This result differs from APM3 perturbations by a $u^{-1}$ suppression for each angular index. This is due to the Cartesian to polar coordinate transformation, where factors of $r'(t,r)$ or $R(t,r)$ in the transformation have non-negligible $u$ dependence. The large time behavior for the new coordinate system of $(T,R)$ was found to only match that of the old coordinate system of $(p',r')$ when integrating the z-direction plane wave over the full solid angle. 
+\\ \\
+It remains to look into the necessity (or non-necessity) of spatial averaging. 
+
+\section*{Notation}
+From the original form of the scale factor
+\begin{equation}
+a^2(t) = \frac{2A L^2}{S_0^2} + \frac{t^2}{L^2} 
+\end{equation}
+we see that for setting up a definition for large $t$, we should take
+\begin{equation}
+\frac{t^2}{L^2} \gg \frac{2A L^2}{S_0^2}.
+\end{equation}
+This is equivalent to requiring $t\gg d$. If the scale behaves such that $2AL^2 /S_0^2 \ll 1$, then $t\gg d$ does not necessarily imply $t \gg L$. Noting in addition the R.W. comoving geometry distance $r/L$, we introduce two scales of comparison 
+\begin{equation}
+u \equiv \frac{t}{d},\qquad v \equiv \frac{r}{L}.
+\end{equation}
+Thus we define large $t$ behavior as taking $u\gg 1$, holding $v$ finite. \\ \\
+In terms of $u$ and $v$, the scale factor takes the form
+\begin{equation}
+a^2(u) = \frac{d^2}{L^2}(1+u^2)
+\end{equation}
+comoving R.W. metric takes the form
+\begin{align}
+ds^2 &=  dt^2 - a(t)^2 \left(  \frac{dr^2}{1+r^2/L^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2 \right)\nonumber\\
+&= d^2 \left[ du^2 - (1+u^2)\left( \frac{dv^2}{1+v^2} + v^2 d\Omega^2\right)\right] 
+\end{align}
+\section*{Coordinate Transformations}
+\subsection*{Cartesian to Polar}
+In going from the geometry of 
+\begin{equation}
+ds^2 = \Omega^2 (\eta_{\mu\nu}+k_{\mu\nu})dx^\mu dx^\nu
+\end{equation}
+to
+\begin{equation}
+ds^2 = \Omega^2 (dt^2-dr^2 - r^2 d\Omega^2+ k^{(P)}_{\mu\nu}dx^\mu dx^\nu),
+\end{equation}
+we must perform the appropriate coordinate transformation (given in the Appendix). Denoting the polar coordinate system as $x^{(P)}$, we find, after imposing the transverse and residual relations, the following:
+\begin{align}
+k^{(P)}_{00} &= 0\nonumber\\
+k^{(P)}_{01} &= k_{01} \sin (\theta ) \cos (\phi )+k_{02} \sin (\theta ) \sin (\phi )\nonumber\\
+k^{(P)}_{02} &= k_{01} r \cos (\theta ) \cos (\phi )+k_{02} r \cos (\theta ) \sin (\phi )\nonumber\\
+k^{(P)}_{03} &= -k_{01} r \sin (\theta ) \sin (\phi )+k_{02} r \sin (\theta ) \cos (\phi )\nonumber\\
+k^{(P)}_{11} &= k_{11} \sin ^2(\theta ) \cos (2 \phi )+k_{12} \sin ^2(\theta ) \sin (2 \phi )\nonumber\\
+k^{(P)}_{22} &= k_{11} r^2 \cos ^2(\theta ) \cos (2 \phi )+k_{12} r^2 \cos ^2(\theta ) \sin (2 \phi )\nonumber\\
+k^{(P)}_{33} &= -k_{11} r^2 \sin ^2(\theta ) \cos (2 \phi )-2 k_{12} r^2 \sin ^2(\theta ) \sin (\phi ) \cos (\phi )\nonumber\\
+k^{(P)}_{12} &= \frac{1}{2} k_{11} r \sin (2 \theta ) \cos (2 \phi )+k_{12} r \sin (\theta ) \cos (\theta ) \sin (2 \phi )\nonumber\\
+k^{(P)}_{13} &=-2 k_{11} r \sin ^2(\theta ) \sin (\phi ) \cos (\phi )+ k_{12} r \sin ^2(\theta ) \cos (2 \phi )\nonumber\\
+k^{(P)}_{23} &= -2 k_{11} r^2 \sin (\theta ) \cos (\theta ) \sin (\phi ) \cos (\phi )+k_{12} r^2 \sin (\theta ) \cos (\theta ) \cos (2 \phi )
+\end{align}
+Since the $\Box^2 k_{\mu\nu} =0$ is only valid in a conformal to Minkowski background, upon transforming the solution for $k_{\mu\nu}$ to polar coordinates, we must account for the factors of $R(t,r)$ and $r'(t,r)$ in regards to the asymptotic time behavior. As a rule, every angular index gets a power of $r$. 
+\subsection*{Original Coordinates}
+Performing coordinate transformations
+\begin{equation}
+p' = \frac{u}{(1+u^2)^{1/2}+(1+v^2)^{1/2}},\qquad r' = \frac{v}{(1+u^2)^{1/2}+(1+v^2)^{1/2}}
+\end{equation}
+transforms the comoving R.W. line element to the conformal to flat (polar)
+\begin{equation}
+ds^2 = \Omega^2(p',r')(dp'^2 - dr'^2 - r'^2 d\Omega^2)
+\end{equation}
+with conformal factor
+\begin{equation}
+\Omega^2(p',r') = \frac{4 L^2 a^2}{(1-(p'+r')^2)(1-(p'+r')^2)} = d^2(1+u^2)\left[ (1+u^2)^{1/2}+(1+v^2)^{1/2}\right]^2.
+\end{equation}
+We will soon make use of the coordinate relations
+\begin{align}
+\frac{\partial p'}{\partial t} &= \frac{1}{d}\frac{\partial p'}{\partial u} = \left(\frac1d\right)\frac{1+(1+u^2)^{1/2}(1+v^2)^{1/2}}{(1+u^2)^{1/2}((1+u^2)^{1/2}+(1+v^2)^{1/2})^2}\nonumber\\
+\frac{\partial p'}{\partial r} &= \frac{1}{L}\frac{\partial p'}{\partial v} = -  \left(\frac1L\right)\frac{uv}{(1+v^2)^{1/2}((1+u^2)^{1/2}+(1+v^2)^{1/2})^2}\nonumber\\
+\frac{\partial r'}{\partial t} &= \frac{1}{d}\frac{\partial r'}{\partial u} = -  \left(\frac1d\right)\frac{uv}{(1+u^2)^{1/2}((1+u^2)^{1/2}+(1+v^2)^{1/2})^2}\nonumber\\
+\frac{\partial r'}{\partial r} &= \frac{1}{L}\frac{\partial r'}{\partial v} = \left(\frac1L\right) \frac{1+(1+u^2)^{1/2}(1+v^2)^{1/2}}{(1+v^2)^{1/2}((1+u^2)^{1/2}+(1+v^2)^{1/2})^2}
+\end{align}
+After transforming from Minkowski to polar, it remains to transform the $k_{\mu\nu}$ from polar to comoving coordinates. We note that angular coordinates are unaffected. In calculating the transformation (given in the appendix), we have
+\begin{align}
+k^{(cm)}_{00} &= 2 \frac{\partial p'}{\partial t} \frac{\partial r'}{\partial t} k^{(P)}_{01} + \left(\frac{\partial r'}{\partial t}\right)^2 k^{(P)}_{11}\nonumber\\
+k^{(cm)}_{01} &=\frac{\partial p'}{\partial t} \frac{\partial r'}{\partial r} k^{(P)}_{01}+\frac{\partial r'}{\partial t} \frac{\partial p'}{\partial r} k^{(P)}_{01}+\frac{\partial r'}{\partial t} \frac{\partial r'}{\partial r} k^{(P)}_{11} \nonumber\\
+k^{(cm)}_{02} &= \frac{\partial p'}{\partial t} k^{(P)}_{02}+\frac{\partial r'}{\partial t} k^{(P)}_{12} \nonumber\\
+k^{(cm)}_{03} &= \frac{\partial p'}{\partial t} k^{(P)}_{03}+\frac{\partial r'}{\partial t} k^{(P)}_{13} \nonumber\\
+k^{(cm)}_{11} &=2 \frac{\partial p'}{\partial r} \frac{\partial r'}{\partial r} k^{(P)}_{01}+\left(\frac{\partial r'}{\partial r}\right)^2 k^{(P)}_{11} \nonumber\\
+k^{(cm)}_{22} &= k^{(P)}_{22}\nonumber\\
+k^{(cm)}_{33} &= k^{(P)}_{33}\nonumber\\
+k^{(cm)}_{12} &= \frac{\partial p'}{\partial r} k^{(P)}_{02}+\frac{\partial r'}{\partial r} k^{(P)}_{12} \nonumber\\
+k^{(cm)}_{13} &= \frac{\partial p'}{\partial r} k^{(P)}_{03}+\frac{\partial r'}{\partial r} k^{(P)}_{13} \nonumber\\
+k^{(cm)}_{23} &= k^{(P)}_{23}
+\end{align}
+\subsubsection*{Asymptotics}
+The leading order solution for $K_{\mu\nu}$ for a wave propagating along the $z'$ axis is
+\begin{align}
+K_{\mu\nu} &= \Omega^2(p',r')p'\left[ C_{\mu\nu}  \cos(k(r'\cos\theta - p')) + D_{\mu\nu} \sin(k(r'\cos\theta - p')) \right]
+\end{align}
+where $k_{\mu} = (-k,0,0,k)$, $z' = r'\cos\theta$, $C_{\mu\nu} = B_{\mu\nu}+B^*_{\mu\nu} $, and $D_{\mu\nu} = i(B_{\mu\nu}-B^*_{\mu\nu})$.
+\\ \\
+Up to leading order in $u$, we have:
+\begin{align}
+p'\sim 1,\qquad r' \sim \frac{1}{u},\qquad \Omega^2(p',r') \sim d^2 u^4.
+\end{align}
+\begin{align}
+\frac{\partial p'}{\partial t} & \sim \frac{1}{d}\left( \frac{1}{u^2}\right),\qquad
+\frac{\partial p'}{\partial r}  \sim 	-\frac{1}{L} \left(\frac{1}{u}\right),\qquad
+\frac{\partial r'}{\partial t}  \sim -\frac{1}{d}\left( \frac{1}{u^2}\right),\qquad
+\frac{\partial r'}{\partial r}  \sim \frac{1}{L}\left( \frac{1}{u}\right).
+\end{align}
+For the plane wave $\sin(k(z'-p'))$, the phase equates to
+\begin{equation}
+z'-p' = \frac{v\cos\theta - u}{(1+u^2)^{1/2}+(1+v^2)^{1/2}}.
+\end{equation}
+For $u \to \infty$, the above converges and has asymptotic expansion
+\begin{equation}
+z'-p' \approx -1 + \frac{1}{u}(v+(1+v^2)^{1/2})\cos\theta - \frac{1}{u^2}\left( \frac12 + v^2 +v(1+v^2)^{1/2}\cos\theta\right) +  O\left( \frac{1}{u^3}\right).
+\end{equation}
+Hence, to second leading order, the $(p',z')$ plane wave behave asymptotically as
+\begin{align}
+\sin(k(z'-p')) &\approx -\sin(k) + \frac{k\cos(k)}{u}(v\cos\theta+(1+v^2)^{1/2})\nonumber\\
+\cos(k(z'-p'))&\approx \cos(k) + \frac{k\sin(k)}{u}(v\cos\theta+(1+v^2)^{1/2})
+\end{align}
+For the tensor transformation behavior, recalling that each angular index goes as $\sim r'$, the leading large $u$ behavior of $B_{\mu\nu}^{(cm)}$ is calculated as:
+\begin{align}
+B^{(cm)}_{00} &\sim \frac{1}{d^2}\left( \frac{1}{u^4}\right),\qquad 
+B^{(cm)}_{01} \sim \frac{1}{dL}\left( \frac{1}{u^3}\right),\qquad 
+B^{(cm)}_{02} \sim \frac{1}{d}\left( \frac{1}{u^3}\right),\qquad 
+B^{(cm)}_{03} \sim \frac{1}{d}\left( \frac{1}{u^3}\right) \\
+B^{(cm)}_{11} &\sim \frac{1}{L^2}\left( \frac{1}{u^2}\right),\quad 
+B^{(cm)}_{22} \sim \frac{1}{u^2},\quad 
+B^{(cm)}_{33} \sim \frac{1}{u^2} ,\quad 
+B^{(cm)}_{12} \sim \frac{1}{L}\left( \frac{1}{u^2}\right) ,\quad 
+B^{(cm)}_{13} \sim \frac{1}{L}\left( \frac{1}{u^2}\right) ,\quad 
+B^{(cm)}_{23} \sim \frac{1}{u^2}\nonumber
+\end{align}
+Finally, we calculate the leading $u= t/d$ behavior for the comoving $K_{\mu\nu}^{(cm)}$, which follows
+\begin{equation}
+K^{(cm)}_{\mu\nu} = \Omega^2(p',r')  B_{\mu\nu}^{(cm)} p' \sin(k(z'-p')) \sim d^2 u^4 B_{\mu\nu}^{(cm)}.
+\end{equation}
+\begin{align}
+K^{(cm)}_{00} &\sim 1 \nonumber\\
+K^{(cm)}_{01} &\sim \frac{d}{L}(u) \nonumber\\
+K^{(cm)}_{02} &\sim d (u) \nonumber\\
+K^{(cm)}_{03} &\sim d (u) \nonumber\\
+K^{(cm)}_{11} &\sim \frac{d^2}{L^2}(u^2) \nonumber\\
+K^{(cm)}_{22} &\sim d^2(u^2) \nonumber\\
+K^{(cm)}_{33} &\sim d^2(u^2) \nonumber\\
+K^{(cm)}_{12} &\sim \frac{d^2}{L}(u^2) \nonumber\\
+K^{(cm)}_{13} &\sim \frac{d^2}{L}(u^2) \nonumber\\
+K^{(cm)}_{23} &\sim d^2(u^2)
+\end{align}
+\subsubsection*{Angular Average Over Plane Wave}
+\begin{equation}
+\int \sin(k(r\cos\theta-t))d\Omega = -4\pi \frac{\sin(kt)\sin(kr)}{kr} 
+\end{equation}
+In terms of the respective coordinates, this is
+\begin{equation}
+\braket{\sin(k(z'-p'))} = -4\pi \frac{\sin(kp')\sin(kr')}{kr'}.
+\end{equation}
+Asymptotically, for large $u$, this behaves as
+\begin{equation}
+\braket{\sin(k(z'-p'))} \sim -\sin(k).
+\end{equation}
+This in fact agrees with our asymptotic expansion of $\sin(k(z'-p'))$ and thus presents no change to the overall behavior.
+\subsection*{New Coordinates}
+Performing coordinate transformations
+\begin{align}
+T = \left[u+(1+u^2)^{1/2}\right]( 1+v^2)^{1/2},\qquad R = \left[u+(1+u^2)^{1/2}\right]v,\qquad X^2 = T^2-R^2,
+\end{align}
+transforms the comoving R.W. line element to the conformal to flat (polar)
+\begin{equation}
+ds^2 = \Omega^2(T,R)(dT^2 - dR^2 - R^2 d\Omega^2)
+\end{equation}
+with conformal factor
+\begin{equation}
+\Omega^2(T,R) = \frac{L^2 a^2}{T^2-R^2} = d^2(1+u^2)((1+u^2)^{1/2}-u)^2.
+\end{equation}
+We will soon make use of the coordinate relations
+\begin{align}
+\frac{\partial T}{\partial t} &= \frac{1}{d}\frac{\partial T}{\partial u} = \left(\frac1d\right)\frac{(u+(1+u^2)^{1/2})(1+v^2)^{1/2}}{(1+u^2)^{1/2}}\nonumber\\
+\frac{\partial T}{\partial r} &= \frac{1}{L}\frac{\partial T}{\partial v} =   \left(\frac1L\right)\frac{(u+(1+u^2)^{1/2})v}{(1+v^2)^{1/2}}\nonumber\\
+\frac{\partial R}{\partial t} &= \frac{1}{d}\frac{\partial R}{\partial u} =   \left(\frac1d\right)\frac{(u+(1+u^2)^{1/2})v}{(1+u^2)^{1/2}}\nonumber\\
+\frac{\partial R}{\partial r} &= \frac{1}{L}\frac{\partial R}{\partial v} = \left(\frac1L\right)( u+(1+u^2)^{1/2})
+\end{align}
+After transforming from Minkowski to polar, it remains to transform the $k_{\mu\nu}$ from polar to comoving coordinates. We note that angular coordinates are unaffected. In calculating the transformation (given in the appendix), we have
+\begin{align}
+k^{(cm)}_{00} &= 2 \frac{\partial T}{\partial t} \frac{\partial R}{\partial t} k^{(P)}_{01} + \left(\frac{\partial R}{\partial t}\right)^2 k^{(P)}_{11}\nonumber\\
+k^{(cm)}_{01} &=\frac{\partial T}{\partial t} \frac{\partial R}{\partial r} k^{(P)}_{01}+\frac{\partial R}{\partial t} \frac{\partial T}{\partial r} k^{(P)}_{01}+\frac{\partial R}{\partial t} \frac{\partial R}{\partial r} k^{(P)}_{11} \nonumber\\
+k^{(cm)}_{02} &= \frac{\partial T}{\partial t} k^{(P)}_{02}+\frac{\partial R}{\partial t} k^{(P)}_{12} \nonumber\\
+k^{(cm)}_{03} &= \frac{\partial T}{\partial t} k^{(P)}_{03}+\frac{\partial R}{\partial t} k^{(P)}_{13} \nonumber\\
+k^{(cm)}_{11} &=2 \frac{\partial T}{\partial r} \frac{\partial R}{\partial r} k^{(P)}_{01}+\left(\frac{\partial R}{\partial r}\right)^2 k^{(P)}_{11} \nonumber\\
+k^{(cm)}_{22} &= k^{(P)}_{22}\nonumber\\
+k^{(cm)}_{33} &= k^{(P)}_{33}\nonumber\\
+k^{(cm)}_{12} &= \frac{\partial T}{\partial r} k^{(P)}_{02}+\frac{\partial R}{\partial r} k^{(P)}_{12} \nonumber\\
+k^{(cm)}_{13} &= \frac{\partial T}{\partial r} k^{(P)}_{03}+\frac{\partial R}{\partial r} k^{(P)}_{13} \nonumber\\
+k^{(cm)}_{23} &= k^{(P)}_{23}
+\end{align}
+\subsubsection*{Asymptotics}
+The leading order solution for $K_{\mu\nu}$ for a wave propagating along the $Z$ axis is
+\begin{equation}
+K_{\mu\nu} = \Omega^2(T,R)T\left[ C_{\mu\nu}  \cos(k(R\cos\theta - T)) + D_{\mu\nu} \sin(k(R\cos\theta - T)) \right]
+\end{equation}
+where $k_{\mu} = (-k,0,0,k)$, $Z = R\cos\theta$, $C_{\mu\nu} = B_{\mu\nu}+B^*_{\mu\nu} $, and $D_{\mu\nu} = i(B_{\mu\nu}-B^*_{\mu\nu})$.
+\\ \\
+Up to leading order in $u$, we have:
+\begin{align}
+T\sim u,\qquad R \sim u,\qquad \Omega^2(T,R) \sim d^2
+\end{align}
+\begin{align}
+\frac{\partial T}{\partial t} & \sim \frac{1}{d},\qquad
+\frac{\partial T}{\partial r}  \sim 	\frac{u}{L},\qquad
+\frac{\partial R}{\partial t}  \sim \frac{1}{d},\qquad
+\frac{\partial R}{\partial r}  \sim \frac{u}{L}
+\end{align}
+For the plane wave $\sin(k(Z-T))$, the phase equates to
+\begin{equation}
+Z-T = \left[u+(1+u^2)^{1/2}\right]\left[v\cos\theta - ( 1+v^2)^{1/2}\right]
+\end{equation}
+For $u \to \infty$, the above diverges and has asymptotic expansion
+\begin{equation}
+Z-T \approx 2 u \left( v\cos\theta - (1+v^2)^{1/2}\right) + \frac{1}{2u}\left( v\cos\theta - (1+v^2)^{1/2}\right) + O\left( \frac{1}{u^3}\right)
+\end{equation}
+Hence, in the $(T,Z)$ coordinate system, plane waves remain at least periodic with asymptotic form
+\begin{align}
+\sin(k(Z-T)) &\approx \sin\left[ 2 k u \left( v\cos\theta - (1+v^2)^{1/2}\right)\right]\nonumber\\
+\cos(k(Z-T)) &\approx \cos\left[ 2 k u \left( v\cos\theta - (1+v^2)^{1/2}\right)\right]
+\end{align}
+For the tensor transformation behavior, recalling that each angular index goes as $\sim R$, the leading large $u$ behavior of $B_{\mu\nu}^{(cm)}$ is calculated as:
+\begin{align}
+B^{(cm)}_{00} &\sim \frac{1}{d^2},\qquad 
+B^{(cm)}_{01} \sim \frac{u}{dL},\qquad 
+B^{(cm)}_{02} \sim \frac{u}{d},\qquad 
+B^{(cm)}_{03} \sim \frac{u}{d} ,\qquad 
+B^{(cm)}_{11} \sim \frac{u^2}{L^2} \nonumber\\
+B^{(cm)}_{22} &\sim u^2 ,\qquad 
+B^{(cm)}_{33} \sim u^2 ,\qquad 
+B^{(cm)}_{12} \sim \frac{u^2}{L} ,\qquad 
+B^{(cm)}_{13} \sim \frac{u^2}{L} ,\qquad 
+B^{(cm)}_{23} \sim u^2
+\end{align}
+Finally, we calculate the leading $u= t/d$ behavior for the comoving $K_{\mu\nu}^{(cm)}$, which follows
+\begin{equation}
+K^{(cm)}_{\mu\nu} = \Omega^2(T,R)  B_{\mu\nu}^{(cm)} T \sin(k(Z-T)) \sim d^2 u B_{\mu\nu}^{(cm)}.
+\end{equation}
+\begin{align}
+K^{(cm)}_{00} &\sim u \nonumber\\
+K^{(cm)}_{01} &\sim \frac{d}{L} u^2 \nonumber\\
+K^{(cm)}_{02} &\sim d(u^2) \nonumber\\
+K^{(cm)}_{03} &\sim d(u^2) \nonumber\\
+K^{(cm)}_{11} &\sim \frac{d^2}{L^2}(u^3) \nonumber\\
+K^{(cm)}_{22} &\sim d^2(u^3) \nonumber\\
+K^{(cm)}_{33} &\sim d^2(u^3) \nonumber\\
+K^{(cm)}_{12} &\sim \frac{d^2}{L}(u^3) \nonumber\\
+K^{(cm)}_{13} &\sim \frac{d^2}{L}(u^3) \nonumber\\
+K^{(cm)}_{23} &\sim d^2(u^3)
+\end{align}
+\subsubsection*{Angular Average Over Plane Wave}
+\begin{equation}
+\int \sin(k(r\cos\theta-t))d\Omega = -4\pi \frac{\sin(kt)\sin(kr)}{kr} 
+\end{equation}
+In terms of the respective coordinates, this is
+\begin{equation}
+\braket{\sin(k(Z-T))} = -4\pi \frac{\sin(kT)\sin(kR)}{kR}.
+\end{equation}
+Asymptotically, for large $u$, this behaves as
+\begin{equation}
+\braket{\sin(k(Z-T))} \sim \frac{1}{u} \sin(kT)\sin(kR).
+\end{equation}
+The averaged plane wave angular behavior will thus reduce the large time behavior by an overall $u^{-1}$. As a result, we have the angular averaged asymptotic behavior
+\begin{align}
+K^{(cm)}_{00} &\sim 1 \nonumber\\
+K^{(cm)}_{01} &\sim \frac{d}{L}(u) \nonumber\\
+K^{(cm)}_{02} &\sim d(u) \nonumber\\
+K^{(cm)}_{03} &\sim d(u) \nonumber\\
+K^{(cm)}_{11} &\sim \frac{d^2}{L^2}(u^2) \nonumber\\
+K^{(cm)}_{22} &\sim d^2(u^2) \nonumber\\
+K^{(cm)}_{33} &\sim d^2(u^2) \nonumber\\
+K^{(cm)}_{12} &\sim \frac{d^2}{L}(u^2) \nonumber\\
+K^{(cm)}_{13} &\sim \frac{d^2}{L}(u^2) \nonumber\\
+K^{(cm)}_{23} &\sim d^2(u^2)
+\end{align}
+\newpage
+\section*{Appendix}
+\section*{Early Universe Setup}
+Given the geometry
+\begin{equation}
+ds^2 = (g_{\mu\nu} + K_{\mu\nu})dx^\mu dx^\nu = \Omega^2(\eta_{\mu\nu} + k_{\mu\nu})dx^\mu dx^\nu,
+\end{equation}
+upon imposing the conformal gauge condition $\nabla_\nu K^{\mu\nu} - \frac12 K^{\mu\nu} g^{\alpha\beta}_{(0)}\partial_\nu g_{\alpha\beta}^{(0)}=0$, 
+solutions to the first order source free Bach tensor $\delta W_{\mu\nu} = 0$ are found to obey
+\begin{equation}
+\frac{1}{2}\Omega^{-2}\Box^2 k_{\mu\nu} = 0
+\end{equation}
+After performing residual gauge transformations to eliminate gauge degrees of freedom, the general momentum eigenstate solution to (46) for a given $k$-mode is 
+\begin{equation}
+k_{\mu\nu} = 
+ \begin{pmatrix}0&0&0&0\\0&A_{11}&A_{12}&0\\0&A_{12}&-A_{11}&0\\0&0&0&0\end{pmatrix}e^{ikx} + \begin{pmatrix}
+0&B_{01}&B_{02}&0\\B_{01}&B_{11}&B_{12}&0\\B_{02}&B_{12}&-B_{11}&0\\0&0&0&0  \end{pmatrix}n_\alpha x^\alpha e^{ikx} 
+\end{equation}
+with timelike $n_\alpha = (1,0,0,0)$. The full solution for $K_{\mu\nu}$ is then given as
+\begin{equation}
+K_{\mu\nu} = \Omega^2 k_{\mu\nu}.
+\end{equation}
+The $k<0$ R.W. line element is given in comoving coordinates as
+\begin{equation}
+ds^2 = dt^2 - a(t)^2 \left(  \frac{dr^2}{1+r^2/L^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2 \right)
+\end{equation}
+where $k = -1/L^2$ (with $k<0$). By coordinate transformation, the hyperbolic R.W. background geometry may be expressed in the form of $g_{\mu\nu}^{(0)} = \Omega^2 \eta_{\mu\nu}$, with the general conformal factor $\Omega$ having time and spatial dependence in the Minkowski coordinates. 
+\\ \\
+Within the early universe radiation era,  the perfect fluid energy momentum tensor obeys $\rho = 3p$, $\rho = A/a^4(t)$, $A>0$, with $a(t)$ following the evolution equation
+\begin{align}
+ \dot a^2 - \frac{1}{L^2}&= \alpha a^2 - \frac{2A}{S_0^2a^2}\nonumber\\
+&= -2\frac{a^2}{S_0^2} \left( \lambda_S S_0^4 + \frac{A}{a^4}\right) 
+\end{align}
+With the radiation dominating over the cosmological constant in the early universe (since $a(t)$ is small), i.e.
+\begin{equation}
+\frac{A}{a^4} \gg \lambda_S S_0^4,
+\end{equation}
+the evolution equation can then be brought to the form
+\begin{equation}
+L^2 \dot a^2 = 1- \frac{d^2}{L^2} \left(\frac{1}{a^2}\right),
+\end{equation}
+in which the solution $a(t)$ is
+\begin{equation}
+a^2(t) = \frac{1}{L^2}(d^2+t^2)
+\end{equation}
+where we have defined
+\begin{equation}
+d^2 \equiv \frac{2AL^4}{S_0^2}.
+\end{equation}
+(With $A \sim [L]^{-4}$ and $S_0 \sim [L]^{-1}$ fixed early on, the relevant quantities to compare in the radiation dominated era should be the dimensionless $a(t)$ and $\lambda_S$). 
+\section*{Cartesian to Polar}
+\subsection*{Transformation Matrices}
+\begin{equation}
+\renewcommand*{\arraystretch}{1.5}
+\begin{pmatrix}
+dx\\dy\\dz
+\end{pmatrix}
+=\begin{pmatrix}\frac{\partial x}{\partial r}&\frac{\partial x}{\partial \theta}&\frac{\partial x}{\partial \phi}\\ \frac{\partial y}{\partial r}&\frac{\partial y}{\partial \theta}&\frac{\partial y}{\partial \phi}\\
+\frac{\partial z}{\partial r}&\frac{\partial z}{\partial \theta}&\frac{\partial z}{\partial \phi} \end{pmatrix}
+\begin{pmatrix}dr\\d\theta\\d\phi\end{pmatrix}
+= \begin{pmatrix}
+\sin\theta\cos\phi&  r\cos\theta\cos\phi&-r\sin\theta\sin\phi\\
+\sin\theta\sin\phi &r\cos\theta\sin\phi & r\sin\theta\cos\phi \\
+\cos\theta&-r\sin\theta&0
+\end{pmatrix}
+\begin{pmatrix}dr\\d\theta\\d\phi\end{pmatrix}
+\end{equation}
+\begin{equation}
+\renewcommand*{\arraystretch}{1.5}
+\begin{pmatrix}dr\\d\theta\\d\phi\end{pmatrix}
+=
+\begin{pmatrix}
+\sin\theta\cos\phi&\sin\theta\sin\phi&\cos\theta \\
+\frac{\cos\theta\cos\phi}{r}&\frac{\cos\theta\sin\phi}{r}&-\frac{\sin\theta}{r}\\
+-\frac{\sin\phi}{r\sin\theta}&\frac{\cos\phi}{r\sin\theta}&0
+\end{pmatrix}
+\begin{pmatrix}dx\\dy\\dz\end{pmatrix}
+\end{equation}
+\subsection*{Time-Time}
+\begin{equation}
+K'_{00} = K_{00}
+\end{equation}
+\subsection*{Time-Space}
+\begin{equation}
+K'_{0i} = \frac{\partial x^j}{\partial x'^i}K_{0j}
+\end{equation}
+\begin{equation}
+\renewcommand*{\arraystretch}{1.5}
+\begin{pmatrix}K'_{01}\\ K'_{02}\\K'_{03} \end{pmatrix}
+=
+\begin{pmatrix}\frac{\partial x^1}{\partial x'^1}&\frac{\partial x^2}{\partial x'^1}&\frac{\partial x^3}{\partial x'^1}\\ \frac{\partial x^1}{\partial x'^2}&\frac{\partial x^2}{\partial x'^2}&\frac{\partial x^3}{\partial x'^2}\\
+\frac{\partial x^1}{\partial x'^3}&\frac{\partial x^3}{\partial x'^1}&\frac{\partial x^3}{\partial x'^3} \end{pmatrix}
+\begin{pmatrix}K_{01}\\ K_{02}\\ K_{03} \end{pmatrix}
+\end{equation}
+\begin{equation}
+K'_{01} = K_{01} \sin (\theta ) \cos (\phi )+K_{02} \sin (\theta ) \sin (\phi )+K_{03} \cos (\theta )
+\end{equation}
+\begin{equation}
+K'_{02} = K_{01} r \cos (\theta ) \cos (\phi )+K_{02} r \cos (\theta ) \sin (\phi )-K_{03} r \sin (\theta )
+\end{equation}
+\begin{equation}
+K'_{03} =-K_{01} r \sin (\theta ) \sin (\phi )+K_{02} r \sin (\theta ) \cos (\phi )
+\end{equation}
+\subsection*{Space-Space}
+\begin{equation}
+K'_{ij} = \frac{\partial x^k}{\partial x'^i}K_{kl}\frac{\partial x^l}{\partial x'^j}
+\end{equation}
+\begin{equation}
+\renewcommand*{\arraystretch}{1.5}
+\begin{pmatrix}K'_{11}&K'_{12}&K'_{13}\\K'_{21}&K'_{22}&K'_{23}\\K'_{31}&K'_{32}&K'_{33} \end{pmatrix}=
+\begin{pmatrix}\frac{\partial x^1}{\partial x'^1}&\frac{\partial x^2}{\partial x'^1}&\frac{\partial x^3}{\partial x'^1}\\ \frac{\partial x^1}{\partial x'^2}&\frac{\partial x^2}{\partial x'^2}&\frac{\partial x^3}{\partial x'^2}\\
+\frac{\partial x^1}{\partial x'^3}&\frac{\partial x^3}{\partial x'^1}&\frac{\partial x^3}{\partial x'^3} \end{pmatrix}
+\begin{pmatrix}K_{11}&K_{12}&K_{13}\\K_{21}&K_{22}&K_{23}\\K_{31}&K_{32}&K_{33} \end{pmatrix}
+\begin{pmatrix}\frac{\partial x^1}{\partial x'^1}&\frac{\partial x^2}{\partial x'^1}&\frac{\partial x^3}{\partial x'^1}\\ \frac{\partial x^1}{\partial x'^2}&\frac{\partial x^2}{\partial x'^2}&\frac{\partial x^3}{\partial x'^2}\\
+\frac{\partial x^1}{\partial x'^3}&\frac{\partial x^3}{\partial x'^1}&\frac{\partial x^3}{\partial x'^3} \end{pmatrix}^T
+\end{equation}
+\\
+\begin{align}
+K'_{11} &= K_{11} \sin ^2(\theta ) \cos ^2(\phi )+K_{12} \sin ^2(\theta ) \sin (2 \phi )+K_{13} \sin (2 \theta ) \cos (\phi )+K_{22} \sin ^2(\theta ) \sin ^2(\phi )\nonumber\\
+\quad&+K_{23} \sin (2 \theta ) \sin (\phi )+K_{33} \cos ^2(\theta )
+\end{align}
+\begin{align}
+K'_{22} &= K_{11} r^2 \cos ^2(\theta ) \cos ^2(\phi )+K_{12} r^2 \cos ^2(\theta ) \sin (2 \phi )-K_{13} r^2 \sin (2 \theta ) \cos (\phi )+K_{22} r^2 \cos ^2(\theta ) \sin ^2(\phi )\nonumber\\
+&\quad -K_{23} r^2 \sin (2 \theta ) \sin (\phi )+K_{33} r^2 \sin ^2(\theta )
+\end{align}
+\begin{align}
+K'_{33} &=K_{11} r^2 \sin ^2(\theta ) \sin ^2(\phi )-2 K_{12} r^2 \sin ^2(\theta ) \sin (\phi ) \cos (\phi )+K_{22} r^2 \sin ^2(\theta ) \cos ^2(\phi )
+\end{align}
+\begin{align}
+K'_{12} &=K_{11} r \sin (\theta ) \cos (\theta ) \cos ^2(\phi )+K_{12} r \sin (\theta ) \cos (\theta ) \sin (2 \phi )+K_{13} r \cos (2 \theta ) \cos (\phi )+K_{22} r \sin (\theta ) \cos (\theta ) \sin ^2(\phi )\nonumber\\
+&\quad+K_{23} r \cos (2 \theta ) \sin (\phi )-K_{33} r \sin (\theta ) \cos (\theta )
+\end{align}
+\begin{align}
+K'_{13} &=-K_{11} r \sin ^2(\theta ) \sin (\phi ) \cos (\phi )+K_{12} r \sin ^2(\theta ) \cos (2 \phi )-K_{13} r \sin (\theta ) \cos (\theta ) \sin (\phi )+K_{22} r \sin ^2(\theta ) \sin (\phi ) \cos (\phi )\nonumber\\
+&\quad+K_{23} r \sin (\theta ) \cos (\theta ) \cos (\phi )
+\end{align}
+\begin{align}
+K'_{23} &=-K_{11} r^2 \sin (\theta ) \cos (\theta ) \sin (\phi ) \cos (\phi )+K_{12} r^2 \sin (\theta ) \cos (\theta ) \cos (2 \phi )+K_{13} r^2 \sin ^2(\theta ) \sin (\phi )\nonumber\\
+&\quad+K_{22} r^2 \sin (\theta ) \cos (\theta ) \sin (\phi ) \cos (\phi )-K_{23} r^2 \sin ^2(\theta ) \cos (\phi )
+\end{align} 
+\section*{Polar to Comoving}
+\begin{equation}
+K'_{\mu\nu}(t,r,\theta,\phi) = \frac{\partial x^\alpha}{\partial x'^\mu}\frac{\partial x^\beta}{\partial x'^\nu} k_{\alpha\beta}(T,R,\theta,\phi)
+\end{equation}
+\begin{equation}
+J_{\mu\nu} = \frac{\partial x^\nu}{\partial x'^\mu},\qquad\text{where}\quad x(T,R,\theta,\phi)\quad x'(t,r,\theta,\phi)
+\end{equation}
+\begin{equation}
+\renewcommand*{\arraystretch}{1.5}
+J_{\mu\nu} = 
+\begin{pmatrix}
+\frac{\partial T}{\partial t}&\frac{\partial R}{\partial t}&0&0\\
+\frac{\partial T}{\partial r}&\frac{\partial R}{\partial r}&0&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}
+\end{equation}
+\begin{equation}
+k^{(cm)}_{\mu\nu} = \frac{\partial x_{(P)}^k}{\partial x_{(cm)}^i}k^{(P)}_{kl}\frac{\partial x_{(P)}^l}{\partial x_{(cm)}^j}
+\end{equation}
+\begin{equation}
+\renewcommand*{\arraystretch}{1.5}
+\begin{pmatrix}
+k^{(cm)}_{00}&k^{(cm)}_{01}&k^{(cm)}_{02}&k^{(cm)}_{03}\\
+k^{(cm)}_{10}&k^{(cm)}_{11}&k^{(cm)}_{12}&k^{(cm)}_{13}\\
+k^{(cm)}_{20}&k^{(cm)}_{21}&k^{(cm)}_{22}&k^{(cm)}_{23}\\
+k^{(cm)}_{30}&k^{(cm)}_{31}&k^{(cm)}_{32}&k^{(cm)}_{33} \end{pmatrix}
+=
+\begin{pmatrix}
+\frac{\partial T}{\partial t}&\frac{\partial R}{\partial t}&0&0\\
+\frac{\partial T}{\partial r}&\frac{\partial R}{\partial r}&0&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}
+\begin{pmatrix}
+k^{(P)}_{00}&k^{(P)}_{01}&k^{(P)}_{02}&k^{(P)}_{03}\\
+k^{(P)}_{10}&k^{(P)}_{11}&k^{(P)}_{12}&k^{(P)}_{13}\\
+k^{(P)}_{20}&k^{(P)}_{21}&k^{(P)}_{22}&k^{(P)}_{23}\\
+k^{(P)}_{30}&k^{(P)}_{31}&k^{(P)}_{32}&k^{(P)}_{33} 
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\partial T}{\partial t}&\frac{\partial R}{\partial t}&0&0\\
+\frac{\partial T}{\partial r}&\frac{\partial R}{\partial r}&0&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}^T
+\end{equation}
+\begin{align}
+k^{(cm)}_{00} &= 2 \frac{\partial T}{\partial t} \frac{\partial R}{\partial t} k^{(P)}_{01} + \left(\frac{\partial R}{\partial t}\right)^2 k^{(P)}_{11}\nonumber\\
+k^{(cm)}_{01} &=\frac{\partial T}{\partial t} \frac{\partial R}{\partial r} k^{(P)}_{01}+\frac{\partial R}{\partial t} \frac{\partial T}{\partial r} k^{(P)}_{01}+\frac{\partial R}{\partial t} \frac{\partial R}{\partial r} k^{(P)}_{11} \nonumber\\
+k^{(cm)}_{02} &= \frac{\partial T}{\partial t} k^{(P)}_{02}+\frac{\partial R}{\partial t} k^{(P)}_{12} \nonumber\\
+k^{(cm)}_{03} &= \frac{\partial T}{\partial t} k^{(P)}_{03}+\frac{\partial R}{\partial t} k^{(P)}_{13} \nonumber\\
+k^{(cm)}_{11} &=2 \frac{\partial T}{\partial r} \frac{\partial R}{\partial r} k^{(P)}_{01}+\left(\frac{\partial R}{\partial r}\right)^2 k^{(P)}_{11} \nonumber\\
+k^{(cm)}_{22} &= k^{(P)}_{22}\nonumber\\
+k^{(cm)}_{33} &= k^{(P)}_{33}\nonumber\\
+k^{(cm)}_{12} &= \frac{\partial T}{\partial r} k^{(P)}_{02}+\frac{\partial R}{\partial r} k^{(P)}_{12} \nonumber\\
+k^{(cm)}_{13} &= \frac{\partial T}{\partial r} k^{(P)}_{03}+\frac{\partial R}{\partial r} k^{(P)}_{13} \nonumber\\
+k^{(cm)}_{23} &= k^{(P)}_{23}
+\end{align}
+
+\end{document}

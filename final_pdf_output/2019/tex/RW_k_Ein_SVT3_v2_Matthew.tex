@@ -1,0 +1,204 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{RW SVT3 $\delta G_{\mu\nu}=-\kappa^2_4\delta T_{\mu\nu}$ \quad (v2)}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)\tilde g_{\mu\nu} dx^\mu dx^\nu,\qquad 
+\tilde g_{\mu\nu} = \text{diag}\left(-1,\frac{1}{1-kr^2},r^2,r^2\sin^2\theta\right)
+\label{geom}
+\\ \nonumber\\
+G^{(0)}_{00}&=& -3k - 3 \dot\Omega^2\Omega^{-2}
+\qquad
+G^{(0)}_{0i} =0
+\qquad
+G^{(0)}_{ij} = k\tilde g_{ij} - \dot\Omega^2\Omega^{-2}\tilde g_{ij} + 2\ddot\Omega \Omega^{-1} \tilde g_{ij}
+\\ \nonumber\\
+\kappa^2_4 T_{\mu\nu}^{(0)} &=& (\rho+p)U_\mu U_\nu + p \Omega^2 \tilde g_{\mu\nu},\qquad U_\mu = - \Omega \delta^0_\mu  \qquad\qquad  \text{[Evaluated in \eqref{geom}]}
+\\ \nonumber\\
+\Delta^{(0)}_{\mu\nu} &=& G_{\mu\nu}^{(0)}+\kappa^2_4 T_{\mu\nu}^{(0)} =0
+\\ \nonumber\\
+\Delta^{(0)}_{00} &=& -3k - 3 \dot\Omega^2\Omega^{-2} + \Omega^2 \rho
+\\ \nonumber\\
+&\to&\boxed{\rho = 3k\Omega^{-2}+3\dot\Omega^2 \Omega^{-4}}
+\label{rho}
+\\ \nonumber\\
+\Delta^{(0)}_{ij} &=& k\tilde g_{ij} - \dot\Omega^2\Omega^{-2}\tilde g_{ij} + 2\ddot\Omega \Omega^{-1} \tilde g_{ij} + \Omega^2 p
+\tilde g_{ij}
+\\ \nonumber\\
+&\to& \boxed{p = -k\Omega^{-2} + \dot\Omega^2\Omega^{-4} -2\ddot\Omega \Omega^{-3}}
+\label{p}
+\\ \nonumber\\
+\kappa^2_4\nabla_\mu T^{\mu\nu}_{(0)} &=& 0
+\nonumber\\
+&\to& \boxed{p = -\rho -\frac13 \frac{\Omega}{\dot\Omega}\dot\rho}
+\\ \nonumber\\
+ p+\rho+\tfrac13 \dot\Omega^{-1}\Omega\dot\rho &=&\tfrac13 \Omega^{-2}\tilde g^{ij} \Delta^{(0)}_{ij} + \tfrac13 \Omega^{-2}\Delta^{(0)}_{00} + \tfrac13 \dot\Omega^{-1}\Omega^{-1} \dot \Delta^{(0)}_{00}
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(\tau)[\tilde g_{\mu\nu}+ f_{\mu\nu}] dx^\mu dx^\nu
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}\left(-1,\frac{1}{1-kr^2},r^2,r^2\sin^2\theta\right)
+\\ \nonumber\\
+f_{00} &=& -2\phi,\qquad f_{0i} = \tilde\nabla_i B + B_i,\qquad f_{ij} = -2\psi \tilde g_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + 
+\tilde\nabla_i E_j +\tilde\nabla_j E_i + 2E_{ij}
+\label{svt}
+\\ \nonumber\\
+\delta G_{00}&=& -6 k \phi - 6 k \psi + 6 \dot{\psi} \dot{\Omega} \Omega^{-1} + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\  \nonumber\\ 
+\delta G_{0i}&=& 3 k \tilde{\nabla}_{i}B -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}B + 2 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B - 2 k \tilde{\nabla}_{i}\dot{E} - 2 \tilde{\nabla}_{i}\dot{\psi} - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\phi +2 k B_{i} -  k \dot{E}_{i} \nonumber \\ 
+&& -  B_{i} \dot{\Omega}^2 \Omega^{-2} + 2 B_{i} \overset{..}{\Omega} \Omega^{-1} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i} -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\  \nonumber\\ 
+\delta G_{ij}&=& -2 \overset{..}{\psi} \tilde{g}_{ij} + 2 \dot{\Omega}^2 \tilde{g}_{ij} \phi \Omega^{-2} + 2 \dot{\Omega}^2 \tilde{g}_{ij} \psi \Omega^{-2} - 2 \dot{\phi} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} - 4 \dot{\psi} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} - 4 \overset{..}{\Omega} \tilde{g}_{ij} \phi \Omega^{-1} \nonumber \\ 
+&& - 4 \overset{..}{\Omega} \tilde{g}_{ij} \psi \Omega^{-1} - 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} + \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} + 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} \nonumber \\ 
+&& -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi + \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B} -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{..}{E} - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E} \nonumber \\ 
+&& + 2 k \tilde{\nabla}_{j}\tilde{\nabla}_{i}E - 2 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E + 4 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi +\dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B_{j} + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j} \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{\nabla}_{i}\overset{..}{E}_{j} -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\dot{E}_{j} + k \tilde{\nabla}_{i}E_{j} -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}E_{j} + 2 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{i}E_{j} + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}B_{i} + \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i} \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{\nabla}_{j}\overset{..}{E}_{i} -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\dot{E}_{i} + k \tilde{\nabla}_{j}E_{i} -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}E_{i} + 2 \overset{..}{\Omega} \Omega^{-1} \tilde{\nabla}_{j}E_{i}- \overset{..}{E}_{ij} - 2 \dot{\Omega}^2 E_{ij} \Omega^{-2} \nonumber \\ 
+&& - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1} + 4 \overset{..}{\Omega} E_{ij} \Omega^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\ \nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu} &=& 6 \dot{\Omega}^2 \phi \Omega^{-4} + 6 \dot{\Omega}^2 \psi \Omega^{-4} - 6 \dot{\phi} \dot{\Omega} \Omega^{-3} - 18 \dot{\psi} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \phi \Omega^{-3} - 12 \overset{..}{\Omega} \psi \Omega^{-3} - 6 \overset{..}{\psi} \Omega^{-2} + 6 k \phi \Omega^{-2} \nonumber \\ 
+&& + 6 k \psi \Omega^{-2} - 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} + 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} + 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} \nonumber \\ 
+&& - 2 \dot{\Omega}^2 \Omega^{-4} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E + 4 \overset{..}{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E + 2 k \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi + 4 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\ \nonumber\\ 
+\kappa^2_4\delta T_{\mu\nu} &=& (\delta\rho + \delta p) U_\mu U_\nu + (\rho+p)(\delta U_\mu U_\nu + U_\mu \delta U_\nu) + \Omega^2 \delta p \tilde g_{\mu\nu} + \Omega^2 p f_{\mu\nu}
+\\ \nonumber\\
+\delta U_0 &=& - \Omega \phi,\qquad \delta U_i = \tilde\nabla_i V + V_i
+\label{fourv}
+\\ \nonumber\\
+\kappa^2_4 \delta T_{00}&=& \Omega^2 \delta \rho + 2 \Omega^2 \rho \phi,\qquad\qquad\qquad \text{[Substituting \eqref{fourv}]}
+\\  \nonumber\\ 
+\kappa^2_4 \delta T_{0i}&=& -\Omega(\rho+p)(\tilde\nabla_i V + V_i) + \Omega^2 p (\tilde\nabla_i B + B_i)
+\qquad\qquad \text{[Substituting \eqref{fourv}]}
+\\  \nonumber\\ 
+\kappa^2_4\delta T_{ij}&=& \Omega^2 \delta p \tilde g_{ij} + \Omega^2 p (-2\psi \tilde g_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + 
+\tilde\nabla_i E_j +\tilde\nabla_j E_i + 2E_{ij})
+\\ \nonumber\\
+\kappa^2_4 g^{\mu\nu}\delta T_{\mu\nu} &=&  - \delta \rho + 3\delta p - 2\rho \phi + p(-6\psi + 2\tilde\nabla_a\tilde\nabla^a E)
+\qquad\qquad \text{[Substituting \eqref{fourv}]}
+\end{eqnarray}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We express the background EM quantities $\rho$ and $p$ in terms of $\Omega$ via substitution \eqref{rho} and \eqref{p}.
+\begin{eqnarray}
+\Delta_{\mu\nu} &\equiv& \delta G_{\mu\nu} +\kappa^2_4\delta T_{\mu\nu}\ =0
+\\ \nonumber\\
+\Delta_{00}&=& -6 k \psi + 6 \dot{\Omega}^2 \phi \Omega^{-2} + 6 \dot{\psi} \dot{\Omega} \Omega^{-1} + \delta \rho \Omega^2 + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\\  \nonumber\\ 
+\Delta_{0i}&=& 2 k \tilde{\nabla}_{i}B - 2 k \tilde{\nabla}_{i}\dot{E} - 2 \tilde{\nabla}_{i}\dot{\psi} - 4 \dot{\Omega}^2 \Omega^{-3} \tilde{\nabla}_{i}V + 2 \overset{..}{\Omega} \Omega^{-2} \tilde{\nabla}_{i}V - 2 k \Omega^{-1} \tilde{\nabla}_{i}V - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\phi +k B_{i} \nonumber \\ 
+&& -  k \dot{E}_{i} - 4 \dot{\Omega}^2 V_{i} \Omega^{-3} + 2 \overset{..}{\Omega} V_{i} \Omega^{-2} - 2 k V_{i} \Omega^{-1} + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i} -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+\\  \nonumber\\ 
+\Delta_{ij}&=& -2 \overset{..}{\psi} \tilde{g}_{ij} + 2 k \tilde{g}_{ij} \psi + 2 \dot{\Omega}^2 \tilde{g}_{ij} \phi \Omega^{-2} - 2 \dot{\phi} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} - 4 \dot{\psi} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} - 4 \overset{..}{\Omega} \tilde{g}_{ij} \phi \Omega^{-1} + \delta p \tilde{g}_{ij} \Omega^2 \nonumber \\ 
+&& - 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} + \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} + 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi \nonumber \\ 
+&& + \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B} -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{..}{E} - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E} + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi \nonumber \\ 
+&& -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi +\dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B_{j} + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j} -  \tfrac{1}{2} \tilde{\nabla}_{i}\overset{..}{E}_{j} -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\dot{E}_{j} + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}B_{i} + \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i} -  \tfrac{1}{2} \tilde{\nabla}_{j}\overset{..}{E}_{i} \nonumber \\ 
+&& -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\dot{E}_{i}- \overset{..}{E}_{ij} - 2 k E_{ij} - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p -  \delta \rho - 6 \dot{\phi} \dot{\Omega} \Omega^{-3} - 18 \dot{\psi} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \phi \Omega^{-3} - 6 \overset{..}{\psi} \Omega^{-2} + 12 k \psi \Omega^{-2} - 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B \nonumber \\ 
+&& - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B} + 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{..}{E} + 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E} - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi + 4 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi 
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (G.I. Form)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\alpha  &=& \phi + \psi + \dot B - \ddot E,\qquad \gamma = - \dot\Omega^{-1}\Omega \psi + B - \dot E,
+\qquad B_i - \dot E_i,\qquad E_{ij},\qquad V_i
+\\ \nonumber\\
+V^{GI} &=& V-\Omega^2 \dot \Omega^{-1}\psi
+\\ \nonumber\\
+\delta \rho^{GI}&=&\delta \rho - 12 \dot{\Omega}^2 \psi \Omega^{-4} + 6 \overset{..}{\Omega} \psi \Omega^{-3} - 6 k \psi \Omega^{-2}
+\\ \nonumber\\ 
+\delta p^{GI}&=&\delta p - 4 \dot{\Omega}^2 \psi \Omega^{-4} + 8 \overset{..}{\Omega} \psi \Omega^{-3} + 2 k \psi \Omega^{-2} - 2 \overset{...}{\Omega} \dot{\Omega}^{-1} \psi \Omega^{-2}
+\\ \nonumber\\
+\Delta_{00}&=& 6 \dot{\Omega}^2 \Omega^{-2}(\alpha-\dot\gamma) + \delta \rho^{GI}{} \Omega^2 + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\gamma 
+\\  \nonumber\\ 
+\Delta_{0i}&=& -2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}(\alpha - \dot\gamma) + 2 k \tilde{\nabla}_{i}\gamma 
++(-4 \dot{\Omega}^2 \Omega^{-3}  + 2 \overset{..}{\Omega} \Omega^{-2}  - 2 k \Omega^{-1}) \tilde{\nabla}_{i}V^{GI}
+\nonumber\\
+&& +k(B_i-\dot E_i)+ \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}(B_{i} - \dot{E}_{i})
++ (-4 \dot{\Omega}^2 \Omega^{-3} + 2 \overset{..}{\Omega} \Omega^{-2} - 2 k \Omega^{-1})V_{i} 
+\\  \nonumber\\ 
+\Delta_{ij}&=& \tilde g_{ij}\big[ 2 \dot{\Omega}^2 \Omega^{-2}(\alpha-\dot\gamma)
+-2  \dot{\Omega} \Omega^{-1}(\dot\alpha -\ddot\gamma)-4\ddot\Omega\Omega^{-1}(\alpha-\dot\gamma)+ \Omega^2 \delta p^{GI}-\tilde\nabla_a\tilde\nabla^a( \alpha + 2\dot\Omega \Omega^{-1}\gamma) \big] 
+\nonumber\\
+&&+\tilde\nabla_i\tilde\nabla_j( \alpha + 2\dot\Omega \Omega^{-1}\gamma)
+\nonumber\\
+&& +\dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}(B_{j}-\dot E_j)+\tfrac{1}{2} \tilde{\nabla}_{i}(\dot{B}_{j}-\ddot{E}_j)
++\dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}(B_{i}-\dot E_i)+\tfrac{1}{2} \tilde{\nabla}_{j}(\dot{B}_{i}-\ddot{E}_i)
+\nonumber\\
+&&- \overset{..}{E}_{ij} - 2 k E_{ij} - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 3 \delta p^{GI}{} -  \delta \rho^{GI}
+-12 \overset{..}{\Omega}  \Omega^{-3}(\alpha - \dot\gamma) -6 \dot{\Omega} \Omega^{-3}(\dot{\alpha} -\ddot\gamma)
+-2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}(\alpha +3\dot\Omega\Omega^{-1}\gamma)
+\\ \nonumber\\
+\nonumber\\ 
+\tilde\nabla^i \Delta_{0i} &=& 
+ \tilde\nabla_a\tilde\nabla^a\big[ -2 \dot{\Omega} \Omega^{-1} (\alpha - \dot\gamma) + 2 k \gamma 
++(-4 \dot{\Omega}^2 \Omega^{-3}  + 2 \overset{..}{\Omega} \Omega^{-2}  - 2 k \Omega^{-1}) V^{GI}\big]
+\\ \nonumber\\
+\tilde g^{ij}\Delta_{ij} &=&  6 \dot{\Omega}^2 \Omega^{-2}(\alpha-\dot\gamma)
+-6  \dot{\Omega} \Omega^{-1}(\dot\alpha -\ddot\gamma)-12\ddot\Omega\Omega^{-1}(\alpha-\dot\gamma)+ 3\Omega^2 \delta p^{GI}-2\tilde\nabla_a\tilde\nabla^a( \alpha + 2\dot\Omega \Omega^{-1}\gamma)
+\end{eqnarray}
+%
+%%
+\\ \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conservation Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{eqnarray}
+\rho &=& 3k\Omega^{-2}+3\dot\Omega^2 \Omega^{-4}
+\\ \nonumber\\
+p &=&-k\Omega^{-2} + \dot\Omega^2\Omega^{-4} -2\ddot\Omega \Omega^{-3}
+\\ \nonumber\\
+\delta \rho^{GI}&=&\delta \rho - 12 \dot{\Omega}^2 \psi \Omega^{-4} + 6 \overset{..}{\Omega} \psi \Omega^{-3} - 6 k \psi \Omega^{-2}
+\\ \nonumber\\
+\delta \dot\rho^{GI} &=&
+\delta \dot{\rho} + 48 \dot{\Omega}^3 \psi \Omega^{-5} - 12 \dot{\psi} \dot{\Omega}^2 \Omega^{-4} - 42 \overset{..}{\Omega} \dot{\Omega} \psi \Omega^{-4} + 6 \overset{..}{\Omega} \dot{\psi} \Omega^{-3} 
+\nonumber\\
+&& + 6 \overset{...}{\Omega} \psi \Omega^{-3} + 12 k \dot{\Omega} \psi \Omega^{-3} - 6 k \dot{\psi} \Omega^{-2}
+\\ \nonumber\\ 
+\delta p^{GI}&=&\delta p - 4 \dot{\Omega}^2 \psi \Omega^{-4} + 8 \overset{..}{\Omega} \psi \Omega^{-3} + 2 k \psi \Omega^{-2} - 2 \overset{...}{\Omega} \dot{\Omega}^{-1} \psi \Omega^{-2}
+\\ \nonumber\\ \\ \nonumber\\
+p +\rho + \tfrac{1}{3} \dot \rho \dot{\Omega}^{-1} \Omega &=&0
+\\ \nonumber\\
+\delta p +\delta \rho +  \tfrac{1}{3} \delta \dot{\rho} \dot{\Omega}^{-1} \Omega 
+&=&\delta p^{GI}{} + \delta \rho^{GI}{} + \tfrac{1}{3} \delta \dot{\rho}^{GI}{} \dot{\Omega}^{-1} \Omega + (4  \dot{\Omega} \Omega^{-3} - 2 \overset{..}{\Omega}  \dot{\Omega}^{-1} \Omega^{-2} + 2 k  \dot{\Omega}^{-1} \Omega^{-1} )\dot{\psi}
+\nonumber\\
+&=& \delta p^{GI}{} + \delta \rho^{GI}{} + \tfrac{1}{3} \delta \dot{\rho}^{GI}{} -\tfrac13 \Omega^2 \dot\Omega^{-2} \dot\rho \dot\psi
+\\ \nonumber\\ \\ \nonumber\\
+ p+\rho+\tfrac13 \dot\Omega^{-1}\Omega\dot\rho &=&\tfrac13 \Omega^{-2}\tilde g^{ij} \Delta^{(0)}_{ij} + \tfrac13 \Omega^{-2}\Delta^{(0)}_{00} + \tfrac13 \dot\Omega^{-1}\Omega^{-1} \dot \Delta^{(0)}_{00}
+ \\ \nonumber\\
+\tfrac13 \Omega^{-2}\tilde g^{ij} \Delta_{ij} + \tfrac13 \Omega^{-2}\Delta_{00} + \tfrac13 \dot\Omega^{-1}\Omega^{-1} \dot \Delta_{00} &=& \delta p^{GI} + \delta \rho^{GI} +\tfrac13 \dot\Omega^{-1}\Omega \delta\dot\rho^{GI}
+-\tfrac23 \Omega^{-2}\tilde\nabla_a\tilde\nabla^a \alpha
+\nonumber\\
+&&-\tfrac23(2\Omega^{-3}\dot\Omega 
+- \ddot\Omega \dot\Omega^{-1}\Omega^{-2})\tilde\nabla_a\tilde\nabla^a \gamma + \tfrac23 \Omega^{-2}\tilde\nabla_a\tilde\nabla^a \dot\gamma  
+\end{eqnarray}
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor,graphicx}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+\title{dS SVT4 Conformal Trace}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+In reference to \emph{dS4\_Ein\_SVT4\_Conformal}, computationally I calculated $g^{\mu\nu}\Delta_{\mu\nu}$ not by $-\Delta_{00} +\delta^{ij}\Delta_{ij}$ but rather by
+$g^{\mu\nu}\delta G_{\mu\nu} + g^{\mu\nu}\delta T_{\mu\nu}$. With this in mind, the lack of $\dot F_{00}$ term originates in eq. (1.10). To check if this is in fact the correct trace of $\delta G_{\mu\nu}$, I recalculated it directly and looked at its trace in terms of $h_{\mu\nu}$:
+\begin{eqnarray}
+\delta G_{\mu\nu}={}&\tfrac{1}{2} \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }h_{\mu \nu }
+-  \tfrac{1}{2} \tilde{g}_{\mu \nu } \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }h
+- 2 h_{\mu \nu } \Omega^{-1} \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }\Omega
+-  \tfrac{1}{2} \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\mu }h_{\nu }{}^{\alpha }
+-  \tfrac{1}{2} \tilde{\nabla}_{\alpha }\tilde{\nabla}_{\nu }h_{\mu }{}^{\alpha }\nonumber\\
+& -  \tilde{g}_{\mu \nu } \Omega^{-1} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}^{\alpha }h
++ \Omega^{-1} \tilde{\nabla}_{\alpha }h_{\mu \nu } \tilde{\nabla}^{\alpha }\Omega
++ h_{\mu \nu } \Omega^{-2} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}^{\alpha }\Omega
++ 2 \tilde{g}_{\mu \nu } \Omega^{-1} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}_{\beta }h_{\alpha }{}^{\beta }\nonumber\\
+& + \tfrac{1}{2} \tilde{g}_{\mu \nu } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }h^{\alpha \beta }
++ 2 \tilde{g}_{\mu \nu } h^{\alpha \beta } \Omega^{-1} \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\Omega
+-  \tilde{g}_{\mu \nu } h_{\alpha \beta } \Omega^{-2} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}^{\beta }\Omega
+-  \Omega^{-1} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}_{\mu }h_{\nu \alpha }\nonumber\\
+& -  \Omega^{-1} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}_{\nu }h_{\mu \alpha }
++ \tfrac{1}{2} \tilde{\nabla}_{\nu }\tilde{\nabla}_{\mu }h.
+\end{eqnarray}
+
+\begin{eqnarray}
+\Omega^{-2} g^{\mu\nu}\delta G_{\mu\nu}={}&- \Omega^{-2} \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }h
+- 2 h \Omega^{-3} \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }\Omega
+- 4 \Omega^{-3} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}^{\alpha }h
++ \Omega^{-3} \tilde{\nabla}_{\alpha }h \tilde{\nabla}^{\alpha }\Omega
++ h \Omega^{-4} \tilde{\nabla}_{\alpha }\Omega \tilde{\nabla}^{\alpha }\Omega\nonumber\\
+& + 6 \Omega^{-3} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}_{\beta }h_{\alpha }{}^{\beta }
++ \Omega^{-2} \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }h^{\alpha \beta }
++ 8 h^{\alpha \beta } \Omega^{-3} \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\Omega
+- 4 h_{\alpha \beta } \Omega^{-4} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}^{\beta }\Omega .
+\end{eqnarray}
+
+Since $F_{\mu\nu}$ cannot appear in $h$ nor $\tilde \nabla^\alpha h_{\alpha\beta}$, this leaves only
+\begin{eqnarray}
+8 h^{\alpha \beta } \Omega^{-3} \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }\Omega - 4 h_{\alpha \beta } \Omega^{-4} \tilde{\nabla}^{\alpha }\Omega \tilde{\nabla}^{\beta }\Omega = -8 \dot{\Omega}^2 F_{00}{} \Omega^{-4} + 16 \overset{..}{\Omega} F_{00}{} \Omega^{-3} = 24H^2 F_{00}
+\end{eqnarray}
+This doesn't yet resolve the apparent discrepancy with $-\Delta_{00} + \delta^{ij}\Delta_{ij}$, but it does tell us that if there is an error it would lie within the calculation of $\delta G_{ij}$ and/or $\delta G_{00}$. 
+\end{document}

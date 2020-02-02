@@ -1,0 +1,265 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\usepackage{hyperref}
+\title{$\delta W_{\mu\nu}$ Residual Gauge v3}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\section*{Residual Gauge for Flat Transverse Traceless $\Box^2 K_{\mu\nu}=0$}
+In the transverse gauge $\partial_\nu K^{\mu\nu} = 0$ in the Minkowski background the vacuum equation of motion for the traceless $K_{\mu\nu}$ is
+\begin{equation}
+\delta W_{\mu\nu} = \eta^{\alpha\beta} \eta^{\sigma\rho}\partial_\alpha\partial_\beta\partial_\sigma\partial_\rho K_{\mu\nu} =0.
+\end{equation}
+The momentum eigenstate solutions take the form 
+\begin{equation}
+K_{\mu\nu} = A_{\mu\nu}e^{ikx} + n_\alpha x^\alpha B_{\mu\nu} e^{ikx} +\text{c.c.}\label{202}
+\end{equation}
+where $n_\alpha = (1,0,0,0)$ and $k^\mu k_{\mu} = 0$. Following the transverse condition, the solution must obey
+\begin{equation}
+0=\left(ik^\nu A_{\mu\nu} + n^\nu B_{\mu\nu}\right)e^{ikx}
++ \left( ik^\nu B_{\mu\nu}\right) n_\alpha x^\alpha  e^{ikx}+ \text{c.c.}\label{203}
+\end{equation}
+In addition to the tracelessness condition, to satisfy all $x$ (noting that $e^{ikx}$, $e^{-ikx}$, $te^{ikx}$ and $te^{-ikx}$ are linearly independent), we set in \eqref{203} each coefficient preceding the space-time dependent function to zero, viz.
+\begin{equation}
+A^\mu{}_\mu = 0,\qquad B^\mu{}_\mu=0,\qquad ik^\nu A_{\mu\nu} + n^\nu B_{\mu\nu}= 0,\qquad i k^\nu B_{\mu\nu} = 0.
+\end{equation}
+We have a total of $10$ conditions upon the 20 total components of $A_{\mu\nu}$ and $B_{\mu\nu}$. 
+It is easy to check that these conditions (and also their implied conjugate expressions) satisfy our choice of transverse coordinate system and retain the tracelessness of $K_{\mu\nu}$. 
+Under infinitesimal coordinate transformation $x^\mu \to x^\mu + \epsilon^\mu(x)$, $K_{\mu\nu}$ transforms as
+\begin{equation}
+	K_{\mu\nu}' = K_{\mu\nu} - \partial_\mu \epsilon_\nu - \partial_\nu\epsilon_\mu + \frac12 g_{\mu\nu} \partial_\rho \epsilon^\rho.
+\end{equation}
+We denote the change in $K_{\mu\nu}$ (Lie derivative) as the tensor
+\begin{equation}
+\Delta K_{\mu\nu} = - \partial_\mu \epsilon_\nu - \partial_\nu\epsilon_\mu + \frac12 g_{\mu\nu} \partial_\rho \epsilon^\rho.\label{207}
+\end{equation}
+Noting that $\Delta K_{\mu\nu}$ is manifestly traceless, in order to preserve the tranverse gauge condition $\partial_\mu K^{\mu\nu} = 0$,  $\Delta K^{\mu\nu}$ must obey $\partial_\nu \Delta K^{\mu\nu}=0$, viz.
+\begin{equation}
+	0 =
+	-\partial_\nu \partial^\nu \epsilon^\mu - \frac12 \partial^\mu \partial_\nu \epsilon^\nu .\label{208}
+\end{equation}
+We take the $\epsilon^\mu(x)$ to be of the plane wave form,
+\begin{equation}
+\epsilon^\mu(x) = i A^\mu e^{ikx} + iB^\mu n_\alpha x^\alpha e^{ikx} + \text{c.c.},
+\end{equation}
+which obeys the following relations:
+\begin{equation}
+\partial^\nu \epsilon^\mu = - k^\nu\left(A^\mu e^{ikx} + B^\mu n_\alpha x^\alpha e^{ikx}\right)+ 
+i n^\nu \left(  B^\mu  e^{ikx} \right)+ \text{c.c.}
+\end{equation}
+\begin{equation}
+\partial_\nu \partial^\nu \epsilon^\mu = -2k_\nu n^\nu \left(B^\mu  e^{ikx}\right)+\text{c.c.},
+\end{equation}
+\begin{equation}
+\partial_\mu \partial^\nu \epsilon^\mu = -i k_\mu k^\nu\left(A^\mu e^{ikx} +  B^\mu n_\alpha x^\alpha e^{ikx}\right)
+- (k^\nu n_\mu+k_\mu n^\nu)\left[ B^\mu e^{ikx}\right] + \text{c.c.},
+\end{equation}
+where for reference we also have the relation
+\begin{equation}
+\partial_\beta \partial^\beta (n_\alpha x^\alpha e^{ikx}) = 2i n_\alpha k^\alpha e^{ikx}.
+\end{equation}
+The transverse condition per \eqref{208} then takes the form
+\begin{align}
+0 {}&= 2k_\nu n^\nu \left(B^\mu  e^{ikx}\right)+\frac12 i k_\nu k^\mu\left(A^\nu e^{ikx} +  B^\nu n_\alpha x^\alpha e^{ikx}\right)
++\frac12 (k^\mu n_\nu+k_\nu n^\mu)\left[ B^\nu e^{ikx}\right]+ \text{c.c.}\ .
+\end{align}
+To hold for arbitrary $x$, we have the two separate conditions,
+\begin{equation}
+2k_\nu n^\nu B^\mu +\frac12 ik_\nu k^\mu A^\nu + \frac12 (k^\mu n_\nu+k_\nu n^\mu)B^\nu=0,\qquad \frac12 ik_\nu k^\mu B^\nu=0.\label{2019}
+\end{equation}
+For arbitrary $k^\mu$, the second condition in \ref{2019} implies $k_\nu B^\nu = 0$. As such, the remaining condition is
+\begin{equation}
+2k_\nu n^\nu B^\mu + \frac12 k^\mu n_\nu B^\nu + \frac12 i k_\nu k^\mu A^\nu = 0.
+\end{equation}
+Let us now take a wave propagating in the $z$ direction, with wavevector
+\begin{equation}
+k^\mu = (k,0,0,k),\qquad k_\mu = (-k,0,0,k).
+\end{equation}
+The transverse condition $\partial^\mu \Delta K_{\mu\nu}$ then entails
+\begin{equation}
+B_0 = -B_3,\qquad B_0 = \frac{i}{5}k(A_0+A_3),\qquad B_1 = B_2 = 0.
+\end{equation}
+%We see that the specific form of $\epsilon^\mu(x)$ comprises of four independent components, here chosen as $B_0$, $A_0$, $A_1$, and $A_2$. The dependencies are:
+%\begin{equation}
+%B_{1} = B_{2} = 0,\qquad B_3 = -B_0,\qquad A_3 = -A_0 - \frac{5i}{k} B_0.
+%\end{equation}
+For the tensor polarizations $A_{\mu\nu}$ and $B_{\mu\nu}$ the transverse relations take the form
+\begin{equation}
+B^\mu{}_\mu = A^\mu{}_\mu = 0,\qquad B_{0\mu} = -B_{3\mu},\qquad ik(A_{\mu 0}+ A_{\mu 3}) = B_{0\mu}.
+\end{equation}
+Although this would appear to be 10 total constraints, the condition $B_{00} = -B_{30}$ reduces the equation
+\begin{equation}
+ik(A_{\mu0}+A_{\mu 3}) = B_{0\mu},
+\end{equation}
+from 4 to 3 conditions, namely
+\begin{equation}
+ik(A_{10}+A_{13}) = B_{01},\qquad ik(A_{20}+A_{23}) = B_{02},\qquad A_{00} + 2A_{03} + A_{33} = 0.
+\end{equation}
+% We will take 11 the independent components as 
+%\begin{equation}
+%B_{00}, B_{01},B_{02},B_{11}, B_{12}, A_{00},A_{01},A_{02},A_{11},A_{22},A_{12}.
+%\end{equation}
+%In order to arrive at the following choice of independent components for $B_{\mu\nu}$, we utliize the gauge conditions which lead us to following dependencies:
+%\begin{equation}
+%B_{33} = -B_{03} = B_{00},\qquad B_{23} = -B_{02},\qquad B_{13} = -B_{01},\qquad B_{22} = -B_{11}.
+%\end{equation}
+%As for $A_{\mu\nu}$, the dependencies are:
+%\begin{equation}
+%A_{13} = -\frac{i}{k} B_{01} - A_{01},\quad
+%A_{23} = -\frac{i}{k}B_{02} - A_{02},\quad
+%A_{33} = A_{00} - A_{11} - A_{22},\quad
+%A_{03} = -A_{00} + \frac12 (A_{11}+A_{22}).
+%\end{equation}
+The form for the transformation (Lie derivative) onto $K_{\mu\nu}$ is
+\begin{align}
+\Delta K_{\mu\nu} &= \left[ k_\nu A_\mu + k_\mu A_\nu - i \left( n_\nu B_\mu + n_\mu B_\nu\right) 
+-\frac12 g_{\mu\nu} A^\alpha k_\alpha + \frac{i}{2} g_{\mu\nu}n_\alpha B^\alpha \right]e^{ikx}
+\nonumber\\
+&\qquad + \bigg[ k_\nu B_\mu + k_\mu B_\nu \bigg] n_\alpha x^\alpha e^{ikx}.
+\end{align}
+It will be useful to evaluate this for different components:
+\begin{align}
+\Delta K_{00} &=\left[ -2 kA_0 +\frac12 k(A_0 + A_3) - \frac{3i}{2} B_0\right]e^{ikx} - \bigg[2kB_0\bigg] n_\alpha x^\alpha e^{ikx}
+\nonumber\\
+\Delta K_{01} &=  -k A_1 e^{ikx},\qquad \Delta K_{02} =  -k A_2 e^{ikx}
+\nonumber\\
+\Delta K_{03} &= \left[ -kA_3 +kA_0 -i B_3\right]e^{ikx} - \left[2kB_3\right] n_\alpha x^\alpha e^{ikx}
+\nonumber\\
+\Delta K_{11} &= \Delta K_{22} =  \left[ - \frac12 k(A_0 + A_3) - \frac{i}{2}B_0 \right]  e^{ikx},\qquad \Delta K_{12} = 0
+\nonumber\\
+\Delta K_{13} &= [kA_1]e^{ikx},\qquad \Delta K_{23} = [kA_2]e^{ikx}
+\nonumber\\
+\Delta K_{33} &= \left[ 2kA_3 -\frac12 k(A_0+A_3) - \frac{i}{2}B_0\right]e^{ikx} + \bigg[2kB_3\bigg]n_\alpha x^\alpha e^{ikx}.
+\end{align}
+The total transformation on each polarization tensor, for $A_{\mu\nu} \to A_{\mu\nu}'$ and $B_{\mu\nu} \to B'_{\mu\nu}$, is 
+\begin{align}
+A_{00}' &= A_{00} -2kA_0 - 4i B_0 			& B_{00}'&= B_{00} -2k B_0
+\nonumber\\
+A_{01}' &= A_{01} - kA_1							& B_{01}'&= B_{01} 
+\nonumber\\
+A_{02}' &= A_{02} - kA_2							&B_{02}'&= B_{02}
+\nonumber\\
+A_{03}' &= A_{03} +2kA_0 + 6i B_0			&B_{03}'&= B_{03} + 2kB_0
+\nonumber \\
+A_{11}' &= A_{11} + 2i B_0						&B_{11}'&= B_{11}
+\nonumber\\
+A_{22}' & = A_{22} +2iB_0						&B_{22}'&= B_{22}
+\nonumber\\
+A_{33}' &= A_{33}-2k A_0 - 8i B_0				&B_{33}'&= B_{33} - 2kB_0
+\nonumber\\
+A_{12}' &= A_{12}									&B_{12}'&=B_{12}
+\nonumber\\
+A_{13}' &= A_{13} + kA_1						&B_{13}'&=B_{13}
+\nonumber\\
+A_{23}' &= A_{23} + k A_2						&B_{23}'&=B_{23}.
+\end{align}
+Neither the polarizations nor the gauge terms $A_\mu$ and $B_\mu$ are all independent. Their dependencies are:
+\begin{align}
+-A_{00} + A_{11}+A_{22} + A_{33} = 0&\quad&A_3 = -A_0 - \frac{5i}{k} B_0\nonumber\\
+ik(A_{\mu 0} + A_{\mu 3}) = B_{0\mu} &\quad &B_3 = -B_0 \nonumber\\
+B_{0\mu} = -B_{3\mu}&\quad& B_{1}=B_2 = 0\nonumber\\
+-B_{00} + B_{11}+B_{22} + B_{33} = 0&\quad&
+\end{align}
+Looking more closely at these dependencies amongst $B_{\mu\nu}$, we note:
+\begin{equation}
+B_{33} = -B_{03} = B_{00},\qquad B_{23} = -B_{02},\qquad B_{13} = -B_{01},\qquad B_{22} = -B_{11}.
+\end{equation}
+This leaves $B_{\mu\nu}$ with 5 total independent components, chosen as: $B_{33}$, $B_{12}$, $B_{11}$, $B_{01}$ and $B_{02}$. 
+\\ \\
+As for the $A_{\mu\nu}$, we note:
+\begin{equation}
+A_{13} = -\frac{i}{k} B_{01} - A_{01},\quad
+A_{23} = -\frac{i}{k}B_{02} - A_{02},\quad
+A_{22} = A_{00} - A_{11} - A_{33},\quad
+A_{03} = - \frac12 (A_{00}+A_{33}).
+\end{equation}
+$A_{\mu\nu}$ thus has a total of 6 independent components, here chosen as: $A_{00}$, $A_{01}$, $A_{02}$, $A_{11}$, $A_{33}$, and $A_{12}$. 
+%B_{1} = B_{2} = 0,\qquad B_3 = -B_0,\qquad A_3 = -A_0 - \frac{5i}{k} B_0
+Regarding the gauge invariance, we may choose to set 
+\begin{equation}
+B_0 = \frac{B_{33}}{2k}
+\end{equation}
+which eliminates $B'_{33}$, $B'_{00}$, and $B'_{03}$. This leaves $B_{\mu\nu}$ with four total independent gauge invariant quantities that cannot be eliminated: $B_{12}$, $B_{11}$, $B_{01}$ and $B_{02}$. 
+\\ \\
+As for $A_{\mu\nu}$, we first set 
+\begin{equation}
+A_1 = \frac{A_{01}}{k},\quad A_2 = \frac{A_{02}}{k}.
+\end{equation}
+This eliminates $A'_{01}$ and $A'_{02}$. Through some various manipulation of the dependencies, we also see that if we set
+\begin{equation}
+A_0 = \frac{2A_{00} - A_{33}}{2k},
+\end{equation}
+this will eliminate $A_{00}$ and $A_{33}$. This leaves $A_{\mu\nu}$ with two total independent gauge invariant quantities which cannot be eliminated: $A_{12}$ and $A_{11}$. 
+\\ \\
+In summary we are left with gauge invariant wave solutions of the form
+\begin{equation}
+K_{\mu\nu} = \begin{pmatrix}0&0&0&0\\0&A_{11}&A_{12}&0\\0&A_{12}&-A_{11}&0\\0&0&0&0\end{pmatrix}e^{ikx} + \begin{pmatrix}
+0&B_{01}&B_{02}&0\\B_{01}&B_{11}&B_{12}&0\\B_{02}&B_{12}&-B_{11}&0\\0&0&0&0  \end{pmatrix} n_\alpha x^\alpha e^{ikx}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Gauge Invariant $\delta W_{\mu\nu} = \delta T_{\mu\nu}$}
+Via the 3+1 projection followed by a helicity decomposition, we may express an arbitrary traceless, transverse, symmetric rank 2 tensor as
+\begin{align}
+\delta T_{00}  &= \rho,
+\nonumber\\	
+\delta T_{0i} &= -Q_i  + \tilde\nabla_i  \int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \rho,
+\nonumber\\	
+\delta T_{ij}  &= 
+\frac12 \delta_{ij} \rho - \frac12 \delta_{ij} \int d^3y D^3(\mathbf x-\mathbf y) \partial_t^2 \rho +\frac32 \tilde\nabla_i\tilde\nabla_j \int d^3y D^3(\mathbf x-\mathbf y) \bigg( \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \rho - \frac13\rho\bigg) 
+\nonumber\\
+&\quad -\tilde\nabla_i \int d^3y D^3(\mathbf x - \mathbf y) \partial_0 Q_j - \tilde\nabla_j \int d^3y D^3(\mathbf x - \mathbf y) \partial_0 Q_i + \pi_{ij}^{T\theta}.
+\end{align}
+We may equivalently express $\delta W_{\mu\nu}$ in terms of the analogous barred perturbation quantities ($\bar \rho$, $\bar Q_i$, $\bar E_{ij}$) as
+\begin{align}
+\delta W_{00}  &= \bar\rho,
+\nonumber\\	
+\delta W_{0i} &= -\bar Q_i  + \tilde\nabla_i  \int d^3y D^3(\mathbf x-\mathbf y) \partial_t  \bar\rho,
+\nonumber\\	
+\delta W_{ij}  &= 
+\frac12 \delta_{ij} \bar\rho - \frac12 \delta_{ij} \int d^3y D^3(\mathbf x-\mathbf y) \partial_t^2 \bar\rho +\frac32 \tilde\nabla_i\tilde\nabla_j \int d^3y D^3(\mathbf x-\mathbf y) \bigg( \int d^3z D^3(\mathbf y-\mathbf z) \partial_t^2 \bar\rho - \frac13\bar\rho\bigg) 
+\nonumber\\
+&\quad -\tilde\nabla_i \int d^3y D^3(\mathbf x - \mathbf y) \partial_0  \bar Q_j - \tilde\nabla_j \int d^3y D^3(\mathbf x - \mathbf y) \partial_0 \bar Q_i + \bar \pi_{ij}^{T\theta}.
+\end{align}
+Then, the fluctuation equation $\delta W_{\mu\nu} = \delta T_{\mu\nu}$ then entails
+\begin{align}
+\bar \rho &= \rho
+\nonumber\\
+\bar Q_i &= Q_i
+\nonumber\\
+\bar \pi_{ij}^{T\theta} &= \pi_{ij}^{T\theta}.
+\end{align}
+The $\delta W_{00} = \delta T_{00}$ fixes $\rho$, allowing $\delta W_{0i} = \delta T_{0i}$ to fix $Q_i$, thereby leading to $\bar\pi_{ij}^{T\theta} = \pi_{ij}^{T\theta}$ without having to apply transverse projections or deal with additional homogenous solutions such as $\tilde\nabla_i\tilde\nabla_j \tilde\nabla_a\tilde\nabla^a \chi = 0$. This is also why the fluctuations equations have been expressed in terms of $Q_i$ rather than $\pi_i$, as the equation of $\pi_i$ necessarily leads to 
+\begin{equation}
+\tilde\nabla_a\tilde\nabla^a \bar \pi_i = \tilde\nabla_a \tilde\nabla^a \pi_i,
+\end{equation}
+which only permits equivalence of $\bar\pi_i = \pi_i$ under assumptions upon the boundary conditions of the perturbations (see helicity\_decomposition\_v1.pdf). 
+\\ \\
+Upon carrying through the same analogous helicity decomposition on $K_{\mu\nu}$, we find that the helicity components of $\delta W_{\mu\nu}$ take the form
+\begin{align}
+\bar \rho &= -\frac{2}{3} \tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^b (\phi + \psi +\partial_0{B}-\partial_0^2{E}) 
+\nonumber\\
+\bar Q_i &= -\frac{1}{2} \tilde{\nabla}_a\tilde{\nabla}^a\left(-\partial_0^2+\tilde{\nabla}_b\tilde{\nabla}^b\right)(B_i - \partial_0{E}_i)
+\nonumber \\
+\bar \pi_{ij}^{T\theta} &= \left(-\partial_0^2 + \tilde\nabla_a\tilde\nabla^a\right)^2 E_{ij}.
+\end{align}
+According to these solutions, we see that the gauge invariant quantity $\phi +\psi + \dot B - \ddot E$ represents a static potential, whereas $B_i - \dot E_i$ admit second order wave solutions, and $E_{ij}$ admit fourth order wave solutions. That is, in terms of momentum eigenstate solutions
+\begin{equation}
+	(B_i - \dot E_i) = A_i e^{ikx} + \text{c.c.}
+\end{equation}
+\begin{equation}
+E_{ij} = A_{ij}e^{ikx} + n_\alpha x^\alpha B_{ij} e^{ikx} +\text{c.c.}
+\end{equation}
+Requiring $E_i$ to be transverse entails $A_i$ to be transverse also, leaving only $A_1$ and $A_2$ as independent polarizations. Under spatial rotation, these modes transform as helicity $\pm 1$ components. 
+\\ \\
+Requiring $E_{ij}$ to be transverse and traceless entails
+\begin{equation}
+k^i A_{ij} = 0,\quad k^iB_{ij} = 0,\quad A^i{}_i = 0,\quad B^i{}_i = 0,
+\end{equation}
+leaving only $A_{12}$, $A_{11} = -A_{22}$, $B_{12}$, and $B_{11} = -B_{22}$ as independent polarizations. As expected from $E_{ij}$, these are helicity $\pm 2$ components. 
+
+\end{document}

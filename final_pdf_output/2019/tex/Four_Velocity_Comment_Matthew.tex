@@ -1,0 +1,40 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{SVT4 $\delta U_\mu$ Covariant Comment}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+From (2.5) and (2.6) in RW\_k\_Ein\_SVT4\_v4\_Matthew we have the perturbed EM tensor:
+\begin{eqnarray}
+\delta T_{\mu\nu}&=& \delta p \tilde{g}_{\mu \nu } \Omega^2 + \delta p U_{\mu } U_{\nu } \Omega^2 + \delta \rho U_{\mu } U_{\nu } \Omega^2 - 2 \tilde{g}_{\mu \nu } p \chi \Omega^2 + 2 p \Omega^2 \tilde{\nabla}_{\mu }\tilde{\nabla}_{\nu }F+\delta U_{\nu } p U_{\mu } \Omega^2 + \delta U_{\mu } p U_{\nu } \Omega^2 \nonumber \\ 
+&& + \delta U_{\nu } U_{\mu } \rho \Omega^2 + \delta U_{\mu } U_{\nu } \rho \Omega^2 + p \Omega^2 \tilde{\nabla}_{\mu }F_{\nu } + p \Omega^2 \tilde{\nabla}_{\nu }F_{\mu }+2 F_{\mu \nu } p \Omega^2
+\\  \nonumber\\ 
+g^{\mu\nu}\delta T_{\mu\nu}&=& 3 \delta p -  \delta \rho - 6 p \chi + 2 \rho \chi + 2 p \tilde{\nabla}_{\alpha }\tilde{\nabla}^{\alpha }F + 2 p U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }F + 2 U^{\alpha } U^{\beta } \rho \tilde{\nabla}_{\beta }\tilde{\nabla}_{\alpha }F+2 p U^{\alpha } U^{\beta } \tilde{\nabla}_{\beta }F_{\alpha } \nonumber \\ 
+&& + 2 U^{\alpha } U^{\beta } \rho \tilde{\nabla}_{\beta }F_{\alpha }+2 F_{\alpha \beta } p U^{\alpha } U^{\beta } + 2 F_{\alpha \beta } U^{\alpha } U^{\beta } \rho .
+\end{eqnarray}
+The perturbed four-velocity obeys the kinematic relation,
+\begin{eqnarray}
+U^\mu \delta U_\mu &=& \tfrac12 U^\mu U^\nu f_{\mu\nu}
+\label{kinematic}
+\end{eqnarray}
+resulting from $\delta (\tilde g^{\mu\nu} U_\mu U_\nu)=0$.
+\\ \\
+When forming the trace $g^{\mu\nu}\delta T_{\mu\nu}$ we get terms that go as $\delta U_\alpha U^\alpha$ - a form that is readily available to implement\eqref{kinematic}. As a result, we were able to bring $g^{\mu\nu}\Delta_{\mu\nu}$ into an entirely covariant gauge invariant form.
+\\ \\
+However, within $\delta T_{\mu\nu}$ itself, we have terms of the form
+\begin{eqnarray}
+\Omega^2 (\rho+p)(\delta U_\mu U_\nu + U_\mu \delta U_\nu).
+\end{eqnarray}
+For $\mu\nu=(0,0)$ this becomes $-2\Omega^2 (\rho+p)\delta U_0$, for $\mu\nu=(0,i)$ this becomes $-\Omega^2 (\rho+p)\delta U_i$, while for $\mu\nu=(i,j)$ it vanishes. Hence, for an explicit choice of components, we need to substitute a kinematic relation for $\delta U_0$, while for others we seek to express $\delta U_i$ as $V_i + \tilde\nabla_i V$. 
+\\ \\
+Is it possible to incorporate the kinematic identity while retaining full covariance? 
+\end{document}

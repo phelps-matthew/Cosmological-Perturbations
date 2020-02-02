@@ -1,0 +1,272 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{SVT4 dS${}_4$ Conformal Einstein}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+G^{(0)}_{\mu\nu} &=& 3H^{2} g_{\mu\nu}
+\\
+R^{(0)}_{\lambda\mu\nu\kappa} &=& H^{2} (g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa}),
+\qquad
+R^{(0)}_{\mu\kappa} = -3 H^{2} g_{\mu\kappa},
+\qquad
+R^{(0)}= -12 H^{2},
+\\ \nonumber\\
+ds^2 &=& \Omega^2(\tau)[\tilde g_{\mu\nu}+ f_{\mu\nu}] dx^\mu dx^\nu,\qquad
+\Omega(\tau) = \frac{1}{H\tau} = e^{Ht}
+\label{geom}
+\\ \nonumber\\
+\tilde g_{\mu\nu} &=& \text{diag}(-1,1,1,1)\quad\text{or}\quad \text{diag}(-1,1,r^2,r^2\sin^2\theta)
+\\ \nonumber\\
+f_{\mu\nu} &=& -2\tilde g_{\mu\nu} \chi + 2\tilde\nabla_\mu\tilde\nabla_\nu F + \tilde\nabla_\mu E_\nu + \tilde\nabla_\nu E_\mu + 2E_{\mu\nu}
+\label{svt}
+\\ \nonumber\\
+\tilde\nabla_\mu \Omega &=&  \dot\Omega \delta^0_\mu ,\qquad \Omega = \frac{1}{H\tau},
+\qquad \dot \Omega = -\frac{1}{H\tau^2},\qquad \ddot\Omega = \frac{2}{H\tau^3}
+\\ \nonumber\\
+\delta G_{00}&=& -6 \dot{\chi} \tau^{-1} - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi -2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}- \overset{..}{E}_{00}{} - 2 \dot{E}_{00}{} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{00}{}
+\\  \nonumber\\ 
+\delta G_{0i}&=& -2 \tau^{-1} \tilde{\nabla}_{i}\overset{..}{F} + 6 \tau^{-2} \tilde{\nabla}_{i}\dot{F} - 2 \tilde{\nabla}_{i}\dot{\chi} - 2 \tau^{-1} \tilde{\nabla}_{i}\chi +3 \dot{E}_{i} \tau^{-2} - 2 \tau^{-1} \tilde{\nabla}_{i}\dot{E}_{0}{} + 3 \tau^{-2} \tilde{\nabla}_{i}E_{0}{}- \overset{..}{E}_{0i}{} \nonumber \\ 
+&& + 6 E_{0i}{} \tau^{-2} + 4 \dot{E}_{0i}{} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0i}{} - 2 \tau^{-1} \tilde{\nabla}_{i}E_{00}{}
+\\  \nonumber\\ 
+\delta G_{ij}&=& -2 \overset{..}{\chi} \tilde{g}_{ij} + 6 \overset{..}{F} \tilde{g}_{ij} \tau^{-2} - 2 \overset{...}{F} \tilde{g}_{ij} \tau^{-1} + 2 \dot{\chi} \tilde{g}_{ij} \tau^{-1} + 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 2 \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi - 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{F} \nonumber \\ 
+&& + 6 \tau^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}F - 2 \tilde{\nabla}_{j}\tilde{\nabla}_{i}\chi +6 \dot{E}_{0}{} \tilde{g}_{ij} \tau^{-2} - 2 \overset{..}{E}_{0}{} \tilde{g}_{ij} \tau^{-1} + 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{} + 3 \tau^{-2} \tilde{\nabla}_{i}E_{j} \nonumber \\ 
+&& + 3 \tau^{-2} \tilde{\nabla}_{j}E_{i} - 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E_{0}{}- \overset{..}{E}_{ij} + 6 E_{ij} \tau^{-2} + 6 E_{00}{} \tilde{g}_{ij} \tau^{-2} + 2 \dot{E}_{ij} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} \nonumber \\ 
+&& + 2 \tau^{-1} \tilde{\nabla}_{i}E_{0}{}_{j} + 2 \tau^{-1} \tilde{\nabla}_{j}E_{0i}{}
+\\ \nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu} &=& 18 H^2 \overset{..}{F} - 6 H^2 \overset{...}{F} \tau + 12 H^2 \dot{\chi} \tau - 6 H^2 \overset{..}{\chi} \tau^2 + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 6 H^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}F \nonumber \\ 
+&& + 6 H^2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi +24 H^2 \dot{E}_{0}{} - 6 H^2 \overset{..}{E}_{0}{} \tau + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}+24 H^2 E_{00}{}
+\\ \nonumber\\
+-\kappa^2_4 \delta T_{00}&=& 6 \overset{..}{F} \tau^{-2} + 6 \tau^{-2} \chi +6 \dot{E}_{0}{} \tau^{-2}+6 E_{00}{} \tau^{-2}
+\\  \nonumber\\ 
+-\kappa^2_4\delta T_{0i}&=& 6 \tau^{-2} \tilde{\nabla}_{i}\dot{F}+3 \dot{E}_{i} \tau^{-2} + 3 \tau^{-2} \tilde{\nabla}_{i}E_{0}{}+6 E_{0i}{} \tau^{-2}
+\\  \nonumber\\ 
+-\kappa^2_4\delta T_{ij}&=& -6 \tilde{g}_{ij} \tau^{-2} \chi + 6 \tau^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}F+3 \tau^{-2} \tilde{\nabla}_{i}E_{j} + 3 \tau^{-2} \tilde{\nabla}_{j}E_{i}+6 E_{ij} \tau^{-2}
+\\ \nonumber\\
+-\kappa^2_4 g^{\mu\nu}\delta T_{\mu\nu} &=& -6 H^2 \overset{..}{F} - 24 H^2 \chi + 6 H^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}F
+\end{eqnarray}
+%
+%
+%
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\Delta_{\mu\nu} &\equiv& \delta G_{\mu\nu} +\kappa^2_4\delta T_{\mu\nu}\ =0
+\\ \nonumber\\
+\Delta_{00}&=& -6 \overset{..}{F} \tau^{-2} - 6 \dot{\chi} \tau^{-1} - 6 \tau^{-2} \chi - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi -6 \dot{E}_{0}{} \tau^{-2} - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}- \overset{..}{E}_{00}{} \nonumber \\ 
+&& - 6 E_{00}{} \tau^{-2} - 2 \dot{E}_{00}{} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{0i}&=& -2 \tau^{-1} \tilde{\nabla}_{i}\overset{..}{F} - 2 \tilde{\nabla}_{i}\dot{\chi} - 2 \tau^{-1} \tilde{\nabla}_{i}\chi -2 \tau^{-1} \tilde{\nabla}_{i}\dot{E}_{0}{}- \overset{..}{E}_{0i}{} + 4 \dot{E}_{0i}{} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0i}{} - 2 \tau^{-1} \tilde{\nabla}_{i}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{ij}&=& -2 \overset{..}{\chi} \tilde{g}_{ij} + 6 \overset{..}{F} \tilde{g}_{ij} \tau^{-2} - 2 \overset{...}{F} \tilde{g}_{ij} \tau^{-1} + 2 \dot{\chi} \tilde{g}_{ij} \tau^{-1} + 6 \tilde{g}_{ij} \tau^{-2} \chi + 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} + 2 \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi \nonumber \\ 
+&& - 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{F} - 2 \tilde{\nabla}_{j}\tilde{\nabla}_{i}\chi +6 \dot{E}_{0}{} \tilde{g}_{ij} \tau^{-2} - 2 \overset{..}{E}_{0}{} \tilde{g}_{ij} \tau^{-1} + 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{} \nonumber \\ 
+&& - 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E_{0}{}- \overset{..}{E}_{ij} + 6 E_{00}{} \tilde{g}_{ij} \tau^{-2} + 2 \dot{E}_{ij} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} + 2 \tau^{-1} \tilde{\nabla}_{i}E_{0}{}_{j} + 2 \tau^{-1} \tilde{\nabla}_{j}E_{0i}{}
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu} &=& 24 H^2 \overset{..}{F} - 6 H^2 \overset{...}{F} \tau + 12 H^2 \dot{\chi} \tau - 6 H^2 \overset{..}{\chi} \tau^2 + 24 H^2 \chi + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{F} \nonumber \\ 
+&& + 6 H^2 \tau^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\chi +24 H^2 \dot{E}_{0}{} - 6 H^2 \overset{..}{E}_{0}{} \tau + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0}{}+24 H^2 E_{00}{}
+\end{eqnarray}
+%
+%
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (G.I. Form)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\alpha &=&\dot{F} + E_{0}{} -  \dot{\Omega}^{-1} \chi \Omega  = \dot{F} + E_{0}{} + \tau \chi  
+\\ \nonumber\\
+\Delta_{00}&=& -6 \dot{\alpha} \tau^{-2} - 2 \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - \overset{..}{E}_{00}{} - 6 E_{00}{} \tau^{-2} - 2 \dot{E}_{00}{} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{0i}&=& -2 \tau^{-1} \tilde{\nabla}_{i}\dot{\alpha}- \overset{..}{E}_{0i}{} + 4 \dot{E}_{0i}{} \tau^{-1} + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{0i}{} - 2 \tau^{-1} \tilde{\nabla}_{i}E_{00}{}
+\\  \nonumber\\ 
+\Delta_{ij}&=& 6 \dot{\alpha} \tilde{g}_{ij} \tau^{-2} - 2 \overset{..}{\alpha} \tilde{g}_{ij} \tau^{-1} + 2 \tilde{g}_{ij} \tau^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha - 2 \tau^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\alpha - \overset{..}{E}_{ij} + 6 E_{00}{} \tilde{g}_{ij} \tau^{-2} + 2 \dot{E}_{ij} \tau^{-1} \nonumber \\ 
+&& + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij} + 2 \tau^{-1} \tilde{\nabla}_{i}E_{0}{}_{j} + 2 \tau^{-1} \tilde{\nabla}_{j}E_{0i}{}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& 24 H^2 \dot{\alpha} - 6 H^2 \overset{..}{\alpha} \tau + 6 H^2 \tau \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha +24 H^2 E_{00}{}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Covariant Conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\\ \nonumber\\
+\nabla_\mu \Delta^{\mu\nu} &=& \tilde{g}^{\alpha \gamma } \tilde{g}^{\nu \beta } \Omega^{-4} \tilde{\nabla}_{\alpha }\Delta_{\beta \gamma } + 2 \tilde{g}^{\alpha \gamma } \tilde{g}^{\nu \beta } \Delta_{\alpha \beta} \Omega^{-5} \tilde{\nabla}_{\gamma }\Omega -   \tilde{g}^{\nu \gamma }\tilde{g}^{\alpha \beta } \Delta_{\alpha\beta } \Omega^{-5} \tilde{\nabla}_{\gamma }\Omega 
+\nonumber\\
+&=& \Omega^{-4}(\tilde g^{\nu\beta}\tilde\nabla^\alpha \Delta_{\alpha\beta} - 2\Omega^{-1}\dot\Omega \tilde g^{\nu\beta} \Delta_{0\beta}
+-\Omega^{-1}\dot\Omega \tilde g^{\nu 0}\tilde g^{\alpha\beta}\Delta_{\alpha\beta})
+\\ \nonumber\\
+\dot E_{00} &=& \tilde\nabla^a E_{0a},\qquad \dot E_{0i} = \tilde\nabla^j E_{ij}
+\\ \nonumber\\
+\nu &=& 0
+\\ \nonumber\\
+\implies 0&\overset{!}{=}&-\tilde\nabla^\alpha \Delta_{\alpha 0} + 2\Omega^{-1}\dot\Omega \Delta_{00}
++\Omega\dot\Omega \tilde g^{\alpha\beta}\Delta_{\alpha\beta}
+\nonumber\\
+&=& \dot \Delta_{00} - \tilde\nabla^i \Delta_{0i} - \frac{2}{\tau}\Delta_{00}-\frac{1}{H^2\tau^3} g^{\alpha\beta}\Delta_{\alpha\beta}
+\nonumber\\
+&=& 0
+\\ \nonumber\\
+\nu &=& i
+\\ \nonumber\\
+\implies 0&\overset{!}{=}&-\dot\Delta_{0i}+\tilde\nabla^j \Delta_{ij} -2\Omega^{-1}\dot\Omega \Delta_{0i}
+\nonumber\\
+&=& -\dot\Delta_{0i}+\tilde\nabla^j \Delta_{ij} +\frac{2}{\tau} \Delta_{0i}
+\nonumber\\
+&=& 0
+\end{eqnarray}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{dS$_{4}$}
+%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+x'^\mu &=& x^\mu - \epsilon^\mu(x)
+\\ \nonumber\\
+h'_{\mu\nu} &=&  h_{\mu\nu} + \nabla_\mu\epsilon_\nu + \nabla_\nu \epsilon_\mu 
+\\ \nonumber\\
+\delta R'_{\mu\nu} &=& \delta R_{\mu\nu} + R^{(0)}_{\lambda\nu} \nabla_\mu \epsilon^\lambda + R^{(0)}_{\lambda\mu} \nabla_\nu \epsilon^\lambda + \nabla_\lambda R^{(0)}_{\mu\nu} \epsilon^\lambda
+\nonumber\\
+&=& \delta R_{\mu\nu} -3H^2 ( \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu )
+\\ \nonumber\\
+\delta R'_{\mu\nu} + 3H^2 h'_{\mu\nu} &=& \delta R_{\mu\nu} + 3H^2 h_{\mu\nu}
+\label{gi1}
+\\ \nonumber\\
+g^{\mu\nu} \delta R'_{\mu\nu} + 3H^2 h' &=& g^{\mu\nu} \delta R_{\mu\nu} + 3H^2 h
+\label{gi2}
+\end{eqnarray}
+Evaluating \eqref{gi1} and \eqref{gi2} in terms of $f_{\mu\nu}$, 
+\begin{eqnarray}
+(\delta R_{\mu\nu} + 3H^2 h_{\mu\nu}) &=&
+-6 H^2 \overset{..}{F} g_{\mu \nu } (1 -  H \tau)^{-2}
++ 4 H \dot{\chi} g_{\mu \nu } (1 -  H \tau)^{-1}
+- 6 H^2 g_{\mu \nu } (1 -  H \tau)^{-2} \chi\nonumber\\
+&& + H g_{\mu \nu } (1 -  H \tau)^{-1} \nabla_{\alpha }\nabla^{\alpha }\dot{F}
+-  g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi
+- 2 H (1 -  H \tau)^{-1} U_{\nu } \nabla_{\mu }\chi\nonumber\\
+&& - 2 H (1 -  H \tau)^{-1} U_{\mu } \nabla_{\nu }\chi
++ 2 H (1 -  H \tau)^{-1} \nabla_{\nu }\nabla_{\mu }\dot{F}
+- 2 \nabla_{\nu }\nabla_{\mu }\chi
+\nonumber\\
+&&
+-6 H^2 \dot{E}^{\alpha } g_{\mu \nu } (1 -  H \tau)^{-2} U_{\alpha }
++ H g_{\mu \nu } (1 -  H \tau)^{-1} U^{\alpha } \nabla_{\beta }\nabla^{\beta }E_{\alpha }\nonumber\\
+&& + 2 H (1 -  H \tau)^{-1} U^{\alpha } \nabla_{\nu }\nabla_{\mu }E_{\alpha }
+-2 H \dot{E}_{\mu \nu } (1 -  H \tau)^{-1}
+- 6 H^2 E_{\alpha \beta } g_{\mu \nu } (1 -  H \tau)^{-2} U^{\alpha } U^{\beta }
+\nonumber\\
+&& + \nabla_{\alpha }\nabla^{\alpha }E_{\mu \nu }+ 2 H (1 -  H \tau)^{-1} U^{\alpha } \nabla_{\mu }E_{\nu \alpha }
++ 2 H (1 -  H \tau)^{-1} U^{\alpha } \nabla_{\nu }E_{\mu \alpha }
+\\ \nonumber\\
+( g^{\mu\nu} \delta R_{\mu\nu} + 3H^2 h) &=& -\Delta
+\nonumber\\
+&=&-24 H^2 \overset{..}{F}
++ 12 H \dot{\chi}
+- 12 H^2 \dot{\chi} \tau
+- 24 H^2 (1 -  H \tau)^{-2} \chi
++ 48 H^3 \tau (1 -  H \tau)^{-2} \chi\nonumber\\
+&& - 24 H^4 \tau^2 (1 -  H \tau)^{-2} \chi
++ 6 H \nabla_{\alpha }\nabla^{\alpha }\dot{F}
+- 6 H^2 \tau \nabla_{\alpha }\nabla^{\alpha }\dot{F}
+- 6 H^2 \nabla_{\alpha }\nabla^{\alpha }F\nonumber\\
+&& + 6 H^2 (1 -  H \tau)^{-2} \nabla_{\alpha }\nabla^{\alpha }F
+- 12 H^3 \tau (1 -  H \tau)^{-2} \nabla_{\alpha }\nabla^{\alpha }F
++ 6 H^4 \tau^2 (1 -  H \tau)^{-2} \nabla_{\alpha }\nabla^{\alpha }F\nonumber\\
+&& - 6 \nabla_{\alpha }\nabla^{\alpha }\chi
++ 12 H \tau \nabla_{\alpha }\nabla^{\alpha }\chi
+- 6 H^2 \tau^2 \nabla_{\alpha }\nabla^{\alpha }\chi 
+-24 H^2 \dot{E}^{\alpha } U_{\alpha }
+\nonumber\\ 
+&&+ 6 H U^{\alpha } \nabla_{\beta }\nabla^{\beta }E_{\alpha }
+- 6 H^2 \tau U^{\alpha } \nabla_{\beta }\nabla^{\beta }E_{\alpha }
+-24 H^2 E_{\alpha \beta } U^{\alpha } U^{\beta }
+\end{eqnarray}
+Here $ ( g^{\mu\nu} \delta R_{\mu\nu} + 3H^2 h)$ is the fundamental scalar gauge invariant, which includes vector and tensor contributions. Unlike the flat space case shown below, we cannot reduce $\Delta$ into combinations of the pure scalars $F$ and $\chi$ that are separate from $E_\alpha$ and $E_{\mu\nu}$. 
+%
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{$R^{(0)}_{\mu\nu}=0$ (Flat)}
+%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+x'^\mu &=& x^\mu - \epsilon^\mu(x)
+\\ \nonumber\\
+h'_{\mu\nu} &=&  h_{\mu\nu} + \nabla_\mu\epsilon_\nu + \nabla_\nu \epsilon_\mu 
+\\ \nonumber\\
+\delta R'_{\mu\nu} &=& \delta R_{\mu\nu},\qquad 
+g^{\mu\nu}\delta R'_{\mu\nu} = g^{\mu\nu} \delta R_{\mu\nu}
+\\ \nonumber\\
+\delta R_{\mu\nu} &=& \nabla_{\alpha }\nabla^{\alpha }E_{\mu \nu } -  g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi - 2 \nabla_{\nu }\nabla_{\mu }\chi 
+\\ \nonumber\\
+g^{\mu\nu}\delta R_{\mu\nu} &=& -6\nabla_\alpha \nabla^\alpha \chi
+\\ \nonumber\\
+\delta G_{\mu\nu} &=& \delta R_{\mu\nu} -\frac12 g_{\mu\nu}(g^{\alpha\beta} \delta R_{\alpha\beta})
+\nonumber\\
+&=& \nabla_{\alpha }\nabla^{\alpha }E_{\mu \nu } + 2 g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }\chi - 2 \nabla_{\nu }\nabla_{\mu }\chi
+\end{eqnarray}
+For a $\chi$ that vanishes asymptotically, we can define a gauge invariant $\chi$ as
+\begin{eqnarray}
+\chi &=& -6\int D g^{\mu\nu}\delta R_{\mu\nu}.
+\end{eqnarray}
+Since $\delta G$ is gauge invariant, all SVT scalars arising within $\delta G$ can be entirely expressed in terms of derivatives onto a single $\chi$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT Gauge Transformations (Incomplete)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+x'^\mu &=& x^\mu - \epsilon^\mu(x),\qquad \epsilon_\mu = \Omega^2\ell_\mu,\qquad \ell_\mu = L_\mu + \tilde\nabla_\mu L
+\\ \nonumber
+\nabla_\mu \epsilon_\nu &=& \Omega^2 \tilde\nabla_\mu \ell_\nu - \frac12 \left(
+\ell_\mu \tilde\nabla_\nu - \ell_\nu \tilde\nabla_\mu - \tilde g_{\mu\nu} \ell^\rho \tilde\nabla_\rho\right)\Omega^2
+\\ \nonumber\\
+f'_{\mu\nu} &=& f_{\mu\nu} + \tilde\nabla_\mu \ell_\nu +\tilde\nabla_\nu \ell_\mu + 2\Omega^{-1} \tilde g_{\mu\nu} \ell^\rho \tilde\nabla_\rho \Omega
+\nonumber\\
+&=& f_{\mu\nu} + \tilde\nabla_\mu \ell_\nu +\tilde\nabla_\nu \ell_\mu + 2\tau^{-1} \tilde g_{\mu\nu}U^\rho \ell_\rho
+\\ \nonumber\\
+\chi &=& \frac{1}{6} \left( \tilde\nabla^\sigma W_\sigma - f\right)
+\\ \nonumber\\
+F &=& \frac{1}{6} \int D(4\tilde\nabla^\sigma W_\sigma -f)
+\\ \nonumber\\
+E_\mu &=& W_\mu -\tilde\nabla_\mu \int D \tilde\nabla^\sigma W_\sigma
+\\ \nonumber\\
+2E_{\mu\nu} &=& h_{\mu\nu} - \tilde\nabla_\mu W_\nu -\tilde\nabla_\nu W_\mu + \frac23 \tilde\nabla_\mu\tilde\nabla_\nu \int D \tilde\nabla^\sigma W_\sigma
++\frac{g_{\mu\nu}}{3} (\tilde\nabla^\sigma W_\sigma -h) + \frac{\tilde\nabla_\mu\tilde\nabla_\nu}{3}\int D f 
+\\ \nonumber\\ 
+\tilde\nabla^\mu f'_{\mu\nu} &=& \tilde\nabla^\mu f_{\mu\nu} + \tilde\nabla_\alpha\tilde\nabla^\alpha L_\nu + 2\tilde\nabla_\alpha\tilde\nabla^\alpha \tilde\nabla_\nu L +
+2  \tau^{-2}  U_{\nu}U^{\alpha}L_\alpha + 2 \tau^{-1} U^{\alpha}\nabla_{\nu}L_{\alpha}
+\nonumber\\
+&&+  2  \tau^{-2}  U_{\nu}\dot L + 2 \tau^{-1}\nabla_{\nu}\dot L
+\\ \nonumber\\
+W'_\nu &=& W_\nu +L_\nu + 2\tilde\nabla_\nu L + \int D(x-x') (2  \tau^{-2}  U_{\nu}U^{\alpha}L_\alpha + 2 \tau^{-1} U^{\alpha}\nabla_{\nu}L_{\alpha}+ 2  \tau^{-2}  U_{\nu}\dot L + 2 \tau^{-1}\nabla_{\nu}\dot L)
+\end{eqnarray}
+\end{appendices}
+\end{document}

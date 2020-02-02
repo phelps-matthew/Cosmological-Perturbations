@@ -1,0 +1,70 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{SVT Decomposition of $\delta W_{\mu\nu}$}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+Under conformal transformation $g_{\mu\nu} \to \bar{g}_{\mu\nu} = \Omega^2 g_{\mu\nu}$, $W_{\mu\nu}$ transforms as
+\[
+	\bar W_{\mu\nu}(\bar g_{\mu\nu}) =  \Omega^{-2}W_{\mu\nu}(g_{\mu\nu}).
+\]
+Perturbing the metric, 
+\[
+	\bar g_{\mu\nu} = \bar g^{(0)}_{\mu\nu} + \bar h_{\mu\nu} = \Omega^2 g^{(0)}_{\mu\nu} + \Omega^2 h_{\mu\nu}
+\]
+it follows that to first order
+\be
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(h_{\mu\nu}).
+\ee
+Under an infinitesimal oordinate transformation $x^\mu \to x'^\mu = x^\mu + \ep^\mu(x)$, the perturbed tensor $\delta W_{\mu\nu}$ transforms as
+\[
+	\delta W_{\mu\nu}(h_{\mu\nu}) \to \delta W'_{\mu\nu}(h'_{\mu\nu}) = \delta W_{\mu\nu}(h_{\mu\nu}) - \delta W_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu})
+\]
+At the same time, we also consider the transformation of the entire $W_{\mu\nu}$ under the infinitesimal coordinate transformation
+\be
+	W_{\mu\nu} \to W_{\mu\nu}' = W_{\mu\nu} + \mathcal{L}_e( W_{\mu\nu})
+\ee
+where the Lie derivative $\mathcal L_e$ for the rank 2 tensor is
+\[
+	 \mathcal{L}_e( W_{\mu\nu}) = W^{\lambda}{}_\mu \ep_{\lambda;\nu} + W^{\lambda}{}_\nu \ep_{\lambda;\mu} + W_{\mu\nu;\lambda}\ep^\lambda.
+\]
+Defining $\delta W_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu}) \equiv \delta W_{\mu\nu}(\ep)$, if we expand eq (2) to first order, we conclude that
+\[
+	 \delta W_{\mu\nu}(\ep) =  W^{\lambda}{}_\mu \ep_{\lambda;\nu} + W^{\lambda}_\nu \ep_{\lambda;\mu} + W_{\mu\nu;\lambda}\ep^\lambda.
+\]
+Hence, in any background that is conformal to flat, the Lie derivative vanishes and thus $\delta W_{\mu\nu}$ must be gauge invariant. As such, it must always be possible to express $\delta W_{\mu\nu}$ in terms of 5 gauge invariant quantities (10 symmetric components - 4 coordinate transformation - 1 traceless condition = 5). This is shown below. Alternatively, we may also fix the gauge, as we have done to make $\delta W_{\mu\nu}$ diagonal in its indicies. 
+\\ \\
+Now decomposing $h_{\mu\nu}$ according to 
+\[
+	ds^2 = \Omega^2\clr{ -(1+2\phi)d\tau^2 + (\pd_i B-B_i)dx^id\tau + [(1-2\psi)\delta_{ij}+2\pd_i\pd_j E + \pd_i E_j+\pd_j E_i + 2E_{ij}]dx^i dx^j}
+\]
+(same as Ellis when tensor mode $E_{ij}$ is doubled), we have in flat space $\delta W_{\mu\nu}(h_{\mu\nu})$:
+\figg[width=180mm]{svt_pic_1.pdf}
+\noindent According to eq. (1), we may find $\delta W_{\mu\nu}$ based on a conformal to flat background by simply multiplying the above by a factor of $\Omega^{-2}$. 
+\\ \\
+The gauge invariant SVT quantities  in the RW $K=0$ space are
+\be
+	\bar \phi = \phi - \frac{\dot \Omega}{\Omega}(\dot E-B) - (\ddot E - \dot B)
+\ee
+\be
+	\bar \psi = \psi + \frac{\dot \Omega}{\Omega}(\dot E - B)
+\ee
+\be
+	F_i = \dot E_i + B_i
+\ee
+\be
+	E_{ij} = E_{ij}.
+\ee
+In the flat space all $\dot \Omega$ gauge quantities vanish and we see immediately $\delta W_{\mu\nu}$ can be expressed solely in terms of $\bar \phi, \bar \psi, F_i,$ and $E_{ij}$. In fact, we see that $\psi$ and $\phi$ are on equal footing everywhere, and thus we may combine the two invariant scalars
+\[
+	\bar \xi = \bar \phi + \bar \psi =  \phi + \psi - (\ddot E - \dot B).
+\]
+so that we are now exactly at 5 independent degrees of freedom. Now, in the conformal to flat background, we must use the gauge invariant quantities eq. (3-6). However we note that the quantity $\bar \xi$ remains unchanged, as the $\dot \Omega$ terms cancel. 
+We see now that even in a conformal to flat background, we are able to retain the same gauge invariant quantities whilst preseving the conformal symmetry, i.e. 
+\[
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(h_{\mu\nu}).
+\]
+\end{document}

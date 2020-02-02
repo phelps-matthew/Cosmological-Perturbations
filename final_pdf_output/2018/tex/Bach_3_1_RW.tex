@@ -1,0 +1,434 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+
+\title{$\delta W_{\mu\nu}$ 3+1 in RW}
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+Within the metric
+\begin{equation}
+	-ds^2 = -d\tau^2 + \frac{dr^2}{1-kr^2}+ r^2d\theta^2 + r^2\sin^2\theta d\phi^2
+\end{equation}
+any Christoffel symbol with a time index will vanish. Therefore, in looking at the Riemann tensor
+\begin{equation}
+R^\lambda{}_{\mu\nu\kappa} = \partial_\kappa \Gamma^\lambda_{\mu\nu} - \partial_\nu \Gamma^\lambda_{\mu\kappa}
++\Gamma^\eta_{\mu\nu}\Gamma^\lambda_{\kappa\eta} - \Gamma^\eta_{\mu\kappa}\Gamma^\lambda_{\nu\eta}
+\end{equation}
+we note that any time component of the Riemann tensor will vanish, i.e. only spatial indices are nonzero. If we construct the four velocity projector
+\begin{equation}
+U^{\mu\nu} = u^\mu u^\nu,\qquad \text{where}\quad u^\mu = \frac{d x^\mu}{d\tau} = (1,0,0,0),
+\end{equation}
+and the 3-space projector
+\begin{equation}
+	P_{\mu\nu} = g_{\mu\nu} + U_{\mu\nu},
+\end{equation}
+it follows that 
+\begin{align}
+	R_{\lambda\mu\nu\kappa} &= (P_{\lambda}{}^{\alpha}-U_{\lambda}{}^{\alpha}) (P_{\mu}{}^{\beta}-U_{\mu}{}^{\beta}) (P_{\nu}{}^{\sigma}-U_{\nu}{}^{\sigma}) (P_{\kappa}{}^{\rho}-U_{\kappa}{}^{\rho})
+	R_{\alpha\beta\sigma\rho}\nonumber \\
+	&=P_{\lambda}{}^{\alpha}P_{\mu}{}^{\beta}P_{\nu}{}^{\sigma}P_{\kappa}{}^{\rho} R_{\alpha\beta\sigma\rho}.
+\end{align}
+Hence, the Riemann tensor effectively represents the curvature only of the underlying 3-space. Given metric (1), the 3-space is maximally symmetric and so the curvature relations are
+\begin{align}
+R_{\lambda\mu\nu\kappa}&= k(P_{\mu\nu}P_{\lambda\kappa}-P_{\lambda\nu}P_{\mu\kappa})\\
+R_{\mu\nu} &= -2kP_{\mu\nu}\\
+R^\mu{}_\mu &= -6k
+\end{align}
+In evaluating $\delta W_{\mu\nu}$ in the metric of (1), we recall
+\begin{equation}
+	\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}(K_{\mu\nu}) + \delta W_{\mu\nu}(\tfrac h4 g_{\mu\nu}^{(0)})
+\end{equation}
+where
+\begin{equation}
+	\delta W_{\mu\nu}(\tfrac h4 g_{\mu\nu}^{(0)}) = -\frac{h}{4}W_{\mu\nu}^{(0)}.
+\end{equation}
+Since (1) can be expressed in a the conformal to flat form (upon taking $a(\tau)=1$) for arbitrary $k$, we know the background piece $W_{\mu\nu}^{(0)}$ must vanish. This has also been confirmed by taking $W_{\mu\nu}$ and directly inserting curvature relations (6-8). As such, the fluctuation equations will only depend on $K_{\mu\nu}$. \\ \\
+To calculate $\delta W_{\mu\nu}$ in (1), first take $\delta W_{\mu\nu}$ in gauge ready form 
+\begin{align}
+\delta W_{\mu\nu}={}&- \tfrac{1}{6} K_{\mu \nu} R^2
+ + \tfrac{1}{3} g_{\mu \nu} K^{\alpha \beta} R R_{\alpha \beta}
+ + \tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta}
+ + \tfrac{1}{3} K_{\nu}{}^{\alpha} R R_{\mu \alpha}
+ -  \tfrac{1}{2} K_{\nu}{}^{\alpha} R_{\alpha \beta} R_{\mu}{}^{\beta}\nonumber\\
+& -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu}
+ + \tfrac{1}{3} K_{\mu}{}^{\alpha} R R_{\nu \alpha}
+ + K^{\alpha \beta} R_{\mu \alpha} R_{\nu \beta}
+ -  \tfrac{1}{2} K_{\mu}{}^{\alpha} R_{\alpha \beta} R_{\nu}{}^{\beta}
+ -  g_{\mu \nu} K^{\alpha \beta} R^{\gamma \zeta} R_{\alpha \gamma \beta \zeta}\nonumber\\
+& -  \tfrac{2}{3} K^{\alpha \beta} R R_{\mu \alpha \nu \beta}
+ + 2 K^{\alpha \beta} R_{\alpha \gamma \beta \zeta} R_{\mu}{}^{\gamma}{}_{\nu}{}^{\zeta}
+ + \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\alpha}\nabla_{\beta}K_{\mu}{}^{\beta}
+ + \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\alpha}\nabla_{\beta}K_{\nu}{}^{\beta}\nonumber\\
+& -  \tfrac{1}{6} \nabla_{\alpha}K_{\mu \nu} \nabla^{\alpha}R
+ + \tfrac{1}{3} g_{\mu \nu} \nabla_{\alpha}K^{\gamma \zeta} \nabla^{\alpha}R_{\gamma \zeta}
+ - 2 \nabla_{\alpha}K^{\gamma \zeta} \nabla^{\alpha}R_{\mu \gamma \nu \zeta}
+ + \tfrac{1}{6} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}K_{\alpha}{}^{\beta}\nonumber\\
+& -  \nabla_{\alpha}K^{\alpha \beta} \nabla_{\beta}R_{\mu \nu}
+ + \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}
+ -  \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}
+ -  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu}\nonumber\\
+& -  K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu}
+ + \tfrac{2}{3} g_{\mu \nu} R^{\gamma \zeta} \nabla_{\beta}\nabla^{\beta}K_{\gamma \zeta}
+ - 2 R_{\mu \gamma \nu \zeta} \nabla_{\beta}\nabla^{\beta}K^{\gamma \zeta}
+ + \tfrac{1}{3} R \nabla_{\beta}\nabla^{\beta}K_{\mu \nu}\nonumber\\
+& + \tfrac{1}{6} g_{\mu \nu} K^{\gamma \zeta} \nabla_{\beta}\nabla^{\beta}R_{\gamma \zeta}
+ + \tfrac{1}{2} K_{\nu}{}^{\gamma} \nabla_{\beta}\nabla^{\beta}R_{\mu \gamma}
+ + \tfrac{1}{2} K_{\mu}{}^{\gamma} \nabla_{\beta}\nabla^{\beta}R_{\nu \gamma}
+ -  K^{\gamma \zeta} \nabla_{\beta}\nabla^{\beta}R_{\mu \gamma \nu \zeta}\nonumber\\
+& + \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\zeta}\nabla_{\gamma}K^{\gamma \zeta}
+ -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\gamma}K_{\nu}{}^{\gamma}
+ -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\gamma}K_{\mu}{}^{\gamma}\nonumber\\
+& -  g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\gamma}K_{\alpha}{}^{\gamma}
+ + R^{\alpha \beta} \nabla_{\beta}\nabla_{\mu}K_{\nu \alpha}
+ + R^{\alpha \beta} \nabla_{\beta}\nabla_{\nu}K_{\mu \alpha}
+ + \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}K_{\mu}{}^{\alpha}\nonumber\\
+& + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}K_{\nu}{}^{\alpha}
+ + \tfrac{1}{6} g_{\mu \nu} K_{\alpha \beta} \nabla^{\beta}\nabla^{\alpha}R
+ -  \tfrac{1}{6} K_{\mu \nu} \nabla^{\beta}\nabla_{\beta}R
+ + R_{\mu \beta \nu \gamma} \nabla^{\gamma}\nabla_{\alpha}K^{\alpha \beta}\nonumber\\
+& + R_{\mu \gamma \nu \beta} \nabla^{\gamma}\nabla_{\alpha}K^{\alpha \beta}
+ + \tfrac{1}{2} \nabla_{\zeta}\nabla^{\zeta}\nabla_{\beta}\nabla^{\beta}K_{\mu \nu}
+ -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}K^{\alpha \beta}
+ + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}K_{\nu \alpha}\nonumber\\
+& -  \tfrac{1}{3} R \nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha}
+ -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\mu}\nabla_{\beta}K_{\alpha}{}^{\beta}
+ -  \tfrac{1}{6} R^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}K_{\alpha \beta}
+ + \tfrac{1}{3} K^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}R_{\alpha \beta}\nonumber\\
+& + \tfrac{1}{3} \nabla_{\mu}\nabla_{\nu}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}
+ -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}K^{\alpha \beta}
+ + \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}K^{\alpha \beta}
+ + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}K_{\mu \alpha}\nonumber\\
+& + \tfrac{1}{3} \nabla_{\mu}K^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta}
+ -  \tfrac{1}{3} R \nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha}
+ -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\nu}\nabla_{\beta}K_{\alpha}{}^{\beta}
+ -  \tfrac{1}{2} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}K_{\alpha \beta},
+\end{align}
+then impose tranvserse gauge
+\begin{equation}
+	\nabla_\mu K^{\mu\nu} = 0,
+\end{equation}
+such that $\delta W_{\mu\nu}$ is now
+\begin{align}
+\delta W_{\mu\nu}={}&- \tfrac{1}{6} K_{\mu \nu} R^2
+ + \tfrac{1}{3} g_{\mu \nu} K^{\alpha \beta} R R_{\alpha \beta}
+ + \tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta}
+ + \tfrac{1}{3} K_{\nu}{}^{\alpha} R R_{\mu \alpha}
+ -  \tfrac{1}{2} K_{\nu}{}^{\alpha} R_{\alpha \beta} R_{\mu}{}^{\beta}\nonumber\\
+& -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu}
+ + \tfrac{1}{3} K_{\mu}{}^{\alpha} R R_{\nu \alpha}
+ + K^{\alpha \beta} R_{\mu \alpha} R_{\nu \beta}
+ -  \tfrac{1}{2} K_{\mu}{}^{\alpha} R_{\alpha \beta} R_{\nu}{}^{\beta}
+ -  g_{\mu \nu} K^{\alpha \beta} R^{\gamma \zeta} R_{\alpha \gamma \beta \zeta}\nonumber\\
+& -  \tfrac{2}{3} K^{\alpha \beta} R R_{\mu \alpha \nu \beta}
+ + 2 K^{\alpha \beta} R_{\alpha \gamma \beta \zeta} R_{\mu}{}^{\gamma}{}_{\nu}{}^{\zeta}
+ + \tfrac{1}{3} R \nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu}
+ -  \tfrac{1}{6} K_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R\nonumber\\
+& -  \tfrac{1}{6} \nabla_{\alpha}K_{\mu \nu} \nabla^{\alpha}R
+ -  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu}
+ -  K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu}
+ + \tfrac{1}{2} K_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\mu \alpha}\nonumber\\
+& + \tfrac{1}{2} K_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\nu \alpha}
+ + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu}
+ + R^{\alpha \beta} \nabla_{\beta}\nabla_{\mu}K_{\nu \alpha}
+ + R^{\alpha \beta} \nabla_{\beta}\nabla_{\nu}K_{\mu \alpha}\nonumber\\
+& + \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}K_{\mu}{}^{\alpha}
+ + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}K_{\nu}{}^{\alpha}
+ + \tfrac{1}{6} g_{\mu \nu} K_{\alpha \beta} \nabla^{\beta}\nabla^{\alpha}R
+ + \tfrac{2}{3} g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}K_{\alpha \beta}\nonumber\\
+& - 2 R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}K^{\alpha \beta}
+ + \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta}
+ -  K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\mu \alpha \nu \beta}\nonumber\\
+& + \tfrac{1}{3} g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}K^{\alpha \beta}
+ - 2 \nabla_{\gamma}R_{\mu \alpha \nu \beta} \nabla^{\gamma}K^{\alpha \beta}
+ -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}K^{\alpha \beta}
+ + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}K_{\nu \alpha}\nonumber\\
+& -  \tfrac{1}{6} R^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}K_{\alpha \beta}
+ + \tfrac{1}{3} K^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}R_{\alpha \beta}
+ -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}K^{\alpha \beta}
+ + \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}K^{\alpha \beta}\nonumber\\
+& + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}K_{\mu \alpha}
+ + \tfrac{1}{3} \nabla_{\mu}K^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta}
+ -  \tfrac{1}{2} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}K_{\alpha \beta}.
+\end{align}
+Now substitute curvature relations (6-8) and impose
+\begin{equation}
+	\nabla_\mu K^{\mu\nu} = 0,\qquad \nabla_\mu U_{\alpha\beta} = 0,\qquad U^{\alpha}{}_{\alpha} = -1,\qquad U^{\alpha\beta}U_{\alpha\lambda}= -U^\beta{}_\lambda,\qquad K^\alpha{}_\alpha = 0.
+\end{equation}
+This yields
+\begin{align}
+\delta W_{\mu\nu}={}&2 k^2 K_{\mu \nu}
+ -  \tfrac{2}{3} k^2 g_{\mu \nu} K_{\alpha \beta} U^{\alpha \beta}
+ + 4 k^2 K_{\nu \alpha} U_{\mu}{}^{\alpha}
+ + \tfrac{4}{3} k^2 K_{\alpha \beta} U^{\alpha \beta} U_{\mu \nu}
+ - 2 k^2 K_{\alpha \beta} U^{\beta \alpha} U_{\mu \nu}\nonumber\\
+& + 4 k^2 K_{\mu \alpha} U_{\nu}{}^{\alpha}
+ - 4 k^2 K_{\alpha \beta} U_{\mu}{}^{\beta} U_{\nu}{}^{\alpha}
+ + 10 k^2 K_{\alpha \beta} U_{\mu}{}^{\alpha} U_{\nu}{}^{\beta}
+ + \tfrac{2}{3} k g^{\alpha \beta} g_{\mu \nu} U^{\gamma \zeta} \nabla_{\beta}\nabla_{\alpha}K_{\gamma \zeta}\nonumber\\
+& + 2 k g^{\alpha \beta} U^{\gamma \zeta} U_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}K_{\gamma \zeta}
+ - 2 k g^{\alpha \beta} U_{\mu}{}^{\gamma} U_{\nu}{}^{\zeta} \nabla_{\beta}\nabla_{\alpha}K_{\gamma \zeta}
+ - 2 k g^{\alpha \beta} U_{\nu}{}^{\gamma} \nabla_{\beta}\nabla_{\alpha}K_{\mu \gamma}\nonumber\\
+& - 2 k g^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu}
+ + 2 k U^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu}
+ - 2 k g^{\alpha \beta} U_{\mu}{}^{\gamma} \nabla_{\beta}\nabla_{\alpha}K_{\nu \gamma}
+ - 2 k U^{\alpha \beta} \nabla_{\beta}\nabla_{\mu}K_{\nu \alpha}\nonumber\\
+& - 2 k U^{\alpha \beta} \nabla_{\beta}\nabla_{\nu}K_{\mu \alpha}
+ + \tfrac{1}{2} g^{\alpha \zeta} g^{\gamma \beta} \nabla_{\zeta}\nabla_{\alpha}\nabla_{\beta}\nabla_{\gamma}K_{\mu \nu}
+ + \tfrac{1}{3} k U^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}K_{\alpha \beta}\nonumber\\
+& + k U^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}K_{\alpha \beta}.
+\end{align}
+Now perform 3+1 split, where Latin indices are spatial and 
+\begin{equation}
+	K'_{\mu\nu} = \frac{\partial K_{\mu\nu}}{\partial \tau},\qquad \nabla^a\nabla_a = g^{ab}\nabla_a\nabla_b,\qquad
+	 U^{\alpha\beta} = u^\alpha u^\beta,\qquad u^\alpha = (1,0,0,0),\qquad u_\alpha = (-1,0,0,0)
+\end{equation}
+The result is
+\begin{equation}
+\delta W_{00}=\tfrac{1}{2} K''''_{00} - 2 k K''_{00} -  \nabla_{a}\nabla^{a}K''_{00} + \tfrac{4}{3} k \nabla_{a}\nabla^{a}K_{00} + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{00}
+\end{equation}
+\begin{equation}
+\delta W_{0i}=\tfrac{1}{2} K''''_{0i} - 2 k^2 K_{0i} -  \nabla_{a}\nabla^{a}K''_{0i} + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{0i} -  \tfrac{2}{3} k \nabla_{i}K'_{00}
+\end{equation}
+\begin{align}
+\delta W_{ij}={}&\tfrac{1}{2} K''''_{ij}
+ + 4 k K''_{ij}
+ -  \tfrac{2}{3} k K''_{00} g_{ij}
+ + 2 k^2 K_{ij}
+ -  \tfrac{2}{3} k^2 g_{ij} K_{00}
+ -  \nabla_{a}\nabla^{a}K''_{ij}
+ - 2 k \nabla_{a}\nabla^{a}K_{ij}\nonumber\\
+& + \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}K_{00}
+ + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{ij}
+ - 2 k \nabla_{i}K'_{0j}
+ + \tfrac{4}{3} k \nabla_{i}\nabla_{j}K_{00}
+ - 2 k \nabla_{j}K'_{0i}.
+\end{align}
+In the limit $k\to0$, this reduces to 
+\begin{equation}
+\delta W_{\mu\nu} = \frac12 \nabla_\alpha \nabla^\alpha \nabla_\beta \nabla^\beta K_{\mu\nu}.
+\end{equation}
+\\ \\
+As a step towards the comoving coordinates, we evaluate (17-19) in the metric
+\begin{equation}
+	-ds^2 = -\frac{dt^2}{a^2(t)} + \frac{dr^2}{1-kr^2}+ r^2d\theta^2 + r^2\sin^2\theta d\phi^2
+\end{equation}
+To do this we must transform the coordinates as
+\begin{equation}
+	d\tau = \frac{dt}{a(t)}.
+\end{equation}
+Under this coordinate change, $K_{\mu\nu}$ transforms as 
+\begin{align}
+	K_{\mu\nu} = \frac{\partial \bar x^\alpha}{\partial x^\mu}\frac{\partial \bar x^\beta}{\partial x^\nu}\bar K_{\alpha\beta}
+\end{align}
+where $\bar x^\mu$ denotes the new coordinate system in $(t,r,\theta,\phi)$ of (21). Only the time components are affected:
+\begin{align}
+	K_{00} = \frac{\partial \bar x^\alpha}{\partial x^0}\frac{\partial \bar x^\beta}{\partial x^0}\bar K_{\alpha\beta} = \delta^\alpha_0 \delta ^\beta_0 \bigg(\frac{dt}{d\tau}\bigg)^2 \bar K_{\alpha\beta}
+	= a^2(t) \bar K_{00}
+\end{align}
+\begin{align}
+	K_{0i} = \frac{\partial \bar x^\alpha}{\partial x^0}\frac{\partial \bar x^\beta}{\partial x^i}\bar K_{\alpha\beta} = \delta^\alpha_0 \delta ^\beta_i \frac{dt}{d\tau} \bar K_{\alpha\beta}
+	= a(t)\bar K_{0i}
+\end{align}
+\begin{align}
+	K_{ij} = \frac{\partial \bar x^\alpha}{\partial x^i}\frac{\partial \bar x^\beta}{\partial x^j}\bar K_{\alpha\beta} = \delta^\alpha_i \delta ^\beta_j \bar K_{\alpha\beta}=  \bar K_{ij}.
+\end{align}
+In addition, only one Christoffel term changes, the one with all time components
+\begin{equation}
+	\bar \Gamma^{0}_{00} = - \frac{\dot a}{a}.
+\end{equation}
+This is useful because any covariant derivative with respect to a spatial index then retains its form in the new coordinate system. 
+Time derivatives onto $K_{\mu\nu}$ must be transformed as
+\begin{align}
+	{K}_{\mu \nu} ' &= a \dot{K}_{\mu \nu}\nonumber \\
+	{K}_{\mu \nu} ''&=a^2 \ddot{K}_{\mu \nu} + a \dot{a} \dot{K}_{\mu \nu}\nonumber \\
+	{K}_{\mu \nu} '''&= a^3 \dddot{K}_{\mu \nu} + 3 a^2 \dot{a} \ddot{K}_{\mu \nu} + a \dot{a}^2 \dot{K}_{\mu \nu} + a^2 \ddot{a} \dot{K}_{\mu \nu}\nonumber \\
+	{K}_{\mu \nu} ''''&=a^4 \overset{\text{...}.}{K}_{\mu \nu} + 6 a^3 \dot{a} \dddot{K}_{\mu \nu} + 7 a^2 \dot{a}^2 \ddot{K}_{\mu \nu} + 4 a^3 \ddot{a} \ddot{K}_{\mu \nu} + a \dot{a}^3 \dot{K}_{\mu \nu} + 4 a^2 \dot{a} \ddot{a} \dot{K}_{\mu \nu} + a^3 \dddot{a} \dot{K}_{\mu \nu}. 
+\end{align}
+Making substitutions (24-28), $\delta W_{\mu\nu}$ can be expressed in the metric of (21) as
+\begin{align}
+\delta W_{00}={}&\tfrac{1}{2} a^6 \overset{\text{...}.}{K}_{00}
+ + 7 a^5 \dot{a} \dddot{K}_{00}
+ - 2 k a^4 \ddot{K}_{00}
+ + \tfrac{55}{2} a^4 \dot{a}^2 \ddot{K}_{00}
+ + 8 a^5 \ddot{a} \ddot{K}_{00}
+ - 10 k a^3 \dot{a} \dot{K}_{00}
+ + \tfrac{65}{2} a^3 \dot{a}^3 \dot{K}_{00}\nonumber\\
+& + 40 a^4 \dot{a} \ddot{a} \dot{K}_{00}
+ + \tfrac{9}{2} a^5 \dddot{a} \dot{K}_{00}
+ - 8 k a^2 \dot{a}^2 K_{00}
+ + 8 a^2 \dot{a}^4 K_{00}
+ - 4 k a^3 \ddot{a} K_{00}
+ + 33 a^3 \dot{a}^2 \ddot{a} K_{00}\nonumber\\
+& + 7 a^4 \ddot{a}^2 K_{00}
+ + 11 a^4 \dot{a} \dddot{a} K_{00}
+ + a^5 \overset{\text{...}.}{a} K_{00}
+ -  a^4 \nabla_{a}\nabla^{a}\ddot{K}_{00}
+ - 5 a^3 \dot{a} \nabla_{a}\nabla^{a}\dot{K}_{00}\nonumber\\
+& + \tfrac{4}{3} k a^2 \nabla_{a}\nabla^{a}K_{00}
+ - 4 a^2 \dot{a}^2 \nabla_{a}\nabla^{a}K_{00}
+ - 2 a^3 \ddot{a} \nabla_{a}\nabla^{a}K_{00}
+ + \tfrac{1}{2} a^2 \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{00}.
+\end{align}
+\begin{align}
+\delta W_{0i}={}&\tfrac{1}{2} a^5 \overset{\text{...}.}{K}_{i0}
+ + 5 a^4 \dot{a} \dddot{K}_{i0}
+ + \tfrac{25}{2} a^3 \dot{a}^2 \ddot{K}_{i0}
+ + 5 a^4 \ddot{a} \ddot{K}_{i0}
+ + \tfrac{15}{2} a^2 \dot{a}^3 \dot{K}_{i0}
+ + 15 a^3 \dot{a} \ddot{a} \dot{K}_{i0}
+ + \tfrac{5}{2} a^4 \dddot{a} \dot{K}_{i0}\nonumber\\
+& - 2 k^2 a K_{i0}
+ + \tfrac{1}{2} a \dot{a}^4 K_{i0}
+ + \tfrac{11}{2} a^2 \dot{a}^2 \ddot{a} K_{i0}
+ + 2 a^3 \ddot{a}^2 K_{i0}
+ + \tfrac{7}{2} a^3 \dot{a} \dddot{a} K_{i0}
+ + \tfrac{1}{2} a^4 \overset{\text{...}.}{a} K_{i0}\nonumber\\
+& -  a^3 \nabla_{a}\nabla^{a}\ddot{K}_{i0}
+ - 3 a^2 \dot{a} \nabla_{a}\nabla^{a}\dot{K}_{i0}
+ -  a \dot{a}^2 \nabla_{a}\nabla^{a}K_{i0}
+ -  a^2 \ddot{a} \nabla_{a}\nabla^{a}K_{i0}
+ + \tfrac{1}{2} a \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{i0}\nonumber\\
+& -  \tfrac{2}{3} k a^3 \nabla_{i}\dot{K}_{00}
+ -  \tfrac{4}{3} k a^2 \dot{a} \nabla_{i}K_{00}.
+\end{align}
+\begin{align}
+\delta W_{ij}={}&\tfrac{1}{2} a^4 \overset{\text{...}.}{K}_{ij}
+ + 3 a^3 \dot{a} \dddot{K}_{ij}
+ + 4 k a^2 \ddot{K}_{ij}
+ + \tfrac{7}{2} a^2 \dot{a}^2 \ddot{K}_{ij}
+ + 2 a^3 \ddot{a} \ddot{K}_{ij}
+ + 4 k a \dot{a} \dot{K}_{ij}
+ + \tfrac{1}{2} a \dot{a}^3 \dot{K}_{ij}\nonumber\\
+& + 2 a^2 \dot{a} \ddot{a} \dot{K}_{ij}
+ + \tfrac{1}{2} a^3 \dddot{a} \dot{K}_{ij}
+ -  \tfrac{2}{3} k a^4 \ddot{K}_{00} g_{ij}
+ -  \tfrac{10}{3} k a^3 \dot{a} \dot{K}_{00} g_{ij}
+ + 2 k^2 K_{ij}
+ -  \tfrac{2}{3} k^2 a^2 g_{ij} K_{00}\nonumber\\
+& -  \tfrac{8}{3} k a^2 \dot{a}^2 g_{ij} K_{00}
+ -  \tfrac{4}{3} k a^3 \ddot{a} g_{ij} K_{00}
+ -  a^2 \nabla_{a}\nabla^{a}\ddot{K}_{ij}
+ -  a \dot{a} \nabla_{a}\nabla^{a}\dot{K}_{ij}
+ - 2 k \nabla_{a}\nabla^{a}K_{ij}\nonumber\\
+& + \tfrac{2}{3} k a^2 g_{ij} \nabla_{a}\nabla^{a}K_{00}
+ + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{ij}
+ - 2 k a^2 \nabla_{i}\dot{K}_{j0}
+ - 2 k a \dot{a} \nabla_{i}K_{j0}
+ + \tfrac{4}{3} k a^2 \nabla_{i}\nabla_{j}K_{00}\nonumber\\
+& - 2 k a^2 \nabla_{j}\dot{K}_{i0}
+ - 2 k a \dot{a} \nabla_{j}K_{i0}.
+\end{align}
+Lastly, within the conformal metric $\bar g_{\mu\nu}^{(0)} = \Omega^2 g_{\mu\nu}^{(0)}$ we recall that the Bach tensor transforms as
+\begin{equation}
+\bar \delta W_{\mu\nu}(\bar K_{\mu\nu}) = \Omega^{-2}\delta W_{\mu\nu}(K_{\mu\nu}).
+\end{equation}
+As such, we may express $\delta W_{\mu\nu}$ in the RW metric (in conformal time or comoving coordinates) by multiplying by the appropriate conformal factor.
+\\ \\
+\section*{Summary}
+Within the RW conformal time metric
+\begin{equation}
+	-ds^2 = a^2(\tau)\bigg[-d\tau^2 + \frac{dr^2}{1-kr^2}+ r^2d\theta^2 + r^2\sin^2\theta d\phi^2\bigg],
+\end{equation}
+$\delta W_{\mu\nu}$ is evaluated as
+\begin{equation}
+\delta W_{00}=a^{-2}(\tau)\big[\tfrac{1}{2} K''''_{00} - 2 k K''_{00} -  \nabla_{a}\nabla^{a}K''_{00} + \tfrac{4}{3} k \nabla_{a}\nabla^{a}K_{00} + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{00}\big]
+\end{equation}
+\begin{equation}
+\delta W_{0i}=a^{-2}(\tau)\big[\tfrac{1}{2} K''''_{0i} - 2 k^2 K_{0i} -  \nabla_{a}\nabla^{a}K''_{0i} + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{0i} -  \tfrac{2}{3} k \nabla_{i}K'_{00}\big]
+\end{equation}
+\begin{align}
+\delta W_{ij}={}&a^{-2}(\tau)\big[\tfrac{1}{2} K''''_{ij}
+ + 4 k K''_{ij}
+ -  \tfrac{2}{3} k K''_{00} g_{ij}
+ + 2 k^2 K_{ij}
+ -  \tfrac{2}{3} k^2 g_{ij} K_{00}
+ -  \nabla_{a}\nabla^{a}K''_{ij}
+ - 2 k \nabla_{a}\nabla^{a}K_{ij}\nonumber\\
+& + \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}K_{00}
+ + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{ij}
+ - 2 k \nabla_{i}K'_{0j}
+ + \tfrac{4}{3} k \nabla_{i}\nabla_{j}K_{00}
+ - 2 k \nabla_{j}K'_{0i}\big].
+\end{align}
+In the RW comoving metric
+\begin{equation}
+	-ds^2 = -dt^2 + a^2(t)\bigg[\frac{dr^2}{1-kr^2}+ r^2d\theta^2 + r^2\sin^2\theta d\phi^2\bigg],
+\end{equation}
+$\delta W_{\mu\nu}$ is evaluated as
+\begin{align}
+\delta W_{00}={}&\tfrac{1}{2} a^4 \overset{\text{...}.}{K}_{00}
+ + 7 a^3 \dot{a} \dddot{K}_{00}
+ - 2 k a^2 \ddot{K}_{00}
+ + \tfrac{55}{2} a^2 \dot{a}^2 \ddot{K}_{00}
+ + 8 a^3 \ddot{a} \ddot{K}_{00}
+ - 10 k a \dot{a} \dot{K}_{00}
+ + \tfrac{65}{2} a \dot{a}^3 \dot{K}_{00}\nonumber\\
+& + 40 a^2 \dot{a} \ddot{a} \dot{K}_{00}
+ + \tfrac{9}{2} a^3 \dddot{a} \dot{K}_{00}
+ - 8 k \dot{a}^2 K_{00}
+ + 8 \dot{a}^4 K_{00}
+ - 4 k a \ddot{a} K_{00}
+ + 33 a \dot{a}^2 \ddot{a} K_{00}
+ + 7 a^2 \ddot{a}^2 K_{00}\nonumber\\
+& + 11 a^2 \dot{a} \dddot{a} K_{00}
+ + a^3 \overset{\text{...}.}{a} K_{00}
+ -  a^2 \nabla_{a}\nabla^{a}\ddot{K}_{00}
+ - 5 a \dot{a} \nabla_{a}\nabla^{a}\dot{K}_{00}
+ + \tfrac{4}{3} k \nabla_{a}\nabla^{a}K_{00}\nonumber\\
+& - 4 \dot{a}^2 \nabla_{a}\nabla^{a}K_{00}
+ - 2 a \ddot{a} \nabla_{a}\nabla^{a}K_{00}
+ + \tfrac{1}{2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{00}.
+\end{align}
+\begin{align}
+\delta W_{0i}={}&\tfrac{1}{2} a^3 \overset{\text{...}.}{K}_{i0}
+ + 5 a^2 \dot{a} \dddot{K}_{i0}
+ + \tfrac{25}{2} a \dot{a}^2 \ddot{K}_{i0}
+ + 5 a^2 \ddot{a} \ddot{K}_{i0}
+ + \tfrac{15}{2} \dot{a}^3 \dot{K}_{i0}
+ + 15 a \dot{a} \ddot{a} \dot{K}_{i0}
+ + \tfrac{5}{2} a^2 \dddot{a} \dot{K}_{i0}\nonumber\\
+& - 2 k^2 a^{-1} K_{i0}
+ + \tfrac{1}{2} a^{-1} \dot{a}^4 K_{i0}
+ + \tfrac{11}{2} \dot{a}^2 \ddot{a} K_{i0}
+ + 2 a \ddot{a}^2 K_{i0}
+ + \tfrac{7}{2} a \dot{a} \dddot{a} K_{i0}
+ + \tfrac{1}{2} a^2 \overset{\text{...}.}{a} K_{i0}\nonumber\\
+& -  a \nabla_{a}\nabla^{a}\ddot{K}_{i0}
+ - 3 \dot{a} \nabla_{a}\nabla^{a}\dot{K}_{i0}
+ -  a^{-1} \dot{a}^2 \nabla_{a}\nabla^{a}K_{i0}
+ -  \ddot{a} \nabla_{a}\nabla^{a}K_{i0}
+ + \tfrac{1}{2} a^{-1} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{i0}\nonumber\\
+& -  \tfrac{2}{3} k a \nabla_{i}\dot{K}_{00}
+ -  \tfrac{4}{3} k \dot{a} \nabla_{i}K_{00}.
+\end{align}
+\begin{align}
+\delta W_{ij}={}&\tfrac{1}{2} a^2 \overset{\text{...}.}{K}_{ij}
+ + 3 a \dot{a} \dddot{K}_{ij}
+ + 4 k \ddot{K}_{ij}
+ + \tfrac{7}{2} \dot{a}^2 \ddot{K}_{ij}
+ + 2 a \ddot{a} \ddot{K}_{ij}
+ + 4 k a^{-1} \dot{a} \dot{K}_{ij}
+ + \tfrac{1}{2} a^{-1} \dot{a}^3 \dot{K}_{ij}
+ + 2 \dot{a} \ddot{a} \dot{K}_{ij}\nonumber\\
+& + \tfrac{1}{2} a \dddot{a} \dot{K}_{ij}
+ -  \tfrac{2}{3} k a^2 \ddot{K}_{00} g_{ij}
+ -  \tfrac{10}{3} k a \dot{a} \dot{K}_{00} g_{ij}
+ + 2 k^2 a^{-2} K_{ij}
+ -  \tfrac{2}{3} k^2 g_{ij} K_{00}
+ -  \tfrac{8}{3} k \dot{a}^2 g_{ij} K_{00}\nonumber\\
+& -  \tfrac{4}{3} k a \ddot{a} g_{ij} K_{00}
+ -  \nabla_{a}\nabla^{a}\ddot{K}_{ij}
+ -  a^{-1} \dot{a} \nabla_{a}\nabla^{a}\dot{K}_{ij}
+ - 2 k a^{-2} \nabla_{a}\nabla^{a}K_{ij}
+ + \tfrac{2}{3} k g_{ij} \nabla_{a}\nabla^{a}K_{00}\nonumber\\
+& + \tfrac{1}{2} a^{-2} \nabla_{b}\nabla^{b}\nabla_{a}\nabla^{a}K_{ij}
+ - 2 k \nabla_{i}\dot{K}_{j0}
+ - 2 k a^{-1} \dot{a} \nabla_{i}K_{j0}
+ + \tfrac{4}{3} k \nabla_{i}\nabla_{j}K_{00}
+ - 2 k \nabla_{j}\dot{K}_{i0}\nonumber\\
+& - 2 k a^{-1} \dot{a} \nabla_{j}K_{i0}.
+\end{align}
+\end{document}

@@ -1,0 +1,245 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage{mathtools} 
+\usepackage{enumitem} % List environment 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Special Gauge Matthew}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+The perturbed Einstein tensor $\delta  G_{\mu\nu}( h_{\mu\nu})$ evaluated in the metric decomposed to first order 
+\begin{equation}
+g_{\mu\nu} = g^{(0)}_{\mu\nu} + g^{(1)}_{\mu\nu} = \Omega^2(\tau)(\eta_{\mu\nu}+h_{\mu\nu})
+\end{equation}
+is calculated as 
+\begin{align}
+\delta G_{\mu\nu}={}&\eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}h_{\mu \nu}
+ -  \eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} h_{\gamma \zeta} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega
+ + \eta^{\alpha \beta} h_{\mu \nu} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega\nonumber\\
+& + \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\alpha}h_{\mu \nu}
+ - 2 \eta^{\alpha \beta} h_{\mu \nu} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\mu}h_{\nu \alpha}
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\nu}h_{\mu \alpha}\nonumber\\
+& + 2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\zeta}h_{\beta \gamma}
+ + \tfrac{1}{2} \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \partial_{\zeta}\partial_{\beta}h_{\alpha \gamma}
+ + 2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} h_{\alpha \gamma} \Omega^{-1} \partial_{\zeta}\partial_{\beta}\Omega\nonumber\\
+& -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\mu}h_{\nu \beta}
+ -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\nu}h_{\mu \beta}- \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}h \partial_{\beta}\Omega -  \tfrac{1}{2} \eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}h\nonumber \\
+& + \tfrac{1}{2} \partial_{\nu}\partial_{\mu}h.
+\end{align}
+\begin{align}
+\delta G_{\mu\nu} ={}&\frac{\eta^{\alpha \beta} \partial_{\alpha}\Omega \partial_{\beta}h_{\mu \nu}}{\Omega}
+ -  \frac{\eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\alpha}h \partial_{\beta}\Omega}{\Omega}
+ -  \frac{\eta^{\alpha \gamma} \eta^{\beta \zeta} \eta_{\mu \nu} h_{\gamma \zeta} \partial_{\alpha}\Omega \partial_{\beta}\Omega}{\Omega^2}
+ + \frac{\eta^{\alpha \beta} h_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega}{\Omega^2}\nonumber\\
+& + \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\alpha}h_{\mu \nu}
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}h
+ -  \frac{2 \eta^{\alpha \beta} h_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega}{\Omega}
+ -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\mu}h_{\nu \alpha}\nonumber\\
+& -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\nu}h_{\mu \alpha}
+ + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\zeta}h_{\beta \gamma}}{\Omega}
+ + \tfrac{1}{2} \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} \partial_{\zeta}\partial_{\beta}h_{\alpha \gamma}\nonumber\\
+& + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \zeta} \eta_{\mu \nu} h_{\alpha \gamma} \partial_{\zeta}\partial_{\beta}\Omega}{\Omega}
+ -  \frac{\eta^{\alpha \beta} \partial_{\alpha}\Omega \partial_{\mu}h_{\nu \beta}}{\Omega}
+ -  \frac{\eta^{\alpha \beta} \partial_{\alpha}\Omega \partial_{\nu}h_{\mu \beta}}{\Omega}
+ + \tfrac{1}{2} \partial_{\nu}\partial_{\mu}h.
+\end{align}
+When calculated explicitly in the Cartesian coordinate system, we see that each tensor component is far away from being diagonal in the perturbation components $h_{\mu\nu}$. In order to solve these equations, we seek to find a gauge that allows the equations to become diagonalized. To this end, we may impose the most general gauge as
+\begin{equation}
+	\eta^{\alpha\beta}\partial_{\alpha}h_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}h_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu h + R \Omega^{-1} h \partial_\nu \Omega
+\end{equation}
+where $J$, $P$, and $R$ are constant coefficients that we vary. Upon taking $J = -2$, $P = 1$, and $R = -1$, the fluctuation equations take a form diagonal in $h_{\mu\nu}$ up to its trace. Indeed other combinations do exist, but deviation from this configuration will result in a trace conditions that involve derivatives of the trace, where as the above choice allows us to solve the trace explicity in terms of $h_{00}$. To be precise, given the special gauge choice, the trace of the Einstein tensor evaluates to
+\begin{align}
+g^{\mu\nu}\delta G_{\mu\nu}={}&\bigg(- \frac{10 \Omega '^2}{\Omega^4}
+ + \frac{6 \Omega ''}{\Omega^3}\bigg) h_{00}
+ + \bigg(\frac{2 \Omega '^2}{\Omega^4}
+ + \frac{3 \Omega ''}{\Omega^3}\bigg) h.
+\end{align}
+In the gauge
+\begin{equation}
+	\eta^{\alpha\beta}\partial_{\alpha}h_{\beta\nu} = -2 \Omega^{-1}  \eta^{\alpha\beta}h_{\nu\alpha}\partial_\beta \Omega +  \partial_\nu h - \Omega^{-1} h \partial_\nu \Omega
+\end{equation}
+the perturbed Einstein tensor has been calculated as :
+\begin{align}
+\delta G_{00}={}&\bigg(\frac{3 \Omega '^2}{\Omega^2}
+ -  \frac{\Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{00}
+ + \bigg(- \frac{3 \Omega '^2}{2 \Omega^2}
+ + \frac{\Omega ''}{2 \Omega}
+ + \frac{\Omega ' \partial_{0}}{2 \Omega}
+ -  \tfrac{1}{2} \partial_{0} \partial_{0}\bigg) h.
+\end{align}
+\begin{align}
+123={}&(-2 \Omega^{-2} \dot{\Omega}^2 \eta_{11}
+ + \Omega^{-1} \ddot{\Omega} \eta_{11}) h_{00}
+ + (- \Omega^{-2} \dot{\Omega}^2
+ + 2 \Omega^{-1} \ddot{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \Omega^{-1} \dot{\Omega} \partial_{0}) h_{11}\nonumber\\
+& + (- \tfrac{1}{2} \Omega^{-2} \dot{\Omega}^2 \eta_{11}
+ -  \tfrac{1}{2} \Omega^{-1} \ddot{\Omega} \eta_{11}
+ -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} \eta_{11}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\bigg(- \frac{2 \Omega '^2}{\Omega^2}
+ + \frac{\Omega ''}{\Omega}\bigg) h_{00}
+ + \bigg(- \frac{\Omega '^2}{\Omega^2}
+ + \frac{2 \Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{11}
+ + \bigg(\frac{\Omega '^2}{2 \Omega^2}
+ + \frac{\Omega ''}{2 \Omega}
+ + \frac{\Omega ' \partial_{0}}{2 \Omega}\nonumber\\
+& -  \tfrac{1}{2} \partial_{1} \partial_{1}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{22}={}&\bigg(- \frac{2 \Omega '^2}{\Omega^2}
+ + \frac{\Omega ''}{\Omega}\bigg) h_{00}
+ + \bigg(- \frac{\Omega '^2}{\Omega^2}
+ + \frac{2 \Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{22}
+ + \bigg(\frac{\Omega '^2}{2 \Omega^2}
+ + \frac{\Omega ''}{2 \Omega}
+ + \frac{\Omega ' \partial_{0}}{2 \Omega}\nonumber\\
+& -  \tfrac{1}{2} \partial_{2} \partial_{2}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{33}={}&\bigg(- \frac{2 \Omega '^2}{\Omega^2}
+ + \frac{\Omega ''}{\Omega}\bigg) h_{00}
+ + \bigg(- \frac{\Omega '^2}{\Omega^2}
+ + \frac{2 \Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{33}
+ + \bigg(\frac{\Omega '^2}{2 \Omega^2}
+ + \frac{\Omega ''}{2 \Omega}
+ + \frac{\Omega ' \partial_{0}}{2 \Omega}\nonumber\\
+& -  \tfrac{1}{2} \partial_{3} \partial_{3}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\bigg(\frac{\Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{01}
+ + \bigg(\frac{\Omega ' \partial_{1}}{2 \Omega}
+ -  \tfrac{1}{2} \partial_{1} \partial_{0}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{02}={}&\bigg(\frac{\Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{02}
+ + \bigg(\frac{\Omega ' \partial_{2}}{2 \Omega}
+ -  \tfrac{1}{2} \partial_{2} \partial_{0}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{03}={}&\bigg(\frac{\Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{03}
+ + \bigg(\frac{\Omega ' \partial_{3}}{2 \Omega}
+ -  \tfrac{1}{2} \partial_{3} \partial_{0}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\bigg(- \frac{\Omega '^2}{\Omega^2}
+ + \frac{2 \Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{12}
+ -  \tfrac{1}{2} \partial_{2} \partial_{1} h.
+\end{align}
+\begin{align}
+\delta G_{13}={}&\bigg(- \frac{\Omega '^2}{\Omega^2}
+ + \frac{2 \Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{13}
+ -  \tfrac{1}{2} \partial_{3} \partial_{1} h.
+\end{align}
+\begin{align}
+\delta G_{23}={}&\bigg(- \frac{\Omega '^2}{\Omega^2}
+ + \frac{2 \Omega ''}{\Omega}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{\Omega ' \partial_{0}}{\Omega}\bigg) h_{23}
+ -  \tfrac{1}{2} \partial_{3} \partial_{2} h.
+\end{align}
+In the deSitter background geometry $\Omega(t) = \frac{1}{Ht}$ there exists a similar gauge that simplifies the result even further. That is, upon taking $J = -2$, $P = \tfrac12$, and $R = 1$ we have
+\begin{equation}
+	\eta^{\alpha\beta}\partial_{\alpha}h_{\beta\nu} = -2 \Omega^{-1}  \eta^{\alpha\beta}h_{\nu\alpha}\partial_\beta \Omega + \tfrac{1}{2} \partial_\nu h +  \Omega^{-1} h \partial_\nu \Omega
+\end{equation}
+The trace of the Einstein tensor evaluates to 
+\begin{align}
+g^{\mu\nu}\delta G_{\mu\nu} ={}&2 H^2 h_{00}
+ + (-2 H^2
+ -  \tfrac{1}{2} H^2 \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} \tau^2) h.
+\end{align}
+The tensor perturbations are then:
+\begin{align}
+123={}&h_{11} (\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \tau^{-2}
+ + \partial_{0} \tau^{-1})
+ + (- \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} \eta_{11}
+ -  \tfrac{3}{2} \eta_{11} \tau^{-2}) h.
+\end{align}
+\begin{align}
+\delta G_{00}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{00}
+ + \bigg(\tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{1}{2 \tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{3}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{11}
+ + \bigg(- \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{3}{2 \tau^2}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{22}={}&\bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{3}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{22} 
+ + \bigg(- \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{3}{2 \tau^2}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{33}={}&\bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{3}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{33} 
+ + \bigg(- \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \frac{3}{2 \tau^2}\bigg) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{2}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{01}
+ + \frac{\partial_{1} h}{2 \tau}.
+\end{align}
+\begin{align}
+\delta G_{02}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{2}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{02}
+ + \frac{\partial_{2} h}{2 \tau}.
+\end{align}
+\begin{align}
+\delta G_{03}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{2}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{03}
+ + \frac{\partial_{3} h}{2 \tau}.
+\end{align}
+\begin{align}
+\delta G_{12}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{3}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{12}.
+\end{align}
+\begin{align}
+\delta G_{13}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{3}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{13}.
+\end{align}
+\begin{align}
+\delta G_{23}={}& \bigg(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \frac{3}{\tau^2}
+ + \frac{\partial_{0}}{\tau}\bigg)h_{23}.
+\end{align}
+\end{document}

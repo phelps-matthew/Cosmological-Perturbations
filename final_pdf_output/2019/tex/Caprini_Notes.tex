@@ -1,0 +1,623 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,hyperref,xcolor}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={red!50!black},
+    urlcolor={blue!80!black}
+}
+\setlength{\parindent}{0pt}
+\numberwithin{equation}{subsection}
+
+\title{Caprini Notes}
+\author{}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matter Action for $S(x)$ and $\psi_{\frac12}(x)$}
+
+The most general curved space conformally invariant matter action for a fermion $\psi(x)$ and here a real spin-zero scalar field $S(x)$ is
+\begin{eqnarray}
+	I_{\rm M} = -\int d^4x(-g)^{1/2} \left[ \xi \left(\frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu}\right) + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi\right]
+\label{matteraction}
+\end{eqnarray}
+We will designate $\xi = 1$ for CG and $\xi = -1$ for MCG. The author instead uses an $\epsilon$ with $\epsilon = -\xi$. 
+\\ \\
+Equations of motion:
+\begin{eqnarray}
+i\gamma^\mu(x)[\partial_\mu + \Gamma^\mu(x)]\psi - hS\psi &=& 0
+\label{psieom}
+\\
+\xi \left( \nabla_\alpha\nabla^\alpha S + \frac16 S R^\alpha{}_\alpha \right) - 4\lambda S^3 + h\bar\psi\psi &=& 0
+\label{seom}
+\end{eqnarray}
+
+Energy momentum tensor (without use of equations of motion)
+\begin{eqnarray}
+T_{\mu\nu} &=& i\bar \psi \gamma_\mu(x)[\partial_\nu +\Gamma_\nu(x)]\psi 
+- g_{\mu\nu}\left[ \lambda S^4 + i\bar\psi\gamma^\alpha(x)[\partial_\alpha + \Gamma^\alpha(x)]\psi - hS\bar\psi \psi\right]
+\nonumber\\
+&&
++\xi \left[ \frac23 \nabla_\mu S\nabla_\nu S - \frac 16 g_{\mu\nu} \nabla_\alpha S\nabla^\alpha S 
+- \frac13 S\nabla_\mu\nabla_\nu S + \frac13 g_{\mu\nu} S \nabla_\alpha\nabla^\alpha S  
+- \frac16 S^2\left( R_{\mu\nu} - \frac12 g_{\mu\nu} R^\alpha{}_\alpha\right)\right] 
+\label{em1}
+\end{eqnarray}
+
+Multiplying \eqref{psieom} by the left with $\bar\psi$, inserting into \eqref{em1} and defining
+\begin{eqnarray}
+T_{\mu\nu}^f = i\bar \psi \gamma_\mu(x)[\partial_\nu +\Gamma_\nu(x)]\psi ,
+\end{eqnarray}
+we see that \eqref{em1} takes the form
+
+\begin{eqnarray}
+T_{\mu\nu} &=&T_{\mu\nu}^f - g_{\mu\nu} \lambda S^4
++ \xi \bigg[ \frac23 \nabla_\mu S\nabla_\nu S - \frac 16 g_{\mu\nu} \nabla_\alpha S\nabla^\alpha S 
+- \frac13 S\nabla_\mu\nabla_\nu S + \frac13 g_{\mu\nu} S \nabla_\alpha\nabla^\alpha S  
+\nonumber\\
+&& - \frac16 S^2\left( R_{\mu\nu} - \frac12 g_{\mu\nu} R^\alpha{}_\alpha\right)\bigg] 
+\label{em2}
+\end{eqnarray}
+Taking the trace of the above we find
+
+\begin{eqnarray}
+g^{\mu\nu}T_{\mu\nu} &=& i\bar\psi \gamma^\mu(x)[\partial_\mu + \Gamma^\mu(x)]\psi -4\lambda S^4
++ \xi \bigg( S\nabla_\alpha\nabla^\alpha S + \frac16 S^2 R\bigg).
+\label{em2tr}
+\end{eqnarray}
+
+Straightfoward use of the equations of motion \eqref{psieom} and \eqref{seom} show that $T_{\mu\nu}$ is traceless. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Spontaneously Broken $T_{\mu\nu}$}
+When $S(x)$ acquires a non-zero constant vacuum expectation value $S_0$, \eqref{em2} reduces to 
+\begin{eqnarray}
+T_{\mu\nu} &=&T_{\mu\nu}^f - g_{\mu\nu} \lambda S_0^4
+ - \frac16 \xi S_0^2\left( R_{\mu\nu} - \frac12 g_{\mu\nu} R^\alpha{}_\alpha\right)
+\label{em3}
+\end{eqnarray}
+with equations of motion
+\begin{eqnarray}
+i\gamma^\mu(x)[\partial_\mu + \Gamma^\mu(x)]\psi - hS_0\psi &=& 0
+\label{psieom2}
+\\
+\frac16 \xi S_0 R^\alpha{}_\alpha - 4\lambda S_0^3 + h\bar\psi\psi &=& 0
+\label{seom2}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Einstein Form of $4\alpha_g W_{\mu\nu} = T_{\mu\nu}$}
+Following Caprini, let us define
+\begin{eqnarray}
+8\pi\tilde G \equiv \frac{6}{S_0^2},\qquad \Lambda \equiv 6\lambda S_0^2.
+\end{eqnarray}
+The energy momentum tensor \eqref{em3} becomes
+\begin{eqnarray}
+ T_{\mu\nu} = T_{\mu\nu}^f  - \frac{1}{8\pi\tilde G} \left( \Lambda g_{\mu\nu} + \xi G_{\mu\nu} \right),
+\label{em4}
+\end{eqnarray}
+with equations of motion
+\begin{eqnarray}
+i\gamma^\mu(x)[\partial_\mu + \Gamma^\mu(x)]\psi - hS_0\psi &=& 0
+\\
+\label{psieom3}
+\frac{1}{8\pi\tilde G} ( \xi R-4\Lambda ) + hS_0 \bar\psi\psi &=& 0
+\label{seom3}
+\end{eqnarray}
+The above equations of motion may be combined into
+\begin{eqnarray}
+8\pi \tilde GT_f = 4\Lambda -\xi R
+\label{sphieom4}
+\end{eqnarray}
+where $T_f = g^{\mu\nu}T_{\mu\nu}^f$. 
+\\ \\
+Using \eqref{em4} the gravitational equation of motion may be expressed as
+\begin{eqnarray}
+4\alpha_g W_{\mu\nu} &=&T_{\mu\nu}
+\nonumber\\
+\to\quad \xi G_{\mu\nu} +\Lambda g_{\mu\nu}+ 32\pi\tilde G \alpha_g W_{\mu\nu} 
+&=& 8\pi\tilde G T_{\mu\nu}^f.
+\end{eqnarray}
+The authors then introduce a ``graviton'' mass $m_g^2 \equiv (32\tilde G\alpha_g)^{-1}$ such that the gravitational field equations may finally be expressed as
+\begin{eqnarray}
+\xi G_{\mu\nu} +\Lambda g_{\mu\nu}+  \frac{1}{m_g^2} W_{\mu\nu} 
+&=& 8\pi\tilde G T_{\mu\nu}^f.
+\label{geom}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%
+\section{Gauge Choice and Linearized Solutions}
+In solving the linearization of \eqref{geom}, the author uses 1) Teyssandier gauge and 2) makes an ansatz to reduce the four order equations of motion into two second order equations. 
+%%%%%%%%%%%%%%%%%%
+\subsection{Reduction to Second Order}
+The author selects to reduce the order of the gravitational equations by defining $h_{\mu\nu}$ as
+\begin{eqnarray}
+h_{\mu\nu} =  -\xi \left( H_{\mu\nu} + \Psi_{\mu\nu}\right),
+\end{eqnarray}
+with the \emph{ansatz}
+\begin{eqnarray}
+\Psi_{\mu\nu} = \frac{1}{m^2_g}\left( \partial_\alpha \partial^\alpha h_{\mu\nu} - \frac13 \eta_{\mu\nu}\delta R\right).
+\end{eqnarray}
+The author refers to $H_{\mu\nu}$ as the ``massless" mode that parallels GR and $\Psi_{\mu\nu}$ as the ``massive'' mode which represents the GR deviation. 
+\\ \\
+The authors choice of ansatz implies an expression of $h_{\mu\nu}$ as
+\begin{eqnarray}
+h_{\mu\nu} = \xi\left[H_{\mu\nu} + \frac{1}{m_g^2} \left( \partial_\alpha \partial^\alpha h_{\mu\nu} - \frac13 \eta_{\mu\nu}\delta R\right)\right].
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%
+\subsection{Teyssandier Gauge}
+Let us define the vector
+\begin{eqnarray}
+Z_\mu = -\frac{1}{m_g^2} \left[ (\partial_\alpha\partial^\alpha + \xi m_g^2) \partial^\rho \bar h_{\rho\mu} + \frac13 \partial_\mu \delta R\right],
+\end{eqnarray}
+where the author uses the trace reversed $\bar h_{\mu\nu} = h_{\mu\nu}- \frac12 g_{\mu\nu}g^{\rho\sigma}h_{\rho\sigma}$.
+The Teyssandier gauge is chosen such that $Z_\mu = 0$. In appendix $B$, the author claims that a proper choice of residual gauge conditions can reduce the $h_{\mu\nu} = -\xi(H_{\mu\nu} - \Psi_{\mu\nu})$ into two gauge invariant quantities for $H_{\mu\nu}$ and five gauge invariant quantities for $\Psi_{\mu\nu}$.
+\\ \\
+This contrasts with section \ref{resgauge} where we  show a total of six gauge invariant quantities; two for the $A_{\mu\nu}$ modes and four for the $B_{\mu\nu} t$ modes. Moreover, one must be careful in showing that the residual conditions must obey solutions to the equation of motion itself, i.e. $\nabla^4 K_{\mu\nu} =$ and will not generally hold for $\nabla^4 K_{\mu\nu} = \delta T_{\mu\nu}$. 
+\\ \\
+However, we must also note that the gravitational side used by the author is no longer $4\alpha_g W_{\mu\nu}$ but rather
+the LHS of \eqref{geom}. Residual gauge symmetries for the homogenous case must obey this particular equation of motion. 
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\section{Appendix}
+\subsection{Curvature Tensors Under Conformal Transformation}
+Curvature tensors (in Weinberg convention) transform under conformal transformation $g_{\mu\nu}\to \Omega^2(x)g_{\mu\nu} = e^{2\alpha(x)}g_{\mu\nu}$  as 
+\begin{align}
+R_{\lambda\mu\nu\kappa} &\to \Omega^2 R_{\lambda\mu\nu\kappa} + \Omega\left ( -g_{\mu\nu}\nabla_\lambda \nabla_\kappa \Omega
++ g_{\lambda\nu}\nabla_\mu\nabla_\kappa \Omega + g_{\mu\kappa} \nabla_\nu\nabla_\lambda \Omega - g_{\lambda\kappa} \nabla_\mu\nabla_\nu \Omega \right)
+\nonumber\\
+&\qquad+ 2g_{\mu\nu} \nabla_\kappa\Omega \nabla_\lambda\Omega - 2g_{\lambda\nu} \nabla_\kappa\Omega \nabla_\mu\Omega - 2g_{\mu\kappa}
+\nabla_\lambda\Omega \nabla_\nu\Omega + 2g_{\lambda\kappa} \nabla_\mu \Omega \nabla_\nu\Omega
+\nonumber\\
+&\qquad + (g_{\lambda\nu} g_{\mu\kappa}-g_{\lambda\kappa}g_{\mu\nu})\nabla^\rho \Omega \nabla_\rho \Omega
+\nonumber\\
+&= e^{2\alpha}\bigg[ R_{\lambda\mu\nu\kappa} + (g_{\mu\kappa}g_{\lambda\nu} - g_{\lambda\kappa}g_{\mu\nu})\nabla_\rho\alpha \nabla^\rho\alpha+
+g_{\mu\nu} \nabla_\kappa\alpha \nabla_\lambda\alpha - g_{\lambda\nu} \nabla_\kappa\alpha \nabla_\mu\alpha - g_{\mu\kappa} \nabla_\lambda\alpha
+\nabla_\nu\alpha 
+\nonumber\\
+&\qquad + g_{\kappa\lambda}\nabla_\mu\alpha\nabla_\nu\alpha - g_{\mu\nu}\nabla_\lambda\nabla_\kappa \alpha + g_{\lambda\nu} \nabla_\mu\nabla_\kappa\alpha + g_{\mu\kappa}\nabla_\nu\nabla_\lambda \alpha -
+g_{\kappa\lambda}\nabla_\mu\nabla_\nu\alpha\bigg]
+ \label{GRA11} \\
+{}
+\nonumber\\
+R_{\mu\nu} &\to R_{\mu\nu} + \Omega^{-2} g_{\mu\nu}\nabla_\lambda \Omega \nabla^\lambda \Omega
+	-4 \Omega^{-2} \nabla_\mu \Omega \nabla_\nu \Omega + \Omega^{-1} g_{\mu\nu}\nabla_\lambda \nabla^\lambda \Omega + 2\Omega^{-1}
+	\nabla_\mu \nabla_\nu \Omega
+\nonumber\\
+&= R_{\mu\nu} + 2 g_{\mu\nu}\nabla_\lambda \alpha \nabla^\lambda\alpha - 2 \nabla_\mu\alpha \nabla_\nu \alpha +  g_{\mu\nu} \nabla_\lambda \nabla^\lambda
+\alpha + 2\nabla_\mu \nabla_\nu \alpha 
+\label{GRA12} \\ 
+{}
+\nonumber\\
+R^\alpha{}_\alpha &\to \Omega^{-2}R^{\alpha}{}_\alpha + 6\Omega^{-3}\nabla_\lambda \nabla^\lambda \Omega
+\nonumber\\
+&= e^{-2\alpha} R^{\alpha}{}_\alpha + 6 e^{-2\alpha}\nabla_\lambda\alpha \nabla^\lambda\alpha + 6 e^{-2\alpha}\nabla_\lambda \nabla^\lambda \alpha.
+\label{GRA13}
+\end{align}
+Using the curvature tensors we may form the transformation of the Einstein tensor
+\begin{equation}
+G_{\mu\nu} \to G_{\mu\nu} + \Omega^{-1}\left( -2g_{\mu\nu}\nabla^\lambda \nabla_\lambda \Omega + 2\nabla_\mu \nabla_\nu \Omega\right) +
+\Omega^{-2}\left( g_{\mu\nu} \nabla_\lambda \Omega \nabla^\lambda \Omega - 4 \nabla_\mu \Omega \nabla_\nu \Omega\right)\label{GRA14}
+\end{equation}
+\subsection{Fields Under Conformal Transformation}\label{A2}
+Under local conformal transformation $g_{\mu\nu} \to e^{2\alpha(x)}g_{\mu\nu}$, the infinitesimal distance between two points also transforms as
+\begin{equation}
+	ds^2 = g_{\mu\nu}dx^\mu dx^\nu \to e^{2\alpha(x)} ds^2,
+\end{equation}
+and hence the unit of length $L$ scales as $L \to e^{\alpha(x)}L$ (note that scale transformation can be achieved from Weyl rescaling or from coordinate conformal transformations - the resulting transformation on length $L$ is the same). Therefore, determination of the length dimensions of our fields will specify their conformal weight. Noting that the canonical conjugate momentum $\pi$ of a field $\phi$ is 
+\begin{equation}
+\pi = \frac{\partial \mathcal L}{\partial \dot \phi},
+\end{equation}
+a conveneint method to finding the length dimension can be obtained from the quantized canonical commutation relations
+\begin{equation}
+	[\phi(\mathbf x),\pi(\mathbf x')] = i \delta^{(3)}(\mathbf x - \mathbf x'),
+\end{equation}
+and hence $\phi \pi \sim L^{-3}$. For the scalar field $S(x)$, the relevant conjugate momentum is 
+\begin{equation}
+	\pi = \frac{\partial}{\partial \dot S} \left(-\frac12 \eta^{\mu\nu} \partial_\mu S \partial_\nu S \right) = 
+\frac{\partial}{\partial \dot S}\left(\frac12\dot S^2- \frac12 \delta^{ij} \partial_i S \partial_j S\right) = \dot S.
+\end{equation}
+Therefore, we find $S\sim L^{-1}$ and hence
+\begin{equation}
+	S(x)\to e^{-\alpha(x)} S(x).
+\end{equation} 
+For the Dirac spinor $\psi(x)$ we note the relevant piece
+\begin{equation}
+	i\bar \psi\gamma^\mu(x) \partial_\mu \psi \propto \bar \psi \gamma^0(x) \dot \psi.
+\end{equation}
+Recalling $\bar\psi = \psi^\dagger \gamma^0$ and $(\gamma^0)^2=-1$ we have
+\begin{equation}
+	\pi = -i \psi^\dagger,
+\end{equation}
+and hence $\psi \psi^\dagger \sim L^{-3}$. Therefore $\psi \sim L^{-3/2}$ and 
+\begin{equation}
+\psi(x) \to e^{-3 \alpha(x)/2} \psi(x).
+\end{equation}
+
+%%%%%%%%%%%%%%%%
+
+\subsection{Matter Action for Conformally Coupled Scalar Field}
+\begin{equation}
+	I_{\rm M} = -\int d^4x(-g)^{1/2} \left[ \frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi\right]\label{GRW1}.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Definitions}
+Definitions:
+\begin{align}
+\gamma^\mu(x) &= V^\mu_a(x)\hat \gamma ^a
+\nonumber\\
+\Gamma_\mu(x) &= \frac{1}{8}\left( [\gamma^\nu(x),\partial_\mu\gamma_\nu(x)] -[\gamma^\nu(x),\gamma_\sigma(x)]\Gamma^\sigma_{\mu\nu} \right)
+\nonumber\\
+ds^2 &= -(dx^0)^2 + \delta_{ij}dx^idx^j = \eta_{ab}dx^a dx^b
+\nonumber\\
+-2\eta^{ab} &= \hat \gamma^a \hat \gamma^b + \hat \gamma^b \hat\gamma^a 
+\nonumber\\
+\bar\psi &= \psi^\dagger \hat D
+\nonumber\\
+\hat \gamma^{a\dagger} &= \hat D \hat\gamma^a \hat D^{-1}
+\end{align}
+Hermiticty is implied, in that
+\begin{align}
+i\bar\psi \gamma^\mu(x)[\partial_\mu+ \Gamma_\mu(x)]\psi &= \frac{i}{2} \bar \psi\gamma^\mu(x)[\partial_\mu + \Gamma_{\mu}(x)]\psi - \frac{i}{2}
+\bar\psi[\overset{\leftarrow}\partial_\mu +\Gamma_\mu(x)]\gamma^\mu(x)\psi
+\nonumber\\
+&= \frac{i}{2}\bar\psi\gamma^\mu(x)[\partial_\mu+\Gamma_\mu(x)]\psi + \rm{h.c.} 
+\end{align}
+and
+\begin{align}
+i\bar\psi\gamma_\mu(x)[\partial_\nu+\Gamma_\nu(x)]\psi &= \frac{i}{4}\bar\psi \gamma_\mu(x)[\partial_\nu + \Gamma_\nu(x)]\psi +
+\frac{i}{4} \bar\psi \gamma_\nu(x)[\partial_\mu + \Gamma_\mu(x)]\psi + \rm{h.c.}
+\end{align}
+
+%%%%%%%%%%%%%%%
+
+\subsubsection{Conformal Invariance}
+Note that under $g_{\mu\nu}\to e^{2\alpha(x)}g_{\mu\nu}$ we have (see \ref{A2})
+\begin{equation}
+S(x) \to e^{-\alpha(x)}S(x),\qquad \psi(x)\to e^{-3\alpha(x)/2}\psi(x),\qquad \bar \psi(x)\to e^{-3\alpha(x)/2}\bar\psi(x).
+\end{equation}
+As for the determinant in $D$ dimensions,
+\begin{equation}
+	\rm{det}[g_{\mu\nu}]\to \rm{det}[e^{2\alpha}g_{\mu\nu}] = e^{2D\alpha}det[g_{\mu\nu}]
+\end{equation}
+whereby
+\begin{equation}
+	(-g^{1/2}) \to e^{D\alpha(x)}(-g^{1/2}),
+\end{equation}
+and thus for $D=4$ it will suffice to show that each term in 
+\begin{equation}
+\mathcal L =  \frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi
+\end{equation}
+must transform as $e^{-4\alpha(x)}$. Looking at the first two terms, we have
+\begin{align}
+\frac12 g^{\mu\nu}\nabla_\mu S\nabla_\nu S &\to   \frac12 g^{\mu\nu}e^{-2\alpha} \left( e^{-\alpha} \nabla_\mu S - S e^{-\alpha}\nabla_\mu \alpha \right)\left( e^{-\alpha} \nabla_\nu S - S e^{-\alpha}\nabla_\nu \alpha \right)\\
+&=  \frac12 g^{\mu\nu}e^{-4\alpha} \left( \nabla_\mu S\nabla_\nu S + S^2 \nabla_\mu\alpha\nabla_\nu\alpha -S \nabla_\nu S \nabla_\mu \alpha - S\nabla_\nu S\nabla_\mu \alpha \right)
+\nonumber\\
+&= e^{-4\alpha}\left( \frac{1}{2} \nabla_\mu S\nabla^\mu S + \frac{1}{2} S^2 \nabla_\lambda \alpha \nabla^\lambda\alpha - S \nabla_\lambda S\nabla^\lambda \alpha \right) 
+\end{align}
+and (see \ref{GRA13})
+\begin{equation}
+-\frac{1}{12} S^2 R^\mu{}_\mu \to e^{-4\alpha}\left(-\frac{1}{12} S^2 R^\mu{}_\mu -\frac12 S^2 \nabla_\lambda\alpha \nabla^\lambda \alpha -\frac12 S^2 \nabla_\lambda
+\nabla^\lambda \alpha \right).
+\end{equation}
+What remains from these two is infact a total derivative, noting that
+\begin{align}
+-\frac12 \nabla_\lambda ( S^2 \nabla^\lambda \alpha ) &= -\frac12 S^2 \nabla_\lambda \nabla^\lambda \alpha - S\nabla_\lambda S\nabla^\alpha \alpha
+\nonumber\\
+&= -\frac{1}{2}(-g)^{1/2} \partial_\lambda \left[ (-g)^{-1/2}S^2\partial^\lambda \alpha \right].
+\end{align}
+Variation of this term with respect to the relevent fields ($\delta g_{\mu\nu}$ and $\delta S$ here) allow it to vanish when evaluated on the boundary. Hence, under conformal transformations the contribution of this term will not affect the equations of motion (as with any total divergence). 
+\\ \\
+\noindent
+For the fermion kinetic energy term, hermiticity has been implied with the full expression being
+\begin{align}
+i\bar\psi \gamma^\mu(x)[\partial_\mu+ \Gamma_\mu(x)]\psi &\equiv \frac{i}{2} \bar \psi\gamma^\mu(x)[\partial_\mu + \Gamma_{\mu}(x)]\psi - \frac{i}{2}
+\bar\psi[\overset{\leftarrow}\partial_\mu +\Gamma_\mu(x)]\gamma^\mu(x)\psi.
+\end{align}
+Under conformal transformation we have 
+\begin{align}
+g_{\mu\nu} = V^{a}_\mu V^b_\nu \eta_{ab} &\to \Omega^2 g_{\mu\nu}
+\nonumber\\
+&= 
+\end{align}
+
+%%%%%%%%%%%%%%
+
+\subsubsection{Trace}
+Allowing the parameter $\epsilon \in (-1,1)$ to represent conformal and massive conformal gravity respectively, the energy momentum tensor evaluates to
+\begin{align}
+	T_{\mu\nu} =&{}
+	 \epsilon\bigg[ -\frac23 \nabla_\mu S\nabla_\nu S + \frac16 g_{\mu\nu} \nabla_\alpha S\nabla^\alpha S + \frac13
+	S \nabla_\mu \nabla_\nu S -\frac13 g_{\mu\nu} S\nabla_\alpha\nabla^\alpha S+ \frac16 S^2\left( R_{\mu\nu} - \frac12 g_{\mu\nu}R\right)\bigg] - g_{\mu\nu}\lambda S^4
+\nonumber\\
+&{} +\frac12 \left[ i\bar\psi \gamma_\mu(\partial_\nu +\Gamma_\nu)\psi +  i\bar\psi \gamma_\nu(\partial_\mu +\Gamma_\mu)\psi\right].
+\end{align}
+The trace of this for arbitrary $S(x)$ is
+\begin{equation}
+	g^{\mu\nu} T_{\mu\nu} = \epsilon\left( - S \nabla_\alpha \nabla^\alpha S - \frac16 S^2 R\right) - 4\lambda S^4 + i \bar\psi \gamma^\mu(\partial_\mu
+	+\Gamma_\mu)\psi.
+\end{equation}
+The equations of motion for the fields are
+\begin{equation}
+	\epsilon\left( -\nabla_\alpha \nabla^\alpha S -\frac16 S R\right) - 4\lambda S^3 + \xi \bar\psi\psi = 0
+\end{equation}
+\begin{equation}
+i\gamma^\mu(\partial_\mu +\Gamma_\mu)\psi - \xi S\psi = 0.
+\end{equation}
+Substituting these into (13) we find that it is traceless.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Massive Conformal Gravity}
+The action used in MCG is 
+\begin{equation}
+I = I_G+I_M
+\end{equation}
+where
+\begin{equation}
+I_{\rm G} = \frac{c^3}{16\pi G} \int d^4x(-g)^{1/2} \left[ \phi^2 R^{\alpha}{}_\alpha + 6 \nabla_\mu \phi \nabla^\mu \phi - 2\Lambda_G \phi^4 - \frac{\alpha^2}{2}C^{\lambda\mu\nu\kappa}C_{\lambda\mu\nu\kappa}\right]
+\end{equation}
+\begin{equation}
+I_{\rm M} = -\frac{1}{c}\int d^4x (-g)^{1/2} \left[ \frac12 \nabla^\mu S \nabla_\mu S + \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi +hS\bar\psi\psi\right].
+\end{equation}
+Compare this to CG where
+\begin{equation}
+I_{\rm G} = -\alpha_g \int d^4x (-g)^{1/2} C^{\lambda\mu\nu\kappa}C_{\lambda\mu\nu\kappa}
+\end{equation}
+\begin{equation}
+	I_{\rm M} = -\int d^4x(-g)^{1/2} \left[ \frac12 \nabla^\mu S \nabla_\mu S - \frac{1}{12} S^2 R^{\mu}{}_{\mu} + \lambda S^4 
++ i\bar\psi\gamma^\mu(x)[\partial_\mu + \Gamma_\mu(x)]\psi -hS\bar\psi\psi\right].
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conformal Symmetry and Trace}
+Consider an arbitrary action
+\begin{equation}
+	I = \int d^4x (-g)^{1/2} C(x),
+\end{equation}
+where $C(x)$ is a general coordinate scalar. Variation of this action with respect to the metric yields the tensor $C_{\mu\nu}$, defined as
+\begin{equation} 
+\frac{\delta I}{\delta g^{\mu\nu}} = \int d^4x (-g)^{1/2} C_{\mu\nu} \delta g^{\mu\nu}.
+\end{equation} 
+Under conformal transformation, 
+\begin{equation}
+\delta g^{\mu\nu} \to e^{-2\alpha}\delta g^{\mu\nu}\qquad (-g)^{1/2} \to e^{4\alpha}(-g)^{1/2},
+\end{equation}
+and hence, to retain conformal invariance it must follow that
+\begin{equation}
+C_{\mu\nu} \to e^{-2\alpha}C_{\mu\nu}.
+\end{equation}
+In maintaining the generality of $C(x)$, $C_{\mu\nu}$ here could represent the energy momentum tensor due to curvature or matter. Now, let us decompose the general $C_{\mu\nu}$ into a trace-free and traceless component via
+\begin{equation}
+C_{\mu\nu} = C^{\theta}_{\mu\nu} + \frac14 g_{\mu\nu}\left( g^{\alpha\beta} C_{\alpha\beta}\right).
+\end{equation}
+Under conformal transformation, denoting transformed quantities with bars and $C = g^{\alpha\beta}C_{\alpha\beta}$, we find the traceless sector transforms into
+\begin{equation}
+\bar C_{\mu\nu}^\theta = \bar C_{\mu\nu}- \frac14 \bar g_{\mu\nu} \bar C = e^{-2\alpha}C_{\mu\nu} - \frac14 e^{2\alpha} g_{\mu\nu} C
+\end{equation}
+in which it is apparent that $\bar g^{\mu\nu} \bar C^\theta_{\mu\nu} = e^{-2\alpha}g^{\mu\nu}C_{\mu\nu}= 0$, i.e. tracelessness is preserved as expected.
+\begin{equation}
+	\bar g^{\mu\nu} \bar C_{\mu\nu}^\theta = 
+\end{equation}
+\begin{equation}
+	\bar C_{\mu\nu}^\theta = e^{-2\alpha} C_{\mu\nu}^\theta + \frac14 (e^{2\alpha} - e^{-2\alpha})g_{\mu\nu} C
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Residual Gauge for Flat Transverse Traceless $\Box^2 K_{\mu\nu}=0$}
+\label{resgauge}
+In the transverse gauge $\partial_\nu K^{\mu\nu} = 0$ in the Minkowski background the vacuum equation of motion for the traceless $K_{\mu\nu}$ is
+\begin{equation}
+\delta W_{\mu\nu} = \eta^{\alpha\beta} \eta^{\sigma\rho}\partial_\alpha\partial_\beta\partial_\sigma\partial_\rho K_{\mu\nu} =0.
+\end{equation}
+The momentum eigenstate solutions take the form 
+\begin{equation}
+K_{\mu\nu} = A_{\mu\nu}e^{ikx} + n_\alpha x^\alpha B_{\mu\nu} e^{ikx} +\text{c.c.}\label{202}
+\end{equation}
+where $n_\alpha = (1,0,0,0)$ and $k^\mu k_{\mu} = 0$. Following the transverse condition, the solution must obey
+\begin{equation}
+0=\left(ik^\nu A_{\mu\nu} + n^\nu B_{\mu\nu}\right)e^{ikx}
++ \left( ik^\nu B_{\mu\nu}\right) n_\alpha x^\alpha  e^{ikx}+ \text{c.c.}\label{203}
+\end{equation}
+In addition to the tracelessness condition, to satisfy all $x$ (noting that $e^{ikx}$, $e^{-ikx}$, $te^{ikx}$ and $te^{-ikx}$ are linearly independent), we set in \eqref{203} each coefficient preceding the space-time dependent function to zero, viz.
+\begin{equation}
+A^\mu{}_\mu = 0,\qquad B^\mu{}_\mu=0,\qquad ik^\nu A_{\mu\nu} + n^\nu B_{\mu\nu}= 0,\qquad i k^\nu B_{\mu\nu} = 0.
+\end{equation}
+We have a total of $10$ conditions upon the 20 total components of $A_{\mu\nu}$ and $B_{\mu\nu}$. 
+It is easy to check that these conditions (and also their implied conjugate expressions) satisfy our choice of transverse coordinate system and retain the tracelessness of $K_{\mu\nu}$. 
+Under infinitesimal coordinate transformation $x^\mu \to x^\mu + \epsilon^\mu(x)$, $K_{\mu\nu}$ transforms as
+\begin{equation}
+	K_{\mu\nu}' = K_{\mu\nu} - \partial_\mu \epsilon_\nu - \partial_\nu\epsilon_\mu + \frac12 g_{\mu\nu} \partial_\rho \epsilon^\rho.
+\end{equation}
+We denote the change in $K_{\mu\nu}$ (Lie derivative) as the tensor
+\begin{equation}
+\Delta K_{\mu\nu} = - \partial_\mu \epsilon_\nu - \partial_\nu\epsilon_\mu + \frac12 g_{\mu\nu} \partial_\rho \epsilon^\rho.\label{207}
+\end{equation}
+Noting that $\Delta K_{\mu\nu}$ is manifestly traceless, in order to preserve the tranverse gauge condition $\partial_\mu K^{\mu\nu} = 0$,  $\Delta K^{\mu\nu}$ must obey $\partial_\nu \Delta K^{\mu\nu}=0$, viz.
+\begin{equation}
+	0 =
+	-\partial_\nu \partial^\nu \epsilon^\mu - \frac12 \partial^\mu \partial_\nu \epsilon^\nu .\label{208}
+\end{equation}
+We take the $\epsilon^\mu(x)$ to be of the plane wave form,
+\begin{equation}
+\epsilon^\mu(x) = i A^\mu e^{ikx} + iB^\mu n_\alpha x^\alpha e^{ikx} + \text{c.c.},
+\end{equation}
+which obeys the following relations:
+\begin{equation}
+\partial^\nu \epsilon^\mu = - k^\nu\left(A^\mu e^{ikx} + B^\mu n_\alpha x^\alpha e^{ikx}\right)+ 
+i n^\nu \left(  B^\mu  e^{ikx} \right)+ \text{c.c.}
+\end{equation}
+\begin{equation}
+\partial_\nu \partial^\nu \epsilon^\mu = -2k_\nu n^\nu \left(B^\mu  e^{ikx}\right)+\text{c.c.},
+\end{equation}
+\begin{equation}
+\partial_\mu \partial^\nu \epsilon^\mu = -i k_\mu k^\nu\left(A^\mu e^{ikx} +  B^\mu n_\alpha x^\alpha e^{ikx}\right)
+- (k^\nu n_\mu+k_\mu n^\nu)\left[ B^\mu e^{ikx}\right] + \text{c.c.},
+\end{equation}
+where for reference we also have the relation
+\begin{equation}
+\partial_\beta \partial^\beta (n_\alpha x^\alpha e^{ikx}) = 2i n_\alpha k^\alpha e^{ikx}.
+\end{equation}
+The transverse condition per \eqref{208} then takes the form
+\begin{align}
+0 {}&= 2k_\nu n^\nu \left(B^\mu  e^{ikx}\right)+\frac12 i k_\nu k^\mu\left(A^\nu e^{ikx} +  B^\nu n_\alpha x^\alpha e^{ikx}\right)
++\frac12 (k^\mu n_\nu+k_\nu n^\mu)\left[ B^\nu e^{ikx}\right]+ \text{c.c.}\ .
+\end{align}
+To hold for arbitrary $x$, we have the two separate conditions,
+\begin{equation}
+2k_\nu n^\nu B^\mu +\frac12 ik_\nu k^\mu A^\nu + \frac12 (k^\mu n_\nu+k_\nu n^\mu)B^\nu=0,\qquad \frac12 ik_\nu k^\mu B^\nu=0.\label{2019}
+\end{equation}
+For arbitrary $k^\mu$, the second condition in \ref{2019} implies $k_\nu B^\nu = 0$. As such, the remaining condition is
+\begin{equation}
+2k_\nu n^\nu B^\mu + \frac12 k^\mu n_\nu B^\nu + \frac12 i k_\nu k^\mu A^\nu = 0.
+\end{equation}
+Let us now take a wave propagating in the $z$ direction, with wavevector
+\begin{equation}
+k^\mu = (k,0,0,k),\qquad k_\mu = (-k,0,0,k).
+\end{equation}
+The transverse condition $\partial^\mu \Delta K_{\mu\nu}$ then entails
+\begin{equation}
+B_0 = -B_3,\qquad B_0 = \frac{i}{5}k(A_0+A_3),\qquad B_1 = B_2 = 0.
+\end{equation}
+%We see that the specific form of $\epsilon^\mu(x)$ comprises of four independent components, here chosen as $B_0$, $A_0$, $A_1$, and $A_2$. The dependencies are:
+%\begin{equation}
+%B_{1} = B_{2} = 0,\qquad B_3 = -B_0,\qquad A_3 = -A_0 - \frac{5i}{k} B_0.
+%\end{equation}
+For the tensor polarizations $A_{\mu\nu}$ and $B_{\mu\nu}$ the transverse relations take the form
+\begin{equation}
+B^\mu{}_\mu = A^\mu{}_\mu = 0,\qquad B_{0\mu} = -B_{3\mu},\qquad ik(A_{\mu 0}+ A_{\mu 3}) = B_{0\mu}.
+\end{equation}
+Although this would appear to be 10 total constraints, the condition $B_{00} = -B_{30}$ reduces the equation
+\begin{equation}
+ik(A_{\mu0}+A_{\mu 3}) = B_{0\mu},
+\end{equation}
+from 4 to 3 conditions, namely
+\begin{equation}
+ik(A_{10}+A_{13}) = B_{01},\qquad ik(A_{20}+A_{23}) = B_{02},\qquad A_{00} + 2A_{03} + A_{33} = 0.
+\end{equation}
+% We will take 11 the independent components as 
+%\begin{equation}
+%B_{00}, B_{01},B_{02},B_{11}, B_{12}, A_{00},A_{01},A_{02},A_{11},A_{22},A_{12}.
+%\end{equation}
+%In order to arrive at the following choice of independent components for $B_{\mu\nu}$, we utliize the gauge conditions which lead us to following dependencies:
+%\begin{equation}
+%B_{33} = -B_{03} = B_{00},\qquad B_{23} = -B_{02},\qquad B_{13} = -B_{01},\qquad B_{22} = -B_{11}.
+%\end{equation}
+%As for $A_{\mu\nu}$, the dependencies are:
+%\begin{equation}
+%A_{13} = -\frac{i}{k} B_{01} - A_{01},\quad
+%A_{23} = -\frac{i}{k}B_{02} - A_{02},\quad
+%A_{33} = A_{00} - A_{11} - A_{22},\quad
+%A_{03} = -A_{00} + \frac12 (A_{11}+A_{22}).
+%\end{equation}
+The form for the transformation (Lie derivative) onto $K_{\mu\nu}$ is
+\begin{align}
+\Delta K_{\mu\nu} &= \left[ k_\nu A_\mu + k_\mu A_\nu - i \left( n_\nu B_\mu + n_\mu B_\nu\right) 
+-\frac12 g_{\mu\nu} A^\alpha k_\alpha + \frac{i}{2} g_{\mu\nu}n_\alpha B^\alpha \right]e^{ikx}
+\nonumber\\
+&\qquad + \bigg[ k_\nu B_\mu + k_\mu B_\nu \bigg] n_\alpha x^\alpha e^{ikx}.
+\end{align}
+It will be useful to evaluate this for different components:
+\begin{align}
+\Delta K_{00} &=\left[ -2 kA_0 +\frac12 k(A_0 + A_3) - \frac{3i}{2} B_0\right]e^{ikx} - \bigg[2kB_0\bigg] n_\alpha x^\alpha e^{ikx}
+\nonumber\\
+\Delta K_{01} &=  -k A_1 e^{ikx},\qquad \Delta K_{02} =  -k A_2 e^{ikx}
+\nonumber\\
+\Delta K_{03} &= \left[ -kA_3 +kA_0 -i B_3\right]e^{ikx} - \left[2kB_3\right] n_\alpha x^\alpha e^{ikx}
+\nonumber\\
+\Delta K_{11} &= \Delta K_{22} =  \left[ - \frac12 k(A_0 + A_3) - \frac{i}{2}B_0 \right]  e^{ikx},\qquad \Delta K_{12} = 0
+\nonumber\\
+\Delta K_{13} &= [kA_1]e^{ikx},\qquad \Delta K_{23} = [kA_2]e^{ikx}
+\nonumber\\
+\Delta K_{33} &= \left[ 2kA_3 -\frac12 k(A_0+A_3) - \frac{i}{2}B_0\right]e^{ikx} + \bigg[2kB_3\bigg]n_\alpha x^\alpha e^{ikx}.
+\end{align}
+The total transformation on each polarization tensor, for $A_{\mu\nu} \to A_{\mu\nu}'$ and $B_{\mu\nu} \to B'_{\mu\nu}$, is 
+\begin{align}
+A_{00}' &= A_{00} -2kA_0 - 4i B_0 			& B_{00}'&= B_{00} -2k B_0
+\nonumber\\
+A_{01}' &= A_{01} - kA_1							& B_{01}'&= B_{01} 
+\nonumber\\
+A_{02}' &= A_{02} - kA_2							&B_{02}'&= B_{02}
+\nonumber\\
+A_{03}' &= A_{03} +2kA_0 + 6i B_0			&B_{03}'&= B_{03} + 2kB_0
+\nonumber \\
+A_{11}' &= A_{11} + 2i B_0						&B_{11}'&= B_{11}
+\nonumber\\
+A_{22}' & = A_{22} +2iB_0						&B_{22}'&= B_{22}
+\nonumber\\
+A_{33}' &= A_{33}-2k A_0 - 8i B_0				&B_{33}'&= B_{33} - 2kB_0
+\nonumber\\
+A_{12}' &= A_{12}									&B_{12}'&=B_{12}
+\nonumber\\
+A_{13}' &= A_{13} + kA_1						&B_{13}'&=B_{13}
+\nonumber\\
+A_{23}' &= A_{23} + k A_2						&B_{23}'&=B_{23}.
+\end{align}
+Neither the polarizations nor the gauge terms $A_\mu$ and $B_\mu$ are all independent. Their dependencies are:
+\begin{align}
+-A_{00} + A_{11}+A_{22} + A_{33} = 0&\quad&A_3 = -A_0 - \frac{5i}{k} B_0\nonumber\\
+ik(A_{\mu 0} + A_{\mu 3}) = B_{0\mu} &\quad &B_3 = -B_0 \nonumber\\
+B_{0\mu} = -B_{3\mu}&\quad& B_{1}=B_2 = 0\nonumber\\
+-B_{00} + B_{11}+B_{22} + B_{33} = 0&\quad&
+\end{align}
+Looking more closely at these dependencies amongst $B_{\mu\nu}$, we note:
+\begin{equation}
+B_{33} = -B_{03} = B_{00},\qquad B_{23} = -B_{02},\qquad B_{13} = -B_{01},\qquad B_{22} = -B_{11}.
+\end{equation}
+This leaves $B_{\mu\nu}$ with 5 total independent components, chosen as: $B_{33}$, $B_{12}$, $B_{11}$, $B_{01}$ and $B_{02}$. 
+\\ \\
+As for the $A_{\mu\nu}$, we note:
+\begin{equation}
+A_{13} = -\frac{i}{k} B_{01} - A_{01},\quad
+A_{23} = -\frac{i}{k}B_{02} - A_{02},\quad
+A_{22} = A_{00} - A_{11} - A_{33},\quad
+A_{03} = - \frac12 (A_{00}+A_{33}).
+\end{equation}
+$A_{\mu\nu}$ thus has a total of 6 independent components, here chosen as: $A_{00}$, $A_{01}$, $A_{02}$, $A_{11}$, $A_{33}$, and $A_{12}$. 
+%B_{1} = B_{2} = 0,\qquad B_3 = -B_0,\qquad A_3 = -A_0 - \frac{5i}{k} B_0
+Regarding the gauge invariance, we may choose to set 
+\begin{equation}
+B_0 = \frac{B_{33}}{2k}
+\end{equation}
+which eliminates $B'_{33}$, $B'_{00}$, and $B'_{03}$. This leaves $B_{\mu\nu}$ with four total independent gauge invariant quantities that cannot be eliminated: $B_{12}$, $B_{11}$, $B_{01}$ and $B_{02}$. 
+\\ \\
+As for $A_{\mu\nu}$, we first set 
+\begin{equation}
+A_1 = \frac{A_{01}}{k},\quad A_2 = \frac{A_{02}}{k}.
+\end{equation}
+This eliminates $A'_{01}$ and $A'_{02}$. Through some various manipulation of the dependencies, we also see that if we set
+\begin{equation}
+A_0 = \frac{2A_{00} - A_{33}}{2k},
+\end{equation}
+this will eliminate $A_{00}$ and $A_{33}$. This leaves $A_{\mu\nu}$ with two total independent gauge invariant quantities which cannot be eliminated: $A_{12}$ and $A_{11}$. 
+\\ \\
+In summary we are left with gauge invariant wave solutions of the form
+\begin{equation}
+K_{\mu\nu} = \begin{pmatrix}0&0&0&0\\0&A_{11}&A_{12}&0\\0&A_{12}&-A_{11}&0\\0&0&0&0\end{pmatrix}e^{ikx} + \begin{pmatrix}
+0&B_{01}&B_{02}&0\\B_{01}&B_{11}&B_{12}&0\\B_{02}&B_{12}&-B_{11}&0\\0&0&0&0  \end{pmatrix} n_\alpha x^\alpha e^{ikx}
+\end{equation}
+
+\end{document}

@@ -1,0 +1,214 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Gauge Invariant $\delta G_{\mu\nu} = \delta T_{\mu\nu}$}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle 
+\noindent Perturbed metric:
+\be
+	ds^2 = \Omega^2 \clr{ -(1-2\phi) d\tau^2 + 2(\del_i B - B_i)d\tau dx^i + \blr{ (1-2\psi)\delta_{ij} + 2\del_i\del_j E + \del_i E_j + \del_j E_i + 2E_{ij}}dx^i dx^j}
+\ee
+where
+\[
+	\del^i B_i = 0,\ \del^i E_i = 0,\ \del^i E_{ij} = 0,\ \delta^{ij}E_{ij} = 0.
+\]
+Under coordinate transformation
+\be
+	x^\mu \to \tilde x^\mu = x^\mu + \ep^\mu
+\ee
+where 
+\[
+	\ep^\mu = (\ep^0, \del^i \ep + \ep^i),\qquad \del^i \ep_i = 0
+\]
+the components of the metric transform as
+\begin{align}
+	\tilde \phi &= \phi - H \ep^0 - \dot \ep^0\\
+	\tilde \psi &= \psi + H \ep^0\\
+	\tilde B &=B + \ep^0 - \dot \ep\\
+	\tilde E &= E-\ep \\
+	\tilde E_{i}&= E_i - \ep_i\\
+	\tilde B_i &= B_i + \dot \ep_i\\
+	\tilde E_{ij} &= E_{ij}
+\end{align}
+From the above, we may form gauge invariant combinations (adding to 6 DOF):
+\begin{align}
+	\Phi &= \phi - H(\dot E - B) - (\ddot E - \dot B)\\
+	\Psi &= \psi + H(\dot E-B)\\
+	Q_i &= B_i + \dot E_i\\
+	E_{ij} &= E_{ij}
+\end{align}
+
+By orthogonal and parallel projections to the four velocity $u^\mu$, a generic symmetric $T_{\mu\nu}$ may be decomposed as
+\be
+	T_{\mu\nu} = (\rho + p)u_\mu u_\nu + p g_{\mu\nu} + u_\nu q_\mu + u_\mu q_\nu + \pi_{\mu\nu}
+\ee
+where
+\[
+	u^\mu q_\mu = 0,\ g^{\mu\nu} \pi_{\mu\nu} = 0, \ u^\mu u_\nu u^\rho u_\sigma \pi_{\nu\sigma} = 0.
+\]
+The conditions on $\pi_{\mu\nu}$ specify that it is traceless and orthogonal to the four velocity $u^\mu$, i.e. $\pi_{\mu\nu} = \pi_{ij}$. We may further decompose $\pi_{ij}$ as
+\be
+	\pi_{ij} = \del_i \del_j \Pi - \frac13 \del^2 \Pi \delta_{ij} + \frac12 \del_i \Pi_j + \frac12 \del_j \Pi_i + \Pi_{ij}
+\ee
+where as expected,
+\[
+	\del^i \Pi_i = 0,\  \del^i\Pi_{ij} = 0,\ \delta^{ij}\Pi_{ij} = 0.
+\]
+We have 2 degrees of freedom from $\rho$ and $p$, 3 from $q_\mu$, and 5 from $\pi_{\mu\nu}$ adding to 10 in total. We decompose $T_{\mu\nu}$ into a background piece and first order fluctuations (mixed tensor to match Ellis):
+\[
+	T^\mu{}_\nu = {}^{(0)}T^{\mu}{}_\nu + \delta T^\mu{}_\nu.
+\]
+We start by separating scalars, where according to homogeneity and isotropy, the background may only depend on $\tau$, 
+\begin{align}
+	\rho(x^\mu) &= \bar \rho(\tau) + \delta \rho(x^\mu)\\
+	p(x^\mu) &= \bar p(\tau) + \delta p(x^\mu).
+\end{align}
+The four velocity is also perturbed
+\be
+	u^\mu = \frac{1}{a}\frac{dx^\mu}{d\tau}= \bar u^\mu + \delta u^\mu
+\ee
+where $\bar u^\mu = a^{-1} \delta^\mu{}_0$ and $\delta u^i = \del^i v + v^i$ with $\del_i v^i = 0$. By normalization of the four velocity $-1 = g_{\mu\nu}u^\mu u^\nu$, we may derive the background and perturbed components of $u^\mu$:
+\be
+	u^\mu = \frac{1}{a}\plr{ 1-\phi,\ \del^i v + v^i},\qquad u_\mu = a\plr{ -1-\phi,\ \del_i v + v_i + \del_i B - B_i}.
+\ee
+Since the background of interest (FLRW) is homogeneous and isotropic, there is no anisotropic stress $\pi_{\mu\nu}$ at zeroth order and so $\pi_{ij}$ itself is first order. We may now form the perturbed E-M tensor:
+\begin{align}
+	\delta T^0{}_0 &= - \delta \rho \\
+	\delta T^0{}_i &= (\rho+p)(\del_i v + v_i + \del_i B - B_i)\\
+	\delta T^i{}_j &= \delta p\delta^i{}_j + \pi^i{}_j.
+\end{align}
+Under gauge transformation (2), scalars transform as (see A.1)
+\begin{align}
+	\delta \tilde \rho &= \delta \rho - \ep^0 \dot{\bar\rho}\\
+\delta \tilde p &= \delta p - \ep^0 \dot{\bar p}
+\end{align}
+and the velocity transforms as (see A.2)
+\be
+	\tilde v = v + \dot \ep,\quad \tilde v^i = v^i + \dot \ep^i.
+\ee
+The components of $\pi_{ij}$, that is $\Pi$, $\Pi_i$ and $\Pi_{ij}$ are all gauge invariant since they vanish in the background (A.3). From these transformation laws, we may form many gauge invariant quantities (omitting the bars on all background quantities now):
+\begin{align}
+	\Delta &= \frac{\delta \rho}{\rho} + \frac{\dot \rho}{\rho}(v+B)\\
+	\delta \rho_\sigma &= \delta \rho + \dot\rho(B-\dot E)\\
+	\delta p_\psi &= \delta \rho + \frac{\dot \rho}{H}\psi\\
+	\mathcal V &= v+\dot E\\
+	\delta p_{nad} &= \delta p - \frac{\dot p}{\dot \rho} \delta \rho\\
+	\zeta&= -\psi - H\frac{\rho}{\dot \rho}\Delta\\
+	q_i &= (\rho+p)(v_i-B_i)\\
+	Q_i &= B_i + \dot E_i
+\end{align}
+and $\Pi, \Pi_i, \Pi_{ij}$. 
+\\ \\ \\
+From the Mathematica program, we explicity calculated $\delta (G^\mu{}_\nu)$ in the metric of (1), the result is:
+\figg[width=180mm]{Einstein_Gauge_Invariant_1.pdf}
+Now we will equate $\delta G^\mu{}_\nu = -8\pi G \delta T^\mu{}_\nu$.
+\\ \\
+\textbf{Scalars:}
+\\
+\\
+\underline{$\delta G^0{}_0 = \delta T^0{}_0$:}
+\be
+	 \del^2 \psi - 3H(\dot \psi + H\phi) + H\del^2(\dot E-B) = 4\pi G \Omega^2 \delta \rho 
+\ee
+If we use the Freidman (background) equation $G_{00} = -8\pi G T_{00}$, which implies
+\[
+	3H^2 = 8\pi G \rho \Omega^2
+\]
+then we may express (34) in terms of gauge invariant variables
+\be
+	\boxed{-\del^2 \Psi + 3H(\dot\Psi + H\Phi) = -4\pi G\Omega^2 \delta \rho_\sigma}
+\ee
+\\
+\underline{$\delta G^0{}_i = \delta T^0{}_i$:}
+\\ \\
+From the Mathematica result, we get
+\be
+	\del_i ( \dot \psi + H\phi) = -4\pi G (\rho+p)\del_i(v+B).
+\ee
+Ellis drops the $\del_i$ common to both sides, though it seems we may add an arbitrary function of time. Ellis's result is then
+\be
+	\dot \psi + H\phi = -4\pi G \Omega^2 (\rho+p)(v+B).
+\ee
+If we use the Freidman trace equation for the background, which implies
+\[
+	3\frac{\ddot \Omega}{\Omega} = 4\pi G(\rho+3p),
+\]
+then we can express (37) as the gauge invariant equation:
+\be
+	\boxed{\dot \Psi + H \Phi =-4\pi G \Omega^2(\rho+p)\mathcal V}
+\ee
+\\
+\underline{$\delta G^i{}_j = \delta T^i{}_j\quad i\ne j$:}
+\\ \\
+From the Mathematica result, we get
+\be
+	\del_i \del_j\blr{ (\ddot E-\dot B)+2H(\dot E-B)-\phi+\psi} = 8\pi G\Omega^2 \del_i \del_j \Pi.
+\ee
+Ellis again drops the $\del_i \del_j$ to obtain
+\be
+	 (\ddot E-\dot B)+2H(\dot E-B)-\phi+\psi= 8\pi G\Omega^2 \Pi.
+\ee
+This one may be expressed easily in gauge invariant form
+\be
+	\boxed{\Psi - \Phi = 8\pi G\Omega^2 \Pi}
+\ee
+\\
+\underline{$\delta^j{}_i\delta G^i{}_j = \delta^j{}_i\delta T^i{}_j$:}
+\\ \\
+From the Mathematica result of the spatial trace, we get
+\be
+	\ddot \psi + H(\dot\phi + 2\dot\psi) +(2\dot H+H^2)\phi +\frac13\del^2[\phi - \psi +\dot B- \ddot E +2H(B-\dot E)] = \frac43\pi G \Omega^2 \delta p.
+\ee
+Substituting the Laplacian of (40) into the above, we get 
+\be
+	\ddot \psi + H(\dot\phi + 2\dot\psi) +(2\dot H+H^2)\phi = 4\pi G\Omega^2\plr{ \delta p + \frac23 \del^2\Pi}.
+\ee
+The gauge invariant form given in Ellis for the spatial trace needs further inspection.
+\\ \\ \\
+\textbf{Vectors:}
+\\
+\\
+\underline{$\delta G^0{}_i = \delta T^0{}_i$:}\\
+From the Mathematica result, we get
+\be
+	\del^2(B_i+\dot E_i) = -16\pi G \Omega^2(\rho+p)(v_i-B_i)
+\ee 
+which is easily expressed in gauge invariant form
+\be
+	\boxed{ \del^2 Q_i = -16\pi G\Omega^2 q_i}
+\ee
+\\
+\\
+\underline{$\delta G^i{}_j = \delta T^i{}_j\quad i\ne j$:}\\
+From the Mathematica result, we get
+\be
+	\del_i (\dot B_j +\ddot E_j)+\del_j (\dot B_i+\ddot E_i)+2H\del_i(B_j+\dot E_j)+2H\del_j(B_i+\dot E_i)=8\pi G \Omega^2 (\del_i \Pi_j+\del_j \Pi_i).
+\ee
+Ellis equates the $\del_i$ and $\del_j$ quantities with each other as in
+\[
+	\dot B_i+\ddot E_i + 2H B_i+\dot E_i = 8\pi G\Omega^2 \Pi_i
+\]
+in which the gauge invariance manifests as
+\be
+	\boxed{\dot Q_i + 2HQ_i = 8\pi G \Omega^2 \Pi_i}.
+\ee
+\\ \\ \\
+\textbf{Tensors:}
+\\
+\\
+\underline{$\delta G^i{}_j = \delta T^i{}_j$:}\\
+From the Mathematica result, we get a result that is already gauge invariant
+\be
+	\boxed{2H\dot E_{ij} -\Box E_{ij} = 8\pi G \Omega^2 \Pi_{ij}}
+\ee
+\\ \\ \\ \\
+\section*{Appendix}
+* Apparent sign error in vector quantity $E_i$ in $\delta G^\mu{}_\nu$. 
+\\ \\
+In RW K=0 space, $\Omega(t)$, we have the covariant Einstein tensor and Weyl tensor:
+\figg[width=180mm]{Einstein_Gauge_Invariant_2.pdf}
+\figg[width=180mm]{Einstein_Gauge_Invariant_3.pdf}
+\end{document}

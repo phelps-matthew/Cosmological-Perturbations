@@ -1,0 +1,978 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\renewcommand{\abstractname}{Summary}
+\title{RW $\delta G_{\mu\nu}$ Covariant Gauge Invariant v1}
+\date{}
+\begin{document} 
+\maketitle
+\tableofcontents
+\newpage
+\noindent 
+%%%%%%%%%%%%%%
+\abstract
+We calculate the perturbed $\delta G_{\mu\nu} = -\kappa^2_4 \delta T_{\mu\nu}$ in the RW geometry based on a covariant SVT decomposition of both the metric and the energy momentum tensor. The energy momentum tensor is based on a perfect fluid background and its perturbation. Behavior of $h_{\mu\nu}$ and $\delta T_{\mu\nu}$ under infinitesimal coordinate transformation is determined, whereby gauge invariant quantities are constructed. As seen in the gauge transformation section~\ref{Gauge Transformations}, gauge invariant quantities separate into SO(3) sectors. Use of the background equations $G_{\mu\nu}^{(0)} = -\kappa^2_4\delta T_{\mu\nu}$ allow us to express the perturbed Einstein equation in an entirely gauge invariant manner. If a covariant generalization of the external projection method is formulated, the Einstein equations themselves will separate into separate SO(3) representations. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\delta G_{\mu\nu} = -\kappa^2_4 \delta T_{\mu\nu}$ Gauge Invariant Form}
+We evaluate in geometry
+\begin{eqnarray}
+ds^2 &=& \Omega(\tau)^2 \left[ -d\tau^2 + \frac{dr^2}{1-kr^2} + r^2d\theta^2 + r^2\sin^2\theta d\phi^2\right]= \Omega^2 \tilde g_{\mu\nu} dx^\mu dx^\nu
+\end{eqnarray}
+
+%%%%%
+\subsection*{$\delta G_{00} = -\kappa^2_4 \delta T_{00}$}
+\begin{eqnarray}
+ 6\mathcal H^2 \Phi- 6 k \Psi + 6 \dot{\Psi} \mathcal H - 2 \tilde\nabla_{a}\tilde\nabla^{a}\Psi&=& -\Omega^2 \kappa^2_4 \delta \rho_\sigma
+\end{eqnarray}
+
+%%%%%%
+\subsection*{$\delta G_{0i} = -\kappa^2_4 \delta T_{0i}$}
+\begin{eqnarray}
+- 2 \tilde\nabla_{i}\dot{\Psi}
+ - 2 \mathcal H \tilde\nabla_{i}\Phi + k \mathcal Q_i + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\mathcal Q_{i}
+&=& 
+(2k+2\mathcal H^2 - 2\dot{\mathcal H}) \tilde\nabla_i\mathcal V +  (2k +2\mathcal H^2 - 2\dot{\mathcal H}) \mathcal B_{i}
+\end{eqnarray}
+
+%%%%%%
+\subsection*{$\delta G_{ij} = -\kappa^2_4 \delta T_{ij}$}
+\begin{eqnarray}
+ &&-\tilde g_{ij}\tilde\nabla_a\tilde\nabla^a \Phi + \tilde g_{ij} \tilde\nabla_a\tilde\nabla^a \Psi + \tilde\nabla_i\tilde\nabla_j \Phi - \tilde\nabla_i\tilde\nabla_j \Psi
+-2 \tilde g_{ij}\ddot \Psi -2\tilde g_{ij}\mathcal H \dot\Phi 
+- 4\tilde g_{ij}\mathcal H \dot\Psi
+-(2\mathcal H^2+4\dot{\mathcal H})\tilde g_{ij}\Phi
+\nonumber\\
+&&
++\mathcal H\tilde\nabla_{i}\mathcal Q_{j}+\tfrac{1}{2} \tilde\nabla_{i}\dot{\mathcal Q}_{j}
++ \mathcal H \tilde\nabla_{j}\mathcal Q_{i}+\tfrac{1}{2} \tilde\nabla_{j}\dot{\mathcal Q}_{i}
+- \ddot{E}_{ij}- 2 \mathcal H \dot{E}_{ij} + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}
+\nonumber\\
+&&=\quad -2k \tilde g_{ij} \Psi-\Omega^2 \kappa^2_4 \tilde g_{ij} \delta p_\sigma +2k E_{ij}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Perturbed Einstein Tensor}
+\subsection{$\delta G_{\mu\nu}$ under Conformal Transformation}
+Under general conformal transformation $g_{\mu\nu}\to \Omega^2(x)g_{\mu\nu}$, the  Einstein tensor transforms as
+\begin{align}
+G_{\mu\nu} &\to G_{\mu\nu} + S_{\mu\nu}
+\nonumber\\
+&\qquad= G_{\mu\nu} +
+\Omega^{-1}\left( -2\tilde g_{\mu\nu}\tilde\nabla^\lambda \tilde\nabla_\lambda \Omega + 2\tilde\nabla_\mu \tilde\nabla_\nu \Omega\right) +
+\Omega^{-2}\left( \tilde g_{\mu\nu} \tilde\nabla_\lambda \Omega \tilde\nabla^\lambda \Omega - 4 \tilde\nabla_\mu \Omega \tilde\nabla_\nu \Omega\right).
+\end{align}
+Perturbing the above to first order yields the transformation of $\delta G_{\mu\nu}$:
+\begin{equation}
+\delta G_{\mu\nu} \to \delta G_{\mu\nu} + \delta S_{\mu\nu},
+\end{equation}
+where
+\begin{align}
+\delta S_{\mu\nu}={}&-2 h_{\mu \nu} \Omega^{-1} \tilde\nabla_{\alpha}\tilde\nabla^{\alpha}\Omega
+ + \Omega^{-1} \tilde\nabla_{\alpha}\Omega \tilde\nabla^{\alpha}h_{\mu \nu}
+ -  \tilde g_{\mu \nu} \Omega^{-1} \tilde\nabla_{\alpha}\Omega \tilde\nabla^{\alpha}h
+ + h_{\mu \nu} \Omega^{-2} \tilde\nabla_{\alpha}\Omega \tilde\nabla^{\alpha}\Omega\nonumber\\
+& + 2 \tilde g_{\mu \nu} \Omega^{-1} \tilde\nabla_{\alpha}\Omega \tilde\nabla_{\beta}h^{\alpha \beta}
+ -  \tilde g_{\mu \nu} h^{\alpha \beta} \Omega^{-2} \tilde\nabla_{\alpha}\Omega \tilde\nabla_{\beta}\Omega
+ + 2 \tilde g_{\mu \nu} h_{\alpha \beta} \Omega^{-1} \tilde\nabla^{\beta}\tilde\nabla^{\alpha}\Omega\nonumber\\
+& -  \Omega^{-1} \tilde\nabla_{\alpha}\Omega \tilde\nabla_{\mu}h_{\nu}{}^{\alpha}
+ -  \Omega^{-1} \tilde\nabla_{\alpha}\Omega \tilde\nabla_{\nu}h_{\mu}{}^{\alpha}.
+\end{align}
+Note that in the transformation of $G_{\mu\nu}$, all curvature tensors ($R_{\mu\nu}$, $R$) are contained within $G_{\mu\nu}$ and not $S_{\mu\nu}$. Likewise, the first order perturbation $\delta S_{\mu\nu}$ does not include any zeroth order background curvature tensors and hence has no dependence upon the 3-space curvature $k$.
+\\ \\
+Taking $\Omega(\tau)$, i.e.
+\begin{equation}
+ds^2 = \Omega(\tau)^2\left[ -(1+h_{00})d\tau^2 + (\tilde g_{ij}+h_{ij})dx^i dx^j\right],
+\end{equation}
+with overdots denoting $\partial/\partial \tau$, 
+ $\delta S_{\mu\nu}$ takes the form under the 3+1 splitting:
+\begin{align}
+\delta S_{00}={}&- \dot{h}_{00} \dot{\Omega} \Omega^{-1}
+ -  \dot{h} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}h_{0}{}^{a},
+\\
+\delta S_{0i}={}&- \dot{\Omega}^2 h_{0i} \Omega^{-2}
+ + 2 \ddot{\Omega} h_{0i} \Omega^{-1}
+ + \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}h_{00},
+\\
+\delta S_{ij}={}&- \dot{\Omega}^2 h_{ij} \Omega^{-2}
+ -  \dot{\Omega}^2 \tilde g_{ij} h_{00} \Omega^{-2}
+ -  \dot{h}_{ij} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{h}_{00} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ + \dot{h} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ + 2 \ddot{\Omega} h_{ij} \Omega^{-1}\nonumber\\
+& + 2 \ddot{\Omega} \tilde g_{ij} h_{00} \Omega^{-1}
+ - 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}h_{0}{}^{a}
+ + \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}h_{0j}
+ + \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}h_{0i}.
+\end{align}
+\subsection{SVT Basis}
+In terms of the SVT decomposition,
+$\delta S_{\mu\nu}$ takes the form 
+\begin{align}
+\delta S_{00}={}&6 \dot{\psi} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E},
+\nonumber\\
+\delta S_{0i}={}&- \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\phi
+- B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+\nonumber\\
+\delta S_{ij}={}&2 \dot{\Omega}^2 \tilde g_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \psi \Omega^{-2}
+ - 2 \dot{\phi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \dot{\psi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} \tilde g_{ij} \phi \Omega^{-1}
+ - 4 \ddot{\Omega} \tilde g_{ij} \psi \Omega^{-1}\nonumber\\
+& - 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ + 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}\dot{E}\nonumber\\
+& - 2 \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}E
++ \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}B_{j}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\dot{E}_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}E_{j}
+\nonumber\\
+& + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}E_{j}
+ + \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}B_{i}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\dot{E}_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}E_{i}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}E_{i}
+\nonumber\\
+&-2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+\end{align}
+Finally, taking their sum $\delta \bar G_{\mu\nu} = \delta G_{\mu\nu} + \delta S_{\mu\nu}$ yields 
+\begin{align}
+\delta \bar G_{00}={}&-6 k \phi
+ - 6 k \psi
+ + 6 \dot{\psi} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}
+ - 2 \tilde\nabla_{a}\tilde\nabla^{a}\psi,
+\nonumber\\
+\delta \bar G_{0i}={}&3 k \tilde\nabla_{i}B
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}B
+ - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\phi
+\nonumber\\
+&+2 k B_{i}
+ -  k \dot{E}_{i}
+ -  B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}B_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}_{i}.
+\nonumber\\
+\delta \bar G_{ij}={}&-2 \ddot{\psi} \tilde g_{ij}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \psi \Omega^{-2}
+ - 2 \dot{\phi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \dot{\psi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} \tilde g_{ij} \phi \Omega^{-1}\nonumber\\
+& - 4 \ddot{\Omega} \tilde g_{ij} \psi \Omega^{-1}
+ - 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\dot{B}
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\ddot{E}
+ + 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}\nonumber\\
+& -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\phi
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\psi
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}B
+ + \tilde\nabla_{j}\tilde\nabla_{i}\dot{B}
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\ddot{E}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}\dot{E}\nonumber\\
+& + 2 k \tilde\nabla_{j}\tilde\nabla_{i}E
+ - 2 \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + \tilde\nabla_{j}\tilde\nabla_{i}\phi
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\psi
+\nonumber\\
+& +\dot{\Omega} \Omega^{-1} \tilde\nabla_{i}B_{j}
+ + \tfrac{1}{2} \tilde\nabla_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde\nabla_{i}\ddot{E}_{j}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\dot{E}_{j}
+ + k \tilde\nabla_{i}E_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}E_{j}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}E_{j}\nonumber\\
+& + \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}B_{i}
+ + \tfrac{1}{2} \tilde\nabla_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{j}\ddot{E}_{i}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\dot{E}_{i}
+ + k \tilde\nabla_{j}E_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}E_{i}\nonumber\\
+& + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}E_{i}
+- \ddot{E}_{ij}
+ - 2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+ + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}.
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Perturbed Energy Momentum Tensor}
+We perturb the background perfect fluid to obtain
+\begin{eqnarray}
+\delta T_{\mu\nu} = (\delta \rho + \delta p)U^{(0)}_\mu U^{(0)}_\nu + (\rho^{(0)} + p^{(0)})(\delta U_\mu U^{(0)}_\nu +U^{(0)}_\mu \delta U_\nu) + \delta p g^{(0)}_{\mu\nu} + p^{(0)} h_{\mu\nu}
+\end{eqnarray}
+According to homogenity and isotropy of the background, the scalars $\rho$ and $p$ only depend on the conformal time
+\begin{eqnarray}
+\rho(x^\mu) = \rho^{(0)}(\tau) + \delta \rho (x^\mu),\qquad p(x^\mu) = p^{(0)}(\tau) + \delta p (x^\mu)
+\end{eqnarray}
+Regarding the four velocity, we first define a $\delta u^i$ as
+\begin{eqnarray}
+\delta U^i = \Omega^{-1} \delta u^i
+\end{eqnarray}
+and then decompose $\delta u^i$ by defining the scalar
+\begin{eqnarray}
+v = \int d^3y D(x-y) \tilde\nabla_i \delta u^i
+\end{eqnarray}
+to allow us to express $\delta u^i$ as
+\begin{eqnarray}
+\delta u^i = v^i +\tilde\nabla^i v.
+\end{eqnarray}
+Upon using  $g^{\mu\nu}U_\mu U_\nu = -1$ it follows that
+\begin{eqnarray}
+&&g_{\mu\nu}(U^\mu\delta U^\nu + \delta U^\mu U^\nu) + h_{\mu\nu} U^\mu U^\nu = 0 
+\nonumber\\
+\to&& \delta U^0 = -\Omega^{-1}\phi.
+\end{eqnarray}
+Hence
+\begin{eqnarray}
+\delta U^\mu = \Omega^{-1}(-\phi, v^i+\tilde\nabla^i v).
+\end{eqnarray}
+We do not lower with the metric directly, rather we must use 
+\begin{eqnarray}
+\delta U_\mu = \delta(g_{\mu\nu} U^\nu),\qquad \delta U_\mu &=& \Omega(-\phi, \tilde g_{ij} v^i +\tilde g_{ij} \tilde\nabla^i v+B_i+\tilde\nabla_i B)
+\nonumber\\
+&\equiv &  \Omega(-\phi, v_i +\tilde \nabla_i v+B_i+\tilde\nabla_i B)
+\end{eqnarray}
+Now we compose $\delta T_{\mu\nu}$:
+\begin{eqnarray}
+\delta T_{00} &=& \Omega^2 ( \delta \rho + 2\rho \phi)
+\nonumber\\
+\delta T_{0i} &=& -\Omega^2 \left[ (\rho+p)(v_i +\tilde\nabla_i v)+\rho(B_i +\tilde\nabla_i B)\right]
+\nonumber\\
+\delta T_{ij} &=& \Omega^2 \left[ \tilde g_{ij} \delta p + p(-2\psi \tilde g_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij})\right]
+\end{eqnarray}
+(Curiously, if we had instead started with a decomposition upon covariant $\delta U_\mu$, the lack of $B_i$ and $\nabla_i B$ causes a new problem with establishing the gauge transformation of $v$ and $v_i$ within $\delta \bar T_{0i} = \delta T_{0i} +\Delta_\epsilon T_{0i}$, as we lack a $B$ term to cancel gauge term $T$ and likewise for $\dot L_i$. )
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge Transformations}
+\label{Gauge Transformations}
+Under coordinate transformation $x^\mu \to \bar x^\mu = x^\mu - \epsilon^\mu (x)$ a general tensor $A$ (of arbitrary rank) will transform as
+\begin{eqnarray}
+\bar A = A + \Delta_\epsilon A.
+\end{eqnarray}
+If $A$ consists of a background and a perturbation, then to first order it follows that
+\begin{eqnarray}
+\delta \bar A = \delta A + \Delta_\epsilon A^{(0)}.
+\label{plied}
+\end{eqnarray}
+In the RW geometry we take the general $\epsilon_\mu(x)$ as $\epsilon_\mu = \Omega^2 f_\mu$ with
+\begin{eqnarray}
+f_0 = -T,\qquad f_i = L_i + \tilde \nabla_i L,\qquad \tilde g^{ij} \tilde\nabla_j L_i = \tilde\nabla^i L_i = 0.
+\end{eqnarray}
+It will be helpful to calculate $\nabla_\mu \epsilon_\nu$ in terms of $f_\mu$,
+\begin{eqnarray}
+\nabla_\mu \epsilon_\nu &=& \partial_\mu \epsilon_\nu - \Gamma^\lambda_{\mu\nu} \epsilon_\lambda
+\nonumber\\
+&=& \partial_\mu \epsilon_\nu - \epsilon_\lambda \left[\tilde \Gamma^{\lambda}_{\mu\nu} + \Omega^{-1}( \delta^\lambda_\mu \partial_\nu +\delta^\lambda_\nu \partial_\mu - \tilde g_{\mu\nu} \tilde g^{\lambda\rho}\partial_\rho)\Omega\right])
+\nonumber\\
+&=& \Omega^2 \tilde\nabla_\mu f_\nu +  ( f_\nu \delta^0_\mu - f_\mu \delta^0_\nu + \tilde g_{\mu\nu} T) \Omega \dot \Omega
+\end{eqnarray}
+Since $\tilde\Gamma^{\lambda}_{\mu\nu}=0$ for any time index, we have
+\begin{eqnarray}
+\tilde\nabla_0 f_0 = -\dot T,\qquad \tilde\nabla_0 f_i = \dot L_i + \tilde\nabla_i \dot L,\qquad \tilde \nabla_i f_0 = -\tilde\nabla_i T,
+\qquad \tilde\nabla_i f_j = \tilde\nabla_i L_j + \tilde\nabla_i \tilde\nabla_j L
+\end{eqnarray}
+and consequently
+\begin{eqnarray}
+\nabla_0 \epsilon_0 = -\dot T \Omega^2 - T \Omega \dot \Omega,\qquad \nabla_0 \epsilon_i = \Omega^2(\dot L_i + \tilde\nabla_i \dot L) + (L_i + \tilde\nabla_i L)\Omega \dot \Omega,\qquad \nabla_i \epsilon_0 = -\Omega^2 \tilde\nabla_i T - (L_i +\tilde\nabla_i L)\Omega \dot\Omega
+\end{eqnarray}
+\begin{eqnarray}
+\nabla_i \epsilon_j = \Omega^2(\tilde\nabla_i L_j + \tilde\nabla_i\tilde\nabla_j L )+ \tilde g_{ij} T\Omega\dot\Omega
+\end{eqnarray}
+
+
+%%%%%%%%%%
+\subsection{Metric}
+For the metric
+\begin{eqnarray}
+\Delta_\epsilon g_{\mu\nu} &=& \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+\nonumber\\
+&=& \Omega^2(\tilde\nabla_\mu f_\nu + \tilde\nabla_\nu f_\mu) + 2\tilde g_{\mu\nu}T \Omega \dot\Omega
+\end{eqnarray}
+and thus
+\begin{eqnarray}
+\Delta_\epsilon g_{00} &=& -2 \dot T\Omega^2 - 2 T\Omega \dot \Omega
+\nonumber\\
+\Delta_\epsilon g_{0i}&=& \Omega^2(\dot L_i + \tilde\nabla_i (\dot L - T) )
+\nonumber\\
+\Delta_\epsilon g_{ij}&=& \Omega^2(\tilde\nabla_i L_j + \tilde\nabla_j L_i + 2\tilde\nabla_i\tilde\nabla_j L) + 2\tilde g_{ij}T \Omega \dot\Omega.
+\label{liemetric}
+\end{eqnarray}
+From the Lie derivatives we can now form three equations in terms of gauge transformed SVT quantities viz $\bar h_{\mu\nu} = h_{\mu\nu} + \Delta_\epsilon g_{\mu\nu}$. These are
+\begin{eqnarray}
+\bar \phi &=& \phi  + \dot T + T \Omega^{-1} \dot\Omega
+\nonumber\\
+\bar B_i + \tilde\nabla_i \bar B &=& B_i + \tilde\nabla_i B + \dot L_i + \tilde\nabla_i (\dot L - T) 
+\nonumber\\
+-2\bar \psi \tilde g_{ij} + 2\tilde\nabla_i \tilde\nabla_j \bar E + \tilde \nabla_i \bar E_j + \tilde\nabla_j \bar E_i +2\bar E_{ij} &=&-2 \psi \tilde g_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde \nabla_i  E_j + \tilde\nabla_j  E_i +2 E_{ij}
+\nonumber\\
+&&+ \tilde\nabla_i L_j + \tilde\nabla_j L_i + 2\tilde\nabla_i\tilde\nabla_j L + 2\tilde g_{ij}T \Omega^{-1} \dot\Omega
+\end{eqnarray}
+If surface terms are to vanish, then we may take the trace and longitudinal projections upon the above equations to yield direct relations among SVT quantities. This will involve covariant derivative commutation (see \eqref{covcom}) and consequently requires the use of a scalar and vector curved space Green's functions behaving as $(\tilde\nabla^2 + 3k)D(x-y) \sim \delta(x-y)$ and $(\tilde\nabla^2+2k) D_{ij'}(x-x')\sim \delta_{ij'}(x-x')$ (see Greens\_Functions\_Cov). Denoting $\mathcal H \equiv \dot\Omega/\Omega$ we have
+\begin{eqnarray}
+\bar \phi &=& \phi  + \dot T + \mathcal H T
+\nonumber\\
+\bar \psi &=& \psi  - \mathcal H T
+\nonumber\\
+\bar B &=& B + \dot L - T
+\nonumber\\
+\bar E &=& E + L
+\nonumber\\
+\bar B_i &=& B_i + \dot L_i
+\nonumber\\
+\bar E_i &=& E_i + L_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}
+\end{eqnarray}
+Gauge invariant quantities are 
+\begin{eqnarray}
+\Phi &=& \phi +\mathcal H (B-\dot E) + (\dot B-\ddot E)
+\nonumber\\
+\Psi &=& \psi - \mathcal H(B-\dot E)
+\nonumber\\
+\mathcal Q_i &=& B_i - \dot E_i
+\nonumber\\
+E_{ij} &=& E_{ij}
+\end{eqnarray}
+( This presents a slightly different, but computationally more conveinent form from those defined in APM-CPII. Instead we take combinations of )
+\begin{eqnarray}
+\Phi &=&\phi + (\dot B-\ddot E) + \Omega^{-1}\dot\Omega (B-\dot E) - \Omega^{-1}\tilde\nabla^i\Omega(E_i +\tilde\nabla_i E)
+\nonumber\\
+\Psi &=& \psi - \Omega^{-1}\dot\Omega(B-\dot E) + \Omega^{-1}\tilde\nabla^i \Omega (E_i +\tilde\nabla_i E)
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%
+\subsection{Energy Momentum Tensor}
+According to \eqref{plied} the perturbed Energy Momentum tensor will transform as a Lie derivative
+\begin{eqnarray}
+\bar \delta T_{\mu\nu} = \delta T_{\mu\nu} + \Delta_\epsilon T_{\mu\nu}
+\end{eqnarray}
+where $T_{\mu\nu}$ implies the background. For a perfect fluid we find in Weinberg pg. 292 
+\begin{eqnarray}
+\Delta_\epsilon T_{\mu\nu} &=&  T^{\lambda}{}_\mu \nabla_\nu \epsilon_\lambda + T^{\lambda}{}_\nu \nabla_\mu \epsilon_\lambda + \epsilon_\lambda  \nabla^\lambda T_{\mu\nu}
+\nonumber\\
+&=&p\Delta_\epsilon g_{\mu\nu} + g_{\mu\nu} \Delta_\epsilon p 
++(\rho+p)\left[ U_\mu^{(0)} \Delta_\epsilon U_\nu^{(0)} + \Delta_\epsilon U_\mu^{(0)} U_\nu^{(0)}\right]
++ U_\mu^{(0)}U_\nu^{(0)} (\Delta_\epsilon \rho + \Delta_\epsilon p).
+\end{eqnarray}
+
+For scalars
+\begin{eqnarray}
+\Delta_\epsilon p = \epsilon_\lambda \nabla^\lambda p = g^{\mu\nu}\epsilon_\mu \nabla_\nu p = T \dot p 
+\end{eqnarray}
+For the four velocity, the only non-zero covariant derivative $\nabla_\mu U^{(0)}_\nu$ is
+\begin{eqnarray}
+\nabla_i U^{(0)}_j = \tilde g_{ij} \dot\Omega \quad\text{because}\quad \Gamma^0_{00} = \frac{\dot\Omega}{\Omega},\quad \Gamma^0_{ij} = \frac{\dot\Omega}{\Omega} \tilde g_{ij}
+\end{eqnarray}
+Thus
+\begin{eqnarray}
+\Delta_\epsilon U_0^{(0)} = -\Omega \dot T - T \dot \Omega,\qquad \Delta_\epsilon U_i^{(0)}= - \Omega \tilde\nabla_i T. 
+\end{eqnarray}
+Calculating the components of the gauge sector:
+\begin{eqnarray}
+\Delta_\epsilon T_{00} &=& 2\rho(\Omega^2 \dot T + T\Omega \dot \Omega) + \Omega^2 T \dot \rho
+\nonumber\\
+\Delta_\epsilon T_{0i} &=& \Omega^2 \rho \tilde\nabla_i T + \Omega^2 p (\dot L_i + \tilde\nabla_i \dot L)
+\nonumber\\
+\Delta_\epsilon T_{ij} &=& \Omega^2 p(\tilde\nabla_i L_j + \tilde\nabla_j L_i + 2\tilde\nabla_i\tilde\nabla_j L + 2\tilde g_{ij} T \Omega^{-1} \dot\Omega) + \Omega^2 \tilde g_{ij} T\dot p 
+\end{eqnarray}
+From the Lie derivatives we can now form three equations in terms of gauge transformed SVT quantities viz $\bar \delta T_{\mu\nu} = \delta T_{\mu\nu} + \Delta_\epsilon T_{\mu\nu}$. Using the gauge transformations from the metric, the gauge dependence for $\delta T_{\mu\nu}$ is straightforward.
+
+\begin{eqnarray}
+-\Omega^2 \kappa^2_4 (\delta \bar \rho + 2\rho \bar \phi) &=& -\Omega^2 \kappa^2_4\left[  \delta \rho + 2\rho \phi + 2\rho\dot T + 2\rho T \mathcal H + T\dot\rho \right]
+\nonumber\\
+%%
+  -\Omega^2 \kappa^2_4\left[ -\rho(\bar v_i +\bar B_i +\nabla_i \bar v+\nabla_i \bar B) - p (\bar v_i  +\nabla_i \bar v) \right]
+&=&   -\Omega^2 \kappa^2_4\bigg[ -\rho(v_i +B_i +\nabla_i v+\nabla_i B-\nabla_i T)
+\nonumber\\
+&&\qquad 
+ - p (v_i -\dot L_i +\nabla_i v - \tilde\nabla_i \dot L) \bigg]
+\nonumber\\
+%%
+-\Omega^2 \kappa^2_4 \bigg[  
+ \gamma_{ij} \delta \bar p + p(-2\bar\psi \tilde g_{ij} + 2\nabla_i \nabla_j \bar E + \nabla_i \bar E_j + \nabla_j \bar E_i + 2\bar E_{ij})\bigg]
+ &=& 
+ -\Omega^2 \kappa^2_4 \bigg[  
+ \tilde g_{ij} \delta p + p(-2\psi \gamma_{ij} + 2\nabla_i \nabla_j E + \nabla_i E_j + \nabla_j E_i 
+\nonumber\\
+&&\qquad
++ 2E_{ij})+p(\tilde\nabla_i L_j + \tilde\nabla_j L_i + 2\tilde\nabla_i\tilde\nabla_j L + 2\tilde g_{ij} T \mathcal H)
+\nonumber\\
+&&\qquad
++\tilde g_{ij} T\dot p \bigg]
+\end{eqnarray}
+
+Requiring only $v$ to vanish on the surface, the gauge dependence is then:
+\begin{eqnarray}
+\delta \bar \rho &=& \delta \rho + T\dot \rho 
+\nonumber\\
+\bar \delta p &=& \delta p + T\dot p
+\nonumber\\
+\bar v&=& v-\dot L
+\nonumber\\
+\bar v_i &=& v_i - \dot L_i
+\end{eqnarray}
+Gauge invariant forms may be solved as:
+\begin{eqnarray}
+\delta \rho_\sigma &=& \delta \rho + \dot \rho (B-\dot E)
+\nonumber\\
+\delta p_\sigma &=& \delta p + \dot p (B-\dot E)
+\nonumber\\
+\mathcal V &=& v+\dot E
+\nonumber\\
+\mathcal B_i &=& v_i + B_i
+\end{eqnarray}
+
+
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{appendices}
+
+\section{Friedmann Equations}
+RW geometry:
+\begin{eqnarray}
+ds^2 = \Omega^2(\tau)\left[ -d\tau^2 + \frac{dr^2}{1-kr^2} + r^2d\Omega^2\right] = \Omega^2(\tau)\left[ -d\tau^2 + \tilde g_{ij} dx^i dx^j\right]
+\end{eqnarray}
+Einstein Tensor:
+\begin{eqnarray}
+G_{00} = -\left(3k + 3 \left(\frac{\dot \Omega}{\Omega}\right)^2\right),\qquad G_{0i} = 0,\qquad G_{ij} = \tilde g_{ij} \left[k - \left(\frac{\dot \Omega}{\Omega}\right)^2 + 2\frac{\ddot \Omega}{\Omega}\right]
+\end{eqnarray}
+EM Tensor (by conditions of homogeneity and isotropy $\to$ perfect fluid):
+\begin{eqnarray}
+T_{\mu\nu} = (\rho+p)U_\mu U_\nu + p g_{\mu\nu}
+\end{eqnarray}
+\begin{eqnarray}
+T_{00} = \Omega^2\rho,\qquad T_{0i} = 0,\qquad T_{ij} = \Omega^2 \tilde g_{ij} p 
+\end{eqnarray}
+** As an aside, to find the background $U_\mu$ we note the proper time $d\tilde \tau$
+\begin{eqnarray}
+d\tilde \tau^2 = -ds^2 =\Omega^2(\tau)d\tau^2\left( 1- \frac{dx^i}{d\tau}\frac{dx^j}{d\tau}\right).
+\end{eqnarray}
+In the RW background, coordinates are co-moving, i.e. $\frac{dx^i}{dt} =0$ and thus $\frac{dx^i}{d\tau} = \frac{dx^i}{dt}\frac{dt}{d\tau} = 0$. This gives us the proper time as related to the conformal time
+\begin{eqnarray}
+d\tilde\tau = \Omega (\tau) d\tau.
+\end{eqnarray}
+By definition of four velocity
+\begin{eqnarray}
+U^\mu = \frac{dx^\mu}{d\tau}\frac{d\tau}{d\tilde\tau} =  \Omega^{-1}\delta^\mu_0,\qquad U_\mu = -\Omega(\tau) \delta^0_\mu \quad **
+\end{eqnarray}
+Friedmann equations:
+\begin{eqnarray}
+ \mathcal H \equiv \frac{\dot \Omega}{\Omega},\qquad \dot{\mathcal H} = \frac{\ddot \Omega}{\Omega} - \left(\frac{\dot \Omega}{\Omega}\right)^2,\qquad \frac{\ddot \Omega}{\Omega} = \mathcal H^2 + \dot{\mathcal H}
+\end{eqnarray}
+\begin{eqnarray}
+G_{\mu\nu} = -\kappa^2_4 T_{\mu\nu},\qquad \Delta_{\mu\nu} \equiv G_{\mu\nu} + \kappa_4^2 T_{\mu\nu}=0
+\end{eqnarray}
+The $00$, $ij$, and trace are respectively
+\begin{eqnarray}
+3k+3\mathcal H^2= \kappa^2_4 \Omega^2\rho
+\end{eqnarray}
+\begin{eqnarray}
+\tilde g_{ij}(k+\mathcal H^2 + 2\dot{\mathcal H}) = -\kappa_4^2 \tilde g_{ij} \Omega^2 p 
+\end{eqnarray}
+\begin{eqnarray}
+\frac{6}{\Omega^2}(k+\mathcal H^2 + \dot{\mathcal H}) = -\kappa_4^2 (-\rho+3p)
+\end{eqnarray}
+Under gauge transformations, we will find $\delta T_{\mu\nu}$ will depend on derivatives of its background quantities, and to this end we give five useful forms of the Friedmann equations:
+\begin{eqnarray}
+3k+3\mathcal H^2&=& \kappa^2_4 \Omega^2\rho
+\nonumber\\
+(k+\mathcal H^2 + 2\dot{\mathcal H}) &=& -\kappa_4^2 \Omega^2 p 
+\nonumber\\
+6(k+\mathcal H^2 + \dot{\mathcal H}) &=& \kappa_4^2 \Omega^2 (\rho - 3p)
+\nonumber\\
+6\mathcal H \dot{\mathcal H} - 6k\mathcal H - 6\mathcal H^3 &=& \kappa_4^2 \Omega^2 \dot\rho
+\nonumber\\
+ 2\mathcal H k + 2\mathcal{H}^3+2\mathcal H \dot{\mathcal H} - 2\ddot{\mathcal H}&=& \kappa_4^2 \Omega^2 \dot p
+\end{eqnarray}
+
+%%%%%%%%%%%%%%
+\section{Maximal 3-Space Geometric Quantities}
+With the geometry of
+\begin{eqnarray}
+ds^2 = \tilde g_{ij}dx^idx^j = \left( \frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2\right):
+\end{eqnarray}
+we have the following geometric quantities
+\begin{eqnarray}
+\tilde R_{ijkl} = k(\tilde g_{jk}\tilde g_{il}-\tilde g_{ik}\tilde g_{jl}),\qquad \tilde R_{ij} = -2k\tilde g_{ij},\qquad \tilde R = -6k
+\end{eqnarray}
+
+\begin{eqnarray}
+[\tilde\nabla_i,\tilde\nabla_j]V_k = V_m \tilde R^m{}_{kij}= k (\tilde g_{ki}\tilde g^{m}{}_j - \tilde g^m{}_{i}\tilde g_{kj})V_m = k(\tilde g_{ik}V_j - \tilde g_{jk}V_i)
+\label{covcom}
+\end{eqnarray}
+
+\begin{eqnarray}
+\Gamma^r_{rr} &=& \frac{kr}{1-kr^2},\qquad \Gamma^r_{\theta\theta} = -r(1-kr^2),\qquad \Gamma^r_{\phi\phi} = -r(1-kr^2)\sin^2\theta
+\nonumber\\
+\Gamma^\theta_{r\theta} &=& \Gamma^{\phi}_{r\phi} = \frac{1}{r},\qquad \Gamma^{\theta}_{\phi\phi} = -\sin\theta\cos\theta, \qquad \Gamma^{\phi}_{\theta\phi} = \cot\theta,\quad\text{with all others zero}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{$\delta T_{\mu\nu}$ Simplified Form}
+Here we insert the background equations and partially form gauge invariant quantities for $\delta T_{\mu\nu}$.
+\begin{eqnarray}
+-\kappa^2_4 \delta T_{00} &=& -\Omega^2 \kappa^2_4\left[  \delta \rho + 2\rho \phi  \right]
+\nonumber\\
+&=& -\Omega^2 \kappa^2_4 \delta \rho - (6k+6\mathcal H^2)\phi
+\nonumber\\
+\nonumber\\
+-\kappa^2_4 \delta T_{0i} &=& -\Omega^2 \kappa^2_4\left[ -(\rho+p)(v_i +\tilde\nabla_i v)-\rho(B_i +\tilde\nabla_i B) \right]
+\nonumber\\
+&=&  -\Omega^2 \kappa^2_4\left[ -\rho(v_i +B_i +\tilde\nabla_i v+\tilde\nabla_i B) - p (v_i  +\tilde\nabla_i v ) \right]
+\nonumber\\
+&=& (3k+3\mathcal H^2)(\mathcal B_i +\tilde\nabla_i v+\tilde\nabla_i B) -(k+\mathcal H^2 + 2\dot{\mathcal H}) (v_i +\tilde\nabla_i v )
+\nonumber\\
+\nonumber\\
+-\kappa^2_4 \delta T_{ij} &=& -\Omega^2 \kappa^2_4 \bigg[  
+ \gamma_{ij} \delta p + p(-2\psi \gamma_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij})\bigg]
+\nonumber\\
+ &=& -\Omega^2 \kappa^2_4 \tilde g_{ij} \delta p + (k+\mathcal H^2 + 2\dot{\mathcal H})(-2\psi \tilde g_{ij} + 2\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij})
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{$\delta G_{\mu\nu}$ Simplified Form}
+Here we insert the background equations and partially form gauge invariant quantities for $\delta G_{\mu\nu}$.
+\begin{eqnarray}
+\delta G_{00}&=&-6 k \phi
+ - 6 k \psi
+ + 6 \dot{\psi} \mathcal H
+ + 2 \mathcal H \tilde\nabla_{a}\tilde\nabla^{a}B
+ - 2 \mathcal H \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}
+ - 2 \tilde\nabla_{a}\tilde\nabla^{a}\psi,
+\nonumber\\
+&=& -6 k \phi- 6 k \psi + 6 \dot{\psi} \mathcal H - 2 \tilde\nabla_{a}\tilde\nabla^{a}\Psi
+\nonumber\\ \nonumber\\
+%%
+\delta  G^{(S)}_{0i}&=&3 k \tilde\nabla_{i}B
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}B
+ - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\phi
+\nonumber\\
+&=& 3 k \tilde\nabla_{i}B
+ -  \mathcal H^2 \tilde\nabla_{i}B
+ + 2 (\mathcal H^2 +\dot{\mathcal H}) \tilde\nabla_{i}B
+ - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi
+\nonumber\\
+&=& (3k+\mathcal H^2 +2\dot{\mathcal H})\tilde\nabla_i B  - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi
+\nonumber\\ \nonumber\\
+%%
+\delta  G^{(V)}_{0i}&=&
+2 k B_{i}
+ -  k \dot{E}_{i}
+ -  B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}B_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}_{i}
+\nonumber\\
+&=& 
+2 k B_{i}
+ -  k \dot{E}_{i}
+ -  \mathcal H^2 B_{i} 
+ + 2(\mathcal H^2 + \dot{\mathcal H}) B_{i} 
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}B_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}_{i}
+\nonumber\\
+&=& 
+  k \mathcal Q_i
+ + (k +\mathcal H^2 + 2\dot{\mathcal H}) B_{i} 
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\mathcal Q_{i}
+\nonumber\\ \nonumber\\
+%%
+\delta  G^{(S)}_{ij}&=&-2 \ddot{\psi} \tilde g_{ij}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \psi \Omega^{-2}
+ - 2 \dot{\phi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \dot{\psi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} \tilde g_{ij} \phi \Omega^{-1}\nonumber\\
+&& - 4 \ddot{\Omega} \tilde g_{ij} \psi \Omega^{-1}
+ - 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\dot{B}
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\ddot{E}
+ + 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}\nonumber\\
+&& -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\phi
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\psi
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}B
+ + \tilde\nabla_{j}\tilde\nabla_{i}\dot{B}
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\ddot{E}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}\dot{E}\nonumber\\
+&& + 2 k \tilde\nabla_{j}\tilde\nabla_{i}E
+ - 2 \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + \tilde\nabla_{j}\tilde\nabla_{i}\phi
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\psi
+\nonumber\\
+&=&-2 \ddot{\psi} \tilde g_{ij}
+ + 2  \tilde g_{ij}\mathcal H^2 \phi 
+ + 2 \mathcal H^2 \tilde g_{ij} \psi 
+ - 2 \mathcal H \dot{\phi}  \tilde g_{ij}
+ - 4 \mathcal H \dot{\psi}  \tilde g_{ij} 
+ - 4 (\mathcal H^2+\dot{\mathcal H}) \tilde g_{ij} \phi \nonumber\\
+&& - 4(\mathcal H^2+\dot{\mathcal H}) \tilde g_{ij} \psi 
+ - 2 \mathcal H \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}B
+ -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\dot{B}
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\ddot{E}
+ + 2 \mathcal H \tilde g_{ij}  \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}\nonumber\\
+&& -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\phi
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\psi
+ + 2 \mathcal H \tilde\nabla_{j}\tilde\nabla_{i}B
+ + \tilde\nabla_{j}\tilde\nabla_{i}\dot{B}
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\ddot{E}
+ - 2 \mathcal H \tilde\nabla_{j}\tilde\nabla_{i}\dot{E}\nonumber\\
+&& + 2 k \tilde\nabla_{j}\tilde\nabla_{i}E
+ - 2 \mathcal H^2 \tilde\nabla_{j}\tilde\nabla_{i}E
+ + 4(\mathcal H^2+\dot{\mathcal H}) \tilde\nabla_{j}\tilde\nabla_{i}E
+ + \tilde\nabla_{j}\tilde\nabla_{i}\phi
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\psi
+\nonumber\\
+&=& -\tilde g_{ij}\tilde\nabla_a\tilde\nabla^a \Phi + \tilde g_{ij} \tilde\nabla_a\tilde \nabla^a \Psi + \tilde\nabla_i\tilde\nabla_j \Phi - \tilde\nabla_i\tilde\nabla_j \Psi
++(2k+2\mathcal H^2 + 4\dot{\mathcal H}) \tilde\nabla_i\tilde \nabla_j E \nonumber\\
+&&-2 \tilde g_{ij}\ddot \psi -2\tilde g_{ij}\mathcal H \dot\phi - 4\tilde g_{ij}\mathcal H \dot\psi
+-(2\mathcal H^2+4\dot{\mathcal H})\tilde g_{ij}\phi -(2\mathcal H^2 +4\dot{\mathcal H})\tilde g_{ij}\psi
+\nonumber\\ \nonumber\\
+%%
+\delta  G^{(V)}_{ij}&=& \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}B_{j}
+ + \tfrac{1}{2} \tilde\nabla_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde\nabla_{i}\ddot{E}_{j}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\dot{E}_{j}
+ + k \tilde\nabla_{i}E_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}E_{j}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}E_{j}\nonumber\\
+&& + \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}B_{i}
+ + \tfrac{1}{2} \tilde\nabla_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{j}\ddot{E}_{i}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\dot{E}_{i}
+ + k \tilde\nabla_{j}E_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}E_{i}\nonumber\\
+&& + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}E_{i}
+\nonumber\\
+&=& \mathcal H \tilde\nabla_{i}B_{j}
+ + \tfrac{1}{2} \tilde\nabla_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde\nabla_{i}\ddot{E}_{j}
+ -  \mathcal H \tilde\nabla_{i}\dot{E}_{j}
+ + k \tilde\nabla_{i}E_{j}
+ -  \mathcal H^2 \tilde\nabla_{i}E_{j}
+ + 2 (\mathcal H^2 +\dot{\mathcal H}) \tilde\nabla_{i}E_{j}\nonumber\\
+&& +\mathcal H \tilde\nabla_{j}B_{i}
+ + \tfrac{1}{2} \tilde\nabla_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{j}\ddot{E}_{i}
+ -  \mathcal H \tilde\nabla_{j}\dot{E}_{i}
+ + k \tilde\nabla_{j}E_{i}
+ -  \mathcal H^2 \tilde\nabla_{j}E_{i}\nonumber\\
+&& + 2 (\mathcal H^2 + \dot{\mathcal H}) \tilde\nabla_{j}E_{i}
+\nonumber\\
+&=& \mathcal H\nabla_{i}\mathcal Q_{j}+\tfrac{1}{2} \tilde\nabla_{i}\dot{\mathcal Q}_{j}
++ \mathcal H \tilde\nabla_{j}\mathcal Q_{i}+\tfrac{1}{2} \tilde\nabla_{j}\dot{\mathcal Q}_{i}
++(k+\mathcal H^2 + 2\dot{\mathcal H})\tilde\nabla_{i}E_{j} + 
+(k+\mathcal H^2 + 2\dot{\mathcal H})\tilde\nabla_{j}E_{i}
+\nonumber\\ \nonumber\\
+%%
+\delta  G^{(T)}_{ij}&=&
+- \ddot{E}_{ij}
+ - 2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+ + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}.
+\nonumber\\
+&=& - \ddot{E}_{ij}
+ - 2 \mathcal H^2 E_{ij} 
+ - 2 \mathcal H \dot{E}_{ij}
+ + 4(\mathcal H^2 +\dot H) E_{ij}
+ + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}.
+\nonumber\\
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\section{$\delta T_{\mu\nu}$ Full Form}
+
+\begin{eqnarray}
+\delta T_{00} &=& \Omega^2 ( \delta \rho + 2\rho \phi)
+\nonumber\\
+\delta T_{0i} &=& -\Omega^2 \left[ (\rho+p)(v_i +\tilde\nabla_i v)+\rho(B_i +\tilde\nabla_i B)\right]
+\nonumber\\
+\delta T_{ij} &=& \Omega^2 \left[ \tilde g_{ij} \delta p + p(-2\psi \tilde g_{ij} + 2\tilde \nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij})\right]
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\section{$\delta G_{\mu\nu}$ Full Form}
+Mathematica output.
+\begin{eqnarray}
+\delta  G_{00}&=&-6 k \phi
+ - 6 k \psi
+ + 6 \dot{\psi} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}
+ - 2 \tilde\nabla_{a}\tilde\nabla^{a}\psi,
+\nonumber\\
+\delta  G_{0i}&=&3 k \tilde\nabla_{i}B
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}B
+ - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\phi
+\nonumber\\
+&&+2 k B_{i}
+ -  k \dot{E}_{i}
+ -  B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}B_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}_{i}.
+\nonumber\\
+\delta G_{ij}&=&-2 \ddot{\psi} \tilde g_{ij}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 \tilde g_{ij} \psi \Omega^{-2}
+ - 2 \dot{\phi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \dot{\psi} \dot{\Omega} \tilde g_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} \tilde g_{ij} \phi \Omega^{-1}\nonumber\\
+&& - 4 \ddot{\Omega} \tilde g_{ij} \psi \Omega^{-1}
+ - 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}B
+ -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\dot{B}
+ + \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\ddot{E}
+ + 2 \dot{\Omega} \tilde g_{ij} \Omega^{-1} \tilde\nabla_{a}\tilde\nabla^{a}\dot{E}\nonumber\\
+&& -  \tilde g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\phi
+ + g_{ij} \tilde\nabla_{a}\tilde\nabla^{a}\psi
+ + 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}B
+ + \tilde\nabla_{j}\tilde\nabla_{i}\dot{B}
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\ddot{E}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}\dot{E}\nonumber\\
+&& + 2 k \tilde\nabla_{j}\tilde\nabla_{i}E
+ - 2 \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}\tilde\nabla_{i}E
+ + \tilde\nabla_{j}\tilde\nabla_{i}\phi
+ -  \tilde\nabla_{j}\tilde\nabla_{i}\psi
+\nonumber\\
+&& +\dot{\Omega} \Omega^{-1} \tilde\nabla_{i}B_{j}
+ + \tfrac{1}{2} \tilde\nabla_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde\nabla_{i}\ddot{E}_{j}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{i}\dot{E}_{j}
+ + k \tilde\nabla_{i}E_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{i}E_{j}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{i}E_{j}\nonumber\\
+&& + \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}B_{i}
+ + \tfrac{1}{2} \tilde\nabla_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde\nabla_{j}\ddot{E}_{i}
+ -  \dot{\Omega} \Omega^{-1} \tilde\nabla_{j}\dot{E}_{i}
+ + k \tilde\nabla_{j}E_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde\nabla_{j}E_{i}\nonumber\\
+&& + 2 \ddot{\Omega} \Omega^{-1} \tilde\nabla_{j}E_{i}
+- \ddot{E}_{ij}
+ - 2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+ + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}.
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\delta G_{\mu\nu} = -\kappa_4^2 \delta T_{\mu\nu}$ Algebra }
+This section entails the steps required to bring $\delta G_{\mu\nu} = -\kappa_4^2 \delta T_{\mu\nu}$ into its entirely gauge invariant form. Scalars, vectors, and tensors are only separated for convenience (they are still coupled in the total $\Delta_{\mu\nu}=0$).
+
+\begin{eqnarray}
+\delta G_{00}&=&-\kappa^2_4 \delta T_{00}
+\nonumber\\
+-6 k \phi- 6 k \psi + 6 \dot{\psi} \mathcal H - 2 \tilde\nabla_{a}\tilde\nabla^{a}\Psi&=& -\Omega^2 \kappa^2_4 \delta \rho - (6k+6\mathcal H^2)\phi
+\nonumber\\
+6\mathcal H^2 \phi- 6 k \psi + 6 \dot{\psi} \mathcal H - 2 \tilde\nabla_{a}\tilde\nabla^{a}\Psi&=& -\Omega^2 \kappa^2_4 \delta \rho 
+\nonumber\\
+\kappa_4^2 \Omega^2 \dot\rho + 6\mathcal H^2 \Phi- 6 k \Psi + 6 \dot{\Psi} \mathcal H - 2 \tilde\nabla_{a}\tilde\nabla^{a}\Psi&=& -\Omega^2 \kappa^2_4 \delta \rho 
+\nonumber\\
+ 6\mathcal H^2 \Phi- 6 k \Psi + 6 \dot{\Psi} \mathcal H - 2 \tilde\nabla_{a}\tilde\nabla^{a}\Psi&=& -\Omega^2 \kappa^2_4 \delta \rho_\sigma
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta  G^{(S)}_{0i}&=& -\kappa^2_4 \delta T^{(S)}_{0i}
+\nonumber\\
+ (3k+\mathcal H^2 +2\dot{\mathcal H})\tilde\nabla_i B  - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi 
+&=& 
+(3k+3\mathcal H^2)(\tilde\nabla_i v+\tilde\nabla_i B) -(k+\mathcal H^2 + 2\dot{\mathcal H}) \tilde\nabla_i v
+\nonumber\\
+ (-2\mathcal H^2 +2\dot{\mathcal H})\tilde\nabla_i B  - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi 
+&=& 
+(2k+2\mathcal H^2 - 2\dot{\mathcal H}) \tilde\nabla_i v
+\nonumber\\
+ (-2\mathcal H^2 +2\dot{\mathcal H})\tilde\nabla_i B  - 2 k \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi 
+&=& 
+(2k+2\mathcal H^2 - 2\dot{\mathcal H}) \tilde\nabla_i(\mathcal V-\dot E)
+\nonumber\\
+ (-2\mathcal H^2 +2\dot{\mathcal H})\tilde\nabla_i B  +(2 \mathcal H^2 -2\dot{\mathcal H}) \tilde\nabla_{i}\dot{E}
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi 
+&=& 
+(2k+2\mathcal H^2 - 2\dot{\mathcal H}) \tilde\nabla_i\mathcal V
+\nonumber\\
+ (-2\mathcal H^2 +2\dot{\mathcal H})\tilde\nabla_i (B-\dot E) 
+ - 2 \tilde\nabla_{i}\dot{\psi}
+ - 2 \mathcal H \tilde\nabla_{i}\phi 
+&=& 
+(2k+2\mathcal H^2 - 2\dot{\mathcal H}) \tilde\nabla_i\mathcal V
+\nonumber\\
+ - 2 \tilde\nabla_{i}\dot{\Psi}
+ - 2 \mathcal H \tilde\nabla_{i}\Phi 
+&=& 
+(2k+2\mathcal H^2 - 2\dot{\mathcal H}) \tilde\nabla_i\mathcal V
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta G_{0i}^{(V)}&=& -\kappa^2_4 \delta T^{(V)}_{0i}
+\nonumber\\
+  k \mathcal Q_i
+ + (k +\mathcal H^2 + 2\dot{\mathcal H}) B_{i} 
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\mathcal Q_{i}
+&=& 
+(3k+3\mathcal H^2)\mathcal B_i -(k+\mathcal H^2 + 2\dot{\mathcal H})v_i
+\nonumber\\
+  k \mathcal Q_i
+ + (k +\mathcal H^2 + 2\dot{\mathcal H}) \mathcal B_{i} 
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\mathcal Q_{i}
+&=& 
+(3k+3\mathcal H^2)\mathcal B_i 
+\nonumber\\
+  k \mathcal Q_i
+ + \tfrac{1}{2} \tilde\nabla_{a}\tilde\nabla^{a}\mathcal Q_{i}&=& (2k +2\mathcal H^2 - 2\dot{\mathcal H}) \mathcal B_{i} 
+\end{eqnarray}
+
+\begin{eqnarray}
+&&\delta  G^{(S)}_{ij}=  -\kappa^2_4 \delta T^{(S)}_{ij}
+\nonumber\\ \nonumber\\
+&& -\tilde g_{ij}\tilde\nabla_a\nabla^a \Phi + \tilde g_{ij} \tilde\nabla_a\nabla^a \Psi + \tilde\nabla_i\nabla_j \Phi - \tilde\nabla_i\nabla_j \Psi
++(2k+2\mathcal H^2 + 4\dot{\mathcal H}) \tilde\nabla_i\nabla_j E \nonumber\\
+&&-2 \tilde g_{ij}\ddot \psi -2\tilde g_{ij}\mathcal H \dot\phi - 4\tilde g_{ij}\mathcal H \dot\psi
+-(2\mathcal H^2+4\dot{\mathcal H})\tilde g_{ij}\phi -(2\mathcal H^2 +4\dot{\mathcal H})\tilde g_{ij}\psi
+\nonumber\\
+&& = -\Omega^2 \kappa^2_4 \tilde g_{ij} \delta p + (k+\mathcal H^2 + 2\dot{\mathcal H})(-2\psi \tilde g_{ij} + 2\nabla_i \tilde\nabla_j E ))
+\nonumber\\ \nonumber\\
+&& -\tilde g_{ij}\tilde\nabla_a\nabla^a \Phi + \tilde g_{ij} \tilde\nabla_a\nabla^a \Psi + \tilde\nabla_i\nabla_j \Phi - \tilde\nabla_i\nabla_j \Psi
+-2 \tilde g_{ij}\ddot \psi -2\tilde g_{ij}\mathcal H \dot\phi 
+\nonumber\\
+&&- 4\tilde g_{ij}\mathcal H \dot\Psi
+-(2\mathcal H^2+4\dot{\mathcal H})\tilde g_{ij}\phi =-2k \tilde g_{ij} \psi-\Omega^2 \kappa^2_4 \tilde g_{ij} \delta p
+\nonumber\\ \nonumber\\
+&& -\tilde g_{ij}\tilde\nabla_a\nabla^a \Phi + \tilde g_{ij} \tilde\nabla_a\nabla^a \Psi + \tilde\nabla_i\nabla_j \Phi - \tilde\nabla_i\nabla_j \Psi
+-2 \tilde g_{ij}\ddot \Psi -2\tilde g_{ij}\mathcal H \dot\Phi 
+\nonumber\\
+&&- 4\tilde g_{ij}\mathcal H \dot\Psi
+-(2\mathcal H^2+4\dot{\mathcal H})\tilde g_{ij}\Phi  =-2k \tilde g_{ij} \Psi-\Omega^2 \kappa^2_4 \tilde g_{ij} \delta p_\sigma
+\end{eqnarray}
+
+\begin{eqnarray}
+&&\delta  G^{(V)}_{ij}=  -\kappa^2_4 \delta T^{(V)}_{ij}
+\nonumber\\
+&& (\mathcal H+\tfrac{1}{2}) \tilde\nabla_{i}\mathcal Q_{j}
++ (\mathcal H+\tfrac{1}{2}) \tilde\nabla_{j}\mathcal Q_{i}
++(k+\mathcal H^2 + 2\dot{\mathcal H})\tilde\nabla_{i}E_{j} + 
+(k+\mathcal H^2 + 2\dot{\mathcal H})\tilde\nabla_{j}E_{i}
+\nonumber\\
+&&=(k+\mathcal H^2 + 2\dot{\mathcal H})( \tilde\nabla_i E_j + \tilde\nabla_j E_i)
+\nonumber\\ 
+ &&(\mathcal H+\tfrac{1}{2}) \tilde\nabla_{i}\mathcal Q_{j}
++ (\mathcal H+\tfrac{1}{2}) \tilde\nabla_{j}\mathcal Q_{i}=0
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta  G^{(T)}_{ij}&=& -\kappa^2_4 \delta T^{(T)}_{ij}
+\nonumber\\
+- \ddot{E}_{ij}
+ - 2 \mathcal H^2 E_{ij} 
+ - 2 \mathcal H \dot{E}_{ij}
+ + 4(\mathcal H^2 +\dot H) E_{ij}
+ + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}
+&=&
+ (2k+2\mathcal H^2 + 4\dot{\mathcal H})E_{ij}
+\nonumber\\
+-2k E_{ij} - \ddot{E}_{ij}- 2 \mathcal H \dot{E}_{ij} + \tilde\nabla_{a}\tilde\nabla^{a}E_{ij}
+&=&
+0
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summarized Gauge Dependence}
+Transformations:
+\begin{eqnarray}
+\bar \phi &=& \phi  + \dot T + \mathcal H T
+\nonumber\\
+\bar \psi &=& \psi  - \mathcal H T
+\nonumber\\
+\bar B &=& B + \dot L - T
+\nonumber\\
+\bar E &=& E + L
+\nonumber\\
+\bar B_i &=& B_i + \dot L_i
+\nonumber\\
+\bar E_i &=& E_i + L_i
+\nonumber\\
+\bar E_{ij} &=& E_{ij}
+\nonumber\\
+\delta \bar \rho &=& \delta \rho + T\dot \rho 
+\nonumber\\
+\bar \delta p &=& \delta p + T\dot p
+\nonumber\\
+\bar v&=& v-\dot L
+\nonumber\\
+\bar v_i &=& v_i - \dot L_i
+\end{eqnarray}
+
+\begin{eqnarray}
+\dot \rho &=& (\kappa_4^2 \Omega^2)^{-1}( 6\mathcal H \dot{\mathcal H} - 6k\mathcal H - 6\mathcal H^3)
+\nonumber\\
+ \dot p &=&(\kappa_4^2 \Omega^2)^{-1} (2\mathcal H k + 2\mathcal{H}^3+2\mathcal H \dot{\mathcal H} - 2\ddot{\mathcal H})
+\end{eqnarray}
+
+Invariants:
+\begin{eqnarray}
+\Phi &=& \phi +\mathcal H (B-\dot E) + (\dot B-\ddot E)
+\nonumber\\
+\Psi &=& \psi - \mathcal H(B-\dot E)
+\nonumber\\
+\mathcal Q_i &=& B_i - \dot E_i
+\nonumber\\
+E_{ij} &=& E_{ij}
+\nonumber\\
+\delta \rho_\sigma &=& \delta \rho + \dot \rho (B-\dot E)
+\nonumber\\
+\delta p_\sigma &=& \delta p + \dot p (B-\dot E)
+\nonumber\\
+\mathcal V &=& v+\dot E
+\nonumber\\
+\mathcal B_i &=& v_i + B_i
+\end{eqnarray}
+
+\end{appendices}
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{Weinberg Gravitation Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Special Relativity}
+Principle of special relativity states that the laws of nature must be invariant under Lorentz transformations. A Lorentz
+transformation is such a transformation that leaves the spacetime interval invariant:
+\[
+	d\tau^2 = -\eta_{\alpha\beta}dx^\alpha dx^\beta
+\]
+If we perform a general coordinate transformation,
+we can in fact show (2.1.8) that the transformation must be linear 
+\[
+	x'^\alpha = \Lambda^\alpha{}_\beta x^\beta + a^\alpha
+\]
+and satisfies
+\[
+	\Lambda^\alpha{}_\gamma \Lambda^\beta{}_\delta \eta_{\alpha\beta} = \eta_{\gamma\delta}.
+\]
+(2.6.5) $ \det \Lambda = 1$. Assume this arises from delta function $\delta(ax) = \frac{\delta(x)}{|a|}$, as in magnitude of 
+$\Lambda$. Not sure. 
+\\ \\
+(2.6.7) Either must be a closed system such that the current flux through the surface is zero, or must be integrated
+over all space such that the current flux vanishes at the (spatial) infinite boundary.
+\\ \\
+(2.9.5) Note that 
+\ba
+	\ep_{\alpha \beta \gamma \delta}(a^\beta p^\gamma p^\delta - a^\gamma p^\beta p^\delta) &=
+	2\ep_{\alpha \beta \gamma \delta}a^\beta p^\gamma p^\delta\\
+	& = -2\ep_{\alpha \beta \delta \gamma}(a^\beta p^\delta p^\gamma) \\
+	&\Rightarrow 0.
+\ea
+It seems that given a fully antisymmetric tensor $\ep$ that is contracted with a tensor $R$ in which any two indices are
+symmetric, then it follows that the contraction of $\ep R = 0$. 
+\\ \\
+\[
+	(\pd^\alpha)( \pd_\alpha - ieA_\alpha(x))\psi(x) = \frac{\pd^2}{\pd^2x^\alpha} \psi(x) - ie\pdiff[A_\alpha]{x^\alpha}\psi(x)
+	-ieA_\alpha\pdiff{\psi(x)}{x^\alpha}
+\]
+\[
+	\frac{\pd^2 x'^\tau}{\pd x^\mu \pd x^\nu} = \pdiff[x'^\tau]{x^\lambda}\Gamma^{\lambda}_{\mu \nu}
+	- \pdiff[x'^\rho]{x^\mu}\pdiff[x'^\sigma]{x^\nu}\Gamma'^\tau_{\rho\sigma}
+\]
+\[
+	\frac{\pd^2 x'^\tau}{\pd x^\kappa \pd x^\lambda} = \pdiff[x'^\tau]{x^\eta}\Gamma^{\eta}_{\kappa \lambda}
+	- \pdiff[x'^\rho]{x^\kappa}\pdiff[x'^\sigma]{x^\lambda}\Gamma'^\tau_{\rho\sigma}
+\]
+\[
+	\frac{\pd^2 x'^\tau}{\pd x^\kappa \pd x^\lambda}\Gamma^\lambda_{\mu\nu} = \Gamma^\lambda_{\mu\nu} 
+	\plr{\pdiff[x'^\tau]{x^\eta}\Gamma^{\eta}_{\kappa \lambda}
+	- \pdiff[x'^\rho]{x^\kappa}\pdiff[x'^\sigma]{x^\lambda}\Gamma'^\tau_{\rho\sigma}}
+\]
+\[
+	-\frac{\pd^2 x'^\sigma}{\pd x^\kappa \pd x^\nu}\frac{\pd x'^\rho}{\pd x^\mu}
+	\Gamma'^\tau_{\rho\sigma} = -\frac{\pd x'^\rho}{\pd x^\mu}
+	\Gamma'^\tau_{\rho\sigma}
+	\plr{\pdiff[x'^\sigma]{x^\eta}\Gamma^{\eta}_{\kappa \nu}
+	- \pdiff[x'^\eta]{x^\kappa}\pdiff[x'^\xi]{x^\nu}\Gamma'^\sigma_{\eta\xi}}
+\]
+We seek to find some sort of field equation to describe gravitation. Gravitation should be uniquely defined by something,
+and so we are looking for some quantity that includes gravitation and is valid in all ref. frames. Clearly this must be 
+a tensor. So let us form a tensor with $g_{\mu \nu}$ and its first derivatives, i.e. $\Gamma^\lambda_{\mu\nu}$. Well,
+in our local inertial frame, $\Gamma^\lambda_{\mu\nu} = 0$ and thus
+\[
+	T \propto g_{\mu\nu}.
+\]
+But under general coordinate transformations, $g_{\mu\nu}$ transforms as a tensor and thus this equality is true
+in all coordinate systems. Rather, we need to go up a power and look at second derivatives. 
+\\ \\
+Starting with
+\[
+	\frac{DA^\mu}{d\tau} = \frac{dA^\mu}{d\tau} + \Gamma^\mu_{\nu\lambda}\frac{dx^\lambda}{d\tau}A^\nu
+\]
+we form the second covariant derivative along a curve $x(\tau)$
+\[
+	\frac{ D^2 A^\mu}{d\tau^2} = \frac{d^2 A^\mu}{d\tau^2} + 2\Gamma^\mu_{\lambda\nu}\frac{dx^\lambda}{d\tau}
+	\frac{dA^\nu}{d\tau}+\frac{\pd\Gamma^\mu_{\lambda\nu}}{\pd x^\rho}\frac{dx^\rho}{d\tau}\frac{dx^\lambda}{d\tau}
+	A^\nu + \Gamma^\mu_{\rho\sigma}\Gamma^\rho_{\lambda\nu} \frac{dx^\sigma}{d\tau}\frac{dx^\lambda}{d\tau}
+	A^\lambda
+\]
+	
+
+
+\end{document}

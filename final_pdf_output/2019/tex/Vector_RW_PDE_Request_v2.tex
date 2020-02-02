@@ -1,0 +1,151 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Vector RW PDE's}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Polar RW}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde g_{ij} &=& \text{Diag}\left(\frac{1}{1-kr^2},r^2,r^2\sin^2\theta\right)
+\\ \nonumber\\
+A^i &=& \tilde\nabla_a\tilde\nabla^a B^i
+\\ \nonumber\\
+\tilde\nabla_a B^a &=& B_{1} (2 r^{-1} - 3 k r) + B_{2} \cos\theta r^{-2} (\sin\theta)^{-1} + (1 -  k r^2) \partial_{1}B_{1} + r^{-2} \partial_{2}B_{2} + r^{-2} (\sin\theta)^{-2} \partial_{3}B_{3}
+\\ \nonumber\\
+A^{1}&=& B_{1} (k - 2 r^{-2} + k^2 r^2) + B_{2} \cos\theta (-2 r^{-3} + 2 k r^{-1}) (\sin\theta)^{-1} + (2 r^{-1} - 7 k r + 5 k^2 r^3) \partial_{1}B_{1} \nonumber \\ 
+&& + (1 - 2 k r^2 + k^2 r^4) \partial_{1}\partial_{1}B_{1} + \cos\theta (- k + r^{-2}) (\sin\theta)^{-1} \partial_{2}B_{1} + (-2 r^{-3} + 2 k r^{-1}) \partial_{2}B_{2} \nonumber \\ 
+&& + (- k + r^{-2}) \partial_{2}\partial_{2}B_{1} + (-2 r^{-3} + 2 k r^{-1}) (\sin\theta)^{-2} \partial_{3}B_{3} + (- k + r^{-2}) (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{1}
+\\ \nonumber\\
+&&\text{Substituting $\partial_2 B_2$}
+\\ \nonumber\\
+A^{1}&=& B_{1} (-9 k + 2 r^{-2} + 7 k^2 r^2) + (4 r^{-1} - 11 k r + 7 k^2 r^3) \partial_{1}B_{1} + (1 - 2 k r^2 + k^2 r^4) \partial_{1}\partial_{1}B_{1} \nonumber \\ 
+&& + \cos\theta (- k + r^{-2}) (\sin\theta)^{-1} \partial_{2}B_{1} + (- k + r^{-2}) \partial_{2}\partial_{2}B_{1} + (- k + r^{-2}) (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{1}
+\\ \nonumber\\
+\\ \nonumber\\
+A^{2}&=& B_{2} \bigl(2 k r^{-2} -  r^{-4} (\sin\theta)^{-2}\bigr) -  k r^{-1} \partial_{1}B_{2} + (- k + r^{-2}) \partial_{1}\partial_{1}B_{2} + (2 r^{-3} - 2 k r^{-1}) \partial_{2}B_{1} \nonumber \\ 
+&& + \cos\theta r^{-4} (\sin\theta)^{-1} \partial_{2}B_{2} + r^{-4} \partial_{2}\partial_{2}B_{2} - 2 \cos\theta r^{-4} (\sin\theta)^{-3} \partial_{3}B_{3} + r^{-4} (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{2}
+\\ \nonumber\\
+&&\text{Substituting $\partial_3 B_3$}
+\\ \nonumber\\
+A^{2}&=& B_{2} \bigl(-2 r^{-4} + 2 k r^{-2} + r^{-4} (\sin\theta)^{-2}\bigr) + B_{1} \cos\theta (4 r^{-3} - 6 k r^{-1}) (\sin\theta)^{-1} \nonumber \\ 
+&& + \cos\theta (-2 k + 2 r^{-2}) (\sin\theta)^{-1} \partial_{1}B_{1} -  k r^{-1} \partial_{1}B_{2} + (- k + r^{-2}) \partial_{1}\partial_{1}B_{2} + (2 r^{-3} - 2 k r^{-1}) \partial_{2}B_{1} \nonumber \\ 
+&& + 3 \cos\theta r^{-4} (\sin\theta)^{-1} \partial_{2}B_{2} + r^{-4} \partial_{2}\partial_{2}B_{2} + r^{-4} (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{2}
+\\ \nonumber\\
+\\ \nonumber\\
+A^{3}&=& 2 k B_{3} r^{-2} (\sin\theta)^{-2} -  k r^{-1} (\sin\theta)^{-2} \partial_{1}B_{3} + (- k + r^{-2}) (\sin\theta)^{-2} \partial_{1}\partial_{1}B_{3} \nonumber \\ 
+&& -  \cos\theta r^{-4} (\sin\theta)^{-3} \partial_{2}B_{3} + r^{-4} (\sin\theta)^{-2} \partial_{2}\partial_{2}B_{3} + (2 r^{-3} - 2 k r^{-1}) (\sin\theta)^{-2} \partial_{3}B_{1} \nonumber \\ 
+&& + 2 \cos\theta r^{-4} (\sin\theta)^{-3} \partial_{3}B_{2} + r^{-4} (\sin\theta)^{-4} \partial_{3}\partial_{3}B_{3}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Polar Conformal RW}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde g_{ij} &=& (1+\rho^2 k/4)^{-2}\text{Diag}\left(1,\rho ^2,\rho ^2\sin^2\theta\right)
+\\ \nonumber\\
+A^i &=& \tilde\nabla_a\tilde\nabla^a B^i
+\\ \nonumber\\
+\tilde\nabla_a B^a &=&  B_{1} (2 \rho^{-1} + \tfrac{1}{2} k \rho) + B_{2} \cos\theta (\tfrac{1}{2} k + \rho^{-2} + \tfrac{1}{16} k^2 \rho^2) (\sin\theta)^{-1} + (1 + \tfrac{1}{2} k \rho^2 + \tfrac{1}{16} k^2 \rho^4) \partial_{1}B_{1} \nonumber \\ 
+&& + (\tfrac{1}{2} k + \rho^{-2} + \tfrac{1}{16} k^2 \rho^2) \partial_{2}B_{2} + (\tfrac{1}{2} k + \rho^{-2} + \tfrac{1}{16} k^2 \rho^2) (\sin\theta)^{-2} \partial_{3}B_{3}
+\\ \nonumber\\
+A^{1}&=& B_{1} (\tfrac{3}{2} k - 2 \rho^{-2} + \tfrac{9}{8} k^2 \rho^2 + \tfrac{5}{32} k^3 \rho^4) + B_{2} \cos\theta (-2 \rho^{-3} -  k \rho^{-1} + \tfrac{1}{16} k^3 \rho^3 + \tfrac{1}{128} k^4 \rho^5) (\sin\theta)^{-1} \nonumber \\ 
+&& + (2 \rho^{-1} + \tfrac{5}{2} k \rho + \tfrac{9}{8} k^2 \rho^3 + \tfrac{7}{32} k^3 \rho^5 + \tfrac{1}{64} k^4 \rho^7) \partial_{1}B_{1} \nonumber \\ 
+&& + (1 + k \rho^2 + \tfrac{3}{8} k^2 \rho^4 + \tfrac{1}{16} k^3 \rho^6 + \tfrac{1}{256} k^4 \rho^8) \partial_{1}\partial_{1}B_{1} \nonumber \\ 
+&& + \cos\theta (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) (\sin\theta)^{-1} \partial_{2}B_{1} \nonumber \\ 
+&& + (-2 \rho^{-3} -  k \rho^{-1} + \tfrac{1}{16} k^3 \rho^3 + \tfrac{1}{128} k^4 \rho^5) \partial_{2}B_{2} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) \partial_{2}\partial_{2}B_{1} \nonumber \\ 
+&& + (-2 \rho^{-3} -  k \rho^{-1} + \tfrac{1}{16} k^3 \rho^3 + \tfrac{1}{128} k^4 \rho^5) (\sin\theta)^{-2} \partial_{3}B_{3} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{1}
+\\ \nonumber\\
+&&\text{Substituting $\partial_2 B_2$}
+\\ \nonumber\\
+A^{1}&=& B_{1} (\tfrac{5}{2} k + 2 \rho^{-2} + \tfrac{7}{8} k^2 \rho^2 + \tfrac{3}{32} k^3 \rho^4) + (4 \rho^{-1} + \tfrac{7}{2} k \rho + \tfrac{9}{8} k^2 \rho^3 + \tfrac{5}{32} k^3 \rho^5 + \tfrac{1}{128} k^4 \rho^7) \partial_{1}B_{1} \nonumber \\ 
+&& + (1 + k \rho^2 + \tfrac{3}{8} k^2 \rho^4 + \tfrac{1}{16} k^3 \rho^6 + \tfrac{1}{256} k^4 \rho^8) \partial_{1}\partial_{1}B_{1} \nonumber \\ 
+&& + \cos\theta (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) (\sin\theta)^{-1} \partial_{2}B_{1} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) \partial_{2}\partial_{2}B_{1} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{1}
+\\ \nonumber\\
+\\ \nonumber\\
+A^{2}&=& B_{2} \bigl(k^2 + 2 k \rho^{-2} + \tfrac{1}{8} k^3 \rho^2 + (- \tfrac{3}{8} k^2 -  \rho^{-4} -  k \rho^{-2} -  \tfrac{1}{16} k^3 \rho^2 -  \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-2}\bigr) \nonumber \\ 
+&& + (\tfrac{1}{2} k \rho^{-1} + \tfrac{3}{8} k^2 \rho + \tfrac{3}{32} k^3 \rho^3 + \tfrac{1}{128} k^4 \rho^5) \partial_{1}B_{2} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) \partial_{1}\partial_{1}B_{2} + (2 \rho^{-3} + k \rho^{-1} -  \tfrac{1}{16} k^3 \rho^3 -  \tfrac{1}{128} k^4 \rho^5) \partial_{2}B_{1} \nonumber \\ 
+&& + \cos\theta (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-1} \partial_{2}B_{2} \nonumber \\ 
+&& + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) \partial_{2}\partial_{2}B_{2} \nonumber \\ 
+&& + \cos\theta (- \tfrac{3}{4} k^2 - 2 \rho^{-4} - 2 k \rho^{-2} -  \tfrac{1}{8} k^3 \rho^2 -  \tfrac{1}{128} k^4 \rho^4) (\sin\theta)^{-3} \partial_{3}B_{3} \nonumber \\ 
+&& + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{2}
+\\ \nonumber\\
+&&\text{Substituting $\partial_3 B_3$}
+\\ \nonumber\\
+A^{2}&=& B_{2} \bigl(\tfrac{1}{4} k^2 - 2 \rho^{-4} -  \tfrac{1}{128} k^4 \rho^4 + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-2}\bigr) \nonumber \\ 
+&& + B_{1} \cos\theta (4 \rho^{-3} + 3 k \rho^{-1} + \tfrac{3}{4} k^2 \rho + \tfrac{1}{16} k^3 \rho^3) (\sin\theta)^{-1} \nonumber \\ 
+&& + \cos\theta (2 k + 2 \rho^{-2} + \tfrac{3}{4} k^2 \rho^2 + \tfrac{1}{8} k^3 \rho^4 + \tfrac{1}{128} k^4 \rho^6) (\sin\theta)^{-1} \partial_{1}B_{1} \nonumber \\ 
+&& + (\tfrac{1}{2} k \rho^{-1} + \tfrac{3}{8} k^2 \rho + \tfrac{3}{32} k^3 \rho^3 + \tfrac{1}{128} k^4 \rho^5) \partial_{1}B_{2} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) \partial_{1}\partial_{1}B_{2} + (2 \rho^{-3} + k \rho^{-1} -  \tfrac{1}{16} k^3 \rho^3 -  \tfrac{1}{128} k^4 \rho^5) \partial_{2}B_{1} \nonumber \\ 
+&& + \cos\theta (\tfrac{9}{8} k^2 + 3 \rho^{-4} + 3 k \rho^{-2} + \tfrac{3}{16} k^3 \rho^2 + \tfrac{3}{256} k^4 \rho^4) (\sin\theta)^{-1} \partial_{2}B_{2} \nonumber \\ 
+&& + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) \partial_{2}\partial_{2}B_{2} \nonumber \\ 
+&& + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-2} \partial_{3}\partial_{3}B_{2}
+\\ \nonumber\\
+\\ \nonumber\\
+A^{3}&=& B_{3} (k^2 + 2 k \rho^{-2} + \tfrac{1}{8} k^3 \rho^2) (\sin\theta)^{-2} + (\tfrac{1}{2} k \rho^{-1} + \tfrac{3}{8} k^2 \rho + \tfrac{3}{32} k^3 \rho^3 + \tfrac{1}{128} k^4 \rho^5) (\sin\theta)^{-2} \partial_{1}B_{3} \nonumber \\ 
+&& + (k + \rho^{-2} + \tfrac{3}{8} k^2 \rho^2 + \tfrac{1}{16} k^3 \rho^4 + \tfrac{1}{256} k^4 \rho^6) (\sin\theta)^{-2} \partial_{1}\partial_{1}B_{3} \nonumber \\ 
+&& + \cos\theta (- \tfrac{3}{8} k^2 -  \rho^{-4} -  k \rho^{-2} -  \tfrac{1}{16} k^3 \rho^2 -  \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-3} \partial_{2}B_{3} \nonumber \\ 
+&& + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-2} \partial_{2}\partial_{2}B_{3} \nonumber \\ 
+&& + (2 \rho^{-3} + k \rho^{-1} -  \tfrac{1}{16} k^3 \rho^3 -  \tfrac{1}{128} k^4 \rho^5) (\sin\theta)^{-2} \partial_{3}B_{1} \nonumber \\ 
+&& + \cos\theta (\tfrac{3}{4} k^2 + 2 \rho^{-4} + 2 k \rho^{-2} + \tfrac{1}{8} k^3 \rho^2 + \tfrac{1}{128} k^4 \rho^4) (\sin\theta)^{-3} \partial_{3}B_{2} \nonumber \\ 
+&& + (\tfrac{3}{8} k^2 + \rho^{-4} + k \rho^{-2} + \tfrac{1}{16} k^3 \rho^2 + \tfrac{1}{256} k^4 \rho^4) (\sin\theta)^{-4} \partial_{3}\partial_{3}B_{3}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\sinh\chi$ RW}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde g_{ij} &=&\text{Diag}\left(1,\sinh^2\chi,\sinh^2\chi\sin^2\theta\right)
+\\ \nonumber\\
+A^i &=& \tilde\nabla_a\tilde\nabla^a B^i
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$B_i = g_i(\chi)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde\nabla_a B^a &=& \dot{g}_{1} + g_{2} \cos\theta (\sin\theta)^{-1} (\sinh\chi)^{-2} + 2 g_{1} \cosh\chi (\sinh\chi)^{-1} =0
+\\ \nonumber\\
+A^{1}&=& -2 g_{1} + \overset{..}{g}_{1} - 2 g_{2} \cos\theta \cosh\chi (\sin\theta)^{-1} (\sinh\chi)^{-3} - 2 g_{1} (\sinh\chi)^{-2} + 2 \cosh\chi \dot{g}_{1} (\sinh\chi)^{-1}
+\\ \nonumber\\
+&&\text{Substituting $g_2$}
+\\ \nonumber\\
+A^{1}&=& \overset{..}{g}_{1} + g_{1} \bigl(2 + 2 (\sinh\chi)^{-2}\bigr) + 4 \cosh\chi \dot{g}_{1} (\sinh\chi)^{-1}
+\\ \nonumber\\
+A^{2}&=& - g_{2} (\sin\theta)^{-2} (\sinh\chi)^{-4} - 2 g_{2} (\sinh\chi)^{-2} + \overset{..}{g}_{2} (\sinh\chi)^{-2}
+\\ \nonumber\\
+A^{3}&=& -2 g_{3} (\sin\theta)^{-2} (\sinh\chi)^{-2} + \overset{..}{g}_{3} (\sin\theta)^{-2} (\sinh\chi)^{-2}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$B_i = h_i(\chi)\cos\theta$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\tilde\nabla_a B^a &=& \cos\theta \dot{h}_{1} + h_{2} (\sin\theta)^{-1} (\sinh\chi)^{-2} - 2 h_{2} \sin\theta (\sinh\chi)^{-2} + 2 h_{1} \cos\theta \cosh\chi (\sinh\chi)^{-1}=0
+\\ \nonumber\\
+A^{1}&=& \cos\theta \overset{..}{h}_{1} + h_{2} \bigl(-2 \cosh\chi (\sin\theta)^{-1} (\sinh\chi)^{-3} + 4 \cosh\chi \sin\theta (\sinh\chi)^{-3}\bigr) \nonumber \\ 
+&& + h_{1} \bigl(-2 \cos\theta - 4 \cos\theta (\sinh\chi)^{-2}\bigr) + 2 \cos\theta \cosh\chi \dot{h}_{1} (\sinh\chi)^{-1}
+\\ \nonumber\\
+&&\text{Substituting $h_2$}
+\\ \nonumber\\
+A^{1}&=& 2 h_{1} \cos\theta + \cos\theta \overset{..}{h}_{1} + 4 \cos\theta \cosh\chi \dot{h}_{1} (\sinh\chi)^{-1}
+\\ \nonumber\\
+A^{2}&=& h_{2} \bigl(-2 \cos\theta (\sinh\chi)^{-4} -  \cos\theta (\sin\theta)^{-2} (\sinh\chi)^{-4} - 2 \cos\theta (\sinh\chi)^{-2}\bigr) \nonumber \\ 
+&& - 2 h_{1} \cosh\chi \sin\theta (\sinh\chi)^{-3} + \cos\theta \overset{..}{h}_{2} (\sinh\chi)^{-2}
+\\ \nonumber\\
+A^{3}&=& -2 h_{3} \cos\theta (\sin\theta)^{-2} (\sinh\chi)^{-2} + \cos\theta \overset{..}{h}_{3} (\sin\theta)^{-2} (\sinh\chi)^{-2}
+\end{eqnarray}
+\end{document}

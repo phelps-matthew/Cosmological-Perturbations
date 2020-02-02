@@ -1,0 +1,176 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{3Space Conformal Transformations v1}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%
+\section{Conformal Transformation of Curvature Tensors}
+For $D=3$ with $\mu,\nu = 1,2,3$ the Ricci tensor and scalar transform under conformal transformation $g_{\mu\nu} \to \Omega^2 g_{\mu\nu}$ as
+\begin{eqnarray}
+R_{\mu\nu} &\to& R_{\mu \nu} + g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega +  \Omega^{-1} \nabla_{\mu}\nabla_{\nu}\Omega - 2 \Omega^{-2} \nabla_{\mu}\Omega \nabla_{\nu}\Omega
+\nonumber\\ \nonumber\\
+R &\to&  \Omega^{-2}R + 4 \Omega^{-3} \nabla_{\alpha}\nabla^{\alpha}\Omega - 2 \Omega^{-4} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega
+\end{eqnarray}
+and thus the Einstein tensor transforms as
+\begin{eqnarray}
+G_{\mu\nu} &\to& G_{\mu\nu} +  g_{\mu \nu}( \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega -\Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega)+  \Omega^{-1} \nabla_{\mu}\nabla_{\nu}\Omega - 2 \Omega^{-2} \nabla_{\mu}\Omega \nabla_{\nu}\Omega
+\label{gbg}
+\end{eqnarray}
+Perturbing the above we find
+\begin{eqnarray}
+\delta G_{\mu\nu} \to \delta G_{\mu\nu} + \delta S_{\mu\nu}
+\label{dgds}
+\end{eqnarray}
+
+\begin{eqnarray}
+\delta S_{\mu\nu} &=&- h_{\mu \nu} \Omega^{-1} \nabla_{\alpha}\nabla^{\alpha}\Omega
+ + \tfrac{1}{2} \Omega^{-1} \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}\Omega
+ -  \tfrac{1}{2} g_{\mu \nu} \Omega^{-1} \nabla_{\alpha}h \nabla^{\alpha}\Omega
+ + h_{\mu \nu} \Omega^{-2} \nabla_{\alpha}\Omega \nabla^{\alpha}\Omega\nonumber\\
+&& + g_{\mu \nu} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\beta}h_{\alpha}{}^{\beta}
+ -  g_{\mu \nu} h_{\alpha \beta} \Omega^{-2} \nabla^{\alpha}\Omega \nabla^{\beta}\Omega
+ + g_{\mu \nu} h_{\alpha \beta} \Omega^{-1} \nabla^{\beta}\nabla^{\alpha}\Omega\nonumber\\
+&& -  \tfrac{1}{2} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\mu}h_{\nu \alpha}
+ -  \tfrac{1}{2} \Omega^{-1} \nabla^{\alpha}\Omega \nabla_{\nu}h_{\mu \alpha}.
+\label{ds}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Background $G^{(0)}_{ij} = - \kappa^2_3 T^{(0)}_{ij}$}
+Since $G_{\mu\nu}$ vanishes in a flat geometry, the background equation is given as
+\begin{eqnarray}
+ g_{ij}( \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega -\Omega^{-1} \nabla_{a}\nabla^{a}\Omega)+  \Omega^{-1} \nabla_{i}\nabla_{j}\Omega - 2 \Omega^{-2} \nabla_{i}\Omega \nabla_{j}\Omega 
+= -\kappa_3^2 \Lambda \Omega^2 g_{ij}. 
+\label{bgeq}
+\end{eqnarray}
+In the covariant formulation, the background equation fixed $k = -\kappa_3^2\Lambda$. 
+Taking the trace of \eqref{bgeq}
+\begin{eqnarray}
+-2\Omega^{-1} \nabla_a\nabla^a \Omega + \Omega^{-2} \nabla_a\Omega \nabla^a\Omega = \frac{12k}{(1+k\rho^2)^2} = 3\Omega^2 k =  -3\kappa_3^2 \Lambda \Omega^2 .
+\end{eqnarray}
+We also find
+\begin{eqnarray}
+G^{(0)}_{\rho\rho} &=& k\Omega^2 g_{\rho\rho}
+\nonumber\\
+\frac{4k}{(1+k\rho^2)^2} &=&  k\Omega^2 g_{\rho\rho}
+\end{eqnarray}
+However, for $\theta\theta$ we find
+\begin{eqnarray}
+G^{(0)}_{\theta\theta} &=& k\Omega^2 g_{\theta\theta}
+\nonumber\\
+\frac{2k\rho^2(3+k\rho^2)}{(1+k\rho^2)^2} &\ne &  \frac{k\rho^2}{(1+k\rho^2)^2}
+\label{gbtt}
+\end{eqnarray}
+Similarly for $\phi\phi$
+\begin{eqnarray}
+G^{(0)}_{\phi\phi} &=& k\Omega^2 g_{\phi\phi}
+\nonumber\\
+\frac{2k\rho^2(3+k\rho^2)\sin^2\theta}{(1+k\rho^2)^2} &\ne &  \frac{k\rho^2\sin^2\theta}{(1+k\rho^2)^2}
+\label{gbpp}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Perturbation $\delta G_{ij} = -\kappa^2_3 \delta T_{ij}$}
+The perturbed energy momentum tensor takes the form
+\begin{eqnarray}
+-\kappa_3^2 \delta T_{ij} &=& -\kappa^2_3 \Lambda \Omega^2 h_{ij}
+\nonumber\\
+&=& k \Omega^2 (-2 g_{ij}\psi + 2\nabla_i\nabla_j E + \nabla_i E_j + \nabla_j E_i + 2E_{ij})
+\nonumber\\ \nonumber\\
+-\kappa_3^2 g^{ij} \delta T_{ij} &=& k\Omega^2(-6\psi + 2\nabla_a\nabla^a E)
+\end{eqnarray}
+If we evaluate \eqref{dgds} and \eqref{ds} we find 
+\begin{eqnarray}
+\delta G_{ij}&=&g_{ij} \nabla_{a}\nabla^{a}\psi
+ + g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}\nabla_{a}E
+ - 2 g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla_{b}\nabla_{a}E \nabla^{b}\Omega\nonumber\\
+&& + 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}\nabla^{a}E
+ + \Omega^{-1} \nabla_{i}\Omega \nabla_{j}\psi
+ + \Omega^{-1} \nabla_{i}\psi \nabla_{j}\Omega
+ - 2 \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}\nabla_{i}E\nonumber\\
+&& + 2 \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}\nabla_{i}E
+ -  \nabla_{j}\nabla_{i}\psi
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}\nabla_{a}E
+\nonumber\\ \nonumber\\
+&&+g_{ij} \Omega^{-1} \nabla^{a}\Omega \nabla_{b}\nabla^{b}E_{a}
+ - 2 g_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla_{b}\Omega \nabla^{b}E^{a}
+ + 2 g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega \nabla^{b}E^{a}\nonumber\\
+&& -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{i}E_{j}
+ + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{i}E_{j}
+ -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{j}E_{i}
+ + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{j}E_{i}\nonumber\\
+&& -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}\nabla_{i}E_{a}
+\nonumber\\ \nonumber\\
+&&+\nabla_{a}\nabla^{a}E_{ij}
+ - 2 E_{ij} \Omega^{-1} \nabla_{a}\nabla^{a}\Omega
+ + \Omega^{-1} \nabla_{a}E_{ij} \nabla^{a}\Omega
+ + 2 E_{ij} \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\nonumber\\
+&& + 2 E^{ab} g_{ij} \Omega^{-1} \nabla_{b}\nabla_{a}\Omega
+ - 2 E_{ab} g_{ij} \Omega^{-2} \nabla^{a}\Omega \nabla^{b}\Omega
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{i}E_{ja}
+ -  \Omega^{-1} \nabla^{a}\Omega \nabla_{j}E_{ia}.
+\end{eqnarray}
+The only two gauge invariant quantities are 
+\begin{eqnarray}
+\bar \psi + \Omega^{-1}(\tilde\nabla_k \bar E + \bar E_k)\tilde\nabla^k \Omega
+&=& \psi + \Omega^{-1}(\tilde\nabla_k  E +  E_k)\tilde\nabla^k \Omega
+\nonumber\\
+\bar E_{ij} &=& E_{ij}.
+\end{eqnarray}
+Hence any $E_i$ or $E_j$ (specifically with index $i$ or $j$) term must vanish identically in the full $\delta G_{ij} = -\kappa_2^3\delta T_{ij}$. 
+\\ \\
+Looking only at the relevant vector pieces, we see
+\begin{eqnarray}=
+\delta G_{ij}^{(V)} &=& -\kappa^2_3\delta T_{ij}^{(V)}
+\nonumber\\
+ -  \Omega^{-1} \nabla_{a}\nabla^{a}\Omega \nabla_{i}E_{j}
+ + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega \nabla_{i}E_{j}
++(i\leftrightarrow j)&=& k\Omega^2 \nabla_i E_j+(i\leftrightarrow j)
+\end{eqnarray}
+which implies
+\begin{eqnarray}
+\left(-\Omega^{-1} \nabla_{a}\nabla^{a}\Omega
+ + \Omega^{-2} \nabla_{a}\Omega \nabla^{a}\Omega\right) \nabla_{i}E_{j} &=&\left(-\tfrac23\Omega^{-1} \nabla_a\nabla^a \Omega + \tfrac13\Omega^{-2} \nabla_a\Omega \nabla^a\Omega\right)\nabla_i E_j.
+\end{eqnarray}
+The above equation along with \eqref{gbtt} and \eqref{gbpp} hints at the necessary form for $\delta S_{ij}$ and thus $G_{ij}^{(0)}$ and serves as another check upon the conformal flat form of $G_{ij}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{eqnarray}
+\delta T_{\mu\nu} &=& \delta T_{\mu\nu}^{T\theta} + \frac{g_{\mu\nu}}{D-1}\delta T - \frac{1}{D-1}\nabla_\mu\nabla_\nu \int D \delta T.
+\end{eqnarray}
+\begin{eqnarray}
+\delta G_{\mu\nu}^{T\theta} &=& \delta T_{\mu\nu}^{T\theta}
+\nonumber\\
+\delta G &=& \delta T
+\end{eqnarray}
+\begin{eqnarray}
+\delta G_{\mu\nu} &=& \nabla^2 E_{\mu\nu} + (D-2) ( g_{\mu\nu}\nabla^2 \psi-\nabla_\mu\nabla_\nu \psi)
+\nonumber\\
+\delta G &=& (D-2)(D-1)\nabla^2 \psi 
+\end{eqnarray}
+\begin{eqnarray}
+\delta G_{\mu\nu}^{T\theta} &=& \nabla^2 E_{\mu\nu} - (D-2)\nabla_\mu\nabla_\nu \left[\psi - \int D \nabla^2\psi\right]
+\end{eqnarray}
+\begin{eqnarray}
+h^{T\theta}_{\mu\nu} &=& h_{\mu\nu} - \nabla_\mu W_\nu -\nabla_\nu W_\mu +\frac{g_{\mu\nu}}{D-1}(\nabla^\alpha W_\alpha - h)
+\nonumber\\
+&&+\frac{D-2}{D-1}\nabla_\mu\nabla_\nu \int D \nabla^\alpha W_\alpha +\frac{\nabla_\mu\nabla_\nu}{D-1}\int D h
+\end{eqnarray}
+\begin{eqnarray}
+\mathcal N (h_{\mu\nu}^{T\theta}) &=& \int D \nabla^2 h_{\mu\nu}^{T\theta}
+\end{eqnarray}
+\begin{eqnarray}
+ (\mathcal N h_{\mu\nu})^{T\theta} &=& \int D \nabla^2 h_{\mu\nu}^{T\theta}
+\end{eqnarray}
+\begin{eqnarray}
+\int D 
+\end{eqnarray}
+\end{document}

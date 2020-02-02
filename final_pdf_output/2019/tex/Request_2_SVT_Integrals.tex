@@ -1,0 +1,28 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Request 2 - SVT Integrals}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+\begin{eqnarray}
+\phi &=& -\frac12 h_{00}
+\\ \nonumber\\
+B &=& \int d^3y D^{(3)}(\mathbf x - \mathbf y) \tilde\nabla^k_y \tilde\nabla_k^y h_{0k}
+\\ \nonumber\\
+B_i &=& \int d^3y D^{(3)}(\mathbf x - \mathbf y)\left[ \tilde\nabla^k_y \tilde\nabla_k^y h_{0i}
+- \tilde\nabla_i^y \tilde\nabla^k_y h_{0k} \right]
+\\ \nonumber\\
+E_i &=& \int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)
+\left[ \tilde\nabla^k_z \tilde\nabla_k^z \tilde\nabla^j_z h_{ij}-\tilde\nabla_i^z \tilde\nabla^k_z \tilde\nabla^l_z h_{kl} \right]
+\end{eqnarray}
+
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Bach SVT Matthew v1}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+The Bach tensor is perturbed according to
+\begin{equation}
+	ds^2 = \Omega^2(x) \big\{ -(1+2\phi) d\tau^2 + 2(\tilde\nabla_i B + B_i)d\tau dx^i + [ (1-2\psi)\gamma_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\big\}
+\end{equation}
+where
+\begin{equation}
+	\gamma^{ij}\tilde\nabla_i B_j = 0,\gamma^{ij}\tilde\nabla_i E_j = 0,\ \gamma^{ij}\tilde\nabla_i E_{kj} = 0,\ \gamma^{ij}E_{ij} = 0.
+\end{equation}
+
+\noindent Covariant derivatives are defined with respect to the flat 3-space background $\gamma_{ij}$ and are indicated as $ \tilde\nabla_i$. 
+\section*{ $\Omega(x)$}
+\begin{align}
+\delta W_{00}^{(S)}={}&\Omega^{-2}\big[- \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
+ + \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
+ -  \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
+ -  \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi\big].
+\end{align}
+\begin{align}
+\delta W_{0i}^{(S)}={}&\Omega^{-2}\big[- \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{B}
+ + \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dddot{E}
+ -  \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\phi}
+ -  \tfrac{2}{3} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{\psi}\big].
+\end{align}
+\begin{align}
+\delta W_{0i}^{(V)}={}&\Omega^{-2}\big[- \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{B}_{i}
+ + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dddot{E}_{i}
+ + \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i}
+ -  \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}\big].
+\end{align}
+\begin{align}
+\delta W_{ij}^{(S)}={}&\Omega^{-2}\big[\tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dddot{B}
+ -  \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\overset{\text{...}.}{E}
+ + \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{\phi}
+ + \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{\psi}
+ -  \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}\nonumber\\
+& + \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
+ -  \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
+ -  \tfrac{1}{3} \gamma_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+ -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dddot{B}
+ + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\overset{\text{...}.}{E}\nonumber\\
+& -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\ddot{\phi}
+ -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\ddot{\psi}
+ + \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
+ -  \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
+ + \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi\nonumber\\
+& + \tfrac{1}{3} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi\big].
+\end{align}
+\begin{align}
+\delta W_{ij}^{(V)}={}&\Omega^{-2}\big[- \tfrac{1}{2} \tilde{\nabla}_{i}\dddot{B}_{j}
+ + \tfrac{1}{2} \tilde{\nabla}_{i}\overset{\text{...}.}{E}_{j}
+ + \tfrac{1}{2} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde{\nabla}_{i}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}_{j}
+ -  \tfrac{1}{2} \tilde{\nabla}_{j}\dddot{B}_{i}
+ + \tfrac{1}{2} \tilde{\nabla}_{j}\overset{\text{...}.}{E}_{i}\nonumber\\
+& + \tfrac{1}{2} \tilde{\nabla}_{j}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde{\nabla}_{j}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}_{i}\big].
+\end{align}
+\begin{align}
+\delta W_{ij}^{(T)}={}&\Omega^{-2}\big[\overset{\text{...}.}{E}_{ij}
+ - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}_{ij}
+ + \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}\big].
+\end{align}
+
+\end{document}

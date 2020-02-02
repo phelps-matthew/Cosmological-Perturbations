@@ -1,0 +1,920 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor,graphicx}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+\title{SVT3 RW Radiation $\Omega(x)$ $k<0$ Cartesian v2}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+\subsection{Comoving $a(t)$}
+%%%%%%%%%%%%%%%%%
+First, determine the form of $a(t)$ for $\rho = 3p$ radiation in comoving coordinates
+\begin{eqnarray}
+ds^2 &=& -dt^2 + a^2(t)\left( \frac{dr^2}{1-kr^2} + r^2d\theta^2 + r^2\sin^2\theta d\phi^2\right) = -dt^2 + a(t)^2 \tilde g_{ij} dx^i dx^j
+\\ \nonumber\\
+T_{\mu\nu} &=& p(4U_\mu U_\nu + g_{\mu\nu}),\qquad\qquad U_\mu = -\delta^0_\mu
+\\ \nonumber\\
+T_{00} &=& 3p,\qquad\qquad T_{ij} = a^2(t)p \tilde g_{ij}
+\\ \nonumber\\
+G_{00} &=& -3k a^{-2} -3 \dot a^2 a^{-2},\qquad\qquad G_{ij} = \tilde g_{ij}(k + \dot a^2 + 2 a \ddot a)
+\\ \nonumber\\
+\Delta_{\mu\nu} &=& G_{\mu\nu}+ T_{\mu\nu} = 0
+\\ \nonumber\\
+\Delta_{00} &=& 3( p- ka^{-2} -\dot a^2 a^{-2}), \qquad\qquad
+\Delta_{ij} = \tilde g_{ij}( a^2 p +k + \dot a^2 + 2a \ddot a)
+\\ \nonumber\\
+\to  &&\boxed{p= k a^{-2} + \dot a^2 a^{-2}}
+\qquad\qquad \boxed{0= k + \dot a^2 + a\ddot a}
+\end{eqnarray}
+With $k=-1/L^2$, we will follow APM (B1) and take 
+\begin{eqnarray}
+a^2(t) &=& \frac{1}{L^2}(d^2+t^2)
+\label{a(t)}
+\\ \nonumber\\
+p &=& -\frac{ d^2}{(d^2 + t^2)^2} = -\frac{d^2}{L^4a^4}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%
+\subsection{Conformal $T,R$ Coordinates}
+%%%%%%%%%%%%%%%%%
+Given $a(t)$ in the form \eqref{a(t)}, we may transform the metric from
+\begin{eqnarray}
+ds^2&=& -dt^2 + a^2(t)\left( \frac{dr^2}{1+r^2/L^2} + r^2d\theta^2 + r^2\sin^2\theta d\phi^2\right),
+\end{eqnarray}
+to the conformal flat form
+\begin{eqnarray}
+ds^2&=& \Omega^2(X)( -dT^2+dR^2 + R^2d\theta^2 +R^2\sin^2\theta d\phi^2).
+\end{eqnarray}
+Making definitions $u \equiv t/d$, $v \equiv r/L$, the coordinate transformations go as
+\begin{eqnarray}
+T &=& \left( u+ \sqrt{u^2+1}\right) \left(1+ v^2\right)^{1/2},\qquad
+R = \left( u+ \sqrt{u^2+1}\right)v,\qquad
+X^2 = T^2-R^2 = \left(u + \sqrt{u^2+1}\right)^2
+\nonumber\\
+u &=& \frac{X^2-1}{2X},\qquad\qquad v = \frac{R}{X}
+\\ \nonumber\\
+a^2(X) &=& \frac{d^2}{L^2} \frac{(1+X^2)^2}{4X^2}
+\\ \nonumber\\
+\Omega^2(X) &=& L^2 \frac{a^2(X)}{X^2} = \frac{d^2}{4}\frac{(1+X^2)^2}{X^4} = d^2 \frac{[1+u^2+ u(u^2+1)^{1/2}]^2}{[u+(u^2+1)^{1/2}]^4}
+\end{eqnarray}
+Transformation matrix components:
+\begin{eqnarray}
+x'^\mu &=& (T,R,\theta,\phi),\qquad x^\mu = (t,r,\theta,\phi)
+\\ \nonumber\\
+\frac{\partial t}{\partial T} &=& d \frac{\partial u}{\partial X}\frac{\partial X}{\partial T} = \Omega\frac{\partial X}{\partial T} = \Omega\frac{T}{X} 
+\\ \nonumber\\
+\frac{\partial r}{\partial T} &=& L \frac{\partial v}{\partial X}\frac{\partial X}{\partial T} = -L\frac{R}{X^2}\frac{\partial X}{\partial T} = -L \frac{TR}{X^3}
+\\ \nonumber\\
+\frac{\partial t}{\partial R} &=& d \frac{\partial u}{\partial X}\frac{\partial X}{\partial R} = \Omega\frac{\partial X}{\partial R} =-\Omega \frac{R}{X}
+\\ \nonumber\\
+\frac{\partial r}{\partial R} &=& L \frac{\partial v}{\partial X}\frac{\partial X}{\partial R} = -L\frac{R}{X^2}\frac{\partial X}{\partial R} = L \frac{R^2}{X^3}
+\end{eqnarray}
+%
+%
+%
+\\ \\
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$T'_{\mu\nu}(T,R)$}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+T'_{\mu\nu} &=& p(4U'_\mu U'_\nu + g'_{\mu\nu})
+\\ \nonumber\\
+p &=& -d^2 \Omega^{-4} X^{-4}
+\\ \nonumber\\
+U'_{\mu} &=& \frac{\partial x^\alpha}{\partial x'^\mu}U_\alpha = - \frac{\partial t}{\partial x'^\mu}
+\nonumber\\
+&=&  \Omega \left(-\frac{T}{X},\frac{R}{X},0,0\right) 
+\\ \nonumber\\
+g'_{\mu\nu} &=& \Omega^2 \text{diag}\left(-1,1,R^2,R^2\sin^2\theta\right)
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$T'_{\mu\nu}(T,x,y,z)$}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+T'_{\mu\nu} &=& p(4U'_\mu U'_\nu + g'_{\mu\nu})
+\\ \nonumber\\
+p &=& -d^2 \Omega^{-4} X^{-4}
+\\ \nonumber\\
+U'_{i} &=& \frac{\partial R}{\partial x'^i} U_R = \frac{x_i}{R}U_R
+\nonumber\\
+U'_{\mu} &=&  \Omega \left(-\frac{T}{X},\frac{x}{X},\frac{y}{X},\frac{z}{X}\right) 
+\\ \nonumber\\
+U'^{\mu} &=&  \Omega^{-1} \left(\frac{T}{X},\frac{x}{X},\frac{y}{X},\frac{z}{X}\right) 
+\\ \nonumber\\
+g'_{\mu\nu} &=& \Omega^2 \text{diag}\left(-1,1,1,1\right)
+\end{eqnarray}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fluctuations}
+% 
+%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(x)(-d\tau^2 + \tilde g_{ij} dx^i dx^j + f_{\mu\nu} dx^\mu dx^\nu)
+\\ \nonumber\\
+\tilde g_{ij} &=& \delta_{ij}
+\\ \nonumber\\
+f_{00} &=& -2\phi,\qquad f_{0i}= \tilde \nabla_i B + B_i,\qquad 
+f_{ij} = -2 \tilde g_{ij}\psi + 2\tilde\nabla_i\tilde \nabla_j E + \tilde \nabla_i E_j + \tilde \nabla_j E_i + 2E_{ij}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\delta G_{\mu\nu}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\delta G_{00} &=& 
+6 \dot{\psi} \dot{\Omega} \Omega^{-1}
++ 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+- 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
++ 4 \phi \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega\nonumber\\
+&& + 4 \psi \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega
++ 4 \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}B
+- 2 \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B
+- 2 \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\psi\nonumber\\
+&& - 2 \phi \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+- 2 \psi \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}E\nonumber\\
+&& + 2 \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}^{b}\Omega
+- 4 \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}E
+\nonumber\\
+&&+4 B^{a} \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega}
+- 2 B^{a} \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E_{a}
++ 2 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}E^{a}\nonumber\\
+&& - 4 \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}E^{a}
+-4 E^{ab} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega
++ 2 E_{ab} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega
+%
+%
+\\ \nonumber\\
+%
+%
+\delta G_{0i} &=&
+- \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}B
++ 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B
+- 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}B
++ \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}B
+- 2 \tilde{\nabla}_{i}\dot{\psi}\nonumber\\
+&& - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\phi
++ 2 \dot{\psi} \Omega^{-1} \tilde{\nabla}_{i}\Omega
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}\tilde{\nabla}_{a}\dot{E}
+- B_{i} \dot{\Omega}^2 \Omega^{-2}
++ 2 B_{i} \ddot{\Omega} \Omega^{-1}
+\nonumber\\
+&&
++ \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i}
+-  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+- 2 B_{i} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega
++ \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B_{i}
+-  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{E}_{i}
+\nonumber\\
+&&
++ B_{i} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+-  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}B^{a}
+-  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}\dot{E}^{a}
+-2 \dot{E}_{ia} \Omega^{-1} \tilde{\nabla}^{a}\Omega
+%
+%
+\\ \nonumber\\
+\delta G_{ij} &=&
+-2 \ddot{\psi} \tilde{g}_{ij}
++ 2 \dot{\Omega}^2 \tilde{g}_{ij} \phi \Omega^{-2}
++ 2 \dot{\Omega}^2 \tilde{g}_{ij} \psi \Omega^{-2}
+- 2 \dot{\phi} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1}
+- 4 \dot{\psi} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1}
+- 4 \ddot{\Omega} \tilde{g}_{ij} \phi \Omega^{-1}\nonumber\\
+&& - 4 \ddot{\Omega} \tilde{g}_{ij} \psi \Omega^{-1}
+- 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+-  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
++ 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}\nonumber\\
+&& -  \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+- 4 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}B
++ 2 \dot{\Omega} \tilde{g}_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B\nonumber\\
+&& - 2 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{B}
+- 2 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\phi
++ 2 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}E\nonumber\\
+&& - 2 \tilde{g}_{ij} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}^{b}\Omega
++ 4 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}E
++ 2 \Omega^{-1} \tilde{\nabla}_{i}\Omega \tilde{\nabla}_{j}\psi\nonumber\\
+&& + 2 \Omega^{-1} \tilde{\nabla}_{i}\psi \tilde{\nabla}_{j}\Omega
++ 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B}
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\ddot{E}
+- 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E}\nonumber\\
+&& - 2 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
++ 4 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
+- 4 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
++ 2 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}E\nonumber\\
+&& + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}E
+\nonumber\\
+&&-4 B^{a} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega}
++ 2 B^{a} \dot{\Omega} \tilde{g}_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega
+- 2 \dot{B}^{a} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega
++ 2 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E_{a}\nonumber\\
+&& - 2 \tilde{g}_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}E^{a}
++ 4 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}E^{a}
++ \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B_{j}
++ \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+-  \tfrac{1}{2} \tilde{\nabla}_{i}\ddot{E}_{j}\nonumber\\
+&& -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
+-  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}E_{j}
++ 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}E_{j}
+- 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}E_{j}\nonumber\\
+&& + \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}E_{j}
++ \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}B_{i}
++ \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}
+-  \tfrac{1}{2} \tilde{\nabla}_{j}\ddot{E}_{i}
+-  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
+-  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}E_{i}\nonumber\\
+&& + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}E_{i}
+- 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}E_{i}
++ \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}E_{i}
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}E_{a}
+\nonumber\\
+&&- \ddot{E}_{ij}
+- 2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+- 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
++ 4 \ddot{\Omega} E_{ij} \Omega^{-1}
++ \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+- 4 E_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega\nonumber\\
+&& + 2 \Omega^{-1} \tilde{\nabla}_{a}E_{ij} \tilde{\nabla}^{a}\Omega
++ 2 E_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
++ 4 E^{ab} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega\nonumber\\
+&& - 2 E_{ab} \tilde{g}_{ij} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}E_{ja}
+- 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}E_{ia}
+\end{eqnarray}
+%
+\begin{eqnarray}
+g^{\mu\nu}\delta G_{\mu\nu} &=& \Omega^{-2}( -\delta G_{00} + \tilde g^{ab}\delta G_{ab})
+\nonumber\\
+&=&6 \dot{\Omega}^2 \phi \Omega^{-4}
++ 6 \dot{\Omega}^2 \psi \Omega^{-4}
+- 6 \dot{\phi} \dot{\Omega} \Omega^{-3}
+- 18 \dot{\psi} \dot{\Omega} \Omega^{-3}
+- 12 \ddot{\Omega} \phi \Omega^{-3}
+- 12 \ddot{\Omega} \psi \Omega^{-3}
+- 6 \ddot{\psi} \Omega^{-2}\nonumber\\
+&& - 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+- 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
++ 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
++ 6 \dot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}\nonumber\\
+&& - 2 \dot{\Omega}^2 \Omega^{-4} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E
++ 4 \ddot{\Omega} \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E
+- 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
++ 4 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+- 4 \phi \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega\nonumber\\
+&& - 4 \psi \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega
+- 16 \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}B
++ 8 \dot{\Omega} \Omega^{-4} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B
+- 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{B}\nonumber\\
+&& - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\phi
++ 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\psi
++ 2 \phi \Omega^{-4} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
++ 2 \psi \Omega^{-4} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega\nonumber\\
+&& + 2 \Omega^{-4} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E
+- 4 \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}E \tilde{\nabla}_{b}\tilde{\nabla}^{b}\Omega
++ 6 \Omega^{-3} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}E\nonumber\\
+&& - 8 \Omega^{-4} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}^{b}\Omega
++ 16 \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}E.
+-16 B^{a} \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega}
+\nonumber\\
+&&+ 8 B^{a} \dot{\Omega} \Omega^{-4} \tilde{\nabla}_{a}\Omega
+- 6 \dot{B}^{a} \Omega^{-3} \tilde{\nabla}_{a}\Omega
++ 6 \Omega^{-3} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E_{a}- 8 \Omega^{-4} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}E^{a}
+\nonumber\\
+&&+ 16 \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}E^{a}
++16 E^{ab} \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega
+- 8 E_{ab} \Omega^{-4} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\delta T_{\mu\nu}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From $\delta(g^{\mu\nu}U_\mu U_\nu)=0$ we find
+\begin{eqnarray}
+U^\mu \delta U_\mu &=& \frac12 \left( h_{\mu\nu} U^\mu U^\nu\right)
+\nonumber\\
+\to \Omega^{-1}\left( T X^{-1}\delta U_0 + x^i X^{-1}\delta U_i\right) &=&
+\frac12 \left( T^2 X^{-2} f_{00} + 2 Tx^i X^{-2} f_{0i} + x^ix^j X^{-2} f_{ij} \right)
+\nonumber\\
+\to T\delta U_0 + x^i \delta U_i &=& \Omega X^{-1}\left[ -\phi T^2 + Tx^i(\tilde\nabla_i B + B_i)+
+x^i x^j(-\psi g_{ij} + \tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + E_{ij})\right]
+\nonumber
+\\
+\phantom{}
+\end{eqnarray}
+%
+\begin{eqnarray}
+p &=& -d^2 \Omega^{-4} X^{-4},\qquad U_\mu =\Omega \left(-\frac{T}{X},\frac{x}{X},\frac{y}{X},\frac{z}{X}\right) ,\quad 
+U^\mu = \Omega^{-1} \left(\frac{T}{X},\frac{x}{X},\frac{y}{X},\frac{z}{X}\right) 
+\\ \nonumber\\
+ \delta T_{\mu\nu} &=& \delta p(4 U_\mu U_\nu + \Omega^2\tilde g_{\mu\nu})+ p\left(
+4 \delta U_\mu U_\nu + 4U_\mu \delta U_\nu + \Omega^2 f_{\mu\nu}\right)
+\\ \nonumber\\
+ \delta T_{00} &=& \Omega^2 \delta p (4T^2X^{-2} -1) -8\Omega T X^{-1} p \delta U_0 - 2\Omega^2 p \phi
+\\ \nonumber\\
+ \delta T_{0i} &=& -4\Omega T X^{-1} U_i \delta p + 4p U_i \delta U_0 - 4\Omega T X^{-1}  p \delta U_i
+ +\Omega^2 p (\tilde\nabla_i B+B_i)
+\\ \nonumber\\
+ \delta T_{ij} &=& 4 U_i U_j \delta p + \Omega^2 \tilde g_{ij} \delta p + 4p U_i \delta U_j + 4p U_j \delta U_i
+ \nonumber\\
+ &&+ \Omega^2 p (-2\psi\tilde g_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij})
+\\ \nonumber\\
+g^{\mu\nu}\delta T_{\mu\nu} &=& 8p \Omega^{-1}\left( T X^{-1}\delta U_0 + x^i X^{-1}\delta U_i\right) + p (2\phi-6\psi+2\tilde\nabla_a\tilde\nabla^a E)
+\end{eqnarray}
+%
+%
+%
+%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Field Equations (G.I. Form)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In the following, $\tilde{\nabla}^2 = \delta^{ij}\tilde\nabla_i\tilde\nabla_j$.
+\begin{eqnarray}
+\alpha &=& \phi+\dot{B} -  \overset{..}{E} + B \dot{\Omega} \Omega^{-1} -  \dot{E} \dot{\Omega} \Omega^{-1} -  E^{a} \Omega^{-1} \tilde{\nabla}_{a}\Omega -  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}E
+\\ \nonumber\\
+\gamma &=& \psi -  B \dot{\Omega} \Omega^{-1} + \dot{E} \dot{\Omega} \Omega^{-1} + E^{a} \Omega^{-1} \tilde{\nabla}_{a}\Omega + \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}E
+\\ \nonumber\\
+\delta p^{GI} &=& \delta p - 32 d^{-2} X^4 (-1 + X^2) (1 + X^2)^{-4} \psi 
+\\ \nonumber\\
+V^{GI} &=& V +  \tfrac{1}{4} d X^{-1} (1 + X^2)^2 \psi
+\\ \nonumber\\
+Q_i &=& B_i - \dot E_i,\qquad V_i,\qquad E_{ij}
+\\ \nonumber\\
+\Delta_{\mu\nu} &=& \delta G_{\mu\nu} + \delta T_{\mu\nu}
+\\ \nonumber\\
+\Delta_{00}&=& - \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (-4 T^2 + X^2) \delta p^{GI}{} - 12 T (X^2 + X^4)^{-1} \dot{\gamma} - 2 \tilde{\nabla}^{2}{}\gamma \nonumber \\ 
+&& + 24 T^2 X^{-4} (1 + X^2)^{-2} \alpha + 8 X^{-4} (1 + X^2)^{-2} \Bigl(X^4 (2 + 5 X^2) + T^2 \bigl(3 - 2 (X^2 + X^4)\bigr)\Bigr) \gamma \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{1}V^{GI}{} + 4 (-1 + 4 X^2) (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\gamma \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{2}V^{GI}{} + 4 (-1 + 4 X^2) (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{3}V^{GI}{} \nonumber \\ 
+&& + 4 (-1 + 4 X^2) (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\gamma -24 T X^{-4} (1 + X^2)^{-2} x Q_{1} - 24 T X^{-4} (1 + X^2)^{-2} y Q_{2} \nonumber \\ 
+&& - 24 T X^{-4} (1 + X^2)^{-2} z Q_{3} - 64 d^{-1} X (1 + X^2)^{-3} x V_{1} - 64 d^{-1} X (1 + X^2)^{-3} y V_{2} \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} z V_{3}-8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 x^2) E_{11} \nonumber \\ 
+&& - 48 X^{-4} (1 + X^2)^{-2} x y E_{12} - 48 X^{-4} (1 + X^2)^{-2} x z E_{13} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 y^2) E_{22} - 48 X^{-4} (1 + X^2)^{-2} y z E_{23} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 z^2) E_{33}
+\\  \nonumber\\ 
+\Delta_{11}&=& -2 \overset{..}{\gamma} + \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (X^2 + 4 x^2) \delta p^{GI}{} + 4 T (X^2 + X^4)^{-1} \dot{\alpha} + 8 T (X^2 + X^4)^{-1} \dot{\gamma} -  \tilde{\nabla}^{2}\alpha \nonumber \\ 
+&& + \tilde{\nabla}^{2}\gamma + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 -  T^2 (3 + 4 X^2)\bigr) \alpha \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 -  T^2 (3 + 4 X^2) + X^2 (1 + X^2) (X^2 - 2 x^2)\bigr) \gamma \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{1}V^{GI}{} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\alpha + 8 (1 + 2 X^2) (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\gamma \nonumber \\ 
+&& + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\alpha -  \tilde{\nabla}_{1}\tilde{\nabla}_{1}\gamma - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\alpha - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\alpha -4 (X^2 + X^4)^{-1} x \dot{Q}_{1} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \dot{Q}_{2} - 4 (X^2 + X^4)^{-1} z \dot{Q}_{3} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x Q_{1} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y Q_{2} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z Q_{3} \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} x V_{1} + \tilde{\nabla}_{1}\dot{Q}_{1} - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}Q_{1}- \overset{..}{E}_{11} + 4 T (X^2 + X^4)^{-1} \dot{E}_{11} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x^2 E_{11} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y E_{12} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z E_{13} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) E_{22} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z E_{23} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) E_{33} \nonumber \\ 
+&& + \tilde{\nabla}^{2}E_{11} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{11} - 8 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}E_{12} - 8 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}E_{13} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{11} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{11}
+\\  \nonumber\\ 
+\Delta_{22}&=& -2 \overset{..}{\gamma} + \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (X^2 + 4 y^2) \delta p^{GI}{} + 4 T (X^2 + X^4)^{-1} \dot{\alpha} + 8 T (X^2 + X^4)^{-1} \dot{\gamma} -  \tilde{\nabla}^{2}\alpha \nonumber \\ 
+&& + \tilde{\nabla}^{2}\gamma + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 -  T^2 (3 + 4 X^2)\bigr) \alpha \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} \Bigl(T^2 (3 - 4 X^2 - 6 X^4) + X^2 \bigl(-1 + (8 + 6 X^2) x^2 + 10 y^2 + 8 z^2 + X^2 (7 + 5 X^2 + 8 y^2 + 6 z^2)\bigr)\Bigr) \gamma \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\alpha - 64 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{2}V^{GI}{} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\alpha \nonumber \\ 
+&& + 8 (1 + 2 X^2) (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\gamma + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\alpha -  \tilde{\nabla}_{2}\tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\alpha -4 (X^2 + X^4)^{-1} x \dot{Q}_{1} - 4 (X^2 + X^4)^{-1} y \dot{Q}_{2} - 4 (X^2 + X^4)^{-1} z \dot{Q}_{3} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x Q_{1} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y Q_{2} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z Q_{3} - 64 d^{-1} X (1 + X^2)^{-3} y V_{2} + \tilde{\nabla}_{2}\dot{Q}_{2} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}Q_{2}- \overset{..}{E}_{22} + 4 T (X^2 + X^4)^{-1} \dot{E}_{22} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) E_{11} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y E_{12} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z E_{13} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y^2 E_{22} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z E_{23} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) E_{33} \nonumber \\ 
+&& + \tilde{\nabla}^{2}E_{22} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{22} - 8 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}E_{12} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{22} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}E_{23} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{22}
+\\  \nonumber\\ 
+\Delta_{33}&=& -2 \overset{..}{\gamma} + \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (X^2 + 4 z^2) \delta p^{GI}{} + 4 T (X^2 + X^4)^{-1} \dot{\alpha} + 8 T (X^2 + X^4)^{-1} \dot{\gamma} -  \tilde{\nabla}^{2}\alpha \nonumber \\ 
+&& + \tilde{\nabla}^{2}\gamma + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 -  T^2 (3 + 4 X^2)\bigr) \alpha \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} \Bigl(T^2 (3 - 4 X^2 - 6 X^4) + X^2 \bigl(-1 + (8 + 6 X^2) x^2 + 8 y^2 + 10 z^2 + X^2 (7 + 5 X^2 + 6 y^2 + 8 z^2)\bigr)\Bigr) \gamma \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\alpha - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\alpha - 64 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{3}V^{GI}{} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\alpha + 8 (1 + 2 X^2) (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\gamma + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\alpha \nonumber \\ 
+&& -  \tilde{\nabla}_{3}\tilde{\nabla}_{3}\gamma -4 (X^2 + X^4)^{-1} x \dot{Q}_{1} - 4 (X^2 + X^4)^{-1} y \dot{Q}_{2} - 4 (X^2 + X^4)^{-1} z \dot{Q}_{3} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x Q_{1} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y Q_{2} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z Q_{3} - 64 d^{-1} X (1 + X^2)^{-3} z V_{3} + \tilde{\nabla}_{3}\dot{Q}_{3} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}Q_{3}- \overset{..}{E}_{33} + 4 T (X^2 + X^4)^{-1} \dot{E}_{33} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) E_{11} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y E_{12} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z E_{13} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) E_{22} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z E_{23} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z^2 E_{33} + \tilde{\nabla}^{2}E_{33} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{33} + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{33} - 8 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}E_{13} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}E_{23} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{33}
+\\  \nonumber\\ 
+\Delta_{01}&=& - d^2 T X^{-6} x \delta p^{GI}{} - 2 d^2 T X^{-4} x \delta p^{GI}{} -  d^2 T X^{-2} x \delta p^{GI}{} + 4 (X^2 + X^4)^{-1} x \dot{\gamma} \nonumber \\ 
+&& + 16 T (X + X^3)^{-2} x \alpha + 32 T (X + X^3)^{-2} x \gamma - 8 T^{-1} X^2 (X + X^3)^{-2} x \gamma \nonumber \\ 
+&& + 16 T X^2 (X + X^3)^{-2} x \gamma - 24 T^{-1} X^4 (X + X^3)^{-2} x \gamma - 2 \tilde{\nabla}_{1}\dot{\gamma} + 32 d^{-1} T X (1 + X^2)^{-3} \tilde{\nabla}_{1}V^{GI}{} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x^2 \tilde{\nabla}_{1}V^{GI}{} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\alpha - 8 T (1 + X^2)^{-1} \tilde{\nabla}_{1}\gamma \nonumber \\ 
+&& - 8 T^{-1} (1 + X^2)^{-1} x^2 \tilde{\nabla}_{1}\gamma + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y \tilde{\nabla}_{2}V^{GI}{} - 8 (T + T X^2)^{-1} x y \tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z \tilde{\nabla}_{3}V^{GI}{} - 8 (T + T X^2)^{-1} x z \tilde{\nabla}_{3}\gamma +\tfrac{1}{2} \tilde{\nabla}^{2}Q_{1} - 4 (X + X^3)^{-2} Q_{1} \nonumber \\ 
+&& - 4 X^2 (X + X^3)^{-2} Q_{1} - 16 (X + X^3)^{-2} x^2 Q_{1} - 16 (X + X^3)^{-2} x y Q_{2} - 16 (X + X^3)^{-2} x z Q_{3} \nonumber \\ 
+&& + 32 d^{-1} T X (1 + X^2)^{-3} V_{1} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x^2 V_{1} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y V_{2} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z V_{3} - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}Q_{2} - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}Q_{3} \nonumber \\ 
+&& + 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}Q_{1} + 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}Q_{1}-4 (X^2 + X^4)^{-1} x \dot{E}_{11} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \dot{E}_{12} - 4 (X^2 + X^4)^{-1} z \dot{E}_{13} - 16 T^{-1} (X + X^3)^{-2} x^3 E_{11} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x^2 y E_{12} - 32 T^{-1} (X + X^3)^{-2} x^2 z E_{13} - 16 T^{-1} (X + X^3)^{-2} x y^2 E_{22} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x y z E_{23} - 16 T^{-1} (X + X^3)^{-2} x z^2 E_{33}
+\\  \nonumber\\ 
+\Delta_{02}&=& - d^2 T X^{-6} y \delta p^{GI}{} - 2 d^2 T X^{-4} y \delta p^{GI}{} -  d^2 T X^{-2} y \delta p^{GI}{} + 4 (X^2 + X^4)^{-1} y \dot{\gamma} \nonumber \\ 
+&& + 16 T (X + X^3)^{-2} y \alpha + 32 T (X + X^3)^{-2} y \gamma - 8 T^{-1} X^2 (X + X^3)^{-2} y \gamma \nonumber \\ 
+&& + 16 T X^2 (X + X^3)^{-2} y \gamma - 24 T^{-1} X^4 (X + X^3)^{-2} y \gamma + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y \tilde{\nabla}_{1}V^{GI}{} \nonumber \\ 
+&& - 8 (T + T X^2)^{-1} x y \tilde{\nabla}_{1}\gamma - 2 \tilde{\nabla}_{2}\dot{\gamma} + 32 d^{-1} T X (1 + X^2)^{-3} \tilde{\nabla}_{2}V^{GI}{} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y^2 \tilde{\nabla}_{2}V^{GI}{} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\alpha - 8 T (1 + X^2)^{-1} \tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& - 8 T^{-1} (1 + X^2)^{-1} y^2 \tilde{\nabla}_{2}\gamma + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z \tilde{\nabla}_{3}V^{GI}{} \nonumber \\ 
+&& - 8 (T + T X^2)^{-1} y z \tilde{\nabla}_{3}\gamma +\tfrac{1}{2} \tilde{\nabla}^{2}Q_{2} - 16 (X + X^3)^{-2} x y Q_{1} - 4 (X + X^3)^{-2} Q_{2} \nonumber \\ 
+&& - 4 X^2 (X + X^3)^{-2} Q_{2} - 16 (X + X^3)^{-2} y^2 Q_{2} - 16 (X + X^3)^{-2} y z Q_{3} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y V_{1} + 32 d^{-1} T X (1 + X^2)^{-3} V_{2} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y^2 V_{2} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z V_{3} + 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}Q_{2} - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}Q_{1} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}Q_{3} + 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}Q_{2}-4 (X^2 + X^4)^{-1} x \dot{E}_{12} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \dot{E}_{22} - 4 (X^2 + X^4)^{-1} z \dot{E}_{23} - 16 T^{-1} (X + X^3)^{-2} x^2 y E_{11} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x y^2 E_{12} - 32 T^{-1} (X + X^3)^{-2} x y z E_{13} - 16 T^{-1} (X + X^3)^{-2} y^3 E_{22} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} y^2 z E_{23} - 16 T^{-1} (X + X^3)^{-2} y z^2 E_{33}
+\\  \nonumber\\ 
+\Delta_{03}&=& - d^2 T X^{-6} z \delta p^{GI}{} - 2 d^2 T X^{-4} z \delta p^{GI}{} -  d^2 T X^{-2} z \delta p^{GI}{} + 4 (X^2 + X^4)^{-1} z \dot{\gamma} \nonumber \\ 
+&& + 16 T (X + X^3)^{-2} z \alpha + 32 T (X + X^3)^{-2} z \gamma - 8 T^{-1} X^2 (X + X^3)^{-2} z \gamma \nonumber \\ 
+&& + 16 T X^2 (X + X^3)^{-2} z \gamma - 24 T^{-1} X^4 (X + X^3)^{-2} z \gamma + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z \tilde{\nabla}_{1}V^{GI}{} \nonumber \\ 
+&& - 8 (T + T X^2)^{-1} x z \tilde{\nabla}_{1}\gamma + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z \tilde{\nabla}_{2}V^{GI}{} - 8 (T + T X^2)^{-1} y z \tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& - 2 \tilde{\nabla}_{3}\dot{\gamma} + 32 d^{-1} T X (1 + X^2)^{-3} \tilde{\nabla}_{3}V^{GI}{} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} z^2 \tilde{\nabla}_{3}V^{GI}{} \nonumber \\ 
+&& + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\alpha - 8 T (1 + X^2)^{-1} \tilde{\nabla}_{3}\gamma - 8 T^{-1} (1 + X^2)^{-1} z^2 \tilde{\nabla}_{3}\gamma +\tfrac{1}{2} \tilde{\nabla}^{2}Q_{3} \nonumber \\ 
+&& - 16 (X + X^3)^{-2} x z Q_{1} - 16 (X + X^3)^{-2} y z Q_{2} - 4 (X + X^3)^{-2} Q_{3} - 4 X^2 (X + X^3)^{-2} Q_{3} \nonumber \\ 
+&& - 16 (X + X^3)^{-2} z^2 Q_{3} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z V_{1} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z V_{2} \nonumber \\ 
+&& + 32 d^{-1} T X (1 + X^2)^{-3} V_{3} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} z^2 V_{3} + 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}Q_{3} \nonumber \\ 
+&& + 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}Q_{3} - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}Q_{1} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}Q_{2}-4 (X^2 + X^4)^{-1} x \dot{E}_{13} - 4 (X^2 + X^4)^{-1} y \dot{E}_{23} - 4 (X^2 + X^4)^{-1} z \dot{E}_{33} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x^2 z E_{11} - 32 T^{-1} (X + X^3)^{-2} x y z E_{12} - 32 T^{-1} (X + X^3)^{-2} x z^2 E_{13} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^2 z E_{22} - 32 T^{-1} (X + X^3)^{-2} y z^2 E_{23} - 16 T^{-1} (X + X^3)^{-2} z^3 E_{33}
+\\  \nonumber\\ 
+\Delta_{12}&=& d^2 X^{-6} x y \delta p^{GI}{} + 2 d^2 X^{-4} x y \delta p^{GI}{} + d^2 X^{-2} x y \delta p^{GI}{} - 16 (X^2 + X^4)^{-1} x y \gamma \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{1}V^{GI}{} + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\gamma + 8 X^2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\gamma \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{2}V^{GI}{} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\gamma + 8 X^2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\gamma + \tilde{\nabla}_{2}\tilde{\nabla}_{1}\alpha \nonumber \\ 
+&& -  \tilde{\nabla}_{2}\tilde{\nabla}_{1}\gamma -32 d^{-1} X (1 + X^2)^{-3} y V_{1} - 32 d^{-1} X (1 + X^2)^{-3} x V_{2} + \tfrac{1}{2} \tilde{\nabla}_{1}\dot{Q}_{2} \nonumber \\ 
+&& - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}Q_{2} + \tfrac{1}{2} \tilde{\nabla}_{2}\dot{Q}_{1} - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}Q_{1}- \overset{..}{E}_{12} + 4 T (X^2 + X^4)^{-1} \dot{E}_{12} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} E_{12} + \tilde{\nabla}^{2}E_{12} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}E_{22} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}E_{23} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}E_{11} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}E_{13} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{12}
+\\  \nonumber\\ 
+\Delta_{13}&=& d^2 X^{-6} x z \delta p^{GI}{} + 2 d^2 X^{-4} x z \delta p^{GI}{} + d^2 X^{-2} x z \delta p^{GI}{} - 16 (X^2 + X^4)^{-1} x z \gamma \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{1}V^{GI}{} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\gamma + 8 X^2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\gamma \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{3}V^{GI}{} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\gamma + 8 X^2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\gamma + \tilde{\nabla}_{3}\tilde{\nabla}_{1}\alpha \nonumber \\ 
+&& -  \tilde{\nabla}_{3}\tilde{\nabla}_{1}\gamma -32 d^{-1} X (1 + X^2)^{-3} z V_{1} - 32 d^{-1} X (1 + X^2)^{-3} x V_{3} + \tfrac{1}{2} \tilde{\nabla}_{1}\dot{Q}_{3} \nonumber \\ 
+&& - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}Q_{3} + \tfrac{1}{2} \tilde{\nabla}_{3}\dot{Q}_{1} - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}Q_{1}- \overset{..}{E}_{13} + 4 T (X^2 + X^4)^{-1} \dot{E}_{13} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} E_{13} + \tilde{\nabla}^{2}E_{13} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}E_{23} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}E_{33} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{13} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}E_{11} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}E_{12}
+\\  \nonumber\\ 
+\Delta_{23}&=& d^2 X^{-6} y z \delta p^{GI}{} + 2 d^2 X^{-4} y z \delta p^{GI}{} + d^2 X^{-2} y z \delta p^{GI}{} - 16 (X^2 + X^4)^{-1} y z \gamma \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{2}V^{GI}{} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\gamma + 8 X^2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{3}V^{GI}{} + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\gamma + 8 X^2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\gamma + \tilde{\nabla}_{3}\tilde{\nabla}_{2}\alpha \nonumber \\ 
+&& -  \tilde{\nabla}_{3}\tilde{\nabla}_{2}\gamma -32 d^{-1} X (1 + X^2)^{-3} z V_{2} - 32 d^{-1} X (1 + X^2)^{-3} y V_{3} + \tfrac{1}{2} \tilde{\nabla}_{2}\dot{Q}_{3} \nonumber \\ 
+&& - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}Q_{3} + \tfrac{1}{2} \tilde{\nabla}_{3}\dot{Q}_{2} - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}Q_{2}- \overset{..}{E}_{23} + 4 T (X^2 + X^4)^{-1} \dot{E}_{23} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} E_{23} + \tilde{\nabla}^{2}E_{23} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{23} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}E_{13} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}E_{33} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}E_{12} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}E_{22}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& -24 d^{-2} X^4 (1 + X^2)^{-2} \overset{..}{\gamma} + 48 d^{-2} T X^2 (1 + X^2)^{-3} \dot{\alpha} + 144 d^{-2} T X^2 (1 + X^2)^{-3} \dot{\gamma} \nonumber \\ 
+&& - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}^{2}\alpha + 16 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}^{2}\gamma + 96 d^{-2} (1 + X^2)^{-3} (-4 T^2 + X^2) \alpha \nonumber \\ 
+&& + 96 d^{-2} (1 + X^2)^{-3} (-4 T^2 + X^2) \gamma - 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\alpha \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\gamma - 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\alpha + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\gamma \nonumber \\ 
+&& - 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\alpha + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\gamma -48 d^{-2} X^2 (1 + X^2)^{-3} x \dot{Q}_{1} \nonumber \\ 
+&& - 48 d^{-2} X^2 (1 + X^2)^{-3} y \dot{Q}_{2} - 48 d^{-2} X^2 (1 + X^2)^{-3} z \dot{Q}_{3} + 384 d^{-2} T (1 + X^2)^{-3} x Q_{1} \nonumber \\ 
+&& + 384 d^{-2} T (1 + X^2)^{-3} y Q_{2} + 384 d^{-2} T (1 + X^2)^{-3} z Q_{3}+384 d^{-2} (1 + X^2)^{-3} x^2 E_{11} \nonumber \\ 
+&& + 768 d^{-2} (1 + X^2)^{-3} x y E_{12} + 768 d^{-2} (1 + X^2)^{-3} x z E_{13} + 384 d^{-2} (1 + X^2)^{-3} y^2 E_{22} \nonumber \\ 
+&& + 768 d^{-2} (1 + X^2)^{-3} y z E_{23} + 384 d^{-2} (1 + X^2)^{-3} z^2 E_{33}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Covariant Conservation (Incomplete)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EM Tensor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\delta(\nabla_\mu T^{\mu\nu}) &=& \tfrac{1}{2} T^{\nu }{}_{\alpha } \Omega^{-4} \tilde{\nabla}^{\alpha }f
++ 2 \delta T_{\alpha \beta } \tilde{g}^{\nu \beta } \Omega^{-5} \tilde{\nabla}^{\alpha }\Omega
+- 2 T^{\nu \beta } f_{\alpha \beta } \Omega^{-5} \tilde{\nabla}^{\alpha }\Omega
++ T^{\beta }{}_{\beta } f^{\nu }{}_{\alpha } \Omega^{-5} \tilde{\nabla}^{\alpha }\Omega\nonumber\\
+&& - 2 T_{\alpha }{}^{\beta } f^{\nu }{}_{\beta } \Omega^{-5} \tilde{\nabla}^{\alpha }\Omega
+-  f^{\nu \alpha } \Omega^{-4} \tilde{\nabla}_{\beta }T_{\alpha }{}^{\beta }
+-  f^{\alpha \beta } \Omega^{-4} \tilde{\nabla}_{\beta }T^{\nu }{}_{\alpha }
+-  T^{\nu \alpha } \Omega^{-4} \tilde{\nabla}_{\beta }f_{\alpha }{}^{\beta }\nonumber\\
+&& + \tilde{g}^{\beta \gamma } \tilde{g}^{\nu \alpha } \Omega^{-4} \tilde{\nabla}_{\gamma }\delta T_{\alpha \beta }
+-  \tfrac{1}{2} T^{\alpha \beta } \Omega^{-4} \tilde{\nabla}^{\nu }f_{\alpha \beta }
+-  \delta T_{\alpha \beta } \tilde{g}^{\alpha \beta } \Omega^{-5} \tilde{\nabla}^{\nu }\Omega
++ T^{\alpha \beta } f_{\alpha \beta } \Omega^{-5} \tilde{\nabla}^{\nu }\Omega 
+\\ \nonumber\\
+\delta(\nabla_\mu T^{\mu 0})&=& \delta T_{00}{} \dot{\Omega} \Omega^{-5} + \delta T_{ab} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} - 4 T_{00}{} \dot{\Omega} \phi \Omega^{-5} - 2 T_{ab} \dot{\Omega} \tilde{g}^{ab} \phi \Omega^{-5} + 2 T_{ab} \dot{\Omega} \tilde{g}^{ab} \psi \Omega^{-5} + \delta \dot{T}_{00}{} \Omega^{-4} \nonumber \\ 
+&& - 2 T_{00}{} \dot{\phi} \Omega^{-4} - 3 T_{00}{} \dot{\psi} \Omega^{-4} -  T_{ab} \dot{\psi} \tilde{g}^{ab} \Omega^{-4} - 4 \dot{T}_{00}{} \phi \Omega^{-4} -  T_{0}{}_{d} \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{a}\tilde{\nabla}_{c}\tilde{\nabla}_{b}E \nonumber \\ 
+&& - 2 T_{0}{}_{a} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}B - 2 \dot{T}_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}B - 2 T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}\dot{B} -  \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{a}B \tilde{\nabla}_{b}T_{00}{} \nonumber \\ 
+&& + 2 \tilde{g}^{ab} \phi \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{a} - 2 \tilde{g}^{ab} \psi \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{a} -  \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}\delta T_{0}{}_{a} -  T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}\phi + T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}\psi \nonumber \\ 
+&& - 2 \delta T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega + 4 T_{0}{}_{a} \tilde{g}^{ab} \phi \Omega^{-5} \tilde{\nabla}_{b}\Omega - 4 T_{0}{}_{a} \tilde{g}^{ab} \psi \Omega^{-5} \tilde{\nabla}_{b}\Omega -  T_{00}{} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}B \tilde{\nabla}_{b}\Omega \nonumber \\ 
+&& + 2 T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{a}B \tilde{\nabla}_{b}\Omega -  T_{00}{} \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}_{a}B + T_{00}{} \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\dot{E} \nonumber \\ 
+&& + T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\dot{E} - 2 T_{cd} \dot{\Omega} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E + 2 T_{0}{}_{d} \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}E \nonumber \\ 
+&& + \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}T_{ab} \tilde{\nabla}_{d}B + 2 \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}_{d}T_{0}{}_{c} -  T_{bc} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{a}B \tilde{\nabla}_{d}\Omega \nonumber \\ 
+&& + 4 T_{0}{}_{c} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}_{d}\Omega +\delta T_{00}{} \dot{\Omega} \Omega^{-5} - 2 B_{a} T_{0}{}_{b} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} + \delta T_{ab} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} + \delta \dot{T}_{00}{} \Omega^{-4} \nonumber \\ 
+&& - 2 B_{a} \dot{T}_{0}{}_{b} \tilde{g}^{ab} \Omega^{-4} - 2 \dot{B}_{a} T_{0}{}_{b} \tilde{g}^{ab} \Omega^{-4} -  B_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}T_{00}{} -  \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}\delta T_{0}{}_{a} \nonumber \\ 
+&& + T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}\dot{E}_{a} - 2 T_{cd} \dot{\Omega} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}E_{a} -  B_{a} T_{00}{} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega - 2 \delta T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega \nonumber \\ 
+&& + 2 B_{a} T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\Omega + B_{d} \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}T_{ab} + \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{a}T_{0}{}_{b} \tilde{\nabla}_{d}E_{c} \nonumber \\ 
+&& + \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{a} \tilde{\nabla}_{d}E_{c} -  B_{a} T_{bc} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{d}\Omega + 2 T_{0}{}_{a} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}E_{c} \tilde{\nabla}_{d}\Omega \nonumber \\ 
+&& + 2 T_{0}{}_{a} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{c}E_{b} \tilde{\nabla}_{d}\Omega + T_{0}{}_{a} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{d}\tilde{\nabla}_{b}E_{c}+\delta T_{00}{} \dot{\Omega} \Omega^{-5} + \delta T_{ab} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \nonumber \\ 
+&& - 2 T_{ab} \dot{\Omega} E_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} + \delta \dot{T}_{00}{} \Omega^{-4} + T_{ab} \dot{E}_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} + 2 E_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{a} \nonumber \\ 
+&& -  \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}\delta T_{0}{}_{a} - 2 \delta T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega + 4 T_{0}{}_{a} E_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\Omega 
+\\  \nonumber\\ 
+\delta(\nabla_\mu T^{\mu i})&=& -2 \delta T_{0}{}_{i} \dot{\Omega} \Omega^{-5} + 4 T_{0}{}_{i} \dot{\Omega} \phi \Omega^{-5} - 4 T_{0}{}_{i} \dot{\Omega} \psi \Omega^{-5} -  \delta \dot{T}_{0}{}_{i} \Omega^{-4} + T_{0}{}_{i} \dot{\phi} \Omega^{-4} + 3 T_{0}{}_{i} \dot{\psi} \Omega^{-4} + 2 \dot{T}_{0}{}_{i} \phi \Omega^{-4} \nonumber \\ 
+&& - 2 \dot{T}_{0}{}_{i} \psi \Omega^{-4} + 2 T_{ib} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}B + \dot{T}_{ib} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{a}B + T_{ib} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{a}\dot{B} + T_{ib} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{a}\phi \nonumber \\ 
+&& -  T_{ib} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{a}\psi + 2 \delta T_{ib} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}\Omega + 8 T_{ib} \tilde{g}^{ab} \psi \Omega^{-5} \tilde{\nabla}_{a}\Omega + T_{id} \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{a}\tilde{\nabla}_{c}\tilde{\nabla}_{b}E \nonumber \\ 
+&& + \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{a}B \tilde{\nabla}_{b}T_{0}{}_{i} + 4 \tilde{g}^{ba} \psi \Omega^{-4} \tilde{\nabla}_{b}T_{ia} + \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\delta T_{ia} + 2 T_{0}{}_{i} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}B \tilde{\nabla}_{b}\Omega \nonumber \\ 
+&& + T_{0}{}_{i} \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}_{a}B -  T_{0}{}_{i} \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\dot{E} - 2 T_{id} \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}E \nonumber \\ 
+&& - 2 \tilde{g}^{ba} \tilde{g}^{dc} \Omega^{-4} \tilde{\nabla}_{c}\tilde{\nabla}_{a}E \tilde{\nabla}_{d}T_{ib} - 4 T_{ic} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}_{d}\Omega -  T_{00}{} \dot{\Omega} \Omega^{-5} \tilde{\nabla}_{i}B \nonumber \\ 
+&& -  T_{ab} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}B -  \dot{T}_{00}{} \Omega^{-4} \tilde{\nabla}_{i}B + \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{a} \tilde{\nabla}_{i}B + 2 T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega \tilde{\nabla}_{i}B \nonumber \\ 
+&& + T_{00}{} \Omega^{-4} \tilde{\nabla}_{i}\phi + T_{ab} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{i}\psi + \delta T_{00}{} \Omega^{-5} \tilde{\nabla}_{i}\Omega -  \delta T_{ab} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}\Omega - 2 T_{00}{} \phi \Omega^{-5} \tilde{\nabla}_{i}\Omega \nonumber \\ 
+&& + 2 T_{00}{} \psi \Omega^{-5} \tilde{\nabla}_{i}\Omega - 4 T_{ab} \tilde{g}^{ab} \psi \Omega^{-5} \tilde{\nabla}_{i}\Omega - 2 T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}B \tilde{\nabla}_{i}\Omega + 2 T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}_{i}\Omega \nonumber \\ 
+&& + T_{0}{}_{b} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{i}\tilde{\nabla}_{a}B + 4 T_{0}{}_{b} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}\tilde{\nabla}_{a}E + 2 \dot{T}_{0}{}_{b} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{i}\tilde{\nabla}_{a}E \nonumber \\ 
+&& - 2 T_{00}{} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega \tilde{\nabla}_{i}\tilde{\nabla}_{a}E - 2 \tilde{g}^{ba} \tilde{g}^{dc} \Omega^{-4} \tilde{\nabla}_{d}T_{bc} \tilde{\nabla}_{i}\tilde{\nabla}_{a}E + 2 T_{bc} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{d}\Omega \tilde{\nabla}_{i}\tilde{\nabla}_{a}E \nonumber \\ 
+&& - 4 T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}\tilde{\nabla}_{b}E -  T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{i}\tilde{\nabla}_{b}\tilde{\nabla}_{a}E- B_{i} T_{00}{} \dot{\Omega} \Omega^{-5} - 2 \delta T_{0}{}_{i} \dot{\Omega} \Omega^{-5} \nonumber \\ 
+&& -  B_{i} T_{ab} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} + 2 B_{a} T_{ib} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} -  B_{i} \dot{T}_{00}{} \Omega^{-4} -  \delta \dot{T}_{0}{}_{i} \Omega^{-4} + B_{a} \dot{T}_{ib} \tilde{g}^{ab} \Omega^{-4} + \dot{B}_{a} T_{ib} \tilde{g}^{ab} \Omega^{-4} \nonumber \\ 
+&& + 2 \delta T_{ib} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}\Omega + B_{i} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{a} + B_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}T_{0}{}_{i} + \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\delta T_{ia} \nonumber \\ 
+&& + 2 T_{0}{}_{a} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}E_{i} + \dot{T}_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{b}E_{i} + 2 B_{i} T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega + 2 B_{a} T_{0}{}_{i} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega \nonumber \\ 
+&& -  T_{00}{} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}E_{i} \tilde{\nabla}_{b}\Omega - 2 T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{a}E_{i} \tilde{\nabla}_{b}\Omega -  \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{a}T_{ib} \tilde{\nabla}_{d}E_{c} \nonumber \\ 
+&& -  \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}T_{ia} \tilde{\nabla}_{d}E_{c} -  \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}T_{ab} \tilde{\nabla}_{d}E_{i} - 2 T_{ic} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{a}E_{b} \tilde{\nabla}_{d}\Omega \nonumber \\ 
+&& + T_{bc} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{a}E_{i} \tilde{\nabla}_{d}\Omega - 2 T_{ic} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{b}E_{a} \tilde{\nabla}_{d}\Omega -  T_{ic} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-4} \tilde{\nabla}_{d}\tilde{\nabla}_{a}E_{b} \nonumber \\ 
+&& + T_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{i}B_{b} -  T_{00}{} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{b}\Omega \tilde{\nabla}_{i}E_{a} - 2 T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\Omega \tilde{\nabla}_{i}E_{a} \nonumber \\ 
+&& + T_{bc} \tilde{g}^{ad} \tilde{g}^{bc} \Omega^{-5} \tilde{\nabla}_{d}\Omega \tilde{\nabla}_{i}E_{a} + 2 T_{0}{}_{a} \dot{\Omega} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}E_{b} + \dot{T}_{0}{}_{a} \tilde{g}^{ab} \Omega^{-4} \tilde{\nabla}_{i}E_{b} -  \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}T_{ab} \tilde{\nabla}_{i}E_{d} \nonumber \\ 
+&& + \delta T_{00}{} \Omega^{-5} \tilde{\nabla}_{i}\Omega - 2 B_{a} T_{0}{}_{b} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}\Omega -  \delta T_{ab} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}\Omega + 2 T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}E_{a} \tilde{\nabla}_{i}\Omega \nonumber \\ 
+&& -  T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{i}\tilde{\nabla}_{b}E_{a}-2 \delta T_{0}{}_{i} \dot{\Omega} \Omega^{-5} + 4 T_{0}{}_{a} \dot{\Omega} E_{ib} \tilde{g}^{ab} \Omega^{-5} -  \delta \dot{T}_{0}{}_{i} \Omega^{-4} + 2 \dot{T}_{0}{}_{a} E_{ib} \tilde{g}^{ab} \Omega^{-4} \nonumber \\ 
+&& + 2 \delta T_{ib} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}\Omega - 2 T_{00}{} E_{ib} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{a}\Omega - 4 T_{ib} E_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{a}\Omega \nonumber \\ 
+&& - 4 T_{cb} E_{id} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{a}\Omega - 2 E_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{b}T_{ia} + \tilde{g}^{ba} \Omega^{-4} \tilde{\nabla}_{b}\delta T_{ia} + 2 T_{ac} E_{id} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{b}\Omega \nonumber \\ 
+&& - 2 E_{id} \tilde{g}^{ad} \tilde{g}^{cb} \Omega^{-4} \tilde{\nabla}_{c}T_{ab} -  T_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-4} \tilde{\nabla}_{i}E_{ab} + \delta T_{00}{} \Omega^{-5} \tilde{\nabla}_{i}\Omega -  \delta T_{ab} \tilde{g}^{ab} \Omega^{-5} \tilde{\nabla}_{i}\Omega \nonumber \\ 
+&& + 2 T_{ab} E_{cd} \tilde{g}^{ac} \tilde{g}^{bd} \Omega^{-5} \tilde{\nabla}_{i}\Omega 
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\Delta_{\mu\nu}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\\ \nonumber\\
+\nabla_\mu \Delta^{\mu\nu} &=& \tilde{g}^{\alpha \gamma } \tilde{g}^{\nu \beta } \Omega^{-4} \tilde{\nabla}_{\alpha }\Delta_{\beta \gamma } + 2 \tilde{g}^{\alpha \gamma } \tilde{g}^{\nu \beta } \Delta_{\alpha \beta} \Omega^{-5} \tilde{\nabla}_{\gamma }\Omega -   \tilde{g}^{\nu \gamma }\tilde{g}^{\alpha \beta } \Delta_{\alpha\beta } \Omega^{-5} \tilde{\nabla}_{\gamma }\Omega
+\\ \nonumber\\
+\nu &=& 0
+\\ \nonumber\\
+0& \overset{!}{=}&\Delta_{00} \dot{\Omega} \Omega^{-5}
++ \Delta_{11} \dot{\Omega} \Omega^{-5}
++ \Delta_{22} \dot{\Omega} \Omega^{-5}
++ \Delta_{33} \dot{\Omega} \Omega^{-5}
++ \dot{\Delta}_{00} \Omega^{-4}
+-  \Omega^{-4} \tilde{\nabla}_{1}\Delta_{01}\nonumber\\
+&& - 2 \Delta_{01} \Omega^{-5} \tilde{\nabla}_{1}\Omega
+-  \Omega^{-4} \tilde{\nabla}_{2}\Delta_{02}
+- 2 \Delta_{02} \Omega^{-5} \tilde{\nabla}_{2}\Omega
+-  \Omega^{-4} \tilde{\nabla}_{3}\Delta_{03}
+- 2 \Delta_{03} \Omega^{-5} \tilde{\nabla}_{3}\Omega 
+\\ \nonumber\\
+&=& 
+\\ \nonumber\\
+\nu &=& 1
+\\ \nonumber\\
+0& \overset{!}{=}&-2 \Delta_{01} \dot{\Omega} \Omega^{-5}
+-  \dot{\Delta}_{01} \Omega^{-4}
++ \Omega^{-4} \tilde{\nabla}_{1}\Delta_{11}
++ \Delta_{00} \Omega^{-5} \tilde{\nabla}_{1}\Omega
++ \Delta_{11} \Omega^{-5} \tilde{\nabla}_{1}\Omega
+-  \Delta_{22} \Omega^{-5} \tilde{\nabla}_{1}\Omega\nonumber\\
+&& -  \Delta_{33} \Omega^{-5} \tilde{\nabla}_{1}\Omega
++ \Omega^{-4} \tilde{\nabla}_{2}\Delta_{12}
++ 2 \Delta_{12} \Omega^{-5} \tilde{\nabla}_{2}\Omega
++ \Omega^{-4} \tilde{\nabla}_{3}\Delta_{13}
++ 2 \Delta_{13} \Omega^{-5} \tilde{\nabla}_{3}\Omega .
+\\ \nonumber\\
+&=& 
+\\ \nonumber\\
+\nu &=& 2
+\\ \nonumber\\
+0& \overset{!}{=}&-2 \Delta_{02} \dot{\Omega} \Omega^{-5}
+-  \dot{\Delta}_{02} \Omega^{-4}
++ \Omega^{-4} \tilde{\nabla}_{1}\Delta_{12}
++ 2 \Delta_{12} \Omega^{-5} \tilde{\nabla}_{1}\Omega
++ \Omega^{-4} \tilde{\nabla}_{2}\Delta_{22}
++ \Delta_{00} \Omega^{-5} \tilde{\nabla}_{2}\Omega\nonumber\\
+&& -  \Delta_{11} \Omega^{-5} \tilde{\nabla}_{2}\Omega
++ \Delta_{22} \Omega^{-5} \tilde{\nabla}_{2}\Omega
+-  \Delta_{33} \Omega^{-5} \tilde{\nabla}_{2}\Omega
++ \Omega^{-4} \tilde{\nabla}_{3}\Delta_{23}
++ 2 \Delta_{23} \Omega^{-5} \tilde{\nabla}_{3}\Omega
+\\ \nonumber\\
+&=& 
+\\ \nonumber\\
+\nu &=& 3
+\\ \nonumber\\
+0& \overset{!}{=}&-2 \Delta_{03} \dot{\Omega} \Omega^{-5}
+-  \dot{\Delta}_{03} \Omega^{-4}
++ \Omega^{-4} \tilde{\nabla}_{1}\Delta_{13}
++ 2 \Delta_{13} \Omega^{-5} \tilde{\nabla}_{1}\Omega
++ \Omega^{-4} \tilde{\nabla}_{2}\Delta_{23}
++ 2 \Delta_{23} \Omega^{-5} \tilde{\nabla}_{2}\Omega\nonumber\\
+&& + \Omega^{-4} \tilde{\nabla}_{3}\Delta_{33}
++ \Delta_{00} \Omega^{-5} \tilde{\nabla}_{3}\Omega
+-  \Delta_{11} \Omega^{-5} \tilde{\nabla}_{3}\Omega
+-  \Delta_{22} \Omega^{-5} \tilde{\nabla}_{3}\Omega
++ \Delta_{33} \Omega^{-5} \tilde{\nabla}_{3}\Omega
+\\ \nonumber\\
+&=& 
+\end{eqnarray}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+	\section{Field Equations}
+	Substituting in background quantities $p$ and $U_\mu$, we have the following field equations
+	%
+	%
+\begin{eqnarray}
+\Delta_{00}&=& - \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (-4 T^2 + X^2) \delta p - 12 T (X^2 + X^4)^{-1} \dot{\psi} + 24 T^2 X^{-4} (1 + X^2)^{-2} \phi \nonumber \\ 
+&& + 24 X^{-4} (1 + X^2)^{-2} (T^2 + X^4) \psi - 24 T X^{-4} (1 + X^2)^{-2} x \tilde{\nabla}_{1}B - 64 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{1}V \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\psi - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 x^2) \tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 2 \tilde{\nabla}_{1}\tilde{\nabla}_{1}\psi - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 24 T X^{-4} (1 + X^2)^{-2} y \tilde{\nabla}_{2}B - 64 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{2}V - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\psi \nonumber \\ 
+&& - 48 X^{-4} (1 + X^2)^{-2} x y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B \nonumber \\ 
+&& + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E} - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 y^2) \tilde{\nabla}_{2}\tilde{\nabla}_{2}E - 2 \tilde{\nabla}_{2}\tilde{\nabla}_{2}\psi \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E - 24 T X^{-4} (1 + X^2)^{-2} z \tilde{\nabla}_{3}B \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{3}V - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\psi - 48 X^{-4} (1 + X^2)^{-2} x z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 48 X^{-4} (1 + X^2)^{-2} y z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 z^2) \tilde{\nabla}_{3}\tilde{\nabla}_{3}E - 2 \tilde{\nabla}_{3}\tilde{\nabla}_{3}\psi - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{2}E - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{3}E-24 T X^{-4} (1 + X^2)^{-2} x B_{1} \nonumber \\ 
+&& - 24 T X^{-4} (1 + X^2)^{-2} y B_{2} - 24 T X^{-4} (1 + X^2)^{-2} z B_{3} - 64 d^{-1} X (1 + X^2)^{-3} x V_{1} \nonumber \\ 
+&& - 64 d^{-1} X (1 + X^2)^{-3} y V_{2} - 64 d^{-1} X (1 + X^2)^{-3} z V_{3} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 x^2) \tilde{\nabla}_{1}E_{1} - 24 X^{-4} (1 + X^2)^{-2} x y \tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& - 24 X^{-4} (1 + X^2)^{-2} x z \tilde{\nabla}_{1}E_{3} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{1} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{3} - 24 X^{-4} (1 + X^2)^{-2} x y \tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 y^2) \tilde{\nabla}_{2}E_{2} - 24 X^{-4} (1 + X^2)^{-2} y z \tilde{\nabla}_{2}E_{3} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{1} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{2} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{3} \nonumber \\ 
+&& - 24 X^{-4} (1 + X^2)^{-2} x z \tilde{\nabla}_{3}E_{1} - 24 X^{-4} (1 + X^2)^{-2} y z \tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 z^2) \tilde{\nabla}_{3}E_{3} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{3}-8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 x^2) E_{11} \nonumber \\ 
+&& - 48 X^{-4} (1 + X^2)^{-2} x y E_{12} - 48 X^{-4} (1 + X^2)^{-2} x z E_{13} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 y^2) E_{22} - 48 X^{-4} (1 + X^2)^{-2} y z E_{23} \nonumber \\ 
+&& - 8 X^{-4} (1 + X^2)^{-2} (X^2 + X^4 + 3 z^2) E_{33}
+\\  \nonumber\\ 
+\Delta_{11}&=& -2 \overset{..}{\psi} + \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (X^2 + 4 x^2) \delta p + 4 T (X^2 + X^4)^{-1} \dot{\phi} + 8 T (X^2 + X^4)^{-1} \dot{\psi} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 -  T^2 (3 + 4 X^2)\bigr) \phi \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + 2 X^4 -  T^2 (3 + 4 X^2)\bigr) \psi + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x \tilde{\nabla}_{1}B \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\dot{B} - 64 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{1}V - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\phi \nonumber \\ 
+&& + 8 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\psi + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x^2 \tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y \tilde{\nabla}_{2}B - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\dot{B} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\phi \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B -  \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{B} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\overset{..}{E} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) \tilde{\nabla}_{2}\tilde{\nabla}_{2}E -  \tilde{\nabla}_{2}\tilde{\nabla}_{2}\phi \nonumber \\ 
+&& + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\psi + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z \tilde{\nabla}_{3}B - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\dot{B} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\phi \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B -  \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{B} + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\overset{..}{E} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) \tilde{\nabla}_{3}\tilde{\nabla}_{3}E -  \tilde{\nabla}_{3}\tilde{\nabla}_{3}\phi \nonumber \\ 
+&& + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\psi + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{1}E + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{3}E+8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x B_{1} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y B_{2} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z B_{3} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \dot{B}_{1} - 4 (X^2 + X^4)^{-1} y \dot{B}_{2} - 4 (X^2 + X^4)^{-1} z \dot{B}_{3} - 64 d^{-1} X (1 + X^2)^{-3} x V_{1} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}B_{1} + \tilde{\nabla}_{1}\dot{B}_{1} -  \tilde{\nabla}_{1}\overset{..}{E}_{1} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\dot{E}_{1} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x^2 \tilde{\nabla}_{1}E_{1} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{1}E_{3} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) \tilde{\nabla}_{2}E_{2} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{2}E_{3} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{1} + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{2} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{3} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{3}E_{1} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) \tilde{\nabla}_{3}E_{3} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{2} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{3}- \overset{..}{E}_{11} + 4 T (X^2 + X^4)^{-1} \dot{E}_{11} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x^2 E_{11} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y E_{12} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z E_{13} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) E_{22} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z E_{23} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) E_{33} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{11} - 8 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}E_{12} - 8 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}E_{13} + \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{11} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{11} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{11} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{11} + \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{11}
+\\  \nonumber\\ 
+\Delta_{22}&=& -2 \overset{..}{\psi} + \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (X^2 + 4 y^2) \delta p + 4 T (X^2 + X^4)^{-1} \dot{\phi} + 8 T (X^2 + X^4)^{-1} \dot{\psi} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 -  T^2 (3 + 4 X^2)\bigr) \phi \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + 2 X^4 -  T^2 (3 + 4 X^2)\bigr) \psi + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x \tilde{\nabla}_{1}B \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\dot{B} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\phi + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B -  \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{B} \nonumber \\ 
+&& + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\overset{..}{E} - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) \tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& -  \tilde{\nabla}_{1}\tilde{\nabla}_{1}\phi + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\psi + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y \tilde{\nabla}_{2}B \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\dot{B} - 64 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{2}V - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\phi \nonumber \\ 
+&& + 8 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\psi + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y^2 \tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z \tilde{\nabla}_{3}B - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\dot{B} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\phi \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B -  \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{B} + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\overset{..}{E} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) \tilde{\nabla}_{3}\tilde{\nabla}_{3}E -  \tilde{\nabla}_{3}\tilde{\nabla}_{3}\phi \nonumber \\ 
+&& + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\psi + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{1}E + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{3}E+8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x B_{1} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y B_{2} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z B_{3} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \dot{B}_{1} - 4 (X^2 + X^4)^{-1} y \dot{B}_{2} - 4 (X^2 + X^4)^{-1} z \dot{B}_{3} - 64 d^{-1} X (1 + X^2)^{-3} y V_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) \tilde{\nabla}_{1}E_{1} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{1}E_{3} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{2} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{3} - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}B_{2} + \tilde{\nabla}_{2}\dot{B}_{2} \nonumber \\ 
+&& -  \tilde{\nabla}_{2}\overset{..}{E}_{2} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\dot{E}_{2} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y^2 \tilde{\nabla}_{2}E_{2} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{2}E_{3} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{3}E_{1} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) \tilde{\nabla}_{3}E_{3} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{2} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{3}- \overset{..}{E}_{22} + 4 T (X^2 + X^4)^{-1} \dot{E}_{22} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) E_{11} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y E_{12} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z E_{13} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y^2 E_{22} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z E_{23} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 z^2 + X^2 (1 + 4 z^2)\bigr) E_{33} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{22} + \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{22} - 8 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}E_{12} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{22} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}E_{23} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{22} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{22} + \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{22}
+\\  \nonumber\\ 
+\Delta_{33}&=& -2 \overset{..}{\psi} + \tfrac{1}{4} d^2 X^{-6} (1 + X^2)^2 (X^2 + 4 z^2) \delta p + 4 T (X^2 + X^4)^{-1} \dot{\phi} + 8 T (X^2 + X^4)^{-1} \dot{\psi} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 -  T^2 (3 + 4 X^2)\bigr) \phi \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + 2 X^4 -  T^2 (3 + 4 X^2)\bigr) \psi + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x \tilde{\nabla}_{1}B \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\dot{B} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\phi + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B -  \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{B} \nonumber \\ 
+&& + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\overset{..}{E} - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) \tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& -  \tilde{\nabla}_{1}\tilde{\nabla}_{1}\phi + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\psi + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y \tilde{\nabla}_{2}B \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\dot{B} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\phi + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B -  \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{B} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\overset{..}{E} \nonumber \\ 
+&& - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) \tilde{\nabla}_{2}\tilde{\nabla}_{2}E -  \tilde{\nabla}_{2}\tilde{\nabla}_{2}\phi \nonumber \\ 
+&& + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\psi + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z \tilde{\nabla}_{3}B - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\dot{B} - 64 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{3}V \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\phi + 8 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\psi + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z^2 \tilde{\nabla}_{3}\tilde{\nabla}_{3}E+8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x B_{1} \nonumber \\ 
+&& + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y B_{2} + 8 T X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z B_{3} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \dot{B}_{1} - 4 (X^2 + X^4)^{-1} y \dot{B}_{2} - 4 (X^2 + X^4)^{-1} z \dot{B}_{3} - 64 d^{-1} X (1 + X^2)^{-3} z V_{3} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) \tilde{\nabla}_{1}E_{1} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{1}E_{3} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{2} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{3} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y \tilde{\nabla}_{2}E_{1} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) \tilde{\nabla}_{2}E_{2} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{2}E_{3} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{2} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{3} - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}B_{3} + \tilde{\nabla}_{3}\dot{B}_{3} \nonumber \\ 
+&& -  \tilde{\nabla}_{3}\overset{..}{E}_{3} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\dot{E}_{3} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z \tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z \tilde{\nabla}_{3}E_{2} + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z^2 \tilde{\nabla}_{3}E_{3}- \overset{..}{E}_{33} \nonumber \\ 
+&& + 4 T (X^2 + X^4)^{-1} \dot{E}_{33} + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^2 + X^4 + (3 + 4 X^2) x^2\bigr) E_{11} \nonumber \\ 
+&& + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x y E_{12} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) x z E_{13} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} \bigl(X^4 + 3 y^2 + X^2 (1 + 4 y^2)\bigr) E_{22} + 16 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) y z E_{23} \nonumber \\ 
+&& + 8 X^{-4} (1 + X^2)^{-2} (3 + 4 X^2) z^2 E_{33} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{33} + \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{33} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{33} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{33} - 8 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}E_{13} - 8 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}E_{23} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{33} + \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{33}
+\\  \nonumber\\ 
+\Delta_{01}&=& - d^2 T X^{-6} (1 + X^2)^2 x \delta p + 4 (X^2 + X^4)^{-1} x \dot{\psi} + 16 T (X + X^3)^{-2} x \phi \nonumber \\ 
+&& + 16 T^{-1} (T -  X) (T + X) (X + X^3)^{-2} x \psi - 4 (X + X^3)^{-2} (1 + X^2 + 4 x^2) \tilde{\nabla}_{1}B - 2 \tilde{\nabla}_{1}\dot{\psi} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} (T^2 + x^2) \tilde{\nabla}_{1}V + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\phi - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x^3 \tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 16 (X + X^3)^{-2} x y \tilde{\nabla}_{2}B + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y \tilde{\nabla}_{2}V \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{1}\dot{E} - 32 T^{-1} (X + X^3)^{-2} x^2 y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E - 16 T^{-1} (X + X^3)^{-2} x y^2 \tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 16 (X + X^3)^{-2} x z \tilde{\nabla}_{3}B + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z \tilde{\nabla}_{3}V - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{1}\dot{E} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x^2 z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E - 32 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x z^2 \tilde{\nabla}_{3}\tilde{\nabla}_{3}E-4 (X + X^3)^{-2} (1 + X^2 + 4 x^2) B_{1} - 16 (X + X^3)^{-2} x y B_{2} \nonumber \\ 
+&& - 16 (X + X^3)^{-2} x z B_{3} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} (T^2 + x^2) V_{1} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y V_{2} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z V_{3} - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}B_{2} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}B_{3} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\dot{E}_{1} - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\dot{E}_{2} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\dot{E}_{3} - 16 T^{-1} (X + X^3)^{-2} x^3 \tilde{\nabla}_{1}E_{1} - 16 T^{-1} (X + X^3)^{-2} x^2 y \tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x^2 z \tilde{\nabla}_{1}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B_{1} -  \tfrac{1}{2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E}_{1} + 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}B_{1} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\dot{E}_{1} - 16 T^{-1} (X + X^3)^{-2} x^2 y \tilde{\nabla}_{2}E_{1} - 16 T^{-1} (X + X^3)^{-2} x y^2 \tilde{\nabla}_{2}E_{2} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{2}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B_{1} -  \tfrac{1}{2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E}_{1} + 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}B_{1} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\dot{E}_{1} - 16 T^{-1} (X + X^3)^{-2} x^2 z \tilde{\nabla}_{3}E_{1} - 16 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x z^2 \tilde{\nabla}_{3}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B_{1} -  \tfrac{1}{2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E}_{1}-4 (X^2 + X^4)^{-1} x \dot{E}_{11} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \dot{E}_{12} - 4 (X^2 + X^4)^{-1} z \dot{E}_{13} - 16 T^{-1} (X + X^3)^{-2} x^3 E_{11} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x^2 y E_{12} - 32 T^{-1} (X + X^3)^{-2} x^2 z E_{13} - 16 T^{-1} (X + X^3)^{-2} x y^2 E_{22} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x y z E_{23} - 16 T^{-1} (X + X^3)^{-2} x z^2 E_{33}
+\\  \nonumber\\ 
+\Delta_{02}&=& - d^2 T X^{-6} (1 + X^2)^2 y \delta p + 4 (X^2 + X^4)^{-1} y \dot{\psi} + 16 T (X + X^3)^{-2} y \phi \nonumber \\ 
+&& + 16 T^{-1} (T -  X) (T + X) (X + X^3)^{-2} y \psi - 16 (X + X^3)^{-2} x y \tilde{\nabla}_{1}B \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y \tilde{\nabla}_{1}V - 16 T^{-1} (X + X^3)^{-2} x^2 y \tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X + X^3)^{-2} (1 + X^2 + 4 y^2) \tilde{\nabla}_{2}B - 2 \tilde{\nabla}_{2}\dot{\psi} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} (T^2 + y^2) \tilde{\nabla}_{2}V \nonumber \\ 
+&& + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\phi - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{1}\dot{E} - 32 T^{-1} (X + X^3)^{-2} x y^2 \tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E} - 16 T^{-1} (X + X^3)^{-2} y^3 \tilde{\nabla}_{2}\tilde{\nabla}_{2}E - 16 (X + X^3)^{-2} y z \tilde{\nabla}_{3}B \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z \tilde{\nabla}_{3}V - 32 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}\dot{E} - 32 T^{-1} (X + X^3)^{-2} y^2 z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y z^2 \tilde{\nabla}_{3}\tilde{\nabla}_{3}E-16 (X + X^3)^{-2} x y B_{1} - 4 (X + X^3)^{-2} (1 + X^2 + 4 y^2) B_{2} \nonumber \\ 
+&& - 16 (X + X^3)^{-2} y z B_{3} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x y V_{1} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} (T^2 + y^2) V_{2} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z V_{3} \nonumber \\ 
+&& + 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}B_{2} - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\dot{E}_{2} - 16 T^{-1} (X + X^3)^{-2} x^2 y \tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x y^2 \tilde{\nabla}_{1}E_{2} - 16 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{1}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B_{2} -  \tfrac{1}{2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E}_{2} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}B_{1} - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}B_{3} - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\dot{E}_{1} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\dot{E}_{2} - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\dot{E}_{3} - 16 T^{-1} (X + X^3)^{-2} x y^2 \tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^3 \tilde{\nabla}_{2}E_{2} - 16 T^{-1} (X + X^3)^{-2} y^2 z \tilde{\nabla}_{2}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B_{2} -  \tfrac{1}{2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E}_{2} \nonumber \\ 
+&& + 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}B_{2} - 2 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\dot{E}_{2} - 16 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^2 z \tilde{\nabla}_{3}E_{2} - 16 T^{-1} (X + X^3)^{-2} y z^2 \tilde{\nabla}_{3}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B_{2} \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E}_{2}-4 (X^2 + X^4)^{-1} x \dot{E}_{12} - 4 (X^2 + X^4)^{-1} y \dot{E}_{22} - 4 (X^2 + X^4)^{-1} z \dot{E}_{23} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x^2 y E_{11} - 32 T^{-1} (X + X^3)^{-2} x y^2 E_{12} - 32 T^{-1} (X + X^3)^{-2} x y z E_{13} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^3 E_{22} - 32 T^{-1} (X + X^3)^{-2} y^2 z E_{23} - 16 T^{-1} (X + X^3)^{-2} y z^2 E_{33}
+\\  \nonumber\\ 
+\Delta_{03}&=& - d^2 T X^{-6} (1 + X^2)^2 z \delta p + 4 (X^2 + X^4)^{-1} z \dot{\psi} + 16 T (X + X^3)^{-2} z \phi \nonumber \\ 
+&& + 16 T^{-1} (T -  X) (T + X) (X + X^3)^{-2} z \psi - 16 (X + X^3)^{-2} x z \tilde{\nabla}_{1}B \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z \tilde{\nabla}_{1}V - 16 T^{-1} (X + X^3)^{-2} x^2 z \tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 16 (X + X^3)^{-2} y z \tilde{\nabla}_{2}B \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z \tilde{\nabla}_{2}V - 32 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^2 z \tilde{\nabla}_{2}\tilde{\nabla}_{2}E - 4 (X + X^3)^{-2} (1 + X^2 + 4 z^2) \tilde{\nabla}_{3}B - 2 \tilde{\nabla}_{3}\dot{\psi} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} (T^2 + z^2) \tilde{\nabla}_{3}V + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\phi - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{1}\dot{E} \nonumber \\ 
+&& - 32 T^{-1} (X + X^3)^{-2} x z^2 \tilde{\nabla}_{3}\tilde{\nabla}_{1}E - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{2}\dot{E} - 32 T^{-1} (X + X^3)^{-2} y z^2 \tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E} - 16 T^{-1} (X + X^3)^{-2} z^3 \tilde{\nabla}_{3}\tilde{\nabla}_{3}E-16 (X + X^3)^{-2} x z B_{1} \nonumber \\ 
+&& - 16 (X + X^3)^{-2} y z B_{2} - 4 (X + X^3)^{-2} (1 + X^2 + 4 z^2) B_{3} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} x z V_{1} \nonumber \\ 
+&& + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} y z V_{2} + 32 d^{-1} T^{-1} X (1 + X^2)^{-3} (T^2 + z^2) V_{3} \nonumber \\ 
+&& + 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}B_{3} - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}\dot{E}_{3} - 16 T^{-1} (X + X^3)^{-2} x^2 z \tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{1}E_{2} - 16 T^{-1} (X + X^3)^{-2} x z^2 \tilde{\nabla}_{1}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B_{3} -  \tfrac{1}{2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E}_{3} \nonumber \\ 
+&& + 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}B_{3} - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\dot{E}_{3} - 16 T^{-1} (X + X^3)^{-2} x y z \tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^2 z \tilde{\nabla}_{2}E_{2} - 16 T^{-1} (X + X^3)^{-2} y z^2 \tilde{\nabla}_{2}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B_{3} -  \tfrac{1}{2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E}_{3} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}B_{1} - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}B_{2} - 2 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\dot{E}_{1} \nonumber \\ 
+&& - 2 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\dot{E}_{2} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\dot{E}_{3} - 16 T^{-1} (X + X^3)^{-2} x z^2 \tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y z^2 \tilde{\nabla}_{3}E_{2} - 16 T^{-1} (X + X^3)^{-2} z^3 \tilde{\nabla}_{3}E_{3} + \tfrac{1}{2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B_{3} \nonumber \\ 
+&& -  \tfrac{1}{2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E}_{3}-4 (X^2 + X^4)^{-1} x \dot{E}_{13} - 4 (X^2 + X^4)^{-1} y \dot{E}_{23} - 4 (X^2 + X^4)^{-1} z \dot{E}_{33} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} x^2 z E_{11} - 32 T^{-1} (X + X^3)^{-2} x y z E_{12} - 32 T^{-1} (X + X^3)^{-2} x z^2 E_{13} \nonumber \\ 
+&& - 16 T^{-1} (X + X^3)^{-2} y^2 z E_{22} - 32 T^{-1} (X + X^3)^{-2} y z^2 E_{23} - 16 T^{-1} (X + X^3)^{-2} z^3 E_{33}
+\\  \nonumber\\ 
+\Delta_{12}&=& d^2 X^{-6} (1 + X^2)^2 x y \delta p - 32 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{1}V + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}\psi \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{2}V + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\psi - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{1}B + \tilde{\nabla}_{2}\tilde{\nabla}_{1}\dot{B} \nonumber \\ 
+&& -  \tilde{\nabla}_{2}\tilde{\nabla}_{1}\overset{..}{E} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{1}\dot{E} - 8 (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\tilde{\nabla}_{1}E + \tilde{\nabla}_{2}\tilde{\nabla}_{1}\phi -  \tilde{\nabla}_{2}\tilde{\nabla}_{1}\psi \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E-32 d^{-1} X (1 + X^2)^{-3} y V_{1} - 32 d^{-1} X (1 + X^2)^{-3} x V_{2} \nonumber \\ 
+&& - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}B_{2} + \tfrac{1}{2} \tilde{\nabla}_{1}\dot{B}_{2} -  \tfrac{1}{2} \tilde{\nabla}_{1}\overset{..}{E}_{2} + 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\dot{E}_{2} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} \tilde{\nabla}_{1}E_{2} - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}B_{1} + \tfrac{1}{2} \tilde{\nabla}_{2}\dot{B}_{1} -  \tfrac{1}{2} \tilde{\nabla}_{2}\overset{..}{E}_{1} \nonumber \\ 
+&& + 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\dot{E}_{1} - 4 (X^2 + X^4)^{-1} \tilde{\nabla}_{2}E_{1} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}\tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E_{2} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\tilde{\nabla}_{1}E_{3}- \overset{..}{E}_{12} + 4 T (X^2 + X^4)^{-1} \dot{E}_{12} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} E_{12} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}E_{22} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}E_{23} + \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{12} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}E_{11} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}E_{13} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{12} + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}E_{12} \nonumber \\ 
+&& + \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{12}
+\\  \nonumber\\ 
+\Delta_{13}&=& d^2 X^{-6} (1 + X^2)^2 x z \delta p - 32 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{1}V + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}\psi \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} x \tilde{\nabla}_{3}V + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\psi - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{1}B + \tilde{\nabla}_{3}\tilde{\nabla}_{1}\dot{B} \nonumber \\ 
+&& -  \tilde{\nabla}_{3}\tilde{\nabla}_{1}\overset{..}{E} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{1}\dot{E} - 8 (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{1}E + \tilde{\nabla}_{3}\tilde{\nabla}_{1}\phi -  \tilde{\nabla}_{3}\tilde{\nabla}_{1}\psi \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{1}E-32 d^{-1} X (1 + X^2)^{-3} z V_{1} - 32 d^{-1} X (1 + X^2)^{-3} x V_{3} \nonumber \\ 
+&& - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}B_{3} + \tfrac{1}{2} \tilde{\nabla}_{1}\dot{B}_{3} -  \tfrac{1}{2} \tilde{\nabla}_{1}\overset{..}{E}_{3} + 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{1}\dot{E}_{3} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} \tilde{\nabla}_{1}E_{3} - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}B_{1} + \tfrac{1}{2} \tilde{\nabla}_{3}\dot{B}_{1} -  \tfrac{1}{2} \tilde{\nabla}_{3}\overset{..}{E}_{1} \nonumber \\ 
+&& + 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\dot{E}_{1} - 4 (X^2 + X^4)^{-1} \tilde{\nabla}_{3}E_{1} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{1}E_{2} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E_{3}- \overset{..}{E}_{13} + 4 T (X^2 + X^4)^{-1} \dot{E}_{13} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} E_{13} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{1}E_{23} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{1}E_{33} + \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{13} \nonumber \\ 
+&& + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{2}E_{13} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{13} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}E_{11} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}E_{12} \nonumber \\ 
+&& + \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{13}
+\\  \nonumber\\ 
+\Delta_{23}&=& d^2 X^{-6} (1 + X^2)^2 y z \delta p - 32 d^{-1} X (1 + X^2)^{-3} z \tilde{\nabla}_{2}V + 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}\psi \nonumber \\ 
+&& - 32 d^{-1} X (1 + X^2)^{-3} y \tilde{\nabla}_{3}V + 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\psi - 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{2}B + \tilde{\nabla}_{3}\tilde{\nabla}_{2}\dot{B} \nonumber \\ 
+&& -  \tilde{\nabla}_{3}\tilde{\nabla}_{2}\overset{..}{E} + 4 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{2}\dot{E} - 8 (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\tilde{\nabla}_{2}E + \tilde{\nabla}_{3}\tilde{\nabla}_{2}\phi -  \tilde{\nabla}_{3}\tilde{\nabla}_{2}\psi \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{2}E-32 d^{-1} X (1 + X^2)^{-3} z V_{2} - 32 d^{-1} X (1 + X^2)^{-3} y V_{3} \nonumber \\ 
+&& - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}B_{3} + \tfrac{1}{2} \tilde{\nabla}_{2}\dot{B}_{3} -  \tfrac{1}{2} \tilde{\nabla}_{2}\overset{..}{E}_{3} + 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{2}\dot{E}_{3} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} \tilde{\nabla}_{2}E_{3} - 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}B_{2} + \tfrac{1}{2} \tilde{\nabla}_{3}\dot{B}_{2} -  \tfrac{1}{2} \tilde{\nabla}_{3}\overset{..}{E}_{2} \nonumber \\ 
+&& + 2 T (X^2 + X^4)^{-1} \tilde{\nabla}_{3}\dot{E}_{2} - 4 (X^2 + X^4)^{-1} \tilde{\nabla}_{3}E_{2} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}\tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}\tilde{\nabla}_{2}E_{2} - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E_{3}- \overset{..}{E}_{23} + 4 T (X^2 + X^4)^{-1} \dot{E}_{23} \nonumber \\ 
+&& - 8 (X^2 + X^4)^{-1} E_{23} + 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{1}E_{23} + \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{23} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{2}E_{13} \nonumber \\ 
+&& - 4 (X^2 + X^4)^{-1} z \tilde{\nabla}_{2}E_{33} + \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{23} - 4 (X^2 + X^4)^{-1} x \tilde{\nabla}_{3}E_{12} - 4 (X^2 + X^4)^{-1} y \tilde{\nabla}_{3}E_{22} \nonumber \\ 
+&& + \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{23}
+\\  \nonumber\\ 
+g^{\mu\nu}\Delta_{\mu\nu}&=& -24 d^{-2} X^4 (1 + X^2)^{-2} \overset{..}{\psi} + 48 d^{-2} T X^2 (1 + X^2)^{-3} \dot{\phi} + 144 d^{-2} T X^2 (1 + X^2)^{-3} \dot{\psi} \nonumber \\ 
+&& + 96 d^{-2} (1 + X^2)^{-3} (-4 T^2 + X^2) \phi + 96 d^{-2} (1 + X^2)^{-3} (-4 T^2 + X^2) \psi \nonumber \\ 
+&& + 384 d^{-2} T (1 + X^2)^{-3} x \tilde{\nabla}_{1}B - 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\dot{B} - 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\phi \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\psi + 48 d^{-2} T X^2 (1 + X^2)^{-3} \tilde{\nabla}_{1}\tilde{\nabla}_{1}B - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{B} \nonumber \\ 
+&& + 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\overset{..}{E} - 48 d^{-2} T X^2 (1 + X^2)^{-3} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\dot{E} \nonumber \\ 
+&& + 96 d^{-2} (1 + X^2)^{-3} (X^2 + 4 x^2) \tilde{\nabla}_{1}\tilde{\nabla}_{1}E - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\phi \nonumber \\ 
+&& + 16 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{1}\tilde{\nabla}_{1}\psi + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 384 d^{-2} T (1 + X^2)^{-3} y \tilde{\nabla}_{2}B - 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\dot{B} - 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\phi \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\psi + 768 d^{-2} (1 + X^2)^{-3} x y \tilde{\nabla}_{2}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 48 d^{-2} T X^2 (1 + X^2)^{-3} \tilde{\nabla}_{2}\tilde{\nabla}_{2}B \nonumber \\ 
+&& - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{B} + 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\overset{..}{E} \nonumber \\ 
+&& - 48 d^{-2} T X^2 (1 + X^2)^{-3} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\dot{E} + 96 d^{-2} (1 + X^2)^{-3} (X^2 + 4 y^2) \tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\phi + 16 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{2}\tilde{\nabla}_{2}\psi \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{1}E + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 384 d^{-2} T (1 + X^2)^{-3} z \tilde{\nabla}_{3}B - 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\dot{B} - 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\phi \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\psi + 768 d^{-2} (1 + X^2)^{-3} x z \tilde{\nabla}_{3}\tilde{\nabla}_{1}E \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\tilde{\nabla}_{1}\tilde{\nabla}_{1}E + 768 d^{-2} (1 + X^2)^{-3} y z \tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\tilde{\nabla}_{2}\tilde{\nabla}_{2}E + 48 d^{-2} T X^2 (1 + X^2)^{-3} \tilde{\nabla}_{3}\tilde{\nabla}_{3}B \nonumber \\ 
+&& - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{B} + 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\overset{..}{E} \nonumber \\ 
+&& - 48 d^{-2} T X^2 (1 + X^2)^{-3} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\dot{E} + 96 d^{-2} (1 + X^2)^{-3} (X^2 + 4 z^2) \tilde{\nabla}_{3}\tilde{\nabla}_{3}E \nonumber \\ 
+&& - 8 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\phi + 16 d^{-2} X^4 (1 + X^2)^{-2} \tilde{\nabla}_{3}\tilde{\nabla}_{3}\psi \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{1}E + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{2}E \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}\tilde{\nabla}_{3}E+384 d^{-2} T (1 + X^2)^{-3} x B_{1} + 384 d^{-2} T (1 + X^2)^{-3} y B_{2} \nonumber \\ 
+&& + 384 d^{-2} T (1 + X^2)^{-3} z B_{3} - 48 d^{-2} X^2 (1 + X^2)^{-3} x \dot{B}_{1} - 48 d^{-2} X^2 (1 + X^2)^{-3} y \dot{B}_{2} \nonumber \\ 
+&& - 48 d^{-2} X^2 (1 + X^2)^{-3} z \dot{B}_{3} + 128 d^{-2} (1 + X^2)^{-3} (X^2 + 3 x^2) \tilde{\nabla}_{1}E_{1} \nonumber \\ 
+&& + 384 d^{-2} (1 + X^2)^{-3} x y \tilde{\nabla}_{1}E_{2} + 384 d^{-2} (1 + X^2)^{-3} x z \tilde{\nabla}_{1}E_{3} \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{1} + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{2} \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{1}\tilde{\nabla}_{1}E_{3} + 384 d^{-2} (1 + X^2)^{-3} x y \tilde{\nabla}_{2}E_{1} \nonumber \\ 
+&& + 128 d^{-2} (1 + X^2)^{-3} (X^2 + 3 y^2) \tilde{\nabla}_{2}E_{2} + 384 d^{-2} (1 + X^2)^{-3} y z \tilde{\nabla}_{2}E_{3} \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{1} + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{2} \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{2}\tilde{\nabla}_{2}E_{3} + 384 d^{-2} (1 + X^2)^{-3} x z \tilde{\nabla}_{3}E_{1} + 384 d^{-2} (1 + X^2)^{-3} y z \tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& + 128 d^{-2} (1 + X^2)^{-3} (X^2 + 3 z^2) \tilde{\nabla}_{3}E_{3} + 48 d^{-2} X^2 (1 + X^2)^{-3} x \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{1} \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} y \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{2} \nonumber \\ 
+&& + 48 d^{-2} X^2 (1 + X^2)^{-3} z \tilde{\nabla}_{3}\tilde{\nabla}_{3}E_{3}+128 d^{-2} (1 + X^2)^{-3} (X^2 + 3 x^2) E_{11} \nonumber \\ 
+&& + 768 d^{-2} (1 + X^2)^{-3} x y E_{12} + 768 d^{-2} (1 + X^2)^{-3} x z E_{13} + 128 d^{-2} (1 + X^2)^{-3} (X^2 + 3 y^2) E_{22} \nonumber \\ 
+&& + 768 d^{-2} (1 + X^2)^{-3} y z E_{23} + 128 d^{-2} (1 + X^2)^{-3} (X^2 + 3 z^2) E_{33}
+\end{eqnarray}
+	%
+	%
+\end{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

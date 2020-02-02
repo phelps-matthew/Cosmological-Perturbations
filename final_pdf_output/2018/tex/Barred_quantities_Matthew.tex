@@ -1,0 +1,302 @@
+\documentclass[10pt,letterpaper]{article}
+% Here are the following hotkeys/shortcuts that I typically use
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage{mathtools} 
+\usepackage{enumitem} % List environment 
+\usepackage{amssymb}
+\newcommand{\plr}[1]{\left(#1\right)} % encloses the argument using stretchable parentheses
+\newcommand{\clr}[1]{\left\{#1\right\}} % encloses the argument using stretchable curly brackets
+\newcommand{\blr}[1]{\left[#1\right]} % encloses the argument using stretchable square brackets
+\newcommand{\elr}[1]{\left.#1\right|} % encloses the argument with evaluated at bar
+\newcommand{\pfrac}[2]{\plr{\frac{#1}{#2}}} % enclosed fraction in parentheses
+\newcommand{\bfrac}[2]{\blr{\frac{#1}{#2}}} % enclosed fraction in square brackets
+\newcommand{\benum}{\begin{enumerate}} % begin enumerate
+\newcommand{\eenum}{\end{enumerate}} % end enumerate
+\newcommand{\be}{\begin{equation}} % begin equation
+\newcommand{\ee}{\end{equation}} % end equation
+\def\ba#1\ea{\begin{align*}#1\end{align*}} % begin / end align
+\newcommand{\vect}[1]{\mathbf{#1}} % bold face vector
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}} % unit bold face vector 
+\newcommand{\del}{\nabla} % Del operator 
+\newcommand{\bpm}{\begin{pmatrix}} % Begin parenthesis matrix
+\newcommand{\epm}{\end{pmatrix}} % End parenthesis matrix
+\newcommand{\pd}{\partial}
+\newcommand{\ep}{\epsilon}
+\newcommand{\hu}{\mathcal H}
+\allowdisplaybreaks
+\title{Barred Quantities in $\delta W_{\mu\nu}$}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+Under conformal transformation the metric decomposes as
+\be
+	g_{\mu\nu} \to \bar g_{\mu\nu} = \bar g_{\mu\nu}^{(0)} + \bar h_{\mu\nu}
+\ee
+and the perturbed Weyl tensor transforms as
+\be
+	\delta W_{\mu\nu}(h_{\mu\nu}) \to \delta \bar W_{\mu\nu}(\bar h_{\mu\nu}).
+\ee
+We seek to obtain solutions to the fluctuation equation 
+\be
+	\delta\bar W_{\mu\nu}(\bar h_{\mu\nu}) = \delta \bar T_{\mu\nu}(\bar h_{\mu\nu})/4\alpha_g
+\ee
+as evaluated in a conformal to flat background (given above eq (12) in paper being written).\\ \\
+The perturbed tensor after conformal transformation takes the form (where $\bar g_{\mu\nu} \equiv \bar g_{\mu\nu}^{(0)}$)
+\begin{align}
+\delta \bar W_{\mu\nu}( \bar h_{\mu\nu})={}&- \tfrac{1}{6} \bar h_{\mu \nu} \bar R^2
+ + \tfrac{1}{3} \bar g_{\mu \nu} \bar h^{\alpha \beta} \bar R \bar R_{\alpha \beta}
+ + \tfrac{1}{2} \bar h_{\mu \nu} \bar R_{\alpha \beta} \bar R^{\alpha \beta}
+ + \tfrac{1}{3} \bar h_{\nu}{}^{\alpha} \bar R \bar R_{\mu \alpha}
+ -  \tfrac{1}{2} \bar h_{\nu}{}^{\alpha} \bar R_{\alpha \beta} \bar R_{\mu}{}^{\beta}\nonumber\\
+& -  \tfrac{2}{3} \bar h^{\alpha \beta} \bar R_{\alpha \beta} \bar R_{\mu \nu}
+ + \tfrac{1}{3} \bar h_{\mu}{}^{\alpha} \bar R \bar R_{\nu \alpha}
+ + \bar h^{\alpha \beta} \bar R_{\mu \alpha} \bar R_{\nu \beta}
+ -  \tfrac{1}{2} \bar h_{\mu}{}^{\alpha} \bar R_{\alpha \beta} \bar R_{\nu}{}^{\beta}
+ -  \bar g_{\mu \nu} \bar h^{\alpha \beta} \bar R^{\gamma \eta} \bar R_{\alpha \gamma \beta \eta}\nonumber\\
+& -  \tfrac{2}{3} \bar h^{\alpha \beta} \bar R \bar R_{\mu \alpha \nu \beta}
+ -  \bar h_{\nu}{}^{\alpha} \bar R^{\beta \gamma} \bar R_{\mu \beta \alpha \gamma}
+ + 2 \bar h^{\alpha \beta} \bar R_{\alpha}{}^{\gamma} \bar R_{\mu \gamma \nu \beta}
+ + 2 \bar h^{\alpha \beta} \bar R_{\alpha \gamma \beta \eta} \bar R_{\mu}{}^{\gamma}{}_{\nu}{}^{\eta}\nonumber\\
+& -  \bar h_{\mu}{}^{\alpha} \bar R^{\beta \gamma} \bar R_{\nu \beta \alpha \gamma}
+ + \tfrac{1}{3} \bar R \bar\nabla_{\alpha}\bar\nabla^{\alpha}\bar h_{\mu \nu}
+ -  \tfrac{1}{6} \bar h_{\mu \nu} \bar\nabla_{\alpha}\bar\nabla^{\alpha}\bar R
+ + \tfrac{1}{2} \bar R_{\nu}{}^{\alpha} \bar\nabla_{\alpha}\bar\nabla_{\beta}\bar h_{\mu}{}^{\beta}\nonumber\\
+& + \tfrac{1}{2} \bar R_{\mu}{}^{\alpha} \bar\nabla_{\alpha}\bar\nabla_{\beta}\bar h_{\nu}{}^{\beta}
+ -  \tfrac{1}{2} \bar R_{\nu}{}^{\alpha} \bar\nabla_{\alpha}\bar\nabla_{\mu}\bar h^{\beta}{}_{\beta}
+ -  \tfrac{1}{2} \bar R_{\mu}{}^{\alpha} \bar\nabla_{\alpha}\bar\nabla_{\nu}\bar h^{\beta}{}_{\beta}
+ -  \tfrac{1}{12} \bar g_{\mu \nu} \bar\nabla_{\alpha}\bar h^{\beta}{}_{\beta} \bar\nabla^{\alpha}\bar R\nonumber\\
+& -  \tfrac{1}{6} \bar\nabla_{\alpha}\bar h_{\mu \nu} \bar\nabla^{\alpha}\bar R
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar\nabla^{\alpha}\bar R \bar\nabla_{\beta}\bar h_{\alpha}{}^{\beta}
+ -  \bar\nabla_{\alpha}\bar h^{\alpha \beta} \bar\nabla_{\beta}\bar R_{\mu \nu}
+ + \tfrac{1}{3} \bar g_{\mu \nu} \bar R \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar h^{\alpha \beta}\nonumber\\
+& -  \tfrac{2}{3} \bar R_{\mu \nu} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar h^{\alpha \beta}
+ + \tfrac{1}{2} \bar g_{\mu \nu} \bar R^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar h^{\gamma}{}_{\gamma}
+ -  \bar R^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar h_{\mu \nu}
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar h^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar R\nonumber\\
+& -  \bar h^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar R_{\mu \nu}
+ -  \tfrac{1}{3} \bar g_{\mu \nu} \bar R \bar\nabla_{\beta}\bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha}
+ + \tfrac{2}{3} \bar R_{\mu \nu} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha}
+ + \tfrac{1}{2} \bar h_{\nu}{}^{\alpha} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar R_{\mu \alpha}\nonumber\\
+& + \tfrac{1}{2} \bar h_{\mu}{}^{\alpha} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar R_{\nu \alpha}
+ + \tfrac{1}{2} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar\nabla_{\alpha}\bar\nabla^{\alpha}\bar h_{\mu \nu}
+ -  \tfrac{1}{2} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar\nabla_{\mu}\bar\nabla_{\alpha}\bar h_{\nu}{}^{\alpha}
+ -  \tfrac{1}{2} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar\nabla_{\nu}\bar\nabla_{\alpha}\bar h_{\mu}{}^{\alpha}\nonumber\\
+& -  \bar g_{\mu \nu} \bar R^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\gamma}\bar h_{\alpha}{}^{\gamma}
+ + \tfrac{1}{2} \bar\nabla_{\beta}\bar R_{\mu \nu} \bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha}
+ + \bar\nabla_{\alpha}\bar R_{\nu \beta} \bar\nabla^{\beta}\bar h_{\mu}{}^{\alpha}
+ + \bar\nabla_{\alpha}\bar R_{\mu \beta} \bar\nabla^{\beta}\bar h_{\nu}{}^{\alpha}\nonumber\\
+& + \tfrac{1}{2} \bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha} \bar\nabla_{\gamma}\bar R_{\mu}{}^{\gamma}{}_{\nu \beta}
+ + \tfrac{2}{3} \bar g_{\mu \nu} \bar R^{\alpha \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar h_{\alpha \beta}
+ - 2 \bar R_{\mu \alpha \nu \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar h^{\alpha \beta}
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar h^{\alpha \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar R_{\alpha \beta}\nonumber\\
+& -  \bar h^{\alpha \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar R_{\mu \alpha \nu \beta}
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar\nabla_{\beta}\bar\nabla_{\alpha}\bar h^{\alpha \beta}
+ -  \tfrac{1}{6} \bar g_{\mu \nu} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar\nabla_{\beta}\bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha}\nonumber\\
+& + \tfrac{1}{3} g_{\mu \nu} \bar\nabla_{\gamma}\bar R_{\alpha \beta} \bar\nabla^{\gamma}\bar h^{\alpha \beta}
+ - 2 \bar\nabla_{\gamma}\bar R_{\mu \alpha \nu \beta} \bar\nabla^{\gamma}\bar h^{\alpha \beta}
+ + \bar R_{\mu \beta \nu \gamma} \bar\nabla^{\gamma}\bar\nabla_{\alpha}\bar h^{\alpha \beta}
+ + \bar R_{\mu \gamma \nu \beta} \bar\nabla^{\gamma}\bar\nabla_{\alpha}\bar h^{\alpha \beta}\nonumber\\
+& -  \bar\nabla_{\beta}\bar R_{\nu \alpha} \bar\nabla_{\mu}\bar h^{\alpha \beta}
+ + \tfrac{1}{6} \bar\nabla^{\alpha}\bar R \bar\nabla_{\mu}\bar h_{\nu \alpha}
+ -  \tfrac{1}{2} \bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha} \bar\nabla_{\mu}\bar R_{\nu \beta}
+ -  \tfrac{1}{3} \bar R \bar\nabla_{\mu}\bar\nabla_{\alpha}\bar h_{\nu}{}^{\alpha}\nonumber\\
+& -  \tfrac{1}{2} \bar R_{\nu}{}^{\alpha} \bar\nabla_{\mu}\bar\nabla_{\beta}\bar h_{\alpha}{}^{\beta}
+ + \bar R^{\alpha \beta} \bar\nabla_{\mu}\bar\nabla_{\beta}\bar h_{\nu \alpha}
+ -  \bar\nabla_{\beta}\bar R_{\mu \alpha} \bar\nabla_{\nu}\bar h^{\alpha \beta}
+ + \tfrac{1}{3} \bar\nabla_{\mu}\bar R_{\alpha \beta} \bar\nabla_{\nu}\bar h^{\alpha \beta}\nonumber\\
+& + \tfrac{1}{6} \bar\nabla^{\alpha}\bar R \bar\nabla_{\nu}\bar h_{\mu \alpha}
+ + \tfrac{1}{3} \bar\nabla_{\mu}\bar h^{\alpha \beta} \bar\nabla_{\nu}\bar R_{\alpha \beta}
+ -  \tfrac{1}{3} \bar R \bar\nabla_{\nu}\bar\nabla_{\alpha}\bar h_{\mu}{}^{\alpha}
+ -  \tfrac{1}{2} \bar R_{\mu}{}^{\alpha} \bar\nabla_{\nu}\bar\nabla_{\beta}\bar h_{\alpha}{}^{\beta}\nonumber\\
+& + \bar R^{\alpha \beta} \bar\nabla_{\nu}\bar\nabla_{\beta}\bar h_{\mu \alpha}
+ -  \tfrac{2}{3} \bar R^{\alpha \beta} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar h_{\alpha \beta}
+ + \tfrac{1}{3} \bar R \bar\nabla_{\nu}\bar\nabla_{\mu}\bar h^{\alpha}{}_{\alpha}
+ + \tfrac{1}{3} \bar h^{\alpha \beta} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar R_{\alpha \beta}\nonumber\\
+& + \tfrac{1}{3} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar\nabla_{\beta}\bar\nabla_{\alpha}\bar h^{\alpha \beta}
+ + \tfrac{1}{6} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar\nabla_{\beta}\bar\nabla^{\beta}\bar h^{\alpha}{}_{\alpha}.
+\end{align}
+Now we make the substitution
+\be
+	\bar h_{\mu\nu} = \bar K_{\mu\nu} + \tfrac14 \bar g_{\mu\nu} h
+\ee
+and we have
+\begin{align}
+\delta \bar W_{\mu\nu}(\bar h_{\mu\nu})={}&- \tfrac{1}{6} \bar K_{\mu \nu} \bar R^2
+ + \tfrac{1}{3} \bar g_{\mu \nu} \bar K^{\alpha \beta} \bar R \bar R_{\alpha \beta}
+ + \tfrac{1}{2} \bar K_{\mu \nu} \bar R_{\alpha \beta} \bar R^{\alpha \beta}
+ + \tfrac{1}{3} \bar K_{\nu}{}^{\alpha} \bar R \bar R_{\mu \alpha}
+ -  \tfrac{1}{2} \bar K_{\nu}{}^{\alpha} \bar R_{\alpha \beta} \bar R_{\mu}{}^{\beta}\nonumber\\
+& -  \tfrac{2}{3} \bar K^{\alpha \beta} \bar R_{\alpha \beta} \bar R_{\mu \nu}
+ + \tfrac{1}{3} \bar K_{\mu}{}^{\alpha} \bar R \bar R_{\nu \alpha}
+ + \bar K^{\alpha \beta} \bar R_{\mu \alpha} \bar R_{\nu \beta}
+ -  \tfrac{1}{2} \bar K_{\mu}{}^{\alpha} \bar R_{\alpha \beta} \bar R_{\nu}{}^{\beta}
+ -  \bar g_{\mu \nu} \bar K^{\alpha \beta} \bar R^{\gamma \eta} \bar R_{\alpha \gamma \beta \eta}\nonumber\\
+& -  \tfrac{2}{3} \bar K^{\alpha \beta} \bar R \bar R_{\mu \alpha \nu \beta}
+ -  \bar K_{\nu}{}^{\alpha} \bar R^{\beta \gamma} \bar R_{\mu \beta \alpha \gamma}
+ + 2 \bar K^{\alpha \beta} \bar R_{\alpha}{}^{\gamma} \bar R_{\mu \gamma \nu \beta}
+ + 2 \bar K^{\alpha \beta} \bar R_{\alpha \gamma \beta \eta} \bar R_{\mu}{}^{\gamma}{}_{\nu}{}^{\eta}\nonumber\\
+& -  \bar K_{\mu}{}^{\alpha} \bar R^{\beta \gamma} \bar R_{\nu \beta \alpha \gamma}
+ + \tfrac{1}{3} \bar R \bar\nabla_{\alpha}\bar\nabla^{\alpha}\bar K_{\mu \nu}
+ -  \tfrac{1}{6} \bar K_{\mu \nu} \bar\nabla_{\alpha}\bar\nabla^{\alpha}\bar R
+ + \tfrac{1}{2} \bar R_{\nu}{}^{\alpha} \bar\nabla_{\alpha}\bar\nabla_{\beta}\bar K_{\mu}{}^{\beta}\nonumber\\
+& + \tfrac{1}{2} \bar R_{\mu}{}^{\alpha} \bar\nabla_{\alpha}\bar\nabla_{\beta}\bar K_{\nu}{}^{\beta}
+ -  \tfrac{1}{6} \bar\nabla_{\alpha}\bar K_{\mu \nu} \bar\nabla^{\alpha}\bar R
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar\nabla^{\alpha}\bar R \bar\nabla_{\beta}\bar K_{\alpha}{}^{\beta}
+ -  \bar\nabla_{\alpha}\bar K^{\alpha \beta} \bar\nabla_{\beta}\bar R_{\mu \nu}\nonumber\\
+& + \tfrac{1}{3} \bar g_{\mu \nu} \bar R \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar K^{\alpha \beta}
+ -  \tfrac{2}{3} \bar R_{\mu \nu} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar K^{\alpha \beta}
+ -  \bar R^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar K_{\mu \nu}
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar K^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar R\nonumber\\
+& -  \bar K^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\alpha}\bar R_{\mu \nu}
+ + \tfrac{1}{2} \bar K_{\nu}{}^{\alpha} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar R_{\mu \alpha}
+ + \tfrac{1}{2} \bar K_{\mu}{}^{\alpha} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar R_{\nu \alpha}
+ + \tfrac{1}{2} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar\nabla_{\alpha}\bar\nabla^{\alpha}\bar K_{\mu \nu}\nonumber\\
+& -  \tfrac{1}{2} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar\nabla_{\mu}\bar\nabla_{\alpha}\bar K_{\nu}{}^{\alpha}
+ -  \tfrac{1}{2} \bar\nabla_{\beta}\bar\nabla^{\beta}\bar\nabla_{\nu}\bar\nabla_{\alpha}\bar K_{\mu}{}^{\alpha}
+ -  \bar g_{\mu \nu} \bar R^{\alpha \beta} \bar\nabla_{\beta}\bar\nabla_{\gamma}\bar K_{\alpha}{}^{\gamma}
+ + \bar\nabla_{\alpha}\bar R_{\nu \beta} \bar\nabla^{\beta}\bar K_{\mu}{}^{\alpha}\nonumber\\
+& + \bar\nabla_{\alpha}\bar R_{\mu \beta} \bar\nabla^{\beta}\bar K_{\nu}{}^{\alpha}
+ + \tfrac{2}{3} \bar g_{\mu \nu} \bar R^{\alpha \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar K_{\alpha \beta}
+ - 2 \bar R_{\mu \alpha \nu \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar K^{\alpha \beta}
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar K^{\alpha \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar R_{\alpha \beta}\nonumber\\
+& -  \bar K^{\alpha \beta} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar R_{\mu \alpha \nu \beta}
+ + \tfrac{1}{6} \bar g_{\mu \nu} \bar\nabla_{\gamma}\bar\nabla^{\gamma}\bar\nabla_{\beta}\bar\nabla_{\alpha}\bar K^{\alpha \beta}
+ + \tfrac{1}{3} \bar g_{\mu \nu} \bar\nabla_{\gamma}\bar R_{\alpha \beta} \bar\nabla^{\gamma}\bar K^{\alpha \beta}\nonumber\\
+& - 2 \bar\nabla_{\gamma}\bar R_{\mu \alpha \nu \beta} \bar\nabla^{\gamma}\bar K^{\alpha \beta}
+ + \bar R_{\mu \beta \nu \gamma} \bar\nabla^{\gamma}\bar\nabla_{\alpha}\bar K^{\alpha \beta}
+ + \bar R_{\mu \gamma \nu \beta} \bar\nabla^{\gamma}\bar\nabla_{\alpha}\bar K^{\alpha \beta}
+ -  \bar\nabla_{\beta}\bar R_{\nu \alpha} \bar\nabla_{\mu}\bar K^{\alpha \beta}\nonumber\\
+& + \tfrac{1}{6} \bar\nabla^{\alpha}\bar R \bar\nabla_{\mu}\bar K_{\nu \alpha}
+ -  \tfrac{1}{3} \bar R \bar\nabla_{\mu}\bar\nabla_{\alpha}\bar K_{\nu}{}^{\alpha}
+ -  \tfrac{1}{2} \bar R_{\nu}{}^{\alpha} \bar\nabla_{\mu}\bar\nabla_{\beta}\bar K_{\alpha}{}^{\beta}
+ + \bar R^{\alpha \beta} \bar\nabla_{\mu}\bar\nabla_{\beta}\bar K_{\nu \alpha}\nonumber\\
+& -  \bar\nabla_{\beta}\bar R_{\mu \alpha} \bar\nabla_{\nu}\bar K^{\alpha \beta}
+ + \tfrac{1}{3} \bar\nabla_{\mu}\bar R_{\alpha \beta} \bar\nabla_{\nu}\bar K^{\alpha \beta}
+ + \tfrac{1}{6} \bar\nabla^{\alpha}\bar R \bar\nabla_{\nu}\bar K_{\mu \alpha}
+ + \tfrac{1}{3} \bar\nabla_{\mu}\bar K^{\alpha \beta} \bar\nabla_{\nu}\bar R_{\alpha \beta}\nonumber\\
+& -  \tfrac{1}{3} \bar R \bar\nabla_{\nu}\bar\nabla_{\alpha}\bar K_{\mu}{}^{\alpha}
+ -  \tfrac{1}{2} \bar R_{\mu}{}^{\alpha} \bar\nabla_{\nu}\bar\nabla_{\beta}\bar K_{\alpha}{}^{\beta}
+ + \bar R^{\alpha \beta} \bar\nabla_{\nu}\bar\nabla_{\beta}\bar K_{\mu \alpha}
+ -  \tfrac{2}{3} \bar R^{\alpha \beta} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar K_{\alpha \beta}\nonumber\\
+& + \tfrac{1}{3} \bar K^{\alpha \beta} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar R_{\alpha \beta}
+ + \tfrac{1}{3} \bar\nabla_{\nu}\bar\nabla_{\mu}\bar\nabla_{\beta}\bar\nabla_{\alpha}\bar K^{\alpha \beta}
+ -\tfrac14 h \bar W_{\mu\nu}(\bar g_{\mu\nu}).
+\end{align}
+Now if we expand all curvature tensors and covariant derivatives in terms of connections evaluated in a conformal to flat background, viz.
+\begin{equation}
+	\Gamma^\lambda_{\mu\nu} = \Omega^{-1}(x)[\delta^\lambda_\mu \pd_\nu + \delta^\lambda_\mu\pd_\mu - \eta^{\lambda\rho}\eta_{\mu\nu}\pd_\rho]\Omega(x)
+\end{equation}
+the dependence upon $h$ drops out and (6) becomes
+\begin{align}
+	&\delta \bar W_{\mu\nu}(\bar K_{\mu\nu}) = 
+- \frac{48 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\eta}\bar{K}_{\mu \nu}}{\Omega^7} + \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\eta}\bar{K}_{\mu \nu}}{\Omega^6} + \frac{20 \eta^{\alpha \beta} \eta^{\gamma \kappa} \eta^{\eta \lambda} \eta_{\mu \nu} \bar{K}_{\kappa \lambda} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\eta}\Omega}{\Omega^8}  \nonumber \\
+ &+ \frac{60 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\eta}\Omega}{\Omega^8} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\bar{K}_{\mu \nu}}{\Omega^5} + \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \nu} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\Omega}{\Omega^6} \nonumber \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\partial_{\mu}\bar{K}_{\nu \gamma}}{\Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\partial_{\nu}\bar{K}_{\mu \gamma}}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\partial_{\nu}\partial_{\mu}\bar{K}_{\alpha \gamma}}{3 \Omega^4} \nonumber \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\partial_{\nu}\partial_{\mu}\Omega}{3 \Omega^5} + \frac{12 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\bar{K}_{\mu \nu}}{\Omega^6} + \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\bar{K}_{\mu \nu}}{\Omega^6} \nonumber \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\bar{K}_{\mu \nu}}{\Omega^5} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\bar{K}_{\mu \nu} \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{48 \eta^{\alpha \gamma} \eta^{\beta \eta} \bar{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^7} \nonumber \\
+&-  \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^7} + \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\beta}\bar{K}_{\mu \nu}}{\Omega^5}\nonumber \\
+& -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\bar{K}_{\mu \nu} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega}{\Omega^5} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\alpha}\bar{K}_{\mu \nu}}{2 \Omega^4}\nonumber \\
+& -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \nu} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\alpha}\Omega}{\Omega^5} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\mu}\bar{K}_{\nu \alpha}}{2 \Omega^4} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\nu}\bar{K}_{\mu \alpha}}{2 \Omega^4} \nonumber \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\mu}\bar{K}_{\nu \beta}}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\mu}\partial_{\beta}\Omega}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\nu}\bar{K}_{\mu \beta}}{\Omega^5} \nonumber \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\nu}\partial_{\beta}\Omega}{\Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\bar{K}_{\nu \beta}}{\Omega^5} -  \frac{6 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\mu}\bar{K}_{\nu \gamma}}{\Omega^6} \nonumber \\
+&-  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\mu}\bar{K}_{\nu \gamma}}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\bar{K}_{\nu \gamma}}{\Omega^5} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega}{\Omega^6}\nonumber \\
+& + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\bar{K}_{\nu \alpha} \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\bar{K}_{\nu \alpha} \partial_{\eta}\partial_{\mu}\partial_{\gamma}\Omega}{\Omega^5} \nonumber \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\bar{K}_{\mu \beta}}{\Omega^5} -  \frac{6 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\nu}\bar{K}_{\mu \gamma}}{\Omega^6} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\nu}\bar{K}_{\mu \gamma}}{\Omega^6} \nonumber \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\bar{K}_{\mu \gamma}}{\Omega^5} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\bar{K}_{\mu \alpha} \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega}{\Omega^5} \nonumber \\
+&-  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\bar{K}_{\mu \alpha} \partial_{\eta}\partial_{\nu}\partial_{\gamma}\Omega}{\Omega^5} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\mu}\bar{K}_{\beta \gamma}}{3 \Omega^5} \nonumber \\
+&+ \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\mu}\Omega}{\Omega^6} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\nu}\partial_{\mu}\Omega}{3 \Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\bar{K}_{\eta \lambda} \partial_{\kappa}\partial_{\gamma}\Omega}{\Omega^6}\nonumber \\
+& + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\kappa}\partial_{\gamma}\Omega \partial_{\lambda}\bar{K}_{\beta \eta}}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\lambda}\bar{K}_{\beta \kappa}}{\Omega^6} -  \frac{8 \eta^{\alpha \eta} \eta^{\beta \kappa} \eta^{\gamma \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\lambda}\bar{K}_{\eta \kappa}}{\Omega^7} \nonumber \\
+&-  \frac{8 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\lambda}\bar{K}_{\eta \kappa}}{\Omega^7} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\lambda}\bar{K}_{\eta \kappa}}{\Omega^6} - \nonumber \\
+& \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\bar{K}_{\beta \kappa}}{3 \Omega^5} + \frac{4 \eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\bar{K}_{\gamma \kappa}}{\Omega^6} + \nonumber \\
+&\frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\bar{K}_{\gamma \kappa}}{\Omega^6} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\bar{K}_{\gamma \kappa}}{3 \Omega^5} - \nonumber \\
+& \frac{16 \eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\gamma \kappa} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\Omega}{\Omega^7} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\gamma \kappa} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\Omega}{\Omega^7} \nonumber \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\alpha \gamma} \partial_{\kappa}\partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\Omega}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\partial_{\beta}\bar{K}_{\gamma \kappa}}{3 \Omega^5}\nonumber \\
+& + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\gamma \kappa} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\partial_{\beta}\Omega}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\kappa}\bar{K}_{\alpha \gamma} \partial_{\lambda}\partial_{\eta}\partial_{\beta}\Omega}{3 \Omega^5}\nonumber \\
+& -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\lambda}\partial_{\kappa}\bar{K}_{\beta \eta}}{3 \Omega^5} + \frac{\eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\kappa}\bar{K}_{\gamma \eta}}{\Omega^6}\nonumber \\
+& -  \frac{4 \eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\kappa}\Omega}{\Omega^7} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\Omega \partial_{\lambda}\partial_{\kappa}\Omega}{\Omega^6} \nonumber \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\bar{K}_{\beta \gamma}}{3 \Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\Omega}{\Omega^6}\nonumber \\
+& -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\beta}\bar{K}_{\alpha \gamma} \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\Omega}{3 \Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\partial_{\beta}\bar{K}_{\alpha \gamma}}{6 \Omega^4} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \bar{K}_{\alpha \gamma} \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\partial_{\beta}\Omega}{3 \Omega^5}\nonumber \\
+& -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega \partial_{\mu}\bar{K}_{\alpha \gamma}}{3 \Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\mu}\bar{K}_{\nu \alpha}}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\mu}\bar{K}_{\nu \beta}}{\Omega^6} \nonumber \\
+&+ \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\mu}\bar{K}_{\nu \eta}}{\Omega^7} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\mu}\bar{K}_{\nu \eta}}{\Omega^6} -  \frac{60 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\mu}\Omega}{\Omega^8}\nonumber \\
+& -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\nu \beta} \partial_{\mu}\Omega}{\Omega^6} + \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\bar{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^7} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\bar{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^7}\nonumber \\
+& -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\bar{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^6} + \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\Omega \partial_{\mu}\Omega}{\Omega^7} \nonumber \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\partial_{\nu}\bar{K}_{\alpha \gamma} \partial_{\mu}\Omega}{3 \Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\bar{K}_{\nu \beta} \partial_{\mu}\Omega}{\Omega^6} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\mu}\Omega}{\Omega^7} \nonumber \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\bar{K}_{\nu \alpha} \partial_{\mu}\Omega}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\mu}\Omega}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\bar{K}_{\beta \gamma} \partial_{\mu}\Omega}{\Omega^6} \nonumber \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega \partial_{\mu}\Omega}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\bar{K}_{\nu \gamma} \partial_{\mu}\partial_{\alpha}\Omega}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\bar{K}_{\nu \beta} \partial_{\mu}\partial_{\alpha}\Omega}{\Omega^5} \nonumber \\
+&-  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\nu}\bar{K}_{\beta \gamma} \partial_{\mu}\partial_{\alpha}\Omega}{3 \Omega^5} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\nu \gamma} \partial_{\mu}\partial_{\beta}\Omega}{\Omega^6} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \alpha} \partial_{\eta}\partial_{\gamma}\Omega \partial_{\mu}\partial_{\beta}\Omega}{\Omega^6} \nonumber \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\bar{K}_{\nu \eta} \partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\nu \beta} \partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \alpha} \partial_{\eta}\partial_{\beta}\Omega \partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} \nonumber \\
+&+ \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \bar{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\partial_{\eta}\Omega}{\Omega^7} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\partial_{\eta}\Omega}{\Omega^7} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega \partial_{\nu}\bar{K}_{\alpha \gamma}}{3 \Omega^5} \nonumber \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\mu}\Omega \partial_{\nu}\bar{K}_{\beta \eta}}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\mu}\partial_{\gamma}\Omega \partial_{\nu}\bar{K}_{\beta \eta}}{\Omega^6} -  \frac{8 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\Omega \partial_{\nu}\bar{K}_{\gamma \eta}}{\Omega^7}\nonumber \\
+& + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\nu}\bar{K}_{\mu \alpha}}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\nu}\bar{K}_{\mu \beta}}{\Omega^6} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\nu}\bar{K}_{\mu \eta}}{\Omega^7} \nonumber \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\nu}\bar{K}_{\mu \eta}}{\Omega^6} -  \frac{60 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\nu}\Omega}{\Omega^8} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\mu \beta} \partial_{\nu}\Omega}{\Omega^6} \nonumber \\
+&+ \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\bar{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^7} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\bar{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^7} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^6} \nonumber \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\bar{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^6} + \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\Omega \partial_{\nu}\Omega}{\Omega^7} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\partial_{\mu}\bar{K}_{\alpha \gamma} \partial_{\nu}\Omega}{3 \Omega^5}\nonumber \\
+& -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\bar{K}_{\mu \beta} \partial_{\nu}\Omega}{\Omega^6} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\nu}\Omega}{\Omega^7} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\bar{K}_{\mu \alpha} \partial_{\nu}\Omega}{\Omega^5} \nonumber \\
+&-  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\nu}\Omega}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\bar{K}_{\beta \gamma} \partial_{\nu}\Omega}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega \partial_{\nu}\Omega}{\Omega^6} \nonumber \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\mu}\bar{K}_{\beta \eta} \partial_{\nu}\Omega}{\Omega^6} -  \frac{8 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\bar{K}_{\gamma \eta} \partial_{\nu}\Omega}{\Omega^7} + \frac{40 \eta^{\alpha \gamma} \eta^{\beta \eta} \bar{K}_{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^8}\nonumber \\
+& -  \frac{16 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\beta \gamma} \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^7} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\bar{K}_{\alpha \gamma} \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^6} -  \frac{8 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\Omega \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^7} \nonumber \\
+&+ \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\bar{K}_{\beta \gamma} \partial_{\mu}\partial_{\alpha}\Omega \partial_{\nu}\Omega}{\Omega^6} -  \frac{16 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\mu}\partial_{\eta}\Omega \partial_{\nu}\Omega}{\Omega^7} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\bar{K}_{\mu \gamma} \partial_{\nu}\partial_{\alpha}\Omega}{\Omega^5} \nonumber \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\bar{K}_{\mu \beta} \partial_{\nu}\partial_{\alpha}\Omega}{\Omega^5} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\mu}\bar{K}_{\beta \gamma} \partial_{\nu}\partial_{\alpha}\Omega}{3 \Omega^5} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\bar{K}_{\beta \gamma} \partial_{\mu}\Omega \partial_{\nu}\partial_{\alpha}\Omega}{\Omega^6} \nonumber \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\mu \gamma} \partial_{\nu}\partial_{\beta}\Omega}{\Omega^6} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \alpha} \partial_{\eta}\partial_{\gamma}\Omega \partial_{\nu}\partial_{\beta}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\bar{K}_{\mu \eta} \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} \nonumber \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\mu \beta} \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \alpha} \partial_{\eta}\partial_{\beta}\Omega \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\mu}\bar{K}_{\beta \eta} \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} \nonumber \\
+&+ \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \bar{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^7} \nonumber \\
+&+ \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^7}\nonumber \\
+& -  \frac{16 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\mu}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^7} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\alpha \gamma} \partial_{\mu}\partial_{\beta}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\nu}\partial_{\mu}\bar{K}_{\beta \eta}}{3 \Omega^5} \nonumber \\
+&+ \frac{2 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\mu}\bar{K}_{\gamma \eta}}{\Omega^6} -  \frac{8 \eta^{\alpha \gamma} \eta^{\beta \eta} \bar{K}_{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\mu}\Omega}{\Omega^7} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\bar{K}_{\beta \gamma} \partial_{\nu}\partial_{\mu}\Omega}{\Omega^6} \nonumber \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\bar{K}_{\alpha \gamma} \partial_{\nu}\partial_{\mu}\Omega}{3 \Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \bar{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\Omega \partial_{\nu}\partial_{\mu}\Omega}{\Omega^6}  .
+\end{align}
+Now we apply the gauge condition
+\be
+	\bar \del_\nu \bar K^{\mu\nu} = 4\Omega^{-1}\bar K^{\mu\nu}\pd_\nu \Omega
+\ee
+or the equivalent gauge covariant in $K_{\mu\nu}$ 
+\be
+	\eta^{\alpha\beta}\pd_\alpha \bar K_{\mu\beta} = 2\Omega^{-1}\eta^{\alpha\beta}\bar K_{\mu\beta}\pd_\alpha \Omega.
+\ee
+and $\delta \bar W_{\mu\nu}$ reduces to
+\begin{align}
+	\delta \bar W_{\mu\nu}(\bar K_{\mu\nu})&= 
+- 48\Omega^{-7} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\rho}\Omega \partial_{\sigma}\bar K_{\mu \nu} + 24\Omega^{-6} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\rho}\partial_{\beta}\Omega \partial_{\sigma}\bar K_{\mu \nu} \nonumber\\
+& + 60\Omega^{-8} \eta^{\alpha \beta} \eta^{\rho \sigma} \bar K_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\rho}\Omega \partial_{\sigma}\Omega - 4\Omega^{-5} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\rho}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\beta}\bar K_{\mu \nu} \nonumber \\
+&+ 6\Omega^{-6} \eta^{\alpha \beta} \eta^{\rho \sigma} \bar K_{\mu \nu} \partial_{\rho}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\beta}\Omega + 12\Omega^{-6} \eta^{\alpha \rho} \eta^{\beta \sigma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\bar K_{\mu \nu}\nonumber\\
+& + 6 \Omega^{-6}\eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\bar K_{\mu \nu} - 2\Omega^{-5} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\bar K_{\mu \nu}  \nonumber \\
+&+ 12\Omega^{-6} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\bar K_{\mu \nu} \partial_{\sigma}\partial_{\rho}\Omega -  48\Omega^{-7} \eta^{\alpha \rho} \eta^{\beta \sigma} \bar K_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\Omega\nonumber\\
+ &-  24\Omega^{-7} \eta^{\alpha \beta} \eta^{\rho \sigma} \bar K_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\Omega  + 3\Omega^{-6} \eta^{\alpha \beta} \eta^{\rho \sigma} \bar K_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\Omega\nonumber\\
+ &- 4\Omega^{-5} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\partial_{\beta}\bar K_{\mu \nu}- 4 \Omega^{-5}\eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\bar K_{\mu \nu} \partial_{\sigma}\partial_{\rho}\partial_{\beta}\Omega\nonumber \\
+ & + 12\Omega^{-6} \eta^{\alpha \beta} \eta^{\rho \sigma} \bar K_{\mu \nu} \partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\partial_{\beta}\Omega + \tfrac{1}{2}\Omega^{-4} \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\sigma}\partial_{\rho}\partial_{\beta}\partial_{\alpha}\bar K_{\mu \nu}\nonumber \\
+ &-  \Omega^{-5}\eta^{\alpha \beta} \eta^{\rho \sigma} \bar K_{\mu \nu} \partial_{\sigma}\partial_{\rho}\partial_{\beta}\partial_{\alpha}\Omega \nonumber \\
+&= \frac12 \Omega^{-2} \eta^{\sigma\rho}\eta^{\alpha\beta}\pd_\sigma\pd_\rho\pd_\alpha \pd_\beta (\Omega^{-2}\bar K_{\mu\nu}) 
+\end{align}
+From this last result we see that 
+\be
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2}\delta W_{\mu\nu}(h_{\mu\nu})
+\ee
+since
+\[
+	\bar h_{\mu\nu} = \Omega^2 h_{\mu\nu}
+\]
+%
+\begin{eqnarray}
+\nabla_{\kappa}\nabla_{\nu}T_{\lambda \mu}=\nabla_{\nu}\nabla_{\kappa}T_{\lambda \mu}+R_{\lambda\sigma\nu\kappa}T^{\sigma}_{\phantom{\sigma}\mu}-R_{\sigma\mu\nu\kappa}T_{\lambda}^{\phantom{\lambda}\sigma}
+\label{AP41}
+\end{eqnarray}
+%
+obeyed by any rank two tensor, so that we can write $W^{\mu\nu}$ as 
+%                                                                               
+\begin{eqnarray}
+W^{\mu \nu}&=&
+-\frac{1}{6}g^{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}
++\nabla_{\beta}\nabla^{\beta}R^{\mu\nu}                    
+ -\frac{1}{3}\nabla_{\mu}\nabla_{\nu}R^{\alpha}_{\phantom{\alpha}\alpha}  
+ -R^{\beta}_{\phantom{\beta}\sigma} R^{\sigma}_{\phantom{\sigma}\mu\beta\nu}   
+  \nonumber\\
+ &-&R^{\beta}_{\phantom{\beta}\sigma} R^{\sigma}_{\phantom{\sigma}\nu\beta\mu}  
++\frac{1}{2}g^{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}                                            
++\frac{2}{3}R^{\alpha}_{\phantom{\alpha}\alpha}R^{\mu\nu}                              
+-\frac{1}{6}g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})^2
+\label{AP42}
+\end{eqnarray}                                 
+%
+Perturbing $W^{\mu\nu}$ about metric $g_{\mu\nu}+h_{\mu\nu}$ with background metric $g_{\mu\nu}$ and fluctuation $h_{\mu\nu}$ gives (following a machine calculation)
+\end{document}

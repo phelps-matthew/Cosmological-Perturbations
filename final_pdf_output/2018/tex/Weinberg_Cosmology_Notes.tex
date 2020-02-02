@@ -1,0 +1,45 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{mymacros}
+\newcommand{\hu}{\mathcal H}
+
+\title{Weinberg Notes}
+\date{}
+\begin{document}
+\maketitle
+\section*{6.2}
+If perturbation modes are just the basis of a function expansion of the distribution in real space, then how do we say that modes that satisfy $k\eta \ll 1$ (where $\eta$ is the conformal time/co-moving horizon/max photon distance since beginning of universe), i.e. modes of which $\lambda >> \eta$, cannot be influenced casually. 
+
+\section*{Flatness Problem from Weinberg}
+Here we can show how the curvature contribution decreases to a very small value as we increase the temperature of the universe (approaching early conditions).
+\\ \\
+We can look at two spans of time (temperature). The matter dominated phase goes from $T_0\sim 1$K presently to $T_1 \sim 10^4$K with $a(t) \propto t^{2/3} \propto T_0^{-1}$. The radiation phase goes from $T_1 \sim 10^4$K to $T _2\sim 10^{10}$K with $a(t) \propto t^{1/2} \propto T$. We have a very high confidence interval that the present value of the curvature contribuation
+\[
+	|\Omega_K| = \frac{|K|}{a^2 H^2} = \frac{|K|}{\dot a^2}
+\]
+is less than unity, $|\Omega_K|_0 < 1$. Now we can take some ratios:
+\[
+	\frac{|\Omega_{K}|_0}{|\Omega_K|_1} = \frac{T_1}{T_0} = 10^4 < \frac{1}{|\Omega_K|_1}
+\]
+thus
+\[
+	|\Omega_K|_1 < 10^{-4}.
+\] 
+Next, 
+\[
+	\frac{|\Omega_{K}|_1}{|\Omega_K|_2} = \frac{T_1^{-2}}{T_2^{-2}} = \frac{10^{-8}}{10^{-20}}   = 10^{12} < \frac{10^{-4}}{|\Omega_K|_2}
+\]
+and thus
+\[
+	|\Omega_K|_2 < 10^{-16}.
+\]
+Since the curvature will become even smaller at we approach the big bang, we see that intially we must have an extremely small value for the curvature. However, no explanation for such a small value has been given. Inherently we see this as poor physics than an actual problem - we seek to find a higher relationship that can explain why the curvature \emph{must} have been small initially (this is so-called horizon problem or fine tuning problem). An interesting solution out of this is to introduce inflation, in which the Hubble expansion $\dot a/a$ is nearly constant, leading to the curvature $\Omega_K \propto a^{-2}$. Since $a$ increases exponentially here, the curvature contribution decreases significantly during inflation and thus must necessarily be small upon the onset of the radiation era. 
+\\
+\\
+Validity of eq. (1.2.3), seems that we must assume here that $\delta t_{0,1} \gg \frac{a}{\dot a}$. This is supposed to hold in general.
+\\ \\
+Notice $d_L$ below 1.4.9 is a function of curvature $K$. How would one get there?\\ \\
+Given $\frac{3\ddot a}{a} = -4\pi G(3p+\rho)$ and taking positive energy density and pressure, we conclude that $\frac{\ddot a}{a} \ge 0$. On pg 38 Weinberg that it follows that the expansion must have started at $a=0$ at some moment in the past. Why? He then states that it follows that $t_0 < H_0^{-1}$, which I can get to by taking the derivative of $\frac{\ddot a}{a} > 0$. 
+\\ \\
+When doing the luminosity distance, Weinberg says the proper area of a sphere of comoving radius $r$ is $a(t)r$. Isn't this only true in flat space? Shouldn't he be using the full proper distance as $a(t)\chi(r)$ where $\chi(r) = \sin^{-1}(r)..$. This continues into his calculation $r(z)$ in eq. 1.5.43. 
+\end{document}

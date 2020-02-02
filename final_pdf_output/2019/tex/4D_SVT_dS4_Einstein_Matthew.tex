@@ -1,0 +1,190 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{4D SVT dS${}_4$ Einstein}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$h_{\mu\nu}$ Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Curvature Tensors:
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R_{\mu\kappa} &=& k(1-D)g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R&=& kD(1-D) 
+\end{eqnarray}
+Covariant Commutation:
+\begin{eqnarray}
+[\nabla^\sigma \nabla_\nu] W_\sigma &=& -R_{\nu}{}^\sigma W_\sigma = -\frac{R}{D}W_\nu
+\nonumber\\
+{[}\nabla^\mu \nabla_\mu, \nabla_\nu] V &=& -R_{\nu}{}^\mu \nabla_\mu V = -\frac{R}{D}\nabla_\nu V
+\nonumber\\
+{[}\nabla^2,\nabla_\mu\nabla_\nu]V &=& \frac{2 g_{\mu\nu}R}{D(D-1)}\nabla^2 V - \frac{2R}{D-1}\nabla_\mu\nabla_\nu V
+\label{comms}
+\end{eqnarray}
+Decomposition:
+\begin{eqnarray}
+h_{\mu\nu} &=& h_{\mu\nu}^{T\theta} + \nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma - h)
+\nonumber\\
+&& +\frac{2-D}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{ g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') \nabla^\sigma W_\sigma
+-\frac{1}{D-1}\left( \nabla_\mu\nabla_\nu -\frac{g_{\mu\nu}R}{D(D-1)}\right) \int D(x,x') h
+\label{decomph}
+\end{eqnarray}
+\begin{eqnarray}
+\left( \nabla_\alpha \nabla^\alpha - \frac{R}{D-1}\right)D(x,x') &=& g^{-1/2}\delta^4 (x-x')
+\nonumber\\ \nonumber\\
+\nabla^\mu h_{\mu\nu} &=& \left( \nabla_\alpha\nabla^\alpha-\frac{R}{D} \right) W_\nu
+\end{eqnarray}
+With the box-like operator mixing indices of $W_\nu$, the particular integral solution for $W_\nu$ involves a bi-tensor Green's function $F_{\sigma\rho'}$ which obeys
+\begin{eqnarray}
+\left( \nabla^\alpha\nabla_\alpha -\frac{R}{D}\right) F_{\sigma\rho'}(x,x') &=& g_{\sigma\rho'}g^{-1/2} \delta^4(x-x').
+\label{fgreen}
+\end{eqnarray}
+Here $g_{\sigma\rho'}$ represents a parallel propagator, defined in terms of Vierbeins $e_\mu^a$:
+\begin{eqnarray}
+g^{\alpha'}{}_{\beta}(x,x') &=& e^{\alpha'}_a(x') e_{\beta}^a(x),\qquad g_{\mu\nu} = \eta_{ab}e_{\mu}^ae_\nu^b.
+\end{eqnarray}
+In terms of \eqref{fgreen}, $W_\nu$ has particular solution
+\begin{eqnarray}
+W_\nu &=& \int F_\nu{}^{\rho'}(x,x')\nabla^{\sigma'}h_{\rho'\sigma'}.
+\end{eqnarray}
+To construct a transverse vector $E_{\mu}$, split $W_{\mu}$
+\begin{eqnarray}
+W_{\mu} &=& \underbrace{W_\mu - \nabla_\mu \int A(x,x')\nabla^\sigma W_\sigma}_{E_\mu} +
+\nabla_\mu \int A(x,x')\nabla^\sigma W_\sigma
+\nonumber\\
+\nabla_\alpha\nabla^\alpha A(x,x') &=& g^{-1/2} \delta^4(x-x')
+\end{eqnarray}
+With $h_{\mu\nu}^{T\theta} = 2E_{\mu\nu}$, \eqref{decomph} may be expressed as
+\begin{eqnarray}
+h_{\mu\nu} &=& 2E_{\mu\nu}^{T\theta} + \nabla_\mu E_\nu + \nabla_\nu E_\mu - \frac{g_{\mu\nu}}{D-1}(\nabla^\sigma W_\sigma -h) + 2\nabla_\mu\nabla_\nu \int A(x,x')\nabla^\sigma W_\sigma
+\nonumber\\
+&&+ \frac{1}{D-1}\left(\nabla_\mu\nabla_\nu - \frac{g_{\mu\nu}R}{D(D-1)}\right)\int D(x,x')\left[(2-D)\nabla^\sigma W_\sigma - h\right].
+\end{eqnarray}
+We may simplify this to
+\begin{eqnarray}
+h_{\mu\nu} &=& 2E_{\mu\nu}^{T\theta} + \nabla_\mu E_\nu + \nabla_\nu E_\mu 
+\nonumber\\
+&&+2\nabla_\mu \nabla_\nu \left( \int A(x,x')\nabla^\sigma W_\sigma + \frac{1}{2(D-1)}\int D(x,x')
+[(2-D)\nabla^\sigma W_\sigma -h]\right)
+\nonumber\\
+&&-\frac{2g_{\mu\nu}}{2(D-1)}\left( \nabla^\sigma W_\sigma -h+ \frac{R}{D(D-1)}\int D(x,x')[(2-D)\nabla^\sigma W_\sigma -h]\right).
+\end{eqnarray}
+SVT Definitions:
+\begin{eqnarray}
+2E_{\mu\nu}^{T\theta} &=& h_{\mu\nu}^{T\theta}
+\nonumber\\
+E_\mu &=& W_\mu - \nabla_\mu\int A(x,x')\nabla^\sigma W_\sigma
+\nonumber\\
+E &=&  \int A(x,x')\nabla^\sigma W_\sigma + \frac{1}{2(D-1)}\int D(x,x')
+[(2-D)\nabla^\sigma W_\sigma -h]
+\nonumber\\ 
+\psi &=& \frac{1}{2(D-1)}\left( \nabla^\sigma W_\sigma -h + \frac{R}{D(D-1)}\int D(x,x')[(2-D)\nabla^\sigma W_\sigma -h]\right)
+\end{eqnarray}
+In the flat space limit, $A(x,x')=D(x,x')$ and we have
+\begin{eqnarray}
+2E_{\mu\nu}^{T\theta} &=& h_{\mu\nu}^{T\theta}
+\nonumber\\
+E_\mu &=& W_\mu - \nabla_\mu\int D(x,x')\nabla^\sigma W_\sigma
+\nonumber\\
+E &=& \frac{1}{2(D-1)}\int D(x,x') [D\nabla^\sigma W_\sigma -h]
+\nonumber\\ 
+\psi &=& \frac{1}{2(D-1)}\left( \nabla^\sigma W_\sigma -h \right),
+\end{eqnarray}
+a form that coincides with \emph{Localization\_Condition\_Matthew} (2.1). 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\delta T_{\mu\nu}$ Decomposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For a conserved $\delta T_{\mu\nu}$ we take $W_\mu=0$.
+\begin{eqnarray}
+\delta T_{\mu\nu} &=& \delta T_{\mu\nu}^{T\theta} + \frac{g_{\mu\nu}}{D-1} \delta T
+-\frac{1}{D-1}\left(\nabla_\mu\nabla_\nu - \frac{g_{\mu\nu}R}{D(D-1)}\right)\int D(x,x') \delta T 
+\nonumber\\ \nonumber\\
+6\bar\psi &=&\int D(x,x')\delta T
+\nonumber\\ \nonumber\\
+2\bar E_{\mu\nu} &=& \delta T_{\mu\nu}^{T\theta}
+\nonumber\\ \nonumber\\
+6(\nabla_\alpha\nabla^\alpha + 4k)\bar\psi &=& \delta T
+\nonumber\\ \nonumber\\
+\delta T_{\mu\nu} &=& 
+2\left( \nabla_\alpha\nabla^\alpha g_{\mu\nu} +3k g_{\mu\nu} - \nabla_\mu\nabla_\nu\right)\bar\psi + 2\bar E_{\mu\nu}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{dS$_4$ Background and Fluctuations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+G^{(0)}_{\mu\nu} &=& 3kg_{\mu\nu}
+\nonumber\\
+R^{(0)}_{\lambda\mu\nu\kappa} &=& k(g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa})
+\nonumber\\
+R^{(0)}_{\mu\kappa} &=& -3k g_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa}
+\nonumber\\
+R^{(0)}&=& -12 k
+\nonumber\\ \nonumber\\
+ds^2 &=& (g_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
+\nonumber\\ \nonumber\\
+\delta G_{\mu\nu}&=& 2 k h_{\mu \nu}
+-  \tfrac{1}{2} k g_{\mu \nu} h
++ \tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
++ \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}\nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
++ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
+\nonumber\\ \nonumber\\
+\delta G &=&  \nabla^\alpha \nabla^\beta h_{\alpha\beta} - \nabla_\alpha\nabla^\alpha h
+\nonumber\\ \nonumber\\
+h_{\mu\nu} &=& -2g_{\mu\nu}\psi +2\nabla_\mu\nabla_\nu E + \nabla_\mu E_\nu + \nabla_\nu E_\mu + 2E_{\mu\nu}
+\nonumber\\ \nonumber\\
+\delta G_{\mu\nu} &=& 4 k E_{\mu \nu} + \nabla_{\alpha}\nabla^{\alpha}E_{\mu \nu} + 2 g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}\psi + 3 k \nabla_{\mu}E_{\nu} + 3 k \nabla_{\nu}E_{\mu} + 6 k \nabla_{\nu}\nabla_{\mu}E - 2 \nabla_{\nu}\nabla_{\mu}\psi
+\nonumber\\ \nonumber\\
+\nabla^\mu \delta G_{\mu\nu} &=& 3k\nabla^\mu h_{\mu\nu} 
+\nonumber\\
+&=&  - 6 k \nabla_{\nu}\psi+ 18 k^2 \nabla_{\nu}E + 6 k \nabla_{\nu}\nabla_{\alpha}\nabla^{\alpha}E+ 9 k^2 E_{\nu} + 3 k \nabla_{\alpha}\nabla^{\alpha}E_{\nu}
+\nonumber\\ \nonumber\\
+-\kappa^2_4 T^{(0)}_{\mu\nu} &=& 3k g_{\mu\nu}
+\nonumber\\ \nonumber\\
+-\kappa^2_4 \delta T^{(b)}_{\mu\nu} &=& 3k h_{\mu\nu}
+\nonumber\\ 
+&=& -6kg_{\mu\nu}\psi +6k\nabla_\mu\nabla_\nu E + 3k\nabla_\mu E_\nu + 3k\nabla_\nu E_\mu + 6kE_{\mu\nu}
+\nonumber\\ \nonumber\\
+\nabla^\mu ( \delta G_{\mu\nu} + \kappa^2_4 \delta T_{\mu\nu}^{(b)}) &=& 0
+\nonumber\\ \nonumber\\
+\delta T_{\mu\nu} &=& \delta T_{\mu\nu}^{(b)}+\delta T_{\mu\nu}^{(s)}
+\nonumber\\ \nonumber\\
+-\kappa^2_4 \delta T_{\mu\nu}^{(s)} &=& 2\left( \nabla_\alpha\nabla^\alpha g_{\mu\nu} +3k g_{\mu\nu} - \nabla_\mu\nabla_\nu\right)\bar\psi + 2\bar E_{\mu\nu},\qquad -\kappa^2_4\nabla^\mu \delta T_{\mu\nu}^{(s)}=0
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT Separation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\delta G_{\mu\nu}+\kappa^2_4 \delta T_{\mu\nu}^{(b)}  &=& -\kappa^2_4 \delta T_{\mu\nu}^{(s)}
+\nonumber\\
+2\left( \nabla_\alpha\nabla^\alpha g_{\mu\nu} +3k g_{\mu\nu} - \nabla_\mu\nabla_\nu\right)\psi + (\nabla_\alpha\nabla^\alpha -2k) E_{\mu\nu}&=& 
+2\left( \nabla_\alpha\nabla^\alpha g_{\mu\nu} +3k g_{\mu\nu} - \nabla_\mu\nabla_\nu\right)\bar\psi + 2\bar E_{\mu\nu}
+\label{dgdt1}
+\end{eqnarray}
+
+Trace \eqref{dgdt1}:
+\begin{eqnarray}
+6(\nabla_\alpha\nabla^\alpha+4k)\psi &=& 6(\nabla_\alpha\nabla^\alpha+4k)\bar\psi
+\end{eqnarray}
+For $\psi=\bar\psi$, \eqref{dgdt1} becomes
+\begin{eqnarray}
+(\nabla_\alpha\nabla^\alpha -2k)E_{\mu\nu} &=& 2\bar E_{\mu\nu} 
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

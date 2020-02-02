@@ -1,0 +1,125 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+
+\title{Boundary Conditions}
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+Under infinitesimal coordinate transformation $x^\mu \to \bar x^\mu = x^\mu + \epsilon^\mu(x)$
+where
+\[
+	\epsilon^0 = T,\qquad \epsilon^i = \tilde\nabla^i L + L^i,\qquad \tilde\nabla^i L_i = 0,
+\]
+it follows that $h_{0i}$ transforms as 
+\begin{align}
+ \bar h_{0i} &=  h_{0i} -  (\tilde\nabla_i \dot L + L_i) +  \partial_i T
+\end{align}
+which evaluates to
+\begin{equation}
+	\tilde \nabla_i \bar B + \bar B_i = \tilde\nabla_i B + B_i - \tilde\nabla_i \dot L - \dot L_i + \tilde\nabla_i T.
+\end{equation}
+or
+\begin{equation}
+\tilde\nabla_i \bar B + \bar B_i = \tilde\nabla_i(B - \dot L + T) + B_i.
+\end{equation}
+Since an arbitrary gradient of a scalar such as $\tilde\nabla_i T$ could in fact be transverse, we cannot immediately separate scalars to scalars and vectors to vectors. If we take the divergence, we arrive at
+\begin{equation}
+\tilde\nabla_a \tilde\nabla^a \bar B = \tilde\nabla_a \tilde\nabla^a (B-\dot L + T),
+\end{equation}
+in which we may define $\bar B$ as
+\begin{align}
+\bar B&= \int d^3y\ D^3(\mathbf x - \mathbf y)\tilde\nabla_a^y \tilde\nabla^a_y(B-\dot L + T)
+\nonumber\\
+&= \int d^3y\  \tilde\nabla_a^y \tilde\nabla^a_y\left[ D^3(\mathbf x - \mathbf y)(B-\dot L + T)\right] - \int d^3y \  \tilde\nabla_a^y \tilde\nabla^a_y D^3(\mathbf x - \mathbf y)(B-\dot L + T)
+\nonumber\\
+&= B-\dot L + T + \int dS_a\  \tilde\nabla^a_y\left[ D^3(\mathbf x - \mathbf y)(B-\dot L + T)\right]
+\nonumber\\
+&= B - \dot L + T + \chi.
+\end{align}
+The surface term takes the form
+\begin{align}
+\chi &=  \int dS_a\   \tilde\nabla^a_yD^3(\mathbf x - \mathbf y)(B-\dot L + T) + \int dS_a\  D^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T).
+\end{align}
+The discussion in Jackson Electrodynamics pg. 39 suggests that a given Green's function $D(\mathbf x, \mathbf y)$, may be defined up to an arbitrary function 
+$F(\mathbf x, \mathbf y)$ which satisfies $\nabla^2 F(\mathbf x, \mathbf y) = 0$. It is then suggested that the freedom in $F(\mathbf x, \mathbf y)$ may be used to formulate the solution for $\bar B$ in terms of either Dirichlet or Neumann boundary conditions by finding an $F(\mathbf x, \mathbf y)$ such that
+\begin{equation}
+D(\mathbf x, \mathbf y) = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S,\qquad \text{or}\qquad \tilde\nabla_a D(\mathbf x, \mathbf y) = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S.
+\end{equation}
+Let us assume we were able to find an $F(\mathbf x,\mathbf y)$ that allows for Dirichlet boundary conditions, i.e.
+\begin{equation}
+D(\mathbf x, \mathbf y) = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S,
+\end{equation}
+then in order to arrive at the desired equation of
+\begin{equation}
+\bar B = B - \dot L + T
+\end{equation}
+we must require that 
+\begin{equation}
+B - \dot L + T = 0\quad\text{for}\quad \mathbf x\ \text{on}\ S,
+\end{equation}
+with $S$ being the asymptotic boundary surface at infinity. Imposing such a boundary condition would seem to allow better constraints when expanding the perturbation functions in momentum space viz.
+\begin{equation}
+B(t,x) = \int d^3k\ e^{ikx} \tilde B(t,k).
+\end{equation}
+For example, an equation such as
+\begin{equation}
+\tilde\nabla_a \tilde\nabla^a (B-E) = 0,
+\end{equation}
+leads to
+\begin{equation}
+\int d^3k\ e^{ikx} k^2 [-\tilde B(t,k)+\tilde E(t,k)] = 0.
+\end{equation}
+Without boundary conditions, either $\tilde B(t,k) = \tilde E(t,k)$ or $\tilde B(t,k)=\tilde E(t,k)+\delta(k)$ (or perhaps $k^n \delta(k)$ for $n>-2$). However, the requirement that $B(t,x)$ and $E(t,x)$ vanish at spatial infinity excludes the possible $\delta(k)$ solutions and thus yields $\tilde B(t,k) = \tilde E(t,k)$ and consequently $B(t,x) = E(t,x)$.
+\\ \\
+As an aside, we take the Laplacian of the boundary term $\chi$, which evaluates to
+\begin{align}
+\tilde\nabla_b^x\tilde\nabla^b_x \chi &=  \int dS_a\   \tilde\nabla^a_y \delta^3(\mathbf x - \mathbf y)(B-\dot L + T) + \int dS_a\  \delta^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T)
+\nonumber \\
+&= -\tilde\nabla^a_x \int dS_a\ \delta^3(\mathbf x- \mathbf y)(B-\dot L + T)+ \int dS_a\  \delta^3(\mathbf x - \mathbf y)\tilde\nabla^a_y(B-\dot L + T)
+\end{align}
+The quantity $\nabla^2 \chi$ is only supported asymptotically, but even if $\mathbf x$ is evaluated at a point on the infinite surface, the two surface terms will mutually cancel. Therfore, for all $\mathbf x$ such a $\chi$ obeys 
+\begin{equation}
+\tilde\nabla_a\tilde\nabla^a \chi = 0.
+\end{equation}
+\\ \\
+Introduce the scalar propagator $D(x-x')$, which obeys
+\begin{equation}
+\partial_\nu \partial^\nu D(x-x') = \delta (x-x').
+\end{equation}
+Take the mathematical identity
+\begin{equation}
+\phi(x')\partial_\nu \partial^\nu D(x-x') = D(x-x')\partial_\nu \partial^\nu \phi(x') + \partial_\nu\left[
+\phi(x')\partial^\nu D(x-x') - D(x-x')\partial^\nu \phi(x')\right],
+\end{equation}
+where here $\partial_\nu = \frac{\partial}{\partial x'^\nu}$. 
+Now integrate over a region $S$,
+\begin{align}
+\int d^4x'\  \phi(x')\partial_\nu \partial^\nu D(x-x') &= \int d^4x'\ D(x-x')\partial_\nu \partial^\nu \phi(x') + \int dS_\nu \left[
+\phi(x')\partial^\nu D(x-x') - D(x-x')\partial^\nu \phi(x')\right]
+\nonumber\\
+\phi(x) &=  \int d^4x'\ D(x-x')\partial_\nu \partial^\nu \phi(x') + \int dS_\nu \left[
+\phi(x')\partial^\nu D(x-x') - D(x-x')\partial^\nu \phi(x')\right].
+\end{align}
+Thus we have separated $\phi$ into two parts
+\begin{equation}
+\phi(x) = \int d^4x'\ D(x-x')\partial_\nu \partial^\nu \phi(x')  +\int dS_\nu \left[
+\phi(x')\partial^\nu D(x-x') - D(x-x')\partial^\nu \phi(x')\right].
+\end{equation}
+\begin{equation}
+\phi = \phi^L + \phi^T
+\end{equation}
+where
+\begin{equation}
+\phi^L = \int d^3x' \ D(x-x') \nabla_a\nabla^a \phi(x'),
+\qquad
+\phi^T = \int dS_a\left[ \phi(x')\nabla^a D(x-x') - D(x-x')\nabla^a \phi(x')\right].
+\end{equation}
+Taking the Laplacian
+\begin{equation}
+\nabla_a \nabla^a \phi^L = \nabla_a \nabla^a \phi,\qquad \nabla_a\nabla^a \phi^T = \int dS_a\left[ \phi(x')\nabla^a \delta(x-x') - \delta(x-x')\nabla^a \phi(x')\right].
+\end{equation}
+We see that $\nabla_a \nabla^a \phi^L = 0$ only if $\nabla_a\nabla^a \phi = 0$, but this then entails by definition of $\phi^L$ that $\phi^L = 0$. Therefore, only a completely transverse $\nabla_a \nabla^a \phi$ entails $\nabla_a \nabla^a \phi^L = 0$.
+\end{document}

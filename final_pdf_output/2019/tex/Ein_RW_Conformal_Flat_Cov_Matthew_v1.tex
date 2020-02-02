@@ -1,0 +1,29 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$\delta G_{\mu\nu}$ RW Conformal Flat Covariant v1}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\Delta_{00} &=& -3 \dot{\Omega}^2 \Omega^{-2} -  p \Omega^2 + p \tilde{U}_{0}{}^2 \Omega^2 + \tilde{U}_{0}{}^2 \rho \Omega^2 + 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega -  \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega 
+\\ \nonumber\\
+\Delta_{0i} &=& p \tilde{U}_{0}{} \tilde{U}_{i} \Omega^2 + \tilde{U}_{0}{} \tilde{U}_{i} \rho \Omega^2 + 2 \Omega^{-1} \tilde{\nabla}_{i}\dot{\Omega} - 4 \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{i}\Omega 
+\\ \nonumber\\
+\Delta_{ij} &=& - \dot{\Omega}^2 \tilde{g}_{ij} \Omega^{-2} + 2 \overset{..}{\Omega} \tilde{g}_{ij} \Omega^{-1} + \tilde{g}_{ij} p \Omega^2 + p \tilde{U}_{i} \tilde{U}_{j} \Omega^2 + \tilde{U}_{i} \tilde{U}_{j} \rho \Omega^2 - 2 \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega + \tilde{g}_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \nonumber\\
+&& - 4 \Omega^{-2} \tilde{\nabla}_{i}\Omega \tilde{\nabla}_{j}\Omega + 2 \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\Omega 
+\\ \nonumber\\
+g^{\mu\nu}\Delta_{\mu\nu} &=&3 p -  \rho + 6 \overset{..}{\Omega} \Omega^{-3} - 6 \Omega^{-3} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega 
+\end{eqnarray}
+\end{document}

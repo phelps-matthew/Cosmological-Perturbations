@@ -1,0 +1,73 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{$h_{ij}$ Decomposition v2}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$E_{ij}(h)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+R_{ijkl} &=& k(\tilde g_{jk}\tilde g_{il}-\tilde g_{ij}\tilde g_{jl})
+\\
+R_{ij}&=& -2k \tilde g_{ij}
+\\
+R &=& -6k
+\\ \nonumber\\ 
+h_{ij} &=& -2\psi \tilde g_{ij}\psi + 2\tilde\nabla_i\tilde\nabla_j E +\tilde\nabla_i E_j + \tilde\nabla_j E_i +2E_{ij}
+\\ \nonumber\\
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b -3k)(2E_{ij})
+&=& 
+(\tilde\nabla_a\tilde\nabla^a-2k)(\tilde\nabla_b\tilde\nabla^b-3k)h_{ij}
++ \tfrac12 \tilde\nabla_i\tilde\nabla_j\big[ \tilde\nabla^a\tilde\nabla^b h_{ab} + (\tilde\nabla_a\tilde\nabla^a +4k)(\tilde g^{bc}h_{bc})\big]
+\nonumber\\
+&&
++\tfrac12 \tilde g_{ij} \big[ (\tilde\nabla_a\tilde\nabla^a-4k)\tilde\nabla^b\tilde\nabla^c h_{bc}-(\tilde\nabla_a\tilde\nabla^a\tilde\nabla_b\tilde\nabla^b -2k \tilde\nabla_a\tilde\nabla^a +4k^2)(\tilde g^{bc}h_{bc})\big]
+\nonumber\\
+&&
+-(\tilde\nabla_a\tilde\nabla^a -3k)(\tilde\nabla_i\tilde\nabla^b h_{jb} + \tilde\nabla_j \tilde\nabla^b h_{ib})
+\label{htt}
+\end{eqnarray}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Invariance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To test gauge invariance, we take
+\begin{eqnarray}
+h_{ij} &=& \tilde\nabla_i\epsilon_j +\tilde\nabla_j \epsilon_i,\qquad (\tilde g^{ab}h_{ab})= 2\tilde\nabla_a \epsilon^a,
+\\ \nonumber\\
+\epsilon_i &=& \tilde\nabla_i L + L_i,\qquad \tilde\nabla^i L_i = 0,
+\end{eqnarray}
+and substitute into the RHS of \eqref{htt}. The result vanishes, confirming gauge invariance.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Asanka's 8th Order Result}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Applying $(\tilde\nabla_a\tilde\nabla^a+3k)(\tilde\nabla_b\tilde\nabla^b-6k)$ to \eqref{htt}, we have
+\begin{eqnarray}
+&&(\tilde\nabla_a\tilde\nabla^a+3k)(\tilde\nabla_b\tilde\nabla^b-6k)(\tilde\nabla_c\tilde\nabla^c-2k)(\tilde\nabla_d\tilde\nabla^d-3k)(2E_{ij})=
+\nonumber\\
+&&45 k^4 h_{ij} - 15 k^4 \tilde{g}_{ij} h -  \tfrac{9}{2} k^3 \tilde{\nabla}_{a}\tilde{\nabla}^{a}h_{ij} -  \tfrac{9}{2} k^3 \tilde{g}_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}h - 9 k^2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\tilde{\nabla}_{j}\tilde{\nabla}_{i}h - 3 k^3 \tilde{\nabla}_{a}\tilde{\nabla}_{i}h_{j}{}^{a} \nonumber \\ 
+&& + 15 k^3 \tilde{\nabla}_{a}\tilde{\nabla}_{j}h_{i}{}^{a} + 18 k^3 \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}h^{ab} - 9 k^2 \tilde{\nabla}_{b}\tilde{\nabla}_{a}\tilde{\nabla}_{j}\tilde{\nabla}_{i}h^{ab} -  \tfrac{51}{2} k^2 \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}h_{ij} \nonumber \\ 
+&& + \tfrac{21}{2} k^2 \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}h -  \tfrac{3}{2} k \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\tilde{\nabla}_{j}\tilde{\nabla}_{i}h + \tfrac{33}{2} k^2 \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}_{i}h_{j}{}^{a} \nonumber \\ 
+&& + \tfrac{39}{2} k^2 \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}_{j}h_{i}{}^{a} - 6 k^2 \tilde{g}_{ij} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}h^{ab} -  \tfrac{3}{2} k \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}\tilde{\nabla}_{j}\tilde{\nabla}_{i}h^{ab} \nonumber \\ 
+&& - 2 k \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}h_{ij} + \tfrac{3}{2} k \tilde{g}_{ij} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}h + \tfrac{1}{2} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\tilde{\nabla}_{j}\tilde{\nabla}_{i}h \nonumber \\ 
+&& + \tfrac{7}{2} k \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}_{i}h_{j}{}^{a} + \tfrac{5}{2} k \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}_{j}h_{i}{}^{a} -  \tfrac{5}{2} k \tilde{g}_{ij} \tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}h^{ab} \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}\tilde{\nabla}_{j}\tilde{\nabla}_{i}h^{ab} + \tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}h_{ij} -  \tfrac{1}{2} \tilde{g}_{ij} \tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}h \nonumber \\ 
+&& -  \tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}_{i}h_{j}{}^{a} -  \tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}_{j}h_{i}{}^{a} \nonumber \\ 
+&& + \tfrac{1}{2} \tilde{g}_{ij} \tilde{\nabla}_{e}\tilde{\nabla}^{e}\tilde{\nabla}_{d}\tilde{\nabla}^{d}\tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}_{a}h^{ab} - 6 k^3 \tilde{\nabla}_{i}\tilde{\nabla}_{a}h_{j}{}^{a} - 6 k^3 \tilde{\nabla}_{j}\tilde{\nabla}_{a}h_{i}{}^{a}.
+\label{8htt}
+\end{eqnarray}
+Expanding out Asanka's (137) in \emph{SVT\_in\_RW\_fullasanka.pdf}, equates to \eqref{8htt}. 
+\end{document}

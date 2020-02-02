@@ -1,0 +1,219 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage{mathtools} 
+\usepackage{enumitem} % List environment 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Einstein SVT Matthew}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+The Einstein tensor is perturbed according to
+\begin{equation}
+	ds^2 = \Omega^2(x) \big\{ -(1+2\phi) d\tau^2 + 2(\tilde\nabla_i B + B_i)d\tau dx^i + [ (1-2\psi)\gamma_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\big\}
+\end{equation}
+where
+\begin{equation}
+	\gamma^{ij}\tilde\nabla_i B_j = 0,\gamma^{ij}\tilde\nabla_i E_j = 0,\ \gamma^{ij}\tilde\nabla_i E_{kj} = 0,\ \gamma^{ij}E_{ij} = 0.
+\end{equation}
+
+\noindent Covariant derivatives are defined with respect to the 3-space background $\gamma_{ij}$ and are indicated as $ \tilde\nabla_i$. 
+\section*{ $\Omega(x)$}
+\begin{align}
+\delta G_{00}^{(S)}={}&6 \dot{\psi} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+ - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+ + 4 \phi \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega\nonumber\\
+& + 4 \psi \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega
+ + 4 \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}B
+ - 2 \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B
+ - 2 \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\psi\nonumber\\
+& - 2 \phi \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+ - 2 \psi \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}E\nonumber\\
+& + 2 \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}^{b}\Omega
+ - 4 \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}E.
+\end{align}
+\begin{align}
+\delta G_{00}^{(V)}={}&4 B^{a} \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega}
+ - 2 B^{a} \dot{\Omega} \Omega^{-2} \tilde{\nabla}_{a}\Omega
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E_{a}
+ + 2 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}E^{a}\nonumber\\
+& - 4 \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}E^{a}.
+\end{align}
+\begin{align}
+\delta G_{00}^{(T)}={}&-4 E^{ab} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega
+ + 2 E_{ab} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega.
+\end{align}
+\begin{align}
+\delta G_{0i}^{(S)}={}&- \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B
+ - 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}B
+ + \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}B
+ - 2 \tilde{\nabla}_{i}\dot{\psi}\nonumber\\
+& - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\phi
+ + 2 \dot{\psi} \Omega^{-1} \tilde{\nabla}_{i}\Omega
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}\tilde{\nabla}_{a}\dot{E}.
+\end{align}
+\begin{align}
+\delta G_{0i}^{(V)}={}={}&- B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+ + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i}
+ -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}
+ - 2 B_{i} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega
+ + \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B_{i}\nonumber\\
+& -  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{E}_{i}
+ + B_{i} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+ -  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}B^{a}
+ -  \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}\dot{E}^{a}.
+\end{align}
+\begin{align}
+\delta G_{0i}^{(T)}={}&-2 \dot{E}_{ia} \Omega^{-1} \tilde{\nabla}^{a}\Omega.
+\end{align}
+\begin{align}
+\delta G_{ij}^{(S)}={}&-2 \ddot{\psi} \gamma_{ij}
+ + 2 \dot{\Omega}^2 \gamma_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 \gamma_{ij} \psi \Omega^{-2}
+ - 2 \dot{\phi} \dot{\Omega} \gamma_{ij} \Omega^{-1}
+ - 4 \dot{\psi} \dot{\Omega} \gamma_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} \gamma_{ij} \phi \Omega^{-1}\nonumber\\
+& - 4 \ddot{\Omega} \gamma_{ij} \psi \Omega^{-1}
+ - 2 \dot{\Omega} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+ -  \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
+ + \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
+ + 2 \dot{\Omega} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}\nonumber\\
+& -  \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
+ + \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+ - 4 \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega} \tilde{\nabla}^{a}B
+ + 2 \dot{\Omega} \gamma_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}B\nonumber\\
+& - 2 \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\dot{B}
+ - 2 \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\phi
+ + 2 \gamma_{ij} \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}E\nonumber\\
+& - 2 \gamma_{ij} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}_{a}E \tilde{\nabla}^{b}\Omega
+ + 4 \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}\tilde{\nabla}^{a}E
+ + 2 \Omega^{-1} \tilde{\nabla}_{i}\Omega \tilde{\nabla}_{j}\psi\nonumber\\
+& + 2 \Omega^{-1} \tilde{\nabla}_{i}\psi \tilde{\nabla}_{j}\Omega
+ + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B
+ + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B}
+ -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\ddot{E}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E}\nonumber\\
+& - 2 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
+ - 4 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
+ + 2 \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}E\nonumber\\
+& + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi
+ -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}\tilde{\nabla}_{a}E.
+\end{align}
+\begin{align}
+\delta G_{ij}^{(V)}={}&-4 B^{a} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\dot{\Omega}
+ + 2 B^{a} \dot{\Omega} \gamma_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega
+ - 2 \dot{B}^{a} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega
+ + 2 \gamma_{ij} \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{b}\tilde{\nabla}^{b}E_{a}\nonumber\\
+& - 2 \gamma_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \tilde{\nabla}^{b}E^{a}
+ + 4 \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \tilde{\nabla}^{b}E^{a}
+ + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B_{j}
+ + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde{\nabla}_{i}\ddot{E}_{j}\nonumber\\
+& -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}E_{j}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}E_{j}
+ - 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}E_{j}\nonumber\\
+& + \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}E_{j}
+ + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}B_{i}
+ + \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde{\nabla}_{j}\ddot{E}_{i}
+ -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}E_{i}\nonumber\\
+& + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}E_{i}
+ - 2 \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}E_{i}
+ + \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}E_{i}
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}\tilde{\nabla}_{i}E_{a}.
+\end{align}
+\begin{align}
+\delta G_{ij}^{(T)}={}&- \ddot{E}_{ij}
+ - 2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+ + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}
+ - 4 E_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\Omega\nonumber\\
+& + 2 \Omega^{-1} \tilde{\nabla}_{a}E_{ij} \tilde{\nabla}^{a}\Omega
+ + 2 E_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\Omega
+ + 4 E^{ab} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega\nonumber\\
+& - 2 E_{ab} \gamma_{ij} \Omega^{-2} \tilde{\nabla}^{a}\Omega \tilde{\nabla}^{b}\Omega
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{i}E_{ja}
+ - 2 \Omega^{-1} \tilde{\nabla}^{a}\Omega \tilde{\nabla}_{j}E_{ia}.
+\end{align}
+\section*{ $\Omega(t)$}
+\begin{align}
+\delta G_{00}^{(S)}={}&6 \dot{\psi} \dot{\Omega} \Omega^{-1}
+ + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+ - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}
+ - 2 \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi.
+\end{align}
+\begin{align}
+\delta G_{00}^{(V)}=\delta G_{00}^{(T)}=0.
+\end{align}
+\begin{align}
+\delta G_{0i}^{(S)}={}&- \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}B
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B
+ - 2 \tilde{\nabla}_{i}\dot{\psi}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\phi.
+\end{align}
+\begin{align}
+\delta G_{0i}^{(V)}={}&- B_{i} \dot{\Omega}^2 \Omega^{-2}
+ + 2 B_{i} \ddot{\Omega} \Omega^{-1}
+ + \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B_{i}
+ -  \tfrac{1}{2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}_{i}.
+\end{align}
+\begin{align}
+\delta G_{0i}^{(T)}=0.
+\end{align}
+\begin{align}
+\delta G_{ij}^{(S)}={}&-2 \ddot{\psi} \gamma_{ij}
+ + 2 \dot{\Omega}^2 \gamma_{ij} \phi \Omega^{-2}
+ + 2 \dot{\Omega}^2 \gamma_{ij} \psi \Omega^{-2}
+ - 2 \dot{\phi} \dot{\Omega} \gamma_{ij} \Omega^{-1}
+ - 4 \dot{\psi} \dot{\Omega} \gamma_{ij} \Omega^{-1}
+ - 4 \ddot{\Omega} \gamma_{ij} \phi \Omega^{-1}\nonumber\\
+& - 4 \ddot{\Omega} \gamma_{ij} \psi \Omega^{-1}
+ - 2 \dot{\Omega} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}B
+ -  \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{B}
+ + \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\ddot{E}
+ + 2 \dot{\Omega} \gamma_{ij} \Omega^{-1} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\dot{E}\nonumber\\
+& -  \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\phi
+ + \gamma_{ij} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\psi
+ + 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}B
+ + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{B}
+ -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\ddot{E}
+ - 2 \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}\dot{E}\nonumber\\
+& - 2 \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
+ + 4 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\tilde{\nabla}_{i}E
+ + \tilde{\nabla}_{j}\tilde{\nabla}_{i}\phi
+ -  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi.
+\end{align}
+\begin{align}
+\delta G_{ij}^{(V)}={}&\dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}B_{j}
+ + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{B}_{j}
+ -  \tfrac{1}{2} \tilde{\nabla}_{i}\ddot{E}_{j}
+ -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}\dot{E}_{j}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{i}E_{j}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}E_{j}\nonumber\\
+& + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}B_{i}
+ + \tfrac{1}{2} \tilde{\nabla}_{j}\dot{B}_{i}
+ -  \tfrac{1}{2} \tilde{\nabla}_{j}\ddot{E}_{i}
+ -  \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}\dot{E}_{i}
+ -  \dot{\Omega}^2 \Omega^{-2} \tilde{\nabla}_{j}E_{i}
+ + 2 \ddot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}E_{i}.
+\end{align}
+\begin{align}
+\delta G_{ij}^{(T)}={}&- \ddot{E}_{ij}
+ - 2 \dot{\Omega}^2 E_{ij} \Omega^{-2}
+ - 2 \dot{E}_{ij} \dot{\Omega} \Omega^{-1}
+ + 4 \ddot{\Omega} E_{ij} \Omega^{-1}
+ + \tilde{\nabla}_{a}\tilde{\nabla}^{a}E_{ij}.
+\end{align}
+\end{document}

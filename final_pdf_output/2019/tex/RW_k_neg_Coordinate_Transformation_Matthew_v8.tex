@@ -1,0 +1,278 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+ \usepackage{braket}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+%\numberwithin{equation}{subsection}
+\title{Coordinate Transformations RW $k<0$ v8}
+\date{}
+\begin{document} 
+\maketitle
+\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Summary}
+Since planes waves in the $(p',r')$ coordinate system behave much differently than those in the $(T,R)$ coordinate system, their asymptotic behavior may vary. After accounting for the leading $u$ behavior in the expansion of $e^{ik(R\cos\theta-T)}$ in the null and timelike configurations, all results are found to agree between both coordinate systems. However, there still seems to remain a mismatch with PRD 2012. This is summarized in the Plane Wave Expansion section. Null and timelike calculations are summarized below.
+\\ \\
+\begin{minipage}[t]{0.45\textwidth}
+\textbf{Null}
+\begin{align}
+K^{(cm)}_{00} &\sim u^2 \nonumber\\
+K^{(cm)}_{01} &\sim  u^2\nonumber\\
+K^{(cm)}_{02} &\sim  u^3\nonumber\\
+K^{(cm)}_{03} &\sim   u^3\nonumber\\
+K^{(cm)}_{11} &\sim  u^2\nonumber\\
+K^{(cm)}_{22} &\sim  u^4\nonumber\\
+K^{(cm)}_{33} &\sim  u^4\nonumber\\
+K^{(cm)}_{12} &\sim u^3\nonumber\\
+K^{(cm)}_{13} &\sim u^3\nonumber\\
+K^{(cm)}_{23} &\sim u^4
+\end{align}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\textbf{Timelike}
+\begin{align}
+K^{(cm)}_{00} &\sim 1 \nonumber\\
+K^{(cm)}_{01} &\sim  u\nonumber\\
+K^{(cm)}_{02} &\sim  u\nonumber\\
+K^{(cm)}_{03} &\sim   u\nonumber\\
+K^{(cm)}_{11} &\sim  u^2\nonumber\\
+K^{(cm)}_{22} &\sim  u^2\nonumber\\
+K^{(cm)}_{33} &\sim  u^2\nonumber\\
+K^{(cm)}_{12} &\sim u^2\nonumber\\
+K^{(cm)}_{13} &\sim u^2\nonumber\\
+K^{(cm)}_{23} &\sim u^2
+\end{align}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Notation/Background}
+For $K<1$ FRW cosmology with $L^2 a^2 = t^2+d^2$, the line element takes the form
+\begin{align}
+ds^2 &=  dt^2 - a(t)^2 \left(  \frac{dr^2}{1+r^2/L^2} + r^2 d\theta^2 + r^2\sin^2\theta d\phi^2 \right)\nonumber\\
+&= d^2 \left[ du^2 - (1+u^2)\left( \frac{dv^2}{1+v^2} + v^2 d\Omega^2\right)\right] ,
+\end{align}
+where we have introduced
+\begin{equation}
+u = \frac{t}{d},\qquad v = \frac{r}{L}.
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Original Coordinates $(p',r')$}
+Transformations and Asymptotics:
+\begin{equation}
+p' = \frac{u}{(1+u^2)^{1/2}+(1+v^2)^{1/2}},\qquad r' = \frac{v}{(1+u^2)^{1/2}+(1+v^2)^{1/2}}
+\end{equation}
+\begin{equation}
+u^2 = \frac{4 p'^2}{(1-(p'+r')^2)(1-(p'-r')^2)},\qquad v =\left(\frac{r'}{p'}\right)u
+\end{equation}
+\begin{equation}
+\Omega^2(p',r') = \frac{4 L^2 a^2}{(1-(p'+r')^2)(1-(p'-r')^2)} = d^2(1+u^2)\left[ (1+u^2)^{1/2}+(1+v^2)^{1/2}\right]^2
+\end{equation}
+\begin{equation}
+r'\cos\theta-p' = \frac{v\cos\theta -u}{\sqrt{1+u^2}+\sqrt{1+v^2}}
+\end{equation}
+%%%%%%%%%%%%%%%%%%
+\subsection*{Null Trajectory}
+In the $u$, $v$ geometry, the condition for null separation (at fixed angle) is $u=v$. Inspection of coordinate transformation (5-8) shows the leading order ($u\gg 1$) contributions for null separation:
+\begin{equation}
+p' \sim 1,\qquad r' \sim 1,\qquad \Omega^2 \sim u^4.
+\end{equation}
+\begin{align}
+\frac{\partial p'}{\partial t} & \sim  \frac{1}{u}\qquad
+\frac{\partial p'}{\partial r}  \sim 	\frac{1}{u},\qquad
+\frac{\partial r'}{\partial t}  \sim \frac{1}{u}\qquad
+\frac{\partial r'}{\partial r}  \sim  \frac{1}{u}.
+\end{align}
+\begin{equation}
+\exp[{ik(r'\cos\theta-p')} ]\sim 1
+\end{equation}
+The leading behavior for the full $K_{\mu\nu}^{(cm)}$ behaves as
+\begin{align}
+K^{(cm)}_{00} &\sim u^2 \nonumber\\
+K^{(cm)}_{01} &\sim  u^2\nonumber\\
+K^{(cm)}_{02} &\sim  u^3\nonumber\\
+K^{(cm)}_{03} &\sim   u^3\nonumber\\
+K^{(cm)}_{11} &\sim  u^2\nonumber\\
+K^{(cm)}_{22} &\sim  u^4\nonumber\\
+K^{(cm)}_{33} &\sim  u^4\nonumber\\
+K^{(cm)}_{12} &\sim u^3\nonumber\\
+K^{(cm)}_{13} &\sim u^3\nonumber\\
+K^{(cm)}_{23} &\sim u^4
+\end{align}
+
+The purely angular sector of this result coincides with the null configuration given in PRD 2012.
+%%%%%%%%%%%%%%%%%
+\subsection*{Timelike Trajectory}
+For coordinate separations which are timelike, $u\gg v$. In order to find the leading contribution in $u$, we take both $u\gg v$ and $u\gg1$. These results yield a leading behavior of:
+\begin{equation}
+p'\sim 1,\qquad r'\sim \frac{1}{u},\qquad \Omega^2\sim u^4. 
+\end{equation}
+\begin{align}
+\frac{\partial p'}{\partial t} & \sim  \frac{1}{u^2}\qquad
+\frac{\partial p'}{\partial r}  \sim 	\frac{1}{u},\qquad
+\frac{\partial r'}{\partial t}  \sim \frac{1}{u^2}\qquad
+\frac{\partial r'}{\partial r}  \sim  \frac{1}{u}.
+\end{align}
+\begin{equation}
+\exp[{ik(r'\cos\theta-p')} ]\sim 1
+\end{equation}
+The leading behavior for the full $K_{\mu\nu}^{(cm)}$ behaves as
+\begin{align}
+K^{(cm)}_{00} &\sim 1 \nonumber\\
+K^{(cm)}_{01} &\sim  u\nonumber\\
+K^{(cm)}_{02} &\sim  u\nonumber\\
+K^{(cm)}_{03} &\sim   u\nonumber\\
+K^{(cm)}_{11} &\sim  u^2\nonumber\\
+K^{(cm)}_{22} &\sim  u^2\nonumber\\
+K^{(cm)}_{33} &\sim  u^2\nonumber\\
+K^{(cm)}_{12} &\sim u^2\nonumber\\
+K^{(cm)}_{13} &\sim u^2\nonumber\\
+K^{(cm)}_{23} &\sim u^2
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{New Coordinates $(T,R)$}
+Transformations and Asymptotics:
+\begin{align}
+T = \left[u+(1+u^2)^{1/2}\right]( 1+v^2)^{1/2},\qquad R = \left[u+(1+u^2)^{1/2}\right]v
+\end{align}
+\begin{equation}
+\Omega^2(T,R) = \frac{L^2 a^2}{T^2-R^2} = d^2\frac{(1+u^2)}{(u+(1+u^2)^{1/2})^2}
+\end{equation}
+\begin{equation}
+R\cos\theta - T = (u+\sqrt{1+u^2})(v\cos\theta - \sqrt{1+v^2}) \sim 2u(v\cos\theta-\sqrt{1+v^2})
+\end{equation}
+%%%%%%%%%%%%%%%%%%
+\subsection*{Null Trajectory}
+In the $u$, $v$ geometry, the condition for null separation (at fixed angle) is $u=v$. Inspection of coordinate transformation (17-19) shows the leading order ($u\gg 1$) contributions for null separation:
+\begin{equation}
+T \sim u^2,\qquad R \sim u^2,\qquad \Omega^2 \sim 1. 
+\end{equation}
+\begin{align}
+\frac{\partial T}{\partial t} & \sim  u,\qquad
+\frac{\partial T}{\partial r}  \sim 	u,\qquad
+\frac{\partial R}{\partial t}  \sim u,\qquad
+\frac{\partial R}{\partial r}  \sim  u.
+\end{align}
+\begin{equation}
+\exp[R\cos\theta-T] \sim \frac{1}{u^2}
+\end{equation}
+The leading behavior for the full $K_{\mu\nu}^{(cm)}$ behaves as
+\begin{align}
+K^{(cm)}_{00} &\sim u^2 \nonumber\\
+K^{(cm)}_{01} &\sim  u^2\nonumber\\
+K^{(cm)}_{02} &\sim  u^3\nonumber\\
+K^{(cm)}_{03} &\sim   u^3\nonumber\\
+K^{(cm)}_{11} &\sim  u^2\nonumber\\
+K^{(cm)}_{22} &\sim  u^4\nonumber\\
+K^{(cm)}_{33} &\sim  u^4\nonumber\\
+K^{(cm)}_{12} &\sim u^3\nonumber\\
+K^{(cm)}_{13} &\sim u^3\nonumber\\
+K^{(cm)}_{23} &\sim u^4
+\end{align}
+
+The purely angular sector of this result coincides with the null configuration given in PRD 2012.
+%%%%%%%%%%%%%%%%%%%%
+\subsection*{Timelike Trajectory}
+For coordinate separations which are timelike, $u\gg v$. In order to find the leading contribution in $u$, we take both $u\gg v$ and $u\gg1$. These results yield a leading behavior of:
+\begin{equation}
+T\sim u,\qquad R\sim u,\qquad \Omega^2\sim 1. 
+\end{equation}
+\begin{align}
+\frac{\partial T}{\partial t} & \sim  1,\qquad
+\frac{\partial T}{\partial r}  \sim  u,\qquad
+\frac{\partial R}{\partial t}  \sim 1,\qquad
+\frac{\partial R}{\partial r}  \sim  u.
+\end{align}
+\begin{equation}
+\exp[R\cos\theta-T] \sim \frac{1}{u}
+\end{equation}
+The leading behavior for the full $K_{\mu\nu}^{(cm)}$ behaves as
+\begin{align}
+K^{(cm)}_{00} &\sim 1 \nonumber\\
+K^{(cm)}_{01} &\sim  u\nonumber\\
+K^{(cm)}_{02} &\sim  u\nonumber\\
+K^{(cm)}_{03} &\sim   u\nonumber\\
+K^{(cm)}_{11} &\sim  u^2\nonumber\\
+K^{(cm)}_{22} &\sim  u^2\nonumber\\
+K^{(cm)}_{33} &\sim  u^2\nonumber\\
+K^{(cm)}_{12} &\sim u^2\nonumber\\
+K^{(cm)}_{13} &\sim u^2\nonumber\\
+K^{(cm)}_{23} &\sim u^2
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Plane-Wave Expansions}
+The plane wave $e^{ik(Z-T)}$ behaves much differently from $e^{ik(z'-p')}$. In order to extract the asymptotic behavior as $u\to \infty$, we utilize the plane wave expansion in terms of Spherical Bessels, viz (30). 
+%%%%%%%%%%%%%%%
+\subsection*{Spherical Bessels}
+\begin{equation}
+e^{ikr\cos\theta} = \sum_{n=0}^\infty (2n+1)i^n j_n(kr)P_n(\cos\theta)
+\end{equation}
+where $j_n$ are the spherical Bessels and $P_n$ are the Legendre polynomials. The asymptotic form for $j_n(z)$ is (NIST 10.52.3)
+\begin{equation}
+j_n(z) = z^{-1}\sin(z-\frac12 n\pi)+e^{\mathbb I(z)}\mathcal O(z^{-2}).
+\end{equation}
+Hence for $r\to\infty$, we have
+\begin{equation}
+e^{ikz} \to \sum_{n=0}^{\infty}(2n+1)i^nP_n(\cos\theta)\left( \frac{\sin(kr-\frac12 n\pi)}{kr}\right)\sim \frac{1}{kr}
+\end{equation}
+since the Legendre polynomials and $\sin$ function are bounded between $[-1,1]$. 
+%%%%%%%%%%%%%%%%
+\subsection*{Null}
+Here we express the phase in terms of $u$ and $v$, set $u=v$ for the null condition, and find the asymptotic behavior for $u\gg 1$:
+\begin{equation}
+r'\cos\theta-p' = \frac{1}{2}\left( \frac{u(\cos\theta-1)}{\sqrt{1+u^2}}\right) \sim \frac{1}{2}(\cos\theta-1)
+\end{equation}
+\begin{equation}
+\implies \exp[{ik(r'\cos\theta-p')} ]\approx\exp[ik(\tfrac12\cos\theta -\tfrac12)] \sim 1
+\end{equation}
+\\ 
+\begin{equation}
+R\cos\theta-T = (u+\sqrt{1+u^2})(u\cos\theta-\sqrt{1+u^2})\sim 2u^2(\cos\theta-1)
+\end{equation}
+\begin{align}
+\implies \exp[{ik(R\cos\theta-T)} ]&\approx \exp[-2ik u^2]\exp[2ik u^2\cos\theta]\\
+&\sim \exp[-2ik u^2] 
+ \sum_{n=0}^{\infty}(2n+1)i^nP_n(\cos\theta)\left( \frac{\sin(2ku^2-\frac12 n\pi)}{2ku^2}\right)\\
+&\sim \frac{1}{u^2}
+\end{align}
+%%%%%%%%%%%%%%%
+\subsection*{Timelike}
+Here we express the phase in terms of $u$ and $v$, hold $v$ finite, and take $u\gg 1$ and $u\gg v$:
+\begin{equation}
+r'\cos\theta-p' = \frac{v\cos\theta -u}{\sqrt{1+u^2}+\sqrt{1+v^2}}\sim \frac{v\cos\theta-u}{u}\sim -1
+\end{equation}
+\begin{equation}
+\implies \exp[ik(r'\cos\theta -p')] \approx \exp[-ik] \sim 1
+\end{equation}
+\\
+\begin{equation}
+R\cos\theta - T = (u+\sqrt{1+u^2})(v\cos\theta - \sqrt{1+v^2}) \sim 2u(v\cos\theta-\sqrt{1+v^2})
+\end{equation}
+\begin{align}
+\implies \exp[R\cos\theta-T]&\approx \exp[ -2iku\sqrt{1+v^2}]\exp[2ik uv\cos\theta]\\
+&\sim  \exp[-2ik u\sqrt{1+v^2}] 
+ \sum_{n=0}^{\infty}(2n+1)i^nP_n(\cos\theta)\left( \frac{\sin(2kuv-\frac12 n\pi)}{2kuv}\right)\\
+&\sim \frac{1}{u}
+\end{align}
+\subsection*{PRD 2012}
+\textbf{Null}:\\
+$u=v$ implies $p'=r'$ and thus
+\begin{equation}
+\Omega^2 p'r' e^{ik(r'-p')} = \Omega^2 p'r' \sim u^4
+\end{equation}
+\\
+\textbf{Timelike}:\\
+In the timelike configuration, $r'\sim \frac1u$, and so large $u$ implies small $r'$. Thus we have
+\begin{equation}
+\Omega^2 p'r' e^{ikr'}e^{-ikp'} \sim u^4  e^{-ikp'} r'^2 \left( \frac{e^{ikr'}}{r'}\right ).
+\end{equation}
+We note that as $r'\to 0$,
+\begin{equation}
+ \frac{e^{ikr'}}{r'} \sim \frac{1}{r'},
+\end{equation}
+and thus it would seem 
+\begin{equation}
+\Omega^2 p'r' e^{ik(r'-p')}\approx \Omega^2 p' r'\sim u^3.
+\end{equation}
+Asymptotically, $e^{ikr'\cos\theta}$ behaves as $\sin(kr')/r'$. However, since $r'$ is not small, we cannot use the asymptotic form of the spherical Bessels, so it not clear for me how to arrive at $\sim u^2$ in PRD.
+\end{document}

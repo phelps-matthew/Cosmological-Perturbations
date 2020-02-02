@@ -1,0 +1,108 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+\usepackage[title]{appendix}
+%\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{4D SVT Thoughts}
+\date{}
+\begin{document} 
+	\maketitle
+	\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Green's Identity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For any function $\phi$, we may always represent it as
+\begin{eqnarray}
+\phi = \int D \nabla^2 \phi + \int \nabla^\rho[\nabla_\rho D\phi - D\nabla_\rho \phi].
+\end{eqnarray}
+Given $\nabla^2\phi =\rho$, this leads us to the fundamental solution to Laplace's equation,
+\begin{eqnarray}
+\phi = \int D \rho + \int dS^\nu[\nabla_\rho D\phi - D\nabla_\rho \phi].
+\end{eqnarray}
+In flat space, the same identity holds for vectors, i.e.
+\begin{eqnarray}
+A_\mu = \int D \nabla^2 A_\mu + \int \nabla^\rho[\nabla_\rho DA_\mu - D\nabla_\rho A_\mu].
+\end{eqnarray}
+Given $\nabla^2 A_\mu = J_\mu$, the fundamental solution is then
+\begin{eqnarray}
+A_\mu = \int D J_\mu + \int \nabla^\rho[\nabla_\rho DA_\mu - D\nabla_\rho A_\mu].
+\label{asol1}
+\end{eqnarray}
+It is of interest to ask what happens when we take the divergence:
+\begin{eqnarray}
+\nabla^\mu A_\mu &=& \nabla^\mu \int D J_\mu + \nabla^\mu \int \nabla^\rho[\nabla_\rho DA_\mu - D\nabla_\rho A_\mu]
+\nonumber\\
+&=& \int D \nabla^\mu J_\mu - \int \nabla^\mu (DJ_\mu) + \int \nabla^\rho[\nabla^\mu D\nabla_\rho A_\mu- \nabla^\mu \nabla_\rho DA_\mu ]
+\nonumber\\
+&=& \int D \nabla^\mu J_\mu + \int \nabla^\rho[\nabla^\mu D \nabla_\rho A_\mu - \nabla^\mu \nabla_\rho D A_\mu - D\nabla^2 A_\rho ]
+\label{Adiv1}
+\end{eqnarray}
+Using the delta function relation
+\begin{eqnarray}
+\int \nabla^2 D \nabla^\mu A_\mu &=& - \int \nabla^\mu \nabla^2 D A_\mu
+\end{eqnarray}
+we may express \eqref{Adiv1} as 
+\begin{eqnarray}
+\nabla^\mu A_\mu &=& \int D \nabla^\mu J_\mu + \int \nabla^\rho[ \nabla_\rho D \nabla^\mu A_\mu - D\nabla_\rho \nabla^\mu A_\mu],
+\label{adiv}
+\end{eqnarray}
+which we may recognize as the fundamental solution to $\nabla^2 (\nabla^\mu A_\mu) = \nabla^\mu J_\mu$, where we treat $\nabla^\mu A_\mu$ as a scalar with no apriori assumptions on the form of $A_\mu$. 
+\\ \\
+Hence we have shown that the divergence of $A_\mu$ as defined by \eqref{asol1} is consistent with the fundamental solution of $\nabla^2 \phi = \rho$ where $\phi = \nabla^\mu A_\mu$ and $\rho = \nabla^\mu J_\mu$. In order to construct an $A_\mu$ that obeys $\nabla^\mu A_\mu = \int D \nabla^\mu J_\mu$ we require $\nabla^\mu A_\mu$ and $D$ to vanish on the surface.
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{4D SVT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In reference to your email, according to decomposition (C), $W_\mu$ is fixed by condition (D)
+\begin{eqnarray}
+\nabla^2 W_\mu = \nabla^\alpha h_{\alpha\mu}. 
+\end{eqnarray}
+The fundamental solution to (D) is
+\begin{eqnarray}
+W_\mu = \int D \nabla^\alpha h_{\alpha\mu} + \int \nabla^\alpha[\nabla_\alpha D W_\mu - D\nabla_\alpha W_\mu].
+\label{Wfun}
+\end{eqnarray}
+Taking the divergence, we have from \eqref{adiv} 
+\begin{eqnarray}
+\nabla^\alpha W_\alpha &=& \int D \nabla^\alpha\nabla^\beta h_{\alpha\beta} + \int \nabla^\rho[ \nabla_\rho D \nabla^\alpha W_\alpha - D\nabla_\rho \nabla^\alpha W_\alpha]
+\label{divW}
+\end{eqnarray}
+From (D) we may construct (G) as
+\begin{eqnarray}
+\nabla^2[\nabla^\alpha W_\alpha - h] = \nabla^\alpha\nabla^\beta h_{\alpha\beta} - \nabla^2 h,
+\end{eqnarray}
+which is equivalent to
+\begin{eqnarray}
+\nabla^2 \nabla^\alpha W_\alpha = \nabla^\alpha\nabla^\beta h_{\alpha\beta}.
+\label{G2}
+\end{eqnarray}
+Based on the Green's identities, we have shown that fundamental solution to the above $\nabla^2 \nabla^\alpha W_\alpha = \nabla^\alpha\nabla^\beta h_{\alpha\beta}$ is again just \eqref{divW}. Decomposing $h$ into its harmonic and non-harmonic components via
+\begin{eqnarray}
+h = \int D \nabla^2 h + \int \nabla^\alpha [\nabla_\alpha D h - D\nabla_\alpha h],
+\end{eqnarray}
+the most general combination $\nabla^\alpha W_\alpha - h$ that satisfies the condition $\nabla^2 W_\mu = \nabla^\alpha h_{\mu\alpha}$
+must be
+\begin{eqnarray}
+\nabla^\alpha W_\alpha - h &=& \int D [ \nabla^\alpha\nabla^\beta h_{\alpha\beta} -\nabla^2 h] + \underbrace{\oint dS^\rho[ \nabla_\rho D(\nabla^\alpha W_\alpha - h) - D \nabla_\rho (\nabla^\alpha W_\alpha - h)]}_{A}.
+\end{eqnarray}
+The harmonic surface term $A$ may vanish given that $D$, $h$, and $\nabla^\alpha W_\alpha$ vanish on the surface. Such constraints would appear to correspond to the freedom to perform integration by parts. Hence it would appear we cannot construct a $\psi$ or $\nabla^2 E_{\mu\nu}$ that is gauge invariant under large spatial gauge transformations.
+\\ \\
+Nonetheless, in defining 
+\begin{eqnarray}
+\psi &=& \nabla^\alpha W_\alpha - h,
+\end{eqnarray}
+it holds that $\nabla^2 \psi$, $\nabla^2 E_{\mu\nu} + (D-2)\nabla_\mu \nabla_\nu \psi$ and $\nabla^4 E_{\mu\nu}$ are gauge invariant. 
+\\ \\
+Though we can reframe the decomposition entirely in terms of a $W_\mu$ which must obey $\nabla^2 W_\mu = \nabla^\alpha h_{\mu\alpha}$, the most general decomposition that is gauge invariant under all transformations would appear to require a $W_\mu$ with the form given in \eqref{Wfun}. 
+
+
+
+
+
+
+\end{document}

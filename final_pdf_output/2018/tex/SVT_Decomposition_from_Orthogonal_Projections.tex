@@ -1,0 +1,108 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{SVT Decomposition from Orthogonal Projections}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+Fundamental observers are locally at rest with respect to the matter fluid. Motivated by these ``preferred'' frames, we seek to split a given rank 2 tensor $T_{ab}$ into components parallel and orthogonal to a velocity vector $u_\mu$. The rest frames locally define surfaces of constant $t$. The induced metric for the surfaces of simultaneity is
+\[
+	h_{ab} = g_{ab} + u_a u_b.
+\]
+That this acts like a 3-space metric can verified by
+\[
+	h^a{}_b h^b{}_c =  h^a{}_c,\qquad h^c{}_c = 3, \qquad h^a{}_b u^b = 0.
+\]
+Note that the last relation uses $h^a{}_b$ to project the components orthogonal to $u^a$.  Likewise $U^a{}_b \equiv -u^au_b$ projects components parallel to $u_a$. \\ \\
+We can use these projectors to decompose a tensor into components parallel and orthogonal to the local velocity. Take arbitrary symmetric rank 2 tensor $T_{ab}$
+\begin{align}
+	T_{ab} &= g^c{}_a g^d{}_b T_{cd}\\
+	&= (h^c{}_a + U^c{}_a{})(h^d{}_b + U^d{}_b{})T_{cd}\\
+	&= h^c{}_a h^d{}_b T_{cd} - u_a(u^c h^d{}_b T_{cd}) - u_b (u^d h^c{}_a T_{cd}) + u_a u_b (u^c u^d T_{cd}) .
+\end{align}
+This can be re-expressed as:
+\begin{align}
+	T_{ab}&= \frac13 h_{ab}h^{cd}T_{cd} + \bigg[ \frac12 h^c{}_a h^d{}_b+\frac12 h^c{}_b h^d{}_a - \frac13 h_{ab}h^{cd}\bigg] T_{cd}
++\bigg[\frac12 h^c{}_a h^d{}_{b}-\frac12 h^d{}_a h^c{}_{b}\bigg]T_{cd} \\
+	&\quad - u_a(h^d{}_b T_{cd}u^c ) - u_b ( h^c{}_a T_{cd}u^d) + u_a u_b (u^c u^d T_{cd}).
+\end{align}
+In this form, we note the quantity
+\[
+	  \bigg[ \frac12 h^c{}_a h^d{}_b+\frac12 h^c{}_b h^d{}_a - \frac13 h_{ab}h^{cd}\bigg] T_{cd}
+\]
+is symmetric, trace-free, and orthogonal to $u^a$ and $u^b$, i.e. the projected symmetric tracefree (PTSF) part. 
+We also note that the quantity
+\begin{equation}
+	\bigg[\frac12 h^c{}_a h^d{}_{b}-\frac12 h^d{}_a h^c{}_{b}\bigg]T_{cd}
+\end{equation}
+vanishes given a symmetric $T_{cd}$. 
+Let us relabel the following quantities:
+\begin{align}
+	\rho &= u^cu^dT_{cd}\\
+	p &= \frac13 h^{cd}T_{cd}\\
+	q_a &  = -h^b{}_a{} u^c  T_{bc} \\
+	\pi_{ab} &=  \bigg[ \frac12 h^c{}_a h^d{}_b+\frac12 h^c{}_b h^d{}_a - \frac13 h_{ab}h^{cd}\bigg] T_{cd}.
+\end{align}
+Now the energy momentum tensor may be expressed as 
+\begin{align}
+	T_{ab} &= u_a u_b \rho + h_{ab}p + u_a q_b + u_b q_a + \pi_{ab}\\
+	&= (\rho + p)u_au_b + pg_{ab} + u_a q_b + u_b q_a + \pi_{ab}
+\end{align} 
+Note that $u^a q_a = 0$, and that $\pi_{ab}$ (projected symmetric traceless) has 5 components. Thus 2 scalars, 3 vector components, and 5 from the tensor give us 10 in total. \\ \\
+In comoving coordinates in FLRW space, the velocity vector is
+\[
+	u^a = \delta^a_0,\qquad u_a = -\delta_a^0
+\]
+and thus the only non-zero components of $\pi_{ab}$ are $\pi_{ij}$ (spatial). According to York (1973) we may decompose a symmetric tensor on a positive definite Riemannian space as
+\[
+	\pi_{ab} = \pi_{ab}^{TT} + \pi_{ab}^L + \pi_{ab}^{Tr}
+\]
+where 
+\[
+	\pi_{ab}^{Tr} = \frac13 g_{ab}g^{cd}\pi_{cd}
+\]
+and (restricting to 3 dimensions)
+\[
+	\pi_{ab}^{L} = \nabla_a W_b + \nabla_b W_a -\frac23 g_{ab}\nabla_c W^c.
+\]
+By construction 
+\[
+	g^{ab}\pi_{ab}^{TT} = 0.
+\]
+The transverse requirement leads to an equation for the vector $W_a$
+\[
+	-\nabla_b \pi^{ab(L)} = - \nabla_b (\pi^{ab} -\frac13 g^{ab} g_{cd}\pi^{cd}).
+\]
+York shows that such a vector $W_a$ must exists and is unique, up to conformal Killing vectors. Moreover, he also shows that decomposition actually holds its form under conformal transformation on the metric. \\ \\
+Going back to the symmetric traceless tensor $\pi_{ab}$, we may write this as
+\begin{align}
+	\pi_{ab} &= \pi_{ab}^{TT} + \pi_{ab}^L\\
+	&=\pi_{ab}^{TT} +  \nabla_a W_b + \nabla_b W_a -\frac23 g_{ab}\nabla_c W^c.
+\end{align}
+\\ \\
+Going back to the general symmetric tensor, if we instead make the substitutions
+\begin{align}
+	\rho &= -2\phi\\
+	p &= \psi\\
+	q_a &= -(B_a+\nabla_a B);\qquad \nabla_a B^a =0\\
+	W_a &= (E_a +\nabla_a E);\qquad \nabla_a E^a \\
+	\pi^{TT}_{ab} &= E_{ab}
+\end{align}
+then
+\begin{align}
+	\pi_{ab} &=\pi_{ab}^{TT} +  \nabla_a W_b + \nabla_b W_a -\frac23 g_{ab}\nabla_c W^c\\
+	&= E_{ab} + \nabla_a E_b + \nabla_b E_a +2 \nabla_a\del_b E - \frac23h_{ab} \nabla^2 E.
+\end{align}
+It follow that we end up with the same form of the perturbation metric as given in the standard SVT decomposition:
+\[
+	T_{ab} = -2\phi u_a u_b - (B_b + \nabla_b B)u_a - (B_a+\nabla_a B)u_b - 2\gamma_{ab} \psi + \nabla_a E_b + \nabla _b E_a +
+	+2E_{ab}.
+\]
+In flat space the spacetime interval is 
+\[
+	ds^2 =  -(1+2\phi)dt^2 + 2(B_i+\nabla_i B)dx^i dt + \blr{-2 \delta_{ij} \psi + (\nabla_i E_j + \nabla_j E_i) + 2\del_i \nabla_j E + 2E_{ij}}dx^i dx^j.
+\]
+Thus the SVT decomposition can be achieved first by orthogonal decomposition of a symmetric tensor relative to the four velocity, and then decomposing the projected symmetric trace-free portion into transverse and longitudinal components. 
+\end{document}

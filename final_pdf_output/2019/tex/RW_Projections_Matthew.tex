@@ -1,0 +1,844 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+
+\title{RW Projections}
+\date{}
+\begin{document}
+\maketitle
+\noindent 
+\section*{Projection Method}
+Via the 3+1 splitting we may express a general $T_{\mu\nu}$ as
+\begin{equation}
+T_{\mu\nu} = (\rho+p)U_\nu U_\mu + pg_{\mu\nu} +U_\mu q_\nu + U_\nu q_\mu + \pi_{\mu\nu}.
+\end{equation}
+Then we may deconstruct the curved space $q_i$ as $q_i = Q_i + \nabla_i Q$, a procedure indicated below for a rank 1 tensor. Then, it only remains to decompose the spatial (traceless) $\pi_{ij}$ in terms of curved space projectors. Since the RW background is maximally symmetric in the underyling 3-space, it suggests the possibility to construct longitudinal and transverse components based solely on the 3-space covariant derivatives. More precisely, spatial covariant derivatives $\tilde\nabla_i$ are defined solely with respect to the 3-space constant curvature background, $\gamma_{ij}$. In polar coordinates for example, this would be
+\begin{equation}
+\gamma_{ij}dx^i dx^j = \frac{dr^2}{1-kr^2}+r^2d\Omega^2.
+\end{equation}
+Upon conformally transforming with a time dependent $\Omega(t)$, the transverse and longitudinal components preserve their decomposed structure. Below is an attempt at constructing projectors within a maximally symmetric space, first by looking at rank 1 tensors, then flat space rank 2 tensors, then finally constant curvature rank 2 tensors.
+\section*{Longitudinal Decomposition}
+First we posit the form of the longitudinal component, project out any transverse components, then integrate to solve in terms of the original tensor. 
+\\ 
+\subsection*{Rank 1 Tensor In Curved Space}
+For a rank 1 tensor $A_\nu$ we express the longitudinal component in terms of a derivative onto a scalar $A$
+\begin{equation}
+A_\nu^L = \nabla_\nu A.
+\end{equation}
+Now project out the transverse component, 
+\begin{equation}
+\nabla^\nu A_\nu = \nabla_\nu \nabla^\nu A.
+\end{equation}
+Solving for $A$, we have
+\begin{equation}
+A = \int d^Dx'\sqrt{g}\  D(x,x') \nabla^\mu A_\mu,
+\end{equation}
+where we have introduced the curved space propogator
+\begin{equation}
+\nabla_\mu \nabla^\mu D(x,x') = g^{-1/2} \delta^D(x-x').
+\end{equation}
+Thus we have
+\begin{equation}
+A_\nu^L = \nabla_\nu \int d^Dx'\sqrt{g}\ D(x,x') \nabla^\mu A_\mu,
+\end{equation}
+and the transverse component is just the remaining part,
+\begin{equation}
+A_\nu^T = A_\nu - A_\nu^L.
+\end{equation}
+Lastly, we may construct a longitudinal projector $\Pi_{\mu\nu}^L$,
+\begin{equation}
+\Pi_{\mu\nu}^L = \nabla_\mu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\nu
+\end{equation}
+\subsection*{Rank 2 Tensor In Minkowski Space}
+For a rank 2 tensor (in Minkowski background), we posit
+\begin{equation}
+h^L_{\mu\nu} = \partial_\mu V_\nu + \partial_\nu V_\mu,
+\end{equation}
+where $V^{\mu}$ remains to be determined in terms of $h^{\mu\nu}$.
+Now project out the transverse components of $h^{\mu\nu}$, noting $h^{\mu\nu}_T$ can make no contribution,
+\begin{equation}
+\partial_\nu h^{\mu\nu} = \partial_\nu \partial^\mu V^\nu + \partial_\nu \partial^\nu V^\mu,
+\end{equation}
+\begin{equation}
+\partial_\mu \partial_\nu h^{\mu\nu} = \partial_\mu\partial_\nu \partial^\mu V^\nu + \partial_\mu\partial_\nu \partial^\nu V^\mu
+= 2 \partial_\mu \partial^\mu \partial_\nu V^\nu.
+\end{equation}
+From $\partial_\mu\partial_\nu h^{\mu\nu}$, solve for $\partial_\nu V^\nu$,
+\begin{equation}
+\partial_\nu V^\nu = \frac12 \int d^3y D(x-y) \partial_\sigma\partial_\rho h^{\sigma\rho}
+= \frac12\left[ \partial_\sigma \int d^3y D(x-y)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(x-y) \partial_\rho h^{\sigma\rho}\right],
+\end{equation}
+where we use the flat space propagator
+\begin{equation}
+\partial_\nu \partial^\nu D(x-x') = \delta(x-x').
+\end{equation}
+Insert $\partial_\nu V^\nu$ back into $\partial_\nu h^{\mu\nu}$
+\begin{equation}
+\partial_\nu h^{\mu\nu} =  \frac12 \partial^\mu\left[ \partial_\sigma \int d^3y D(x-y)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(x-y) \partial_\rho h^{\sigma\rho}\right] + \partial_\nu \partial^\nu V^\mu,
+\end{equation}
+and solve for $V^\mu$,
+\begin{align}
+V^\mu &= \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} -  \frac12\int d^3y D(x-y) \partial^\mu \left[ \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(y-z) \partial_\rho h^{\sigma\rho}\right]\\
+&=  \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} -  \frac12
+\partial^\mu \int d^3y D(x-y)\left[ \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(y-z) \partial_\rho h^{\sigma\rho}\right]\\
+&\qquad
+-\frac12 \int dS^\mu D(x-y)\left[ \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
++ \int dS_\sigma D(y-z) \partial_\rho h^{\sigma\rho}\right].
+\end{align}
+Dropping surface terms, $V^\mu$ takes the form
+\begin{align}
+V^\mu &= \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} -  \frac12
+\partial^\mu \int d^3y D(x-y) \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}.
+\end{align}
+Now using $V^\mu$, we can  construct $h^{\mu\nu}_L = \partial^\mu V^\nu + \partial^\nu V^\mu$, 
+\begin{align}
+h^{\mu\nu}_L &= \partial^\mu \int d^3y D(x-y)\partial_\sigma h^{\sigma\nu} + \partial^\nu \int d^3y D(x-y)\partial_\sigma h^{\sigma\mu} 
+\\
+&\qquad -  
+\partial^\mu\partial^\nu \int d^3y D(x-y) \partial_\sigma \int d^3z D(y-z)\partial_\rho h^{\sigma\rho}
+\end{align}
+Lastly, we can express this in terms of the longitudinal projector
+\begin{align}
+L_{\mu\nu\sigma\rho} &= \partial_\mu \int d^4x'\ D(x-x') \eta_{\nu\rho}\partial_\sigma + \partial_\nu \int d^4x'\ D(x-x') \eta_{\mu\sigma}\partial_\tau
+\\
+&\qquad - \partial_\nu\partial_\mu \int d^4x'\ D(x-x') \partial_\sigma \int d^4x''\ D(x-x'') \partial_\rho.
+\end{align}
+\subsection*{Transverse and Longitudinal Decomposition: $h_{\mu\nu} = h^L_{\mu\nu}+h^T_{\mu\nu}$}
+In a maximally symmetric space of constant curvature, we have the curvature relations
+\begin{equation}
+R_{\lambda\mu\nu\kappa} = k(g_{\mu\nu}g_{\lambda\kappa} - g_{\lambda\nu}g_{\mu\kappa}),
+\qquad R_{\mu\nu} = -(D-1)k g_{\mu\nu},\qquad  R = -D(D-1)k.
+\end{equation}
+It is convenient to express the curvature tensors in terms of $R$, via
+\begin{equation}
+\qquad R_{\mu\nu} = \frac{R}{D}g_{\mu\nu},\qquad \nabla_\mu R = 0.
+\end{equation}
+We posit the longitudinal component of $h^{\mu\nu}$ may be expressed as derivatives onto vectors,
+\begin{equation}
+h^{\mu\nu}_L = \nabla^\mu V^\nu  + \nabla^\nu V^\mu,
+\end{equation}
+where $V^{\mu}$ remains to be determined in terms of $h^{\mu\nu}$.
+Now project out the transverse components of $h^{\mu\nu}$,
+\begin{equation}
+\nabla_\nu h^{\mu\nu} = \nabla_\nu \nabla^\mu V^\nu + \nabla_\nu \nabla^\nu V^\mu
+= \left(\nabla_\nu\nabla^\nu - \frac{R}{D}\right)V^\mu + \nabla^\mu \nabla_\nu V^\nu 
+\end{equation}
+\begin{align}
+\nabla_\mu\nabla_\nu h^{\mu\nu} &= \nabla_\mu\nabla_\nu( \nabla^\mu V^\nu + \nabla^\nu V^\mu)
+\nonumber\\
+& = 
+ 2 \nabla_\mu \nabla^\mu \nabla_\nu V^\nu - 2(\nabla^\mu R_{\mu\nu})V^\nu - 2 R_{\mu\nu} \nabla^\mu V^\nu
+\nonumber\\
+&
+=  2\left(
+\nabla_\mu \nabla^\mu - \frac{R}{D}\right) \nabla_\nu V^\nu.
+\end{align}
+From $\nabla_\mu\nabla_\nu h^{\mu\nu}$, solve for $\nabla_\nu V^\nu$
+\begin{equation}
+\nabla_\nu V^\nu = \frac12 \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma\nabla_\rho h^{\sigma\rho},
+\end{equation}
+where we have introduced the curved space scalar propagator
+\begin{equation}
+\left( \nabla_\nu \nabla^\nu -\frac{R}{D} \right)D(x,x') = g^{-1/2} \delta^D(x-x').
+\end{equation}
+Now insert $\nabla_\nu V^\nu$ back into $\nabla_\nu h^{\mu\nu}$
+\begin{align}
+\left(\nabla_\nu\nabla^\nu - \frac{R}{D}\right)V^\mu&= \nabla_\nu h^{\mu\nu} -\nabla^\mu \nabla_\nu V^\nu 
+\nonumber\\
+&=  \nabla_\nu h^{\mu\nu} - \frac12 \nabla^\mu  \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma\nabla_\rho h^{\sigma\rho}.
+\end{align}
+Solving for $V^\mu$,
+\begin{equation}
+V^{\mu} =   \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma h^{\mu\sigma} - \frac12
+  \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\mu   \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla_\sigma\nabla_\rho h^{\sigma\rho}.
+\end{equation}
+Performing integration by parts and dropping the surface integrals (an action whos validity needs investigation), we can bring $V^\mu$ to the form
+\begin{equation}
+V^{\mu} =   \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma h^{\mu\sigma} - \frac12\nabla^\mu 
+  \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma   \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla_\rho h^{\sigma\rho}.
+\end{equation}
+Now we can construct the longitudinal tensor $h^{\mu\nu}_L = \nabla^\mu V^\nu + \nabla^\nu V^\mu$, 
+\begin{align}
+  h^{\mu\nu}_L&=\nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu} + \nabla^\nu \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\\
+&\qquad -  
+ \nabla^\mu\nabla^\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+To verify, let us confirm $\nabla_\nu h^{\mu\nu}_L = \nabla_\nu h^{\mu\nu}$,
+\begin{align}
+\nabla_\nu h^{\mu\nu}_L &= \nabla_\nu \nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu}
++ \nabla_\sigma h^{\sigma\mu} + \frac{R}{D}  \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\\
+&\qquad - \nabla_\nu \nabla^\mu \nabla^\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+Noting the commutation relation
+\begin{equation}
+\nabla_\nu \nabla^\mu \nabla^\nu f(x) = \nabla^\mu\left[\left( \nabla_\nu \nabla^\nu - \frac{R}{D}\right)f(x)\right]
+\end{equation}
+we can express the longitudinal tensor as
+\begin{align}
+\nabla_\nu h^{\mu\nu}_L &= \nabla_\nu \nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu}
++ \nabla_\sigma h^{\sigma\mu} + \frac{R}{D}  \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\nonumber
+\\ &\qquad 
+- \nabla^\mu \nabla_\sigma \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+Taking another commutation relation
+\begin{equation}
+\nabla^\mu \nabla_\sigma A^\sigma(x) = \nabla_\sigma\nabla^\mu A^\sigma(x) + \frac{R}{D}A^\mu(x),
+\end{equation}
+we are finally left with
+\begin{equation}
+\nabla_\nu h^{\mu\nu}_L = \nabla_\nu h^{\mu\nu}.
+\end{equation}
+Lastly, we cast the longitudinal component into the form a projector
+\begin{align}
+L_{\mu\nu\sigma\rho} &= \nabla_\mu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\nu}\nabla_\rho 
++ \nabla_\nu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\mu}\nabla_\rho 
+\nonumber\\
+&\qquad - \nabla_\mu\nabla_\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho. 
+\end{align}
+It follows that the transverse projector is just what remains,
+\begin{align}
+T_{\mu\nu\sigma\rho} &= g_{\mu\sigma}g_{\nu\rho}- \nabla_\mu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\nu}\nabla_\rho 
+- \nabla_\nu \int d^Dx' \sqrt g\ D(x,x') g_{\sigma\mu}\nabla_\rho 
+\nonumber\\
+&\qquad + \nabla_\mu\nabla_\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho. 
+\end{align}
+\emph{Still need to confirm if the above actually behave as projectors, i.e. $L_{\mu\nu\sigma\rho}L^{\sigma\rho}{}_{\alpha\beta} = L_{\mu\nu\alpha\beta}$, etc.}
+\subsection*{Traceless Transverse and Traceless Longitudinal Decomposition: : $h_{\mu\nu} = h^{L\theta}_{\mu\nu}+h^{T\theta}_{\mu\nu}+h^{tr}_{\mu\nu}$}
+Following C.93 in \emph{Brane Gravity}, we may construct the traceless longitudinal component via
+\begin{align}
+h_{\mu\nu}^{L\theta} &= h_{\mu\nu}^L - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h^L_{\sigma\tau} +\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}^L ,
+\end{align}
+where we have introduced another scalar propogator obeying
+\begin{equation}
+\left( \nabla_\rho \nabla^\rho - \frac{R}{D-1}\right)F(x,x') = g^{-1/2} \delta^D (x-x').
+\end{equation}
+As written, the tensor $h_{\mu\nu}^{L\theta}$ obeys
+\begin{align}
+g^{\mu\nu}h_{\mu\nu}^{L\theta} = 0,\qquad \nabla^\nu h_{\mu\nu}^{L\theta} = \nabla^\nu h_{\mu\nu}^{L}.
+\end{align}
+With the analogous decomposition following for $h_{\mu\nu}^{T\theta}$ taking the form
+\begin{align}
+h_{\mu\nu}^{T\theta} &= h_{\mu\nu}^T - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h^T_{\sigma\tau} +\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}^T ,
+\end{align}
+we may construct the full $h_{\mu\nu}$ by taking their sum:
+\begin{align}
+h_{\mu\nu}^{T\theta}+h_{\mu\nu}^{L\theta}&= h_{\mu\nu} - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h_{\sigma\tau} +\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}.
+\end{align}
+Hence the full $h_{\mu\nu}$ takes the form
+\begin{align}
+h_{\mu\nu}&= h_{\mu\nu}^{T\theta}+h_{\mu\nu}^{L\theta} + \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h_{\sigma\tau} -\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+&\equiv h_{\mu\nu}^{T\theta}+h_{\mu\nu}^{L\theta}+h^{tr}_{\mu\nu}.
+\end{align}
+\subsection*{The SVT Basis}
+Given the form for $h_{\mu\nu}^{L\theta}$, unlike the flat space case, I was unable to construct a vector $V_\mu$ such that
+\begin{equation}
+h_{\mu\nu}^{L\theta} = \nabla_\mu V_\nu + \nabla_\nu V_\mu -\frac{2}{D}g_{\mu\nu} \nabla^\sigma V_\sigma. 
+\end{equation}
+However, this intermediate step, though useful, is not required for an SVT decomposition.
+First, let us note the relation
+\begin{align}
+h_{\mu\nu}^{L\theta} + h^{tr}_{\mu\nu} &= h_{\mu\nu}^L+ \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}(h_{\sigma\tau}-h^L_{\sigma\tau})
+\nonumber\\
+&\quad -\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}(h_{\sigma\tau}-h_{\sigma\tau}^L)
+\end{align}
+Next, let us introduce the vector
+\begin{equation}
+W_{\mu} = \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma h_{\sigma\mu},
+\end{equation}
+whereby the longitudinal component (ref) may be expressed as
+\begin{equation}
+h_{\mu\nu}^L = \nabla_\mu W_\nu + \nabla_\nu W_\mu - \nabla_\mu\nabla_\nu \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma,
+\end{equation}
+with a trace obeying
+\begin{equation}
+g^{\mu\nu}h_{\mu\nu}^{L} = \nabla^\sigma W_\sigma - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma.
+\end{equation}
+Now we elect to decompose $W_{\mu}$ into its transverse and longitudinal components viz. 
+\begin{align}
+W_\mu &= W_\mu^T + \nabla_\mu W,\qquad W = \int d^Dx' \sqrt{g}\ A(x,x')\nabla^\sigma W_\sigma, 
+\qquad \nabla_\rho \nabla^\rho W = \nabla^\sigma W_\sigma,
+\end{align}
+where we have introduced the scalar propagator which obeys
+\begin{equation}
+ \nabla_\rho \nabla^\rho A(x,x') = g^{-1/2}\delta^D(x-x').
+\end{equation}
+In the scalar vector basis, $h^L_{\mu\nu}$ takes the form
+\begin{equation}
+h_{\mu\nu}^L =\nabla_\mu W^T_\nu + \nabla_\nu W^T_\mu + \nabla_\mu\nabla_\nu\left( 2W-\int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W\right),
+\end{equation}
+with trace
+\begin{equation}
+g^{\mu\nu}h_{\mu\nu}^L = \nabla_\rho \nabla^\rho W - \frac{R}{D}\int d^Dx' \sqrt g\ D(x,x') \nabla_\rho \nabla^\rho W.
+\end{equation}
+For compactness, let us define the scalar
+\begin{align}
+M(x)  &= g^{\mu\nu}h_{\mu\nu} - g^{\mu\nu}h_{\mu\nu}^L 
+\nonumber\\
+&= g^{\sigma\tau}h_{\sigma\tau} -  \nabla_\rho \nabla^\rho W + \frac{R}{D}\int d^Dx' \sqrt g\ D(x,x') \nabla_\rho \nabla^\rho W
+\nonumber\\
+&= g^{\sigma\tau}h_{\sigma\tau} - \nabla^\sigma \int d^Dx' \sqrt{g}\ D(x,x') \nabla^\rho h_{\sigma\rho}
+ +\frac{R}{D}\int d^Dx' \sqrt g\ D(x,x') \nabla^\sigma \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho}.
+\end{align}
+Now we can express (ref) in terms of scalars and vectors as
+\begin{align}
+h_{\mu\nu}^{L\theta} + h^{tr}_{\mu\nu} &=\nabla_\mu W^T_\nu + \nabla_\nu W^T_\mu
+\nonumber\\
+ &\quad+ \nabla_\mu\nabla_\nu \left[ 2W- \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W - \frac{1}{D-1} \int  d^Dx' \sqrt{g}\ F(x,x') M(x')\right]
+\nonumber\\
+&\quad +\frac{1}{D-1} g_{\mu\nu}\left[ M(x) + \frac{R}{D(D-1)} \int   d^Dx' \sqrt{g}\ F(x,x') M(x') \right].
+\end{align}
+The full $h_{\mu\nu}$ then may be written as
+\begin{align}
+h_{\mu\nu} &=h_{\mu\nu}^{T\theta} + \nabla_\mu W^T_\nu + \nabla_\nu W^T_\mu
+\nonumber\\
+ &\quad+ \nabla_\mu\nabla_\nu \left[ 2W- \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W - \frac{1}{D-1} \int  d^Dx' \sqrt{g}\ F(x,x') M(x')\right]
+\nonumber\\
+&\quad +\frac{1}{D-1} g_{\mu\nu}\left[ M(x) + \frac{R}{D(D-1)} \int   d^Dx' \sqrt{g}\ F(x,x') M(x') \right].
+\end{align}
+With the two scalars and the transverse vector
+\begin{align}
+M(x) &=  g^{\sigma\tau}h_{\sigma\tau} - \nabla^\sigma \int d^Dx' \sqrt{g}\ D(x,x') \nabla^\rho h_{\sigma\rho}
+ +\frac{R}{D}\int d^Dx' \sqrt g\ D(x,x') \nabla^\sigma \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho}
+\nonumber\\
+W(x) &=  \int d^Dx' \sqrt{g}\ A(x,x') \nabla^\sigma  \int   d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho}
+\nonumber\\
+W^T_\mu &= \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \int d^Dx' \sqrt{g}\ A(x,x')
+\nabla^\sigma \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho},
+\end{align}
+upon defining
+\begin{align}
+2\psi &= -\frac{1}{(D-1)}\left[ M(x) + \frac{R}{D(D-1)} \int   d^Dx' \sqrt{g}\ F(x,x') M(x') \right]
+\nonumber\\
+2E&= 2W(x)- \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W(x') - \frac{1}{D-1} \int  d^Dx' \sqrt{g}\ F(x,x') M(x')
+\nonumber\\
+E_{\mu}&= W_{\mu}^T
+\nonumber\\
+2E_{\mu\nu} &= h_{\mu\nu}^{T\theta},
+\end{align}
+the tensor takes the SVT form
+\begin{equation}
+h_{\mu\nu} = -2 g_{\mu\nu}\psi + 2\nabla_\mu \nabla_\nu E + \nabla_\mu E_\nu +\nabla_\nu E_\mu + 2E_{\mu\nu}.
+\end{equation}
+If we restrict to flat space, we have the following simplifications:
+\begin{align}
+R &= 0,\qquad A(x,x') = D(x,x') = F(x,x'),\qquad M(x) =  g^{\sigma\tau}h_{\sigma\tau} - \nabla^\sigma \int d^Dx' \sqrt{g}\ D(x,x') \nabla^\rho h_{\sigma\rho}
+\nonumber\\
+\sqrt g &= 1,\qquad W(x) = \int d^Dx' \sqrt{g}\ D(x,x') \nabla^\sigma  \int   d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho}.
+\end{align}
+According to (ref 63), the SVT components would then be reduce to
+\begin{align}
+2\psi &= -\frac{1}{(D-1)}\left[  g^{\sigma\tau}h_{\sigma\tau} - \nabla^\sigma \int d^Dx' \ D(x,x') \nabla^\rho h_{\sigma\rho} \right]
+\nonumber\\
+2E&= \frac{D}{D-1} \int d^Dx'\ D(x,x') \nabla^\sigma  \int   d^Dx' \ D(x,x') \nabla^\rho h_{\sigma\rho}
+ - \frac{1}{D-1} \int  d^Dx' \ D(x,x') g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+E_{\mu}&=  \int d^Dx' \ D(x,x')\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \int d^Dx' \ D(x,x')
+\nabla^\sigma \int d^Dx'' \ D(x',x'') \nabla^\rho h_{\sigma\rho}
+\nonumber\\
+2E_{\mu\nu} &= h_{\mu\nu}^{T\theta}.
+\end{align}
+Follwing an integration by parts on $E$ and $\psi$, the above equates to our prior paper results. 
+\subsection*{Traceless $\pi_{\mu\nu}$ Decomposition}
+After the 3+1 splitting of $T_{\mu\nu}$, we are left with a traceless $\pi_{\mu\nu}$ of which we would like to decompose into scalars, vectors tensors. Taking $\pi_{\mu\nu}$ to be of the same SVT form as $h_{\mu\nu}$, namely
+\begin{equation}
+\pi_{\mu\nu} = -2 g_{\mu\nu}\psi + 2\nabla_\mu \nabla_\nu E + \nabla_\mu E_\nu +\nabla_\nu E_\mu + 2E_{\mu\nu}.
+\end{equation}
+From the tracelessness of $\pi_{\mu\nu}$ it follows
+\begin{equation}
+2D\psi = 2 \nabla_\rho \nabla^\rho E
+\end{equation}
+(expressing $\psi$ and $E$ in their projected integral form, the above holds identically when $g^{\mu\nu}\pi_{\mu\nu}=0$, as anticipated). 
+Substituting
+\begin{equation}
+\psi = \frac{1}{D} \nabla_\rho \nabla^\rho E, 
+\end{equation}
+the tensor becomes
+\begin{equation}
+\pi_{\mu\nu} = -\frac{2}{D}g_{\mu\nu}\nabla_\rho \nabla^\rho E + 2\nabla_\mu \nabla_\nu E + \nabla_\mu E_\nu +\nabla_\nu E_\mu + 2E_{\mu\nu}.
+\end{equation}
+Finally, upon defining
+\begin{equation}
+\pi = E,\qquad \pi_\mu = E_\mu,\qquad 2E_{\mu\nu}=\pi_{\mu\nu}^{T\theta},
+\end{equation}
+we may write $\pi_{\mu\nu}$ in the desired form
+\begin{equation}
+\pi_{\mu\nu} = -\frac{2}{D}g_{\mu\nu}\nabla_\rho \nabla^\rho \pi + 2\nabla_\mu \nabla_\nu \pi + \nabla_\mu \pi_\nu +\nabla_\nu \pi_\mu + \pi^{T\theta}_{\mu\nu}.
+\end{equation}
+For reference, the components in their projected form are
+\begin{align}
+2\pi &= 2W(x)- \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W(x') - \frac{1}{D-1} \int  d^Dx' \sqrt{g}\ F(x,x') M(x')
+\nonumber\\
+\pi_{\mu}&=  \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma h_{\sigma\mu} - \nabla_\mu \int d^Dx' \sqrt{g}\ A(x,x')
+\nabla^\sigma \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho},
+\end{align}
+where
+\begin{align}
+M(x) &= - \nabla^\sigma \int d^Dx' \sqrt{g}\ D(x,x') \nabla^\rho h_{\sigma\rho}
+ +\frac{R}{D}\int d^Dx' \sqrt g\ D(x,x') \nabla^\sigma \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho}
+\nonumber\\
+W(x) &=  \int d^Dx' \sqrt{g}\ A(x,x') \nabla^\sigma  \int   d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\rho h_{\sigma\rho}.
+\end{align}
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\newpage
+the longitudinal traceless component is expressed as
+\begin{align}
+h_{\mu\nu}^{L\theta} &= \nabla_\mu W_\nu + \nabla_\nu W_\mu 
+\nonumber\\
+ &\quad+ \nabla_\mu\nabla_\nu \bigg[ - \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma
+\nonumber\\
+&\qquad\qquad
++ \frac{1}{D-1} \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla^\sigma W_\sigma-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma\right)\bigg]
+\nonumber\\
+&\quad + \frac{g_{\mu\nu}}{D-1}\bigg[ - \nabla^\sigma W_\sigma - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma 
+\nonumber \\
+&\qquad\qquad
+- \frac{R}{D(D-1)} \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla^\sigma W_\sigma-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma\right)\bigg].
+\end{align}
+At this point, we may elect to decompose the $W_{\mu}$ into its transverse and longitudinal components viz. 
+\begin{align}
+W_\mu &= W_\mu^T + \nabla_\mu W,\qquad 
+\nabla_\rho \nabla^\rho W = \nabla^\sigma W_\sigma =\nabla^\sigma \int d^Dx'' \sqrt{g}\ (x',x'') \nabla^\rho h_{\sigma\rho}.
+\end{align}
+Now $h_{\mu\nu}^{L\theta}$ may be expressed in terms of transverse vectors $W^T_{\mu}$ and scalars $W$,
+\begin{align}
+h_{\mu\nu}^{L\theta} &= \nabla_\mu W_\nu^T + \nabla_\nu W_\mu^T  
+\nonumber\\
+&\quad + \nabla_\mu\nabla_\nu \bigg[ 2W- \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W
+\nonumber\\
+&\qquad \qquad + \frac{1}{D-1} \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla_\rho \nabla^\rho W-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W\right)\bigg]
+\nonumber\\
+&\quad + \frac{g_{\mu\nu}}{D-1}\bigg[ -\nabla_\rho \nabla^\rho W - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W 
+\nonumber \\
+&\qquad\qquad 
+- \frac{R}{D(D-1)} \int d^Dx' \sqrt{g}\ F(x,x') \left(\nabla_\rho \nabla^\rho W-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W\right)\bigg].
+\end{align}
+\subsection*{Remark}
+We are at somewhat of an impasse since 1) The vector decomposition involved a propagator different from the tensor decomposition and 2) We have not fully decomposed $h_{\mu\nu}^L$ in terms of scalars and vectors, since the integral relation still remains. 
+\begin{align}
+h_{\mu\nu}^{L\theta} &= h_{\mu\nu}^L - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h^L_{\sigma\tau} +\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu + g_{\mu\nu}\frac{R}{D} - g_{\mu\nu}\frac{R}{D-1}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}^L 
+\end{align}
+asl;dkfjsl;kdfj
+\begin{align}
+h_{\mu\nu}^{L\theta} &= h_{\mu\nu}^L - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h^L_{\sigma\tau} +\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}^L 
+\end{align}
+\begin{align}
+  h^{\mu\nu}_L&=\nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu} + \nabla^\nu \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\\
+&\qquad -  
+ \nabla^\nu\nabla^\mu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho},
+\end{align}
+where
+\begin{equation}
+\left( \nabla_\nu \nabla^\nu -\frac{R}{D} \right)D(x,x') = g^{-1/2} \delta^D(x-x'),\qquad \left( \nabla_\nu \nabla^\nu -\frac{R}{D-1} \right)F(x,x') = g^{-1/2} \delta^F(x-x').
+\end{equation}
+\begin{equation}
+\nabla_\mu \nabla^\mu \nabla^\nu \phi = \nabla^\nu \nabla_\mu \nabla^\mu \phi - \frac{R}{D}\nabla^\nu \phi,
+\quad \nabla_\nu \nabla^\mu \nabla^\nu \phi = \nabla^\mu \nabla_\nu \nabla^\nu \phi - \frac{R}{D}\nabla^\mu \phi,\quad
+\nabla_\nu \nabla^\sigma W_{\sigma} = \nabla^\sigma \nabla_\nu W_{\sigma} + \frac{R}{D}W_{\nu}
+\end{equation}
+\begin{align}
+\nabla^\nu h_{\mu\nu}^L &= 
+\nabla^\nu\left[ \nabla_\mu W_\nu + \nabla_\nu W_\mu - \nabla_\mu\nabla_\nu
+ \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma W^\sigma\right]
+\nonumber\\
+&=
+\left(\nabla_\alpha \nabla^\alpha - \frac{R}{D}\right)W_\mu
+\nonumber\\
+&= \nabla^\nu h_{\mu\nu}
+\end{align}
+\begin{equation}
+\nabla^\nu h_{\mu\nu}^L = \left(\nabla_\alpha \nabla^\alpha - \frac{R}{D}\right)W_\mu,
+\qquad \nabla^\mu \nabla^\nu h_{\mu\nu}^L = \left(\nabla_\alpha \nabla^\alpha - 2\frac{R}{D}\right)\nabla^\sigma W_\sigma
+\end{equation}
+\begin{align}
+g^{\mu\nu}h_{\mu\nu}^L = \nabla^\sigma W_{\sigma} - \frac{R}{D} \int dx' \sqrt{g}\ D(x,x') \nabla^\sigma W_\sigma
+\end{align}
+\begin{equation}
+\nabla^\nu h_{\mu\nu}^L =  \left(\nabla_\nu\nabla^\nu - \frac{R}{D}\right)V_\mu + \nabla_\mu \nabla_\nu V^\nu,
+\qquad \nabla^\mu \nabla^\nu h_{\mu\nu}^L = 2\left(\nabla_\alpha \nabla^\alpha - \frac{R}{D}\right)\nabla_\nu V^\nu,
+\qquad g^{\mu\nu}h_{\mu\nu}^L = 2 \nabla^\sigma V_\sigma
+\end{equation}
+\begin{align}
+h_{\mu\nu}^{L\theta} &= \nabla_\mu V_\nu +\nabla_\nu V_\mu - \frac{2}{D-1} g_{\mu\nu} \nabla^\sigma V_\sigma +\frac{2}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')\nabla^\sigma V_\sigma
+\end{align}
+\begin{align}
+h_{\mu\nu}^{L\theta} &=  \nabla_\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma h_{\sigma\nu} + \nabla_\nu \int d^Dx' \sqrt{g}\  D(x,x')\nabla^\sigma h_{\sigma\mu} 
+\\
+&\qquad -  
+ \nabla_\mu\nabla_\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho},
+\nonumber\\
+&\qquad - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h^L_{\sigma\tau} +\frac{1}{D-1}
+\left[ \nabla_\mu\nabla_\nu- g_{\mu\nu}\frac{R}{D(D-1)}\right] \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\tau}h_{\sigma\tau}^L 
+\end{align}
+\begin{align}
+h_{\mu\nu}^{L\theta} &=  \nabla_\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma h_{\sigma\nu} + \nabla_\nu \int d^Dx' \sqrt{g}\  D(x,x')\nabla^\sigma h_{\sigma\mu} 
+\\
+&\qquad -  
+ \nabla_\mu\nabla_\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho},
+\nonumber\\
+&\qquad - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h^L_{\sigma\tau} +\frac{1}{D-1}
+ \nabla_\mu\nabla_\nu  \int d^Dx' \sqrt{g}\ D(x,x')g^{\sigma\tau}h_{\sigma\tau}^L 
+\end{align}
+\newpage
+\begin{equation}
+h_{\mu\nu}^{L\theta} = \nabla_\mu V_\nu +\nabla_\nu V_\mu + \alpha g_{\mu\nu} \nabla^\sigma V_\sigma + \beta R g_{\mu\nu} \nabla^\sigma V_\sigma
+\end{equation}
+\begin{equation}
+g^{\mu\nu}h_{\mu\nu}^{L\theta} = (2+\alpha D +\beta R D)\nabla^\sigma V_\sigma
+\end{equation}
+\begin{align}
+\nabla^\nu h_{\mu\nu}^{L\theta} &= \nabla^\sigma \nabla_\sigma V_\mu + \nabla_\mu \nabla^\sigma V_\sigma - \frac{R}{D}V_\mu +\alpha \nabla_\mu \nabla^\sigma V_\sigma + \beta R \nabla_\mu \nabla^\sigma V_{\sigma}
+\nonumber\\
+&= ( 1+\alpha +\beta R) \nabla_\mu\nabla^\sigma V_\sigma + \left(\nabla^\sigma \nabla_\sigma- \frac{R}{D}\right) V_\mu
+\end{align}
+\begin{align}
+\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta} &= 2\nabla^\sigma \nabla_\sigma \nabla^\mu V_\mu -2\frac RD \nabla^\mu V_\mu  + \alpha \nabla^\sigma \nabla_\sigma \nabla^\mu  V_\mu + \beta R \nabla^\sigma \nabla_\sigma \nabla^\mu V_\mu
+\nonumber\\
+&= \left[ \left( 2 + \alpha +\beta R\right) \nabla_\sigma \nabla^\sigma -2\frac{R}{D}\right] \nabla^\mu V_{\mu}
+\end{align}
+\begin{equation}
+\nabla^\mu V_{\mu} = \int dx' \sqrt{g}\ D(x,x') \nabla^\sigma \nabla^\tau h_{\sigma\tau}
+\end{equation}
+where
+\begin{equation}
+\left[ \left( 2 + \alpha +\beta R\right) \nabla_\sigma \nabla^\sigma -2\frac{R}{D}\right]D(x,x') = \sqrt g \delta(x-x')
+\end{equation}
+Substitute this into $\nabla^\nu h_{\mu\nu}^{L\theta}$,
+\begin{equation}
+h_{\mu\nu}^{L\theta} = \nabla_\mu V_\nu +\nabla_\nu V_\mu + \alpha g_{\mu\nu} \nabla^\sigma V_\sigma + \beta R g_{\mu\nu} \nabla^\sigma V_\sigma
++\left[ \gamma \nabla_\mu \nabla_\nu + \rho g_{\mu\nu} + \kappa R g_{\mu\nu} \right] \int D(x,x') \nabla^\sigma V_\sigma
+\end{equation}
+\begin{equation}
+\nabla_\nu \nabla^\nu D(x,x') - A(x) D(x,x') = \sqrt g \delta^D(x-x')
+\end{equation}
+\begin{align}
+\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta} &= 2\left( \nabla_\rho \nabla^\rho- \frac{R}{D}\right) \nabla^\sigma V_\sigma
++(\alpha+\beta R) \nabla_\rho \nabla^\rho \nabla^\sigma V_\sigma + \gamma \left(\nabla_\rho \nabla^\rho-\frac{R}{D}\right) \nabla^\sigma V_\sigma 
+\nonumber \\ 
+&\qquad 
++\gamma\left(\nabla_\rho \nabla^\rho-\frac{R}{D}\right)  \left( A(x) \int D(x,x') \nabla^\sigma V_\sigma \right) 
+\nonumber\\
+&\qquad
++(\rho + \kappa R) \nabla^\sigma V_\sigma + (\rho+\kappa R) \left( A(x) \int D(x,x')\nabla^\sigma V_\sigma\right)
+\nonumber\\
+&= \left[ \left(\nabla_\rho \nabla^\rho - \frac{R}{D}\right)(2+\gamma) + (\alpha +\beta R)\nabla_\rho \nabla^\rho + \rho +\kappa R\right]\nabla^\sigma V_\sigma
+\nonumber\\
+&\qquad + \left[\gamma\left(\nabla_\rho \nabla^\rho -\frac{R}{D}\right) + \rho+\kappa R\right]  A(x) \int D(x,x')\nabla^\sigma V_\sigma
+\nonumber\\
+&= \left[ (\alpha +\beta R +2+\gamma)\nabla_\rho \nabla^\rho -(2+\gamma)\frac{R}{D} + \rho+\kappa R+\gamma A(x)\right] \nabla^\sigma V_\sigma
+\nonumber \\
+&\qquad +\left[  \left(\rho +\kappa R -\gamma \frac{R}{D} + \gamma A(x)\right) A(x) + \gamma \nabla_\rho \nabla^\rho A(x)\right] \int D(x,x')\nabla^\sigma V_\sigma
+\end{align}
+\begin{align}
+g^{\mu\nu}h_{\mu\nu}^{L\theta} &= \left[ 2 + D(\alpha +\beta R) + \gamma\right] \nabla^\sigma V_\sigma 
++\gamma A(x) \int D(x,x') \nabla^\sigma V_\sigma + D(\rho +\kappa R)\int D(x,x') \nabla^\sigma V_\sigma
+\end{align}
+\begin{align}
+\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta} &= \left[
+(\alpha + 2 +\gamma) \nabla_\rho \nabla^\rho + R \left( \frac{-2 - \gamma}{D} +\kappa + \gamma q \right) +\rho+\gamma p\right] \nabla^\sigma V_\sigma
+\nonumber\\
+&\qquad + \left\{ p(\rho +\gamma p) + R\left[ p(\kappa-\frac{\gamma}{D} + \gamma q)+q(\rho+\gamma p)\right] + R^2 q\left( k - \frac{\gamma}{D} + \gamma q\right)\right\} \int D(x,x') \nabla^\sigma V_\sigma
+\end{align}
+Hence we require
+\begin{equation}
+2+\gamma + D(\alpha +\beta R) = 0,\qquad \gamma A(x) + D(\rho +\kappa R) = 0.
+\end{equation}
+Taking $A(x) = p+qR$, the conditions are then (holding for each power of $R$), 
+\begin{equation}
+2+\gamma + D\alpha = 0,\qquad D\beta R = 0,\qquad \gamma p + D\rho = 0,\qquad \gamma q + D\kappa = 0
+\end{equation}
+For convenience, we would like the integral relation in $\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta}$ to vanish, and thus we set
+\begin{equation}
+0= p(\rho +\gamma p) + R\left[ p(\kappa-\frac{\gamma}{D} + \gamma q)+q(\rho+\gamma p)\right] + R^2 q\left( k - \frac{\gamma}{D} + \gamma q\right).
+\end{equation}
+Hence all together we have
+\begin{align}
+2+\gamma + D\alpha = 0,\qquad \beta =0,\qquad \gamma p + D\rho = 0,\qquad \gamma q + D\kappa = 0
+\end{align}
+\begin{align}
+p(\rho +\gamma p) = 0,\qquad  p(\kappa-\frac{\gamma}{D} + \gamma q)+q(\rho+\gamma p)=0,\qquad 
+q\left( \kappa - \frac{\gamma}{D} + \gamma q\right)=0
+\end{align}
+Six equations, six unknowns. Start with the relations
+\begin{equation}
+\kappa = -\gamma \frac{q}{D},\qquad \rho = -\gamma \frac{p}{D},
+\end{equation}
+which leads to 
+\begin{equation}
+\gamma p \left( p - \frac{p}{D}\right) = 0
+\end{equation}
+Now either $p=0$, $\gamma=0$, or $p -\frac pD = 0$. 
+\\ \\
+Helpful covariant commutations (within maximally symmetric space):
+\begin{equation}
+\nabla^\nu \nabla_\mu V_\nu = \nabla_\mu \nabla^\nu V_\nu - \frac{R}{D}V_\mu,\qquad
+\nabla^\mu \nabla_\rho \nabla^\rho V_\mu = \nabla_\rho \nabla^\rho \nabla^\mu V_\mu - \frac{R}{D}\nabla^\sigma V_\sigma.
+\end{equation}
+Let us posit $h_{\mu\nu}^{L\theta}$ to be of the follwing form (see A.1)
+\begin{equation}
+h_{\mu\nu}^{L\theta} = \nabla_\mu V_\nu +\nabla_\nu V_\mu -\frac{2}{D} g_{\mu\nu} \nabla^\sigma V_\sigma.
+\end{equation}
+It follows that 
+\begin{equation}
+ g^{\mu\nu} h_{\mu\nu}^{L\theta} = 0,
+\end{equation}
+\begin{equation}
+\nabla^\nu h_{\mu\nu}^{L\theta} = \nabla^\nu h_{\mu\nu}= \left( \nabla_\rho \nabla^\rho - \frac{R}{D}\right) V_\mu + \frac{D-2}{D} \nabla_\mu \nabla^\sigma V_\sigma,
+\end{equation}
+\begin{align}
+\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta} &=\nabla^\mu \nabla^\nu h_{\mu\nu}= 2\left(\frac{D-1}{D}\nabla_\rho \nabla^\rho - \frac{R}{D}\right) \nabla^\sigma V_\sigma 
+\nonumber
+\\
+\to& \quad \frac{D}{2(D-1)}\nabla^\mu \nabla^\nu h_{\mu\nu}  = \left( \nabla_\rho \nabla^\rho - \frac{R}{D-1}\right)\nabla^\sigma V_\sigma,
+\end{align}
+where we have imposed $\nabla^\nu h_{\mu\nu}^{L\theta} = \nabla^\nu h_{\mu\nu}$, $\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta} =\nabla^\mu \nabla^\nu h_{\mu\nu}$.
+Now introduce a scalar propagator $D(x,x')$ which obeys
+\begin{equation}
+\left( \nabla_\rho \nabla^\rho - \frac{R}{D-1}\right)D(x,x') = g^{-1/2} \delta^D (x-x'),
+\end{equation}
+and solve for $\nabla^\sigma V_\sigma$, viz.
+\begin{equation}
+\nabla^\sigma V_\sigma = \frac{D}{2(D-1)} \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+Next, substitute $\nabla^\sigma V_\sigma$ into $\nabla^\nu h_{\mu\nu}^{L\theta}$, to yield
+\begin{equation}
+\nabla^\nu h_{\mu\nu}=  \left( \nabla_\rho \nabla^\rho - \frac{R}{D}\right) V_\mu
++ \frac{D-2}{2(D-1)} \nabla_\mu  \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+or
+\begin{equation}
+  \left( \nabla_\rho \nabla^\rho - \frac{R}{D}\right) V_\mu = \nabla^\nu h_{\mu\nu}- \frac{D-2}{2(D-1)} \nabla_\mu  \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+Introduce another scalar propogator $F(x,x')$, which obeys
+\begin{equation}
+\left( \nabla_\rho \nabla^\rho - \frac{R}{D}\right)F(x,x') = g^{-1/2} \delta^D(x-x'),
+\end{equation}
+whereby $V_\mu$ is solved as
+\begin{equation}
+V_\mu =   \int d^Dx' \sqrt{g}\ F(x,x') \nabla^\nu h_{\mu\nu}- \frac{D-2}{2(D-1)}  \int d^Dx' \sqrt{g}\ F(x,x') \nabla_\mu^{x'}  \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+Let us now introduce a tensor $h_{\mu\nu}^{tr}$, to facilitate expressing the entire $h_{\mu\nu}$ as
+\begin{equation}
+h_{\mu\nu} = h_{\mu\nu}^{L\theta} + h_{\mu\nu}^{T\theta} + h_{\mu\nu}^{tr}.
+\end{equation}
+For $h_{\mu\nu}$ to take this form, such a $h_{\mu\nu}^{tr}$ must obey
+\begin{equation}
+g^{\mu\nu}h_{\mu\nu}^{tr} = g^{\mu\nu}h_{\mu\nu},\qquad \nabla^\nu h_{\mu\nu}^{tr} = 0.
+\end{equation}
+With $h^{L\theta}_{\mu\nu}$ already obeying $\nabla^\nu h_{\mu\nu}^{L\theta} = \nabla^\nu h_{\mu\nu}$, $g^{\mu\nu}h_{\mu\nu}^{L\theta} = 0$, 
+we see that $h^{T\theta}_{\mu\nu} = h_{\mu\nu} - h^{L\theta}_{\mu\nu} - h^{tr}_{\mu\nu}$ will be transverse and traceless as desired. As constructed in (C.93),
+the tensor that satisfies our requirements is
+\begin{equation}
+h_{\mu\nu}^{tr} = \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h_{\sigma\tau}  - \frac{1}{D-1}\left( \nabla_\mu\nabla_\nu - \frac{1}{D(D-1)}g_{\mu\nu}R\right)
+ \int d^Dx' \sqrt{g}\ D(x,x') g^{\sigma\tau}h_{\sigma\tau}.
+\end{equation}
+Consequently, we may express the entire $h_{\mu\nu}$ as
+\begin{align}
+h_{\mu\nu} &= h^{T\theta}_{\mu\nu} + \nabla_\mu V_\nu +\nabla_\nu V_\mu -\frac{2}{D} g_{\mu\nu} \nabla^\sigma V_\sigma+
+ \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+&\qquad - \frac{1}{D-1}\left( \nabla_\mu\nabla_\nu - \frac{1}{D(D-1)}g_{\mu\nu}R\right)
+ \int d^Dx' \sqrt{g}\ D(x,x') g^{\sigma\tau}h_{\sigma\tau}.
+\end{align}
+To match the desired form for SVT decomposition, we will need to decompose the vectors $V_{\mu}$ into transverse and longitudinal components (denoted here as $W_\mu$ and $W$). This is achieved by introducing the scalar propagator
+\begin{equation}
+ \nabla_\rho \nabla^\rho A(x,x') = g^{-1/2} \delta^D(x-x'),
+\end{equation}
+whereby $V_\mu$ is deconstructed as
+\begin{equation}
+V_{\mu} = W_{\mu} + \nabla_\mu W,
+\end{equation}
+with
+\begin{equation}
+W = \int d^Dx' \sqrt{g}\ A(x,x') \nabla^\sigma V_\sigma,\qquad W_{\mu} = V_{\mu} - \nabla_\mu W.
+\end{equation}
+The full $h_{\mu\nu}$ then takes the form
+\begin{align}
+h_{\mu\nu} &= h^{T\theta}_{\mu\nu} +\nabla_\mu W_\nu +\nabla_\nu W_\mu +2\nabla_\mu\nabla_\nu W - \frac{2}{D}g_{\mu\nu} \nabla_\sigma \nabla^\sigma W +
+ \frac{1}{D-1} g_{\mu\nu} g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+&\qquad - \frac{1}{D-1}\left( \nabla_\mu\nabla_\nu - \frac{1}{D(D-1)}g_{\mu\nu}R\right)
+ \int d^Dx' \sqrt{g}\ D(x,x') g^{\sigma\tau}h_{\sigma\tau}.
+\end{align}
+Upon defining
+\begin{align}
+2\psi &= \frac{2}{D} \nabla_\sigma \nabla^\sigma W - \frac{1}{D-1}g^{\sigma\tau}h_{\sigma\tau} - \frac{R}{D(D-1)^2} \int d^Dx' \sqrt{g}\ D(x,x') g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+2E &= 2W - \frac{1}{D-1}  \int d^Dx' \sqrt{g}\ D(x,x') g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+E_\mu &= W_\mu
+\nonumber\\
+2 E_{\mu\nu} &= h^{T\theta}_{\mu\nu},
+\end{align}
+$h_{\mu\nu}$ may be written in the SVT form
+\begin{equation}
+h_{\mu\nu} = -2\psi g_{\mu\nu} +2 \nabla_\mu \nabla_\nu E + \nabla_\mu E_\nu + \nabla_\nu E_\mu + 2E_{\mu\nu}.
+\end{equation}
+\begin{equation}
+V_\mu =   \int d^Dx' \sqrt{g}\ F(x,x') \nabla^\nu h_{\mu\nu}- \frac{D-2}{2(D-1)}  \int d^Dx' \sqrt{g}\ F(x,x') \nabla_\mu^{x'}  \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+\begin{equation}
+\nabla^\sigma V_{\sigma} = 
+\end{equation}
+\\ \\
+\begin{equation}
+V_\mu = W_\mu + \nabla_\mu W,\qquad h_{\mu\nu} = \nabla_\mu W_\nu + \nabla_\nu W_\mu + 2 \nabla_\mu \nabla_\nu W
+\end{equation}
+\begin{equation}
+\nabla^\nu h_{\mu\nu} = \nabla_\sigma \nabla^\sigma W_{\mu} + 2\nabla_\sigma \nabla^\sigma \nabla_\mu W
+\end{equation}
+\begin{equation}
+\nabla^\mu \nabla^\nu h_{\mu\nu} = 2\nabla_\rho \nabla^\rho \nabla_\sigma \nabla^\sigma W
+\end{equation}
+\begin{equation}
+\nabla_\sigma \nabla^\sigma W = \frac12 \int D(x,x') \nabla^\mu \nabla^\nu h_{\mu\nu} = \nabla^\sigma V_\sigma
+\end{equation}
+\begin{equation}
+\nabla_\sigma \nabla^\sigma W_\mu = \nabla^\nu h_{\mu\nu} - 2\nabla_\mu \nabla_\sigma \nabla^\sigma W
+\end{equation}
+\begin{equation}
+W_\mu = \int D(x,x')\nabla^\nu h_{\mu\nu} - \int D(x,x') \nabla_\mu \int D(x',x'')\nabla^\mu \nabla^\nu h_{\mu\nu}
+\end{equation}
+\begin{align}
+V_{\mu} &= W_\mu + \nabla_\mu W
+\\
+&=  \int D(x,x')\nabla^\sigma h_{\mu\sigma} - \int D(x,x') \nabla_\mu \int D(x',x'')\nabla^\sigma \nabla^\rho h_{\sigma\rho} + \frac{1}{2}\nabla_\mu 
+\int D(x,x') \int D(x',x'') \nabla^\sigma \nabla^\rho h_{\sigma\rho}
+\end{align}
+\\ \\
+\begin{equation}
+V_\mu =   \int d^Dx' \sqrt{g}\ F(x,x') \nabla^\nu h_{\mu\nu}- \frac{D-2}{2(D-1)}  \nabla_\mu \int d^Dx' \sqrt{g}\ F(x,x') \nabla^\sigma  \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+\begin{equation}
+\nabla^\nu h_{\mu\nu}^{L\theta} = \nabla^\nu h_{\mu\nu}= \left( \nabla_\rho \nabla^\rho - \frac{R}{D}\right) V_\mu + \frac{D-2}{D} \nabla_\mu \nabla^\sigma V_\sigma,
+\end{equation}
+\begin{align}
+\nabla^\mu \nabla^\nu h_{\mu\nu}^{L\theta} &=\nabla^\mu \nabla^\nu h_{\mu\nu}= 2\left(\frac{D-1}{D}\nabla_\rho \nabla^\rho - \frac{R}{D}\right) \nabla^\sigma V_\sigma 
+\nonumber
+\\
+\to& \quad \frac{D}{2(D-1)}\nabla^\mu \nabla^\nu h_{\mu\nu}  = \left( \nabla_\rho \nabla^\rho - \frac{R}{D-1}\right)\nabla^\sigma V_\sigma,
+\end{align}
+\begin{equation}
+\nabla^\sigma V_\sigma = \nabla^\sigma \int F(x,x') \nabla^\rho h_{\sigma\rho} - \frac{D-2}{2(D-1)} \nabla^\sigma \int D(x,x') \nabla^\tau h_{\sigma\tau}
++\frac{D-2}{2(D-1)} \frac{R}{D} \int F(x,x') \nabla^\sigma \int D(x',x'') \nabla^\tau h_{\sigma\tau}
+\end{equation}
+\begin{align}
+\left( \nabla_\rho \nabla^\rho - \frac{R}{D}\right) V_\mu 
+= \nabla^\nu h_{\mu\nu} - \frac{D-2}{2(D-1)}\nabla_\mu \nabla^\sigma \int d^Dx' \sqrt{g}\ D(x,x') \nabla^\tau h_{\sigma\tau}.
+\end{align}
+\\ \\
+\begin{equation}
+V^{\mu} =   \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\sigma h^{\mu\sigma} - \frac12\nabla^\mu 
+  \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma   \int d^Dx'' \sqrt{g}\ D(x',x'') \nabla_\rho h^{\sigma\rho}.
+\end{equation}
+Now we can construct the longitudinal tensor $h^{\mu\nu}_L = \nabla^\mu V^\nu + \nabla^\nu V^\mu$, 
+\begin{align}
+  h^{\mu\nu}_L&=\nabla^\mu \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\nu} + \nabla^\nu \int d^Dx' \sqrt{g}\  D(x,x')\nabla_\sigma h^{\sigma\mu} 
+\\
+&\qquad -\nabla^\mu\nabla^\nu \int d^Dx'\sqrt{g}\  D(x,x') \nabla_\sigma \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla_\rho h^{\sigma\rho}.
+\end{align}
+\begin{equation}
+W^{\mu} = \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\sigma h^{\sigma\mu}
+\end{equation}
+\begin{equation}
+h_{\mu\nu}^L = \nabla_\mu W_\nu + \nabla_\nu W_\mu - \nabla_\mu\nabla_\nu \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma
+\end{equation}
+\begin{align}
+h_{\mu\nu}^{L\theta} &= h_{\mu\nu}^L - \frac{1}{D-1} g_{\mu\nu} g^{\sigma\rho}h_{\sigma\rho}^L
++ \frac{1}{D-1}\left[ \nabla_\mu\nabla_\nu - \frac{1}{D(D-1)}Rg_{\mu\nu}\right]\int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\rho}h_{\sigma\rho}^L
+\end{align}
+\begin{equation}
+g^{\mu\nu}h_{\mu\nu}^{L} = \nabla^\sigma W_\sigma - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma
+\end{equation}
+\begin{align}
+h_{\mu\nu}^{L\theta} &= \nabla_\mu W_\nu + \nabla_\nu W_\mu 
+\nonumber\\
+\quad &+ \nabla_\mu\nabla_\nu \left[ - \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma + \frac{1}{D-1} \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla^\sigma W_\sigma-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma\right)\right]
+\nonumber\\
+&\qquad + \frac{g_{\mu\nu}}{D-1}\bigg[ - \nabla^\sigma W_\sigma - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma 
+\nonumber \\
+&\qquad
+- \frac{1}{D(D-1)}R \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla^\sigma W_\sigma-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma\right)\bigg]
+\nonumber
+\end{align}
+\begin{align}
+h_{\mu\nu}^{L\theta} &=\nabla_\mu W_\nu + \nabla_\nu W_\mu - \nabla_\mu\nabla_\nu \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma
+\nonumber\\
+&\qquad - \frac{1}{D-1} g_{\mu\nu} \left( g^{\sigma\rho}h_{\sigma\rho}^L + \frac{1}{D(D-1)}R
+\int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\rho}h_{\sigma\rho}^L\right)
+\nonumber\\
+&\qquad
++ \frac{1}{D-1}\nabla_\mu\nabla_\nu \int d^Dx' \sqrt{g}\ F(x,x')g^{\sigma\rho}h_{\sigma\rho}^L
+\end{align}
+\begin{equation}
+V_\mu =  W_\mu- \frac{D-2}{2(D-1)}  \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\mu^{x'}  \int d^Dx'' \sqrt{g}\ F(x',x'')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+\begin{equation}
+W_\mu =  V_\mu+ \frac{D-2}{2(D-1)}  \int d^Dx' \sqrt{g}\ D(x,x') \nabla_\mu^{x'}  \int d^Dx'' \sqrt{g}\ F(x',x'')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+\begin{equation}
+V_\mu =   \int d^Dx' \sqrt{g}\ F(x,x') \nabla^\nu h_{\mu\nu}- \frac{D-2}{2(D-1)}  \int d^Dx' \sqrt{g}\ F(x,x') \nabla_\mu^{x'}  \int d^Dx'' \sqrt{g}\ D(x',x'')\nabla^\sigma \nabla^\tau h_{\sigma\tau}.
+\end{equation}
+\newpage
+\begin{align}
+h_{\mu\nu}^{L\theta} &= \nabla_\mu W_\nu + \nabla_\nu W_\mu 
+\nonumber\\
+\quad &+ \nabla_\mu\nabla_\nu \left[ - \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma + \frac{1}{D-1} \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla^\sigma W_\sigma-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma\right)\right]
+\nonumber\\
+&\qquad + \frac{g_{\mu\nu}}{D-1}\bigg[ - \nabla^\sigma W_\sigma - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma 
+\nonumber \\
+&\qquad
+- \frac{1}{D(D-1)}R \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla^\sigma W_\sigma-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla^\sigma W_\sigma\right)\bigg]
+\nonumber
+\end{align}
+\begin{align}
+W_\mu &= W_\mu^T + \nabla_\mu W\\
+&=W_\mu^T + \nabla_\mu \int d^Dx' \sqrt{g}\ A(x,x')\nabla^\sigma \int d^Dx'' \sqrt{g}\ (x',x'') \nabla^\rho h_{\sigma\rho}
+\end{align}
+\begin{equation}
+\nabla_\rho \nabla^\rho W = \nabla^\sigma W_\sigma =\nabla^\sigma \int d^Dx'' \sqrt{g}\ (x',x'') \nabla^\rho h_{\sigma\rho}
+\end{equation}
+\begin{align}
+h_{\mu\nu}^{L\theta} &= \nabla_\mu W_\nu^T + \nabla_\nu W_\mu^T  
+\nonumber\\
+\quad &+ \nabla_\mu\nabla_\nu \bigg[ 2W- \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W
+\nonumber\\
+&\qquad  + \frac{1}{D-1} \int d^Dx' \sqrt{g}\ F(x,x') \left( \nabla_\rho \nabla^\rho W-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W\right)\bigg]
+\nonumber\\
+&\qquad + \frac{g_{\mu\nu}}{D-1}\bigg[ -\nabla_\rho \nabla^\rho W - \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W 
+\nonumber \\
+&\qquad
+- \frac{1}{D(D-1)}R \int d^Dx' \sqrt{g}\ F(x,x') \left(\nabla_\rho \nabla^\rho W-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W\right)\bigg]
+\nonumber
+\end{align}
+Upon defining
+\begin{align}
+2\psi &=  \frac{1}{D-1}\bigg[ \nabla_\rho \nabla^\rho W + \frac{R}{D} \int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W 
+\nonumber \\
+&\qquad
++ \frac{1}{D(D-1)}R \int d^Dx' \sqrt{g}\ F(x,x') \left(\nabla_\rho \nabla^\rho W-\frac{R}{D}\int d^Dx' \sqrt{g}\ D(x,x')\nabla_\rho \nabla^\rho W\right)\bigg]
+\nonumber\\
+2E &= 2W - \frac{1}{D-1}  \int d^Dx' \sqrt{g}\ D(x,x') g^{\sigma\tau}h_{\sigma\tau}
+\nonumber\\
+E_\mu &= W_\mu
+\nonumber\\
+2 E_{\mu\nu} &= h^{T\theta}_{\mu\nu},
+\end{align}
+\end{document}

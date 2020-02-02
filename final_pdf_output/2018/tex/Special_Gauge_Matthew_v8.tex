@@ -1,0 +1,292 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb}
+\allowdisplaybreaks[0]
+\title{Special Gauge Matthew v8}
+\date{}
+\begin{document}
+\maketitle
+\noindent
+\section*{Setup}
+Metric decomposed to first order:
+\begin{equation}
+g_{\mu\nu} = g^{(0)}_{\mu\nu} + g^{(1)}_{\mu\nu} = \Omega^2(\tau)(\eta_{\mu\nu}+h_{\mu\nu}).
+\end{equation}
+We then split $h_{\mu\nu}$ into its traceless and trace components, i.e.
+\begin{equation}
+	h_{\mu\nu} = K_{\mu\nu} + \frac 14 \eta_{\mu\nu}h
+\end{equation}
+where $h = \eta^{\mu\nu}h_{\mu\nu}$. 
+We impose a generalized gauge of the form
+\begin{equation}
+	\eta^{\alpha\beta}\partial_{\alpha}K_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}K_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu h + R \Omega^{-1} h \partial_\nu \Omega.
+\end{equation}
+With $J=-3$, the trace for $\Omega(\tau) = \frac{1}{H\tau}$ becomes
+\begin{equation}
+	\eta^{\mu\nu}\delta G_{\mu\nu} = 
+	(-4 R \tau^{-2} -  \tfrac{3}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} -  \tfrac{3}{2} \tau^{-1} \partial_{0} + 3 P \tau^{-1} \partial_{0} + R \tau^{-1} \partial_{0}) h
+\end{equation}
+With $J=-4$, the trace for $\Omega(\tau) = \frac{1}{H\tau}$ becomes
+\begin{equation}
+	\eta^{\mu\nu}\delta G_{\mu\nu} = 
+(-3 R \tau^{-2} -  \tfrac{3}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} -  \tfrac{3}{2} \tau^{-1} \partial_{0} + 2 P \tau^{-1} \partial_{0} + R \tau^{-1} \partial_{0}) h
+\end{equation}
+We seek to see if it is possible to find coefficients of $P$ and $R$ such that this reduces to the box operator onto a factor of $\Omega(\tau)$. There are two possible forms
+\begin{equation}
+	C\Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^2 h)
+	= C(\eta^{\mu \nu} \partial_{\mu} \partial_{\nu} - 6 \tau^{-2} + 4 \partial_{0} \tau^{-1}) h
+\end{equation}
+and
+\begin{equation}
+	C\Omega^{2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{-2} h)
+	=C(\eta^{\mu \nu} \partial_{\mu} \partial_{\nu} - 2 \tau^{-2} - 4 \partial_{0} \tau^{-1}) h
+\end{equation}
+where $C$ is just an overall coefficient. 
+\\ 
+\section*{ $J=-3$, \ $\Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^2 h)$}
+Matching coefficients from (4) with (6) we find
+\begin{align}
+	C &= -\frac34 + P\\
+	4C &= -\frac32 + 3P+R\\
+	-6C &= -4R.
+\end{align}
+These three linearly independent equations will uniquely specify $C$, $P$ and $R$. Their solution is
+\begin{equation}
+	C = -\frac32,\qquad J=-3,\qquad P = -\frac34,\qquad R =- \frac94.
+\end{equation}
+With these constants, the fluctuation equations become:
+\begin{equation}
+\eta^{\mu\nu}\delta G_{\mu\nu} = -\frac32 \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^2 h)
+\end{equation}
+\begin{align}
+\delta G_{00}={}&(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{5}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tfrac{1}{2} \tau^{-1} \partial_{1} K_{00}
+ + (\tfrac{3}{2} \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \tau^{-1} \partial_{0}) K_{01}
+ + (- \tfrac{7}{8} \tau^{-1} \partial_{1}
+ + \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{9}{4} \tau^{-2}
+ -  \tfrac{5}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{7}{4} \tau^{-1} \partial_{0}\nonumber\\
+& + \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tfrac{1}{2} \tau^{-1} \partial_{2} K_{01}
+ + \tfrac{1}{2} \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}
+ + \partial_{2} \partial_{1} h.
+\end{align}
+\\
+\section*{ $J=-3$, \ $\Omega^{2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{-2} h)$}
+Matching coefficients from (4) with (7) we find
+\begin{align}
+	C &= -\frac34 + P\\
+	-4C &= -\frac32 + 3P+R\\
+	-2C &= -4R.
+\end{align}
+ Their solution is
+\begin{equation}
+	C = -\frac{1}{10},\qquad J=-3,\qquad P = \frac{13}{20},\qquad R =-\frac{1}{20}.
+\end{equation}
+\begin{equation}
+\eta^{\mu\nu}\delta G_{\mu\nu} = -\frac{1}{10} \Omega^{2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{-2} h)
+\end{equation}
+\begin{align}
+\delta G_{00}={}&(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{00}
+ + (- \tfrac{3}{40} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{2}{5} \tau^{-1} \partial_{0}
+ -  \tfrac{2}{5} \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tfrac{1}{2} \tau^{-1} \partial_{1} K_{00}
+ + (\tfrac{3}{2} \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \tau^{-1} \partial_{0}) K_{01}
+ + (\tfrac{9}{40} \tau^{-1} \partial_{1}
+ -  \tfrac{2}{5} \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{1}{20} \tau^{-2}
+ + \tfrac{3}{40} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{20} \tau^{-1} \partial_{0}\nonumber\\
+& -  \tfrac{2}{5} \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tfrac{1}{2} \tau^{-1} \partial_{2} K_{01}
+ + \tfrac{1}{2} \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}
+ -  \tfrac{2}{5} \partial_{2} \partial_{1} h.
+\end{align}
+\section*{ $J=-4$, \ $\Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^2 h)$}
+Matching coefficients from (5) with (6) we find
+\begin{align}
+	C &= -\frac34 + P\\
+	4C &= -\frac32 + 2P+R\\
+	-6C &= -3R.
+\end{align}
+ Since two equations are linearly dependent, their solution is
+\begin{equation}
+	R=2C,\qquad P=\frac34+C,\qquad\to\qquad R = 2P-\frac32.
+\end{equation}
+Hence we may vary $P$ such that the equations simplify the most (note that we could also have $C=0$ which is explored below). For $R = 2P-\tfrac32$ the fluctuation equations take the form
+\begin{equation}
+\eta^{\mu\nu}\delta G_{\mu\nu} =(P-\tfrac34) \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{2} h)
+\end{equation}
+\begin{align}
+\delta G_{00}={}&(-2 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{3}{4} \tau^{-2}
+ -  P \tau^{-2}
+ + \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& + P \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{0} \partial_{0}
+ -  P \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tau^{-1} \partial_{1} K_{00}
+ + (\tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{01}
+ + (- \tfrac{1}{2} \tau^{-1} \partial_{1}
+ + P \tau^{-1} \partial_{1}
+ + \tfrac{1}{4} \partial_{1} \partial_{0}\nonumber\\
+& -  P \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-2} K_{00}
+ + 2 \tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{3}{4} \tau^{-2}
+ -  P \tau^{-2}\nonumber\\
+& -  \tfrac{1}{4} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{2} P \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ -  \tau^{-1} \partial_{0}
+ + P \tau^{-1} \partial_{0}
+ + \tfrac{1}{4} \partial_{1} \partial_{1}
+ -  P \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tau^{-1} \partial_{2} K_{01}
+ + \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}
+ + (\tfrac{1}{4} \partial_{2} \partial_{1}
+ -  P \partial_{2} \partial_{1}) h.
+\end{align}
+Possible choices that allow simplification are $P\in (0,1,\tfrac14, \tfrac12,\tfrac34)$. For $P=\tfrac14$ the fluctuation equations reduce to
+\begin{equation}
+\eta^{\mu\nu}\delta G_{\mu\nu} =-\frac12 \Omega^{-2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{2} h)
+\end{equation}
+\begin{align}
+\delta G_{00}={}&(-2 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 3 \tau^{-1} \partial_{0}) K_{00}
+ + (\tfrac{1}{2} \tau^{-2}
+ + \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{4} \tau^{-1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tau^{-1} \partial_{1} K_{00}
+ + (\tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{01}
+ -  \tfrac{1}{4} \tau^{-1} \partial_{1} h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-2} K_{00}
+ + 2 \tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{1}{2} \tau^{-2}
+ -  \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}\nonumber\\
+& -  \tfrac{3}{4} \tau^{-1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tau^{-1} \partial_{2} K_{01}
+ + \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}.
+\end{align}
+\\
+\section*{ $J=-4$, \ $\Omega^{2}\eta^{\alpha\beta}\partial_\alpha\partial_\beta (\Omega^{-2} h)$}
+Matching coefficients from (5) with (7) we find
+\begin{align}
+	C &= -\frac34 + P\\
+	-4C &= -\frac32 + 2P+R\\
+	-2C &= -3R.
+\end{align}
+ Here there is no solution for $C\ne 0$. However, if we do take
+ \begin{equation}
+	C =0,\qquad J=-3,\qquad P =\frac34,\qquad R =0,
+\end{equation}
+then we have a very simple equation for the trace, i.e.
+\begin{equation}
+\eta^{\mu\nu}\delta G_{\mu\nu} = \frac{3}{4\tau} \partial_0 h
+\end{equation}
+and thus
+\begin{equation}
+	h =\frac43\int d\tau\ \tau (\eta^{\mu\nu}\delta G_{\mu\nu}).
+\end{equation}
+The rest of the fluctuation equations take the form
+\begin{align}
+\delta G_{00}={}&(\tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + 2 \tau^{-1} \partial_{0}) K_{00}
+ + (- \tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{8} \tau^{-1} \partial_{0}
+ -  \tfrac{1}{2} \partial_{0} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{01}={}&\tfrac{1}{2} \tau^{-1} \partial_{1} K_{00}
+ + (\tfrac{3}{2} \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{3}{2} \tau^{-1} \partial_{0}) K_{01}
+ + (\tfrac{1}{4} \tau^{-1} \partial_{1}
+ -  \tfrac{1}{2} \partial_{1} \partial_{0}) h.
+\end{align}
+\begin{align}
+\delta G_{11}={}&\tau^{-1} \partial_{1} K_{01}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{11}
+ + (\tfrac{1}{8} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tfrac{1}{8} \tau^{-1} \partial_{0}
+ -  \tfrac{1}{2} \partial_{1} \partial_{1}) h.
+\end{align}
+\begin{align}
+\delta G_{12}={}&\tfrac{1}{2} \tau^{-1} \partial_{2} K_{01}
+ + \tfrac{1}{2} \tau^{-1} \partial_{1} K_{02}
+ + (3 \tau^{-2}
+ + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
+ + \tau^{-1} \partial_{0}) K_{12}
+ -  \tfrac{1}{2} \partial_{2} \partial_{1} h.
+\end{align}
+\end{document}

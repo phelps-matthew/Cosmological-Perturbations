@@ -1,0 +1,1256 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{mymacros}
+\newcommand{\hu}{\mathcal H}
+
+\title{Fluctuations in  $W_{\mu\nu}$ and $G_{\mu\nu}$}
+\author{Matthew Phelps}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Weyl Tensor}
+\subsection{Fluctuations}
+\begin{align}
+	W_{\mu\nu} &= W^2_{\mu\nu} - \frac13 W^1_{\mu\nu}\\
+	&= - \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta} -  \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R \\
+&\qquad + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha} -  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha} + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R
+\end{align}
+where 
+\begin{align}
+	W^1_{\mu\nu} &= \tfrac{1}{2} g_{\mu \nu} R^2 - 2 R R_{\mu \nu} + 2 g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R - 2 \nabla_{\nu}\nabla_{\mu}R
+\end{align}
+\begin{align}
+	W^2_{\mu\nu} = \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} - 2 R^{\alpha \beta} R_{\alpha \mu \beta \nu} + \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha} -  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha}
+\end{align}
+\begin{align*}
+\delta W^1_{\mu\nu} &= \tfrac{1}{2} h_{\mu \nu} R^2 -  g_{\mu \nu} h^{\alpha \beta} R R_{\alpha \beta} -  h_{\nu}{}^{\alpha} R R_{\mu \alpha} + 2 h^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} -  h_{\mu}{}^{\alpha} R R_{\nu \alpha} + 2 h^{\alpha \beta} R R_{\mu \alpha \nu \beta} -  R \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}\\
+& + 2 h_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + g_{\mu \nu} \nabla_{\alpha}h^{\beta}{}_{\beta} \nabla^{\alpha}R -  \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}R - 2 g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}h_{\alpha}{}^{\beta} -  g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + 2 R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\\
+& - 2 g_{\mu \nu} h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R + g_{\mu \nu} R \nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha} - 2 R_{\mu \nu} \nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha} - 2 g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}h_{\alpha \beta} - 2 g_{\mu \nu} h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta}\\
+& - 2 g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + 2 g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha} - 4 g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}h^{\alpha \beta} + \nabla^{\alpha}R \nabla_{\mu}h_{\nu \alpha}\\
+& + R \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha} + 2 \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}h^{\alpha \beta} + \nabla^{\alpha}R \nabla_{\nu}h_{\mu \alpha} + 2 \nabla_{\mu}h^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta} + R \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha} + 2 R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}h_{\alpha \beta}\\
+& -  R \nabla_{\nu}\nabla_{\mu}h^{\alpha}{}_{\alpha} + 2 h^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta} + 2 \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} - 2 \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha}
+\end{align*}
+\begin{align*}
+\delta W^2_{\mu\nu} &= \tfrac{1}{2} h_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  g_{\mu \nu} h^{\alpha \beta} R^{\gamma \eta} R_{\alpha \gamma \beta \eta} -  h_{\nu}{}^{\alpha} R^{\beta \gamma} R_{\mu \beta \alpha \gamma} + 2 h^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \gamma \nu \beta} \\
+&+ 2 h^{\alpha \beta} R_{\alpha \gamma \beta \eta} R_{\mu}{}^{\gamma}{}_{\nu}{}^{\eta} -  h_{\mu}{}^{\alpha} R^{\beta \gamma} R_{\nu \beta \alpha \gamma} + \tfrac{1}{2} h_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\alpha}\nabla_{\mu}h^{\beta}{}_{\beta} -  \\
+&\tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\alpha}\nabla_{\nu}h^{\beta}{}_{\beta} + \tfrac{1}{4} g_{\mu \nu} \nabla_{\alpha}h^{\beta}{}_{\beta} \nabla^{\alpha}R -  \tfrac{1}{2} \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}R -  \tfrac{1}{2} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}h_{\alpha}{}^{\beta} \\
+&-  \nabla_{\alpha}h^{\alpha \beta} \nabla_{\beta}R_{\mu \nu} + \tfrac{1}{2} g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}h^{\gamma}{}_{\gamma} + \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}h_{\mu}{}^{\beta} -  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}h_{\mu \nu} \\
+&+ \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}h_{\nu}{}^{\beta} -  \tfrac{1}{2} g_{\mu \nu} h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R -  h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu} + \tfrac{1}{2} h_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\mu \alpha} \\
+&+ \tfrac{1}{2} h_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\nu \alpha} + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}\\
+& -  g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\gamma}h_{\alpha}{}^{\gamma} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\mu}h_{\alpha}{}^{\beta} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\nu}h_{\alpha}{}^{\beta} + \tfrac{1}{2} \nabla_{\beta}R_{\mu \nu} \nabla^{\beta}h^{\alpha}{}_{\alpha}\\
+& + \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}h_{\mu}{}^{\alpha} + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}h_{\nu}{}^{\alpha} + \tfrac{1}{2} \nabla^{\beta}h^{\alpha}{}_{\alpha} \nabla_{\gamma}R_{\mu}{}^{\gamma}{}_{\nu \beta} - 2 R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}h^{\alpha \beta}\\
+& -  \tfrac{1}{2} g_{\mu \nu} h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta} -  h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\mu \alpha \nu \beta} -  \tfrac{1}{2} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + \tfrac{1}{2} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha}\\
+& -  g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}h^{\alpha \beta} - 2 \nabla_{\gamma}R_{\mu \alpha \nu \beta} \nabla^{\gamma}h^{\alpha \beta} + R_{\mu \beta \nu \gamma} \nabla^{\gamma}\nabla_{\alpha}h^{\alpha \beta} + R_{\mu \gamma \nu \beta} \nabla^{\gamma}\nabla_{\alpha}h^{\alpha \beta} -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}h^{\alpha \beta}\\
+& + \tfrac{1}{2} \nabla^{\alpha}R \nabla_{\mu}h_{\nu \alpha} -  \tfrac{1}{2} \nabla^{\beta}h^{\alpha}{}_{\alpha} \nabla_{\mu}R_{\nu \beta} + R^{\alpha \beta} \nabla_{\mu}\nabla_{\beta}h_{\nu \alpha} -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}h^{\alpha \beta} + \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}h^{\alpha \beta} + \tfrac{1}{2} \nabla^{\alpha}R \nabla_{\nu}h_{\mu \alpha} \\
+&+ \nabla_{\mu}h^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta}+ R^{\alpha \beta} \nabla_{\nu}\nabla_{\beta}h_{\mu \alpha} + h^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta} + \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha}
+\end{align*}
+\begin{align*}
+	\delta W_{\mu\nu} &=
+- \tfrac{1}{6} h_{\mu \nu} R^2 + \tfrac{1}{3} g_{\mu \nu} h^{\alpha \beta} R R_{\alpha \beta} + \tfrac{1}{2} h_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{1}{3} h_{\nu}{}^{\alpha} R R_{\mu \alpha} -  \tfrac{2}{3} h^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + \tfrac{1}{3} h_{\mu}{}^{\alpha} R R_{\nu \alpha}\\
+& -  g_{\mu \nu} h^{\alpha \beta} R^{\gamma \eta} R_{\alpha \gamma \beta \eta} -  \tfrac{2}{3} h^{\alpha \beta} R R_{\mu \alpha \nu \beta} -  h_{\nu}{}^{\alpha} R^{\beta \gamma} R_{\mu \beta \alpha \gamma} + 2 h^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \gamma \nu \beta} + 2 h^{\alpha \beta} R_{\alpha \gamma \beta \eta} R_{\mu}{}^{\gamma}{}_{\nu}{}^{\eta}\\
+& -  h_{\mu}{}^{\alpha} R^{\beta \gamma} R_{\nu \beta \alpha \gamma} + \tfrac{1}{3} R \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu} -  \tfrac{1}{6} h_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\alpha}\nabla_{\mu}h^{\beta}{}_{\beta} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\alpha}\nabla_{\nu}h^{\beta}{}_{\beta}\\
+& -  \tfrac{1}{12} g_{\mu \nu} \nabla_{\alpha}h^{\beta}{}_{\beta} \nabla^{\alpha}R -  \tfrac{1}{6} \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}R + \tfrac{1}{6} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}h_{\alpha}{}^{\beta} -  \nabla_{\alpha}h^{\alpha \beta} \nabla_{\beta}R_{\mu \nu} + \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\\
+& -  \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + \tfrac{1}{2} g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}h^{\gamma}{}_{\gamma} + \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}h_{\mu}{}^{\beta} -  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}h_{\mu \nu}\\
+&+ \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}h_{\nu}{}^{\beta} + \tfrac{1}{6} g_{\mu \nu} h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R -  h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu} -  \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha} + \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha}\\
+& + \tfrac{1}{2} h_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\mu \alpha} + \tfrac{1}{2} h_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\nu \alpha} + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}\\
+& -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha} -  g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\gamma}h_{\alpha}{}^{\gamma} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\mu}h_{\alpha}{}^{\beta} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\nu}h_{\alpha}{}^{\beta} \\
+&+ \tfrac{1}{2} \nabla_{\beta}R_{\mu \nu} \nabla^{\beta}h^{\alpha}{}_{\alpha} + \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}h_{\mu}{}^{\alpha} + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}h_{\nu}{}^{\alpha} + \tfrac{1}{2} \nabla^{\beta}h^{\alpha}{}_{\alpha} \nabla_{\gamma}R_{\mu}{}^{\gamma}{}_{\nu \beta} + \tfrac{2}{3} g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}h_{\alpha \beta}\\
+&- 2 R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}h^{\alpha \beta} + \tfrac{1}{6} g_{\mu \nu} h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta} -  h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\mu \alpha \nu \beta} + \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\\
+& -  \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha} + \tfrac{1}{3} g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}h^{\alpha \beta} - 2 \nabla_{\gamma}R_{\mu \alpha \nu \beta} \nabla^{\gamma}h^{\alpha \beta} + R_{\mu \beta \nu \gamma} \nabla^{\gamma}\nabla_{\alpha}h^{\alpha \beta}\\
+& + R_{\mu \gamma \nu \beta} \nabla^{\gamma}\nabla_{\alpha}h^{\alpha \beta} -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}h^{\alpha \beta} + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}h_{\nu \alpha} -  \tfrac{1}{2} \nabla^{\beta}h^{\alpha}{}_{\alpha} \nabla_{\mu}R_{\nu \beta} -  \tfrac{1}{3} R \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha} \\
+&+ R^{\alpha \beta} \nabla_{\mu}\nabla_{\beta}h_{\nu \alpha} -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}h^{\alpha \beta} + \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}h^{\alpha \beta} + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}h_{\mu \alpha} + \tfrac{1}{3} \nabla_{\mu}h^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta}\\
+& -  \tfrac{1}{3} R \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha} + R^{\alpha \beta} \nabla_{\nu}\nabla_{\beta}h_{\mu \alpha} -  \tfrac{2}{3} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}h_{\alpha \beta} + \tfrac{1}{3} R \nabla_{\nu}\nabla_{\mu}h^{\alpha}{}_{\alpha} + \tfrac{1}{3} h^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta} \\
+&+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha}
+\end{align*} 
+\\ \\ 
+\subsection{Conformal Properties}
+Under conformal transformation
+\be
+	g_{\mu\nu} \to \bar g_{\mu\nu}=\Omega^2 g_{\mu\nu} ,
+\ee
+the Weyl  tensor  transforms as
+\be
+	W_{\mu\nu} \to \bar W_{\mu\nu}(\bar g_{\mu\nu})  = \Omega^{-2}W_{\mu\nu}(g_{\mu\nu})
+\ee
+and thus
+\be
+	\bar W_{\mu\nu}(\bar g_{\mu\nu}) =  \Omega^{-2}W_{\mu\nu}(\Omega^{-2}\bar g_{\mu\nu}).
+\ee
+Now expanding to first order in the gravitational
+perturbation
+\be
+	g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}
+\ee
+we have 
+\ba
+	\bar W_{\mu\nu}(\bar g^{(0)}_{\mu\nu}+ \bar h_{\mu\nu}) &= \bar W_{\mu\nu}^{(0)}(\bar g^{(0)}_{\mu\nu}) + \delta \bar W_{\mu\nu}(\bar h_{\mu\nu})\\
+	&=\Omega^{-2}\blr{W^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+ \delta W_{\mu\nu}(h_{\mu\nu})}.
+\ea
+i.e. the  fluctuations transform according to conformal symmetry as 
+\be
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(\Omega^{-2}\bar h_{\mu\nu}).
+\ee
+Hence if the fluctuations  $\delta W_{\mu\nu}(h_{\mu\nu})$ are diagonal in $h_{\mu\nu}$, it immediately follows they will remain so under conformal transformations. 
+\subsubsection{Trace Considerations}
+We can continue to use conformal invariance to determine the trace depedendent properties of $W_{\mu\nu}$. Taking $h$ as a first order perturbation in the metric and using the conformal invariance, we find up to first order 
+\ba
+	W_{\mu\nu}\plr{g^{(0)}_{\mu\nu} + \frac h4 g^{(0)}_{\mu\nu}} &=W_{\mu\nu}\blr{\plr{1+\frac h4}g^{(0)}_{\mu\nu} }= W_{\mu\nu}^{(0)}(g^{(0)}_{\mu\nu}) +\delta W_{\mu\nu}\plr{\frac h4g^{(0)}_{\mu\nu}} \\
+&=\plr{1-\frac h4}W_{\mu\nu}(g^{(0)}_{\mu\nu}),
+\ea
+and hence
+\be
+	-\frac h4 W_{\mu\nu}(g_{\mu\nu}^{(0)}) = \delta W_{\mu\nu}\plr{\frac h4 g^{(0)}_{\mu\nu}}.
+\ee
+This is verified in Mathematica, which yields
+\begin{align}
+	g^{(0)}{}^{\mu\nu}\delta W_{\mu\nu} &= h^{\mu \nu} (- \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta} -  \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R  \\
+&+\nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha} -  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha} + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R)\\
+	&=h^{\mu\nu}W_{\mu\nu}(g^{(0)}_{\mu\nu})
+\end{align} 
+Now, decomposing $h_{\mu\nu}$ into a trace and trace free components
+\be
+	h_{\mu\nu} = K_{\mu\nu} + g_{\mu\nu}\frac h4
+\ee
+(where $g^{(0)\mu\nu}K_{\mu\nu} = 0$, $h= g^{(0)\mu\nu}h_{\mu\nu}$), substitute the above in, again keeping only first order terms
+\be
+	\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}\plr{K_{\mu\nu}+\frac h4g^{(0)}_{\mu\nu}}= \delta W_{\mu\nu}(K_{\mu\nu}) +\delta W_{\mu\nu}\plr{\frac h4g^{(0)}_{\mu\nu}}.
+\ee
+If we work in a background that is conformal to flat, then (1) will vanish which implies from (2) that
+\be
+	\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}(K_{\mu\nu}).
+\ee
+\\
+We may also find a relationship in the trace of entire fluctuation $\delta W_{\mu\nu}$. The tracelessness of $W_{\mu\nu}$ implies
+\be
+	g^{\mu\nu}W_{\mu\nu}(g_{\mu\nu}) = \plr{ g^{(0)\mu\nu}-h^{\mu\nu}}\plr{ W^{(0)}_{\mu\nu}+ \delta W_{\mu\nu}}=0.
+\ee
+To first order,
+\be
+	-h^{\mu\nu}W^{(0)}_{\mu\nu} + g^{(0)\mu\nu}\delta W_{\mu\nu} = 0
+\ee
+and thus
+\be
+	g^{(0)\mu\nu}\delta W_{\mu\nu}(h_{\mu\nu}) = h^{\mu\nu}W_{\mu\nu}(g^{(0)}_{\mu\nu}).
+\ee
+This is verified in mathematica, which yields
+\begin{align}
+	\delta W_{\mu\nu}(\tfrac{h}{4}g^{(0)}_{\mu\nu}) &= - \tfrac{1}{4} h (- \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta} -  \\
+	&\tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha} -  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha} + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R)\\
+	&= -\tfrac{h}{4}W_{\mu\nu}(g^{(0)}_{\mu\nu})
+\end{align}
+Once again, in a conformal to flat background, the trace of the fluctuations will vanish. 
+\\ \\
+\subsection{Conformal Transverse Gauge}
+In a conformal to flat geomerty with a cartesian coordinate system (this should be able to be generalized for any orthogonal flat coordinate system), the perturbed Weyl tensor computes as
+\ba
+	&\delta \bar W_{\mu\nu}(\bar K_{\mu\nu}) = 
+- \frac{48 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\eta}\overline{K}_{\mu \nu}}{\Omega^7} + \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\eta}\overline{K}_{\mu \nu}}{\Omega^6} + \frac{20 \eta^{\alpha \beta} \eta^{\gamma \kappa} \eta^{\eta \lambda} \eta_{\mu \nu} \overline{K}_{\kappa \lambda} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\eta}\Omega}{\Omega^8}\\
+ &+ \frac{60 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\eta}\Omega}{\Omega^8} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\overline{K}_{\mu \nu}}{\Omega^5} + \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \nu} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\Omega}{\Omega^6} \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\partial_{\mu}\overline{K}_{\nu \gamma}}{\Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\partial_{\nu}\overline{K}_{\mu \gamma}}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\partial_{\nu}\partial_{\mu}\overline{K}_{\alpha \gamma}}{3 \Omega^4} \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\partial_{\nu}\partial_{\mu}\Omega}{3 \Omega^5} + \frac{12 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\overline{K}_{\mu \nu}}{\Omega^6} + \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\overline{K}_{\mu \nu}}{\Omega^6} \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\overline{K}_{\mu \nu}}{\Omega^5} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\overline{K}_{\mu \nu} \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{48 \eta^{\alpha \gamma} \eta^{\beta \eta} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^7} \\
+&-  \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^7} + \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\beta}\overline{K}_{\mu \nu}}{\Omega^5}\\
+& -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\overline{K}_{\mu \nu} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega}{\Omega^5} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\alpha}\overline{K}_{\mu \nu}}{2 \Omega^4}\\
+& -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \nu} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\alpha}\Omega}{\Omega^5} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\mu}\overline{K}_{\nu \alpha}}{2 \Omega^4} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\partial_{\nu}\overline{K}_{\mu \alpha}}{2 \Omega^4} \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\mu}\overline{K}_{\nu \beta}}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\mu}\partial_{\beta}\Omega}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\partial_{\nu}\overline{K}_{\mu \beta}}{\Omega^5} \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\nu}\partial_{\beta}\Omega}{\Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\overline{K}_{\nu \beta}}{\Omega^5} -  \frac{6 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\mu}\overline{K}_{\nu \gamma}}{\Omega^6} \\
+&-  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\mu}\overline{K}_{\nu \gamma}}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\overline{K}_{\nu \gamma}}{\Omega^5} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega}{\Omega^6}\\
+& + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\overline{K}_{\nu \alpha} \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\overline{K}_{\nu \alpha} \partial_{\eta}\partial_{\mu}\partial_{\gamma}\Omega}{\Omega^5} \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\overline{K}_{\mu \beta}}{\Omega^5} -  \frac{6 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\nu}\overline{K}_{\mu \gamma}}{\Omega^6} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\partial_{\nu}\overline{K}_{\mu \gamma}}{\Omega^6} \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\overline{K}_{\mu \gamma}}{\Omega^5} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\overline{K}_{\mu \alpha} \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega}{\Omega^5} \\
+&-  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\overline{K}_{\mu \alpha} \partial_{\eta}\partial_{\nu}\partial_{\gamma}\Omega}{\Omega^5} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\mu}\overline{K}_{\beta \gamma}}{3 \Omega^5} \\
+&+ \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\partial_{\mu}\Omega}{\Omega^6} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\nu}\partial_{\mu}\Omega}{3 \Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\overline{K}_{\eta \lambda} \partial_{\kappa}\partial_{\gamma}\Omega}{\Omega^6}\\
+& + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\kappa}\partial_{\gamma}\Omega \partial_{\lambda}\overline{K}_{\beta \eta}}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\lambda}\overline{K}_{\beta \kappa}}{\Omega^6} -  \frac{8 \eta^{\alpha \eta} \eta^{\beta \kappa} \eta^{\gamma \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\lambda}\overline{K}_{\eta \kappa}}{\Omega^7} \\
+&-  \frac{8 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\lambda}\overline{K}_{\eta \kappa}}{\Omega^7} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\lambda}\overline{K}_{\eta \kappa}}{\Omega^6} - \\
+& \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\overline{K}_{\beta \kappa}}{3 \Omega^5} + \frac{4 \eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\overline{K}_{\gamma \kappa}}{\Omega^6} + \\
+&\frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\overline{K}_{\gamma \kappa}}{\Omega^6} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\overline{K}_{\gamma \kappa}}{3 \Omega^5} - \\
+& \frac{16 \eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\gamma \kappa} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\Omega}{\Omega^7} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\gamma \kappa} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\Omega}{\Omega^7} \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\alpha \gamma} \partial_{\kappa}\partial_{\beta}\Omega \partial_{\lambda}\partial_{\eta}\Omega}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\partial_{\beta}\overline{K}_{\gamma \kappa}}{3 \Omega^5}\\
+& + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\gamma \kappa} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\eta}\partial_{\beta}\Omega}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\kappa}\overline{K}_{\alpha \gamma} \partial_{\lambda}\partial_{\eta}\partial_{\beta}\Omega}{3 \Omega^5}\\
+& -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\lambda}\partial_{\kappa}\overline{K}_{\beta \eta}}{3 \Omega^5} + \frac{\eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\kappa}\overline{K}_{\gamma \eta}}{\Omega^6}\\
+& -  \frac{4 \eta^{\alpha \gamma} \eta^{\beta \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\lambda}\partial_{\kappa}\Omega}{\Omega^7} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\Omega \partial_{\lambda}\partial_{\kappa}\Omega}{\Omega^6} \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\overline{K}_{\beta \gamma}}{3 \Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\Omega}{\Omega^6}\\
+& -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\beta}\overline{K}_{\alpha \gamma} \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\Omega}{3 \Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\partial_{\beta}\overline{K}_{\alpha \gamma}}{6 \Omega^4} -  \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \eta^{\kappa \lambda} \eta_{\mu \nu} \overline{K}_{\alpha \gamma} \partial_{\lambda}\partial_{\kappa}\partial_{\eta}\partial_{\beta}\Omega}{3 \Omega^5}\\
+& -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega \partial_{\mu}\overline{K}_{\alpha \gamma}}{3 \Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\mu}\overline{K}_{\nu \alpha}}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\mu}\overline{K}_{\nu \beta}}{\Omega^6} \\
+&+ \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\mu}\overline{K}_{\nu \eta}}{\Omega^7} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\mu}\overline{K}_{\nu \eta}}{\Omega^6} -  \frac{60 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\mu}\Omega}{\Omega^8}\\
+& -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\nu \beta} \partial_{\mu}\Omega}{\Omega^6} + \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\overline{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^7} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\overline{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^7}\\
+& -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\overline{K}_{\nu \gamma} \partial_{\mu}\Omega}{\Omega^6} + \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\Omega \partial_{\mu}\Omega}{\Omega^7} \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\partial_{\nu}\overline{K}_{\alpha \gamma} \partial_{\mu}\Omega}{3 \Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\overline{K}_{\nu \beta} \partial_{\mu}\Omega}{\Omega^6} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\mu}\Omega}{\Omega^7} \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\overline{K}_{\nu \alpha} \partial_{\mu}\Omega}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\mu}\Omega}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\nu}\overline{K}_{\beta \gamma} \partial_{\mu}\Omega}{\Omega^6} \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\nu}\partial_{\beta}\Omega \partial_{\mu}\Omega}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\overline{K}_{\nu \gamma} \partial_{\mu}\partial_{\alpha}\Omega}{\Omega^5} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\overline{K}_{\nu \beta} \partial_{\mu}\partial_{\alpha}\Omega}{\Omega^5} \\
+&-  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\nu}\overline{K}_{\beta \gamma} \partial_{\mu}\partial_{\alpha}\Omega}{3 \Omega^5} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\nu \gamma} \partial_{\mu}\partial_{\beta}\Omega}{\Omega^6} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \alpha} \partial_{\eta}\partial_{\gamma}\Omega \partial_{\mu}\partial_{\beta}\Omega}{\Omega^6} \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\overline{K}_{\nu \eta} \partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\nu \beta} \partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \alpha} \partial_{\eta}\partial_{\beta}\Omega \partial_{\mu}\partial_{\gamma}\Omega}{\Omega^6} \\
+&+ \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \overline{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\partial_{\eta}\Omega}{\Omega^7} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\nu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\partial_{\eta}\Omega}{\Omega^7} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega \partial_{\nu}\overline{K}_{\alpha \gamma}}{3 \Omega^5} \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\mu}\Omega \partial_{\nu}\overline{K}_{\beta \eta}}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\mu}\partial_{\gamma}\Omega \partial_{\nu}\overline{K}_{\beta \eta}}{\Omega^6} -  \frac{8 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\Omega \partial_{\nu}\overline{K}_{\gamma \eta}}{\Omega^7}\\
+& + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\nu}\overline{K}_{\mu \alpha}}{\Omega^5} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\nu}\overline{K}_{\mu \beta}}{\Omega^6} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\nu}\overline{K}_{\mu \eta}}{\Omega^7} \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\gamma}\partial_{\beta}\Omega \partial_{\nu}\overline{K}_{\mu \eta}}{\Omega^6} -  \frac{60 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\gamma}\Omega \partial_{\nu}\Omega}{\Omega^8} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\mu \beta} \partial_{\nu}\Omega}{\Omega^6} \\
+&+ \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\overline{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^7} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\eta}\overline{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^7} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^6} \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\overline{K}_{\mu \gamma} \partial_{\nu}\Omega}{\Omega^6} + \frac{24 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\beta}\Omega \partial_{\nu}\Omega}{\Omega^7} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\partial_{\mu}\overline{K}_{\alpha \gamma} \partial_{\nu}\Omega}{3 \Omega^5}\\
+& -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\overline{K}_{\mu \beta} \partial_{\nu}\Omega}{\Omega^6} + \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \beta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\gamma}\Omega \partial_{\nu}\Omega}{\Omega^7} + \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\overline{K}_{\mu \alpha} \partial_{\nu}\Omega}{\Omega^5} \\
+&-  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \alpha} \partial_{\eta}\partial_{\gamma}\partial_{\beta}\Omega \partial_{\nu}\Omega}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\partial_{\mu}\overline{K}_{\beta \gamma} \partial_{\nu}\Omega}{\Omega^6} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\mu}\partial_{\beta}\Omega \partial_{\nu}\Omega}{\Omega^6} \\
+&+ \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\mu}\overline{K}_{\beta \eta} \partial_{\nu}\Omega}{\Omega^6} -  \frac{8 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\overline{K}_{\gamma \eta} \partial_{\nu}\Omega}{\Omega^7} + \frac{40 \eta^{\alpha \gamma} \eta^{\beta \eta} \overline{K}_{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^8}\\
+& -  \frac{16 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\beta \gamma} \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^7} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\overline{K}_{\alpha \gamma} \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^6} -  \frac{8 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\Omega \partial_{\mu}\Omega \partial_{\nu}\Omega}{\Omega^7} \\
+&+ \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\overline{K}_{\beta \gamma} \partial_{\mu}\partial_{\alpha}\Omega \partial_{\nu}\Omega}{\Omega^6} -  \frac{16 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\mu}\partial_{\eta}\Omega \partial_{\nu}\Omega}{\Omega^7} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\overline{K}_{\mu \gamma} \partial_{\nu}\partial_{\alpha}\Omega}{\Omega^5} \\
+&+ \frac{\eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\gamma}\overline{K}_{\mu \beta} \partial_{\nu}\partial_{\alpha}\Omega}{\Omega^5} -  \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\mu}\overline{K}_{\beta \gamma} \partial_{\nu}\partial_{\alpha}\Omega}{3 \Omega^5} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\overline{K}_{\beta \gamma} \partial_{\mu}\Omega \partial_{\nu}\partial_{\alpha}\Omega}{\Omega^6} \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\mu \gamma} \partial_{\nu}\partial_{\beta}\Omega}{\Omega^6} -  \frac{3 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \alpha} \partial_{\eta}\partial_{\gamma}\Omega \partial_{\nu}\partial_{\beta}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\overline{K}_{\mu \eta} \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} \\
+&-  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\mu \beta} \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} -  \frac{6 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \alpha} \partial_{\eta}\partial_{\beta}\Omega \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\mu}\overline{K}_{\beta \eta} \partial_{\nu}\partial_{\gamma}\Omega}{\Omega^6} \\
+&+ \frac{24 \eta^{\alpha \gamma} \eta^{\beta \eta} \overline{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^7} \\
+&+ \frac{12 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\mu \gamma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^7}\\
+& -  \frac{16 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\beta \gamma} \partial_{\alpha}\Omega \partial_{\mu}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^7} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\alpha \gamma} \partial_{\mu}\partial_{\beta}\Omega \partial_{\nu}\partial_{\eta}\Omega}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\gamma}\partial_{\alpha}\Omega \partial_{\nu}\partial_{\mu}\overline{K}_{\beta \eta}}{3 \Omega^5} \\
+&+ \frac{2 \eta^{\alpha \gamma} \eta^{\beta \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\mu}\overline{K}_{\gamma \eta}}{\Omega^6} -  \frac{8 \eta^{\alpha \gamma} \eta^{\beta \eta} \overline{K}_{\gamma \eta} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\nu}\partial_{\mu}\Omega}{\Omega^7} + \frac{4 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\alpha}\Omega \partial_{\eta}\overline{K}_{\beta \gamma} \partial_{\nu}\partial_{\mu}\Omega}{\Omega^6} \\
+&-  \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \partial_{\eta}\partial_{\beta}\overline{K}_{\alpha \gamma} \partial_{\nu}\partial_{\mu}\Omega}{3 \Omega^5} + \frac{2 \eta^{\alpha \beta} \eta^{\gamma \eta} \overline{K}_{\alpha \gamma} \partial_{\eta}\partial_{\beta}\Omega \partial_{\nu}\partial_{\mu}\Omega}{\Omega^6}
+\ea
+In choosing a gauge, it is important to note that in a flat geometry, the equations of motion are diagonal in the transverse gauge. By conformally transforming the transverse gauge condition, i.e.
+\be
+	\bar \del_\nu \bar K^{\mu\nu} = 4\Omega^{-1}\bar K^{\mu\nu}\pd_\nu \Omega
+\ee
+we anticipate that the equations of motion will retain diagonalization but now in a conformal to flat geometry. The equivalent gauge covariant in $K_{\mu\nu}$ is
+\be
+	\eta^{\alpha\beta}\pd_\alpha \bar K_{\mu\beta} = 2\Omega^{-1}\eta^{\alpha\beta}\bar K_{\mu\beta}\pd_\alpha \Omega.
+\ee
+Working within this gauge, we find the Weyl tensor reduces beautifully as
+\ba
+	\delta \bar W_{\mu\nu}(\bar K_{\mu\nu})&= 
+- \frac{2 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\partial_{\sigma}\partial_{\rho}\overline{K}_{\mu \nu}}{\Omega^5} -  \frac{2 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\overline{K}_{\mu \nu} \partial_{\beta}\partial_{\sigma}\partial_{\rho}\Omega}{\Omega^5} + \frac{6 \eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\partial_{\sigma}\partial_{\rho}\Omega}{\Omega^6}\\
+& -  \frac{48 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\rho}\Omega \partial_{\sigma}\overline{K}_{\mu \nu}}{\Omega^7} + \frac{24 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\rho}\partial_{\beta}\Omega \partial_{\sigma}\overline{K}_{\mu \nu}}{\Omega^6} + \frac{60 \eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\rho}\Omega \partial_{\sigma}\Omega}{\Omega^8}\\
+& -  \frac{4 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\rho}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\beta}\overline{K}_{\mu \nu}}{\Omega^5} + \frac{6 \eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\rho}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\beta}\Omega}{\Omega^6} + \frac{12 \eta^{\alpha \rho} \eta^{\beta \sigma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\overline{K}_{\mu \nu}}{\Omega^6}\\
+& + \frac{6 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\overline{K}_{\mu \nu}}{\Omega^6} -  \frac{2 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\overline{K}_{\mu \nu}}{\Omega^5} + \frac{12 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\beta}\overline{K}_{\mu \nu} \partial_{\sigma}\partial_{\rho}\Omega}{\Omega^6}\\
+& -  \frac{48 \eta^{\alpha \rho} \eta^{\beta \sigma} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\Omega}{\Omega^7} -  \frac{24 \eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\beta}\Omega \partial_{\sigma}\partial_{\rho}\Omega}{\Omega^7} + \frac{3 \eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\Omega}{\Omega^6}\\
+& -  \frac{2 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\partial_{\beta}\overline{K}_{\mu \nu}}{\Omega^5} -  \frac{2 \eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\alpha}\overline{K}_{\mu \nu} \partial_{\sigma}\partial_{\rho}\partial_{\beta}\Omega}{\Omega^5} + \frac{6 \eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\alpha}\Omega \partial_{\sigma}\partial_{\rho}\partial_{\beta}\Omega}{\Omega^6}\\
+& + \frac{\eta^{\alpha \beta} \eta^{\rho \sigma} \partial_{\sigma}\partial_{\rho}\partial_{\beta}\partial_{\alpha}\overline{K}_{\mu \nu}}{2 \Omega^4} -  \frac{\eta^{\alpha \beta} \eta^{\rho \sigma} \overline{K}_{\mu \nu} \partial_{\sigma}\partial_{\rho}\partial_{\beta}\partial_{\alpha}\Omega}{\Omega^5}\\
+&= -\frac12 \Omega^{-2} \eta^{\sigma\rho}\eta^{\alpha\beta}\pd_\sigma\pd_\rho\pd_\alpha \pd_\beta (\Omega^{-2}\bar K_{\mu\nu})
+\ea
+\\ 
+\subsection{Gauge Invariance}
+Under conformal transformation $g_{\mu\nu} \to \bar{g}_{\mu\nu} = \Omega^2 g_{\mu\nu}$, $W_{\mu\nu}$ transforms as
+\be
+	\bar W_{\mu\nu}(\bar g_{\mu\nu}) =  \Omega^{-2}W_{\mu\nu}(g_{\mu\nu}).
+\ee
+Perturbing the metric, 
+\be
+	\bar g_{\mu\nu} = \bar g^{(0)}_{\mu\nu} + \bar h_{\mu\nu} = \Omega^2 g^{(0)}_{\mu\nu} + \Omega^2 h_{\mu\nu}
+\ee
+it follows that to first order
+\be
+	\delta \bar W_{\mu\nu}(\bar h_{\mu\nu}) = \Omega^{-2} \delta W_{\mu\nu}(h_{\mu\nu}).
+\ee
+Under an infinitesimal oordinate transformation $x^\mu \to x'^\mu = x^\mu + \ep^\mu(x)$, the perturbed tensor $\delta W_{\mu\nu}$ transforms as
+\be
+	\delta W_{\mu\nu}(h_{\mu\nu}) \to \delta W'_{\mu\nu}(h'_{\mu\nu}) = \delta W_{\mu\nu}(h_{\mu\nu}) - \delta W_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu})
+\ee
+At the same time, we also consider the transformation of the entire $W_{\mu\nu}$ under the infinitesimal coordinate transformation
+\be
+	W_{\mu\nu} \to W_{\mu\nu}' = W_{\mu\nu} - \mathcal{L}_e( W_{\mu\nu})
+\ee
+where the Lie derivative $\mathcal L_e$ for the rank 2 tensor is
+\be
+	 \mathcal{L}_e( W_{\mu\nu}) = W^{\lambda}{}_\mu \ep_{\lambda;\nu} + W^{\lambda}{}_\nu \ep_{\lambda;\mu} + W_{\mu\nu;\lambda}\ep^\lambda.
+\ee
+Defining $\delta W_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu}) \equiv \delta W_{\mu\nu}(\ep)$, if we expand eq (5) to first order (that is $g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}$), we get
+\be
+	W_{\mu\nu} \to W_{\mu\nu}' = W^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+ \delta W_{\mu\nu}(h_{\mu\nu})- \mathcal{L}_e( W_{\mu\nu})
+\ee
+and conclude that
+\be
+	 \delta W_{\mu\nu}(\ep) =  \mathcal{L}_e( W_{\mu\nu}) = W^{\lambda}{}_\mu \ep_{\lambda;\nu} + W^{\lambda}_\nu \ep_{\lambda;\mu} + W_{\mu\nu;\lambda}\ep^\lambda.
+\ee
+Hence, in any background that is conformal to flat, the Lie derivative vanishes and thus $\delta W_{\mu\nu}$ must be gauge invariant. As such, it must always be possible to express $\delta W_{\mu\nu}$ in terms of 5 gauge invariant quantities (10 symmetric components - 4 coordinate transformation - 1 traceless condition = 5). This is shown below. Alternatively, we may also fix the gauge, as we have done to make $\delta W_{\mu\nu}$ diagonal in its indicies. 
+\\ \\
+\subsection{S.V.T. Decomposition}
+Decomposing $h_{\mu\nu}$ according to 
+\be
+	ds^2 = \Omega^2\clr{ -(1+2\phi)d\tau^2 + (\del_i +B_i)dx^id\tau + [(1-2\psi)\delta_{ij}+2\del_i\del_j E + \del_i E_j+\del_j E_i + 2E_{ij}]dx^i dx^j}
+\ee
+we have in conformal flat space $\delta W_{\mu\nu}(h_{\mu\nu})$ in arbitrary coordinate system
+\\
+\\
+\textbf{Scalars:}
+\ba
+	\delta W_{00} & = -\frac{2}{3\Omega^2}\del^4 (\phi + \psi - (E'-B)')\\
+	\delta W_{0i} &=  -\frac{2}{3\Omega^2}\del^4\dot(\phi + \psi - (E'-B)')\\
+	\delta W_{ij} & = \frac{1}{3\Omega^2}\big[ g_{ij}\del^2 \ddot (\phi + \psi - (E'-B)') + \del^2 \del_i\del_j (\phi + \psi - (E'-B)') \\
+	&\qquad - g_{ij}\del^4(\phi + \psi - (E'-B)') -3\del_i\del_j \ddot (\phi + \psi - (E'-B)')\big]
+\ea
+\textbf{Vectors:}
+\ba
+	\delta W_{0i} &=  \frac{1}{2\Omega^2}\blr{ \del^4 (B_i - E'_i) - \del^2 (B_i - E'_i)''} \\
+	\delta W_{ij} & = \frac{1}{2\Omega^2}\blr{ \del^2 \del_i   (B_j - E'_j)'+ \del^2 \del_j (B_i - E'_i)' - \del_i(B_j - E'_j)''-\del_j(B_i - E'_i)''}
+\ea
+\textbf{Tensors:}
+\ba
+	\delta W_{ij} & = \frac{1}{\Omega^2}\plr{E_{ij}-2\del^2\ddot E_{ij}+\del^4E_{ij}}
+\ea
+\noindent According to eq. (4), we may find $\delta W_{\mu\nu}$ based on a conformal to flat background by simply multiplying the above by a factor of $\Omega^{-2}$. 
+\\ \\
+Under coordinate transformation $x^\mu \to \tilde x^\mu = x^\mu + \ep^\mu$ where $\ep^\mu = (T,\pd^i L + L^i)$ the SVT quantities in the RW $K=0$ background transform as ($\mathcal H = \frac{\dot\Omega}{\Omega}$)
+\be
+	\tilde \phi = \phi - T' -\hu T
+\ee
+\be
+	\tilde \psi = \psi +\hu T
+\ee
+\be
+	\tilde E = E - L
+\ee
+\be
+	\tilde B = B + T - L'
+\ee
+\be
+	\tilde B_i = B_i - L_i'
+\ee
+\be
+	\tilde E_i = E_i - L_i
+\ee
+\be
+	\tilde E_{ij} = E_{ij}
+\ee
+in which the gauge invariant combinations are
+\be
+	\Phi = \phi -\hu (E'-B) - (E' - B)'
+\ee
+\be
+	\Psi = \psi + \hu(E'-B)
+\ee
+\be
+	\mathcal Q_i = B_i - E_i'
+\ee
+\be
+	E_{ij} = E_{ij}.
+\ee
+and, importantly for the Weyl tensor
+\be
+	\Sigma = \Phi + \Psi  = \phi + \psi - (E'-B)'.
+\ee
+Now, if we generalize the conformal factor $\Omega(\tau) \to \Omega(x)$ we can calculate the gauge transformations by effectively sending 
+\be
+	T\hu \to \tilde H = \frac{\ep^\mu \pd_\mu \Omega}{\Omega} = T\hu + (\pd^i L + L^i)\frac{\pd_i\Omega}{\Omega}.
+\ee
+That this is true can be seen from the first order contrubtion of $\Omega(x^\mu + \ep^\mu)$. As such, the analogous SVT quantities under the coordinate transformation are
+\be
+	\tilde \phi = \phi - T' -\tilde H 
+\ee
+\be
+	\tilde \psi = \psi +\tilde H
+\ee
+\be
+	\tilde E = E - L
+\ee
+\be
+	\tilde B = B + T - L'
+\ee
+\be
+	\tilde B_i = B_i - L_i'
+\ee
+\be
+	\tilde E_i = E_i - L_i
+\ee
+\be
+	\tilde E_{ij} = E_{ij}
+\ee
+The gauge invariant combinations can then only possibly differ from that of RW for those involving $\psi$ and $\phi$ and in the Weyl case we only care about 
+\be
+	\Sigma = \phi + \psi - (E'-B)'.
+\ee
+But we note that the $\tilde H$ terms drop out identically, and thus in the general conformal case and thus the same form for $\Sigma$ remains invariant. Thus the gauge invariant quantities for any conformal factor are:
+\be
+	\Sigma = \phi + \psi - (E'-B)'
+\ee
+\be
+	\mathcal Q_i = B_i - E_i'
+\ee
+\be
+	E_{ij} = E_{ij}.
+\ee
+This brings us to 5 independent components in total, as mentioned above, and the gauge invariant combinations within $\delta W_{\mu\nu}$ drop out very clearly.
+\newpage
+\section{Einstein}
+\subsection{Fluctuations}
+\be
+	G_{\mu\nu} = R_{\mu\nu}-\frac12 g_{\mu\nu}R
+\ee
+\begin{align}
+	\delta G_{\mu\nu} & = 
+- \tfrac{1}{2} h_{\mu \nu} R + \tfrac{1}{2} g_{\mu \nu} h^{\alpha \beta} R_{\alpha \beta} + \tfrac{1}{2} h_{\nu}{}^{\alpha} R_{\mu \alpha} + \tfrac{1}{2} h_{\mu}{}^{\alpha} R_{\nu \alpha} -  h^{\alpha \beta} R_{\mu \alpha \nu \beta} + \tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu} + \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}\\
+& -  \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}h^{\alpha}{}_{\alpha} -  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha} -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha} + \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h^{\alpha}{}_{\alpha}
+\end{align}
+\subsection{Conformal Properties}
+ Under conformal transformation
+\be
+	g_{\mu\nu} \to \bar g_{\mu\nu}=\Omega^2 g_{\mu\nu} ,
+\ee
+the Ricci  tensor  transforms as
+\be
+	R_{\mu\nu}(g_{\mu\nu})\to \bar R_{\mu\nu}(\bar g_{\mu\nu})= R_{\mu\nu}(g_{\mu\nu}) +\tilde S_{\mu\nu}(g_{\mu\nu}) 
+\ee
+where $\tilde S_{\mu\nu}$ involves terms with covariant derivatives of $\Omega$. It follows that the Ricci scalar transforms as
+\be
+	g^{\alpha\beta}R_{\alpha\beta}(g_{\mu\nu})\to \bar R(\bar g_{\mu\nu})=\Omega^{-2}[R(g_{\mu\nu})  +g^{\alpha\beta}\tilde S_{\alpha\beta}(g_{\mu\nu})] 
+\ee
+and thus
+\be
+	g_{\mu\nu}R \to \bar g_{\mu\nu}\bar R= g_{\mu\nu}R + S'_{\mu\nu}.
+\ee
+The Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac12 g_{\mu\nu}R$ must then transform as
+\be
+	G_{\mu\nu}(g_{\mu\nu}) \to \bar G_{\mu\nu}(\bar g_{\mu\nu}) =G_{\mu\nu}(g_{\mu\nu})+ S_{\mu\nu}(g_{\mu\nu})
+\ee
+where again $S_{\mu\nu}$ is some arbitrary tensor of $\Omega$ and $g_{\mu\nu}$. Now expanding to first order in the gravitational
+perturbation
+\be
+	g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}
+\ee
+we have 
+\ba
+	\bar G_{\mu\nu}(\bar g^{(0)}_{\mu\nu}+ \bar h_{\mu\nu}) &= \bar G_{\mu\nu}^{(0)}(\bar g^{(0)}_{\mu\nu}) + \delta \bar G_{\mu\nu}(\bar h_{\mu\nu})\\
+	&=G^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+ \delta G_{\mu\nu}(h_{\mu\nu}) + S^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu}) + \delta S_{\mu\nu}(h_{\mu\nu}).
+\ea
+Now looking at the first order contribution,
+\be
+	 \delta \bar G_{\mu\nu}(\bar h_{\mu\nu}) =  \delta G_{\mu\nu}(h_{\mu\nu}) + \delta S_{\mu\nu}(h_{\mu\nu}),
+\ee
+we note that diagonality in $\bar h_{\mu\nu}$ of  $\delta \bar G_{\mu\nu}(\bar h_{\mu\nu})$ requires the sum of $ \delta G_{\mu\nu}(h_{\mu\nu})$ and $\delta S_{\mu\nu}(h_{\mu\nu})$ to be diagonal in $h_{\mu\nu}$. 
+\\ \\
+Specifically, we may calculate $S_{\mu\nu}$ to be
+\be
+	S_{\mu\nu} = \Omega^{-1}( g_{\mu\nu} \del_\alpha \del^\alpha \Omega + 2\del_\nu\del_\mu \Omega) + \Omega^{-2}( g_{\mu\nu}\del_\alpha \Omega \del^\alpha\Omega - 4\del_\mu\Omega \del_\nu\Omega)
+\ee
+and expanding to first order (here $g_{\mu\nu} = g^{(0)}_{\mu\nu}$)
+\ba
+	\delta S_{\mu\nu} &= \Omega^{-1}[-g_{\mu\nu}\del_\alpha\Omega\del_\beta h^{\alpha\beta}+\frac12 g^{\alpha\beta}g_{\mu\nu}\del_\alpha\Omega \del_\beta
+h^\gamma{}_\gamma+g^{\alpha\beta}\del_\alpha\Omega \del_\beta h_{\mu\nu}-g_{\mu\nu}h^{\alpha\beta}\del_\beta\del_\alpha \Omega\\
+&\qquad\quad 
++g^{\alpha\beta}h_{\mu\nu}\del_\beta\del_\alpha \Omega - \del_\alpha \Omega \del_\mu h^\alpha{}_\nu - \del_\alpha \Omega\del_\nu h^{\alpha}{}_\mu]\\
+&\quad + \Omega^{-2}[ g^{\alpha\beta}h_{\mu\nu} \del_\alpha\Omega \del_\beta\Omega - g_{\mu\nu} h^{\alpha\beta}\del_\alpha\Omega \del_\beta\Omega].
+\ea
+In the conformal to flat case, $\delta S_{\mu\nu}$ simplifies to
+\ba
+	\delta S_{\mu\nu} &= \Omega^{-1}[\frac12 \eta^{\alpha\beta}\eta^{\gamma\eta}\eta_{\mu\nu}\pd_\alpha\Omega \pd_\beta h_{\gamma\eta}+\eta^{\alpha\beta}
+\pd_\alpha \Omega \pd_\beta h_{\mu\nu} + \eta^{\alpha\beta}h_{\mu\nu}\pd_\beta\pd_\alpha\Omega\\
+&\qquad\quad 
+-\eta^{\alpha\beta}\eta^{\gamma\eta}\eta_{\mu\nu}\pd_\alpha\Omega \pd_\eta h_{\beta\gamma} - \eta^{\alpha\beta}\eta^{\gamma\eta}\eta_{\mu\nu}h_{\alpha\gamma}\pd_\eta \pd_\beta \Omega - \eta^{\alpha\beta}\pd_\alpha\Omega \pd_\mu h_{\nu\beta} - \eta^{\alpha\beta}\pd_\alpha \Omega \pd_\nu h_{\mu\beta}]\\
+&\quad + \Omega^{-2}[ \eta^{\alpha\beta}h_{\mu\nu} \pd_\alpha\Omega \pd_\beta\Omega - \eta^{\alpha\gamma}\eta^{\beta\eta}\eta_{\mu\nu} h^{\gamma\eta}\pd_\alpha\Omega \pd_\beta\Omega].
+\ea
+In the harmonic gauge, the extra term $\delta S_{\mu\nu}(g_{\mu\nu})$ does not vanish, and thus does not yield
+\be
+	\delta \bar G_{\mu\nu}(\bar h_{\mu\nu}) = \delta G_{\mu\nu}(h_{\mu\nu}).
+\ee
+If the harmonic gauge did in fact cause $\delta S_{\mu\nu}$ to vanish, then we would be able to use the conformally transformed harmonic condition directly within $\delta \bar G_{\mu\nu}(\bar h_{\mu\nu})$ to obain (nearly) diagonal equations of motion (or just as diagonal as can be found using harmonic in the flat fluctuations).
+\subsection{Special Gauge}
+The perturbed Einstein tensor $\delta \bar G_{\mu\nu}(\bar h_{\mu\nu})$ evaluated in a $K=0$ RW background (in cartesian coordinates) takes the general form (dropping the bar on $\delta G_{\mu\nu}$):
+\begin{align}
+	\delta  G_{00} &= \frac{\partial_{1}\partial_{1}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{1}\partial_{1}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{1}\partial_{1}h -  \frac{\partial_{2}\partial_{1}\overline{h}_{12}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{2}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} \\
+&+ \tfrac{1}{2} \partial_{2}\partial_{2}h -  \frac{\partial_{3}\partial_{1}\overline{h}_{13}}{\bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{2}\overline{h}_{23}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{3}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{3}\partial_{3}h -  \frac{\partial_{0}\overline{h}_{00} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3}\\
+& -  \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{\Omega(t)} + \frac{2 \partial_{1}\overline{h}_{01} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{2 \partial_{2}\overline{h}_{02} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{2 \partial_{3}\overline{h}_{03} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4}
+\end{align}
+\begin{align}
+	\delta  G_{11} &= \frac{\partial_{0}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{0}\partial_{0}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{0}\partial_{0}h -  \frac{\partial_{2}\partial_{0}\overline{h}_{02}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{2}\partial_{2}h\\
+& -  \frac{\partial_{3}\partial_{0}\overline{h}_{03}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{2}\overline{h}_{23}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{3}\partial_{3}h + \frac{\partial_{0}\overline{h}_{11} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{\Omega(t)} -  \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{2 \overline{h}_{11} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{\overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} + \frac{3 \overline{h}_{11} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{22} &=\frac{\partial_{0}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{0}\partial_{0}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{0}\partial_{0}h -  \frac{\partial_{1}\partial_{0}\overline{h}_{01}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{1}\partial_{1}h\\
+&-  \frac{\partial_{3}\partial_{0}\overline{h}_{03}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{1}\overline{h}_{13}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{3}\partial_{3}h + \frac{\partial_{0}\overline{h}_{22} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{\Omega(t)} \\
+&-  \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{2 \overline{h}_{22} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{\overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} + \frac{3 \overline{h}_{22} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{33} &= \frac{\partial_{0}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{0}\partial_{0}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{0}\partial_{0}h -  \frac{\partial_{1}\partial_{0}\overline{h}_{01}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2}\\
+& -  \tfrac{1}{2} \partial_{1}\partial_{1}h -  \frac{\partial_{2}\partial_{0}\overline{h}_{02}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{1}\overline{h}_{12}}{\bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{2}\partial_{2}h + \frac{\partial_{0}\overline{h}_{33} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{\Omega(t)} -  \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{2 \overline{h}_{33} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{\overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} + \frac{3 \overline{h}_{33} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{01} &=\frac{\partial_{1}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{1}\partial_{0}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{1}\partial_{0}h -  \frac{\partial_{2}\partial_{0}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{1}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2}\\
+& -  \frac{\partial_{3}\partial_{0}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{1}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\overline{h}_{11} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{\partial_{2}\overline{h}_{12} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3}\\
+& + \frac{\partial_{3}\overline{h}_{13} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} -  \frac{\overline{h}_{01} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{2 \overline{h}_{01} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{02} &= - \frac{\partial_{1}\partial_{0}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{0}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{2}\partial_{0}h -  \frac{\partial_{2}\partial_{1}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2}\\
+& -  \frac{\partial_{3}\partial_{0}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{2}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\overline{h}_{12} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{\partial_{2}\overline{h}_{22} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{\partial_{3}\overline{h}_{23} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&-  \frac{\overline{h}_{02} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{2 \overline{h}_{02} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{03} &= - \frac{\partial_{1}\partial_{0}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{0}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{0}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} \\
+&+ \tfrac{1}{2} \partial_{3}\partial_{0}h -  \frac{\partial_{3}\partial_{1}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{2}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\overline{h}_{13} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{\partial_{2}\overline{h}_{23} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} + \frac{\partial_{3}\overline{h}_{33} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&-  \frac{\overline{h}_{03} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{2 \overline{h}_{03} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{12} &=- \frac{\partial_{0}\partial_{0}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{0}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{0}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{1}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{1}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{2}\partial_{1}h -  \frac{\partial_{3}\partial_{1}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2}\\
+& -  \frac{\partial_{3}\partial_{2}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{12} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} -  \frac{2 \overline{h}_{12} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{3 \overline{h}_{12} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{13} &=- \frac{\partial_{0}\partial_{0}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{0}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{1}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{0}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{1}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} \\
+&-  \frac{\partial_{3}\partial_{1}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{3}\partial_{1}h -  \frac{\partial_{3}\partial_{2}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{13} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} -  \frac{2 \overline{h}_{13} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{3 \overline{h}_{13} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{23} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{0}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{2}\partial_{1}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{0}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{1}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2}\\
+& -  \frac{\partial_{3}\partial_{2}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} -  \frac{\partial_{3}\partial_{2}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \tfrac{1}{2} \partial_{3}\partial_{2}h + \frac{\partial_{0}\overline{h}_{23} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} -  \frac{2 \overline{h}_{23} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{3 \overline{h}_{23} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+We see that each tensor component is far away from being diagonal in the perturbation components $h_{\mu\nu}$. In order to solve these equations, we seek to find a gauge that allows the equations to become diagonalized. To this end, we may impose the most general gauge as
+\be
+	\eta^{\alpha\beta}\pd_{\alpha}h_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}h_{\nu\alpha}\pd_\beta \Omega + P\Omega^2 \pd_\nu h + R \Omega h \pd_\nu h
+\ee
+where $J$, $P$, and $R$ are constant coefficients that we vary. Upon taking $J = 0$, $P = 1$, and $R = -1$, the fluctation equations take a form diagonal in $h_{\mu\nu}$ up to its trace. Indeed other combinations do exist, but deviation from this configuration will result in a trace conditions that involve derivatives of the trace, where as the above choice allows us to solve the trace explicity in terms of $h_{00}$. To be precise, given the special gauge choice, the trace of the Einstein tensor evaulates to
+\be
+	g^{\mu\nu}\delta G_{\mu\nu} = - \frac{10 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^6} + \frac{2 h \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{6 \overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^5} + \frac{3 h \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}.
+\ee 
+In the gauge
+\be
+	\eta^{\alpha\beta}\pd_{\alpha}h_{\beta\nu} = \Omega^2 \pd_\nu h - \Omega h \pd_\nu h,
+\ee
+the perturbed Einstein tensor has been calculated as:
+\begin{align}
+	\delta  G_{00} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{0}\partial_{0}h + \frac{\partial_{1}\partial_{1}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{00}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{00} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} + \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{3 h \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{2 \bigl(\Omega(t)\bigr)^2} + \frac{h \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{2 \Omega(t)}
+\end{align}
+\begin{align}
+	\delta  G_{11} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{1}\partial_{1}h + \frac{\partial_{2}\partial_{2}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{11}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{11} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} -  \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{2 \overline{h}_{11} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{h \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}\\
+&+ \frac{3 \overline{h}_{11} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} + \frac{h \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{2 \Omega(t)}
+\end{align}
+\begin{align}
+	\delta G_{22} &=- \frac{\partial_{0}\partial_{0}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{2}\partial_{2}h + \frac{\partial_{3}\partial_{3}\overline{h}_{22}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{22} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3}\\
+& + \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} -  \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{2 \overline{h}_{22} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{h \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{3 \overline{h}_{22} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} + \frac{h \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{2 \Omega(t)}
+\end{align}
+\begin{align}
+	\delta G_{33} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{33}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{3}\partial_{3}h + \frac{\partial_{0}\overline{h}_{33} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3}\\
+& + \frac{\partial_{0}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} -  \frac{2 \overline{h}_{00} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} -  \frac{2 \overline{h}_{33} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{h \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\overline{h}_{00} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}\\
+& + \frac{3 \overline{h}_{33} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3} + \frac{h \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{2 \Omega(t)}
+\end{align}
+\begin{align}
+	\delta G_{01} &=- \frac{\partial_{0}\partial_{0}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{1}\partial_{0}h + \frac{\partial_{1}\partial_{1}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{01}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{01} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3}\\
+& + \frac{\partial_{1}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} -  \frac{\overline{h}_{01} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{2 \overline{h}_{01} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{02} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{2}\partial_{0}h + \frac{\partial_{2}\partial_{2}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{02}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{02} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{\partial_{2}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} -  \frac{\overline{h}_{02} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{2 \overline{h}_{02} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{03} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{3}\partial_{0}h + \frac{\partial_{3}\partial_{3}\overline{h}_{03}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{03} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&+ \frac{\partial_{3}h \frac{\partial \Omega(t)}{\partial t}}{2 \Omega(t)} -  \frac{\overline{h}_{03} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{2 \overline{h}_{03} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{12} &=- \frac{\partial_{0}\partial_{0}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{2}\partial_{1}h + \frac{\partial_{2}\partial_{2}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{3}\partial_{3}\overline{h}_{12}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{12} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&-  \frac{2 \overline{h}_{12} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{3 \overline{h}_{12} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{13} &=- \frac{\partial_{0}\partial_{0}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{3}\partial_{1}h + \frac{\partial_{3}\partial_{3}\overline{h}_{13}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{13} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3} \\
+&-  \frac{2 \overline{h}_{13} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{3 \overline{h}_{13} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+\begin{align}
+	\delta G_{23} &= - \frac{\partial_{0}\partial_{0}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{1}\partial_{1}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{2}\partial_{2}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} -  \tfrac{1}{2} \partial_{3}\partial_{2}h + \frac{\partial_{3}\partial_{3}\overline{h}_{23}}{2 \bigl(\Omega(t)\bigr)^2} + \frac{\partial_{0}\overline{h}_{23} \frac{\partial \Omega(t)}{\partial t}}{\bigl(\Omega(t)\bigr)^3}\\
+& -  \frac{2 \overline{h}_{23} \bigl(\frac{\partial \Omega(t)}{\partial t}\bigr)^2}{\bigl(\Omega(t)\bigr)^4} + \frac{3 \overline{h}_{23} \frac{\partial^{2}\Omega(t)}{\partial t^{2}}}{\bigl(\Omega(t)\bigr)^3}
+\end{align}
+In the deSitter background geometry, the above equations take an even simpler form as $\Omega(t) = \frac{1}{Ht}$. The trace condition is
+\be
+	g^{\mu\nu}\delta G_{\mu\nu} = - \frac{10 H^4 \overline{h}_{00}}{t^6} + \frac{2 H^2 h}{t^4}.
+\ee
+The tensor perturbations are then:
+\begin{align}
+	\delta  G_{00} &= \frac{2 H^2 \overline{h}_{00}}{t^4} -  \frac{3 h}{2 t^2} + \frac{H^2 \partial_{0}\overline{h}_{00}}{t^3} + \frac{\partial_{0}h}{2 t} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{00}}{2 t^2} -  \tfrac{1}{2} \partial_{0}\partial_{0}h + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{00}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{00}}{2 t^2} + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{00}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta  G_{11} &= - \frac{2 H^2 \overline{h}_{00}}{t^4} -  \frac{2 H^2 \overline{h}_{11}}{t^4} + \frac{h}{2 t^2} + \frac{H^2 \partial_{0}\overline{h}_{11}}{t^3} + \frac{\partial_{0}h}{2 t} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{11}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{11}}{2 t^2} -  \tfrac{1}{2} \partial_{1}\partial_{1}h \\
+&+ \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{11}}{2 t^2} + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{11}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{22} &=- \frac{2 H^2 \overline{h}_{00}}{t^4} -  \frac{2 H^2 \overline{h}_{22}}{t^4} + \frac{h}{2 t^2} + \frac{H^2 \partial_{0}\overline{h}_{22}}{t^3} + \frac{\partial_{0}h}{2 t} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{22}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{22}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{22}}{2 t^2} \\
+&-  \tfrac{1}{2} \partial_{2}\partial_{2}h + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{22}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{33} &= - \frac{2 H^2 \overline{h}_{00}}{t^4} -  \frac{2 H^2 \overline{h}_{33}}{t^4} + \frac{h}{2 t^2} + \frac{H^2 \partial_{0}\overline{h}_{33}}{t^3} + \frac{\partial_{0}h}{2 t} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{33}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{33}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{33}}{2 t^2} \\
+&+ \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{33}}{2 t^2} -  \tfrac{1}{2} \partial_{3}\partial_{3}h
+\end{align}
+\begin{align}
+	\delta G_{01} &=- \frac{H^2 \overline{h}_{01}}{t^4} + \frac{H^2 \partial_{0}\overline{h}_{01}}{t^3} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{01}}{2 t^2} + \frac{\partial_{1}h}{2 t} -  \tfrac{1}{2} \partial_{1}\partial_{0}h + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{01}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{01}}{2 t^2} + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{01}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{02} &= - \frac{H^2 \overline{h}_{02}}{t^4} + \frac{H^2 \partial_{0}\overline{h}_{02}}{t^3} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{02}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{02}}{2 t^2} + \frac{\partial_{2}h}{2 t} -  \tfrac{1}{2} \partial_{2}\partial_{0}h + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{02}}{2 t^2} + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{02}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{03} &= - \frac{H^2 \overline{h}_{03}}{t^4} + \frac{H^2 \partial_{0}\overline{h}_{03}}{t^3} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{03}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{03}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{03}}{2 t^2} + \frac{\partial_{3}h}{2 t} -  \tfrac{1}{2} \partial_{3}\partial_{0}h + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{03}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{12} &=- \frac{2 H^2 \overline{h}_{12}}{t^4} + \frac{H^2 \partial_{0}\overline{h}_{12}}{t^3} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{12}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{12}}{2 t^2} -  \tfrac{1}{2} \partial_{2}\partial_{1}h + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{12}}{2 t^2} + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{12}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{13} &=- \frac{2 H^2 \overline{h}_{13}}{t^4} + \frac{H^2 \partial_{0}\overline{h}_{13}}{t^3} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{13}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{13}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{13}}{2 t^2} -  \tfrac{1}{2} \partial_{3}\partial_{1}h + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{13}}{2 t^2}
+\end{align}
+\begin{align}
+	\delta G_{23} &=- \frac{2 H^2 \overline{h}_{23}}{t^4} + \frac{H^2 \partial_{0}\overline{h}_{23}}{t^3} -  \frac{H^2 \partial_{0}\partial_{0}\overline{h}_{23}}{2 t^2} + \frac{H^2 \partial_{1}\partial_{1}\overline{h}_{23}}{2 t^2} + \frac{H^2 \partial_{2}\partial_{2}\overline{h}_{23}}{2 t^2} -  \tfrac{1}{2} \partial_{3}\partial_{2}h + \frac{H^2 \partial_{3}\partial_{3}\overline{h}_{23}}{2 t^2}
+\end{align}
+
+\subsection{Gauge Invariance}
+(refer to Appendix A in Brane Localized Gravity)
+\\ \\
+Perturbing the metric, 
+\be
+	\bar g_{\mu\nu} =  g^{(0)}_{\mu\nu} + h_{\mu\nu} 
+\ee
+the first order Einstein field equations are
+\be
+	\delta G_{\mu\nu}- \delta T_{\mu\nu} \equiv \Delta G_{\mu\nu} = 0.
+\ee
+Under an infinitesimal oordinate transformation $x^\mu \to x'^\mu = x^\mu + \ep^\mu(x)$, each perturbed tensor must transform as
+\be
+	\delta G_{\mu\nu}(h_{\mu\nu}) \to \delta G'_{\mu\nu}(h'_{\mu\nu}) = \delta G_{\mu\nu}(h_{\mu\nu}) - \delta G_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu})
+\ee
+\be
+	\delta T_{\mu\nu}(h_{\mu\nu}) \to \delta G'_{\mu\nu}(h'_{\mu\nu}) = \delta G_{\mu\nu}(h_{\mu\nu}) - \delta G_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu})
+\ee
+At the same time, we also consider the transformation of the entire $G_{\mu\nu}$ and $T_{\mu\nu}$ under the infinitesimal coordinate transformation
+\be
+	G_{\mu\nu} \to G_{\mu\nu}' = G_{\mu\nu} - \mathcal{L}_e( G_{\mu\nu})
+\ee
+\be
+	T_{\mu\nu} \to T_{\mu\nu}' = T_{\mu\nu} - \mathcal{L}_e( T_{\mu\nu})
+\ee
+where the Lie derivative $\mathcal L_e$ for the rank 2 tensor is
+\be
+	 \mathcal{L}_e( G_{\mu\nu}) = G^{\lambda}{}_\mu \ep_{\lambda;\nu} + G^{\lambda}{}_\nu \ep_{\lambda;\mu} + G_{\mu\nu;\lambda}\ep^\lambda.
+\ee
+Defining $\delta G_{\mu\nu}(\ep_{\mu;\nu}+\ep_{\nu;\mu}) \equiv \delta G_{\mu\nu}(\ep)$, if we expand eq (5) to first order (that is $g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}$), we get
+\be
+	G_{\mu\nu} \to G_{\mu\nu}' = G^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+ \delta G_{\mu\nu}(h_{\mu\nu})- \mathcal{L}_e( G_{\mu\nu})
+\ee
+and conclude that
+\be
+	 \delta G_{\mu\nu}(\ep) =  \mathcal{L}_e( G_{\mu\nu}) = G^{\lambda}{}_\mu \ep_{\lambda;\nu} + G^{\lambda}_\nu \ep_{\lambda;\mu} + G_{\mu\nu;\lambda}\ep^\lambda.
+\ee
+In a flat background of $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$, Lie derivatives of $\delta G_{\mu\nu}$ vanish thus making $\delta G_{\mu\nu}$ gauge invariant all on its own.
+\subsection{S.V.T. Decomposition}
+In perturbing the metric $g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}$, we may express $h_{\mu\nu}$ as an SVT decomposition as indicated in the Appendix (decomposition by orthogonal projects), which combined with the background yields the line element
+\be
+	ds^2 = \Omega^2 \clr{ -(1+2\phi) d\tau^2 + 2(\del_i B + B_i)d\tau dx^i + \blr{ (1-2\psi)\delta_{ij} + 2\del_i\del_j E + \del_i E_j + \del_j E_i + 2E_{ij}}dx^i dx^j}
+\ee
+where
+\be
+	\del^i B_i = 0,\ \del^i E_i = 0,\ \del^i E_{ij} = 0,\ \delta^{ij}E_{ij} = 0.
+\ee
+\subsubsection{General Covariant Form}
+In the RW background, the SVT decomposed perturbation equation take the general form (arbitrary orthogonal coordinate system, where $\hu = \tfrac{\dot\Omega}{\Omega}$)
+\be
+	\delta G_{00} = 6\hu\dot \psi + 2\hu g{ij}\del_i\del_j (B-\dot E) - 2g^{ij}\del_i\del_j \psi
+\ee
+\be
+	\delta G^{(S)}_{0i} = -2\del_i \dot \psi - 2\hu \del_i \phi - \hu^2 \del_i B + 2 {\ddot \Omega}{\Omega}\del_i B
+\ee
+\be
+	\delta G^{(V)}_{0i} = \frac12 g{ij}\del_i\del_j (B_i-\dot E_i) - \hu^2 B_i + 2\frac{\ddot \Omega}{\Omega} B_i
+\ee
+\begin{align}
+	\delta G^{(S)}_{ij} &= -2 g_{ij} \ddot \psi + 2\hu^2 g_{ij} \phi + 2\hu^2 g_{ij}\psi - 4\frac{\ddot\Omega}{\Omega}g_{ij}\phi - 2\hu g_{ij} \dot \phi -4\frac{\ddot\Omega}{\Omega}g_{ij}\psi - 4\hu g_{ij} \dot\psi - 2\hu g_{ij} g^{kl}\del_k\del_l (B-\dot E) \\
+&- g_{ij}g^{kl}\del_k\del_l (\dot B-\ddot E) - g_{ij}g^{kl}\del_k\del_l (\phi+\psi) + 2\hu\del_i\del_j B + \del_i\del_j \dot B - 2\hu^2 \del_i \del_j E + 4\frac{\ddot\Omega}{\Omega}\del_i\del_j E\\
+& - 2\hu \del_i\del_j \dot E - \del_i\del_j \ddot E +\del_i\del_j(\phi-\psi)
+\end{align}
+\begin{align}
+	\delta G^{(V)}_{ij} &= \hu\del_i(B_j-\dot E_j) + \hu \del_j(B_i-\dot E_i) + \frac12 \del_i (\dot B_j - \ddot E_j) - \hu^2 \del_i E_j -\hu^2 \del_j E_i + 2\frac{\ddot\Omega}{\Omega}\del_i E_j + 2\frac{\ddot\Omega}{\Omega}\del_j E_i
+\end{align}
+\begin{align}
+	\delta G^{(T)}_{ij} &= \ddot E_{ij} + g^{kl}\del_k\del_l E_{ij} - 2 \hu^2 E_{ij} -2 \hu \dot E_{ij} + 4 \frac{\ddot\Omega}{\Omega}E_{ij}
+\end{align}
+\subsubsection{Polar}
+In the flat background $\Omega = 1$ polar coordinate system, we choose to set $\sin\theta = p$ such that the metric takes the form
+\be
+	g^{(0)}_{\mu\nu} = \bpm -1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0\\ 0 & 0& \frac{r^2}{1-p^2} & 0\\ 0&0&0&p^2r^2 \epm
+\ee
+In this polar coodinate system, the Einstein perturbations are calculated as
+\be
+	\text{WILL INSERT IF NEEDED}
+\ee
+\subsubsection{Flat Space Solutions}
+\textit{Bianchi Identities:}
+\\
+First lets see how they decouple using only Bianchi identities and the decomposition of $\delta G_{\mu\nu}$. The $\nu = 0$ component of the Bianchi identity $\eta^{\mu\alpha}\pd_\alpha \delta G_{\mu\nu}$ gives
+\be
+	-\pd_0 \delta G_{00} +\delta^{ij}\del_j \delta G_{0i} = 0.
+\ee
+Expressed in terms of the $\delta G_{\mu\nu}$ decomposition, this is
+\be
+	2\dot{\bar\phi} + \del^2\bar B = 0.
+\ee
+Time Bianchi:
+\be
+	\boxed{\del^2 \bar B = -2\dot{\bar \phi}}.
+\ee
+Now set $\nu = i$, the Bianchi identity gives
+\be
+	-\pd_0 \delta G_{0i} + \delta^{jk} \del_j \delta G_{ik} =0.
+\ee
+Space Bianchi:
+\be
+	\boxed{-(\del_i \dot{\bar B} + \dot{\bar{ B_i}}) -2 \del_i \bar{\psi} + 2 \del_i \del^2 \bar E + \del^2 \bar E_i =0 }
+\ee
+For later use we will also take the divergence of the above:
+\be
+	-\del^2 (2\bar\psi +\dot{\bar B} - 2\del^2 \bar E)=0.
+\ee
+\\ 
+\textit{Decompositions:}\\
+Now let us equate decompositions in $\delta G_{\mu\nu}$ to that of $h_{\mu\nu}$. Start with $\delta G_{00}$
+\be
+	\delta G_{00}:\quad \boxed{\bar \phi = \del^2 \psi} \quad\text{or}\quad \boxed{\del^2\bar B = -2\del^2 \dot\psi}
+\ee
+Another scalar to solve for is the trace $\eta^{\mu\nu} \delta G_{\mu\nu}$
+\be
+	2\bar\phi - 6\bar \psi + 2\del^2 \bar E = 2\del^2 \psi +2(\del^2-3\pd_0\pd_0)\psi - 2\del^2 (\phi +\dot B - \ddot E) .
+\ee
+Substituting eq. (3) we arrive at
+\be
+	\boxed{-6\bar\psi + 2\del^2 \bar E = -6 \ddot \psi+2\del^2\psi - 2\del^2 (\phi +\dot B - \ddot E)}
+\ee
+To relate vectors to vectors, we look at $\delta G_{0i}$ and its Laplacian,
+\be
+	\delta G_{0i}:\quad \del_i \bar B +\bar B_i = -2\del_i \dot \psi + \frac12 \del^2(B_i-\dot E_i)
+\ee
+\be
+	\del_i \del^2 \bar B + \del^2 \bar B_i = -2 \del_i \del^2 \dot \psi + \frac12 \del^4 (B_i - \dot E_i).
+\ee
+Now substitute eq. (3)  into the above, giving
+\be
+	\boxed{\del^2 \bar B_i = \frac12 \del^4(B_i - \dot E_i)}
+\ee
+Now for the spatial components $\delta G_{ij}$ we have
+\ba
+	& -2\bar \psi \delta_{ij} + 2 \del_i\del_j \bar E + \del_i \bar E_j +\del_j \bar E_i + 2\bar E_{ij} =\\
+	&\qquad-2 \ddot \psi \delta_{ij} - (\del_i\del_j - \delta_{ij} \del^2)\psi + (\del_i\del_j - \del^2 \delta_{ij})(\phi+\dot B - \ddot E) + \frac12 \del_i (\dot B_j-\ddot E_j)+\frac12 \del_j (\dot B_i - \ddot E_i) + \Box E_{ij}.
+\ea
+We may form a scalar by taking $\delta^{ij}\delta G_{ij}$ or $\del^i\del^j \delta G_{ij}$. The former is the trace equation, while the later is
+\be
+	\boxed{-2\del^2\bar \psi + 2\del^4 \bar E = -2 \del^2 \ddot \psi }.
+\ee
+This is equivalent to the equation we found for the divergence of the Bianchi space identity. We can try to form a vector by taking the divergence $\del^j\delta G_{ij}$
+\be
+	-2\del_i \bar \psi + 2\del_i \del^2 \bar E + \del^2 \bar E_i = -2\ddot \del_i \psi+\frac12 \del^2(\dot B_i - \ddot E_i)
+\ee
+If we further take the Laplacian we can subtitute eq. (6) in to give
+\be
+	\boxed{\del^4 \bar E_i = \frac12 \del^4 (\dot B_i -\ddot E_i)}
+\ee
+In order to equate tensor components, scalar and vector parts must cancel. For the vector portions to cancel according to eq. (7), we must take $\del^4 \delta G_{ij}$. This gives
+\ba
+	& -2\del^4 \bar \psi \delta_{ij} + 2 \del_i\del_j \del^4\bar E + \del_i\del^4 \bar E_j +\del_j \del^4 \bar E_i + 2\del^4\bar E_{ij} =\\
+	&\qquad-2\del^4 \ddot \psi \delta_{ij} - (\del_i\del_j - \delta_{ij} \del^2)\del^4\psi + (\del_i\del_j - \del^2 \delta_{ij})\del^4(\phi+\dot B - \ddot E) + \frac12 \del_i \del^4(\dot B_j-\ddot E_j)+\frac12 \del_j \del^4 (\dot B_i - \ddot E_i) + \del^4\Box E_{ij}
+\ea
+in which the vector portion of the equation is 
+\be
+	\del_i\del^4 \bar E_j + \del_j \del^4 \bar E_i =  \frac12 \del_i \del^4(\dot B_j-\ddot E_j)+\frac12 \del_j \del^4 (\dot B_i - \ddot E_i).
+\ee
+This is satisfied by eq. (7) and hence the vectors will drop out. 
+However, the scalar portions 
+\be
+	-2\del^4 \bar \psi \delta_{ij} + 2 \del_i\del_j \del^4\bar E = -2\del^4 \ddot \psi \delta_{ij} - (\del_i\del_j - \delta_{ij} \del^2)\del^4\psi + (\del_i\del_j - \del^2 \delta_{ij})\del^4(\phi+\dot B - \ddot E)
+\ee
+will not cancel using substitutions eq. (4) and (6). Thus I am not sure how to relate tensor components to each other. 
+
+\subsubsection{Gauge Invariant Equations in RW K=0}
+Under coordinate transformation
+\be
+	x^\mu \to \tilde x^\mu = x^\mu + \ep^\mu
+\ee
+where 
+\be
+	\ep^\mu = (\ep^0, \del^i \ep + \ep^i),\qquad \del^i \ep_i = 0
+\ee
+the components of the metric transform as
+\begin{align}
+	\tilde \phi &= \phi - H \ep^0 - \dot \ep^0\\
+	\tilde \psi &= \psi + H \ep^0\\
+	\tilde B &=B + \ep^0 - \dot \ep\\
+	\tilde E &= E-\ep \\
+	\tilde E_{i}&= E_i - \ep_i\\
+	\tilde B_i &= B_i - \dot \ep_i\\
+	\tilde E_{ij} &= E_{ij}
+\end{align}
+From the above, we may form gauge invariant combinations (adding to 6 DOF):
+\begin{align}
+	\Phi &= \phi - H(\dot E - B) - (\ddot E - \dot B)\\
+	\Psi &= \psi + H(\dot E-B)\\
+	\mathcal Q_i &= B_i - \dot E_i\\
+	E_{ij} &= E_{ij}
+\end{align}
+By orthogonal and parallel projections to the four velocity $u^\mu$, a generic symmetric $T_{\mu\nu}$ may be decomposed as
+\be
+	T_{\mu\nu} = (\rho + p)u_\mu u_\nu + p g_{\mu\nu} + u_\nu q_\mu + u_\mu q_\nu + \pi_{\mu\nu}
+\ee
+where
+\be
+	u^\mu q_\mu = 0,\ g^{\mu\nu} \pi_{\mu\nu} = 0, \ u^\mu u_\nu u^\rho u_\sigma \pi_{\nu\sigma} = 0.
+\ee
+The conditions on $\pi_{\mu\nu}$ specify that it is traceless and orthogonal to the four velocity $u^\mu$, i.e. $\pi_{\mu\nu} = \pi_{ij}$. We may further decompose $\pi_{ij}$ as
+\be
+	\pi_{ij} = \del_i \del_j \Pi - \frac13 \del^2 \Pi \delta_{ij} + \frac12 \del_i \Pi_j + \frac12 \del_j \Pi_i + \Pi_{ij}
+\ee
+where as expected,
+\be
+	\del^i \Pi_i = 0,\  \del^i\Pi_{ij} = 0,\ \delta^{ij}\Pi_{ij} = 0.
+\ee
+We have 2 degrees of freedom from $\rho$ and $p$, 3 from $q_\mu$, and 5 from $\pi_{\mu\nu}$ adding to 10 in total. We decompose $T_{\mu\nu}$ into a background piece and first order fluctuations:
+\be
+	T_{\mu\nu} = {}^{(0)}T_{\mu\nu} + \delta T_{\mu\nu}.
+\ee
+The scalars, according to homogeneity and isotropy of the background, may only depend on $\tau$, 
+\begin{align}
+	\rho(x^\mu) &= \bar \rho(\tau) + \delta \rho(x^\mu)\\
+	p(x^\mu) &= \bar p(\tau) + \delta p(x^\mu).
+\end{align}
+The background $T_{\mu\nu}$ is given as a perfect fluid
+\be
+	T^{(0)}_{\mu\nu} = (\bar\rho + \bar p)u^{(0)}_\mu u^{(0)}_\nu + \bar p g^{(0)}_{\mu\nu}.
+\ee
+The first order contribution goes as
+\be
+	\delta T_{\mu\nu} = (\delta\rho + \delta p)u^{(0)}_{\mu}u^{(0)}_\nu + (\bar\rho+\bar p)\delta u_\mu u^{(0)}_\nu + (\bar\rho+\bar p)u^{(0)}_\mu \delta u_\nu + \delta p g^{(0)}_{\mu\nu} + \bar p h_{\mu\nu} + u^{(0)}_\mu q_\nu + u^{(0)}_\nu q_\mu + \pi_{\mu\nu},
+\ee
+since the background of interest (FLRW) is homogeneous and isotropic, there is no anisotropic stress $\pi_{\mu\nu}$ or vector perturbation $q_\mu$ at zeroth order and so $\pi_{ij}$ and $q_\mu$ are automatically first order.
+Perturbing the four velocity,
+\be
+	u^\mu = \frac{1}{a}\frac{dx^\mu}{d\tau}= \bar u^\mu + \delta u^\mu
+\ee
+where $\bar u^\mu = a^{-1} \delta^\mu{}_0$ and $\delta u^i = \del^i v + v^i$ with $\del_i v^i = 0$. By normalization of the four velocity $-1 = g_{\mu\nu}u^\mu u^\nu$, we may derive the background and perturbed components of $u^\mu$:
+\be
+	u^\mu = \frac{1}{\Omega}\plr{ 1-\phi,\ \del^i v + v^i},\qquad u_\mu = \Omega\plr{ -1-\phi,\ \del_i v + v_i + \del_i B - B_i}.
+\ee
+\begin{align}
+	\delta T_{00} &= \Omega^2(2\rho \phi + \delta \rho)\\
+	\delta T_{0i} &= -\Omega^2\rho(\del_i v + \del_i B + v_i + B_i)-\Omega^2 p(\del_i v + v_i)\\
+	\delta T_{ij} &= \Omega^2ph_{ij} + \Omega^2 \delta_{ij} \delta p + \pi_{ij}
+\end{align}
+Under gauge transformation (2), scalars transform as (see A.1)
+\begin{align}
+	\delta \tilde \rho &= \delta \rho - \ep^0 \dot{\bar\rho}\\
+\delta \tilde p &= \delta p - \ep^0 \dot{\bar p}
+\end{align}
+and the velocity transforms as (see A.2)
+\be
+	\tilde v = v + \dot \ep,\quad \tilde v^i = v^i + \dot \ep^i.
+\ee
+The components of $\pi_{ij}$, that is $\Pi$, $\Pi_i$ and $\Pi_{ij}$ are all gauge invariant since they vanish in the background (A.3). From these transformation laws, we may form many gauge invariant quantities (omitting the bars on all background quantities now and denoting $\sigma \equiv \dot E-B$):
+\begin{align}
+	\delta \rho_\sigma &= \delta \rho - \dot\rho\sigma \\
+	\delta p_\sigma &= \delta p - \dot p\sigma\\
+	\mathcal V &= v+\dot E\\
+	\mathcal B_i &= B_i + v_i\\
+	\pi_{ij} &= \pi_{ij}
+\end{align}
+and $\Pi, \Pi_i, \Pi_{ij}$. 
+\\ \\
+$\delta G_{\mu\nu} = -8\pi G \delta T_{\mu\nu}$
+\\
+\\
+\emph{Scalars:}
+\\
+\\
+\underline{$\delta G_{00} = -8\pi G\delta T_{00}$:}
+\ba
+	\delta G_{00} & = -2\del^2 \psi - 2\mathcal H\del^2 \sigma + 6\mathcal H\dot\psi\\
+		&= -2\del^2 \Psi + 6\mathcal H \dot \Psi - 6\mathcal H\dot{\mathcal H}\sigma - 6{\mathcal H}^2\dot\sigma
+\ea
+\ba
+	-8\pi G\delta T_{00} & =-8\pi G\Omega^2(2\rho \phi + \delta \rho) \\
+		&=-6\mathcal H^2\Phi - 6\mathcal H^2 \dot\sigma - 6\mathcal H \dot{\mathcal H}\sigma - 8\pi G\Omega^2 \delta \rho_\sigma
+\ea
+This leads to field equation
+\be
+	\boxed{ \del^2 \Psi - 3\mathcal H \dot\Psi - 3\mathcal H^2 \Phi - 4\pi G \Omega^2 \delta\rho_\sigma = 0}
+\ee
+\\
+\\
+\underline{$\delta G_{0i} = -8\pi G\delta T_{0i}$:}
+\ba
+	\delta G_{0i} & = \del_i\plr{ -2\dot \psi -2 \mathcal H \phi - \mathcal H^2 B + 2\frac{\ddot \Omega}{\Omega} B}\\
+		&= \del_i\plr{ 2\dot \Psi + 2\dot{\mathcal H}\sigma +2\dot{\mathcal H}B + \mathcal H^2 B - 2\mathcal H \Phi - 2\mathcal H^2 \sigma}
+\ea
+\ba
+	-8\pi G\delta T_{0i} & =-8\pi G\Omega^2\del_i(\rho(v+B)+pv) \\
+		&=\del_i\plr{-v(2\dot{\mathcal H}+\mathcal H^2) + 3\mathcal H^2 (v+B)}
+\ea
+This leads to field equation
+\be
+	\boxed{ \dot\Psi - \dot \hu \mathcal B + \hu \Phi + \hu^2 \mathcal V = 0}
+\ee
+\\
+\\
+\underline{$\delta G_{ij} = -8\pi G\delta T_{ij},\quad i\ne j$:}
+\ba
+	\delta G_{ij} & = \del_i \del_j\plr{-\dot \sigma + \phi - \psi -2\hu^2E - 2\hu \sigma +4\dot\hu E+4\hu^2 E}\\
+		&= \del_i\del_j\plr{ \Phi - \Psi +2\hu^2 E +4\dot\hu E}
+\ea
+\ba
+	-8\pi G\delta T_{0i} & =-8\pi G\Omega^2\del_i\del_j (2pE) \\
+		&=\del_i\del_j(2(2\dot\hu + \hu^2)E)
+\ea
+This leads to field equation (need to recheck this result)
+\be
+	\boxed{}
+\ee
+\\
+\\
+\underline{$\delta^{ij}\delta G_{ij} = -8\pi G\delta^{ij}\delta T_{ij},$:}
+\ba
+	\delta^{ij}\delta G_{ij} & =2\del^2\psi - 2\del^2 \hu + 2\delta \dot\sigma - 2\hu^2 \del^2E -6\ddot\psi -6\hu\dot\phi+ 6\hu^2 (\phi+\psi) +4\hu\del^2\sigma \\
+&\qquad\qquad + 4(\hu^2+\dot\hu)\del^2 E-12(\hu^2 +\dot\hu)(\phi+\psi) - 12\hu\dot\psi \\
+		&= 2\del^2 (\Psi-\Phi) -6\ddot\Psi - 6\hu^2(\Psi+\Phi) + 2\hu^2 \del^2 E + 6\ddot \hu\sigma + 6\hu\dot\hu \sigma + 4\dot\hu \del^2 E - 6\hu\dot\Phi \\
+&\qquad\qquad - 12\dot \hu(\Psi+\Phi) - 12\hu \dot \Psi
+\ea
+\ba
+	-8\pi G\delta^{ij}\delta T_{ij} & =-8\pi G\Omega^2(-6\psi p+2p\del^2E+3\delta p)\\
+		&=2(2\dot\hu +\hu^2)\del^2 E + 6\hu\dot\hu \sigma + 6\ddot\hu \sigma -12 \dot \hu\Psi - 12\hu^2 \psi - 24\pi G\Omega^2 \delta\rho_\sigma
+\ea
+This leads to field equation (need to recheck this result)
+\be
+	\boxed{}
+\ee
+\emph{Vectors:}
+\\
+\\
+\underline{$\delta G_{0i} = -8\pi G\delta T_{0i}$:}
+\ba
+	\delta G_{0i} & =-\frac{1}{2}\del^2(\dot E_i - B_i)-\hu^2 B_i + 2B_i(\dot \hu + \hu^2) \\
+&= \frac{1}{2}\del^2\mathcal Q_i+ B_i(2\dot \hu + \hu^2) 
+\ea
+\ba
+	-8\pi G\delta T_{0i} & =-8\pi G\Omega^2(-\rho B_i - (\rho+p)v_i)\\
+		&=3\hu^2(v_i + B_i)-(2\dot \hu +\hu^2)v_i\\
+&= 3\hu^2\mathcal B_i - 2(\dot\hu +\hu^2)v_i
+\ea
+This leads to field equation
+\be
+	\boxed{ \frac12 \del^2 \mathcal Q_i - 3\hu^2 \mathcal B_i + (2\dot\hu +\hu^2)\mathcal B_i = 0}
+\ee
+\\
+\\
+\underline{$\delta G_{ii} = -8\pi G\delta T_{ii}$:}
+\ba
+	\delta G_{ii} & = \del_i \blr{\dot{\mathcal Q_i} + 2\hu^2 E_i + 2\hu\mathcal Q_i + 4\dot\hu E_i}\\
+&= \frac{1}{2}\del^2\mathcal Q_i+ B_i(2\dot \hu + \hu^2) 
+\ea
+\ba
+	-8\pi G\delta T_{ii} & =-8\pi G\Omega^2\del_i(2E_ip)\\
+		&=(4\dot\hu + 2\hu^2)\del_i E_i
+\ea
+This leads to field equation
+\be
+	\boxed{ \frac12 \del^2 \mathcal Q_i - 3\hu^2 \mathcal B_i + (2\dot\hu +\hu^2)\mathcal B_i = 0}
+\ee
+\emph{Tensors:}
+\\
+\\
+\underline{$\delta G_{ij} = -8\pi G\delta T_{ij}$:}
+\ba
+	\delta G_{ij} & =\del^2 E_{ij} - \ddot E_{ij} -2\hu^2 E_{ij} -2\hu\dot E_{ij} + 4(\dot\hu +\hu^2)E_{ij} 
+\ea
+\ba
+	-8\pi G\delta T_{ij} & =-8\pi G\Omega^2(pE_{ij} + \pi_{ij})\\
+		&=(2\dot\hu + \hu^2)(E_{ij}+\pi_{ij})
+\ea
+This leads to field equation
+\be
+	\boxed{ \del^2 E_{ij} - \ddot E_{ij} -2\hu \dot E_{ij} + (2\dot\hu +\hu^2)(E_{ij} - \pi_{ij})}
+\ee
+\\ \\
+\emph{Friedman Equations}:\\ \\
+Useful forms of the Friedman equations required for $\delta G_{\mu\nu} = \delta T_{\mu\nu}$ :
+\be
+	\rho\frac{8\pi G\Omega}{3} = \hu^2
+\ee
+\be
+	8\pi G \Omega^2 \dot\rho = 6(\dot \hu \hu -\hu^3)
+\ee
+\be
+	\frac{4\pi G\Omega}{3} (\rho-3p) = \frac{\ddot \Omega}{\Omega}
+\ee
+\be
+	-(2\dot\hu + \hu^2) = 8\pi G\Omega^2p
+\ee
+\be
+	8\pi G\Omega^2 \dot p = 2\hu (2\dot\hu + \hu^2)-(2\ddot\hu+2\hu\dot\hu)
+\ee
+\\ \\
+\emph{Pure Gauge:}\\ \\ After decomposing the metric into SVT as
+\be
+	ds^2 = -(1+2\phi)d\tau^2 + (\pd_i B+B_i)dx^id\tau + [(1-2\psi)\delta_{ij}+2\pd_i\pd_j E + \pd_i E_j+\pd_j E_i + 2E_{ij}]dx^i dx^j
+\ee
+there exist transformations that leave the metric invariant. These are
+\be
+	B \to B + p
+\ee
+\be
+	B_i \to B_i - \del_i p
+\ee
+\be
+	E\to E+q
+\ee
+\be
+	E_i\to E_i - \del_i q + 2r_i
+\ee
+\be
+	E_{ij} \to E_{ij} - \del_i r_j - \del_j r_i.
+\ee
+In order to preserve transverness in $B_i$, $E_i$ and $E_{ij}$ we require
+\be
+	\del^2 p = 0
+\ee
+\be
+	\del^2 q= 0
+\ee
+\be
+	\del^2 r_i = 0
+\ee
+\be
+	\del^i r_i = 0.
+\ee
+The above total to four indepedent components, as expected from the four gauge depedent coordinate transformations. In forming the decomposition of the metric, we choose scalars, vectors, and tensors such that $q$, $p$, and $r_i$ are zero, or in other words $B' = B+p$ etc. 
+\subsubsection{Fourier Solution}
+In a flat background of $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$, Lie derivatives of $\delta G_{\mu\nu}$ vanish thus making $\delta G_{\mu\nu}$ gauge invariant all on its own. We will decompose $\delta G_{\mu\nu}$ by S.V.T. via the metric
+\be
+	ds^2 = -(1+2\phi)d\tau^2 + 2(B_i + \pd_i B)d\tau dx^i + \blr{ (1-2\psi)\delta_{ij} + 2\pd_i \pd_j E + \pd_i E_j + \pd_j E_i + 2E_{ij}}dx^idx^j.
+\ee
+The perturbed Einstein tensor can be expressed in terms of the following gauge invariant quantities:
+\ba
+	\Psi &= \psi\\
+	\Phi &= \phi + \dot B - \ddot E\\
+	Q_i &= \dot E_i - B_i\\
+	E_{ij} &= E_{ij}.
+\ea
+The perturbed tensor is then 
+\begin{align}
+	\delta G_{00} &= -2\del^2 \Psi \\
+	\delta G_{0i}  &= -2\pd_i \dot \Psi - \frac12 \del^2Q_i \\
+	\delta G_{ij} &= -2\ddot \Psi \delta_{ij} + (\del^2\delta_{ij}-\pd_i \pd_j)(\Psi - \Phi) - \frac12\plr{\pd_i \dot Q_j+\pd_j \dot Q_i}  + \Box E_{ij}.
+\end{align}
+The gauge invariant variables are subject to the constraints
+\be
+	\pd^i Q_i = 0,\qquad \pd^i E_{ij} = 0,\qquad \delta^{ij}E_{ij} = 0.
+\ee
+We may also decompose $\delta T_{\mu\nu}$ in a manner exactly analogous to $\delta g_{\mu\nu}$, where perturbed variables are denoted with bars. Since the zeroth order terms in $T_{\mu\nu}$ vanish, all first order terms are all automatically gauge invariant. In addition to the Einstein equation, we have the conservation of energy
+\be
+	\pd^\mu \delta T_{\mu\nu} = 0
+\ee
+yielding the two equations
+\be
+	-2\dot{\bar{\phi}} - \del^2 \bar B = 0
+\ee
+\be
+	-(\dot{\bar{B}}_i + \pd_i \dot{\bar B}) - 2\pd_i \bar\psi + 2\pd_i \del^2\bar E + \del^2 \bar{E}_i = 0
+\ee
+Let us represent each of the perturbed variables in terms of its Fourier decomposition, i.e.
+\begin{align}
+	\Psi(x,t) &= \int d^3k\  e^{ikx} \hat \Psi(k,t)\\
+	\Phi(x,t) &= \int d^3k\  e^{ikx} \hat \Phi(k,t)\\
+	Q_i(x,t)&= \int d^3k\  e^{ikx} \hat Q_i(k,t)\\
+	E_{ij}(x,t) &= \int d^3k\  e^{ikx} \hat E_{ij}(k,t)
+\end{align}
+where the transformed quantities are defined as usual, for example
+\be
+	\hat \Psi(k,t) = \int d^3x\ e^{-ikx} \Psi(x,t).
+\ee
+Now if we substitute (9) and (10) into the constraint equations we have
+\be
+	\int d^3k\  e^{ikx} ik^i \hat Q_i(k,t) = 0, \qquad \int d^3k\  e^{ikx} ik^i \hat E_{ij}(k,t) = 0,\qquad \int d^3k\  e^{ikx} \delta^{ij} \hat E_{ij}(k,t) = 0
+\ee
+For arbitrary $k$, it should then follow that the constraints can be expressed as
+\be
+	k^i \hat Q_i = 0,\qquad k^i \hat E_{ij} = 0,\qquad \delta^{ij}\hat E_{ij} =0.
+\ee
+Next we will substitute (7-10) into $\delta G_{\mu\nu} = \delta T_{\mu\nu}$. This yields
+\ba
+	\delta G_{00}-\delta T_{00} &= \int d^3k\ e^{ikx} \blr{ 2 k^2 \hat\Psi - \delta \hat T_{00}} = 0\\
+	\delta G_{0i}-\delta T_{0i} &= \int d^3k\ e^{ikx} \blr{ -2 ik_i \dot{\hat  \Psi} +\frac12 k^2 \hat Q_i- \delta \hat T_{0i}} = 0\\
+	\delta G_{ij}-\delta T_{ij} &= \int d^3k\ e^{ikx} \blr{ -2 \ddot{\hat \Psi} \delta_{ij} - (k^2 \delta_{ij} - k_ik_j)(\hat \Psi - \hat \Phi)
+	-\frac12\plr{ ik_i \dot{\hat Q}_j + ik_j \dot{\hat {Q}}_i} - k^2 \hat E_{ij} - \ddot {\hat{E}}_{ij}-\delta \hat T_{ij}}=0
+\ea
+Again, operating under the assumption that the inverse Fourier transform of zero is zero, we directly evaluate the integrand to zero, yielding the following new set of equations
+\begin{align}
+	&2k^2 \hat \Psi = -2\hat{\bar \phi} \\
+	 -&2 ik_i \dot{\hat  \Psi} +\frac12 k^2 \hat Q_i= \hat{\bar B}_i+ik_i \hat{\bar B}\\
+	  -&2 \ddot{\hat \Psi} \delta_{ij} - (k^2 \delta_{ij} - k_ik_j)(\hat \Psi - \hat \Phi)
+	-\frac12\plr{ ik_i \dot{\hat Q}_j + ik_j \dot{\hat {Q}}_i} - k^2 \hat E_{ij} - \ddot {\hat{E}}_{ij}=-2\hat{\bar \psi}\delta_{ij} - 2k_ik_j \hat{\bar E} + ik_i \hat{\bar E}_j + ik_j \hat{\bar E}_i + 2\hat{\bar E}_{ij}\\
+ -&6\ddot{\hat \Psi} - 2k^2(\Psi-\Phi) = -6\bar\psi - 2k^2\bar E
+\end{align}
+where we have included the spatial trace as the last equation. We also have the $k$-space conservation equations
+\begin{align}
+	&-2\dot{\hat{\bar{\phi}}} + k^2 \hat{\bar B} = 0\\
+&-(\dot{\hat{\bar{B}}}_i + ik_i \dot{\hat{\bar B}}) - 2ik_i \hat{\bar\psi} - 2ik_ik^2\hat{\bar E} - k^2 \hat{\bar{E}}_i = 0.
+\end{align}
+When looking to decompose the equations in $k$ \emph{space} in terms of S.V.T., we first look at $\delta G_{0i}$ and must assess whether $k_i \hat \Psi$ is orthogonal to $\hat Q_i$ and $\hat{\bar B}_i$. The most straightforward test is to take their scalar product
+\be
+	k^i \hat \Psi \hat Q_i = 0
+\ee
+where we have used the constraint eq (11). Clearly then $k_i\hat \Psi$ lies along $k_i$ and $Q_i$ is orthogonal to it. Since $\hat{\bar B}_i$ follows the same constraint equation as $\hat Q_i$, it is also orthogonal to $k_i\hat\Psi$. Alternatively, we may choose to apply $k^i$ to eq (13) in which we arrive at the same decomposition. The result is the decomposition of scalar and vector equations:
+\begin{align}
+-&2\dot{\hat\Psi} = \hat{\bar B}\\
+&\dot{\hat{\bar B}} + 2\hat{\bar \psi} + 2k^2 \hat{\bar E} = 0\\
+&\frac12 k^2 \hat{Q}_i = \hat{\bar B}_i\\
+&\dot{\hat{\bar B}}_i + k^2\hat{\bar E}_i = 0
+\end{align}
+\\ \\
+Before looking at the spatial piece $\delta G_{ij}$, we can try to solve eq (18) and compare it to the solution obtained in Mannheim SVTsolution.pdf. The solution to (18) is
+\be
+	-2\hat\Psi = \int dt\ \hat{\bar B} + \hat{h}(k).
+\ee
+Having solved for $\hat \Psi$ we can now construct $\Psi(x,t)$ as
+\be
+	-2\Psi(x,t) = -2\int d^3k\ e^{ikx}\hat\Psi
+ = \int d^3k e^{ikx}\blr{ \int dt\ \hat{\bar B} + \hat{h}(k)}= \int dt\ \bar B + h(x)
+\ee
+thus
+\be
+	-2\Psi(x,t) =  \int dt\ \bar B + h(x).
+\ee
+Compare this to the equation calculated in SVTsolution.pdf (recall $\Psi = \psi$)
+\be
+	-2\psi(x,t) = \int dt\ \bar B + \alpha_j x_j \int dt\ f(t) + \int dt\ g(t) + h(x)
+\ee
+where $\del^2 h(x) = 0$. 
+\\ \\
+To try to make the discrepancy more transparent, we note that the equation one obtains from solving in position space is
+\be
+	-2\del^2 \dot \psi = \del^2 \bar B
+\ee
+in which it follows
+\be
+	-2\dot \psi = \bar B + A(x,t)
+\ee
+where $\del^2 A(x,t) = 0$. The solution is then
+\be
+	-2\psi(x,t) = \int dt\ \bar B + \int dt\  A(x,t) + h(x).
+\ee
+\\ 
+However, if we transform (24) into Fourier components we get
+\be
+	-2k^2 \hat \Psi = k^2 \hat{\bar B}
+\ee
+which reduces to
+\be
+	-2\hat \Psi = \hat{\bar B}
+\ee
+with the solution given in eq. (22).
+%In continuing the analysis to $\delta G_{ij}$, we first apply $k^ik^j$ to eq (14) to obtain the scalar equation
+%\be
+%	-2\ddot{\hat \Psi}k^2-(\hat\Psi-\hat\Phi)k^4 = -2\hat{\bar \psi}k^2 + 2k^4 E
+%\ee
+\\
+\\
+%It is worth noting that while the Fourier components at arbitrary $k$ of $\pd_i\Psi$ and $Q_i$ are orthogonal, it is not true of the actual functions of space themselves:
+%\be
+%	\pd^i \Psi Q_i \ne 0.
+%\ee
+Related to this problem is that there seems to reside an ambiguity when we consider a vector that is both longitudinal and transverse at the same time, as in the vector $\pd_i A$ where 
+\be
+	\del^2 A = 0.
+\ee
+Decomposing $A$ into its Fourier transform we see
+\be
+	\del^2 \int d^3k\ e^{ikx} \hat A(k,t) = -\int d^3k\ e^{ikx} k^2 \hat A(k,t) =0
+\ee
+and hence
+\be
+	k^2 \hat A = 0
+\ee
+which for arbitrary $k$ implies that $\hat A = 0$. The problem then is that if we try to construct $A(x,t)$ via
+\be
+	A(x,t) = \int d^3k\ e^{ikx}\hat A(k,t)
+\ee
+we find that $A(x,t) =0$ which we know is not the general solution of Laplace's equation. 
+\newpage
+\section{Appendix}
+\subsection{SVT Decomposition from Orthogonal Projections}
+Fundamental observers are locally at rest with respect to the matter fluid. Motivated by these ``preferred'' frames, we seek to split a given rank 2 tensor $T_{ab}$ into components parallel and orthogonal to a velocity vector $u_\mu$. The rest frames locally define surfaces of constant $t$. The induced metric for the surfaces of simultaneity is
+\be
+	h_{ab} = g_{ab} + u_a u_b.
+\ee
+That this acts like a 3-space metric can verified by
+\be
+	h^a{}_b h^b{}_c =  h^a{}_c,\qquad h^c{}_c = 3, \qquad h^a{}_b u^b = 0.
+\ee
+Note that the last relation uses $h^a{}_b$ to project the components orthogonal to $u^a$.  Likewise $U^a{}_b \equiv -u^au_b$ projects components parallel to $u_a$. \\ \\
+We can use these projectors to decompose a tensor into components parallel and orthogonal to the local velocity. Take arbitrary symmetric rank 2 tensor $T_{ab}$
+\ba
+	T_{ab} &= g_a{}^c g_b{}^d T_{cd}\\
+	&= (h_a{}^c + U_a{}^c)(h_b{}^d + U_b{}^d)T_{cd}\\
+	&= h_a{}^c h_b{}^d T_{cd} - u_a(u^c h_b{}^d T_{cd}) - u_b (u^d h_a{}^c T_{cd}) + u_a u_b (u^c u^d T_{cd}) .
+\ea
+This can be expressed in terms of symmetric trace free quantities
+\ba
+	T_{ab}&= \frac13 h_{ab} h^{cd}T_{cd}+ \blr{ h_{(a}{}^c h_{b)}{}^d - \frac13 h_{ab}h^{cd}}T_{cd} + h^a{}_b h^c{}_d T_{[cd]}\\
+	&\quad - u_a(h_b{}^d T_{cd}u^c ) - u_b ( h_a{}^c T_{cd}u^d) + u_a u_b (u^c u^d T_{cd}).
+\ea
+where 
+\be
+	T_{<ab>} \equiv  \blr{ h_{(a}{}^c h_{b)}{}^d - \frac13 h_{ab}h^{cd}}T_{cd} 
+\ee
+is the symmetric trace free projection orthogonal to $u_a$. For a vector, we have orthogonal projection
+\be
+	V_{<a>} \equiv h_a{}^b V_a.
+\ee
+Let us take $T_{ab}$ to be symmetric and relabel the following quantities:
+\ba
+	\rho &= u^au^bT_{ab}\\
+	p &= \frac13 h^{ab}T_{ab}\\
+	q_a &= q_{<a>} = -h_a{}^b T_{bc} u^c = -T_{<a>b}u^b\\
+	\pi_{ab} &= \pi_{<ab>} = T_{<ab>}.
+\ea
+Now the energy momentum tensor may be expressed as 
+\ba
+	T_{ab} &= u_a u_b \rho + h_{ab}p + u_a q_b + u_b q_a + \pi_{ab}\\
+	&= (\rho + p)u_au_b + pg_{ab} + u_a q_b + u_b q_a + \pi_{ab}
+\ea 
+Note that $u^a q_a = 0$, and that $\pi_{ab}$ (projected symmetric traceless) has 5 components. Thus 2 scalars, 3 vector components, and 5 from the tensor give us 10 in total. \\ \\
+In comoving coordinates in FLRW space, the velocity vector is
+\be
+	u^a = \delta^a_0,\qquad u_a = -\delta_a^0
+\ee
+and the only non-zero components of $\pi_{ab}$ are $\pi_{ij}$ (spatial). According to York (1973) we may decompose a symmetric tensor on a positive definite Riemannian space as
+\be
+	\pi_{ab} = \pi_{ab}^{TT} + \pi_{ab}^L + \pi_{ab}^{Tr}
+\ee
+where 
+\be
+	\pi_{ab}^{Tr} = \frac13 g_{ab}g^{cd}\pi_{cd}
+\ee
+and 
+\be
+	\pi_{ab}^{L} = \del_a W_b + \del_b W_a -\frac23 g_{ab}\del_c W^c.
+\ee
+By construction 
+\be
+	g^{ab}\pi_{ab}^{TT} = 0.
+\ee
+The transverse requirement leads to an equation for the vector $W_a$
+\be
+	-\del_b \pi^{ab(L)} = - \del_b (\pi^{ab} -\frac13 g^{ab} g_{cd}\pi^{cd}).
+\ee
+York shows that such a vector $W_a$ must exists and is unique, up to conformal Killing vectors. Moreover, he also shows that decomposition actually holds its form under conformal transformation on the metric. \\ \\
+Going back to the symmetric traceless tensor $\pi_{ab}$, we may write this as
+\ba
+	\pi_{ab} &= \pi_{ab}^{TT} + \pi_{ab}^L\\
+	&=\pi_{ab}^{TT} +  \del_a W_b + \del_b W_a -\frac23 g_{ab}\del_c W^c.
+\ea
+\\ \\
+Going back to the general symmetric tensor, if we instead make the substitutions
+\ba
+	\rho &= -2\phi\\
+	p &= -2\plr{\psi'-\frac13 \del^2 E} = \psi\\
+	q_a &= -(B_a+\del_a B);\qquad \del_a B^a =0\\
+	W_a &= (E_a +\del_a E);\qquad \del_a E^a = 0
+\ea
+and 
+\ba
+	\pi_{ab} &=\pi_{ab}^{TT} +  \del_a W_b + \del_b W_a -\frac23 g_{ab}\del_c W^c\\
+	&= E_{ab} + \del_a E_b + \del_b E_a +2 \del_a\del_b E - \frac23h_{ab} \del^2 E
+\ea
+we then end up with the same form of the perturbation metric as given in the standard SVT decomposition:
+\be
+	T_{ab} = -2\phi u_a u_b - (B_b + \del_b B)u_a - (B_a+\del_a B)u_b - 2\gamma_{ab} \psi + \del_a E_b + \del _b E_a +
+	+2E_{ab}.
+\ee
+In flat space the spacetime interval is 
+\be
+	ds^2 =  -(1+2\phi)dt^2 + 2(B_i+\del_i B)dx^i dt + \blr{-2 \delta_{ij} \psi + (\del_i E_j + \del_j E_i) + 2\del_i \del_j E + 2E_{ij}}dx^i dx^j.
+\ee
+Thus the SVT decomposition can be achieved first by orthogonal decomposition of a symmetric tensor relative to the four velocity, and then decomposing the projected symmetric trace-free portion into transverse and longitudinal components. 
+\end{document}
