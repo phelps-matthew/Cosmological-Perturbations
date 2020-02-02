@@ -1,0 +1,318 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11294,        310]
+NotebookOptionsPosition[      8167,        231]
+NotebookOutlinePosition[      8766,        255]
+CellTagsIndexPosition[      8697,        250]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"ParallelNeeds", "[", "\"\<xAct`xTensor`\>\"", "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.7293653548983173`*^9, 
+  3.7293653548993173`*^9}},ExpressionUUID->"c77a7015-fda9-408e-ad6f-\
+16f659e68303"],
+
+Cell["<<xAct`xTensor`", "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.545036798532836*^9, 3.5450367987773457`*^9}, 
+   3.547889969246751*^9, 3.552731863542223*^9, 3.552731878082793*^9, {
+   3.569070741073968*^9, 3.569070751713723*^9}, {3.603629917738783*^9, 
+   3.60362995483315*^9}, {3.6041458458408437`*^9, 3.604145848990848*^9}, {
+   3.604147023323492*^9, 3.6041470286734996`*^9}, {3.6041470659035516`*^9, 
+   3.604147069833557*^9}, {3.7288489049428754`*^9, 3.728848917400588*^9}, {
+   3.728946083228155*^9, 3.72894608523627*^9}, {3.729365330782938*^9, 
+   3.729365354104272*^9}},
+ TextAlignment->Left,
+ TextJustification->0.,
+ CellTags->"S5.18.1",ExpressionUUID->"5deb4a35-f5cd-4541-8ae3-da5a19cf303b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DefManifold", "[", 
+   RowBox[{"M", ",", "4", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\[Alpha]", ",", "\[Beta]", ",", "\[Gamma]", ",", "\[Mu]", ",", "\[Nu]", 
+      ",", "\[Lambda]", ",", "\[Sigma]", ",", "\[Kappa]", ",", "\[Rho]", ",", 
+      "\[Eta]", ",", "\[Xi]", ",", "\[Chi]", ",", "\[Omega]", ",", 
+      "\[Zeta]"}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.728736302862382*^9, 
+  3.728736304238936*^9}},ExpressionUUID->"e860c029-e5ea-4b6b-9312-\
+67bff1606139"],
+
+Cell[BoxData["\"\</home/matthew/Dropbox/Vacio/Mannheim/output/\>\""], "Input",
+ CellChangeTimes->{{3.7293697424944377`*^9, 
+  3.729369744174534*^9}},ExpressionUUID->"5ec8bd59-f8c6-4445-847e-\
+6616882ff88c"],
+
+Cell[BoxData[
+ RowBox[{"NotebookDirectory", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7293699636610875`*^9, 
+  3.7293699699824495`*^9}},ExpressionUUID->"b7f0f184-7fe8-4209-b8ef-\
+1140fd3b8a92"],
+
+Cell[BoxData["$UserBaseDirectory"], "Input",
+ CellChangeTimes->{{3.729370135633924*^9, 
+  3.729370167164727*^9}},ExpressionUUID->"80aab000-8e88-4ed9-afe4-\
+1eb8851c4ea7"],
+
+Cell[BoxData["$InstallationDirectory"], "Input",
+ CellChangeTimes->{{3.729370155986088*^9, 
+  3.7293701576071806`*^9}},ExpressionUUID->"9f03f449-fe0a-47ad-951c-\
+69bff0972f11"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NotebookEvaluate", "[", 
+  "\"\<C:\\\\Users\\\\mgp\\\\Dropbox\\\\Vacio\\\\Mannheim\\\\xAct\\\\hpc_run.\
+nb\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.729371710920025*^9, 3.729371732612266*^9}, {
+  3.729371766658213*^9, 3.729371769961402*^9}, {3.7293718509130325`*^9, 
+  3.729371857240394*^9}, {3.729371905793171*^9, 
+  3.7293719230711594`*^9}},ExpressionUUID->"4aff41ea-0612-4702-86b6-\
+8367545f8de2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.729371953900923*^9},ExpressionUUID->"a3c84fb2-79c1-4567-8d77-\
+45552e8cbd18"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.3", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.729371953902923*^9},ExpressionUUID->"aa7270dc-1847-4382-8c36-\
+a2f5b3c44ec5"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2015, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7293719539049234`*^9},ExpressionUUID->"106a3560-a0ba-419f-ae04-\
+f474d8850b65"],
+
+Cell[BoxData["\<\"Connecting to external MinGW executable...\"\>"], "Print",
+ CellChangeTimes->{
+  3.7293719539489255`*^9},ExpressionUUID->"8b9f7bf7-fa3e-40af-896c-\
+8b4e1eac727d"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7293719539769273`*^9},ExpressionUUID->"fab10286-191c-4963-becf-\
+5876dbbdd91f"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.729371953979927*^9},ExpressionUUID->"796a3399-9457-4b46-a3e1-\
+91dbb4780c3b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.1.2", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.729371953986928*^9},ExpressionUUID->"45fb478b-08cc-4bc0-af4c-\
+3dbe17a84736"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2015, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7293719539899282`*^9},ExpressionUUID->"adbbc783-8615-4a90-9ab8-\
+a88ecbf18343"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.729371953991928*^9},ExpressionUUID->"5e822a86-c8a5-4593-b9ff-\
+bfd4c98d11aa"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7293719539949284`*^9},ExpressionUUID->"80a0e834-1ba0-4eb7-847e-\
+a56911fa08bd"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.729371953996928*^9},ExpressionUUID->"14973807-4542-4b61-ba30-\
+eef261459a3c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefManifold", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"manifold \"\>", "\[InvisibleSpace]", "M", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefManifold, ": Defining ", "manifold ", $CellContext`M,
+    ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.729371954093934*^9},ExpressionUUID->"abcceea9-8f20-4bfe-a5d4-\
+93ae6767d971"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefVBundle", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"vbundle \"\>", "\[InvisibleSpace]", "TangentM", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefVBundle, ": Defining ", 
+   "vbundle ", $CellContext`TangentM, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7293719541059346`*^9},ExpressionUUID->"2d6b128a-76a0-4442-8797-\
+3cc49d2562c8"]
+}, Open  ]],
+
+Cell[BoxData["\<\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\11.1\"\>"], "Output",
+ CellChangeTimes->{
+  3.7293719541259356`*^9},ExpressionUUID->"513be9d8-0bb5-4e47-afde-\
+d37264105be4"]
+}, Open  ]],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.7293719397381124`*^9, 
+  3.729371946415495*^9}},ExpressionUUID->"3ddc0020-fae5-4066-9810-\
+7139af6a80a6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Print", "[", 
+  RowBox[{"{", 
+   RowBox[{"$MachineName", ",", "$KernelID"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7293721323361287`*^9, 
+  3.7293721323371286`*^9}},ExpressionUUID->"a744e629-8c85-46d3-b205-\
+b113bbf2668c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"mgp-pc\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.7293721335661993`*^9},ExpressionUUID->"994594c4-8f3b-4c70-99f1-\
+3b5c00eebfb7"]
+}, Open  ]]
+},
+WindowSize->{1264, 1201},
+WindowMargins->{{409, Automatic}, {Automatic, 35}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "S5.18.1"->{
+  Cell[805, 28, 744, 12, 
+  46, "Input", "ExpressionUUID" -> "5deb4a35-f5cd-4541-8ae3-da5a19cf303b",
+   CellGroupingRules->{GroupTogetherGrouping, 10000.},
+   CellTags->"S5.18.1"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"S5.18.1", 8492, 242}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 244, 6, 46, "Input", "ExpressionUUID" -> \
+"c77a7015-fda9-408e-ad6f-16f659e68303"],
+Cell[805, 28, 744, 12, 46, "Input", "ExpressionUUID" -> \
+"5deb4a35-f5cd-4541-8ae3-da5a19cf303b",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellTags->"S5.18.1"],
+Cell[1552, 42, 522, 12, 46, "Input", "ExpressionUUID" -> \
+"e860c029-e5ea-4b6b-9312-67bff1606139"],
+Cell[2077, 56, 206, 3, 46, "Input", "ExpressionUUID" -> \
+"5ec8bd59-f8c6-4445-847e-6616882ff88c"],
+Cell[2286, 61, 195, 4, 46, "Input", "ExpressionUUID" -> \
+"b7f0f184-7fe8-4209-b8ef-1140fd3b8a92"],
+Cell[2484, 67, 170, 3, 46, "Input", "ExpressionUUID" -> \
+"80aab000-8e88-4ed9-afe4-1eb8851c4ea7"],
+Cell[2657, 72, 176, 3, 46, "Input", "ExpressionUUID" -> \
+"9f03f449-fe0a-47ad-951c-69bff0972f11"],
+Cell[CellGroupData[{
+Cell[2858, 79, 427, 8, 46, "Input", "ExpressionUUID" -> \
+"4aff41ea-0612-4702-86b6-8367545f8de2"],
+Cell[CellGroupData[{
+Cell[3310, 91, 198, 4, 34, "Print", "ExpressionUUID" -> \
+"a3c84fb2-79c1-4567-8d77-45552e8cbd18"],
+Cell[3511, 97, 467, 11, 34, "Print", "ExpressionUUID" -> \
+"aa7270dc-1847-4382-8c36-a2f5b3c44ec5"],
+Cell[3981, 110, 221, 4, 34, "Print", "ExpressionUUID" -> \
+"106a3560-a0ba-419f-ae04-f474d8850b65"],
+Cell[4205, 116, 180, 3, 34, "Print", "ExpressionUUID" -> \
+"8b9f7bf7-fa3e-40af-896c-8b4e1eac727d"],
+Cell[4388, 121, 161, 3, 34, "Print", "ExpressionUUID" -> \
+"fab10286-191c-4963-becf-5876dbbdd91f"],
+Cell[4552, 126, 198, 4, 34, "Print", "ExpressionUUID" -> \
+"796a3399-9457-4b46-a3e1-91dbb4780c3b"],
+Cell[4753, 132, 474, 12, 34, "Print", "ExpressionUUID" -> \
+"45fb478b-08cc-4bc0-af4c-3dbe17a84736"],
+Cell[5230, 146, 221, 4, 34, "Print", "ExpressionUUID" -> \
+"adbbc783-8615-4a90-9ab8-a88ecbf18343"],
+Cell[5454, 152, 198, 4, 34, "Print", "ExpressionUUID" -> \
+"5e822a86-c8a5-4593-b9ff-bfd4c98d11aa"],
+Cell[5655, 158, 355, 6, 63, "Print", "ExpressionUUID" -> \
+"80a0e834-1ba0-4eb7-847e-a56911fa08bd"],
+Cell[6013, 166, 198, 4, 34, "Print", "ExpressionUUID" -> \
+"14973807-4542-4b61-ba30-eef261459a3c"],
+Cell[6214, 172, 530, 12, 34, "Print", "ExpressionUUID" -> \
+"abcceea9-8f20-4bfe-a5d4-93ae6767d971"],
+Cell[6747, 186, 542, 12, 34, "Print", "ExpressionUUID" -> \
+"2d6b128a-76a0-4442-8797-3cc49d2562c8"]
+}, Open  ]],
+Cell[7304, 201, 203, 4, 46, "Output", "ExpressionUUID" -> \
+"513be9d8-0bb5-4e47-afde-d37264105be4"]
+}, Open  ]],
+Cell[7522, 208, 158, 3, 46, "Input", "ExpressionUUID" -> \
+"3ddc0020-fae5-4066-9810-7139af6a80a6"],
+Cell[CellGroupData[{
+Cell[7705, 215, 254, 6, 46, "Input", "ExpressionUUID" -> \
+"a744e629-8c85-46d3-b205-b113bbf2668c"],
+Cell[7962, 223, 189, 5, 34, "Print", "ExpressionUUID" -> \
+"994594c4-8f3b-4c70-99f1-3b5c00eebfb7"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,334 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12182,        325]
+NotebookOptionsPosition[     11368,        295]
+NotebookOutlinePosition[     11750,        312]
+CellTagsIndexPosition[     11707,        309]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Initialization", "Section",
+ CellChangeTimes->{{3.72986293472701*^9, 3.729862936258499*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"slurmnodes", " ", "=", " ", 
+   RowBox[{"ToString", "[", 
+    RowBox[{"Environment", "[", "\"\<SLURM_JOB_NODELIST\>\"", "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.72986191352497*^9, 3.729861918425045*^9}, {
+  3.729862788023903*^9, 3.729862803594342*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"slurmcpus", " ", "=", " ", 
+   RowBox[{"ToString", "[", 
+    RowBox[{"Environment", "[", "\"\<SLURM_JOB_CPUS_PER_NODE\>\"", "]"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.72986192012787*^9, 3.7298619207742968`*^9}, {
+  3.7298620560186043`*^9, 3.7298620588150797`*^9}, {3.729862804517455*^9, 
+  3.729862805040564*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"resourcegrab", "[", 
+    RowBox[{"nodes_", ",", "cpus_"}], "]"}], ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "nodelist0", ",", "nodelist", ",", "cpulist", ",", "dash", ",", 
+       "nondash", ",", "prefix"}], "}"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"StringContainsQ", "[", 
+         RowBox[{"nodes", ",", "\"\<[\>\""}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"nodes", ",", "cpus"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"prefix", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{"nodes", ",", 
+           RowBox[{
+            RowBox[{"\"\<[\>\"", "~~", "__", "~~", "\"\<]\>\""}], "\[Rule]", 
+            "\"\<\>\""}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"nodelist0", " ", "=", " ", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"StringCases", "[", 
+             RowBox[{"nodes", ",", 
+              RowBox[{"\"\<[\>\"", "~~", "__", "~~", "\"\<]\>\""}]}], "]"}], 
+            "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<[\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<]\>\"", "\[Rule]", "\"\<\>\""}]}], "}"}]}], "]"}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"dash", " ", "=", " ", 
+         RowBox[{"ToExpression", "[", 
+          RowBox[{"StringSplit", "[", 
+           RowBox[{
+            RowBox[{"StringCases", "[", 
+             RowBox[{"nodelist0", ",", 
+              RowBox[{
+              "NumberString", " ", "~~", "\"\<-\>\"", "~~", 
+               "NumberString"}]}], "]"}], ",", "\"\<-\>\""}], "]"}], "]"}]}], 
+        ";", 
+        RowBox[{"dash", "=", " ", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Range", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"dash", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"dash", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", 
+              RowBox[{"Length", "[", "dash", "]"}]}], "}"}]}], "]"}], "]"}]}],
+         ";", 
+        RowBox[{"nondash", " ", "=", 
+         RowBox[{"ToExpression", "[", 
+          RowBox[{"StringSplit", "[", 
+           RowBox[{
+            RowBox[{"StringReplace", "[", 
+             RowBox[{
+              RowBox[{"StringReplace", "[", 
+               RowBox[{"nodelist0", ",", 
+                RowBox[{
+                 RowBox[{
+                 "NumberString", "~~", "\"\<-\>\"", "~~", "NumberString"}], 
+                 "\[Rule]", "\"\<\>\""}]}], "]"}], ",", 
+              RowBox[{"\"\<,,\>\"", "\[Rule]", "\"\<,\>\""}]}], "]"}], ",", 
+            "\"\<,\>\""}], "]"}], "]"}]}], ";", 
+        RowBox[{"nodelist", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"prefix", ",", "#"}], "]"}], "&"}], "/@", 
+          RowBox[{"ToString", "/@", 
+           RowBox[{"Sort", "[", 
+            RowBox[{"Join", "[", 
+             RowBox[{"dash", ",", "nondash"}], "]"}], "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"cpulist", " ", "=", " ", 
+         RowBox[{"ToExpression", "[", 
+          RowBox[{"StringSplit", "[", 
+           RowBox[{
+            RowBox[{"StringReplace", "[", 
+             RowBox[{
+              RowBox[{"StringReplace", "[", 
+               RowBox[{"cpus", ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"a", ":", "NumberString"}], "~~", "\"\<(x\>\"", 
+                   "~~", 
+                   RowBox[{"b", ":", "NumberString"}], "~~", "\"\<)\>\""}], ":>", 
+                  RowBox[{"ToString", "[", 
+                   RowBox[{"Table", "[", 
+                    RowBox[{"a", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", 
+                    RowBox[{"ToExpression", "[", "b", "]"}]}], "}"}]}], "]"}],
+                    "]"}]}], "}"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<{\>\"", "\[RuleDelayed]", "\"\<\>\""}], ",", 
+                RowBox[{"\"\<}\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+                RowBox[{"\"\< \>\"", "\[RuleDelayed]", "\"\<\>\""}]}], 
+               "}"}]}], "]"}], ",", "\"\<,\>\""}], "]"}], "]"}]}], ";", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"nodelist", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], "\[Rule]", 
+           RowBox[{"cpulist", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "1", ",", 
+            RowBox[{"Length", "[", "nodelist", "]"}]}], "}"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", " ", "]"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.729821213578846*^9, 3.729821240257148*^9}, {
+   3.729821270941628*^9, 3.72982133764326*^9}, {3.729821372669832*^9, 
+   3.729821406712079*^9}, {3.729824279568284*^9, 3.72982441399083*^9}, {
+   3.729824572022862*^9, 3.729824616859811*^9}, {3.729824895938344*^9, 
+   3.7298249901971617`*^9}, {3.729825039436185*^9, 3.7298250511037397`*^9}, {
+   3.729825354341325*^9, 3.729825356439128*^9}, {3.7298255740216627`*^9, 
+   3.729825579270968*^9}, {3.72982561798218*^9, 3.729825624573848*^9}, {
+   3.729826111862096*^9, 3.729826134559952*^9}, {3.729826331635956*^9, 
+   3.729826351738573*^9}, {3.7298264206394157`*^9, 3.7298264278473043`*^9}, {
+   3.729827537975071*^9, 3.7298276342955017`*^9}, {3.729827672722973*^9, 
+   3.729827696669299*^9}, {3.729827819138349*^9, 3.72982787675218*^9}, 
+   3.729827913137328*^9, {3.729828962409202*^9, 3.729829027475606*^9}, {
+   3.729829137108042*^9, 3.729829139334836*^9}, {3.729861612902083*^9, 
+   3.7298616231207047`*^9}, 3.72986326398687*^9, {3.729863328002976*^9, 
+   3.729863331937881*^9}, {3.7298639920364313`*^9, 3.729863992635138*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"resources", " ", "=", " ", 
+   RowBox[{"resourcegrab", "[", 
+    RowBox[{"slurmnodes", ",", "slurmcpus"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7298633398827257`*^9, 3.7298633575886183`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cputotal", " ", "=", " ", 
+   RowBox[{"Total", "[", 
+    RowBox[{"Values", "[", "resources", "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7298632991046658`*^9, 3.729863318955209*^9}, {
+  3.7298633647479143`*^9, 3.729863367637334*^9}, {3.729863440765036*^9, 
+  3.729863444730895*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ToString", "[", "resources", "]"}], ">>", 
+  "\"\</home/map14010/res.txt\>\""}]], "Input",
+ CellChangeTimes->{{3.729889445076284*^9, 3.729889460711937*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<SubKernels`RemoteKernels`\>\"", "]"}], "\n", 
+ RowBox[{"Parallel`Settings`$MathLinkTimeout", "=", "100"}], "\n", 
+ RowBox[{
+  RowBox[{"user", "=", "\"\<map14010\>\""}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"password", "=", "\"\<duality2.\>\""}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ssh", "=", "\"\<ssh\>\""}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"ssh", " ", "program", " ", 
+     RowBox[{"name", ".", "If"}], " ", "you", " ", "install", " ", "GOW", " ",
+      "on", " ", "Windows"}], ",", 
+    RowBox[{"then", " ", "this", " ", "should", " ", "work"}], ",", 
+    RowBox[{
+    "otherwise", " ", "put", " ", "the", " ", "path", " ", "yourself"}]}], 
+   "*)"}], 
+  RowBox[{"math", "=", 
+   RowBox[{
+   "\"\<MathKernel\>\"", "<>", 
+    "\"\< -wstp -linkmode Connect `4` -linkname `2` -subkernel -noinit >&  \
+/dev/null &\>\""}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"number", "=", "1"}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+   "number", " ", "of", " ", "parallel", " ", "kernels", " ", "to", " ", 
+    "launch"}], "*)"}], 
+  RowBox[{"machine", "=", 
+   RowBox[{"Keys", "[", 
+    RowBox[{"resources", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"remote", "=", 
+   RowBox[{"SubKernels`RemoteKernels`RemoteMachine", "[", 
+    RowBox[{"machine", ",", 
+     RowBox[{
+     "ssh", "<>", "\"\< \>\"", "<>", "user", "<>", "\"\<@\>\"", "<>", 
+      "machine", "<>", "\"\< \>\"", "<>", "\"\<-pw \>\"", "<>", "password", 
+      "<>", "\"\< \\\"\>\"", "<>", "math", "<>", "\"\<\\\"\>\""}], ",", 
+     "number"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.729889194710761*^9, 3.7298891947222757`*^9}, {
+   3.729889231950368*^9, 3.7298892718409643`*^9}, {3.7298893103930607`*^9, 
+   3.729889327638525*^9}, {3.729889469105482*^9, 3.729889501237771*^9}, 
+   3.7298896037173777`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluationData", "[", "1", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.729889611444765*^9, 3.7298896164461327`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ToString", "[", 
+   RowBox[{"remote", "//", "InputForm"}], "]"}], ">>", 
+  "\"\</home/map14010/remote.txt\>\""}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"kerns", "=", 
+   RowBox[{"ToString", "[", 
+    RowBox[{"EvaluationData", "[", 
+     RowBox[{"LaunchKernels", "[", "remote", "]"}], "]"}], "]"}]}], ">>", 
+  "\"\<launch.txt\>\""}]], "Input",
+ CellChangeTimes->{{3.729889513993587*^9, 3.729889522307564*^9}, {
+  3.729889619905136*^9, 3.7298896355603437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"ParallelEvaluate", "[", "$MachineName", "]"}], "*)"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CloseKernels", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.729879728980291*^9, {3.729889570960927*^9, 3.729889578400404*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Exit", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.729889579660089*^9, 3.7298895810654697`*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 98, 1, 95, "Section"],
+Cell[681, 25, 304, 7, 75, "Input"],
+Cell[988, 34, 365, 8, 75, "Input"],
+Cell[1356, 44, 6288, 143, 887, "Input"],
+Cell[7647, 189, 237, 5, 46, "Input"],
+Cell[7887, 196, 328, 7, 46, "Input"],
+Cell[8218, 205, 191, 4, 46, "Input"],
+Cell[8412, 211, 1858, 45, 495, "Input"],
+Cell[10273, 258, 153, 3, 46, "Input"],
+Cell[10429, 263, 158, 4, 75, "Input"],
+Cell[10590, 269, 341, 8, 103, "Input"],
+Cell[10934, 279, 105, 2, 46, "Input"],
+Cell[11042, 283, 169, 4, 46, "Input"],
+Cell[11214, 289, 138, 3, 46, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

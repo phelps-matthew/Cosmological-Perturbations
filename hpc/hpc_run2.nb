@@ -1,0 +1,222 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7579,        214]
+NotebookOptionsPosition[      6152,        173]
+NotebookOutlinePosition[      6750,        197]
+CellTagsIndexPosition[      6681,        192]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Put", "[", "\"\<output.txt\>\"", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.729376424359618*^9, 
+  3.729376429615919*^9}},ExpressionUUID->"49cfd216-5cef-4572-beb2-\
+be4de8870060"],
+
+Cell["(*<<xAct`xTensor`*)", "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.545036798532836*^9, 3.5450367987773457`*^9}, 
+   3.547889969246751*^9, 3.552731863542223*^9, 3.552731878082793*^9, {
+   3.569070741073968*^9, 3.569070751713723*^9}, {3.603629917738783*^9, 
+   3.60362995483315*^9}, {3.6041458458408437`*^9, 3.604145848990848*^9}, {
+   3.604147023323492*^9, 3.6041470286734996`*^9}, {3.6041470659035516`*^9, 
+   3.604147069833557*^9}, {3.7288489049428754`*^9, 3.728848917400588*^9}, {
+   3.728946083228155*^9, 3.72894608523627*^9}, {3.729365330782938*^9, 
+   3.729365354104272*^9}, {3.729376405088516*^9, 3.729376416432165*^9}, {
+   3.7293766226619606`*^9, 3.7293766327735395`*^9}},
+ TextAlignment->Left,
+ TextJustification->0.,
+ CellTags->"S5.18.1",ExpressionUUID->"8f4cdabe-c85b-473a-90d2-9cdcbcebad50"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"DefManifold", "[", 
+    RowBox[{"M", ",", "4", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Alpha]", ",", "\[Beta]", ",", "\[Gamma]", ",", "\[Mu]", ",", "\[Nu]",
+        ",", "\[Lambda]", ",", "\[Sigma]", ",", "\[Kappa]", ",", "\[Rho]", 
+       ",", "\[Eta]", ",", "\[Xi]", ",", "\[Chi]", ",", "\[Omega]", ",", 
+       "\[Zeta]"}], "}"}]}], "]"}], ">>", "\"\<output.txt\>\""}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.728736302862382*^9, 3.728736304238936*^9}, {
+  3.729376436519314*^9, 
+  3.729376437025343*^9}},ExpressionUUID->"770938ec-af2f-4c43-90c8-\
+ee7b15d35b0a"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"$UserBaseDirectory", ">>", "\"\<output.txt\>\""}], "*)"}]], "Input",
+ CellChangeTimes->{{3.729370135633924*^9, 3.729370167164727*^9}, 
+   3.72937643820041*^9},ExpressionUUID->"1c587a41-a045-43d8-9f01-\
+c406077beb47"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"$InstallationDirectory", ">>", "\"\<output.txt\>\""}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.729370155986088*^9, 3.7293701576071806`*^9}, 
+   3.7293764387364407`*^9},ExpressionUUID->"6b25076e-044b-4665-b76b-\
+dcfdcb4fa825"],
+
+Cell[BoxData[
+ RowBox[{"(*", "Quit", "*)"}]], "Input",
+ CellChangeTimes->{{3.7293748995734053`*^9, 
+  3.729374899879423*^9}},ExpressionUUID->"e4c1c8dc-df46-4fee-bda1-\
+364d6f45e744"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"headNode", "=", 
+   RowBox[{"Environment", "[", "\"\<SLURMD_NODENAME\>\"", "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.7293748145145407`*^9, 
+  3.7293748233680468`*^9}},ExpressionUUID->"e66794a6-5a0a-4fc2-9f25-\
+48c073735458"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"nodes", "=", 
+   RowBox[{"ReadList", "[", 
+    RowBox[{
+    "\"\<!scontrol show hostname $SLURM_NODELIST\>\"", ",", "String"}], 
+    "]"}]}], "*)"}]], "Input",
+ CellChangeTimes->{
+  3.7293748239200783`*^9},ExpressionUUID->"69d98a24-3624-46a2-8ee3-\
+a4c30c7e1365"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"get", " ", "association", " ", "of", " ", "resources"}], ",", 
+    RowBox[{"name", " ", "of", " ", "local", " ", "host"}], ",", 
+    RowBox[{
+    "and", " ", "remove", " ", "local", " ", "host", " ", "from", " ", 
+     "available", " ", "resources"}]}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"hosts", "=", 
+     RowBox[{"Counts", "[", 
+      RowBox[{"ReadList", "[", 
+       RowBox[{
+        RowBox[{"Environment", "[", "\"\<PBS_NODEFILE\>\"", "]"}], ",", 
+        "\"\<String\>\""}], "]"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"local", "=", 
+     RowBox[{"First", "[", 
+      RowBox[{"StringSplit", "[", 
+       RowBox[{
+        RowBox[{"Environment", "[", "\"\<HOSTNAME\>\"", "]"}], ",", 
+        "\"\<.\>\""}], "]"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"hosts", "[", "local", "]"}], "--"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "launch", " ", "subkernels", " ", "and", " ", "connect", " ", "them", " ",
+      "to", " ", "the", " ", "controlling", " ", "Wolfram", " ", "Kernel"}], 
+    "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"Needs", "[", "\"\<SubKernels`RemoteKernels`\>\"", "]"}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"hosts", "[", "#", "]"}], ">", "0"}], ",", 
+         RowBox[{"LaunchKernels", "[", 
+          RowBox[{"RemoteMachine", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{"hosts", "[", "#", "]"}]}], "]"}], "]"}]}], "]"}], "&"}], 
+      ",", 
+      RowBox[{"Keys", "[", "hosts", "]"}]}], "]"}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{"\[Equal]", 
+      RowBox[{
+      "regular", " ", "Wolfram", " ", "Language", " ", "code", " ", "goes", 
+       " ", "here"}]}], "===", "\[Equal]"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"{", 
+     RowBox[{"$MachineName", ",", "$KernelID"}], "}"}], "]"}], "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"===", 
+     RowBox[{"\[Equal]", 
+      RowBox[{
+      "end", " ", "of", " ", "Wolfram", " ", "Language", " ", "program"}]}], "===",
+      "\[Equal]"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CloseKernels", "[", "]"}], ";"}], "\n", "Quit"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.7293748033949046`*^9, 
+  3.729374830657464*^9}},ExpressionUUID->"d40b4c25-62bc-4e31-a9f7-\
+6e87e5fd53fb"]
+},
+WindowSize->{1264, 1370},
+WindowMargins->{{Automatic, 219}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "S5.18.1"->{
+  Cell[785, 27, 848, 13, 
+  46, "Input", "ExpressionUUID" -> "8f4cdabe-c85b-473a-90d2-9cdcbcebad50",
+   CellGroupingRules->{GroupTogetherGrouping, 10000.},
+   CellTags->"S5.18.1"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"S5.18.1", 6476, 184}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 224, 5, 46, "Input", "ExpressionUUID" -> \
+"49cfd216-5cef-4572-beb2-be4de8870060"],
+Cell[785, 27, 848, 13, 46, "Input", "ExpressionUUID" -> \
+"8f4cdabe-c85b-473a-90d2-9cdcbcebad50",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellTags->"S5.18.1"],
+Cell[1636, 42, 630, 15, 46, "Input", "ExpressionUUID" -> \
+"770938ec-af2f-4c43-90c8-ee7b15d35b0a"],
+Cell[2269, 59, 257, 5, 46, "Input", "ExpressionUUID" -> \
+"1c587a41-a045-43d8-9f01-c406077beb47"],
+Cell[2529, 66, 269, 6, 46, "Input", "ExpressionUUID" -> \
+"6b25076e-044b-4665-b76b-dcfdcb4fa825"],
+Cell[2801, 74, 182, 4, 46, "Input", "ExpressionUUID" -> \
+"e4c1c8dc-df46-4fee-bda1-364d6f45e744"],
+Cell[2986, 80, 275, 7, 46, "Input", "ExpressionUUID" -> \
+"86c7919c-144d-4117-8209-ce831ed8fc3d"],
+Cell[3264, 89, 304, 9, 46, "Input", "ExpressionUUID" -> \
+"ee85d2a2-b13e-49f5-8ead-bf5b7b7e3aa7"],
+Cell[3571, 100, 2577, 71, 453, "Input", "ExpressionUUID" -> \
+"d40b4c25-62bc-4e31-a9f7-6e87e5fd53fb"]
+}
+]
+*)
+
