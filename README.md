@@ -9,7 +9,7 @@ Ever wonder what a PhD in theoretical physics *actually* might look like? Look n
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; radiation decay of a binary star system within conformal gravity
   - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the SVT decomposition from a more group-theoretic point of view; generalizes well beyond cosmology
   - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology
-* `Research Bulk
+* Research Bulk
   - Organized by year, these pdf's represent day-to-day work output
   - Incorporates output of calculations performed in Mathematica
   - Presented weekly/bi-weekly to research group
