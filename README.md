@@ -20,7 +20,7 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
   - `GR_waves_notes.pdf` : Initial research into gravitational wave project; radiation decay of binary star system within conformal gravity
   - `Helicity Decomposition_Matthew_v1.pdf` : Frames the SVT decomposition from more group-theoretic point of view; generalizes well beyond cosmology
 * `coursework`
-  - Consists of completed graduate course assignments from about 10 classes
+  - Consists of all completed graduate course assignments spanning about 10 classes
   - Includes many solved problems for prelim exam preparation
 * `extra`
   - Contains reference papers
@@ -55,4 +55,6 @@ If we increase the magnitude of the oscillating field (red vector) to a critical
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400"><img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx430_FT.gif"  width="400">
 
 Owing to the nonlinear nature of the magnetization equations, we have effectively identified an unexpected mechanism by which we can tune the transient response!
+
+Here is our publication on these results: ![][(./extra/undergrad_research/CSURF_Presentation/Final_paper.pdf)
 
