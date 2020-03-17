@@ -1,5 +1,5 @@
 # Cosmological-Perturbations
-Ever wonder what a PhD in physics *actually* might look like? Look no further! Here is a complete representation my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of pdf's.
+Ever wonder what a PhD in physics *actually* might look like? Look no further! Here is a complete representation my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of nicely formatted pdf's.
 
 ## Contents
 
