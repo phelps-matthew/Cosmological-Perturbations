@@ -5,12 +5,20 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
 
 * `research_bulk`
   - Organized by year, these pdf's represent day to day work output
-  - Include many latex-formatted outputs from Mathematica calcuations
+  - Incorporates output of calculations performed in Mathematica
   - Presented weekely/bi-weekly to research group
 * `mathematica`
+  - Contains day-to-day calculations performed in Mathematica; generating equations, varying geometries, decomposing perturbations, and extensive simplification methods
   - Simplifying equations in general relativity requires software capable of symbolic tensor calculus
   - Mathematica's xAct package allows one to take covariant derivatives, refactor dummy indicies, expand into Christoffel's, etc
-  - Contains day-to-day calculations performed in Mathematica - generating equations, varying geometries, decomposing perturbations, and extensive simplification methods
+  - `SVT3_RW.nb`, `SVT4_General.nb`, and `3_1_Splitting.nb` are the most heavily used modules, continually modified over multiple years
+* `research_highlights`
+  - `SVT_Decomposition_Theorem.pdf` : Most recent publication (60 pages)
+  - `Cosmological_Perturbations_II.pdf` : Publication regarding cosmological perturbations in a theory of gravitation called conformal gravity
+  - `Fluctuations_Summary_Matthew.pdf`: Inlcudes many useful methods specific to dynamics in conformal gravity
+  - `GR_waves_notes.pdf` : Initial research into gravitational wave project; radiation decay of binary star system within conformal gravity
+  - `Helicity Decomposition_Matthew_v1.pdf` : Frames the SVT decomposition from more group-theoretic point of view; generalizes well beyond cosmology
+
 
 ## What did I research?
 ### High-level
