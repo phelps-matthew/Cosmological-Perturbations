@@ -38,7 +38,7 @@ In perturbing the Einstein equations around a cosmological background (i.e., Rob
 
 ## Undergrad Research
 
-In the gifs below, the blue arrow represents the magnetic field of a nanoparticle (magnetiziation vector, specifically). The green and red vectors are static and oscillating external magnetic fields, respectively. The equations that describe the motion of the nanoparticles magnetic field (blue vector) are non-linear and have to be solved numerically. 
+In the gifs below, the blue arrow represents the magnetic field of a nanoparticle (magnetiziation vector, specifically). The green and red vectors are static and oscillating external magnetic fields, respectively. The equations that describe the motion of the nanoparticle's magnetic field (blue vector) are non-linear and have to be solved numerically. 
 
 In fact, the form of these equations make many parallels to equations that describe a physical pendulum.
 
@@ -50,7 +50,7 @@ However, if we add in an oscillating field (red-vector) in the x-direction, we s
 
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx100.gif"  width="400"><img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
 
-If we increase the magnitude of the oscillating field (red vector) to a critical strength, we can infact increase the decay time by a factor of 10^4.
+If we increase the magnitude of the oscillating field (red vector) to a critical strength, we can infact increase the decay time by a factor of 10^4!
 
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400"><img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx430_FT.gif"  width="400">
 
