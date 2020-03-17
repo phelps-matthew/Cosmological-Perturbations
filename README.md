@@ -18,6 +18,12 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
   - `Fluctuations_Summary_Matthew.pdf`: Inlcudes many useful methods specific to dynamics in conformal gravity
   - `GR_waves_notes.pdf` : Initial research into gravitational wave project; radiation decay of binary star system within conformal gravity
   - `Helicity Decomposition_Matthew_v1.pdf` : Frames the SVT decomposition from more group-theoretic point of view; generalizes well beyond cosmology
+ * `coursework`
+  - Consists of completed graduate course assignments from about 10 classes
+  - Includes many solved problems for prelim exam preparation
+* `extra`
+  - Contains reference papers
+  - Undergrad research publication, presentation, and Mathematica files
 
 
 ## What did I research?
