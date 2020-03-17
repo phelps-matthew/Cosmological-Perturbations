@@ -3,7 +3,7 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
 
 ## Contents
 * `research_highlights`
-  - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT decomposition Theorem</a>: Most recent publication (60 pages)
+  - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT decomposition Theorem</a>: Most recent publication that analyzes the cosmological decomposition theorem (60 pages)
   - <a href="research_highlights/Cosmological_Perturbations_II.pdf">Cosmological Perturbations II</a>: Publication regarding cosmological perturbations in a theory of gravitation called conformal gravity
   - <a href="research_highlights/Fluctuations_Summary_Matthew.pdf">Fluctuations Summary</a>: Inlcudes many useful methods specific to dynamics in conformal gravity
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; radiation decay of binary star system within conformal gravity
