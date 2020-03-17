@@ -35,4 +35,16 @@ Getting back to the research, a large part of my work dealt with what is called 
 ### Low-level
 In perturbing the Einstein equations around a cosmological background (i.e., Roberston Walker, DeSitter, or Minkowski spacetime), we are left with a large set of non-linear coupled PDE's. To simplify their form, the metric and matter perturbations are then decomposed into irreducible SO(3) representations. According to the decomposition theorem, the equations of motion *themselves* are then taken to decouple into like-representations. That is, scalars are only coupled with scalers, vector with vectors, and tensors with tensors. My research team has determined that such a decomposition is strictly dependent on the choice of boundary conditions and does not hold in general. By exploring a variety of universe geometries we provide explicit counter-examples that demonstrate well-behaved phsyical behavior but nonetheless violate the theorem. Morevoer, we introduce a new 4 dimensional SVT decomposition that simplifies the equations further and does not break the covariant form of the perturbations. 
 
-![Flowchart](/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif)
+## Undergrad Fun Research Stuff
+
+The blue arrow is the magnetiziation vector of a magnetic nanoparticle. The red and green vectors are static and oscillating magnetic fields, respectively. The equations that describe the motion of the mag. vector are non-linear and have to be solved numerically. 
+
+The equations in fact make many parallels to that of an inverted pendulum.
+<img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="200">
+
+
+Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field.
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="200">
+
+However, we found found a suprising non-linear effect - 
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="200">
