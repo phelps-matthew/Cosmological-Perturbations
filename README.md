@@ -40,11 +40,14 @@ In perturbing the Einstein equations around a cosmological background (i.e., Rob
 The blue arrow is the magnetiziation vector of a magnetic nanoparticle. The red and green vectors are static and oscillating magnetic fields, respectively. The equations that describe the motion of the mag. vector are non-linear and have to be solved numerically. 
 
 The equations in fact make many parallels to that of an inverted pendulum.
-<img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="200">
+
+<img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400">
 
 
 Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field.
-<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="200">
 
-However, we found found a suprising non-linear effect - 
-<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="200">
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
+
+However, we found found a suprising non-linear effect 
+
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
