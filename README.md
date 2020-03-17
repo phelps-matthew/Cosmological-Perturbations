@@ -10,9 +10,9 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
   - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the SVT decomposition from a more group-theoretic point of view; generalizes well beyond cosmology
   - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology
 * `research_bulk`
-  - Organized by year, these pdf's represent day to day work output
+  - Organized by year, these pdf's represent day-to-day work output
   - Incorporates output of calculations performed in Mathematica
-  - Presented weekely/bi-weekly to research group
+  - Presented weekly/bi-weekly to research group
 * `mathematica`
   - Contains day-to-day calculations performed in Mathematica; generating equations, varying geometries, decomposing perturbations, and extensive simplification methods
   - Simplifying equations in general relativity requires software capable of symbolic tensor calculus
