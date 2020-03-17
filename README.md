@@ -1,6 +1,17 @@
 # Cosmological-Perturbations
 Ever wonder what a PhD in physics *actually* might look like? Look no further! Here is a complete representation my 6 years of research and coursework. all compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of pdf's.
 
+## Contents
+
+* `research_bulk`
+  - Organized by year, these pdf's represent day to day work output
+  - Include many latex-formatted outputs from Mathematica calcuations
+  - Presented weekely/bi-weekly to research group
+* `mathematica`
+  - Simplifying equations in general relativity requires software capable of symbolic tensor calculus
+  - Mathematica's xAct package allows one to take covariant derivatives, refactor dummy indicies, expand into Christoffel's, etc
+  - Contains day-to-day calculations performed in Mathematica - generating equations, varying geometries, decomposing perturbations, and extensive simplification methods
+
 ## What did I research?
 ### High-level
 My research mainly focused around analyzing the equations that describe the large scale evolution of the universe. Physcists that study the unvierse as a whole are called cosmologists. Don't trust a cosmologist to do your hair - leave that to cosmetologists! Cosmologists can be contrasted with astrophysicists who study more localized events happening in the universe - black holes, galaxies, star formation, etc. 
