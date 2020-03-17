@@ -33,19 +33,19 @@ My research mainly focused around analyzing the equations that describe the larg
 Getting back to the research, a large part of my work dealt with what is called the *cosmological decomposition theorem*. Essentially, this is a method regularly used by the cosmology/astrophysics community to simplify and solve the equations that describe the dynamics of the universe. My research uncovered many inherent limitations to the decomposition theorem and formulated new approaches that cast the equations into a reduced form that is readily solvable. 
 
 ### Low-level
-In perturbing the Einstein equations around a cosmological background (i.e., Roberston Walker, DeSitter, or Minkowski spacetime), we are left with a large set of non-linear coupled PDE's. To simplify their form, the metric and matter perturbations are then decomposed into irreducible SO(3) representations. According to the decomposition theorem, the equations of motion *themselves* are then taken to decouple into like-representations. That is, scalars are only coupled with scalers, vector with vectors, and tensors with tensors. My research team has determined that such a decomposition is strictly dependent on the choice of boundary conditions and does not hold in general. By exploring a variety of universe geometries we provide explicit counter-examples that demonstrate well-behaved phsyical behavior but nonetheless violate the theorem. Morevoer, we introduce a new 4 dimensional SVT decomposition that simplifies the equations further and does not break the covariant form of the perturbations. 
+In perturbing the Einstein equations around a cosmological background (i.e., Roberston Walker, DeSitter, or Minkowski spacetime), we are left with a large set of non-linear coupled PDE's. To simplify their form, the metric and matter perturbations are then decomposed into irreducible SO(3) representations. According to the decomposition theorem, the equations of motion *themselves* are then taken to decouple into like-representations. That is, scalars are only coupled with scalers, vector with vectors, and tensors with tensors. My research team has determined that such a decomposition is strictly dependent on the choice of boundary conditions and does not hold in general. By exploring a variety of universe geometries, we provide explicit counter-examples that demonstrate well-behaved phsyical behavior but nonetheless violate the theorem. Morevoer, we introduce a new 4 dimensional SVT decomposition that simplifies the equations further and does not break the covariant form of the perturbations. 
 
 ## Undergrad Research
 
-The blue arrow is the magnetiziation vector of a magnetic nanoparticle. The red and green vectors are static and oscillating magnetic fields, respectively. The equations that describe the motion of the mag. vector are non-linear and have to be solved numerically. 
+In the gifs below, the blue arrow represents the magnetic field of a nanoparticle (magnetiziation vector, specifically). The green and red vectors are estatic and oscillating external magnetic fields, respectively. The equations that describe the motion of the nanoparticles magnetic field (blue vector) are non-linear and have to be solved numerically. 
 
-The equations in fact make many parallels to that of an inverted pendulum.
+In fact, the form of these equations make many parallels to equations that describe a physical pendulum.
 
-Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field. We see here that it eventually lines up with the green vector.
+Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field. That is, its transient response is short-lived. We see here the blue vector eventually lines up with the green vector.
 
 <img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx0_Precession.gif"  width="400"><img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx0_FT.gif"  width="400">
 
-However, if we add in an oscillating field in the x-direction, we see the natural frequency has some persistance.
+However, if we add in an oscillating field (red-vector) in the x-direction, we see the transient response has some persistance.
 
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx100.gif"  width="400"><img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
 
@@ -53,5 +53,5 @@ If we increase the magnitude of the oscillating field (red vector) to a critical
 
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400"><img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx430_FT.gif"  width="400">
 
-Owing to the nonlinear nature of the magnetization equations, we have effectively identified a mechanism where we can tune the transient response!
+Owing to the nonlinear nature of the magnetization equations, we have effectively identified an unexpected mechanism by which we can tune the transient response!
 
