@@ -16,7 +16,7 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
 * `mathematica`
   - Contains day-to-day calculations performed in Mathematica; generating equations, varying geometries, decomposing perturbations, and extensive simplification methods
   - Simplifying equations in general relativity requires software capable of symbolic tensor calculus
-  - Mathematica's xAct package allows one to take covariant derivatives, refactor dummy indicies, expand into Christoffel's, etc
+  - The third party package called [xAct](http://www.xact.es/index.html) allows one to take covariant derivatives, refactor dummy indicies, expand into Christoffel's, etc
   - `SVT3_RW.nb`, `SVT4_General.nb`, and `3_1_Splitting.nb` are the most heavily used modules, continually modified over multiple years
   - Unfortunately GitHub does not render Mathematica files; even worse, Mathematica is not open-source; in the future I may try to host them within jupyter notebooks on my server - we'll see!
 * `coursework`
