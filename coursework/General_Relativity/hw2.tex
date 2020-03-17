@@ -1,0 +1,338 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{General Relativity\\HW 2}
+\author{Matthew Phelps}
+\date{Due: September 29}
+
+\begin{document}
+\maketitle
+
+\benum
+% 1------------------------------------------------------------------------------------------------------------------------
+\item
+\be
+	\pd_\alpha F^{\alpha \beta} = J^\beta
+\ee
+\be
+	\pd_\alpha F_{\beta\gamma} + \pd_\beta F_{\gamma\alpha} + \pd_\gamma F_{\beta\alpha} = 0
+\ee
+\\ \\
+\[
+	J^\alpha = (\rho,J^i), \quad F^{i0} = E^{i0}, F^{ij} = -\epsilon^{ijk}B_k
+\]
+\[
+	\pd_i F^{i0} = J^0 \to \boxed{ \del \cdot \vect E = \rho}
+\]
+\ba
+	\pd_\alpha F^{\alpha i} &= \pdiff[t]F^{0i} + \pd_j F^{ji} = J^i\\
+	\pdiff[F^{0i}]{t} +  \epsilon^{jik}\pd_jB_k &= J^i \to \boxed{-\pdiff[E^i]{t}+(\del\times \vect B)^i = J^i}
+\ea
+For $\alpha =1,\beta =2,\gamma =3$, (2) takes the form
+\ba
+	\pdiff{x}F_{23} + \pdiff{y}F_{31} + \pdiff{z} F_{21} &= 0\\
+	\pdiff{x}B_x + \pdiff{y}B_y + \pdiff{z} B_z &= 0\\
+	\to \boxed{ \del\cdot \vect B =0}.
+\ea
+For $\alpha =0,\beta =i,\gamma =j$, (2) takes the form
+\ba
+	\pd_0 F_{ij} + \pd_i F_{j0}j + \pd_jF_{0i} &= 0\\
+	\pdiff{t}F_{ij} + \pd_i E_j + \pd_j E_i &=0
+\ea
+Now if we sum over all values of $i$ and $j$ (noting the antisymmetry) we have
+\[
+	\boxed{\pdiff{t}\vect B + \del\times \vect E = 0}
+\]
+
+% 2------------------------------------------------------------------------------------------------------------
+\item 
+\[
+	x = r\cos\phi,\qquad y = r\sin\phi
+\]
+Line element:
+\[
+	dl^2 = dx^2 + dy^2 = dr^2 + r^2d\phi^2.
+\]
+Metric:
+\[
+	g_{\mu\nu} = \bpm 1 & 0\\0&r^2\epm.
+\]
+Connection:
+\[
+	\Gamma^{\sigma}_{\lambda\mu} = \frac12 g^{\nu\sigma}\blr{ \pd_\lambda g_{\nu\mu} + \pd_{\mu}g_{\lambda\nu} - \pd_\nu g_{\lambda\mu}}.
+\]
+Since $g_{\mu\nu}$ is diagonal, from the above we must have $g^{\nu\sigma} = g^{\sigma\sigma}$. Also, we see the only non-zero derivative of $g_{\mu\nu}$ is $\pd_0 g_{11} = 2r$. It follows that $\lambda=1$ and/or $\mu=1$. If either is $1$ then $\sigma = 1$, but if both $\mu=\lambda=1$, then $\sigma = 0$. So we are left with two (due to symmetry) we need to compute:
+\[
+	\Gamma^{0}_{11} = -\frac12 g^{00}(\pd_o g_{11}) = -r
+\]
+\[
+	\Gamma^{1}_{01} = \frac12 g^{11}\pd_0 g_{11} = \frac1r
+\]
+Equation of motion:
+\[
+	\frac{d^2x^\lambda}{d\tau^2} + \Gamma^{\lambda}_{\mu\nu} \frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau} = 0
+\]
+leads to
+\[
+	\frac{d^2r}{d\tau^2} -r\pfrac{d\phi}{d\tau}^2 = 0
+\]
+\[
+	\frac{d^2\phi}{d\tau^2} + \frac2r \frac{d\phi}{d\tau}\frac{dr}{d\tau} = 0.
+\]
+Adding these together
+\[
+	\frac{d^2r}{d\tau^2}+\frac{d^2\phi}{d\tau^2}(1-r)+ \frac2r \frac{d\phi}{d\tau}\frac{dr}{d\tau}=0.
+\]
+% 3 -------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+\[
+	x = r\cos\phi,\qquad y = r\sin\phi,\qquad r = \sqrt{x^2+y^2},\qquad \phi = \tan^{-1}\pfrac{y}{x}
+\]
+\[
+	\pdiff[r]{x} = \cos\phi
+\]
+\[
+	\pdiff[r]{y} = \sin\phi
+\]
+\[
+	\pdiff[\phi]{x} = -\frac{1}{x^2}\pfrac{y}{1+(y/x)^2} = -\frac{y}{r^2} = -\frac{\sin\phi}{r}
+\]
+\[
+	\pdiff[\phi]{y} = \frac{1}{x}\pfrac{1}{1+(y/x)^2} = \frac{x}{r} = \frac{\cos\phi}{r}
+\]
+\[
+	\pdiff[x'^\mu]{x^\nu} = \bpm \cos\phi & \sin\phi \\ -\frac{\sin\phi}{r} & \frac{\cos\phi}{r} \epm.
+\]
+% 4 -------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+\benum 
+% (a)
+\item 
+In cartesian coordinates, the connection vanishes and so
+\ba
+	V^\mu{}_{;\nu} &= \pd_\nu V^{\mu}.
+\ea
+\[
+	\pd_0 V^0 = 2x
+\]
+\[
+	\pd_0 V^1=3
+\]
+\[
+	\pd_1 V^0=3
+\]
+\[
+	\pd_1 V^1=2y.
+\]
+So in matrix form 
+\[
+	V^\mu{}_{;\nu} = \bpm 2x & 3 \\ 3 & 2y \epm
+\]
+%(b)
+\item
+Under a change from cartesian to polar coordinates,$x\to x'$, the mixed rank tensor transforms as
+\[
+	V'^{\mu}{}_{;\nu} = \pdiff[x'^\mu]{x^\rho}\pdiff[x^\sigma]{x'^\nu}V^{\rho}{}_{;\sigma}.
+\]
+In matrix form
+\ba
+	V'^\mu{}_{;\nu} &= \bpm \cos\phi & \sin\phi \\ -\frac{\sin\phi}{r} & \frac{\cos\phi}{r} \epm
+	\bpm 2x & 3 \\ 3 & 2y \epm
+	\bpm \cos\phi & -r\sin\phi \\ \sin\phi & r\cos\phi \epm\\
+	&=  \bpm \cos\phi & \sin\phi \\ -\frac{\sin\phi}{r} & \frac{\cos\phi}{r} \epm
+	\bpm (2x\cos\phi + 3\sin\phi)& (-2xr\sin\phi + 3r\cos\phi)\\(3\cos\phi+2y\sin\phi)&(-3r\sin\phi +2yr\cos\phi)\epm\\\
+	&=\bpm  (2x\cos^2\phi + 3\sin\phi\cos\phi+3\sin\phi\cos\phi+2y\sin^2\phi)&(-2xr\sin\phi\cos\phi+3r\cos^2\phi-3r\sin^2\phi + 2yr\sin\phi\cos\phi)\\
+	\frac1r (-2x\sin\phi\cos\phi - 3\sin^2\phi + 3\cos^2\phi + 2y\sin\phi\cos\phi)&
+	\frac1r (2xr\sin^2\phi -3r\sin\phi\cos\phi -3r\sin\phi\cos\phi +2yr\cos^2\phi) \epm.
+\ea
+Since that got cutoff,
+\ba
+	V^0{}_{;0} &= 2x\cos^2\phi + 3\sin\phi\cos\phi+3\sin\phi\cos\phi+2y\sin^2\phi\\
+	&=2r\cos^2\phi +6\sin\phi\cos\phi +2r\sin^2\phi
+\ea
+\ba
+	V^0{}_{;1} &=-2xr\sin\phi\cos\phi+3r\cos^2\phi-3r\sin^2\phi + 2yr\sin\phi\cos\phi\\
+	&=-2r^2\sin\phi\cos^2\phi + 3r\cos^2\phi -3r\sin^2\phi +2r^2\sin^2\phi\cos\phi
+\ea
+\ba
+	V^1{}_{;0} &=\frac1r (-2x\sin\phi\cos\phi - 3\sin^2\phi + 3\cos^2\phi + 2y\sin\phi\cos\phi)\\
+	&=-2\sin\phi\cos^2\phi + \frac3r\cos^2\phi -\frac3r\sin^2\phi +2\sin\phi\cos^2\phi
+\ea
+\ba
+	V^1{}_{;1} &=\frac1r (2xr\sin^2\phi -3r\sin\phi\cos\phi -3r\sin\phi\cos\phi +2yr\cos^2\phi) \\
+	&=2r\cos\phi\sin^2\phi - 6\sin\phi\cos\phi +2r\sin\phi\cos^2\phi
+\ea
+% c
+\item
+\[
+	V^\mu{}_{;\nu} = \pd_\nu V^\mu + \Gamma^\mu_{\lambda\nu}V^\lambda
+\]
+From question 2, we have
+\[
+	\Gamma^0_{11} = -r,\qquad \Gamma^1_{01} = \frac1r.
+\]
+We must also convert $V^\mu$ to polar 
+\[
+	V^\mu = (r^2\cos^2\phi+3r\sin\phi, r^2\sin^2\phi +3r\cos\phi).
+\]
+Taking each appropriate derivative with respective Christoffel symbol (summing over $\lambda$), we find
+\[
+	V^0{}_{;0} = 2r\cos^2\phi +6\sin\phi\cos\phi +2r\sin^2\phi
+\]
+\[
+	V^0{}_{;1} = =-2r^2\sin\phi\cos^2\phi + 3r\cos^2\phi -3r\sin^2\phi +2r^2\sin^2\phi\cos\phi
+\]
+\[
+	V^1{}_{;0}=-2\sin\phi\cos^2\phi + \frac3r\cos^2\phi -\frac3r\sin^2\phi +2\sin\phi\cos^2\phi
+\]
+\[
+	V^1{}_{;1}=2r\cos\phi\sin^2\phi - 6\sin\phi\cos\phi +2r\sin\phi\cos^2\phi,
+\]
+which coincides with what we calculated in part b.
+\eenum
+% 5------------------------------------------------------------------------------------
+\item
+\benum
+\item
+% (a)
+In the inertial system, the proper time interval is given as (constrained to 1D motion)
+\[
+	d\tau^2 = dt^2 - dx^2.
+\]
+With the coordinate transformation parametrized by $\lambda$
+\[
+	t(\lambda) = a \sinh(\lambda),\qquad x(\lambda)= a\cosh(\lambda)
+\]
+it follows that
+\[
+	dt = a\cosh (\lambda) d\lambda,\qquad dx = a\sinh(\lambda) d\lambda
+\]
+and thus
+\[
+	d\tau^2 = a^2 d\lambda^2 [\cosh^2(\lambda) - \sinh^2(\lambda)] = a^2 d\lambda^2.
+\]
+For a finite proper time, taking $\tau_0 = 0$, we integrate
+\[
+	\tau = a\lambda.
+\]
+\item
+% (b)
+For an interial observer, a spacelike line can be expressed as
+\[
+	t = xb,\qquad -1<b<1.
+\]
+For the accelerated observer, his coordinates satisfy the relation
+\[
+	x^2 - t^2 = a^2
+\]
+for any fixed $\lambda$. Different values of $a$ will generate different hyperbolic curves in the $x-t$ plane. Solving for the point of intersection between these two worldlines,
+\[
+	x_0 = \frac{a}{\sqrt{1-b^2}},\qquad  t_0 = \frac{ab}{\sqrt{1-b^2}}.
+\]
+The two lines will be perpendicular if their derivatives are negative inverses. For the inertial observer,
+\[
+	\frac{dt}{dx} = b
+\]
+while for the accelerated observer
+\[
+	2x - 2t \frac{dt}{dx} = 0 \to \frac{dt}{dx} = \elr{\frac{x}{t}}_{t_0,x_0} = \frac1b.
+\]
+This would show they were orthogonal if the slopes were of opposite sign... \\
+\item
+% c
+The coordinate and inverse coordinate transformation is
+\[
+	t = a\sinh \lambda,\qquad x= a\cosh \lambda
+\]
+\[
+	\lambda = \tanh^{-1}\pfrac tx,\qquad a =\sqrt{x^2-t^2}.
+\]
+From our earlier equation 
+\[
+	x^2 -t^2 = a^2,
+\]
+we see that curves of constant $\lambda$ will yield a family of hyperbolas. Since $a^2 \ge 0$, these will be contrained to the $x\ge 0$ region, thus only covering half of the $x-t$ plane. Meanwhile, lines of constant $a$ take the form
+\[
+	t = \tanh(\lambda) x.
+\]
+For $-\infty < \lambda < \infty$, it follows that the above equation forms straight lines with slopes from $(-1,1)$. Note that these slopes specifically exclude $\{-1,1\}$ from the interval, and since they can only be reached in the limit of infinity, we consider these ``bad'' coordinates.
+In total we will have something like this:
+\figg[width=100mm]{hw2_5.pdf}
+\item
+% (d)
+Recalling that
+\[
+	g_{\mu\nu} = \frac{\pd \xi^\alpha}{\pd x^\mu} \frac{ \pd\xi^\beta}{\pd x^\nu} \eta_{\alpha\beta},
+\]
+for our 2d case $(t,x) \to (\lambda,a)$ this becomes
+\[
+	g_{\mu\nu} =  -\frac{\pd t}{\pd x^\mu} \frac{ \pd t}{\pd x^\nu}+ \frac{\pd x}{\pd x^\mu} \frac{ \pd x}{\pd x^\nu}.
+\]
+Taking each component
+\ba
+	g_{00} &= -\pfrac{\pd t}{\pd \lambda}^2 + \pfrac{\pd x}{\pd \lambda}^2\\
+	&= a^2(\sinh^2\lambda - \cosh^2\lambda) \\
+	&= -a^2
+\ea
+\ba
+	g_{01} = g_{10} &=   -\frac{\pd t}{\pd a} \frac{ \pd t}{\pd \lambda}+ \frac{\pd x}{\pd a} \frac{ \pd x}{\pd \lambda}\\
+	& = -a\sinh\lambda\cosh\lambda + a\sinh\lambda \cosh\lambda\\
+	&= 0
+\ea
+\ba
+	g_{11} &= -\pfrac{\pd t}{\pd a}^2 + \pfrac{\pd x}{\pd a}^2\\
+	&= -\sinh^2\lambda + \cosh^2\lambda \\
+	&= 1.
+\ea
+Thus
+\[
+	g_{\mu\nu} = \bpm -a^2 & 0 \\ 0& 1 \epm.
+\]
+The Christoffel symbols are
+\[
+	\Gamma^0_{00} = \frac12 g^{00}\frac{\pd g_{00}}{\pd \lambda} = 0
+\]
+\[
+	\Gamma^1_{11} = \frac12 g^{11}\frac{\pd g_{11}}{\pd a} = 0
+\]
+\[
+	\Gamma^0_{01} = \frac12 g^{00} \frac{\pd g_{00}}{\pd a} = \frac1a
+\]
+\[
+	\Gamma^1_{01} = \frac12 g^{11} \frac{\pd g_{10}}{\pd \lambda} = 0
+\]
+\[
+	\Gamma^0_{11} = \frac12 g^{00}\blr{ 2\frac{\pd g_{01}}{\pd a} - \frac{\pd g_{11}}{\pd \lambda}} = 0
+\]
+\[
+	\Gamma^1_{00} = \frac12 g^{11}\blr{ 2\frac{\pd g_{01}}{\pd \lambda} - \frac{\pd g_{00}}{\pd a}} = a.
+\]
+\eenum
+% 6------------------------------------------------------------------------------------
+\item
+\[
+	ds^2 = dx^2 + dy^2 + dz^2
+\]
+\[
+	x = r\sin\theta\cos\phi,\qquad y = r\sin\theta\sin\phi,\qquad z=r\cos\theta
+\]
+\[
+	dx = (\sin\theta\cos\phi)dr + (r\cos\theta\cos\phi)d\theta + (-r\sin\theta\sin\phi)d\phi
+\]
+\[
+	dy = (\sin\theta\sin\phi)dr +(r\cos\theta\sin\phi)d\theta +(r\sin\theta\cos\phi)d\phi
+\]
+\[
+	dz = \cos\theta dr + (-r\sin\theta)d\theta
+\]
+\ba
+	dx^2+dy^2+dz^2 &= dr^2(\sin^2\theta+\cos^2\theta)+d\theta^2(r^2) + d\phi^2(r^2)\\
+	& = dr^2+r^2d\theta^2 +r^2\sin^2\theta d\phi^2
+\ea
+Setting $dr =0$, we are left with only the angular part (at a fixed radius) $d\Omega^2$
+\[
+	g_{\mu\nu} = \bpm r^2 & 0 \\ 0 & r^2\sin^2\theta \epm.
+\]
+\eenum
+
+\end{document}

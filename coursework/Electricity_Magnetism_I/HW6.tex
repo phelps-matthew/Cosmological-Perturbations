@@ -1,0 +1,114 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Electrodynamics I\\HW 6\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 30}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+	A straight long wire and a ring of radius $a$ lie in the same plane. The distance between the wire and the ring center is $b$. Find
+	the mutual inductance $L_{12}$ and interaction force $\vect F_{12}$, if the wire and ring currents are respectively $I_1$ and $I_2$.
+	\\
+	\\
+	Ran out of time this week..
+% #2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Determine the trajectory of an electron moving in the uniform electric $\vect E = E_y\vecth e_y+E_z\vecth e_z$ and 
+	magnetic  $\vect B = B\vecth e_z$ fields. Initial conditions at $t=0$: the electron radius vector $\vect r=0$, and the electron
+	velocity $\vect v(t=0)$ is $\vect v_0 = v_{0x}\vecth e_x+v_{0z}\vecth e_z$. 
+	\\
+	\\
+	We can use the Lorentz force law to determine the trajectory of the electron. The law goes as
+	\[
+		m\vect a= q\vect E+q(\vect v\times \vect B).
+	\]
+	Taking the cross product
+	\[
+		\vect v\times \vect B = v_yB\vecth x - v_xB\vecth y.
+	\]
+	Separating the components we have three differential equations
+	\ba
+		\ddot x &= \frac{q}{m}\dot yB \\
+		\\
+		\ddot y &= \frac{q}{m}(E_y-\dot xB) \\
+		\\
+		\ddot z &= \frac{q}{m}E_z.
+	\ea
+	The last equation is easily solved as 
+	\[
+		z(t) = \frac{q}{2m}E_zt^2+v_{z}(0)t+z(0)
+	\]
+	\[
+		z(t) = \frac{E_zq}{2m}t^2+v_{0z}t
+	\]
+	The other two equations are coupled together, but we can use a substitution to solve them. Lets set
+	\[
+		u_1 = x+iy,\qquad u_2 = x-iy.
+	\]
+	In terms of these new variables, our first differential equation for $\ddot x$ becomes 
+	\[
+		\ddot{u_1}+\ddot{u_2} = \frac{qB}{m}i(\dot{u_2}-\dot{u_1})
+	\]
+	while the second differential equation for $\ddot{y}$ becomes
+	\[
+		i(\ddot{u_2}-\ddot{u_1}) = \frac{2q}{m}E_y - \frac{qB}{m}(\dot{u_1}+\dot{u_2}).
+	\]
+	Before we combine the equations, lets first multiply the $\ddot x$ equation by  a factor of $i$. Our two equations are then
+	\[
+		i(\ddot{u_1}+\ddot{u_2}) = \frac{qB}{m}(\dot{u_1}-\dot{u_2})
+	\]
+	\[
+		i(\ddot{u_2}-\ddot{u_1}) = \frac{2q}{m}E_y - \frac{qB}{m}(\dot{u_1}+\dot{u_2}).
+	\]
+	Now we may add these equations together to get a differential equation of only one variable
+	\[
+		2i\ddot{u_2} = \frac{2q}{m}E_y+\frac{2qB}{m}(-\dot{u_2}).
+	\]
+	Simplifying
+	\[
+		\ddot{u_2} = \frac{q}{m}(-iE_y+iB\dot{u_2}).
+	\]
+	To make things easier, lets set $-\frac{q}{m}E_y \equiv a$ and $B\equiv b$ so that we have
+	\[
+		\ddot{u_2}-ib\dot{u_2}= -ia.
+	\]
+	As a inhomogeneous differential equation, we shall first find the homogeneous solution and then find the particular. For the
+	equation 
+	\[
+		\ddot{u_2}-ib\dot{u_2} = 0
+	\]
+	the solution is easily solved to be 
+	\[
+		u_2(t) = Ae^{ibt}.
+	\]
+	Now in order to satisfy our inhomogeneous solution, we see that the differential equation is satisfied for the solution
+	\[
+		u_2(t) = Ae^{ibt} -iat.
+	\]
+	In terms of $x$ and $y$ we then have
+	\[
+		u_2(t)= x(t)-iy(t) = \cos(bt)+i\sin(bt) -iat.
+	\]	
+	Equating real and imaginary parts,
+	\[
+		x(t) = A\cos(bt)
+	\]
+	\[
+		y(t) = -A\sin(bt)-at
+	\]
+	In terms of the original constants
+	\[
+		x(t) = A\cos(Bt)
+	\]
+	\[
+		y(t) = -A\sin(Bt)+\frac{q}{m}E_yt
+	\]
+	\emph{I think something went wrong here, because the initial conditions cannot be satisfied as it is written. It seems that
+	it should be as $x\propto \sin(Bt)$ and $y\propto\cos(Bt)$ but I am not sure where the mistake lies}
+	\eenum
+\end{document}

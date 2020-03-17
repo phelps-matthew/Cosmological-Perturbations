@@ -1,0 +1,258 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 4}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[7.1]
+Starting with the result 
+\[
+	P = nv_xp_x
+\]
+with
+\[
+	p_x \approx hn^{1/3}
+\]
+and
+\[
+	v_x = p_x/m_e
+\]
+we have
+\[
+	P = np_x^2/m_e = \frac{h^2 n_e^{5/3}}{m_e}.
+\]
+For a density of ions of atomic number $Z$ and weight $A$, from neutrality we have
+\[
+	Zn_+ = n_e
+\]
+and the density is then
+\[
+	\rho = Am_p n_+.
+\]
+Substituting the above condition into the neutrality equation,
+\[
+	n_e=Zn_+ = Z\frac{ \rho}{Am_p}.
+\]
+The precise formula for the electron degeneracy pressure is
+\[
+	P_e =0.0485 \frac{h^2n_e^{5/3}}{m_e}.
+\]
+Substituting the relation for $n_e$ into this we have
+\[
+	P_e = 0.0485 \frac{h^2}{m_e} \pfrac{Z}{A}^{5/3} \pfrac{\rho}{m_p}^{5/3}.
+\]
+For typical white dwarf conditions, we have 
+\[
+	\rho = 10^6\ \text{gm cm}^{-3},\qquad T = 10^7\ \text K,\qquad \frac{Z}{A} = 0.5.
+\]
+Under these conditions, the thermal pressure is
+\[
+	P_T = n_e kT = \frac12 \frac\rho m_p kT = 4.13\times10^{20}\ \text{Ba}
+\]
+Compare this to the degeneracy pressure 
+\[
+	P_e = 0.0485 \frac{h^2}{m_e} \pfrac{Z}{A}^{5/3} \pfrac{\rho}{m_p}^{5/3} = 3.14\times 10^{22}\ \text{Ba}.
+\]
+We see that the electron degeneracy pressure is greater by about a factor of $100$. 
+\\ \\
+For a gas of fermionic ions, the degeneracy pressure is given the same, except for $n_+$ number density of ions wit now a total atomic weight $Am_p$. Thus
+\[
+	P_+ = 0.0485 h^2 \frac{n_+^{5/3}}{Am_p}
+\]
+This pressure is reduced compared to the electron degeneracy pressure because the number density is reduced $n_+ = n_e/Z$ and because the ions are more massive $m_+ = Am_p$. 
+Similarly, the ion thermal pressure $n_+ kT$ will be less than the electron thermal pressure.
+\\ \\
+\item[7.2]
+From the last problem we showed that the electron degeneracy pressure is given as
+\[
+	P_e = 0.0485 \frac{h^2}{m_e} \pfrac{Z}{A}^{5/3} \pfrac{\rho}{m_p}^{5/3}.
+\]
+In order to calculate the degeneracy pressure at the center of the star, we must evaluate the number density $n_e$ at the center. This is given as
+\[
+	(n_e)_c = \frac{Z}{A} \frac{\rho_c}{m_p}
+\]
+(the above is also in 7.1, coming from neutrality condition). Substituting this in, the central degeneracy pressure is then
+\[
+	(P_e)_c = 0.0485 \frac{h^2}{m_e} \pfrac{Z}{A}^{5/3} \pfrac{\rho_c}{m_p}^{5/3}.
+\]
+Equating this pressure equal to the gravitational pressure 
+\[
+	P_c = 0.770 \frac{GM^2}{R^4}
+\]
+we have
+\[
+	0.0485 \frac{h^2}{m_e} \pfrac{Z}{A}^{5/3} \pfrac{\rho_c}{m_p}^{5/3}= 0.770 \frac{GM^2}{R^4}.
+\]
+The central density can be expressed as
+\[
+	\rho_c = 1.43 \frac{M}{R^3}
+\] so that we have
+\[
+	0.0485 \frac{h^2}{m_e} \pfrac{Z}{A}^{5/3} \pfrac{1.43 M}{m_p}^{5/3}\frac{1}{R^5}= 0.770 \frac{GM^2}{R^4}.
+\]
+Solving for $R$ we have
+\[
+	R = 0.114 \frac{h^2}{Gm_e m_p^{5/3}}\pfrac{Z}{A}^{5/3} M^{-1/3}.
+\]
+Taking $\frac ZA = 0.5$, we compute this $R$ for two masses
+\[
+	R(0.5M_{sun}) = 1.1\times 10^9\ \text{cm}
+\]
+\[
+	R(M_{sun}) = 8.8\times 10^8\ \text{cm}.
+\]
+We see that the larger mass has a smaller radius. In fact, the radius of the earth and the radius of a star with electron degeneracy pressure equal to the gravitational pressure is of the same order of magnitude of the radius of the earth $R = 7\times10^{8}\ \text{cm}$. 
+\\ \\
+\item[7.3]
+Relativistically, the electron degeneracy pressure is given by the max value at $v=c$
+\[
+	(P_e)_{rel} = 0.123 hc n_e^{4/3}.
+\]
+In order for the relativistic pressure to equal the non-relativistic degen. pressure we used prior, we have
+\[
+	 0.123 hc n_e^{4/3} = 0.0485 h^2 \frac{n_e^{5/3}}{m_e}.
+\]
+This gives a $n_e$ of
+\[
+	n_e = \plr{ 2.54 \frac{m_e c}{h}}^3 = 1.15\times 10^{30}\ \text{cm}^{-3}.
+\]
+At this value of $n_e$ the typical velocity is then 
+\[
+	v_x = p_x/m_e \approx \frac{h n_e^{1/3}}{m_e} = 7.6\times 10^{10}\ \text{cm sec}^{-1} = 2.54 c.
+\]
+From 7.2, the central density is given as
+\[
+	\rho_c = 1.43 \frac{M}{R^3}.
+\]
+Using 
+\[
+	M = M_{sun},\qquad R(M_{sun}) = 8.8\times 10^{8}
+\]
+this gives
+\[
+	\rho_c = 4.2\times 10^6
+\]
+and so
+\[
+	(n_e)_c = \frac{Z}{A} \frac{\rho_c}{m_p} = 1.25\times 10^{30}\ \text{cm}^{-3}.
+\]
+The density at the center of the white dwarf of one solar mass is nearly equal in magnitude 
+to the relativistic electron density.
+\\ \\
+\item[7.4]
+Substituing 
+\[
+	n_e = \frac ZA \frac{\rho}{m_p}
+\]
+into
+\[
+	(P_e)_{rel} = 0.123 hc n_e^{4/3}.
+\]
+we have
+\[
+	(P_e)_{rel} = 0.123 hc \pfrac{Z}{A}^{4/3}\pfrac{\rho}{m_p}^{4/3}.
+\]
+For the self-gravitating sphere at hydrostatic equilibrium we have
+\[
+	P_c = 11 \frac{GM^2}{R^4},\qquad \rho_c = 54.2 \frac{3M}{4\pi R^3}.
+\]
+Equating the central gravitational pressure to the electron degeneracy pressure (relativistic)
+\[
+	11 \frac{GM^2}{R^4} = 0.123 hc \pfrac{Z}{Am_p}^{4/3}\plr{54.2 \frac{3M}{4\pi R^3}}^{4/3}.
+\]
+We see that we have the same power of $R$. We solve for $M$
+\[
+	M = 0.198 \pfrac{hc}{G}^{3/2} \pfrac{Z}{Am_p}^2 .
+\]
+For $Z/A=1/2$, we may compute the Chandrasekhar mass as
+\[
+	M = 2.9\times 10^{33}\ \text{gm}=1.45 M_{sun}
+\]
+\\ \\
+\item[7.5]
+The critical temperature at which the thermal energy per ion is equal to its electrostatic energy is given by setting the two equal
+\[
+	Z^2 e^2 n_+^{1/3} = kT.
+\]
+For a mean density of helium $A = 4$ and
+\[
+	\rho = Am_p n_+ = 4m_p n_+ =10^6\ \text{gm cm}^{-3}.
+\]
+Thus 
+\[
+	n_+ = 10^6/4m_p = 1.5\times 10^{29}\ \text{cm}^{-3}.
+\]
+The critical temperature is then for $Z=2$
+\[
+	T = \frac{ Z^2 e^2 n_+^{1/3}}{k} = 3.5\times 10^7\ \text K.
+\]
+This critical temperature corresponds to the temperature at which the star is stable and does not undergo any thermonuclear reactions. Any increase in temperature will allow nuclear fusion reactions - at $T=10^8\ \text K$, we will have high enough temperature to undergo the triple alpha processes converting helium into carbon. 
+\\ \\
+\item[7.6]
+In a neutron star, protons are combined with electrons to produce neutrons. Thus the number of neutrons will be equal to the number of protons, and we will assume $m_p\approx m_n$. As fermions, they will have a degeneracy pressure equal to
+\[
+	P_p = 0.0485 \frac{h^2 n_p^{5/3}}{m_p}.
+\]
+Now with
+\[
+	n_p = \rho/m_p
+\] 
+we have
+\[
+	P_p = 0.0485 \frac{h^2}{m_p}\pfrac{\rho}{m_p}^{5/3}
+\]
+With $\rho_c = 1.43 \frac{M}{R^3}$, we set the central degeneracy pressure equal to the gravitational pressure
+\[
+	0.770 \frac{GM^2}{R^4} = 0.0485 \frac{h^2}{m_p^{8/3}}\pfrac{M}{R^3}^{5/3}
+\]
+and solve for $R$
+\[
+	R = 0.114 \frac{h^2}{Gm_p^{8/3}}M^{-1/3}.
+\]
+ \\ \\
+ \item[7.12]
+ Here we are deriving heuristically the relation of the temperature of black holes
+ \[
+ 	kT = \frac{hc^3}{16\pi^2GM}.
+\]
+From the uncertaintiy principle we have particle-antiparticle pair production from vacuum fluctuations
+\[
+	\Delta E\Delta t \approx \frac \h2.
+\]
+If these pairs travel a separation distance approximately equal to half the circumferance of the black hole, then
+\[
+	c\Delta t/2 \approx 2\pi GM/c^2
+\]
+\[
+	\Delta t = \frac{4\pi GM}{c^3}.
+\]
+Then the thermal energy can be written as 
+\[
+	\Delta E = \frac{\h}{2\Delta t} = \frac{hc^3}{16\pi^2 GM} 
+\]
+or 
+\[
+	kT =  \frac{hc^3}{16\pi^2 GM}.
+\]
+For a black hole with mass $M = M_{sun}$
+\[
+	T(M_{sun}) = 6.2\times 10^{-8}\ \text{K}
+\]
+and for $M = 10^{15}\ \text{gm}$
+\[
+	T(M=10^{15}) = 1.2 \times 10^{11}\ \text K.
+\]
+Mini black holes have extremely high temperatures. The Schwarzchild radius of the miniblack hole is
+\[
+	R_{sch} = \frac{2GM}{c^2} = 1.5\times 10^{-13}\ \text{cm}.
+\]
+This is about the same as the classical electron radius. 
+\eenum
+\end{document}

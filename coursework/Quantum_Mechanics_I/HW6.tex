@@ -1,0 +1,1089 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics I\\HW 6\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 9}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+	
+	\benum
+		\item 
+		% (a)
+		Consider the angular momentum operator $\vect L = \vect r\times \vect p$. Evaluate the commutator
+		$[L_x,az^2p_y^2+bx^2r^2]$, where $a$, $b$ are pure numbers and $r^2 = x^2+y^2+z^2$. 
+		\\
+		\\
+		The $x$ component of orbital angular momentum can be expressed as
+		\[
+			L_x = yp_z - zp_y
+		\]
+		in which the commutator becomes
+		\[
+			[yp_z-zp_y, az^2p_y^2+bx^2(x^2+y^2+z^2)].
+		\]
+		To evaluate, the only commutation relation we need to keep in mind here is 
+		\[
+			[x_i,p_j] = i\h \delta_{ij};
+		\]
+		everything else commutes. Start with
+		\ba
+			[yp_z,zp_y] &= [yp_z,z]p_y + z[yp_z,p_y]\\
+				& = ([y,z]p_z+y[p_z,z])p_y + z([y,p_y]p_z+y[p_z,p_y])\\
+				& = -i\h yp_y+i\h zp_z\\
+				& = i\h(zp_z - yp_y).
+		\ea
+		Using this result we have
+		\ba	
+			[yp_z,z^2p_y^2] &= [yp_z,zp_y]zp_y+zp_y[yp_z,zp_y]\\
+				& = i\h(zp_z-yp_y)zp_y + i\h zp_y(zp_z-yp_y)\\
+				& = i\h\{zp_z-yp_y,zp_y\}.
+		\ea
+		For the first commutator then
+		\[
+			[yp_z-zp_y,az^2p_y^2] = ai\h\{zp_z-yp_y,zp_y\}.
+		\]
+		As for the second part, only select terms contribute
+		\ba
+			[yp_z-zp_y,x^2(x^2+y^2+z^2)]  &=  [yp_z,x^2z^2]-[zp_y,x^2y^2]\\
+			& = x^2y[p_z,z^2]-x^2z[p_y,y^2]\\
+			& = -2i\h x^2yz +2i\h x^2yz\\
+			& = 0.
+		\ea
+		Thus we finally have
+		\[
+			[L_x,az^2p_y^2+bx^2r^2] = ai\h\{zp_z-yp_y,zp_y\}
+		\]
+		\\
+		\\
+		
+		\item
+		% (b)
+		Consider the addition of two angular momentum operators according to $\vect L_1 + \vect L_2 = \vect L$. Eigenstates
+		$\ket{l_1,m_1}$ are associated with the operators $\vect L_1^2$ and $L_{1z}$, eigenstates $\ket{l_2,m_2}$ are associated
+		with the operators $\vect L_2^2$ and $L_{2z}$, and eigenstates $\ket{L,M}$ are associate with the operators 
+		$\vect L^2$ and $L_z$. In terms of the quantum numbers $(l_1,m_1)$ and $(l_2,m_2)$ determine (derive and state the
+		answer) the values which are allowed for the quantum numbers $(L,M)$. Express the $\ket{L,M}$ eigenstate with the largest
+		$M$ value in terms of the $\ket{l_1,m_1}$ and $\ket{l_2,m_2}$ eigenstates. 
+		\\
+		\\
+		For the addition of two angular momentum operators, 
+		\[
+			\vect L = \vect L_1 \otimes 1 +1 \otimes  \vect L_2
+		\] 
+		we can expand the base kets in terms of two different sets of maximally compatible oberservables. To distinguish which observables 
+		are compatible with each other, we note the following commutation relations:
+		\[
+			[J_{1i}, J_{2j}] = 0 \quad (\text{all } i,j)
+		\]
+		\[
+			[\vect J^2,\vect J_1^2] = [\vect J^2,\vect J_2^2] = 0
+		\]
+		\[
+			[\vect J^2,J_{1z}] \ne 0
+		\] 
+		\[
+			[\vect J^2,J_{2z}] \ne 0.
+		\]
+		Commutation relations between angular momentum in the same subspace have been left out as they follow the familiar
+		rules. From these commutation relations, we can form kets that are eigenstates of $\vect J_1^2$, $\vect J_2^2$, $J_{1z}$, 
+		$J_{2z}$ or kets that are eigenstates of $\vect J^2$, $J_z$, $J_1^2$, and $J_2^2$. We will denote them respectively as
+		\[
+			\ket{l_1,l_2,m_1,m_2}
+		\]
+		and
+		\[
+			\ket{l_1,l_2,l,m}.
+		\]
+		To relate the two base kets to each other (for fixed $l_1$, $l_2$) we form the expansion
+		\[
+			\ket{l_1,l_2,l,m} = \sum_{m_1,m_2} \ket{l_1,l_2,m_1,m_2}\braket{l_1,l_2,m_1,m_2|l_1,l_2,l,m}.
+		\]
+		where the inner products (matrix elements)
+		\[
+			\braket{l_1,l_2,m_1,m_2|l_1,l_2,l,m}
+		\]
+		are called the Clebsch-Gordan coefficients. The question of what values are allowed for $l,m$ for a given $l_1,m_1$ and $l_2,m_2$
+		is equivalent to asking which Clebsch-Gordan coeffiecents are non-vanishing. Put another way, if we have a state of definite $l_1$, 
+		$l_2$, $m_1$, and $m_2$ and we apply the total angular momentum operator $\vect L^2$ to this this state, the possible values
+		that are returned depend on the expansion of $\ket{l_1,l_2,m_1,m_2}$ in the $\ket{l_1,l_2,l,m}$ basis - aka the 
+		nonvanishing Clebsch-Gordan coefficients. By convention, the Clebsch-Gordan coefficients are real. As a consequence, the
+		transformation is orthogonal $U= U^T$ and thus the nonvanishing requirement applies equally regardless of which basis we start 
+		with. 
+		\\
+		\\
+		To find the requirement on which $z$-components of total angular momentum are allowed, we can do the following routine. 
+		Start with
+		\[
+			(L_z-L_{1z}-L_{2z})\ket{l_1,l_2,l,m} = 0 
+		\]
+		since 
+		\[
+			L_z = L_{1z}+L_{2z}.
+		\]
+		Now multiply by the other base ket on the left
+		\[
+			\braket{l_1,l_2,m_1,m_2|(L_z-L_{1z}-{L_2z})|l_1,l_2,l,m} = 0 
+		\]
+		\[
+			(m-m_1-m_2)\braket{l_1,l_2,m_1,m_2|l_1,l_2,l,m} = 0.
+		\]
+		We observe that only nonvanishing coffecients occur for
+		\[
+			m = m_1+m_2.
+		\]
+		As for the condition on the angular momentum itself it is easy to imagine that
+		\[
+			|l_1-l_2|\le l \le l_1+l_2
+		\]
+		if we view it as the sum of two angular momentum vectors. For a more formal proof, however, we can show that the 
+		dimensionality of the space spanned by either basis is equivalent only if $|l_1-l_2|\le l \le l_1+l_2$. Given fixed
+		$l_1$ and $l_2$, the dimensionality of the space is 
+		\[
+			N = (2j_1+1)(2j_2+1).
+		\]
+		In terms of the other basis, for each $l$ there are $2l+1$ states. If we assume our rule for angular momentum holds true,
+		we find
+		\[
+			\sum_{|l_1-l_2|}^{l_1+l_2} (2l+1) = (2l_1+1)(2l_2+1)= N.
+		\]
+		Therefore we conclude that for a given $(l_1,m_1)$ and $(l_2,m_2)$ the allowed $(l,m)$ are
+		\[
+			m = m_1+m_2
+		\]
+		\[
+			|l_1-l_2|\le l \le l_1+l_2.
+		\]
+		For a given $l$, the maximum $m$ value the state $\ket{l_1,l_2,l,m}$ can have is 
+		\[
+			m = l = l_1+l_2.
+		\]
+		If we combine this with the requirement that
+		\[
+			m = m_1+m_2
+		\]
+		we must conclude that $\ket{l_1,l_2,l,m_{max}}$ can only be expressed by one state in the $\ket{l_1,l_2,m_1,m_2}$ basis. That 
+		state is 
+		\[
+			\ket{l_1,l_2,l_1,l_2}.
+		\]
+		Thus for maximum $m$ the conversion between the two basis kets is
+		\[
+			\ket{l_1,l_2,l,m_{max}} = \ket{l_1,l_2,l_1,l_2}.
+		\]
+		\\
+		
+		\item
+		% (c)
+		Consider a general ket $\ket{l,m}$ where $l$ designates the orbital angular momentum eigenvalue and $m$ its $z$ 
+		component. Consider a specific ket $\ket{2,1}$. Determine for which $\ket{l,m}$ values the matrix elements
+		\[
+			\braket{2,1|r^2|l,m},\quad \braket{2,1|r\vect r|l,m}
+		\]
+		are non-zero, and determine their values (you can give your answer in terms of closed form integrals, there is no need to
+		calculate the integrals themselves). 
+		\\
+		\\
+		To apply $r^2$, we will need to expand $\ket{l,m}$ in a position basis. Since the $\ket{l,m}$ deal only with angular positions, 
+		we expand in terms of $\ket{\vecth n}$. For the first matrix element,
+		\ba
+			\braket{2,1|r^2|l,m} &= \iint \braket{2,1|\vecth n'}\braket{\vecth n'|r^2|\vecth n}\braket{\vecth n|l,m} d\Omega\, d\Omega'
+			\\ & = \iint \braket{2,1|\vecth n'}\braket{\vecth n'|\vecth n}\braket{\vecth n|l,m} d\Omega\, d\Omega' \\
+			& = \int \braket{2,1|\vecth n}\braket{\vecth n|l,m} d\Omega\\
+			& = \int_0^{2\pi}\int_0^\pi Y^*_{21} Y_{lm} \sin\theta d\theta \, d\phi\\
+			& = \delta_{2,l}\delta_{1,m}.
+		\ea
+		Thus the only nonvanishing matrix element is
+		\[
+			\braket{2,1|r^2|2,1} = 1.
+		\]
+		Similarly for the other element we form
+		\ba
+			\braket{2,1|r\vect r|l,m} &= \int_0^{2\pi}\int_0^\pi Y^*_{21} Y_{lm}\vecth n \sin\theta d\theta \, d\phi\\
+			& = \vecth r \, \delta_{2,l}\delta_{1,m}.
+		\ea
+		Therefore the only nonvanishing matrix element is
+		\[
+			\braket{2,1|r\vect r|2,1} = \vecth r = \vecth n.
+		\]
+		\\
+	\eenum
+	
+% #3 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	A particle of mass $M$ is constrained to move on the surface of a sphere of radius $r$. Its dynamics can be described by a free 
+	Hamiltonian $H_0$ and a set of free eigenstates $Y_l^m(\theta,\phi)$. The sphere is then embedded in a uniform gravitational 
+	field with acceleration $g$ directed along the $-z$ axis, so that the particle experiences the potential
+	\[
+		V(\theta,\phi) = mgr\cos\theta.
+	\]
+	
+	\benum
+		% (a)
+		\item 
+		Compute the values of all non-zero matrix elements of the potential operator $V(\theta,\phi)$ in a basis consisting of those 				$Y_l^m(\theta,\phi)$ that have $l=0,1$ and $2$. Do not attempt to work out every case - there are 81 of them. Use symmetry 
+		arguments to save work.
+		\\
+		\\
+		In the position representation, the matrix values go as
+		\[
+			mgr \int_{0}^{2\pi}\int_{0}^\pi (Y_{l'}^{m'})^*Y_l^m\cos\theta\sin\theta d\theta \, d\phi.
+		\]
+		Notice that since $m$ and $m'$ are integers, the $\phi$ dependence of the integration is proportional to
+		\[
+			\int_0^{2\pi} e^{im\phi}e^{-im'\phi}  \propto \delta_{m,m'}.
+		\]
+		Therefore, only values with the same $z$ component of angular momentum have nonvanishing matrix elements. For the $\theta$ 
+		dependence of the integral, $\cos\theta$ is odd about $\pi/2$ while $\sin\theta$ is even about $\pi/2$. Therefore, if a function
+		$f(\theta)$ in
+		\[
+			\int_0^\pi f(\theta)\cos\theta\sin\theta\, d\theta\
+		\]
+		is even (symmetric) about $\pi/2$, then the integral will vanish. Here is a list of the 
+		spherical harmonics up to $l=2$. 
+		\ba
+			Y_0^0  & = \pfrac{1}{4\pi}^{1/2} \\
+			Y_1^0  & =\pfrac{3}{4\pi}^{1/2}\cos\theta \\
+			Y_1^1  & = -\pfrac{3}{8\pi}^{1/2}\sin\theta e^{i\phi} \\
+			Y_2^0  & = \pfrac{5}{16\pi}^{1/2}(3\cos^2\theta-1) \\
+			Y_2^1  & = -\pfrac{15}{8\pi}^{1/2}\sin\theta\cos\theta e^{i\phi}\\
+			Y_2^2 & = \pfrac{15}{32\pi}^{1/2}\sin^2\theta e^{2i\phi}
+		\ea
+		The rest can be composed using $Y_l^{-m} = (-1)^m(Y_l^m)^*$. We observe that each spherical harmonic, being composed
+		of combinations of sines and cosines, is even or odd about our integration bounds. Therefore we can exclude harmonics
+		with $l'=l$ since their product $f(\theta)$ will be even. Now our task amounts to finding two spherical harmonics with
+		$m=m'$, $l\ne l'$ and who's product is an odd function (it turns out that last requirement holds given the first two). Listing
+		them out as $\braket{l',m'| |l,m}$,  we have the possible combinations of states
+		\ba
+			 &\braket{1,0   | |   0,0}\quad &\braket{0,0   | |   1,0} \\
+			 &\braket{2,0   | |   1,0}\quad &\braket{1,0   | |   2,0} \\
+			 &\braket{2,-1   | |   1,-1}\quad &\braket{1,-1   | |   2,-1} \\
+			& \braket{2,1   | |   1,1}\quad &\braket{1,1   | |   2,1} 
+		\ea
+		Since the transpose of the matrix elements for $m'=m$ are equivalent, we have the relationship
+		\[
+			\braket{l',m'| |l,m} = \braket{l,m||l'm'}.
+		\]
+		Therefore we only need to compute four integrals in total (3 actually since $\braket{2,1   | |   1,1} = \braket{2,-1   | |   1,-1}$.
+		Denoting $V = mgr\cos\theta$ we have
+		\ba	
+			\braket{1,0   |V |   0,0} &=  \pfrac{\sqrt 3}{2} \int_0^\pi \cos^2\theta\sin\theta d\theta = \frac{\sqrt 3}{3}\\
+			\braket{2,0   |V |   1,0} &=  \pfrac{\sqrt 15}{4} \int_0^\pi (3\cos^2\theta-1)\cos^2\theta\sin\theta d\theta  =\frac{2\sqrt{15}}{15}\\
+			\braket{2,-1   |V |   1,-1} &=  \pfrac{3\sqrt 5}{4} \int_0^\pi \cos^2\theta\sin^3\theta d\theta  =  \frac{\sqrt 5}{5}\\
+			\braket{2,1   |V |   1,1} &=  \braket{2,-1   |V |   1,-1}  = \frac{\sqrt 5}{5} 
+		\ea
+		All matrix elements should be multiplied by $mgr$. 
+		\\
+		% (b) 
+		\item
+		Consider matrix elements of the full Hamiltonian between the states in this basis and the free ground state. Identify for which 
+		particular states in the basis these matrix elements are nonzero. Reduce the dimension of the basis to just these particular 
+		states and write down the full Hamiltonian as a matrix in this reduced basis. 
+		\\
+		\\
+		Which basis is this even referring to? I am going to assume it is the basis $Y_l^m(\theta,\phi)$ for $l=0$, $1$, $2$. 
+		The full Hamiltonian is
+		\[
+			H = H_0+V(\theta) = \frac{\vect p^2}{2m}+mgr\cos\theta. 
+		\]
+		We are looking for elements such that
+		\[
+			\frac{1}{2m}\braket{l,m|\vect p^2|0,0} + \braket{l,m|V|0,0} \ne 0
+		\]
+		for $l=0,1,2$. We have already computed all nonvanishing matrix elements for $V$, so it remains to find the matrix elements
+		for $\vect p^2$. Expanding in a position basis, 
+		\[
+			\braket{l,m|\vect p^2|0,0} = \int d\vect x\, \braket{l,m|\vect x}\braket{\vect x|\vect p^2|0,0}.
+		\]
+		For the last term, we can use the relation 
+		\[
+			\braket{\vect x|\vect p^2|\alpha} = -\h^2\plr{\pdifff{}{*2r}\braket{\vect x|\alpha}+\frac{2}{r}\pdiff{r}\braket{\vect x|\alpha}
+			-\frac{1}{\h^2r^2}\braket{\vect x|\vect L^2|\alpha}}.
+		\]
+		As there is no radial depedence in our ket $\ket\alpha$, the only term remaining is then
+		\[
+			\braket{\vect x|\vect p^2|\alpha} = \frac{1}{r^2}\braket{\vect x|\vect L^2|\alpha}.
+		\]
+		However we note
+		\[
+			\braket{\vect x|\vect L^2|0,0} = 0
+		\]
+		so all matrix elements must vanish. So it seems only nonvanishing elements of $\braket{l,m|V|0,0}$ can be used. Looking
+		at part (a) this only leaves 
+		\[
+			\braket{1,0|V|0,0} = mgr\frac{\sqrt 3}{3} =  \braket{0,0|V|1,0}.
+		\]
+		In the basis
+		\[
+			\ket{0,0} = \begin{pmatrix}1\\0\end{pmatrix},\quad \ket{1,0} = \begin{pmatrix}0\\1\end{pmatrix}
+		\]
+		we have
+		\[
+			H = mgr\frac{\sqrt 3}{3} \begin{pmatrix}0&1\\1&0\end{pmatrix}
+		\]
+		\\
+		\\
+	\eenum
+% #3 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Find the Clebsch-Gordan coefficients for combining two spins, $s_1 = 1$ and $s_2 = 1$. 
+	\\
+	\\
+	The spin number of a particle distinguishes the dimension of the Hilbert space spanned by the spin states. We seek to find the 
+	representation of a state $\ket{j_1=1,j_2=1,j,m}$ in terms of the states $	
+	\ket{j_1=1,m_1,j_2=1,m_2}$, where
+	the former are eigenstates of the total angular momentum operators ($\vect J^2$, $J_z$) according to
+	\[
+		\vect J = \vect J_1\otimes1 + 1\otimes \vect J_2
+	\]
+	while the latter are eigenstates of $\vect J_1^2$, $\vect J_2^2$, $J_{1z}$, and $J_{2z}$. Since the two particles always have the 
+	same individual spin number $j_1=j_2= 1$ we may denote the states as $\ket{j,m}$ and $\ket{m_1,m_2}$. The procedure 
+	for finding the Clebsch-Gordan coefficients can be achieved by the following steps:
+		\begin{enumerate}[label=\Roman*.]
+		\item Find the maximal total angular momentum and $z$ angular momentum state 
+		\[
+			\ket{j_{max},m_{max}} = \ket{m_1=j_1,m_2=j_2}.
+		\]
+		\item Repeatedly apply the lowering operator $J_-=J_{1-}+J_{2-}$ to generate the set of $m$ states. 
+		\item Obtain the next maximal spin state  $\ket{j_{max}-1,m=j_{max}-1}$ by requiring it to be orthogonal to 
+		$\ket{j_{max},j_{max}-1}$. 
+		\item Repeat II and III until $N=(2j_1+1)(2j_2+1)$ states are found.
+		\eenum 
+		
+	As per the procedure, the maximal state, given in the notation of $\ket{j,m} = \sum \ket{m_1,m_2}$, is
+	\[
+		\ket{2,2} = \ket{1,1}.
+	\]
+	Now applying the lowering operator (omitting $\h$ as they all cancel)
+	\ba
+		J_-\ket{2,2} &= (J_{1-}+J_{2-})\ket{1,1}\\
+		2 \ket{2,1} & = \sqrt{2}(\ket{0,1}+\ket{1,0})\\
+		\ket{2,1}& = \frac{1}{\sqrt 2}(\ket{0,1}+\ket{1,0})\\ 
+		\\
+		J_-\ket{2,1} &= \frac{1}{\sqrt 2}(J_{1-}+J_{2-})(\ket{0,1}+\ket{1,0})\\
+		\sqrt{6} \ket{2,0} & = \frac{1}{\sqrt 2}[\sqrt 2 (\ket{-1,1}+\ket{1,-1})+\sqrt {2}(\ket{0,0}+\ket{0,0})\\
+		\ket{2,0} &= \frac{1}{\sqrt 6}\plr{\ket{-1,1}+\ket{1,-1}+2\ket{0,0}}\\
+		\\
+		J_-\ket{2,0} &= \frac{1}{\sqrt 6}(J_{1-}+J_{2-})(\ket{-1,1}+\ket{1,-1}+2\ket{0,0})\\
+		\sqrt 6\ket{2,-1} &= \frac{1}{\sqrt 6}[\sqrt 2(\ket{0,-1}+\ket{-1,0}+2\ket{-1,0}+2\ket{0,-1})]\\
+		\ket{2,-1} & = \frac{1}{\sqrt 2}(\ket{0,-1}+\ket{-1,0})\\
+		\\
+		J_-\ket{2,-1} &= \frac{1}{\sqrt 2}(J_{1-}+J_{2-})(\ket{0,-1}+\ket{-1,0})\\
+		2\ket{2,0} & = \frac{1}{\sqrt 2}(2\sqrt 2(\ket{-1,-1})\\
+		\ket{2,0} & = \ket{-1,-1}
+	\ea
+	The next maximal state $\ket{j_{max}-1,m_{max}-1} = \ket{1,1}$ can be found by making it orthogonal to 
+	$\ket{2,1}$. That is
+	\[
+		\ket{1,1}_{j,m} = \frac{1}{\sqrt 2}(\ket{0,1}-\ket{1,0})_{m_1,m_2}.
+	\]
+	Applying the lowering operator
+	\ba
+		J_-\ket{1,1} &= \frac{1}{\sqrt 2}(J_{1-}+J_{2-})(\ket{0,1}-\ket{1,0})\\
+		\sqrt 2\ket{1,0} &= \frac{1}{\sqrt 2}[\sqrt 2(\ket{-1,1}-\ket{1,-1}+\ket{0,0}-\ket{0,0})]\\
+		\ket{1,0} & = \frac{1}{\sqrt 2}(\ket{-1,1}-\ket{1,-1})\\
+		\\
+		J_-\ket{1,0} &= \frac{1}{\sqrt 2}(J_{1-}+J_{2-})(\ket{-1,1}-\ket{1,-1})\\
+		\sqrt 2\ket{1,-1} & = \frac{1}{\sqrt 2}[\sqrt 2(-\ket{0,-1}+\ket{-1,0})]\\
+		\ket{1,-1} & = \frac{1}{\sqrt 2}(\ket{-1,0}-\ket{0,-1}).
+	\ea
+	To find the last state, $\ket{0,0}$ we must make it orthogonal to both $\ket{2,0}$ and $\ket{1,0}$. This can also be seen
+	as finding a state such that it vanishes when applied by either the raising or lowering operator. Thus
+	\[
+		\ket{0,0} = \frac{1}{\sqrt 3}(\ket{-1,1}+\ket{1,-1}-\ket{0,0}).
+	\]
+	All together then we have ($\ket{j,m} = \sum \ket{m_1,m_2}$)
+	\ba
+		\ket{2,2} & = \ket{1,1} \\
+		\ket{2,1} & = \frac{1}{\sqrt 2}(\ket{0,1}+\ket{1,0}) \\
+		\ket{2,0} & = \frac{1}{\sqrt 6}(\ket{-1,1}+\ket{1,-1}+2\ket{0,0}) \\
+		\ket{2,-1} & = \frac{1}{\sqrt 2}(\ket{0,-1}+\ket{-1,0}) \\
+		\ket{2,-2} & = \ket{-1,-1} \\
+		\ket{1,1} & = \frac{1}{\sqrt 2}(\ket{0,1}-\ket{1,0}) \\
+		\ket{1,0} & = \frac{1}{\sqrt 2}(\ket{-1,1}-\ket{1,-1}) \\
+		\ket{1,-1} & = \frac{1}{\sqrt 2}(\ket{-1,0}-\ket{0,-1}) \\
+		\ket{0,0} & = \frac{1}{\sqrt 3}(\ket{-1,1}+\ket{1,-1}-\ket{0,0})
+	\ea	
+	\\
+% #4 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	A beam of massive spin-1 particles passes through a Stern-Gerlach apparatus and splits into three output beams, each one 
+	corresponding to one of the allowed projections of the particle spins onto a direction defined by the magnetic field inside the 
+	apparatus. Unless stated otherwise, all directions in this problem are with respect to a fixed laboratory coordinate system.
+	\benum
+		% (a)
+		\item
+		Using the standard raising and lowering operators of angular momentum $J_\pm = J_x\pm iJ_y$ such that 
+		$J_\pm\ket{j,m} = \sqrt{j(j+1)-m(m+1)}\ket{jm\pm1}$ show that the three matrices below form a valid representation
+		of the spin operators for these particles
+		\[
+			S_x = \frac{\h}{\sqrt 2}\begin{pmatrix}0&1&0\\1&0&1\\0&1&0\end{pmatrix};\ 
+			S_y = \frac{\h}{\sqrt 2}\begin{pmatrix}0&-i&0\\i&0&-i\\0&i&0\end{pmatrix};\ 
+			S_z = \h\begin{pmatrix}1&0&0\\0&0&0\\0&0&-1\end{pmatrix}
+		\]
+		\\
+		In this problem $j$ is fixed at $j=1$. We may first form the raising and lowering operators in terms of the matrices given. Let us
+		define the kets in the matrix representation 
+		\[
+			\begin{pmatrix}1\\0\\0\end{pmatrix} = \ket{j=1,m=1},\ 
+			\begin{pmatrix}0\\1\\0\end{pmatrix} = \ket{j=1,m=0},\ 
+			\begin{pmatrix}0\\0\\1\end{pmatrix} = \ket{j=1,m=-1}.
+		\]
+		As a quick check to confirm that we put these in the right order, we can see that $S_z$ acting on each column
+		matrix gives the correct value of $m$ back as an eigenvector. 
+		\\
+		\\
+		Lets construct the raising and lowering operator in the matrix representation:
+		\ba
+			J_- = J_x\pm iJ_y \quad \to \quad  J_- &=  \frac{\h}{\sqrt 2} \begin{pmatrix}0&1&0\\1&0&1\\0&1&0\end{pmatrix}
+			-i\frac{\h}{\sqrt 2} \begin{pmatrix}0&-i&0\\i&0&-i\\0&i&0\end{pmatrix}\\
+			& = \sqrt 2\h \begin{pmatrix}0&0&0\\1&0&0\\0&1&0\end{pmatrix} .
+		\ea
+		Using $J_+ = (J_-)^\dag$ we have
+		\[
+			J_- = \sqrt 2\h \begin{pmatrix}0&0&0\\1&0&0\\0&1&0\end{pmatrix},\quad
+			J_+ = \sqrt 2\h \begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}
+		\]
+		In matrix representation, we must confirm the same results as we know hold true in Dirac notation:
+		\[
+			J_-\ket{1,1} = \sqrt 2\h\ket{1,0} \to  \sqrt 2\h \begin{pmatrix}0&0&0\\1&0&0\\0&1&0\end{pmatrix}
+			\begin{pmatrix}1\\0\\0\end{pmatrix} = \sqrt 2\h \begin{pmatrix}0\\1\\0\end{pmatrix}
+		\]
+		\[
+			J_-\ket{1,0} = \sqrt 2\h\ket{1,-1} \to  \sqrt 2\h \begin{pmatrix}0&0&0\\1&0&0\\0&1&0\end{pmatrix}
+			\begin{pmatrix}0\\1\\0\end{pmatrix} = \sqrt 2\h \begin{pmatrix}0\\0\\1\end{pmatrix}
+		\]
+		\[
+			J_-\ket{1,-1} = 0  \to  \sqrt 2\h \begin{pmatrix}0&0&0\\1&0&0\\0&1&0\end{pmatrix}
+			\begin{pmatrix}0\\0\\1\end{pmatrix} = 0 .
+		\]
+		Similarly for $J_+$ we have
+		\[
+			J_+\ket{1,1} = 0 \to \sqrt 2\h \begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}
+			\begin{pmatrix}1\\0\\0\end{pmatrix} = 0
+		\]
+		\[
+			J_+\ket{1,0} = \sqrt 2\h\ket{1,1} \to \sqrt 2\h \begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}
+			\begin{pmatrix}0\\1\\0\end{pmatrix} = \sqrt 2\h \begin{pmatrix}1\\0\\0\end{pmatrix}
+		\]
+		\[
+			J_+\ket{1,-1} = \sqrt 2\h\ket{1,0} \to \sqrt 2\h \begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}
+			\begin{pmatrix}0\\0\\1\end{pmatrix} = \sqrt 2\h \begin{pmatrix}0\\1\\0\end{pmatrix}.
+		\]
+		Thus the spin matrices given form a valid representation of the spin operators. 
+		\\
+		\\
+		% (b)
+		\item
+		Suppose the incoming beam is initially completely unpolarized, so its density operator in the matrix 
+		representation given in part (a) is 
+		\[
+			\rho_0 = \frac{1}{3}\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}.
+		\]
+		The density operator may be written in terms of the three eigenstates of the spin in the $z$ direction as
+		\be\label{1}
+			\rho_0 = \frac{1}{3}\blr{\ket +\bra ++\ket 0\bra 0 +\ket -\bra -}
+		\ee
+		not only in the laboratory frame, but in any Cartesian coordinate system obtained from the laboratory frame with an arbitrary 
+		rotation. Why?
+		\\
+		\\
+		Because the beam is unpolarized, it is a completely random ensemble and there is no preferred direction for the spin
+		orientation. In other words, the ensemble given above can be also be expressed as an ensemble of the spin projection
+		 $S_x$ operator all with equal weights
+		\[
+			\rho_0 = \frac{1}{3}\blr{\ket{S_x,+}\bra{S_x,+}+\ket{S_x,0}\bra{S_x,0}+\ket{S_x,-}\bra{S_x,-}}.
+		\]
+		Even more generally, $\rho_0$ can be expressed as
+		\be\label{2}
+			\rho_0 = \frac{1}{3}\blr{\ket{S\cdot\vecth n,+}\bra{S\cdot\vecth n,+}+\ket{S\cdot\vecth n,0}\bra{S\cdot\vecth n,0}
+			+\ket{S\cdot\vecth n,-}\bra{S\cdot\vecth n,-}}
+		\ee
+		where $\vecth n$ is the direction of the SG apparatus. In regards to rotation, our unpolarized beam will pass through the SG 
+		apparatus and always emerge as three beams of equal intensity along the $S\cdot\vecth n$ direction solely because
+		there is \emph{no preferred spin direction}. Since the probability weight of the density operator is evenly split, we may
+		always represent \eqref 2 in the form of \eqref 1 at any arbitrary angle of rotation. 
+		\\
+		\\
+		% (c)
+		\item
+		What fraction of the particles in the unpolarized beam will pass through a Stern-Gerlach filter set up in such a way that
+		only the particles with the component of the spin equal to 0 in the $x$ direction are selected?
+		\\
+		\\
+		From \eqref 2 for $\vecth n = \vecth x$ we see that fraction of particles that pass through the SG filter that have
+		$m = 0$ is $1/3 = 33\%$. 
+	\eenum	
+% #5 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item 
+	Four massive spin 1/2 particles are fixed on the vertices of a regular tetrahedron. The Hamiltonian of this system consists of a sum
+	of spin-spin interactions over each of the six pairs as follows
+	\[
+		H = \alpha\sum_{i\ne j} \vect S_i\vect S_j
+	\]
+	\benum
+		% (a)
+		\item
+		Show that all three components of the total spin $\vect J = \sum\nolimits_{i} \vect S_i$ of the system commutes with $H$. 
+		\\
+		\\
+		Each of the four spin 1/2 particles resides in its own spin space such that we may use the formalism of addition 
+		of angular momentum to describe how the operators act; i.e. $S_{1i}$ may only act on the spin ket corresponding
+		to particle 1. The state of the system may be written as (since total angular momentum is fixed at $j=1/2$ for each 
+		particle) 
+		\[
+			\ket{m_1,m_2,m_3,m_4} = \ket{m_1}\otimes\ket{m_2}\otimes\ket{m_3}\otimes\ket{m_4}
+		\]
+		and an operator such as $S_{1x}$ should be interpreted as
+		\[
+			S_{1x} = S_{1x}\otimes 1 \otimes 1 \otimes 1. 
+		\]
+		By restricting operators to only act within certain spaces, we automatically are implying that the commutator between
+		different spaces must be 0
+		\[
+			[S_{li},S_{mj}] = 0 \ \ \text{if}\ \  l\ne m. 
+		\]
+		Operators within the same spin particle space are to be evaluated as usual.
+		\\
+		\\
+		Now we are in a position to evaluate the commutator
+		\[
+			[H,J_i].
+		\]
+	 	Beginning with $J_x$, 
+		\[
+			J_x = S_{1x}+S_{2x}+S_{3x}+S_{4x}
+		\]
+		\[
+			[J_x, \vect S_1\cdot\vect S_2] = [S_{1x}+S_{2x}+S_{3x}+S_{4x},S_{1x}S_{2x}+S_{1y}S_{2y}+S_{1z}S_{2z}].
+		\]
+		Term by term,
+		\ba
+			[S_{1i},S_{1j}S_{2j}] &= [S_{1i},S_{1j}]S_{2j}+S_{1j}[S_{1i},S_{2j}]\\
+			& = [S_{1i},S_{1j}]S_{2j}+0\\
+			& = i\h\epsilon_{ijk}S_{1k}S_{2j} .
+		\ea	
+		Using this relation, we can see that
+		\ba
+			[J_x,\vect S_1\cdot\vect S_2] =&[S_{1x}+S_{2x},S_{1x}S_{2x}+S_{1y}S_{2y}+S_{1z}S_{2z}] \\
+			=&i\h( S_{1z}S_{2y}- S_{1y}S_{2z})+i\h(S_{1y}S_{2z}-S_{1z}S_{2y})\\
+			=& 0
+		\ea
+		By both cyclic permutation and commutation in the same spin particle space, it should now be clear that the following relation holds 
+		for any $J_i$ as well as any pair of spin interactions $\vect S_j\cdot \vect S_k$
+		\[
+			[J_i,\vect S_j\cdot \vect S_k] = 0 \quad\text{for}\quad j\ne k.
+		\]
+		Consequently, we arrive at the desired result,
+		\[
+			[J_i,H] = 0 \quad\text{for}\quad i=1,2,3.
+		\]
+		\\
+		\\
+		% (b)
+		\item
+		List all of the allowed energy levels for the system and the degeneracy factors of each level. Please note, you do not have
+		to construct any eigenstates of energy explicitly. 
+		\\
+		\\
+		Since we have
+		\[
+			[J_i,H] = 0
+		\]
+		it follows that
+		\[
+			[\vect J^2,H] = 0.
+		\]
+		However, since
+		\[
+			[J_i,J_j] \ne 0\quad\text{for}\quad i\ne j
+		\]
+		eigenstates of the Hamiltonian are simultaneous eigenstates of $\vect J^2$ and only one component of $\vect J$. Following 
+		convention, we choose to diagonalize in the $z$-direction. Thus the energy eigenstates may be denoted as
+		\[
+			H\ket{j,m} = E\ket{j,m}
+		\]
+		where the same eigenvalue equations apply as we had for the addition of two angular momentum, i.e.
+		\[
+			J_z\ket{j,m} = m\h \ket{j,m}
+		\]
+		\[
+			\vect J^2\ket{j,m} = j(j+1)\h^2\ket{j,m}.
+		\]
+		There is actually one more set of operators that commute with the Hamiltonian and $\vect J$. It can be shown that
+		\[
+			[S_i^2,H] = [S_i^2, \vect J^2] = [S_i^2,J_z] = 0.
+		\]
+		So we could denote the common eigenstates by four indices instead
+		\[
+			\ket{j_1,j_2,j_3,j_4,j,m}
+		\]
+		with the eigenvalue equation
+		\[
+			S_i^2\ket{j_1,j_2,j_3,j_4,j,m} = j_i(j_i+1)\h^2\ket{j_1,j_2,j_3,j_4,j,m}.
+		\]
+		Typically we do not label eigenstates with these numbers because the total spin (per particle) is fixed. In our case
+		it is fixed at $s=1/2$ so that
+		\ba
+			S_i^2\ket{j_1,j_2,j_3,j_4,j,m} &= \frac{1}{2}\plr{\frac{1}{2}+1}\h^2\ket{j_1,j_2,j_3,j_4,j,m}\\
+			&= \frac{3}{4}\h^2\ket{j_1,j_2,j_3,j_4,j,m}. 
+		\ea
+		Keeping this in mind, we will continue to denote our energy eigenstates as $\ket{j,m}$. The reason the set of operators
+		$S_i^2$ are important is because they allow us to write out Hamiltonian as (dropping the $\alpha$ for now)
+		\[
+			H = \vect J^2 - (S_1^2+S_2^2+S_3^2+S_4^2).
+		\]
+		This enables us to solve the allowed energy values
+		\ba
+			H\ket{j,m} &= E\ket{j,m}\\
+			& = [\vect J^2 - (S_1^2+S_2^2+S_3^2+S_4^2)]\ket{j,m}\\
+			& = [j(j+1)\h^2 - 3\h^2]\ket{j,m}.
+		\ea
+		The next question is then what are the allowed values of $j$ and what is their degeneracy? For $j_1=j_2=j_3=j_4=1/2$, the 
+		dimensionality of the space spanned by $\ket{m_1,m_2,m_3,m_4}$ is
+		\[
+			N = \blr{2\pfrac{1}{2}+1}^4 = 16. 
+		\]
+		In the other basis, however, thing are a little different. By adding four particles of spin 1/2, we expect the angular momentum to 
+		range from $j=0$ to $j=2$. Since the total angular momentum must be separated by an integer, the three values of $j$ must be
+		\[
+			j=0,1,2. 
+		\]
+		Naively summing $(2j+1)$ for $j=1,2,3$ will not give the correct dimensionality. A good way to proceed would be to build up
+		to the addition four angular momenta. Starting with just the addition of two angular momenta, 
+		\[
+			\vect S = \vect S_1 +\vect S_2
+		\]
+		we know the allowed values of $j$ are $j = 0,1$. Now lets add another spin 1/2,
+		\[
+			\vect S = \vect{S}_1+\vect{S}_2+\vect{S}_3.
+		\]
+		The allowed values of $j$ are now $j = \frac{1}{2},\frac{3}{2}$. However we see that there are two ways that we can arrive at
+		$j=\frac{1}{2}$. In other words, there are two linearly independent representations of $j=\frac{1}{2}$. Lastly, we add on
+		one more angular momentum, $\vect S_4$
+		\[
+			\vect S = \vect S_1+\vect S_2+\vect S_3 +\vect S_4.
+		\]
+		Listing the values of $j$ for each independent representation we see that we have
+		\[
+			j = 0,1,2,1,0,1.
+		\]
+		To check that the dimensionality is correct, we take the sum of $(2j+1)$ for each $j$ and representation to find
+		\[
+			N = 1+3+5+3+1+3 = 16.
+		\]
+		Thus we have found that $j=0$ has two representations, $j=1$ has three representations, and $j=2$ has one representation. 
+		In terms of degeneracy
+		\ba
+			j &= 0 \to 2 \\
+			j &= 1 \to 9 \\
+			j &= 2 \to 5 
+		\ea 
+		These show the degeneracy at each value of $j$. Regarding the energy, we have
+		\[
+			E = \alpha\h^2[j(j+1)-3]\quad\text{for}\quad j = 0,1,2
+		\]
+		which the degeneracies for each value of $j$ listed above. 
+		\\
+		\\
+	\eenum
+	
+% #6 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	An electron in a Coulomb field of a proton is in the state 
+	\[
+		\ket\psi = \frac{4}{5}\ket{1,0,0}+\frac{3i}{5}\ket{2,1,1,}
+	\]
+	where $\ket{n,l,m}$ are the standard energy eigenstates of hydrogen.
+	\\
+	\benum
+		% (a)
+		\item 
+		What is the expectation value of energy in this state? What are $\braket{\vect L^2}$ and $\braket{L_z}$?
+		\\
+		\\
+		Since the Hamiltonian of the state is the same as that of the hydrogen atom, the state is an energy eigenstate
+		$H\ket\psi = E\ket\psi$. For the states $\ket{n,l,m}$ the energy can be shown to be
+		\[
+			H\ket{n,l,m} = -\frac{mc^2\alpha^2}{2}\frac{1}{n^2}\ket{n,l,m} \quad\text{for}\quad n = 1,2,3...
+		\]
+		where $\alpha \equiv e^2/hc \approx 1/37$ is the fine structure constant. For a given value of $n$, the angular
+		momentum $l$ ranges from $l=0,1...n-1$ and we also have the usual degeneracy in $m = -l,-l+1...l-1,l$.  The 
+		expectation value of the energy is
+		\[
+			\braket{\psi|H|\psi} = \frac{16}{25}\braket{1,0,0|H|1,0,0}+\frac{9}{25}\braket{2,1,1|H|2,1,1}
+		\]
+		where orthogonality between states with different quantum numbers has been implemented. Continuing on,
+		\ba
+			\braket{\psi|H|\psi} &= -\frac{mc^2\alpha^2}{2}\plr{\frac{16}{25}+\frac{9}{25}\pfrac{1}{4}}\\
+			& =  -\frac{mc^2\alpha^2}{2}\pfrac{73}{100}.
+		\ea
+		In more physical terms,
+		\[
+			\braket{E} = -13.6eV\pfrac{73}{100}.
+		\]
+		The expectation values for $\vect L^2$ and $L_z$ are found similarly, since $\ket{\psi}$ is an eigenstate of both.
+		\ba
+			\braket{\psi|\vect L^2|\psi} &=  \frac{16}{25}\braket{1,0,0|\vect L^2|1,0,0}+\frac{9}{25}\braket{2,1,1|\vect L^2|2,1,1}\\
+			& = \frac{16}{25}(0)\h^2+\frac{9}{25}(2)\h^2\\
+			& = \frac{18}{25}\h^2.
+		\ea
+		\[
+			\braket{\vect L^2} = \frac{18}{25}\h^2
+		\]
+		\ba
+			\braket{\psi|L_z|\psi} & = \frac{16}{25}\braket{1,0,0|L_z|1,0,0}+\frac{9}{25}\braket{2,1,1|L_z|2,1,1}\\
+			& = \frac{9}{25}\h
+		\ea
+		\[
+			\braket{L_z} = \frac{9}{25}\h
+		\]
+		% (b)
+		\item
+		What is $\ket{\psi(t)}$? What, if any, of the expectation values in (a) vary with time?
+		\\
+		\\
+		Since $\ket{\psi}$ is an energy eigenstate, we have a very simple time dependence. Setting $E_0 \equiv -13.6eV$,
+		\[
+			\ket{\psi(t)} = e^{-\frac{i}{\h}Ht}\ket{\psi} = \frac{4}{5}e^{-\frac{i}{\h}E_0t}\ket{1,0,0}
+			+\frac{3i}{5}e^{-\frac{i}{\h}\frac{E_0}{4}t}\ket{2,1,1}.
+		\]
+		Because the states $\ket{1,0,0}$ and $\ket{2,1,1}$ are eigenstates of $H$, $\vect L^2$, and $L_z$, the matrix elements
+		of operators between any two differing states will always be zero, i.e.
+		\[	
+			\braket{2,1,1|H,\vect L^2,L_z|1,0,0} = 0.
+		\]
+		As such, only the same states will have a non-vanishing contribution to the expectation values. However, the time dependence
+		between like-states will cancel and thus all expectation values are independent of time.
+		\\
+		\\
+	\eenum
+
+% #7 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Sakurai 3.10: 
+	\benum
+		% (a)
+		\item
+		Consider a pure ensemble of identically prepared spin 1/2 systems. Suppose the expectation values $\braket{S_x}$
+		and $\braket{S_z}$ and the sign of $\braket{S_y}$ are known. Show how we may determine the state vector. Why is it 
+		unnecessary to know the magnitude of $\braket{S_y}$? 
+		\\
+		\\
+		As a pure ensemble, every particle is within the same spin 1/2 state, and the density operator can be formed as
+		\[
+			\rho = \ket{\alpha}\bra\alpha.
+		\]
+		This problem is probably most easily treated in the spinor formalism. Our yet to be determined state is given by
+		the spinor
+		\[
+			\ket{\alpha} \doteq \bpm a\\b\epm	
+		\]
+		For a given state, only the relative phase difference is of importance in the outplay of physical quantities. Therefore, we may 
+		choose to make $a$ real and $b = |b|e^{i\delta}$. 
+		\ba
+			\braket{S_x} &= \frac{\h}{2} \bpm a& b^* \epm \bpm 0&1\\1&0\epm \bpm a\\b\epm \\
+			& = \frac{\h}{2}a(b+b^*) 
+		\ea
+		
+		\ba
+			\braket{S_y} &= \frac{\h}{2} \bpm a& b^*\epm \bpm 0&-i\\i&0\epm \bpm a\\b\epm \\
+			& = \frac{\h}{2}a(b^*-b)i
+		\ea
+		
+		\ba
+			\braket{S_z} &= \frac{\h}{2} \bpm a& b^*\epm \bpm 1&0\\0&-1\epm \bpm a\\b\epm \\
+			& = \frac{\h}{2}(a^2-|b|^2).
+		\ea
+		We shall make things a little simpler by denoting
+		\[
+			S_i' = \braket{S_i}\frac{2}{\h}.
+		\]
+		From our normalization condition, we know
+		\[
+			a^2+|b|^2 = 1.
+		\]
+		Using this with $S_z'$ we see that
+		\[
+			S_z'+1 = 2a^2;\quad a = \sqrt{\frac{S_z'+1}{2}}
+		\]
+		With $a$ in terms of $S_z'$ we can also solve for the magnitude $|b|$ now as
+		\[
+			|b| = \sqrt{1-a^2} = \sqrt{1-\frac{S_z'+1}{2}}.
+		\]
+		Now if we look at $S_x'$ we see
+		\[
+			S_x' = a|b|(e^{i\delta}+e^{-i\delta}) = a|b|2\cos\delta 
+		\]
+		\[
+			\cos\delta = \frac{S_x'}{2a|b|}.
+		\]
+		Here we have determined the magnitude of our last quantity $\delta$, but the sign of $\delta$ still remains
+		unknown. If we look at $S_y'$ we see
+		\[
+			S_y' = -ia|b|(e^{i\delta}-e^{-i\delta}) = 2a|b|\sin\delta = 2a|b|sign(\delta)\sin(|\delta|)
+		\]
+		By only knowing the sign of $S_y$ we can determine the sign of $\delta$ by the equation above in conjunction with 
+		$\cos\delta = \frac{S_x'}{2a|b|}$. 
+		\\
+		\\
+		Therefore, we have shown that given $\braket{S_x}$, $\braket{S_z}$ and 
+		$sign(\braket{S_y})$ we can determine exactly what state $\ket\alpha = a\ket+ + b\ket-$ we have. 
+		\\
+		\\
+		% (b)
+		\item
+		Consider a mixed ensemble of spin 1/2 systems. Suppose the ensemble averages $[S_x]$, $[S_y]$, and $[S_z]$ are
+		all known. Show how we may construct the $2\times 2$ density matrix that characterizes the ensemble.
+		\\
+		\\
+		The ensemble average is defined by 
+		\[
+			[A] = \tr(\rho A)
+		\]
+		where $A$ is any operator. But we also know the trace is independent of representation, so the ensemble 
+		average can be calculated in any convenient basis. An additional property is that the denisty operator always
+		has $\tr(\rho) = 1$ - all probability weights must add to unity and it can be seen to be Hermitian. With this
+		information in hand, the most general density operator in spin 1/2 space is written as the hermitian matrix
+		\[
+			\rho = \bpm a&c\\c^*&b \epm.
+		\]
+		where $a$ and $b$ are real. Lets now form the ensemble average of the spin operators:
+		\ba
+			[S_x] &= \frac{\h}{2}\tr(\rho\sigma_1) \\
+			& = \frac{\h}{2}\tr\blr{
+			\bpm a&c\\c^*&b \epm \bpm 0&1\\1&0 \epm} \\
+			&= \frac{\h}{2}(c+c^*)
+		\ea
+		Similarly, for the other two ensemble averages we find
+		\[
+			[S_y] = \frac{\h}{2}i(c-c^*)
+		\]
+		\[
+			[S_z] = \frac{\h}{2}(a-b)
+		\]
+		Lets denote $c = c_1+ic_2$ and $[S_i]'= \frac{2}{\h}[S_i]$. If we include the trace condition for the density matrix,
+		we all together have
+		\ba
+			& a+b = 1\\
+			& [S_x]' = 2c_1\\
+			&[S_y]' = -2c_2\\
+			&[S_z]' = a-b
+		\ea
+		Then we see
+		\[
+			a = \frac{[S_z]'+1}{2}
+		\]
+		\[
+			b = 1-\frac{[S_z]'+1}{2}
+		\]
+		\[
+			c_1 = \frac{[S_x]'}{2}	
+		\]
+		\[
+			c_2 = -\frac{[S_y]'}{2}.
+		\]
+		This completes the construction of the density matrix in terms of $[S_x]$, $[S_y]$, and $[S_z]$. 
+		
+	\eenum
+	
+% #8 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Sakurai 3.12: Consider an ensemble of spin 1 systems. The density matrix is now a $3\times3$ matrix. How many independent (real) 
+	parameters are needed to characterize the ensemble completely?
+	\\
+	\\
+	A $3\times 3$ Hermitian matrix may be represented as
+	\[
+		\bpm a_1&b^*&c^*\\b&a_2&d^*\\c&d&a_3 \epm
+	\]
+	where $a_1$, $a_2$, $a_3$ are all real. This matrix is characterized by $3+2(3) = 9$ real components. However, 
+	from the normalization condition $\tr(\rho) = 1$, we may eliminate one real parameter. Thus a spin 1 density matrix
+	is characterized by 8 real parameters. 
+	\\
+% #9 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item 
+	Sakurai 3.30
+	\benum
+		% (a)
+		\item
+		Construct a spherical tensor of rank 1 out of two different vectors $\vect U = (U_x,U_y,U_z)$ and
+		$\vect V = (V_x,V_y,V_z)$. Explicitly write $T^{(0)}_{\pm1,0}$ in terms of $U_{x,y,z}$ and $V_{x,y,z}$.
+		\\
+		\\
+		A vector in the spherical tensor basis goes as
+		\[
+			\vect V = (V_{-1},V_0,V_{1})
+		\]
+		where the components are related the cartesian vector by
+		\[
+			V_{-1} = \frac{1}{\sqrt 2}(V_x-iV_y),\qquad V_0 = V_z,\qquad V_1 = -\frac{1}{\sqrt 2}(V_x+iV_y).
+		\]
+		Although there are other (easier) ways of constructing the rank 1 spherical tensor from two vectors, we shall
+		use the most formal way which is based upon the following equation:
+		\[
+			T_q^{(k)} = \sum_{q_1}\sum_{q_2}\braket{k_1k_2;q_1q_2|k_1k_2;kq}X_{q_1}^{(k_1)}Z_{q_2}^{(k_2)}.
+		\]
+		If we use $X^{(1)}_{q_1} = U$ and $Z_{q_2}^{(1)} = V$, then we can form a rank 1 spherical tensor by
+		\[
+			T^{(1)}_q = \sum_{q_1}\sum_{q_2}\braket{11;q_1q_2|11;1q}U_{q_1}V_{q_2}.
+		\]
+		For $T^{(1)}_{0}$ we have
+		\ba
+			T_0^{(1)} =& \braket{11;-11|11;10}U_{-1}V_1 \\
+			&+ \braket{11;1-1|11;10}U_{1}V_{-1}\\
+			&+\braket{11;00|11;10}U_{0}V_0.
+		\ea
+		The coefficients are the same as the Clebsch-Gordan coefficients. In the sum we have omitted terms in 
+		which $q_1+q_2 \ne q$. The last coefficient turns out to be zero and the remaining two have been referenced 
+		from a table. The result is
+		\[
+			T_0^{(1)} = -\frac{1}{\sqrt 2}U_{-1}V_1+\frac{1}{\sqrt 2}U_1V_{-1}.
+		\]
+		Inputting the vector components in their cartesian form, and temporarily suppressing the normalization constant
+		\ba
+			T_0^{(1)} &= U_1V_{-1}-U_{-1}V_1 \\
+			& = -\frac{1}{2}(U_x+iU_y)(V_x-iV_y)+\frac{1}{2}(U_x-iU_y)(V_x+iV_y)\\
+			& = i(U_xV_y-U_yV_x)\\
+			& = i(\vect U\times\vect V)_z.
+		\ea
+		Next, we have $T^{(1)}_1$
+		\ba
+			T^{(1)}_1 &= \braket{11;10|11;11}U_1V_0+\braket{11;01|11;11}U_0V_1 \\
+			& = \frac{1}{\sqrt 2}U_1V_0-\frac{1}{\sqrt 2}U_0V_1.
+		\ea
+		Converting to cartesian 
+		\ba
+			T^{(1)}_1 &= U_1V_0-U_0V_1\\
+			& = -\frac{1}{\sqrt 2}(U_x+iU_y)V_z+\frac{1}{\sqrt 2}(V_x+iV_y)U_z\\
+			& = -\frac{i}{\sqrt 2}[(\vect U\times\vect V)_x+i(\vect U\times\vect V)_y]
+		\ea
+		Lastly, 
+		\ba
+			T^{(1)}_{-1} &= \braket{11;-10|11;11-1}U_{-1}V_0+\braket{11;0-1|11;1-1}U_0V_{-1} \\
+			& = -\frac{1}{\sqrt 2}U_{-1}V_0+\frac{1}{\sqrt 2}U_0V_{-1}\\
+			&\to \frac{1}{\sqrt 2}[-(U_x-iU_y)V_z+U_z(V_x-iV_y)]\\
+			& = \frac{i}{\sqrt 2}[(\vect U\times\vect V)_x-i(\vect U\times \vect V)_y].
+		\ea
+		If we like, we could define $\vect Z = i\vect U\times\vect V$. Then we have
+		\[
+			T^{(1)}_{\pm 1} = \mp \frac{1}{\sqrt 2}(Z_x+iZ_y),\qquad T_0^{(1)} = Z_z.
+		\]
+		\\
+
+		% (b)
+		\item
+		Construct a spherical tensor of rank 2 out of two different vectors $\vect U$ and $\vect V$. Write down explicitly
+		$T^{(2)}_{\pm2,\pm1,0}$ in terms of $U_{x,y,z}$ and $V_{x,y,z}$. 
+		\\
+		\\
+		Proceeding in the same manner as part (a), we form the sum, evaluate the coefficients and arrive at (suppressing the 
+		common normalization factor)
+		\ba
+			T^{(2)}_2 &= U_1V_1 \\
+			& = \frac{1}{2}(U_x+iU_y)(V_x+iV_y)\\
+			\\
+			T^{(2)}_1 &= \frac{1}{\sqrt 2}(U_1V_0+U_0V_1) \\
+			& = -\frac{1}{2}[(U_x+iU_y)V_z+(V_x+iV_y)U_z]\\
+			\\
+			T^{(2)}_0 &= \frac{1}{\sqrt 6}(U_1V_{-1}+U_{-1}V_1+2U_0V_0) \\
+			& = -\frac{1}{2\sqrt 6}[(U_x+iU_y)(V_x-iV_y)+(U_x-iU_y)(V_x+iV_y)-4U_zV_z]\\
+			\\
+			T^{(2)}_{-1} &= \frac{1}{\sqrt 2}(U_{-1}V_0+U_0V_{-1}) \\
+			& = \frac{1}{2}[(U_x-iU_y)V_z+(V_x-iV_y)U_z]\\
+			\\
+			T^{(2)}_{-2} &= U_{-1}V_{-1} \\
+			& = \frac{1}{2}(U_x-iU_y)(V_x-iV_y)\\
+		\ea
+			
+	\eenum 
+	
+% #10 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Sakurai 3.32: 
+	\benum
+		% (a)
+		\item 
+		Write $xy$, $xz$, and $(x^2-y^2)$ as components of a spherical (irreducible) tensor of rank 2.
+		\\
+		\\
+		In part (a) we formed a rank 1 and rank 2 spherical tensor from two vectors $\vect U$ and $\vect V$. If we 
+		chose instead to make $\vect U =\vect V = \vect r$, we can show that the new rank 2 spherical tensor 
+		can be expressed in cartesian components as
+		\ba
+			T^{(2)}_2 & = \frac{1}{2}(x^2-y^2 +2i xy)\\
+			T^{(2)}_1 & = -(x+iy)z \\
+			T^{(2)}_0 & = \frac{1}{\sqrt 6}(3z^2-r^2)\\
+			T^{(2)}_1 & = (x-iy)z \\
+			T^{(2)}_2 & = \frac{1}{2}(x^2-y^2-2ixy).
+		\ea
+		If we play around with combinations of these tensors we find that we can form the desired quantities with
+		\ba
+			xy &= -\frac{i}{2}(T_2^{(2)}-T_{-2}^{(2)})\\
+			xz &= \frac{1}{2}(T_{-1}^{(2)}-T_{1}^{(2)})\\
+			x^2-y^2 &= T_2^{(2)}+T_{-2}^{(2)}
+		\ea
+
+		%(b)
+		\item
+		The expectation value 
+		\[
+			Q \equiv e\braket{\alpha,j,m=j|(3z^2-r^2)|\alpha,j,m=j}
+		\]
+		is known as the quadrupole moment. Evaluate
+		\[
+			e\braket{\alpha,j,m'|(x^2-y^2)|\alpha,j,m=j}
+		\]
+		where $m' = j,j-1,j-2,...$ in terms of $Q$ and appropriate Clebsch-Gordan coefficients. 
+		\\
+		\\
+		First let us notice that
+		\[	
+			\frac{1}{\sqrt 6}(3r^2-z^2) = T_0^{(2)}
+		\]
+		so 
+		\[
+			Q \equiv e\sqrt 6\braket{\alpha,j,m=j|T_0^{(2)}|\alpha,j,m=j}.
+		\]
+		This means that any expectation values involving $T_0^{(2)}$ may be written as
+		\[
+			\braket{\alpha,j,j|T_0^{(2)}|\alpha,j,j} =\frac{Q}{e\sqrt 6}.
+		\]
+		To evaluate
+		\[
+			e\braket{\alpha,j,m'|(x^2-y^2)|\alpha,j,m=j} = e\braket{\alpha,j,m'|T_2^{(2)}+T_{-2}^{(2)}|\alpha,j,m=j}
+		\]
+		we implement the Wigner Eckart theorem. This theorem is as follows:
+		\[
+			\braket{\alpha',j',m'|T_q^{(k)}|\alpha,j,m} = \braket{j,k;m,q|j,k;j',m'}\frac{\braket{\alpha'j'||T^{(k)}||\alpha j}}{\sqrt{
+			2j+1}}
+		\]
+		The double bar matrix element is completely independent of $m'$ and $q$. What this means for our problem
+		is that we can use $Q$, a defined value, as our double bar matrix element and solve the desired matrix element in 
+		terms of it. Putting this into action, we have
+		\ba
+			&e\braket{\alpha,j,m'|T_2^{(2)}+T_{-2}^{(2)}|\alpha,j,j} \\
+			&= \frac{e\braket{\alpha,j|T^{(2)}|\alpha,j}}{\sqrt{2j+1}}\blr{\braket{j,2;j,-2|j,2;j,m'}+\braket{j,2;j,2|j,2;j,m'}}\\
+			& = \frac{Q}{\sqrt 6\sqrt{2(j+1)}}\blr{\braket{j,2;j,-2|j,2;j,m'}+\braket{j,2;j,2|j,2;j,m'}}
+		\ea
+		In evaluating the different $m' = j,j-1,j-2,..$ we note that the condition for nonvanishing Clebsch-Gordan 
+		coefficients is that 
+		\[
+			m' = m+q \Rightarrow j\pm2. 
+		\]
+		However $m'$ may not exceed $j$ so the only remaining coefficient corresponds to $m' = j-2$
+		and thus our result may be written in final form as
+		\[
+			e\braket{\alpha,j,m'|(x^2-y^2)|\alpha,j,m=j} =  \frac{Q}{\sqrt 6\sqrt{2(j+1)}}\braket{j,2;j,-2|j,2;j,j-2}.
+		\]
+	\eenum 
+		
+		
+	 
+\eenum
+\end{document}

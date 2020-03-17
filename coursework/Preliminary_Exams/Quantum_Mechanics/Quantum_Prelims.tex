@@ -1,0 +1,428 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{Quantum Mechanics Preliminary Examination Problems}
+\author{Matthew Phelps}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+
+% 2015 Winter------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection*{2015 Winter}
+\phantom{}
+	\benum
+	% 1
+		\item
+		Consider a finite set of operators $B_i$. Let $H$ be a Hamiltonian which \emph{commutes} with each $B_i$; i.e., $[H,B_i]=0$ for all $i		$. Suppose the $\ket{a_n}$'s form a complete set of eigenstates of $H$ satisfying $H\ket{a_n} = a_n\ket{a_n}$.
+		\benum
+			% (a)
+			\item
+			Let us choose one particular value of $i$ and one particular value of $n$. Under what circumstances can it be deduced that $B_i			\ket{a_n}$ is proportional to $\ket{a_n}$?
+			\\
+			\\
+			If $[H,B_i]=0$ then $\ket{a_n}$ is an eigenket of $B_i$. To show this
+			\[
+				[H,B_i]\ket{a_n} = 0
+			\]
+			\[
+				H\plr{B_i\ket{a_n}} = a_n\plr{B_i\ket{a_n}}.
+			\]
+			Thus $B_i\ket{a_n}$ is an eigenket of $H$ with eigenvalue $a_n$. If the spectrum of $H$ is non-degenerate, we 
+			deduce that $B_i\ket{a_n}$ must be proportional to $\ket{a_n}$ up to a constant, which we denote $b^i_n$
+			\[
+				B_i\ket{a_n} = b^i_n\ket{a_n}.
+			\]
+			\\
+			% (b)		
+			\item
+			Show that if the above is true for all $i$ and for all $n$, then $[B_i,B_j]=0$ for all $i,j$. 
+			\\
+			\\
+			\[
+				[B_i,B_j]\ket{a_n}\quad\to\quad (b^i_nb^j_n-b^j_nb^i_n)\ket{a_n} = 0\ket{a_n}
+			\]
+			thus $[B_i,B_j] = 0$. 
+			\\
+			% (c) 			
+			\item
+			How can you reconcile the rule stated in part (b) with the fact that for angular momentum operators $L_i$, we can have a 
+			situation where $[L_i,H] = 0$ but $[L_i,L_j] \ne 0$ when $i\ne j$?
+			\\
+			\\
+			For $[L_i,H] = 0$, we also have $[\vect L^2,H] = 0$. Therefore, we know our Hamiltonian must be
+			proportional to $\vect L^2$. As such, the system is degenerate in $L_i$. For example, if the z-component of angular
+			momentum were up or down, the energy eigenvalue would remain the same. Since this system is degenerate in $L_i$,
+			our rule from part (b) does not hold. There is really a lot more to this. The important idea revolves around a complete set
+			of mutually compatible observables. 
+		\eenum
+		\phantom{}
+		\phantom{}
+	%2
+		\item
+		Consider a quantum particle in 1D with mass $m$ and energy $E = -E'<0$ bound in the double $\delta$-function potential
+		$V(x) = -c_0\delta(x-L)-c_0\delta(x+L)$ where $c_0>0$.
+		\benum
+			% (a)
+			\item
+			Derive the transcendental equation for the ground state energy $E_0$ and show (by plotting an appropriate freehand graph) that 
+			a solution of this equation exists, for all (positive) values of $c_0$. 
+			\\
+			\\
+			Confer problem 2.27 Griffiths. Since the potential is even, we will have even and odd solutions. The ground state energy always 			occurs as an even solution as it can be proven that the even solution contains no nodes (no nodes equates to lower energy). 				Therefore, we need to find the even wavefunction for the ground state. The energy is strictly negative, and so we denote
+			\[
+				k\equiv \sqrt{\frac{2m|E|}{\h^2}}.
+			\]
+			
+			Our wavefunction goes as
+			\[
+				\psi(x) = \begin{cases} Ae^{kx}+Be^{-kx}&\quad\text{for}\quad 0<x<L\\ Ce^{-kx} &\quad\text{for}\quad x>L 
+				\end{cases}
+			\]
+			and our boundary conditions are
+			\benum
+				\item
+				$\psi(L)_L = \psi(L)_R; \quad \psi \text{ is everywhere continuous}$
+				
+				\item 
+				$ \ds\elr{\diff[\psi]{x}}_0 = 0$
+				
+				\item 
+				$\ds\Delta\elr{\diff[\psi]{x}}_L = -\frac{2m}{\h^2}c_0\psi(L)$
+			\eenum
+			where the last conditions follows from
+			\[
+				\lim_{\epsilon\to 0}\blr{-\frac{\h^2}{2m}\int_{L-\epsilon}^{L+\epsilon}dx\,\difff{\psi}{*2x}+\int_{L-\epsilon}^{L+\epsilon}dx\,V(x)
+				\psi(x)} = \lim_{\epsilon\to 0}\blr{\int_{L-\epsilon}^{L+\epsilon}dx\, E\psi(x)}.
+			\]
+			
+			Let's first impose the even boundary condition ii., in which we have
+			\[
+				Ak-Bk=0\quad\to\quad A=B
+			\]	
+			Now lets impose B.C. i., 
+			\[
+				Ae^{kL}+Ae^{-kL} = Ce^{-kL}
+			\]		
+			\[
+				A(e^{2kL} +1) = C.
+			\]
+			Now we have a wavefunction given as 
+			\[
+				\psi(x) = \begin{cases} A(e^{kx}+e^{-kx})&\quad\text{for}\quad 0<x<L\\ A(e^{2kL}+1)e^{-kx} &\quad\text{for}\quad x>L 
+				\end{cases}
+			\]
+			Imposing the last boundary condition now,
+			\[
+				(-kAe^{kL}-kAe^{-kL})-(kAe^{kL}-kAe^{-kL}) = -\frac{2m}{\h^2}c_0A(e^{kL}+e^{-kL})
+			\]
+			\[
+				-2kAe^{kL} = -\frac{2m}{\h^2}c_0A(e^{kL}+e^{-kL})
+			\]
+			\[
+				k=\frac{m}{\h^2}c_0(1+e^{-2kL})
+			\]
+			\[
+				\plr{\frac{h^2}{m}}\frac{k}{c_0}-1=e^{-2kL}.
+			\]
+			This is the transcendental equation we were looking for. In dimensionless variables we have
+			\[
+				z\equiv 2kL;\quad a\equiv \frac{\h^2}{2mc_0L}
+			\]
+			\[
+				az-1=e^{-z}
+			\]
+			which is simply the graph of a decaying exponential and a line with positive slope. We see that there is exactly one solution. 
+			\\
+			% (b)
+			\item
+			Derive the transcendental equation for the energy $E_1$ of the first (and only) excited state, show (by plotting an appropriate 
+			freehand graph) that it has a solution only if the constant $c_0$ is above a certain threshold $c_{min}$, i.e. $c_0 > c_{min}$,
+			and determine the value of $c_{min}$.
+			\\
+			\\
+			The next excited state will be the odd solution. Following the same routine as earlier we start with 
+			\[
+				\psi(x) = \begin{cases} Ae^{kx}+Be^{-kx}&\quad\text{for}\quad 0<x<L\\ Ce^{-kx} &\quad\text{for}\quad x>L 
+				\end{cases}
+			\]
+			except boundary condition ii. this time is changed to 
+			\benum
+				\item
+				$\psi(L)_L = \psi(L)_R; \quad \psi \text{ is everywhere continuous}$
+				
+				\item 
+				$ \psi(0) = 0$
+				
+				\item 
+				$\ds\Delta\elr{\diff[\psi]{x}}_L = -\frac{2m}{\h^2}c_0\psi(L)$.
+			\eenum
+			Starting from boundary condition ii. we have
+			\[
+				A=-B.
+			\]
+			Now applying this to B.C. i., we have
+			\[
+				Ae^{kL}-Ae^{-kL} = Ce^{-kL}
+			\]
+			\[
+				A(e^{2kL}-1)=C
+			\]
+			and so our wavefunction goes as
+			\[
+				\psi(x) = \begin{cases} A(e^{kx}-e^{-kx})&\quad\text{for}\quad 0<x<L\\ A(e^{2kL}-1)e^{-kx} &\quad\text{for}\quad x>L 
+				\end{cases}
+			\]
+			Moving on to B.C. iii,
+			\[
+				-kAe^{kL}+kAe^{-kL} - (kAe^{kL}+kAe^{-kL}) = -\frac{2m}{\h^2}c_0A(e^{kL}-e^{-kL})
+			\]
+			\[
+				-2kAe^{kL} = -\frac{2m}{\h^2}c_0A(e^{kL}-e^{-kL})
+			\]
+			\[
+				k = \frac{m}{\h^2}c_0(1-e^{-2kL})
+			\]
+			\[
+				-\frac{\h^2}{mc_0}k +1 = e^{-2kL}.
+			\]
+			In the same dimensionless units, 
+			\[
+				z\equiv 2kL;\quad a \equiv\frac{\h^2}{2mc_0L}
+			\]
+			we have
+			\[
+				-az+1 = e^{-z}.
+			\]
+			Note that $a$ is positive. If we are careful in analyzing the graph, we can see that there can only be one intersection if the slope of 
+			of the line is greater than the slope of the exponential at the $y$-intercept $z=0$.  The slope of the exponential is easily found to 
+			be 
+			\[
+				(e^{-z})'|_0 = -1
+			\]
+			and thus we find our condition is 
+			\[
+				a<1.
+			\]
+			Imposing this in terms of our previous variables we have
+			\[
+				\frac{\h^2}{2mc_0L}<1\quad\to\quad c_0>\frac{\h^2}{2mL}.
+			\]
+			Therefore we can have up to exactly two bound states if $c_0>c_{min}=\frac{\h^2}{2mL}$. 
+		\eenum
+	\eenum
+	
+% 2014 Summer ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\phantom{}
+\subsection*{2014 Summer}
+\phantom{}
+	\benum
+	% 1
+		\item
+		Let us define $D = \frac 12(xp+px)$, where $x$ is the position operator and $p$ the momentum operator in one dimension.
+		\benum
+			% (a)
+			\item
+			Calculate $[D,x^m]$ and $[D,p^n]$ where $m$ and $n$ are integers.
+			\\
+			\\
+			Typically, we strive to use the equation
+			\[
+				[f(A),B] = \pdiff[f]{A}[A,B]
+			\]
+			which is valid only if the commutators commute, i.e. $[A,[A,B]] = [B,[A,B]] = 0$. Let's see if this last condition holds for the 
+			operators given:
+			\ba
+				[x,D] &= \frac 12[x,xp]+\frac 12[x,px]\\
+					&= \frac 12([x,x]p+x[x,p])+\frac 12([x,p]x+p[x,x])\\
+					&= \frac 12(i\h x)+\frac 12(i\h x)\\
+					&= i\h x 
+			\ea
+			\ba
+				[p,D] &= \frac 12[p,xp]+\frac 12[p,px]\\
+					&= \frac 12([p,x]p+x[p,p])+\frac 12([p,p]x+p[p,x])\\
+					&= \frac 12(-i\h p)+\frac 12(-i\h p)\\
+					&= -i\h p .
+			\ea
+			Now we can observe that
+			\ba
+				[x,[x,D]] &=  [x,(i\h x)] = 0;\quad[D,[x,D]] = [D,(i\h x)] = -i\h[x,D] = \h^2 x\\
+				[p,[p,D]] &= [p,(-i\h p)] = 0;\quad[D,[p,D]] = [D,(-i\h p)] = i\h[p,D] = \h^2 p.
+			\ea
+			From the right hand equations, apparently we cannot use our simple derivative rule for commutators because the commutators
+			don't commute. Not to worry, we can still easily compute the desired commutators by simply invoking the identity 
+			that we have already used multiple times, namely
+			\[
+				[A,BC] = [A,B]C+B[A,C].
+			\]
+			Applying this to our quantities of interest we have
+			\ba
+				[x^m,D] &= \frac 12[x^m,xp]+\frac 12[x^m,px] = \frac 12([x^m,x]p+x[x^m,p])+\frac 12([x^m,p]x+p[x^m,x])\\
+					&=xmx^{m-1}i\h = mi\h x^m
+			\ea
+			\ba
+				[p^m,D] &= \frac 12[p^m,xp]+\frac 12[p^m,px] = \frac 12([p^m,x]p+x[p^m,p])+\frac 12([p^m,p]x+p[p^m,x])\\
+					&=pmp^{m-1}(-i\h) = -mi\h p^m
+			\ea
+			where this time we have in fact used our derivative rule since it is valid here. Therefore we alas have
+			\[
+				[D,x^m] = -im\h x^m
+			\]
+			\[
+				[D,p^m] = im\h p^m.
+			\]
+			\\
+			% (b)
+			\item
+			Consider the Hamiltonian operator $\ds H = \frac{p^2}{2m}+V(x)$ with the potential $V(x) = \alpha x^\beta$ where $\alpha$ and 
+			$\beta$ are real non-zero constants. Calculate $U(\lambda)HU^\dag(\lambda)$ with $U(\lambda) = \exp(i\lambda D/\h)$.
+			\\
+			\\
+			First note that $D$ is hermitian. Therfore, assuming $\lambda$ is real, we have
+			\[
+				U^\dag(\lambda) = \exp(-i\lambda D^\dag/\h) = \exp(-i\lambda D/\h).
+			\]
+			This unitary operator is some mixture between both translation in position space and momentum space. Interesting. And we are 
+			essentially computing the expectation value of the Hamiltonian (expectation energy). Anyway, we can now use the hint to 
+			decompose our problem as
+			\ba
+				U(\lambda)HU^\dag(\lambda) &= \exp(i\lambda D/\h)H\exp(-i\lambda D/\h)\\
+				&=H+\pfrac{i\lambda}{1!\h}[D,H]+\pfrac{i\lambda}{2!\h}^2[D,[D,H]]+\pfrac{i\lambda}{3!\h}^3[D,[D,[D,H]]].
+			\ea
+			To solve this we need to calculate
+			\ba
+				[D,H] &= [D, p^2/2m+\alpha x^\beta]\\ 
+				&= \frac{1}{2m}[D,p^2]+\alpha[D,x^\beta]\\
+				&= \frac{p^2}{2m}(2i\h)+(-\beta i\h)\alpha x^\beta.
+			\ea	
+			We can start to see the pattern emerging. To allow easier computation, note that
+			\[
+				[D,p^2] = 2i\h p^2;\quad [D,x^\beta] = -\beta i\h x^\beta.
+			\]
+			Now observe
+			\ba
+				[D,[D,H]] &= \frac{1}{2m}[D,[D,p^2]]+\alpha[D,[D,x^\beta]]\\
+				&= \frac{1}{2m}(2i\h)[D,p^2]+\alpha(-\beta i\h)[D,x^\beta]\\
+				&=\frac{p^2}{2m}(2i\h)^2+(-\beta i\h)^2\alpha x^\beta\\
+				[D,[D,[D,H]]] &= \frac{1}{2m}(2i\h)^2[D,p^2]+\alpha(-\beta i\h)^2[D,x^\beta]\\
+				&=\frac{p^2}{2m}(2i\h)^3+(-\beta i\h)^3\alpha x^\beta.
+			\ea
+			We can now rewrite our desired product as
+			\ba
+				\exp(i\lambda D/\h)H\exp(-i\lambda D/\h) &= \frac{p^2}{2m}\sum_{n=0}^\infty \frac{(i\lambda)^n}{\h^nn!}(2i\h)^n+\alpha
+				x^\beta \sum_{n=0}^\infty \frac{(i\lambda)^n}{\h^nn!}(-\beta i\h)^n \\
+				U(\lambda)HU^\dag(\lambda)&=\frac{p^2}{2m}\exp(-2\lambda)+\alpha x^\beta\exp(\beta\lambda).
+			\ea
+				
+			% (c)
+			\item
+			There is a value for $\beta$ in the potential $V(x) = \alpha x^\beta$ for which the Hamiltonian in part (b) transforms as 
+			$U(\lambda)HU^\dag(\lambda) = f(\lambda)H$. What is the function $f(\lambda)$?
+			\\
+			\\
+			We can easily see that for $\beta = -2$ we could express
+			\[
+				U(\lambda)HU^\dag(\lambda) = \exp(-2\lambda)H
+			\]
+			and thus
+			\[
+				f(\lambda) = \exp(-2\lambda).
+			\]
+			\\
+			\\
+			Hints: Recall the identity for two non-commuting linear operators $A$ and $B$:
+			\[
+				\exp(\lambda A)B\exp(-\lambda A) = B+\frac{\lambda^1}{1!}[A,B]+\frac{\lambda^2}{2!}[A,[A,B]]+\frac{\lambda^3}{3!}
+				[A,[A,[A,B]]]+...
+			\]
+			You may do the mathematics formally, ignoring issues such as the precise definitions and domains of various operators.
+		\eenum
+	% 2
+		\item
+		Problem
+		\benum
+			% (a)
+			\item
+			
+			% (b)
+			\item
+			% (c)
+			\item
+		\eenum
+	% 3
+		\item
+		A particle of mass $m$ and electric charge $q$ is constrained to move in a tightly confining ring of radius $R$; call the remaining 
+		coordinate along the ring $x$. The motion along $x$ is free, i.e., there are no forces acting on the particle in the direction $x$.
+		Determine:
+		\benum
+			% (a)
+			\item
+			Eigenvalues and eigenfunctions of energy.
+			% (b)
+			\item
+			The maximum value of the electric current $I$ in the first excited state.
+			\\
+			\\
+			Hint: The current density of a quantum particle is $\ds\vect j = \frac{i\h q}{2m}(\psi\del\psi^*-\psi\del\psi)$.
+		\eenum	
+	% 4
+		\item
+		Problem
+		\benum
+			% (a)
+			\item
+			
+			% (b)
+			\item
+			% (c)
+			\item
+		\eenum
+	% 5
+		\item
+		Consider the Hamiltonian
+		\[
+			H = E_1\ket 1\bra 1+E_2\ket 2\bra 2+V\ket 2\bra 1 +V^*\ket 1\bra 2
+		\]
+		with $|V|\ll |E_2-E_1|$.
+		\benum
+			% (a)
+			\item
+			Find the eigenvalues of energy and the corresponding normalized eigenstates up to the lowest nontrivial order in the
+			strength of the perturbation $V$. Denote these by $E'_1$, $\ket{1'}$ and $E'_2$, $\ket{2'}$, with $E'_1\to E_1$ as $V\to 0$ 
+			and so on.
+			% (b)
+			\item
+			Suppose we are studying transitions from yet another state $\ket g$ to the states $\ket 1$ and $\ket 2$ governed by the operator
+			$D$, and have the known transition matrix elements $\braket{1|D|g}=d$, $\braket{2|D|g}=0$. At this level the transition $g\to 2$ is 
+			evidently forbidden. However, the perturbation $V$ leads to a small admixture of the original state $\ket 1$ in the state $\ket{2'}$. 
+			Thus a transition that to an observer unaware of the existence of the perturbation $V$ might seem to be $g\to 2$ is possible after 
+			all. Find the corresponding matrix element $\braket{2'|D|g}$. 
+		\eenum
+	\eenum
+	
+% 2014 Winter ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\phantom{}
+\subsection*{2014 Winter}
+\phantom{}
+	\benum
+	% 1
+		\item
+		Let $H = H_{kin} + V(\vect x)$ be a single-particle Hamiltonian operator with $H_{kin} = \frac{\vect p^2}{2m}$ and $m$ the
+		mass of the particle. Consider the operator $D = \frac{1}{2}(\vect x\cdot\vect p +\vect p\cdot\vect x)$.
+		\benum
+			% (a)
+			\item
+			Calculate the commutators $[D, \vect x]$ and $[D,\vect p]$.
+			\\
+			% (b)
+			\item
+			Calculate $[D, F(\vect x)]$ and $[D,G(\vect p)]$ where $F$ and $G$ are differentiable functions. You may want to
+			work out the commutators in position or momentum space.
+			\\
+			% (c)
+			\item
+			Let $H\ket{E_i} = E_i\ket{E_i}$. Calculate $[D,H]$ and prove that $2\braket{E_i|H_{kin}|E_i} = 
+			\braket{E_i|\vect x\cdot\del V(\vect x)|E_i}$, which is the quantum mechanical virial theorem. 
+		\eenum
+	\eenum
+\end{document}

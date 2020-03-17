@@ -1,0 +1,502 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 6\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Oct. 28}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item{One Dimensional Scattering Using Green's Functions}
+	\\
+	\\
+	\benum
+	% (a)
+	\item
+	Use a Fourier transform and contour integration to show that the Green's function of the one-dimensional
+	Helmholtz operator, $\plr{\difff{}{*2x}+k^2}$ is 
+	\[
+		G_k(x,x') = -\frac{i}{2k}e^{ik|x-x'|}
+	\]
+	\\
+	\\
+	The Green's function operator is defined as
+	\be\label{1}
+		\plr{\del^2_x +k^2}G_k(x,x') = \delta(x-x').
+	\ee
+	If we apply a translation
+	\[
+		x\to \tilde x = x+a\qquad x' \to\tilde x' = x'+a
+	\]
+	eq. \eqref 1 becomes
+	\[
+		\plr{\del^2_{x}+k^2}G_k(\tilde x,\tilde x') = \delta(x-x').
+	\]
+	Since the Helmholtz operator and delta function are invariant under translation, we know that the solution to 
+	$G_k(x,x')$ can be (but not strictly limited to) translationally invariant. Thus we assume a form for the 
+	Green's function as
+	\[
+		G_k(x,x') = G_k(x-x') \equiv G_k(x).
+	\]
+	\\
+	Now we do a Fourier transform of \eqref 1 to the $k'=p/\h$ space. This is motivated by the fact that
+	the eigenfunctions of the Helmholtz operator are momentum eigenkets - thus by decomposing
+	the Green's function in the momentum basis, we may easily act with the Helmholtz operator. 
+	\[
+		\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dx\ e^{-ik'x}\plr{\del^2_x +k^2}G_k(x) 
+		= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dx\ e^{-ik'x}\delta(x-x').
+	\]
+	Applying the hermitian differentiation operator to the left and noting that the remaining integral is just
+	the Green's function in the momentum representation we have
+	\[
+		(k^2-k'^2)G_k(k') = \frac{1}{\sqrt{2\pi}}
+	\]
+	or
+	\[
+		G_k(k') = \frac{1}{\sqrt{2\pi}(k^2-k'^2)}.
+	\]	
+	Now we would like to revert back to the position basis, so we take the inverse Fourier transform
+	\[
+		G_k(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty} dk'\ \frac{e^{ik'x}}{(k+k')(k-k')}.
+	\]
+	This integral is evaluated by Cauchy's integral formula
+	\[
+		\frac{1}{2\pi i} \oint dz\ \frac{f(z)}{(z-z_0)} = \begin{cases}f(z_0)\quad &z_0\ \text{within contour}\\
+		0\quad\ &z_0\ \text{exterior to contour}\end{cases}
+	\]
+	
+	There are two poles on the real axis at $k' = \pm k$. For $k'>0$ we will close above and only 
+	enclose the pole at $k'=+k$
+	\[
+		G_k(x) = -\frac{1}{2\pi}\oint dk'\  \pfrac{e^{ik'x}}{k'+k}\frac{1}{k'-k} = -i\frac{e^{ikx}}{2k}.
+	\]
+	For $k'<0$ we close below only enclosing the pole $k'=-k$
+	\[
+		G_k(x) = \frac{1}{2\pi}\oint dk'\  \pfrac{e^{ik'x}}{k'-k}\frac{1}{k'+k} = -i\frac{e^{-ikx}}{2k}.
+	\]
+	As such, we may combine both results into an absolute value 
+	\[
+		G_k(x) = -\frac{i}{2k}e^{ik|x|}.
+	\]
+	Recalling that $x\equiv x-x'$ we finally have
+	\[
+		G_k(x,x')= -\frac{i}{2k}e^{ik|x-x'|}
+	\]
+	\\
+	\\
+	
+	% (b)
+	\item
+	Use the result in (a) to write down the first Born approximation for the scattering amplitude in one-dimension,
+	and hence show that the Born approximation for the reflection probability is
+	\[
+		R \approx \pfrac{m}{\h^2 k}^2\left|\int_{-\infty}^{\infty} dx'\ e^{2ikx'}V(x')\right|^2
+	\]
+	\\
+	\\
+	Given the Schrodinger equation
+	\[
+		\plr{\del_x^2+k^2}\psi = \frac{2m}{\h^2} V\psi
+	\]
+	we may use the Green's function in (a) to cast this into an integral equation for $\psi$
+	\[
+		\psi(x) = \frac{2m}{\h^2}\int_{-\infty}^\infty dx'\ G_k(|x-x'|)V(x')\psi(x').
+	\]
+	To be perfectly general, we must include the homogeneous solution $\psi_0$ to the Helmholtz equation. This will
+	allow us to fit the appropriate boundary conditions
+	\[
+		\psi(x) = \psi_0(x) + \frac{2m}{\h^2}\int_{-\infty}^\infty dx'\ G_k(|x-x'|)V(x')\psi(x').
+	\]
+	We see that we can iterate this equation to expand $\psi$ as a perturbative series in powers of
+	the potential $V$. In the limit that $V=0$, we expect our particle to propagate freely and thus
+	\[
+		\psi_0 = Ae^{ikx}\qquad\text{(incoming wave)}.
+	\]
+	Now, to zeroth order in $V$, $\psi(x) = \psi_0(x)$. Thus, to 1st order in $V$ we substitute the zeroth order
+	$\psi(x)$ into the integral to obtain
+	\[
+		\psi(x) \approx Ae^{ikx}+\frac{2Am}{\h^2}\int_{-\infty}^\infty dx'\  G_k(|x-x'|)V(x')e^{ikx'}.
+	\]
+	Inputting the Green's function, we can write this equation in a more suitable form that clarifies the notion of reflected 
+	and transmitted waves:
+	\ba
+		\psi(x) &\approx Ae^{ikx}-\frac{iAm}{\h^2k}\int_{-\infty}^x dx'\ e^{ik(x-x')}V(x')e^{ikx'}
+		-\frac{iAm}{\h^2k}\int_{x}^\infty dx'\ e^{-ik(x-x')}V(x')e^{ikx'} \\
+		& =  Ae^{ikx}-e^{ikx}\plr{\frac{iAm}{\h^2k}\int_{-\infty}^x dx'\ e^{-ikx'}V(x')e^{ikx'}}
+		-e^{-ikx}\plr{\frac{iAm}{\h^2k}\int_{x}^\infty dx'\ e^{ikx'}V(x')e^{ikx'}}.
+	\ea
+	In the limit that $x\to\pm\infty$ (or far away from the potential) the remaining terms are either the transmitted or 	
+	reflected waves. For the reflection probability, we take $x\to -\infty$ and compute ratio of incoming/reflected wave 
+	probability amplitudes
+	\ba
+		R&\approx\pfrac{|A|^2\pfrac{m}{\h^2k}^2\left|\int_{-\infty}^\infty dx'\ e^{ikx'}V(x')e^{ikx'}\right|^2}{|A|^2}\\
+		&= \pfrac{m}{\h^2 k}^2\left|\int_{-\infty}^{\infty} dx'\ e^{2ikx'}V(x')\right|^2
+	\ea
+	% (c
+	\item
+	Evaluate this Born approximation reflection probability for the two cases:
+		\benum
+		% (i)
+		\item
+		an attractive delta function well: $V(x) = -\lambda\delta(x)$
+		\\
+		\\
+		For the attractive delta function 
+		\[
+			\left|\int_{-\infty}^{\infty} dx'\ e^{2ikx'}(-\lambda\delta(x))\right|^2 =\lambda^2
+		\]
+		hence
+		\[
+			R\approx \pfrac{\lambda m}{\h^2k}^2 = \frac{\lambda^2m}{2\h^2 E}.
+		\]
+		% (ii)
+		\item
+		a finite square well of depth $V_0$ and width $L$.
+		\\
+		\\
+		For the finite square well
+		\[
+			\int_{-L/2}^{L/2} dx'\ e^{2ikx'}(-V_0) = -\frac{V_0}{k}\sin(kL)
+		\]
+		hence
+		\[
+			R\approx \pfrac{mV_0}{\h^2k^2}^2\sin^2(kL) = \pfrac{V_0}{2E}^2\sin^2(kL)
+		\]
+
+		\eenum
+	
+	% (d)
+	\item
+	Compare your answers in (c) with the exact answers [look them up in another QM book: e.g. Griffiths
+	QM equations (2.141) and (2.169), in the second edition]. Comment on how good the Born approximation
+	answers are, and in what physical region they are good.
+	\\
+	\\
+	Attractive delta function potential:
+	\[
+		R = \frac{ \pfrac{\lambda^2m}{2\h^2 E}}{1+ \pfrac{\lambda^2m}{2\h^2 E}};
+		\qquad R_{Born} = \frac{\lambda^2m}{2\h^2 E}
+	\]
+	The Born approximation overestimates the reflection probability by an error 
+	\[
+		\varepsilon \propto  R_{Born}.
+	\]
+	Strictly speaking, the criteria for a ``good" Born approximation is when the dimensionless ratio 
+	\[
+		\frac{\lambda^2m}{2\h^2 E}\ll 1.
+	\]This delta potential 
+	seems a little bit more complicated since the strength of the potential energy is related to not only $\lambda$,
+	but also $m$ and $\h$. However we can certainly say that the approximation gets better as the energy gets 	
+	higher.
+	\\
+	\\
+	\\
+	Finite square well: 
+	\[
+		R = \frac{\frac{V_0^2}{4E(E+V_0)}\sin^2\plr{kL\sqrt{1+\frac{V_0}{E}}}}{1
+		+\frac{V_0^2}{4E(E+V_0)}\sin^2\plr{kL\sqrt{1+\frac{V_0}{E}}}};
+		\qquad R_{Born} =  \frac{V_0^2}{4E^2}\sin^2(kL)
+	\]
+	Again, the Born approximation overestimates the true probability, but this time with an error proportional to
+	\[
+		\varepsilon \propto \frac{V_0}{E}. 
+	\]
+	If $E\gg V_0$ we see both the sine argument and its pre-factor will approach the Born approximation. 
+	\\
+	\\
+	It appears that for both potentials, the Born approximation is most ideal for energies much greater than the 
+	strength of the potential. 
+	\eenum
+	
+	
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+\item{Three Dimensional Born Approximation}
+\\
+	\benum
+	% (a)
+	\item 
+	Compute the Born approximation for the following radially symmetric potentials:
+		\benum
+		\item 
+		radial square well of depth $V_0$ and radius $a$.
+		\item 
+		Gaussian well: $V(r) = -V_0\exp-\frac{r^2}{a^2}$
+		\item 
+		$V(r) = -\frac{V_0}{\plr{1+\frac{r^2}{a^2}}^2}$
+		\\
+		\eenum
+		
+		In the Born approximation, the scattering amplitude may be approximated by
+		\[
+			|f(\theta,\phi)|^2 = \left|-\frac{m}{2\pi\h^2}\int d^3\vect r \ e^{-i\vect q\cdot\vect r}V(\vect r)\right|^2
+		\]
+		with momentum transfer
+		\[
+			\vect q = \vect k_f-\vect k_i;\qquad q = 2k\sin(\theta/2).
+		\]
+		For a spherically symmetric potential, this simplifies to 
+		\[
+			|f(\theta)|^2 = \left|-\frac{2m}{\h^2}\int_0^\infty dr\ r\frac{\sin(qr)}{q}V(r)\right|^2
+		\]
+		with $q$ containing the $\theta$ and $E$ dependence. 
+		\\
+		\benum
+		
+		% (i)
+		\item 
+		For the radial square well of depth $V_0$ radius $a$
+		\ba
+			f(\theta) &= \frac{2mV_0}{\h^2} \int_0^a dr\  r\frac{\sin(qr)}{q}\\
+			& = \frac{2mV_0}{\h^2}\plr{\frac{\sin(aq)-aq\cos(aq)}{q^3}}
+		\ea
+		thus
+		\[
+			|f(\theta)|^2 = 4a^2\pfrac{mV_0a^2}{\h^2}^2\plr{\frac{\sin(aq)-aq\cos(aq)}{(qa)^3}}^2.
+		\]
+		\\
+		
+		% (ii)
+		\item 
+		For the Gaussian well
+		\ba
+			f(\theta) &= \frac{2mV_0}{\h^2} \int_0^\infty dr\  r\frac{\sin(qr)}{q}\exp{\pfrac{-r^2}{a^2}}\\
+			& = \frac{2mV_0}{\h^2}\pfrac{\sqrt\pi a^3}{4}\exp\plr{-\frac{a^2q^2}{4}}\\
+			& = \frac{2mV_0}{\h^2}\pfrac{\sqrt\pi a^3}{4}\exp\blr{-a^2k^2\sin(\theta/2)^2}
+		\ea
+		thus
+		\[
+			|f(\theta)|^2 = \frac{\pi a^2}{4}\pfrac{mV_0a^2}{\h^2}^2\exp\blr{-2a^2k^2\sin(\theta/2)^2}.
+		\]
+		\\
+		% (iii)
+		\item 
+		For the last well
+		\ba
+			f(\theta) &= \frac{2mV_0}{\h^2} \int_0^\infty dr\  r\frac{\sin(qr)}{q}\plr{1+\frac{r^2}{a^2}}^{-2}\\
+			& = \frac{2mV_0}{\h^2}\pfrac{\pi a^3}{4}\exp\plr{-a|q||}
+		\ea
+		thus
+		\[
+			|f(\theta)|^2 = \frac{\pi^2 a^2}{4}\pfrac{mV_0a^2}{\h^2}^2\exp\blr{-4ak|\sin(\theta/2)|}.
+		\]
+		\\
+		\eenum
+	
+	% (b)
+	\item
+	In each of the cases in (a), write the leading low energy limit of the scattering amplitude.
+	\\
+	\\
+	In the low energy limit, we may take $k\sim q \to 0$ before integrating such that
+	\[
+		f_{low}(\theta) = -\frac{2m}{\h^2}\int dr\ r^2 V(r).
+	\]
+	Or we may integrate and then take the resulting limit. If the strength of the potential is characterized by
+	some length parameter $a$, then the low energy limit can also be taken for $ka\ll 1$. From this point of 
+	view, the wavelength of the particle must be much larger than the effective range of the potential. 
+	\\
+	\benum
+	\item
+	For the radial square well, the leading order approximation is easiest to calculate by taking the integral
+	\ba
+		|f_{low}(\theta)|^2 &= \pfrac{2mV_0}{\h^2}^2\blr{\int_0^a dr\ r^2}^2\\
+		& = \pfrac{2mV_0}{\h^2}^2\pfrac{a^3}{3}^2	
+	\ea
+	thus
+	\[
+		|f_{low}(\theta)|^2 = \frac{4a^2}{9}\pfrac{mV_0a^2}{\h^2}^2.
+	\]
+	\\
+	
+	\item
+	For the Gaussian, we can simply use the Born approximation we found and take the argument in the exponential to 	
+	zero. Thus
+	\[
+		|f_{low}(\theta)|^2 = \frac{\pi a^2}{4}\pfrac{mV_0a^2}{\h^2}^2.
+	\]
+	\\
+	
+	\item
+	For the last well we again take the exponential argument to zero
+	\[
+		|f_{low}(\theta)|^2 = \frac{\pi^2 a^2}{4}\pfrac{mV_0a^2}{\h^2}^2.
+	\]
+	\\
+	\eenum
+	% (c)
+	\item 
+	In each of the cases in (a), make a 3d plot of $|f_k^{Born}(\theta,\phi)|^2$, as a function of both
+	$k$ and $\theta$, and show that at large $k$ the scattering is concentrated at a small angle $\theta$. 
+	What determines this small angle?
+	\\
+	\\
+	Each well was plotted for three values of the dimensionless quantity $\alpha = ka$. The Mathematica
+	function \emph{SphericalPlot3D} plots a radius equal to the magnitude of the function $|f(\theta,\phi)|^2$
+	at each point $(\theta,\phi)$. 
+	\\
+	\\
+	To gain an approximation to the forward cone of small angle $\theta$ at high scattering energies, we can look at
+	the original integral
+	\[
+		|f(\theta)|^2 = \left|-\frac{2m}{\h^2}\int_0^\infty dr\ r^2\frac{\sin(qr)}{qr}V(r)\right|^2.
+	\]
+	We note that the integrand has a sinc function and so the only significant contributions to the sum come from
+	the range in which the argument of the sinc function is less than $\pi$
+	\[
+		qr = 2kr\sin(\theta/2) < \pi.
+	\]
+	For large $k$, the only way to limit the argument to less than $\pi$ is if $r\ll1$ or $\sin(\theta/2)\ll 1$. For 
+	$r\ll 1$ however, the linear factor of $r$ in the remaining part of the integrand (as well as the potenial) would 		
+	dominate and so
+	we would have little contribution. But for $\sin(\theta/2)\ll1$ or, perhaps more precisely $\sin(\theta/2)k \sim
+	 \mathcal O(1)$ we may meet the desired inequality. To first order then
+	 \[
+	 	kr\theta < \pi.
+	\]
+	For a potential with effective range $a$, values of $r>a$ are insignificant due to $V(r)$ and thus we
+	finally arrive at an approximation for the small forward cone:
+	\[
+		\theta < \frac{\pi}{ka}.
+	\]
+	\\
+	\\
+	\benum
+	\item{Radial Square Well:\qquad $\ds\frac{|f(\theta)|^2}{a^2} \sim 4\plr{\frac{\sin(aq)-aq\cos(aq)}{(qa)^3}}^2$}
+	\\
+	\figg[width=100mm]{6_11.png}
+	\figg[width=100mm]{6_12.png}
+	\figg[width=100mm]{6_13.png}
+	\phantom{}\phantom{}\phantom{}\phantom{}\phantom{}\phantom{}
+	\item{Guassian Well:\qquad $\ds\frac{|f(\theta)|^2}{a^2} \sim 
+	\frac{\pi}{4}\exp\blr{-2a^2k^2\sin(\theta/2)^2}$}
+	\\
+	\\
+	\figg[width=100mm]{6_21.png}
+	\figg[width=100mm]{6_22.png}
+	\figg[width=100mm]{6_23.png}
+	
+	\phantom{}\phantom{}\phantom{}\phantom{}\phantom{}\phantom{}
+	\item{Guassian-Like Well:\qquad $\ds\frac{|f(\theta)|^2}{a^2} \sim 
+	\frac{\pi^2}{4}\exp\blr{-4ak|\sin(\theta/2)|}$}
+	\\
+	\\
+	\figg[width=100mm]{6_31.png}
+	\figg[width=100mm]{6_32.png}
+	\figg[width=100mm]{6_33.png}
+	\eenum
+	
+	% (d)
+	\item
+	In each of the cases in (a), state the dimensionless quantity that should be small for the low energy
+	Born approximation to be good, and for the high energy Born approximation to be good. 
+	\\
+	\\
+	For the low energy Born approximation, we see that in our various well calculations if  $ak\ll 1$, the low energy 		approximation approaches
+	the Born approximation. At the same time however, if the quantity
+	\[
+		\frac{mV_0a^2}{\h^2}\ll1 
+	\]
+	than the low energy approximation is also good. If we are asking when the ``regular" Born approximation is good
+	for low energies, we can answer this differently. Looking at the Lippman-Schwinger equation we can see that
+	the Born approximation is good if the correction term is much smaller than the homogeneous term. Since the
+	scattered term is largest at the origin, composing our condition at this point sets the upper bound:
+	\[
+		\frac{|\psi_{sc}(0)|^2}{|\psi_0(0)|^2} = |\psi_{sc}(0)|^2 \ll 1\quad \text{or}\quad |\psi_{sc}(0)| \ll 1.
+	\]
+	From
+	\[
+		\psi_{sc}(0) = \frac{2m}{4\pi \h^2} \int d^3\vect r'\ \frac{e^{ikr'}}{r'}V(\vect r')e^{-i\vect k_i\cdot\vect r'}
+	\]
+	we see that for a spherical potential $V(r)$ we may take $\vect k_i$ to lie along the $z$-direction in the integration
+	and easily integrate out the $\theta '$ dependence exactly in the same fashion as we derived the scattering amplitude
+	earlier. Hence
+	\be\label{2}
+		\frac{2m}{\h^2}\left|\int dr'\ e^{ikr'}\frac{\sin(kr')}{k}V(r')\right|\ll 1.
+	\ee
+	For low energy, $k\ll 1$ and so $e^{ikr}\approx 1$ and $\sin(kr)\approx kr$. The finite potential range $r_0$
+	takes care of the values in which $r'\gg k$. This leads us to
+	\[
+		\frac{2m}{\h^2}\left|\int dr'\ V(r')\right|\ll 1.
+	\]
+	For a well of depth $V_0$ and range $a$ a reasonble upper bound on the integral is $\left|\int dr'\ r'V(r')\right| 
+	\lesssim V_0a^2$ so finally we arrive at the result:
+	\[
+		\frac{mV_0a^2}{\h^2}\ll 1.
+	\]
+	\\
+	\\
+	For high energies we first rearrange the integrand term of \eqref 2
+	\[
+		e^{ikr'}\sin(kr') = \frac{e^{2ikr'}-1}{2i}
+	\]
+	and see that the exponential term oscillates rapidly, with no hope of stabilization. Thus we can drop the term
+	from the integral (along with the factor of 2), leaving
+	\[
+		\frac{m}{\h^2 k}\left|\int dr'\ V(r')\right| \ll 1.
+	\]
+	With similar reasoning as before we have
+	\[
+		\left|\int dr'\ V(r')\right| \lesssim V_0a
+	\] 
+	and so the high energy criteria becomes
+	\[
+		\frac{mV_0a^2}{\h^2} \ll ka.
+	\]
+	\\
+	\eenum
+
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider an elastic scattering process as a transition from an initial and final state of momentum $\h \vect k$
+	and $\h \vect k'$, respectively. \\ \\
+	Use Fermi's Golden Rule, with the density of states for momentum states in the continuum to write the
+	probability per unit time for scattering into the angle $d\Omega$, and show that you recover the Born 
+	approximation expression.
+	\\
+	\\
+	Given a periodic time dependent perturbation $H_1(t) = Ve^{i\omega t}$, Fermi's Golden Rule gives
+	the transition rate from initial energy eigenstate $\ket i$ to final state $\ket f$ as
+	\[
+		R_{i\to f} = \frac{2\pi}{\h}|\braket{f|V|i}|^2\delta(\h\omega-(E_f-E_i)).
+	\]
+	In the context of this problem, our perturbation is time independent so $\omega = 0$. Since a
+	detector is finite, we seek the range of momentum states $\h \vect k'$ that lie within the solid
+	angle $d\Omega$ at a given $(\theta,\phi)$
+	\[
+		R_{i\to f\in d\Omega} = \sum_{\vect k'\in d\Omega} \frac{2\pi}{\h}
+		|\braket{\vect k|V(\vect r)|\vect k'}|^2\delta(E_k-E_{k'})
+	\]
+	In the continuum this becomes an integral over $d^3\vect k'$
+	\ba
+		R_{i\to f} &=\frac{2\pi}{\h} \int_{\vect k'\in d\Omega} d^3\vect k'\
+		|\braket{\vect k|V(\vect r)|\vect k'}|^2\delta(E_k-E_{k'})\\
+		& = \frac{4\pi m}{\h^3} \int_0^\infty dk'\ d\Omega\ k'^2 |\braket{\vect k|V(\vect r)|\vect k'}|^2
+		\delta(k^2-k'^2).
+	\ea
+	The integral is infinite because we are looking for all magnitudes of $k'$ who's direction lies in the differential
+	solid angle $d\Omega$. However, from Fermi's golden rule, only those of which $k'^2=k^2$ filter through:
+	\ba
+		R_{i\to f}&=d\Omega\ \frac{2\pi m}{\h^3} \int_0^\infty d(k'^2)\  \sqrt{k'^2} |\braket{\vect k|V(\vect r)|\vect k'}|^2 
+		\delta(k^2-k'^2)\\
+		&= d\Omega\ \frac{2\pi mk}{\h^3}|\braket{\vect k|V(\vect r)|\vect k'}|^2 .
+	\ea
+	We can now use the incoming probability flux
+	\[	
+		j_{inc} =\frac{\h k}{m}\pfrac{1}{2\pi\h}^3
+	\]
+	to form the rate of detected probability in cross section $d\Omega$ 
+	\ba
+		\frac{R_{i\to f}}{j_{inc}} &= d\Omega\  (2\pi)^4m^2  |\braket{\vect k|V(\vect r)|\vect k'}|^2\\
+		& = d\Omega\  (2\pi)^4m^2\h^2  |\braket{\vect p|V(\vect r)|\vect p'}|^2\\
+		& = \frac{d\sigma}{d\Omega}d\Omega .
+	\ea
+	Minding some Fourier Transform constants, alas we recover the Born approximation (up to a phase constant)
+	\ba
+		\frac{d\sigma}{d\Omega} &=  (2\pi)^4m^2\h^2  |\braket{\vect p|V(\vect r)|\vect p'}|^2\\
+		& = \left|\frac{m}{2\pi\h^2}\int d^3\vect r \ e^{-i\vect q\cdot\vect r}V(\vect r)\right|^2.
+	\ea
+\eenum
+\end{document}

@@ -1,0 +1,759 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+\newcommand{\nm}[1]{\textnormal{#1}}
+
+\title{Astrophysics \& Cosmology\\Final Exam}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item 
+Evidence suggests that the universe, as a first approximation, is everywhere homogeneous and isotropic. A space that is homogeneous and isoptropic about every point is maximally symmetric. These spaces are uniquely specified by a curvature constant and by the number of positive/negative eigenvalues in the metric - any two metrics with the same curvature constant and eigenvalue spectrum must be equivalent. This means we can find the metric of cosmology by constructing a maximally symmetric space with arbitrary curvature (and the proper eigenvalues) as it is guaranteed to be unique up to coordinate transformations. \\ \\
+One such construction is an embedding of our 3-space metric within a flat 4-space, subject to the contraint that the 3-space metric lies on a surface of constant curvature within the 4-space,
+\be
+	\vect x^2 + z^2 = \pm A^2 \equiv \pm 1/k,
+\ee
+where $A$ is constant. 
+The 4-space flat line element is then
+\[
+	ds^2 = d\vect x ^2 + dz^2 .
+\]
+With substitution
+\[
+	dz^2 = \frac{ (\vect x \cdot d\vect x)^2}{\pm A^2 - \vect x^2} = \frac{ \pm k(\vect x \cdot d\vect x)^2}{ 1 \mp k \vect x^2}
+\]
+we then have
+\[
+	ds^2 = d\vect x^2 +  \frac{ \pm k(\vect x \cdot d\vect x)^2}{ 1 \mp k \vect x^2}.
+\]
+Adopting polar coordinates, we see that $(\vect x\cdot d\vect x)^2 = (\vect r\cdot d\vect r)^2$ and can express the above as
+\[
+	ds^2 = \frac{dr^2}{1\mp kr^2} + r^2d\theta^2+ r^2 \sin^2\theta d\phi^2 .
+\]
+We now have an expression for the metric of a 3-space of constant curvature, derived by embedding with a Euclidean 4-space. Now, we can construct the invariant spacetime interval
+\ba
+	d\tau^2 &= dt^2 - R(t)^2ds^2\\
+	&= dt^2 - R(t)^2\plr{  \frac{dr^2}{1\mp kr^2} + r^2d\theta^2+ r^2 \sin^2\theta d\phi^2 },
+\ea
+where we have substituted in an arbitrary function $R(t)$, as this is the most general form for our whole space. For $k>0$, (1) corresponds to a surface of a sphere, but one that is bound by a radius $r<1/\sqrt k$. For $k =0$, we have a sphere with infinite radius - this is equivalent to flat euclidian space. For $k<0$, we have the geometry of a hyperbola, again with no restriction on the radius. Thus only for $k>0$ is the universe bound.
+\\ \\
+ Note that we may always rescale our radial coodinate as
+\[
+	r' = |k|^{1/2} r
+\]
+which brings an overall constant of $k$ outside the 3-space metric. Since this constant can be absorbed in $R(t)$, it has no net effect and it follows that our metric is fully specified by a $k$ that may only take values from the set $k\in \{-1,0,1\}$. With this definition we write our spacetime interval as
+\[
+	d\tau^2 = dt^2 - R(t)^2\plr{  \frac{dr^2}{1- kr^2} + r^2d\theta^2+ r^2 \sin^2\theta d\phi^2 }.
+\]
+Note that we may interpret the function $R(t)$ as a time dependent scale factor acting only the on the 3-space. Given this metric, we may now use the Einstein field equations to obtain the Freidman equations for the evolution of the function $H(t)$. That is
+\ba
+	G_{\mu\nu} &= -8\pi T_{\mu\nu}\\
+	R_{\mu\nu} -\frac12 g_{\mu\nu}R &= -8\pi T_{\mu\nu}.
+\ea
+In computing the connections, we will define the 3-space metric as $\tilde g_{ij}$. The non-vanishing Christoffel symbols are
+\[
+	\Gamma^0{}_{ij} = R\dot R \tilde g_{ij}
+\]
+\[
+	\Gamma^i{}_{0j} = \dot R R^{-1} \delta^i_j
+\]
+\[
+	\Gamma^i{}_{jk} = \tilde \Gamma^i{}_{jk}.
+\]
+Defined as
+\[
+	R_{\mu\nu} = \pd_\kappa \Gamma^\kappa_{\mu\nu} - \pd_\nu \Gamma^\kappa_{\mu\kappa} + \Gamma^\kappa_{\alpha\kappa}\Gamma^\alpha_{\mu\nu}-\Gamma^\kappa_{\alpha\nu}\Gamma^\alpha_{\mu\kappa},
+\]
+the elements of the Ricci tensor are
+\[
+	R_{00} = 3\ddot R R^{-1}
+\]
+\[
+	R_{0i} = 0
+\]
+\[
+	R_{ij} = \tilde R_{ij} - (R\ddot R + 2\dot R^2)\tilde g_{ij}.
+\]
+For this last term, we note that any maximally symmetric space will have a constant Ricci scalar and a Ricci tensor defined as
+\[
+	\tilde R = -N(N-1)k = -6k
+\] 
+\[
+	\tilde R_{ij} = N^{-1} \tilde g_{ij} \tilde R = -2k \tilde g_{ij}.
+\]
+The Ricci scalar is
+\ba
+	R &= g^{\mu\nu}R_{\mu\nu} = -3\ddot R R^{-1} + R(t)^{-2} \tilde g^{ij} R_{ij} \\
+	&= -3\ddot R R^{-1}+ R(t)^{-2} (-6k-3R\ddot R -6\dot R^2)\\
+	&= -\frac{6}{R(t)^2}\plr{ \ddot R R+ \dot R^2 + k}.
+\ea
+We can now form the Einstein tensor
+\[
+	G_{00} =-\frac{3}{R(t)^2}\plr{\dot R^2 + k}
+\]
+\[
+	G_{ij} =  R(t)^{-2} (-6k-3R\ddot R -6\dot R^2)\tilde g_{ij}+3\tilde g_{ij} \plr{ \ddot R R+ \dot R^2 + k}.
+\]
+According to our idea of homogeneity and isotropy, the energy momentum tensor $T_{\mu\nu}$ must be form invariant under coordinate transformation, and necessarily takes the form of a perfect fluid, that is
+\[
+	T_{\mu\nu} = (\rho+p)U_\mu U_\nu + pg_{\mu\nu}
+\]
+where we have the four velocity in the rest frame 
+\[
+	U^t = 1,\qquad U^i = 0.
+\]
+The components are
+\[
+	T_{00} = \rho(t)
+\]
+\[
+	T_{ij} = p(t)R(t)^2\tilde g_{ij}.
+\]
+Finally we compose the Einstein field equations $G_{\mu\nu} = -8\pi T_{\mu\nu}$. The time-time component is
+\be
+	 -\frac{3}{R(t)^2}\plr{\dot R^2 + k} = -8\pi \rho(t)
+\ee
+and the spatial components are
+\[
+	 R(t)^{-2} (-6k-3R\ddot R -6\dot R^2)+3\plr{ \ddot R R+ \dot R^2 + k} = p(t)R(t)^2.
+\]
+These two equations are not independent as they are related via the Bianchi identities (or energy conservation, if you will). Thus we use (2) and write it with appropriate units as
+\be
+	\dot R(t)^2 + kc^2 = \frac{8\pi G}{3c^2}R(t)^2\rho(t).
+\ee
+The Freidmann equation can also be derived by Newtonian Cosmology. Consider a mass element in the universe at a position $r$ from the center $O$ of a sphere of uniform mass density. Such a mass element will only feel the effects of gravitation due to the mass inside the sphere (all sources outside the sphere have no net force). With the mass within the sphere as $M = 4/3\pi r^3 \rho$, the acceleration of the mass element at the edge is then
+\[
+	 \ddot r = -\frac{4\pi G \rho}{r^2},
+\]
+which may be expressed as 
+\[
+	\frac{d}{dt}\plr{ \frac12 \dot r^2 - \frac{4\pi G\rho r^2}{3}}=0
+\]
+or
+\be
+	\frac12 \dot r^2 -  \frac{4\pi G\rho r^2}{3} = E = const
+\ee
+which we recognize as the conservation of energy. According to Hubbles law, the expansion radius is
+\be
+	\dot r = H(t)r.
+\ee
+Integrating the above we have
+\be
+	r = r_0 \exp\plr{ \int_{t_0}^t\ dt\ H(t)} \equiv R(t)r_0,
+\ee
+which implies
+\[
+	H(t) = \frac{\dot R}{R}.
+\]
+In this form, $r_0$ represents the comoving location and $R(t)$ the scale factor for expansion. Substituting (5) and (6) into (4) we have
+\be
+	\dot R^2 -\frac{2E}{r_0^2}= \frac{8\pi G}{3}{R}^2(t)\rho.
+\ee
+From here, let us define $C = -\frac{2E}{r_0^2}$, as well as the following rescalings for $R$ based on the sign of $C$
+\[
+	R = \begin{cases} \tilde R\quad &\text{for}\quad C = 0\\ \tilde R/\sqrt C\quad &\text{for}\quad C > 0 \\ \tilde R/\sqrt{-C} \quad &\text{for}\quad C < 0
+	\end{cases}
+\]
+then we may write (7) as
+\[
+	\tilde{\dot R}^2+k= \frac{8\pi G}{3}{\tilde R}^2(t)\rho
+\]
+where $k$ takes values from the set $k\in\{-1,0,1\}$. This is same Freidmann equation as given in (3). 
+\\ \\
+Now that we have the Freidmann equation, we will analyze its consequences. We may express (3) as
+\[
+	k = \dot R^2\plr{\frac{\rho}{\rho_c}-1} \equiv \dot R^2\plr{\Omega(t)-1}
+\]
+where
+\[
+	\rho_c(t) = \frac{3 H(t)^2}{8\pi G}.
+\]
+It follows that 
+\ba
+	\Omega &< 1\to k<1\\
+	\Omega &= 1\to k=0\\
+	\Omega &> 1\to k>1.
+\ea
+To establish the approximate behavior of $R(t)$, we will need the acceleration $\ddot R(t)$ from the time-time and space-space components of the Einstein equation as well as an equation of energy conservation $T^{\mu\nu}{}_{;\nu} = 0$
+\be
+	3\ddot R = -4\pi G(\rho+3p)R
+\ee
+\be
+	\frac{d}{dR}(\rho R(t)^3) = -3p R(t)^2.
+\ee
+Foremost, for $\rho+3p>0$, the acceleration $\ddot R$ is negative. Since $\dot R >0$ presently, it follows that $R(t)$, from negative concavity, must have taken the value $R(t) =0$ in the past. Define this at $t=0$, then $R(0) = 0$ and present time is $R(t_0)$. From (9) we see that for non-negative pressure, the density must decrease with $R$ at least as fast as $R^{-3}$. This means that in (3), as $R\to \infty$ , the right hand side vanishes at least as fast as $R^{-1}$ and thus 
+\[
+	\dot R^2 \propto  \sqrt{-k},\qquad t\to\infty.
+\]
+For $k=-1$, this means $R\propto t$ and for $k=0$, again $\dot R^2$ is positive definite, but the expansion rate must go as $t^s$ for $0<s<1$ (in fact is goes as $R(t)\propto t^{2/3}$). \\ \\
+For $k=1$  a look at (3) shows that $\dot R(t)^2 = 0$ when $\rho = \frac{3}{8\pi G}$. From the negative acceleration, $\dot R$ will continue to decrease until it reaches a point of $R=0$. 
+\\ \\
+Hence, we may deduce that
+\ba
+	\Omega(t) &< 1\quad\to\quad k < 1\quad R\propto t\quad \text{Infinite hyperbolic universe, R monotonically increasing}\\
+	\Omega(t) &= 1\quad\to\quad k =0\quad R\propto t^{2/3}\quad \text{Infinite flat universe, R monotonically increasing}\\
+	\Omega(t) &> 1\quad\to\quad k > 1\quad \text{Closed spherical finite contracting universe}
+\ea
+To make an estimate of the present density of the universe, we first approximate the pressure to be negligible in comparison to the energy density, $p \ll \rho$. That this is reasonable follows from the fact that highly relativistic particle energies compromise a small portion of non-relativistic matter. Any substantial source of relativistic matter must be instead produced in exotic matter-anti matter processes, from the early universe, or from gravitational collapse - high densities that are not currently supported by observation. Continuing on this assumption, we define the deceleration parameter 
+\[
+	q = -R\ddot R/\dot R^2
+\]
+to be used within out Freidman equation for the pressure
+\be
+	p = -\frac{1}{8\pi G}\blr{ \frac{k}{R^2}+H^2(1-2q)}
+\ee
+and we separately note (3) in the form
+\be
+	\rho = \frac{3}{8\pi G}\plr{ \frac{k}{R^2} + H^2}.
+\ee
+For $p\ll \rho$ we have
+\[
+	\frac{k}{R^2} = (2q-1)H^2
+\]
+which may be combined with (11) to give a simple form for the density ration
+\[
+	\frac{\rho}{\rho_c} = \Omega = 2q .
+\]
+Recent measurements for $q_0$ yield
+\[
+	q_0 = \frac{\Omega_m}{2}-\Omega_\Lambda = -0.55,
+\]
+which puts $\Omega \approx 1$.  Thus, presently, we live in a universe which is approximately flat and will continue to expand forever asymptotically approaching $T=0\ \text{K}$. \\ \\
+% 1------------------------------------------------------------------------------------
+\item
+The sun generates its energy via thermonuclear fusion of hyrdogen into helium. That is, at high enough temperatures, probabilities from quantum tunneling through the Coulomb barrier are appreciable such that fusion of two reactants (hydrogen) into a massive product (helium) takes place. This process of fusion in the sun is primarily achieved by the (ppI) proton-proton chain:
+\be
+	{}^1_1H + {}^1_1H \to {}^2_1H + {}^0_1\bar e + {}^0_0\nu_e
+\ee
+\be
+	{}^2_1H + {}^1_1H \to {}^3_2He + {}^0_0\gamma
+\ee
+\[
+	{}^3_2H + {}^3_2H \to {}^4_2He + {}^1_1H + {}^1_1H.
+\]
+Starting with (13), reaction (14) follows with $85\%$ probability. However, other reactions processes are possible and they are typically denoted as different branches of the proton proton chain. Starting from (13), the two other branches are the ppII
+\[
+	{}^2_1H + {}^1_1H \to {}^3_2He + {}^0_0\gamma
+\]
+\[
+	{}^3_2He + {}^4_2He \to {}^7_4Be + {}^0_0\gamma
+\]
+\[
+	{}^7_4Be +  {}^0_{-1} e \to {}^7_3Li + {}^0_0\nu_e
+\]
+\[
+	{}^7_3Li+  {}^1_1 H \to {}^4_2He + {}^4_2He
+\]
+and the ppIII
+\[
+	{}^2_1H + {}^1_1H \to {}^3_2He + {}^0_0\gamma
+\]
+\[
+	{}^3_2He + {}^4_2He \to {}^7_4Be + {}^0_0\gamma
+\]
+\[
+	{}^7_4Be +  {}^1_1H \to {}^8_5Be + {}^0_0\gamma
+\]
+\[
+	{}^8_5B  \to {}^8_4Be + {}^0_1\bar e+  {}^0_0\nu_e
+\]
+\[
+	{}^8_4B  \to {}^4_2He+{}^4_2He.
+\]
+The ppIV chain has not yet been observed, but is predicted to follow from (13)
+\[
+	{}^2_1H + {}^1_1H \to {}^3_2He + {}^0_0\gamma
+\]
+\[
+	{}^3_2He + {}^1_1H \to {}^4_2He + {}^0_{-1} e+ {}^0_0\nu_e.
+\]
+Lastly, we have a small probability of the $pep$ reaction occuring in the sun
+\[
+	{}^1_1H + {}^0_{-1}e + {}^1_1H \to {}^2_1D+ {}^0_0 \nu_e.
+\]
+Listing all reactions that yield nuetrinos, we have
+                \begin{table} [H]
+                \centering
+                \begin{tabular}{LC}
+                \multicolumn{2}{c}{}\\
+                \midrule
+			\text{Reaction}&\text{Neutrino Energy (MeV)} \\ 
+			\midrule
+	{}^1_1H + {}^1_1H \to {}^2_1H + {}^0_1\bar e + {}^0_0\nu_e&\le 0.42\\
+	 {}^7_4Be +  {}^0_{-1} e \to {}^7_3Li + {}^0_0\nu_e&0.86(90\%)\quad 0.38(10\%)\\
+	 {}^8_5B  \to {}^8_4Be + {}^0_1\bar e+  {}^0_0\nu_e&<15\\
+	 {}^3_2He + {}^1_1H \to {}^4_2He + {}^0_{-1} e+ {}^0_0\nu_e&\le 18.77\\
+	 {}^1_1H + {}^0_{-1}e + {}^1_1H \to {}^2_1D+ {}^0_0 \nu_e&1.44\\
+		\midrule
+
+                \end{tabular}
+                \end{table}
+ The threshold energies for the $ {}^7_4Be +  {}^0_{-1} e \to {}^7_3Li + {}^0_0\nu_e$ reaction depend on whether the $Li$ produced is in its ground or excited state listed with its respective probabilities.  
+ \\ \\
+ Based on the measured luminosity of the sun, we may predict the number of neutrinos captured by the earth (per second per unit area), simply by $L_{sun}/E_{\nu}$. Starting in 1968, Davis conducted an experiment to measure the nuetrinos from the ppIII branch, whereby the nuetrino's would interact with chlorine
+ \[
+ 	{}^{36}_{17}Cl+{}^0_0\nu_e \to {}^{37}_{17}Ar+{}^0_{-1}e
+\]
+Here a nuetrino combines with chlorine to produce an argon isotope, and the chlorine dexcites, emitting a photon to be measured. The result of Davis's experiement (in SNU - solar neutrino units) was
+\[
+	\sigma = 2.1\pm0.3\ \text{SNU}
+\]
+while the predicted rate was
+\[
+	\sigma = 7.9\pm0.9\ \text{SNU}.
+\]
+Clearly a large discrepancy is present. Modifications regarding the stellar structure of the sun were proposed, but later it was found that even these adjustments would not be able to account for the discrepancy between experiment and theory. The issue was finally resolved with the proposal that if neutrinos had a non-zero mass, they would in fact oscillate between electron, tau, and mu states. Since the state of the neutrino changes along its path from sun to earth, and since experiments like Davis were only sensitive to electron neutrinos, the oscillations could potentially describe why the rate of detection was so much lower. 
+\\ \\
+Quantum mechanically, the three flavors of neutrinos are linear superpositions of mass eigenstates:
+\[
+	\ket{\nu_A} = U_{Aj}\ket{\nu_i}
+\]
+where $A \in\{\mu,e,\tau\}$ and $i\in\{1,2,3\}$, and where $U$ is a unitary matrix (PMNS matrix model). The mass neutrino has time behavior,
+\[
+	\ket{\nu_i(t)} = \ket{\nu_i(0)}e^{-iE_i t}\approx \ket{\nu_i(0)}e^{-i(p_i+m_i^2/2p_i)}
+\]
+such that the flavors mix over time
+\[
+	\ket{\nu_A(t)} = U_{Ai}e^{-iE_it}\ket{\nu_i(0)} = U_{Ai}U^*_{Bi}e^{-iE_i t}\ket{\nu_B(0)}.
+\]
+As a simple example, if we take the two state model
+\[
+	\bpm \nu_A\\ \nu_B \epm =\bpm \cos\theta &\sin\theta\\-\sin\theta&\cos\theta \epm \bpm \nu_1\\ \nu_2\epm
+\]
+then we may calculate the probability of transition from state A to state B as
+\[
+	|\braket{\nu_B|\nu_A(t)}|^2 = \sin^22\theta \sin^2\pfrac{( E_2-E_1)t}{2}.
+\]
+The first strong case of experimental evidence that supports neutrino oscillations came from the neutrino observatory Super-Kamiokande. In 1999 Kearns, Kajita, and Totsuka measured atmospheric neutrinos - neutrinos resulting from the interaction of atmoic nuclei within the atmosphere with cosmic rays - via observing interactions with hydrogen and oxygen within a massive, underground, volume of water. Neutrinos are not directly measured, rather, their flavor is deduced by measuring the by-products only associated with specific flavors of neutrinos (such as pions and hadrons). Specifically, the charged by-products move at speed greater than the speed of light (within water), producing a Cherenkov ring of light, who's intensity, shape and orientation is subsequently detected by an array of PMTs. The results of the SK detector was the the number muon neutrinos detected in a given direction (say upward through the detector) was approximately half that going the opposite (downward) through the detector - we predict the rate should be indepdenent of direction, but the oscillation of neutrinos along its path length difference provides the discrepancy. Subsequent experiments have been performed which measure oscillations along a neutrino beam passing between two detectors with large separation distance, such that the sinusoidal dependence as a function of length and energy was confirmed (T2K 2011 experiment). 
+\\ 
+\\
+\item
+Start with a perfect fluid energy momentum tensor 
+\[
+	T^{\mu\nu} = (\rho+p)U^\mu U^\nu + pg^{\mu\nu}
+\]
+in the rest frame of the fluid such that
+\[
+	g_{\mu\nu}U^\mu U^\nu = -1
+\]
+with only the only nonvansihing four velocity component
+\[
+	U^0 = (-g_{00})^{1/2}.
+\]
+From the conservation of energy 
+\[
+	T^{\mu\nu}{}_{;\nu} = 0 =g^{\mu\nu}\pd_\nu p + g^{-1/2} \pd_\nu g^{1/2}(\rho+p)U^\mu U^\nu + \Gamma^\mu_{\nu\lambda}(\rho+p)U^\nu U^\lambda.
+\]
+Since we are in the rest frame, the fluid is at rest and has no time dependence. This implies
+\[
+	\Gamma^\mu_{\nu\lambda}(p+\rho)U^\nu U^\lambda = -\frac12 g^{\mu\nu} \pd_\nu g_{00}(\rho+p)
+\]
+and
+\[
+	\pd_\nu[(\rho+p)U^\mu U^\nu] = 0.
+\]
+Multiplying our energy conservation equation by $g_{\mu\lambda}$,  and use of the identity
+\[
+	\pd_\lambda \ln(g)^{1/2} = g^{-1/2}\pd_\lambda g^{1/2}
+\]
+along with the equations above yields the equation for hydrostatic equilibrium in the presence of gravitation
+\be
+	-\pd_\lambda p = (\rho+p)\pd_\lambda \ln(-g_{00})^{1/2}.
+\ee
+Keeping this in mind, we now look at the gravitational sector. We model the spatial metric of our star as a spherically symmetric (isotropic) geometry with no time dependence (static). The most general metric isotropic static metric takes the form
+\be
+	d\tau^2 = B(r)dt^2 - A(r)dr^2 - r^2(d\theta^2+\sin^2\theta d\phi^2).
+\ee
+Noting that $g_{00} = -B(r)$ we may now express our hydostatic equilibrium equation as
+\be 
+	\frac{B'}{B} = -\frac{2p'}{\rho+p}
+\ee
+where primes denote derivatives with respect to $r$ hereonforth. Using our isotropic metric, we calculate the components of the Ricci tensor to be used within the Einstein equation, and add the specific linear combination
+\[
+	\frac{R_{rr}}{2A}+\frac{R_{\theta\theta}}{r^2}+\frac{R_{tt}}{2B} = -\frac{A'}{rA^2}-\frac{1}{r^2}+\frac{1}{Ar^2} = -8\pi G\rho.
+\]
+The above result yields a differential equation for $A(r)$ which is simplified as
+\[
+	\pfrac{r}{A}' = 1-8\pi G\rho r^2.
+\]
+Given intial condition $A(0)>0$, $A(r)$ is solved as
+\be
+	A(r) = \blr{ 1-\frac{2GM(r)}{r}}^{-1}
+\ee
+where we have introduced
+\be
+	M(r)= \int_0^r 4\pi r'^2\rho(r')\ dr'.
+\ee
+If we look specifically at the Ricci component equation
+\[
+	R_{\theta\theta} = -1 + \frac{r}{2A}\plr{ -\frac{A'}{A} + \frac{B'}{B}}+\frac1A = -4\pi G(\rho-p)r^2
+\]
+we note that we may substitue our forms (16) and (17) for $B'/B$ and $A'/A$. This will yield a differential equation given entirely in terms of physical quantities associated with a star: $\rho$, $p$, and $M$
+\be
+	-r^2p'(r) = GM(r)\rho(r)\blr{1+\frac{p(r)}{\rho(r)}}\blr{ 1+ \frac{4\pi r^3 p(r)}{M(r)}}\blr{ 1-\frac{2GM(r)}{r}}^{-1}.
+\ee
+We see that (18) gives an inital condition $M(0) = 0$. This condition, along with $\rho(0)$ and an equation of state $f(\rho,p)=0$ will serve to determine $\rho(r)$, $M(r)$, and $p(r)$ throughout the star. 
+\\ \\Moving onward, we approximate our white dwarf as a Newtonian star, meaning that the internal energy $e$ and pressure $p$ are much less than the rest-mass density
+\[
+	e\ll m_N n,\qquad p \ll m_N n
+\]
+such that the total density is governed by rest mass density
+\[
+	\rho \approx m_N n.
+\]
+and hence
+\[
+	p \ll \rho,\qquad 4\pi r^3 p \ll M.
+\]
+Recall the above defined quantities where the internal energy density is,
+\[
+	e = \rho(r) - m_nN(r),
+\]
+$n$ is the nucleon density measured in an inertial rest frame in the star, $m_N$ is the rest mass of the nucleon (proton/neutron). We also take the gravitational potential of the star to be small
+\[
+	\frac{2GM}{r} \ll 1.
+\]
+Under these approximations, the ``stellar'' equation (19) simplifies as
+\be
+	\frac{d}{dr}\plr{ \frac{r^2}{\rho(r)}}\frac{dp(r)}{dr} = -4\pi G r^2\rho(r).
+\ee
+From this equation, we see that for $\rho(0) >0$ (finite central density), we require $p'(0)=0$. Given an equation of state $p(\rho)$ where $\frac{dp}{d\rho}\ne 0$ it follows that
+\[
+	\elr{\frac{dp}{dr}}_0 =\elr{\frac{dp}{d\rho}\frac{d\rho}{dr}}_0= 0
+\]
+and thus
+\[
+	\rho'(0) = 0.
+\]
+We take the equation of state of the star to be a polytrope
+\be
+	p = K\rho^\gamma.
+\ee
+The constant $K$ is dependent only upon the constant energy per nucleon and chemical composition. This approximation holds when the internal energy is proportional to the pressure
+\[
+	e = (\gamma-1)p.
+\]
+Using the polytropic equation of state, the stellar equation (20) may be greatly simplified by introducing the dimensionless variables $\xi$ and $\theta$ defined by
+\[
+	r = \pfrac{ K\gamma}{4\pi G(\gamma-1)}^{1/2}\rho(0)^{(\gamma-2)/2}\xi
+\]
+\[
+	\rho = \rho(0) \theta^{1/(\gamma-1)},\qquad p = K\rho(0)^\gamma \theta^{\gamma/(\gamma-1)}
+\]
+yielding
+\be
+	\frac{1}{\xi^2}\frac{d}{d\xi}\xi^2\frac{d\theta}{d\xi} + \theta^{1/(\gamma-1)}=0.
+\ee
+From boundary condition $\rho'(0) = 0$ and the definition of $\theta$ it is clear that we must have
+\[
+	\theta(0) = 1,\qquad \theta'(0) = 0.
+\]
+Equation (22) serves to define the function $\theta(\xi)$ called the Lane-Emden function of a given index $(\gamma-1)^{-1}$. For a $\gamma > 6/5$, the function has a zero at some finite $\xi_1$
+\[
+	\theta(\xi_1) = 0.
+\]
+Thus at some finite radius $R$, $\theta$ must vanish and thus $\xi_1$ defines the radius
+\[
+	R = \pfrac{ K\gamma}{4\pi G(\gamma-1)}^{1/2}\rho(0)^{(\gamma-2)/2}\xi_1.
+\]
+Now we look at the total mass of the star and substitute for $R$ and $\rho(r)$
+\ba
+	M(R) &= \int_0^R 4\pi r^2\rho(r)\ dr\\
+	&= 4\pi \rho(0)^{(3\gamma-4)/2}\pfrac{K\gamma}{4\pi G(\gamma-1)}^{3/2}\int_0^{\xi_1} \xi^2\theta^{1/(\gamma-1)}\ d\xi\\
+	& =4\pi \rho(0)^{(3\gamma-4)/2}\pfrac{K\gamma}{4\pi G(\gamma-1)}^{3/2}\xi_1^2|\theta'(\xi_1)|
+\ea
+where $\xi_1^2|\theta'(\xi_1)|$ can be referenced from a table of numerical values (Weinberg Ch 11). Note that the above integral is solved by substitution of (22), in which we integrate over a total derivative.
+\\ \\
+In determining the mass of a star, it now remains to determine both $\gamma$ and $K$. To this end, we must determine $\rho$ and $p$ given by the statstical mechanics of a degenerate electron gas. At low enough temperatures, all the electrons within our white dwarf will occupy the lowest energy level. As a spin 1/2 fermion, there will be twofold degeneracy (spin up spin down) of electrons at a given energy (momentum). Between the two momenta $k$ and $dk$, the number of occupied energy states per volume is the $k$-space shell volume
+\[
+	4\pi k^2 dk
+\]
+divided by the phase space volume
+\[
+	(2\pi \h)^{3}
+\]
+multiplied by a degeneracy of $2$. Thus
+\[
+	dn = \frac{8\pi}{(2\pi \h)^3} k^2 dk
+\]
+or
+\[
+	n =  \frac{8\pi}{(2\pi \h)^3}\int_0^{k_F} k^2 dk = \frac{k_F^3}{3\pi^2\h^3}
+\]
+where $k_F$ denotes the maximum Fermi momentum. Now, given the mass density
+\[
+	\rho = nm_N\mu
+\]
+where $\mu$ is the atomic ration $Z/A$ (typically $\mu=2$ for stars that have synthesized most of their hydrogen into helium or higher elements), we may express Fermi  energy in terms of the density
+\[
+	k_F = \h\pfrac{3\pi^2\rho}{m_N\mu}^{3/2}.
+\]
+Recall earlier that we required a low enough temperature to form our degenerate fermi gas with all lower energies filled. The condition on the tempeture is such that the maximum free energy must be much greater than the thermal energy $kT$, that is
+\[
+	kT \ll [k_F^2+m_e^2]^{1/2} - m_e = e_F - m_e.
+\]
+The kinetic energy of the entire as is computed as
+\be
+	e =\frac{8\pi}{(2\pi \h)^3}\int_0^{k_F} [(k^2+m_e^2)^{1/2} - m_e]k^2\ dk
+\ee
+\be
+	p =\frac{8\pi}{3(2\pi \h)^3}\int_0^{k_F} \frac{k^2}{(k^2+m_e^2)^{1/2}}k^2\ dk
+\ee
+($p$ is given from $p \propto T^{ii}/3 = \frac13 \sum_n \frac{(p_n^i)^2}{E_n}\delta(\vect x(t) - \vect x_n(t))$). We see that we can obtain an equation of state by the substitution of $k_F$ into the integral of $p$. The equations of state reduce to polytropes in two limiting cases, defined by
+\[
+	\rho \gg \rho_c\qquad \text{or}\qquad \rho \ll \rho_c
+\]
+where $\rho_c$ is the critical density at which the fermi energy is equal to the rest mass $k_F = m_e$. In obtaining the Chandrasekhar limit, we will be concerned with obtaining the maximum central density (and by extension the maximum mass $M$), and thus we will work under the relativistic energy density approximation $\rho \gg \rho_c$. In this case $k_F \gg m_e$ and so the kinetic energy density and pressure easily reduce to
+\[
+	e = 3p
+\]
+and
+\[
+	p = \frac{8\pi k_F^4}{12(2\pi\h)^3} = \frac{\h}{12\pi^2}\pfrac{3\pi^2\rho}{m_N\mu}^{4/3}.
+\]
+This defines a polytrope with constants
+\[
+	K = \frac{\h}{12\pi^2}\pfrac{3\pi^2}{m_N\mu}^{4/3}
+\]
+and 
+\[
+	\gamma = \frac43.
+\]
+These constants now define a unique mass, recalling 
+\[
+	M=4\pi \rho(0)^{(3\gamma-4)/2}\pfrac{K\gamma}{4\pi G(\gamma-1)}^{3/2}\xi_1^2|\theta'(\xi_1)|
+\]
+we have
+\ba
+	M_C&= \frac12 (3\pi)^{1/2}\pfrac{\h^{3/2}c^{3/2}}{G^{3/2}m_N^2\mu^2}\xi_1^2|\theta'(\xi_1)|_{\gamma=4/3}\\
+	&=  \frac12 (3\pi)^{1/2}\pfrac{\h^{3/2}c^{3/2}}{G^{3/2}m_N^2\mu^2}(2.01824)\\
+	&= 5.87/\mu^2 M_{sun}.
+\ea
+For $\mu \approx 2$ this yields $M_C = 1.468 M_{sun}$. If we repeat the same analysis for the Newtonon-relativistic case $\rho \ll \rho_c$ we find that $\gamma = 5/3$. Assuming $\gamma$ to be a decreasing monotonic function of density (which is reasonable since $M$ grows with $\rho$), we see that $\gamma = 4/3$ represents the largest possible mass $M$, since $M\propto \rho(0)$. Note that $M_C$ does not in fact depend on the central density, and thus represents $\rho(0)\to \infty$, i.e. the largest possible stable white dwarf mass. 
+\\ \\
+\item
+The circular motion of stars within a galaxy may be expressed in the Newtonian description as
+\[
+	-\frac{v^2}{r}\vecth r = -(\del \phi)
+\]
+where $v$ is the velocity tangent to its path, $r$ is the radial distance from the center of the galaxy, and $\phi$ is the gravitational potential acting on a given star. Since our mass distribution will be static and posses cylindrical symmetry for a disc density, and sphericial symmetry for the halo, the above reduces to
+\[
+	\frac{v^2}{r} = \frac{d\phi(r)}{dr}.
+\]
+Given a mass distribution $\rho'(r)$, the potential is governed via Poisson's equation
+\[
+	\del^2\phi(r) = 4\pi G\rho'(r).
+\]
+The solution of $\phi$ is 
+\[
+	\phi(\vect x) =4\pi \int_{\vect x'} G(\vect x,\vect x')\rho'(\vect x')\ d\vect x'
+\]
+where $G(\vect x,\vect x')$ is the Green function defined as
+\[
+	\del^2G(\vect x,\vect x') =  \delta(\vect x-\vect x').
+\]
+The solution of the Green's function consistent with the Dirichlet boundary condition $\phi(\infty) = 0$ is
+\[
+	G(\vect x',\vect x) =-\frac{1}{4\pi}\frac{1}{|\vect x'-\vect x|}.
+\]
+Thus we may express $\phi$ as
+\[
+	\phi(\vect x) =- \int_{\vect x'}\frac{G\rho'(\vect x')}{|\vect x'-\vect x|}\ d\vect x'.
+\]
+To be consistent with the given potential due to a single star 
+\[
+	\phi(r) = -\frac{\beta c^2}{r}
+\]
+we set $\rho'(\vect x') = M_\odot \delta(\vect x')$ in which (25) takes the form
+\[
+	\phi(\vect x) = -\frac{GM}{|\vect x|},
+\]
+hence $\beta c^2 = GM_\odot$. Effectively, we can arrive at this same result if we define the potential as
+\be
+	\phi(\vect x) =-\beta c^2 \int_{\vect x'}\frac{\rho(\vect x')}{|\vect x'-\vect x|}\ d\vect x'
+\ee
+where now $\rho = \rho'/M_\odot$ is the number density of the mass distribution, i.e. the number of stars of solar mass is
+\[
+	N^* = \int_V d^3x\ \rho(\vect x).
+\]
+In cylindrical coordinates with a distribution that is independent of azimuthal angle $\phi$, i.e. $\rho(r,z)$, (25) is expressed as
+\be
+	\phi(r,z) = -\beta c^2 \int_0^{2\pi} d\phi' \int_{-\infty}^\infty\ dz' \int_0^\infty dr'\ \frac{ r'\rho(r',z')}{|\vect r'-\vect r|}.
+\ee
+The expansion of the Green's function in cylindrical coordinates may expressed as
+\be
+	|\vect r-\vect r'|^{-1} = \sum_{m=-\infty}^\infty \int_0^\infty dk\ J_m(kr)J_m(kr')e^{im(\phi-\phi')-k|z-z'|}.
+\ee
+Note that 
+\[
+	\int_0^{2\pi} d\phi' |\vect r-\vect r'|^{-1} =  \sum_{m=-\infty}^\infty \int_0^\infty dk\ (\delta^m_0)J_m(kr)J_m(kr')e^{im(\phi-\phi')-k|z-z'|}
+	= 2\pi \int_0^\infty dk\ J_0(kr)J_0(kr')e^{-k|z-z'|}.
+\]
+Substituting (27) into (26) we have
+\be
+	\phi(r,z) =   -2\pi\beta c^2 \int_0^\infty dk \int_0^\infty dr' \int_{-\infty}^\infty\ dz'\  r'\rho(r',z') J_0(kr)J_0(kr')e^{-k|z-z'|}.
+\ee
+For our flat spiral galaxy taken as infinitesimally thin disk, the mass density is 
+\[
+	\rho(r,z) = \Sigma(r)\delta(z)=\Sigma_0 e^{r/r_0}\delta(z),
+\]
+which upon substitution into (28) at $z=0$ yields
+\be
+	\phi(r) =   -2\pi\beta c^2 \int_0^\infty dk \int_0^\infty dr'\  r'\Sigma(r') J_0(kr)J_0(kr').
+\ee
+As we put in the explicit exponential form of $\Sigma(r') = \Sigma_0 e^{-r/r_0} \equiv \Sigma_0 e^{-\alpha r}$, we note the use of integration forumlas involving Bessel functions:
+\[
+	\int_0^\infty dr'\ rJ_0(kr')e^{-\alpha r'} = \frac{\alpha}{(\alpha^2+k^2)^{3/2}}
+\]
+\[
+	\int_0^\infty dk\ \frac{J_0(kr)}{(\alpha^2+k^2)^{3/2}} = \frac{r}{2\alpha}\blr{
+	I_0\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}}.
+\]
+Substituting the first relation into (29) yields
+\[
+	\phi(r)=-2\pi\beta c^2\Sigma_0 \int_0^\infty dk\ \frac{\alpha J_0(kr)}{(\alpha^2+k^2)^{3/2}}
+\]
+and then the second relation into above gives
+\[
+		\phi(r)=-\pi\beta c^2\Sigma_0 r\blr{
+	I_0\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}}.
+\]
+Recall that in order to find the velocity, we will need the derivative of the potential $\phi'(r)$. Consequently, we will need derivative relations among the modified Bessel functions:
+\[
+	I'_0(z) = I_1(z),\qquad I'_1(z) = I_0(z)- \frac{I_1(z)}{z},\qquad K'_0(z) = -K_1(z),\qquad K'_1(z) = -K_0(z) - \frac{K_1(z)}{z}.
+\]
+Now we differentiate, setting $z = r\alpha/2$ such that $\frac{d}{dz} = \frac{2}{\alpha}\frac{d}{dr}$
+\ba
+	\phi(r)' &= -\pi\beta c^2\Sigma_0\blr{I_0(z)K_1(z)-I_1(z)K_0(z)}- \frac{\alpha}{2} \pi\beta c^2\Sigma_0r\frac{d}{dz} \blr{I_0(z)K_1(z)-I_1(z)K_0(z)}\\
+&=  -\pi\beta c^2\Sigma_0\blr{I_0(z)K_1(z)-I_1(z)K_0(z)}\\&\qquad- \frac{\alpha}{2} \pi\beta c^2\Sigma_0r\blr{ I_1(z)K_1(z)+I_0(z)(-K_0(z)-K_1(z)/z) - K_0(z)(I_0(z)-I_1(z)/z)+I_1(z)K_1(z)}\\
+	&= \Sigma_0\pi\beta c^2 \alpha r\blr{I_0\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}}\\
+	&= \frac12 N\beta c^2 \alpha^3 r\blr{I_0\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}}
+\ea
+where in the last step we have used
+\[
+	N = 2\pi\Sigma_0\int_0^\infty dr'\ r'e^{-\alpha r'}=2\pi \frac{\Sigma_0}{\alpha^2}.
+\]
+Thus for the disk galaxy
+\be
+	\phi'(r) = \frac12 N\beta c^2 \alpha^3 r\blr{I_0\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}}
+\ee
+\\ \\
+For a spherical distribution of matter density $\rho(r)$, we may evaluate the Poisson equation directly
+\ba
+	\del^2 \phi(r) &= 4\pi\beta c^2 \rho(r)\\
+	&= \frac{1}{r^2}\frac{d}{dr}\plr{ r^2\frac{d\phi}{dr}} = 4\pi\beta c^2\rho(r)\\
+	r^2 \frac{d\phi}{dr} &= 4\pi\beta c^2 \int_0^r dr' r'^2 \rho(r')
+\ea
+thus
+\be
+	\frac{d\phi}{dr} = \frac{4\pi \beta c^2}{r^2} \int_0^r dr'\ r'^2\rho(r').
+\ee
+For the halo mass density $\sigma(r) =\sigma_0/(r^2+r_0^2)$, the derivative of the potential is then
+\[
+	\frac{d\phi}{dr} = \frac{4\pi \beta c^2\sigma_0 }{r^2} \int_0^r dr'\ \frac{r'^2}{r_0^2+r'^2}.
+\]
+For the integral
+\[
+	\int_0^r dr'\ \frac{r'^2}{r_0^2+r'^2} = \int_0^r dr'\ \plr{1-\frac{r_0^2}{r_0^2+r^2}} = r-r_0 \arctan\pfrac{r}{r_0}.
+\]
+Hence the potential is
+\[
+	\frac{d\phi}{dr} = 4\pi \beta c^2\sigma_0\pfrac{r-r_0 \arctan\pfrac{r}{r_0}}{r^2}.
+\]
+Now we may compose the velocity curves for the three sources. 
+\\ For $\rho(r) = \Sigma_0 e^{-r/r_0}\delta(z)=\Sigma_0 e^{-\alpha r}\delta(z)$ 
+\[
+	\boxed{ v^2(r) = \frac12 N \beta c^2 \alpha^3 r^2 \blr{I_0\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}} }
+\]
+for a general spherically symmetric $\rho(r)$
+\[
+	\boxed{	v^2(r) =  \frac{4\pi \beta c^2}{r} \int_0^r dr'\ r'^2\rho(r') = \frac{\beta c^2}{r}N(r)}
+\]
+and for the halo density $\rho(r) = \sigma_0\pfrac{r^2}{r^2+r_0^2}$
+\[
+	\boxed{ v^2(r) =4\pi \beta c^2\sigma_0\pfrac{r-r_0 \arctan\pfrac{r}{r_0}}{r}}
+\]
+\\ \\ \\
+\item
+Given the data of the NGC3198 galaxy, we first will attempt to model the galatic rotation curve in terms of a disk mass density of
+\[
+	\Sigma(r) = \Sigma_0 e^{-\alpha r}.
+\]
+From the previous problem, we saw that given this potential the centripetal velocity is 
+\be
+	v(r)= \clr{ \frac12 N \beta c^2 \alpha^3 r^2 \blr{I_0\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}} }^{1/2}
+\ee
+where $\alpha = 1/r_0$ is the inverse scale length. Based on the luminosity relation, the scale length has been determined as $r_0 = 1\ \text{arcmin}$. In order to convert this to linear distance from the center, we multiply by central distance between the earth and the galaxy $d = 9.36\ \text{Mpc}$. In (32), there is only one free parameter then left to vary, which is the total number of stars, $N = 2 \pi \Sigma_0/\alpha^2$. One $N$ is determined, we may calculate the mass to luminosity ratio $M/L$ in units of $M_\odot/L_\odot$ by referring to the total observed luminosity from the data, 
+\[
+	\frac{M}{L} = \frac{N}{9\times 10^9}.
+\]
+Performing the least squares fit within mathematica yields the parameter in the table below.
+                \begin{table} [H]
+                \centering
+                \begin{tabular}{LC}
+                \multicolumn{2}{c}{}\\
+                \midrule
+			\text{Parameter of Best Fit: Disk Potential} \\ 
+			\midrule
+			N&5.92\times 10^{10}\\
+			M/L&6.58\ \text{M}_\odot/\text{L}_\odot\\
+		\midrule
+		                \end{tabular}
+                \end{table}
+A plot of the velocity rotation curve as a function of the radius is given below - we see the Newtonian disk distribution overshoot the maximum but also asymptotically decays too quickly. 
+                	\figg[width=140mm]{f_2.pdf}
+As an attempt to remedy the discrepancy between our expected and theoretical rotation curve, we introduce a non-luminous mass density to be added to the disk as
+ \[
+ 	\rho(r) = \Sigma_0 \exp^{-\alpha r}\delta(z) +  \sigma_0\pfrac{r^2}{r^2+r_0^2}.
+\]
+This dark matter halo serves the purpose to add enough mass such that data at large radial distances may be fit. From the previous problem, we have calculated the centripetal velocity due to this density as
+\be
+	v(r)= \clr{ \frac12 N \beta c^2 \alpha^3 r^2 \blr{I_0\pfrac{r\alpha}{2}K_0\pfrac{r\alpha}{2}-I_1\pfrac{r\alpha}{2}K_1\pfrac{r\alpha}{2}}+4\pi \beta c^2\sigma_0\pfrac{r-r_0 \arctan\pfrac{r}{r_0}}{r} }^{1/2}.
+\ee
+Worth noting is that the halo scale length $r_0$ is independent of luminosity scale length $1/\alpha$. In total, for the disk plus halo fit we have three parameters to vary $N$, $\sigma_0$, and $r_0$. Computing the least square fit for these yield:
+		                \begin{table} [H]
+                \centering
+                \begin{tabular}{LC}
+                \multicolumn{2}{c}{}\\
+                \midrule
+			\text{Parameters of Best Fit: Disk and Halo Potential} \\ 
+			\midrule
+	N&1.32\times10^{10}\\
+	M/L&1.47\ \text{M}_\odot/\text{L}_\odot\\
+		\sigma_0&3.93\times10^5\ \text{M}_\odot \text{ pc}^{-1}\\
+	r_0&1.34\times10^{3}\ \text{pc}\\
+		\midrule
+                \end{tabular}
+                \end{table}
+ It is interesting to note the scale length $r_0$ extends to about $5R_0$, $R_0$ being the luminous scale length. In other words, the dark matter distrbution extends well beyond the visible range of the galaxy. Below we plot the resulting fit, which does indeed do reasonable job.
+            	\figg[width=140mm]{f_1.pdf}
+ The total disk mass in the range of data of the disk-halo fit is found in solar mass units as
+ \[
+ 	N(r) = 2\pi \Sigma_0 \int_0^{11/\alpha} dr\ re^{-\alpha r} = \frac{2\pi \Sigma_0}{\alpha^2} (1-12e^{-11}) = N(0.9998).
+\]
+Note we have substituted $N$, the total number of stars integrated out to infinity. The above tells us that the mass in the observational disk data is only $0.02\%$ less than the total disk mass. Since this difference is negligible, we simply take $N$ as the mass of the disk (in solar mass units). 
+\\ \\
+The mass of the halo is found via
+\ba
+	M_{halo} &=4\pi  \sigma_0 \int_0^{11/\alpha} dr\ \frac{r^2}{r^2+r_0^2} =4\pi  \sigma_0 \blr{ \frac{11}{\alpha} - r_0 \arctan \pfrac{11}{r_0\alpha}}\\
+	&= 1.38\times 10^{11}\ \text{M}_\odot,
+\ea
+where we have inserted the fit paramters from the disk-halo table. Now we may find the ratio of disk mass to halo mass in the obeserved region:
+\[
+ 	\frac{M_{disk}}{M_{halo}} = \frac{ 1.32\times 10^{10}}{1.38\times 10^{11}} \simeq 1/10.
+\]
+Accordingly, it appears that dark matter constitutes 90\% of the galaxy's mass! 
+
+\eenum
+\end{document}

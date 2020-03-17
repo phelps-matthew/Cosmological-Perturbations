@@ -1,0 +1,347 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 7\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Mar. 7}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item[6.4]
+	Starting from equations (6.9) and (6.10), show that the creation and annihilation operators are hermitian conjugates,
+	and verify equations (6.11), (6.13), and (6.15). To avoid inessential complications, assume one boson mode only.
+	\\ \\
+	To show the creation/annihilation operators are hermitian conjugates, denote a single boson mode of $n$ particles as
+	the orthonormal states $\{ \ket n\}$, along with the annihilation operator $b$ 
+	\[
+		b\ket n = \sqrt n\ket{n-1}.
+	\]
+	Now form the inner product
+	\ba
+		\braket{n-1|b|n} &= (n-1,bn)  = (b^\dag(n-1),n)\\
+		& =\sqrt n.
+	\ea
+	Since the states are orthonormal, this must imply
+	\ba
+		&b^\dag\ket{n-1} = \sqrt n \ket n\\
+		&\Rightarrow b^\dag\ket n = \sqrt{n+1}\ket{n+1}.
+	\ea
+	The operator equation above, equivalent to the hermitian conjugate
+	of the annihilation operator, is the definition of the creation operator (6.10). \\ \\
+	For a single mode, we have
+	\[
+		[b,b^\dag]\ket n = (n+1)\ket n-n\ket n = \ket n\Rightarrow [b,b^\dag]=1,
+	\]
+	thus
+	\[
+		[b,b]=[b^\dag,b^\dag]=0,\quad [b,b^\dag] = 1.
+	\]
+	As for the number operator
+	\[
+		\hat n\ket n = b^\dag b\ket n = b^\dag \sqrt n\ket{n-1} = n\ket n.
+	\]
+	Lastly, we may form any $n$ particle state $\ket n$ of a single boson mode by acting $b^\dag$ on the vacuum:
+	\[
+		(b^\dag)^n\ket 0 = (b^\dag)^{n-1}\ket 1 = (b^\dag)^{n-2}\sqrt{2}\ket 2 = (b^\dag)^{n-3}\sqrt 3\sqrt{2}\ket 3 
+		= ... = \sqrt{n!}\ket n
+	\]
+	So to get just the state $\ket n$ we divide by $\sqrt{n!}$
+	\[
+		\frac{(b^\dag)^n}{\sqrt{n!}} = \ket n.
+	\]
+	\pagebreak
+	
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[6.6]
+	Show by direct calculation of the relevant commutator that the particle number $\hat N  = \sum_{\vect k\sigma}
+	\hat n_{\vect k\sigma}$ is a constant of motion for our interacting electron gas, Eq. (6.47).
+	\\ \\
+	From the Heisenberg equation of motion for the number operator $\hat N$,
+	\[
+		-i\h \diff{t}\hat N = [H,\hat N]\overset ! = 0.
+	\]
+	In computing the commutator
+	\ba
+		[H,\hat N] & = \blr{\plr{
+		\sum_{\vect k,\sigma}\ep_k c^\dag_{\vect k\sigma}c_{\vect k\sigma}
+		+\frac{e^2}{2\epo V}\sum_{\vect k\vect p\vect q,\lambda \sigma}
+		\frac{1}{q^2}c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}}
+		, \sum_{\vect k'\sigma'}c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}}.
+	\ea 
+	we must make use of the anti-commutation relations
+	\[
+		[c_k,c_l]_+ = [c_k^\dag,c_l^\dag]_+ = 0 \Rightarrow c_kc_l = -c_lc_k,\quad c_k^\dag c_l^\dag = -c_l^\dag c_k^\dag
+	\]
+	\[
+		[c_k,c_l^\dag]_+= \delta_{kl} \Rightarrow c_kc_l^\dag = \delta_{kl} - c_l^\dag c_k
+	\]
+	along with the commutator of the number operator
+	\[
+		[\hat n_{\vect k\sigma},\hat n_{\vect k'\sigma'}] = [c^\dag_{\vect k\sigma}c_{\vect k\sigma},
+		c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}]= 0.
+	\]
+	The kinetic term in the Hamiltonian consists of number operators (multiplied by associated energies), so
+	\ba
+		\blr{\sum_{\vect k,\sigma}\ep_k c^\dag_{\vect k\sigma}c_{\vect k\sigma},\hat N} &=
+		\sum_{\vect k\sigma \vect k'\sigma'} \ep_k
+		\blr{c^\dag_{\vect k\sigma}c_{\vect k\sigma},c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}}\\
+		& = \sum_{\vect k\sigma \vect k'\sigma'} \ep_k
+		\blr{\hat n_{\vect k\sigma},\hat n_{\vect k'\sigma'}}= 0.
+	\ea
+	As for the interaction term, we cut it down to the form
+	\ba
+		\blr{\plr{\sum_{\vect k\vect p\vect q,\lambda \sigma}\frac{1}{q^2}
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}},
+		 \sum_{\vect k'\sigma'}c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}}
+		 & = \sum_{\vect k\vect p\vect q,\lambda \sigma,\vect k' \sigma'}\frac{1}{q^2}
+		 \blr{c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda},
+		 c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}}\\
+		&\sim c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		 c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}
+		-  c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}.
+	\ea
+	Before we go further, it will be helpful to use the following relation between operators
+	\ba
+		c_i c_j c_k^\dag&= c_i(-c_k^\dag c_j+\delta_{jk})\\
+		& = -c_ic_k^\dag c_j+c_i\delta_{jk}\\
+		& = -(-c_k^\dag c_i+\delta_{ik})c_j+c_i\delta_{jk}\\
+		 & = c_k^\dag c_ic_j-\delta_{ik}c_j+\delta_{jk}c_i
+	\ea
+	and similarly
+	\[
+		c_i c_j^\dag c_k^\dag = c_j^\dag c_k^\dag c_i-\delta_{ik}c_j^\dag +\delta_{ij}c^\dag_k.
+	\]
+	Now put it to use
+	\ba
+	&c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		 c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}
+		-  c^\dag_{\vect k'\sigma'}c_{\vect k'\sigma'}
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}\\
+		& =\{ c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}
+		(c^\dag_{\vect k'\sigma'}c_{\vect p\sigma}c_{\vect k\lambda}-\delta_{\vect p\sigma,\vect k'\sigma'}
+		c_{\vect k\lambda}+\delta_{\vect k\lambda,\vect k'\sigma'}c_{\vect p\sigma})c_{\vect k'\sigma'}\}
+		\\
+		&\  -\{  c^\dag_{\vect k'\sigma'}(c_{\vect k+\vect q\lambda}^\dag c^\dag_{\vect p-\vect q\sigma}
+		c_{\vect k'\sigma'}-\delta_{\vect p-\vect q\sigma,\vect k'\sigma '}c^\dag_{\vect k+\vect q\lambda}
+		+\delta_{\vect k+\vect q\lambda,\vect k'\sigma'}c^\dag_{\vect p-\vect q\sigma})
+		c_{\vect p\sigma}c_{\vect k\lambda}\}.
+	\ea
+	By virtue of $[c_k,c_l]_+ = [c_k^\dag,c_l^\dag]_+ = 0$, we can commute operators in the terms without any delta 			functions to find that they both cancel. We are then left with
+	\ba
+		 &\quad\{- \delta_{\vect p\sigma,\vect k'\sigma'}c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}
+		 c_{\vect k\lambda}c_{\vect k'\sigma'}
+		 +  \delta_{\vect k\lambda,\vect k'\sigma'}c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}
+		c_{\vect p\sigma}c_{\vect k'\sigma'}\}\\
+		 &\qquad -\{-\delta_{\vect p-\vect q\sigma,\vect k'\sigma '}c^\dag_{\vect k'\sigma'}c^\dag_{\vect k+\vect q\lambda}
+		 c_{\vect p\sigma}c_{\vect k\lambda}+\delta_{\vect k+\vect q\lambda,\vect k'\sigma'}c^\dag_{\vect k'\sigma'}
+		c^\dag_{\vect p-\vect q\sigma}
+		c_{\vect p\sigma}c_{\vect k\lambda}\}\\%asdfasd
+		& = \{- c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}
+		 c_{\vect k\lambda}c_{\vect p\sigma}
+		 + c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}
+		c_{\vect p\sigma}c_{\vect k\lambda}\}\\%fgh
+		 &\qquad -\{-c^\dag_{\vect p-\vect q'\sigma}c^\dag_{\vect k+\vect q\lambda}
+		 c_{\vect p\sigma}c_{\vect k\lambda}+c^\dag_{\vect k+\vect q\lambda}
+		c^\dag_{\vect p-\vect q\sigma}
+		c_{\vect p\sigma}c_{\vect k\lambda}\}\\
+		& = \{-c^\dag_{\vect p-\vect q'\sigma}c^\dag_{\vect k+\vect q\lambda}
+		 c_{\vect p\sigma}c_{\vect k\lambda}
+		 + c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}
+		c_{\vect p\sigma}c_{\vect k\lambda}\}\\%fgh
+		 &\qquad -\{-c^\dag_{\vect p-\vect q'\sigma}c^\dag_{\vect k+\vect q\lambda}
+		 c_{\vect p\sigma}c_{\vect k\lambda}+c^\dag_{\vect k+\vect q\lambda}
+		c^\dag_{\vect p-\vect q\sigma}
+		c_{\vect p\sigma}c_{\vect k\lambda}\}\\
+		& = 0.
+	\ea
+	Now that my eyes hurt, we can confirm that
+	\[
+		\diff{t}\hat N = \frac{i}{\h}[H,\hat N] = 0
+	\]
+	and so $\hat N$, the total number of particles, is a constant of motion. \\ \\
+		
+		
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[6.12]		
+	The boson-fermion model is specified by the Hamiltonian
+	\[
+		H/\h = \omega a^\dag a+\omega_0 c^\dag c+(\Omega c^\dag a+\Omega^* a^\dag c),
+	\]
+	where $a$ and $c$ are boson and fermion operators and $\omega$, $\omega_0$, $\Omega$ are appropriate
+	constants. Show that the number of excitations $\hat N = a^\dag a+c^\dag c$ is a constant of the motion.
+	\\ \\
+	Since the spin space of bosons and fermions are fundamentally different (integer vs half integer), it should follow
+	that boson operators and fermion operators commute
+	\[
+		[a,c] = [a^\dag,c^\dag] = [a,c^\dag] = [a^\dag,c] = 0.
+	\]
+	Boson operators $a$ obey the commutation relation
+	\be\label{1}
+		[a,a^\dag] = 1
+	\ee
+	while the fermion operators $c$ obey anti-commutation relation
+	\be\label{2}
+		[c,c^\dag]_+ = 1.
+	\ee
+	To find the time dependence of $\hat N$, we commute with the Hamiltonian as before
+	\ba
+		[H,\hat N] &= \blr{ \omega a^\dag a+\omega_0 c^\dag c+(\Omega c^\dag a+\Omega^* a^\dag c),
+		a^\dag a+c^\dag c}\\
+		& = \blr{\Omega c^\dag a+\Omega^* a^\dag c,
+		a^\dag a+c^\dag c}\\
+		& =\Omega  c^\dag[a, a^\dag a]+\Omega a[c^\dag,c^\dag c]+\Omega^* c[a^\dag,a^\dag a]+
+		\Omega^* a^\dag[ c,c^\dag c].
+	\ea
+	The commutations with the number operator are solved using \eqref 1 and \eqref 2
+	\[
+		[a,a^\dag a] = [a,N_a] = a,\qquad [a^\dag,a^\dag a] =[a^\dag,N_a] = -a^\dag
+	\]
+	while for fermions
+	\[
+		[c,c^\dag c] = [c,N_c] = c,\qquad [c^\dag, c^\dag c] = [c^\dag, N_c] = -c^\dag.
+	\]
+	Altogether then, we have
+	\[
+		[H,\hat N] = \Omega c^\dag a +\Omega a(-c^\dag)+\Omega^* c(-a^\dag)+\Omega^* a^\dag c = 0
+	\]
+	Thus $\hat N$ is a constant of motion. \pagebreak
+% 4 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[6.15]
+	Let us study the electron gas. As we know from statistical mechanics, if there were no electron-electron interactions,
+	at zero temperature the thermal equilibrium would be the Fermi sea: one-particle states with the wave number $k$
+	less than the Fermi wave number $k_F$ are occupied and the rest of the states are empty. Of course, the ground state
+	energy of the noninteracting gas is $\frac{3}{5}N\ep_F$. 
+	\benum
+	% (a)
+	\item
+	Regarding the electron-electron interactions as a perturbation, find the leading correction to the energy in 
+	integral form.\\ \\
+	The integral can be done analytically, but you do not need to do it to answer the following questions:
+	% (b)
+	\item
+	In the perturbative limit, do the repulsive electron-electron interactions increase or decrease the energy?
+	
+	% (c)
+	\item
+	The interaction energy per electron is obviously a function of density $n$, and at $T=0$ there is no other independent
+	intensive thermodynamic variable. How does the interaction energy scale as a function of density?
+	\\ \\ Finally:\\ 
+	
+	% (d)
+	\item
+	Find the interaction energy explicitly, including the dimensionless multiplicative constant. \\ \\
+	\eenum 
+	\benum
+	% (a)
+	\item
+	Recall that the first order correction to the energy due to perturbation $H^1$ is
+	\[
+		E^1_n=\braket{n^0|H^1|n^0}
+	\]
+	where $\ket{n^0}$ is the unperturbed eigenstate of $H^0$ with energy $E^0_n$. In this case,
+	the ground state ($T=0$) is the fermi sea, where all states are occupied up to 
+	\[
+		k_F = \pfrac{6\pi^2 n}{g}^{1/3}
+	\]
+	with particle density $n$ and degeneracy $g = 2s+1 =2$. We denote the ground state as 
+	\[
+		\ket{GS} = \prod_{\sigma, \vect k:|\vect k| < k_F} c^\dag_{\vect k\sigma}\ket 0.
+	\]
+	The first order contribution is then the expectation of the electron-electron interaction potential $V$
+	\[
+		E^1 = \braket{GS|V|GS} = 
+		\frac{e^2}{2\epo V}\sum_{\vect k\vect p\vect q,\lambda \sigma}
+		\frac{1}{q^2}
+		\braket{GS|
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		|GS}.
+	\]
+	Focusing on the inner product term,
+	\[
+		\braket{GS|
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		|GS},
+	\]
+	 all first order perturbations are zero unless
+	\[
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		\ket{GS} = a\ket{GS}
+	\]
+	for some eigenvalue $a$. This is due to the $\braket{GS|\psi} = \delta_{GS,\psi}$ where $\ket\psi$ is a single state in the 		Fock space. Since
+	$\vect q\ne 0$, the above may only be satisfied given 
+	\ba
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		\ket{GS}& \to \delta_{\lambda,\sigma}\delta_{\vect k+\vect q,\vect p}
+		c^\dag_{\vect k+\vect q \lambda}c^\dag_{\vect p-\vect q \sigma}c_{\vect p\sigma}c_{\vect k\lambda}
+		\ket{GS}\\
+		& = c^\dag_{\vect k+\vect q\sigma}c^\dag_{\vect k\sigma}c_{\vect k+\vect q\sigma}c_{\vect k\sigma}
+		\ket{GS}\\
+		&= -c^\dag_{\vect k+\vect q\sigma}c_{\vect k+\vect q\sigma}c^\dag_{\vect k\sigma}c_{\vect k\sigma}
+		\ket{GS}\\
+		& = -\hat n_{\vect k+\vect q\sigma}\hat n_{\vect k\sigma}\ket{GS}
+	\ea
+	where in the third line, we note that $\vect k\ne \vect k+\vect q$ for the anti-commutation. Thus our summation is now 		only over three indices
+	\[
+		E^1 = \braket{GS|V|GS} = 
+		\frac{e^2}{2\epo V}\sum_{\sigma,\vect k\vect q}
+		-\frac{1}{q^2}
+		\braket{GS|
+		\hat n_{\vect k+\vect q\sigma}\hat n_{\vect k\sigma}
+		|GS}
+	\]
+	The number operators will return a $1$ if $|\vect k+\vect q|,|\vect k| < k_F$ and zero otherwise, and the so the 				expectation may be expressed as step functions.
+	 In the thermodynamic
+	limit, as we take the length of our box $L\to \infty$, the lattice spacing of our quantized $\vect k$ values becomes 			infinitesimal and we may perform an integration
+	\ba
+		\frac{e^2}{2\epo V}\sum_{\sigma,\vect k\vect q}
+		-\frac{1}{q^2}
+		\braket{GS|
+		\hat n_{\vect k+\vect q\sigma}\hat n_{\vect k\sigma}
+		|GS} &\to -\frac{e^2}{2\epo V}\pfrac{V}{(2\pi)^3}^2 \int d^3k\ d^3q\ \frac{1}{q^2}\theta(k_F-|\vect k|)
+		\theta(k_F-|\vect k+\vect q|)
+	\ea
+	For each direction of $\vect q$, we vary $\vect k$ over all space. Under integration over $k$, the term $|\vect k+\vect q|$ 		does not
+	depend on the \emph{direction} of $\vect q$, but rather on the magnitude. So we write the following integral
+	\[
+		E^1 = -\frac{e^2}{2\epo V}\pfrac{V}{(2\pi)^3}^28\pi^2 \int dq\ dk\ d(\cos\theta_k)\ k^2
+		\ \theta(k_F-\sqrt{k^2+q^2+2kq\cos\theta_k})\theta(k_F-|\vect k|)
+	\]
+	Note that $k$ is bound
+	to a maximum of $k_F$, so $k<k_F$. From this we deduce that $0<q<2k_F$. Moreover
+	\ba
+		k^2+q^2+2kq\cos\theta_k &\le k_F^2 \\
+		q\cos\theta_k &\le \frac{k_F^2 - k^2 - q^2}{2k}\\
+		q\cos\theta_k &\le -\frac{q^2}{2k_F} \\
+		\cos\theta_k &\le -\frac{q}{2k_F}\\
+		1\ge\cos\theta_k &\ge \frac{q}{2k_F}
+	\ea
+	where we have added the upper bound of unity. Thus $ \frac{q}{2\cos\theta_k}<k<k_F$. The integral may then be formed 		as
+	\ba
+		E^1&=  -\frac{e^2}{2\epo V}\pfrac{V}{(2\pi)^3}^28\pi^2
+		 \int_0^{2k_F}dq\ \int_{\frac{q}{2k_F}}^1\ d(\cos\theta_k)\ \int_\frac{q}{2\cos\theta_k}^{k_F} dk\ k^2\\
+		 & = -\frac{e^2}{4\pi\epo}V\frac{k_F^4}{4\pi^3}\\
+		 & =-\frac{e^2}{4\pi\epo}\frac{V}{4\pi^3} \plr{3\pi^2n}^{4/3}
+	\ea
+	\\ \\
+	
+	% (b)
+	\item
+	From the integration over $\vect q$ and $\vect k$, we see that the integrand is positive and the overall sign of
+	the perturbation due to e-e interaction is negative (can also be seen by explicit evaluation of integral). So the interaction 		energy decreases the total energy 
+	in the limit of first order perturbation.
+	\\ \\
+	
+	% (c)
+	\item[(c),(d)]
+	The interaction energy per particle can be found from part (a) as
+	\ba
+		\frac{E^1}{N} &= -\frac{e^2}{4\pi\epo}\frac{1}{4\pi^3} \plr{3\pi^2}^{4/3}n^{1/3}\\
+		&\sim -n^{1/3}
+	\ea
+	\eenum
+\eenum
+\end{document}

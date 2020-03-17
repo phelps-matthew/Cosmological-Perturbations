@@ -1,0 +1,617 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Stat Mech Summer 2015\end{spacing}}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item
+	 Molecular oxygen is a paramagnetic gas. Each molecule has a spin angular momentum $\vec S$ 
+	 with $|\vect S|=1$. For a dilute gas (with N molecules in volume V) immersed in a magnetic field 
+	 $\vect B = B\vecth z$, we can write the magnetic contribution to the Hamiltonian as
+	 \[
+	 	H_{mag} = -\gamma \sum_{i=1}^N (S_{iz}B)
+	\]
+
+	\benum
+	% (a)
+	\item
+	If this (lattice) gas is at temperature $T$, calculate the probabilities for $S_{iz}$ to have values
+	$+1$, $-1$, and $0$.
+	
+	% (b)
+	\item
+	Calculate (i) the magnetization $\vect m = \vect M/V$ (average magnetic moment per unit volume)
+	and (ii) the entropy at temperature $T$ and $B\ne 0$	.
+	% (c)
+	\item
+	For $B\ne 0$, find the limiting values of the entropy and magnetization as (i) $T\to 0$ and (ii) $T\to \infty$. 
+	Give a physical explanation for each of the limiting values you obtain. \\ \\
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	Not sure what $|\vect S|=1$ means, because this suggests $\vect S^2 = 1$ in which 
+	\[
+		\vect S^2\ket{s,m_z} = s(s+1)\ket{s,m_z} = 1\ket{s,m_z}
+	\]
+	which means $s = -1/2 \pm \sqrt 5/2$. Anyway, lets assume $s=1$ (Bosons). As a lattice gas,
+	each particle is distinguishable. The partition function factors as the partition function of a single particle,
+	$\zeta$
+	\[
+		Z_N = \zeta^N.
+	\]
+	\[
+		\zeta = \sum_i e^{-\beta E_i} = \sum_{S_z=\pm1,0} e^{\beta\gamma B S_z} = 1+2\cosh(\beta\gamma B)
+	\]
+	We are looking for the expectation value of spin for a single particle. Noting that $N$ is fixed, the canonical
+	density operator is
+	\[
+		\rho = \frac{e^{-\beta H}}{Z} = \sum_i p_i \ket i\bra i
+	\]
+	\[
+		\tr(\rho) = \sum_i p_i = \frac{1}{Z}\tr(e^{-\beta H}) = \sum_i \frac{e^{-\beta E_i}}{Z}
+	\]	
+	hence
+	\[	
+		p_i = \frac{e^{-\beta E_i}}{Z}
+	\]
+	where $Z = \zeta$ above and so
+	\[
+		p(s_z=1) = \frac{e^{\beta\gamma B}}{1+2\cosh(\beta\gamma B)}
+	\]
+	\[
+		p(s_z=-1) = \frac{e^{-\beta\gamma B}}{1+2\cosh(\beta\gamma B)}
+	\]
+	\[
+		p(s_z=0) = \frac{1}{1+2\cosh(\beta\gamma B)}
+	\]
+	\\ \\
+	% (b)
+	\item
+	The magnetic moment is $\mu = \gamma S_z$. We seek to find the average magnetic moment
+	\[
+		\vect M = \braket{M_z} .
+	\]
+	Since the particles are independent and distinguishable, the expectation of total magnetic moment
+	is a sum of expectation values of individual moments
+	\[
+		\braket{M_z} = N\braket{m_{iz}} = N\gamma\braket{s_{iz}}.
+	\]
+	This becomes
+	\[
+		\braket{M_z} = N \gamma \frac{\plr{-e^{-\beta \gamma B}+e^{\beta\gamma B}}}{\zeta}
+	\]
+	thus
+	\be\label{1}
+		\vect m = n\gamma  \pfrac{2\sinh(\beta\gamma B)}{1+2\cosh(\beta\gamma B)}
+	\ee
+	**As an aside, 
+	\[
+		\braket{M_z} = \tr(\rho M_z) = \frac{\gamma}{Z_N} \sum_{\{n\}} e^{-\beta E_n}\plr{\sum_i s_{iz}}
+	\]
+	Here we are summing over all possible sets of $\{ n\} = \{ n_0,n_1,..,n_n\}$ where $n_i = \{-1,0,1\}$. 
+	The particles are distinguishable, so states with the same energy are treated distinctly. 
+	Noting that $\braket{S_z} = -\frac{1}{\gamma B}
+	\braket{E}$, we will simply take the expectation value of $\braket{E}$ instead and divide at the end.
+	 Anyway, when we do this we have
+	\ba
+		\braket{E} &=  \frac{1}{Z_N} \sum_{\{n\}} E_ne^{-\beta E_{n}}  \\
+		&= \frac{\plr{ 
+		(NE_0)e^{-\beta NE_0}+((N-1)E_0+E_1)e^{(N-1)E_0+E_1} + ... }}{Z_N} \\
+		& = \frac{N\braket{E_i}Z_N}{Z_N} = N\braket{E_i}
+	\ea
+	Basically, we can factor the partition function out of the summation and everything reduces 
+	down to simply finding the one particle expectation value (with corresponding one particle partition function)
+	as we initially expected.**
+	\\ \\
+	To calculate the entropy, we have the thermodynamics connection
+	\[
+		F  = -kT\ln Z
+	\]
+	and so
+	\[
+		S = -\pdiff[F]{T}.
+	\]
+	Actually, the Von Neumann entropy is the more fundamental connection (coming from $S = \tr(\rho\ln\rho)$), but
+	$F$ is easy to work with. At any rate, we can show that
+	\[
+		S = k\ln Z_N + \frac{\braket{H}}{T}.
+	\]
+	The energy is 
+	\[
+		\braket{E} = N\braket{E_i} =  -B\braket{M_z}
+	\]
+	and the log of the partition function is
+	\[
+		\ln Z_N = N\ln \zeta = N\ln(1+2\cosh(\beta\gamma B))
+	\]
+	and thus
+	\be\label{2}
+		S = kN\ln(1+2\cosh(\beta\gamma B))-\frac{B\braket{M_z}}{T}.
+	\ee
+	\\ \\
+	% (c)
+	\item 
+	For $T\to\infty$, $\beta \to 0$ and $T\to 0$, $\beta \to \infty$. For the magnetization \eqref 1
+	\[
+		\lim_{T\to 0} \vect m = n\gamma
+	\]
+	\[
+		\lim_{T\to \infty} \vect m = 0 .
+	\]
+	At high enough temperatures, the magnetic spins are randomly orientated, averaging to a net spin of zero. At 
+	low temperatures, we approach maximal magnetization with all spins pointing up (why up and not down, 
+	symmetry breaking due to nonzero B?). 
+	\\ \\
+	For the entropy,
+	\[
+		\lim_{T\to 0} S = kN\ln(1+e^\infty)-NkB\gamma(\infty) \approx \infty - \infty = 0
+	\]
+	\[
+		\lim_{T\to\infty} S = kN\ln(3)
+	\]
+	From the third law of thermodynamics, we must have $S\to0$ as $T\to 0$. As the temperature goes to infinity,
+	we approach a maximum finite value of $kN\ln(3)$. This is the single particle entropy of N particles, 
+	independent of the magnetic field. 
+	\\ \\
+	\eenum
+	
+% #2 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider a classical ideal gas with fixed particle number $N$ such that $pV = NkT$ with a constant
+	heat capacity with fixed volume $C_V = Nk\eta$, where $\eta$ can be considered to be constant (for
+	the temperatures $T$ we are interested in). Use Maxwell relations etc. to find the heat capacity at constant
+	pressure $C_p$. Then show that in that case the entropy can be written as
+	\[
+		S = Nk\ln{\frac{V}{N}} + f(T)+\text{const}.,
+	\]
+	where $f(T)$ is a function of temperature and "const." does not depend on either temperature of volume.
+	What is $f(T)$? Show that for an adiabatic process, both $VT^\eta$ and $pV^\eta$ are constant. Here
+	$\gamma = \frac{C_p}{C_V}$. 
+	\\ \\ \\
+	The heat capacity at constant pressure
+	\[
+		C_p = T\plr{\pdiff[S]{T}}_p
+	\]
+	suggests the form $S(T,p)$. However, we know from our equation of state that we may express this as
+	$S(T,p(T,V))$. And so with the chain rule we may relate $C_p$ to $C_V$ by
+	\[
+		\plr{\pdiff[S]{T}}_V = \plr{\pdiff[S]{T}}_p+\plr{\pdiff[S]{p}}_T\plr{\pdiff[p]{T}}_V.
+	\]
+	From the Gibbs maxwell relation
+	\[
+		-\plr{\pdiff[S]{p}}_T = \plr{\pdiff[V]{T}}_p
+	\]
+	we then have
+	\[
+		\plr{\pdiff[S]{T}}_V = \plr{\pdiff[S]{T}}_p- \plr{\pdiff[V]{T}}_p\plr{\pdiff[p]{T}}_V.
+	\]
+	Thus
+	\ba
+		C_V &= C_p-T \plr{\pdiff[V]{T}}_p\plr{\pdiff[p]{T}}_V \\
+		&= C_p - \frac{TNk}{p}\pfrac{Nk}{V} \\
+		& = C_p - \frac{TN^2k^2}{pV} \\
+		& = C_p - Nk.
+	\ea
+	So
+	\ba
+		C_p &= C_V + Nk \\
+		& = Nk(1+\eta).
+	\ea
+	 \\
+	For the entropy, we use its two partial derivatives: one from the heat capacity
+	\[
+		\plr{\pdiff[S]{T}}_V = \frac{C_V}{T}
+	\]
+	and one from the Helmholtz maxwell equation 
+	\[
+		\plr{\pdiff[S]{V}}_T = \plr{\pdiff[p]{T}}_V = \frac{Nk}{V}.
+	\]
+	Hence we have a path independent function
+	\[
+		dS = \plr{\pdiff[S]{T}}_V dT + \plr{\pdiff[S]{V}}_T dV
+	\]
+	and we integrate
+	\ba
+		S(T,V)  &= \int dT\ \frac{C_V}{T} + \int dV\ \frac{Nk}{V}\\ 
+		& = C_V\ln T +Nk\ln V + C
+	\ea
+	where $C$ is a volume and temp. independent constant. We may use the constant to put this into the form
+	\[
+		S = Nk\plr{\ln\frac{V}{N}+\eta \ln T} + C'.
+	\]
+	Therefore $f(T)= C_V\ln T$. 
+	\\ \\
+	In an adiabatic process, $\delta Q = 0$. If we may assume the process is irreversible, then $\delta Q = TdS$
+	and thus $dS = 0 \to S = \text{const}$. Then we may use the form of entropy we found earlier
+	\[
+		S = Nk\plr{\ln V-\eta\ln T} + C = K
+	\]
+	and so
+	\[
+		\ln(VT^\eta) = K
+	\]
+	or
+	\[
+		VT^\eta = K.
+	\]
+	For the other relation, we can use the eq. of state to get to
+	\[
+		p\eta V^{\eta+1} = K
+	\]
+	in which we can raise to the $\frac{1}{\eta}$ and use the ratio of heat capacities 
+	\[
+		\frac{C_p}{C_V} = \frac{\eta+1}{\eta}
+	\]
+	to arrive at
+	\[
+		pV^\gamma = K.
+	\]
+	However, if the process is not reversible, then we must find another way to relate $p$ to $V$ and $V$ to $T$. This
+	can be accomplished through the energy (in an adiabatic process)
+	\[
+		dU = dW = -pdV.
+	\]
+	Firstly, in an ideal gas we can find the two derivatives for $dU$ and integrate to find the energy:
+	\[
+		\plr{\pdiff[U]{T}}_V = C_V
+	\]
+	\[
+		\plr{\pdiff[U]{V}}_T = T\plr{\pdiff[S]{V}}_T-p.
+	\]
+	For the second partial, the Helmholtz maxwell eq. gives 
+	\[
+		\plr{\pdiff[S]{V}}_T = \plr{\pdiff[p]{T}}_V = \frac{Nk}{V}.
+	\]
+	Thus for $U(T,V)$ 
+	\[
+		dU = C_VdT-(0)dV
+	\]
+	or
+	\[
+		U = C_VT +K.
+	\]
+	Okay, now we return to the adiabatic process $dU = \delta W$ and form
+	\[
+		C_VdT = -pdV.
+	\]
+	From the eq. of state
+	\[
+		NkdT = Vdp+pdV.
+	\]
+	Thus we find the relation
+	\[
+		\eta(Vdp+pdV) = -pdV
+	\]
+	or
+	\[
+		-\frac{(1+\eta)}{\eta}\frac{dV}{V} = \frac{dp}{p}.
+	\]
+	Integrating and exponentiating
+	\[
+		V^{-\frac{(1+\eta)}{\eta}}p^{-1} = K
+	\]
+	or
+	\[
+		pV^\gamma = K.
+	\]
+	We proceed by the same steps as before to show that $VT^\eta = K$. 
+	\\ \\
+	
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider an ideal gas of photons in 2-dimensions confined to an area $A$. The total energy is obtained by using 
+	the harmonic oscilator quantization (without the zero-point energy) as $\sum_{\vect k} n_{\vect k}
+	\h\omega_{\vect k}$ where $n_\vect k =0$, $1$, $2....$ (being the number of photons); $\omega_{\vect k}$ is
+	the angular frequency of an oscillator associated with the radiation mode (polarization index has been 
+	surpressed for clarity). The partition function $Z$ is given by
+	\[
+		\ln Z = -2\sum_{\vect k}\ln\blr{1-\exp\plr{-\beta\h\omega_{\vect k}}}.
+	\]
+	
+	\benum
+	% (a)
+	\item
+	Find the average occupation number $\braket{n_\vect k}$ and an integral expression in $\omega$
+	for the internal energy $U(T)$ at temperature $T$. Hence obtain the Plank's distribution (or radiation law)
+	of energy density $\rho(\omega, T)$ in 2-dimensions. How does $\rho(\omega,T)$ behave as
+	$\omega \to 0$ and $\omega \to \infty$ at fixed $T$?
+	\item
+	% (b)
+	Evaluate the temperature dependence of the specific heat and find the pressure of this photon gas in terms
+	of $U$. (You may express your answers in terms of the integrals $C_n = \int_0^\infty dx\ \frac{x^n}{e^x-1}$.)
+	\\ \\
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	To find the expectation of the occupation number (in each mode), first we use the partition function of 
+	a single mode
+	\ba
+		Z_{\vect k} &= \sum_{n=0}^\infty e^{\beta \h\omega_{\vect k}n} \\
+		& = \frac{1}{1-e^{\beta \h\omega_{\vect k}}}.
+	\ea
+	Then the probability for a single mode to contain $n$ particles is
+	\[	
+		P(n) = \frac{e^{-\beta \h\omega_{\vect k}n}}{Z_{\vect k}}.
+	\]
+	Each oscillator is independent and thus the total partition factorizes. Each mode can have 2 different 
+	polarizations as well. Since each system is independent, average quantities of the entire system can 
+	be found by summing the averages of the subsystems (modes in this case). Back to expectation 
+	of particle number in a given mode, we have
+	\ba
+		\braket{n_\vect k} &= \sum_{n=0}^\infty nP(n) = \frac{1}{Z_\vect k}\sum_n ne^{-\beta \h\omega_{\vect k}n}
+		\\
+		& = -\frac{1}{Z_\vect k}\diff{x}\plr{ \sum_n e^{-nx}} \\
+		& =  -\frac{1}{Z_\vect k}\diff{x} \pfrac{1}{1-e^{-x}} \\
+		& = \frac{1}{Z_\vect k}\frac{e^{-x}}{(1-e^{-x})^2} \\
+		& = \frac{e^{-x}}{1-e^{-x}} \\
+		& = \frac{1}{e^{\beta \h\omega_{\vect{k}}}-1}
+	\ea
+	Looks just like the occupancy for Bosons with $\mu = 0$. However, we must recall that from the two 
+	polarization modes we have
+	\[
+		\braket{n_\vect k} = \frac{2}{e^{\beta \h\omega_{\vect{k}}}-1}.
+	\]
+	* Alternatively, we could compute the expectation number for a system of two polarizations
+	\[
+		Z = Z_{\vect k}^2
+	\]
+	and sum over all possible combinations $\{n_i\}: \sum_i n_i =n$ for a given $n$ (which turns out to be $(n+1)$). 
+	We arrive at the same answer with this combined polarization system.*
+	\\ \\
+	**Also much simpler to take $-\pdiff{\beta}\ln Z = U$, then proceed with integration.**
+	\\ \\
+	The internal energy can be found by summing the average thermal energy per mode
+	\[
+		\braket{\epsilon_\vect k} = \braket{n_\vect k}\h\omega_\vect k
+	\]
+	\[
+		U = \sum_{\vect k} \braket{\epsilon_\vect k}.
+	\]
+	As for the vector $\vect k$ itself, it is what we typically expect from box normalization (in 2D)
+	\[
+		\vect k = \frac{2\pi}{L}\plr{n_1 \vecth x_1 + n_2 \vecth x_2}\qquad n_1,n_2 = 0,1,2,...
+	\]
+	Negative values are not given as they produce modes that are not independent? We integrate
+	over $\vec k$ space to find the internal energy
+	\[
+		\sum_{\vect k} = \frac{1}{4}\int d^2n = \frac{\pi}{2} \int_0^\infty dn\ n.
+	\]
+	With $\omega_\vect k = c|\vect k| = \frac{2\pi c}{L}|\vect n|$ and $d\omega = \frac{2\pi c}{L} dn$
+	\[
+		2\h \pfrac{L}{2\pi c}^2\pfrac{\pi}{2} \int d\omega \frac{\omega^2}{e^{\beta\omega\h}-1} = 
+		\frac{A\h}{4\pi c^2} \int_0^\infty d\omega \frac{\omega^2}{e^{\beta\omega\h}-1} 
+	\]
+	The energy density as a function of frequency $U/V = \int d\omega \rho(\omega,T)$ is 
+	\[
+		\rho(\omega,T) = \frac{\h}{4\pi c^2}\frac{\omega^2}{e^{\beta\omega\h}-1}.
+	\]
+	For fixed $\beta$, the energy density at zero oscillation is
+	\[
+		\lim_{\omega\to 0} \rho(\omega,T) = \frac{k^2 T^2}{2\pi \h}
+	\]
+	where L'Hopitals has been used twice. As the frequency becomes infinite
+	\[
+		\lim_{\omega\to\infty} \rho(\omega,T) = 0.
+	\]
+	\\ \\
+	
+	% (b)
+	\item
+	Using
+	\[
+		\pdiff{T} = -\frac{k}{\beta^2}\pdiff{\beta}
+	\]
+	we take the derivative of $U$ with respect to $T$ to find the heat capacity. First we need $U$ in a more
+	appropriate form
+	\ba
+		U &= \frac{A\h}{4\pi c^2} \int_0^\infty d\omega \frac{\omega^2}{e^{\beta\omega\h}-1}  \\
+		&= \frac{A\h}{4\pi c^2}\pfrac{1}{\beta\h}^3 \int_0^\infty dx\ \frac{x^2}{e^x-1} \\
+		& = \frac{(kT)^3A}{4\pi (\h c)^2} C_2 \\
+		& = AT^3\gamma
+	\ea
+	Now we may easily take the derivative with respect to $T$:
+	\[
+		C_V = 3AT^2\gamma
+	\]
+	Not sure how to express this in terms of $C_n$. \\ \\
+	We may find the pressure as
+	\[
+		F = -kT\ln Z
+	\]
+	\[
+		-\plr{\pdiff[F]{V}}_T = p.
+	\]
+	It may be slightly more simply to just calculate $F$ first
+	\[
+		F = 2kT\sum_\vect k \ln(1-e^{-\beta\omega_\vect k\h})
+	\]
+	which upon continuation becomes
+	\[
+		F = \frac{kTL^2}{4\pi c^2}\int_0^\infty d\omega\ \omega\ln(1-e^{-\beta\omega\h}).
+	\]
+	Converting to dimensionless quantity $x = \beta \omega \h$
+	\[
+		F= \frac{kTL^2}{4\pi c^2}\pfrac{1}{\beta\h}^2 \int_0^\infty dx\ x \ln(1-e^{-x}).
+	\]
+	Under integration by parts, the surface term vanishes and we are left with
+	\[
+		F= -\frac{k^3T^3L^2}{8\pi \h ^2c^2} \int_0^\infty dx \frac{x^2}{e^x-1} = -\frac{k^3T^3L^2}{8\pi \h ^2c^2}C_2
+		= -\frac{1}{2}AT^3\gamma = -\frac{1}{2}U.
+	\]
+	Now we use the relation for pressure
+	\[
+		p = \frac{T^3}{2}\gamma = \frac{U}{2A}.
+	\]
+	\\ \\ \\
+	
+	\eenum 
+% #4 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	A ferromagnetic XY model consists of unit classical spins, $\vect S_i = (S_i^x,S_i^y,S_i^z) =
+	(\cos\phi_i,\sin\phi_i,0)$ such that $|\vect S_i|=1$ on a three dimensional cude lattice with $i$ labeling
+	the site. The spins can point in any direction in the $xy$ plane. The Hamiltonian with nearest neighbor 
+	interactions is given by
+	\[
+		H = -\frac{1}{2} J\sum_{i,l}\vect S_i\cdot \vect S_{i+1} - \vect h\cdot \sum_i \vect S_i,
+	\]
+	where $\vect h$ is a field pointing the in the $x$-direction (i.e. $\vect h = (h,0,0)$) and with $i$ running
+	over all sites and $l$ running over the six nearest neighbors.
+	
+	
+	\benum
+	% (a)
+	\item
+	For the noninteracting case $J=0$, calculate the susceptibility $\chi = \plr{\pdiff[m_{ix}]{h}}_{h=0}$ per
+	spin showing that the average $\vect m_i = \braket{\vect S_i}$ reduces to a component $m_{ix}$ along
+	the $x$-axis. 
+	\\
+	\emph{Hint: While it is hard to evaluate the integral expression for $\vect m(\vect h)$, it should
+	be easy to evaluate its derivative at $h=0$.} \\
+	(In order to not get confused with the nomenclature, rename $\vect m$ for this $J=0$ case as $\vect m_0$,
+	and $\chi$ as $\chi_0$ before part (b).)
+	
+	% (b)
+	\item
+	Use your result in (a) to calculate the (critical) transition temperature in the ferromagnetic case using the 
+	standard "mean field theory" for $h=0$ and $J\ne 0$. In this regard, find $H_i$ such that (in mean field theory)
+	\[
+		H = \sum_i H_i = -\vect h'(\vect m_0)\cdot \sum_i \vect S_i + const.
+	\]
+	What is $\vect h'(\vect m)$? 
+	\\
+	Hint: In order to find the critical temperature, repeat the procedure from part (a) to find $\chi$, but 
+	self-consistently replace $\vect h'(\vect m_0)$ by $\vect h'(\vect m)$. The find $\chi = \plr{
+	\pdiff[m_{ix}]{h}}_{h=0}$ and calculate the critical temperature $T_C$ where $\chi \to \infty$. 
+	\\ \\ 
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	To find the magnetization $\braket{\vect S_i}$ at $J=0$, we take the usual Maxwell Boltzmann distribution
+	function. However, since the microstates are continuous, we have a probability density function
+	\[
+		\rho(\vect S_i) = e^{\beta h\cos\phi_i}/Z
+	\]
+	where 
+	\[
+		Z = \int_{-\pi}^\pi d\phi\ e^{\beta h\cos\phi}.
+	\]
+	Thus to find the expectation value we integrate
+	\[
+		\braket{\vect S_i} = \int_{-\pi}^\pi \frac{e^{\beta h\cos\phi_i}}{Z}(\cos\phi \vecth x_1 +\sin\phi \vecth x_2).
+	\]
+	The projection of the average magnetization along the $\vecth x_2$ direction is zero from 
+	integrating an odd overall function over even bounds. Hence
+	\[
+		\braket{\vect S_i} = \braket{S^x_i} = \int_{-\pi}^\pi d\phi\ \frac{e^{\beta h\cos\phi}}Z \cos\phi.
+	\]
+	Now we find the susceptibility. Denote the integral without $Z$ as $A$. Then
+	\[
+		\chi = AZ^{-1}
+	\]
+	\[
+		\plr{\pdiff{h}\braket{S_i^x}}_{h=0} = \pfrac{A'Z-AZ'}{Z^2}_{h=0} 
+	\]
+	\[
+		\elr{A}_{h=0} = \int_{-\pi}^\pi d\phi \ \cos\phi = 0
+	\]
+	\[
+		\elr{Z}_{h=0} = 2\pi
+	\]
+	\[
+		\chi = \pfrac{A'}{2\pi}_{h=0}
+	\]
+	\[
+		\elr{A'}_{h=0} = \beta \int_{-\pi}^\pi d\phi \ \cos^2(\phi) = \frac{\beta}{2} \int_{-\pi}^\pi d\phi \ (1+\cos(2\phi))
+		= \beta\pi.
+	\]
+	All together then
+	\[
+		\chi_0 = \frac{\beta}{2};\qquad \vect m_0 = \int_{-\pi}^\pi d\phi\ \frac{e^{\beta h\cos\phi}}Z \cos\phi.
+	\]
+	\\ \\
+	
+	% (b)
+	\item
+	Applying the mean field theory to only the interaction term (keeping in mind that all variables are vectors)
+	\[
+		\delta s_i = s_i-m;\qquad s_i = \delta s_i+m
+	\]
+	we have
+	\ba
+		\sum_{i,l} 	s_is_{i+l} &= \sum_{i,l} (\delta s_i+m)(\delta s_{i+l}+m) \\
+		& \approx \sum_{i,l} m^2 +m(s_i-m)+m(s_{i+l}-m) \\
+		& = \sum_{i,l} -m^2 + m(s_i+s_{i+l})
+	\ea
+	This summation is over the $q=6$ nearest neighbors. Hence, there are $qN$ nearest neighbor pairs
+	in the lattice, but a single bond is counted twice for each pair and so we must divide the result by two
+	\[
+		 \sum_{i,l} -m^2+2ms_i. = -\frac{m^2Nq}{2} +qm \sum_i s_i.
+	\]
+	Now adding back the rest of the noninteracting factors
+	\[
+		H_{int}^{MF} = -Jq\vect m \cdot \sum_i \vect s_i+\pfrac{JNq}{2}\vect m^2.
+	\]
+	Hence 
+	\[
+		\vect h'(\vect m_0) = 6J\vect m.
+	\]
+	I'm assuming $\vect m_0$ is at $h=0$ in this case? Very confusing.
+	\\ \\
+	In the mean field theory, the total hamiltonian is
+	\[
+		H^{MF} = -(6J\vect m+\vect h)\cdot  \sum_i \vect s_i + \pfrac{JNq}{2}\vect m^2
+	\]
+	The constant term in the Hamiltonian should be able to be ignored. This leaves us with the same 
+	Hamiltonian as in part (a), but with an effective applied field that includes the effect of magnetization.
+	I am not sure why, but I am going to proceed by inputting the effective field into the magnetization. I assume
+	that the magnetization is the same as in part (a) in the sense that it lies only along the $x$-direction and
+	tends to zero as $h\to 0$. 
+	\\ \\
+	In this regard, we have the magnetization
+	\[
+		m_x = \frac{\int_{-\pi}^{\pi} d\phi\ e^{\beta(h+6Jm_x)\cos\phi}\cos\phi}{
+			\int_{-\pi}^{\pi} d\phi\ e^{\beta(h+6Jm_x)\cos\phi}}
+	\]
+	Denoting the numerator as $A$ and denominator as $Z$ (the partition funciton), the susceptibility is then
+	\[
+		\elr{\pdiff[m_x]{h}}_{h=0}=\chi = \frac{A'Z-AZ'}{Z^2}
+	\]
+	\[
+		\elr{A}_{h=0} = \int_{-\pi}^\pi d\phi\ \cos\phi = 0
+	\]
+	\[
+		\elr{Z}_{h=0} = 2\pi
+	\]
+	 \ba
+	 	\elr{A'}_{h=0} &= \elr{\int_{-\pi}^\pi d\phi\ e^{\beta(h+6Jm_x)\cos\phi}\cos^2(\phi)
+		\beta(1+6J\pdiff[m_x]{h})}_{h=0} \\
+		 &=  \beta(1+6J\chi) \int_{-\pi}^\pi d\phi\ \cos^2(\phi) \\
+		 & = \beta\pi(1+6J\chi).
+	\ea
+	Thus we have
+	\[
+		\chi = \frac{\beta(1+6J\chi)}{4\pi}
+	\]
+	or
+	\[
+		\chi = \frac{1}{4\pi/\beta-6J}.
+	\]
+	For $\chi\to\infty$
+	\[
+		T_C = \frac{6J}{4\pi k}.
+	\]
+	\eenum
+	\eenum
+\end{document}

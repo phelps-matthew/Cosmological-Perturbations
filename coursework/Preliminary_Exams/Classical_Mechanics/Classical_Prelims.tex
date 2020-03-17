@@ -1,0 +1,697 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+
+\title{Classical Mechanics Preliminary Examination Problems}
+\author{Matthew Phelps}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+
+% 2015 Winter------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection*{2015 Winter}
+\phantom{}
+	\benum
+	% 1
+		\item
+		A system in uniform gravity, consisting of two masses $m$, each carrying a charge $q$, is arranged as in the figure, that is, the arms of 
+		length $l$ with the masses can move in $\theta$ and $\phi$ directions independently. (The interaction between the charges is
+		$V_{12} = \frac{q^2}{r_{12}}$, where $r_{12}$ is the distance between the masses.) Find the Lagrangian and the equilibrium
+		(the assumption that $\phi_{1,0} -\phi_{2,0} =\pi$ and $\theta_{1,0} = \theta_{2,0} \equiv \theta$ can be made from symmetry without 
+		proof). Show that the equilibrium condition is
+		\\
+		\\
+		\\
+		\[
+			\delta S = \delta \int_{t_1}^{t_2} \mathcal{L}(q_i,\dot{q_i})\, dt =0 
+		\]
+		\\
+		\\
+		\\
+		\[
+			\frac{4mgl^2}{q^2}\tan^3\theta = 1+\tan^2\theta.
+		\]
+		(You do not need to solve this for $\theta$ explicitly.) Then show that for the potential we have for the deviations from the equilibrium 
+		position $\{\delta\theta_1,\delta\theta_2,\delta\phi_1,\delta\phi_2\} \equiv \{ \eta_i\}$
+		\[
+			\elr{\pdifff{V}{\eta_i,\eta_j}}_\text{equilibrium} = \bpm u+v&v&0&0\\v&u+v&0&0\\0&0&w&-w\\0&0&-w&w\epm.
+		\]
+		What are the constants $u$, $v$, and $w$?
+		\\
+		Then show the eigenmodes (i.e. frequencies and eigenvectors) for small deviations from the equilibrium.
+
+		\figg{15W1.png}
+		
+		You can use (any or none of)
+		\ba
+			\sin(x+\delta x) &\approx \sin x+\delta x\cos x-\frac{1}{2}(\delta x)^2\sin x \\
+			\cos(x+\delta x) &\approx \cos x-\delta x\sin x-\frac{1}{2}(\delta x)^2\cos x \\
+			\tan(x+\delta x) &\approx \tan x+\delta x(\tan^2 x+1)+(\delta x)^2(\tan^3(x)+\tan x) \\
+			\frac{1}{r_{12}} &\approx \frac{1}{2l\sin\theta}\plr{1+\mathcal O(\delta\theta_i,\delta\phi_i)+\frac{1}{8}\plr{\plr{\frac{2}{\sin^2\theta}
+			-1}(\delta\theta_1+\delta\theta_2)^2+(\delta\phi_1-\delta\phi_2)^2}}.
+		\ea
+		\\ \\
+		From cartesian to polar
+		\ba
+			T &= \frac{p^2}{2m}\\ 
+			&= \frac{1}{2}m(x_1^2+x_2^2+x_3^2)\\
+			& = \frac{1}{2}m(\dot r^2+r^2\dot\theta^2+r^2\sin^2\theta\dot\phi^2)
+		\ea
+		Therefore our Lagrangian for the system takes the form
+		\be\label{1}
+			\mathcal{L} = \frac{1}{2}ml^2(\dot\theta_1^2+\dot\theta_2^2+\sin^2\theta_1\dot\phi_1^2+\sin^2\theta_2\dot\phi_2^2)
+			+mgl\cos\theta_1+mgl\cos\theta_2-\frac{q^2}{r_{12}}.
+		\ee
+		A system is defined to be in equilibrium when all the generalized forces vanish. In our Lagrangian formulation then, this amounts to
+		\[
+			Q_j \equiv -\pdiff[V]{q_j} = 0.
+		\]
+		We can use this condition to prove that $\theta_1 = \theta_2 \equiv \theta$ and $\phi_1-\phi_2 = \pi$. 
+		At equilibrium, the deviations from equilibrium are of course zero
+		\[
+			\delta\theta_1,\delta\theta_2,\delta\phi_1,\delta\phi_2=0
+		\]
+		so that the potential may be written as (using $r_{12}$ defined below)
+		\[
+			V = -2mgl\cos\theta+\frac{q^2}{2l\sin\theta}.
+		\]	
+		Now imposing the equilibrium condition
+		\[
+			-\pdiff[V]{\theta} = 0
+		\]
+		\[
+			2mgl\sin\theta =\frac{q^2}{2l}\frac{\cos\theta}{\sin^2\theta}\to \frac{4mgl^2}{q^2}\tan^3\theta = 1+\tan^2\theta
+		\]
+		To find the matrix elements, we first take the potential term from the Lagrangian 
+		\[
+			V = -mgl\cos\theta_1-mgl\cos\theta_2+\frac{q^2}{r_{12}}
+		\]
+		where $r_{12}$ is given already as
+		\[
+			\frac{1}{r_{12}} \approx \frac{1}{2l\sin\theta}\plr{1+\mathcal O(\delta\theta_i,\delta\phi_i)+\frac{1}{8}\plr{\plr{\frac{2}{\sin^2\theta
+			}-1}(\delta\theta_1+\delta\theta_2)^2+(\delta\phi_1-\delta\phi_2)^2}}.
+		\]
+		Note that $\theta$ here is the equilibrium angle. Also note that the change of variable from $q_i$ to $\eta_i$ does not affect the 
+		derivative, i.e. $\pdiff[\eta_i]{q_i} = 1$. For the first two terms in the potential, the only non-vanishing elements are 
+		$V_{11}$ and $V_{22}$
+		\[
+			\elr{\pdifff{V}{*2\theta_1}}_\theta = \elr{\pdifff{V}{*2\theta_2}}_\theta= mgl\cos\theta.
+		\]
+		Therefore, 
+		\[
+			u = mgl\cos\theta.
+		\]
+		We can carry on calculating the remaining part of $V_{11}$ to find $v$. 
+		\ba
+			V_{11} &= mgl\cos\theta +\frac{q^2}{2l\sin\theta}\pfrac{2}{8}\plr{\frac{2}{\sin^2\theta}-1}\\
+			& = mgl\cos\theta+\frac{q^2}{8l\sin\theta}\plr{\frac{2}{\sin^2\theta}-1}.
+		\ea
+		Thus,
+		\[
+			v = \frac{q^2}{8l\sin\theta}\plr{\frac{2}{\sin^2\theta}-1}.
+		\]
+		To find $w$ note that we will end up with the same term as for $v$. Thus altogether we have
+		\[
+			u = mgl\cos\theta;\quad v=w=\frac{q^2}{8l\sin\theta}\plr{\frac{2}{\sin^2\theta}-1}.
+		\]
+		\\
+		\\
+		We have essentially computed a first approximation to $V$ as
+		\[
+			V = \frac{1}{2}V_{ij}\eta_i\eta_j.
+		\]
+		It will be useful to similarly expand the potential portion of the Lagrangian. We can express this as
+		\[
+			T = \frac{1}{2}m_{ij}\dot q_i\dot q_j = \frac{1}{2}m_{ij}\dot\eta_i\dot\eta_j.
+		\]
+		In general the $m_{ij}$ are dependent on position (like $\sin\theta_1$ in this problem), but if we expand $T$ as a taylor series
+		and take the lowest non-vanishing term we have
+		\[
+			m_{ij} = m_{ij}(q_{01},q_{02},..).
+		\]
+		Thus the $m_{ij}$ is a matrix of coefficients evaluated at equilibrium denoted by $T_{ij}$. We then have
+		\[
+			T = \frac{1}{2}T_{ij}\dot\eta_i\dot\eta_j
+		\]
+		where
+		\[
+			T_{ij} = ml^2\bpm 1&0&0&0\\ 0&1&0&0\\0&0&\sin^2\theta&0\\0&0&0&\sin^2\theta \epm.
+		\]
+		In these forms the Lagrangian may be expressed as
+		\[
+			\mathcal L = \frac{1}{2}(T_{ij}\dot\eta_i\dot\eta_j-V_{ij}\eta_i\eta_j).
+		\]
+		Guessing an exponential solution $\eta_i = a_{i}e^{-i\omega t}$ leads to the determinant equation
+		\[
+			(V-\omega^2 T)\vect a = 0
+		\]
+		which have non-zero solutions only if the determinant vanishes
+		\[
+			|V-\omega^2 T| =0.
+		\]
+		As a matrix we have
+		\[
+			\bvm  (u+v)-\omega^2&v&0&0\\v&(u+v)-\omega^2&0&0\\0&0&v-\omega^2\sin^2\theta&-v\\0&0&-v&v
+			-\omega^2\sin^2\theta \evm.
+		\]
+		Breaking up into smaller determinants we find
+		\ba
+			 &[(u+v)-\omega^2]^2[(v-\omega^2\sin^2\theta)^2-v^2]-v^2[(v-\omega^2\sin^2\theta)^2-v^2]\\
+			& =\{ [(u+v)-\omega^2]^2-v^2\}[(v-\omega^2\sin^2\theta)^2-v^2].
+		\ea
+		Honestly, this is about as good as it gets in factored form. From here we basically have to use some inspection to find the form of 
+		$\omega$. From this $4\times 4$ determinant, there are four possible solutions for $\omega^2$:
+		\ba
+			\omega^2 & = 0\\
+				& = u\\
+				& = u+2v\\
+				& = \frac{2v}{\sin^2\theta}.
+		\ea
+		Now for the eigenvectors
+		\[
+			(V-\omega_i^2T)\vect a_i = 0.
+		\]
+		As a homogeneous system, we will have an infinite number of solutions. Therefore, we can solve for $n-1 = 3$ variables in terms of 
+		one component, or we may impose some sort of normalization. This normalization is a bit tricky, admittedly. The easiest scenario is 
+		that for nondegenerate roots, which is what we have here. For the $k$th eigenvalue $\omega_k^2 = \lambda_k$ we first assume 
+		(this can be shown Goldstein p. 242) that $\vect a_k$ and $\lambda_k$ are real. As such, $\vect a_k^\dag = \vect a_k^T$. Our 
+		eigenvalue equation is then
+		\[
+			\vect V\vect a_k = \lambda_k\vect T\vect a_k.
+		\]
+		We next form a new transposed equation of the eigenvalue equation and continue to manipulate.
+		\[
+			\vect a_l^T\vect V = \lambda_l\vect a_l^T\vect T
+		\]
+		\[
+			\vect a_l^T\vect V\vect a_k =\lambda_l\vect a_l^T\vect T\vect a_k
+		\]
+		\[
+			\lambda_k \vect a_l^T\vect T\vect a_k = \lambda_l\vect a_l^T\vect T\vect a_k
+		\]
+		\[
+			(\lambda_k-\lambda_l)\vect a_l^T\vect T\vect a_k = 0.
+		\]
+		These series of steps have been achieved by the reality and symmetric properties of $\vect V$ and $\vect T$. Now we can see
+		that for distinct eigenvalues, we must have
+		\be\label{2}
+			\vect a_l^T\vect T\vect a_k = 0. 
+		\ee
+		Now at this point we choose to impose the normalization condition such that
+		\be\label{3}
+			\vect a_k^T\vect T\vect a_k = 1.
+		\ee
+		If we combine both the above equations, we simply have
+		\[
+			\vect A^T \vect T\vect A = 1
+		\]
+		where $\vect A$ is a matrix composed of the column vectors $\vect a_k$. Point is, our normalization condition that fixes
+		our eigenvector components is given by \eqref 3
+		\[
+			a_{1k}^2+a_{2k}^2+\sin^2\theta(a_{3k}^2+a_{4k}^2) = 1.
+		\]
+		Proceeding to the eigenvectors themselves, we solve the following equations
+		\[
+			((u+v)-\omega_k^2)a_{1k}+va_{2k}=0
+		\]
+		\[
+			va_{1k}+((u+v)-\omega_k^2)a_{2k}=0
+		\]
+		\[
+			(v-\omega_k^2\sin^2\theta)a_{3k}-va_{4k} = 0
+		\]
+		\[
+			-va_{3k}+(v-\omega_k^2\sin^2\theta)a_{4k} = 0.
+		\]
+		Starting with the first frequency $\omega_1 = 0$ we find that
+		\[
+			a_{11} = a_{21}=0,\quad a_{31} = a_{41} = \frac{1}{\sqrt 2\sin\theta}
+		\]
+		The first two components may only satisfy our system of linear equations if $a_{11} = a_{21} = 0$. The arbitrariness of 
+		$a_{31} = a_{41}$ is dealt with by the normalization condition. For $\omega^2 = u$ we find
+		\[
+			a_{12} = -a_{22} = \frac{-1}{\sqrt 2},\quad a_{32} = -a_{42} = 0. 
+		\]
+		For $\omega^2 = u+2v$ we have
+		\[
+			a_{13} = a_{23} = \frac{1}{\sqrt 2},\quad a_{33} = -a_{43} = 0.
+		\]
+		Lastly for $\omega^2 = \frac{2v}{\sin^2\theta}$ we have
+		\[
+			a_{14}=a_{24} = 0,\quad a_{34} = -a_{44}= \frac{-1}{\sqrt 2\sin\theta}.
+		\]
+		Thus in total the following frequencies and vectors for displacement from equilibruim
+		\[
+			\omega_1^2 = 0,\quad \vect a_1 = \frac{1}{\sqrt 2\sin\theta} \bpm 0\\0\\1\\1 \epm
+		\]
+		\[
+			\omega_2^2 = u,\quad \vect a_2 = \frac{1}{\sqrt 2}\bpm 1\\-1\\0\\0\epm
+		\]
+		\[
+			\omega_3^2 = u+2v,\quad \vect a_3 = \frac{1}{\sqrt 2} \bpm 1\\1\\0\\0 \epm
+		\]
+		\[
+			\omega_4^2 = \frac{2v}{\sin^2\theta},\quad \vect a_4 =  \bpm 0\\0\\1\\-1 \epm.
+		\]
+		Stopping for a moment to analyze what these motions mean, we find they are in agreement with the types of oscillations we
+		intuitively expect.
+		\\
+		\\
+	%2
+		\item
+		A top in a uniform gravitational field consists of a homogeneous, circular disc of radius $r$, and a massless axle of length $r/2$
+		perpendicular to the disc through its center. The axle is connected by a joint to a point $A$ on the periphery of a horizontal circular
+		merry-go-round of radius $R$, so that the axle of the top can pivot with negligible friction in a vertical plane containing the axle of the
+		merry-go-round. The merry-go-round has the constant angular velocity $\Omega$ about its axle, and the top has the constant angular
+		velocity $\omega$, relative to the merry-go-round, about its axle. Find the magnitude of the angle $\alpha$ between the axle of the top
+		and the verticle.
+		
+		\figg[width=80mm]{15W2.png}
+		
+		A few hints: This problem might be easiest if one uses (and compares) a top-fixed and a space-fixed coordinate system. How do they 
+		convert (especially since one is time dependent, the other is not)? Show during your calculation that the absolute value of the torque
+		on the top is given by 
+		\[
+			|\vect N| = \frac{r}{2}mg\sin\alpha+\frac{r}{2}m\Omega^2(R+\frac{r}{2}\sin\alpha)\cos\alpha.
+		\]
+		Since you are looking for the equilibrium angle $\alpha$, it is fine to set $\dot\alpha = 0$ throughout the problem. 
+		\\
+		\\
+		The hint seemed to derail me. Take the lagrangian of the system - center of mass plus rotation about center of mass. Rotation
+		about it is simple. Center of mass motion is most easily decomposed in cartesian form. In the end, you find your equation of motion
+		\[
+			\frac{1}{4}m\ddot{\alpha} = \frac{r}{2}mg\sin\alpha+\frac{r}{2}m\Omega^2(R+\frac{r}{2}\sin\alpha)\cos\alpha
+		\]
+		The LHS represents the generalized torque for variable $\alpha$. Setting this net torque to zero allows one to find the
+		equilibrium angle. Earlier I found equilibrium by setting the generalized forces
+		\[
+			-\pdiff[V]{q_i} = Q_i = 0.
+		\]
+		Here we essentially just set $\dot\alpha = 0$. Have not gotten to the bottom of this disparity yet. 
+	% 3
+		\item A uniform rigid rod $AB$ of mass $M$ and length $L$ is free to rotate smoothly (in a vertical plane $\chi$) about a
+		horizontal axis through $A$ (fixed).
+		\benum
+			% (a)
+			\item
+			When the rod is hanging vertically at rest with $B$ below $A$, a bullet of mass $m$, moving horizontally in $\chi$ with
+			speed $v$ perpendicular to the rod, hits the rod and get embedded in it at $B$. What is the \emph{initial angular speed} 
+			of the rod immediately after this impact? Briefly justify your answer explaining why your approach in valid.
+			\\
+			\\
+			First note that this must be an inelastic collision as some kinetic energy must be lost to the deformation of the bullet/rod. 
+			Had this been a perfectly elastic collision, the bullet would transfer all its K.E. to the rod and thus be static post-collision. 
+			Two objects sticking to one another after collision represents a maximally inelastic collision. Being inelastic, we cannot use 
+			the conservation of energy in determining the initial speed $\omega$. In fact, momentum is not conserverd either, as there
+			exists an external force at the hinge that acts to resist linear motion. Such an external force applies no torque on our system since 
+			$\vect r_{hinge} = 0$. However, gravity \emph{will} induce a net torque on our system as soon as the rod begins to pivot. Thus we 
+			may conclude that initially angular momentum is conserved, but as soon as the rod begins to pivot
+			\[
+				\frac{d\vect L}{dt}\ne 0.
+			\]
+			To calculate the initial angular velocity of the particle, we relate the angular momentum just before collision to that just 
+			after
+			\[
+				lmv = I\omega.
+			\]
+			Choosing a coordinate system in which $\vect \omega = \omega\vecth x$ with origin at the pivot, we have
+			\[
+				I_{zz} = 0
+			\]
+			\[
+				I_{xx}=I_{yy}= \int_{-l}^0 \frac{M}{l}z^2 = \frac{1}{3}Ml^2.
+			\]
+			We must also remember to add the contribution due to the bullet, 
+			\[
+				I = \frac{1}{3}Ml^2+ml^2
+			\]
+			so the angular momentum is 
+			\[
+				\vect L = \plr{\frac{1}{3}Ml^2+ml^2}\omega\vecth x.
+			\]
+			Equating the initial momentum to the angular momentum of the system immediately after impact
+			\[
+				lmv = I\omega
+			\]
+			\[
+				\omega = \frac{lmv}{I}
+			\]
+			with $I$ given as above. 
+			% (b)
+			\item
+			If the impact is \emph{barley sufficient} to make the rod horizontal, find the \emph{initial speed $v$} of the bullet, 
+			before the impact (in terms of $l$ and $m$). Again, justify your answer explaining why your approach is valid.
+			\\
+			\\
+			Gravity, being a conservative force means that the total mechanical energy of the system ($U=T+V$) is conserved. This
+			is true only if the pivot is frictionless of course. Operating on that assumption, we may equate the initial kinetic energy of the 
+			system to that of the difference in gravitational potential in order to find the speed $v$ that makes the rod horizontal. The 
+			potential due to gravity is 
+			\[
+				V = m_i\vect r_i\cdot\vect g.
+			\] 
+			With the definition of the location of the center of mass being 
+			\[
+				\vect R = \frac{\sum_i m_i\vect r_i}{\sum_i m_i}
+			\]
+			we have
+			\[
+				V = M\vect R\cdot \vect g.
+			\]
+			The location of the center of mass along the direction of the rod is simply
+			\[	
+				r' = \frac{M\pfrac{l}{2}+ml}{M+m}.
+			\]
+			Defining the gravitational potential of the system immediately after collision as $V=0$, the gravitational potential 
+			when the rod is horizontal is then
+			\[
+				V = (M+m)r'g.
+			\]
+			Finally equating the potential to the kinetic energy,
+			\[
+				\frac{1}{2}I\omega^2 = (M+m)r'g
+			\]
+			substituting $\omega$
+			\[
+				\frac{1}{2}Il^2m^2v^2 = (M+m)r'g. 
+			\]
+			We shall leave $v$ in this implicit form.
+			\\
+			\\ 
+			\item
+			% (c)
+			If the hinge at $C$ is not smooth, are your answers to (a) and (b) still valid? Explain briefly. (No calculations here.)
+			\\
+			\\
+			With friction present at the hinge, this introduces an external torque acting on the system as the rod rotates. In the limit
+			that the frictional torque becomes very large, we know the rod does not move. Thus, its initial angular velocity $\omega
+			\approx 0$. In addition, the torque friction causes a loss in energy so conservation of mechanical energy cannot be used. 
+			Therefore, the answers to (a) and (b) no longer remain valid. 
+		\eenum
+		
+	% 4
+		\item Three identical objects, each of mass $m$, are connected by springs of spring constant $k$ as shown in the
+		figure. The motion is confined to one dimension. At $t=0$, the masses are at rest at their equilibrium positions. Mass $A$
+		is subjected to a force of $F = f\cos(\omega t)$, $t>0$. Calculate the motion of mass $C$. All surfaces are frictionless.
+		
+		\figg[width = 100mm]{15W4.png}
+		
+		First for the homogeneous system without the driving force,
+		\[
+			V = \frac{1}{2}k\blr{(\eta_2-\eta_1)^2+(\eta_3-\eta_2)^2}
+		\]
+		and
+		\[
+			T = \frac{1}{2}m(\dot\eta_1^2+\dot\eta_2^2+\dot\eta_3^2). 
+		\]
+		As we can see, $V$ is already in its quadratic form, so its first order approximation is exact. In other words
+		\[
+			V \approx \frac{1}{2}\elr{\plr{\pdifff{V}{q_i,q_j}}}_{eq}\eta_i\eta_j = V.
+		\]
+		In definiing
+		\[
+			T = \frac{1}{2}T_{ij}\dot\eta_1\dot\eta_2, \quad
+			V = \frac{1}{2}V_{ij}\eta_1\eta_2
+		\]
+		we see that
+		\[
+			T_{ij} = \bpm m&0&0\\0&m&0\\0&0&m \epm
+		\]
+		\[
+			V_{ij} = \bpm k&-k&0\\-k&2k&-k\\0&-k&k \epm.
+		\]
+		Now our Lagrangian takes the form 
+		\[
+			\mathcal{L} = \frac{1}{2}\plr{T_{ij}\dot\eta_i\dot\eta_j-V_{ij}\eta_i\eta_j}
+		\]
+		with an equation of motion as
+		\[
+			\frac{1}{2}T_{ij}\ddot{\eta_j}+\frac{1}{2}V_{ij}\eta_j = 0. 
+		\]
+		If we guess a solution of the form
+		\[
+			\eta_i = a_ie^{i\omega t}
+		\]
+		then we find
+		\[
+			(V_{ij}-T_{ij}\omega^2)a_i  = 0.
+		\]
+		This is our homogeneous set of linear equations, which can only have a nontrivial solution (must not be invertible) if
+		\[
+			|V_{ij}-\omega^2T_{ij}| = 0. 
+		\]
+		Solving for the roots of the secular equation, we find the roots of
+		\[
+			\omega_1 = 0,\quad \omega_2 = \sqrt\frac{k}{m},\quad \omega_3 = \sqrt{\frac{3k}{m}}.
+		\]
+		We may solve for the eigenvectors of each frequency. We will either need to choose a normalization condition, or express
+		two components in terms of one component (set one component constant in other words). Doing such, we find
+		\[
+			\omega_1 = 0,\quad C\bpm 1\\1\\1 \epm
+		\]
+		\[
+			\omega_2 = \sqrt\frac{k}{m},\quad C\bpm 1\\0\\-1 \epm
+		\]
+		\[
+			\omega_3 = \sqrt\frac{3k}{m},\quad \bpm 1\\-2\\1 \epm .
+		\]
+		The position of each mass over time may be given as a linear combination of the homogeneous solutions
+		\[
+			\bpm \eta_1(t)\\ \eta_2(t) \\ \eta_3(t) \epm  = C_1 \bpm 1\\1\\1 \epm e^{i\omega_1t}
+			+ C_2 \bpm 1\\0\\-1 \epm e^{i\omega_2 t}
+			+ C_3 \bpm 1\\-2\\1 \epm e^{i\omega_3t}
+		\]
+		where $C_1$, $C_2$, and $C_3$ represent the initial conditions at $t=0$. These scale factors are complex, and thus may be 
+		decomposed into real and imaginary parts. 
+	\eenum
+	
+% 2012 Winter ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\phantom{}
+\subsection*{2012 Winter}
+\phantom{}
+	\benum
+	% 1
+		\item
+		Let us define $D = \frac 12(xp+px)$, where $x$ is the position operator and $p$ the momentum operator in one dimension.
+		\benum
+			% (a)
+			\item
+			Calculate $[D,x^m]$ and $[D,p^n]$ where $m$ and $n$ are integers.
+			\\
+			\\
+	
+			% (b)
+			\item
+			Consider the Hamiltonian operator $\ds H = \frac{p^2}{2m}+V(x)$ with the potential $V(x) = \alpha x^\beta$ where $\alpha$ and 
+			$\beta$ are real non-zero constants. Calculate $U(\lambda)HU^\dag(\lambda)$ with $U(\lambda) = \exp(i\lambda D/\h)$.
+	
+				
+			% (c)
+			\item
+			There is a value for $\beta$ in the potential $V(x) = \alpha x^\beta$ for which the Hamiltonian in part (b) transforms as 
+			$U(\lambda)HU^\dag(\lambda) = f(\lambda)H$. What is the function $f(\lambda)$?
+			\\
+			\\
+			We can easily see that for $\beta = -2$ we could express
+			\[
+				U(\lambda)HU^\dag(\lambda) = \exp(-2\lambda)H
+			\]
+			and thus
+			\[
+				f(\lambda) = \exp(-2\lambda).
+			\]
+			\\
+			\\
+			Hints: Recall the identity for two non-commuting linear operators $A$ and $B$:
+			\[
+				\exp(\lambda A)B\exp(-\lambda A) = B+\frac{\lambda^1}{1!}[A,B]+\frac{\lambda^2}{2!}[A,[A,B]]+\frac{\lambda^3}{3!}
+				[A,[A,[A,B]]]+...
+			\]
+			You may do the mathematics formally, ignoring issues such as the precise definitions and domains of various operators.
+		\eenum
+	% 2
+		\item
+		In this astrophysics exercise denote the mass, radius and rotation angular velocity of the Earth by $M_e$, $R_e$, and 
+		$\omega_e$. A small asteroid with mass $m\ll M_e$ strikes the assumedly perfectly spherical Earth at the co-latitude (polar angle) 
+		$\theta$. Assume the sole effect of the asteroid is to deposit its mass at the point of impact. This breaks the full rotation symmetry of
+		the Earth, and thus fixes the direction for one principle axis of rotation.
+		\benum
+			% (a)
+			\item
+			Show that the new moments of inertia are $I_1 = I_2 = \frac{2}{5}M_eR_e^2+mR_e^2+\mathcal O(m^2)$, 
+			$I_3 = \frac{2}{5}M_eR_e^2$.
+			\\ \\
+			For an object there exists an orientation of body fixes axes such that the inertia tensor is in diagonal form. The eigenvalues or
+			elements of this diagonal matrix are the principle moments of inertia (not to be confused with the moment of inertia, which is 
+			defined as $I = \vect \omega\cdot \vect I\cdot \omega$). Given an origin and orientation of the principle axes, the principle 
+			moments of inertia can be calculated by using
+			\[
+				I_{\alpha\beta} = \int \rho(\vect r)(\delta_{\alpha\beta}r^2-r_\alpha r_\beta)dV.
+			\]
+			For the case at hand, we have a sphere which possesses full rotational symmetry. Thus $I_1 = I_2 = I_3$. With the origin of 
+			the body axes placed at the center of the sphere, we may calculate $I_i = \frac{2}{5}M_e R_e^2$. When the asteroid impacts 
+			the Earth, it deposits a mass $m$ located at some point $\vect r_0$ where $|\vect r_0| = R_e$. Having broke the rotational 
+			symmetry, the body axes we defined prior no longer serve as the principle axes. We must choose a new orientation of body 
+			axes for $\vect I$ to be in diagonal form. A simple choice is to place the body $z$-axis through the point of impact such that 
+			we have symmetry always lying in the $x$-$y$ plane, i.e. $I_1 = I_2$. The new principle moments of inertia are calculated by 
+			adding the contribution due to the asteroid. Since the asteroid mass is located at $(x,y) = (0,0)$, the added contribution can
+			be calculated to be $I' = mR_e^2$. Thus we have shown that the new principle moments of inertia are
+			\[
+				I_1 = I_2 = \frac{2}{5}M_e R_e^2+mR_e^2
+			\]
+			\[
+				I_3 = \frac{2}{5}M_eR_e^2.
+			\]
+			\\
+			Choosing these new principle axes, however, means that the axis of rotation $\vect \omega$ no longer lies along a principle 
+			axis. Therefore, as the body rotates about $\vect \omega$ the moments of inertia (from the space frame) change. In order to 
+			conserve angular momentum, $\vect \omega$ itself must also change accordingly. What we find is that in the body frame, 
+			$\vect \omega$ and $\vect L$ precess around the principle $z$-axis at a precession rate $\Omega$. In the space fixed frame, we 
+			see that $\vect \omega$ and the $z$-axis of the body frame precess around the angular momentum vector $\vect L$. If the angular 
+			momentum were to remain in the same direction as before the collision, then the body $z$-axis would precess about
+			the north pole with the precession frequency. 
+			\\ \\
+			The result is that the axis of the Earth starts precessing about an axis that goes through the center of the Earth and the point 
+			of the impact.\\
+			% (b)
+			\item
+			Find the angular frequency of the precession.
+			\\
+			\\
+			To quantify the above discussion, we use Euler's equations of motion for a rigid body. Starting with 
+			\[
+				\vect N = \frac{d\vect L}{dt} 
+			\]
+			we can express the change of a vector as seen in the space frame to that in body frame which is rotating by
+			\[
+				\plr{\frac{d\vect L}{dt}}_s = \plr{\frac{d\vect L}{dt}}_b +\vect\omega \times \vect L.
+			\]
+			Taking the body axis as the principle axis and expanding the equations, we arrive at Euler's equations of motion
+			\[
+				I_1\dot{\omega_1}-\omega_2\omega_3(I_2-I_3) = N_1
+			\]
+			\[
+				I_2\dot{\omega_2}-\omega_3\omega_1(I_3-I_1) = N_2
+			\]
+			\[
+				I_3\dot{\omega_3}-\omega_1\omega_2(I_1-I_2) = N_3.
+			\]
+			Note that $\vect \omega$ and $\vect L$ are taken with respect to the body frame. For our problem there are no torques 
+			applied and $I_1=I_2$, thus we have
+			\[
+				I_1\dot{\omega_1} = (I_1-I_3)\omega_3\omega_2
+			\]
+			\[
+				I_1\dot{\omega_2}= (I_3-I_1)\omega_3\omega_1
+			\]
+			\[
+				I_3\dot{\omega_3} = 0. 
+			\]
+			First we see that $\omega_3 = \omega_e\cos\theta$. If we define
+			\[
+				\Omega = \omega_3\frac{I_3-I_1}{I_1}
+			\]
+			then we can express the last two EOM as
+			\[
+				\dot{\omega_1}  = -\Omega \omega_2
+			\]
+			\[
+				\dot{\omega_2} = \Omega\omega_1. 
+			\]
+			Applying another time derivative
+			\[
+				\ddot{\omega_1} = -\Omega\dot{\omega_2} = -\Omega^2\omega_1
+			\]
+			we find
+			\[
+				\omega_1 = A\cos(\Omega t).
+			\]
+			where $A$ is the amplitude of $\omega_1$ at $t=0$.
+			Using this result we find 
+			\[
+				\omega_2 = A\sin(\Omega t).
+			\]
+			We conclude that the vector $\omega_1\vecth x +\omega_2 \vecth y$ has constant magnitude and precesses around the
+			$\vecth z$ with frequency $\Omega$. Expressed in terms of the initial problem, the rate of precession is
+			\[
+				\Omega = \omega_e\cos\theta\plr{\frac{mR_e^2}{\frac{2}{5}M_eR_e^2+mR_e^2}}. 
+			\]
+		\eenum
+	% 3
+		\item
+		A particle of mass $m$ and electric charge $q$ is constrained to move in a tightly confining ring of radius $R$; call the remaining 
+		coordinate along the ring $x$. The motion along $x$ is free, i.e., there are no forces acting on the particle in the direction $x$.
+		Determine:
+		\benum
+			% (a)
+			\item
+			Eigenvalues and eigenfunctions of energy.
+			% (b)
+			\item
+			The maximum value of the electric current $I$ in the first excited state.
+			\\
+			\\
+			Hint: The current density of a quantum particle is $\ds\vect j = \frac{i\h q}{2m}(\psi\del\psi^*-\psi\del\psi)$.
+		\eenum	
+	% 4
+		\item
+		Problem
+		\benum
+			% (a)
+			\item
+			
+			% (b)
+			\item
+			% (c)
+			\item
+		\eenum
+	% 5
+		\item
+		Consider the Hamiltonian
+		\[
+			H = E_1\ket 1\bra 1+E_2\ket 2\bra 2+V\ket 2\bra 1 +V^*\ket 1\bra 2
+		\]
+		with $|V|\ll |E_2-E_1|$.
+		\benum
+			% (a)
+			\item
+			Find the eigenvalues of energy and the corresponding normalized eigenstates up to the lowest nontrivial order in the
+			strength of the perturbation $V$. Denote these by $E'_1$, $\ket{1'}$ and $E'_2$, $\ket{2'}$, with $E'_1\to E_1$ as $V\to 0$ 
+			and so on.
+			% (b)
+			\item
+			Suppose we are studying transitions from yet another state $\ket g$ to the states $\ket 1$ and $\ket 2$ governed by the operator
+			$D$, and have the known transition matrix elements $\braket{1|D|g}=d$, $\braket{2|D|g}=0$. At this level the transition $g\to 2$ is 
+			evidently forbidden. However, the perturbation $V$ leads to a small admixture of the original state $\ket 1$ in the state $\ket{2'}$. 
+			Thus a transition that to an observer unaware of the existence of the perturbation $V$ might seem to be $g\to 2$ is possible after 
+			all. Find the corresponding matrix element $\braket{2'|D|g}$. 
+		\eenum
+	\eenum
+	
+% 2014 Winter ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\phantom{}
+\subsection*{2014 Winter}
+\phantom{}
+	\benum
+	% 1
+		\item
+		Let $H = H_{kin} + V(\vect x)$ be a single-particle Hamiltonian operator with $H_{kin} = \frac{\vect p^2}{2m}$ and $m$ the
+		mass of the particle. Consider the operator $D = \frac{1}{2}(\vect x\cdot\vect p +\vect p\cdot\vect x)$.
+		\benum
+			% (a)
+			\item
+			Calculate the commutators $[D, \vect x]$ and $[D,\vect p]$.
+			\\
+			% (b)
+			\item
+			Calculate $[D, F(\vect x)]$ and $[D,G(\vect p)]$ where $F$ and $G$ are differentiable functions. You may want to
+			work out the commutators in position or momentum space.
+			\\
+			% (c)
+			\item
+			Let $H\ket{E_i} = E_i\ket{E_i}$. Calculate $[D,H]$ and prove that $2\braket{E_i|H_{kin}|E_i} = 
+			\braket{E_i|\vect x\cdot\del V(\vect x)|E_i}$, which is the quantum mechanical virial theorem. 
+		\eenum
+	\eenum
+\end{document}

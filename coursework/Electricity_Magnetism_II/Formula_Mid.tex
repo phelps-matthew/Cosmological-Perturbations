@@ -1,0 +1,115 @@
+\documentclass[9pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\begin{document}
+\noindent Radiation zone: $d\ll \lambda \ll r$
+\[
+	\vect B = \del\times \vect A = i\vect k\times\vect A,\qquad \vect E = c(\vect B\times \vecth e_k)
+\]
+\[
+	\vect S = \frac{c B^2}{\mu_0}\vecth e_k,\qquad I = \diff[P]{\Omega} = Sr^2
+\]
+\[
+	t' = t-\frac{r}{c}
+\]
+Electric Dipole:
+\[
+	\vect p = \int d^3r'\ \vect r' \rho(\vect r')
+\]
+\ba
+	\vect A &= \frac{\mu_0}{4\pi r} \dot{\vect p}(t')\\
+	& = -\frac{i\omega\mu_0}{4\pi }\frac{e^{i(kr-\omega t)}}{r}\vect p_\omega \quad (\text{Harmonic})
+\ea
+\[
+	\vect B = \frac{\mu_0 ck^2}{4\pi}\frac{e^{i(kr-\omega t)}}{r} (\vecth e_k\times\vect p_\omega)\quad (\text{Harmonic})
+\]
+\[
+	\vect S = \frac{\mu_0 c^3 k^4}{16\pi^2 r^2}p_\omega^2\sin^2\theta\cos^2(kr-\omega t)\vecth e_k
+	\quad (\text{Harmonic})
+\]
+\[
+	I = \frac{\ddot{\vect p}^2}{4\pi c^3}\sin^2\theta
+\]
+\[
+	P_{total} = \frac{2}{3c^3} \ddot{\vect p}^2
+\]
+Magnetic Dipole:
+\[
+	\vect m = \frac{1}{2}\int d^3r'\ \vect r'\times \vect j(\vect r')
+\]
+\ba
+	\vect A &= \frac{\mu_0}{4\pi rc} \dot{\vect m}(t')\times\vecth e_k\\
+	& = -\frac{i\omega\mu_0}{4\pi c }\frac{e^{i(kr-\omega t)}}{r}(\vect m_\omega\times \vecth e_k)
+	\quad (\text{Harmonic})
+\ea
+\[
+	\vect B = \frac{\mu_0 k^2}{4\pi}\frac{e^{i(kr-\omega t)}}{r}(\vecth e_k\times \vect m_\omega)\times \vecth e_k
+	\quad (\text{Harmonic})
+\]
+\[
+	\vect S = \frac{c\mu_0 k^4}{16 \pi^2}m_\omega^2\sin^2\theta\frac{\cos^2(kr-\omega t)}{r^2}
+	\quad (\text{Harmonic})
+\]
+\[
+	P_{total} = \frac{2}{3c^3}\ddot{\vect m}^2
+\]
+Quadrupole:
+\[
+	Q_\alpha(\vecth e_k) = \sum_\beta Q_{\alpha\beta}(\vecth e_k)_\beta
+\]
+\[
+	Q_{\alpha\beta} = \int d^3x\ (3x_\alpha x_\beta-\delta_{\alpha\beta}r^2)\rho(\vect x)
+\]
+\ba
+	\vect A &= \frac{\mu_0}{24\pi r c}\ddot{\vect Q}_k(t')\\
+	& = -\frac{\mu \omega^2}{24\pi c}\frac{e^{i(kr-\omega t)}}{r} \vect Q_\omega
+	\quad (\text{Harmonic})
+\ea
+\[
+	\vect B = -\frac{i\mu_0 ck^3}{24\pi}\frac{e^{i(kr-\omega t)}}{r}(\vecth e_k\times\vect Q_k)
+	\quad (\text{Harmonic})
+\]
+\[
+	\braket{ I}_t= \frac{\mu_0\omega^6}{1152\pi^2c^3}|(\vecth e_k\times \vect Q_k)\times \vecth e_k|^2
+	\quad (\text{Harmonic})
+\]
+\[
+	P_{total} = \frac{1}{180c^3}\dddot{\vect Q}_k^2
+\]
+\newpage
+\noindent Radiation by accelerated charge:
+\[
+	P = \frac{2q^2}{3c^3}|\ddot{\vect r}|^2
+\]
+\[
+	I(\theta) = \frac{q^2}{4\pi c^3}|\ddot{\vect r}|^2\sin^2\theta
+\]
+Scattering:
+\[
+	d\sigma(\vecth e_k) = \diff[P]{S_0} = I(\theta)\diff[\Omega]{S_0}
+\]
+\[
+	\diff[\sigma]{\Omega} = \frac{I(\theta)}{S_0}
+\]
+\[
+	\sigma_{total} = \frac{P}{S_0}
+\]
+\[
+	\vect S_0 = \frac{c}{4\pi}E_0^2\cos^2(kr-\omega t)\vecth e_k
+	\quad (\text{Plane Waves})
+\]
+\[
+	|\vect S_0| = \frac{c}{4\pi}E_0^2
+	\quad (\text{Constant Field})
+\]
+\[
+	\sigma_{total} = \frac{8\pi}{3}\pfrac{e^2}{m_3 c^2}^2 = \frac{8\pi}{3}r_0^2
+	\quad (\text{Free electron, incoming plane wave})
+\]
+\[
+	\sigma_{total} = \frac{8\pi}{3}r_0^2\pfrac{\omega^2}{\omega^2-\omega_0^2}^2
+	\quad (\text{Harmonically bound electron, incoming plane wave})
+\]
+
+\end{document}
+

@@ -1,0 +1,479 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{Electrodynamics II\\HW 4}
+\author{Matthew Phelps}
+\date{Due: April 27}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item
+A particle moving with velocity $V$ dissociates ``in flight" into two particles. Determine the relation between the angles of emergence of these particles and their energies.
+\\ \\
+Define $\theta$ as the angle of emergence in the Lab Frame, and $\mathscr E_0$ energy in c.o.m. frame and 
+$\mathscr E$ as lab frame energy. Then ($c=1$ units)
+\[
+	\mathscr E_0 = \frac{\mathscr E-Vp\cos\theta}{\sqrt{1-V^2}}
+\]
+\[
+	\Rightarrow \cos\theta = \frac{\mathscr E - \mathscr E_0\sqrt{1-V^2}}{V\sqrt{\mathscr E^2-m^2}}
+	= \frac{\mathscr E - \mathscr E_0\sqrt{1-V^2}}{Vp}
+\]
+For $m_1 = m_2$ then $\theta_1=\theta_2$ in the L.F. In c.o.m. frame, particles are separated by $\pi$ (for $m_1 = m_2$).
+\\
+Taking our original equation
+\[
+	\mathscr E^2(1-V^2\cos^2\theta)-2\mathscr E\mathscr E_0 \sqrt{1-v^2}+\mathscr E_0^2(1-V^2)+V^2m^2
+	\cos^2\theta = 0
+\]
+solving for $\mathscr E$
+\[
+	\mathscr E = \frac{2\mathscr E_0 \sqrt{1-V^2}\pm 2V\cos\theta \sqrt{\mathscr E_0^2(1-V^2)-m^2(1-V^2
+	\cos^2\theta)}}{2(1-V^2\cos^2\theta)}.
+\]
+\\ \\
+% 2------------------------------------------------------------------------------------
+\item
+For the collision of two particles of equal mass $m$, express $\mathscr{E}_1'$, $\mathscr{E_2'}$, $\chi$ in terms
+of the angle $\theta_1$ of scattering in the L-system.
+\\ \\
+\[
+	p_1p_1'\cos\theta_1 = \mathscr E_1'(\mathscr E_1+m)-\mathscr E_1m-m^2.
+\]
+Use $c=1$ units. Now use the energy momentum relation
+\[
+	p_i^2 = \mathscr E_i^2-m_i^2
+\]
+\[
+	\Rightarrow (\mathscr E_1^2-m_1^2)(\mathscr E_1'^2 - m^2)\cos^2\theta_1 = 
+	(\mathscr E_1+m)^2(\mathscr E_1'-m)^2
+\]
+\[
+	\Rightarrow \mathscr E_1'\cos^2\theta_1(\mathscr E_1-m)+m_1\cos^2\theta_1(\mathscr E_1-m)
+	= \mathscr E_1'(\mathscr E_1+m)-m(\mathscr E_1+m)
+\]
+\[
+	\Rightarrow \mathscr E_1' = \frac{m_1\plr{ (\mathscr E_1+m)+(\mathscr E_1-m)\cos^2\theta}}{(\mathscr E_1
+	+m)-(\mathscr E_1-m)\cos^2\theta_1}.
+\]
+\\ \\
+Using energy conservation
+\ba
+	\mathscr E_2' &= \mathscr E_1+m-\mathscr E_1' = \mathscr E_1+m-m
+	\frac{\plr{(\mathscr E_1+m_1)+(\mathscr E_1-m)\cos^2\theta_1}}{(\mathscr E_1+m)-(\mathscr E_1-m)
+	\cos^2\theta_1}\\
+	& = m+\blr{ \frac{\mathscr E_1(2m)+\mathscr E_1(\mathscr E_1-m)\sin^2\theta_1 - 2m\mathscr E_1 
+	+ m(\mathscr E_1-m)\sin^2\theta_1}{2m+(\mathscr E_1-m)\sin^2\theta_1}}\\
+	\mathscr E_2& = m+\blr{ \frac{(\mathscr E_1^2-m^2)\sin^2\theta_1}{2m+(\mathscr E_1-m)\sin^2\theta_1}}
+\ea
+\\ 
+Lastly, for $\chi$
+\[
+	\mathscr E_1' = \mathscr E_1 - \frac{(\mathscr E_1-m)}{2}(1-\cos\chi)
+\]
+\[
+	\Rightarrow \mathscr E_1'-\mathscr E_1 - m = 
+	- m - \frac{(\mathscr E_1-m)}{2}(1-\cos\chi).
+\]
+Now use
+\[
+	\mathscr E_1'-\mathscr E_1-m = -\mathscr E_0'
+\]
+to arrive at
+\[
+	\mathscr E_2' = m+\frac{(\mathscr E_1-m)}{2}(1-\cos\chi).
+\]
+\[
+	\Rightarrow 2(\mathscr E_2' - m) = \frac{2(\mathscr E_1^2-m^2)\sin^2\theta_1}{2m+(\mathscr E_1-m)			\sin^2\theta_1} = (\mathscr E_1-m)(1-\cos\chi)
+\]
+Solve for $\chi$
+\[
+	\cos\chi = 1-\blr{\frac{ 2(\mathscr E_1+m)\sin^2\theta_1}{2m+(\mathscr E_1-m)\sin^2\theta_1}}
+\]
+\[
+	\Rightarrow \cos\chi = \frac{2m-(\mathscr E_1+3m)\sin^2\theta_1}{2m+(\mathscr E_1-m)\sin^2\theta_1}
+\]
+% 3------------------------------------------------------------------------------------
+\item
+Express the acceleration of a particle in terms of its velocity and the electric and magnetic field intensities.
+\\ \\
+Given the Lorentz force
+\[
+	\diff[\vect p]{t} = e\vect E +\frac{e}{c}(\vect v\times \vect H)
+\]
+substitute relation for $\vect p$
+\[
+	\vect p = \frac{\vect v \mathscr E_k}{c^2},\qquad \mathscr E_k = \frac{mc^2}{\sqrt{1-v^2/c^2}}
+\]
+then
+\ba
+	\Rightarrow \diff[\vect p]{t} &= \dot v \frac{\mathscr E_k}{c^2}+\frac{v\dot{\mathscr E_k}}{c^2}\\
+	&= \dot v \pfrac{\mathscr E_k}{c^2} + \frac{v}{c^2}e\vect E\cdot \vect v\\
+	& = \dot v\pfrac{\mathscr E_k}{c^2} +\frac{e}{c^2}\vect v(\vect v\cdot \vect E)
+\ea
+where $\dot{\mathscr E_k} = e\vect E\cdot \vect v$.
+Thus
+
+we have
+\[
+	\dot v = \frac{e}{m}\sqrt{1-\pfrac{v}{c}^2}\plr{ \vect E +\frac{1}{c}(\vect v\times \vect H)-\frac{1}{c^2}
+	\vect v(\vect v\cdot \vect E)}.
+\]
+\ba
+	\dot v\pfrac{\mathscr E_k}{c^2} &= c\vect E +\frac{e}{c}(\vect v\times \vect H)
+	 - \frac{e}{c^2}\vect v(\vect v\cdot\vect E)\\
+	 & = \frac{ec^2}{\mathscr E_k} \plr{ \vect E + \frac{1}{c}(\vect v\times \vect H)-\frac{1}{c^2}
+	 \vect v(\vect v\cdot \vect E)}
+\ea
+Now using the energy relation
+\[
+	\mathscr E_k = \frac{mc^2}{\sqrt{1-(v/c)^2}}
+\]
+we have
+\[
+	\dot v = \frac{e}{m}\sqrt{1-(v/c)^2}\plr{\vect E+\frac{1}{c}(\vect v\times \vect H)-\frac{1}{c^2}
+	\vect v(\vect v\cdot \vect E)}
+\]
+\\ \\
+% 4------------------------------------------------------------------------------------
+\item
+Determine the relativistic motion of a charge in electric and magnetic fields which are mutually perpendicular and equal
+in magnitude.
+\\ \\
+Using the lorentz force
+\[
+	\diff[p]{t} = e\vect E+\frac{e}{c}(\vect v\times \vect H)
+\]
+we have
+\[
+	\dot p_x = \frac{e}{c} Ev_y;\qquad \dot p_y = eE(1-\frac{v_x}{c});\qquad \dot p_z = 0.
+\]
+Now we use
+\[
+	\dot{\mathscr E_k} = e\vect E\cdot \vect v,\qquad \mathscr E_k = \frac{mc^2}{\sqrt{1-(v/c)^2}}
+\]
+so
+\[
+	\dot{\mathscr E}_k = eEv_y,\qquad \dot p_x = \frac{\dot{\mathscr E_k}}{c} 
+	\Rightarrow \mathscr E_k - cp_x = const = \gamma
+\]
+From this
+\ba
+	\mathscr E_k^2 &= m^2c^4 +c^2(p_x^2+p_y^2+p_z^2)\\
+	& = c^2p_x^2+c^2p_y^2+\mathscr E^2
+\ea
+where we have used
+\[
+	\mathscr E^2 = m^2c^4+c^2p_z^2= const.
+\]
+We may rewrite this as
+\ba
+	\mathscr E_k^2 -c^2p_x^2 &= c^2p_y^2 +\mathscr E^2\\
+	(\mathscr E_k-cp_x)(\mathscr E_k+cp_x)& = c^2p_y^2 +\mathscr E^2\\
+	\gamma(\mathscr E_k+cp_x) & = c^2 p_y^2+\mathscr E^2
+\ea
+thus
+\[
+	\mathscr E_k +cp_x = \frac{1}{\gamma}(c^2p_y^2+\mathscr E^2)
+\]
+Forging onward, we use the relations
+\[
+	\mathscr E_k = \frac{\gamma}{2} + \frac{c^2p_y^2+\mathscr E^2}{2\gamma}
+\]
+\[
+	p_x = -\frac{\gamma}{2c}+\frac{c^2p_y^2+\mathscr E^2}{2\alpha c}
+\]
+\[
+	\dot p_y = eE(1-v_x/c) \Rightarrow eE(\mathscr E_k-cp_x) = eE\gamma
+\]
+and we integrate over time
+\[
+	eE\gamma \int dt = \int dp_y\ \plr{\frac{\gamma}{2}+\frac{\mathscr E^2}{2\gamma}+\frac{c^2p_y^2}{2\gamma}}
+\]
+\[
+	\Rightarrow eE\gamma t = p_y \plr{\frac{\gamma}{2} + \frac{\mathscr E^2}{2\gamma}}+
+	\frac{c^2p_y^3}{6\gamma}
+\]
+\[
+	\Rightarrow 2eE\gamma t= p_y\plr{1+\frac{\mathscr E^2}{\gamma^2}}+
+	\frac{c^2p_y^3}{3\alpha ^2}.
+\]
+Transforming our variables
+\[
+	\diff[x]{t} = \frac{c^2p_x}{\mathscr E_k} \Rightarrow dt =\frac{\mathscr E_k\ dp_y}{eE\gamma}
+\]
+\ba
+	\Rightarrow dx& = \frac{c^2p_x}{\mathscr E_k}dt\\
+	& = \frac{c^2}{eE\gamma}\plr{ -\frac{\gamma}{2c}+\frac{\mathscr E^2}{2\gamma c}+
+	\frac{c^2 p_y^2}{2\gamma c}}dp_y
+\ea
+Now integrate
+\[
+	x = \frac{c^2}{eEx}\plr{\frac{E^2}{2\gamma c}-\frac{\gamma}{2c}}p_y+
+	\frac{c^2p_y^3 c^2}{6\gamma c Ee\gamma}
+\]
+\[
+	x = \frac{c}{2eE}\plr{\frac{\mathscr E^2}{\gamma^2}-1}p_y + \frac{c^3p_y^3}{6\alpha^2 eE}.
+\]
+Now we repeat the same procedure to find both $y$ and $z$. Starting with
+\[
+	\diff[y]{t} = \frac{c^2p_y}{\mathscr E_k}\Rightarrow dy = \frac{c^2}{\mathscr E_k}p_y\frac{\mathscr E_k}{eE\gamma}
+	dp_y\Rightarrow dt = \frac{\mathscr E_k\ dp_y}{eEx}
+\]
+this leads to
+\[
+	y = \frac{c^2 p_y^2}{2\gamma eE}.
+\]
+As for the $z$ component
+\[
+	\diff[z]{t} = \frac{c^2 p_z}{\mathscr E_k} \Rightarrow dz = \frac{p_zc^2}{\mathscr E_k} \frac{\mathscr E_k dp_y}{eE\gamma}
+\]
+which leads to 
+\[
+	z = \frac{p_zc^2p_y}{eE\gamma}.
+\]\\ \\
+% 5------------------------------------------------------------------------------------
+\item
+Show explicitly that two successive Lorentz transformations in the same direction are equivalent to a single Lorentz 
+transformation with a velocity 
+\[
+	v = \frac{v_1+v_2}{1+(v_1v_2/c)}
+\]
+This is an alternative way to derive the parallel-velocity addition law.
+\\ \\
+First boost to S'
+\[
+	x_0' = \gamma_1(x_0-\beta_1 x_1),\qquad x_1' = \gamma_1(x_1-\beta_1 x_0)
+\]
+where we have
+\[
+	\gamma_1 = \frac{1}{\sqrt{1-(v_1/c)^2}},\quad \beta_1 = v_1/c
+\]
+and likewise for a boost to S''
+\[
+	x_0'' = \gamma_2(x_0'-\beta_2x_1'),\qquad x_1'' = \gamma_2(x_1'-\beta_2x_0')
+\]
+where again
+\[
+	\gamma_2 = \frac{1}{\sqrt{1-(v_2/c)^2}},\quad \beta_2 = v_2/c.
+\]
+Substitute these into each other
+\[
+	x_0'' = \gamma_2\gamma_1\plr{ (1+\beta_2\beta_1)x_0-(\beta_1+\beta_2)x_1}
+\]	
+\[
+	x_1'' = \gamma_2\gamma_1\plr{ (1+\beta_2\beta_1)x_1-(\beta_1+\beta_2)x_0}.
+\]
+The transformation to original frame S goes as
+\[
+	x_0'' = \gamma(x_0-\beta x_1)
+\]
+\[
+	x_1'' = \gamma(x_1-\beta x_0)
+\]
+where
+\[
+	\gamma = \frac{1}{\sqrt{1-(v/c)^2}},\quad \beta = v/c.
+\]	
+Matching the coefficients from the equations above
+\[
+	\gamma_2\gamma_1 (1+\beta_2\beta_1) = \gamma
+\]
+\[
+	\Rightarrow
+	\frac{1}{\sqrt{1-(v/c)^2}} = \frac{1}{\sqrt{1-(v_2/c)^2}}\frac{1}{\sqrt{1-(v_1/c)^2}}\plr{1+\frac{v_2 v_1}{c^2}}.
+\]
+Now solve for $v$
+\[
+	v = \sqrt{ c^2 - \frac{(1-(v_2/c)^2(1-(v_1/c)^2)}{\plr{1+v_2v_1/c^2}^2}}
+\]
+\[
+	\Rightarrow v = \frac{v_1+v_2}{1+(v_1v_2/c^2)}
+\]
+\\ \\
+% 6------------------------------------------------------------------------------------
+\item
+A coordinate system $K'$ moves with a velocity $\vect v$ relative to another system $K$. In $K'$ a particle has a 
+velocity $\vect u'$ and an acceleration $\vect a'$. Find the Lorentz transformation law for accelerations, 
+and show that in the system $K$ the components of acceleration parallel and perpendicular to $\vect v$ are
+\[
+	\vect a_{||} = \frac{\plr{1-\frac{v^2}{c^2}}^{3/2}}{\plr{1+\frac{\vect v\cdot \vect u'}{c^2}}^3} \vect a'_{||}
+\]
+\[
+	\vect a_{\perp} = \frac{\plr{1-\frac{v^2}{c^2}}}{\plr{1+\frac{\vect v\cdot \vect u'}{c^2}}^3}
+	\plr{\vect a_\perp'+\frac{\vect v}{c^2} \times (\vect a'\times \vect u')}
+\]
+\\ \\
+Let us perform a boost in the $x$ direction
+\[
+	x^0 = \gamma(x'^0 +\beta x'),\qquad x = \gamma(x'+\beta x'^0).
+\]
+Then for the K frame
+\[
+	\vect u = c\pdiff[\vect x]{x^0},\qquad \vect a= c\pdiff[\vect u]{x^0}
+\]
+and for the K' frame
+\[
+	\vect u' = c\pdiff[\vect x']{x'^0},\qquad \vect a' = c\pdiff[\vect u']{x'^0}.
+\]
+It follows that
+\[
+	\diff[x^0]{x'^0} = \gamma(1+\beta u_x'/c)
+\]
+and
+\[
+	\diff[x'^0]{x} = \frac{1}{\gamma(1+\beta u_x'/c)}
+\]
+and so
+\ba
+	u_x &= c\pdiff[x]{x^0}\\
+	& = c\diff[x'^0]{x^0}\diff[x]{x'^0}\\
+	& = \frac{c}{\gamma(1+\beta u_x'/c)}\diff{x'^0}\gamma(x'+\beta x'^0)\\
+	& = \frac{u_x' +c\beta}{1+\beta u_x'/c}.
+\ea
+As for the $y$ component
+\ba
+	u_y &= c\diff[y]{x^0}\\
+	& = c\diff[x'^0]{x^0}\diff[y]{x'^0}\\
+	& = \frac{c}{\gamma(1+\beta u'_x/c}\pfrac{u_y'}{c}\\
+	& = \frac{u_y'}{\gamma(1+\beta u'_x/c)}.
+\ea
+Now from using
+\[
+	\beta u_x' = \beta \cdot \vect u'
+\]
+and that $\vect x$ and $\vect v$ are parallel (and perpendicular to $\vect y$)
+we have
+\[
+	\vect u_{||} = \frac{\vect u'_{||}+c\vect \beta}{1+\vect \beta \cdot \vect u'/c}
+\]
+\[
+	\vect u_{\perp} = \frac{\vect u'_\perp}{\gamma(1+\vect\beta \cdot \vect u'/c)}.
+\]
+To find the accelerations 
+\ba
+	a_x &= c\diff[u_x]{x^0}\\
+	& = \frac{c}{\gamma(1+\beta u'_x/c)}\diff{x'^0} \frac{ u_x'+c\beta}{1+\beta u'_x/c}\\
+	& = \frac{(1-\beta^2)a_x'}{\gamma(1+\beta u'_x/c)^3}\\
+	& = \frac{a'_x}{\gamma^3(1+\beta u_x'/c)^3}
+\ea
+and similarly for $a_y$ we have
+\[
+	a_y = \frac{a_y'+\beta(u'_xa'_y-u'_ya'_x)/c}{\gamma^2(1+\beta u'_x/c)^3}
+\]
+Finally
+\[
+	a_{||} = a_x
+\]
+so
+\[
+	a_{||} = \frac{\vect a'_{||}}{\gamma^3(1+\vect \beta \cdot \vect u'/c)^3}.
+\]
+For the perpendicular component
+\[
+	a_\perp = \frac{a'_\perp +\vect a'(\vect \beta \cdot \vect u')-u'(\vect \beta \cdot \vect a')/c}{
+	\gamma^2(1+\vect \beta \cdot\vect u'/c)^3}
+\]
+and so
+\[
+	a_\perp = \frac{a_\perp'+\vect\beta \times (\vect a'\times \vect u')/c}{\gamma^2(1+\vect \beta\cdot \vect u'/c)^3}
+\]
+\\ \\
+% 7------------------------------------------------------------------------------------
+\item
+A particle of mass $M$ and 4-momentum $P$ decays into two particles of masses $m_1$ and $m_2$.
+\benum
+\item
+Use the conservation of energy and momentum in the form, $p_2 = P-p_1$, and the invariance of scalar
+products of 4-vectors to show that the total energy of the first particle in the rest frame of the decaying particle
+is 
+\[
+	E_1 = \frac{M^2+m_1^2-m_2^2}{2M}
+\]
+and that $E_2$ is obtained by interchanging $m_1$ and $m_2$.
+\item
+Show that the \emph{kinetic energy} $T_i$ of the $i$th particle in the same frame is 
+\[
+	T_i = \Delta M\plr{1-\frac{m_i}{M}-\frac{\Delta M}{2M}}
+\]
+where $\Delta M = M-m_1-m_2$ is the mass excess or $Q$ value of the process.
+\item
+The charged pi-meson ($M$ = 139.6MeV) decays into a mu-meson ($m_1$ = 105.7 MeV) and a neutrino
+($m_2$ = 0). Calculate the kinetic energies of the mu-meson and the neutrino in the pi-meson's rest frame.
+The unique kinetic energy of the muon is the signature of a two-body decay. It entered importantly in the discovery
+of the pi-meson in photographic emulsions by Powell and his coworkers in 1947.
+\eenum
+\benum
+\item
+In the center of mass frame
+\[
+	E = E_1+E_2 = Mc^2
+\]
+and
+\[
+	\vect p-\vect p_1 = \vect p_2 \Rightarrow \vect p_2 = -\vect p_1.
+\]
+Thus
+\[
+	(E_1,\vect p_1)+(E_2,\vect p_2) = (Mc^2-E_1,-\vect p_1)
+\]
+and using the energy momentum relation
+\ba
+	E_1^2-E_2^2 &= c^4(m_1^2-m_2^2)\\
+	(E_1+E_2)(E_1-E_2)& = c^4(m_1^2-m_2^2)
+\ea
+\[
+	\Rightarrow E_1-E_2 = c^4 \frac{(m_1^2-m_2^2)}{Mc^2}
+\]
+\[
+	\Rightarrow E_1+E_2 = Mc^2
+\]
+Add these last two equations together
+\[
+	E_1 = \frac{c^2(m_1^2-m_2^2+M^2)}{2M}
+\]
+or subtract the two
+\[
+	E_2 = \frac{c^2(M^2+m_2^2-m_1^2)}{2M}.
+\]
+\\ \\
+\item
+Employing the $c=1$ convenient units
+\ba
+	T_1 &= E_1-m_1 \\
+	& = \frac{m_1^2-m_2^2-M^2-2m_1M}{2M}\\
+	& = \frac{M^2-m_1^2-m_2^2-2m_1M}{2m}\\
+	& = \frac{\Delta M}{2m}(M-m_1-m_2)\\
+	& = \frac{\Delta M}{2M} \plr{ M-m_1+m_2-\Delta M+M-m_1-m_2}\\
+	& = \frac{\Delta M}{2M}(2M-2m_1-\Delta M)\\
+	& = \Delta M\plr{1-\frac{m_1}{M}-\frac{\Delta M}{2M}}
+\ea
+thus
+\[
+	T_i = \Delta M\plr{1-\frac{m_i}{M}-\frac{\Delta M}{2M}}.
+\]
+\\ \\
+\item
+From part (a)
+\[
+	E_1 = \frac{M^2+m_1^2-m_2^2}{2M} = 109.8\ (MeV)
+\]
+and so for the mu-meson
+\[
+	T_1 = E_1-m_1 = 4.1\ (MeV).
+\]
+As for the pi-meson
+\[
+	E_1 = 29.8\ (MeV)
+\]
+and so again
+\[
+	T_2 = E_2 -m_2 = 29.8\ (MeV).
+\]
+\eenum
+\eenum 
+\end{document}

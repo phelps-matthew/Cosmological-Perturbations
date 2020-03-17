@@ -1,0 +1,522 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+\usepackage{array}
+\usepackage{booktabs}
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+\newcommand{\nm}[1]{\textnormal{#1}}
+
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 4\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Oct. 7}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+	Fine-structure energies in hydrogen
+	\benum
+		% (a)
+		\item
+		Verify that the spin-orbit splitting
+		\[
+			\Delta E_{SO} = \frac{(E_n^{Bohr})^2}{mc^2}\blr{\frac{n(j(j+1)-l(l+1)-\frac{3}{4})}{l(l+\frac{1}{2})
+			(l+1)}}, \quad j = l \pm \frac{1}{2}
+		\]
+		and the relativistic 
+		\[
+			\Delta E_{rel} = -\frac{(E_n^{Bohr})^2}{mc^2}\blr{\frac{2n}{(l+\frac{1}{2})}-\frac{3}{2}}
+		\]
+		combine to give the net fine-structure correction
+		\[
+			\Delta E_{n,j}^{FS} = \frac{(E_n^{Bohr})^2}{2mc^2}\blr{3-\frac{4n}{(j+\frac{1}{2})}}
+		\]
+		so that (here $\vect R \equiv \frac{me^4}{2\h^2}$ is the ``Rydberg constant"):
+		\be\label{1}
+			E_{n,j}^{FS} = -\frac{\vect R}{n^2}\plr{1+\frac{\alpha^2}{n}\blr{\frac{1}{(j+\frac{1}{2})}-\frac{3}{4n}
+			}}
+		\ee
+		\\
+		\\
+		First we note that
+		\[
+			 \frac{(E_n^{Bohr})^2}{mc^2} =\frac{1}{mc^2} \pfrac{-me^4}{2\h^2 n^2}^2 = -\frac{1}{2n^2}
+			 \pfrac{e^2}{\h c}^2\pfrac{-me^4}{2\h^2 n^2} = -\frac{\alpha^2}{2}\frac{E_n^{Bohr}}{n^2} 
+			 = \frac{\alpha^2}{2}\frac{\vect R}{n^4}.
+		\]
+		Next, we see that if we substitute the $j$'s in terms of $l$'s we have for the spin orbit correction
+		\[
+			\Delta E_{SO} = \frac{\alpha^2}{n}\frac{\vect R}{n^3} \blr{\frac{1}{2l(l+\frac{1}{2})
+			(l+1)}}\begin{cases}l&\quad\text{for}\quad j = l+\frac{1}{2}\\-(l+1)&\quad\text{for}\quad j = l-\frac{1}{2}
+			\end{cases}
+		\]
+			
+		Now adding the spin-orbit and relativistic correction together
+		\[
+			\Delta E_{SO}+\Delta E_{rel} = -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{\frac{1}{(l+\frac{1}{2})}-\frac{3}{4n}
+			-\frac{1}{2l(l+\frac{1}{2})(l+1)}\begin{cases}l\ ;\  j = l+
+			\frac{1}{2}\\-(l+1)\ ;\  j = l-\frac{1}{2}
+			\end{cases}}
+		\]
+		In this (improper) notation, only the last term in brackets is multiplied by the appropriate quantity corresponding
+		to $j$. When we evaluate for $j = l+\frac{1}{2}$ we have
+		\ba
+			\Delta E^{FS}_{n,l} &= -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{\frac{1}{(l+\frac{1}{2})}-\frac{3}{4n}
+			-\frac{1}{2(l+\frac{1}{2})(l+1)}} \\
+			& = -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{-\frac{3}{4n}
+			+\frac{1}{(l+1)}}  \\
+			& = -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{-\frac{3}{4n}
+			+\frac{1}{(j+\frac{1}{2})}}
+		\ea
+		while when we evaluate for $ j = l-\frac{1}{2}$ we have
+		\ba
+			\Delta E^{FS}_{n,l} &= -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{\frac{1}{(l+\frac{1}{2})}-\frac{3}{4n}
+			-\frac{1}{2(l+\frac{1}{2})(l+1)}} \\
+			& = -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{-\frac{3}{4n}
+			+\frac{1}{l}}  \\
+			& = -\frac{\vect R}{n^2}\frac{\alpha^2}{n}\blr{-\frac{3}{4n}
+			+\frac{1}{(j+\frac{1}{2})}}.
+		\ea
+		We get the same answer! Thus the energy correction only depends on $j$ explicitly. Given
+		the unperturbed energy 
+		\[
+			E^{Bohr}_{n} = -\frac{\vect R}{n^2}
+		\]	
+		 we thus confirm \eqref 1 by expressing the corrected fine structure energy levels as
+		\[
+		 	E_{n,j}^{FS} = -\frac{\vect R}{n^2}\plr{1+\frac{\alpha^2}{n}\blr{\frac{1}{(j+\frac{1}{2})}-\frac{3}{4n}
+			}}.
+		\]
+		\\
+		\\
+		\item
+		% (b) 
+		Compute the $n=1$, $n=2$, $n=3$ hydrogen atom energies including fine-structure corrections, as
+		given by formula \eqref 1. Use $\alpha = 1/137.035\,999\,074$. 
+		\\
+		
+		\item
+		% (c)
+		The experimental values for hydrogen levels (labeled as $nl_j$, with standard notation $s : l = 0$,
+		$p : l=1$, $d: l=2$), in units of the Rydberg are:
+		\ba
+			1s_{1/2}: -0.999 466 509\\
+			2s_{1/2}: -0.249 867 761\\
+			2p_{1/2}: -0.249 868 082\\
+			2p_{3/2}: -0.249 864 748\\
+			3s_{1/2}: -0.111 052 015\\
+			3p_{1/2}: -0.111 052 111\\
+			3p_{3/2}: -0.111 051 123\\
+			3d_{3/2}: -0.111 051 124\\
+			3d_{5/2}: -0.111 050 795\\
+		\ea
+		For each energy level compute the ratio of the experimental value to the fine-structure prediction 
+		given by \eqref 1. Comment on this result. 
+		\\
+		
+		\item
+		% (d)
+		Estimate the order of magnitude of the expected correction to the hydrogen energy levels if you use the 
+		\textbf{reduced mass} of the electron [use $\frac{m_p}{m_e} = 1836.152\,672\,457$]. Use this correction to 
+		recompute the hydrogen energy levels, and compare again with the experimental values. Comment. 
+		\\
+		\\
+		The reduced mass $\mu$ of the electron is 
+		\[
+			\mu = \frac{m_pm_e}{m_p+m_e}.
+		\]
+		Denoting 
+		\[
+			\gamma \equiv \frac{m_p}{m_e} = 1836.152\,672\,457
+		\]
+		we may express the reduced mass as
+		\[
+			\mu = \pfrac{\gamma}{1+\gamma}m_e
+		\]
+		thus
+		\[
+			\vect R \to \pfrac{\gamma}{1+\gamma}\vect R
+		\]
+		and our overall energies are simply scaled by the factor $\pfrac{\gamma}{1+\gamma}$. To 
+		estimate the the order of magnitude of this correction to the fine structure we
+		take the difference between the two
+		\[
+			\frac{\gamma}{\gamma}-\frac{\gamma}{1+\gamma} = \frac{1}{1+\gamma} \approx \mathcal 
+			O(10^{-3}).
+		\]
+		\\
+		Below is 
+		a table of experimental data compared to calculated energies and their respective ratios. 
+		
+		% Blindly copied a table format http://tex.stackexchange.com/questions/88929/vertical-table-lines-are-
+		%discontinuous-with-booktabs
+                \begin{table} [H]
+                \centering
+                \begin{tabular}{LCCCCC}
+                
+                \multicolumn{6}{c}{\large{Hydrogen Fine Structure Energy Levels}\makebox[0pt][l]{$^{\ast}$}} \\ 
+                \midrule
+                \multicolumn{1}{l}{$e^{(-)}$ Config.} &
+                \multicolumn{1}{c}{Exp.}     &
+                \multicolumn{1}{c}{F.S.} &
+                \multicolumn{1}{c}{F.S.+R.M.}&
+                \multicolumn{1}{c}{Exp./F.S.}&
+                \multicolumn{1}{c}{Exp./(F.S.+R.M.)}
+                \\
+                \midrule
+			1s_{1/2}& -0.999466509& -1.000013313& -0.999468985&0.999453203&0.999997523\\
+			2s_{1/2}&	-0.249867761& -0.250004160& -0.249868078&0.999454412&0.999998732\\
+			2p_{1/2}&	-0.249868082& -0.250004160& -0.249868078&0.999455696&1.000000017\\
+			2p_{3/2}&	-0.249864748& -0.250000832 & -0.249864751&0.999455666&0.999999986\\
+			3s_{1/2}&	-0.111052015&  -0.111112590& -0.111052109&0.999454829&0.999999150\\
+			3p_{1/2}&	-0.111052111& -0.111112590& -0.111052109&0.999455693&1.000000014\\
+			3p_{3/2}& 	-0.111051123& -0.111111604 & -0.111051124&0.999455672&0.999999992\\
+			3d_{3/2}& 	-0.111051124&- 0.111111604& -0.111051124&0.999455681&1.000000001\\
+			3d_{5/2}&	-0.111050795& -0.111111275 & -0.111050795&0.999455677&0.999999997\\
+ 		\midrule
+		\multicolumn{6}{l}{ \footnotesize $^*$ Energies given in units of Ry.} \\
+                \bottomrule
+                \end{tabular}
+                \end{table}
+		Its possible that I need to adjust my the level of accuracy used in Mathematica in using the same level
+		of supplied precision throughout the calculations. Nonetheless, we can still make many observations.
+		\\
+		\\
+		Firstly (as is apparent in \eqref 1) we will have theoretical degeneracies across pairs of states due to the 
+		dependence on $j$ and not $l$. For example the states $2s_{1/2}$ and $2p_{1/2}$ should have the
+		same energy according to our corrections. However, when we look at the experimental data, we see 
+		this is not the case. So we must be missing an additional correction that can lift such degeneracy. 
+		Secondly, we see that the fine-structure correction is approximately accurate up to at least $\mathcal O
+		(10^{-2})$ while the fine-structure plus reduced mass correction gets us to at least $\mathcal O
+		(10^{-5})$. For the $3d$ states it even matches exactly up to the order the experimental data
+		was given. Our estimate for the order of magnitude correction from the reduced mass appears to be
+		correct - the difference between corrections is $\mathcal O(10^{-3})$. A look at the ratio for both sets 
+		of corrections tends to show a trend toward higher accuracy 
+		at higher energy levels. Perhaps the missing correction is proportional to something like $1/n$? The simple 
+		correction of the reduced mass added a significant amount of accuracy to the energies. In general, it
+		is remarkable how close these values are to the measured energies. 
+		\\
+	\eenum
+% #2-------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Adiabatic Approximation
+	\\
+	\\
+	Consider a Hamiltonian
+	\[
+		H = H(x,p,\lambda(t))
+	\]
+	that depends on the time through the time-dependent parameter $\lambda(t)$. Suppose that at each time $t$ the
+	complete set of eigenstates of $H$ are known:
+	\[
+		H(x,p,\lambda(t))\psi_n(x,\lambda(t)) = E_n(\lambda(t))\psi_n(x,\lambda(t))
+	\]
+	\benum
+		% (a)
+		\item
+		Write the full time-dependent wavefunction $\psi(x,t)$ as
+		\[
+			\psi(x,t) = \sum_n c_n(t)\exp\blr{-\frac{i}{h}\int_0^t E_n(t')\ dt'}\psi_n(x,\lambda(t))
+		\]
+		where $E_n(t) \equiv E_n(\lambda(t))$, and derive the following equation for the time evolution of the 
+		coefficients:
+		\[
+			\dot{c_k}(t) = -\sum_n c_n(t)\exp\blr{\frac{i}{\h}\int_0^t (E_k(t')-E_n(t'))\ dt'}\int dx\ 
+			\psi_k^*(x,\lambda(t))\dot{\psi}_n(x,\lambda(t))
+		\]
+		\\
+		\\
+		\\
+		Lets denote 
+		\[
+			\theta_n(t) = -\frac{1}{\h}\int_0^t dt'\ E_n(t')
+		\]
+		and take it as given that all quantities are time-dependent herein-forth. Substituting the general time dependent 
+		state $\psi(x,t)$ (in the eigen energy basis) into the time dependent Schrodinger equation
+		\[
+			i\h\pdiff{t}\psi = H\psi
+		\]
+		we have
+		\[
+			i\h\sum_n \blr{\dot c_ne^{i\theta_n}\psi_n+ic_n\dot\theta_ne^{i\theta_n}\psi_n+c_ne^{i\theta_n}\dot\psi_n}
+			= \sum_n c_ne^{i\theta_n}E_n\psi_n.
+		\]
+		Factoring out the common exponential and evaluating $\dot\theta_n$ we obtain
+		\[
+			i\h\sum_n \blr{\dot c_n\psi_n-\frac{i}{\h}c_nE_n\psi_n+c_n\dot\psi_n}e^{i\theta_n} 
+			= \sum_n c_nE_n\psi_ne^{i\theta_n}
+		\]
+		or
+		\[
+			\sum_n\dot c_n\psi_ne^{i\theta_n} = - \sum_n c_n\dot\psi_n e^{i\theta_n}. 
+		\]
+		Now we take the inner product with orthonormal energy state $\psi_k$ to obtain
+		\[
+			\dot c_ke^{i\theta_k} = -\sum_n c_n e^{i\theta_n} \int dx\ \psi^*_k\dot\psi_n 
+		\]
+		which may be rearranged as
+		\be\label{2}
+			\dot c_k = -\sum_n c_n e^{i(\theta_n-\theta_k)}\int dx\ \psi^*_k\dot\psi_n .
+		\ee
+		\\
+		%(b)
+		\item
+		Use the result of (a) to show that to leading order, as $\dot\lambda\to0$, in the adiabatic approximation the 
+		distribution of quantum states does not change in time.
+		\\
+		\\
+		Given the time-derivative of energy eigenfunction coefficients, it may be possible to solve for them exactly
+		if our Hamiltonian varies very slowly. Let us differentiate the energy eigenvalue equation
+		\[
+			\dot H\psi_n+H\dot\psi_n = \dot E_n\psi_n +E_n\dot\psi_n.
+		\]
+		Now take the inner product with eigenstate $\psi_k$ for $k\ne n$
+		\[
+			\int dx\  \psi_k^*\dot H\psi_n +\int dx\ \psi_k^* H\dot\psi_n = \int dx\  \dot E_n(0)+\int dx\ E_n\psi_k^*\dot
+			\psi_n.
+		\]
+		Since our hamiltonian is hermitian, this leads to
+		\[
+			\int dx\ \psi_k^* \dot H\psi_n +\int dx\ E_k\psi_k^*\dot\psi_n =\int dx\  E_n\psi_k^*\dot\psi_n
+		\]
+		or
+		\be \label{3}
+			\int dx\ \frac{\psi_k^* \dot H \psi_n}{E_n-E_k} = \int dx\ \psi_k^*\dot\psi_n
+		\ee
+		This inner product term $\int dx\ \psi_k^*\dot\psi_n$ is also within the eq. for $\dot c_k$. Thus we can make the 
+		substitution of \eqref 3 into \eqref 2 
+		\[
+			\dot c_k = -\sum_n c_n e^{i(\theta_n-\theta_k)}\int dx\ \frac{\psi_k^* \dot H \psi_n}{E_n-E_k}.
+		\]
+		Splitting the sum into two parts we obtain
+		\be\label{4}
+			\dot c_k = -c_k\int dx\ \psi_k^*\dot\psi_k - \sum_{n\ne k}c_n e^{i(\theta_n-\theta_k)}
+			\int dx\ \frac{\psi_k^* \dot H \psi_n}{E_n-E_k}.
+		\ee
+		Now we look at the time derivative of $H$
+		\[
+			\diff[H]{t} = \pdiff[H]{x}\diff[x]{t}+\pdiff[H]{p}\diff[p]{t} + \pdiff[H]{\lambda}\diff[\lambda]{t}.
+		\]
+		Since $\dot x = \dot p=0$ in this Schrodinger picture, we see that
+		\[
+			\diff[H]{t} = \pdiff[H]{\lambda}\diff[\lambda]{t}.
+		\]
+		Thus taking $\dot\lambda \to 0$ leads to $\dot H \to 0 $ in which \eqref 4 becomes
+		\[
+			\dot c_k = -c_k\int dx\ \psi_k^*\dot\psi_k.
+		\]
+		This constitutes a basic differential equation of the form
+		\[
+			\diff[f(t)]{t} = -f(t)g(t)
+		\]
+		which has the solution
+		\[
+			f(t) = f(0)\exp\blr{-\int_0^t dt'\ g(t')}.
+		\]
+		Thus we may solve $c_k(t)$ as
+		\[
+			c_k(t) = c_k(0)e^{i\gamma_k(t)}
+		\]
+		with
+		\[
+			\gamma_k(t) = i\int_0^t dt'\ \psi_k^*\dot\psi_k.
+		\]
+		In fact, $\gamma_k(t)$ is real. This can be shown by the fact that the energy eigenstates are normalized
+		\[
+			0= \pdiff{t}\braket{\psi_k|\psi_k} = \braket{\dot\psi_k|\psi_k}+\braket{\psi_k|\dot\psi_k} = 2\mathfrak R[
+			\braket{\dot\psi_k|\psi_k}].
+		\]
+		Therefore, under the adiabatic approximation any general state $\psi$ may be expressed as
+		\[
+			\psi(x,t) =  \sum_n c_n(0)e^{i(\theta_n+\gamma_n)}\psi_n(x,\lambda(t)) 
+		\]
+		which implies that the distribution of energy eigenstates over time only varies by a phase and 
+		consequently the probability distribution is completely independent of time. 
+		\\
+		
+		% (c)
+		\item
+		Show that for $k\ne n$:
+		\[
+			\int dx\ \psi_k^*(x,\lambda(t))\dot\psi_n(x,\lambda(t)) = \frac{1}{E_n(t)-E_k(t)}\int dx\ \psi_k^*(x\lambda(t))
+			\plr{\pdiff[H]{t}}\psi_n(x,\lambda(t))
+		\]
+		and hence find the probability of transition to the $n^{th}$ unperturbed level at $t=+\infty$, for a
+		charged linear harmonic oscillator, initially in the ground state at time $t=-\infty$, under the action
+		of a homogeneous electric field $\mathcal E(t)$, where $\mathcal E(t) = \mathcal E_0e^{t^2/r^2}$.
+		\\
+		 \\
+		 The relation for $k\ne n$ has been given in \eqref 3.
+		 \\
+		 \\
+		We cannot use the adiabatic approximation here because the time variation of $H(t)$ does not vary slowly in 
+		comparison to the time scale of our system. And even if we did, the probability of transition would be zero
+		since eigenstates do not change in time. So instead, I will try a first order perturbation theory approach to give us at least
+		a first order estimate of the probability of transition. Let us write a general time dependent state as
+		\[
+			\ket{\psi(t)} = \sum_n c_n(t)e^{-\frac{i}{\h}E_n^0t}\ket {n^0}.
+		\]
+		 Next we apply the Schrodinger equation and take the inner product with state $k^0$
+		in the same vein as in part (a) to arrive at
+		\be\label{5}
+			\dot c_k = \frac{-i}{\h} \sum_n c_n(t) \braket{k^0|H(t)|n^0}e^{i\omega_{kn}t}
+		\ee
+		with
+		\[
+			\omega_{kn} = \frac{E_k^0-E_n^0}{\h}.
+		\]
+		For a zeroth order approximation in the time dependent Hamiltonian, we see from \eqref 5 that
+		\[
+			\dot c_k = 0
+		\]
+		which is the usual time independent system. The constants are fixed according to our imposed initial condition
+		\[
+			c_n(0) = \delta_{ni}
+		\]
+		for an initial state $\ket i$. To first order, we substitute the zeroth order coefficient into \eqref 5
+		\[
+			\dot c_n(t) =-\frac{i}{\h} \braket{k^0|H(t)|n^0}e^{i\omega_{kn}t}. 
+		\]
+		Along with the initial conditions, this equation may be solved as
+		\be\label{6}
+			c_n(t) = \delta_{nk}-\frac{i}{\h}\int_0^t dt'\ \braket{k^0|H(t')|n^0}e^{i\omega_{nk}t'}.
+		\ee
+		\\
+		Now for the original problem, the coefficient of eigenstate $\ket n$ with the Hamiltonian
+		\[
+			H = \frac{p^2}{2m}+\frac{1}{2}m\omega^2 - q\mathcal E x e^{-t^2/r^2} 
+		\]
+		is
+		\[
+			c_n(\infty) = -\frac{i}{\h}\int_{-\infty}^{\infty} dt'\ \braket{0|-q\mathcal Exe^{-t'^2/r^2}|n} e^{i\omega_{n0}t'}.
+		\]
+		Being the friendly harmonic oscillator it is, we have the nice relation
+		\[
+			x = \sqrt{\frac{\h}{2m\omega}}(a+a^\dag)
+		\]
+		to see that the only state with non-zero probability of transmission is $\ket 1$. Thus our integral becomes
+		\[
+			c_1(\infty) = \frac{iq\mathcal E}{\h} \sqrt{\frac{\h}{2m\omega}} \int_{-\infty}^\infty dt'\ e^{-t'^2/r^2}e^{i\omega t'}.
+		\]
+		The integral is a Fourier transform and may be solved to give
+		\[
+			c_1(\infty) = \frac{iq\mathcal E}{\h} \sqrt{\frac{\h}{2m\omega}} \sqrt{\pi r^2}e^{-\omega^2 r^2/4}.
+		\]
+		Lastly we multiply by the complex conjugate to find the probability of transition:
+		\[
+			P_{0\to1} = \frac{q^2\mathcal E^2\pi r^2}{2m\omega \h}e^{-\omega^2r^2/2}.
+		\]
+		\\
+		
+	\eenum
+% #3 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Landau-Zener Transition
+	\\
+	\\
+	Consider a 2-level quantum system described by the 2$\times$2 matrix Hamiltoninan
+	\[
+		H(t) = \bpm E_-(t)&F\\F^*&E_+(t) \epm
+	\]
+	where $E_\pm(t) = \pm \frac{\nu}{2}t$, with $\nu>0$, and $F = const.$
+	
+	\benum
+	% (a)
+		\item
+		Plot $E_\pm(t)$ and the instantaneous eigenvalues $\lambda_\pm(t)$ of $H(t)$ on the same graph, for various
+		values of the parameters $F$ and $\nu$. Choose some parameters such that the curves $\lambda_\pm(t)$
+		almost cross.
+	\\
+	\figg[width=100mm]{hw4_1.pdf}
+	\figg[width=100mm]{hw4_2.pdf}
+	\figg[width=100mm]{hw4_3.pdf}	
+	\figg[width=100mm]{hw4_4.pdf}
+
+	
+	% (b)
+		\item
+		Write the wavefunction as
+		\[
+			\psi(t) = \bpm A(t)\exp\blr{-\frac{i}{\h}\int_{-\infty}^t dt'\ E_-(t')} \\
+					B(t)\exp\blr{-\frac{i}{\h}\int_{-\infty}^t dt'\ E_+(t')}
+				\epm
+		\]
+		and use the Schrodinger equation to derive the time evolution equations for the coefficients $A(t)$
+		and $B(t)$.
+		\\
+		\\
+		\\
+		Using 
+		\[
+			i\h \pdiff{t}\ket{\psi(t)} = H\ket{\psi(t)}
+		\]
+		we form two differential equations for the coefficients of $\psi(t)$:
+		\[
+			i\h\plr{\dot A(t) -\frac{i}{\h}E_-(t)A(t)}e^{-\frac{i}{\h}\theta_a(t)} 
+			= E_-(t)A(t)e^{-\frac{i}{\h}\theta_a(t)}+FB(t)e^{-\frac{i}{\h}\theta_b(t)}
+		\]
+		\[
+			i\h\plr{\dot B(t) -\frac{i}{\h}E_+(t)B(t)}e^{-\frac{i}{\h}\theta_b(t)} 
+			= F^*A(t)e^{-\frac{i}{\h}\theta_a(t)}+E_+(t)B(t)e^{-\frac{i}{\h}\theta_b(t)}
+		\]
+		where we have denoted
+		\[
+			\theta_a \equiv \int_{-\infty}^t dt'\ E_-(t),\quad \theta_b \equiv \int_{-\infty}^t dt'\ E_+(t).
+		\]
+		These two coupled differential equations may be simplified as
+		\be\label{7}
+			i\h\dot A(t)e^{-\frac{i}{\h}\theta_a(t)}=FB(t)e^{-\frac{i}{\h}\theta_b(t)} 
+		\ee
+		
+		\be\label{8}
+			i\h\dot B(t)e^{-\frac{i}{\h}\theta_b(t)}=F^*A(t)e^{-\frac{i}{\h}\theta_a(t)} 
+		\ee
+		If we like, we could take the derivative of either equation again and turn this into two decoupled
+		second-order differential equations. But since this form is simple enough for Mathematica input, we 
+		will leave it as it is. 
+		\\
+	% (c)
+		\item
+		Numerically integrate the equation for $B(t)$, with initial conditions
+		\[
+			B(-\infty)=1,\quad A(-\infty) = 0
+		\]
+		to obtain the probability $|B(+\infty)|^2$ that the system has made a transition. Plot $|B(t)|^2$ 
+		and compare your final value, $|B(+\infty)|^2$, with the Landau-Zener formula
+		\[	
+			|B(+\infty)|^2 \approx \exp\blr{-\frac{2\pi|F|^2}{\nu\h}}
+		\]
+		Hint: Using NDsolve, start your numerical integration at some large negative value of $t$, and integrate
+		out to some large positive value of $t$.
+		\\
+		\\
+		\\
+		Using the parameters $\nu = 1$ and $F = 0.2$ in units of $\h=1$ the Laudau-Zener forumla yields
+		\[
+			|B(+\infty)|^2_{LZ} = 0.777768
+		\]
+		while our numerical integration at large $t$ yields
+		\[
+			|B(+\infty)|^2_{Numerical} = 0.779318.
+		\]
+		This is an approximate error of
+		\[
+			\epsilon \approx 0.2 \%.
+		\]
+		\\
+		Below is a plot of the probability amplitudes of both $A(t)$ and $B(t)$ where we can clearly see the probability of
+		transition to the lower eigenstate. The system starts in an upper eigenstate in the infinite past and has a 
+		considerable probability of transitioning to the lower eigenstate in the infinite future. Such is the
+		behavior for the particular time dependent hamiltonian where $E_A(t)-E_B(t) \propto t$. 
+		
+		\figg[width=150mm]{hw4_5.pdf}
+		
+		\eenum
+	
+	
+\eenum
+\end{document}

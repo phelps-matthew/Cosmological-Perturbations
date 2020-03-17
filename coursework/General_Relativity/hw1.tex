@@ -1,0 +1,196 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{General Relativity\\HW 1}
+\author{Matthew Phelps}
+\date{Due: September 15}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item
+Time dilation:
+\be
+	\frac{\Delta t}{\Delta t'} = (1-\vect v^2)^{1/2} \equiv \frac1\gamma,
+\ee
+where $\Delta t$ measures the time interval between two events in the rest frame, while $\Delta t'$ measure the time interval at relative velocity $\vect v$. \\ \\
+Length Contraction:
+\be
+	\frac{\Delta x}{\Delta x'} = (1-\vect v^2)^{-1/2} \equiv \gamma,
+\ee
+where $\Delta x$ is the proper length, and $\Delta x'$ is the observed length at relative velocity $\vect v$ (parallel to object). \\ 
+\benum
+\item
+The runner is at rest relative to the pole. The friend moves at relative velocity $v$. Thus, in the reference frame of the friend the pole measures
+\[
+	\Delta x' = \frac1\gamma \Delta x = (0.6)20\text m = 12\text m.
+\]
+\item
+	The pole is 12m and the barn is 15m in the friends reference frame. Since the pole is traveling at speed $v$, the time
+	it take the hit the end is
+\[
+	\frac{15-12}{0.8c} = 12.5\text{ns}.
+\]
+The spacetime interval between these events, defined as
+\[
+	ds^2 = -d\tau^2 = d\vect x^2 - dt^2
+\] 
+is
+\[
+	\Delta s^2 = 3^2 - (3\times 10^8)^2(1.25\times 10^{-8})^2 \approx -5\text m^2.
+\]
+Since $\Delta s^2 < 0$, these events are timelike. \\
+\item
+The runner does not believe the pole is entirely inside the barn. We can equivalently think of the barn moving towards the runner at speed $v$. Its 15m length will be further contracted. If the runner measures the time interval between barn door meeting tip of pole and end of barn meeting the same tip of pole, then multiply by velocity, the result will be less than 20m. Instead it will be
+\[
+	(0.6)15\text m = 9\text m
+\]
+leading him/her to believe the pole is not enclosed within the barn.
+\item
+Since events simulataneous in one frame are not (necessarily) simultaneous in the other, it should actually be possible to contrive a reference frame where the event of closing the door and the event of hitting the end of the barn happen simulataneously. Then as we deviate from this frame towards a frame where either the barn is at rest or the runner is at rest, we find that the order of events deviate proportionally. It follows that we will arrive at a situation where in one reference frame, the door closes before the pole hits the end of the barn, while in another reference frame the door closes after the pole hits the end of the barn. 
+\\ \\
+``After the collision'' depends on which reference frame we are referring to. The fact remains though, that with everyone at rest the pole is 5m longer than the barn and thus cannot fit. Since the door was actually physically closed (and remains so) it seems that the pole must have collided and be sticking outside the end of the barn. \\
+\eenum
+% 2------------------------------------------------------------------------------------
+\item
+In a reference frame in which the astronaut is at rest, we can think of the rocket moving towards her at relative speed $v$. The time it takes from the tip to tail of the rocket to pass under her feet, mulitplied by its velocity gives the rocket length in her frame, $O'$
+\[
+	\Delta x' = v\Delta t'.
+\]
+This length is related to the rockets rest length $L\equiv \Delta x$ via (2)
+\[
+	\Delta x' = \frac{\Delta x}{\gamma(v)}.
+\]
+and so
+\[
+	\Delta t' = \frac{\Delta x}{v\gamma(v)}.
+\]
+Now we relate the travel time in the astronauts rest frame $\Delta t'$ to that of the inertial frame $O$. The astronaut moves at a speed $|v-v_0|$ relative to frame $O$. So now we use the time dilation equation to arrive the total time elapsed in the inertial frame $O$
+\[
+	\Delta t = \frac{1}{\gamma(v-v_0)}\Delta t' = \frac{\Delta x}{v\gamma(v)\gamma(v-v_0)}.
+\]\\
+% 3------------------------------------------------------------------------------------
+\item
+We will start with the Lorentz boost matrix given in Weinberg. To arrive at this, we relate one system at rest to another moving at velocity $v$. Using the invariant proper time, this fixes the componets
+\[
+	\Lambda^0{}_0 = \gamma, \qquad \Lambda^i{}_0 = \gamma v_i.
+\]
+The other components are not uniquely specified, but the must obey the Lorentz condition
+\[
+	\Lambda^\alpha{}_\gamma \Lambda^\beta{}_\delta \eta_{\alpha\beta} = \eta_{\gamma\delta}
+\]
+One such matrix that obeys the above is
+\[
+	\Lambda^\alpha{}_\beta = 
+	\bpm \gamma & \gamma v_1 &\gamma v_2 &\gamma v_3 \\
+	\gamma v_1 & 1+ \frac{v_1^2}{v^2}(\gamma-1) & \frac{v_1v_2}{v^2}(\gamma-1) & \frac{v_1v_3}{v^2}(\gamma-1)\\
+	\gamma v_2 & \frac{v_1v_2}{v^2}(\gamma-1) & 1+\frac{v_2^2}{v^2}(\gamma-1) & \frac{v_2v_3}{v^2}(\gamma-1)\\
+	\gamma v_3 & \frac{v_1v_3}{v^2}(\gamma-1) & \frac{v_2 v^3}{v^2}(\gamma-1) &1+ \frac{v_3^2}{v^2}(\gamma-1)\\
+	\epm.
+\]
+Restricting the boost velocity the direction $v_1$, 
+\[
+	\Lambda^\alpha{}_\beta = 
+	\bpm \gamma & \gamma v & 0 &0\\
+	\gamma v & \gamma & 0 & 0 \\
+	0 & 0 & 1 & 0\\
+	0&0&0&1
+	\epm.
+\]
+As we expect, only the $x^0$ and $x^1$ components are mixed. Since the remaining components do not transform, from hereforth we will use the $2\times 2$ reduced matrix
+\[
+	\bpm \gamma &\gamma v\\ \gamma v &\gamma \epm.
+\]
+Let us parametrize $v$ by rapidity $u$ via
+\[
+	\tanh u = v.
+\]
+It then follows
+\[
+	1-\tanh^2 u = 1-v^2 = \frac{1}{\gamma^2} = \frac{1}{\cosh^2u}
+\]
+and so
+\[
+	\cosh u = \gamma,\qquad \sinh u = \gamma v.
+\]
+Now we may express our boost as
+\[
+	\Lambda(v) = \bpm \cosh u &\sinh u\\
+		\sinh u &\cosh u
+		\epm.
+\]
+Two successive boosts then take the simple form
+\[
+	\Lambda(v_1)\Lambda(v_2) = \bpm \cosh u_1 &\sinh u_1\\
+		\sinh u_1 &\cosh u_1
+		\epm \bpm \cosh u_2 &\sinh u_2\\
+		\sinh u_2 &\cosh u_2
+		\epm= 
+		\bpm \cosh (u_1+u_2) &\sinh (u_1+u_2)\\
+		\sinh (u_1+u_2) &\cosh (u_1+u_2).
+		\epm
+\]
+We see that two boosts in the same direction are equivalent to a single boost of rapidity
+\[
+	u = u_1+u_2.
+\]
+Inverting this expression back to velocity, we have
+\ba
+	\tanh u &= \tanh(u_1+u_2) \\
+	&= \frac{\tanh u_1 +\tanh u_2}{1+\tanh u_1 \tanh u_2}\\
+	v& = \frac{ v_1+v_2}{1+v_1v_2}.
+\ea
+
+% 4 ----------------------------------------------------------------------------------------
+\item
+In system $K$, the proper time interval between the two events of each runner meeting the finish line is
+\be
+	\Delta \tau^2 = -\Delta t^2 + \Delta x^2.
+\ee
+In a transformed coordinate system $K'$, the general proper time interval will be
+\[
+	-\Delta t^2 + \Delta x^2 = -\Delta t'^2 + \Delta x'^2 + \Delta y'^2 + \Delta z'^2.
+\]
+We seek a transformation such that $\Delta t'^2 =0$, i.e. simultaneity. This can most simply be achieved if we choose to only transform $x'$ and $t'$, such that
+\[
+	-\Delta t^2 + \Delta x^2 = \Delta x'^2.
+\] 
+Since such a transformation cannot come from a rotation (we have held fixed the spatial components), it must be a boost (recalling any Lorentz trans. can be expressed as a rotation then boost).  Therefore we seek to find the velocity $v$ such that when acting the boost matrix we have
+\[
+	\bpm \gamma &v\gamma \\ v\gamma &\gamma \epm \bpm \Delta t \\ \Delta x \epm = \bpm 0\\ \Delta \tau \epm.
+\]
+With $\Delta t$, $\Delta x$, and $\Delta \tau$ defined, we have a set of two equivalent equations for one variable $v$
+\[
+	\gamma \Delta t + v\gamma \Delta x	= 0 
+\]
+\[
+	v\gamma \Delta t + \gamma \Delta x = \Delta \tau.
+\] 
+The solution is ($c=1$ units)
+\[
+	v = -\frac{\Delta t}{\Delta x}.
+\]
+Thus our Lorentz transformation is, for $v = - \Delta t/\Delta x$
+\[
+	\Lambda^\alpha{}_\beta = \bpm \gamma & v\gamma & 0 & 0 \\ v\gamma & \gamma & 0 &0 \\ 0&0&1&0\\0&0&0&1\epm.
+\]
+An observer moving with speed $v = - \Delta t/\Delta x$ along the x-axis will observe simultaneous events. Now, if the events were instead simultaneous in the $K$ frame, we may find the intervals in the $K'$ frame by
+\[
+	\bpm \Delta t' \\ \Delta x' \epm = \bpm \gamma & v\gamma \\ v\gamma & \gamma \epm \bpm 0\\ \Delta x \epm
+\]
+\[
+	\Delta t' = v\gamma \Delta x
+\]
+\[
+	\Delta x' =\gamma \Delta x.
+\]
+Since $v = - \Delta t/\Delta x$, we easily solve for the time interval in the $K'$ system,
+\[
+	\Delta t' = -\gamma \Delta t.
+\]
+Note that $\Delta t$ here is the original time difference between finishes. Since the sign is opposite, we find that second runner actually starts earlier than the first, by an amount $\Delta t' = |-\gamma \Delta t|$.
+\eenum 
+\end{document}

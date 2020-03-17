@@ -1,0 +1,323 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Electrodynamics II\\HW 3\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 6}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item
+A particle of mass $m_1$ and energy $E_0$ collides elastically with a particle of mass $m_2$. The 
+particle 2 was at rest before the collision in the Laboratory Frame (LF). The particle energies after collision
+are $E_1$ and $E_2$. Calculate the LF scattering angles $\theta_1$ and $\theta_2$
+\\ \\
+In an elastic collision, both conservation and energy can be nicely expressed in terms of the invariant 4-vector
+quantity
+\[
+	p_1^i +p_2^i = p_1^{i'} + p_2^{i'}.
+\]
+Now we may arrive at different forms of this invariant quantity by contracting it with a covariant vector. Contracting with $p_{1i}$ we have
+\be\label{1}
+	m_1^2 + p_{1i}p_2^i-p_{1i}p_1^{i'}-p_{1i}p_2^{i'} = 0
+\ee
+and contracting with $p_{2i}$ we have
+\be\label{2}
+	m_2^2 +p_{2i}p_1^i - p_{2i}p_1^{i'}-p_{2i}p_2^{i'} = 0.
+\ee
+Note the mass terms come from $p_ip^i = E^2/c^2 - \vect p\cdot\vect p = m^2$. Now, taking $m_2$ at rest,
+the scalar products from \eqref 1 are
+\[
+	p_{1i}p_2^i = m_2E_0
+\]
+\[
+	p_{1i}p_1^{i'} = E_0E_1 - \vect p_1\cdot\vect p_1' = E_0E_1-p_1p_1'\cos\theta_1
+\]
+\[
+	p_{1i}p_2^{i'} = E_0E_2-p_1p_2'\cos\theta_2
+\]
+
+and the scalar products from \eqref 2 are 
+\[
+	p_{2i}p_1^i = m_2E_0
+\]
+\[
+	 p_{2i}p_2^{i'} = m_2E_2
+\]
+\[
+	p_{2i}p_1^{i'} = m_2E_1 .
+\]
+These form two equations
+\[
+	m_1^2+m_2E_0-E_0E_1+p_1p_1'\cos\theta_1 -E_0E_2+p_1p_2'\cos\theta_2= 0
+\]
+\[
+	m_2(m_2+E_0-E_1-E_2) = 0
+\]
+I don't understand how Landau gets a $(-p_{2i}p_1^{i'})$ in equation \eqref 1  (13.2 in text).. 
+\\ \\
+I suppose I'll have to proceed differently.
+\\ \\
+Conservation laws
+\[
+	\vect p_1 = \vect p_2' +\vect p_1'
+\]
+\[
+	E_0 +m_2c^2 = E_1+E_2.
+\]
+Now square these
+\be\label{3}
+	p_2'^2 = p_1^2+p_1'^2 -2p_1p_1'\cos\theta_1
+\ee
+\be\label{4}
+	E_2^2 = E_0^2+E_1^2+m_2^2c^4-2E_0E_1 +2m_2c^2(E_0-E_1)
+\ee
+Subtract the difference of these squares
+\[	
+	(4)^2-c^2(3)^2 = E_2^2-c^2p_2'^2 = m_2^2c^4.
+\]
+Expand the left hand side
+\[
+	E_0^2+E_1^2+m_2^2c^5-2E_0E_1+2m_2c^2(E_0-E_1)-c^2p_1^2-c^2p_1'^2 +2p_1p_1'\cos\theta_1 = m_2^2c^4
+\]	
+which reduces to
+\[
+	2p_1p_1'\cos\theta_1 = -m_1^2c^4-m_1^2c^4+2E_0E_1-2m_2c^2(E_0-E_1).
+\]
+Solving for the angle
+\[
+	\cos\theta_1 = \frac{E_0E_1-m_2c^2(E_0-E_1)-m_1c^4}{p_1p_1'}.
+\]
+Lastly we may rid $p_1$ and $p_1'$ via the relations $p_i^2 = E_i^2/c^2 - m_i^2c^2$
+to arrive at
+\[
+	\cos\theta_1 = \frac{(E_0+m_2c^2)(E_1-m_2c^2)+c^4(m_2^2-m_1^2)}{c^2[(E_0^2/c^2-m_1^2c^2)
+	(E_1^2/c^2-m_1^2c^2)]^{1/2}}.
+\]
+Now we repeat the similar process for $\cos\theta_2$ but with $E_1^2$ on the LHS.
+\[
+	m_1c^4 = E_0^2+E_2^2+m_2^2c^4-2E_0E_2+2E_0m_2c^2-2E_2m_2c^2-p_1^2-p_2'^2+
+	2p_1p_2'\cos\theta_2.
+\]
+Solving for $\cos\theta_2$ in its appropriate form, we have
+\[
+	\cos\theta_2 = \frac{(E_0+m_2c^2)(E_2-m_2c^2)}{c^2[(E_0^2/c^2-m_1^2c^2)(E_2^2/c^2 - m_2^2c^2)]}.
+\]
+\\ \\
+% 2------------------------------------------------------------------------------------
+\item
+A disk of the radius $R_0$ is moving with the relativistic velocity $\vect v$ in a cold molecular gas. The molecular
+rest mass is $m_0$ and the gas density is $n_0$. Find the pressure acting on the disk.
+\\ \\
+Take the disc to travel in the $x$-direction, $\vect v =v\vecth x$. In the rest frame of the disk, each gas particle collides and rebounds and the change in momentum is $2p_i$ or
+\[
+	p = \frac{2m_0v}{\sqrt{1-v^2/c^2}}.
+\]
+Given an area $A = \pi R_0^2$ the rate of collisions per unit time is
+\[
+	Z = vAn_0.
+\]
+The force on the disc can then be calculated by
+\[
+	F = Zp = 2m_0v\gamma v\pi R_0^2n_0
+\]
+where $\gamma = (1-v^2/c^2)^{-1/2}$. Now taking pressure as force per unit area, we then have the pressure
+\[
+	P = 2m\gamma v^2n_0.
+\]
+To be more general, we may give the velocity of the disk as measured by an observer moving with velocity $v'$
+relative to the gas. This is given by the velocity addition 
+\[
+	v'' = \frac{v'+v}{1+\frac{vv'}{c^2}}.
+\]
+In this frame of reference $p = 2mv''\gamma$ and
+\[
+	P = 2m_0 \gamma v''^2 n_0.
+\]
+% 3------------------------------------------------------------------------------------
+\item
+The velocity vector of a particle is $\vect v'$ in the $S'$ frame. Calculate the absolute value of the velocity 
+$|\vect v|$ of this particle in the frame $S$, moving with the velocity $\vect V$ with respect to the $S'$-frame. The 
+answer has to include only given velocity vectors and the speed of light $c$. 
+\\ \\
+Let's assume that system $S$ moves relative to $S'$ with velocity $V$ along its $x$-axis. Then by 
+the transformation of velocities we have each component of velocity in the $S$ frame
+\[
+	v_x  = \frac{v_x+V}{1+v_x'\frac{V}{c^2}}
+\]
+\[
+	v_y = \frac{v_y'}{\gamma(1+v_x'\frac{V}{c^2})}
+\]
+\[
+	v_z = \frac{v_z'}{\gamma(1+v_x'\frac{V}{c^2})}
+\]
+where $\gamma = (1-V^2/c^2)^{-1/2}$. Now find the magnitude via $v_x^2+v_y^2+v_z^2$. After some lengthy
+algebra
+\[
+	v^2 = \frac{c^4(v_x'^2+v_y'^2+v_z'^2)+2v_x'Vc^4+V^2c^2(c^2-v_y'^2-v_z'^2)}{(c^2+v_x'V)^2}
+\]
+We may put this in a more general form by noting that (since taken in the $x$ direction)
+\[
+	v_x'V = \vect v'\cdot \vect V,
+\]
+\[
+	(\vect v'\times \vect V)^2 = (\vect v'\cdot\vect v')(\vect V\cdot\vect V)-(\vect v'\cdot\vect V)(\vect V\cdot
+	\vect v') = v'^2V^2-v_x'^2V^2 = V^2(v_y'^2+v_z'^2),
+\]
+and
+\[
+	(\vect v'+\vect V)^2 = v'^2+2v_x'V+V^2.
+\]
+Now, after algebraic manipulation, we may simplify the $v^2$ found earlier using these relations
+\[
+	v = \frac{1}{1+\frac{\vect v'\cdot\vect V}{c^2}}\blr{(\vect v'+\vect V)^2-(\vect V\times\vect v')^2}^{1/2}.
+\]
+\\ \\
+% 4------------------------------------------------------------------------------------
+\item
+The para-positronium (a bound state of electron and positron) moves with a constant velocity $\vect V$ with respect
+to the Laboratory Frame and decays with an emission of two photons. In the positronium rest frame, the angular
+distribution of photons is isotropic.
+\benum
+\item
+Calculate an angular distribution of photons in the Laboratory Frame.
+\item
+Show that the single-photon decay of a positronium is not allowed by the energy-momentum conservation. 
+\\ \\
+\eenum
+\benum
+\item
+In the center of mass frame, we may describe the number of emitted photons detected 
+in differential solid angle $d\Omega_0$ simply as the ratio over total solid angle, i.e.
+\[
+	dN = \frac{d\Omega_0}{4\pi}.
+\]
+This may also be expressed as 
+\[
+	dN = \frac{1}{2} |d(\cos\theta_0)|.
+\]
+To find the angular distribution in a different frame of reference, we must use the transformation of angles between these two coordinate systems
+\[
+	\cos\theta_0 = \frac{\cos\theta -\frac{v}{c}}{1-\frac{v}{c}\cos\theta}.
+\]
+We will specifically transform to the lab frame. Denoting $\beta = v/c$ we have
+\ba
+	d\cos\theta_0 &= \diff{\theta}\pfrac{\cos\theta-\beta}{1-\beta\cos\theta}\\
+	&= \diff{\theta}\plr{\frac{-\sin\theta}{1-\beta\cos\theta}+\frac{\beta\sin\theta\cos\theta}{(1-\beta\cos\theta)^2}
+	-\frac{\beta^2\sin\theta}{(1-\beta\cos\theta)^2}}d\theta\\
+	&= \plr{\frac{\sin\theta-\beta\sin\theta\cos\theta+\beta\sin\theta\cos\theta-\beta^2\sin\theta}{
+	(1-\beta\cos\theta)^2}}d\theta\\
+	&= \frac{(1-\beta)^2\sin\theta}{(1-\beta\cos\theta)^2}d\theta
+\ea
+Now reutilizing the equation for particle number, but this time in the lab frame we have
+\[
+	dN = \frac{1}{2}|d(\cos\theta_0)|  = \frac{(1-\beta)^2\sin\theta}{2(1-\beta\cos\theta)^2} = 
+	\frac{(1-\beta)^2\sin\theta}{4\pi(1-\beta\cos\theta)^2}d\Omega
+\]
+where $d\Omega = 2\pi \sin\theta\ d\theta$. 
+\\ \\
+\item
+If we view the decay of a single photon in the center of mass frame, we have from the conservation of momentum
+and energy
+\[
+	E_1=E_2\Rightarrow m_1c^2 = p_2c,\qquad p_1 = p_2.
+\]
+Index 1 denotes positronium and 2 denotes the photon.
+But, in the c.o.m frame, $p_1 = 0$ and thus $p_2 = 0$. We have a violation because a photon cannot
+have zero momentum in any frame of reference, i.e. it is massless and moves with speed $c$ in any frame.
+We may continue on to see that its energy is also not conserved, because if it were to somehow have a zero momentum, then
+\[
+	E_2 = p_2c = \h\omega =0\ne E_1 = mc^2 >0.
+\]
+
+\eenum
+% 5------------------------------------------------------------------------------------
+\item
+A mirror is moving with a velocity $V$ in the Laboratory Frame (LF). Determine the light reflection law
+(the relation between incident and reflection angles), if the velocity vector is 
+\benum
+\item
+Perpendicular to the mirror plane;
+\item
+Parallel to the mirror plane \\ \\
+\eenum
+\benum
+\item
+Let's orient our apparatus such that the mirror lies along the $\vecth y$ axis and the light moves along the $\vecth x$ axis. Denote $\alpha$ as the angle of incidence relative to the $\vecth x$ axis and $\theta$ as the 
+angle of reflection relative to the $\vecth x$ axis. Lastly let $\vect c_i$ and $\vect c_f$ denote the initial
+and final velocity vectors of light, respectively. \\ \\
+Ok, in the lab frame 
+\[
+	c_i = c\cos\alpha \vecth x+c\sin\alpha\vecth y.
+\]
+Meanwhile we may transform this into the mirror frame via
+\[
+	c_{ix}' = \frac{c_{ix}+V}{1+\frac{c_{ix}V}{c^2}}
+\]
+\[
+	c_{iy}' = \frac{c_{iy}\sqrt{1-\frac{V^2}{c^2}}}{1+\frac{c_{ix}V}{c^2}}.
+\]
+In the mirror frame, we have from conservation of momentum
+\[
+	c_{ix}' = -c_{fx}',\qquad c_{iy}'=c_{fy}'.
+\]
+Now, convert the $y$ component to the lab frame
+\[
+	c_{fy} = \frac{c_{fy}'\sqrt{1-V^2/c^2}}{1-\frac{c_{fx}'V}{c^2}} = c\sin\theta
+\]
+and relate these to each other via
+\[
+	c_{fy}' = c_{iy}' = \frac{c_{iy}\sqrt{1-V^2/c^2}}{1+\frac{c_{ix}V}{c^2}}.
+\]
+Now use the form with $\sin\theta$ to arrive at
+\ba
+	c\sin\theta &= \frac{c_{iy}\sqrt{1-V^2/c^2}}{1+\frac{c_{ix}V}{c^2}}\pfrac{
+	\sqrt{1-V^2/c^2}}{1-\frac{c_{fx}'V}{c^2}}\\
+	&= \frac{c_{iy}(1-V^2/c^2)}{\plr{1+\frac{c_{ix}V}{c^2}}\plr{1+\frac{c_{ix}'V}{c^2}}}.
+\ea
+Now use the relation
+\[
+	1+\frac{c_{ix}'V}{c^2} = 1+\frac{V}{c^2}\pfrac{c_{ix}+V}{1+\frac{c_{ix}V}{c^2}} =
+	\pfrac{\beta\cos\alpha+\beta^2}{1+\beta\cos\alpha}
+\]
+to express $c\sin\theta$ as
+\[
+	c\sin\theta = \frac{c\sin\alpha(1-\beta^2)}{1+2\beta\cos\alpha+\beta^2}.
+\]
+Thus our reflection law in the lab frame is
+\[
+	\sin\theta = \frac{\sin\alpha(1-\beta^2)}{1+2\beta\cos\alpha+\beta^2}.
+\]
+\\ \\
+\item
+Now if the light is moving parallel to the mirror in the $\vecth y$ direction, we have the transformations
+\[
+	c_{ix}' =  \frac{c_{ix}\sqrt{1+V^2/c^2}}{1+\frac{c_{iy}V}{c^2}}
+\]
+\[
+	c_{iy}' = \frac{c_{iy}+V}{1+\frac{c_{iy}V}{c^2}}.
+\]
+Our conservation of momentum then gives us
+\[
+	c_{ix}' = -c_{fx}',\qquad c_{iy}' = c_{fy}'.
+\]
+Bringing these together with the transformation equations
+\[
+	c_{fy} = \frac{-c_{fy}'+V}{1-\frac{c_{fy}'V}{c^2}} = \frac{-c_{iy}'+V}{1-\frac{c_{iy}'V}{c^2}}.
+\]
+Following the same procedure as before we have
+\[
+	c\sin\theta = \frac{-\pfrac{c\sin\alpha+V}{1+\beta\sin\alpha}+V}{1-\pfrac{\beta\sin\alpha+\beta^2}{1+
+	\beta\sin\alpha}} = \frac{-c\sin\alpha+V\beta\sin\alpha}{1-\beta^2} = -c\sin\alpha
+\]
+Thus we finally have the reflection law in the lab frame
+\[
+	\sin\theta = -\sin\alpha.
+\]
+\eenum
+\eenum 
+\end{document}

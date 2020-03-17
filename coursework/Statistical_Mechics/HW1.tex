@@ -1,0 +1,110 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 1\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Sept. 9}
+
+\begin{document}
+\maketitle
+
+\benum
+% 1.1  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item[(1.1)]
+	
+	Derive the Maxwell Relations for the enthalpy $H$, the Gibbs free energy $G$, and one of the potentials that also depend on either the 
+	particle number or the chemical potential (how many are there?).
+	\\
+	\\
+	For the enthalpy $H$, 
+	\[
+		H = U + pV
+	\]
+	\ba
+		dH &= dU+pdV+Vdp
+		\\
+		& = TdS+Vdp
+	\ea
+	\[
+		\plr{\pdiff[H]{S}}_p = T,\quad \plr{\pdiff[H]{p}}_S = V
+	\]
+	\[
+		\plr{\pdiff[V]{S}}_p = \pdifff{H}{S,p} = \pdifff{H}{p,S} = \plr{\pdiff[T]{p}}_S
+	\]	
+	\[
+		\plr{\pdiff[V]{S}}_p = \plr{\pdiff[T]{p}}_S.
+	\]
+	For the Gibbs free energy,
+	\[
+		G = U-TS+pV
+	\]
+	\ba
+		dG &= dU-SdT-TdS+pdV+Vdp\\
+		& = Vdp-SdT
+	\ea
+	\[
+		\plr{\pdiff[G]{p}}_T = V,\quad \plr{\pdiff[G]{T}}_p=-S
+	\]
+	\[
+		\plr{\pdiff[V]{T}}_S = \pdifff{G}{T,p} = \pdifff{G}{p,T} = -\plr{\pdiff[S]{p}}_T
+	\]
+	\[
+		\plr{\pdiff[V]{T}}_S = -\plr{\pdiff[S]{p}}_T
+	\]
+	\\
+	We may also derive the Maxwell Relations for the Gibbs free energy that includes the chemical potential and particle number (the 
+	internal energy, enthalpy, Helmholtz free energy, and Grand potential may also include $\mu dN$). 
+	\[
+		G = U-TS+pV
+	\]
+	\[
+		dG = Vdp-SdT+\mu dN
+	\]
+	\[
+		\plr{\pdiff[G]{p}}_{T,N} = V,\quad \plr{\pdiff[G]{T}}_{p,N}=-S,\quad \plr{\pdiff[G]{N}}_{T,p} = \mu
+	\]
+	\[
+		\plr{\pdiff[S]{p}}_{T,N} = -\pdifff{G}{p,T} = -\pdifff{G}{T,p} = -\plr{\pdiff[V]{T}}_{p,N}
+	\]
+	\[
+		\plr{\pdiff[S]{N}}_{T,p} = -\pdifff{G}{N,T} = -\pdifff{G}{T,N} = -\plr{\pdiff[\mu]{T}}_{p,N}
+	\]
+	\[
+		\plr{\pdiff[V]{N}}_{T,p} = \pdifff{G}{N,p} = \pdifff{G}{p,N} = \plr{\pdiff[\mu]{p}}_{T,N}
+	\]
+	Thus our Maxwell Relations are	
+	\[
+		\plr{\pdiff[S]{p}}_{T,N} = -\plr{\pdiff[V]{T}}_{p,N},\quad \plr{\pdiff[S]{N}}_{T,p} = -\plr{\pdiff[\mu]{T}}_{p,N},
+		\quad \plr{\pdiff[V]{N}}_{T,p} = \plr{\pdiff[\mu]{p}}_{T,N}
+	\]
+	\\
+	\\
+	
+	
+% 1.2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[(1.2)]
+	
+	Consider a sample gas in a cylinder of fixed volume and temperate. The cylinder is divided into two chambers with a movable piston
+	in between. Assuming thermodynamic equilibrium at all times and no external forces, which thermodynamic potential is minimized 	
+	when the piston is standing still? 
+	\\
+	\\
+	Let's look at the Helmholtz free energy for this system
+	\ba
+		dF &= dU-SdT-Tds 
+		\\
+		& = dQ-pdV-SdT-TdS
+	\ea
+	At fixed $V$, and $T$, the Helmholtz free energy is then
+	\[
+		dF = dQ-TdS.
+	\]
+	From the second law we know $dQ\le TdS$, thus we may conclude that
+	\[
+		dF \le 0.
+	\]
+	As such, the Helmholtz free energy may only decrease at fixed $V$, $T$. At equilibrium (when the piston stops moving), this energy 
+	will be at a minimum. 
+	 
+\eenum
+\end{document}

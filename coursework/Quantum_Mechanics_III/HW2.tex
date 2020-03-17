@@ -1,0 +1,215 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 2\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Feb. 3 }
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item[1.12]
+	 
+	Consider measurements of a spin 1/2 particle in the direction $\vecth n = \cos\alpha \vecth e_z + \sin\alpha 
+	\vecth e_x$, so that we are measuring the operator $S(\alpha)$ with the corresponding
+	unit-normalized eigenvectors $\chi_\pm(\alpha)$ corresponding to the eigenvalues $\pm \h/2$:
+	\[
+		S(\alpha) = \frac{\h}{2}\bbm \cos\alpha & \sin\alpha \\ \sin\alpha & -\cos\alpha\ebm;\ 
+		\chi_+(\alpha) = \bbm \cos\frac{\alpha}{2} \\ \sin\frac{\alpha}{2} \ebm,\ 
+		\chi_-(\alpha) = \bbm -\sin\frac{\alpha}{2} \\ \cos\frac{\alpha}{2} \ebm
+	\]
+	
+	\benum
+	% (a)
+	\item
+	Suppose we prepare the system initially in the state $\chi_+(0)$ (along the $z$ axis), then measure
+	successively in the directions $\alpha,\ 2\alpha,\ ...,\ n\alpha$. Show that the probability that the result is 
+	$+\h/2$ everytime is $\blr{\cos\frac{\alpha}{2}}^{2n}$. 
+	% (b)
+	\item
+	Now make the angle $\alpha$ smaller and the number of measurements larger in such a way
+	that $n\alpha = \pi$ remains constant. What do you achieve in the limit $n\to\infty$?
+	\\ \\
+	\eenum
+	
+	\benum
+	\item 
+	% (a)
+	After each measurement, the state collapses into the eigenstate of $S(\alpha)$ with eigenvalue $\h/2$. In 
+	order to find probabilities of measuring these eigenvalues, we expand the state in question in the
+	eigenbasis of our operator $S(\alpha)$. An arbitrary state $\xi(\alpha')$ can be expanded in said basis as
+	\[
+		\xi(\alpha') = \chi^\dag_+(\alpha) \xi(\alpha') \chi_+(\alpha) 
+		+  \chi^\dag_-(\alpha) \xi(\alpha') \chi_-(\alpha).
+	\]
+	with probability of measuring eigenvalue $\h/2$
+	\[
+		| \chi^\dag_+(\alpha) \xi(\alpha')|^2.
+	\]
+	Now, if we start off with the initial state $\chi_+(0)$ and perform a measurement at angle $\alpha$, the probabilty
+	is
+	\ba
+		| \chi^\dag_+(\alpha) \chi(0)|^2 &= (\chi^\dag_+(\alpha) \chi_+(0))^2 \\
+		&  = \plr{
+		\bbm \cos\frac{\alpha}{2} & \sin\frac{\alpha}{2}\ebm
+		\bbm 1 \\ 0 \ebm }^2 \\
+		& = \plr{\cos\frac{\alpha}{2}}^2
+	\ea
+	The system is now in state $\chi_+(\alpha)$. If we perform a measurement at $2\alpha$ we have probability
+	\ba
+		 (\chi^\dag_+(2\alpha) \chi_+(\alpha))^2 & =
+		  \plr{
+		\bbm \cos\frac{2 \alpha}{2} & \sin\frac{2\alpha}{2}\ebm
+		\bbm \cos\frac{\alpha}{2} \\ \sin\frac{\alpha}{2} \ebm }^2.
+	\ea
+	If we perform $n$ measurements in intervals of $\alpha$ the probability is 
+	\ba
+		 \blr{\chi^\dag_+(n\alpha) \chi_+((n-1)\alpha)}^2 &=
+		  \plr{
+		\bbm \cos\frac{n \alpha}{2} & \sin\frac{n\alpha}{2}\ebm
+		\bbm \cos\frac{(n-1)\alpha}{2} \\ \sin\frac{(n-1)\alpha}{2} \ebm }^2 \\
+		& = \blr{\cos\pfrac{n\alpha}{2}\cos\pfrac{(n-1)\alpha}{2}+\sin\pfrac{n\alpha}{2}\sin\pfrac{(n-1)\alpha}{2}}^2\\
+		& = \clr{ \cos\plr{\frac{n\alpha}{2}-\frac{(n-1)\alpha}{2}}}^2\\
+		& = \plr{\cos\frac{\alpha}{2}}^2
+	\ea
+	The final probability is the product of individual probabilities, thus
+	\[
+		P(n) = \plr{\cos\frac{\alpha}{2}}^{2n}.
+	\]
+	\item 
+	% (b)
+	For $n\alpha = \pi$ we may write our probability as
+	\ba
+		P &= \lim_{n\to\infty} \blr{\cos\pfrac{\pi}{2n}}^{2n} \\
+		& =  \lim_{n\to\infty} \exp\blr{2n \ln\plr{\cos\pfrac{\pi}{2n}}} \\
+		& = \exp\clr{ \lim_{n\to\infty} \pfrac{\ln \plr{\cos\pfrac{\pi}{2n}}}{1/2n}} \\
+		& \Rightarrow \exp\clr{ \lim_{n\to\infty} \pfrac{ -\tan\pfrac{\pi}{2n} \frac{\pi}{2n^2}}{1/2n^2}} \\
+		& =  \exp\clr{ \lim_{n\to\infty} \tan\pfrac{-\pi}{2n}\pi} \\
+		& = 1
+	\ea
+	So it seems that given this type of successive measurement, our state will always be in a spin up eigenstate. 
+	\\ \\
+	\eenum 
+	
+	% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[2.1]
+	
+	Verify the completeness relation in Eq. (2.3) from the notions of orthonormality and completeness as discussed in 
+	Ch. 1.\\ \\
+	
+	Given an arbitrary vector $\ket v$ in $\mathscr H$ space, if we have a complete orthonormal basis  $\{ \ket n\}$, 
+	then $\ket v$ may be expanded as a linear combination of  $\{ \ket n\}$ with coefficients $c_n = (n,v)$
+	\[
+		\ket v = \sum_n c_n \ket n = \sum_n \braket{n|v}\ket n =\plr{ \sum_n {\ket n\bra n}}\ket v = \mathds 1 \ket v.
+	\]
+	 Or perhaps if we apply the completeness relation the vector $\ket v$ (which we expand in the same basis 
+	 labeled by $\{\ket m\}$)
+	 
+	\[
+		\plr{\sum_n \ket n\bra n} \ket v = \sum_{n,m} \ket n \braket{n|m}\braket{m|v} = \sum_m \ket m\braket{m|v} 
+		=\ket v.
+	\]
+	\\
+	Thus we verify that $\sum_n \ket n\bra n = \mathds 1$. 
+	\\ \\
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[2.3]
+	Any operator with the property that $P^2 = P$ is called a projection operator or projector. This property, in fact, 
+	does not guarantee that $P$ is hermitian, but in quantum mechanics only hermitian projection operators
+	really figure. Thus, assume that $P^2 = P$ and $P = P^\dag$. Show that such an operator is always an
+	orthogonal projection to some subspace of the Hilbert space. \\ \\
+	As always, take is as given that any orthonormal set in the quantum mechanical Hilbert space can be completed
+	into an orthonormal basis. \\ \\ \\
+	
+	Since $P=P^\dag$, its eigenvectors form an orthogonal set, which may be completed to an orthonormal
+	basis $\{\ket n\}$ for a particular subspace $\mathscr S$. We apply the completeness relation
+	\[
+		\sum_{n \in \mathscr S} \ket n \bra n = \mathds 1
+	\]
+	to the operator $P$
+	\[
+		\sum_{n,m \in \mathscr S} \ket n \bra m \braket{n|P|m} = \sum_{n,m \in \mathscr S} \lambda_n
+		\ket n \bra m \braket{n|m} = \sum_{n \in \mathscr S} \lambda_n
+		\ket n \bra n
+	\]
+	where $\lambda_n$ denote the eigenvalues $P\ket n = \lambda_n \ket n$. Now we take $P^2$
+	\ba
+		P^2 &= \plr{\sum_{n \in \mathscr S} \lambda_n \ket n \bra n}
+		\plr{\sum_{m \in \mathscr S} \lambda_m \ket m \bra m} \\
+		& = \sum_{n,m\in\mathscr S} \lambda_n\lambda_m \delta_{nm}\ket n\bra m \\
+		& = \sum_{n\in \mathscr S} \lambda_n^2 \ket n\bra n \overset{!}{=} 
+		\sum_{n \in \mathscr S} \lambda_n \ket n \bra n = P
+	\ea
+	We have the equality $P^2 = P$ only if the eigenvalues $\lambda^2_n = \lambda_n$. Hence $\lambda_n = 1$
+	(or trivially $0$). Therefore
+	\[
+		P = \sum_{n\in \mathscr S} \ket n\bra n
+	\]
+	which is the definition of the orthogonal projection on a subspace in $\mathscr H$. 
+	 \\
+	
+% 4 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[2.4]
+	An alternative approach to normal operators: Take it as given that two hermitian operators may be diagonalized
+	simultaneously if and only if they commute.
+	\benum
+	% (a)
+	\item
+	As already noted, every operator $A$ may be decomposed trivially in the form $A = A_1+iA_2$,
+	where $A_1$ and $A_2$ are hermitian. Suppose we have a normal operator $N$ with the 
+	corresponding components $N_1$ and $N_2$. Verify the following items: (i) $[N_1,N_2] = 0$. 
+	(ii) $N$ may be diagonalized.
+	% (b)
+	\item
+	Conversely, suppose that an operator $N$ can be diagonalilzed, with the eigenvalues $c_n$ (not necessarily
+	real) and the orthonormal eigenvectors $u_n$. Verify the following items: (i) $(u_n,N^\dag u_m) = 
+	c_n^*\delta_{nm}$. (ii) $N^\dag u_m = c_m^* u_m$. Therefore, $N^\dag$ can also be diagonalized, eigenvalues
+	and eigenvectors $c_n^*$ and $u_n$. (iii) $N$ is normal.
+	\\ \\
+	We have again, the result that normal, and only normal, operators can be diagonalized.
+	\eenum 
+	\benum
+	% (a)
+	\item
+	\[
+		N = N_1+iN_2;\quad N^\dag = N_1-iN_2
+	\]
+	\[
+		[N,N^\dag] = [N_1+iN_2,N_1-iN_2] = 2i[N_2,N_1] = 0
+	\]
+	
+	\[
+		\Rightarrow [N_1,N_2] = 0.
+	\]
+	Since $[N_1,N_2] = 0$ both $N_1$ and $N_2$ (hermitian operators) can be simultaneously diagonalized. As
+	$N = N_1 +iN_2$ it is the sum of two diagonalized operators and thus is itself diagonal (but not strictly 
+	hermitian). Therefore normal operators are diagonalizable.
+	\\ 
+	% (b)
+	\item
+	\begin{enumerate}[label=\roman*).]
+	\item
+	\[
+		(u_n,N^\dag u_m) = (Nu_n,u_m) = (c_nu_n,u_m) = c_n^*\delta_{nm}
+	\]
+	\item
+	\[
+		N^\dag = \sum_{n,m} \ket n\braket{n|N^\dag|m}\bra m = \sum_n c_n^*\ket n\bra n
+	\]
+	\[
+		N^\dag \ket n = \plr{\sum_n c_n^*\ket n\bra n} \ket n = c_n^* \ket n.
+	\]
+	\item
+	\[
+		[N,N^\dag]\ket n = (|c_n|^2-|c_n|^2)\ket{n} = 0
+	\]
+	\[
+		\Rightarrow [N,N^\dag] = 0
+	\]
+	\eenum 
+	\eenum
+	\eenum
+
+\end{document}

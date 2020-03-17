@@ -1,0 +1,158 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 8}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[11.1]
+Since the mean free path between collision is $l$, the volume swept out by a dust particle with cross sectional area $\pi R^2$ is
+\[
+	V = l\pi R^2.
+\]
+Since only one collision is expected to occur within such a volume, we have
+\[
+	n/N = n = l\pi R^2
+\]
+or
+\[
+	l = \frac{1}{n\pi R^2}.
+\]
+Given $l = 3000\ \text{ly}$ and $R = 10^{-5}\ \text{cm}$, we have a density
+\[
+	n = \frac{1}{l\pi R^2} = 33.6\ \text{stars cm}^{-3}.
+\]
+Given a football stadium volume of $10^{12}\ \text{cm}^3$ this given the number of stars as
+\[
+	N = 33.65(10^{12}) = 3.36 \times 10^{12}\ \text{stars}.
+\]\\ \\
+\item[12.1]
+The number of stars with $f>f_0$ is all stars with $r<r_0$. Thus the total number of stars will lie in a volume spanned by the limit of $r_0$, i.e.
+\[
+	V = \frac{4}{3}\pi r^3.
+\]
+Multiplying by the density
+\[
+	N = n(L)\frac{4}{3}\pi r^3.
+\]
+From the luminosity relation
+\[
+	L = 4\pi r^2 f_0
+\]
+we have
+\[
+	\frac{4}{3}\pi r_0^3  = \frac{L^{3/2}f_0^{-3/2}}{3(4\pi)^{1/2}}
+\]
+and thus the total number of stars is
+\[
+	N_L(f>f_0) =  \frac{n(L)L^{3/2}f_0^{-3/2}}{3(4\pi)^{1/2}}.
+\]
+\\ \\
+\item[12.3]
+Equating the pressure due to gravity to the pressure from kinetic energy
+\ba
+	P& = F/A = \rho_k \bar g_z H\\
+	&= P_k = \rho_k v_z^2
+\ea
+this  leads to
+\[
+	\bar g_z = \frac{H}{v_z^2}.
+\]
+Poisson eq:
+\[
+	\del \cdot \vect g = -4\pi G\rho.
+\]
+Divergence theorem:
+\[
+	\int \del \cdot \vect g\ d^3x = \oint \vect g \cdot \vecth n\ dA = -4\pi G\int d^3x\ \rho
+\]
+\[
+	\oint \vect g\cdot \vecth n\ dA = -4\pi GM.
+\]
+Taking a surface as a rectange of height $2H$ centered at $z=0$, the only flux of the field through the suface is that at $z=\pm H$. In this case, the gravitational field is in opposite direction to the normal of the surface, thus
+\[
+	\oint \vect g\cdot\vecth n\ dA = -2Ag_z.
+\]
+\[
+	-2Ag_z = -4\pi GM
+\]
+\[
+	\mu = \frac{M}{A} = \frac{g_z}{2\pi G}.
+\]
+Given that $g_z = 2\bar g_z$ and from the above $\bar g_z = H/v_z^2$, this yields
+\[
+	\mu = \frac{H}{v^2\pi G}.
+\]
+\item[12.4]
+\ba
+	A-B &= -\frac{r}{2} \frac{d\Omega}{dr} +\frac{1}{2r}\frac{d}{dr}(r^2\Omega)\\
+	&=  -\frac{r}{2} \frac{d\Omega}{dr} + \frac{1}{2r}\plr{ 2r\Omega + r^2\frac{d\Omega}{dr}}\\
+	&= \Omega 
+\ea
+If $A=0$, it follows that $\Omega = -B$. \\ \\
+With 
+\[
+	(1-A/B)^{1/2} = 1.6
+\]
+and 
+\[
+	A = 0.005\ \text{km/sec/lyr}
+\]
+it follows that 
+\[
+ 	B = -A/1.56 = -.0032\ \text{km/sec/lyr}.
+\]
+Then the period is
+\[
+	T=2\pi/\Omega = 2\pi/(A-B) = 765.8\ \text{s}^{-1}
+\]
+At a radius of $r=3\times 10^4\ \text{lyr}$, this implies a linear velocity of
+\[
+	v = r\Omega = 3\times 10^4 (0.0082) = 246.15\ \text{ km s}^{-1}.
+\]
+From the mass galaxy formula
+\[
+	M_G = \frac{rv^2}{G} 
+\] 
+we then have
+\[
+	M_G = 2\times 10^12\ \text{g} = 10^{-21} M_{sun}
+\]
+\\ \\
+I must have made an error somewhere within the period $T = 2\pi/\Omega$?
+\\ \\
+\item[12.5]
+From Gauss's law, let us take our surface to enclose the mass at radius $r = 30000\ \text{lyr}$. Then
+\[
+	\oint \vect g\cdot \vecth n \ dA = -4\pi G M
+\]
+\[
+	-4\pi r^2 g(r) - 4\pi GM
+\]
+\[
+	M = \frac{r^2g(r)}{G}.
+\]
+At the radius $r$, if in circular orbit, the centripetal accleration is that due to gravtiation
+\[
+	mg(r) = m \frac{v^2}{r}
+\]
+or
+\[
+	g(r) = \frac{v^2}{r}.
+\]
+Thus we have
+\[
+	M = \frac{v^2r}{G}.
+\]
+For $v= 300\ \text{km s}^{-1}$ and $r = 6\times 10^4\ \text{lyr}$ this yields
+\[
+	M_G = 5.1\times 10^{37} \text{g} = 10^5 M_{sun}.
+\]
+\eenum
+\end{document}

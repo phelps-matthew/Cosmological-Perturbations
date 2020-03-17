@@ -1,0 +1,417 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 1\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Sept. 9}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+	Consider the 1-dimensional double-well Hamiltonian
+	\[
+		H = -\frac{\h^2}{2m}\difff{}{*2x}+\frac{m\omega^2}{8a^2}(x^2-a^2)^2
+	\]
+	\benum
+		\item 
+		% (a)
+		Show that an expansion about either one of the wells, in the limit of large separation between the wells, leads to a harmonic
+		oscillator system of frequency $\omega$.
+		\\
+		\\
+		First, we expand the potential $V$ about $a$ 
+		\[
+			V = \frac{m\omega^2}{2}\blr{(x-a)^2+\frac{(x-a)^3}{a}+\frac{(x-a)^4}{4a^2}}.
+		\]
+		In the limit of large separation between wells, we see that the last two terms tend toward zero for $x$ in the neighborhood of $a$. This 		leaves us with a Hamiltonian of 
+		\[
+			H = -\frac{\h^2}{2m}\difff{}{*2x}+\frac{m\omega^2}{2}(x-a)^2
+		\]
+		which represents the Hamiltonian of a harmonic oscillator centered around $a$. A similar result applies if we instead expand about 
+		$-a$. 
+		\\
+		% (b)
+		\item
+		Make an educated guess for the form of the wavefunction for the ground state and first excited state, in the limit of large 
+		separation between the wells. 
+		\\
+		\\
+		Based on part (a), we see that for large separation between wells the potential takes the form of two harmonic oscillators; one at $a$
+		and one at $-a$. As such, a reasonable guess for a ground state wave function would be two Gaussians centered at both $a$ and $-a$.
+		As our potential is even, both even and odd solutions are permitted. Since the ground state is symmetric, we guess a solution of
+		\[
+			\ket{\Psi_0} = \braket{x-a|0}+\braket{x+a|0}
+		\]
+		where $\braket{x|n}$ represents the $n$th state of the harmonic oscillator. The next excited state will be an antisymmetric combination 
+		of the two Gaussians
+		\[
+			\ket{\Psi_1} = \braket{x-a|0} - \braket{x+a|0}. 
+		\]
+		% (c)
+		\item
+		For each of these two wavefunctions, compute $\frac{\braket{\psi|H|\psi}}{\braket{\psi|\psi}}$
+		\\
+		\\
+		First, for the approximate ground state energy (not yet taking the limit of large well separation) we have
+		\[
+			\braket{\Psi_0|H|\Psi_0} = \int_{-\infty}^\infty \Psi_0(x)\plr{-\frac{\h^2}{2m}\difff{}{*2x}+\frac{m\omega^2}{2}(x^2-a^2)^2}
+			\Psi_0(x)\, dx
+		\]
+		where
+		\[
+			\Psi_0(x) = \pfrac{m\omega}{\pi\h}^{1/4}\exp\blr{-\frac{m\omega}{2\h}(x-a)^2}+
+			 \pfrac{m\omega}{\pi\h}^{1/4}\exp\blr{-\frac{m\omega}{2\h}(x+a)^2}.
+		\]
+		Evaluating the integral we find
+		\[
+			\braket{\Psi_0|H|\Psi_0} = \h\omega+\frac{3}{16}\frac{\h^2}{a^2m}+\exp\plr{-\frac{a^2m\omega}{\h}}
+			\blr{\frac{1}{4}\frac{\h}{\omega}+\frac{3}{16}\frac{\h^2}{a^2m}-\frac{3}{4}a^2m\omega^2}
+		\]
+		with norm squared
+		\[
+			\braket{\Psi_0|\Psi_0} = 2+2\exp\plr{\frac{a^2m\omega}{\h}}.
+		\]
+		Dividing the two, we arrive at our estimation of the ground state energy 
+		\be\label{1}
+			\frac{\braket{\Psi_0|H|\Psi_0}}{\braket{\Psi_0|\Psi_0}} = \frac{\h\omega}{2}\blr{1+\frac{3}{16}\frac{\h}{a^2m\omega}-\frac{3}{4}
+			\plr{\frac{a^2m\omega}{\h}+1}\frac{1}{1+\exp\pfrac{a^2m\omega}{\h}}}.
+		\ee
+		\\
+		
+		For the first excited state, the relevant quantities are
+		\ba
+			&\Psi_1(x) = \pfrac{m\omega}{\pi\h}^{1/4}\exp\blr{-\frac{m\omega}{2\h}(x-a)^2}-
+			 \pfrac{m\omega}{\pi\h}^{1/4}\exp\blr{-\frac{m\omega}{2\h}(x+a)^2}
+			\\ \\
+			&\braket{\Psi_1|H|\Psi_1} = \h\omega+\frac{3}{16}\frac{\h^2}{a^2m}-\exp\plr{-\frac{a^2m\omega}{\h}}
+			\blr{\frac{1}{4}\frac{\h}{\omega}+\frac{3}{16}\frac{\h^2}{a^2m}-\frac{3}{4}a^2m\omega^2}
+			\\ \\
+			&\braket{\Psi_1|\Psi_1} = 2-2\exp\plr{\frac{a^2m\omega}{\h}}
+		\ea
+		thus
+		\be\label{2}
+			\frac{\braket{\Psi_1|H|\Psi_1}}{\braket{\Psi_1|\Psi_1}} = \frac{\h\omega}{2}\blr{1+\frac{3}{16}\frac{\h}{a^2m\omega}+\frac{3}{4}
+			\plr{\frac{a^2m\omega}{\h}+1}\frac{1}{\exp\pfrac{a^2m\omega}{\h}-1}}.
+		\ee
+		\\	
+		% (d)
+		\item
+		Deduce that in the limit of large separation between the wells the energies are approximately:
+		\[
+			E_0 \approx \frac{\h\omega}{2}\blr{1+\frac{3}{16}\frac{\h}{a^2m\omega}-\frac{3}{4}\frac{a^2m\omega}{\h}\exp
+			\blr{-\frac{a^2m\omega}{\h}}+...}
+		\]
+		\[
+			E_1 \approx \frac{\h\omega}{2}\blr{1+\frac{3}{16}\frac{\h}{a^2m\omega}+\frac{3}{4}\frac{a^2m\omega}{\h}\exp
+			\blr{-\frac{a^2m\omega}{\h}}+...}
+		\]
+		Thus, the energy splitting is exponentially small in the limit of large separation between the wells.
+		\\
+		\\
+		In the limit of large separation between wells
+		\[
+			\exp\pfrac{a^2m\omega}{\h} \gg 1
+		\]
+		such that \eqref{1} and $\eqref{2}$ respectively become 
+		\[
+			E_0 \approx \frac{\h\omega}{2}\blr{1+\frac{3}{16}\frac{\h}{a^2m\omega}-\frac{3}{4}\frac{a^2m\omega}{\h}\exp
+			\blr{-\frac{a^2m\omega}{\h}}-\frac{3}{4}\exp\blr{-\frac{a^2m\omega}{\h}}}
+		\]
+		\[
+			E_1 \approx \frac{\h\omega}{2}\blr{1+\frac{3}{16}\frac{\h}{a^2m\omega}+\frac{3}{4}\frac{a^2m\omega}{\h}\exp
+			\blr{-\frac{a^2m\omega}{\h}}+\frac{3}{4}\exp\blr{-\frac{a^2m\omega}{\h}}}.
+		\]
+		\\
+		\\
+	\eenum
+% #2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Evaluate the integrals involved in the derivation of the variational approximation for the ground state energy of He. Specifically, evaluate
+	the integrals involved in going from the first line to the second line of the formula (16.1.15) in Shankar.
+	\\
+	\\
+	If we ignore the electron-electron repulsion we see that the helium Hamiltonian resembles that of two hydrogen Hamiltonians with 
+	$Z=2$. Trying a wavefunction of the product of two $Z=2$ hydrogen ground states in the full helium hamiltonian, we find that the ground
+	state energy is about -75eV. The actual energy of ground state of the He atom is -78.6eV. To better our approximation, we 
+	allow $Z$ to be a free parameter. The motivation is that the effective potential each electron sees will be slightly less than $Z=2$, due 
+	to the electron screening. As such, we will guess a solution of the ground state wavefunction as
+	\[
+		\psi(\vect r_1,\vect r_2) = \frac{Z^3}{\pi a_0^3}\exp\blr{\frac{-Z(r_1+r_2)}{a_0}}
+	\]
+	and we may express our (unchanged) Hamiltonian as
+	\[
+		H = \blr{-\frac{\h^2}{2m}\plr{\del_1^2+\del_2^2}-\frac{Ze^2}{r_1}-\frac{Ze^2}{r_2}}+\frac{(Z-2)e^2}{r_1}+\frac{(Z-2)e^2}{r_2}
+		+\frac{e^2}{|\vect r_1-\vect r_2|}.
+	\]
+	In evaluating $\braket{\psi|H|\psi}$ we see that the bracketed term in our Hamiltonian is just twice the energy of the $Z=2$ hydrogen-like
+	atom. Thus
+	\ba
+		\braket{\psi|H|\psi} &= \braket{\psi|H_0|\psi} + \braket{\psi|G+I|\psi}\\
+		& = -Z^2\frac{e^2}{a_0} +\braket{\psi|G+I|\psi}.
+	\ea
+	where we have separated the remaining Hamiltonian into two parts
+	\[
+		I\equiv \braket{\psi|\frac{e^2}{|\vect r_1-\vect r_2|}|\psi}
+	\]
+	\[
+		G\equiv \braket{\psi|\frac{(Z-2)e^2}{r_1}+\frac{(Z-2)e^2}{r_2}|\psi}.
+	\]
+	Evaluating $G$ first (as $\psi$ is real, we omit complex conjugates in inner products)
+	\ba
+		G =& \iint d^3\vect r_1d^3\vect r_2\ \psi_{100}(\vect r_1)\psi_{100}(\vect r_2)\frac{(Z-2)e^2}{r_1}\psi_{100}(\vect r_1)\psi_{100}(\vect r_2) 		\\
+		&+  \iint d^3\vect r_1d^3\vect r_2\ \psi_{100}(\vect r_1)\psi_{100}(\vect r_2)\frac{(Z-2)e^2}{r_2}\psi_{100}(\vect r_1)\psi_{100}(\vect r_2)
+	\ea
+	where $\psi_{100}(\vect x)$ represents the ground state of the $Z$ hydrogen-like atom. Working on the first integral above we have
+	\ba
+		& \int d^3\vect r_1 \ \psi_{100}(\vect r_1)\frac{(Z-2)e^2}{r_1}\psi_{100}(\vect r_1)
+		 \int d^3\vect r_2\ \psi_{100}(\vect r_2)\psi_{100}(\vect r_2)
+		 \\
+		 =& \int d^3\vect r_1 \ \psi_{100}(\vect r_1)\frac{(Z-2)e^2}{r_1}\psi_{100}(\vect r_1)
+		 \\
+		 =&(Z-2)e^2 \frac{4\pi Z^3}{\pi a_0^3}\int_0^\infty dr_1\ \exp\blr{\frac{-2Zr_1}{a_0}}r_1
+		 \\
+		 =&(Z-2)e^2 \frac{Z}{a_0}.
+	\ea
+	We can see that the second integral in $G$ is in fact the same integral, thus
+	\[
+		G = 2(Z-2)e^2 \frac{Z}{a_0}.
+	\]
+	For the interaction integral $I$, we need to compute
+	\ba
+		I=&\iint d^3\vect r_1d^3\vect r_2\ \psi_{100}(\vect r_1)\psi_{100}(\vect r_2)\frac{e^2}{|\vect r_1-\vect r_2|}\psi_{100}(\vect r_1)\psi_{100}
+		(\vect r_2)
+		\\
+		=&\,e^2  \int d^3\vect r_2\ \psi_{100}^2(\vect r_2)\int d^3\vect r_1\ \psi^2_{100}(\vect r_1)\frac{1}{|\vect r_1-\vect r_2|}
+	\ea
+	Looking at the second integral, the potential can be expanded in terms of Legendre polynomials as
+	\[
+		\frac{1}{|\vect r_1-\vect r_2|} = \sum_l \frac{ r_1^l}{r_2^{l+1}}P_l(\cos\theta)\quad r_1<r_2.
+	\]
+	If we orient $\vect r_2$ to lie along the $z$-axis, we may express the integral as
+	\ba
+		&2\pi\frac{Z^3}{\pi a_0^3}\int_0^\pi \int_0^{r_2} d\theta\, dr_1\ r_1^2\sin\theta  \plr{\sum_l \frac{ r_1^l}{r_2^{l+1}}P_l(\cos\theta)}\exp
+		\blr{\frac{-2Zr_1}{a_0}}
+		\\
+		+& 2\pi\frac{Z^3}{\pi a_0^3}\int_0^\pi \int_{r_2}^{\infty} d\theta\, dr_1\ r_1^2\sin\theta  \plr{\sum_l \frac{ r_2^l}{r_1^{l+1}}P_l(\cos\theta)}
+		\exp\blr{\frac{-2Zr_1}		{a_0}}.
+	\ea
+	If we look at the orthonormality of the Legendre polynomials
+	\[
+		\int_0^\pi d\theta\ P_l(\cos\theta)P_m(\cos\theta) = \frac{2}{2l+1} \delta_{lm}
+	\]
+	and note that $P_0(\cos\theta) = 1$, we observe that only the $l=0$ term will survive in each integral. Thus
+	\ba
+		 \int d^3\vect r_1\ \psi^2_{100}(\vect r_1)\frac{1}{|\vect r_1-\vect r_2|} &= \frac{4Z^3}{ a_0^3}\plr{\int_0^{r_2} dr_1\  \frac{r_1^2}{r_2}
+		 \exp\blr{\frac{-2Zr_1}{a_0}} + \int_{r_2}^{\infty} dr_1\ r_1\exp\blr{\frac{-2Zr_1}{a_0}}}
+		 \\
+		 & = \frac{1}{r_2}-\plr{\frac{1}{r_2}+\frac{Z}{a_0}}\exp\pfrac{-2Zr_2}{a_0}.
+	\ea
+	Lastly, we integrate with respect to to $\vect r_2$
+	\ba
+		I &= e^2\pfrac{4Z^3}{a_0^3}\int_0^\infty dr_2\ r_2^2 \exp\blr{\frac{-2Zr_2}{a_0}}\blr{\frac{1}{r_2}
+		-\plr{\frac{1}{r_2}+\frac{Z}{a_0}}\exp\pfrac{-2Zr_2}{a_0}}
+		\\
+		& = \frac{5}{8}\frac{Ze^2}{a_0}
+	\ea
+	\\
+	\\
+	Altogether we have
+	\[
+		\braket{\psi|H|\psi} =  -Z^2\frac{e^2}{a_0}+2Z(Z-2)\frac{e^2}{a_0}+\frac{5}{8}\frac{Ze^2}{a_0}.
+	\]
+	Substituting
+	\[
+		\text{Ry} = \frac{e^2}{2a_0}
+	\]
+	we can express the approximate ground state energy of Helium as
+	\[
+		\braket{\psi|H|\psi}  = -2\text{Ry}\blr{4Z-Z^2-\frac{5}{8}Z}
+	\]
+	\\
+	\\
+	\\
+% #3 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider the hydrogen molecule ion problem with Hamiltonian
+	\[
+		H = -\frac{\h^2}{2m}\del^2-\frac{e^2}{r_1}-\frac{e^2}{r_2}
+	\]
+	where $r_1$ and $r_2$ are the distances of the electron from each nucleus, $R$ is the separation between the two nuclei. Thus, with 
+	one nucleus at the origin and the other on the $z$-axis at $z=R$, we have in terms of spherical polar coordinates:
+	$r_1=r$, and $r_2 = \sqrt{r^2+R^2-2rR\cos\theta}$, where $\theta$ is the angle to the $z$-axis. 
+	\\
+	\\
+	For the ground and first-excited states choose trial wavefunction
+	\[
+		\psi_\pm = A(\psi_0(r_1)\pm\psi_0(r_2))
+	\]
+	where $\psi_0(r)$ is the normalized ground state wavefunction of hydrogen. 
+	\benum
+		% (a)
+		\item
+		Show that the overlap integral is
+		\[
+			I \equiv \braket{\psi_0(r_1)|\psi_0(r_2)} = \blr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}
+		\]
+		where $a$ is the Bohr radius.
+		\\
+		\\
+		The normalized ground state wavefunction for hydrogen is 
+		\[
+			\psi_0(r) = \sqrt{\frac{1}{\pi a^3}}e^{-r/a}.
+		\]
+		Substituting the relevant quantities into the overlap integral we have
+		\ba
+			I &= \frac{1}{\pi a^3} \intasphere \exp\blr{-\frac{r}{a}}\exp\blr{-\frac{\sqrt{r^2+R^2-2rR\cos\theta}}{a}} 
+			\\
+			& = \frac{2}{a^3}\int_0^\pi \int_0^\infty dr\, d\theta\  r^2\sin\theta \exp\blr{-\frac{r}{a}}\exp\blr{-\frac{\sqrt{r^2+R^2-2rR\cos\theta}}{a}} 
+			\\
+			& = \frac{4}{a^3}\plr{e^{-R/a}\blr{\frac{a^3}{4}+\frac{1}{4}Ra^2+\frac{1}{12}R^2a}}
+			\\
+			& =  \blr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}
+		\ea
+		% (b)
+		\item
+		Show that the direct integral is 
+		\[
+			D \equiv a\braket{\psi_0(r_1)|\frac{1}{r_2}|\psi_0(r_1)} = \frac{a}{R}-\plr{1+\frac{a}{R}}e^{-2R/a}
+		\]
+		\\
+		\\
+		For the direct integral we have
+		\[
+			D = \frac{2}{a^2}\int_0^\pi \int_0^\infty d\theta\, dr\ r^2\sin\theta\frac{e^{-\frac{2r}{a}}}{\sqrt{r^2+R^2-2rR\cos\theta}}.
+		\]
+		For the angular part
+		\ba
+			\int_0^\pi d\theta\ \frac{\sin\theta}{\sqrt{r^2+R^2-2rR\cos\theta}} &= \elr{\frac{1}{rR}\sqrt{r^2+R^2-2rR\cos\theta}}_0^\pi
+			\\
+			& = \frac{1}{rR}\blr{(r+R)-|r-R|}.
+		\ea
+		Incorporating the absolute value, we now integrate over the radius
+		\ba
+			D &= \frac{2}{a^2}\blr{\int_0^R dr\  \pfrac{2}{R}r^2e^{-\frac{2r}{a}} +\int_R^\infty dr\ 2r\,e^{-\frac{2r}{a}}}\\
+			& = \frac{a}{R}-\plr{1+\frac{a}{R}}e^{-2R/a}
+		\ea
+		% (c)
+		\item
+		Show that the exchange integral is
+		\[
+			X \equiv a\braket{\psi_0(r_1)|\frac{1}{r_1}|\psi_0(r_2)} = \plr{1+\frac{R}{a}}e^{-R/a}
+		\]
+		\\
+		\\
+		Now for the exchange integral
+		\[	
+			X = \frac{2}{a^2}\int_0^\pi \int_0^\infty dr\, d\theta\  r \exp\blr{-\frac{r}{a}}\exp\blr{-\frac{\sqrt{r^2+R^2-2rR\cos\theta}}{a}}.
+		\]
+		This is very similar to the overlap integral with a linear factor of $r$ in the integrand. Thus
+		\ba
+			X &= \frac{2}{a^2}\int_0^\pi \int_0^\infty dr\, d\theta\  r \exp\blr{-\frac{r}{a}}\exp\blr{-\frac{\sqrt{r^2+R^2-2rR\cos\theta}}{a}}
+			\\
+			& = \plr{1+\frac{R}{a}}e^{-R/a}
+		\ea
+		% (d)
+		\item 
+		Hence, including the nucleus-nucleus electrostatic energy $\frac{e^2}{R}$, show that the total energy expectation value
+		for $\psi_\pm$ can be written as 
+		\[
+			\frac{\braket{\psi\pm|H_{total}|\psi\pm}}{\braket{\psi\pm|\psi\pm}}
+			= |E_{Bohr}|
+			\left\{-1+2\frac{a}{R}\blr{\frac{\plr{1+\frac{R}{a}}e^{-2R/a}\pm\plr{1-\frac{2}{3}\pfrac{R}{a}^2}e^{-R/a}}
+			{1\pm\plr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}}}\right\}
+		\]
+		\\
+		\\
+		Let's start with the ground state wavefunction
+		\[
+			\psi_+ = A\blr{\psi_0(r_1)+\psi_0(r_2)}.
+		\]
+		We will denote this state as
+		\[
+			\ket{\psi_+} = A\plr{\ket{\psi_{01}}+\ket{\psi_{02}}}
+		\]
+		such that $\braket{r_1|\psi_{01}} = \psi_0(r_1)$ and $\braket{r_2|\psi_{02}} = \psi_0(r_2)$.\\
+		For the normalization
+		\ba
+			\braket{\psi_+|\psi_+} &= A^2\plr{ 1+1+2\braket{\psi_{01}|\psi_{02}}} \\
+			& =  2A^2\plr{1+I} \\
+			& = 2A^2\plr{1+\blr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}}
+		\ea
+		Now for the Hamiltonian
+		\ba
+			\braket{\psi_+|H|\psi_+} &= A^2\plr{\bra{\psi_{01}}+\bra{\psi_{02}}}|-\frac{\h^2}{2m}\del^2-\frac{e^2}{r_1}-\frac{e^2}{r_2}+\frac{e^2}
+			{R}|\plr{\ket{\psi_{01}}+\ket{\psi_{02}}}
+			\\
+			& = A^2\blr{2E_{Bohr}+2E_{Bohr}I + 4E_{Bohr}(D+X)}
+			\\
+			& = 2A^2|E_{Bohr}|\plr{-(1+I)-2(D+X)}.
+		\ea
+		Dividing by the normalization,
+		\ba
+			\frac{\braket{\psi_+|H|\psi_+}}{\braket{\psi_+|\psi_+}} &= |E_{Bohr}|\left\{-1-2\frac{(D+X)}{(1+I)}\right\}
+			\\
+			& = |E_{Bohr}|
+			\left\{-1+2\frac{a}{R}\blr{\frac{\plr{1+\frac{R}{a}}e^{-2R/a}+\plr{1-\frac{2}{3}\pfrac{R}{a}^2}e^{-R/a}}
+			{1+\plr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}}}\right\}
+		\ea
+		\\
+		\\
+		Now for the antisymmetric state
+		\[
+			\ket{\psi_-} = A\plr{\ket{\psi_{01}}-\ket{\psi_{02}}}
+		\]
+		we may use the same $I$, $D$, and $X$ integrals to form the expectation of energy as
+		\[
+			\braket{\psi_-|H|\psi_-} =  2A^2|E_{Bohr}|\plr{-(1-I)-2(D-X)}
+		\]
+		with normalization
+		\[
+			\braket{\psi_-|\psi_-} = 2A^2(1-I).
+		\]
+		Consequently we have for the asymmetric state 
+		\ba
+			\frac{\braket{\psi_-|H|\psi_-}}{\braket{\psi_-|\psi_-}} &= |E_{Bohr}|\left\{-1-2\frac{(D-X)}{(1-I)}\right\}
+			\\
+			& = |E_{Bohr}|
+			\left\{-1+2\frac{a}{R}\blr{\frac{\plr{1+\frac{R}{a}}e^{-2R/a}-\plr{1-\frac{2}{3}\pfrac{R}{a}^2}e^{-R/a}}
+			{1-\plr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}}}\right\}
+		\ea
+		Thus we arrive at the expression initially given 
+		\[
+			\frac{\braket{\psi\pm|H_{total}|\psi\pm}}{\braket{\psi\pm|\psi\pm}}
+			= |E_{Bohr}|
+			\left\{-1+2\frac{a}{R}\blr{\frac{\plr{1+\frac{R}{a}}e^{-2R/a}\pm\plr{1-\frac{2}{3}\pfrac{R}{a}^2}e^{-R/a}}
+			{1\pm\plr{1+\frac{R}{a}+\frac{1}{3}\pfrac{R}{a}^2}e^{-R/a}}}\right\}
+		\]
+		where we should also include the contribution of the potential between protons, which goes as
+		\[
+			\frac{2e^2}{R}\plr{1\pm I} = |E_{Bohr}|\frac{4a}{R}(1\pm I)
+		\]
+		for the ground and first excited state respectively.
+		\\
+		\\
+		% (e)
+		\item
+		Plot these two functions and deduce that the energy expectation value has a minimum for the plus state, but not for the minus state. 
+		\\
+		\\
+		For the ground state we have 
+		\[
+			f(R/a) = \frac{\braket{\psi_+|H|\psi_+}}{\braket{\psi_+|\psi_+}}
+		\]
+		\figg[width=100mm]{hw1_1.pdf}
+		while for the first excited state we have
+		\[
+			g(R/a) = \frac{\braket{\psi_-|H|\psi_-}}{\braket{\psi_-|\psi_-}}
+		\]
+		\figg[width=100mm]{hw1_2.pdf}
+		As we can see, only the ground state has a minimum for the expectation energy. 
+		
+	
+	\eenum 
+\eenum
+\end{document}

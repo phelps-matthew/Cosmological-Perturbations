@@ -1,0 +1,229 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 6\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Feb. 29}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item[4.10]
+	\benum
+	% (a)
+	\item
+	Take a joint system $S+E$, an arbitrary operator of the joint system $A$, and a trace preserving completely
+	positive map $\mathcal L$ for the system $S$. Show that $\tr_S(\mathcal LA) = \tr_S A$.
+	
+	% (b)
+	\item
+	Use the result of part (a) to solve the problem 4.3.
+	\eenum
+	\benum
+	% (a)
+	\item
+	From the theorem given in eq. 4.19, the CP map $\mathcal L$ acting on joint operator $A$ may be 
+	written in terms of Krauss operators $K$, $K^\dag$ as
+	\[
+		\mathcal L(A) = \sum_k K_k A K_k^\dag.
+	\]
+	In order for $\mathcal L$ to preserve the trace, we have the condition
+	\[
+		\sum_k K^\dag_k K = 1.
+	\]
+	Now we form the trace
+	\[
+		\tr_S(\mathcal LA) = \tr_S\plr{ \sum_k K_k A K_k^\dag } = \tr_S\plr{
+		\sum_k K_k^\dag K_kA} = \tr_SA.
+	\]
+	Thus
+	\[
+		\tr_S(\mathcal LA) = \tr_S A.
+	\]
+	\\ \\
+	\item
+	% (b)
+	State 2 before measurement is given by
+	\[
+		\rho_2 = \tr_1(\rho) 
+	\]
+	where $\rho = \ket\psi\bra\psi$ and $\ket\psi = \frac{1}{\sqrt 2}(\ket\uparrow_1\ket\downarrow_2-\ket\downarrow_1
+	\ket\uparrow_2)$. After measurement, the density operator is mapped into another positive operator via the CP linear
+	mapping $\mathcal L$, i.e.
+	\[
+		\rho \to \rho' = \sum_k P(k)\rho_k = \mathcal L(\rho).
+	\]
+	Now state 2 is
+	\[
+		\rho_2' = \tr_1(\mathcal L\rho).
+	\]
+	By the result from part (a), we then have
+	\[
+		 \tr_1(\rho) = \tr_1(\mathcal L \rho) \Rightarrow \rho_2 =\rho_2'.
+	\]
+	Thus state 2 does not change after measurement of state 1. 
+	\eenum 
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[5.2]
+	Consider a simple harmonic oscillator with the Hamiltonian $H_0 = \h\omega a^\dag a$ and a damping constant
+	$\gamma$, so that the density operator has the master equation
+	\[
+		\dot\rho = \frac{1}{i\h}[H_0,\rho]+\gamma(2a\rho a^\dag - a^\dag a\rho - \rho a^\dag a).
+	\]
+	\benum
+	\item
+	% (a)
+	Argue that the relaxation term in fact is of the proper Lindblad form.
+	
+	\item
+	% (b)
+	Show (using the cyclic invariance of trace) that the expectation value of the (nonhermitian) operator $a$ 
+	satisfies the equation of motion $\diff{t}\braket a = -i\omega \braket a - \gamma \braket a$.
+	
+	\item
+	% (c)
+	Find the equations of motion for the expectation values $\braket x$ and $\braket p$.  \\
+	\eenum 
+	\benum
+	\item
+	% (a)
+	The Lindblad form of the relaxation term $\mathcal L\rho$ is
+	\[
+		\mathcal L\rho = \sum_k[2L_k\rho L_k^\dag-L_k^\dag L_k\rho -\rho L_k^\dag L_k].
+	\]
+	Now if we denote
+	\[
+		L = \gamma^{1/2}a;\qquad L^\dag = \gamma^{1/2} a^\dag
+	\]
+	we see that the relaxation term $ \gamma(2a\rho a^\dag - a^\dag a\rho - \rho a^\dag a)$ is indeed 
+	\[
+		\mathcal L\rho = 2L\rho L^\dag-L^\dag L\rho -\rho L^\dag L
+	\]
+	which follows the Linblad form (as a single term in the summation). 
+	\\ \\
+	\item
+	% (b)
+	Multiply the master equation by $a$, take the trace, and commute things around from the cyclic invariance of the trace
+	\ba
+		\tr\plr{ a\diff{t}\rho} &= \tr\plr{
+		 \frac{1}{i\h}[H_0,\rho]+\gamma(2aa\rho a^\dag - aa^\dag a\rho - a\rho a^\dag a)}\\
+		 \tr\plr{\diff{t}\rho a} &= -i\omega \tr(\rho[a,a^\dag]a)
+		 +2\gamma\tr\plr{\rho a^\dag a a} -\gamma\tr\plr{\rho aa^\dag a}-\gamma\tr\plr{\rho a^\dag a a}\\
+		 \diff{t}\tr(\rho a) &= -i\omega\tr(\rho a)+\gamma\tr(\rho[a^\dag,a]a) \\
+		 \diff{t}\braket a &= -i\omega \braket{a}-\gamma\braket{a}
+	\ea
+	where we have used the commutation relation of the ladder operators $[a,a^\dag] = 1$. \\ \\
+	
+	\item
+	% (c)
+	From $\braket{a}^\dag = \braket{a^\dag}$ we may form the adjoint equation of motion for $a^\dag$
+	\[
+		\diff{t}\braket{a^\dag} = ( -i\omega \braket{a}-\gamma\braket{a})^\dag = i\omega\braket{a^\dag}-\gamma
+		\braket{a^\dag}.
+	\]
+	The operators $x$ and $p$ are related to the ladder operators by
+	\[
+		x = \sqrt{\frac{\h}{2m\omega}}(a^\dag+a);\qquad p = i\sqrt{\frac{\h m\omega}{2}}(a^\dag -a).
+	\]
+	To find the equations of motion, lets add the derivatives
+	\ba
+		\diff{t}\braket{a}+\diff{t}\braket{a^\dag} &= i\omega(\braket{a^\dag}-\braket a)-\gamma(\braket{a^\dag}+\braket a)\\
+		\sqrt{\frac{2m\omega}{\h}} \diff{t}\braket x & =
+		\frac{1}{m}\sqrt{\frac{2m\omega}{\h}}\braket{p}-\gamma\sqrt{\frac{2m\omega}{\h}}\braket x\\
+		\diff{t}\braket x &= \frac{\braket p}{m}-\gamma\braket x.
+	\ea
+	Now subtract the derivatives
+	\ba
+		\diff{t}\braket{a^\dag}-\diff{t}\braket{a} &= i\omega(\braket{a^\dag}+\braket a)-\gamma(\braket{a^\dag}-\braket 			a)\\
+		-i\sqrt{\frac{2}{\h m\omega}} \diff{t}\braket p & =
+		i\omega \sqrt{\frac{2}{\h m\omega}}\braket{x}+i\gamma\sqrt{\frac{2}{\h m\omega}}\braket p\\
+		\diff{t}\braket p &= -m\omega^2\braket x-\gamma\braket p.
+	\ea
+	Altogether then, we have
+	\[
+		\diff{t}\braket x = \frac{\braket p}{m}-\gamma\braket x;\qquad  \diff{t}\braket p = -m\omega^2\braket x-\gamma			\braket p.
+	\]
+	\\ \\
+	\eenum
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[6.1]		
+	Let $\psi_a$ and $\psi_b$ be two orthonormal one-particle states. Show that the two-particles wave functions
+	\[
+		\psi_{ab}^\pm(\vect r_1,\vect r_2) = \frac{1}{\sqrt 2}\blr{
+		\psi_a(\vect r_1)\psi_b(\vect r_2)\pm \psi_a(\vect r_2)\psi_b(\vect r_1)}
+	\]
+	are normalized to unity and have the proper boson $(+)$ and fermion $(-)$ exchange symmetries. They could
+	be, and actually are, the many-body wave functions that express the state of affairs that one particle is in state $a$
+	and the other in state $a$ and the other in state $b$. 
+	\\ \\
+	Bosons are symmetric under exchange of $a$ and $b$
+	\[
+		\frac{1}{\sqrt 2}\blr{
+		\psi_a(\vect r_1)\psi_b(\vect r_2)+ \psi_a(\vect r_2)\psi_b(\vect r_1)} \overset{ab\to ba}\to
+		+\frac{1}{\sqrt 2}\blr{\psi_a(\vect r_1)\psi_b(\vect r_2)+ \psi_a(\vect r_2)\psi_b(\vect r_1)}
+	\]
+	while fermions are antisymmetric
+	\[
+		\frac{1}{\sqrt 2}\blr{
+		\psi_a(\vect r_1)\psi_b(\vect r_2)- \psi_a(\vect r_2)\psi_b(\vect r_1)} \overset{ab\to ba}\to
+		-\frac{1}{\sqrt 2}\blr{\psi_a(\vect r_1)\psi_b(\vect r_2)- \psi_a(\vect r_2)\psi_b(\vect r_1)}.
+	\]
+	Switching to dirac notation (no longer in position basis (wavefunction)), where $\ket n_1$ and $\ket n_2$ represent two    		(orthonormal) one-particle states
+	\[
+		\ket{\psi} = \frac{1}{\sqrt 2}\plr{ \ket n_1\ket n_2 \pm \ket n_2\ket n_1}.
+	\]
+	Now form the inner product
+	\ba
+		\braket{\psi|\psi} &= \frac{1}{2}\plr{\bra n_2\bra n_1 \pm \bra n_1\bra n_2 } \plr{ \ket n_1\ket n_2 \pm \ket n_2\ket 			n_1}\\
+		& = \frac{1}{2}(1\pm0\pm0+1) \\
+		& = 1.
+	\ea
+	\\ \\
+% 4 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[6.2]
+	Consider a system of two identical particles (or two particles with the same fixed value of the $z$ component of the 
+	spin) that interact with a potential that is a function of the absolute value of the distance between the particles
+	$|\vect r_1-\vect r_2|$. As is well known, the center-of-mass degree of freedom and the relative motion of the 
+	two particles may then be separated. Show that in such a product form the wave function of the relative motion
+	must be an even function of the relative coordinate $\vect r= \vect r_1-\vect r_2$ for bosons, and an odd 
+	function for fermions. 
+	\\ \\
+	For the interacting two particle system, the Hamiltonian is
+	\[
+		H = \frac{p_1^2+p_2^2}{2m}+V(|\vect r_1-\vect r_2|)
+	\]
+	which may be converted into the center of mass degree of freedom and relative motion Hamiltonian. The center of mass 
+	is
+	\[
+		\vect R = \frac{m_1\vect r_1+m_2\vect r_2}{m_1+m_2} = \frac{\vect r_1+\vect r_2}{2}
+	\]
+	and its derivative
+	\[
+			\dot{\vect R} = \frac{1}{2} \dot{\vect r_1}+\dot{\vect r_2}.
+	\]
+	Now with $\vect r = \vect r_1-\vect r_2$, $\mu = m_1m_2/(m_1+m_2) = m/2$, and $M = 2m$ , the Hamiltonian
+	can then be brought to the form
+	\[
+		H = \frac{\vect P_{cm}}{2M}+\frac{\vect p}{2\mu} + V (r) = H(\vect R) + H(\vect r).
+	\]
+	To clarify, $\vect P$ is the momentum conjugate to $\vect R$ and $\vect p$ is the momentum conjugate to $\vect r$. As 		the Hamiltonian is now separated into two terms, we may write the wavefunction as the product of the two coordinates
+	\[
+		\psi(\vect R,\vect r) = \psi_1(\vect R)\psi_2(\vect r)
+	\]
+	(one can also think of this as separation of variables in the Schrodinger eq.). Given this
+	wavefunction, under particle exchange
+	we see that $\vect R$ is symmetric since $\vect R =( \vect r_1+\vect r_2)/2$. The exchange effects must then lie all within 	$\psi_2(\vect r$). Since bosons (fermions) are even (odd) under particle exchange, we 
+	deduce that
+	\[
+		\psi_2(\vect r) \overset{r_1r_2\to r_2r_1}\to +\psi_2(\vect r)\quad \text{for bosons}
+	\]
+	\[
+		\psi_2(\vect r) \overset{r_1r_2\to r_2r_1}\to -\psi_2(\vect r)\quad \text{for fermions}.
+	\]
+	Thus product form the wave function of the relative motion
+	must be an even function of the relative coordinate $\vect r= \vect r_1-\vect r_2$ for bosons, and an odd 
+	function for fermions.
+\eenum
+\end{document}

@@ -1,0 +1,396 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.3}QFT\\ Ch 2: The Klein-Gordan Field\end{spacing}}
+\author{Matthew Phelps}
+\date{}
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item[2.2]{\bf{The complex scalar field}}
+	 
+	Consider the field theory of a complex-valued scalar field obeying the the Klein-Gordon equation. The action of
+	this theory is
+	\[
+		S = \int d^4x\ (\partial_\mu \phi^*\partial^\mu \phi-m^2\phi^*\phi)
+	\]
+	It is easiest to analyze this theory by considering $\phi(x)$ and $\phi^*(x)$, rather than the real and imaginary
+	parts of $\phi(x)$, as the basic dynamical variables. 
+	
+	\benum
+	% (a)
+	\item
+	Find the conjugrate momenta to $\phi(x)$ and $\phi^*(x)$ and the canonical commutation relations. Show that the
+	Hamiltonian is 
+	\[
+		H = \int d^3x\ (\pi^*\pi +\del \phi^*\cdot \del \phi +m^2 \phi^*\phi).
+	\]
+	Compute the Heisenberg equation of motion for $\phi(x)$ and show that it is indeed the Klein-Gordon equation.
+	
+	% (b)
+	\item
+	Diagonalize $H$ by introducing creation and annihilation operators. Show that the theory contains two sets of 
+	particles of mass $m$.
+	
+	% (c)
+	\item
+	Rewrite the conserved charge 
+	\[
+		Q = \int d^3x\ \frac{i}{2}(\phi^*\pi^*-\pi\phi)
+	\]
+	in terms of creation and annihilation operators, and evaluate the charge of the particles of each type. 
+	% (d)
+	\item
+	Consider the case of two complex Klein-Gordon fields with the same mass. Label the fields as
+	$\phi_a(x)$, where $a=1,2$. Show that there are now four conserved charges, one given by the
+	generalization of part (c), and the other three given by
+	\[
+		Q_i = \int d^3x\ \frac{i}{2}\plr{\phi^*_a(\sigma^i)_{ab}\pi^*_b-\pi_a(\sigma^i)_{ab}\phi_b},
+	\]
+	where $\sigma^i$ are the Pauli sigma matrices. Show that these three charges have the commutation 
+	relations of angular momentum ($SU(2)$). Generalize these results to the case of $n$ identical
+	complex scalar fields. 
+	\\ \\
+	\eenum
+	\pagebreak
+	\benum
+	\item 
+	% (a)
+	With
+	\[
+		\pi(\vect x) = \pdiff[\mathcal L]{\dot\phi(\vect x)}
+	\]
+	we form the conjugate momenta from our Lagrangian
+	\[
+		\pi(\vect x) = \dot\phi^*;\qquad \pi^*(\vect x) = \dot\phi
+	\]
+	From the canonical commutation relation of a field and its conjugate momenta,
+	\[
+		[\phi(\vect x),\pi(\vect x')] = i\delta(\vect x-\vect x')
+	\]
+	and taking the conjugate
+	\[
+		[\phi(\vect x)^*,\pi(\vect x')^*] = -[\phi(\vect x),\pi(\vect x')]^\dag = i\delta(\vect x-\vect x').
+	\]
+	
+	The other usual commutation relations should also hold
+	\[
+		[\phi(\vect x),\phi^*(\vect x')] = [\pi(\vect x),\pi^*(\vect x')] = [\phi(\vect x),\pi^*(\vect x')]= 0.
+	\]
+	To find the Hamiltonian, we may use
+	\[
+		H = \int d^3x\ \plr{\sum_i \pi_i(\vect x)\dot\phi_i(\vect x) - \mathcal L} = \int d^3x\ \mathcal H
+	\]
+	thus
+	\ba
+		\mathcal H &= \pdiff[\mathcal L]{\dot\phi}\dot\phi + \pdiff[\mathcal L]{\dot\phi^*}\dot\phi^* -\mathcal L\\
+		& = \dot\phi^*\dot\phi + m^2\phi\phi^*+\del\phi\cdot\del\phi^* \\
+		& = \pi^*\pi + \del\phi^*\cdot\del\phi +m^2\phi^*\phi
+	\ea
+	To find the operators' time dependence, we compute the Heisenberg equation of motion
+	\ba
+		i\pdiff{t}\phi(x) &= [\phi(x),H]  \\
+		& = \blr{ \phi(x),\int d^3x'\ \pi^*(x')\pi(x') + \del\phi^*(x')\cdot\del\phi(x') +m^2\phi^*(x')\phi(x') }\\
+		& = \int d^3x'\ \plr{ \pi^*(x')[\phi(x),\pi(x')]+\del\phi^*(x')\cdot [\phi(x),\del\phi(x')] + 
+		m^2\phi^*(x')[\phi(x),\phi(x')]} \\
+		& = \int d^3x'\ i\pi^*(x')\delta^3(\vect x-\vect x') \\
+		& = i\pi^*(\vect x,t).
+	\ea
+	Similarly
+	\[
+		\pdiff{t}\phi^*(x) = \pi(x).
+	\]
+	For the conjugate momenta
+	\ba
+	 [\pi(x),H]  & = \blr{ \pi(x),\int d^3x'\ \pi^*(x')\pi(x') + \del\phi^*(x')\cdot\del\phi(x') +m^2\phi^*(x')\phi(x') }\\
+		& = \int d^3x'\ \plr{ \pi^*(x')[\pi(x),\pi(x')]+\del\phi^*(x')\cdot [\pi(x),\del\phi(x')] + 
+		m^2\phi^*(x')[\pi(x),\phi(x')]} \\
+	\ea
+	Looking at the commutator with the gradient
+	\[
+		[\pi(x),\del \phi(x')] = \del_{x'}[\pi(x),\phi(x')] = -i\del \delta^3(\vect x-\vect x')
+	\]
+	with the derivative defined as (for arbitrary $\vect f$)
+	\ba
+		\vect f\cdot \del \delta^3(\vect x-\vect x') = -(\del\cdot \vect f) \delta^3(\vect x-\vect x').
+	\ea
+	Back to the EOM for $\pi(x)$
+	\ba
+		[\pi(x),H] &= \int d^3x'\ \blr{i\del^2\phi^*(x')\delta^3(\vect x-\vect x) 
+		- im^2\phi^*(x')\delta^3(\vect x-\vect x')} \\
+		\pdiff[\pi(x)]{t} & = \del^2\phi^*(x)-m^2\phi^*(x)
+	\ea
+	and likewise for the conjugate
+	\[
+		\pdiff[\pi^*(x)]{t} = \del^2\phi(x)-m^2\phi(x).
+	\]
+	Substituting $\pi = \dot\phi$ we arrive at the Klein-Gordon equation for each field
+	\[
+		\pd_\mu\pd^\mu \phi +m^2\phi = 0;\quad \pd_\mu\pd^\mu \phi^* +m^2\phi^* =0
+	\]
+	\pagebreak
+	
+	% (b)
+	\item
+	We can express $\phi(x)$ in momentum space as
+	\[
+		\phi(x) = \int \frac{d^3p}{(2\pi)^3} e^{i\vect p\cdot\vect x} \phi(\vect p,t)
+	\]
+	and then apply the Klein-Gordon equation to arrive at
+	\[
+		\plr{\pdifff{}{*2t}+\vect p\cdot \vect p + m^2}\phi(\vect p,t) = 0
+	\]
+	which has solutions
+	\[
+		\phi(\vect p,t) = a(\vect p) e^{-i\omega_\vect p t}+b(\vect p) e^{i\omega_\vect p t};\qquad 
+		\omega_\vect p = \sqrt{|\vect p|^2+m^2}.
+	\]
+	This applies to both fields $\phi(x)$ and $\phi^*(x)$. In the case of the real field, we choose the coefficients
+	of momentum in analogy with the harmonic oscillator raising/lowering operators as the following
+	\[
+		a(\vect p) \to \frac{1}{\sqrt{2\omega_\vect p}} a_\vect p
+	\]
+	\[
+		b(\vect p) \to \frac{1}{\sqrt{2\omega_\vect p}}a^\dag_{-\vect p}
+	\]
+	thus
+	\[
+		\phi(x) = \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2\omega_\vect p}} e^{i\vect p\cdot\vect x}
+		(a_\vect p e^{-i\omega_{\vect p}t}+a^\dag_\vect{-p} e^{i\omega_{\vect p}t})
+	\]
+	and from the Heisenberg equation of motion $\pi(x) = \dot\phi(x)$
+	\[
+		\pi(x) = \int \frac{d^3p}{(2\pi)^3}(-i) \sqrt{\frac{\omega_\vect p}{2}}e^{i\vect p\cdot\vect x}\plr{
+		a_\vect p e^{-i\omega_\vect p t}-a^\dag_{-\vect p}e^{i\omega_\vect p t}}.
+	\]
+	Imposing $[\phi(x),\pi(x')]_{x_0=x'_0} = i\delta^3(\vect x-\vect x')$ leads to 
+	\[
+		[a_\vect p,a^\dag_{\vect p'}] = (2\pi)^3\delta(\vect p-\vect p').
+	\]
+	This last commutation relation aligns with our expectation of a harmonic oscillator. The specific form 
+	of the coefficients was chosen so that $\phi(x)$ is self adjoint i.e. $\phi^\dag(\vect p,t) = \phi(-\vect p,t)$. 
+	This is important because for the complex field, $\phi(x)$ is no longer self adjoint. As such we 
+	choose coefficients as
+	\[
+		a(\vect p) \to \frac{1}{\sqrt{2\omega_\vect p}} a_\vect p
+	\]
+	\[
+		b(\vect p) \to \frac{1}{\sqrt{2\omega_\vect p}}b^\dag_{-\vect p}.
+	\]
+	Recalling that the Heisenberg e.o.m. are now $\pi = \dot\phi^\dag$ we have the following:
+	\[
+		\phi(x) = \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2\omega_\vect p}} e^{i\vect p\cdot\vect x}
+		(a_\vect p e^{-i\omega_{\vect p}t}+b^\dag_\vect{-p} e^{i\omega_{\vect p}t})
+	\]
+	\[
+		\pi(x) = \int \frac{d^3p}{(2\pi)^3}i \sqrt{\frac{\omega_\vect p}{2}}e^{i\vect p\cdot\vect x}\plr{
+		a^\dag_{-\vect p} e^{i\omega_\vect p t}-b_{\vect p}e^{-i\omega_\vect p t}}.
+	\]
+	\[
+		\phi^\dag(x) = \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2\omega_\vect p}} e^{i\vect p\cdot\vect x}
+		(a^\dag_{-\vect p} e^{i\omega_{\vect p}t}+b_\vect{p} e^{-i\omega_{\vect p}t})
+	\]
+	\[
+		\pi^\dag(x) = \int \frac{d^3p}{(2\pi)^3}(-i) \sqrt{\frac{\omega_\vect p}{2}}e^{i\vect p\cdot\vect x}\plr{
+		a_\vect p e^{-i\omega_\vect p t}-b^\dag_{-\vect p}e^{i\omega_\vect p t}}.
+	\]	
+	In maintaining $[\phi(\vect x),\pi(\vect x')] = [\phi^\dag(\vect x),\pi^\dag(\vect x')] = i\delta(\vect x-\vect x')$ 
+	we find the following commutation relation (denote $c\equiv e^{i\omega_\vect p t_0}$)
+	\ba
+		i\delta^3(\vect x-\vect x') &= 
+		\int \frac{d^3pd^3p'}{(2\pi)^6}\pfrac{i}{2}e^{i(\vect p\cdot x+\vect p'\vect\cdot \vect x')}
+		\blr{ (ca_\vect p+c^*b^\dag_{-\vect p}),(c'^*a^\dag_{-\vect p'}-c'b_{\vect p'}) }\\
+		&= \int \frac{d^3pd^3p'}{(2\pi)^6}\pfrac{i}{2}e^{i(\vect p\cdot x+\vect p'\vect\cdot \vect x')}
+		\clr{ cc'^*[a_\vect p,a^\dag_{-\vect p'}]+c'c^*[b_{\vect p'},b^\dag_{-\vect p}]-cc'[a_\vect p,b_{\vect p'}]
+		+c^*c'^*[b^\dag_{-\vect p},a^\dag_{\vect -p'}] }\\
+		&= \int \frac{d^3pd^3p'}{(2\pi)^6}\pfrac{i}{2}e^{i(\vect p\cdot x+\vect p'\vect\cdot \vect x')}
+		\plr{ cc'^*[a_\vect p,a^\dag_{-\vect p'}]+c'c^*[b_{\vect p'},b^\dag_{-\vect p}]}
+	\ea
+	which leads to
+	\[
+		[a_\vect p,a^\dag_{\vect p'}] = [b_\vect p,b^\dag_{\vect p'}] = (2\pi)^3\delta(\vect p-\vect p').
+	\]
+	All other combinations commute. Note that it seemed to helpful to single out which commutators are relevant
+	by keeping the phase factors in; those that were not conjugates were discarded for many (hopefully
+	self evident) reasons. 
+	\\ \\
+
+	Now we form the Hamiltonian
+	\ba
+		H &= \int d^3x\ (\pi^*\pi + \del\phi^*\cdot\del\phi +m^2\phi^*\phi)\\
+		&= \int \frac{d^3x}{(2\pi)^3}e^{i(\vect{p}+\vect{p}')\cdot \vect x} \int \frac{ d^3pd^3p'}{(2\pi)^3}
+		\bigg\{
+		\frac{\sqrt{\omega_{\vect p}\omega_{\vect p'}}}{2}
+				(a_{\vect{p}'}-b^\dag_{-\vect{p}'})(a^\dag_{-\vect{p}}-b_{\vect{p}})\\
+				&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+		+\frac{-\vect p\cdot\vect p'+m^2}{2\sqrt{\omega_{p}\omega_{p'}}}
+		(a^\dag_{-\vect p'}+b_{\vect p'})(a_{\vect p}+b^\dag_{-\vect p})
+		\bigg\}\\
+		& = \int \frac{ d^3pd^3p'}{(2\pi)^3} \delta^3(\vect p+\vect p')
+		\bigg\{
+		\frac{\sqrt{\omega_{\vect p}\omega_{\vect p'}}}{2}
+				(a_{\vect{p}'}-b^\dag_{-\vect{p}'})(a^\dag_{-\vect{p}}-b_{\vect{p}})\\
+				&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+		+\frac{-\vect p\cdot\vect p'+m^2}{2\sqrt{\omega_{p}\omega_{p'}}}
+		(a^\dag_{-\vect p'}+b_{\vect p'})(a_{\vect p}+b^\dag_{-\vect p})
+		\bigg\}\\
+		& = \int \frac{d^3p}{(2\pi)^3}\pfrac{\omega_\vect p}{2}\clr{
+		(a_{-\vect{p}}-b^\dag_{\vect{p}})(a^\dag_{-\vect{p}}-b_{\vect{p}})
+		+
+		(a^\dag_{\vect p}+b_{-\vect p})(a_{\vect p}+b^\dag_{-\vect p})
+		}\\
+		& = \int \frac{d^3p}{(2\pi)^3}\pfrac{\omega_\vect p}{2}\clr{
+		(a_{-\vect{p}}-b^\dag_{\vect{p}})(a^\dag_{-\vect{p}}-b_{\vect{p}})
+		+
+		(a^\dag_{-\vect p}+b_{\vect p})(a_{-\vect p}+b^\dag_{\vect p})
+		}\\
+		& = \int \frac{d^3p}{(2\pi)^3} \pfrac{\omega_\vect p}{2} \plr{
+			a_{-\vect p}a^\dag_{-\vect p}+a^\dag_{-\vect p}a_{-\vect p}
+			+b_{\vect p}b^\dag_{\vect p} +b_{\vect p}^\dag b_\vect p}\\
+		& = \int \frac{d^3p}{(2\pi)^3} \omega_\vect p \plr{
+			a^\dag_\vect p a_\vect p + b^\dag_\vect p b_\vect p 
+			+\frac{1}{2}[a_\vect p,a^\dag_\vect p]+\frac{1}{2}[b_\vect p,b^\dag_\vect p]
+			}
+	\ea
+	It appears we have creation/annihilation operators for particles of type $a$ and $b$, with the same
+	relativistic energy and thus same mass. 
+	\pagebreak
+	
+	% (c)
+	\item
+	The Lagrangian is invariant under the transformation
+	\[
+		\phi\to e^{i\alpha}\phi;\qquad \phi^* \to e^{-i\alpha}\phi^*
+	\]
+	which in infinitesimal form amounts to the variation $\Delta \phi = i\alpha\phi$. The conserved current
+	is then
+	\[
+		j^\mu = \pdiff[\mathcal L]{(\pd_\mu\phi)}\Delta\phi = i\alpha\blr{
+		(\pd_\mu\phi^*) \phi-(\pd_\mu\phi) \phi^*}.
+	\]
+	The conserved charge is then $Q= \int d^3x\ j^0$ and so (for $\alpha = 1/2$)
+	\[
+		Q = \int d^3x\ \frac{i}{2}\plr{ \phi^*\pi^* -\pi\phi}
+	\]
+	I suspect we write it in this form so that $Q^\dag = Q$. Continuing, 
+	\ba
+		Q &= \int \frac{d^3x}{(2\pi)^3} e^{i(\vect p+\vect p')\cdot \vect x}
+		\int \frac{d^3pd^3p'}{(2\pi)^3} \pfrac{1}{4}\sqrt\frac{\omega_\vect p'}{\omega_\vect p}
+		\bigg\{
+		\plr{a^\dag_{-\vect p} e^{i\omega_{\vect p}t}+b_\vect{p} e^{-i\omega_{\vect p}t}}
+		\plr{ a_{\vect p'} e^{-i\omega_\vect p' t}-b^\dag_{-\vect p'}e^{i\omega_\vect p' t}}\\
+				&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+		+\plr{a^\dag_{-\vect p'} e^{i\omega_\vect p' t}-b_{\vect p'}e^{-i\omega_\vect p' t}}
+		\plr{a_\vect p e^{-i\omega_{\vect p}t}+b^\dag_\vect{-p} e^{i\omega_{\vect p}t}}
+		\bigg\}\\
+		& = \int \frac{d^3p}{(2\pi)^3}\pfrac{1}{4}\bigg\{
+		\plr{a^\dag_{-\vect p} e^{i\omega_{\vect p}t}+b_\vect{p} e^{-i\omega_{\vect p}t}}
+		\plr{ a_{-\vect p} e^{-i\omega_\vect p t}-b^\dag_{\vect p}e^{i\omega_\vect p t}}\\
+		&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+		+\plr{a^\dag_{\vect p} e^{i\omega_\vect p t}-b_{-\vect p}e^{-i\omega_\vect p t}}
+		\plr{a_\vect p e^{-i\omega_{-\vect p}t}+b^\dag_{-\vect{p}} e^{i\omega_{\vect p}t}}\bigg\}\\
+		& =  \int \frac{d^3p}{(2\pi)^3}\pfrac{1}{2}
+		\clr{ a^\dag_{\vect p}a_{\vect p}-b_{\vect p}b^\dag_{\vect p}}\\
+		& =   \int \frac{d^3p}{(2\pi)^3}\pfrac{1}{2}
+		\clr{ a^\dag_{\vect p}a_{\vect p}-b^\dag_{\vect p}b_{\vect p}+\delta^3(0)}
+	\ea
+	Not accounting for the infinite constant, we see that the corresponding charges are
+	$\pm \frac{1}{2}q$, where $\alpha = \frac{1}{2}q$ is some charge constant. 
+	\pagebreak
+	
+	% (d)
+	\item
+	To maintain the Klein-Gordon equation for two complex fields (4 independent fields), we may add on a similar 
+	Lagrangian so that
+	\ba
+		\mathcal L &= \pd_\mu \phi_1\pd^\mu\phi^*_1 +\pd_\mu \phi_2\pd^\mu\phi^*_2
+		-m^2(\phi_1\phi^*_1+\phi_2\phi^*_2) \\
+		& = |\pd_\mu \phi_1|^2+ |\pd_\mu \phi_2|^2 -m^2\plr{|\phi_1|^2+|\phi_2|^2}.
+	\ea
+	Based on the form of the conserved current, we need to write this in terms of vectors. Denote
+	\[
+		\vec \Phi = \bpm \phi_1 \\ \phi_2 \epm;\qquad \Phi_i = \phi_i
+	\]
+	and now
+	\[
+		\mathcal L = \pd^\mu\Phi_i^\dag\pd_\mu\Phi^i - m^2\plr{ \Phi_i^\dag\Phi^i}.
+	\]
+	The Lagrangian is invariant under $SU(2)$ transformation
+	\[
+		\vec \Phi \to e^{i\vec\sigma\cdot\vec \alpha}\vec \Phi
+	\]
+	infinitesimally
+	\[
+		\alpha^i \Delta \Phi_j = i\alpha^i (\sigma_{jk})^i\Phi^k.
+	\]
+	We may also include the identity matrix, which amounts to the same transformation as earlier ($U(1)$)
+	\[
+		\phi_i \to e^{i\alpha}\phi_i.
+	\]
+	Then we may combine everything into a conserved tensor of four currents (define $\sigma^0 = \mathds 1$) 
+	\ba
+		T^{\mu \nu} &= \pdiff[\mathcal L]{(\pd_\mu \Phi^i)}\alpha^\nu \Delta\Phi_i+
+					\pdiff[\mathcal L]{(\pd_\mu \Phi^{\dag i})}\alpha^\nu \Delta\Phi_i^\dag \\
+		& = \pdiff[\mathcal L]{(\pd_\mu \Phi^i)}i\alpha^\nu (\sigma_{ij})^\nu\Phi^j-
+					\pdiff[\mathcal L]{(\pd_\mu \Phi^{\dag i})}i\alpha^\nu (\sigma_{ij}^\dag)^\nu\Phi^{\dag j}
+	\ea
+	The four conserved charges are then (with $\alpha = -1/2$)
+	\[
+		Q^\nu = \int d^3x\ T^{0\nu} = \int d^3x\ \frac{i}{2}\blr{\pi_a^\dag (\sigma_{ab}^\dag)^\nu\phi^{\dag}_b-
+		 \pi_a (\sigma_{ab})^\nu\phi_b} 
+	\]
+	There is an implied summation over $a,b$ here. I suppose as we require $Q = Q^\dag$ we 
+	rewrite this as
+	\[
+		Q^\nu =  \int d^3x\ \frac{i}{2}\blr{\phi_a^\dag (\sigma_{ab})^\nu\pi^{\dag}_b-
+		 \pi_a(\sigma_{ab})^\nu\phi_b}.
+	\]
+	Now forming the commutator
+	\ba
+		[Q^i,Q^j] &= \int d^3x\ d^3x' \pfrac{i}{2}^2
+		\blr{
+		\plr{\phi_a^\dag (\sigma_{ab})^i\pi^{\dag}_b-\pi_a(\sigma_{ab})^i\phi_b},
+		\plr{\phi_{a'}^\dag (\sigma_{a'b'})^j\pi^{\dag}_{b'}-\pi_{a'}(\sigma_{a'b'})^j\phi_{b'}}
+		}
+	\ea
+	\ba
+		\blr{
+		\plr{\phi_a^\dag (\sigma_{ab})^i\pi^{\dag}_b-\pi_a(\sigma_{ab})^i\phi_b},
+		\plr{\phi_{a'}^\dag (\sigma_{a'b'})^j\pi^{\dag}_{b'}-\pi_{a'}(\sigma_{a'b'})^j\phi_{b'}}
+		}&\\=
+		\delta_{aa',bb'}\blr{\phi_a^\dag (\sigma_{ab})^i\pi^{\dag}_b,\phi_{a'}^\dag (\sigma_{a'b'})^j\pi^{\dag}_{b'}}
+		+\delta_{aa',bb'}\blr{\pi_a(\sigma_{ab})^i\phi_b,\pi_{a'}(\sigma_{a'b'})^j\phi_{b'}}&\\
+		=\blr{\phi_a^\dag(\vect x) (\sigma_{ab})^i\pi^{\dag}_b(\vect x),\phi_{a}^\dag(\vect x')
+		(\sigma_{ab})^j\pi^{\dag}_{b}(\vect x')}
+		+\blr{\pi_a(\vect x)(\sigma_{ab})^i\phi_b(\vect x),\pi_{a}(\vect x')(\sigma_{ab})^j\phi_{b}(\vect x')}&\\
+		=\phi^\dag_a\pi^\dag_b[(\sigma_{ab})^i,(\sigma_{ab})^j]+\pi_a\phi_b[(\sigma_{ab})^i,(\sigma_{ab}^j)]&\\
+		=\plr{ \phi_a^\dag\pi_b^\dag+\pi_a\phi_b}[(\sigma_{ab})^i,(\sigma_{ab})^j] (wrong)&
+	\ea
+	\\ 
+	Looking at part of the commutator
+	\[
+		[(\sigma_{ab})^i\phi_a(\vect x)\pi_b(\vect x),(\sigma_{ab})^j\phi_a(\vect x')\pi_b(\vect x')]
+		=2i\delta^3(\vect x-\vect x')\phi_a\pi_b\sigma_{ab}^i\sigma_{ab}^j.
+	\]
+	The conjugate expression is then
+	\[
+		[(\sigma_{ab})^i\phi_a(\vect x)\pi_b(\vect x),(\sigma_{ab})^j\phi_a(\vect x')\pi_b(\vect x')]^\dag
+		=-2i\delta^3(\vect x-\vect x')\pi_a^\dag\phi_b^\dag\sigma_{ab}^j\sigma_{ab}^i.
+	\]	
+	Back to the integral
+	\[
+		[Q^i,Q^j] = \int d^3x \pfrac{i}{2} \plr{ \phi_a^\dag\pi_b^\dag-\pi_a\phi_b}[(\sigma_{ab})^i,(\sigma_{ab})^j] = 
+		\epsilon_{ijk}Q^k.
+	\]
+	In this form it should be easy to generalize to $n$ independent fields by replacing the sigma matrices
+	by the general $SU(n)$ commutation relation
+	\[
+	 	\left[\lambda_i, \lambda_j \right] = i \sum_{k=1}^{n^2 -1}{f_{ijk} \lambda_k} \,    .
+	\]
+	where $f_{ijk}$ are the structure constants. As such, there will be $n^2$ conserved charges associated with $n$
+	independent complex fields (at least for those due to the $SU(n)$) symmetry. 
+	\eenum
+	\eenum
+\end{document}

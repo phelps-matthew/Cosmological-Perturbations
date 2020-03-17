@@ -1,0 +1,222 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 13\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 27}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[8.6]
+Study the excitations of a homogeneous condensate of density $n$ that flows with wave number $\vect k$, so that
+the macroscopic wave function is $\phi = \sqrt n e^{i\vect k\cdot \vect r}$. As you well know, the chemical potential
+in this case is $\mu = \ep_k+gn$.. The elementary excitations in this case should clearly be plane waves. Let us denote
+the wave vector of an excitation with respect to the condensate flow by $\vect q$. A quick look at the equations
+(8..49) and (8.50) shows that the small excitations may, in fact, be written in the form $u(\vect r) = u e^{i(\vect k+\vect q)
+\cdot \vect r}$ and $v(\vect r) = v e^{i(-\vect k+\vect q)\cdot \vect r}$ for some constants $u$ and $v$.
+\benum
+\item
+Define the velocities associated with the macroscopic flow $\vect V = \h \vect k/m$ and with the excitations as
+$\vect v = \h \vect q/m$. Show that the excitations energies (functions of $\vect v$) are of the form
+\[
+	\omega = m\blr{ \vect v\cdot \vect V\pm \frac{1}{2}\sqrt{v^2(4c^2+v^2)}},
+\]
+where $c$ is the usual speed of sound in the BEC.
+
+\item
+While this argument should, perhaps, be augmented by the analysis of the corresponding eigenvectors $[u,v]$, the limiting case $\vect V \to 0$ strongly and correctly suggests that only the energies corresponding to the $+$ sign in
+front of the square root qualify as true excitation frequencies. On the basis of this fact, show that all excitation frequencies are positive only if the flow velocity is slow enough, i.e., $V\le c$. \\
+\eenum
+
+\benum
+\item
+\[
+	g = \frac{4\pi \h^2 a}{m},\qquad c = \sqrt{gn/m}
+\]
+Using the information as given in the problem, we take eq (8.49) and (8.50) and eliminate the relative phase
+\[
+	\plr{ \frac{\h^2(\vect k+\vect q)^2}{2m}+2gn}u+gnv= (\mu +\omega)u
+\]
+\[
+	\plr{ \frac{\h^2(\vect k-\vect q)^2}{2m}+2gn}v+gnu= (\mu -\omega)v.
+\]
+Now use the following relations
+\[
+	\frac{\h^2k^2}{2m} = \frac{1}{2}mV^2,\quad \frac{\h^2 q^2}{2m} = \frac{1}{2}mv^2
+\]
+and 
+\[
+	\mu = \ep_k+gn = \frac{1}{2}mV^2+gn.
+\]
+Substituting these results into the above
+\[
+	\plr{\frac{1}{2}m(\vect v+\vect V)^2+2gn}u +gnv = \plr{\frac{1}{2}mV^2+gn+\omega}u
+\]
+\[
+	\plr{\frac{1}{2}m(\vect v-\vect V)^2+2gn}v +gnu = \plr{\frac{1}{2}mV^2+gn-\omega}v.
+\]
+This can be brought into matrix form as
+\[
+	\bpm \frac{1}{2}m(2\vect v\cdot \vect V+v^2+2c^2) & gn \\ -gn & \frac{1}{2}m
+	(2\vect v\cdot \vect V-v^2-2c^2) \epm
+	\bpm u \\v \epm = \omega \bpm u\\v \epm.
+\]
+Taking the determinant, the characteristic eigenvalue equation is then
+\[
+	0 = (gn)^2 +(m\vect v\cdot \vect V)^2 -\frac{1}{4}m^2(v^2+2c^2)^2-2(m\vect v\cdot\vect V)\omega +\omega^2
+\]
+\ba
+	\Rightarrow \omega &= m\vect v\cdot \vect V \pm \frac{1}{2}\sqrt{m^2(v^2+2c^2)^2-4(gn)^2}\\
+	& = m\plr{\vect v\cdot \vect V\pm \frac{1}{2}\sqrt{v^2(v^2+4c^2)}}
+\ea
+where we have substituted in our relation for $c$. 	
+	
+\item
+Based on the $\vect V\to 0$ behavior, as indicated in the question, we only take the positive root:
+\[
+	\omega = m\blr{ \vect v\cdot \vect V +\frac{1}{2}\sqrt{v^2(4c^2+v^2)}}
+\]
+First note that all terms in the square root are positive (or zero). Now, as the flow and excitation velocities may assume any direction,
+\[
+	-vV\le \vect v\cdot \vect V \le vV.
+\]
+we conclude that \\
+i). 
+\[ v \ne 0 \]
+ii).
+\[ 
+	\omega \ge m\blr{ -vV +\frac{1}{2}\sqrt{v^2(4c^2+v^2)}}
+\]
+We seek an $\omega$ such that $\omega \ge 0$ - this is determined by the term in brackets:
+\ba
+	 -vV +\frac{1}{2}\sqrt{v^2(4c^2+v^2)} &\ge 0\\
+	\frac{1}{2}\sqrt{4c^2+v^2}& \ge V\\
+\ea
+For small excitations $\vect q=\frac{m\vect v}{\h}$, we have $v\ll c$ thus
+\[
+	V \le c.
+\]\\ \\
+\eenum
+% #2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[9.5]
+\benum
+\item
+By analyzing the Heisenberg equations of motion for the occupation number of a site $b_n^\dag b_n$, identify
+the current operator $j_n$ for the number of atoms per unit time that cross from site $n-1$ to site $n$.
+\item
+Given the stationary state of a lattice of length $L$ with $N$ noninteracting atoms all in the state with the lattice
+momentum $q$, find the expectation values of the occupation number $b_n^\dag b_n$ and of the current $j_n$.
+\item
+The ratio of the current and the occupation number obviously gives the velocity at which an atom moves along the lattice, in sites per unit time. Find the velocity as a function of the lattice momentum $q$ in the state described in part (b).\\ \\
+\eenum
+\benum
+\item
+First let us take a total derivative
+\[
+	i\diff{t}(b_n^\dag b_n) = (i\diff{t}b_n^\dag)b_n + b_n^\dag(i\diff{t}b_n) = -(i\diff{t}b_n)^\dag b_n
+	+b_n^\dag(i\diff{t}b_n).
+\]
+Now we may use this result in 9.44
+\[
+	-(i\diff{t}b_n)^\dag b_n+b_n^\dag(i\diff{t}b_n) = \frac{J}{2}\plr{(b_{n+1}^\dag +b_{n-1}^\dag)b_n -
+	U(b^\dag_n)^2b_n^2+U(b^\dag_n)^2 b_n^2 - b_n^\dag (b_{n+1}+b_{n-1})}
+\]
+\[
+	\Rightarrow \diff{t}(b_n^\dag b_n) = \frac{-iJ}{2}\plr{b_{n+1}^\dag b_n +b_{n-1}^\dag b_n
+	-b_n^\dag b_{n+1} -b_n^\dag b_{n-1}}.
+\]
+This equation is equal to the current operator $j_n+j_{n+1}$.\\
+Thus we have
+\[
+	j_n =  \frac{-i J}{2}\plr{ b_{n-1}^\dag b_n - b_n^\dag b_{n-1}}
+\]
+\[
+	j_{n+1} = \frac{-iJ}{2}\plr{ b_{n+1}^\dag b_n - b_n^\dag b_{n+1}}
+\]\\ \\
+\item
+Denote the state in the problem as $\ket{N_k}$. Now take the expectation value
+\ba
+	\braket{N_k|b_n^\dag b_n|N_k} &= \frac{1}{L}\sum_{n,m = -L/2}^{L/2-1} 
+	\braket{ N_k|e^{\frac{-2\pi i}{L}(nj-m(j+1))}B_m^\dag B_n|N_k}\\
+	& = \frac{N}{L}\sum_{n =-L/2}^{L/2-1} \delta_{nk}e^{\frac{2\pi i n}{L}}\\
+	& = \frac{N}{L}e^{iq}
+\ea
+Proceeding with the same form of calculations, we may compute 
+\[
+	\braket{j_{n+1}} = \frac{-iNJ}{2L}(e^{iq}-e^{-iq}) = \frac{NJ}{L}\sin(q)
+\]
+\[
+	\braket{j_{n}} = \frac{-iNJ}{2L}(e^{-iq}-e^{iq}) = -\frac{NJ}{L}\sin(q)
+\]
+\[
+	\braket{b^\dag_n b_n} = \frac{N}{L}
+\]
+
+\item
+We may compute the velocity as (current density/occupation number)
+\[
+	v = \frac{\braket{j_n}}{\braket{b_n^\dag b_n}} = J \sin(q).
+\]
+\newpage
+\eenum
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[9.6]
+Consider small excitations of the ground state $(p=0)$ of the lattice within the mean field framework, assuming
+repulsive atom-atom interactions $U>0$. For each excitation lattice momentum $q$ the eigenvalues and eigenvectors
+of the matrix $M$ in (9.52) give the frequencies $\omega_q$ and the corresponding amplitudes $u_q$, $v_q$ of
+the small-excitation modes. In close analogy to the corresponding free-condensate case, the number of excitations
+has doubled, only those modes that can be normalized to the form $|u_q|^2-|v_q|^2=1$ give true physical
+excitations, and the number of noncondensate atoms is then $\hat N = \sum_q |v_q|^2$. Show that
+in the limit $L\to\infty$ the fraction of noncondensate atoms diverges. There is no such thing as a a true
+one-dimensional condensate (in a lattice, or for that matter, in free space), but don't let that stop you from 
+analyzing it anyway. 
+\\ Hint: Everything depends on how the $|v_q|^2$ behave in the limit $q\to 0$. 
+\\ \\
+For simplification, we will choose our eigenvectors such that $u_q,v_q \in \mathbb R$ (given a 2x2 real matrix with
+real eigenvalues, we may always choose eigenvectors such that they are real). For $p=0$, take the
+equation for $u_q$ given by matrix (9.52)
+\[
+	\omega_q u_q = u_q(\bar n U+2J\sin^2(q/2))+\bar n U v_q
+\]
+\[
+	u_q(\omega_q-\bar nU-2J\sin^2(q/2)) = \bar n U v_q.
+\]
+Square both sides
+\[
+	u_q^2(\omega_q-\bar n U-2J\sin^2(q/2))^2 = \bar n^2 U^2 v_q^2.
+\]
+Use normalization condition $u_q^2-v_q^2 = 1$ to solve for $v_q^2$ (Mathematica helpful here)
+\ba
+	v_q^2 &= -\frac{\blr{-\bar n U -2J\sin^2(q/2)+2\sqrt{J\sin^2(q/2)(\bar n U+J\sin^2(q/2)}}^2}{
+	-\bar n^2 U^2+\blr{-\bar n U - 2J\sin^2(q/2)+2\sqrt{J\sin^2(q/2)(\bar n U+J\sin^2(q/2))}}^2}\\
+		&= -\frac{\blr{- \frac{N}{L}U -2J\sin^2\pfrac{\pi m}{L}+2\sqrt{J\sin^2\pfrac{\pi m}{L}( \frac{N}{L} U+J\sin^2
+		\pfrac{\pi m}{L})}}^2}{- \pfrac{N}{L}^2 U^2+\blr{- \frac{N}{L} U - 2J\sin^2\pfrac{\pi m}{L}+2\sqrt{J\sin^2
+		\pfrac{\pi m}{L}\plr{\frac{N}{L}U+J\sin^2\pfrac{\pi m}{L}}}}^2}\\
+	&= -1-\frac{\pfrac{N}{L}^2U^2}{- \pfrac{N}{L}^2 U^2+\blr{- \frac{N}{L} U - 2J\sin^2\pfrac{\pi m}{L}+2\sqrt{J\sin^2
+		\pfrac{\pi m}{L}\plr{\frac{N}{L}U+J\sin^2\pfrac{\pi m}{L}}}}^2}
+\ea
+where
+\[
+	\bar n = N/L,\qquad q = \frac{2\pi m}{L},\quad m = 0,1,2,3..
+\]
+\[
+	\omega_q = \sqrt{ 4J\sin^2(q/2)(\bar n U+J\sin^2(q/2))}.
+\]
+If we immediately take $L\to \infty$, we get an indeterminate $\frac{0}{0}$ form. For finite $m$, using mathematica
+we may take the limit to find
+\[
+	\lim_{L\to\infty} v_q^2 = \infty.
+\]
+I would like to take $q\to 0$ but it seems that this would not account for the $\bar n$ term in the $L\to \infty$ limit ( though of course we could express $\bar n$ in terms of $q$ and $m$). Based on the result that for a finite $m$, since individual terms 
+$|v_q|^2$ approach infinity in the $L\to\infty$ limit, I claim the sum of terms must also diverge
+\[
+	\lim_{L\to\infty} \sum_q |v_q|^2 \to \infty.
+\]
+\emph{Another idea was to expand the function in $q$ for small $q$, take leading order terms, and then
+arrive at a summation $\propto \sum_q 1/q \Rightarrow \int 1/q \propto \ln(q)$ which diverges as $q\to 0$, but
+again I seemed to have a problem dealing with both $m$ and $q$ due to the $\bar n$. I am most likely overlooking something simple.}
+\eenum
+\end{document}

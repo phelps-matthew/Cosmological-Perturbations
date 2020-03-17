@@ -1,0 +1,204 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 3}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[6.1]
+Given that the sun has a composition of 70\% hydrogen and a total mass of $2.0\times 10^{33}\ [\text{gm}]$, the number of hydrogen nuclei is 
+\[
+	N = \frac{0.7(2.0\times 10^{33})}{m_p}=8.38\times 10^{56}.
+\]
+If all hydrogen is converted to helium, releasing an energy $E = 0.03m_pc^2$, the total energy supply of the sun is
+\[
+	E_{supply} = \frac{NE}{4} = \frac{0.7(2.0\times 10^{33})(0.03c^2)}{4}=9.45\times10^{51}\ [\text{erg}].
+\]
+During the phase at which the sun undergoes hydrogen fusion in a shell, if this phase can use 13\% of its total supply (the quantity given above) as it radiates at luminosity $L_{sun}$,
+then the total time this phase lasts is given by
+\[
+	t = \frac{E_{supply}}{L_{sun}} = \frac{9.45\times10^{51}}{3.9\times 10^{33}}=2.4\times10^{18}\ [\text{sec}] =7.7\times 10^{10} \ [\text{yr}].
+\]
+\\ \\
+\item[6.3]
+Referring to Dirac's treatment of quantum mechanics, start with 
+\[
+	(m^2c^4 + p^2 c^2)^{1/2} = \vect a\cdot\vect p c + bmc^2.
+\]
+Square both sides,
+\be
+	m^2c^4 + p^2c^2 = (\vect a\cdot \vect pc)^2 + b^2m^2c^4 + 2bmc^2\vect a\cdot\vect pc.
+\ee
+Substitute
+\[
+	p^2 = p_x^2+p_y^2+p_z^2,\qquad \vect a\cdot\vect p = a_xp_x+a_yp_y+a_zp_z
+\]
+so that (1) reads
+\ba
+	m^2c^4+ c^2(p_x^2+p_y^2+p_z^2) &= c^2[a_x^2p_x^2+a_y^2p_y^2 + a_z^2p_z^2 + (a_xa_y+a_ya_x)p_xp_y +  (a_xa_z+a_za_x)p_xp_z  + (a_ya_z+a_za_y)p_yp_z ]\\& + b^2m^2c^4 + 2bmc^3(a_xp_x+a_yp_y+a_zp_z).
+\ea
+Now we equate the coefficients of powers of $p_i$ and $mc^2$ on each side. It is clear that
+\[
+	a_x^2 = a_y^2=a_z^2 = 1
+\]
+\[
+	b^2=1
+\]
+\[
+	a_xb = a_yb = a_zb = 0
+\]
+\[
+	a_xa_y+a_ya_x = a_xa_z+a_za_x =a_ya_z + a_za_y = 0.
+\]
+From the first two relations above, if $a_i$ and $b$ are ordinary numbers, then we conclude that
+\[
+	a_i = b = \pm 1.
+\]
+This violates the next relation
+\[
+	a_x b= (\pm1)(\pm1) = \pm 1 \ne 0.
+\]
+Hence the $a_i$ and $b$ cannot be scalars. However, the relations are satisfied by $4\times4$ matricies 
+\[
+	a_x = \bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm,\quad a_y =\bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm,\quad
+	a_z = \bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm,\quad  b=\bpm 1&0&0&0\\0&1&0&0\\0&0&-1&0\\0&0&0&-1\epm.
+\]
+Now verify the relations for $a_i$
+\[
+	a_xa_x = \bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm  \bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm = \bpm 1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\epm
+\]
+\[
+	a_ya_y =\bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm  \bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm = \bpm 1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\epm
+\]
+\[
+	a_za_z =\bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm  \bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm = \bpm 1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\epm
+\]
+\[
+	a_xa_y+a_ya_x = \bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm \bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm
+	+\bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm\bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm=0
+\] 
+\[
+	a_xa_z+a_za_x = \bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm  \bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm
+	+ \bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm \bpm 0&0&0&1\\ 0&0&1&0\\0&1&0&0\\1&0&0&0 \epm=0
+\]
+\[
+	a_ya_z + a_za_y = \bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm \bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm+
+	 \bpm 0&0&1&0\\ 0&0&0&-1\\1&0&0&0\\0&-1&0&0 \epm \bpm 0&0&0&-i\\ 0&0&i&0\\0&-i&0&0\\i&0&0&0 \epm=0
+\]
+\\ \\
+\item[6.7]
+\[
+	{}^3_2\text{He} +{}^1_1\text H \to {}^4_2\text{He} + {}^0_1 \bar e + {}^0_0 \nu
+\]
+ \\ 
+\item[6.8]
+Beta decay involves the conversion $n\to p + e^-+\bar \nu$ or $p\to n + \bar e + \nu$, which is a result of the weak interaction. Alpha decay involves the ejection of a ${}^4_2\text{He}$ atom from the nucleus, governed by the strong and EM interaction. Gamma decay occurs when a system with positive binding energy undergoes fusion and excess energy is released in the form of a photon, or ${}^0_0\gamma$. 
+\[
+	{}^{12}_6\text C + {}^1_1 \text H \to {}^{13}_7\text N + {}^0_0 \gamma\quad\text{EM}
+\]
+\[
+	{}^{13}_7\text N \to {}^{13}_6\text C + {}^0_1 \bar e + {}^0_0 \nu\quad \text{Weak}
+\]
+\[
+	{}^{13}_6 \text C + {}^1_1 \text H \to {}^{14}_7 \text N + {}^0_0 \gamma\quad\text{EM}
+\]
+\[
+	{}^{14}_7\text N + {}^1_1 \text H \to {}^{15}_8 \text O + {}^0_0\nu\quad\text{EM}
+\]
+\[
+	{}^{15}_8\text O \to {}^{15}_7 \text N + {}^0_1 \bar e + {}^0_0 \nu\quad \text{Weak}
+\]
+\[
+	{}^{15}_7\text N + {}^1_1\text H \to {}^{12}_6\text C + {}^4_2\text{He}\quad\text{Strong}
+\]
+\\ \\
+\item[6.9]
+The total energy on the one-body problem mass $m$ is the sum of kinetic and potential. The only appreciable potential forces at this scale are those due to Coulomb repulsion. Thus, infinitely far away, all energy is kinetic
+\[
+	E(r=\infty) = \frac12 mv^2.
+\]
+According to classical mechanics, a particle will come in from infinity, and reflect off the Coulomb barrier at some potential $V(r)$. At the barrier, all energy is converted into potential and the particle has zero translational energy. Penetration of the barrier would violate energy conservation. The point at which the potential is equal to the total energy is
+\[
+	\frac{q_1q_2}{r} = \frac12 mv^2.
+\]
+For a given velocity, the particle hits the barrier at a radius
+\[
+	r = \frac{2q_1q_2}{mv^2}.
+\]
+However, according to quantum mechanics, there exists a finite probability of penetrating the barrier due to the uncertainty principle. The penetration probability is proportional to
+\[
+	P_1 \propto \exp\plr{ -2\pi^2r/\lambda} = \exp\plr{ -4\pi^2q_1q_2/hv}.
+\]
+Higher velocities yield higher probabilities for penetration. From statistical mechanics, the velocity of particles in thermodynamic equilibrium is given by the probability distribution
+\[
+	P_2 \propto \exp\plr{ -mv^2/2kT}.
+\]
+Thus the probabilty for a particle is maximized by finding the maximum of $P_1P_2$. This occurs at velocity
+\[
+	v = \pfrac{4\pi^2q_1q_2kT}{hm}^{1/3}.
+\]
+For a proton proton reaction at $T=1.5\times 10^7\ \text K$, the radius at which penetration is most likely occurs at
+\[
+	r = \frac{2e^2}{mv^2} = \frac{4e^2}{m_p}\pfrac{8\pi^2e^2kT}{hm_p}^{-2/3} = 2.4\times 10^{-11}\ \text{cm}.
+\]
+This is about $10^2$ larger than the approximate ``size'' of the neutron/proton. 
+\\ \\
+The maximum probability occurs by substituting the $v$ given above into $P_1P_2$:
+\ba
+	P_1P_2(v_{max}) &= \exp(-4\pi q_1q_2/hv)\exp(-mv^2/2kT) = \exp \pfrac{ -8\pi^2q_1q_2 kT-mhv^3}{2kThv} \\
+	&=\exp\pfrac{ -8\pi^2 q_1q_2 kT-4\pi^2q_1q_2kT}{2kT(4\pi^2q_1q_2kT)^{1/3}(hm)^{-1/3}}\\
+	&= \exp\blr{ -\frac32 (4\pi^2 q_1q_2/h)^{2/3}(m/kT)^{1/3}}\\
+	&= \exp\blr{-\pfrac{T_0}{T}^{1/3}}
+\ea
+where 
+\[
+	T_0 = (3/2)^3(4\pi^2 q_1q_2/h)^2(m/k).
+\]
+For hydrogen reactions $T_0$ is given by
+\[
+	T_0 = (3/2)^3(4\pi^2e^2/h)^2(m_p/2k) = 3.84\times 10^{10}\ \text K.
+\]
+Plotting the resulting probability, we have
+\figg[width=150mm]{31.pdf}
+It looks the the probability for fusion is negligible until we reach temperatures greater than $T= 2\times10^7\ \text K$. At we increase up to $T=10^8\ \text K$, we approach a probability of about $1/1000$. The increase as a function of $T$ is exponential. 
+\\ \\
+\item[6.13]
+Dimensional analysis of the following quantities:
+\[
+	G = \text{gm}^{-1}\ \text{cm}^3\ \text{s}^{-2}
+\]
+\[
+	h = \text{gm}\ \text{cm}^2\ \text{s}^{-1}
+\]
+\[
+	c = \text{cm}\ \text{s}^{-1}
+\]
+
+To get the plank mass we can form the combination
+\[
+	m_{plank} =\pfrac{hc}{G}^{1/2} = 5.4\times 10^{-5}\ \text{gm}.
+\]
+This is $10^{19}$ times more massive than the proton!
+\\ \\
+\item[6.14]
+The kinetic energy of car of mass $m=2\times 10^6\ \text{gm}$ moving at speed $v = 1.2\times 10^3\ \text{cm sec}^{-1}$ is 
+\[
+	E = \frac12 mv^2 = 1.44\times 10^{12}\ \text{erg}.
+\]
+Meanwhile the rest mass energy of a proton is 
+\[
+	m_pc^2 = 1.5\times 10^{-3}\ \text{erg}.
+\]
+In order for a car to have the same energy as $10^19 m_p c^2$ (energy per particle for ``Supergravity'', or Plank mass) it must travel at a velocity
+\[
+	v = 1.2\times 10^5\ \text{cm sec}^{-1} \approx 3000\ \text{mph}.
+\]
+
+\eenum
+\end{document}

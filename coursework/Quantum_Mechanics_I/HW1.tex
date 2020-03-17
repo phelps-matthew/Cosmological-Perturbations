@@ -1,0 +1,316 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[top=1in,textheight=9in]{geometry}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{braket}
+\usepackage{enumitem}
+
+
+\title{\begin{spacing}{1.2}Quantum Mechanics I\\HW 1\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: February 5}
+
+\begin{document}
+
+\maketitle
+
+% #1
+\begin{enumerate}
+  \item If the states $\ket{1}$, $\ket{2}$, and $\ket{3}$ form an orthonormal basis and if the operator $\hat{G}$ has the properties
+  \begin{align*}
+  \hat{G}\ket{1}&=2\ket{1}+4\ket{2}+7\ket{3}\\
+  \hat{G}\ket{2}&=2\ket{1}+7\ket{3}\\
+  \hat{G}\ket{3}&=\ket{1}+2\ket{2}+6\ket{3}\end{align*}
+what is the matrix representation of $\hat{G}$ in this basis? Recall that the matrix representation of an operator $\hat{O}$ in a basis $\{\ket{a_i}\}$ is the matrix $\braket{a_i | \hat{O} | a_j}$.
+\\ \\Note that from orthonormality $\hat G_{ij} = \braket{i | \hat G | j} = c_i$, where $c_i$ is the coefficient of $\ket{i}$ in the expansion of $\hat G\ket j$. Forming into a matrix, we arrive at 
+  $$\begin{pmatrix}
+  2 & 2 & 1 \\4 & 0 & 2 \\ 7 & 7 & 6 
+  \end{pmatrix}$$
+  
+  % #2
+  \item If the states $\ket 1$, $\ket 2$, and $\ket 3$ form an orthonormal basis and if the operator $\hat K$ has the properties 
+  $$\hat K\ket 1 = 2\ket 1;\quad \hat K\ket 2 = 3 \ket 2;\quad  \hat K\ket 3 = -6 \ket 3 $$
+  \begin{enumerate}
+  \item Write an expression for $\hat K$ in terms of its eigenvalues and eigenvectors (projection operators). Use this expression to derive the matrix representing $\hat K$. 
+\\ \\Using the completeness relation twice (since $\ket 1$, $\ket 2$ and $\ket 3$ form a complete set), we can write any operator (in this case $\hat K$) as 
+ $$ \hat K = \sum_{i,j}^3{\ket i\braket{i|\hat K|j}\bra j} $$
+ and we see that there are $3\times 3$ terms of $\braket{i|\hat K|j}$ which form our matrix elements. In the scenario that the basis vectors are eigenvectors of our operator $\hat K$, which is what we have here, the expression for $\braket{i|\hat K|j}$ reduces to a diagonal form
+ $$\braket{i|\hat K|j} = j\braket{i|j} = j\delta_{ij} = i\delta_{ij}$$
+ (Note that the $i$, $j$ represent the corresponding eigenvalues, not the number values - a sloppy notation admittedly). Thus
+ $$\hat K = \sum_{i=1}^{3}{i\ket i\bra i}.$$
+ For the properties above, this forms a matrix of
+ $$\hat K = \begin{pmatrix*}[r]2&0&0\\0&3&0\\0&0&-6\end{pmatrix*}$$
+
+  \item What is the expectation or average value of $\hat K$, defined as $\braket{\alpha|\hat K| \alpha}$, in the state $\ket \alpha = \frac{1}{\sqrt{83}}\left(-3\ket 1 + 5\ket 2 + 7 \ket 3\right)$ ?
+  \\ \\ In matrix notation, we can express $\braket{\alpha|\hat K|\alpha}$ as
+  \begin{align*}\braket{\hat K}&=\frac{1}{\sqrt{83}}\begin{pmatrix}-3&5&7\end{pmatrix}
+  \begin{pmatrix*}[r] 2&0&0\\0&3&0\\0&0&-6\end{pmatrix*}
+  \frac{1}{\sqrt{83}}\begin{pmatrix*}[r]-3\\5\\7\end{pmatrix*}\\
+  &= \frac{1}{83}\begin{pmatrix}-3&5&7\end{pmatrix}
+  \begin{pmatrix*}[r] -6\\15\\-42\end{pmatrix*} = \frac{-201}{83}\end{align*}
+  
+  \item Suppose a quantum measurement is performed that measures the observable $K$. What are the possible values of $K$ that can be observed as a result of such a measurement? What is the probability that a given value $k_i$ is observed in the experiment? How do your answers change if the same measurement is performed on the state $\ket \beta = \frac{1}{\sqrt{83}}\left(3\ket 1 -(3+4i)\ket 2 + 7 \ket 3\right)$?
+  \\ \\By the process of measurement $\hat K\ket\alpha \rightarrow k_i\ket{k_i}$, where the $k_i$ are the eigenvalues and eigenvectors. The possible values of $\hat K$ (its eigenvalues) are $k_1 = 2$, $k_2=3$, or $k_3=-6$. The probability for obtaining such eigenvalues is $|\braket{k_i|\alpha}^2|$. This equates to $P_{k_1} = \frac{9}{83}$, $P_{k_2}=\frac{25}{83}$, and $P_{k_3}=\frac{49}{83}$. For the state $\ket \beta$ the possible eigenvalues/measurements remain the same, as well as $P_{k_1}$ and $P_{k_3}$; however, $P_{k_2} = \braket{2|\beta}\braket{2|\beta}^* = \braket{2|\beta}\braket{\beta|2} = -(3+4i)(-(3+4i)^*)\frac{1}{83} = \frac{25}{83}$, which is the same! 
+  \end{enumerate}
+% #3
+\item An operator for a two-state system is given by $\hat H = a[\ket 1\bra 1 - \ket 2\bra 2 + \ket1\bra 2 + \ket 2\bra 1]$, where $a$ is a number. Find the eigenvalues of $\hat H$ and the corresponding eigenkets.
+\\ \\ Expressing $\hat H$ as 
+$$\hat H = \sum_{i,j}{\ket i \braket{i|\hat H|j}\bra j},$$
+we can form a $2\times2$ matrix representation of $\hat H$ by finding the elements $\braket{i|\hat H|j}$. Represented in the $\ket 1$,$\ket 2$ basis, we can see by inspection
+$$\hat H = a\begin{pmatrix}1&1\\1&-1\end{pmatrix}.$$
+This reduces to an eigenvalue problem of $\hat H\ket{h_i} = h_i\ket{h_i}.$
+$$\begin{vmatrix}1-h&1\\1&-(1+h)\end{vmatrix} = 0 \quad \rightarrow \quad h_{\pm}=\pm\sqrt2$$
+$$h_+ = \sqrt2 : \quad \begin{pmatrix}1-\sqrt2&1\\1&-(1+\sqrt2)\end{pmatrix}\begin{pmatrix}a_1\\a_2\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}$$
+$$(1-\sqrt2)a_1 + a_2 = 0$$ $$a_1 -(1+\sqrt2)a_2 = 0$$
+Both of these equations are equivalent. Thus, we set $a_1 = C$ and obtain
+$$a_1 = C; \quad a_2 = (-1+\sqrt2)C;\quad \rightarrow\quad C\begin{pmatrix}1\\-1+\sqrt2\end{pmatrix}$$
+Normalizing
+$$C^2 + C^2(-1+\sqrt2)^2 = C^2(1+1-2\sqrt2 +2)=1$$
+$$C^2 = \frac{1}{4-2\sqrt2}\rightarrow C=\left(\frac{1}{4-2\sqrt2}\right)^{1/2}$$
+For the other eigenvalue,
+$$h_- = -\sqrt2 : \quad \begin{pmatrix}1+\sqrt2&1\\1&-(1-\sqrt2)\end{pmatrix}\begin{pmatrix}b_1\\b_2\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}$$
+$$(1+\sqrt2)b_1 + b_2 = 0$$ $$b_1 -(1-\sqrt2)b_2 = 0$$
+Once again both of these equations are equivalent. Thus, we set $b_1 = C^\prime$ and obtain
+$$b_1 = C^\prime; \quad b_2 = -(1+\sqrt2)C^\prime;\quad \rightarrow\quad C^\prime\begin{pmatrix}1\\-1-\sqrt2\end{pmatrix}$$
+Normalizing
+$$C^{\prime2} + C^{\prime2}(-1-\sqrt2)^2 = C^{\prime2}(1+1+2\sqrt2 +2)=1$$
+$$C^{\prime2} = \frac{1}{4+2\sqrt2}\rightarrow C^{\prime}=\left(\frac{1}{4+2\sqrt2}\right)^{1/2}$$
+Thus our eigensystem is:
+$$h_+ = \sqrt2:\left(\frac{1}{4-2\sqrt2}\right)^{1/2}\begin{pmatrix}1\\-1+\sqrt2\end{pmatrix}\quad h_-=-\sqrt2:\left(\frac{1}{4+2\sqrt2}\right)^{1/2}\begin{pmatrix}1\\-1-\sqrt2\end{pmatrix}$$
+Note that the components of the eigenvectors are in the $\ket 1,\ket2$ basis. This particular eigensystem was quite the ordeal - in any $2\times2$ system, the equations giving the eigenvector components will always be equal. 
+% #4 
+\item Parity operator $\hat P$ in quantum mechanics has eigenvalues $\pm 1$. Consider a two dimensional Hilbert space spanned by two parity eigenstates $\ket +$ and $\ket -$, such that $\hat P\ket + = \ket +;\quad \hat P \ket - = -\ket -$. Suppose we now have a state
+$$\ket A = \cos\theta\ket + + e^{i\phi}\sin\theta\ket -$$
+\begin{enumerate}
+\item Is this state normalized? If not, normalize it.
+\\ $$\braket{A|A} = \cos^2{\theta}+\sin^2\theta(e^{i\phi}e^{-i\phi})=1$$
+\item Find a state $\ket B$ orthogonal to $\ket A$. Make sure it is normalized.
+\\ \\Playing with the coefficients and trying to keep it as symmetrical as possible, 
+$$\ket B = -e^{-i\phi}\sin\theta\ket + + \cos\theta\ket -$$
+$$\braket{B|B} = (-e^{-i\phi})(-e^{i\phi})\sin^2\theta + \cos^2\theta = 1$$
+$$\braket{A|B} = -e^{-i\phi}\sin\theta\cos\theta+e^{-i\phi}\sin\theta\cos\theta=0$$
+\item Express $\ket +$ and $\ket -$ in the $\ket A$ and $\ket B$ basis.
+\\ \\To express $\ket -$ and $\ket +$ in the $\ket A$, $\ket B$ basis, we simply need the expansion coefficients in that basis. i.e.
+  $$\ket + = \braket{A|+}\ket A + \braket{B|+}\ket B$$
+  $$\ket - = \braket{A|-}\ket A + \braket{B|-}\ket B$$
+ Evaluating, we have
+ $$\braket{A|+} = \cos\theta \quad \braket{B|+}=-e^{i\phi}\sin\theta\quad \braket{A|-}=e^{-i\phi}\sin\theta\quad \braket{B|-}=\cos\theta$$
+ Thus
+ $$\ket + = \cos\theta\ket A -e^{-i\phi}\sin\theta\ket B$$
+ $$\ket - = e^{-i\phi}\sin\theta\ket A + \cos\theta\ket B$$
+\item What are the possible outcomes of parity measurement in state $\ket A$ and with what probability do they occur?
+\\ \\Since $\ket A$ is in a superposition of the eigenkets of $\hat P$, possible measurement values are $\pm 1$
+$$\hat P\ket A \rightarrow +1\ket + \text{or} -1\ket -$$
+The probability of obtaining such values are 
+$$|\braket{+|A}|^2 =\cos^2\theta$$ $$|\braket{-|A}|^2=e^{-i\phi}e^{i\phi}\sin^2\theta=\sin^2\theta$$
+\item Express the parity operator in the $\{\ket A,\ket B\}$ basis.
+\\ \\We could find a unitary transformation operator and do a similarity transformation of $\hat P^\prime = U^\dag \hat PU$, however, it will be easy to construct the parity operator by simply substituting the $\ket +$'s and $\ket -$'s in terms of $\ket A$'s and $\ket B$'s already found above. First note that $\hat P$ in its own basis is
+$$\hat P = \ket +\bra + -\ket -\bra-$$
+which, upon substitution yields
+\begin{align*}\hat P = &(\cos\theta\ket A-e^{-i\phi}\sin\theta\ket B)(\cos\theta\bra A-e^{i\phi}\sin\theta\bra B)\\&-(e^{-i\phi}\sin\theta\ket A + \cos\theta\ket B)(e^{i\phi}\sin\theta\bra A+\cos\theta\bra B)\end{align*}
+\begin{align*}\hat P =&(\cos^2\theta -\sin^2\theta)\ket A\bra A -\sin\theta\cos\theta(e^{i\phi}+e^{-i\phi}) \ket A \bra B
+\\-&\sin\theta\cos\theta(e^{i\phi}+e^{-i\phi})\ket B\bra A +(\cos^2\theta-\sin^2\theta)\ket B\bra B\end{align*}
+
+\end{enumerate}
+
+% #5
+\item \begin{enumerate} \item Show that an arbitrary linear operator $Q$ may always be written in the form $Q=A+iB$, where $A$ and $B$ are both hermitian operators.
+\\ \\I'll go ahead and show this in braket notation, though a matrix representation proof is also easily possible. First note that any operator $Q$ can be expressed as follows
+$$Q = \frac{1}{2}(Q+Q^\dag)+\frac{1}{2}(Q-Q^\dag)$$
+Here, $Q+Q^\dag$ is hermitian and $Q-Q^\dag$ is antihermitian. To see this
+$$\braket{\alpha|(Q+Q^\dag)|\beta}=\braket{(Q^\dag+Q)\alpha|\beta} = \braket{(Q+Q^\dag)\alpha|\beta}$$
+$$\braket{\alpha|(Q-Q^\dag)|\beta}=\braket{(Q^\dag-Q)\alpha|\beta} = \braket{-(Q+Q^\dag)\alpha|\beta}$$
+Now, any antihermitian operator $C$ can be expressed in terms a hermitian operator $D$, as $C=iD$. To see this, simply take the adjoint: $C^\dag = -iD^\dag = -iD=-C$. Thus, denoting $A = (Q-Q^\dag)$ and $B=(Q-Q^\dag)$ we alas arrive at
+$$Q = A+iB$$
+where $A$ and $B$ are hermitian.
+\item Suppose that $\braket{\psi |Q| \psi} = 0$ for an arbitrary state $\ket\psi$. Then the same also holds true for the state $\ket \Psi = \ket \psi + \lambda\ket\phi$, no matter what the states $\ket\psi$ and $\ket\phi$ and the number $\lambda$ might be. By first picking $\lambda =1$ and then $\lambda=i$, show that $\braket{\psi |Q| \phi} =0$ for all states $\ket\psi$ and $\ket\phi$.
+\\ \\Formulating the expectation value of $\braket{\Psi|Q|\Psi}$ 
+\begin{align*}\braket{\Psi|Q|\Psi} &=0\\&= (\bra\psi + \lambda^*\bra\phi)Q(\ket\psi +\lambda\ket\phi)\\
+&=\braket{\psi|Q|\psi}+\lambda\lambda^*\braket{\phi|Q|\phi}+\lambda^*\braket{\phi|Q|\psi}+\lambda\braket{\psi|Q|\phi}\end{align*}
+The first two terms vanish and we are left with
+$$\lambda^*\braket{\phi|Q|\psi}=-\lambda\braket{\psi|Q|\phi}$$
+Substituting $\lambda = 1$ we obtain:
+$$\braket{\phi|Q|\psi} = -\braket{\psi|Q|\phi}$$
+This statement is equivalent to
+$$a = -b$$
+Setting $\lambda = i$ we obtain:
+$$-i\braket{\phi|Q|\psi} = -i\braket{\psi|Q|\phi}$$
+$$\braket{\phi|Q|\psi} = \braket{\psi|Q|\phi}$$
+$$a = b$$
+Combining the two results, we must conclude
+$$a = -a$$
+which can only be true if $a=0$. By using two explicit values of $\lambda$ we have actually found a result that holds for all $\lambda$ as a consequence. Thus we finally arrive at
+$$\braket{\psi|Q|\phi}=0\ \text{for all}\ \ket \psi\text , \ket\phi$$
+
+\item Show that if $\braket{\psi|Q|\psi} = 0$ for an arbitrary state $\ket \psi$, then $Q$ is in fact the zero operator that maps all states to the zero vector.
+\\ \\Given $\braket{\psi|Q|\psi}=0$ for all $\ket\psi$, our results led us to conclude that $\braket{\psi|Q|\phi} = 0$ for any $\ket \psi$, $\ket \phi$. Allowing $\bra\psi$ to be arbitrary, the only vector that is orthogonal to \emph{any} $\bra \psi$ is the zero vector. Since $\ket\phi$ can also be any vector and is not limited to the zero vector, we must conclude that applying $Q$ to $\ket \phi$ results in the zero vector. Thus $Q$ must be the zero operator that maps all states to the zero vector. 
+\item Take it as given that the expectation value of a hermitian operator $A$ in any state is real. Based on the stated results of parts (a) and (c), show that converse also holds true, that an operator $Q$ whose expectation value is real \textbf{in all} states must be hermitian.
+\\ \\Starting from the results of (a),
+$$\braket{\psi|Q|\psi} = \braket{\psi|A+iB|\psi} = \braket{\psi|A|\psi} + i\braket{\psi|B|\psi}$$
+where $A$ and $B$ are hermitian. From this hermiticity, note that $\braket{\psi|A|\psi}$ and $\braket{\psi|B|\psi}$ are real. Since $\braket{\psi|Q|\psi}$ is real, this reduces to showing that $i\braket{\psi|B|\psi}$ must also be real, which means
+$$i\braket{\psi|B|\psi} = (i\braket{\psi|B|\psi})^* = -i\braket{\psi|B|\psi}$$
+This can only be true if 
+$$\braket{\psi|B|\psi} = 0$$
+Since this result holds for any $\ket \psi$ we can conclude from (c) that $B$ must be the zero operator. Therefore, 
+$$Q=A$$
+which is hermitian.
+\end{enumerate}
+
+% #6
+\item An operator can be diagonalized if an orthonormal basis may be found whose members are eigenvectors of the operator. It is a built-in assumption in quantum mechanics that any hermitian operator may be diagonalized. Two hermitian operators may be diagonalized simultaneously (with the same orthonormal basis) if and only if they commute. On the other hand, an operator such that $NN^\dag = N^\dag N$, or $[N,N^\dag]=0$, is called normal.
+\begin{enumerate}
+\item Every operator $A$ may be decomposed trivially in the form $A=A_1+iA_2$, where $A_1$ and $A_2$ are hermitian. Suppose we have a normal operator $N$ with the corresponding components $N_1$ and $N_2$. Verify the following items: (i) $[N_1,N_2] = 0$. (ii) $N$ may be diagonalized.
+\\ \\(i) Using the definition of a normal operator $[N,N^\dag]=0$,
+$$(N_1+iN_2)(N_1-iN_2)-(N_1-iN_2)(N_1+iN_2) = 0$$
+$$N_1N_1+N_2N_2+iN_2N_1-iN_1N_2 - (N_1N_1+N_2N_2+iN_1N_2-iN_2N_1) =0$$
+$$2iN_2N_1-2iN_1N_2 = 0$$
+$$N_2N_1-N_1N_2 = 0$$
+Thus 
+$$[N_1,N_2] = 0.$$
+\\ (ii) Since $N_1$ and $N_2$ are hermitian and $[N_1,N_2]=0$, $N_1$ and $N_2$ can be simultaneously diagonalized. Thus N is also diagonalized and expressed as
+$$N = \sum_{n}{c_{1n}\ket{v_n}\bra{v_n}} + \sum_{n}{ic_{2n}\ket{v_n}\bra{v_n}} = \sum_{n}{(c_{1n}+ic_{2n})\ket{v_n}\bra{v_n}}$$
+\item Conversely, suppose that an operator $N$ can be diagonalized, with the eigenvalues $c_n$ (not necessarily real) and the orthonormal eigenvectors $v_n$. Verify the following items: (i) $(v_n; N^\dag v_m) = c_n^*\delta_{nm}$. (ii) $N^\dag v_m = c_m^* v_m$. Therefore, $N^\dag$ can also be diagonalized, with eigenvalues and eigenvectors $c_n^*$ and $v_n$. (iii) $N$ is normal. We have the result that normal, and only normal, operators can be diagonalized. 
+\\ \\(i) Since $N$ is diagonalized with eigenvectors $v_n$ and eigenvalues $c_n$, it obeys the relationship $N\ket{v_n} = c_n\ket{v_n}$. Therefore,
+$$\braket{v_n|N^\dag|v_m} = c_n^*\braket{v_n|v_m} = c_n^*\delta_{nm}$$
+\\ (ii) Using result (i), we can represent $N^\dag$ as
+$$N^\dag = \sum_{n,m}{\ket{v_n}\braket{v_n|N^\dag|v_m}\bra{v_m}}=\sum_{n}{c_n^*\ket{v_n}\bra{v_n}}$$
+Now applying $N^\dag$,
+$$N^\dag\ket{v_m} = \sum_{n}{c_n^*\ket{v_n}\braket{v_n|v_m}}$$
+$$N^\dag\ket{v_m} = c_m^*\ket{v_m}$$
+Therefore, $N$ and $N^\dag$ share the same eigenstates (compatible).
+\\ \\(iii) I could try to show that $\braket{v_n|[N,N^\dag]|v_n}=0$ or $[N,N^\dag]\ket{v_n}=0$, but I don't think this would prove that $[N,N^\dag]$ is necessarily the zero operator, since $\ket{v_n}$ cannot be completely arbitrary. Therefore, I will just construct $[N,N^\dag]$ explicitly.
+\begin{align*} NN^\dag - N^\dag N &= \sum_{n}{c_n\ket{v_n}\bra{v_n}}\sum_{m}{c_m^*\ket{v_m}\bra{v_m}}-\sum_{m}{c_m^*\ket{v_m}\bra{v_m}}\sum_{n}{c_n\ket{v_n}\bra{v_n}}\\ &=c_nc_n^*\sum_n{\ket{v_n}\bra{v_n}}-c_n^*c_n\sum_n{\ket{v_n}\bra{v_n}}\\&=0
+\end{align*}
+Thus
+$$[N,N^\dag] = 0$$
+\end{enumerate}
+
+% #7
+\item 1.18 Sakurai: \begin{enumerate}
+\item The simplest way to derive the Schwarz inequality goes as follows. First, observe 
+$$ (\bra\alpha +\lambda^*\bra\beta)\cdot(\ket\alpha+\lambda\ket\beta)\geq 0$$
+for any complex number $\lambda$; then choose $\lambda$ in such a way that the preceding inequality reduces the Schwarz inequality.
+\\ \\First note that the inequality given is comprised of the inner product of two identical kets, so it must be $\geq 0$. Second, the simplest choice of $\lambda$ is given in the book as
+ $$\lambda = -\frac{\braket{\beta|\alpha}}{\braket{\beta|\beta}}.$$
+ Expanding the inequality first,
+ \begin{align*}\braket{\alpha|\alpha}+\lambda\lambda^*\braket{\beta|\beta} +\lambda\braket{\alpha|\beta}+\lambda^*\braket{\beta|\alpha} \geq 0
+ \end{align*}
+ Substituting $\lambda$,
+$$\braket{\alpha|\alpha}+\frac{|\braket{\alpha|\beta}|^2}{\braket{\beta|\beta}^2}\braket{\beta|\beta} -\frac{\braket{\beta|\alpha}}{\braket{\beta|\beta}}\braket{\alpha|\beta}-\frac{\braket{\alpha|\beta}}{\braket{\beta|\beta}}\braket{\beta|\alpha} \geq 0$$
+$$\braket{\alpha|\alpha} - \frac{|\braket{\alpha|\beta}|^2}{\braket{\beta|\beta}} \geq 0$$
+$$\braket{\alpha|\alpha}\braket{\beta|\beta} \geq |\braket{\alpha|\beta}|^2$$
+\item Show that the equality sign in the generalized uncertainty relation holds if the state in question satisfies
+$$\Delta A \ket\alpha = \lambda \Delta B \ket\alpha$$
+with $\lambda$ purely \emph{imaginary}.
+\\ \\The generalized uncertainty relation:
+$$\braket{(\Delta A)^2}\braket{(\Delta B)^2}\geq\frac{1}{4}|\braket{[A,B]}|^2$$
+where $\Delta A \equiv A-\braket A$ is an operator whose square is the dispersion of an observable $A$. First, substituting the relation $\Delta A\ket{ } = \lambda\Delta B\ket{ }$, 
+$$\lambda\lambda^*\braket{(\Delta B)^2}\braket{(\Delta B)^2} \geq \frac{1}{4}|\braket{[A,B]}|^2$$
+To evaluate the commutator, note that $A = \Delta A +\braket A$. Thus,
+\begin{align*}[A,B] &= (\Delta A +\braket A)(\Delta B + \braket B)-(\Delta B +\braket B)(\Delta A +\braket A)\\
+&=\Delta A \Delta B + \Delta A \braket B + \braket A\Delta B+\braket A\braket B
+\\&\quad -(\Delta B\Delta A +\Delta B \braket A+\braket B\Delta A +\braket B\braket A)
+\\&=[\Delta A,\Delta B]
+\end{align*}
+Now we can see that
+$$|\braket{\Delta A \Delta B-\Delta B\Delta A}|^2 = |\lambda^*\braket{(\Delta B)^2}-\lambda\braket{(\Delta B)^2}|^2$$
+Since $(\Delta B)^2$ can be shown to be hermitian, $\braket{(\Delta B)^2}$ is real and so
+$$|\lambda^*\braket{(\Delta B)^2}-\lambda\braket{(\Delta B)^2}|^2= 4|\lambda|^2\braket{(\Delta B)^2}^2$$
+for $\lambda$ purely imaginary. Substituting this result into the right side of the inequality, we arrive at 
+$$|\lambda|^2\braket{(\Delta B)^2}^2 = |\lambda|^2\braket{(\Delta B)^2}^2$$
+
+\item Explicit calculations using the usual rules of wave mechanics show that the wave function for a Gaussian wave packet given by 
+$$\braket{x^\prime|\alpha} = (2\pi d^2)^{-1/4}\exp{\left[\frac{i\braket{p}x^\prime}{\hbar}-\frac{(x^\prime-\braket{x})^2}{4d^2}\right]}$$
+satisfies the minimum uncertainty relation
+$$\sqrt{\braket{(\Delta x)^2}}\sqrt{\braket{(\Delta p)^2}} = \frac{\hbar}{2}~.$$
+\\Prove that the requirement
+$$\braket{x^\prime|\Delta x|\alpha} = (\text{imaginary number})\braket{x^\prime|\Delta p|\alpha}$$
+is indeed satisfied for such a Gaussian wave packet, in agreement with (b).
+\\ \\In order to prove that the equation above is satisfied by the given Gaussian wave packet, we first rewrite the right hand side as
+\begin{align*}\braket{x^\prime|\Delta p|\alpha} &= \int{dx''\braket{x'|p-\braket{p}|x''}\braket{x''|\alpha}}\\
+&=\int{dx''(\braket{x'|p|x''}-\braket{p}\braket{x'|x''})\braket{x''|\alpha}}\\
+&=\int{dx''(-i\hbar\frac{\partial}{\partial x'}\delta(x'-x'') -\braket p\delta(x'-x''))\braket{x''|\alpha}}\\
+&=\left(-i\hbar\frac{\partial}{\partial x'}-\braket p\right)\braket{x'|\alpha}
+\end{align*}
+Now we can take the derivative of the wave function,
+$$-i\hbar\frac{\partial}{\partial x'}\braket{x'|\alpha} =-i\hbar \left(\frac{i\braket p}{\hbar}-\frac{x'-\braket x}{2d^2}\right)\braket{x'|\alpha}$$
+Therefore,
+$$\braket{x'|\Delta p|\alpha} = -\frac{i\hbar}{2d^2}(x'-\braket{x})\braket{x'|\alpha}$$
+$$\frac{i2d^2}{\hbar}\braket{x'|\Delta p|\alpha} = \braket{x'|\Delta x|\alpha}$$
+For this last step, first notice that $x'$ is an eigenvalue and $\braket x$ is a scalar. Then, if we use $x-\braket x$ inside the inner product $\braket{x'|\alpha}$, we can act to the left with $x$, since $x=x^\dag$,  to produce back eigenvalue $x'$, thus reaching the final equation we desired.
+\end{enumerate}
+
+% #8
+\item 1.28 Sakurai: \begin{enumerate}
+\item Let $x$ and $p_x$ be the coordinate momentum and the linear momentum in one dimension. Evaluate the classical Poisson bracket
+$$[x, F(p_x)]_{classical}~.$$
+\\$$[x_1, F(p_1)]_{classical} = \sum_{i}\left({\frac{\partial x_1}{x_i}\frac{\partial F(p_1)}{\partial p_i}+\frac{\partial x_1}{p_i}\frac{\partial F(p_1)}{x_i}}\right) = \frac{\partial F(p_x)}{\partial p_x}$$
+\item Let $x$ and $p_x$ be the corresponding quantum-mechanical operators this time. Evaluate the commutator
+$$\left[x, \exp{\left(\frac{ip_xa}{\hbar}\right)}\right].$$
+\\ \\In order to evaluate a commutator involving function of matrices, specifically in the form of a taylor expansion, we must first derive a commutator property, namely
+$$[A^n,B] = nA^{n-1}[A,B]$$
+subject to the condition that $[A,[A,B]] = [B,[A,B]] = 0$. Lets prove this by induction. First, for the basis it is clear that $n=0$ holds true. Next, we will assume $[A^{n-1},B] = (n-1)A^{n-2}[A,B]$ holds true and we prove for the $n+1$ case.  
+\begin{align*} [A^n,B] &= A^nB-BA^n\\
+&=A^{n-1}[A,B] +[A^{n-1},B]A\\
+&=A^{n-1}[A,B]+(n-1)A^{n-2}[A,B]A\\
+&=A^{n-2}(A[A,B]-[A,B]A+n[A,B]A)\\
+&=nA^{n-2}[A,B]A\\
+&=nA^{n-2}(A[A,B]-[A,[A,B]])\\
+&=nA^{n-1}[A,B]
+\end{align*}
+where $[A,[A,B]] = 0$ been used twice. Now we are prepared to take the commutator of a function
+$$[f(A),B] = [\sum_{n}{c_nA^n},B] = \sum_nc_nnA^{n-1}[A,B] = \frac{df}{dA}[A,B].$$
+Now back to the original problem
+$$\left[x, \exp{\left(\frac{ip_xa}{\hbar}\right)}\right] = \frac{ia}{\hbar}\exp{\left(\frac{ip_xa}{\hbar}\right)}[x,p_x]$$
+$$\left[x, \exp{\left(\frac{ip_xa}{\hbar}\right)}\right] = -a\exp{\left(\frac{ip_xa}{\hbar}\right)}$$
+
+\item Using the result obtain in (b), prove that
+$$\exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x^\prime}, \quad (\braket{x|x^\prime} = x^\prime\ket{x^\prime})$$
+is an eigenstate of the coordinate operator $x$. What is the corresponding eigenvalue?
+\\ \\We need to prove that 
+$$x\exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'} = \lambda \exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'}$$
+To show this, we can rewrite this as
+$$\left(\exp{\left(\frac{ip_xa}{\hbar}\right)}x + [x,\exp{\left(\frac{ip_xa}{\hbar}\right)}]\right)\ket{x'} = \lambda \exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'}$$
+$$\left(\exp{\left(\frac{ip_xa}{\hbar}\right)}-a\exp{\left(\frac{ip_xa}{\hbar}\right)}\right)\ket{x'} = \lambda\exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'}$$
+$$(x'-a)\exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'} = \lambda\exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'}$$
+Therefore, $\exp{\left(\frac{ip_xa}{\hbar}\right)}\ket{x'}$ is an eigenstate of $x$ with eigenvalue $x'- a$.
+\end{enumerate}
+% #9
+\item 1.33 Sakurai: \begin{enumerate}
+\item Prove the following: \begin{enumerate}
+\item $\braket{p^\prime |x|\alpha} = i\hbar\dfrac{\partial}{\partial{p^\prime}}\braket{p^\prime|\alpha}$
+\\ \\ (i) First let us note
+$$x'\braket{p'|x'} = x' e^{-\frac{i}{\hbar}p'x'} = i\hbar\frac{\partial}{\partial p'}e^{-\frac{i}{\hbar}p'x'} = i\hbar\frac{\partial}{\partial p'}\braket{p'|x'}$$
+Now we form 
+\begin{align*}\braket{p'|x|\alpha}&=\int{dx'\braket{p'|x|x'}\braket{x'|\alpha}}\\
+&=\int{dx'\ x'\braket{p'|x'}\braket{x'|\alpha}}\\
+&=\int{i\hbar\frac{\partial}{\partial p'}\braket{p|x'}\braket{x'|\alpha}}\\
+&=i\hbar\frac{\partial}{\partial p'}\braket{p'|\alpha}
+\end{align*}
+Thus
+$$\braket{p'|x|\alpha}= i\hbar\frac{\partial}{\partial p'}\braket{p'|\alpha}$$
+\\ \item $\braket{\beta|x|\alpha}=\int{dp^\prime\phi^*_\beta(p^\prime)i\hbar\frac{\partial}{\partial{p^\prime}}\phi_\alpha(p^\prime)}$, where $\phi_\alpha(p^\prime) = \braket{p^\prime|\alpha}$ and $\phi_\beta(p^\prime) = \braket{p^\prime|\beta}$ are momentum-space wave functions.
+\\ \\(ii) Forming $\braket{\beta|x|\alpha}$,
+\begin{align*}
+\braket{\beta|x|\alpha}&=\int{dp'\braket{\beta|p'}\braket{p'|x|\alpha}}\\
+&=\int{dp'\braket{\beta|p'}i\hbar\frac{\partial}{\partial p'}\braket{p'|\alpha}}
+\end{align*}
+Thus
+$$\braket{\beta|x|\alpha} = \int{dp'\ \phi^*_\beta(p')i\hbar \frac{\partial}{\partial p'}\phi_\alpha(p')}$$
+\end{enumerate}
+
+\item What is the physical significance of 
+$$\exp{\left(\frac{ix\Xi}{\hbar}\right)},$$ where $x$ is the position operator and $\Xi$ is some number with the dimension of momentum? Justify your answer.
+\\ \\Let's act this operator upon a momentum eigenket:
+\begin{align*}\exp{\left(\frac{ix\Xi}{\hbar}\right)}\ket {p'} &=\int{dx'\exp{\left(\frac{ix\Xi}{\hbar}\right)}\ket{x'}\braket{x'|p'}}\\
+&=\int{dx'\exp{\left(\frac{ix\Xi}{\hbar}\right)}\ket {x'}\exp{\left(\frac{ip'x'}{\hbar}\right)}}\\
+&=\int{dx'\ket {x'}\exp{\left(\frac{i(p'+\Xi)x'}{\hbar}\right)}}\\
+&=\int{dx'\ket {x'}\braket{x|p'+\Xi}}\\
+&=\ket{p'+\Xi}
+\end{align*}
+From this it would seem that this operator changes the momentum of a state, very similar to the translation operator.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

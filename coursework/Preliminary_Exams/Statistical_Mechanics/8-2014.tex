@@ -1,0 +1,293 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Stat Mech Summer 2014\end{spacing}}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item
+	Consider a system of $N$ non-interacting diatomic molecules at temperature $T$ inside a volume $V$. 
+	Let the Hamiltonian function of a single molecule be given by
+	\[
+		H(\vect p_1,\vect p_2, \vect r_1,\vect r_2) = \frac{\vect p_1^2+\vect p_2^2}{2m} 
+		+\alpha \frac{ |\vect r_1-\vect r_2|^2}{2}
+	\]
+	
+	\benum
+	%(a)
+	\item
+	Derive the expression for the classical canonical partition function, and show that it is
+	of the form $Z(T,V,N) = c_N V^N(kT)^{9N/2}$ where $c_N$ is a function of $N$. 
+	% (b)
+	\item
+	Derive an equation of state of the form $f(p,T,V,N) = 0$.
+	% (c)
+	\item
+	Find the heat capacity at constant volume $C_v(T,V,N)$ \\ \\ \\
+	\eenum
+	
+	\benum
+	% (a)
+	\item 
+	For the classical continuous partition function, we must integrate over the phase space density. Since
+	the particles are non-interacting, we have the factorization
+	\[
+		Z = (Z_1)^N.
+	\]
+	In addition, the momentum and spatial dependence in the hamiltonian factorizes (when used in
+	the Boltzmann factor $e^{-\beta H}$, so
+	\[
+		Z_1 = \frac{1}{h^6}\iiint_{-\infty}^{\infty} d^3p_1d^3p_2\  e^{-\beta\pfrac{\vect p_1^2+\vect p_2^2}{2m}}
+		\iiint_{-L/2}^{L/2}d^3q_1d^3q_2\  e^{-\beta\alpha\pfrac{|\vect r_1-\vect r_2|^2}{2}}
+	\]
+	For the purpose of this problem, the quantization of the momentum eigenvalues $k=\frac{2\pi}{L}n$
+	subject to boundary conditions $\psi(x) = \psi(x+L)$ has been done in a box centered at the origin. This
+	way our position integral runs over even bounds, which allow us to evaluate the Gaussian at infinity. 
+	\\ \\
+	For the momentum portion, we need only evaluate a single instance of 
+	\[
+		\iiint_{-\infty}^{\infty} d^3p\ e^{-\frac{\beta}{2m}\vect p^2} = \pfrac{2m\pi}{\beta}^{3/2}.
+	\]
+	Now, for the spring potential, the Guassian at finite limits gives us a error function (not useful). The only 
+	realistic way of getting a sensible answer here is to take $L\to \infty$
+	\[
+		\lim_{L\to\infty} \iiint_{-L/2}^{L/2}d^3q_1d^3q_2\  e^{-\beta\alpha\pfrac{|\vect r_1-\vect r_2|^2}{2}}
+	\]
+	The only relevant integral here is
+	\[
+		\iint_{-\infty}^\infty dq_1dq_2\ e^{-\frac{\beta\alpha}{2}(q_1-q_2)^2} = \sqrt{\frac{2\pi}{\beta\alpha}}
+	\]
+	Even when you are integrating over another variable (such as $q_2$), the result will never
+	depend on $q_2$. You would think it would have to if you break up the Gaussian as
+	\[
+		e^{-\frac{\beta\alpha}{2}(x_1^2-2x_1x_2)}e^{-\frac{\beta\alpha}{2}x_2^2}
+	\]
+	yet the result comes out exactly the same. I guess the point is the integral will always be 
+	$\sqrt{\frac{2\pi}{\beta\alpha}}$ irrespective of any possible $q_2$ value. Anyway, the 
+	position integrals are now
+	\[
+		\lim_{L\to\infty} \iiint_{-L/2}^{L/2}d^3q_1d^3q_2\  e^{-\beta\alpha\pfrac{|\vect r_1-\vect r_2|^2}{2}}
+	 	= \pfrac{2\pi}{\beta\alpha}^{3/2}V
+	\]
+	The single particle partition function is then
+	\[
+		Z_1 = \frac{1}{h^6}V\pfrac{2m\pi}{\beta}^{3}\pfrac{2\pi}{\beta\alpha}^{3/2}
+		= \frac{V}{h^6}\pfrac{(2\pi)^3m^2}{\alpha}^{3/2}\pfrac{1}{\beta}^{9/2}
+	\]
+	I am not sure on this, but it is my belief that we should divide by $2!$. The reasoning is that we should
+	not be able to distinguish between a diatomic molecule that has been rotated by $\pi$ about the difference
+	vector $|\vect r_1-\vect r_2|$. With $Z_1$ in hand, we raise it to the $N$ power for $N$ molecules
+	and also divide by $N!$ since the diatomic molecule are indistinguishable. Hence we
+	finally arrive at
+	\[
+		Z = \frac{1}{h^{6N}2^NN!}\pfrac{(2\pi)^3m^2}{\alpha}^{3N/2} V^N (kT)^{9N/2}.
+	\]
+	\\ \\
+	
+	% (b)
+	\item
+	We use the thermodynamic connection
+	\[
+		F = -kT\ln Z.
+	\]	
+	From this, we should be able to find pressure as a function of $T,V,N$
+	\[
+		p = -\plr{\pdiff[F]{V}}_T.
+	\]
+	Let's denote 
+	\[
+		\gamma^{3N/2} =\pfrac{(2\pi)^3m^2}{2^{2/3}h^4\alpha}^{3N/2}
+	\]
+	then
+	\[
+		Z = \frac{\gamma^{3N/2}}{N!}V^N(kT)^{9N/2}
+	\]
+	\[
+		-kT\ln Z= -kT\blr{\frac{3N}{2}\ln\gamma - N\ln N +N+N\ln V +\frac{9N}{2}\ln(kT)}
+	\]
+	\[
+		p = \frac{NkT}{V}.
+	\]
+	or
+	\[
+		f(p,T,V,N) = p-\frac{NkT}{V} = 0.
+	\]
+	\\ \\
+	
+	% (c)
+	\item
+	We may find the internal energy by 
+	\[
+		U = -\pdiff{\beta}\ln Z.
+	\]
+	\[
+		U = -\pdiff{\beta}\plr{-\frac{9N}{2}\ln{\beta}} = \frac{9N}{2}kT
+	\]
+	then
+	\[
+		C_V = \frac{9N}{2}k.
+	\]
+	\\ \\
+	\eenum 
+
+% #2 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Find the probability distribution $P(\omega_1,\omega_2,\omega_3)$ for the angular velocities $\omega_i$,
+	$i=1,2,3$ in 3D rotation of polyatomic molecules in a classical ideal gas at the temperature $T$. The
+	respective principal moments of inertia of this molecule are $I_1$, $I_2$, $I_3$. From the 
+	distribution $P$, determine the mean squares of angular velocity $\braket{\vect\omega^2}$
+	and angular momentum $\braket{\vect L^2}$ of a molecule.
+	\\ \\ \\
+	The probability distribution of a single particle, in this classical case, is just 
+	\[
+		\frac{e^{-\beta H}}{Z}
+	\]
+	used in the form
+	\[
+		\braket{A} = \frac{1}{h^3}\iiint d^3pd^3q\ \frac{e^{-\beta H(p,q)}}{Z}A(p,q).
+	\]
+	The hamiltonian is that due to the kinetic energy of rotation
+	\[
+		H = \frac{1}{2}I\omega^2 = \frac{L^2}{2I}.
+	\]
+	In 3D we have an inertia tensor with principle moments of inertia (all lying orthogonal to each other) and
+	we can thus formulate the hamiltonian as
+	\[
+		H = \frac{L_1^2}{2I_1}+\frac{L_2^2}{2I_2}+\frac{L_3^2}{2I_3}.
+	\]
+	I would think we should be able to transform from a phase space in $p,q$ to $L,q$ so that
+	\ba
+		Z &= \frac{1}{h^3}\iiint_{-\infty}^{\infty} dL_1dL_2dL_3 \int d\Omega \ e^{-\beta H}\\
+		& = \frac{4\pi}{h^3}\prod_{i=1}^3 \int_{-\infty}^{\infty} dL_1\ e^{-\beta \frac{L_1^2}{2I_1}}\\
+		& = \frac{4\pi}{h^3}\prod_{i=1}^3 \sqrt{\frac{2 \pi I_i}{\beta}} \\
+		& = \frac{4\pi}{h^3}\pfrac{2\pi}{\beta}^{3/2}\sqrt{I_1I_2I_3}.
+	\ea
+	To find the mean square of angular velocity, we note
+	\[
+		\omega^2 = \sum_i \pfrac{L_i}{I_i}^2.
+	\]
+	Compute the following
+	\ba
+		\braket{\omega_1^2} &= \frac{1}{h^3}\iiint dL_1dL_2dL_3\ \frac{e^{-\beta H} }{Z}\pfrac{L_1}{I_1}^2 \\
+		&=  \frac{4\pi}{h^3}\pfrac{2\pi}{\beta}\sqrt{I_2I_3}\frac{1}{ZI_1^2}\int_{-\infty}^{\infty}dL_1\ 
+		e^{-\beta\pfrac{L_1^2}{2I_1}}L_1^2
+	\ea 
+	I won't evaluate the rest, but the calculation is clear. \\ \\
+	
+	
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider an ideal Fermi gas of particles with two interconverting species 1 and 2, such as
+	two hyperfine states in an atom. Suppose it is possible to effect the conversion in such a way that
+	an atom picks up an added energy $\Delta \ep$ when it moves from species 1 to species 2, and loses
+	energy $\Delta \ep$ in the reverse transition. This could happen, say, if an off-resonant microwave field 
+	is transferring atoms between the species. Write the total density of the gas $2\rho$, and denote
+	the densities of the individual species by $\rho_{1,2} = \rho\mp \frac{1}{2}\Delta\rho$.
+	
+	\benum
+	% (a)
+	\item
+	Given the global temperature and pressure, and the energy difference, the equilibrium condition for
+	the two species is $\mu_1 +\Delta \epsilon = \mu_2$. Why?
+	
+	%(b)
+	\item
+	Show that for a small energy difference $\Delta \ep$ and at zero temperature, the density
+	difference equals
+	\[
+		\Delta \rho = \frac{3\rho}{\ep_F}\Delta \ep
+	\]
+	where $\ep_F$ is the Fermi energy of a single species at the density $\rho$.
+	\\ \\
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	Ultimately, this comes down to just arguing that the change in free energy as we move from one species to another
+	must increase by $\Delta \ep$. Typically we try to make an equilibrium argument as 
+	\[
+		dG(p,T)_{eq} = 0
+	\]
+	\[
+		dN_1 = -dN_2 \equiv dN
+	\]
+	\[
+		dG = dG_1+dG_2 = dN(\mu_1-\mu_2) = 0.
+	\]
+	As we go from species $1\to 2$ the change in Gibbs energy is
+	\[
+		\Delta G_{1\to 2} = -\mu_1 +\mu_2+\Delta \ep
+	\]
+	and as we go from $2\to 1$
+	\[
+		\Delta G_{2\to 1}= \mu_1-\mu_2-\Delta \ep
+	\]
+	and if $\Delta G = 0$ for both cases it must be that
+	\[
+		\mu_1 = \mu_2+\Delta \ep.
+	\]
+	\\ \\
+	
+	% (b)
+	\item
+	From the last equation we are looking for $\rho_2-\rho_1$. The density in each case may is found by integrating up
+	to the fully occupied fermi energy $\ep_F$
+	\[
+		\rho_1 = \frac{g}{6\pi^2}\pfrac{2m}{\h^2}^{3/2}\ep_F^{3/2}
+	\]
+	\[
+		\rho_2 = \frac{g}{6\pi^2}\pfrac{2m}{\h^2}^{3/2}(\ep_F+\Delta\ep)^{3/2}
+	\]
+	The fermi energy for species two has the additional energy term. Now we simply take the difference 
+	for $\Delta \ep$ small and denote $\rho_1 \approx \rho$. We expand the small energy term 
+	using the binomial expansion. We end up with
+	\[
+		\Delta\rho = \frac{3\rho}{2\ep_F}\Delta\ep
+	\]
+	\\ \\
+	\eenum
+	
+% #4 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Collective elementary excitations called \emph{spin waves} or \emph{magnons} determine the low-T
+	specific heat of a spin system that has undergone the ferromagnetic phase transition. For a small wave 
+	vector $\vect k$ the dispersion relation of magnons is $\omega(k) \propto \vect k^2$. What is the temperature
+	dependence of the heat capacity of magnons at low temperatures? \\
+	Hint: As usual in three dimensions, at least at low energies the density of states as a function
+	of the wave number $k =|\vect k|$ is proportional to $k^2$. 
+	\\ \\
+	It seems that excitations of a particular field are mediated by \emph{massless} bosons. This means that
+	these bosonic excitations probably do not conserve particle number and hence we set the
+	chemical potential to zero. In this event, the occupations are
+	\[
+		\braket{n_\vect k} = \frac{1}{e^{\beta \ep_k-1}}
+	\]
+	Let's define the dispersion relation as $\ep(k) = \alpha k^2$ then we can find the energy as
+	\ba
+		U & = \sum_\vect k \braket{n_\vect k}\ep(k) \to 4\pi\alpha\pfrac{L}{2\pi}^3
+		 \int_0^\infty dk\ \frac{k^4}{e^{\alpha\beta k^2}-1}
+	\ea
+	In the low temperature approximation, $\beta \to \infty$ and so it seems justified that we should
+	be able to integrate over the full range of wavevectors. We need to convert this to a dimensionless
+	integral to determine the $T$ dependence
+	\[
+		U = \gamma/2 \pfrac{1}{\alpha\beta}^{5/2}  \int_0^\infty d(\alpha\beta k^2)\ \frac{\alpha\beta k^2\sqrt{\alpha
+		\beta k^2}}{e^{\alpha\beta k^2}-1}
+	\]
+	and so we have
+	\[
+		U \propto T^{5/2}
+	\]
+	and
+	\[
+		C_V \propto T^{3/2}.
+	\]
+	
+	\eenum
+\end{document}

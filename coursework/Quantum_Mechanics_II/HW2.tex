@@ -1,0 +1,360 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{Quantum Mechanics II\\HW 2}
+\author{Matthew Phelps}
+\date{Due: Sept. 16}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+	\benum
+		% (a)
+		\item
+		For the 1d Schrodinger equation with potential $V(x)$, use the standard WKB expansion
+		\[
+			\psi(x) = \exp\blr{\frac{i}{\h}(S_0+\h S_1+\h^2S_2+\h^3S_3+...)}
+		\]
+		to find expressions for $S_0$, $S_1$, $S_2$ and $S_3$, and show that both $S_1$ and $S_3$ are in fact total derivatives.
+		\\
+		\\
+		\\
+		Denoting $S(x)$ as
+		\[
+			S(x) = S_0(x)+\h S_1(x)+\h^2S_2(x)+h^3S_3(x)+...
+		\]
+		and $\psi(x)$ as
+		\[
+			\psi(x) = \exp\blr{\frac{i}{\h}S(x)}
+		\]
+		(no loss of generality for $S(x)$ complex), our TISE reads
+		\be\label{1}
+			-(S')^2+i\h S''+[p(x)]^2= 0
+		\ee
+		where
+		\[
+			p(x) \equiv \sqrt{E-V(x)}.
+		\]
+		If we now substitute the expansion of $S(x)$ into \eqref 1, keeping terms up to $\mathcal{O}(\h^3)$ we have
+		\ba
+			0= &[p(x)]^2-(S_0')^2 \\
+			+&\h[-2S_0'S_1'+iS_0'']\\
+			+&\h^2[-2S_0'S_2'+iS_1''-(S_1')^2]\\
+			+&\h^3[-2S_0'S_3'-2S_1'S_2'+iS_2'']
+		\ea
+		As another power series in $\h$, we equate each ``coefficient" of $\h$ to zero identically. Thus 
+		\ba
+			&\phantom{}\ [p(x)]^2=(S_0')^2 \\
+		 	\to \ & S_0(x) = \pm \int^x dx'\ p(x')
+		\ea
+		\ba
+			&2S_0'S_1' = iS_0'' \\
+			&S_1' = \frac{i}{2}\frac{p'}{p}\\
+			\to\ &S_1' = \blr{\frac{i}{2}\ln p}'
+		\ea 
+		\ba
+			&2S_0'S_2'= iS_1''-(S_1')^2\\
+			&S_2' = \frac{1}{2S_0'}\blr{iS_1''-(S_1')^2}\\
+			\to\ & S_2' = \frac{1}{4p}\blr{\frac{3}{2}\pfrac{p'}{p}^2-\frac{p''}{p}}
+		\ea
+		\ba
+			& 2S_0'S_3'=-2S_1'S_2'+iS_2''\\
+			& S_3' = \frac{1}{2S_0'}\blr{-2S_1'S_2'+iS_2''} \\
+			& S_3' = \frac{3i}{4}\blr{\frac{p'p''}{p^4}-\frac{p'^3}{p^5}-\frac{1}{6}\frac{p'''}{p^3}}\\
+			\to\ & S_3' = \frac{i}{16}\blr{\frac{3p'^2-2pp''}{p^4}}'
+		\ea
+		We see that $S_1$ and $S_3$ can be written in explicit form (in terms of $V(x)$ and its higher derivatives) while $S_0$ and $S_2$ 
+		are given as integral forms.  
+		\\
+		\\
+		% (b)
+		\item
+		Now make a different expansion, writing
+		\[
+			\psi(x) = A(x)\exp\blr{\frac{i}{h}W(x)}
+		\]
+		where the amplitude function $A(x)$ and phase function $W(x)$ are both real. Separate the Schrodinger equation into real and 
+		imaginary parts to find an expression for the amplitude $A(x)$ in terms of the phase $W(x)$.
+		\\
+		\\
+		\\
+		Writing the TISE as
+		\[
+			\blr{\difff{}{*{2}x}+\pfrac{p(x)}{\h}^2}\psi = 0
+		\]
+		we substitute $\psi(x) = A(x)\exp\blr{\frac{i}{h}W(x)}$ to arrive at
+		\[
+			i\h[2A'W'+AW'']+[Ap^2-A(W')^2+\h^2A''] = 0.
+		\]
+		Now setting the imaginary and real parts equal to zero, we get two equations:
+		\be\label{2}
+			2A'W'+AW'' = 0
+		\ee
+		\be\label{3}
+			Ap^2-AW'^2+\h^2A'' = 0
+		\ee
+		We can express \eqref 2 in terms of the total derivative
+		\[
+			\blr{\ln(A^2W')}'=0.
+		\]
+		Hence an equation for $A(x)$ in terms of $W(x)$ goes as
+		\[
+			A(x)= \frac{C}{\sqrt{W'(x)}}.
+		\]
+		\\
+		\\
+		
+		% (c)
+		\item
+		Show that the resulting equation for $W(x)$ can be solved by an expansion of the form
+		\[
+			W(x) = W_0+\h^2W_2+\h^4W_4+...
+		\]
+		involving only terms with \emph{even} powers of $\h$. 
+		\\
+		\\
+		\\
+		First, we form the differential equation for $W(x)$ by substituting $A(x) = C/\sqrt{W'(x)}$ into \eqref 3
+		\[
+			\frac{p^2}{\sqrt{W'}}-(W')^{3/2}+\h^2\blr{\frac{3}{4}\frac{(W'')^2}{(W')^{5/2}}-\frac{W'''}{2(W')^{3/2}}} =0.
+		\]
+		We may simplify by multiplying through by $(W')^{5/2}$
+		\be\label{3}
+			p^2(W')^2-(W')^4+\h^2\blr{\frac{3}{4}(W'')^2-\frac{1}{2}W'W'''} = 0.
+		\ee
+		If we now substitute the even expansion of $W(x)$ up to $\mathcal O(\h^4)$ and equate each ``coefficient" of $\h$
+		to zero, we have
+		\ba
+			\mathcal O(\h^0):\quad 
+			&p^2W_0'^2 = W_0'^4 \\
+			\to\ &W_0(x) = \int^x dx'\ p(x')
+		\ea
+		\ba
+			\mathcal O(\h^2):\quad 
+			&8p^2W_0'W_2'-16(W_0')^3W_2'+3(W_0')^2-2W_0'W_0''=0\\
+			&-8p^3W_2'+3(p')^2-2pp''=0\\
+			\to\ &W_2'(x) = \frac{1}{4p}\blr{\frac{3}{2}\pfrac{p'}{p}^2-\frac{p''}{p}}
+		\ea
+		\ba
+			\mathcal O(\h^4):\quad 
+			&4p^2(W_2')^2-24(W_0')^2(W_2')^2+8p^2W_0'W_4'-16(W_0')^3W_4'\\
+			&\ +6W_0''W_2''-2W_2'W_0'''-2W_0'W_2'''=0\\
+			&-8p^3W_2'+3(p')^2-2pp''=0\\
+			\to\ &W_4'(x) = -\frac{297}{128}\frac{(p')^4}{p^7}+\frac{99}{32}\frac{(p')^2p''}{p^6}-\frac{13}{32}\frac{(p'')^2}{p^5}
+			-\frac{5}{8}\frac{p'p^{(3)}}{p^5}+\frac{1}{16}\frac{p^{(4)}}{p^4}
+		\ea
+		\\
+		If we desired, we could continue calculating even higher order terms of $\h^{2n}$. Thus we can see that an expansion of $W(x)$
+		in even powers 	of $\h$ presents a solution to \eqref 3. 
+		\\
+		
+		% (d)
+		\item
+		Show that your expressions for $W_0(x)$ and $W_2(x)$, and the corresponding expression for $A(x)$ to this order, are 
+		consistent with your results for $S_0(x)$, $S_1(x)$, and $S_2(x)$ in (a), to $\mathcal O(\h^2)$. 
+		\\
+		\\
+		\\
+		The wavefunction can be expressed in terms of $A(x)$ and $W(x)$ as
+		\ba
+			\psi(x)& = A(x)\exp\blr{\frac{i}{h}W(x)}\\
+			&\simeq \exp\blr{\frac{i}{h}(W_0+\h^2W_2)+\ln[(W_0'+\h^2W_2')^{-1/2}]}.
+		\ea
+		Alternatively, we may express it in terms of  $S(x)$ as
+		\[
+			\psi(x) \simeq \exp\blr{\frac{i}{\h}(S_0+\h S_1+\h^2S_2)}.
+		\]
+		For our results to be consistent, we must equate the arguments in the exponentials
+		\[
+			\frac{i}{h}(W_0+\h^2W_2)+\ln[(W_0'+\h^2W_2')^{-1/2}] = \frac{i}{\h}(S_0+\h S_1+\h^2S_2)
+		\]
+		or 
+		\[
+			F=G
+		\]
+		where $F$ denotes the LHS and $G$ the RHS. For $F$ we have
+		\[
+			F = \frac{i}{\h}W_0+ i\h W_2-\frac{1}{2}\blr{\ln(p+\h^2W_2')}
+		\]
+		while for $G$
+		\[
+			G = \frac{i}{\h}S_0 + i\h S_2 -\frac{1}{2}\ln p.
+		\]
+		If we note from earlier that $S_0 = W_0$ and $S_2 = W_2$ and then keep terms up to $\mathcal O(\h^2)$ such that
+		\[
+			\ln(p+\h^2W_2')\to \ln p.
+		\]
+		then we can conclude that $F=G$, thus showing consistency between results. 
+		\\
+		\\
+		**As an aside, perhaps a better way to show the last step would be 
+		\ba
+			\ln(W_0'+\h^2W_2') &= \ln(W_0')+\ln\plr{1+\h^2\frac{W_2'}{W_0'}}\\
+			&\approx \ln(W_0')+\h^2\frac{W_2'}{W_0'}+....
+		\ea
+		where, when we multiply both $F$ and $G$ by an overall $\h$ and take up to $\mathcal O(\h^2)$ only $\ln(p)$ remains.**
+		\\
+		\\
+		\eenum
+% #2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	\benum
+		
+		% (a)
+		\item 
+		Use WKB for bound states the estimate the energy for the Hamiltonian
+		\[
+			H = -\frac{\h^2}{2m}\difff{}{*{2}x}+\lambda x^{2N}
+		\]
+		where $\lambda > 0$ and $N$ is an integer. Comment on the limit $N\to \infty$. 
+		\\
+		\\
+		\\
+		For a bound state with two turning points, the WKB estimation for energy can used
+		\[
+			k\int_{x_1}^{x_2}dx\ \sqrt{1-\frac{V(x)}{E}} = \plr{n+\frac{1}{2}}\pi\quad (n=0,1,2,3,..)
+		\]
+		where
+		\[
+			k = \frac{\sqrt{2mE}}{\h}.
+		\]
+		For this problem, the two turning points are located at
+		\[
+			x = \pm \pfrac{E}{\lambda}^{\frac{1}{2N}}
+		\]
+		thus our energy estimation will be
+		\[
+			2k\int_0^{\pfrac{E}{\lambda}^{\frac{1}{2N}}} dx\ \sqrt{1-\frac{\lambda x^{2N}}{E}} = \plr{n+\frac{1}{2}}\pi.
+		\]
+		This yields energies
+		\[
+			E = \pfrac{\h^2 \pi}{2m}^{\frac{N}{N+1}}
+			\pfrac{\Gamma\blr{\frac{1}{2}\plr{3+\frac{1}{N}}}}{\Gamma\blr{\frac{1}{2}\plr{2+\frac{1}{N}}}}^{\frac{2N}{N+1}}
+			\lambda^{\frac{1}{N+1}}\plr{n+\frac{1}{2}}^{\frac{2N}{N+1}}	.	
+		\]
+		For $N=2$ and $\lambda = m\omega^2/2$ we get the familiar harmonic oscillator
+		\[
+			E = \h\omega\plr{n+\frac{1}{2}}. 
+		\]
+		In the limit of $N\to\infty$
+		\[
+			E = \frac{\h^2\pi^2n^2}{8m}\quad (n=1,2,3..)
+		\]
+		which is precisely the energy spectrum of the infinite square well with width $L=1$. 
+		\\
+		\\
+		\\
+		% (b)
+		\item
+		Use WKB to estimate the transmission probability for scattering from the potential
+		\[
+			V = -\lambda x^{2N}
+		\]
+		where $\lambda >0$ and $N$ is an integer, and for energies \textbf{below} the top of the barrier. 
+		\\
+		\\
+		\\
+		For a single barrier, the relation for the transmission probability is
+		\[
+			T = \exp(-\gamma)
+		\]
+		where
+		\[
+			\gamma \equiv \frac{2}{\h}\int_{x_1}^{x_2} \sqrt{2m(V(x)-E)}
+		\]
+		and $(x_2-x_1)$ represents the tunneling region. The points of entry/exit for this potential are located at
+		\[
+			x = \pm \pfrac{|E|}{\lambda}^{\frac{1}{2N}}
+		\]
+		thus
+		\ba
+			\gamma &= 4k\int_0^{\pfrac{|E|}{\lambda}^{\frac{1}{2n}}}dx\ \sqrt{1+\frac{\lambda x^{2N}}{E}}\\
+			& = 2k\sqrt\pi\pfrac{|E|}{\lambda}^{\frac{1}{2N}}\frac{\Gamma\blr{\frac{1}{2}\plr{2+\frac{1}{N}}}}
+			{\Gamma\blr{\frac{1}{2}\plr{3+\frac{1}{N}}}}
+		\ea
+		where
+		\[
+			k = \frac{\sqrt{2m|E|}}{\h}.
+		\]
+		Therefore the probability of transmission is
+		\[
+			T = \exp\blr{2k\sqrt\pi\pfrac{|E|}{\lambda}^{\frac{1}{2N}}\frac{\Gamma\blr{\frac{1}{2}\plr{2+\frac{1}{N}}}}
+			{\Gamma\blr{\frac{1}{2}\plr{3+\frac{1}{N}}}}}.
+		\]
+		Since $\gamma \propto |E|$, the transmission probability increases as you approach the top of the barrier. 
+		\\
+		\\
+		\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+		
+	\eenum
+	
+	
+	% #3 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	\benum
+	
+		% (a)
+		\item
+		Using the data for Thorium in the attached table, make a plot of $\ln T_{1/2}$ versus $1/\sqrt E$
+		\\
+		\\
+		\figg[width=150mm]{hw2_1.pdf}
+		
+		% (b)
+		\item
+		Your answer in (a) should show approximately linear behavior, over a huge range of energies. Use WKB to find a rough estimate for the 
+		slope coefficient. [Note that thorium has $Z=90$, and the mass of an $\alpha$ particle is approximately 3724 Mev$/c^2$]. How good
+		is the WKB estimate?
+		\\
+		\\
+		We may use the tunneling probability to find half life of Thorium. In utilizing the WKB in three dimensions, we can use an effective 
+		potential that includes the angular momentum barrier such that
+		\[
+			\gamma = \frac{2}{\h}\int_{r_0}^{r_1} dr\ \sqrt{2m(V_{eff}(r)-E)}
+		\]
+		where
+		\[
+			V_{eff}(r) = \frac{\h^2}{2m}\frac{(l+\frac{1}{2})^2}{r^2}+\frac{2(Z-2)e^2}{r}.
+		\]
+		Here we have used the Langer substitution along with a repulsive $(Z-2)$ Coulomb potential representing the nuclear force after
+		emission of an alpha particle. Gamma then becomes
+		\[
+			\gamma = 2\int_{r_0}^{r_1} dr\ \frac{1}{r}\blr{\plr{l+\frac{1}{2}}^2+\frac{2m}{\h^2}\blr{2(Z-2)e^2r-Er^2}}^{1/2}.
+		\]
+		The first turning point may be approximated by
+		\[
+			r_0 \approxeq (1.0\  \text{fm})A^{1/3}
+		\]
+		with $A$ being the number of neutrons and protons. Then, $r_1$ may be found by solving for the positive root in the quadratic 
+		equation for
+		\[
+			E = V_{eff}(r)
+		\]
+		If we now set 
+		\[
+			m = \text{3724 MeV}/c^2
+		\]
+		\[
+			l=0
+		\]
+		\[
+			Z = 90,
+		\]
+		we may get an estimation for $\gamma(E)$. Then, the lifetime can be found using
+		\[
+				\tau = \frac{1}{R}
+		\]
+		where
+		\[
+			R = \frac{\blr{2m(E+V_0)}^{1/2}}{2mr_0}\exp(-\gamma).
+		\]
+		Then we should be able to find the slope using
+		\[
+			\diff[]{\pfrac{1}{\sqrt E}}\plr{\ln[T_{1/2}(\tau(1/\sqrt E))]}.
+		\]		
+	\eenum
+\eenum
+\end{document}

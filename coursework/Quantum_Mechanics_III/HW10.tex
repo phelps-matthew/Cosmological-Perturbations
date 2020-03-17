@@ -1,0 +1,306 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{Quantum Mechanics III\\HW 10}
+\author{Matthew Phelps}
+\date{Due: April 4}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.4]
+Consider the two-level atom embedded in the big environment of the quantized electromagnetic field along the lines 
+of section 7.5 using the interaction Hamiltonian (7.59). Show that the relaxation terms of the form (5.6) ensue. There
+will also be a level shift called \emph{Lamb Shift}, but at the present stage of the modeling it is infinite and you 
+should ignore it. In a full analysis the Lamb shift is ``renormalized" so that it becomes finite.\\ \\
+The atom-field interaction Hamiltonian is
+\[
+	H_{AR} = -\sum_{\vect k\lambda}\sqrt\frac{\h\omega_k}{2\epo V}\vect D\cdot\vecth e_{\vect\lambda}(\vect k)
+	(\ket 2\bra 1 a_{\vect k\lambda}+a_{\vect k\lambda}^\dag \ket 1\bra 2).
+\]
+We will work with a combined index $n$ and shorten the notation to
+\[
+	H_{AR} = \sum_{n}G_{n}
+	(\ket 2\bra 1 a_{n}+a_{n}^\dag \ket 1\bra 2)
+\]
+where
+\[
+	G_n(\vect D,\lambda,\vect k) = -\sqrt\frac{\h\omega_k}{2\epo V}\vect D\cdot\vecth e_{\vect\lambda}(\vect k).
+\]
+Converting to the interaction picture with respect to $H_0$
+\[
+	H_0 = H_A + H_E = \h\omega_1 \ket 1\bra 1+\h\omega_2\ket 2\bra 2
+	+\sum_{n}\h\omega_n a^\dag_n a_n
+\]
+we have for the interaction perturbation
+\[
+	H^I_{AR} = e^{iH_0t/\h}H_{AR}e^{-iH_0t/\h}.
+\]
+To compute this, first take the result from the atomic hamiltonian
+\[
+	e^{iH_At/\h}H_{AR}e^{-iH_At/\h} = \sum_n G_n (
+	e^{i(\omega_2-\omega_1)t}\ket 2\bra 1 a_n+e^{-i(\omega_2-\omega_1)t}\ket 1\bra 2a_n^\dag).
+\]
+Now we need to take this result between the exponentials of the environment
+\ba
+	e^{iH_E}\blr{ \sum_n G_n (
+	e^{i(\omega_2-\omega_1)t}\ket 2\bra 1 a_n+e^{-i(\omega_2-\omega_1)t}\ket 1\bra 2a_n^\dag)}e^{-iH_E}.
+\ea 
+Some steps necessary to compute this:
+\[
+	[a_i, n_{j}] = \delta_{ij}a_k,\qquad [a_i^\dag,n_{j}] = -\delta_{ij}a^\dag_i
+\]
+\qquad\qquad BCH formula
+\[
+	e^{X}Ye^{-X} = Y+[X,Y]+\frac{1}{2!}[X,[X,Y]]+\frac{1}{3!}[X[X[X,Y]]]+...
+\]
+\[
+	e^{iH_Et/\h}a_ke^{-iH_Et/\h} = e^{-i\omega_k t}a_k,
+	\qquad e^{iH_Et/\h}a^\dag_ke^{-iH_Et/\h} = e^{i\omega_k t}a_k^\dag.
+\]
+All together then we have the interaction potential 
+\[
+	H^I_{AR} =  \sum_n G_n (
+	e^{i(\omega_{21}-\omega_n)t}\ket 2\bra 1 a_n+e^{-i(\omega_{21}-\omega_n)t}\ket 1\bra 2a_n^\dag).
+\]
+The time dependence of the density operator $\rho(t)$ corresponding to the combined system may be written out as an perturbative expansion of the Liouville-von Neumann equation
+\be\label{1}
+	\rho(t+\delta t) = \rho(t)-\frac{i}{\h}\int_t^{t+\delta t}dt_1\ [V(t_1),\rho(t)] +
+	\pfrac{-i}{\h}^2\int_t^{t+\delta t}dt_1\ \int_{t}^{t_1}dt_2\ [V(t_1),[V(t_2),\rho(t)]]+...
+\ee
+We assume the density operator starts in the vacuum state of the environment
+\[
+	\rho(t) = \rho_A(t)\otimes \ket 0\bra 0_E
+\]
+and we choose to trace away the environment to get the time evolution of the system. With this we compute the
+trace of each term in \eqref 1 (denoting $\rho_A(t)\equiv \rho(t)$). 
+The first order term vanishes
+\[
+	\tr_E([V(t_1),\rho(t)]) = 0
+\]
+The second order term can be split into four parts. One part is
+\ba
+	\tr_E(V(t_1)V(t_2)\rho(t)) =\sum_{nn'}G_nG_{n'}\bigg( \bra0|\blr{
+	e^{i(\omega_{21}-\omega_n)t_1}\ket 2\bra 1 a_n+e^{-i(\omega_{21}-\omega_n)t_1}\ket 1\bra 2a_n^\dag}
+	\\ \quad\times\blr{
+	e^{i(\omega_{21}-\omega_{n'})t_2}\ket 2\bra 1 a_{n}'+e^{-i(\omega_{21}-\omega_{n'})t_2}\ket 1\bra 2a^		\dag_{n'}}\ket 0\bigg) \rho(t)
+\ea
+
+The annihilation operators annihilate the vacuum and only $n=n'$ terms survive. We must also note the 
+orthogonality of the atomic states. We are left with a trace of
+\[
+	\tr_E(V(t_1)V(t_2)\rho(t)) = \sum_{n}G_n^2e^{i(\omega_{21}-\omega_n)(t_1-t_2)}\ket 2\bra 2\rho(t)
+\]
+The remaining three terms of the commutator from the perturbation are evaluated similarly. At this point, we note that our results take a similar form as that in the script. The
+result of the trace of the integration of each term is
+\[
+	\pfrac{-i}{\h}^2\tr_E \blr{ \int_t^{t+\delta t}dt_1\ \int_{t}^{t_1}dt_2\ V(t_1)V(t_2)\rho(t)}
+	\approx \delta t\blr{-(\gamma-i\delta)\ket 2\bra 2\rho(t)}
+\]
+\[
+	\pfrac{-i}{\h}^2\tr_E \blr{ \int_t^{t+\delta t}dt_1\ \int_{t}^{t_1}dt_2\ \rho(t)V(t_2)V(t_1)}
+	\approx \delta t\blr{-(\gamma+i\delta)\rho(t)\ket 2\bra 2}
+\]
+\[
+	\pfrac{-i}{\h}^2\tr_E \blr{ \int_t^{t+\delta t}dt_1\ \int_{t}^{t_1}dt_2\ V(t_1)\rho(t)V(t_2)}
+	\approx \delta t\blr{(\gamma-i\delta)\ket 1\braket{2|\rho(t)|2}\bra 1}
+\]
+\[
+	\pfrac{-i}{\h}^2\tr_E \blr{ \int_t^{t+\delta t}dt_1\ \int_{t}^{t_1}dt_2\ V(t_2)\rho(t)V(t_1)}
+	\approx \delta t\blr{(\gamma+i\delta)\ket 1\braket{2|\rho(t)|2}\bra 1}
+\]
+where $\gamma$ and $\delta$ follow the definitions in the text. \\ \\
+Summing these results
+\[
+	\rho(t+\delta t) = \rho(t) +\delta t\bigg(-(\gamma-i\delta)\ket 2\bra 2\rho(t)-
+	(\gamma+i\delta)\rho(t)\ket 2\bra 2+2\gamma\ket 1\braket{2|\rho(t)|2}\bra 1 \bigg)
+\]
+which may be brought to the form
+\[
+	\dot\rho = i\delta[\ket 2\bra 2,\rho]+\gamma\big(2\ket 1\braket{2|\rho|2}\bra 1-\ket 2\bra 2\rho-\rho
+	\ket 2\bra 2\big).
+\]
+We have the Liouville-von Neumann term for a modified Hamiltonian and the relaxation terms in the Lindblad form.
+Taking expectation values between the two atomic states, we may easily confirm eq. (5.9) for $\Gamma = 2\gamma$.
+\[
+	\dot\rho_{22} = -\Gamma\rho_{22},\ \dot\rho_{11} = \Gamma\rho_{22},\ \dot\rho_{21} = -\frac{1}{2}
+	\Gamma\rho_{21},\ \dot\rho_{12} = -\frac{1}{2}\Gamma\rho_{12}.
+\]
+\emph{For some reason I find that only the state $\ket 2\bra 1\rho(t)\ket 1\bra 2a_na^\dag_n$ is nonvanishing
+in the interaction term. But this doesn't follow the proper Lindblad form of $\ket 1\bra 2\rho(t)\ket 2\bra 1$ for a two level system.. }
+\\ \\
+% #2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.6]
+By attempting to construct an eigenstate of the boson creation operator $a^\dag$ in the Fock state basis, show
+that it does not have any eigenstates at all. \\ \\
+Eigenvalue equation for $a^\dag$:
+\[
+	a^\dag \ket \psi = \lambda \ket \psi.
+\]
+Expand $\ket \psi$ in a basis of single mode Fock states $\ket n$ (we may expand over all modes and all particle
+numbers, but $a^\dag_{\vect k}$ acting on any other momentum of $\vect k\ne \vect k'$ vanishes, so 
+we restrict our space to a single mode)
+\ba
+	a^\dag \ket \psi &= \lambda \ket \psi\\
+	a^\dag \sum_{n=0}^\infty c_n \ket n &= \lambda  \sum_{n=0}^\infty c_n \ket n\\
+	\sum_{n=0}^\infty \sqrt{n+1}c_n\ket{n+1} &= \lambda \sum_{n=0}^\infty c_n\ket n\\
+	\sum_{n=1}^\infty \sqrt nc_{n-1}\ket n &= \lambda \sum_{n=0}^\infty c_n \ket n\\
+	\sum_{n=1}^\infty \sqrt nc_{n-1}\ket n &= \lambda c_0 \ket 0 +\lambda \sum_{n=1}^\infty \sqrt nc_{n}\ket n.
+\ea
+This leads to
+\[
+	\lambda c_0\ket 0 + \sum_{n=1}^\infty (\lambda c_n -\sqrt n c_{n-1})\ket n = 0
+\]
+As the states are orthogonal, each coefficient must vanish independently
+\ba
+	\lambda c_0 &= 0\\
+	\lambda c_1 &= \sqrt 1 c_0\\
+	\lambda c_2 &= \sqrt 2 c_1\\
+	&.....\\
+	\lambda c_n &= \sqrt n c_{n-1}
+\ea
+For a nonzero eigenvalue, $\lambda \ne 0$, we must have $c_0 = 0$. However, through the recursion it 
+then follows that all $c_n=0$. Thus a non-zero eigenstate of the creation operator cannot exist.
+\newpage
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.7]
+Consider a beam splitter that combines two incoming photon modes $a_1$ and $a_2$ into two new photon modes
+$A_1$ and $A_2$. 
+\benum
+\item
+% (a)
+Assume that the transformation between the modes is linear, so that $A_1 = u_{11}a_1+u_{12}a_2$ and
+$A_2 = u_{21}a_1+u_{22}a_2$. Show that the matrix with the element $u_{ij}$ must be unitary. 
+\\ \\
+Now consider an ideal 50/50 beam splitter, for which the (unitary) transformation is $A_1 = \frac{1}{\sqrt 2}
+a_1+\frac{1}{\sqrt 2}a_2$, $A_2 = -\frac{1}{\sqrt 2}a_1+\frac{1}{\sqrt 2}a_2$. \\
+\item 
+% (b)
+Suppose that we put one photon in each incoming mode $a_1$ and $a_2$. Show that at the output both photons
+will be observed to come out from the same port, either in the mode $A_1$ or $A_2$.
+\\ \\
+Hint: A state with one photon in the modes $a_1$ and $a_2$ may be written $a_1^\dag a_2^\dag\ket 0$. \\ \\
+\eenum
+\benum
+\item
+Recall the commutation relations for boson modes
+\[
+	[a_i,a_j^\dag] = \delta_{ij},\quad [a_i,a_j] = [a_i^\dag,a_j^\dag] = 0.
+\]
+This also applies to the $A$ modes. Using the linear composition of $A$ modes in terms of $a$ modes,
+we equate them to the commutator
+\ba
+	[A_1,A_2^\dag] &= [u_{11}a_1+u_{12}a_2, u_{21}^*a_1^\dag+u_{22}^*a_2^\dag]\\
+	&= u_{11}u_{21}^*[a_1,a_1^\dag] + u_{12}u_{22}^*[a_2,a_2^\dag] \\
+	&= u_{11}u_{21}^*+u_{12}u_{22}^*\\
+	&= 0.
+\ea
+Thus
+\be\label{2}
+	u_{11}u_{21}^* = -u_{12}u_{22}^*
+\ee
+and it follows
+\be\label{3}
+	u_{11}^*u_{21} = - u_{12}^*u_{22}.
+\ee
+Repeat the same procedure for $A_1$ and $A_2$, yielding
+\be\label{4}
+	[A_1,A_1^\dag] \Rightarrow |u_{11}|^2 + |u_{12}|^2 = 1
+\ee
+\be\label{5}
+	[A_2,A_2^\dag] \Rightarrow |u_{21}|^2 +|u_{22}|^2 = 1
+\ee
+Now, a 2x2 unitary matrix must satisfy 
+\ba
+	U^\dag &= U^{-1}\\  
+	\bpm u_{11}^* &u_{21}^*\\ u_{12}^*& u_{22}^* \epm &= \frac{1}{u_{11}u_{22}-u_{12}u_{21}}
+	\bpm u_{22}&-u_{12}\\-u_{21}&u_{11}\epm
+\ea
+Now we relate all the elements using \eqref 2, \eqref 3,\eqref 4, and \eqref 5. 
+\ba
+	u_{22}|u_{11}|^2+u_{22}|u_{12}|^2 &= u_{22}\\
+	u_{22}|u_{11}|^2-u_{21}u_{11}^*u_{12} &= u_{22}
+\ea
+\[
+	\Rightarrow u_{11}^* = \frac{u_{22}}{u_{22}u_{11}-u_{21}u_{12}}
+\]
+\[
+	\Rightarrow (U^\dag)_{11} = (U^{-1})_{11}
+\]
+\newpage
+\ba
+	-u_{12}|u_{22}|^2-u_{12}|u_{21}|^2 &= -u_{12}\\
+	-u_{12}|u_{21}|^2+u_{11}u_{21}^*u_{22} &= -u_{12}
+\ea
+\[
+	\Rightarrow u_{21}^* = -\frac{u_{12}}{u_{22}u_{11}-u_{21}u_{12}}
+\]
+\[
+	\Rightarrow (U^\dag)_{21} = (U^{-1})_{21}
+\]
+\[
+	u_{12}^*u_{11}u_{22}-|u_{11}|^2u_{21} = -u_{21}
+\]
+\[
+	\Rightarrow u_{12}^* = -\frac{u_{21}}{u_{22}u_{11}-u_{21}u_{12}}
+\]
+\[
+	\Rightarrow (U^\dag)_{12} = (U^{-1})_{12}
+\]
+\[
+	-u_{22}^*u_{12}u_{21}+|u_{21}|^2u_{11} = -u_{21}
+\]
+\[
+	\Rightarrow u_{22}^* = \frac{u_{11}}{u_{22}u_{11}-u_{21}u_{12}}
+\]
+\[
+	\Rightarrow (U^\dag)_{22} = (U^{-1})_{22}.
+\]
+Thus we establish
+\[
+	U^\dag = U^{-1}.
+\]
+\\ \\
+\item
+we have for the state $a_1^\dag a_2^\dag \ket 0 = \ket \psi$
+\[
+	A_1 = \frac{1}{\sqrt 2}a_1+\frac{1}{\sqrt 2}a_2 = \alpha_1 a_1 +\beta a_2
+\]
+\[
+	A_2 = -\frac{1}{\sqrt 2}a_1+\frac{1}{\sqrt 2}a_2 = \alpha_2 a_1 +\beta a_2
+\]
+The measurement probability for sequence $A_iA_j$ in the state $\ket{11} = a_1^\dag a_2^\dag \ket{0}$
+is
+\ba
+	P(A_i A_j) &= \frac{1}{2}\braket{0|a_2a_1A_j^\dag A_i^\dag A_i A_ja_1^\dag a_2^\dag|0}\\
+	&=\frac{1}{2}\braket{0|a_2a_1A_j^\dag A_i^\dag [A_i A_j,a_1^\dag a_2^\dag]|0}\\
+	&=\frac{1}{2}\braket{0|a_2a_1A_j^\dag A_i^\dag A_i [A_j,a_1^\dag a_2^\dag]|0}\\
+	&=\frac{1}{2}\braket{0|a_2a_1A_j^\dag A_i^\dag A_i(a_1^\dag [A_j, a_2^\dag]+[A_j,a_1^\dag]a_2^\dag)|0}\\
+\ea
+The results above follow from annihilation of the state from annihilation operators. Looking at the last
+two commutators
+\ba
+	[A_i,a_1^\dag] &= [\alpha_i a_1,a_1^\dag] +[\beta a_2,a_1^\dag]\\
+	& = \alpha_i
+\ea
+and likewise
+\[
+	[A_i,a_2^\dag] = \beta.
+\]
+Thus
+\ba
+	P(A_iA_j)
+	&= \frac{1}{2}\braket{0|a_2a_1A_j^\dag A_i^\dag\beta(\alpha_i a_1a_1^\dag+\alpha_j a_2a_2^\dag)|0}\\
+	& = \frac{1}{2}\braket{0|a_2a_1A_j^\dag A_i^\dag\beta( \alpha_i+\alpha_j)|0}
+\ea
+Now noting from the earlier assignment that 
+\[
+	\alpha_1+\alpha_2 = 0,\quad 2\alpha_1 = 2\beta,\quad 2\alpha_2 = -2\beta
+\]
+we see that unless $i=j$, the probability $P(A_iA_j) = 0$. Therefore, at the output both photons
+will be observed to come from the same port, either in the mode $A_1$ or $A_2$.
+\eenum
+\eenum
+\end{document}

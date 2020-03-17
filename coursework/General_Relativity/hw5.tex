@@ -1,0 +1,418 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{General Relativity\\HW 5}
+\author{Matthew Phelps}
+\date{Due: Nov 15}
+
+\begin{document}
+\maketitle
+
+\benum
+% 1------------------------------------------------------------------------------------------------------------------------
+\item
+\benum
+\item
+% (a)
+As we know, we may reduce the problem of two orbiting masses to an effective one body problem with
+reduced mass
+\[
+	\mu = \frac{mM}{m+M}
+\]
+with radial separation $r$ and coordinates relative to the center of mass
+\[
+	r_1 = \frac{ m}{M+m}r,\qquad r_2 = \frac{M}{m+M}r.
+\]
+The potential is then a function of the separation $r$ only, $V(r)$. Due to this spherical symmetry, the total angular momentum vector is conserved and it ensues that motion takes place in a plane. The lagrangian for said system is
+\[
+	 L = \frac 12 m(\dot r^2+r^2 \dot\theta ^2)-V(r).
+\]
+Here I will set $\mu = m$ until the end of the problem.
+We recall the Euler-Lagrange equations
+\[
+	\frac{d}{dt} \frac{ \pd L}{\pd \dot q} - \frac{\pd L}{\pd q} = 0.
+\]
+Here $\theta$ is cyclic and thus the orbital angular momentum is conserved
+\[
+	\frac{d}{dt} \frac{\pd L}{\pd \dot\theta} = \frac{d}{dt} mr^2\dot\theta = 0
+\]
+\[
+	\Rightarrow mr^2\dot\theta = l.
+\]
+In terms of a force $f(r) = -\frac{\pd V(r)}{\pd r}$ the radial Euler-Lagrange equation yields
+\[
+	m\ddot r - \frac{l^2}{mr^3} = f(r).
+\]
+At this point, we may use our relation for the angular momentum to change from time derivatives to those with respect to $\theta$
+\[
+	\frac{d}{dt} = \frac{l}{mr^2}\frac{d}{d\theta}.
+\]
+Performing a substitution of $u = 1/r$, the radial equation is now
+\[
+	\frac{l}{r^2} \frac{d}{d\theta} \plr{ \frac{ l}{mr^2}\frac{dr}{d\theta}} - \frac{l^2}{mr^3} = f(r)
+\]
+or 
+\[
+	\frac{d^2u}{d\theta^2}+u = -\frac{m}{l^2}\frac{d}{du}V\pfrac{1}{u}.
+\]
+Integrating this equation for $\theta$ we have
+\[
+	\theta = \theta_0 \int_{u_0}^u \frac{ du}{\sqrt{ \frac{2mE}{l^2}-\frac{2mV}{l^2}-u^2}}.
+\]
+For the newtonian potential $V = -\frac{k}{r}$
+this is
+\[
+	\theta = \theta' \int \frac{du}{\sqrt{\frac{2mE}{l^2} +\frac{2mku}{l^2}-u^2}}. 
+\]
+Evaluating the integral,
+\[
+	\theta = \theta' -\cos^{-1}\blr{ \frac{ \frac{l^2u}{mk}-1}{\sqrt{ 1+\frac{2El^2}{mk^2}}}}.
+\]
+Going back to $r = 1/u$ this gives the equation of orbit
+\[
+	\frac{1}{r} = \frac{mk}{l^2}\plr{ 1+\sqrt{ 1+\frac{2El^2}{mk^2}\cos(\theta-\theta')}}.
+\]
+The general equation for an ellipse takes the form of
+\[
+	\frac{1}{r} = C[1+e\cos(\theta-\theta')]
+\]
+with eccentricity $e$. Thus we immediately identify the eccentricity of the orbit equation as
+\[
+	\boxed{e = \sqrt{1+\frac{2El^2}{mk^2}}}.
+\]
+The closest distance of approach is given by minimum $r$, and thus by the semi-minor axis. For an ellipse, the semi-minor $b$ is related to the semi-major $a$ by
+\[
+	b = a\sqrt{1-e^2}.
+\]	
+Thus we seek to solve for $a$. This can be accomplished by looking at the total energy 
+\[
+	E = \frac12 m\dot r^2 + \frac12 \frac{l^2}{mr^2} -\frac{k}{r}.
+\]
+The turning points are points at which the radial velocity is zero, i.e. $\dot r =0$
+\[
+	E -\frac{l^2}{2mr^2}+\frac kr = 0.
+\]
+There are two roots to this equation $r_1$ and $r_2$. The average of these then gives the semi major axis $a$
+\[
+	a = \frac{|r_1+r_2|}{2} = \frac{k}{2E}.
+\]
+Now using this we may solve for the distance of closest approach $l_0 = b$
+\[
+	\boxed{l_0 = \frac{k}{2E}\sqrt{1-e^2} = \sqrt{\frac{l^2}{2mE}}}.
+\]
+To find the period, we may use some of the properties of an ellipse. From conservation of angular momentum, the area $dA = \frac12 r^2 d\theta$ is conserved over time
+\[
+	\frac{dA}{dt} = \frac12 r^2\dot\theta = \frac{l}{2m}
+\]
+The total area of the ellipse $A = \pi ab$. is given by the time $\tau$ to complete one orbit
+\[
+	\int_0^\tau \frac{dA}{dt}dt = A = \frac{l\tau}{2m}.
+\]
+Recalling our relation earlier representing the semi-minor in terms of the eccentricity and semi-major, this leads us to
+\[
+	\tau = \frac{2m}{l}\pi a^2\sqrt{1-e^2} = 2\pi a^{3/2}\sqrt{\frac mk}.
+\]
+Thus the orbital period is
+\[
+	\boxed{\tau = \pi k^2 \sqrt{\frac{m}{2E^3}}}
+\]
+where $k =GmM$ and $\mu\equiv m$. 
+\item
+% (b)
+Recall the quadropole moment defined as
+\[
+	D_{ij} = \int d^3x\ x^i x^j T^{00}.
+\]
+In our binary system, we have
+\[
+	T^{00} = M\delta(\vec x_1 - \vec x) + m\delta(\vec x_2 - \vec x)
+\]
+with coordinates
+\[
+	x_1 = r_1\cos\theta,\quad y_1 = r_1\sin\theta
+\]
+\[
+	x_2 = -r_2\cos\theta,\quad y_2 = -r_2\sin\theta.
+\]
+The distances $r_1$ and $r_2$ are relative to the center of mass, and can therefore be expressed in terms of the distance between the two masses $r$
+\[
+	r_1 = \frac{ m}{M+m}r,\qquad r_2 = \frac{M}{m+M}r
+\]
+with reduced mass
+\[
+	\mu = \frac{mM}{m+M}.
+\]
+Substituting these in for $r_1$ and $r_2$, we may now evaluate the quadropole moment $D_{ij} = M(x_1^i x_1^j) + m(x_2^i x_2^j)$:
+\[
+	D_{xx} = \mu r^2\cos^2\theta
+\]
+\[
+	D_{yy} = \mu r^2 \sin^2\theta
+\]
+\[
+	D_{xy} = \mu r^2 \sin\theta\cos\theta.
+\]
+All other quadropole terms vanish. \\
+\item
+% (c)
+From general coordinate invariance, it always possible to choose a gauge such that the perturbed metric (and thus the polarization tensor) is tranverse to a chosen direction,  for example the $z$-axis. Within such a gauge, to leading order $1/r$,  the following conditions hold ($G=1$ units):
+\[
+	h_{z\mu} = 0
+\]
+\[
+	h_{xx} = -h_{yy} = -\omega^2\frac{e^{i\omega( r-t)}}{r}(D_{xx}-D_{yy})
+\]
+\[
+	h_{xy} = -2\omega^2\frac{e^{i\omega(r-t)}}{r}D_{xy}.
+\]
+
+Now if we look for radiation along the $z$ axis, using coordinates with mass separation $R$, we see that
+\[
+	h_{xx} = -h_{yy} =  -\omega^2\frac{e^{i\omega( r-t)}}{r}\mu R^2(\cos^2\theta - \sin^2\theta)
+\]
+\[
+ 	h_{xy} =  -2\omega^2\frac{e^{i\omega( r-t)}}{r}\mu R^2\sin\theta\cos\theta.
+\]
+%Expressed in terms of left and right handed polarization spin-2 vectors (helicity $\pm2$)
+%\[
+%	e_{\pm} = e_{11} \mp ie_{12},
+%\]
+%we see that the motion in the $z$ direction corresponds to
+%\[
+%	e_{\pm} \propto (\cos^2\theta - \sin^2\theta \mp 2i\sin\theta\cos\theta) = \cos(2\theta) \mp i\sin(2\theta) = e^{\mp 2i\theta}.
+%\]
+Now if we are to look at radiation along the $x$-axis, we must rearrange our gauge conditions such that only components transerve to $x$ are non-zero. This is implemented by a change in the gauge conditions of 
+$z\to x$, $y\to z$, $x\to y$:
+\[
+	h_{z0} \to h_{x0} = 0
+\]
+\[
+	(h_{xx} = -h_{yy}) \to (h_{yy} = -h_{zz}) = -\omega^2\frac{e^{i\omega( r-t)}}{r}(D_{yy}-D_{zz})
+\]
+\[
+	h_{xy} \to h_{yz} = -2\omega^2\frac{e^{i\omega(r-t)}}{r}D_{yz}.
+\]
+This leaves us with
+\[
+	h_{yy} = -h_{zz} =  -\omega^2\frac{e^{i\omega( r-t)}}{r}\mu R^2 \sin^2\theta
+\]
+\[
+	h_{yz} = 0.
+\]
+%The polarization vector is then
+%\[
+%	e_\pm = e_{yy} \mp ie_{yz} = e_{yy} \propto \sin^2\theta
+%\]
+\\ \\
+Now, as we take $M\to m$, we have $\mu \to m$ and $r_1 = r_2$. Given appropriate initial conditions, the distance between masses may remain fixed and we have circular motion, $\theta = \omega t$. Looking for radiation along the $z$ axis, we may express the components as
+\[
+	h_{z\mu} = 0
+\]
+\[
+	h_{xx} = -h_{yy} =  -\omega^2\frac{e^{i\omega( r-t)}}{r}m R^2[\cos(2\omega t) + const]
+\]
+\[
+	h_{xy} =  -\omega^2\frac{e^{i\omega( r-t)}}{r}m R^2\sin(2\omega t).
+\]
+Note that $\mu R^2$ becomes constant here. In terms of the spin 2 polarization vector
+\[
+	e_{\pm} = e_{11}\mp ie_{12}
+\]
+we have
+\[
+	e_+ = 2e_{xx},\qquad e_- = 0.
+\]
+Thus the radition is circularly polarized  (traveling in $+1$ helicity direction, i.e. counter clockwise along the $z$-axis) when measured in the $z$-direction.
+\\ \\
+Now measuing along the $x$-direction, we have
+\[
+	h_{yy} = -h_{zz} =  -\omega^2\frac{e^{i\omega( r-t)}}{r}m R^2 \sin^2\theta
+\]
+\[
+	h_{yz} = 0.
+\]
+In this case we have $e_+ = e_- = h_{yy}$. We know that an equally weighted  linear combination of two circularly polarized vectors gives rise to linear polarization, and thus for measurements along the $x$-direction we have linearly polarized radation. This conforms to the results given in class. 
+\vspace{500mm}
+\eenum
+% 2------------------------------------------------------------------------------------------------------------
+\item 
+The static spherically symmetric metric is
+\[
+	g_{tt} = -B(r),\quad g_{rr} = A(r),\quad  g_{\theta\theta} = r^2,\quad g_{\phi\phi} = r^2\sin^2\theta,
+\]
+and its inverse is
+\[
+	g^{tt} = -B^{-1}(r),\quad g^{rr} = A^{-1}(r),\quad  g^{\theta\theta} =1/ r^2,\quad g^{\phi\phi} = 1/r^2\sin^2\theta.
+\]
+For a perfect fluid, the EM tensor is
+\[
+	T^{\mu\nu} = (\rho+p)U^{\mu}U^{\nu}+pg^{\mu\nu}
+\]
+where we have normalization
+\[
+	g_{\mu\nu}U^\mu U^\nu = -1.
+\]
+For fluid at rest, $U^r = U^\theta = U^\phi = 0$, and from the above we find
+\[
+	U^t = B^{-1/2}.
+\]
+Now we evaluate $T^{\mu\nu}$:
+\[
+	T^{tt} =\rho B^{-1},\quad T^{rr} = pA^{-1},\quad T^{\theta\theta} = pr^{-2},\quad T^{\phi\phi} = pr^{-2}\sin^{-2}\theta.
+\]
+The covariant conservation equation is of the form
+\[
+	T^{\mu\nu}{}_{;\mu} = \pd_\mu T^{\mu\nu} + \Gamma^{\mu}_{\mu\lambda} T^{\lambda\nu} + \Gamma^\nu_{\mu\lambda}T^{\mu\lambda}
+	=0.
+\]
+Only $\nu = r$ is non-vanishing,
+\[
+	T^{\mu r}{}_{;\mu} = \pd_r T^{r r} + \Gamma^{\mu}_{\mu r} T^{r r} + \Gamma^r_{\mu\lambda}T^{\mu\lambda}.
+\]
+The first connection term is
+\ba
+	\Gamma^\mu_{\mu r} &= \frac12 g^{\mu\rho}\blr{ \pd_r g_{\rho\mu} + \pd_\mu g_{\rho r} - \pd_\rho g_{\mu r}}
+	= \frac12 g^{\mu\rho}\pd_r g_{\mu\rho}\\
+	&= \frac12 \plr{ B^{-1}B' + A^{-1}A' +4r^{-1}}.
+\ea
+The other is
+\ba
+	\Gamma^{r}_{\mu\lambda} &= \frac12 g^{r\rho}\blr{ \pd_\mu g_{\rho\lambda} + \pd_\lambda g_{\rho\mu} - \pd_\rho g_{\mu\lambda}}\\
+	&=   \delta^r_\lambda \delta^r_\mu (g^{rr} \pd_r g_{rr})  -\frac12 g^{rr} \pd_r g_{\mu\lambda}\\
+	&= A^{-1}A'\delta^r_\lambda \delta^r_\mu -\frac12 A^{-1}\pd_r g_{\mu\lambda}.
+\ea
+Contracting this with $T^{\mu\lambda}$ gives
+\[
+	\Gamma^{r}_{\mu\lambda} T^{\mu\lambda} = pA^{-2}A'-\frac12 A^{-1}\plr{ -\rho B^{-1}B' + pA^{-1}A' +4pr^{-1}}.
+\]
+Now putting all of this together
+\ba
+	T^{\mu r}{}_{;\mu} &= \pd_r T^{r r} + \Gamma^{\mu}_{\mu r} T^{r r} + \Gamma^r_{\mu\lambda}T^{\mu\lambda}\\
+	&=p'A^{-1}-pA^{-2}A' + \frac12 pA^{-1}\plr{ B^{-1}B' + A^{-1}A' +4r^{-1}}
+	+ pA^{-2}A' - \frac12\plr{-\rho A^{-1}B^{-1}B' +pA^{-2}A' +4pA^{-1}r^{-1}}\\
+	&= p'A^{-1}+\frac12 A^{-1}B^{-1}B'(\rho+p) \\
+	&= A^{-1}\blr{ p'+\frac12 B^{-1}B'(\rho+p)}=0
+\ea
+which yields
+\[
+	(\rho+p)B' = -2p'B.
+\]
+\newpage
+% 3 -------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+The static spherically symmetric metric for our star is given as 
+\[
+	g_{tt} = -B(r),\quad g_{rr} = A(r),\quad  g_{\theta\theta} = r^2,\quad g_{\phi\phi} = r^2\sin^2\theta.
+\]
+We may first find a differential equation for $A(r)$ by taking the following combination of Ricci tensor components:
+\[
+	\frac{R_{rr}}{2A}+\frac{R_{\theta\theta}}{r^2}+\frac{R_{tt}}{2B} = -\frac{A'}{rA^2}-\frac{1}{r^2}+\frac{1}{Ar^2} = -8\pi G\rho
+\]
+which simplifies to
+\[
+	\pfrac{r}{A}'=1-8\pi G\rho r^2.
+\]
+If, for conveinence, we define the function
+\[
+	m(r) = \frac12 r(1-A(r))
+\]
+then the differential equation for $A$ above becomes
+\be
+	m' = 4\pi r^2\rho.
+\ee
+In addition to this equation, we will need the T.O.V. equation, which is supplied by taking the $G_{rr} = 8\pi GT_{rr}$ component of the field equation and then subtituting in the result from the last problem ($(\rho+p)B' = -2p'B$). This yields the following equation for $m$ in terms of the pressure and density
+\[
+	p' = -\frac{(\rho+p)(m+4\pi r^3 p)}{r(r-2m)}.
+\]
+Typically then, one may use the last two equations, along with an equation of state, to solve for $\rho$, $p$, and $m$. However, in our case, we will not use an equation of state and instead can use $\rho = const$ to express $m$ in terms of a critical $p=p_c$. 
+\\ \\
+Firstly, we solve for $m$ in (1) by integration
+\be
+	m(r) = \begin{cases}\frac{4}{3}\pi \rho r^3 & r\le R\\
+	\frac{4}{3}\pi \rho R^3 &r\ge R \end{cases} 
+\ee
+The exterior solution is defined in terms of the Scharwzchild mass parameter $M = \frac{4}{3}\pi \rho R^3$. Note $m(r)$ is continuous at the boundary. Going back to the interior solution, we may solve for the T.O.V. equation by substituting in the appropriate form for $m(r)$ - this yields
+\[
+	p' = -\frac43\pi r\frac{(\rho+p)(\rho+3p)}{1-8\pi r^2\rho/3}.
+\]
+Now integrate from $0$ to arbitrary $r$, defining $p(0) = p_c$,
+\[
+	\frac{1}{2\rho}\ln \blr{ \frac{(\rho+p_c)(3p_\rho)}{(3p_c+\rho)(p+\rho)}} = \frac{1}{4\rho}\ln\blr{
+	1-\frac83 \pi r^2\rho}.
+\]
+Again making use of our definition of $m(r)$, we can express this as 
+\[
+	\frac{\rho+3p}{\rho+p} = \plr{ 1-2\frac mr}^{1/2}\frac{\rho+3p_c}{\rho+p_c}.
+\]
+For $p$ to be continuous, it must be zero at the boundary $r=R$. Thus we may evaluate the above at $r=R$ to find an expression for the radius in terms of the critical density
+\[
+	1 = \plr{ 1-\frac 83\pi \rho R^2}^{1/2}\frac{\rho+3p_c}{\rho+p_c}
+\]
+and solving for $R$
+\[
+	\boxed{R = \blr{\frac{3}{8\pi\rho}\plr{ 1- \frac{(\rho+p_c)^2}{(\rho+3p_c)^2}}}^{1/2}}.
+\]
+We may also express the mass of the star in terms of the critical pressure and radius $R$ by subsituting
+\[
+	M = \frac{4\pi\rho R^3}{3}
+\]
+into the above and solving for $M$. This yields
+\[
+	\boxed{M = \frac{2Rp_c(2p_c+\rho)}{(3p_c+\rho)^2}}.
+\]
+Recalling our definition of $m(r)$ in terms of $A(r)$, we may easily solve for $A(r)$ as
+\[
+	\boxed{A(r) = \plr{ 1-\frac{2m(r)}{r}}^{-1}}
+\]
+where $m(r)$ for any $r$ is given in (2). To solve for $B(r)$ we go back to the result 
+\[
+	(\rho+p)B' = -2p'B.
+\]
+Before we solve for $B(r)$, first we note that from the $rr$ component of the Einstein equation, we have
+\[
+	-\frac{1}{r^2}B(1-B^{-1}) +\frac{2}{r}\frac{B'}{B} = pA = p \plr{ 1-\frac{2m(r)}{r}}^{-1}.
+\]	
+This simplifies to 
+\[
+	\frac{B'}{B} = \frac{m(r)+4\pi r^3p}{r(r-2m(r))}.
+\]
+Outside the star, $p=\rho =0$ and $m(r) = const = M$, and solving the above equation gives the usual Scharzchild
+solution
+\[
+	B(r) = 1-\frac{2M}{r}\qquad r\ge R.
+\]
+where the initial condition $B(\infty) = 1$ has been applied for asymptotic limit. Now solving for $B$ interior, 
+we start with 
+\[
+	\frac{B'}{B} = \frac{m(r)+4\pi r^3p}{r(r-2m(r))}
+\]
+and transform it to
+\[
+	B = C\exp\blr{ -\int \frac{2p'}{\rho+p}}.
+\]
+$C$ here is an integration constant. Making use of 
+\[
+	\frac{\rho+3p}{\rho+p} = \plr{ 1-2\frac mr}^{1/2}\frac{\rho+3p_c}{\rho+p_c}.
+\]
+we may first solve for $p(r)$ as well as its derivative in terms of $r$, $\rho$, $p_c$ and $m$. Then, using
+\[
+	\rho = \frac{3M}{4\pi R^3}
+\]
+and 
+\[
+	p_c = \rho\frac{(1-2Mr^2/R^3)^{1/2}-(1-2M/R)^{1/2}}{3(1-2M/R)^{1/2}-(1-2Mr^2/R^3)^{1/2}}
+\]
+we may express the entire integral in terms of $M$, $R$ and $r$. Lastly, we use the boundary condition to solve for the arbitrary integration constant 
+\[
+	B(R) = \frac{4}{3}\pi \rho R^3.
+\]
+This is a long process and easier to keep track of things in Mathematica, but the end result yields an expression for
+$B(r)$ in the interior of the star
+\[
+	\boxed{B(r) = \blr{ \frac32\plr{1-\frac{2M}{R}}^{1/2} - \frac12 \plr{1-\frac{2Mr^2}{R^3}}^{1/2}}^2}\quad r\le R
+\]
+\eenum
+
+
+
+\end{document}

@@ -1,0 +1,150 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 9}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[13.9]
+From the luminosity relation, we have
+\[
+	L = 4\pi r^2 \mathscr L(r).
+\]
+Since the luminosity is constant, it holds at all $r$, and thus we will take
+\[
+	L = 4\pi r_0^2 \mathscr L(r_0)\propto r_0^2 \mathscr L(r_0).
+\]
+Now we take the mass to light ratio $\mu(r)/\mathscr L(r)$ to be constant. Assuming this, it follows that
+\[
+	\mu(r) \propto \mathscr L(r).
+\]
+As $\mu$ is the mass density per unit area, if we multiply by area of radius $r_0^2$ we get the mass
+\[
+	\mu(r_0)r_0^2 \propto M \propto \mathscr L(r_0)r_0^2
+\]
+and thus
+\[
+	L \propto M.
+\]
+From equivalence between centripal accleration and law of gravitation
+\[
+	\frac{V^2}{r} \propto \frac{GM}{r^2},
+\]
+where $M(r)$ is the mass interior to a given radius $r$. This implies
+\[
+	M(r_0) \propto \frac{r_0V^2}{G}.
+\]
+Using the above relation for mass and luminosity (and surface brightness) we then see that
+\[
+	r_0 V^2 \propto r_0^2 \mathscr L(r_0)
+\]
+or
+\[
+	r_0\propto \frac{V^2}{\mathscr L(r_0)}.
+\]
+Finally then we see that
+\[
+	L\propto M \propto r_0V^2 \propto V^4/\mathscr L_0
+\]
+and when we take $L_0$ to be a universal constant, which serves as a good approximation for most galaxies, then 
+\[
+	L\propto V^4.
+\]
+\\ \\
+\item[13.13]
+Start with the classical electron radius
+\[
+	r_e = \frac{e^2}{m_e c^2}
+\]
+and the scattering cross section
+\[
+	\sigma = \frac{8\pi r_e^2}{3}.
+\]
+Now, by definition, the radiation flux (energy) falling upon a surface at a radius $r$ per unit area per unit time is
+\[
+	f(r) = L/4\pi r^2.
+\]
+The amount of energy per time intercepted by a single free electron located at radius $r$ is equal to the flux times the area of the cross section, i.e.
+\[
+	\frac{dE}{dt} = \sigma f(r) = (8\pi r_e^2/3)(L/4\pi r^2) = \frac{ 2r_e^2 L}{3r^2}.
+\]
+This energy is scattered in all directions due to spontaneous emission. Now, since the incoming radiation only comes from discrete photons with packets of energy $E = pc$, the effect of incoming radiation will change the energy of the electron by
+\[
+	dE = dp c.
+\]
+Thus the change in momentum of the electron is 
+\[
+	\frac{dp}{dt} = \frac{ 2r_e^2 L}{3cr^2}.
+\]
+This is the force experienced by the incoming radiation, and is directed radially outward. Protons are also affected by this force, due to the strong electromagnetic interaction between the electron and proton (the electron proton gas moves together from this EM interaction). Meanwhile, the force of gravity from a supermassive black hole of mass $M$ attracts the gas with a force
+\[
+	F_G = \frac{m_H M G}{r^2}
+\]
+where $m_H = m_e+m_p$ is the mass of both constituents. In order for accretion to occur, the gravitational force must be larger than the force due to radiation, i.e.
+\[
+	\frac{m_H M G}{r^2} \ge  \frac{ 2r_e^2 L}{3cr^2}.
+\]
+The equality sign is present since accretion may occur at a constant velocity, if the velocities of the gas had initial radial components. The above reduces to the requirement
+\[
+	M \ge \frac{2 r_e^2 L}{3 Gm_h c}.
+\]
+For a luminosity of $L = 10^{47}\ \text{erg/sec}$, this requires a black hole mass of $M \ge 1.6\times 10^{42}\ \text{g}\approx 8\times 10^8 M_{sun} $. We can compute the Edditngton luminosity for a black hole of stellar mass, say, $1.4 M_{sun}$. This results in
+\[
+	L_E = 1.4\frac{3GM m_H c}{2r_e^2} =  1.8\times 10^{38}\ \text{erg/sec}.
+\]
+This coincides exactly the order of magnitude of maximum X-ray luminosity for binary stars. We may conclude that for a binary system consisting of a black hole and a star, in which the black hole aquires an accretion disk, the mass of such a black hole required to produce the given x-ray luminosity must only be on the order of the stellar mass of the sun $M_{sun}$. 
+\\ \\
+\item[13.14]
+The change in energy $\Delta E = \ep \Delta m c^2$ due to a blackhole gaining mass $\Delta M$ is liberated in the form of radiation at luminosity $L$. Assuming this process is only 10\% efficient, it follows that 
+\[
+	\ep c^2 \frac{dm}{dt} = L
+\]
+or
+\[	
+	\frac{dm}{dt} = \frac{L}{\ep c^2}.
+\]
+In order to produce a luminosity of $L = 10^{47}\ \text{erg/sec}$, this requires the black hole to aquire mass at a rate
+\[
+	\frac{dm}{dt} = 1.11\times 10^{27}\ \text{g/sec} = 17.6\ \text{Msun/yr}. 
+\]
+\\ \\
+\item[13.15]
+For an object bound to become a black hole, we may estimate its density as its mass divided by the spherical volume of its Schwarzchild radius
+\[
+	\rho = M/(4/3\pi R^3).
+\]
+The Schwarzchild radius is
+\[
+	R = \frac{2GM}{c^2}.
+\]
+Substituting this radius, the density becomes
+\[
+	\rho = Mc^6/(4/3\pi (8 G^3 M^3)) = \frac{3}{32} \pfrac{c^6}{\pi G^3 M^2}.
+\]
+For a pre-black hole object of $M_{sun}$ this equates to a density of 
+\[
+	\rho(M_{sun}) = 1.85\times 10^{16}\ \text{g cm}^{-3}.
+\]
+For a pre-black hole of mass $M = 10^9 M_{sun}$, the density is
+\[
+	\rho(10^9 M_{sun})= 1.85\times 10^{-2}\ \text{g cm}^{-3}.
+\]
+\\ \\
+\item[13.16]
+For a black hole of mass $M=10^9 M_{sun}$ the Schwarzchild radius is
+\[
+	R = \frac{2GM}{c^2} = 3\times 10^{14}\ \text{cm}.
+\]
+Meanwhile, three light hours corresponds to
+\[
+	c(3\times 3600) = 3.24\times 10^{14}\ \text{cm}.
+\]
+The x-ray variability region has nearly the same radius as that of the Schwarzchild radius for a supermassive black hole of mass $10^9 M_{sun}$, though the x-ray variability region is slightly larger. In fact, only a small region for x-ray emissions lies outside the Schwarzchild radius (the radius at which light may escape the gravitational force). 
+\eenum
+\end{document}

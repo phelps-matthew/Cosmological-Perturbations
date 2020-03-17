@@ -1,0 +1,141 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 5\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Oct. 5}
+
+\begin{document}
+\maketitle
+
+\benum
+% 5.1 ----------------------------------------------------------------------------------------------------------------------
+  	\item[\textbf{5.1}]
+	Show that any density operator defined as
+	\[
+		\rho = \sum_i p_i\ket{\psi_i}\bra{\psi_i}
+	\]
+	for any set of normalized (but not necessarily orthogonal) states $\{\ket{\psi_i}\}$ can also be written as
+	\[
+		\rho = \sum_n p_n'\ket{n}\bra{n}
+	\]
+	where $\{\ket{n}\}$ is an orthonormal basis, and the $p'_n$ are also probabilities. 
+	\\
+	\\\\
+	As a hermitian operator, the eigenvalues of $\rho$ are real and the eigenvectors form an orthogonal basis. Let's
+	denote these normalized eigenvectors as 
+	\[
+		\rho \ket{n} = \lambda \ket n
+	\]
+	Using the identity operator twice, the matrix representation of $\rho$ is 
+	\ba
+		\rho &= \sum_i p_i\sum_{n,m} \ket{n}\braket{n|\psi_i}\braket{\psi_i|m}\bra m\\
+		& = \sum_{n,m} \ket{n}\bra m\sum_{i} \braket{n|p_i|\psi_i}\braket{\psi_i|m}\\
+		& = \sum_{n,m}\braket{n|\rho|m}\ket{n}\bra m.
+	\ea
+	Since the basis is the diagonal basis, this becomes
+	\[
+		\rho = \sum_n \lambda_n \braket{n|\rho|n}\ket n\bra n.
+    	\]
+	The expectation value of the density operator is real due to hermiticity and is positive definite by
+	\[
+		\braket{n|\rho|n} = \sum_i p_i |\braket{\psi|n}|^2 =\lambda_n \ge 0.
+	\]
+	Therefore we may write $\rho$ in an orthogonal basis with probabilities $p_n'=\lambda_n^2$
+	\[
+		\rho = \sum_n p_n'\bra n\ket n.
+	\]
+	
+		
+% 5.2 -----------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{5.2}]
+	Given an entangled state of $\ket\phi = (\ket{000}+\ket{111})/\sqrt 2$ of three qubits,
+	what is the state of one of the individual subsystems?
+	\\
+	\\
+	\\
+	As an entangled state, it cannot be written as a tensor product of three pure state. \emph{However we may write it as a 	density matrix, which suggests the individual subsystems are actually ensembles?}
+	\\
+	\\
+	Start with the entangled pure state
+	\[
+		\rho = \ket\phi\bra\phi.
+	\]
+	To find the ensemble state of say subsystem $A$, we must trace out the other two subsystem $B$ and $C$:
+	\[
+		\sum_{b,c} \bra b_B\bra c_C\ket\phi\bra\phi \ket c_C\ket b_B = \sum_{b,c}\braket{bc|\phi}\braket{\phi|bc}.
+	\]
+	Now applied to the given system,
+	\[
+		\braket{\phi|cb} = \frac{1}{\sqrt 2} \delta_{c,b}\bra{b}
+	\]
+	thus
+	\[
+		\braket{bc|\phi} = \frac{1}{\sqrt 2} \delta_{c,b} \ket{b}
+	\]
+	so
+	\[
+		\sum_{b,c}\braket{bc|\phi}\braket{\phi|bc} = \sum_{b,c}\frac{1}{2}\delta_{c,b}\ket b\bra b = \frac{1}{2}(
+		\ket 0\bra 0+\ket 1\bra 1).
+	\]
+	Therefore, the state of each individual subsystem $i$ may be written as
+	\[
+		\rho_i =  \frac{1}{2}(\ket 0\bra 0+\ket 1\bra 1).
+	\]
+	\\
+% 5.3 ------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{5.3}]
+	Take a qubit with the two states $\ket\pm$. Write down the density operators in matrix form corresponding
+	to the superposition state $\ket\psi = \frac{1}{\sqrt 2}\plr{\ket ++\ket -}$ and to the 50/50 mixture of the 
+	states $\ket +$ and $\ket -$. 
+	\\
+	\\
+	The superposition state is a pure state
+	\[
+		\rho = \ket{\psi}\bra\psi = \sum_{n,m}\braket{n|\rho|m}\ket n\bra m = 
+		\sum_{n,m}\braket{n|\psi}\braket{\psi|m}\ket n\bra m.
+	\]
+	The elements are easily worked out
+	\[
+		\braket{\pm|\psi} = \frac{1}{\sqrt 2}
+	\]
+	and our matrix
+	\[
+		\rho= \frac{1}{2}\bpm 1&1\\1&1\epm
+	\]
+	For the ensemble, our density operator is
+	\[
+		\rho = \frac{1}{2}\ket +\bra++\frac{1}{2}\ket -\bra -
+	\]
+	so our matrix is
+	\[
+		\rho = \frac{1}{2}\bpm 1&0\\0&1\epm
+	\]
+	\\
+	\\
+% 5.4 -------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{5.4}]
+	
+	Show that the relation that we used in class is correct:
+	\[
+		p_m = \tr\plr{P_m\rho P_m},
+	\]
+	where $p_m$ is the probability of being in eigenstate $\ket m$ and $P_m$ is the projector onto this state.
+	\\
+	\\
+	\\
+	Forming the trace of the density operator $\rho = \sum_i p_i\ket{\psi_i}\bra{\psi_i}$ in the basis of $\ket m$ (which 
+	should be orthogonal considering they are eigenstates)
+	\ba
+		\tr\plr{P_m\rho P_m} &= \sum_i p_i \sum_n \braket{n|m}\braket{m|\psi_i}\braket{\psi_i|m}\braket{m|n}\\
+		& = \sum_i p_i |\braket{m|\psi_i}|^2 \\
+		& =  p_m
+	\ea
+	If the density operator is a pure state, then $\rho = \ket\psi\bra\psi$ and the trace reduces to
+	\[
+		\tr\plr{P_m\rho P_m} =  |\braket{m|\psi}|^2
+	\]
+	which is the familiar probability of obtaining eigenstate $\ket m$ for a known pure state. 
+		
+\eenum
+\end{document}

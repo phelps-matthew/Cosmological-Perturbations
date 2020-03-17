@@ -1,0 +1,387 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 11}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[15.1]
+The energy of a select galaxy of mass $m$ lying at the edge of sphere of radius $r$ of mass $M = 4/3\pi r^3 \rho$ is
+\[
+	E = \frac12 m\dot r^2 - \frac{4\pi G m r^2}{3}.
+\]
+Setting $E=0$ and using $\dot r = H_0 r$ we have
+\[
+	H_0^2  = \frac{8\pi G}{3}\rho.
+\]
+or
+\[
+	\rho = \frac{3H_0^2}{8\pi G}.
+\]
+Since this is the energy density such that $E=0$, this is the critical energy density $\rho = \rho_c$. This density may be calculated at present time given 
+\[
+	H_0 = 20\ \text{km/sec/million lyr}
+\]
+which yields in CGS units
+\[
+	\rho_c \approx 8\times 10^{-30}\ \text{g cm}^{-3}.
+\]
+\\ \\
+To make an estimate of comparison of the energy density, we take the mass of the Local Group 
+\[
+	M = 4\times 10^{11}M_{sun}
+\]
+spread over a volume of the M81 group
+\[
+	V= (15\times 10^6)^3\ \text{lyr}^3.
+\]
+This yields
+\[
+	\rho = \frac{M}{V} = 2.8\times 10^{-31}\ \text{g cm}^{-3}
+\]
+which is very close but about a factor of $10$ smaller than the critical density today. 
+\\ \\
+\item[15.2]
+Setting
+\[
+	r \approx 10^{10}/H_0 \approx 10^{10}/10^{-18}\ \text{cm}\approx 10^{10}\ \text{lyr}.
+\]
+Referring to figure 14.23, distant ScI galaxies are at most $6\times 10^8 \ \text{lyr}$. This is still an appreciable $100$ times less than velocities required to begin approaching the speed of light. Thus it is likely that at these distances, $H_0$ still provides a good estimation for the distance as $v\ll c$. 
+\\ \\
+\item[15.3]
+ For $E=0$ we have
+\[
+	0= \frac12 m\dot r^2 - \frac{ GmM}{r}
+\]
+in which $m$ cancels. Then we rearrange
+\be
+	\frac{dr}{dt} = \sqrt{ \frac{2GM}{r}}.
+\ee
+Since we measure red shifts and not blue shifts, the radius $r$ is increasing over time and thus $\dot r>0$. Hence the positive sign on the square root. Integrating (1) we have
+\ba	
+	\int_0^r dr\ \sqrt r &= \int_0^t dt\ (2GM)^{1/2}\\
+	\frac23 r^{3/2} &= (2GM)^{1/2}t
+\ea
+which implies
+\[
+	r = \frac32 (2GM)^{1/3}t^{2/3}.
+\]
+It follow that at present time
+\[
+	H_0 r_0 = \dot r_0 = \plr{2GM/r_0}^{1/2} = H_0 \frac32 (2GM)^{1/3}t^{2/3}
+\]
+or
+\[
+	H_0(3/2 t_0)^{2/3}(2GM)^{1/3} = (2GM)^{1/3}(3/2 t_0)^{1/3}
+\]
+\[
+	\frac32 H_0t_0 = 1
+\]
+\[
+	t_0 = 2/3 H_0^{-1}.
+\]
+For $\dot r > \pfrac{2GM}{r}^{1/2}$ we have $E>0$. Since $t \propto r^{3/2}$ and $r$ increases at a faster rate than the marginally bound $E=0$ we know that we must have
+\[
+	\frac 23 H_0^{-1} < t_0 < t_{max}\qquad E>0
+\]
+where $t_{max}$ is shown explicitly in Box 15.2 to take the value $H_0^{-1}$. For $E<0$, $\dot r <  \pfrac{2GM}{r}^{1/2}$ and the bound universe may only decrease to a lower bound of $t_0 = 0$. Thus
+\[
+	0 < t_0 < \frac23 H_0^{-1}\qquad E<0.
+\]
+\\ \\
+\item[15.4]
+Using $v = r_0H_0$ and $M = 4/3\pi r_0^3\rho$ the energy equation may be written as
+\[
+	E = m(H_0^2/2-4\pi G\rho /3)r_0^2.
+\]
+Setting this equal to 15.1 at arbitrary $r$ (energy is conserverd)
+\ba
+	m(H_0^2/2-4\pi G\rho /3)r_0^2 &= \frac12m\dot r^2 - \frac{GmM}{r}\\
+	(1-\Omega_0)&= \pfrac{ \dot r}{H_0 r_0}^2 - \frac{2GM}{H_0^2 r_0^2 r}\\
+	(1-\Omega_0)&= \pfrac{ \dot r}{H_0 r_0}^2 - \frac{\Omega_0r_0}{r}
+\ea
+With substitution $D = r/r_0$ and $\tau^* = H_0 t$ it follows that
+\[
+	\frac{dD}{d\tau^*} = \frac{1}{r_0H_0}\dot r
+\]
+and the energy equation yields
+\be
+	(1-\Omega_0)= \pfrac{dD}{d\tau^*}^2 - \frac{\Omega_0}{D}.
+\ee
+We make another substitution
+\[
+	\xi = (|1-\Omega_0|/\Omega_0)D
+\]
+and
+\[
+	\tau = (|1-\Omega_0|^{3/2}/\Omega_0)\tau^*.
+\]
+We may rearrage (2) as
+\[
+	1 =  \pfrac{dD}{d\tau^*}^2\frac{1}{(1-\Omega_0)}-\frac{\Omega_0}{(1-\Omega_0)D} 
+\]
+Now with
+\[
+	\frac{d\xi}{d\tau} = \frac{1}{|1-\Omega_0|^{1/2}}\frac{dD}{d\tau^*}
+\]
+we can see that
+\[
+	\pfrac{d\xi}{d\tau}^2 - \frac{1}{\xi} = 1.
+\]
+Here we have assumed that $0<\Omega_0 < 1$. For $\Omega_0 > 1$, we have an overall change in sign, thus we can take absolute magnitudes and write the expression as
+\be
+	\pfrac{d\xi}{d\tau}^2 - \frac{1}{\xi} = \pm 1
+\ee
+without any restriction on $\Omega_0$. (3) yields the differential equation
+\[
+	d\tau = \plr{ \pm 1 +1/\xi}^{-1/2}d\xi = \pfrac{ \xi}{1\pm \xi}^{1/2} d\xi
+\]
+or
+\[
+	\tau = \int_0^\xi d\xi\  \pfrac{ \xi}{1\pm \xi}^{1/2}
+\]
+for $\xi(0) = 0$. For $1-\xi$ in the denominator $\xi \le 1$ and we make substitution
+\[
+	\xi = \sin^2(\eta/2)
+\]
+such that
+\[
+	d\xi = \sin(\eta/2)\cos(\eta/2)d\eta
+\]
+and
+\ba
+	\tau &= \int d\eta\ \sin(\eta/2)\cos(\eta/2) \pfrac{\sin^2(\eta/2)}{\cos^2(\eta/2)}^{1/2}\\
+&= \int d\eta\ \sin^2(\eta/2)\\
+&= \int d\eta\ \frac12 (1-\cos\eta)\\
+\tau &= \frac12(\eta - \sin\eta)
+\ea
+where we also note that $\xi(\eta=0) = 0$.\\ \\
+For the positive denominator, $1+\xi$ has $\xi >0$ we have an unbound universe and we use the substitution
+\[
+	\xi = \sinh^2(\eta/2)
+\]
+such that
+\[
+	d\xi = \sinh(\eta/2)\cosh(\eta/2)d\eta
+\]
+and
+\ba
+	\tau &= \int d\eta\ \sinh(\eta/2)\cosh(\eta/2) \pfrac{\sinh^2(\eta/2)}{\cosh^2(\eta/2)}^{1/2}\\
+&= \int d\eta\ \sinh^2(\eta/2)\\
+&= \int d\eta\ \frac12 (\cosh\eta -1)\\
+\tau &= \frac12(\sinh\eta -\eta )
+\ea
+where again $\xi(\eta=0) = 0$. \\ \\
+For the bound universe $\xi = \frac12 (1-\cos\eta)$ we see that at $\eta = \pi$, $\xi$ is maximum, and assumes the value of one. Thus
+\[
+	\xi = 1 = \frac{|\Omega_0-1|}{\Omega_0}\frac{r_{max}}{r_0}
+\]
+which leads to 
+\[
+	r_{max} = \frac{\Omega_0}{\Omega_0-1}r_0.
+\]
+From the figures below, we will find that the behavior is the same towards the origin because a series expansion around $\eta = 0$ up to leading order in $\eta$ gives the same for the bounded and unbounded universe, that is
+\[
+	\xi \approx \eta^2
+\]
+\[
+	\tau \approx \frac{x^3}{3}.
+\]
+Below we have included sample tables, though the graphs generated used many more points.
+	\figg[width=100mm]{15_4a.pdf}
+	\[
+	\begin{array}{ccc}
+ \tau  & \xi  & \eta  \\
+ 0. & 0. & 0. \\
+ 0.0792645 & 0.229849 & 1. \\
+ 0.545351 & 0.708073 & 2. \\
+ 1.42944 & 0.994996 & 3. \\
+ 2.3784 & 0.826822 & 4. \\
+ 2.97946 & 0.358169 & 5. \\
+ 3.13971 & 0.0199149 & 6. \\
+ 3.17151 & 0.123049 & 7. \\
+ 3.50532 & 0.57275 & 8. \\
+ 4.29394 & 0.955565 & 9. \\
+ 5.27201 & 0.919536 & 10. \\
+\end{array}
+\]
+		\figg[width=100mm]{15_4b.pdf}
+		\[
+		\begin{array}{ccc}
+ \tau  & \xi  & \eta  \\
+ 0. & 0. & 0. \\
+ 0.0876006 & 0.27154 & 1. \\
+ 0.81343 & 1.3811 & 2. \\
+ 3.50894 & 4.53383 & 3. \\
+ 11.645 & 13.1541 & 4. \\
+ 34.6016 & 36.605 & 5. \\
+ 97.8566 & 100.358 & 6. \\
+ 270.658 & 273.659 & 7. \\
+ 741.239 & 744.74 & 8. \\
+ 2021.27 & 2025.27 & 9. \\
+ 5501.62 & 5506.12 & 10. \\
+\end{array}
+\]
+\\ \\ \\
+
+\item[15.8]
+Starting with the Freidmann equation
+\[
+	\frac{\dot R^2}{R^2} - \frac{8\pi G\rho}{3}  = -\frac{c^2}{R^2}
+\]
+we substitute $\rho = \frac{M}{2\pi ^2 R^3}$ and multiply through by $\frac12 R^2$ to arrive at
+\[
+	\frac12 \dot R^2-\frac{2G}{3\pi}\plr{2\pi^2\rho R^2} = -\frac12 c^2
+\]
+or
+\be
+	\frac12 \dot R^2 - \frac{2GM}{3\pi R}=-\frac12 c^2.
+\ee
+Compared to eq 15.1
+\[
+	E = \frac 12 m\dot r^2 - \frac{GMm}{r}
+\]
+both involve time derivatives of a radius $R$ governed by a gravtiational interaction, however, the Freidmann equation makes no reference to the intrinsic mass of an object and differs in coeffiecents of kinetic and potential - like terms. Also, the energy constant is given by $c^2$ in the Freidmann equation. We now introduce auxially variable
+\[
+	\xi = \frac{3\pi c^2}{4GM}R
+\]
+\[
+	\tau = \frac{3\pi c^3}{4GM}t
+\]
+such that 
+\[
+	\frac{d\xi}{d\tau} = \frac{\dot R}{c}.
+\]
+Multiplying (4) through by $2/c^2$, we now see that (4) may be written in terms of $\xi$ and $\tau$ as
+\[
+	\pfrac{d\xi}{d\tau}^2 - \frac{1}{\xi} = -1.
+\]
+This is the same differential equation solved in 15.4, with solutions
+\[
+	\xi = \frac12 (1-\cos\eta),\qquad \tau = \frac12 (\eta-\sin\eta).
+\]
+We see that $\xi$ takes its maximum value at $\xi(\pi) = 1$. It then follows that the maximum radius is
+\[
+	R_{max} = \frac{4GM}{3\pi c^2}.
+\]
+The time elapsed from big bang to big squeeze is $\tau(\xi = 0)$. Since $\xi$ reaches its second zero at $\eta = 2\pi$, this yields
+\[
+	\tau(2\pi) = \pi = \frac{3\pi c^3}{4GM}t
+\]
+or
+\[
+	t= \frac{4GM}{3c^3}.
+\]
+For $M = 10^{24}M_{sun}$ we have
+\[
+	R_{max} \approx 6\times 10^{10}\ \text{lyr}
+\]
+\[
+	t_{squeeze} = 6.5\times 10^{18}\ \text{sec} = 2\times 10^{11}\ \text{yr}.
+\]
+We may use the hubble relation
+\[
+	H_0 = \frac{\dot R_0}{R_0}
+\]
+to express (4) as
+\[
+	H_0^2 - \frac{4GM}{3\pi}\frac{1}{R_0^3} = -\frac{c^2}{R_0^2}.
+\]
+Solving this cubic equation in terms of $H_0$ and other constants given, we have
+\[
+	R_0 = 2.04\times 10^{28}\ \text{cm} \approx 2\times 10^{10}\ \text{lyr}.
+\]
+This yields a $\xi_0$ of
+\[
+	\xi_0 =  \frac{3\pi c^2}{4GM}R_0 = 0.326.
+\]
+With $\xi_0 = \frac12(1-\cos\eta_0)$ this gives
+\[
+	\eta_0 = 1.21536
+\]
+and thus
+\[
+	\tau_0 = \frac12(\eta_0-\sin\eta_0) = 0.1389
+\]
+and finally
+\[
+	t_0 = \frac{4GM}{3\pi c^3}\tau_0 =2.9\times 10^{17}\ \text{sec} = 9.2\times 10^9\ \text{yr}.
+\] 
+Compare this to 
+\[
+	t_0 = \frac23 H_0^{-1} = 10^{10}\ \text{yr}
+\]
+and we see that the estimate above is very close the numerical calculation given by GR. 
+\\ \\
+\item[15.9]
+The invariant volume element (for spatial metrics) is
+\[
+	dV = \sqrt{g} d^n x
+\]
+where $n$ denotes the dimension and $g$ is the determinant from the matrix $g_{ij}$ in the generalized line element
+\[
+	dl^2 = g_{ij} dx^i dx^j.
+\]
+Using this form, we may find the ``volume'' of a closed surface in one, two, or three dimensions. \\For $n=1$
+\[
+	g_{ij} = R^2 \qquad g = R^2
+\]
+\[
+	\int\ dx^1\sqrt g = \int_0^{2\pi} d\phi R = 2\pi R.
+\]
+For $n=2$
+\[
+	dl^2 = R^2(d\theta^2 + \sin^2\theta d\phi^2)
+\]
+\[
+	g = R^2\sin^2\theta
+\]
+\[
+		\int\ dx^1dx^2\sqrt g = \int_0^\pi d\theta\ R \int_0^{2\pi} d\phi\ R\sin\theta= 4\pi R^2
+\]
+For $n=3$
+\[
+	dl^2 = R^2[ d\psi^2+\sin^2\psi d\theta^2 + \sin^2\psi\sin^2\theta d\phi^2]
+\]
+\[
+	g = R^2(sin^2\psi\sin^2\psi\sin^2\theta)
+\]
+\ba
+		\int\ dx^1dx^2dx^3\sqrt g &= \int_0^\pi d\psi\ R \int_0^{\pi} d\phi\ R\sin\theta \int_0^{2\pi}d\psi\ R\sin\psi\sin\theta\\
+		&= (R\pi)(2\pi R^2) = 2\pi^2R^3.
+\ea
+We note that in the last problem, we used
+\[
+	\rho = M/V = M/(2\pi^2 R^3)
+\]
+which is the proper volume to use in a space with positive curvature. \\ 
+\\
+To put our line element in a more suitiable form, we make the coordinate transformation
+\[
+	r = R\sin\psi
+\]
+such that
+\[
+	dr = R\cos\psi d\psi.
+\]
+Now
+\[
+	(1-r^2/R^2)^{-1} dr^2 = (1-\cos^2\psi)^{-1} R^2\cos^2\psi d\psi^2 = R^2 d\psi^2.
+\]
+Thus we replace $R^2d\psi^2$ in the line element
+\[
+	dl^2 = R^2[ d\psi^2+\sin^2\psi d\theta^2 + \sin^2\psi\sin^2\theta d\phi^2]
+\]
+to yield
+\[
+	dl^2 = \frac{dr^2}{1-r^2/R^2}+r^2(d\theta^2+\sin^2\theta d\phi^2).
+\]
+This is the line element of 3-space with uniform positive curvature. 
+\eenum
+\end{document}

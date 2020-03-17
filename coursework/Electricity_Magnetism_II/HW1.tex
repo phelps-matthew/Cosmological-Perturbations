@@ -1,0 +1,338 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{\begin{spacing}{1.2}Electrodynamics II\\HW 1\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Feb. 24}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item
+	Calcdfulate the retarded Green function for the electromagnetic wave equation
+	\[
+		\del^2G(\vect x,t,\vect x',t') - \frac{1}{c^2} \pdifff{G(\vect x,t,\vect x',t')}{*2t} = 
+		-4\pi\delta(\vect x-\vect x')\delta(t-t')
+	\]
+	in a 1D space. Construct the general solution of the wave equation for the electric potential
+	field induced by a variable 1D charge density $\rho(\vect x,t)$.
+	\\ \\
+	\emph{Hint}: Fourier transformation of the wave equation can be used to evaluate the spatial part of the 
+	Green function $G_\omega(\vect x,\vect x')$. 
+	\\ \\ 	
+	The d'Alembertian operator is invariant under translations. If we define the translation operator 
+	as $T_a f(x) = f(x+a)$ and the d'Alembertian operator as $D = \partial_\mu\partial^\mu$ then we find
+	\[
+		[T_a,D] = 0.
+	\]
+	As such, we expect the solutions to the wave equation to be translationally invariant as well (not sure how to show why 		this follows, but Maxwell's equations must be Lorentz invariant). With this in mind, we see the 1D Green's function is then
+	\[
+		G(x,t,x',t') \to G(x-x',t-t') \equiv G(\bar x,\bar t).
+	\]
+	Now take the Fourier transform of the wave equation with respect to $\bar t$
+	\[
+		\int \frac{d\bar t}{\sqrt{2\pi}} e^{-i\omega \bar t}
+		\plr{ \del^2G(\bar x,\bar t) - \frac{1}{c^2} \pdifff{G(\bar x,\bar t)}{*2t}+ 
+		4\pi\delta(\bar x)\delta(\bar t) }=0
+	\]
+	We use $\pdifff{}{*2t}= \pdifff{}{*2\bar t}$ and integration by parts (or the property of Fourier transforms) to 
+	take the time derivative (assuming $G(\bar x,\pm \infty) = 0$) and arrive at
+	\[
+		\del^2 G_\omega(x-x')+\frac{\omega^2}{c^2} G_\omega(x-x')=- \frac{4\pi}{\sqrt{2\pi}}\delta(x-x').
+	\]
+	Now lets Fourier transform to $k$ space
+	\ba
+		&\int \frac{d\bar x}{\sqrt{2\pi}} e^{-ik'\bar x}\plr{ \del^2 G_\omega(x-x')+\frac{\omega^2}{c^2} G_\omega(x-x')+ 			\frac{4\pi}{\sqrt{2\pi}}\delta(x-x')} = 0\\
+		=&\plr{k'^2-\frac{\omega^2}{c^2}}G(\omega,k') = 2
+	\ea
+	so
+	\[
+		G(\omega, k') = \frac{2}{\plr{k'+\frac{\omega}{c}}\plr{k'-\frac{\omega}{c}}}.
+	\]
+	To get back to the position basis, we take in inverse Fourier transform over $k'$
+	\[
+		\int \frac{dk'}{\sqrt{2\pi}} e^{ik'\bar x} \blr{  \frac{2}{\plr{k'+\frac{\omega}{c}}\plr{k'-\frac{\omega}{c}}} }.
+	\]
+	We have a two poles at $k' = \pm \frac{\omega}{c}$. For $x<0$ we enclose the pole at $k' = \omega/c$ and close from 		below
+	\[
+		-\frac{2}{\sqrt{2\pi}} \oint dk'\  \frac{e^{ik'\bar x}}{k'+\frac{\omega}{c}} \pfrac{1}{k'-\frac{\omega}{c}} = -\sqrt{2\pi} i					\pfrac{
+		e^{i\frac{\omega}{c}\bar x}}{\omega/c} \qquad \bar x<0.
+	\]
+	For $x>0$ we enclose the pole at $k' = -\omega/c$ and close from above
+	\[
+		\frac{2}{\sqrt{2\pi}} \oint dk'\  \frac{e^{ik'\bar x}}{k'-\frac{\omega}{c}} \pfrac{1}{k'+\frac{\omega}{c}} = -\sqrt{2\pi} i					\pfrac{
+		e^{-i\frac{\omega}{c}\bar x}}{\omega/c} \qquad \bar x>0.
+	\]
+	The same sign comes from integrating over different directions (counter/clockwise). \\ 
+	So we may write
+	\[
+		G_\omega(\bar x) = -\sqrt{2\pi} i\pfrac{e^{-i\frac{\omega}{c}|\bar x|}}{\omega/c}.
+	\]
+	** Actually I am now under the belief that the proper way to do the counter integration for a Green's function is to insert 
+	an $i\epsilon$ rather than using the principle value. The choice of pushing the poles up or down depends on the boundary 	conditions. In this case,
+	we move one pole up, and one down, since we do not have b.c.'s on $x$ but rather on $t-|x|/c$ (advanced/retarded)**\\ \\
+	Lastly, we inverse transform over $\omega$ to get back to the time basis
+	\ba
+		G(\bar x,\bar t) &=  -i \int d\omega\ e^{i\omega t} \frac{e^{-i\frac{\omega}{c}|\bar x|}}{\omega/c}\\
+		&= -ic\int d\omega\ \frac{ e^{i\omega(t-|\bar x|/c)}}{\omega} 
+	\ea
+	With a pole at the origin, we choose to push the pole up via
+	\[
+		-ic\int d\omega\ \frac{ e^{i\omega(t-|\bar x|/c)}}{\omega-i\varepsilon} 
+	\]
+	so that, by Jordan's lemma and Cauchy integral theorem, we only enclose a pole for $t-t'-|x-x'|/c >0$ (retarded). 
+	The residue is turns out to just be $2\pi i(-ic)$ for $t-t'-|x-x'|/c >0$ and zero for $t-t'-|x-x'|/c <0$. Thus
+	we form the Heaviside step function
+	\[
+		G(x,t,x',t') = 2\pi c H(t-t'-|x-x'|/c).
+	\]
+	The general solution then, is
+	\[
+		\Psi(x) = \Psi_0(x)+ \int d^4x\ G(x,t,x',t')f(x)
+	\]
+	where $x$ is the spacetime vector and $f(x)$ denotes the source in the wave equation and $\Psi_0$ is
+	the homogeneous solution. \\ \\ 
+	\pagebreak
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Derive an analytical expression of the Green function, describing propagation of electromagnetic waves
+	in 2D space. 
+	\\ \\
+	Starting with the 2D wave equation in spherical coordinates (assuming source is radially symmetric)
+	\[
+		\plr{\pdifff{}{*2r}+\frac{1}{r}\pdiff{r}-\frac{1}{c^2}\pdifff{}{*2t}}G(r,t) = -4\pi \delta^2(r)\delta(t)
+	\]
+	we Fourier transform to $\omega$ space to take care of the time derivatives
+	\[
+		\plr{\pdifff{}{*2r}+\frac{1}{r}\pdiff{r}+\frac{\omega^2}{c^2}}G(r,t) = -4\pi \delta^2(r).
+	\]
+	The solutions the differential equation are those of Bessel functions. The general solution consists
+	of coefficients dependent on $\omega$. We discard the Bessel function of the first kind due to its asymptotic behavior 		near the origin. So
+	\[
+		G(r,\omega) = c(\omega)Y_0(\omega R).
+	\]
+	To determine the discontinuity arising from the delta function, we may integrate both sides of the equation
+	over a disc of radius $\rho$. Integrating the result,
+	\[
+		 r\elr{\pdiff[G(r,\omega)]{r}}_{r=\rho}+\frac{\omega^2}{c^2}\int_0^\rho dr\ r G(r,\omega)= -2
+	\]
+	now substituting in the form of $G(r,\omega)$ in terms of the Bessel
+	\[
+		-c(\omega)Y_1(\omega\rho)\rho\omega +\frac{\omega^2}{c^2}c(\omega)Y_1(\omega r)\elr{\frac{r}{\omega}
+		}^\rho_0 = -2
+	\]
+	To determine the unknown constant $c(\omega)$, we may take the limit as $\rho\to 0$ and match the left and 
+	right hand sides of the equation (using the asymptotic form for $Y_1$)
+	\[
+		\lim_{\rho\to 0} \plr{\frac{\omega^2}{c^2}c(\omega)\pfrac{2}{\pi \rho\omega}\frac{\rho}{\omega}} = -2
+	\]
+	this leads to $c(\omega) = -\pi c^2$. To fourier transform back, it will be helpful to convert the bessel function
+	to an integral representation, thus
+	\[
+		G(r,\omega) = 2c^2\int_0^\infty dy\ \cos(\omega r\cosh(y))
+	\]
+	Now take the inverse fourier transform back to time space
+	\ba
+		G(r,t) &= \frac{2c^2}{\sqrt{2\pi}} \int \int_0^\infty dy\ d\omega\ e^{-i\omega t} \cos(\omega r \cosh y)\\
+		& = \sqrt{2\pi}c^2 \int_0^\infty dy\ \delta(r\cosh(y)+t)+\delta(r\cosh y-t).
+	\ea
+	With the variable substitution
+	\[
+		z = r\cosh y;\qquad dz = \sqrt{z^2-r^2}dy
+	\]
+	\[
+		G(r,t) = \int_r^\infty \frac{dz}{\sqrt{z^2-r^2}}\ \delta(z-t)+\delta(z+t) = \frac{H(|t|-r)}{\sqrt{t^2-r^2}}.
+	\]
+	Thus our 2D greens function is represented by the step function $H$ as
+	\[
+		G(r,t) = \frac{H(|t|-r)}{\sqrt{t^2-r^2}}.
+	\]
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	A sphere of radius $R_0$ has a charge $q$ uniformly distributed over its volume. The surface radius of this 
+	sphere oscillates around equilibrium value $R_0$ according to the equation:
+	\[
+		R(\theta, t) = R_0[1+aP_2(\cos\theta)\cos(\omega t)],
+	\]
+	where $\theta$ is the polar angle; $P_l(\cos\theta)$ is a Legendre polynomial $(l=2)$; $\omega$ and $a$ are 
+	the frequency and amplitude of small oscillations of the sphere surface $(a\gg 1)$. Calculate the total 
+	intensity $I$ of the induced electromagnetic waves and determine its angular distribution $\diff[I]{\Omega}$. 
+	\\ \\ 
+	We may write the radius as
+	\[
+		R(\theta,t) = R_0[1+a(t)P_2(\cos\theta)]
+	\]
+	and the charge density as 
+	\[
+		\rho = \frac{3q}{4\pi R(\theta)^3}.
+	\]
+	First we find the multipole moment as
+	\ba
+		Q_{l0} &= \int d^3r\ r^l Y_{l0}\rho(\theta,t) = \frac{6\pi q}{4\pi}\sqrt{\frac{2l+1}{4\pi}} \int_0^\pi d\theta\ \sin\theta
+		\int_0^R\ dr\ r^{l+2} P_l(\cos\theta)R(\theta)^{-3} \\
+		& =  \frac{6\pi q}{4\pi}\sqrt{\frac{2l+1}{4\pi}}\frac{1}{l+3}
+		\int _0^\pi\ d\theta\ \sin\theta R(\theta)^3 P_l(\cos\theta) \\
+		& =  \frac{6\pi q}{4\pi}\sqrt{\frac{2l+1}{4\pi}}\frac{1}{l+3} 
+		\int_0^\pi d\theta\ R_0^l[1+a(t)P_2(\cos\theta)]^l P_l(\cos\theta)\sin\theta\\
+		& = \frac{6\pi q}{4\pi}\sqrt{\frac{2l+1}{4\pi}}\frac{R_0^l}{l+3} 
+		\int_0^\pi d\theta\ \plr{ P_l+la(t)P_lP_2}\sin\theta \\
+		& =  \frac{6\pi q}{4\pi}\sqrt{\frac{2l+1}{4\pi}}\frac{R_0^l}{l+3} 
+		\plr{ \delta_{l0}+la(t)\delta_{l2}}\frac{2}{2l+1}.
+	\ea
+	In the last step we expanded for small perturbation $aP_2(\cos\theta)\cos(\omega t)$. The moments are then
+	\[
+		Q_{00} = q\sqrt{\frac{1}{4\pi}}
+	\]
+	\[
+		Q_{20} = 3qaR_0^2 \cos(\omega t)\frac{1}{5\sqrt{5\pi}}
+	\]
+	For $\lambda \gg a$ we then have
+	\[
+		a_E(l,m) = -\frac{ick^{l+2}}{(2l+1)}\sqrt{\frac{l+1}{l}}(Q_{lm}+Q'_{lm}).
+	\]
+	With $Q'_{lm} = 0$ we then find
+	\[
+		a_E(2,0) = -ick^4 R_0^2 qa\cos(\omega t)\frac{1}{25}\sqrt{\frac{3}{10\pi}}.
+	\]
+	With this we may find the intensity as
+	\[
+		\diff[P]{\Omega} = I - \frac{z_0}{2k^2}|a_E(2,0)|^2|\vect X_{20}|^2
+	\]
+	where
+	\[
+		|\vect X_{20}|^2 = \frac{15}{8\pi}\sin^2\theta\cos^2\theta .
+	\]
+	Simplifying we arrive at
+	\[
+		I = \frac{ac^2z_0}{2\times 10^4\pi^2}k^6 R_0^4 q^2a\cos(\omega t)\sin^2\theta\cos^2\theta.
+	\]
+	This gives intensity as a function of $\theta$. Not sure how to find over solid angle. We could find
+	\[
+		\diff[I]{\theta} = \frac{ac^2z_0}{2\times 10^4\pi^2}k^6 R_0^4 q^2
+		(\sin\theta\cos^3\theta-\sin^3\theta\cos\theta).
+	\]
+% 4 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	A uniformly magnetized sphere of radius $a$ has a total magnetic moment $\vect M = M \vect e_z$. The sphere
+	is rotating with angular frequency $\omega$ about a diameter. An angle between $\vect M$ and $\vect \omega$
+	vectors if $\beta$. Calculate electric and magnetic fields $\vect E$ and $\vect B$ at large distances $r$ from the
+	sphere $(r\gg a)$. Determine the total intensity of emission $I$.
+	\\ \\
+	Set $\vect \omega$ along the $z$ axis. The magnetic moment is given as
+	\[
+		\vect m = m\blr{\cos\beta \vecth z +\sin\beta(\cos\omega t\vecth x+\sin\omega t\vecth y)}.
+	\]
+	We move to spherical coordinates using
+	\[
+		\theta = \omega t;\quad \phi = \beta;
+	\]
+	and respectively for the directions. Now we find the vector potential
+	\[
+		\vect A = \frac{ik\mu_0}{4\pi} \frac{e^{ikr}}{r} \vecth{e_r} \times \vect m
+	\]
+	in which we have for the magnetic field
+	\ba
+		\vect B &= \del \times \vect A \approx (i\vect k)\times \vect A \\
+		& = -\frac{\mu_0k^2}{4\pi}\frac{e^{ikr}}{r}\blr{\vecth r\times (\vecth r\times\vect m)}.
+	\ea
+	Looking at the last cross product
+	\ba
+		\vecth r\times \vect m = \vecth r \times [
+		\cos\omega t(\sin\theta\cos\phi \vecth r+\cos\theta\cos\phi \vect\phi -\sin\phi\vecth\phi)\\
+		+\sin\theta(\sin\theta\sin\phi\vecth r+\cos\theta\sin\theta\vecth \phi+\cos\phi\vecth\phi] .
+	\ea
+	We may use the cross product relations $\vecth r\times \vecth r = 0$, $\vecth r\times \vecth \theta = \vecth \phi$,
+	and $\vecth r\times \vecth \phi = -\vecth \theta$ to solve for the magnetic field $\vect B$
+	\ba
+		\vect B = -\frac{\mu_0 k^2}{4\pi} m\sin\beta[-(\cos^2\omega t\cos\beta +\sin\omega t\cos\omega t\sin\beta)
+		\vecth\theta \\
+		+(\cos\omega t\sin\beta-\sin\omega t\cos\beta)\vecth \phi]
+	\ea
+	We can find the electric field
+	\ba
+		\vect E &= c(\vect B\times\vecth r) \\
+		& = -\frac{\mu_0 k^2}{4\pi} m\sin\beta[(\cos^2\omega t\cos\beta +\sin\omega t\cos\omega t\sin\beta)
+		\vecth\phi \\
+		&-(\cos\omega t\sin\beta-\sin\omega t\cos\beta)\vecth \theta]
+	\ea
+	For the poynting vector, 
+	\[
+		S = \frac{cB^2}{\mu_0} \vecth e_k
+	\]
+	and the power is then
+	\[
+		P =\int \vect S\cdot dA = 4\pi |\vect S|
+	\]
+	and the intensity is
+	\ba
+		I &= \frac{P}{A} = \frac{\mu_0|\ddot m|}{16\pi^2 c^3}\sin^2\theta\cos^2\phi\\
+		& = \frac{\mu_0\sin^2\theta\cos^2\phi}{16\pi^2c^3}(m^2\sin^2\beta\omega^4)
+	\ea
+	\\ \\
+
+% 5 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Two identical electric dipoles $p_0$ oscillate with the same frequency $\omega$ but with the phase difference
+	of $\pi$:
+	\[
+		\vect p_1 = \vect p_0 \cos(\omega t);\quad \vect p_2 = -\vect p_0 \cos(\omega t)
+	\]
+	A distance between the dipoles is $a$ ($a\gg \lambda$ or $a\ll \lambda$, $\lambda$ is the wavelength) and dipoles
+	are oriented along $a$. Determine the total intensity $I$ of the induced electromagnetic waves and calculate the angular
+	distribution $\diff[I]{\Omega}$ of the emitted radiation at large distances $r\gg a$. 
+	\\ \\
+	The vector potential is given by
+	\[
+		\vect A(r,t) = \frac{\mu_0}{4\pi} \frac{e^{ikr}}{r}\vect p(t).
+	\]
+	Using the law of cosines, we may express the difference vector $r_{12}$ as
+	\[
+		r_{12} = \sqrt{r^2+\pfrac{a}{2}^2\pm ar\cos\theta} \approx r(1\pm \frac{a}{2r}\cos\theta)
+	\]
+	and so it follows that
+	\[
+		\frac{1}{r_{12}} \approx \frac{1}{r} (1\pm \frac{a}{2r}\cos\theta)
+	\]
+	Treating the vector potential as the sum $\vect A = \vect A_1+\vect A_2$ we have
+	\ba
+		A_{12} &= \mp \frac{\mu_0 P_0\omega^2}{4\pi r_{12}} \sin(\omega t-kr_{12})\\
+		&\approx  \frac{\mu_0 P_0\omega^2}{4\pi r}
+		\blr{\pm\sin\omega t_0+\frac{ka}{2}\cos\theta\cos\omega t_0+\frac{a}{2r}\cos\theta
+		\sin\omega t_0}\vecth z
+	\ea
+	it follows that we then have for the vector potential
+	\[
+		\vect A = -\frac{\mu_0 P_0\omega^2 a}{4\pi rc}\cos\theta\cos(\omega t-kr)
+	\]
+	and we can find the magnetic field as
+	\ba
+		\vect B &= \del \times \vect A \approx (i\vect k)\times \vect A \\
+		& = \frac{1}{r}\plr{\pdiff{r}(rA_\theta)-\pdiff[A_r]{\theta}}\vecth \phi \\
+		& = -\frac{\mu_0 P_0\omega^2 a}{4\pi rc}k\sin\theta\cos\theta\sin(\omega t-kr)\vecth \phi\\
+		& = \frac{\mu_0 P_0\omega k^2 a}{4\pi r}\sin\theta\cos\theta\sin(\omega t-kr)\vecth \phi
+	\ea
+	where in the cross product only the $\vecth \phi$ term remains. We then find the Poynting vector
+	\ba
+		S &= \frac{1}{\mu_0}(\vect E\times\vect B) \\
+		& = \frac{c|\vect B|^2}{\mu_0}\vecth r\\
+		& = \frac{\mu_0 P_0^2 a^2}{16\pi^2r^2}\frac{k^6}{c^3}\sin^2\theta\cos^2\theta\sin^2(\omega t-kr)\vecth r
+	\ea
+	Following in suit, the power is then
+	\ba
+		P &= \int S\cdot dA \\
+		& = \frac{\mu_0}{6\pi c^3}P_0^2\omega^6
+	\ea
+	and the intensity is
+	\ba
+		I &= \diff[P]{\Omega} \\
+		& = \frac{\mu_0 P_0^2\omega^6}{32 \pi c^3 r^2} \sin^2\theta\cos^2\theta.
+	\ea
+	The intensity is only dependent on $\theta$ but we may find
+	\[
+		\diff[I]{\theta} =\frac{\mu_0 P_0^2\omega^6}{32 \pi c^3 r^2} (\sin\theta\cos^3\theta-\sin^3\theta\cos\theta).
+	\]
+	\eenum
+
+\end{document}

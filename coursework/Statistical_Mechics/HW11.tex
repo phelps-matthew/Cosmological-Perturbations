@@ -1,0 +1,229 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 11\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Dec. 9}
+
+\begin{document}
+\maketitle
+
+\benum
+% 11.3 ----------------------------------------------------------------------------------------------------------------------
+  	\item[\textbf{11.3}]
+	(9.1 in script)
+	By taking the derivative of the self-consistency condition of a 1D Ising model with respect to the
+	magnetic field, show that the susceptibility diverges like $|T-T_C|^{-1}$ on both sides of the critical
+	temperature.
+ 	\\ \\ 
+	It is helpful to deduce the behavior of the magnetization when $H=0$ and $T<T_C \rightarrow x>1$.
+	Expanding the self-consistency condition for $L\ll 1$ we have
+	\[
+		L = xL -\frac{1}{3}(xL^3)
+	\]
+	\[
+		L = \sqrt{3\pfrac{x-1}{x^3}}.
+	\]
+	From here we expand the fraction in the radical about the parameter 
+	\[
+		\Delta x = \frac{T_C-T}{T_C}  = \frac{x-1}{x}
+	\]
+	thus
+	\[
+		\frac{x-1}{x^3} = \Delta x - 2(\Delta x)^2 +(\Delta x)^3 \approx \Delta x.
+	\]
+	Now the magnetization may be approximated as
+	\[
+		L = \sqrt{ 3\pfrac{x-1}{x}} = \sqrt{3\plr{1-\frac{1}{x}}} = \sqrt{3\pfrac{T_C-T}{T_C}} 
+		\propto (T_C-T)^{1/2}.
+	\]
+	On the other hand, when we approach the critical temperature from above $T>T_C$ then 
+	$x<1$ and the only solution for $H=0$ is $L=0$. Hence
+	\[
+		L = \begin{cases} \sqrt{3\pfrac{T_C-T}{T_C}}&\qquad T<T_C \\
+			0&\qquad T>T_C
+			\end{cases}
+	\]
+	\\
+	Now as for the susceptibility, we expand the consistency equation for small $L$ and $H$. It turns
+	out that $L\to 0$ much slower than $H$ and so we only keep the first order term in $H$:
+	\[
+		L= \tanh \plr{\beta H + Lx} \simeq \beta H + Lx -\frac{1}{3}(Lx)^3.
+	\]
+	Using
+	\[
+		\chi  = \plr{\pdiff[L]{H}}_{H=0}
+	\]
+	we have
+	\[
+		\chi =  \beta +\chi x-\chi x^3 L^2
+	\]
+	or
+	\[
+		\chi = \frac{\beta}{1-x+x^3L^2}.
+	\]
+	From here, we may use our equation for $L$ close to the critical temperature
+	\[
+		\chi = \begin{cases}\ds \frac{\beta}{1-x+3x^3\pfrac{x-1}{x} }\approx \frac{\beta}{1-
+		(1+\Delta x)+3\Delta x} = \frac{\beta}{2\pfrac{T_C-T}{T_C}} \propto |T_C-T|^{-1}
+		 &\qquad T<T_C \\
+		\ds \frac{\beta}{1-x}\approx \frac{\beta}{-\Delta x} = \frac{\beta}{\pfrac{T-T_C}{T_C}} \propto
+		|T_C-T|^{-1}
+		&\qquad T>T_C
+		\end{cases}
+	\]
+	We conclude that
+	\[
+		\chi \propto |T_C-T|^{-1}
+	\]
+	on either side of the critical temperature.
+	\\ \\
+	
+	
+% 10.2 -----------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{11.4}]
+	(9.2 in script)
+	
+	In the Bragg-Williams mean field approximation, the Hamiltonian for the one-dimensional Ising
+	model is
+	\[
+		H_{MF} = -(\gamma \epsilon\braket s +H)\sum_i s_i +\frac{1}{2}\gamma\epsilon N\braket s^2
+	\]
+	where $\gamma = 2$, $\epsilon >0$ is a constant characterizing the spin-spin interaction, $H$ is the
+	applied magnetic field, $N$ is the number of lattice sites $i$ containing the spins $s_i = \pm 1$, and
+	$\braket s = \braket{s_i}$ is the mean field. 
+	
+	\benum
+		% (a)
+		\item
+		Show that the free energy is
+		\[
+			G = -k_B TN\ln(2\cosh(\beta(\gamma\epsilon \braket s +H))) +\frac{1}{2}\gamma
+			\epsilon N\braket{s}^2
+		\]
+		It is a subtlety of the magnetic system that when you calculate the free energy according to
+		$-k_BT\ln Z$, the result is indeed Gibbs, not Helmholtz!
+		\\ \\
+		We look to compute
+		\[
+			G = -kT\ln Z.
+		\]
+		The mean field conveniently makes the Hamiltonian non-interacting, and thus the
+		partition function is simply
+		\ba
+			Z &= \sum_i e^{-\beta E_i} =
+			\exp\blr{-\beta(\gamma \epsilon \braket s +H)^N-\beta \frac{1}{2}\gamma\epsilon
+			N\braket s^2}+
+			\exp\blr{\beta(\gamma \epsilon \braket s +H)^N-\beta \frac{1}{2}\gamma\epsilon
+			N\braket s^2} \\
+			& = \exp\plr{-\beta \frac{1}{2}\gamma\epsilon N\braket{s}^2}\plr{
+			\exp\blr{-\beta(\gamma \epsilon \braket s +H)}^N
+			+\exp\blr{\beta(\gamma \epsilon \braket s +H)}^N}
+			\\ &=\exp\plr{-\beta \frac{1}{2}\gamma\epsilon N\braket{s}^2}
+			2\cosh\blr{\beta(\gamma \epsilon \braket s +H)}^N.
+		\ea
+		Now we can compute the Gibbs free energy using 
+		\[
+			G = -kTN\ln\blr{2\cosh\plr{\beta(\gamma \epsilon \braket s +H)}}
+			+\frac{1}{2}\gamma\epsilon N\braket{s}^2
+		\]
+		\\ \\
+		% (b)
+		\item
+		Now regard the mean field as an independent parameter, and find the extremum of free energy
+		with respect to the value of the mean field. Show that the result is the usual self-consistency condition 
+		of the mean field theory, $\braket s = \tanh(\beta(\gamma\epsilon \braket s +H))$.
+		\\ \\
+		Now we take
+		\[
+			\pdiff[G]{\braket s} = 0
+		\]
+		and compute:
+		\ba
+			\pdiff[G]{\braket s} &= -\pfrac{1}{\beta}\frac{2\sinh\plr{\beta(\gamma \epsilon \braket s +H)}}	
+			{2\cosh\plr{\beta(\gamma \epsilon \braket s +H)}}N\beta\gamma\epsilon
+			+
+			\gamma\epsilon N\braket s  \\
+			\gamma\epsilon N\braket s & = \tanh(\beta(\gamma\epsilon\braket s +H)) 
+			\gamma \epsilon N \\
+			\braket s & =  \tanh(\beta(\gamma\epsilon\braket s +H)) 
+		\ea
+		\\ \\
+		% (c)
+		\item
+		In the absence of the magnetic field, below the critical temperature, the system has a spontaneous
+		magnetization $\braket s \ne 0$. Show that the nontrivial solution, in fact, gives minimum of
+		free energy, and the trivial solutions $\braket s = 0$ is a maximum of free energy.
+		\\
+		\\
+		We can determine whether we are at a maximum or minimum by taking the second
+		derivative (at $H=0$ and $x>1$)
+		\[
+			\pdifff{G}{*2\braket s} = \gamma\epsilon N\plr{1-
+			\frac{\beta\gamma\epsilon}{\cosh^2(\beta\gamma\epsilon\braket s)}}
+		\]
+		For the nontrivial case, we may use the relation
+		\[
+			\beta\gamma\epsilon\braket s = \tanh^{-1}\braket s.
+		\]
+		Substituting this into the second derivative
+		\ba
+			\elr{\pdifff{G}{*2\braket s} }_{\braket s\ne 0} & =  \gamma\epsilon N\plr{1-
+			\frac{\beta\gamma\epsilon}{\cosh^2( \tanh^{-1}\braket s)}} \\
+			& =  \gamma\epsilon N\plr{1-\beta\gamma\epsilon
+			(1-\braket{s}^2)}\\
+			& = \gamma\epsilon N\plr{1+\beta\gamma\epsilon(\braket{s}^2-1)} \\
+			& = \gamma\epsilon N\plr{1+x(\braket s^2 -1)}
+		\ea
+		Assuming 
+		\[
+			1-\braket{s}^2 >0
+		\]
+		which it seems it must in order for 
+		\[
+			\cosh(\tanh^{-1}\braket s) = \frac{1}{\sqrt{1-\braket s^2}}
+		\]
+		to be real. Thus the nontrivial magnetization value is a minimum of the free energy.
+		\\
+		\\
+		For the trivial case, we substitute $\braket s = 0$ into the second derivative
+		\ba
+			\elr{\pdifff{G}{*2\braket s}}_{\braket s =0} &= \gamma\epsilon N\plr{1-
+			\frac{\beta\gamma\epsilon}{\cosh^2(0)}} \\
+			& = \gamma\epsilon N\plr{1-\beta\gamma\epsilon}\\
+			& = \gamma \epsilon N (1-x) < 0
+		\ea
+		Hence, the trivial magnetization is a maximum of Gibbs energy. 
+		\\ \\
+		% (d)
+		\item
+		In the absence of the magnetic field, below the critical temperature, the system has a 
+		spontaneous magnetization $\braket s \ne 0$; besides, if $\braket s$ is a possible
+		magnetization, then so is $-\braket s$. Show, however, that even the tiniest external
+		field $H\ne 0$ suffices to determine which way the equilibrium magnetization points for
+		$T\to T_C$. 
+		\\
+		\\
+		We can break the symmetry by taking the limit as $H\to 0$
+		\[
+			\braket s = \lim_{H\to 0}\lim_{N\to \infty} \frac{\sum_{\{s_i\}}
+			\blr{\plr{\frac{1}{N}\sum_{i=1}^N s_i}e^{-\beta(H_0+H_I)}}}{\sum_{\{s_i\}}
+			e^{-\beta(H_0+H_I)}} \ne 0
+		\]
+		\\
+		% (e)
+		\item
+		Argue that the ferromagnetic phase transition in this system is continuous at the critical point
+		$T_C$, $H=0$, but first order for any $H\ne 0$. 
+		\\
+		\\
+		For temperature above $T_C$, the only solution for $\braket s$ is the trivial solution. At
+		zero field $H=0$, we find that $\braket s=0$ and thus we have a continuous phase transition 
+		at the critical temperature. However, when we have a small first order field of $H\ne 0$, then
+		at the critical temperature we in fact have $\braket s \propto H^{1/3}$. In this sense,
+		the magnetization jumps from zero to a finite first order value as we approach 
+		the critical temperature. 
+		skgj
+		\eenum
+\eenum
+\end{document}

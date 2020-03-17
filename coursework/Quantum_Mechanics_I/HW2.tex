@@ -1,0 +1,563 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[top=1in,textheight=9in]{geometry}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics I\\HW 2\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: February 19}
+
+\begin{document}
+
+\maketitle
+
+% #1
+\begin{enumerate}
+  \item Consider a two-level system with the Hamiltonian
+  $$\frac{H}{\hbar}=\lambda(\ket 1\bra 2+\ket 2\bra 1)$$
+  where $\lambda$ is real and $\{\ket 1;\ket 2\}$ makes an orthonormal basis in the corresponding Hilbert space.
+  \begin{enumerate}
+  % (a)
+  \item The system starts at time $t=0$ in the state $\ket\psi = C_1\ket 1+C_2\ket2$. Show that at time $t$ the state evolves to 
+  \begin{equation}\label{9}\ket{\psi(t)} = C_1(\cos(\lambda t)\ket 1 - i\sin(\lambda t)\ket2)+C_2(\cos(\lambda t)\ket 2-i\sin(\lambda t)\ket 1)\end{equation}
+\\  \\\emph{Method 1: }Before we construct the time evolution operator 
+  $$U(t) = e^{-\frac{i}{\hbar}Ht},$$ lets look at the effect of $H$ on $\ket 1$ and $\ket 2$.
+$$H\ket 1 = \lambda\hbar\ket 2;\quad H\ket 2 = \lambda\hbar\ket 1.$$
+Now lets apply $H^2$
+$$HH\ket 1= \lambda\hbar H\ket 2  = \lambda^2\hbar^2\ket1;\quad HH\ket 2= \lambda\hbar H\ket 1  = \lambda^2\hbar^2\ket2.$$
+We could now construct the relation
+$$H^n\ket 1 = \begin{cases}\lambda^n\hbar^n\ket 2\quad \text{if}\ n=1,3,5,..\\\lambda^n\hbar^n\ket 1\quad \text{if}\ n=0,2,4,..\end{cases}$$
+$$H^n\ket 2 = \begin{cases}\lambda^n\hbar^n\ket 1\quad \text{if}\ n=1,3,5,..\\\lambda^n\hbar^n\ket 2\quad \text{if}\ n=0,2,4,..\end{cases}$$
+Going back to the time evolution operator, we see that
+\begin{align*}U(t) &= e^{-\frac{i}{\hbar}Ht} \\&= \sum_{n=0}^\infty{\frac{\left(-\frac{i}{\hbar}Ht\right)^n}{n!}}\\
+&=\sum_{n=0}^\infty{\frac{(-1)^n}{(2n)!}\left(-\frac{1}{\hbar}Ht\right)^{2n}}+i\sum_{n=0}^\infty{\frac{(-1)^n}{(2n+1)!}\left(-\frac{1}{\hbar}Ht\right)^{2n+1}}\\
+&=\cos(-\frac{1}{\hbar}Ht)+i\sin(-\frac{1}{\hbar}Ht).
+\end{align*}
+By noting that the $\sin$ expression is composed of odd powers of $H$ and the $\cos$ of even powers of $H$, we can deduce that
+\begin{align*}U(t)\ket 1 &= e^{-\frac{i}{\hbar}Ht}\ket 1 = \left(\cos(-\frac{1}{\hbar}Ht)+i\sin(-\frac{1}{\hbar}Ht)\right)\ket 1\\
+&=\cos\left(-\frac{1}{\hbar}(\lambda\hbar)t\right)\ket 1 +i\sin\left(-\frac{1}{\hbar}(\lambda\hbar)t\right)\ket 2\\
+&=\cos(\lambda t)\ket 1-i\sin(\lambda t)\ket 2.
+ \end{align*}
+ Similarly, 
+ $$U(t)\ket 2 =\cos(\lambda t)\ket 2-i\sin(\lambda t)\ket 1.$$
+ For our given state of $\psi = C_1\ket 1+C_2\ket 2$, 
+$$\ket{\psi(t)} = U(t)\ket\psi=C_1U(t)\ket1+C_2U(t)\ket2$$
+ $$\ket{\psi(t)}=C_1(\cos(\lambda t)\ket 1-i\sin(\lambda t)\ket 2)+C_2(\cos(\lambda t)\ket 2-i\sin(\lambda t)\ket 1)
+$$
+\\ \\ \emph{Method 2:}
+  The hamiltonian can be expressed as
+  $$H = \sum_{i,j = 1}^{2}{\ket i\bra iH\ket j\bra j}.$$
+  In matrix representation of the $\ket1$,$\ket2$ basis, where $\braket{i|H|j}$ are the elements, the Hamiltonian is
+  $$H=\lambda\hbar\begin{pmatrix}0&1\\1&0
+  \end{pmatrix}.$$
+  To find the eigenstates and eigenvalues of the Hamiltonian, we solve the secular equation.
+  $$|H-aI|\vect a=0$$ 
+  $$\begin{vmatrix}-a&\lambda\hbar\\\lambda\hbar&-a
+  \end{vmatrix}=0$$
+  $$a^2-\lambda^2\hbar^2 = 0$$
+  $$a=\pm\lambda\hbar$$
+  $$a=+\lambda\hbar:\quad\lambda\hbar\begin{pmatrix}-1&1\\1&-1\end{pmatrix}\begin{pmatrix}a_1\\a_2\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}$$
+  $$-a_1+a_2 = 0;\quad a_1=a_2=C;\quad C=\frac{1}{\sqrt 2}$$
+  $$a=-\lambda\hbar:\quad\lambda\hbar\begin{pmatrix}1&1\\1&1\end{pmatrix}\begin{pmatrix}b_1\\b_2\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}$$
+  $$b_1 = -b_2;\quad b_1 = C' = \frac{1}{\sqrt 2};\quad b_2 = -C'$$
+  Altogether our eigensystem is
+  $$a_+ = \lambda\hbar:\ \vect a_+=\begin{pmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{pmatrix};\quad a_- = -\lambda\hbar:\ \vect a_-=\begin{pmatrix}\frac{1}{\sqrt2}\\-\frac{1}{\sqrt2}\end{pmatrix}$$
+  In Dirac notation, 
+  $$H\ket{a_+} = \lambda\hbar\ket{a_+};\quad H\ket{a_-}=-\lambda\hbar\ket{a_-},$$
+  where
+  $$\ket{a_+} = \frac{1}{\sqrt2}(\ket 1+\ket 2);\quad \ket{a_-} = \frac{1}{\sqrt 2}(\ket 1-\ket 2).$$
+  Likewise
+  $$\ket 1 = \frac{1}{\sqrt 2}(\ket{a_+}+\ket{a_-});\quad \ket 2 = \frac{1}{\sqrt 2}(\ket{a_+}-\ket{a_-}).$$
+  From here we could express $\ket\psi$ in the basis of the eigenstates of $H$. Doing so would allow us to write
+  $$e^{-\frac{i}{\hbar}Ht}\ket{a_\pm} = e^{-\frac{i}{\hbar}\pm\lambda\hbar t}\ket{a_\pm}.$$ We could then decompose $e^{-\frac{i}{\hbar}\lambda\hbar t}$ into its $\sin$ and $\cos$ components and then convert the expression back into the $\ket 1$ and $\ket 2$ basis to arrive at the answer.
+  % (b)
+  \item In particular suppose the system starts in state $\ket 1$. What is the probability that it would be found in state $\ket 2$ if a measurement was made at time $t$?
+  \\ \\Since the system starts in state $\ket 1$ at $t=0$, we can simply set $C_2 = 0$ and $C_1=1$ in expression \eqref 9 to obtain
+  $$\ket{\psi(t)} = \cos(\lambda t)\ket1-i\sin(\lambda t)\ket2.$$
+  The probability of finding the system in state $\ket 2$ is 
+  $$|\braket{2|\psi(t)}|^2 = \sin^2(\lambda t)$$
+  for $\lambda$ real. 
+  % (c)
+  \item Suppose two measurements are made at times $t_1$ and $t_2$ with $t_2>t_1$. What is the probability that the system is found in the state $\ket 2$ at both times?
+  \\ \\From the keyword \emph{the} system, we will assume this is a single system and not an ensemble of identically prepared systems. Starting from the initial state of part (b), the probability of obtaining state $\ket 2$ after a measurement at time $t_1$ is is the same as that of part (b), namely
+    $$|\braket{2|\psi(t_1)}|^2 = \sin^2(\lambda t_1).$$
+    After a measurement that yields $\ket 2$ at $t_1$, the state collapses into state $\ket 2$ and we can think of the system now ``starting" in state $\ket 2$. So, at time $t_1$, the system is defined by \eqref 9 with $C_1 = 0$ and $C_2 = 1$. That is
+    $$\ket{\psi(t)} = \cos(\lambda \Delta t)\ket 2-i\sin(\lambda 
+   \Delta t)\ket 1.$$
+   where $\Delta t = t-t_1$.
+    The probability of measuring $\ket 2$ at $t_2$ is then
+    $$|\braket{2|\psi(t_2-t_1)}|^2 = \cos^2(\lambda(t_2-t_1)).$$
+    The probability of measuring $\ket 2$ at \emph{both} $t_1$ and $t_2$ is the product of probabilities
+    $$P_{t_1t_2} = \sin^2(\lambda t_1)\cos^2(\lambda(t_2-t_1)).$$
+  
+  \end{enumerate}
+  % #2
+  \item Consider a particle of mass $m$ moving in the harmonic oscillator potential
+  $$H = \frac{p^2}{2m}+\frac{m\omega^2}{2}x^2.$$
+  Define the standard creation and annihilation operators $a$ and $a^\dag$
+  $$a =\left(\frac{m\omega}{2\hbar}\right)^{1/2}\left(x+\frac{ip}{m\omega}\right);\quad a^\dag = \left(\frac{m\omega}{2\hbar}\right)^{1/2}\left(x-\frac{ip}{m\omega}\right).$$
+  A coherent state is an eigenstate of the annihilation operator $a$:
+  $$a\ket\alpha = \alpha\ket\alpha$$
+      \begin{enumerate}
+  \item Find the wave function of the coherent state in the coordinate representation $\braket{x|\alpha}$ for an arbitrary complex $\alpha$.
+  \\ \\A coherent state is a superposition of energy eigenstates that most closely resembles the classical oscillator. In addition, it has the important property that it is a minimum uncertainty wave-packet. Let's first attempt to find a coherent state. Representing $\ket\alpha$ in the $\ket n$ basis
+  $$\ket\alpha = \sum{\ket n\braket{n|\alpha}}.$$
+  $\ket n$ can also be expressed as
+  $$\ket n = \frac{(a^\dag)^n}{\sqrt{n!}}\ket 0$$
+  and so
+  $$\braket{n|\alpha} = \braket{0|\frac{a^n}{\sqrt{n!}}|\alpha}=\frac{\alpha^n}{\sqrt{n!}}\braket{0|\alpha}$$
+  therefore
+  $$\ket\alpha = \braket{0|\alpha}\sum{\frac{\alpha^n}{\sqrt{n!}}\ket n}.$$
+The only undefined constant here is $\braket{0|\alpha}$, so we can use it to normalize $\ket\alpha$ (notice that $\braket{0|\alpha}$ is just one of the expansion coefficients, which are the terms we modify in order to normalize a particular state):
+  $$\braket{\alpha|\alpha} = |\braket{0|\alpha}|^2\sum{\frac{\alpha^{\dag m}}{\sqrt{m!}}\bra m}\sum{\frac{\alpha^n}{\sqrt{n!}}\ket n} = |\braket{0|\alpha}|^2\sum{\frac{|\alpha|^{2n}}{\sqrt{n!}}}$$
+  $$\braket{\alpha|\alpha} = 1 = |\braket{0|\alpha}|^2e^{|\alpha|^2}$$
+  thus
+  $$\braket{0|\alpha}=e^{-\frac{1}{2}|\alpha|^2}.$$
+This term can vary by a phase factor, $e^{i\phi}$, but this turns out to not be of significance since it does not affect the probability amplitude and also because any coherent state differing by a constant factor is still a coherent state. We now have
+  \begin{equation}\label{7}\ket\alpha = e^{-\frac{1}{2}|\alpha|^2}\sum{\frac{\alpha^n}{\sqrt{n!}}\ket n}.\end{equation}
+  Now we can use a nice trick, namely
+  $$\sum_{n=0}^\infty{\ket n} = \sum_{n=0}^\infty{\frac{a^{\dag n}}{\sqrt{n!}}\ket 0}$$
+  to rewrite $\ket\alpha$ as
+  $$\ket\alpha = e^{-\frac{1}{2}|\alpha|^2}\sum{\frac{(\alpha a^\dag)^n}{n!}\ket 0}$$
+  \begin{equation}\label{1}\ket\alpha = e^{-\frac{1}{2}|\alpha|^2}e^{\alpha a^\dag}\ket 0.\end{equation}
+  This same expression for $\ket\alpha$ could alternatively be derived by applying the finite translation operator to the ground state $\ket 0$. To find the wave function in the $x$ representation, we form
+  \begin{align*}\braket{x|\alpha} &= \braket{x|e^{-\frac{1}{2}|\alpha|^2}e^{\alpha a^\dag}|0} = e^{-\frac{1}{2}|\alpha|^2}\braket{x|e^{\alpha a^\dag}|0}\\
+  &=e^{-\frac{1}{2}|\alpha|^2}\braket{x|e^{\alpha\sqrt{\frac{m\omega}{2\hbar}}\left(x-\frac{ip}{m\omega}\right)}|0}.
+  \end{align*}
+  Note that $\braket{x|p|\alpha} = -i\hbar\frac{\partial}{\partial x}\braket{x|\alpha}$. Applying the operators to $\bra x$,
+  $$\braket{x|\alpha} = \exp{\left[-\frac{1}{2}|\alpha|^2\right]}\exp{\left[\alpha\sqrt{\frac{m\omega}{2\hbar}}\left(x-\frac{\hbar}{m\omega}\frac{\partial}{\partial x}\right)\right]}\braket{x|0}.$$
+  The wavefunction of the ground state is given as
+  \begin{equation}\label{2}\braket{x|0} = \left(\frac{1}{\pi^{1/4}\sqrt{x_0}}\right)\exp{\left[-\frac{1}{2}\left(\frac{x}{x_0}\right)^2\right]},\end{equation}
+  where
+  $$x_0 \equiv \sqrt{\frac{\hbar}{m\omega}}.$$
+  Substituting in, and in terms of $x_0$ we have
+  $$\braket{x|\alpha} = \left(\frac{1}{\pi^{1/4}\sqrt{x_0}}\right) \exp{\left[-\frac{1}{2}|\alpha|^2\right]}\exp{\left[\frac{\alpha}{\sqrt 2x_0}\left(x-x_0^2\frac{d}{dx}\right)\right]}\exp{\left[-\frac{1}{2}\left(\frac{x}{x_0}\right)^2\right]}$$
+  At this point a substitution of $x' = x/x_0$, $\frac{d}{dx} = \frac{1}{x_0}\frac{d}{dx'}$ will help simplify things:
+    $$\braket{x|\alpha} = \left(\frac{1}{\pi^{1/4}\sqrt{x_0}}\right) \exp{\left[-\frac{1}{2}|\alpha|^2\right]}\exp{\left[\frac{\alpha}{\sqrt 2}\left(x'-\frac{d}{dx'}\right)\right]}\exp{\left[-\frac{1}{2}x^{'2}\right]}$$
+To reduce this expression even further, we will utilize the BCH formula given as
+$$e^{A+B} = e^{-\frac{1}{2}[A,B]}e^Ae^B$$
+  which is valid under the condition $[A,[A,B]] = [B,[A,B]] = 0$. Let's apply it to
+  $$\exp{\left[\frac{\alpha}{\sqrt 2}\left(x'-\frac{d}{dx'}\right)\right]}.$$
+  Taking the commutator
+  \begin{align*}\left[\frac{\alpha}{\sqrt 2}x',-\frac{\alpha^2}{\sqrt 2}\frac{d}{dx'}\right]f(x') &= -\frac{\alpha^2}{2}x'\frac{d}{dx'}f(x)'+\frac{\alpha^2}{2}\frac{d}{dx'}(x'f(x'))\\
+  &=-\frac{\alpha^2}{2}x'\frac{d}{dx'}f(x)'+\frac{\alpha^2}{2}x'\frac{d}{dx'}f(x')+\frac{\alpha^2}{2}f(x')\\
+  &=\frac{\alpha^2}{2}f(x').
+  \end{align*}
+  Thus
+  $$\left[\frac{\alpha}{\sqrt 2}x',-\frac{\alpha}{\sqrt 2}\frac{d}{dx'}\right] = \frac{\alpha^2}{2}.$$
+  From this commutator, we easily see that any term will commute, satisfying our BCH formula criteria. In utilizing this formula for our exponential we will use $A = \frac{\alpha}{\sqrt 2}x'$ and $B = -\frac{\alpha}{\sqrt 2}\frac{d}{dx'}$, and so
+    $$\exp{\left[\frac{\alpha}{\sqrt 2}\left(x'-\frac{d}{dx'}\right)\right]} = \exp{\left[-\frac{\alpha^2}{4}\right]}\exp{\left[\frac{\alpha}{\sqrt2}x'\right]}\exp{\left[-\frac{\alpha}{\sqrt2}\frac{d}{dx'}\right]}.$$
+    The wavefunction now looks like 
+    $$\braket{x|\alpha} = \left(\frac{1}{\pi^{1/4}\sqrt{x_0}}\right)\exp{\left[-\frac{1}{2}|\alpha|^2\right]}\exp{\left[-\frac{\alpha^2}{4}\right]}\exp{\left[\frac{\alpha}{\sqrt2}x'\right]}\exp{\left[-\frac{\alpha}{\sqrt2}\frac{d}{dx'}\right]}\exp{\left[-\frac{1}{2}x^{'2}\right]}.$$
+    Note that the 4th exponential looks like the translation operator. From Sakurai 1.7.20
+    $$\braket{x'|p^n|\alpha} = (-i\hbar)^n\frac{\partial^n}{\partial x^{'n}}\braket{x'|\alpha}.$$
+    It follows that
+    \begin{align*}\braket{x'|\sum_{n=0}^\infty{\frac{\left(-\frac{i}{\hbar}p\Delta x'\right)^n}{n!}}|\alpha} &= \braket{x'|e^{-\frac{i}{\hbar}p\Delta x'}|\alpha} \\&= \braket{x'|T(\Delta x')|\alpha}\\
+    &=\sum_{n=0}^\infty{\frac{\Delta x^{'n}\left(-\frac{\partial^n}{\partial x^{'n}}\right)}{n!}}\braket{x'|\alpha}\\
+    &= \exp{\left(-\Delta x'\frac{\partial}{\partial x'}\right)}\braket{x'|\alpha}\\
+    &=\braket{x'-\Delta x'|\alpha}.
+    \end{align*}
+    From this property, our wavefunction becomes
+        $$\braket{x|\alpha} = \left(\frac{1}{\pi^{1/4}\sqrt{x_0}}\right)\exp{\left[-\frac{1}{2}|\alpha|^2\right]}\exp{\left[-\frac{\alpha^2}{4}\right]}\exp{\left[\frac{\alpha}{\sqrt2}x'\right]}\exp{\left[-\frac{1}{2}\left(x'-\frac{\alpha}{\sqrt 2}\right)^2\right]}.$$
+  Simplifying further via commutation of exponentials
+ \begin{equation}\label{3}\braket{x|\alpha} = \left(\frac{1}{\pi^{1/4}\sqrt{x_0}}\right)\exp{\left[-\frac{1}{2}|\alpha|^2\right]}\exp{\left[-\frac{1}{2}\alpha^2+\sqrt 2\alpha x'-\frac{1}{2}x^{'2}\right]}.\end{equation}
+   At this point, it is beneficial to look into some more relations. Specifically, the components of $\alpha$. Note that
+   $$\braket{\alpha|(a+a^\dag)|\alpha} = (\alpha+\alpha^*)$$
+   $$\braket{\alpha|(a-a^\dag)|\alpha} = (\alpha-\alpha^*).$$
+   Therefore we can see that
+   \begin{equation}\label{4}\Re{(\alpha)} = \braket{\alpha|\frac{(a+a^\dag)}{2}|\alpha} = \sqrt{\frac{m\omega}{2\hbar}}\braket{\alpha|x|\alpha} = \sqrt{\frac{m\omega}{2\hbar}}\braket{x}_\alpha\end{equation}
+  \begin{equation}\label{5}\Im{(\alpha)} = \braket{\alpha|\frac{(a-a^\dag)}{2i}|\alpha} = \sqrt{\frac{1}{2m\omega\hbar}}\braket{\alpha|p|\alpha}=\sqrt{\frac{1}{2m\omega\hbar}}\braket{p}_\alpha.\end{equation}
+  Using some cleverness in breaking up the real and imaginary parts of $\alpha$, we can express \eqref 3 as 
+  $$\braket{x|\alpha} = \exp{\left[-\frac{1}{2}(x'-\sqrt 2\Re(\alpha))^2+i\sqrt2\Im(\alpha)x'-i\Im(\alpha)\Re(\alpha)\right]}.$$
+  Now using \eqref 4 and \eqref 5 to re-express these real and imaginary components, substituting back in $x = x'x_0$, and setting back $x_0 \equiv \sqrt{\frac{\hbar}{m\omega}}$ our wavefunction becomes
+  $$\braket{x|\alpha} = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp{\left[-\frac{m\omega}{2\hbar}(x-\braket{x}_\alpha)^2+\frac{i}{\hbar}\braket{p}_\alpha x-\frac{i}{2\hbar}\braket{p}_\alpha\braket{x}_\alpha\right]}.$$
+Since we are typically concerned with probability amplitudes, we drop the last phase term by convention to finally arrive at
+\begin{equation}\label{6}
+\braket{x|\alpha} = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp{\left[-\frac{m\omega}{2\hbar}(x-\braket{x}_\alpha)^2+\frac{i}{\hbar}\braket{p}_\alpha x\right]}.\end{equation}
+% (b)
+  \item Show that for real $\alpha$ this wave function is the same as that of the ground state of the harmonic oscillator centered not at the origin, but at $x=x_0$. Find the coordinate of the center of the oscillator $x_0$ in terms of $\alpha$.
+  \\ \\Firstly, the ground state of the harmonic oscillator given by \eqref 2 is, in full form, 
+  $$\braket{x|0} = \left(\frac{m\omega}{\pi\hbar}\right)\exp{\left[-\frac{m\omega}{2\hbar}x^2\right]}.$$
+  For $\alpha$ real, we can see from \eqref 5 that $\braket{p}_\alpha = 0$ and so \eqref 6 becomes 
+  $$\braket{x|\alpha} = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp{\left[-\frac{m\omega}{2\hbar}(x-\braket{x}_\alpha)^2\right]}.$$
+  This is indeed the same as the ground state, with the exception that our Gaussian is centered around $x_0 = \braket{x}_\alpha$. From \eqref 4 we see that
+  $$x_0 = \sqrt{\frac{2\hbar}{m\omega}}\alpha.$$
+  % (c)
+  \item What is the meaning of the imaginary part of $\alpha$?
+  \\ \\From \eqref 5, we can see that 
+  $$\Im(\alpha) \propto \braket{p}_\alpha,$$
+  the expectation value of the momentum in the coherent state. For the ground state, $\braket{p}=0$, but for a coherent state it may be non-zero. 
+  % (d)
+  \item Calculate the uncertainty in the coherent state $\braket{(\Delta x)^2}\braket{(\Delta p)^2}$ and prove that $\ket\alpha$ is a minimum uncertainty state.
+  \\ \\From \eqref 4 and \eqref 5 we can see that 
+  $$\braket{x} = \sqrt{\frac{2\hbar}{m\omega}}\left(\frac{\alpha+\alpha*}{2}\right)$$
+  $$\braket{p} = \sqrt{2 m\omega\hbar}\left(\frac{\alpha-\alpha*}{2i}\right).$$
+  And so
+  $$\braket{x}^2 = \frac{2\hbar}{m\omega}\frac{(\alpha+\alpha^*)^2}{4}$$
+  $$\braket{p^2} = -2m\hbar\omega\frac{(\alpha-\alpha^*)^2}{4}.$$
+  Now, to find $\braket{x^2}$ and $\braket{p^2}$ we use
+  $$x^2 = \frac{\hbar}{2m\omega}(a+a^\dag)^2$$
+  $$p^2 = -\frac{m\omega\hbar}{2}(a-a^\dag)^2.$$
+  Finding the expectation value
+  $$\braket{x^2} = \frac{h}{2m\omega}\braket{\alpha|(a+a^\dag)(a+a^\dag)|\alpha} = \frac{\hbar}{2m\omega}\left((\alpha+\alpha^*)^2+1\right)$$
+    $$\braket{p^2} = -\frac{m\omega\hbar}{2}\braket{\alpha|(a-a^\dag)(a-a^\dag)|\alpha} = -\frac{m\omega\hbar}{2}\left((\alpha-\alpha^*)^2-1\right).$$
+    Lastly,
+    $$\braket{(\Delta x)^2} = \braket{x^2}-\braket{x}^2 = \frac{\hbar}{2m\omega} $$
+      $$\braket{(\Delta p)^2} = \braket{p^2}-\braket{p}^2 = \frac{m\omega\hbar}{2} .$$
+      Our uncertainty relation for the coherent state is then
+      $$\braket{(\Delta x)^2}\braket{(\Delta p)^2} = \frac{\hbar^2}{4}$$
+      which is minimum!
+  % (e)
+   \item Prove that $\ket\alpha = e^{-|\alpha|^2/2}e^{\alpha a^\dag}\ket 0$.
+  \\ \\This is given by \eqref 1.\\
+  % (f)
+  \item Write $\ket\alpha$ as 
+  $$\ket\alpha = \sum_{n=0}^\infty{f(n)\ket n}.$$
+  Show that the distribution $|f(n)|^2$ with respect to $n$ is of the Poisson form. Find the most probably value of $n$ and hence energy $E$.
+  \\ \\Using \eqref 7, we have 
+  $$\ket\alpha = e^{-\frac{1}{2}|\alpha|^2}\sum_{n=0}^\infty{\frac{\alpha^n}{\sqrt{n!}}\ket n}.$$
+  Therefore
+  $$f(n) = e^{-\frac{1}{2}|\alpha^2|}\frac{\alpha^n}{\sqrt{n!}}$$ and
+  \begin{equation}\label{8}|f(n)|^2 = e^{-|\alpha|^2}\frac{|\alpha|^{2n}}{n!}.\end{equation}
+  A Poisson distribution is a discrete function given by 
+  $$P(n;\lambda) = e^{-\lambda}\frac{\lambda^n}{n!}.$$
+From this, we can see that for $\lambda=|\alpha|^2$, \eqref 8 is indeed a Poisson distribution. The Poisson distribution is often used for system with large $n$ and small $\lambda$. First, let us note that for large $n$ we can use the Stirling approximation
+  $$\ln n! =n\ln n-n$$
+  $$\frac{\partial}{\partial n}\ln n! = \ln n.$$
+  In addition, one of the properties of a Poisson distribution is that the ``expected value" is simply $\lambda$, but just for kicks we'll go through the process of finding the most probable value via maximization of \eqref 9. Before we maximize, it is more convenient to work in the \emph{ln} base, which is a valid action since the maximum likelihood estimator (MLE) converges to the true probability as $n\to \infty$. Accordingly, we proceed with 
+  $$\ln{|f(n)|^2} = -|\alpha|^2+n\ln(|\alpha|^2) - \ln(n!).$$
+  Now maximizing
+  $$\frac{\partial |f(n)|^2}{\partial n} = \ln(|\alpha|^2)-\frac{\partial}{\partial n}\ln(n!)=\ln(|\alpha|^2)-\ln n=0$$
+  where we have used Stirlings approximation given above. 
+  This leads us to conclude
+  $$n_{max} = |\alpha|^2.$$
+  Using Sakurai 2.3.22
+  $$E_n=\left(n+\frac{1}{2}\right)\hbar\omega\quad (n=0,1,2,3,..),$$
+  the most probable energy for the coherent state $\ket\alpha$ is 
+  $$\bar E = \left(|\alpha|^2+\frac{1}{2}\right)\hbar\omega.$$
+  \end{enumerate}
+% #3
+\item Calculate the wave function of the ground state of the harmonic oscillator in the momentum representation $\braket{p|0}$. 
+\\ \\The process to find $\braket{x|0}$ is given in Sakurai 2.3.30, however to find $\braket{p|0}$ we will use something different, yet simple. We use
+$$\braket{p|0} = \int{dx\ \braket{p|x}\braket{x|0}}.$$
+We know the two wave functions in the integrand,
+$$\braket{p|x} = \braket{x|p}^* = \frac{1}{\sqrt{2\pi\hbar}}\exp{\left(-\frac{ipx}{\hbar}\right)}$$
+$$\braket{x|0} = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp{\left(-\frac{m\omega}{2\hbar}x^{2}\right)}.$$
+Our task now amounts to solving this integral
+\begin{equation}\label{10}\braket{p|0} = \frac{1}{\sqrt{2\pi}}\sqrt{\frac{m\omega}{\hbar}}\frac{1}{(m\omega\pi\hbar)^{1/4}}\int_{-\infty}^\infty{dx\ \exp{\left(-\frac{ipx}{\hbar}\right)}\exp{\left(-\frac{m\omega}{2\hbar}x^2\right)}}.\end{equation}
+This integral represents an inverse Fourier Transform (Gradshteyn Ryzhik p.1089). To convert into a more suitable form, we do the following substitutions:
+$$k = \frac{p}{\hbar}$$
+$$a \equiv \sqrt{\frac{\hbar}{2m\omega}}$$
+to yield
+\begin{equation}\label{11}
+f(k) = \frac{1}{(m\omega\pi\hbar)^{1/4}}\frac{1}{\sqrt{2\pi}}\int^\infty_{-\infty}{dx\ \frac{1}{a\sqrt 2}\exp{\left(-\frac{x^2}{4a^2}\right)}\exp{\left(-ikx\right)}}.
+\end{equation}
+The the corresponding Fourier Transform pair is, for $k>0$
+$$f(k) = \frac{1}{(m\omega\pi\hbar)^{1/4}}\exp{\left(-a^2k^2\right)}.$$
+Bringing back to original form
+$$\braket{p|0} = \frac{1}{(m\omega\pi\hbar)^{1/4}}\exp{\left(-\frac{p^2}{2m\omega\hbar}\right)}$$
+which is also a Gaussian centered at $p=0$. In retrospect, $\braket{p|0}$ could have just been obtain by using the Fourier inverse of $\braket{x|0}$, from Sakurai 1.7.34b
+$$\phi_0(p) =\frac{1}{\sqrt{2\pi\hbar}}\int{dx\ \exp{\left(-\frac{ipx}{\hbar}\right)}\psi_0(x)}.$$
+% #4
+\item The Heisenberg equation of motion for an operator $O$ in quantum mechanics is
+$$\frac{d}{dt}O = \frac{1}{i\hbar}[O,H].$$
+Consider the Hamiltonian
+$$H = \frac{p^2}{2m}+\frac{m\omega^2}{2}x^2+\frac{\lambda}{4!}x^4.$$
+\begin{enumerate}
+% (a)
+\item Write down explicitly the Heisenberg equations of motion for the operators $x$, $p$, $x^2$, and $p^2$.
+\\ \\Note the following commutation relations:
+$$[x,p] = i\hbar$$
+$$[f(A),B] =\frac{\partial f}{\partial A}[A,B]\quad (\text{valid if }[A,[A,B]]=[B,[A,B]]=0)$$ 
+$$[A,BC] = [A,B]C+B[A,C].$$
+Using these, we calculate all commutators of interest:
+$$[x,p^2] = 2i\hbar p$$
+$$[x^2,p] = 2i\hbar x$$
+$$[x^2,p^2] = [x^2,p]p+p[x^2,p]=2i\hbar xp+2i\hbar px$$
+$$[x^4,p] = 4i\hbar x$$
+$$[x^4,p^2] = [x^4,p]p+p[x^4,p] = 4i\hbar xp+4i\hbar px.$$
+Calculating the Heisenberg equations of motion,
+$$\frac{dx}{dt} = \frac{1}{i\hbar}\left(\frac{1}{2m}[x,p^2]\right)= \frac{p}{m}$$
+$$\frac{dp}{dt} = \frac{1}{i\hbar}\left(\frac{m\omega^2}{2}[p,x^2]+\frac{\lambda}{4!}[p,x^4]\right)=-m\omega^2x-\frac{\lambda x}{6}$$
+$$\frac{d(x^2)}{dt} = \frac{1}{i\hbar}\left(\frac{1}{2m}[x^2,p^2]\right) = \frac{xp+px}{m} $$
+$$\frac{d(p^2)}{dt} = \frac{1}{i\hbar}\left(\frac{m\omega^2}{2}[p^2,x^2]+\frac{\lambda}{4!}[p^2,x^4]\right)=-m\omega^2(xp+px)-\frac{\lambda(xp+px)}{6}.$$
+As expected when dealing with non-commuting quantities, in general $\frac{d}{dA}A^n\neq nA^{n-1}$. Altogether we have
+\begin{align*}\frac{dx}{dt} &= \frac{p}{m}\\
+\frac{dp}{dt} &=-m\omega^2x-\frac{\lambda x}{6}\\
+\frac{d(x^2)}{dt}  &= \frac{xp+px}{m} \\
+\frac{d(p^2)}{dt} &=-m\omega^2(xp+px)-\frac{\lambda(xp+px)}{6}.\end{align*}
+\\Taking the expectation value of the Heisenberg equation in a state $\ket\Psi$ we obtain the equation of motion for the average of $O$:
+$$\frac{d}{dt}\braket{\Psi|O|\Psi} = \frac{1}{i\hbar}\braket{\Psi|[O,H]|\Psi}$$
+One can think either of the operator $O$ (Heisenberg picture) or the wave function (Schrodinger picture) as time dependent. In general this equation is not closed because its right-hand side involves expectation values of operators distinct from $O$. Let us however assume that the Schrodinger picture wave function can at all times be approximated by a Gaussian
+$$\Psi = \left(\frac{1}{\pi G}\right)^{1/4}\exp{\left[-\frac{1}{2}(x-X)(G^{-1}+i\Sigma)(x-X)+ixP\right]}$$
+Here the real parameters $X, P, G, \Sigma$ all can depend on time, and the state is normalized to one. In this ``Gaussian approximation", the expectation values of the Heisenberg equations you have derived in (a) close, and reduce to a set of equations of motion for the parameters of the Gaussian.\\
+% (b)
+\item Calculate the expectation values $\braket{x}$, $\braket p$, $\braket{x^2}$, $\braket{p^2}$, and $\braket{xp}$ in terms of the parameters of the Gaussian $X, P, G, \Sigma$.
+\\ \\To calculate the expectation values, we will need to integrate the wave function and its conjugate as follows
+$$\braket{\Psi|O|\Psi} = \int_{-\infty}^{\infty}{dx\ \Psi^*(x)O\Psi^(x)}.$$
+Lets also rewrite $\Psi(x)$ in a form that accentuates its imaginary and real components, namely
+\begin{equation}\label{17}\Psi(x) = \left(\frac{1}{\pi G}\right)^{1/4}\exp{\left[-\frac{1}{2}\left(G^{-1}(x-X)^2+i(\Sigma(x-X)^2-2xP)\right)\right]}.
+\end{equation}
+Now we can construct, for later use, $|\Psi|^2$
+\begin{equation}\label{18}\Psi(x)\Psi^*(x) = \left(\frac{1}{\pi G}\right)^{1/2}\exp{\left[-\frac{(x-X)^2}{G}\right]}.\end{equation}
+Some important things to note are
+$$\int_{-\infty}^{\infty}{dx\ \exp{\left[-x^2a\right]}}=2\int_0^\infty{dx\ \exp{\left[-x^2a\right]}}=\sqrt{\frac{\pi}{a}}.$$
+$$\int_{-\infty}^{\infty}{dx\ x\exp{\left[-x^2a\right]}}=0$$
+$$\int_{-\infty}^{\infty}{dx\ x^2\exp{\left[-x^2a\right]}}=2\int_{0}^{\infty}{dx\ x^2\exp{\left[-x^2a\right]}}=\frac{1}{2a}\sqrt{\frac{\pi}{a}}$$
+ Okay let's compute some expectation values:
+\begin{align*}\braket{x} &= \int_{-\infty}^{\infty}{dx\ \Psi^*(x)x\Psi(x)}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}\int_{-\infty}^{\infty}{dx\ x\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}\int_{-\infty}^{\infty}{dx'\ (x'+X)\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}X\sqrt{\pi G} \\&= X
+\end{align*}
+
+\begin{align*}\braket{x^2} &= \int_{-\infty}^{\infty}{dx\ \Psi(x)^*x^2\Psi(x)}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}\int_{-\infty}^{\infty}{dx\ x^2\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}\int_{-\infty}^{\infty}{dx'\ (x'+X)^2\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}\int_{-\infty}^{\infty}{dx'\ (x^{'2}+2x'X+X^2)\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}X^2\sqrt{\pi G}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}\int_{-\infty}^{\infty}{dx'\ x^{'2}\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}X^2\sqrt{\pi G}+\left(\frac{1}{\pi G}\right)^{1/2}\frac{G}{2}\sqrt{\pi G}\\
+&=X^2+\frac{G}{2}
+\end{align*}
+Before we do the next ones, lets find the derivative of $\Psi(x)$
+\begin{align*}\frac{\partial\Psi}{\partial x} &= [-(x-X)(G^{-1}+i\Sigma)+iP]\Psi\\
+&=[-x(G^{-1}+i\Sigma)+X(G^{-1}+i\Sigma)+iP]\Psi.
+\end{align*}
+Now we can continue
+\begin{align*}\braket{p} &= \int_{-\infty}^{\infty}{dx\ \Psi^*(x)\left(-i\hbar\frac{\partial}{\partial x}\right)\Psi(x)}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx\ [-x(G^{-1}+i\Sigma)+X(G^{-1}+i\Sigma)+iP]\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)[X(G^{-1}+i\Sigma)+iP]\sqrt{\pi G}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx\ [-x(G^{-1}+i\Sigma)]\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)[X(G^{-1}+i\Sigma)+iP]\sqrt{\pi G}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx\ [-(x'+X)(G^{-1}+i\Sigma)]\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&=(-i\hbar)[X(G^{-1}+i\Sigma)+iP-X(G^{-1}+i\Sigma)]\\
+&=-i\hbar(iP)\\
+&=\hbar P
+\end{align*}
+
+Lets find the second derivative of $\Psi(x)$
+\begin{align*}\frac{\partial^2\Psi}{\partial x^2} &= \frac{\partial}{\partial x}[-x(G^{-1}+i\Sigma)+X(G^{-1}+i\Sigma)+iP]\Psi \\
+&= -(G^{-1}+i\Sigma)\Psi+[-x(G^{-1}+i\Sigma)+X(G^{-1}+i\Sigma)+iP]\frac{\partial\Psi}{\partial x}\\
+&=-(G^{-1}+i\Sigma)\Psi+[-x(G^{-1}+i\Sigma)+X(G^{-1}+i\Sigma)+iP]^2\Psi.
+\end{align*}
+Lets denote $(G^{-1}+i\Sigma)\equiv A$ so that
+\begin{align*}\frac{\partial^2\Psi}{\partial x^2} &= -A\Psi+[-x(A)+X(A)+iP]^2\Psi\\
+&=-A\Psi+[x^2A^2-2xA(XA+iP)+X^2A^2+2iXAP-P^2]\Psi
+\end{align*}
+Continuing,
+\begin{align*}\braket{p^2} &= \int_{-\infty}^{\infty}{dx\ \Psi^*(x)\left((-i\hbar)^2\frac{\partial^2}{\partial x^2}\right)\Psi(x)}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx\ (-A)\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx\ [-x(A)+X(A)+iP]^2\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)(-A)\sqrt{\pi G}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx\ [x^2A^2-2xA(XA+iP)+X^2A^2+2iXAP-P^2]}\\
+&\quad\times\exp{\left[-\frac{(x-X)^2}{G}\right]}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\sqrt{\pi G}[-A+(X^2A^2+2iXAP-P^2)]\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx\ [-2xA(XA+iP)]\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx\ x^2A^2\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\sqrt{\pi G}[-A+(X^2A^2+2iXAP-P^2)]\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx\ [-2(x'+X)A(XA+iP)]\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx'\ (x'+X)^2A^2\exp{\left[-\frac{x^{'^2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\sqrt{\pi G}[-A+(X^2A^2+2iXAP-P^2)-2XA(XA+iP)]\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx'\ (x^{'2}+2x'X+X^2)A^2\exp{\left[-\frac{x^{'^2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\sqrt{\pi G}[-A+(X^2A^2+2iXAP-P^2)-2XA(XA+iP)+X^2A^2]\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\int_{-\infty}^{\infty}{dx'\ x^{'2}A^2\exp{\left[-\frac{x^{'^2}}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-\hbar^2)\sqrt{\pi G}\\
+&\quad\times\left[-A+(X^2A^2+2iXAP-P^2)-2XA(XA+iP)+X^2A^2+A^2\frac{G}{2}\right]\\
+&=-\hbar^2\left(-A+A^2\frac{G}{2}-P^2\right)\\
+&= \hbar^2\left(\Sigma^2\frac{G}{2}+P^2\right)
+\end{align*}
+
+\begin{align*}\braket{xp} &= \int_{-\infty}^{\infty}{dx\ \Psi^*(x)x\left(-i\hbar\frac{\partial}{\partial x}\right)\Psi(x)}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx\ x[-x(G^{-1}+i\Sigma)+X(G^{-1}+i\Sigma)+iP]\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx\ [-x^2(G^{-1}+i\Sigma)+xX(G^{-1}+i\Sigma)+ixP]\exp{\left[-\frac{(x-X)^2}{G}\right]}}\\
+&=\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx'\ [-(x^{'2}+2x'X+X^2)A]\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&\quad+\left(\frac{1}{\pi G}\right)^{1/2}(-i\hbar)\int_{-\infty}^{\infty}{dx\ [(x'+X)X(G^{-1}+i\Sigma)+i(x'+X)P]\exp{\left[-\frac{x^{'2}}{G}\right]}}\\
+&=(-i\hbar)\left[-X^2A-A\frac{G}{2}+X^2A+iXP\right]\\
+&=(i\hbar)\left[A\frac{G}{2}-iXP\right]\\
+&=i\hbar\left(\frac{1}{2}+i\frac{G\Sigma}{2}\right)\\
+&=\frac{\hbar}{2}\left(i-G\Sigma\right)
+\end{align*}
+
+% (c)
+\item Let us now additionally set $X=0$, $P=0$. Derive the equation of motion for $G$ and $\Sigma$ (known as ``squeezing parameters") in this approximation. To derive these equations you can use the following relation between the expectation values in a Gaussian state:
+$$\braket{px^3}=3\braket{px}\braket{x^2}$$
+Also remember $x^3p = (px^3)^\dag$. 
+\\ \\Setting $X=0$ and $P=0$, lets list our results for the expectation values:
+$$\braket{x} = 0$$
+$$\braket{x^2} = \frac{G}{2}$$
+$$\braket{p} = 0$$
+$$\braket{p^2} = \frac{\hbar^2}{2}\Sigma^2G$$
+$$\braket{xp} = \frac{\hbar}{2}\left(i-G\Sigma\right).$$
+
+Note that our first results will come into play here as
+$$\frac{d}{dt}\braket{O}=\frac{df(G,\Sigma)}{dt} = \braket{\frac{dO}{dt}}.$$
+Looking at the expectation values already calculated, the easiest one to start off with for $G$ would probably be 
+$$\braket{x^2} = \frac{G}{2}.$$
+Our equation of motion then becomes
+$$2\frac{d}{dt}\braket{x^2}= 2\braket{\frac{d(x^2)}{dt}}$$
+or
+$$\frac{dG}{dt} = \frac{2}{m}\braket{xp+px}.$$
+We note
+$$\braket{xp} +\braket{px} = \braket{xp}+\braket{(px)^\dag}^* = \braket{xp}+\braket{xp}^*,$$
+to arrive at
+\begin{align*}\frac{dG}{dt} &= \frac{2}{m}\left(\frac{\hbar}{2}(i-G\Sigma)+\frac{\hbar}{2}(-i-G\Sigma)\right)\\
+&= -\frac{2\hbar}{m}G\Sigma.
+\end{align*}
+Thus
+\begin{equation}\label{19}\frac{dG}{dt} = -\frac{2\hbar}{m}G\Sigma.\end{equation}
+Now for $\Sigma$ we shall start with 
+$$\frac{d}{dt}\braket{xp} = \frac{1}{i\hbar}\braket{[xp,H]}.$$
+To find $[xp,H]$ we use the following
+$$[xp,H] = -[H,xp] = -([H,x]p+x[H,p])$$
+where we can use
+$$[x,H] = i\hbar\frac{p}{m}$$
+$$[p,H] = i\hbar\left(-m\omega^2x-\frac{\lambda x}{6}\right).$$
+Therefore
+\begin{align*}[xp,H] &= -i\hbar\left[-\frac{p^2}{m}+x\left(m\omega^2x+\frac{\lambda x}{6}\right)\right]\\
+&=i\hbar\left(\frac{p^2}{m}-m\omega^2x^2-\frac{\lambda}{6}x^2\right).
+\end{align*}
+So now we have
+$$\frac{d}{dt}\braket{xp} = \frac{1}{m}\braket{p^2}-m\omega^2\braket{x^2}-\frac{\lambda}{6}\braket{x^2}.$$
+Substituting in our variables of interest
+$$\frac{d}{dt}\left(\frac{\hbar}{2}(i-G\Sigma)\right) =  \frac{1}{m}\braket{p^2}-m\omega^2\braket{x^2}-\frac{\lambda}{6}\braket{x^2}.$$
+$$\frac{\hbar}{2}\frac{d}{dt}(G\Sigma) =  -\frac{1}{m}\braket{p^2}+m\omega^2\braket{x^2}+\frac{\lambda}{6}\braket{x^2}.$$
+$$\frac{\hbar}{2}\left(G\frac{d\Sigma}{dt}+\Sigma\frac{dG}{dt}\right) =  -\frac{1}{m}\braket{p^2}+m\omega^2\braket{x^2}+\frac{\lambda}{6}\braket{x^2}$$
+$$\frac{\hbar}{2}\left(G\frac{d\Sigma}{dt}+\Sigma\frac{dG}{dt}\right) =-\frac{\hbar^2}{2m}(G\Sigma^2)+\frac{m\omega^2}{2}G+\frac{\lambda}{12}G$$
+\begin{equation}\label{20}G\frac{d\Sigma}{dt}+\Sigma\frac{dG}{dt} =-\frac{\hbar}{m}(G\Sigma^2)+\frac{m\omega^2}{\hbar}G+\frac{\lambda}{6\hbar}G.\end{equation}
+Using \eqref{19}, we can substitute $\frac{dG}{dt}$ into the LHS of \eqref{20} to yield
+$$G\frac{d\Sigma}{dt}-\frac{2\hbar}{m}G\Sigma^2 =-\frac{\hbar}{m}(G\Sigma^2)+\frac{m\omega^2}{\hbar}G+\frac{\lambda}{6\hbar}G.$$
+Cancel the $G$ to give
+$$\frac{d\Sigma}{dt}-\frac{2\hbar}{m}\Sigma^2 =-\frac{\hbar}{m}\Sigma^2+\frac{m\omega^2}{\hbar}+\frac{\lambda}{6\hbar}.$$
+$$\frac{d\Sigma}{dt}=\frac{\hbar}{m}\Sigma^2+\frac{m\omega^2}{\hbar}+\frac{\lambda}{6\hbar}.$$
+To solve this differential equation by separation, we will denote
+$$x \equiv \sqrt{\frac{\hbar}{m}}\Sigma$$
+$$a^2 \equiv \frac{m\omega^2}{\hbar}+\frac{\lambda}{6\hbar}$$
+which then gives us
+$$\sqrt{\frac{m}{\hbar}}\frac{dx}{dt} = x^2+a^2$$
+$$\sqrt{\frac{m}{\hbar}}\int{\frac{dx}{x^2+a^2}}=\int{dt}$$
+$$\sqrt{\frac{m}{\hbar}}\frac{1}{a^2}\int{\frac{dx}{x^2/a^2+1}}=\int{dt} .$$
+We recognize the solution is of the form $\tan^{-1}(x)$
+$$\sqrt{\frac{m}{\hbar}}\frac{1}{a}\tan^{-1}(\frac{x}{a}) = t + C$$
+or
+$$x(t) = a\tan\left(a\sqrt{\frac{\hbar}{m}}(t+C)\right).$$
+Making the appropriate substitutions,
+$$\Sigma(t) = \sqrt{\frac{6m^2\omega^2+m\lambda}{6\hbar^2}}\tan{\left[\sqrt{\omega^2+\frac{\lambda}{6m}}(t+C)\right]}.$$
+Maybe a more convenient form would be to keep $a$, giving us
+\begin{equation}\label{22}\Sigma(t) = \sqrt{\frac{m}{\hbar}}a\tan{\left[a\sqrt{\frac{\hbar}{m}}(t+C)\right]}.\end{equation}
+From \eqref{19} we have
+$$\frac{dG}{dt} = -\frac{2\hbar}{m}G\Sigma$$
+which we can rearrange to
+$$-\frac{m}{2\hbar}\int{\frac{dG}{G}} = \int{dt\ \Sigma(t)}$$
+or 
+$$-\frac{1}{2}\sqrt{\frac{m}{\hbar}}\int{\frac{dG}{G}} = a\int{dt\ \tan(b(t+C))}$$
+where 
+$$b \equiv a\sqrt{\frac{\hbar}{m}}.$$
+Solving this
+$$-\frac{1}{2}\sqrt{\frac{m}{\hbar}}\ln G = -\frac{1}{b}\ln\left[\cos(b(t+C))\right]+C'$$
+$$\ln G = \frac{2}{b}\sqrt{\frac{m}{\hbar}}\ln[\cos(b(t+C))]+C'$$
+$$G(t) = C'\cos[b(t+C))]^{\frac{2}{b}\sqrt{\frac{m}{\hbar}}}.$$
+Altogether we then have
+$$\Sigma(t) = \sqrt{\frac{m}{\hbar}}a\tan{\left[a\sqrt{\frac{\hbar}{m}}(t+C)\right]}$$
+$$G(t) = C'\cos\left[a\sqrt{\frac{\hbar}{m}}(t+C))\right]^{\frac{2m}{a\hbar}}$$
+where $$a^2\equiv\frac{m\omega^2}{\hbar}+\frac{\lambda}{6\hbar}.$$
+
+\end{enumerate}
+% #5 
+\item 2.3 Sakurai: An electron is subject to a uniform, time-independent magnetic field of strength $B$ in the positive $z$-direction. At $t=0$ the electron is known to be in an eigenstate of $\vect S\cdot\hat{\vect n}$ with positive eigenvalue $\hbar/2$, where $\hat{\vect n}$ is a unit vector, lying in the $xz$-plane, that makes an angle $\beta$ with the $z$-axis.
+\begin{enumerate}
+% (a)
+\item Obtain the probability for finding the electron in the $S_x =\hbar/2$ state as a function of time.
+\\ \\Some preliminaries:
+\begin{equation}\label{13}\ket{S_x\pm} = \frac{1}{\sqrt 2}\ket + \pm \frac{1}{\sqrt 2}\ket -\end{equation}
+$$H = -\frac{e}{m_ec}\vect S\cdot\vect B$$
+and our base kets are the eigenvectors of $S_z$, that is $\ket +$, $\ket -$. 
+For the problem at hand
+$$H = \omega Sz$$ where
+$$\omega = \frac{|e|B}{m_ec} .$$
+Also, we will need to use Sakurai 1.9 (\href{https://www3.nd.edu/~bjanko/p70007/qm1hw2answers.pdf}{here}) which expresses our initial state as
+\begin{equation}\label{12}\ket{\vect S\cdot\hat{\vect n}} = \cos\left(\frac{\beta}{2}\right)\ket + + \sin\left(\frac{\beta}{2}\right)\ket -.\end{equation}
+First, we construct the evolution of our system over time
+$$\ket{\vect S\cdot\hat{\vect n};t}=e^{-\frac{i}{\hbar}Ht}\ket{\vect S\cdot\hat{\vect n}}=e^{-\frac{i\omega}{\hbar}S_zt}\ket{\vect S\cdot\hat{\vect n}}.$$
+To find the probability of measuring state $\ket{S_x, +}$ as a function of time,
+\begin{align*}\braket{S_x,+|\vect S\cdot\hat{\vect n};t} &= \braket{S_x,+|e^{-\frac{i\omega}{\hbar}S_zt}|\vect S\cdot\hat{\vect n}}\\
+&=\sum_\pm{\braket{S_x,+|\pm}\braket{\pm|e^{-\frac{i\omega}{\hbar}S_zt|}\pm}\braket{\pm|\vect S\cdot\hat{\vect n}}}\\
+&=\sum_\pm{\braket{S_x,+|\pm}e^{\mp\frac{i\omega t}{2}}\braket{\pm|\vect S\cdot\hat{\vect n}}}
+\end{align*}
+Now implementing \eqref{13} and \eqref{12} we have
+$$\braket{S_x,+|\vect S\cdot\hat{\vect n};t} = \frac{\cos(\frac{\beta}{2})}{\sqrt 2}e^{-\frac{i\omega t}{2}}+\frac{\sin(\frac{\beta}{2})}{\sqrt 2}e^{\frac{i\omega t}{2}}.$$
+And thus
+\begin{align*}P_{s_x+}(t) &= |\braket{S_x,+|\vect S\cdot\hat{\vect n};t}|^2\\
+&=\frac{1}{2}\left[\cos^2(\beta/2)+\sin^2(\beta/2) + 2\cos(\beta/2)\sin(\beta/2)\cos(\omega t)\right]\\
+&= \frac{1}{2}[1 +\sin(\beta)\cos(\omega t)]
+\end{align*}
+where $\sin(2\theta) = 2\sin(\theta)\cos(\theta)$ was used.\\
+% (b)
+\item Find the expectation value of $S_x$ as a function of time.
+\\ \\Using
+\begin{align*}\braket{S_x(t)}&=\sum_\pm{\braket{\vect S\cdot\hat{\vect n};t|S_x,\pm}\braket{S_x,\pm|S_x|S_x,\pm}\braket{S_x,\pm|\vect S\cdot\hat{\vect n};t}}\\
+&= \frac{\hbar}{2}|\braket{\vect S\cdot\hat{\vect n};t|S_x,+}|^2-\frac{\hbar}{2}|\braket{\vect S\cdot\hat{\vect n};t|S_x,-}|^2,\end{align*}
+and $$|\braket{\vect S\cdot\hat{\vect n};t|S_x,-}|^2= 1-P_{s_x+}$$
+we arrive at 
+\begin{align*}\braket{S_x(t)} &= \frac{\hbar}{2}P_{s_x+}-\frac{\hbar}{2}(1-P_{s_x+})\\
+&=\frac{\hbar}{2}(2P_{s_x+}-1)\\
+&=\frac{\hbar}{2}\sin(\beta)\cos(\omega t)
+\end{align*}
+
+% (c)
+\item For your own peace of mind, show that your answers make good sense in the extreme cases (i) $\beta\to0$ and (ii) $\beta\to\pi/2$
+\\ \begin{align*}\beta\to0:&\quad \braket{S_x(t)}=0\\
+\beta\to\frac{\pi}{2}:&\quad\braket{S_x(t)} = \frac{\hbar}{2}\cos(\omega t)\end{align*}
+This result make sense since at $\beta = 0$ it stays in eigenket $\ket{+}$ and at $\beta = \pi/2$ it precesses in the $x$-$y$ plane. 
+\end{enumerate}
+% #6
+\item 2.16 Sakurai: Consider a function, known as the \textbf{correlation function}, defined by
+$$C(t) = \braket{x(t)x(0)},$$
+where $x(t)$ is the position operator in the Heisenberg picture. Evaluate the correlation function explicitly for the ground state of a one-dimensional simple harmonic oscillator. 
+\\ \\The Hamiltonian of the harmonic oscillator is given by
+$$H = \frac{p^2}{2m}+\frac{1}{2}m\omega^2x^2.$$
+In the Heisenberg picture, each of these operators is time dependent. In order to evaluate the correlation function
+\begin{equation}\label{14}
+C(t) = \braket{x(t)x(0)}
+\end{equation}
+we need to first find $x(t)$. This is given in the book, however, we will re-derive it here.
+To solve for the equation of motion, we will need to construct Hamiltonians equations of motion, akin to the procedure used in classical, but rather using Heisenbergs equation of motion:
+$$\frac{dx}{dt} = \frac{1}{i\hbar}[x,H] = \frac{1}{i2m\hbar}[x,p^2] = \frac{p}{m}$$
+$$\frac{dp}{dt} = \frac{m\omega^2}{i2\hbar}[p,x^2] = -m\omega^2x$$
+To get to solving these equations, lets take the derivative of both of them
+$$\frac{d^2x}{dt^2} = \frac{1}{m}\frac{dp}{dt} = -\omega^2 x$$
+$$\frac{d^2p}{dt^2} = -m\omega^2\frac{dx}{dt} = -\omega^2 p.$$
+Looks like some nice harmonic oscillator equations. Let's expand their solutions in terms of $\sin$ and $\cos$.
+\begin{equation}\label{15}x(t) = A\cos(\omega t)+B\sin(\omega t)\end{equation}
+\begin{equation}\label{16}p(t) = C\cos(\omega t)+D\sin(\omega t)\end{equation}
+We can find $x(0)$ by looking at $t=0$,
+$$x(0) = A$$
+$$p(0) = C.$$
+To solve for the other unknown constants, we can take the derivative of \eqref{15} and \eqref{16} and relate them the quantities found earlier,
+$$\frac{dx}{dt} = -x(0)\omega\sin(\omega t) +B\omega\cos(\omega t) = \frac{p}{m} = \frac{p(0)}{m}\cos(\omega t)+\frac{D}{m}\sin(\omega t)$$
+$$-x(0)\omega\sin(\omega t)+B\omega\cos(\omega t) = \frac{p(0)}{m}\cos(\omega t)+\frac{D}{m}\sin(\omega t).$$
+Equating the coefficients on both sides, we see that
+$$D = -m\omega x(0)$$
+$$B = \frac{p(0)}{m\omega}.$$
+So all together we have
+$$x(t) = x(0)\cos(\omega t)+\frac{p(0)}{m\omega}\sin(\omega t).$$
+Similarly, we could solve for $p(t)$ but that is not necessary for this problem. Now on to the correlation function of \eqref 14 we see that
+$$C(t) = \braket{x^2(0)\cos(\omega t)+\frac{p(0)x(0)}{m\omega}\sin(\omega t)}.$$
+Remember that at $t=0$ the operators in the Heisenberg picture coincide with the operators in the Schrodinger picture. Therefore, we can represent $C(t)$ as 
+\begin{align*}C(t) &= \cos(\omega t)\braket{x^2}+\frac{\sin(\omega t)}{m\omega}\braket{px}\\
+&=\frac{\hbar}{2m\omega}\cos(\omega t)\braket{0|(a+a^\dag)(a+a^\dag)|0}-\frac{i\hbar}{2m\omega}\sin(\omega t)\braket{0|(a-a^\dag)(a+a^\dag)|0}\\
+&=\frac{\hbar}{2m\omega}\cos(\omega t)\braket{0|aa^\dag|0}-\frac{i\hbar}{2m\omega}\sin(\omega t)\braket{0|aa^\dag|0}\\
+&=\frac{\hbar}{2m\omega}\cos(\omega t)\braket{0|0}-\frac{i\hbar}{2m\omega}\sin(\omega t)\braket{0|0}\\
+&=\frac{\hbar}{2m\omega}(\cos(\omega t)-i\sin(\omega t))\\
+&=\frac{\hbar}{2m\omega}e^{-i\omega t}.
+\end{align*}
+Therefore we end with the nice result that
+$$C(t) = \frac{\hbar}{2m\omega}e^{-i\omega t}$$
+\end{enumerate}
+
+\end{document}

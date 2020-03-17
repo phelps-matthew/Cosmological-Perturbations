@@ -1,0 +1,300 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 8\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Nov. 2}
+
+\begin{document}
+\maketitle
+
+\benum
+% 8.1 ----------------------------------------------------------------------------------------------------------------------
+  	\item[\textbf{8.1}]
+	Find the chemical potential $\mu = \mu(n,T)$ and the entropy $S=Ns(n,T)$ of an ideal
+	Fermi gas in the limit of a classical ideal gas (density $n\to 0$ and/or $T\to \infty$). There are
+	situations in which the absolute value of entropy matters; this is one way getting it right.
+	\emph{Hint: use the explicit form for $\mu$ if $z=z_0=n\lambda_{dB}^3\ll 1$ and keep only
+	the largest order for $\mu$. Then calculate the form of $S$ via $U-TS+pV = G=\mu N$.} 
+	\\
+	\\
+	For a Fermi gas the particle density is
+	\[
+		n = \frac{g}{\lambda^3}f_{3/2}(z)
+	\]
+	with
+	\[
+		z = 	e^{\beta\mu}.
+	\]
+	The density can be arranged and expanded as
+	\[
+		\frac{n\lambda^3}{g} \equiv z_0 =  f_{3/2}(z) = z- \frac{z^2}{2\sqrt 2}+\frac{z^3}{3\sqrt 3}+...
+	\]
+	We can invert the power series and instead express $z$ in term of $z_0$
+	\[
+		z = z_0+\frac{1}{2\sqrt 2}z_0^2+\frac{9-4\sqrt 3}{36}z_0^3+....
+	\]
+	In this form I think it is easier to see that for $z_0\ll 1$
+	\[
+		z\simeq z_0.
+	\]
+	Thus in the classical limit
+	\[
+		\mu = kT\ln\plr{\frac{n\lambda^3}{g}}.
+	\]
+	In much the same way, the energy may be calculated as
+	\[
+		U = \frac{3}{2}kTN\blr{1+\frac{1}{4\sqrt 2}z_0+...}
+	\]
+	with the classical limit of the energy being just the first term.
+	\\
+	\\
+	From thermodynamics we know
+	\[
+		U = TS-pV+N\mu 
+	\]
+	so
+	\ba
+		s &= \frac{1}{T}\plr{\frac{U}{N}+\frac{p}{n}-\mu}\\
+		& = k\blr{\frac{3}{2}-\ln\plr{\frac{n\lambda^3}{g}}}+\frac{p}{nT}
+	\ea
+	\[
+		S = Ns(n,T) = N k\blr{\frac{3}{2}-\ln\plr{\frac{n\lambda^3}{g}}}+\frac{pV}{T}
+	\]
+	\\
+% 8.2 -----------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{8.2}]
+	For an isotropic 3D harmonic oscillator with angular frequency $\omega$ the energy levels are
+	characterized by a triplet of non-negative integers $\vect n = (n_1,n_2,n_3)$, the energy
+	being $\epsilon_n = \h\omega\plr{n_1+n_2+n_3+\frac{3}{2}}$. In this problem we always assume
+	that the harmonic oscillator quantum $\h\omega$ is the smallest energy scale in the problem,
+	so that the integers $n_i$ are large and anything that depends on these integers varies little
+	with $n_i\to n_i+1$.
+	\benum
+		% (a)
+		\item
+		Argue that in this case the continuum approximation reads
+		\[
+			\sum_{\vect n} f(\vect n) \to \int d^3n\ f(\vect n)
+		\]
+		where the integral runs over the first octant (all Cartesian coordinates positive) of the 
+		3D space.
+		\\
+		\\
+		The distance between the neighboring quantized points is just $1$, so our lattice constant
+		would be $(1)^3$. At large $n_i$ variation between $(n_i+1)-n_i\approx dn_i$ is infinitesimal and 
+		the lattice becomes infinitely dense. This should justify our use of
+		going from 
+		\[
+			\sum_{\vect n} f(\vect n) \to \int d^3n\ f(\vect n).
+		\]
+		\\
+		% (b)
+		\item
+		Now some geometry: Show the volume in the first octant between the planes
+		$x+y+z = k$ and $x+y+z =k+dk\quad (k>0)$ equals $dV = \frac{1}{2}k^2dk$.
+		\\
+		\\
+		The plane in the first octant makes a triangle with sides all equal to $\sqrt 2k$. The area of 
+		this plane is
+		\[
+			A = \frac{\sqrt 3}{2}k^2.
+		\]
+		The center of the plane is located by the normal vector with equal components
+		\[
+			\vect n = \plr{\frac{k}{3},\frac{k}{3},\frac{k}{3}}
+		\]
+		with magnitude $n = \frac{k}{\sqrt 3}$. Hence
+		\[
+			dn = \frac{1}{\sqrt 3}dk
+		\]
+		Now the volume can be formulated by
+		\[
+			dV = A\,dn = \frac{\sqrt 3}{2}k^2\plr{\frac{1}{\sqrt 3}dk}.
+		\]
+		Thus 
+		\[
+			dV = \frac{1}{2}k^2dk
+		\]
+		\\
+		% (c)
+		\item
+		As usual, the density of energy eigenstates $D(\epsilon)$ is defined as the function of 
+		energy $\epsilon$ such that for an arbitrary function of energy $g(\epsilon)$ we have
+		\[
+			\sum_i g(\epsilon_i) = \int_0^\infty d\epsilon\ D(\epsilon)g(\epsilon).
+		\]
+		Show that for the 3D harmonic oscillator the energy density, in fact, is 
+		\[
+			D(\epsilon) = \frac{\epsilon^2}{2(\h\omega)^3}
+		\]
+		\\
+		\\
+		We can reformulate the equation of a plane as
+		\[
+			\frac{\epsilon}{\h\omega} = \plr{n_1+\frac{1}{2}}
+			+\plr{n_2+\frac{1}{2}}
+			+\plr{n_3+\frac{1}{2}}
+		\]
+		However, we know that for $n_i$ large, we have $\plr{n_i+\frac{1}{2}}\approx n_i$
+		so
+		\[
+			\frac{\epsilon}{\h\omega} = n_1+n_2+n_3.
+		\]
+		We proceed as in part (b) with $k = \frac{\epsilon}{\h\omega}$ and 
+		$dk = \frac{d\epsilon}{\h\omega}$. 
+		\[
+			d^3n = \frac{1}{2}\pfrac{\epsilon}{\h\omega}^2 \frac{d\epsilon}{\h\omega}
+		\]
+		Thus
+		\[
+			D(\epsilon) = \frac{\epsilon^2}{2(\h\omega)^3}
+		\] 
+		\\
+		\eenum
+% 8.3 ------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{8.3}]
+	The sum-to-integral conversion from the last problem is obviously better the more states
+	are involved in the sum. Suppose now that $D(\epsilon)\propto \epsilon^\alpha$ as
+	$\epsilon\to 0$.
+	
+	\benum
+		\item
+            	% (a)
+            	Argue that noninteracting bosons are liable to condense in a system only if the density
+            	of states is characterized by an exponent $\alpha > 0$.
+            	\\
+		\\
+		If the energy density goes as $1/\epsilon^\alpha$ for $\alpha > 0$, then as we approach the 
+		ground state energy, the occupation number exponentially increases. This would even suggest 
+		that at zero energy, we have an infinite number of states. This is clearly inconsistent, would 
+		not allow us to separate the ground state occupation number from the rest of the integral
+		term and would overshadow the effect when the fugacity approaches $z=1$.\\ \\ For the
+		case that $\alpha = 0$, this suggests the density of states is constant, e.g. all
+		equal occupation numbers and hence no condensate. 
+		\\
+		\\
+            	\item
+            	% (b)
+            	Show that for a free massive particle in $D$ dimensions, $\alpha = (D-2)/2$ holds true.
+            	\\
+		\\
+		For a free massive particle in $D$ dimensions, the energy is
+		\[
+			\epsilon_k = \frac{\h^2(\vect k\cdot\vect k)}{2m} = \frac{\h^2}{2m}\sum_i^D q_i^2
+		\]
+		with
+		\[
+			\vect k = \frac{2\pi}{L}\sum_i^D q_i\vecth e_i
+		\]
+		We also may express
+		\[
+			\sum_i g(\epsilon_i) = \sum_{\vect k} g(e_\vect k) \to \frac{L^D}{(2\pi)^D} \int d^Dk\ 
+			g(\epsilon_{\vect k})
+		\]
+		The volume element in $D$ dimensions can be given in hyper-spherical coordinates as
+		\[
+			d^Dk = k^{D-1}dk\, d\Omega_{D-1}
+		\]
+		Integrating out the spherical dependence leave us with something like
+		\[
+			 ~ \int dk\ k^{D-1} g(\epsilon_{\vect k})
+		\]
+		Now we may use
+		\[
+			d\epsilon \sim k dk\quad\to\quad k^n\, dk \sim \epsilon^{(n-1)/2}\,d\epsilon
+		\]
+		so that 
+		\[
+			\int dk\ k^{D-1} g(\epsilon_{\vect k}) \sim \int d\epsilon\,
+			\epsilon^{(D-2)/2} g(\epsilon).
+		\]
+		Thus $\alpha = (D-2)/2$ holds true. \\
+		
+            	\item
+            	% (c)
+            	The density of states is related to the number of energy eigenstates with energy less than
+            	or equal to $\epsilon$, $N(\epsilon)$, by $D(\epsilon) = \frac{dN(\epsilon)}{d\epsilon}$.
+            	On the basis of this observation, argue that for massive particles in a harmonic-oscillator in 
+            	$D$ dimensions the exponent is $\alpha = D-1$.
+            	\\
+		\\
+		The number of energy eigenstates is proportional to the energy volume under the shell of 
+		energy less than $\epsilon$. Thus
+		\[
+			N \sim \epsilon^D \quad\to\quad D(\epsilon) = \frac{dN}{d\epsilon} \sim \epsilon^{D-1}
+		\]
+		\\
+            	\item
+            	% (d)
+            	Do you have Bose-Einstein condensation in $D=1,2,3$ dimensions if the particles are free? 
+		What if they are trapped in a harmonic potential well?
+		\\
+		\\
+		According to answer (b), if $D=1,2$ then $\alpha = 0,-1/2$. Thus according to answer
+		(a) which states $\alpha > 0$, we cannot have a Bose-Einstein condensate in two 
+		or three dimensions. 
+		\\
+		\\
+		If the particles are trapped in a harmonic potential, the ground state will never have zero
+		energy, and thus we will never have an infinite nor negative ground state occupation number.
+		\\
+	\eenum
+	
+% 8.4 -------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{8.4}]
+		For the extremely relativistic ideal Fermi gas, one may write the dispersion relation 
+		$\epsilon_k = \h c|\vect k|$. Find the Fermi energy, pressure, and average energy 
+		per particle at zero temperature. 
+		\\
+		\\
+		At zero temperature $\beta \to \infty$ and so the occupation number becomes
+		\[
+			\braket{n_i} = \theta(\mu-\epsilon_i).
+		\]
+		First we calculate the particle number as
+		\ba
+			N &= \frac{Vg}{((2\pi)^3}\int d^3k\ \theta(\mu-\epsilon_k) = \frac{Vg}{(2\pi)^3}
+			\int_{\epsilon<\mu} d^3k \\
+			& = \frac{Vg}{(2\pi)^3}\frac{4}{3\pi}k^3.
+		\ea
+		For these relativistic Fermions, the radius $k$ is
+		\[	
+			k = \frac{\mu}{\h c} 
+		\]
+		so $N$ becomes 
+		\[
+			N = \frac{Vg}{6\pi^2}\pfrac{\mu}{\h c}^3.
+		\]
+		Solving for $\mu$
+		\[
+			\mu = \h c k_F = \h c\pfrac{6\pi^2n}{g}^{1/3}
+		\]
+		So we have found
+		\[
+			\epsilon_f = \h c\pfrac{6\pi^2n}{g}^{1/3}.
+		\]
+		For the average energy per particle
+		\ba
+			\frac{\braket{E}}{\braket N} &= \frac{\int_{k<k_F} dk\ k^2 \epsilon_k}
+			{\int_{k<k_F} dk\ k^2} 
+			= \frac{\h c\int_{0}^{k_F} dk\ k^3 \epsilon_k}
+			{\int_{0}^{k_F} dk\ k^2} = \frac{3}{4}\h c k_F = \frac{3}{4}\epsilon_F.
+		\ea
+		We can use $\braket E/\braket N$ and $N$ to find the average energy 
+		(could have just directly integrated it as well)
+		\[
+			\braket{E} = \frac{Vg}{8\pi^2}\frac{\epsilon_F^4}{(\h c)^3}.
+		\]
+		The change in energy with respect to volume leads to the work done in expansion
+		or contraction of the gas. Thus
+		\[
+			dE = dW = \frac{g}{8\pi^2}\frac{\epsilon_F^4}{(\h c)^3}dV = pdV.
+		\]
+		Hence the Fermi pressure should be
+		\[
+			p_F = \frac{g}{8\pi^2}\frac{\epsilon_F^4}{(\h c)^3}.
+		\]
+		
+\eenum
+\end{document}

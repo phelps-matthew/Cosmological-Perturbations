@@ -1,0 +1,315 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[top=1in,textheight=9in]{geometry}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+\newcommand{\h}{\hbar}
+\newcommand{\epo}{\epsilon_0}
+% Hyperbolic function for the last question. Surprisingly its not included in math package
+\DeclareMathOperator{\sech}{sech}
+\allowdisplaybreaks
+
+\title{\begin{spacing}{1.2}Electrodynamics I\\HW 3\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: March 10}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item
+% 1
+A disc of radius $R$ carries an electric double layer of the dipole density $D$ ($D=const$). Determine the potential $\phi$ and the electric field $\vect E$ along the axis of symmetry perpendicular to the disc plane.
+\\ \\For a dipole layer, the potential of a dipole surface can calculated as the integral of the dipole moment $D$ and the solid angle $\Omega$ subtended at the observation point by the surface (Jackson 1.26)
+$$\Phi(\vect r) = -\frac{1}{4\pi\epo}\int_S{d\Omega\ D(\vect r')}.$$
+Here our point lies on the ``inside" of the surface where the direction of points away from position vector of our observation source. We also recall the solid angle is defined by the projection of a surface onto the unit sphere centered at the observation point
+$$\Omega = \int_S{d\phi\ d\theta \sin\theta}.$$
+If we place the disk at the origin oriented perpendicular to the $z$-axis then for $z<0$ we have
+\begin{align*}\Phi(\vect r) &= -\frac{D}{4\pi\epo}\int_S{d\Omega}\\
+&= -\frac{D}{4\pi\epo}\int\limits_0^{2\pi} \int\limits_0^{\theta}d\theta'\,d\phi\,\sin\theta'\\
+&= -\frac{2\pi D}{4\pi\epo}(-\cos\theta')|_0^{\theta}\\
+&=  -\frac{2\pi D}{4\pi\epo}(1+\cos\theta).
+\end{align*}
+For an observation point $z$, we can see that for our disk we have
+$$\cos\theta = \frac{z}{(z^2+R^2)^{1/2}}.$$
+For $z>0$, the sign of $D$ simply changes as we view the other side of the dipole surface layer. Putting all this together we have our potential as
+$$\Phi(\vect z) =\begin{cases}\displaystyle-\frac{2\pi D}{4\pi\epo}\left(1+\frac{z}{(z^2+R^2)^{1/2}}\right)\vecth z&\quad\text{for}\quad z< 0\\\\\displaystyle
+\frac{2\pi D}{4\pi\epo}\left(1+\frac{z}{(z^2+R^2)^{1/2}}\right)\vecth z&\quad\text{for}\quad z> 0
+\end{cases}$$
+As our observation point becomes infinitesimally close to any dipole layer, the solid angle of the surface is half of the unit sphere, $\Omega = 2\pi$ and therefore as we approach a surface (placed at the origin and perpendicular to the $z$-axis) from $z<0$, our potential is 
+$$\Phi_- = -\frac{1}{4\pi\epo}(2\pi)D$$
+while the potential from $z>0$ is 
+$$\Phi_+ = \frac{1}{4\pi\epo}(2\pi)D$$
+and thus our potential undergoes a discontinuity of ($z>0\to z<0$)
+$$\Phi_+-\Phi_- = \frac{D}{\epo}.$$
+If we look at our potential of the disk that we found and take the limit
+$$\lim_{z\to0}\Phi(\vect z) =\begin{cases}\displaystyle-\frac{2\pi D}{4\pi\epo}\vecth z&\quad\text{for}\quad z< 0\\\\\displaystyle
+\frac{2\pi D}{4\pi\epo}\vecth z&\quad\text{for}\quad z> 0
+\end{cases}$$
+we see the same discontinuity
+$$\Phi_+-\Phi_- = \frac{D}{\epo}$$
+which is what we expect. 
+
+\item
+% 2
+A capacitor consists of two cylindrical conducting surfaces with radii $R_1$ and $R_2\ (R_2 > R_1)$. The distance between the axes is $a\le R_2-R_1$. Find the capacitance $C$ of the system. 
+\\ \\When the two cylinders are off axis, one would suspect the eccentricity would significantly affect the answer/approach to this problem. But I believe the answer remains the same as the if there were no off-axis eccentricity at all. We can start by finding the electric field due to the inner cylinder. Using Gauss's law, and placing $+q$ on the inner cylinder we have (assuming $l\gg R_1$)
+$$\oint{\vect E\cdot d\vect S} = \frac{q}{\epo}$$
+$$E(2\pi rl) = \frac{q}{\epo}$$
+$$\vect E = \frac{1}{2\pi\epo}\frac{q}{r}\vecth r.$$
+For two cylinders along the same axis, our usual procedure would entail finding the potential between the shells by
+\begin{equation}\label{1}\Phi_{R_1}-\Phi_{R_2}= -\int_{R_2}^{R_1}{\vect E\cdot d\vect l}=\frac{q}{2\pi\epo} \int_{R_1}^{R_2}{dr\,\frac{1}{r}}=\frac{1}{2\pi\epo}\frac{q}{l}\ln{\left(\frac{R_2}{R_1}\right)}.\end{equation}
+However, if we were to use \eqref 1 for the eccentric cylinders, we would get different potentials depending on what finite path we integrated on! Since we know that the two cylinders \emph{must} be at a single potential, the only explanation is that the electric field must vary such that the integral of $\vect E\cdot d\vect l$ remains the same across any path from one cylindrical surface to other. Presumably, this happens because the distribution of charge is not uniform on either cylinder - it reorients itself to an equilibrium position such that \eqref 1 still holds. We expect the charge of the outer cylinder to induce a non-uniform distribution on the inner cylinder and vice versa. The distribution will be such that our problem can be equivalently cast into the situation where both cylinders lie on the same axis. Therefore, using \eqref 1 to find the capacitance we arrive at
+$$C = \frac{2\pi l\epo}{\ln\left(\frac{b}{a}\right)}$$
+\item
+% 3
+Find the potential $\phi$ at large distances $r\ (r\gg a)$ for the following systems of charges:
+\begin{enumerate}[label=\Roman*.]
+\item
+Potential charges, $q$, $-2q$, and $q$ lying along the $z$-axis at the distance $a$ from each other (linear quadrupole).
+\item 
+Point charges $\pm q$ at the corners of a square, arranged so that neighboring changes have opposite signs. A square side is $a$. A charge $+q$ is placed in the coordinate origin and sides of the square are parallel to the $x$- and $y$-axes (planar quadrupole).
+\\ \\ To find the potential at large distances, we will use the multipole expansion for each configuration. Since we are seeking to find the potential for $r\gg a$, we will expand the potential in spherical coordinates  whereafter we can assess the limit as $r$ becomes large. 
+% II
+\\ \\ I. For the first configuration, the locations of the charges in polar coordinates are as follows:
+$$r_{q_1+} = (a,0);\quad r_{q_2-} = (0,0);\quad r_{q_3+} = (-a,0)$$
+First we would like to express our charge distribution in terms of a single function. To see what factors we will need, we integrate over the charge density of a single charge located at $\vect r_0 = (r_0,\theta_0,\phi_0)$ in spherical coordinates,
+$$q = \int{d^3r\, \rho(\vect r)} = \int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty \rho(\vect r)r^{2}\sin\theta\,dr\,d\theta\,d\phi.$$
+If we use a density such that
+$$\rho(\vect r) = \frac{q}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)$$ 
+we observe that
+$$q=\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty \frac{q}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)r^{2}\sin\theta\,dr\,d\theta\,d\phi.$$
+Note that when the charge density contains a certain symmetry, we do not specify a delta-function as such an action would not be unique. Take for example the point charge located at $\vect r(r,\theta) = (a,0)$ which contains azimuthal symmetry. If we were to represent the charge density of this point charge as
+$$\rho(\vect r) = \frac{q}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)$$
+then
+$$\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty F(\phi)\frac{q}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)r^{2}\sin\theta\,dr\,d\theta\,d\phi=qF(\phi_0).$$
+When integrating over charge density, $F(\phi)$ can then be completely arbitrary which we know should not be the case. Instead, $F(\phi)$ should be integrated over its full range as this would be the only unique specification and thus we do not include the delta-function for a potential with a certain symmetry. As a consequence, we must include a term in our charge density to account for the full integration. Perhaps an even better explanation is that a point particle is the limit of a sphere. For a sphere located at the origin, as we take the appropriate limit, we would expect the azimuthal symmetry to remain.\\ \\
+Accordingly, we can express our charge distribution as 
+\begin{align*}\rho(r,\theta,\phi)  = &\frac{q}{2\pi r^2\sin\theta}\delta(r-a)\delta(\theta)\\
+&+\frac{q}{2\pi r^2\sin\theta}\delta(r+a)\delta(\theta)\\
+&-\frac{2q}{4\pi r^2}\delta(r)\end{align*}
+and with simplification
+\begin{align}\label{6}\rho(r,\theta,\phi) =&\frac{q}{2\pi r^2\sin\theta}\delta(\theta)[\delta(r-a)+\delta(r+a)]-\frac{2q}{4\pi r^2}\delta(r).\end{align}
+It is interesting to note that if we have $\delta(\theta_0)$ we must include $\sin\theta$ into our density. Otherwise, our integral would always be zero. But for $\theta\ne 0$, we can simply divide the numerical factor of $\sin(\theta)$ \emph{evaluated} at $\theta_0$. 
+\\ \\With the charge density in hand, the proceed to find the potential. It is important to note that the reciprocal of the difference between any two vectors can be expressed as the following expansion
+$$\frac{1}{|\vect r-\vect r'|} = \sum_{l=0}^\infty{\frac{r^l_<}{r^{l+1}_>}P_l(\cos\gamma)}$$
+where $\gamma$ is the angle between vectors,$r^l_>$ and $r^l_<$ denote the magnitude of the larger and smaller vector respectively, and $P_l(\cos\gamma)$ are the Legendre polynomials. Such an expansion is particularly useful for an expression characterized by the angle between vectors. However, this type of expansion is not always desired, especially for use in integration. By using the addition theorem for spherical harmonics, namely
+$$P_l(\cos\gamma) = \frac{4\pi}{2l+1}\sum_{m=-l}^{l}{Y_{lm}^*(\theta',\phi')Y_{lm}(\theta,\phi)}$$
+we can express the vector difference in terms of spherical coordinates as
+$$\frac{1}{|\vect r-\vect r'|} = 4\pi\sum_{l=0}^\infty\sum_{m=-l}^{l}{\frac{1}{2l+1}\frac{r^l_<}{r^{l+1}_>}Y_{lm}^*(\theta',\phi')Y_{lm}(\theta,\phi)}.$$
+With this result we can now express our potential
+$$\Phi(\vect r) = \frac{1}{4\pi\epo}\int{d^3r'\,\frac{\rho(\vect r')}{|\vect r-\vect r'|}}$$
+as an expansion of spherical harmonics
+\begin{equation}\label{2}\Phi(\vect r)  = \frac{1}{\epo}\sum_{l=0}^\infty\sum_{m=-l}^{l}{\frac{1}{2l+1}q_{lm}\frac{Y_{lm}(\theta,\phi)}{r^{l+1}}}\end{equation}
+where
+\begin{equation}\label{3}q_{lm} = \int_{\partial V}{d^3r'\,Y^*_{lm}(\theta',\phi')r^{'l}\rho(\vect r')}.\end{equation}
+Note that we have used $r_< = r'$ and $r_>=r$ which means our equation is valid for the potential \emph{outside} the volume $V$ of the charge distribution. If we instead desired to find the potential \emph{inside} the charge distribution, then $r'>r$ and we would have
+\begin{equation}\label{4}\Phi(\vect r)  = \frac{1}{\epo}\sum_{l=0}^\infty\sum_{m=-l}^{l}{\frac{1}{2l+1}q_{lm}Y_{lm}(\theta,\phi)r^{l}}\end{equation}
+where
+\begin{equation}q_{lm}\label{5} = \int_{\partial V}{d^3r'\,\frac{Y^*_{lm}(\theta',\phi')}{r'^{(l+1)}}\rho(\vect r')}.\end{equation}
+For our problem, of course, we desire the potential far outside our charge distribution so we will use \eqref 2 and \eqref 3. The coefficients $q_{lm}$ that characterize our potential  are called the multipole moments. We shall attempt to find the relationship for the multipole moments. 
+\\ \\
+Substituting our density \eqref 6 into \eqref 3 we have
+\begin{align*}q_{lm} =& \int{d^3r'\,Y^*_{lm}(\theta',\phi')\frac{q}{2\pi r'^2\sin\theta'}\delta(\theta')[\delta(r'-a)+\delta(r'+a)]}\\
+&-\int{d^3r'\,Y^*_{lm}(\theta',\phi')\frac{2q}{4\pi r'^2}\delta(r')}\\
+=& \frac{q}{2\pi}\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty dr'\,d\theta'\,d\phi'\,\delta(\theta')\delta(r'-a)r'^lY^*_{lm}(\theta',\phi')\\
+&+ \frac{q}{2\pi}\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty dr'\,d\theta'\,d\phi'\,\delta(\theta')\delta(r'+a)r'^lY^*_{lm}(\theta',\phi')\\
+&-\frac{2q}{4\pi}\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty dr'\,d\theta'\,d\phi'\,\delta(r')r'^lY^*_{lm}(\theta',\phi')\sin\theta'\\
+=& \frac{q}{2\pi}a^l\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,\delta(\theta')Y^*_{lm}(\theta',\phi')\\
+&+ \frac{q}{2\pi}(-a)^l\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,\delta(\theta')Y^*_{lm}(\theta',\phi')\\
+&-\frac{2q}{4\pi}\delta_{l,0}\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,Y^*_{lm}(\theta',\phi')\sin\theta'
+\end{align*}
+We can see that last integral vanishes for all $l\ne0$. At this point, we can expand the spherical coordinates in terms of the Legendre polynomials to analyze the $\phi$ dependence using
+$$Y_{lm}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_l^m(\cos\theta)e^{im\phi} .$$
+In using this substitution, we will denote
+$$b \equiv  \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}$$
+in which we can express $q_{lm}$ as 
+\begin{align*}q_{lm}=&\frac{q}{2\pi}b(a^l+(-a)^l)\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,\delta(\theta')P^m_{l}(\cos\theta')e^{-im\phi'}\\
+&-\frac{2q}{4\pi}b\delta_{l,0}\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,P^m_{l}(\cos\theta')e^{-im\phi'}\sin\theta'\\
+=&\frac{q}{2\pi}b(a^l+(-a)^l)P_l^m(1)\left.\left[\frac{e^{-im\phi'}}{-im}\right]\right|_0^{2\pi}\\
+&-\frac{2q}{4\pi}b\delta_{l,0}\int\limits_0^{2\pi}d\theta'\,P_l^m(\cos\theta')\sin\theta'\left.\left[\frac{e^{-im\phi'}}{-im}\right]\right|_0^{2\pi}\\
+=&qb(a^l+(-a)^l)P_l(1)\delta_{m,0}\\
+&-\frac{4q}{2}\sqrt{\frac{1}{4\pi}}\delta_{l,0}\delta_{m,0}.
+\end{align*}
+Note that from the azimuthal symmetry we have $\delta_{m,0}$ which is exactly as it should be. In addition, only the even terms survive from the first integral and only the $l=0$ term is present from the charge at the origin. Lets first calculate the monopole term, which we expect to be zero.
+$$q_{00} = 2q\sqrt{\frac{1}{4\pi}}-2q\sqrt{\frac{1}{4\pi}} = 0.$$
+For the higher even moments we find 
+$$q_{lm} = 2q\sqrt{\frac{2l+1}{4\pi}}2a^lP_l(1)\delta_{m,0}=\sqrt{\frac{2l+1}{\pi}}qa^l.$$
+ Now we can express all the mutlipole moments as
+$$q_{lm} = \begin{cases}\displaystyle \sqrt{\frac{2l+1}{\pi}}qa^l&\quad\text{for}\quad l =2,4,6,..;\ m=0\\0&\quad\text{otherwise}\end{cases}$$
+To find the potential, we use \eqref 2 
+\begin{align*}\Phi(\vect r)  =& \frac{1}{\epo}\sum_{l=0}^\infty\sum_{m=-l}^{l}{\frac{1}{2l+1}q_{lm}\frac{Y_{lm}(\theta,\phi)}{r^{l+1}}}\\
+=&\frac{1}{\epo}\sum_{l=0}^\infty{\frac{1}{2l+1}q_{l0}\frac{Y_{l0}(\theta,\phi)}{r^{l+1}}}\\
+=&\frac{1}{\epo}\sum_{l=2,4,6}^\infty{\frac{1}{\sqrt{\pi(2l+1)}}qa^l\frac{Y_{l0}(\theta,\phi)}{r^{l+1}}}\\
+=&\frac{1}{\epo}\sum_{l=2,4,6}^\infty{\frac{1}{\sqrt{\pi(2l+1)}}\sqrt{\frac{2l+1}{4\pi}}P_l(\cos\theta)qa^l\frac{1}{r^{l+1}}}\\
+=&\frac{1}{\epo}\sum_{l=2,4,6}^\infty{\frac{qa^l}{2\pi}\frac{1}{r^{l+1}}P_l(\cos\theta)}.
+\end{align*}
+Using the first few moments as an approximation to our potential we have
+$$\Phi(\vect r)\approxeq\frac{q}{2\pi\epo}\left[\frac{a^2}{r^3}P_2(\cos\theta)+\frac{a^4}{r^5}P_4(\cos\theta)+\frac{a^6}{r^7}P_6(\cos\theta)+...\right].$$
+For $r\gg a$ the higher order terms quickly approach zero. Therefore, the first non-vanishing approximation to our potential would be given as
+$$\Phi(\vect r) \approx \frac{q}{4\pi\epo}\frac{a^2}{r^3}(3\cos^2\theta-1).$$
+\\- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\\II. For the second configuration, the locations of the charges are as follows:
+$$r_{q_1+} = (0,0,0);\quad r_{q_2-} = (a,\frac{\pi}{2},0);\quad r_{q_3+} = (\sqrt 2 a, \frac{\pi}{2},\frac{\pi}{4});\quad r_{q_4-} = (a,\frac{\pi}{2},\frac{\pi}{2}).$$
+We can express the charge density as
+\begin{align*}\rho(r,\theta,\phi)  = &\quad \frac{q}{4\pi r^2}\delta(r)\\
+&-\frac{q}{r^2\sin\theta}\delta(r-a)\delta(\theta - \frac{\pi}{2})\delta(\phi)\\
+&+\frac{q}{r^2\sin\theta}\delta(r-\sqrt 2 a)\delta(\theta - \frac{\pi}{2})\delta(\phi-\frac{\pi}{4})\\
+&-\frac{q}{r^2\sin\theta}\delta(r-a)\delta(\theta - \frac{\pi}{2})\delta(\phi-\frac{\pi}{2})\end{align*}
+and with simplification
+\begin{align*}\rho(r,\theta,\phi) =&\quad \frac{q}{4\pi r^2}\delta(r)+\frac{q}{r^2\sin\theta}\delta(\theta-\frac{\pi}{2})[-\delta(r-a)\delta(\phi)\\
+&+\delta(r-\sqrt 2 a)\delta(\phi-\frac{\pi}{4})-\delta(r-a)\delta(\phi-\frac{\pi}{2})].\end{align*}
+Substituting this into we then have for the multipole moments:
+\begin{align*}q_{lm} =& \int{d^3r'\,Y^*_{lm}(\theta',\phi')\{\frac{q}{4\pi r^2}\delta(r)+\frac{q}{r^2\sin\theta}\delta(\theta-\frac{\pi}{2})[-\delta(r-a)\delta(\phi)}\\&+ \delta(r-\sqrt 2 a)\delta(\phi-\frac{\pi}{4})-\delta(r-a)\delta(\phi-\frac{\pi}{2})]\}\\
+=&\frac{q}{4\pi}\delta_{l,0}\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,Y^*_{lm}(\theta',\phi')\\
+&-qa^l\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,\delta(\theta-\frac{\pi}{2})\delta(\phi)Y^*_{lm}(\theta',\phi')\\
+&+q(\sqrt 2 a)^l\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,\delta(\theta-\frac{\pi}{2})\delta(\phi-\frac{\pi}{4})Y^*_{lm}(\theta',\phi')\\
+&-qa^l\int\limits_0^{2\pi}\int\limits_0^\pi d\theta'\,d\phi'\,\delta(\theta-\frac{\pi}{2})\delta(\phi-\frac{\pi}{2})Y^*_{lm}(\theta',\phi').
+\end{align*}
+We can see that first separated integral vanishes for all $l\ne0$. Once again, we can expand the spherical coordinates in terms of the Legendre polynomials to analyze the $\phi$ dependence using
+$$Y_{lm}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_l^m(\cos\theta)e^{im\phi} $$
+and where once again
+$$b\equiv \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}.$$
+Making this substitution into our integral we find
+\begin{align*}q_{lm}=& \ qb\delta_{l,0}\delta_{m,0}P_l^m(0)\\
+&-qba^lP_l^m(0)\int\limits_0^{2\pi}d\phi'\,\delta(\phi)e^{-im\phi'}\\
+&+qb(\sqrt 2a)^lP_l^m(0)\int\limits_0^{2\pi}d\phi'\,\delta(\phi-\frac{\pi}{4})e^{-im\phi'}\\
+&-qba^lP_l^m(0)\int\limits_0^{2\pi}d\phi'\,\delta(\phi-\frac{\pi}{2})e^{-im\phi'}\\
+\end{align*}
+\begin{align*}q_{lm}&= q\frac{1}{\sqrt{4\pi}}\delta_{l,0}\delta_{m,0}-qba^lP_l^m(0)+qb(\sqrt 2a)^lP_l^m(0)e^{-im\frac{\pi}{4}}-qba^lP_l^m(0)(-1)^mi^m\\
+&=qbP_l^m(0)[-a^l+(\sqrt 2 a)^le^{-im\frac{\pi}{4}}-a^l(-1)^mi^m]+q\frac{1}{\sqrt{4\pi}}\delta_{l,0}\delta_{m,0}
+\end{align*}
+Unfortunately this seems to be about as far as we can reduce this expression for $q_{lm}$. The factor of $e^{-im\frac{\pi}{2}}$ was able to be reduced to $(-1)^mi^m$, however the factor of $e^{-im\frac{\pi}{4}}$ turns out be much more difficult to handle (though separating it into even and odd terms seemed reasonable). Nonetheless, since we cannot compute the entire multipole expansion, it should suffice to find the most important terms - the monopole and dipole terms - and use these as an approximation to our potential. For the monopole term we have
+\begin{align*}q_{00} &= \int{d^3r'\,Y^*_{lm}(\theta',\phi')\rho(\vect r')}\\
+&=\frac{1}{\sqrt{4\pi}}\int{d^3r' \rho(\vect r')}\\
+&= 0 
+\end{align*} 
+\begin{align*}q_{00} &= qbP_l^m(0)[-a^l+(\sqrt 2 a)^le^{-im\frac{\pi}{4}}-a^l(-1)^mi^m]|_{l=0}^{m=0}+q\frac{1}{\sqrt{4\pi}}\\
+&=q\frac{1}{\sqrt{4\pi}}[-1+1-1]+q\frac{1}{\sqrt{4\pi}}\\
+&=0
+\end{align*}
+which is just as we expect since the total charge enclosed is zero. Now for the dipole terms we have
+\begin{align*}
+q_{1-1}&=qbP_1^{-1}(0)[-a+\sqrt 2a\left(\frac{1}{\sqrt 2}+i\frac{1}{\sqrt 2}\right)-ia]\\
+&=qbP_1^{-1}(0)[-a+a+ia-ia]\\
+&=0
+\end{align*}
+\begin{align*}
+q_{10}&=qbP_1^{0}(0)[-a+\sqrt 2a-a]\\
+&=qbP_1^{0}(0)a(\sqrt 2-2)\\
+&=0
+\end{align*}
+\begin{align*}
+q_{11}&=qbP_1^{1}(0)[-a+\sqrt 2a\left(\frac{1}{\sqrt 2}-i\frac{1}{\sqrt 2}\right)+ia]\\
+&=qbP_1^{1}(0)[-a+a-ia+ia]\\
+&=0.
+\end{align*}
+Even the dipole terms are zero! Looks like we have to keep going to the quadrapole terms. For $l=2$ we have
+\begin{align*}
+q_{2-2}&=qbP_2^{-2}(0)[-a^2+i2a^2+a^2]\\
+&=\frac{q}{8}\sqrt{\frac{5}{4\pi}\frac{24}{1}}(i2a^2)\\
+&=q\frac{ia^2}{4}\sqrt{\frac{5}{4\pi}\frac{24}{1}}\\
+&=iqa^2\sqrt{\frac{30}{\pi}}
+\end{align*}
+\begin{align*}
+q_{2-1}&=qbP_2^{-1}(0)[-a^2+2a^2\left(\frac{1}{\sqrt 2}-i\frac{1}{\sqrt 2}\right)-ia^2]\\
+&=0
+\end{align*}
+\begin{align*}
+q_{20}&=qbP_2^{0}(0)[-a^2+2a^2-a^2]\\
+&=0
+\end{align*}
+\begin{align*}
+q_{21}&=qbP_2^{1}(0)[...]\\
+&=0
+\end{align*}
+\begin{align*}
+q_{22}&=qbP_2^{2}(0)[-a^2+2a^2-a^2]\\
+&=3qb[-a^2-i2a^2+a^2]\\
+&=-i6\sqrt{\frac{5}{4\pi}\frac{1}{24}}qa^2\\
+&=-iqa^2\sqrt{\frac{30}{\pi}}
+\end{align*}
+where we have used 
+$$P_l^{-m}(x) = (-1)^m\frac{(l-m)!}{(l+m)!}P_l^m(x).$$
+In retrospect, we should have just simply used
+$$q_{l-m} = (-1)^mq^*_{lm}$$
+as given in Jackson 4.7. We now can use the quadrupole moment to make a first order approximation of the potential using \eqref 2. 
+\begin{align*}\Phi(\vect r) &\approx \frac{q}{\epo}\sqrt{\frac{6}{\pi}}\frac{1}{r^3}ia^2(Y_{2-2}(\theta,\phi)-Y_{22}(\theta,\phi))\\
+&=\frac{q}{4\pi\epo}3\sqrt5i\frac{a^2}{r^3}(\sin^2\theta e^{-i2\phi}-\sin^2\theta e^{i2\phi})\\
+&=\frac{q}{4\pi\epo}3\sqrt5\frac{a^2}{r^3}i(\sin^2\theta e^{-i2\phi}-\sin^2\theta e^{i2\phi})\\
+&=\frac{q}{4\pi\epo}3\sqrt5\frac{a^2}{r^3}\sin^2\theta i(e^{-i2\phi}-e^{i2\phi})\\
+&=\frac{q}{4\pi\epo}3\sqrt5\frac{a^2}{r^3}\sin^2\theta\sin(2\phi).
+\end{align*}
+Thus our first order quadrupole planar approximation is
+$$\Phi(\vect r) \approx \frac{q}{4\pi\epo}\frac{a^2}{r^3}3\sqrt5\sin^2\theta\sin(2\phi)$$
+\end{enumerate}
+\item 
+% 4
+Two thin coaxial uniformly charged rings with radii $a$ and $b\ (a>b)$ and charges $q$ and $-q$, respectively, lie in a given plane. Calculate the potential $\phi$ at a large distance from the system using the multipole expansion.
+\\ \\
+Our first task is to determine the potential. For the two rings, which we assume like in the $x$-$y$ plane have
+$$\rho(\vect r)  = \frac{q}{2\pi r^2\sin\theta}\delta(r-a)\delta(\theta-\frac{\pi}{2})-\frac{q}{2\pi r^2\sin\theta}\delta(r-b)\delta(\theta-\frac{\pi}{2}).$$
+Inserting this into \eqref 3 we then have
+\begin{align*}q_{lm} =&\frac{q}{2\pi}\int\limits dr'\,d\theta'\, d\phi' \delta(r'-a)\delta(\theta'-\frac{\pi}{2}) r'^lY^*_{lm}\\
+&-\frac{q}{2\pi}\int\limits dr'\,d\theta'\, d\phi' \delta(r'-b)\delta(\theta'-\frac{\pi}{2}) r'^lY^*_{lm}.
+\end{align*}
+Since this configuration has azimuthal symmetry, we know that we must have $m=0$ and thus we shall express the spherical harmonics as 
+$$Y_{l0}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi}}P_l(\cos\theta)$$
+in which we shall denote
+$$c\equiv \sqrt{\frac{2l+1}{4\pi}}.$$
+Making these substitutions into the $q_{lm}$ we now have
+\begin{align*}q_{lm} =&qca^l\int\limits d\theta'\,\delta(\theta'-\frac{\pi}{2})P_l(\cos\theta)\\
+&-qcb^l\int\limits d\theta'\, \delta(\theta'-\frac{\pi}{2})P_l(\cos\theta)\\
+=&qcP_l(0)(a^l-b^l).
+\end{align*}
+A very nice and simple form. Now we can start computing some multipole moments. We expect of course the monopole to be zero, but we shall check to make sure our formula is correct.
+$$q_{00} = qc(1-1) =0.$$
+Keeping in mind that we only have $m=0$ terms, we move on to the dipole moments
+$$q_{1-1} = q_{11} = 0$$
+$$q_{10} = qc(0)(a-b) = 0.$$
+No dipole terms. Now on to the quadrupole moments,
+$$q_{2-2}=q_{2-1}=q_{21} =q_{22} = 0$$
+$$q_{20} = qcP_2(0)(a^2-b^2) = \sqrt{\frac{5}{4\pi}}q(-\frac 12)(a^2-b^2)=-\sqrt{\frac{5}{4\pi}}q\frac{a^2-b^2}{2}.$$
+If we wish to go beyond the quadrupole expansion, we could compute the next terms
+$$q_{30} = \sqrt{\frac{7}{4\pi}}q(0)(a^3-b^3) = 0$$
+$$q_{40} = \sqrt{\frac{9}{4\pi}}q\frac{3}{8}(a^4-b^4) $$
+$$q_{60} = \sqrt{\frac{13}{4\pi}}q\frac{-5}{16}(a^6-b^6) $$
+$$q_{80} = \sqrt{\frac{17}{4\pi}}q\frac{35}{128}(a^6-b^6) .$$
+Since the Legendre polynomials are all zero for odd $l$ only the even terms remain. A closed formula for the solution of $q_{lm}$ could be easily written if we had an expression for the Legendre polynomials evaluated at zero. Nevertheless, we can use our results to find an approximate form of the integral. Substituting the $q_{lm}$ into \eqref 2 we have
+$$\Phi(\vect r)\approxeq \frac{1}{\epo}\sum_{l=4,6,8}^{\infty}\frac{1}{2l+1}qc^2P_l(0)(a^l-b^l)P_l(\cos\theta)\frac{1}{r^{l+1}}.$$
+Taking the first few terms we see
+$$\Phi(\vect r)\approx \frac{q}{4\pi\epo}\left[P_4(0)P_4(\cos\theta)\frac{a^4-b^4}{r^5}+P_6(0)P_6(\cos\theta)\frac{a^6-b^6}{r^7}+P_8(0)P_8(\cos\theta)\frac{a^8-b^8}{r^9}+..\right].$$
+Since the higher order terms converge very quickly, we will approximate our potential as simply the quadrupole moment
+$$\Phi(\vect r) \approx \frac{q}{4\pi\epo}\frac{a^4-b^4}{r^5}\frac{3}{64}(35\cos^4\theta-30\cos^2\theta+3).$$
+Since $a>b$ we see that the potential at distances $r\gg a$ is positive. 
+\item
+% 5
+Find the potential $\phi$ at a large distance from two parallel linear wires charges with linear density $\lambda$ and $-\lambda$. The distance between wires is $a$. 
+\\ \\First lets compute the potential due to one infinitely long line of charge. Noting the symmetry and its infinite nature, we are encouraged to try Gauss's law to easily determine the electric field. Enclosing with a cylindrical surface,
+$$\oint{\vect E\cdot d\vect S} = \frac{\lambda l}{\epo}$$
+$$\vect E = \frac{\lambda}{2\pi\epo}\frac{1}{r}\vecth r$$
+where $\vect r$ is the distance from the axis of the line of charge. To find the potential we use
+$$\Phi(r)-\Phi(r_1)= -\int_{r_1}^{r}{dr'\,\frac{\lambda}{2\pi\epo}\frac{1}{r'}}.$$
+Observing that the integral is proportional to $\ln(r)$, we must careful in choosing our reference points. As with most any infinite distribution, we cannot use $\infty$ as a reference point because then our potential would become infinite. Instead, we shall define the potential at an arbitrary non-infinite location to be
+$$\Phi(r_1) = 0.$$
+We could choose the potential to be some finite value, but since the difference between potentials is really the only important quantity, we might as well set it to zero. We then have
+$$\Phi(r)= -\int_{r_1}^{r}{dr'\,\frac{\lambda}{2\pi\epo}\frac{1}{r'}} = -\frac{\lambda}{2\pi\epo}\ln(r')|_{r_1}^{r} = \frac{\lambda}{2\pi\epo}\ln\left(\frac{r_1}{r}\right)$$
+where $r_1$ is the radial distance from the line of charge. Now to our original problem, let us place the two wires in the $z$-plane parallel to the $z$-axis, $\lambda$ located at $x=a/2$ and $-\lambda$ at $x=-a/2$. Firstly, we can observe from the symmetry that as we vary the $z$ coordinate of our position vector, the potential remains the same. So in fact we can reduce this problem down to two dimensions $\Phi(\vect r) = \Phi(x,y)$. In addition, we will conveniently use the zero of potential as the cylindrical surface of radial distance $a/2$ from each of the line charges. Thus the potential at the origin should be zero. Now we form the sum of our potentials as the total potential
+$$\Phi(\vect r) = \frac{\lambda}{2\pi\epo}\ln\left(\frac{r_1}{r_+}\right)-\frac{\lambda}{2\pi\epo}\ln\left(\frac{r_1}{r_-}\right) = \frac{\lambda}{2\pi\epo}\ln\left(\frac{r_-}{r_+}\right).$$
+where $r_+$ and $r_-$ denote the distance from the positive and negative line of charge respectively. In order to relate the distances $r_-$ and $r_+$ to our coordinate system we observe that
+$$r_+ = \sqrt{(x-a/2)^2+y^2};\quad r_-= \sqrt{(x+a/2)^2+y^2}.$$
+Substituting this into our potential we have
+$$\Phi(x,y) = \frac{\lambda}{2\pi\epo}\ln\left(\frac{\sqrt{(x+a/2)^2+y^2}}{\sqrt{(x-a/2)^2+y^2}}\right)$$
+where we can use a logarithm property to finally give
+$$\Phi(x,y) = \frac{\lambda}{4\pi\epo}\ln\left(\frac{(x+a/2)^2+y^2}{(x-a/2)^2+y^2}\right).$$
+Notice that along the line $x=0$, $\Phi = 0$. In addition, for $x,y\gg a$ we have
+$$\Phi(x,y) \to \frac{\lambda}{4\pi\epo}\ln\left(\frac{x^2+y^2}{x^2+y^2}\right) = 0$$
+which is the type of behavior we might expect as the contribution from $+\lambda$ negates the potential due to $-\lambda$, causing the potential to be zero at infinity. 
+\end{enumerate}
+\end{document}

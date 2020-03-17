@@ -1,0 +1,418 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 8\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Nov. 11}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item{Scattering from a radial delta shell}
+	\\ \\
+	Consider the potential for a spherical cavity of radius $R$, bounded by a thin wall of dimensionless opacity 
+	$\Omega$:
+	\[
+		V(r) = \frac{\h^2}{2m}\frac{\Omega}{R}\delta(r-R)
+	\]
+	\benum
+	% (a)
+	\item
+	Match the $s$-wave radial wavefunction at the delta function wall, and hence obtain an expression for 
+	$\tan\delta_0$, or $\sin\delta_0$, in terms of the momentum $k$ and the parameters of the potential.
+	% (b)
+	\item
+	From this matching also find an expression for the amplitude $A_0$ of the $s$-wave radial wavefunction
+	inside the cavity, relative to the amplitude of the $s$-wave radial wavefunction outside the cavity.
+	% (c)
+	\item
+	Plot $\delta_0(k)$, $\sigma_0(k)$, and $A_0(k)$ as functions of the dimensionless quantity $kR$, for 
+	$\Omega = 4$, and again for $\Omega=10$.
+	% (d)
+	\item
+	Comment on the physical interpretation of the features of these plots.
+	\\
+	\\
+	\eenum
+
+	
+	\benum
+	% (a)
+	\item
+	For $r<R$, the solution to the radial Schrodinger equation is that of a free particle with regular behavior at
+	the origin
+	\[
+		R_l(r) = A_lj_l(kr)
+	\]
+	while for $r>R$ we again have a free particle but we include the Neumann function 
+	\[
+		R_l(r) = B_lj_l(kr)+C_ln_l(kr).
+	\]
+	At $r=R$, the wavefunction must be continuous
+	\[
+		A_lj_l(kR) = B_lj_l(kR)+C_ln_l(kR).
+	\]
+	For the other boundary condition, the delta-function will specify what the discontinuity of the wavefunction is. 
+	Let us integrate the Schrodinger eq. with vanishing bounds around $R$
+	\[
+		-\frac{\h^2}{2m}\int_{R-\epsilon}^{R+\epsilon} dr'\ \difff{u_l}{*2r'} +
+		\frac{\h^2}{2m} \int_{R-\epsilon}^{R+\epsilon} dr'\  \frac{\Omega}{R}\delta(r-R)u_l(r') = 0.
+	\]
+	The energy and centrifugal term vanish in the limit of $\epsilon\to 0$. From this equation we find
+	\[
+		\elr{\diff[u_l]{r}}_{R_+} - \elr{\diff[u_l]{r}}_{R_-} = \frac{\Omega}{R}u(R)
+	\]
+	or
+	\[
+		\elr{R\diff[R_l(r)]{r}}_{R_+}+R_l(R_+) - \elr{R\diff[R_l(r)]{r}}_{R_-}-R_l(R_-) = \frac{\Omega}{R}RR_l(R).
+	\]
+	Using the continuity of the wavefunction this leads to
+	\[
+		\elr{\diff[R_l]{r}}_{R_+} - \elr{\diff[R_l]{r}}_{R_-} = \frac{\Omega}{R}R_l(R).
+	\]
+	or
+	\[
+		 A_lkj'_l(kR) - B_lkj'_l(kR)-C_lkn'_l(kR) = \frac{\Omega}{R}\blr{B_lj_l(kR)+C_ln_l(kR)}.
+	\]
+	Ultimately, we want the relation between $C$ and $D$ to determine the phase shift. We can find this by first 
+	eliminating $A_l$ and then solving for the ratio $\frac{C}{B}$
+	\[
+		\frac{B_lj_l(kR)+C_ln_l(kR)}{j_l(kR)} j'_l(kR) - B_lj'_l(kR)-C_ln'_l(kR) 
+		= \frac{\Omega}{kR}\blr{B_lj_l(kR)+C_ln_l(kR)}.
+	\]
+	We find
+	\[
+		-\frac{C}{B} = \frac{\frac{\Omega}{kR}j_l(kR)}{\frac{\Omega}{kR}n_l(kR)+n'_l(kR)-n_l(kR)
+		\frac{j'_l(kR)}{j_l(kR)}}.
+	\]
+	At this point we diverge from the general $l$ result and specifically restrict the problem to $l=0$. We 
+	use the forms
+	\[
+		j_0 = \frac{\sin (kr)}{kr};\qquad n_0 =- \frac{\cos(kr)}{kr}
+	\]
+	to simplify the ratio as
+	\[
+		-\frac{C}{B} = \frac{\sin^2(kR)}{\frac{kR}{\Omega}-\cos(kR)\sin(kR)}.
+	\]
+	Now if we take the wavefunction for $r>R$ at $r\to \infty$ we  can show that it takes the form
+	\[
+		R(r) = \frac{(B^2+C^2)^{1/2}}{kr}\blr{\sin\plr{kr-\frac{(0)\pi}{2}+\delta_0}}
+	\]
+	with
+	\[
+		\tan\delta_0 = -\frac{C}{B}.
+	\]
+	Hence we have found $\delta_0$ in terms of the momentum and parameters of the potential
+	\[
+		\tan\delta_0 = \frac{\sin^2(kR)}{\frac{kR}{\Omega}-\cos(kR)\sin(kR)}.
+	\]
+	\\
+	\\
+	% (b)
+	\item
+	In the same way that we arrived at the form of the asymptotic radial wavefunction for $r>R$, $r\to\infty$, we 
+	can take the solution of the free particle at the boundary $r=R$ and transform it in the same way:
+	\[
+		\frac{1}{kR}\blr{B\sin(kR)-C\cos(kR)}  = \frac{(B^2+C^2)^{1/2}}{kR}\blr{\sin\plr{kR+\delta_0}}.
+	\]
+	Now lets denote $D \equiv \sqrt{B^2+C^2}$ and use this in our first boundary condition equation
+	\[
+		A\sin(kR) = D\sin\plr{kR+\delta_0}
+	\]
+	hence
+	\[
+		\frac{A}{D} = \frac{\sin(kR+\delta_0)}{\sin(kR)}
+	\]
+	\\
+	\\
+	
+	% (c)
+	\item
+	\[
+		\boxed{
+		\delta_0 = \tan^{-1} \plr{\frac{\sin^2(kR)}{\frac{kR}{\Omega}-\cos(kR)\sin(kR)}}
+		}
+	\]
+	\\
+	\figg[width=100mm]{8_11.pdf}
+	\figg[width=100mm]{8_12.pdf}
+	\phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} 
+	\phantom{} \phantom{} \phantom{} \phantom{} 
+	
+	
+	\[
+		\boxed{
+		\frac{A_0(k)}{D_0(k)} =  \frac{\sin(kR+\delta_0)}{\sin(kR)}
+		}
+	\]
+	\\
+	\figg[width=100mm]{8_13.pdf}
+	\figg[width=100mm]{8_14.pdf}
+	\phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} \phantom{} 
+	\phantom{} \phantom{} \phantom{} \phantom{} 
+	\[
+		\boxed{
+		\frac{\sigma_0}{R^2}  = \frac{4\pi}{(kR)^2} \sin^2(\delta_0)
+		}
+	\]
+	\\
+	\figg[width=100mm]{8_15.pdf}
+	\figg[width=100mm]{8_16.pdf}
+	
+	% (d)
+	\item
+	Both the amplitude and phase-shift have periodic maximums and minimums, which correspond to resonant 
+	energies of $kR$. The resonance is strongest at low energy - as we continue to increase the energy, the effect of 
+	resonance becomes weak and we can see that the relative amplitude inside the well equilibrates to the amplitude 
+	outside the well. Also, the s-wave cross section has the most significant contribution at low energy, which is what we 
+	expect - as we increase the energy, higher angular momentum terms are required. In addition, increasing the 
+	strength $\Omega$ of the potential increases the strength/effect of the resonance for the same given energy.
+	This also shifts the $\sigma_0$ cross section energy dependence to larger values of $kR$.  
+	\\
+	\eenum
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{Inverse square potential}
+	\\ \\
+	Consider the scattering problem with a radial potential
+	\[
+		V(r) = \frac{\alpha}{r^2}
+	\]
+	\benum
+	% (a)
+	\item 
+	From the solution to the radial Schrodinger equation, write down an explicit expression for the phase shift 
+	$\delta_l$. (Think about the form of the potential.)
+	% (b)
+	\item
+	Show that in the large $l$ limit
+	\[
+		\delta_l \sim -\pfrac{\pi m \alpha}{2\h^2l}
+	\]
+	% (c)
+	\item
+	What is the momentum dependence of the total cross section?
+	\\ \\ 
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	With $V=0$ the radial Schrodinger equation is
+	\[
+		\blr{\difff{}{*2r}+\frac{2}{r}\diff{r}-\frac{l(l+1)}{r^2}+k^2}R(r).
+	\]
+	With substitution $\rho = kr$ this becomes
+	\[
+		\difff{R}{*2\rho}+\frac{2}{\rho}\diff[R]{\rho}+\blr{1-\frac{l(l+1)}{\rho^2}}R = 0
+	\]
+	which is in fact the spherical Bessel differential equation whose solutions are the familiar $j_l(kr)$ 
+	and $n_l(kr)$. Of course, none of this is new. 
+	\\ \\
+	Now add in the potential
+	\[
+		\difff{R}{*2\rho}+\frac{2}{\rho}\diff[R]{\rho}+\blr{1-\frac{l(l+1)}{\rho^2}-\frac{(2m\alpha/\h^2)}{\rho^2}}R = 0.
+	\]
+	With $s = \frac{2m\alpha}{\h^2}$ we can also write this as
+	\[
+		\difff{R}{*2\rho}+\frac{2}{\rho}\diff[R]{\rho}+\blr{1-\frac{s+l(l+1)}{\rho^2}}R = 0
+	\]
+	Using the fact that the spherical Bessel functions are not
+	limited to integer values of the factor $l(l+1)$, this allows us to form a very similar differential equation
+	whose solutions are in fact still spherical Bessel functions:
+	\[
+		\difff{R}{*2\rho}+\frac{2}{\rho}\diff[R]{\rho}+\blr{1-\frac{\lambda(\lambda+1)}{\rho^2}}R = 0
+	\]
+	where we have specifically defined
+	\[
+		\lambda(\lambda+1) \equiv s+l(l+1).
+	\]
+	Hence the solutions are
+	\[
+		R_l(r) = j_\lambda(kr)+ n_\lambda(kr)
+	\]
+	with (solving the quadratic eq. for lambda)
+	\[
+		\lambda = -\frac{1}{2}+\sqrt{\pfrac{2l+1}{2}^2+s}.
+	\]
+	The asymptotic form of the radial equation under the influence of the potential is
+	\[
+		R_l(r) \underset{r\to\infty}\longrightarrow \frac{\sin\plr{kr-\frac{\lambda\pi}{2}}}{kr}
+	\]
+	while the general form in terms of the phase shift is
+	\[
+		R_l(r) \underset{r\to\infty}\longrightarrow \frac{\sin\plr{kr-\frac{l\pi}{2}+\delta_l}}{kr}.
+	\]
+	To find $\delta_l$ we just have to match these
+	\[
+		-\frac{\lambda\pi}{2} = -\frac{l\pi}{2}+\delta_l
+	\]
+	so finally
+	\[
+		\delta_l = \frac{\pi}{2}\plr{l-\lambda} = \frac{\pi}{2}\plr{l+\frac{1}{2}-\sqrt{\pfrac{2l+1}{2}^2+\frac{2m\alpha}{\h^2}}}.
+	\]
+	\\
+	\\
+	
+	% (b)
+	\item
+	For large $l$ we first have $l+\frac{1}{2}\approx l$ and thus
+	\[
+		\delta_l \approx \frac{\pi}{2}\plr{l-\sqrt{l^2+s}}.
+	\]
+	Inputting the binomial expansion
+	\[
+		\sqrt{l^2+s} = l\sqrt{\frac{s}{l^2}+1} \approx 1+\frac{s}{2l^2}
+	\]
+	we have
+	\[
+		\delta_l \approx \frac{\pi}{2}\plr{l-l\plr{1+\frac{s}{2l^2}}} = -\frac{\pi s}{4l}
+	\]
+	and therefore
+	\[
+		\delta_l \sim -\pfrac{\pi m \alpha}{2\h^2l}.
+	\]
+	\\
+	\\
+	
+	% (c)
+	\item
+	With
+	\[
+		\sigma_l = \frac{4\pi}{k^2}(2l+1)\sin^2\delta_l
+	\]
+	the total cross section is
+	\[
+		\sigma = \sum_{l=0}^\infty \sigma_l .
+	\]
+	Interestingly, the phase shift does not depend on the energy. And so the momentum dependence is
+	just $1/k^2$ as seen in 
+	\[
+		\sigma = \sum_{l=0}^\infty \sigma_l = \frac{1}{k^2}\sum_l f(l).
+	\]
+	For large $l$, $f(l)$ decreases in magnitude and thus makes little contribution to the total
+	cross section. 
+	\\
+	\\
+	\eenum 
+
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{WKB Phase Shifts}
+	\\ \\
+	Consider a radial potential $V(r)$ and define $U(r) = \frac{2m}{\h^2}V(r)$. The WKB expression for the phase 
+	shift is given by the difference between the WKB phases with and without the potential
+	\[
+		\delta_l^{WKB}(k) = \int_{r'}^{\infty} dr\ \sqrt{k^2-U(r)-\frac{l(l+1)}{r^2}} - \int_{r''}^{\infty} dr\ 
+		\sqrt{k^2-\frac{l(l+1)}{r^2}}
+	\]
+	Here $r'$ and $r''$ are the relevant turning points with and without the potential.
+	\benum
+	% (a)
+	\item
+	Consider the case of scattering from a hard sphere of radius $a$. For the energy regime where 
+	$k^^2>\frac{l(l+1)}{a^2}$, compute the WKB expression for the phase shift $\delta_l^{WKB(k)}$. 
+	% (b)
+	\item
+	For $l=5$ and $l=10$, plot the contribution to the cross section from the $l^{th}$ partial wave, as a function of
+	$k$ with $k>\sqrt\frac{l(l+1)}{a^2}$, using the WKB expression found in the previous part, and compare it on the
+	same plot with the exact expression.
+	% (c)
+	\item
+	Comment on the differences between the WKB and exact plots in the previous part, and explain the origin
+	of the discrepancy. 
+	\\
+	\\
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+ 	As a hard sphere
+	\[
+		V(r) = \begin{cases} \infty &\qquad \text{for}\quad r\le a\\
+						0 &\qquad \text{for}\quad r>a 
+						\end{cases}
+	\]
+	For the particle under the potential influence, the turning point is simply $a$ and the potential vanishes
+	beyond $a$, so that we have
+	\[
+		\int_{a}^{\infty} dr'\ \sqrt{k^2-\frac{l(l+1)}{r'^2}} .
+	\]
+	For the second integral, the turning point can be found as
+	\[
+		k^2 = \frac{l(l+1)}{r^2}
+	\]
+	or 
+	\[
+		r_0 = \sqrt{\frac{l(l+1)}{k^2}}.
+	\]
+	Altogether then
+	\[
+		\delta_l^{WKB}= \int_{a}^{\infty} dr'\ \sqrt{k^2-\frac{l(l+1)}{r'^2}}
+		- \int_{r_0}^{\infty} dr''\ \sqrt{k^2-\frac{l(l+1)}{r''^2}}.
+	\]
+	Since we are in the energy regime $k^2 >\frac{l(l+1)}{a^2}$ this means $r_0 < a$ and we can write 
+	the phase shift as
+	\[
+		\delta_l^{WKB} = -\int_{r_0}^a dr \sqrt{k^2-\frac{l(l+1)}{r'^2}} .
+	\]
+	Evaluating the integral we have
+	\[
+		\delta_l^{WKB} = \frac{\pi}{2}\sqrt{l(l+1)}-\sqrt{(ka)^2-l(l+1)}-l(l+1)
+		\tan^{-1}\plr{\frac{\sqrt{l(l+1)}}{\sqrt{(ka)^2-l(l+1)}}}
+	\]
+	\\
+	\\
+	
+	% (b)
+	\item
+	First let's compute the exact phase shift. For $r<a$, the wavefunction vanishes, while for $r>a$ it has the
+	free particle form
+	\[
+		R_l(r) = A_lj_l(kr) + B_ln_l(kr).
+	\]
+	The boundary condition of continuity leads us to
+	\[
+		R_l(a) = 0
+	\]
+	or
+	\[
+		-\frac{B_l}{A_l} = \frac{j_l(ka)}{n_l(ka)}.
+	\]
+	As $r\to\infty$ the form is
+	\[
+		R_l(r)  \underset{r\to\infty}\longrightarrow \frac{(A^2+B^2)^{1/2}}{kr}
+		\blr{\sin\plr{kr-\frac{l\pi}{2}+\tan^{-1}\pfrac{-B_l}{A_l}}}
+	\]
+	hence
+	\[
+		\delta_l = \tan^{-1}\pfrac{-B_l}{A_l} = \tan^{-1}\pfrac{j_l(ka)}{n_l(ka)}.
+	\]
+	\\
+	\\
+	The $l^{th}$ contribution to the total cross section is
+	\[
+		\sigma_l = \frac{4\pi}{k^2}(2l+1)\sin^2\delta_l.
+	\]
+	Both exactly and in the WKB approximation, we will plot $\sigma_l$ as a function of $k$ 
+	for $l=2,5,10$. We set $a=1$ and look at energies $(ka)^2>l(l+1)$.
+	\figg[width=100mm]{8_33.pdf}
+	\figg[width=100mm]{8_31.pdf}
+	\figg[width=100mm]{8_32.pdf}
+	
+	% (c)
+	\item
+	The WKB approximation is good for energies in which the potential varies slowly in comparison to the 
+	wavelength of the particle $\lambda = 2\pi/k$ (this might be an oversimplification?). At the surface of the
+	hard-sphere, the potential has a singular derivative and so the WKB fails to provide a reasonable 
+	approximation near $r=a$. Consequently, the phase shift absorbs this discrepancy. 
+	\\
+	\\
+	As we increase $l$, the angular momentum barrier slope increases and again the WKB becomes less valid. At the 
+	same time, 
+	higher energies are needed to increase the distance between $a$ and the angular momentum barrier, such
+	that the phase shift can accumulate accurate contributions away from the spherical barrier at $a$. This is why we see 	the WKB being a good approximation at low values of $l$ with high energy. 
+	\eenum
+\eenum
+\end{document}

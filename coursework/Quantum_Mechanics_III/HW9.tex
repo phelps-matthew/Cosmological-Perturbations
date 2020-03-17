@@ -1,0 +1,161 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 9\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Mar. 28}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.1]
+\benum
+\item
+% (a)
+Write down the density operator of the electromagnetic field at temperature $T$ and chemical potential $\mu =0$.
+\\ \\
+\[
+	\rho = \elr{\frac{1}{\mathcal Z}e^{-\beta(\hat H-\mu \hat N)}}_{\mu=0} = \frac{e^{-\beta \hat H}}{\mathcal Z}
+\]
+where
+\[
+	\mathcal Z = \elr{\tr\  e^{-\beta(\hat H-\mu \hat N)}}_{\mu = 0} = \tr\ e^{-\beta\hat H}.
+\]
+The Hamiltonian of the electromagnetic field, given in a basis of the Fock space characterized by free photons with
+mode energy $\h\omega_n$, is
+\[
+	\hat H = \sum_n \h\omega_n a_n^\dag a_n.
+\]
+Here $n$ denotes a general index of the photon mode; it could, for example, stand for a momentum index $\vect k$ and polarization vector $\lambda$. This defines the density operator given above. \\ \\
+\item
+% (b)
+Show that the grand partition function is
+\[
+	\mathcal Z = \prod_n \frac{1}{1-e^{-\beta\h\omega_n}},
+\]
+where the product runs over all photon modes.
+\\ \\
+\[
+	\mathcal Z = \tr\plr{ e^{-\beta\sum_n \h\omega_n a_n^\dag a_n }} 
+\]
+To trace over all possible photon modes, we may first sum over a fixed particle number $N$ and then sum over all
+possible permutations of the occupation numbers $n_i$ of single mode states $i$
+\ba
+	\mathcal Z &= \sum_N\sum_{\{\{n_i\}:\sum_i n_i= N\}} e^{-\sum_i \beta\h\omega_i n_i }\\
+	&= \sum_{\{ n_i\}} e^{-\sum_i  \beta\h\omega_i n_i }\\
+	&= \sum_{\{n_i\}} \plr{ \prod_i e^{-\beta\h\omega_i n_i }}\\
+	&= \prod_i \plr{\sum_{n_i}e^{- \beta\h\omega_i n_i }}\\
+	& = \prod_i \frac{1}{1-e^{-\beta \h\omega_i}}
+\ea
+Summing over all possible sets $\{\{n_i\}:\sum_i n_i= N\}$ and then summing over $N$ is equivalent to
+carrying out a sum over all possible sets of $\{ n_i\}$, unconstrained. In addition, as we sum over all 
+sets ${\{ n_i\}}$, the term
+$\sum_{\{ n_i\}}\prod_i$ can be rearranged to a product of a sum, analogous to factorization. \\ \\
+\eenum
+% #2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.2]
+As we have discussed, in atom-field interactions two forms of the interaction Hamiltonian are in common use.
+Let us denote these by
+\[
+	H_{\vect d\cdot \vect E} = -q\vect r\cdot \vect E(t),\quad H_{\vect p\cdot\vect A} = -\frac{q}{m}\vect p\cdot\vect A(t).
+\]
+The term quadratic in $\vect A$ is immaterial in the present context, as it does not involve the quantum variables
+$\vect r$ or $\vect p$ and can be removed with a trivial unitary transformation.
+\benum
+\item 
+% (a)
+By studying the commutator $[x,H_A]$ show that the matrix elements of position between the eigenstates $\ket n$ of
+the atomic Hamiltonian $H_A$ satisfy $\braket{m|\vect p|n} = im\omega_{mn}\braket{m|\vect r|n}$, where
+$\omega_{nm} = (E_m-E_n)/\h$ is the frequency difference between the states $\ket m$ and $\ket n$. 
+\item
+% (b)
+Suppose the atom is driven by electromagnetic fields such that $\vect A(t)$ tends to zero smoothly with $t\to \pm\infty$.
+Consider transitions from some initial $(t=-\infty)$ state of the atom $\ket n$ to the other states using first-order
+time dependent perturbation theory. Show that the transition probabilities after the fields have turned back to zero
+$(t=\infty)$, are the same for the two choices of the interaction Hamiltonian. \\ \\
+\eenum
+\benum
+% (a)
+\item 
+Given the atomic Hamiltonian
+\[
+	H_A = \frac{\vect p^2}{2m}+V(\vect r)
+\]
+and its commutator with position
+\[
+	[\vect r,H_A] = \frac{1}{2m}[\vect r,\vect p^2] = \frac{\vect p}{m}[\vect r,\vect p] = i\h \frac{\vect p}{m},
+\]
+take the commutator between the expectation of eigenstates $\ket m$ and $\ket n$ of $H_A$
+\ba
+	\braket{m|[H_A,\vect r]|n} &= \braket{m|H_A\vect r-\vect rH_A|n}\\
+	&= \h\omega_{mn}\braket{m|\vect r|n}\\
+	&= -\frac{i\h}{m} \braket{m|\vect p|n}.
+\ea
+Thus
+\[
+	im\omega_{mn}\braket{m|\vect r|n} = \braket{m|\vect p|n}.
+\]
+\\ \\
+
+\item
+% (b)
+To first order, the probability of transition from initial state $\ket n$ to state $\ket m$ is given by the time dependent 
+coefficient $c_m(t)$ (more specifically the modulus square)
+\ba
+	c_m^1(t) &= \frac{-i}{\h} \int^\infty_{-\infty} dt\ \braket{m|H_{int}|n} e^{i\omega_{mn}t}.
+\ea
+We evaluate with both forms of the interaction Hamiltonian
+\ba
+	c_m^1(t) &= \frac{-i}{\h} \int^\infty_{-\infty} dt\ \braket{m|H_{int}|n} e^{i\omega_{mn}t}\\
+	&= \frac{iq}{\h}\int dt\ \braket{m|\vect r\cdot\vect E(t)|n}e^{i\omega_{mn}t}\\
+	&=  \frac{iq}{\h}\int dt\ \braket{m|\vect r|n}\cdot\vect E(t) e^{i\omega_{mn}t}\\
+	&= -\frac{iq}{\h} \int dt\ \braket{m|\vect r|n}\cdot \pdiff[\vect A(t)]{t} e^{i\omega_{mn}t}\\
+	&= -\frac{q}{\h m\omega_{mn}}\int dt\ \braket{m|\vect p|n}\cdot\pdiff[\vect A(t)]{t} e^{i\omega_{mn}t}\\
+	&= \frac{i\omega_{mn}q}{\h m\omega_{mn}}\int dt\ \braket{m|\vect p|n}\cdot \vect A(t)e^{i\omega_{mn}t}\\
+	&= \frac{iq}{\h m}\int dt\ \braket{m|\vect p\cdot \vect A(t)|n}e^{i\omega_{mn}t}
+\ea
+where in the sixth line, we integrate by parts with a vanishing surface term 
+\[
+	\braket{m|\vect p|n}\cdot\vect A(t)e^{i\omega_{mn}t}|_{-\infty}^\infty =0.
+\]
+We see our result for $c^1_m(t)$ is the same for either interacting Hamiltonian. \\ \\
+\eenum
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.3]
+Study a transition in an atom where the lower state has the angular momentum $J=0$ and the upper state the 
+angular momentum $J'=1$. Using the Wigner-Eckart theorem, show that the dipole matrix elements between the  state 
+$J=0$, $m=0$ and $J'=1$, $m'=0$ may be chosen to be a real vector that points along the quantization $(z)$ axis.
+\\ \\
+The dipole matrix elements between states $\ket{jm}$ that we seek are
+\[
+	\braket{00|\vect d|10} = q\braket{00|\vect r|10}.
+\]
+Meanwhile, according the Wigner-Eckart theorem
+\[
+	\braket{00|T^{(k)}_q|10} = \braket{10;kq|00}\braket{0||T^{(k)}||1}
+\]
+where $T^(k)_q$ is an irreducible spherical tensor of rank $k$, $\braket{10;kq|00}$ is a Clebsch-Gordon coefficient, and
+$\braket{0||T^{(k)}||1}$ is proportionality factor independent of the geometric features. To compute the dipole elements,
+we may form a rank 1 spherical tensor, with a representation along quantization axis $z$
+\[
+	z = T^1_0,\qquad y = \frac{i(T_{-1}^1+T_1^1)}{\sqrt 2},\qquad x = \frac{T^1_{-1}-T^1_1}{\sqrt 2}.
+\]
+Putting the theorem to use, we then have (using a shorthand for the Clebsch-Gordon coefficients)
+\[
+	\braket{00|\vect d_x|10}= \frac{q}{\sqrt 2}\braket{0||T^{(1)}||1}(C^{00}_{1(-1)10}-C^{00}_{1110}) = 
+	 \frac{q}{\sqrt 2}\braket{0||T^{(1)}||1}(0-0) =0
+\]
+\[
+	\braket{00|\vect d_y|10}= i\frac{q}{\sqrt 2}\braket{0||T^{(1)}||1}(C^{00}_{1(-1)10}+C^{00}_{1110}) = 
+	 i\frac{q}{\sqrt 2}\braket{0||T^{(1)}||1}(0+0) =0
+\]
+\[
+	\braket{00|\vect d_z|10}= q\braket{0||T^{(1)}||1}C^{00}_{1010}
+\]
+Treating each matrix element as a vector component, we may represent $\braket{00|\vect d|01}$ as a real vector $\vect a$ of which only one component is nonzero, the component along the quantization axis. Note that the common factor of the double bar matrix element (reduced matrix) is set through normalization. 
+
+\eenum
+
+\end{document}

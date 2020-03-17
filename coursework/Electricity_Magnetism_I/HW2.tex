@@ -1,0 +1,173 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[top=1in,textheight=9in]{geometry}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}}
+
+\title{\begin{spacing}{1.2}Electrodynamics I\\HW 2\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: February 24}
+
+\begin{document}
+
+\maketitle
+
+% #1
+\begin{enumerate}
+  \item A conductor maintained at a potential $V$ contains a spherical cavity of radius $R$. A point charge $q$ is placed at a distance $a\ (a<R)$ from the center of the cavity. Find the potential of the electric field in the cavity.
+  \\ \\As for the physics, $\vect E = 0$ within the conductor, which it at a constant potential $V$. Inside the cavity, however, $\vect E\neq 0$. Charge is induced on the surface of the cavity as to cancel the electric field for all points within the conductor. This problem is a Dirichlet type problem that can be handled via method of images. Once solved this way, the correct Green function can easily be obtained. However, starting with the Green function first seems unlikely. 
+  
+ The image charge we seek is not as simple as the plane problem. Rather, the magnitude and distance of the image charge must be carefully selected as to create a spherical equipotential surface when combined with our source charge. The best starting point is to inspect the symmetry and  place the image charge along the radial line from the source charge to the origin. Working in units $1/4\pi\epsilon_0=k=1$, we will define $\vect n'$ as the unit vector in the direction from the origin to the image charge (of which the source charge also lies along) and $\vect n$ as an arbitrary unit vector in the direction of the point of interest. So far we then have 
+ $$\Phi(r) =  \frac{q}{|r\vect n-a\vect n'|}+\frac{q'}{|r\vect n -a'\vect n'|}$$
+ where $a'\vect n'$ s the location of the image charge. Our task is to define $q'$ and $a'$ such that
+ $$\Phi(R) =  \frac{q}{|R\vect n-a\vect n'|}+\frac{q'}{|R\vect n -a'\vect n'|}=V.$$
+The trick is to factor $R$ out of the first term and $a'$ out of the second to arrive at
+ $$\Phi(R) =  \frac{q/R}{|\vect n-\frac{a}{R}\vect n'|}+\frac{q'/a'}{|\vect n' -\frac{R}{a'}\vect n|}.$$
+It can be seen that potential can be brought to zero if we choose
+ $$\frac{a}{R} = \frac{R}{a'},\quad \frac{q}{R}=-\frac{q'}{a'}$$
+ or
+ $$q' = -q\frac{R}{a},\quad a'=\frac{R^2}{a}$$
+ since $|\vect n-\frac{a}{R}\vect n'| = |\vect n'-\frac{a}{R}\vect n|$.
+To maintain the conductor at potential $V$, we simply have to add a constant $V$ to our potential. We then have
+$$\Phi(\vect r) = \frac{q}{|r\vect n-a\vect n'|}-\frac{Rq}{a|\frac{R^2}{a}\vect n'-r\vect n|}+V.$$
+
+
+ % #2
+  \item An electric dipole $\vect p$ is placed in the center of a spherical cavity ($R$ is the cavity radius) in a conductor. Find the distribution of charges $\sigma$ induced on the surface of the cavity. Determine the electric field $\vect E$ inside the cavity.
+  \\ \\The potential of the conductor is not mentioned, but we know it must be at an equipotential so we will solve it for an arbitrary potential $V$. In the end, the solution of our problem is uniquely specified by the either the boundary condition $\Phi(\vect r)|_{s}$ (Dirichlet) or $\frac{\partial\Phi}{\partial n}|_{s}$ (Neumann). First off, lets note the dipole moment and its potential:
+  $$\vect p = q\vect d$$
+  $$\Phi_{dip}(\vect r) = \frac{1}{4\pi\epsilon_0}\left[\frac{q}{r_+}-\frac{q}{r_-}\right] \cong \frac{1}{4\pi\epsilon_0}\frac{\vect p\cdot\hat{\vect r}}{r^2}.$$
+  If we imagine solving this problem using images charges that cancel each dipole charge individually, we can find the solution by a superposition. Centered about the origin, let the dipole moment be
+  $$\vect p = p\vect n' = qd\vect n'$$
+  in which $\vect n'$ is a unit vector. The potential due to the dipole is then (in $k=1$ units)
+  $$\Phi(\vect r) = \frac{q}{|r\vect n - \frac{d}{2}\vect n'|}- \frac{q}{|r\vect n + \frac{d}{2}\vect n'|}$$
+  where $\vect n$ is a unit vector in the direction of $\vect r$. Based on the results of the previous problem, we can place two image charges of appropriate magnitude along $\vect n'$ that will cancel the contribution of the dipole potential at the surface of the cavity. Following problem (1), we arrive at
+   \begin{equation}\label{1}\Phi(\vect r) = \frac{q}{|r\vect n - \frac{d}{2}\vect n'|}- \frac{q}{|r\vect n + \frac{d}{2}\vect n'|} -\frac{Rq}{\frac{d}{2}|\frac{R^2}{d/2}\vect n' - r\vect n|}+\frac{Rq}{\frac{d}{2}|\frac{R^2}{-d/2}\vect n' - r\vect n|}+V.\end{equation}
+   At $r=R$ we have
+   \begin{align*}\Phi(R) &= \frac{q}{|R\vect n - \frac{d}{2}\vect n'|}- \frac{q}{|R\vect n + \frac{d}{2}\vect n'|} -\frac{Rq}{\frac{d}{2}|\frac{R^2}{d/2}\vect n' - R\vect n|}+\frac{Rq}{\frac{d}{2}|\frac{R^2}{-d/2}\vect n' - R\vect n|}+V\\
+   &= \frac{q}{R|\vect n - \frac{d/2}{R}\vect n'|}- \frac{q}{R|\vect n + \frac{d/2}{R}\vect n'|} -\frac{q}{R|\vect n' - \frac{d/2}{R}\vect n|}+\frac{q}{R|-\vect n' - \frac{d/2}{R}\vect n|}+V\\
+   &=V
+   \end{align*}
+   since $|\vect n-\frac{d/2}{R}\vect n'| = |\vect n'-\frac{d/2}{R}\vect n|$ and $|\vect n+\frac{d/2}{R}\vect n'| = |-\vect n'-\frac{d/2}{R}\vect n|$. 
+  \\ \\ Since $\vect E = 0$ inside the conductor, we know that it must undergo a discontinuity of $\vect E = -\frac{\sigma}{\epsilon_0}\vect n$ at the surface of the cavity. Therefore we can find the charge distribution by
+  \begin{equation}\label{2}\sigma = -\epsilon_0E_r = \epsilon_0\left.\frac{\partial\Phi}{\partial r}\right|_R.\end{equation} Taking $\vect p$ in the $\vecth z$ direction, we can use the law of cosines to write the potential in spherical polar coordinates. It follows that:
+  $$|r\vect n-\frac{d}{2}\vect n'| = |\vect r-\frac{d}{2}\vecth z|=\left[r^2+\left(\frac{d}{2}\right)^2-rd\cos\theta\right]^{1/2}$$
+   $$|r\vect n+\frac{d}{2}\vect n'| = |\vect r+\frac{d}{2}\vecth z|=\left[r^2+\left(\frac{d}{2}\right)^2+rd\cos\theta\right]^{1/2}$$
+   $$\left|\frac{R^2}{d/2}\vect n'-r\vect n\right| = \left|\frac{R^2}{d/2}\vecth z-\vect r\right|=\left[r^2+\frac{4R^4}{d^2}-\frac{4R^2}{d}r\cos\theta\right]^{1/2}$$
+   $$\left|\frac{R^2}{-d/2}\vect n'-r\vect n\right| = \left|\frac{R^2}{d/2}\vecth z+\vect r\right|=\left[r^2+\frac{4R^4}{d^2}+\frac{4R^2}{d}r\cos\theta\right]^{1/2}.$$
+  Accordingly, \eqref1 becomes 
+  \begin{align}\label{3}
+  \Phi(\vect r) &=\frac{q}{\left[r^2+\left(\frac{d}{2}\right)^2-rd\cos\theta\right]^{1/2}}-\frac{q}{\left[r^2+\left(\frac{d}{2}\right)^2+rd\cos\theta\right]^{1/2}}\\
+  &\quad-\frac{q(2R/d)}{\left[r^2+\frac{4R^4}{d^2}-\frac{4R^2}{d}r\cos\theta\right]^{1/2}}+\frac{q(2R/d)}{\left[r^2+\frac{4R^4}{d^2}+\frac{4R^2}{d}r\cos\theta\right]^{1/2}}\notag\\
+  &\quad+V.\notag
+  \end{align}
+  Now we differentiate
+  \begin{align*}\frac{\partial\Phi}{\partial r}&=\frac{q(-\frac{1}{2}(2r-d\cos\theta))}{\left[r^2+\left(\frac{d}{2}\right)^2-rd\cos\theta\right]^{3/2}}-\frac{q(-\frac{1}{2}(2r+d\cos\theta))}{\left[r^2+\left(\frac{d}{2}\right)^2+rd\cos\theta\right]^{3/2}}\\
+  &\quad-\frac{q(2R/d)(-\frac{1}{2})(2r-\frac{4R^2}{d}\cos\theta)}{\left[r^2+\frac{4R^4}{d^2}-\frac{4R^2}{d}r\cos\theta\right]^{3/2}}+\frac{q(2R/d)(-\frac{1}{2})(2r+\frac{4R^2}{d}\cos\theta)}{\left[r^2+\frac{4R^4}{d^2}+\frac{4R^2}{d}r\cos\theta\right]^{3/2}}\\
+  &=\frac{q(\frac{d}{2}\cos\theta-r)}{\left[r^2+\left(\frac{d}{2}\right)^2-rd\cos\theta\right]^{3/2}}+\frac{q(\frac{d}{2}\cos\theta+r)}{\left[r^2+\left(\frac{d}{2}\right)^2+rd\cos\theta\right]^{3/2}}\\
+  &\quad-\frac{q(\frac{4R^3}{d^2}\cos\theta-\frac{2R}{d}r)}{\left[r^2+\frac{4R^4}{d^2}-\frac{4R^2}{d}r\cos\theta\right]^{3/2}}-\frac{q(\frac{4R^3}{d^2}\cos\theta+\frac{2R}{d}r)}{\left[r^2+\frac{4R^4}{d^2}+\frac{4R^2}{d}r\cos\theta\right]^{3/2}}.
+  \end{align*}
+  Evaluate at $R$
+  \begin{align*}\left.\frac{\partial\Phi}{\partial r}\right|_R  &=\frac{q(\frac{d}{2}\cos\theta-R)}{\left[R^2+\left(\frac{d}{2}\right)^2-Rd\cos\theta\right]^{3/2}}+\frac{q(\frac{d}{2}\cos\theta+R)}{\left[R^2+\left(\frac{d}{2}\right)^2+Rd\cos\theta\right]^{3/2}}\\
+  &\quad-\frac{q(\frac{4R^3}{d^2}\cos\theta-\frac{2R^2}{d})}{\left[R^2+\frac{4R^4}{d^2}-\frac{4R^3}{d}\cos\theta\right]^{3/2}}-\frac{q(\frac{4R^3}{d^2}\cos\theta+\frac{2R^2}{d})}{\left[R^2+\frac{4R^4}{d^2}+\frac{4R^3}{d}\cos\theta\right]^{3/2}}\\
+  &=\frac{q(\frac{d}{2}\cos\theta-R)}{\left[R^2+\left(\frac{d}{2}\right)^2-Rd\cos\theta\right]^{3/2}}+\frac{q(\frac{d}{2}\cos\theta+R)}{\left[R^2+\left(\frac{d}{2}\right)^2+Rd\cos\theta\right]^{3/2}}\\
+  &\quad-\frac{q(\frac{R}{d/2})(\frac{R^2}{d/2}\cos\theta-R)}{\left[\left(\frac{R^2}{(d/2)^2}\right)\left((\frac{d}{2})^2+R^2-Rd\cos\theta\right)\right]^{3/2}}-\frac{q(\frac{R}{d/2})(\frac{R^2}{d/2}\cos\theta+R)}{\left[\left(\frac{R^2}{(d/2)^2}\right)\left((\frac{d}{2})^2+R^2+Rd\cos\theta\right)\right]^{3/2}}\\
+    &=\frac{q(\frac{d}{2}\cos\theta-R)}{\left[R^2+\left(\frac{d}{2}\right)^2-Rd\cos\theta\right]^{3/2}}+\frac{q(\frac{d}{2}\cos\theta+R)}{\left[R^2+\left(\frac{d}{2}\right)^2+Rd\cos\theta\right]^{3/2}}\\
+  &\quad-\frac{q(\frac{R^2}{d/2}\cos\theta-R)}{\frac{R^2}{(d/2)^2}\left[(\frac{d}{2})^2+R^2-Rd\cos\theta\right]^{3/2}}-\frac{q(\frac{R^2}{d/2}\cos\theta+R)}{\frac{R^2}{(d/2)^2}\left[(\frac{d}{2})^2+R^2+Rd\cos\theta\right]^{3/2}}\\
+      &=\frac{q(\frac{d}{2}\cos\theta-R)}{R^3\left[1+\frac{(d/2)^2}{R^2}-\frac{d}{R}\cos\theta\right]^{3/2}}+\frac{q(\frac{d}{2}\cos\theta+R)}{R^3\left[1+\frac{(d/2)^2}{R^2}+\frac{d}{R}\cos\theta\right]^{3/2}}\\
+  &\quad-\frac{q(\frac{R^2}{d/2}\cos\theta-R)}{\frac{R^5}{(d/2)^2}\left[\frac{(d/2)^2}{R^2}+1-\frac{d}{R}\cos\theta\right]^{3/2}}-\frac{q(\frac{R^2}{d/2}\cos\theta+R)}{\frac{R^5}{(d/2)^2}\left[\frac{(d/2)^2}{R^2}+1+\frac{d}{R}\cos\theta\right]^{3/2}}\\
+  &=\frac{q}{R^2}\left[\frac{\frac{(d/2)^2}{R^2}-1}{(1+\frac{(d/2)^2}{R^2}-\frac{d}{R}\cos\theta)^{3/2}}+\frac{1-\frac{(d/2)^2}{R^2}}{(1+\frac{(d/2)^2}{R^2}+\frac{d}{R}\cos\theta)^{3/2}}\right].
+  \end{align*}
+  We can express this in terms of $\zeta \equiv \frac{(d/2)}{R}$ to arrive at
+  $$\vect E = -\frac{\partial \Phi}{\partial r}\vecth r=\frac{q}{R^2}\left[\frac{1-\zeta^2}{(1+\zeta^2-2\zeta\cos\theta)^{3/2}}+\frac{\zeta^2-1}{(1+\zeta^2+2\zeta\cos\theta)^{3/2}}\right]\vecth r.$$
+  The surface charge density is then, using \eqref2 (and putting back the units for $k$)
+  $$\sigma = \frac{q}{4\pi R^2}\left[\frac{\zeta^2-1}{(1+\zeta^2-2\zeta\cos\theta)^{3/2}}+\frac{1-\zeta^2}{(1+\zeta^2+2\zeta\cos\theta)^{3/2}}\right].$$
+  % #3
+  \item 2.7 Jackson: Consider a potential problem in the half-space defined by $z\geq 0$, with Dirichlet boundary conditions on the plane $z=0$ (and at infinity).
+  \begin{enumerate}
+  \item Write down the appropriate Green function $G(\vect x,\vect x')$.
+  \item If the potential on the plane $z=0$ is specified to be $\Phi = V$ inside a circle of radius $a$ centered at the origin, and $\Phi = 0$ outside that circle, find an integral expression for the potential at the point $P$ specified in terms of cylindrical coordinates $(\rho, \phi, z)$.
+  \item Show that, along the axis of the circle $(\rho = 0)$, the potential is given by 
+  \begin{equation}\label{4}\Phi = V\left(1-\frac{z}{\sqrt{a^2+z^2}}\right)\end{equation}
+  \item Show that at large distances $(\rho^2+z^2\gg a^2)$ the potental can be expanded in a power series in $(\rho^2+z^2)^{-1}$, and that the leading terms are
+  \begin{equation}\label{5}
+  \Phi = \frac{Va^2}{2}\frac{z}{(\rho^2+z^2)^{3/2}}\left[1-\frac{3a^2}{4(\rho^2+z^2)}+\frac{5(3\rho^2a^2+a^4)}{8(\rho^2+z^2)^2}+...\right]
+  \end{equation}
+  Verify that the results of parts (c) and (d) are consistent with each other in the their common range of validity.
+  \end{enumerate}
+ % #4
+  \item A point dipole $\vect p$ is located at $\vect r$ relative to the origin, around which is centered a grounded conducting sphere of radius $a$. Determine the potential $\phi$ of electric field at $\vect r'$ outside the sphere. Direction of the dipole vector $p$ is arbitrary.
+\\ \\If $\vect r$ was in a cavity within the sphere, the dipole would induce a charge on the interior as to cancel the field everywhere in the conductor. Since the total quantity of induced charge is zero, I would suspect that there would be no distribution of charges on the exterior surface of the conductor, and thus $\vect E = 0$ outside the sphere.
+\\ \\ Therefore, the more nontrivial case would be that of a dipole placed outside the sphere, in which we must find the potential everywhere exterior to the sphere. At first sight, this should be able to accomplished by placing a necessary image dipole with the appropriate orientation, charge, and position. However, it turns out that the situation is not so simple. As covered in this paper \href{http://arxiv.org/pdf/physics/0405122.pdf}{here}, unless the dipole is oriented perpendicular to the adjoining radius vector of the sphere, an additional image charge \emph{must} be added that is dependent on the relative orientation of the dipole. Keeping this in mind our initial potential that includes our images must begin as ($k=1$ units)
+$$\Phi(\vect r') = \frac{\vect r_1\cdot\vect p_1}{r_1^3}+\frac{\vect r_2\cdot\vect p_2}{r_2^3}+\frac{q_2}{r_2}$$
+where $\vect r_1 = \vect r'-\vect r$ is the difference vector between the dipole and point of potential and $\vect r_2 = \vect r'-\vect r_i$ is the difference vector between the image dipole and the potential point of interest. Note that we have placed the extra image charge at the same location of the image dipole. Based on the previous method of images, a good starting point would be to use the same relation of relative distances for the images charges and actual charges commonly found for the conducting sphere of only one charge. Namely,
+$$yy_i = R^2$$
+where $y$ is the distance of the charge to origin and $y_i$ is that of the image charge to the origin. As we switch to a new notation, this relation changes as we will see. First we define
+$$\vect r_1 = \vect R-\vect R_1$$
+and
+$$\vect r_2 = \vect R-\vect R_2$$
+where $\vect R = R\vecth r$ is the radius vector of our sphere, and $\vect r_1$, $\vect r_2$ are the distance vectors from a point on the sphere to the charge/image respectively. Therefore, $\vect R_1$ and $\vect R_2$ can be viewed as the position vectors of the charge/image relative the origin now. Our new relation which is vaild for all points on the surface of the sphere is now defined in terms of a yet to be determined constant of 
+$$\frac{r_1}{r_2} = k.$$
+Since the sphere is grounded, we are looking for a solution to the potential at $R$, that is zero
+$$\Phi(R) = \frac{\vect r_1\cdot\vect p_1}{r_1^3}+\frac{\vect r_2\cdot\vect p_2}{r_2^3}+\frac{q_2}{r_2}=0.$$
+In terms of our constant $k$ this becomes
+$$\frac{\vect p_1\cdot\vect R}{k^3}-\frac{\vect p_1\cdot\vect R_1}{k^3}+\vect p_2\cdot\vect R-\vect p_2\cdot\vect R_2+q_2(R^2+R_2^2)-2q_2\vect R_2\cdot\vect R. $$
+Notice the use of the law of cosines in application to $q_2$. Since this relation holds for any point on the surface of the sphere, this means that $\vect R$ can be completely arbitrary. Thus, two terms must be zero identically for the relation to hold. That is
+$$\frac{\vect p_1}{k^3}+\vect p_2-2q_2\vect R_2 = 0$$
+and
+$$\frac{\vect p_1\cdot \vect R_1}{k^3}+\vect p_2\cdot\vect R_2 - q_2(R^2+R_2^2) = 0.$$
+To solve for the quantities of interest ($\vect p_2$ and $q_2$), we can solve the set of two equation by taking the dot product of the first with $\vect R_2$ and subtract the second equation from the result. This gives us
+$$\frac{\vect p_1\cdot\left(\vect R_2-\vect R_1\right)}{k^3}+q_2(R^2-R_2^2) = 0.$$
+Now $q_2$ can easily be solved for, yielding
+$$q_2 = -\frac{\vect p_1\cdot(\vect R_2-\vect R_1)}{k^3(R^2-R_2^2)}.$$
+Analyzing the difference of the vectors, we can rewrite this as
+$$q_2 = \frac{\vect p_1\cdot\vect R_1}{k^3R^2}.$$
+To solve for $k$ we choose $\vect R$ (which is arbitrary) such that it parallel to both $\vect R_1$ and $\vect R_2$. Combining our relation for $k$ with the relation for an ordinary image charge ($y_iy=R^2$) we then have
+$$k = \frac{r_1}{r_2} = \frac{R_1-R}{R-R_2} = \frac{R_1}{R}.$$
+Using this $k$ in the equation for $q_2$ we arrive at
+$$q_2 = \frac{R\vect p_1\cdot\vect R_1}{R_1^3}.$$
+Now we substitute this $q_2$ into our first zero equation to find
+$$\vect p_2 = -\frac{R^3}{R_1^3}\left[\vect p_1-2\left(\vect p_1\cdot\vecth R_1\right)\vecth R_1\right]$$
+where we have the used the fact that $\vect R_1$ is parallel to $\vect R_2$ and once again used $yy_i=R_1R_2=R^2$. Thus for an arbitrary orientation of $\vect p_1$, our dipole, our potential can now be written as 
+$$\Phi(\vect r') = \frac{\vect r_1\cdot\vect p_1}{r_1^3}-\frac{R^3}{R_1^3}\frac{\vect r_2\cdot\left[\vect p_1-2\left(\vect p_1\cdot\vecth R_1\right)\vecth R_1\right]}{r_2^3}+ \frac{R\vect p_1\cdot\vect R_1}{R_1^3r_2},$$
+where the vectors are related to $\vect r'$ by
+$$\vect r' = \vect r_1+\vect R_1=\vect r_2+\vect R_2.$$
+One final thing we can do is rewrite the dot product in the second term using the triple cross produce formula to yield
+$$\Phi(\vect r') = \frac{\vect r_1\cdot\vect p_1}{r_1^3}+\frac{R^3}{R_1^3}\frac{\vect r_2\cdot\left[\vect p_1+2\left(\vect p_1\times\vecth R_1\right)\times\vecth R_1\right]}{r_2^3}+ \frac{R\vect p_1\cdot\vect R_1}{R_1^3r_2}.$$
+This form elucidates the fact that if $\vect p_1$ and $\vecth R_1$ are parallel, we have a large simplification from the zero result of the cross product. Even more importantly, however, we see that if $\vect p_1\cdot\vect R_1 =0 $, then the image charge can be completely constructing by a single dipole of appropriate magnitude, position, and orientation. 
+ % #5
+  \item 2.9 Jackson: An insulated, spherical, conducting shell of radius $a$ is in a uniform electric field $E_0$. If the sphere is cut into two hemispheres by a plane perpendicular to the field, find the force required to prevent the hemispheres from separating
+  \begin{enumerate}
+  \item if the shell is uncharged;
+  \item if the total charge on the shell is $Q$
+  \end{enumerate}
+% #6
+  \item A sphere of radius $R$ is uniformly polarized to a volume density of a dipole moment $P$. Determine the potential of the electric field $\phi$, produced by this sphere through the entire space. Hint: A dipole moment $d\vect p$ of the small volume $dV$ may be calculated as $d\vect p=\vect PdV$. 
+  \\ \\The potential due to a single dipole is 
+  $$\Phi(\vect r) = \frac{1}{4\pi\epsilon_0}\frac{\vect r\cdot\vect p}{r^3}$$
+  where $\vect r$ is the distance from the origin to the point of interest and $\vect p$ is the usual
+  $$\vect p = \int{d^3r'\ \vect r'\rho(\vect r')}.$$
+  For our uniformly polarized sphere, the dipole moment is given by
+  $$\vect p = \int_{V}{d^3r'\ \vect P}.$$
+  Now rewriting our potential we have
+  $$\Phi(\vect r) = \frac{1}{4\pi\epsilon_0}\frac{1}{r^3}\int{d^3r'\ \vect r\cdot\vect P}.$$
+  Since $\vect P$ is uniform, let us direct it along the $z$-axis as
+  $$\vect P = P\vecth z$$
+  in which we the inner product becomes
+  $$\vect r\cdot\vect P = Pr\cos\theta = Pz.$$
+  Integrating over the sphere, our potential is then
+  $$\Phi(\vect r) = \frac{1}{4\pi\epsilon_0}\frac{Pr\cos\theta}{r^3}\frac{4\pi R^3}{3} = \frac{P}{3\epsilon_0}\frac{R^3}{r^2}\cos\theta.$$
+  Incidentally, the potential exterior to a uniformly polarized sphere is 
+  $$\Phi(\vect r) = \frac{P}{3\epsilon_0}\frac{R^3}{r^2}\cos\theta$$
+  which can also be written simply as
+  $$\Phi(\vect r) = \frac{1}{4\pi\epsilon_0}\frac{\vect r\cdot\vect p}{r^3}$$
+  where 
+  $$\vect p = \frac{4\pi R^3}{3}\vect P.$$
+  
+\end{enumerate}
+
+\end{document}

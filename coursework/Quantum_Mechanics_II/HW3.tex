@@ -1,0 +1,351 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 3\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Sept. 30}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+	Radial WKB and perturbation theory
+	\benum
+		% (a)
+		\item
+		Show that with the ``Langer substitution", the radial WKB quantization condition yields the exact bound state spectrum for
+		the hydrogen atom. \\
+		Hint: Write the WKB integral in terms of the turning points, and then only at the end, after you have done
+		the integral, substitute the actual expressions for the turning points.
+		\\
+		\\
+		Using the Langer substitution, the effective potential for the hydrogen atom is
+		\[
+			V_{eff} = -\frac{e^2}{r}+\pfrac{\h^2}{2m}\frac{(l+\frac{1}{2})^2}{r^2}.
+		\]
+		Thus our bound state WKB energy estimate
+		\[
+			\int_{r_0}^{r_1} dr\ \sqrt{\frac{2m}{\h^2}(E-V)}
+		\]
+		becomes
+		\[
+			\int_{r_0}^{r_1} dr\ \sqrt{\frac{2m}{\h^2}\plr{E+\frac{e^2}{r}}-\frac{(l+\frac{1}{2})^2}{r^2}}.
+		\]
+		We then rescale $r$ by the wavevector $k$ such that 
+		\[
+			\rho  = \sqrt{\frac{-2mE}{\h^2}}r = kr
+		\]
+		in which our integral becomes
+		\[
+			\int_{\rho_0}^{\rho_1} d\rho\ \sqrt{-1+\frac{2me^2}{\h^2k\rho}-\frac{(l+\frac{1}{2})^2}{\rho^2}}.
+		\]
+		We are left with the dimensionless parameter which may be expressed in the relevant scales as
+		\[
+			\frac{me^2}{\h^2 k} = \frac{1}{ak} = \frac{1}{\alpha}\pfrac{\lambda}{\lambda_C}.
+		\]
+		with $a$, $\lambda$, $\lambda_C$ and $\alpha \equiv \frac{1}{137}$ being the Bohr radius, de Broglie wavelength, Compton 
+		wavelength, and fine structure constant respectively. For now we will express our parameter in terms of $k$ and $a$. We
+		may further simplify this integral by putting the terms under the radical in factored quadratic form
+		\[
+			\int_{\rho_0}^{\rho_1} d\rho\ \frac{1}{\rho}\sqrt{-(\rho-\rho_0)(\rho-\rho_1)}.
+		\]
+		Since we have essentially factored the solution to $E=V_{eff}$, the zeros of the quadratic are precisely our turning points
+		\[
+			\rho_{0,1} = \frac{1}{ak}\plr{1\pm \sqrt{1-\plr{ak(l+\frac{1}{2})}^2}}.
+		\]
+		The solution to the integral is
+		\[
+			\int_{\rho_0}^{\rho_1} d\rho\ \frac{1}{\rho}\sqrt{-(\rho-\rho_0)(\rho-\rho_1)} = \frac{\pi}{2}\plr{\rho_0+\rho_1
+			-2\sqrt{\rho_0\rho_1}}
+		\]
+		thus according the WKB energy quantization,
+		\[
+			\frac{1}{2}\plr{\rho_0+\rho_1-2\sqrt{\rho_0\rho_1}} = n'+\frac{1}{2}.
+		\]
+		Substituting the appropriate expressions for $\rho_0$ and $\rho_1$, we arrive at
+		\[
+			\frac{1}{ak}- \plr{l+\frac{1}{2}}= n'+\frac{1}{2}
+		\]
+		or
+		\[
+			E=\frac{-\h^2}{2ma^2(n'+l+1)^2} \qquad l=0,1,2,3..\quad n'=0,1,2,3..
+		\]
+		Denoting the principle quantum number
+		\[
+			n = n'+l+1
+		\]
+		we retain the full hydrogen energy spectrum
+		\[
+			E=\frac{-\h^2}{2ma^2n^2} \qquad n=1,2,3..
+		\]
+		\\
+		\\
+		% (b)
+		\item
+		Consider a radial potential 
+		\[
+			V = -\frac{e^2}{r}+V_{int}(r)
+		\]
+		Using the fact that at large $n$ the radial hydrogenic wavefunctions behave like [check this for yourself with some plots!]
+		\[
+			R_{n,l}(r) \approx \frac{\sqrt 2J_{2l+1}\plr{2\sqrt 2\sqrt{r/a}}}{a^{3/2}n^{3/2}\sqrt{r/a}}
+		\]
+		show that the first-order shift in the energy can be written in the form
+		\[
+			\Delta E_N^{(1)}=\frac{e^2}{a}\frac{\delta}{n^3}
+		\]
+		where $\delta$ is some integral transform of $V_{int}$. Hence show that to this order the energy levels can be
+		written as an ``effective shift in n":
+		\[
+			E_n\approx -\frac{e^2}{2a(n+\delta)^2}. 
+		\]
+		Comment: Note that Mathematica has a slightly unusual convention for writing the Laguerre polynomials so that the
+		hydrogenic radial wavefunctions are (in dimensionless radial coordinates)
+		\[
+			R_{n,l}(r) = \frac{2^{l+1}e^{-\frac{r}{n}}\sqrt{\frac{(-l+n-1)!}{(l+n)!}}\pfrac{r}{n}^l\ LaguerreL[n-l-1,2l+1,(2r)/n]}{n^2}
+		\]
+		It's worth checking that your version of Mathematica has this same convention: check the first few with the radial 
+		wavefunctions from a QM book. 
+		\\
+		\\
+		\\
+		To calculate the first order energy correction of the $n$th state, we use
+		\[
+			\Delta E_n^1 = \braket{n^0|H^1|n^0}
+		\]
+		where $H^0\ket{n^0} = E_n^0\ket{n^0}$ denote the energy eigenstates. For our hydrogen atom the first 
+		order energy correction is
+		\ba
+			\Delta E_n^1 &= \braket{n^0|V(r)|n^0} \\
+			& = \int_S d\Omega\ |Y^l_m(\theta,\phi)|^2  \int_0^\infty dr\ r^2 |R_{n,l}(r)|^2\,V(r) \\
+			& = \int d\rho\ |R_{n,l}(\rho)|^2 \\
+			& = \frac{2}{a^3n^3}\int_0^\infty dr\ r^2 \frac{\blr{J_{2l+1}(2\sqrt 2\sqrt\frac{r}{a})}^2}{r/a}V(r)\\
+			& = \frac{e^2}{an^3}\int_0^\infty d\rho\ \rho \blr{J_{2l+1}\plr{2\sqrt 2\sqrt\rho}}^2\pfrac{2a}{e^2}V(\rho)\\
+			& = \frac{e^2\delta}{an^3}
+		\ea
+		where $\delta$ is a dimensionless integral of $V_{int}(r)$ in dimensionless variable $\rho = r/a$. Adding
+		this correction to unperturbed hydrogen eigenstates, we have
+		\ba
+			E_n &\approx E_n^0+E_n^1\\
+			& = -\frac{e^2}{2an^2}+\frac{e^2\delta}{an^3}\\
+			& = -\frac{e^2}{2a}\plr{\frac{1}{n^2}-\frac{2\delta}{n^3}}\\
+			& = -\frac{e^2}{2a}\plr{\frac{1-2\frac{\delta}{n}}{n^2}}\\
+			& \approx -\frac{e^2}{2a}\pfrac{1}{n^2\plr{1+\frac{\delta}{n}}^2}\\
+			& = -\frac{e^2}{2a(n+\delta)^2}
+		\ea
+		Thus a first order approximation to the large $n$ energy spectrum of hydrogen can be calculated by 
+		\[
+			-\frac{e^2}{2a(n+\delta)^2}
+		\]
+		where $\delta$ is a dimensionless integral transform of $V_{int}(r)$. 
+		\\
+		\\
+		\emph{What integral transform is this exactly? Looks similar to a Hankel transform.}
+		\\
+		\\
+	\eenum
+	
+	
+% #2-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider a constant electric field $\mathcal E$ applied to a hydrogen atom in the $n=3$ energy level.
+	
+	\benum
+		% (a)
+		\item 
+		List the relevant states for first-order perturbation theory and use symmetry arguments to show that only a small number
+		of non-zero matrix elements are needed.
+		\\
+		\\
+		Our task is to evaluate the matrix elements of the degenerate states of in the $n=3$ energy level of hydrogen
+ 		which are of the form
+ 		\[
+			\braket{3l'm'|H'|3lm} = \braket{3l'm'|e\mathcal{E}z|3lm}
+		\]
+		where $\mathcal E$ denotes the strength of the electric field. We do not account for relativistic corrections nor 
+		spin orbit coupling here. For the $n=3$ level, there is $3^2 = 9$ fold degeneracy and thus the first order
+		perturbation matrix would contain a total of $81$ elements. 
+		\\
+		\\ 
+		First off, the matrix is Hermitian and so we only need to calculate $n(n+1)/2 = 45$ elements. Next, since the 
+		perturbation $H'$ is a tensor operator
+		\[
+			H' = e\mathcal Ez \sim T_{q=0}^{(k=1)}
+		\]
+		we may use the Wigner-Eckart theorem
+		\[
+			\braket{3l'm'|T_{q=0}^{(k=1)}|3lm} = \braket{lk;mq|jk;j'm'}\frac{\braket{3l'||T^{(k)}|3l}}{\sqrt{2l+1}}
+		\]
+		to conclude that the Clebsch-Gordan coefficients vanish unless
+		\[
+			l' = l-1,l,l+1\quad \text{and} \quad m' = m.
+		\]
+		In addition, since the eigenstates of hydrogen have definite parity and the perturbation $H'$ is of odd parity,
+		we deduce that matrix elements of the same $l=l'$ must vanish. Thus, the criteria for non-vanishing matrix
+		elements is then
+		\[
+			\braket{3l'm'|e\mathcal{E}z|3lm} = 0\quad\text{unless}\quad 
+			\begin{cases} l'=l\pm1\\m'=m \end{cases}
+		\]
+		This leaves us with
+		\[
+			\braket{300|H'|310},\quad \braket{31(-1)|H'|32(-1)},\quad \braket{310|H'|320},\quad \braket{311|H'|321}
+		\]
+		\\
+		% (b)
+		\item
+		Compute the non-zero matrix elements, and hence find the first-order Stark shifts.
+		\\
+		\\
+		Evaluating these elements,
+		\ba
+			\braket{300|H'|310} &= e\mathcal E a\plr{-3\sqrt 6}
+			\\
+			 \braket{31(-1)|H'|32(-1)} &=  e\mathcal E a\plr{-\frac{9}{2}}
+			 \\
+			 \braket{310|H'|320} & =  e\mathcal E a\plr{-3\sqrt 3}
+			 \\
+			  \braket{311|H'|321} & =  e\mathcal E a\plr{-\frac{9}{2}}
+		\ea
+		Forming these elements into a matrix equation and solving for the eigenvalues yields the first order 
+		energy corrections of 
+		\[
+			E_3 = E_3^0 \pm 9 e\mathcal E a \quad \text{and}\quad E_3 = E_3^0\pm \frac{9}{2}e\mathcal E a.
+		\]
+		Thus the $n=3$ hydrogen energy level is split into four perturbed energies under application of an external
+		electric field. 
+		\\
+		\\
+		% (c)
+		\item
+		What remaining degeneracies are there?
+		\\
+		\\
+		In applying the electric field, we have broken the ``theta" symmetry but the perturbation still commutes with 
+		$L_z$ and thus possesses azimuthal symmetry. Therefore, we expect extra degeneracies to exist due to this
+		symmetry. Would it be correct to say the degeneracy in $l$ has been lifted, but our system still is 
+		degenerate in $m$? 
+		\\
+	\eenum
+	
+	
+% #3 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Second order Stark shift
+	\benum
+	
+		% (a)
+		\item
+		Consider the following expression for the second-order Stark shift of the hydrogen ground state energy level, coming from
+		summing over all bound states other than the ground state:
+		\[
+			\Delta E_1^{(2)} = \sum_{(n,l,m)\ne(1,0,0)} \frac{|\braket{n,l,m|e\mathcal E z|1,0,0}|^2}{E_1-E_n}
+		\]
+		Without doing any computation, explain the \textbf{sign} of this second-order shift.
+		\\
+		\\
+		As the modulus squared of a complex number is real and positive, we are left to analyze the denominator, which
+		must be negative since we are summing over states with energy greater than the ground state. Thus 
+		our second order energy shift is negative. 
+		\\
+		
+		% (b)
+		\item
+		Use scaling and symmetries to reduce this expression to an expression of the form
+		\[
+			\Delta E_1^{(2)} = E_1^{\text{Bohr}}\times\text{(dimensionless measure of strength of the applied field)}
+			\times \sum_{n=2}^\infty F(n)
+		\]
+		for some numbers $F(n)$, given by dimensionless integrals involving the hydrogenic radial wavefunctions. Explain
+		the physical meaning of the dimensionless measure of the strength of the applied field that arises in your expression.
+		\\
+		\\
+		We could use the same selection rules and parity as in question 2 to deduce that only the $l=1$ $m=0$ elements survive. Or,
+		alternatively, we may see that
+		\[
+			z = rcos\theta = r\sqrt{\frac{4\pi}{3}}Y_0^1(\theta,\phi)
+		\]
+		so we integrate the angular dependence
+		\[
+			\sqrt{\frac{4\pi}{3}}\int d\Omega\ Y_m^lY_0^1Y_0^0 = \sqrt{\frac{4\pi}{3}}\pfrac{1}{\sqrt{4\pi}}
+			\int d\Omega\ Y_m^lY_0^1=  \pfrac{1}{\sqrt 3} \delta_{m,0}\delta_{l,1}
+		\]
+		which leads us to the same conclusion. As a result, the square modulus of the matrix elements goes as
+		\[
+			|\braket{n,l,m|e\mathcal E z|1,0,0}|^2 = \frac{1}{3}(e\mathcal E a)^2
+			\blr{\int_0^\infty d\rho\ \rho^3 R_{n,1}(\rho)R_{1,0}(\rho)}^2
+		\]
+		where $\rho$ and $R_{n,l}(\rho)$ are dimensionless. If we now look at the denominator in the summation
+		of our second order energy correction, we have
+		\[
+			E_1 - E_n = E_1\plr{1-\frac{1}{n^2}} = E_1\pfrac{n^2-1}{n^2}.
+		\]
+		Putting all this together, the energy correction is
+		\[
+			\Delta E_1^{(2)} = \frac{1}{3}(e\mathcal E a)^2\frac{1}{E_1}\sum_{n=2}^\infty
+			\pfrac{n^2}{n^2-1}\blr{\int_0^\infty d\rho\ \rho^3 R_{n,1}(\rho)R_{1,0}(\rho)}^2.
+		\]
+		This may be rearranged as
+		\[
+			\Delta E_1^{(2)} = E_1^{(0)}\pfrac{\mathcal E a^2}{e}^2 \frac{4}{3}
+			\sum_{n=2}^\infty F(n)
+		\]
+		where of course
+		\[
+			F(n) = \pfrac{n^2}{n^2-1}\blr{\int_0^\infty d\rho\ \rho^3 R_{n,1}(\rho)R_{1,0}(\rho)}^2.
+		\]
+		The dimensionless strength of the applied field
+		\[
+			\frac{\mathcal E}{e/a^2}
+		\]
+		sets a natural scale relative to the electric field produced by a proton at the Bohr radius $a$. This is the same
+		magnitude of the field acting upon an electron in the hydrogen atom (assuming the electron is at $a$, which it is 
+		on average).  
+		\\
+		% (c)
+		\item
+		The numbers $F(n)$ are difficult to compute in closed-form, but are simple to compute numerically: for example
+		use the NIntegrate command in mathematica.\\
+		Evaluate $\sum_{n=2}^{\infty} F(n)$ numerically by summing up to $n=20$, and compare with the exact answer
+		which we derived in class.
+		\\
+		\\
+		Utilizing mathematica we have
+		\[
+			\sum_{n=2}^{20} F(n) = 2.74.
+		\]
+		Substituting this into our formula for $\Delta E_1^{(2)}$
+		\[
+			\Delta E_1^{(2)} \approxeq E_1^{(0)}\pfrac{\mathcal E a^2}{e}^2(3.66).
+		\]
+		In class we derived this as 
+		\[
+			\Delta E_1^{(2)} = E_1^{(0)}\pfrac{\mathcal E a^2}{e}^2\pfrac{9}{2}.
+		\]
+		\\
+		 % (d)
+		 \item
+		 Why is there a mis-match, and what would you need to do to correct it [you don't need to do this, just explain briefly what should 
+		 be done]?
+		 \\
+		 \\
+		 As a numerical solution, we may continue to approximate the second order energy shift to higher accuracy by summing over 
+		 more terms. However, since this is an infinite summation we will never reach the exact result. Instead, we may use the first
+		 order equation in the perturbation
+		 \[
+		 	(H^{(0)}-E^{(0)}_1)\ket{\psi^{(1)}_1} = (E^{(1)}_1-H^{(1)})\ket{\psi^{(0)}_1}
+		\]
+		to solve for $\ket{\psi^{(1)}}$ in which we can find the second order energy from
+		\[
+			E^{(2)} = \braket{\psi^{(0)}_1|H^{(1)}|\psi^{(1)}_1}.
+		\]
+		In order to solve for $\ket{\psi^{(1)}_1}$ in this case, we may make an educated guess of something similar to
+		\[
+			\psi^{(1)}_1(r) = e^{-r/a}\cos\theta f(r),
+		\]
+		then substitute this into the modified radial equation to finally solve for $f(r)$. 
+		\eenum
+\eenum
+\end{document}

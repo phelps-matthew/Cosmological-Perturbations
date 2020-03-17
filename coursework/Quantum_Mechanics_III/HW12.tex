@@ -1,0 +1,143 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 12\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 20}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[8.2]
+\benum
+\item
+Show that the spectrum of the solutions $\omega$ to the eigenvalue equations (8.49) and (8.50) is unchanged
+if there is a global change in the phase of the zeroth order solution $\phi$, $\phi\to e^{i\psi}\phi$ for
+a constant (in space and time) $\psi$. \\
+\item
+The physics of a BEC is said to be invariant under time reversal if the field $\phi$ may be chosen to be real. Show
+that in such a case the eigenvalues come in pairs: if $\omega$ is an eigenvalue, then so is $-\omega$.\\ \\
+\eenum
+\benum
+\item %(a)
+As eigenvalue equations, we may put (8.49) and (8.50) into a more illustrative form according the following definitions:
+\[
+ 	\mathcal L = \plr{ -\frac{\h^2}{2m}\del^2 +U+2g|\phi|^2},\qquad
+	A = g\phi^2.
+\]
+Yes, $\mathcal L$ is dependent on $A$, but for the argument here this is not important. With these definitions,
+we may now construct our eigenvalue matrix equation
+\[
+	\bpm \mathcal L - (\mu+\omega)& A \\ -A^*&-(\mathcal L-(\mu-\omega)) \epm\bpm u\\ v\epm 
+\]
+The transformation $\phi \to e^{i\psi}\phi$ is effectively carried out by $A\to e^{2i\psi}A$, thus
+\[
+	\bpm \mathcal L - (\mu+\omega)& A \\ -A^*&-(\mathcal L-(\mu-\omega)) \epm \to
+	\bpm \mathcal L - (\mu+\omega)& Ae^{2i\psi} \\ -A^*e^{-2i\psi}&-(\mathcal L-(\mu-\omega)) \epm.
+\]
+The spectrum of eigenvalues are defined by the characteristic equation resulting from the determinant of a matrix.
+We see that the determinant here is unaffected by the transformation, making $\{\omega\}$ invariant.
+\\ \\ Now that I'm skeptical on the validity of taking the determinant of differential operators, perhaps we may answer this
+question in a different manner. Note that if we define $v' =  ve^{2i\psi}$, we may write both our eigenvalue equations 
+(that is, after a transformation $\phi \to \phi e^{i\psi}$) as
+\[
+	\plr{-\frac{\h^2}{2m}\del^2+U+2g|\phi|^2}u+g\phi^2 v' = (\mu +\omega)u
+\]
+\[
+	\plr{-\frac{\h^2}{2m}\del^2+U+2g|\phi|^2}v'+g\phi^{*2} u = (\mu -\omega)v'.
+\]
+The second eq. was accomplished by multiplying by an overall phase factor. Now we see that the eigenvalue
+equations are of the exact same form as before, now defined in terms of variables $u,v'$. Therefore, the spectrum of eigenvalues $\{\omega\}$ has not changed. \\ \\
+\item 
+For $\phi$ real, the variable change $\omega \to -\omega$ may be effectively carried out by taking 
+$u\to u'= v$ and $v\to v'= u$ in eqs. (8.49) and (8.50). Now we have the same two eigenvalue equations in
+terms of variables $v',u'$, and therefore $-\omega$ also serves as valid eigenvalue. \\ \\
+\eenum
+% #2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[8.5]
+Let us model a torus containing a BEC as one-dimensional motion of the atoms with periodic boundary conditions
+over the circumference $L$. In order to keep the dimensions of the various quantities under control, let us also
+quietly assume that the gas is confined in the transverse directions to a small area $A$ in such a way that the density
+is only a function of the longitudinal coordinate $x$.\\ \\
+The torus is rotated about its axis so that the linear velocity of the rim is $v$, and we study the gas in a frame rotating
+with the torus. A simple piece of classical mechanics shows that in the rotating frame the Hamiltonian gets 
+amended with the term $H_R = -v\hat p$.
+\benum
+\item
+Find the constant-density solutions of the time independent GPE and the corresponding wave numbers in the
+rotating frame.
+\item
+Suppose the potential along the torus is not constant, but has a little dimple that rotates with the torus. Intuition
+then tells us that the thermodynamical equilibrium state must be one that is stationary in the rotating frame.
+Generalizing, the thermodynamical equilibrium state should be one with the smallest chemical potential in the rotating frame. Show that the thermodynamical equilibrium is the state with the wave number
+\[
+	k = \frac{2\pi}{L}\pfrac{v}{v_0},
+\]
+where $v_0 =  2\pi\h/(mL)$ is kind of a quantum of rotation of velocities, and $[x]$ stands for the integer
+closest to $x$.
+\item
+Now, the instantaneous (at a fixed $t$) spatial variation of the wave function is the same in the rotating and 
+in the stationary frame. Incredible as it may sound, this correctly suggests that in the laboratory frame the flow
+of velocity of the gas $V$ is given in terms of the wave number in the rotating frame $k$ as 
+$V = \h k/m$. Thus, sketch the variation of the equilibrium flow velocity of the gas in the lab frame
+as a function of the velocity at which the torus is rotated. \\ \\
+\eenum
+\benum
+\item %(a)
+The density of the condensate is 
+\[
+	n(x,t) = \psi(x,t)\psi^*(x,t).
+\]
+With
+\[
+	\psi(x,t) = \phi(x)e^{-i\mu t/ \h}
+\]
+the GPE equation becomes (in the rotating frame)
+\[
+	\plr{-\frac{\h^2}{2m}\difff{}{*2x} + U(x)+i\h v\diff{x}}\phi(x) +\frac{4\pi\h^2 a}{m}\phi^*(x)\phi(x)\phi(x) = \mu \phi(x).
+\]
+Assuming no external potential and accounting for proper normalization ($\int dx |\phi(x)|^2 = N$), this equation has the solution
+\[
+	\phi(x) = \sqrt ne^{ikx}
+\]
+under the energy constraint
+\[
+	\ep_k - \h kv +\frac{4\pi\h^2 an}{m} = \mu.
+\]
+Additionally, our periodic boundary conditions restrict our values of $k$:
+\[
+	\phi(x) = \phi(x+L) \Rightarrow k = \frac{2\pi}{L}j
+\]
+where $j = 0,1,2,3..$.\\
+\item % (b)
+Following the logic as explained in the question, we seek to find wavenumbers that minimize the chemical potential, i.e.
+\[
+	\pdiff[\mu]{k} = 0.
+\]
+Minimizing our energy equation with respect to $k$
+\ba
+	\pdiff[\mu]{k}&= \pdiff{k}\plr{\frac{\h^2k^2}{2m} - \h kv+\frac{4\pi\h^2 an}{m}}\\
+	&=\frac{\h^2 k}{m}-\h v\\
+	\Rightarrow k &= \frac{mv}{\h}
+\ea
+Meanwhile this must conform to our periodic boundary conditions
+\[
+	\frac{2\pi}{L} j = \frac{mv}{\h} \Rightarrow j = \blr{\frac{mvL}{2\pi \h}} = \blr{\frac{v}{v_0}}.
+\]
+Thus
+\[
+	k = \frac{2\pi}{L}\blr{\frac{v}{v_0}}.
+\]
+where $[..]$ denotes nearest integer. \\ \\
+\item % (c)
+The equilibrium velocity flow of the gas in the lab frame $V$ as a function of the rotation velocity $v$ is
+\[
+	V = \frac{\h k}{m} = \frac{ 2\pi \h}{L m}\blr{\frac{v}{v_0}}.
+\]
+The behavior is interesting because we must take the nearest integer, so it appears the flow velocity is quantized.
+\figg[width=150mm]{12_1.png}
+\eenum
+\eenum
+\end{document}

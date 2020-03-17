@@ -1,0 +1,253 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{General Relativity\\Final: Inflation}
+\author{Matthew Phelps}
+
+
+\begin{document}
+\maketitle
+\section*{Introduction}
+In this paper we shall first review the main problems faced by hot big bang theory and discuss how they may be solved by introducing inflation. Then we will introduce the general concept of the scalar inflaton field $\phi$, its approximate solutions in the slow roll approximation, and compute the field for a massive quadratic potential. Lastly, we will address the issue of reheating after inflation and discuss the role of quantum fluctuations as the sources for density perturbations post-inflation. 
+\section{Shortcomings of the Big Bang}
+The big bang theory is based upon an expanding universe, set in the background of a Friedman-Robertson-Walker background
+\[
+	ds^2 = -dt^2+a(t)^2\plr{\frac{dr^2}{1-kr^2}+r^2d\theta^2+r^2\sin^2\theta d\phi^2}.
+\]
+Here $a(t)$ is the scale factor and is a time dependent quantity responsible for the expansion of space. That we arrive at this background is a consequence of the cosmological principle: that the universe is everywhere homogeneous and isotropic. The curvature $k$ may take values of $-1,0,1$ corresponding to open, flat, or closed. It is believed that today we live in a flat, matter dominated universe (with most of this matter in the form of dark matter). \\ \\
+With its origin rooted in the notion of an expanding universe, the big bang model of cosmology has successfully described many aspects of physics, including the relative abundances of matter we see today (nucleosynthesis), the cosmic microwave background (photon decoupling), the age of the universe, and the formation of structure through graviational collapse. However, the big bang theory alone was not enough to solve many of the puzzles remaining in cosmology. These include the horizon problem, the flatness problem, and lack of abundance of ``theoretical matter''. Addressing these problems, the idea of inflation - an era of exponential expansion of spacetime driven by an inflaton field - was introduced to address these problems. The theory has proven successful and is now standard in most theories of modern cosmology. First let's take a look at what problems the standard big bang model faces. 
+
+\subsection{Horizon Problem}
+In an expanding universe, objects at a given comoving coordinate move away from an observer at a velocity proportional to the distance between them (this is what the Hubble telescope showed us). Given comoving coordinates $x(t)$ and scale factor $a(t)$, the proper distance is 
+\[
+	d(t) = a(t)x(t).
+\]
+If an object has no peculiar velocity relative to the observer $\dot x =0$ and the only change in proper distance over time comes from the expansion of space, then
+\[
+	\dot d= \dot a x = Ha x.
+\]
+If an object's velocity $\dot d\ge c$, then any signals sent will not be able to reach the observer. Thus, the set of points at a comoving distance in which the velocities are equal to the speed of light defines a radius of casuality. This is called the Hubble radius
+\[
+	x_H = \frac1{Ha}.
+\]
+This is a time dependent quantity, and any object outside the Hubble radius cannot be seen and cannot causually influence the observer. 
+Now, given that $Ha = \dot a$, we know from the standard big bang theory that $\ddot a <0$, and thus $Ha=\dot a$ decreases over time. What this implies is that the Hubble radius \emph{increases} over time.  
+\\ \\
+Though this may seem sensible, as we expect to be able to see further out into the universe at time progresses, it does pose a problem in the standard big bang theory. During the era of photon decoupling, the universe was in local thermal equilibrium. We emphasize locality, because it is important to note that there existed disparate regions in this photon ``gas'' (there were other particles too) that were not in casual contact with each other (seperation was larger than mean-free path length). As such, the temperature of the photons was not uniform, but rather followed some sort of distribution. Now, as the universe continued to expand, the Hubble radius also continued to grow. Photons from these previously casually disconnected regions will, given enough time, eventually come into the horizon of a given observer. Today, when we look out and measure the CMB, we are indeed measuring the photons from the era of decoupling, photons which previously were outside our Hubble radius. Our measurements show that the temperature of the photons is approximately homogeneous and isotropic. How could photons from two casually disconnected regions during the big bang have come to the same temperature? Herein lies the horizon problem. 
+\subsection{Flatness Problem}
+Consider the two forms of the Freidman equation:
+\be
+	\frac{\ddot a}{a} = -\frac{4\pi}{3m^2_{pl}}(\rho+3p)
+\ee
+\be
+	|\Omega-1| = \frac{|k|}{(Ha)^2}.
+\ee
+where $\Omega = \rho_0/\rho_c$ and $m_{pl}^2 =\h c^5/G$. 
+With the scale factor $a\ge 0$ and $\rho+3p\ge 0$ (strong energy condition for perfect fluid), (1) tells us  that $\ddot a < 0$. Since $Ha = \dot a$ decreases over time, (2) tells us that the quantity $|\Omega - 1|$ must be increasing with time. As such, $|\Omega-1|$ was much smaller in the past than in the present. Current observation of the density $\rho_0$ of the unverise is constrained to
+\[
+	|\Omega_0-1| < 0.01.
+\]
+This implies that $\Omega$ must deviate less and less from the value of unity as look back in time. If we look at specific era's and specify the dependency of $\rho$ upon $a$, we could calculate the deviations
+\ba
+	\text{Nucleosynthesis}:\quad &|\Omega-1| \le \mathcal O (10^{-16})\\
+	\text{Electro-Weak Scale}:\quad &|\Omega-1| \le \mathcal O (10^{-27})\\
+	\text{Planck Scale}:\quad &|\Omega-1| \le \mathcal O (10^{-61}).
+\ea
+The implication is that for our universe to exist as it is today (approximately flat and matter dominated), the initial conditions on the densities during the big bang are extremely confined. They are fined tuned to extremely high precision around unity. This signals a sign that something may be amiss in the standard big bang theory, as there is no basis as to \emph{why} this precise initial condition is necessary from a theoretical viewpoint. 
+\subsection{Theoretical Matter}
+Many grand unified theories predict a large number of particles/relics arising from symmetry breaking. These include magnetic monopoles, cosmic strings, toplogical defects, domain walls, and supersymmetric particles. It is expected that these particles are produced in the radiation era. Under the standard big bang model, the density of matter scales as $a^{-3}$, while that of radiation sclaes as $a^{-4}$. As such, matter is diminished much slower than radiation. It is thus expected that we should see a large abundance of these ``theoretical'' particles alongside ordinary matter. However, these particles are not observed today. How does the big bang explain this?
+\section{Concept of Inflation}
+Given the shortcoming of the big bang model described in the last section, we must keep in mind that big bang cosmology does have success in describing the distributions of matter we see today, among many other features. This suggests that perhaps the big bang model is due for a modification, rather than complete overhaul. A very simple path to altering the big bang model would be again to look at the flatness problem
+\[
+	|\Omega-1|= \frac{|k|}{(Ha)^2}.
+\]
+As described before, the deviation $|\Omega-1|$ increases over time because $\ddot a < 0$. Instead, let us take a period of time in which 
+\[
+	\ddot a >0. 
+\]
+This implies from (1) that
+\[
+	\rho+3p <0.
+\]
+Immediately we see that we have a chance of solving the horizon and flatness problem because $\Omega \to 1$ and the Hubble radius $(aH)^{-1}$ decreases as a function of time during this inflationary phase. Moreover, we will see that this in fact provides a possible solution for the monopoles and other relics of the big bang. To preserve the former successes of the big bang, we will need inflation to be a temporary era. Its position in the chronology of the universe should place it at some time point immediately following the initial expansion of space, but dropping off before electro-weak, quark, and hadron epochs. 
+
+\subsection{Horizon Problem}
+To solve the horizon problem, we may imagine the following sequence of events. First the universe undergoes expansion and has a finite Hubble radius. Events inside this radius are in causal interaction. We may imagine subregions within this radius that are allowed to reach thermal equilibrium. Then, as inflation ensues, the Hubble radius decreases. It continues to decrease to a radius considerably smaller than that prior to inflation. Once the era of inflation begins, the radius expands back out into a region that was previously casually connected. This is depicted diagramatically below.
+\figg[width=80mm]{horizon.png}
+\noindent This means the expanding horizon we see today is expanding into an area of space time that has had time to equilbriate a priori via casual interactions. This explains why the photon distrubtion of the CMB is approximately uniform in every direction. 
+\\ \\
+To implement inflation that achieves the result of homogenous isotropic CMB, the Hubble radius at the time prior to inflation must be much larger than the hubble radius at the end of inflation. This is equivalent to saying that the distance photons could travel before decoupling must be much longer than the time after decoupling. Quantitatively, the distance traveled by a photon is given by the conformal time
+\[
+	\tau = \int_{t_0}^{t_1} \frac{dt}{a(t)}.
+\]
+The above condition on inflation is then
+\[
+	\int_{0}^{t_d} \frac{dt}{a(t)} \gg \int_{t_d}^{t} \frac{dt}{a(t)}
+\]
+where $t_d$ is the time of photon decoupling. 
+\subsection{Flatness Problem}
+The flatness problem is solved rather simply. Again looking at the Freidmann equation
+\be
+	|\Omega-1| = \frac{|k|}{(Ha)^2},
+\ee
+we see that for $\ddot a>0$ the quantity $aH$ increases, and thus $|\Omega -1|$ decreases. This means that $\Omega$ is driven towards unity generally by inflation. Post-inflation, $aH$ decreases and we deviate away from unity as the universe continues to expand. The result is that we do not require any specific initial condition on the density of matter to reproduce the flat matter-dominated universe that we observe today. Any initial condition will drive $\Omega \to 1$ during this inflationary stage. A theory that does not depend critically on intial conditions is a more favorable theory.
+ \subsection{Theoretical Matter}
+ During inflation, we are in a regime in which
+ \[
+ 	\rho+3p <0.
+\]
+In this era, the energy density of the universe decreases very slowly ($a^{-2}$ or slower). Meanwhile, the density of matter decreases as $a^{-3}$. During the rapid expansion of space, the density distribution of matter is heavily diluted to the point of negligibility. Following inflation, the process of reheating allows the creation of elementary particles and fields. Later on, we have nucleosynthesis and photon decoupling. In a theory with inflation, we can solve this problem of ``theoretical matter'' by requiring that the reheating process is bound below the threshold temperature required for generation of exotic particles such as magnetic monopoles and supersymmetric matter. This will allow creation for all the ordinary matter we see today, while also explaining why we have never observed the existance of the spontanesouly broken matter found in many modern grand unified theories. 
+\section{The Inflaton field}
+In order to account for inflation, there must be some source driving the rapid expansion of space. The simplest models of inflation use scalar fields to generate the expansion. The physical field responsible will not be specified, though some models do use the Higgs field to drive inflation. Here, we will look at a simple model of one such scalar field, $\phi$. The dynamics of the scalar field are given by the minimally coupled action
+\[
+	S = \int d^4x\sqrt{-g}\plr{\frac12 R+\frac12 g_{\mu\nu}\pd_\mu \phi \pd_\nu \phi - V(\phi)}.
+\]
+We see that the action is a sum of the Einstein Hilbert action, the kinetic term in $\phi$, and a potential $V(\phi)$. By varying the $\phi$ field portion of the action with respect to the metric we obtain the energy momentum tensor
+\[
+	T_{\mu\nu} = \pd_\mu\phi\pd_\nu\phi -g_{\mu\nu}\plr{\frac12 \pd^\lambda\phi \pd_\lambda \phi+V(\phi)}.
+\]
+The equations of motion for $\phi$ are given by variation of the action with respect to the field $\phi$ 
+\[
+	\frac{1}{\sqrt{-g}}\pd_\mu(\sqrt{-g}\pd^\mu \phi)+\pd_\phi V(\phi) = 0.
+\]
+Taking our field to be homogeneous, $\phi(x) \to \phi(t)$, and taking the FRW metric, the energy momentum tensor is in the form of a perfect fluid with energy and momentum
+\be
+	\rho = \frac12 \dot\phi^2+V(\phi)
+\ee
+\be
+	p = \frac12 \dot\phi^2 - V(\phi).
+\ee
+Substituting  (4) and (5) into the Freidman equation, we have the evolution equations for $\phi$
+\be
+	\ddot \phi +3H\dot\phi+\frac{dV}{d\phi} = 0
+\ee
+\be
+	H^2 = \frac13\plr{\frac12 \dot\phi^2+V(\phi)}.
+\ee
+Recall that our condition for $\ddot a >0$ led to $p/\rho < -1/3$. Taking (4) and (5)
+\[
+	w\equiv \frac p\rho  = \frac{\frac12 \dot\phi^2 -V(\phi)}{\frac12 \dot\phi^2 +V(\phi)} < -\frac13.
+\]
+We see from the above that accelerated expansion can occur if 
+\be
+	V(\phi) \gg  \dot\phi^2.
+\ee
+
+\subsection{Slow Roll Approximation}
+Equations (6) and (7) are typically solved by neglecting a term in each of the equations. This is the slow roll approximation. Let us introduce the slow roll parameters
+\be
+	\epsilon = -\frac{\dot H}{H^2}
+\ee
+\be
+	\eta = -\frac{\ddot \phi}{H\dot\phi}.
+\ee
+Looking at (9), we see that accelerated expasion $\ddot a>0$ only occurs for $\epsilon < 1$. In this range of $\epsilon$ it follows that $V(\phi)> \dot\phi^2$. However, we also need the second slow roll parameter to ensure that the inflation lasts long enough. This means that we need the second time derivative to small, relative to the other paramters in the evolution equation
+\[
+	\ddot \phi \ll 3H\dot\phi, \frac{dV}{d\phi}.
+\]
+This is accomplished if $|\eta| < 1$. In the slow roll regime, we take $\epsilon,|\eta|\ll 1$ and the equations of motion (6) and (7) become
+\be
+	H^2 \approx \frac13 V(\phi)
+\ee
+\be
+	\dot\phi \approx -\frac{1}{3H}\frac{dV}{d\phi}.
+\ee
+Often it is more conveinent to define slow roll parameters in terms of the potential
+\be
+	\tilde\epsilon = \frac12 \pfrac{V_{,\phi}}{V}^2
+\ee
+\be
+	\tilde\eta = \frac{V_{,\phi\phi}}{V}
+\ee
+which are in units of $m_p = 1$ and of course $V_{,\phi} = dV/d\phi$. The conditions are the same as before in the slow roll, namely
+\[
+	\tilde \epsilon \ll 1,\qquad |\tilde\eta| \ll1.
+\]
+If we take the potential to be constant (cosmological constant), we recover the de Sitter space $a\propto e^{Ht}$.
+\subsection{Measuring inflation: e-foldings}
+Before we continue, it would suit us well to define a quantity that measures the ``amount'' of inflation elapsed from the beginning to the end. This quanity is the number of e-foldings 
+\be
+	N \equiv \ln \frac{a_f}{a_i} = \int_{t_i}^{t_f} Hdt.
+\ee
+Given that we know $|\Omega -1|$ is of order unity, the number of efoldings required to solve the flatness problem is around $N\ge 70$. 
+\subsection{Massive Quadratic Potential}
+As a nice example, let us find how many efoldings ensue with the massive potential
+\[
+	V=\frac12 m^2\phi^2. 
+\]
+The slow roll parameters are (in plank mass units)
+\[
+	\tilde \epsilon = \tilde \eta = \frac{1}{4\pi}\pfrac{m_p}{\phi}^2.
+\]
+The solution to the equations of motion (11) and (12) in the slow roll approximation are
+\[
+	\phi \approx \phi_i-\frac{mm_p}{2\sqrt{3\pi}}t 
+\]
+\[
+	a\approx a_i\exp\blr{2\sqrt\frac\pi3\frac{m}{m_p}\plr{ \phi_it-\frac{mm_p}{4\sqrt{3\pi}}t}}
+\] 
+where $\phi_i$ is the potential at the onset of inflation. \\ \\
+The inflationary era ends as $\tilde \epsilon,\tilde\eta \approx 1$, which is around $\phi \approx \frac{ m_p}{\sqrt{4\pi}}$. Calculating the number of efoldings, we find
+\[
+	N \approx 2\pi \pfrac{\phi_i}{m_p}^2-\frac12.
+\]
+To achieve the requisite number of efoldings ($N\ge 70$), we then require $\phi_i \ge 3m_p$.  
+\section{Reheating}
+During inflation, the rapid expansion of space significantly reduces the temperature of the universe and dilutes the densities of radiation and matter to negligible levels (recall matter and radiation go as $a^{-3}$ and $a^{-4}$ respectively). In order for the standard big bang cosmology to commence after inflation, the universe must have entered an era of reheating. During this stage, the energy of the inflaton field (which comprises nearly the entire energy of the universe) is transfered to a radiation dominated plasma, i.e. the universe ``reheats''. As more radiation is produced, the temperature increases to a final threshold value of the reheating temperature, $T_r$. 
+\\ \\
+To be more precise, as inflation came to an end, the inflaton field $\phi$ approaches the minimum of its potential $V(\phi)$. The inflaton field then oscillates about its minimum, decreasing in amplitude as it gradually decays into elementary particles and due to the expansion of space. The elementary particles interact with each other, reaching a state of thermal equilbrium at temperature $T_r$. 
+\\ \\
+The more recent theory of reheating can be broken up into three possible stages. First, we have preheating, where a classically coherent inflaton field oscillates and decays into massive $\phi$ bosons due to parametric resonance. This process occurs extremely quickly, with many models having a very broad resonance. Rapid production of fermions is prohibited during this phase by Pauli exclusion. Next, which we will call the reheating phase, the particles and fields produced in the preheating stage decay into standard elementary particles perturbatively. Lastly, the process of thermalization equilibriates the plasma of particles up to a temperature $T_r$. 
+\subsection{Elementary Model}
+An elementary approach of reheating we will outline here, which does not include the non-perturbative process of preheating, is to treat the classical oscillating scalar field as a collection of $\phi$ particles at rest. The rate at which the oscillatory energy decreases is in correspondance with the rate at which $\phi$ particles are created. Let us assume a potential of the form
+\[
+	V(\phi) = \pm \frac12 m^2\phi^2 +\frac14 \lambda \phi^4.
+\]
+The negative sign in the potential is to allow for spontaneous symmetry breaking with mass generation $\sigma = \frac{m_\phi}{\sqrt \lambda}$. 
+After inflation, our scalar field may decay into bosons $\chi$ and fermions $\psi$ via the Lagrangian interaction terms $-\frac12 g^2\phi^2$ and $-h\bar\psi\psi\phi$ respectively, where $\lambda$, $g$, and $h$ are small coupling constants. To simplify, we assume the bare masses of fermion and boson fields are small such that 
+\[
+	m_\chi = g\phi,\qquad m_\psi = |h\phi|.
+\]
+For $m_\phi \gg m_\chi,m_\psi$, the decay rate for bosons $\phi \to \chi\chi$ is
+\[
+	\Gamma(\phi \to \chi\chi) = \frac{g^4\sigma^2}{8\pi m_\phi}
+\]
+and the rate for fermions $\phi \to \psi\psi$ is
+\[
+	\Gamma(\phi\to\psi\psi) = \frac{h^2 m_\phi}{8\pi}.
+\]
+When the total decay rate becomes smaller than the rate of expansion of space
+\[
+	\Gamma(\phi \to \chi\chi) +\Gamma(\phi\to\psi\psi) < H
+\]
+the process of reheating is finished and $T_r$ is reached. In this elementary model, the reheating temperature can be estimated as
+\[
+	T_r \approx 0.1\sqrt{\Gamma m_p}.
+\]
+\section{Quantum Fluctuations}
+If we look at the CMB, we do indeed see that the photons are all nearly at the same temperature. This was the motivation behind the horizon problem. However, if we look even closer, we notice fluctuations in the distrubution of radiation. These fluctuations are small, but they span large astrophysical distances. Similarly, observation of the large scale structure of the universe also reveals an inhomogeneity and anisoptropy of the matter in the universe - there is a cosmic web filled with walls, nodes, and vast voids. Returning to the CMB, since the background is nearly uniform, we may effectively treat these anisotropies as linear perturbations. But what is the source of these linear perturbations?\\ \\
+It turns out that quantum fluctuations in the inflaton field serve as the sources of these pertubations. The reason we see anisotropies on such large scales today, is due to the change in the horizon as mentioned in the horizon problem. Specifically, during inflation small quantum fluctuations exist in the energy density of the inflaton field, which spans the space within an initial Hubble radius. As inflation continues, the horizon decreases, and the variances in the distrubutions of energy begin to lose casual contact. Additionally, the once tiny quantum perturbations grow exponentially as the expansion of space continues. Thus we have a scenario of non-quantum scale perturbations that are not casually connected - they are essentially ``frozen in''. As inflation ends elementary particles and fields are generated via reheating and our horizon resumes its course of increasing. However, recall that the reheating process depends on the energy of the inflaton field. Hence there will be an anisotropic and inhomogenous energy density of elementary particles, including the radiation era. Thus the perturbations in photon temperature in the CMB have arisen solely due to the effect of the rapid expansion of space upon quantum fluctuations of the inflaton field. Though the CMB was a specific example, it is believed these quantum fluctuations also serve as the seeds for the large scale structure of the universe that we see today. 
+\\ \\
+Computing the power spectrum of the CMB based on these quantum fluctuations is quite a task in its own right. However, we may outline the sequence of steps and state the main results.\\ \\
+1. Linearize the Einstein field equations treating the perturbations as a zeroth order background and first order fluctuation. This inlcudes the metric and energy momentum tensor.\\ \\
+2. Decompose the pertubations into scalar, vector, and tensor modes. One may show, in fact, that the field equations for the pertubations decouple according to their helicity (i.e. spin 0 = scalar equations only depend on scalar quantities - no mixing with vectors or tensors)\\ \\
+3. Express the field equations in co-moving fourier space.\\ \\
+4. Quantize the theory. Promote pertubations as operators following commutation relations. Calculate quantum field equations.\\ \\
+5. Find solution with an intial condition such that the quantum fields are in Minkowski space (horizon exit $k\gg aH$).\\ \\
+6. Find asymptotic value of perturbations for horizon re-entry  ($k \ll aH$)\\ \\
+7. Compute the power spectrum of curvature fluctuations at horizon crossing.\\ \\
+Following the general outline of these steps, we state the amplitude for a scalar density pertubation
+\[
+	\delta_\rho(k) = \sqrt\frac{512\pi}{75}\frac{V^{3/2}}{m_p^3|\frac{dV}{d\phi}|}
+\]
+and for the graviational amplitude
+\[
+	\delta_g(k) = \sqrt\frac{32}{75}\frac{\sqrt V}{m_p^2}.
+\]
+Here $k$ denotes the comoving wavelength, and each quantity is evaluated at inflationary time $k = aH$. It is clear that the amplitudes of the pertubations depend on the specified inflaton potential at the time $k=aH$. If we use the massive scalar potential
+\[
+	V = \frac12 m^2\phi^2,
+\]
+emperical observation of the size of pertubation amplitudes put a constraint on $m$ such that $m\approx m_p^{-16}$. A very small mass for the massive field!
+
+\end{document}

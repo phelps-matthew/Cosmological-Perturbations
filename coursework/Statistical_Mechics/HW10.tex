@@ -1,0 +1,295 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 10\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Dec. 2}
+
+\begin{document}
+\maketitle
+
+\benum
+% 10.1 ----------------------------------------------------------------------------------------------------------------------
+  	\item[\textbf{10.1}]
+	Read (and work through) the remainder of chapter 7 in the manuscript. This is, basically after
+	7.3, everything after equation (7.62). We will discuss this next class and I will assume you know it
+	(modulo asking questions during next class).
+ 	\\
+	
+% 10.2 -----------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{10.2}]
+	(7.10 in script)
+	\benum
+		% (a)
+		\item
+		Consider a simple chemical reaction $A+B \leftrightarrow AB$. As the double arrow indicates,
+		all the chemical reactions go both ways. Show that in a mixture of reactants  the condition for 
+		chemical equilibrium is expressed in terms of chemical potentials as $\mu_A+\mu_B = \mu_{AB}$.
+		\\ \\
+		In thermodynamic equilibrium, any variation of the total entropy must be zero. The
+		total entropy is the entropy of the reactants and products
+		\[
+			\delta S = \delta S_A+\delta S_B +\delta S_{AB}.
+		\]
+		However we also know that 
+		\[
+			dN_A+dN_B = d_{N_{AB}} \equiv dN.
+		\]
+		Assuming the variation in entropy comes solely from the change in particle number, we have
+		\[
+			\delta S = \plr{\pdiff[S_A]{N} +\pdiff[S_B]{N} - \pdiff[S_{AB}]{N}}dN = 0
+		\]
+		and so our criteria for chemical equilibrium is
+		\[
+			 \pdiff[S_A]{N} +\pdiff[S_B]{N} - \pdiff[S_{AB}]{N} = 0
+		\]
+		However we also have the maxwell relation
+		\[
+			\plr{\pdiff[S]{N}}_{U,V} = \mu
+		\]
+		and so finally, for chemical equilibrium we have
+		\[
+			\mu_A+\mu_B = \mu_{AB}.
+		\]
+		% (b)
+		\item
+		Show that in an ideal gas where the only relevant degree of freedom is the center-of-mass
+		motion of the atoms or molecules, the chemical potential in the classical (high temperature/
+		low density) limit is $\mu = kT\ln(n\lambda^3)$, where $\lambda = (2\pi\h^2/mkT)^{1/2}$ is 
+		the usual thermal de Broglie wavelength. 
+		\\ \\
+		With the center of mass motion being the only relevant degree of freedom, we have just a free ideal 
+		gas with 
+		\[
+			\mathcal H = \sum_i^N \frac{\vect p^2}{2m}. 
+		\]
+		We then compute the partition function, as in the script, as 
+		\[
+			Z = \frac{1}{N!}\pfrac{V}{\lambda^3}^N
+		\]
+		with the deBroglie wavelength $\lambda$ defined as in the problem. Now we can make a 
+		connection to thermodynamics using $F = -kT\ln Z$. Hence
+		\[
+			F = -kT\ln\blr{ \frac{1}{N!}\pfrac{V}{\lambda^3}^N} \simeq-NkT\plr{\ln\frac{V}{\lambda^3}
+			-\ln N+1}.
+		\]
+		To find the chemical potential, we recall
+		\[
+			\mu = \plr{\pdiff[F]{N}}_{T,V}
+		\]
+		and so
+		\[
+			\mu = -kT\ln\frac{V}{\lambda^3}+\ln N+1 = kT\ln\plr{n\lambda^3}
+		\]
+		\\ \\
+		% (c)
+		\item
+		Consider the formation of diatomic molecules $A_2$ out of atoms $A$. Assume that the binding
+		energy of the molecule is $I$, i.e., the difference in internal energy between a molecule and a pair
+		of atoms is $-I$. Show that in the limit when the atoms and molecules may be regarded as classical
+		ideal gasses, except for the formation of the molecules, the equilibrium density of the atoms and
+		molecules satisfy $n_{A_2}/n^2_{A} = \sqrt 8 \lambda_A^3 e^{\frac{I}{kT}}$. The chemical
+		equilibrium density of atoms and molecules depend manifestly on the de Broglie wavelength, 
+		i.e., on quantum mechanics, even at room temperature!
+		\\
+		\\
+		Based on part (a), the condition for chemical equilibrium is
+		\[
+			2\mu_A = \mu_{A_2}.
+		\]
+		We know from (b) that
+		\[
+			\mu_A =  kT\ln\plr{n_A\lambda_A^3}
+		\]
+		and
+		\[
+			\mu_{A_2} =  kT\ln\plr{n_{A_2}\lambda_{A_2}^3}
+		\]
+		or
+		\[
+			\exp\plr{\frac{\mu_A}{kT}} = n_A\lambda_A^3.
+		\]
+		and
+		\[
+			\exp\plr{\frac{\mu_{A_2}}{kT}} = n_{A_2}\lambda_{A_2}^3.
+		\]
+		If we form the ratio of equilibrium densities
+		\[
+			\frac{n_{A_2}}{n^2_A} = \frac{\lambda_A^6}{\lambda_{A_2}^3}
+			\exp\plr{\frac{\mu_{A_2}-2\mu_A}{kT}}.
+		\]
+		Perhaps if we ignore the formation of molecules, then the condition of part (a) does not 
+		apply and we may write the difference in chemical potential as 
+		\[
+			\mu_{A_2} - 2\mu_A = I\quad (?)
+		\]
+		and thus
+		\[
+			\frac{n_{A_2}}{n^2_A} =  \frac{\lambda_A^6}{\lambda_{A_2}^3}\exp\plr{\frac{I}{kT}}.
+		\]
+		If we can show that
+		\[
+			\lambda_A =\sqrt 2 \lambda_{A_2}\quad (?)
+		\]
+		(maybe from the partition function and that two atoms make up one molecule)
+		we can show that
+		\[
+			\frac{n_{A_2}}{n^2_{A}} = \sqrt 8 \lambda_A^3 e^{\frac{I}{kT}}.
+		\]
+	\eenum 
+% 10.3 ------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{10.3}]
+	(7.14 in script)
+	\\ \\
+	Study a trap for atoms. We assume that the gas is effectively homogeneous along the trap axis,
+	so that the direction along the trap axis may be separated out and we have a two-dimensional 
+	situation. The trapping potential is the rotationally symmetric
+	 $V(\vect x) = \frac{1}{2}m\omega^2(x_1^2+x_2^2)$. Let us introduce the 3 component of the
+	 angular momentum $L_3 = x_1p_2-x_2p_1$, and write
+	 \[
+	 	f(\vect x,\vect p) = K\exp\blr{-\frac{1}{kT}\plr{\frac{\vect p^2}{2m}+
+		\frac{m\omega^2\vect x^2}{2}-\Omega L_3}}
+	\]
+	with some constant $\Omega$.
+	
+	\benum
+		% (a)
+		\item
+            	Show that the convective derivative acting on $f(\vect x,\vect p)$ give zero. Since everything inside
+		the exponential is conserved locally in a collision, $f(\vect x,\vect p)$ is therefore also a 
+		stationary solution to the Boltzmann equation.
+            	\\
+		\\
+		\\
+		Convective derivative on phase space density:
+		\[
+			\plr{\pdiff{t} +\vect v\cdot \pdiff{\vect r}+\vect F\cdot \pdiff{\vect p}}f(\vect r,\vect p,t) = 0.
+		\]
+		In this particular trap, there is no explicit time dependence. Also, we have
+		\[
+			\vect F = -\del V(x_1,x_2) = -m\omega^2(x_1\vecth x_1+x_2\vecth x_2).
+		\]
+		So
+		\[
+			\frac{\vect p}{m} \cdot\pdiff{\vect r}f(\vect r,\vect p) = \del V(x_1,x_2)\cdot \pdiff{\vect p}
+			f(\vect r,\vect p)\tag{1}.
+		\]
+		For the position derivative
+		\[
+			\pdiff{\vect r}f(\vect r,\vect p) = -\blr{ \plr{ m\omega^2 x_1-\Omega p_2}\vecth x_1+
+			 \plr{ m\omega^2 x_2+\Omega p_1}\vecth x_2}\frac{f(\vect r,\vect p)}{kT}
+		\]
+		and momentum derivative
+		\[
+			\pdiff{\vect p}f(\vect r,\vect p) = -\blr{ \plr{ \frac{p_1}{m}+\Omega x_2}\vecth x_1 + 
+			\plr{ \frac{p_2}{m}-\Omega x_1}\vecth x_2 }\frac{f(\vect r,\vect p)}{kT}.
+		\]
+		Now forming (1)
+		\ba
+			\plr{ p_1\omega^2 x_1-\Omega\frac{p_1p_2}{m}} + 
+			\plr{ p_2\omega^2 x_2 + \Omega\frac{p_1p_2}{m}} &= 
+			\plr{ \omega^2 p_1x_1+m\omega^2\Omega x_1x_2} +
+			\plr{ \omega^2 x_2p_2-m\omega^2\Omega x_1x_2} \\
+			\omega^2(x_1p_1+x_2p_2) &= \omega^2(x_1p_1+x_2p_2).
+		\ea
+		Thus the convective derivative is zero.
+		\\
+		\\
+		% (b)
+		\item
+		Find the local flow velocity 
+		\[
+			\vect u(\vect x) = \frac{\int d^2p\ f(\vect x,\vect p)(\vect p/m)}
+			{\int d^2p\ f(\vect x,\vect p)},
+		\]
+		and explain what the constant $\Omega$ means.
+		\\ \\
+		Finding the average velocity (without yet normalizing)
+		\[
+			\braket{\vect v} = \int_{-\infty}^{\infty} dp_1\ \int_{-\infty}^{\infty} dp_2\ 
+			\exp\blr{-\frac{1}{kT}\plr{\frac{p_1^2+p_2^2}{2m}+
+			\frac{m\omega^2(x_1^2+x_2^2)}{2}-\Omega(x_1p_2-x_2p_1)}}\frac{1}{m}
+			(p_1\vecth x_1+p_2\vecth x_2)
+		\]
+		The integrals to be evaluated are of the form
+		\ba
+			I_1 &= \int_{-\infty}^{\infty} dx\ \exp\blr{-\plr{ Ax^2+Bx +C}}D \\
+			& = D \sqrt\frac{\pi}{A} \exp\plr{\frac{B^2}{4A}-C}
+		\ea
+		and
+		\ba
+			I_2 &= \int_{-\infty}^{\infty} dx\ \exp\blr{-\plr{ Ax^2+Bx +C}}Dx \\
+			& = -\frac{DB}{2}\sqrt\frac{\pi}{A^3}  \exp\plr{\frac{B^2}{4A}-C}.
+		\ea
+		First we integrate in the $\vecth x_1$ direction. The integral over $p_2$ is of the form $I_1$ 
+		in which we get
+		\[
+			v_1(\vect r)= -2\pi mkT\Omega x_2 \exp\blr{-\frac{m}{2kT}(x_1^2+x_2^2)(\omega^2-		
+			\Omega^2)}.
+		\]
+		The $\vecth x_2$ integral has the form of $I_2$ and we get something similar
+		\[
+			v_2(\vect r) = 2\pi mkT\Omega x_1 \exp\blr{-\frac{m}{2kT}(x_1^2+x_2^2)(\omega^2-		
+			\Omega^2)}.
+		\]
+		As for the normalization
+		\[
+			\int d^2p\ f(\vect x,\vect p) = 2\pi mkT \exp\blr{-\frac{m}{2kT}(x_1^2+x_2^2)(\omega^2-	
+			\Omega^2)}.
+		\]
+		Hence
+		\[
+			\vect u(\vect x) = \Omega\plr{ -x_2 \vecth x_1 + x_1\vecth x_2}
+		\]
+		\\ \\
+		The factor of $I_3\Omega$ in the phase space density function (and thus in the Hamiltonian)
+		represents rotational motion about the $\vecth x_3$ axis at frequency $\Omega$; it is the 
+		phase space density in a rotating frame of reference. Thus, we see the local flow velocity is
+		dependent on this rate of rotation. I would guess in this problem it represents a rotating cylinder
+		of the trapped ions, i.e a centrifuge. \\ \\
+            	% (c)
+		\item 
+            	How does the root-mean-square radius $r = \sqrt{\braket{\vect x^2}}$ of the gas behave with
+		the parameter $\Omega$? Please explain. 
+		\\
+		\\
+		If we find the expectation value of $\braket{\vect x^2}$ we have (without normalization)
+		\ba
+			\braket{\vect x^2} &= \int_{-\infty}^{\infty} dx_1\ \int_{-\infty}^{\infty} dx_2\ 
+			\exp\blr{-\frac{1}{kT}\plr{\frac{p_1^2+p_2^2}{2m}+
+			\frac{m\omega^2(x_1^2+x_2^2)}{2}-\Omega(x_1p_2-x_2p_1)}}(x_1^2+x_2^2) \\
+			& = \frac{2\pi kT}{m^3\omega^6}(2kTm\omega^2+(p_1^2+p_2^2)\Omega^2)
+			\exp\blr{-\frac{1}{2kTm\omega^2}(p_1^2+p_2^2)(\omega^2-\Omega^2)}.
+		\ea
+		With the normalization
+		\[
+			\int d^2x f(\vect x,\vect p) = \frac{2\pi kT}{m\omega^2}
+			\exp\blr{-\frac{1}{2kTm\omega^2}(p_1^2+p_2^2)(\omega^2-\Omega^2)}
+		\]
+		we finally have
+		\[
+			\braket{\vect x^2} = \frac{2kTm\omega^2+(p_1^2+p_2^2)\Omega^2}{m^2\omega^4}
+		\]
+		or 
+		\[
+			r = \sqrt{2kTm\omega^2+(p_1^2+p_2^2)}\pfrac{\Omega}{m\omega^2}.
+		\]
+		The radius depends linearly on the angular velocity $\Omega$. As seen from a rotating 
+		reference frame, a centrifugal force acts on the ions as
+		\[
+			F_c = \Omega\times(\Omega\times \vect r).
+		\]
+		We can see that the directions work out
+		appropriately when we use the general form 
+		\[
+			\diff[\vect r]{t} = \plr{\diff[\vect r]{t}}_{rotation} + \vect \Omega\times \vect r.
+		\]
+		For our trap this equates to
+		\[
+			\Omega (\vecth x_3\times \vect r) = \Omega(-x_2\vecth x_1+x_1 \vecth x_2).
+		\]
+		The force is quadratic in $\Omega$, but I'm not sure how intuitively this translates to average position 
+		(since the expectation position we found is linear in $\Omega$). 
+            	\eenum
+	\eenum
+\end{document}

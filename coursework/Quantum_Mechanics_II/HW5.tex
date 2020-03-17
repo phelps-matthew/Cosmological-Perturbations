@@ -1,0 +1,402 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 5\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Oct. 21}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item{Coherent States}
+	\\
+	\\
+	Define a coherent state $\ket \alpha$ as
+	\[
+		\ket \alpha = e^{\alpha a^\dag-\alpha^*a}\ket 0 = e^{-|\alpha|^2/2}e^{\alpha a^\dag}\ket 0
+	\]
+	where $[a,a^\dag] = 1$, and the vacuum state $\ket 0$ is such that $a\ket 0 = 0$. 
+	
+	\benum
+	% (a)
+	\item
+	Using basic properties of the number operator and number eigenstates $\ket n$, verify that the coherent state
+	$\ket \alpha$ is an eigenstate of the operator $a$: $a\ket\alpha = \alpha\ket\alpha$, and hence compute the
+	expectation value of the number operator $N = a^\dag a$ in the coherent state $\ket\alpha$.
+	\\
+	\\
+	The coherent state may be expressed as
+	\[
+		\ket\alpha = e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n a^{\dag n}}{n!} \ket 0 
+		=  e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}}\ket n.
+	\]
+	Now apply $a$
+	\[
+		a\ket\alpha =   e^{-|\alpha|^2/2}   \sum_n \alpha^{n+1}\frac{\sqrt{n+1}}{\sqrt{n+1!}}\ket n 
+		= \alpha \plr{e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}}\ket n} = \alpha\ket\alpha.
+	\]
+	In retrospect, a simpler method would be the following:
+	\ba
+		a\ket\alpha &= e^{-|\alpha|^2/2}([a,e^{\alpha a^\dag}]+e^{\alpha a^\dag}a)\ket 0 \\
+		& = e^{-|\alpha|^2/2}\alpha e^{\alpha a^\dag}\ket 0\\
+		& = \alpha \ket \alpha
+	\ea
+	Now we are in a nice position to take the expectation value of $N = a^\dag a$ in state $\ket\alpha$
+	\[
+		\braket{\alpha|N|\alpha} = \alpha\alpha^*\braket{\alpha|\alpha} = |\alpha|^2.
+	\]
+	\\
+	% (b)
+	\item
+	Evaluate the uncertainties $\delta x$ and $\delta p$ for a coherent state, using 
+	\[
+		x = \sqrt\frac{\h}{2m\omega}(a^\dag +a),\qquad p = i\sqrt\frac{m\h\omega}{2}(a^\dag-a)
+	\]
+	and show that this state saturates the lower bound from the uncertainty relation. 
+	\\
+	\\
+	\\
+	With dispersion $\Delta x \equiv x-\braket x$, the variance is 
+	\[
+		\braket{(\Delta x)^2} = \braket{x^2}-\braket{x}^2.
+	\]
+	For the first term
+	\ba
+		\braket{x^2} &= \frac{\h}{2m\omega}\braket{(a^\dag+a)^2} \\
+		&=  \frac{\h}{2m\omega}\braket{(a^{\dag 2}+a^2+2N+1)} \\
+		& =  \frac{\h}{2m\omega}\blr{(1+2|\alpha|^2)+\braket{a^2}^*+\braket{a^2}}\\
+		& = \frac{\h}{2m\omega}\plr{1+2|\alpha|^2+\plr{\alpha^2}^*+\alpha^2}\\
+		& = \frac{\h}{2m\omega}\blr{1+(\alpha+\alpha^*)^2}.
+	\ea
+	While the second term is
+	\[
+		\braket{x}^2 =  \frac{\h}{2m\omega}\braket{(a^\dag+a)}^2 = \frac{\h}{2m\omega}(\alpha+\alpha^*)^2.
+	\]
+	Thus
+	\[
+		\braket{(\Delta x)^2} =  \frac{\h}{2m\omega}.
+	\]
+	Similarly we can show for $p$ that we have
+	\[
+		\braket{(\Delta p)^2} = -\frac{m\h\omega}{2}\blr{(\alpha-\alpha^*)^2-1}+\frac{m\h\omega}{2}(\alpha-\alpha^*)^2
+		= \frac{m\h\omega}{2}.
+	\]
+	Finally we can form the uncertainty relation
+	\[
+		\braket{(\Delta x)^2}\braket{(\Delta p)^2} = \frac{\h^2}{4}\quad\text{or}\quad
+		\sigma_x\sigma_p = \frac{\h}{2}
+	\]
+	which meets the lower bound equality of the uncertainty relation. 
+	\\
+	\\
+	% (c)
+	\item
+	Decompose the coherent state $\ket \alpha$ in the basis of eigenstates of the number operator and hence
+	show that the probability that a measurement of the number operator yields the value $n$ for a system
+	in a coherent state $\ket\alpha$ is given by the Poisson distribution: $P_n = \frac{|\alpha|^{2n}}{n!}e^{-|\alpha|^2}$.
+	\\
+	\\
+	The decomposition is (a) was
+	\[	
+		\ket\alpha = e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}}\ket n.
+	\]
+	The probability of measuring $n$ is 
+	\[
+		|\braket{n|\alpha}|^2 = e^{-|\alpha|^2}\alpha^n(\alpha^n)^*\frac{1}{\sqrt{n!}}\frac{1}{\sqrt{n!}} 
+	\]
+	therefore
+	\[
+		P_n = \frac{|\alpha|^{2n}}{n!}e^{-|\alpha|^2}.
+	\]
+	\\
+	% (d)
+	\item
+	Using the Baker-Campbell-Hausdorff formula, $e^{A+B} = e^{A}e^Be^{-\frac{1}{2}[A,B]}$ (which is valid if $[A,B]$
+	commutes with both $A$ and $B$), show that
+	\[
+		e^{-\gamma^*a+\gamma a^\dag}\ket\alpha = e^{\frac{1}{2}(\alpha^*\gamma-\gamma^*\alpha)}
+		\ket{\alpha+\gamma}
+	\]
+	\\
+	\\
+	Since $[a^\dag,a] = 1$, our commutation criteria for the BCH formula is satisfied
+	\ba
+		e^{-\gamma^*a+\gamma a^\dag}\ket\alpha &= e^{-\gamma^*a}e^{\gamma a^\dag}e^{\frac{1}{2}|\gamma|^2}
+		\plr{e^{-|\alpha|^2/2}e^{\alpha a^\dag}\ket 0} \\
+		& = e^{\frac{1}{2}(\alpha\gamma^*+\alpha^*\gamma)}e^{|\gamma|^2}e^{-\gamma^*a}e^{-|\alpha+\gamma|^2/2}
+		e^{(\alpha+\gamma)a^\dag}\ket 0 \\
+		& = e^{\frac{1}{2}(\alpha\gamma^*+\alpha^*\gamma)}e^{|\gamma|^2}e^{-\gamma^*a}\ket{\alpha+\gamma}\\
+		& = e^{\frac{1}{2}(\alpha^*\gamma-\gamma^*\alpha)}\ket{\alpha+\gamma}
+	\ea
+	where the last step uses the eigen-relation $e^a\ket\alpha = e^\alpha\ket\alpha$. 
+	\\
+	\\
+	\\
+	\eenum
+	
+% 2 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Time Evolution Operator for Forced Harmonic Oscillator, and Coherent States
+	\\
+	\benum
+	
+	% (a)
+	\item
+	Using the identity
+	\be\label{1}
+		\diff{t}e^{A(t)} = \plr{\dot A(t)+\frac{1}{2!}[A(t),\dot A(t)]+\frac{1}{3!}[A(t),[A(t),\dot A(t)]]+...}e^{A(t)}
+	\ee
+	choose
+	\[
+		A(t) = -\zeta^*(t)a+\zeta(t)a^\dag
+	\]
+	where $a$ and $a^\dag$ are the harmonic oscillator annihilation and creation operators, and show that
+	\[
+		\diff{t}e^{-\zeta^*a+\zeta a^\dag} = \plr{-\dot\zeta^*a+\dot\zeta a^\dag+\frac{1}{2}\plr{\zeta\dot\zeta^*-\zeta^*\dot
+		\zeta}\mathbf{1}}e^{-\zeta^*a+\zeta a^\dag}
+	\]
+	\\
+	\\
+	For the derivative we have
+	\[
+		\dot A(t) = -\dot\zeta^*a+\dot\zeta a^\dag.
+	\]
+	First note that since $\zeta(t)$ are just parametrized complex numbers 
+	\[
+		[\zeta(t),\dot\zeta(t)] = 0.
+	\]
+	Now evaluating the commutator, 
+	\ba
+		[A(t),\dot A(t)] &= [-\zeta^*a+\zeta a^\dag,-\dot\zeta^*a+\dot\zeta a^\dag]\\
+		& = \zeta^*\dot\zeta^*[a,a]+\zeta\dot\zeta[a^\dag,a^\dag]-\zeta^*\dot\zeta[a,a^\dag]-\zeta\dot\zeta^*
+		[a^\dag,a]\\
+		& = \mathbf 1(\zeta\dot\zeta^*-\zeta^*\dot\zeta).
+	\ea
+	From this result, we see that for any operator $B$
+	\[
+		[B,[A(t),\dot A(t)]] = 0. 
+	\]
+	Consequently all terms beyond $\frac{1}{2!}[A(t),\dot A(t)]$ in the parenthesis of \eqref 1 are zero. Thus we
+	may express the derivative of our exponential operator as
+	\[
+		\diff{t}e^{-\zeta^*a+\zeta a^\dag} = \plr{-\dot\zeta^*a+\dot\zeta a^\dag+\frac{1}{2}\plr{\zeta\dot\zeta^*
+		-\zeta^*\dot\zeta}\mathbf{1}}e^{-\zeta^*a+\zeta a^\dag}
+	\]
+	% (b)
+	\item
+	Hence show that for the forced oscillator with Hamiltonian
+	\[
+		H(t) = \h\omega\plr{a^\dag a+\frac{1}{2}}+\plr{f(t)a+f^*(t)a^\dag}
+	\]
+	the interaction picture evolution operator is
+	\[
+		U_I(t,t_0) = e^{i\beta(t,t_0)}e^{-\zeta^*(t,t_0)a+\zeta(t,t_0)a^\dag}
+	\]
+	where
+	\[
+		\zeta(t,t_0) = -\frac{i}{\h}\int_{t_0}^t dt'\ e^{i\omega t'}f^*(t')
+	\]
+	and $\beta(t,t_0)$ is a particular phase (find an explicit expression for this phase). 
+	\\
+	\\
+	\\
+	In the interaction picture, the time evolution operator is given by the differential equation
+	\[
+		i\h\diff[U_I]{t}  = H_I^1(t) U_I
+	\]
+	where $H_I^1(t)$ is the interaction Hamiltonian consisting of the ``rotated" time-dependent perturbation of the 
+	original Hamiltonian
+	\[
+		H_I^1(t) = U^{0\dag}H^1(t)U^0
+	\]
+	and $U^0 = e^{-\frac{i}{\h}H^0t}$ is the time evolution operator of the unperturbed Hamiltonian. For our problem
+	\[
+		H^1(t) = f(t)a+f^*(t)a^\dag
+	\] 
+	and so the differential equation for $U_I(t)$ is
+	\[
+		i\h\diff[U_I(t,t_0)]{t}  = \exp\blr{-\frac{i}{\h}H^0 t}\plr{f(t)a+f^*(t)a^\dag }\exp\blr{\frac{i}{\h}H^0t} U_I(t,t_0).
+	\]
+	Taking a look at one particular term
+	\[
+		 \exp\blr{-\frac{i}{\h}H^0t}a\exp\blr{\frac{i}{\h}H^0t} 
+	\]
+	we see that this is the annihilation operator of the unperturbed harmonic oscillator in the Heisenberg picture. As
+	such, it follows the Heisenberg equation of motion
+	\[
+		\diff[a]{t} = -\frac{i}{\h}[a,H^0] = -i\omega[a,N] = -i\omega a
+	\]
+	with solution
+	\[
+		a(t) = a(t_0)e^{-i\omega (t-t_0)}.
+	\]
+	If we allow the interaction picture and Schrodinger picture to coincide at $t=t_0$, $a(t_0)$ can be 
+	interpreted just as time independent $a$. Similarly, we have
+	\[
+		a^\dag(t) = a^\dag e^{i\omega (t-t_0)}.
+	\]
+	Therefore we may write
+	\[
+		H_I^1(t) = f(t)e^{-i\omega (t-t_0)}a+f^*(t)e^{i\omega (t-t_0)}a^\dag
+	\]
+	and the differential equation for $U_I(t,t_0)$ becomes
+	\[
+		\diff[U_I(t,t_0)]{t} = -\frac{i}{\h} \blr{f(t)e^{-i\omega (t-t_0)}a+f^*(t)e^{i\omega (t-t_0)}a^\dag} U_I(t,t_0)
+	\]
+	Since $a$ and $a^\dag$ are stationary, we should be able to solve the differential equation as
+	\[
+		U_I(t,t_0) = \exp\blr{-\frac{i}{\h}\int_{t_0}^t dt'\ f(t)e^{-i\omega (t-t_0)}a+f^*(t)e^{i\omega (t-t_0)}a^\dag}
+	\]
+	We would like the evolution operator at $t_0$ to be $U(t_0,t_0) = \mathbf 1$, which can be achieved by the 
+	exponential term if $f(t_0)$ is finite. Otherwise, we need the correct initial condition for $U(t_0,t_0)$.
+	\\
+	\\
+	\emph{I am unsure how to proceed here. In one term I have an $e^{i\omega t_0}$ while for the other
+	$e^{-i\omega t_0}$. Can't seem to be able to figure out this $\beta(t,t_0)$ phase}...
+	\\
+	\\
+	% c)
+	\item
+	Hence, combine with the result of Q1 to show that if the system starts at initial time $t_0$ in a coherent state
+	$\ket\alpha$, then the subsequent time evolution is
+	\[
+		\ket{\Psi(t)} = e^{i\tilde\beta(t,t_0)}\ket{\alpha+\zeta(t,t_0)}
+	\]
+	where $\tilde\beta(t,t_0)$ is a phase. 
+	\\
+	\\
+	Comment: This means that the coherent state evolves in time in a very simple manner: just a multiplicative phase
+	factor, and the complex parameters $\alpha$ characterizing the initial coherent state evolves as 
+	$\alpha\to\alpha +\zeta(t,t_0)$. 
+	\\
+	\\
+	\\
+	If we now apply the time evolution operator in the interaction picture on the coherent state $\ket\alpha$
+	\[
+		U_I(t,t_0)\ket\alpha = e^{i\beta(t,t_0)}e^{-\zeta^*(t,t_0)a+\zeta(t,t_0)a^\dag}\ket{\alpha} 
+	\]
+	we see from 1(d) 
+	\ba
+		U_I(t,t_0)\ket\alpha &= e^{i\beta(t,t_0)}e^{\frac{1}{2}(\alpha^*\zeta(t,t_0)-\zeta(t,t_0)^*\alpha)}
+		\ket{\alpha+\zeta(t,t_0)}\\
+		& = e^{i\tilde\beta(t,t_0)}\ket{\alpha+\zeta(t,t_0)}
+	\ea
+	\eenum
+	
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+\item{Casimir Effect}
+\\
+\\
+The Riemann zeta function is defined
+\[
+	\zeta(z) = \sum_{n=1}^\infty \frac{1}{n^z}
+\]
+and the sum converges for $\text{Re}(z)>1$. 
+	
+	\benum
+	% (a)
+	\item
+	The Riemann zeta function has an analytic continuation in terms of the following integral representation:
+	\[
+		\zeta(z) = \frac{1}{\Gamma(z)}\blr{\int_0^\infty dt\ t^{z-1}e^{-t/2}\plr{\frac{1}{2\sinh(t/2)}-\frac{1}{t}
+		+\frac{t}{24}-\frac{7t^3}{5760}}}-\frac{1}{\Gamma(z)}\int_0^\infty dt\ t^{z-1}e^{-t/2}\plr{-\frac{1}{t}
+		+\frac{t}{24}-\frac{7t^3}{5760}}
+	\]
+	Use the expression for the gamma function, $\Gamma(z) = \int_0^\infty dt\ e^{-t}t^{z-1}$, and 
+	$z\Gamma(z)=\Gamma(z+1)$, to evaluate the terms in the second integral, to obtain the following
+	representation:
+	\[
+	\zeta(z) = \frac{1}{\Gamma(z)}\blr{\int_0^\infty dt\ t^{z-1}e^{-t/2}\plr{\frac{1}{2\sinh(t/2)}-\frac{1}{t}
+		+\frac{t}{24}-\frac{7t^3}{5760}}}
+		+\frac{2^{z-1}}{z-1}-\frac{z2^{z+1}}{24}+\frac{7z(z+1)(z+2)2^{z+3}}{5760}
+	\]
+	We can now evaluate the zeta function at $z=-3$, because the remaining integral is finite at
+	$z=-3$ , and $1/\Gamma(-3) = 0$. Hence show that $\zeta(-3) = \frac{1}{120}$. Note how weird this 
+	result looks if you look at the original series! 
+	\\
+	\\
+	\\
+	With substitution $2u = t$ we intregrate
+	\[
+		\int_0^\infty dt\ t^{z-1}e^{-t/2}\plr{-\frac{1}{t} +\frac{t}{24}-\frac{7t^3}{5760}} 
+		= 2^z\int_0^\infty du\ u^{z-1}e^{-u}\plr{-\frac{1}{2u}+\frac{2u}{24}-\frac{56u^3}{5760}}.
+	\]
+	First term:
+	\[
+		-2^{z-1}\int_0^\infty du\ u^{z-2}e^{-u}= -\frac{2^{z-1}}{z-1}\Gamma(z)
+	\] 	
+	Second term: 
+	\[
+		\frac{2^{z+1}}{24}\int_0^\infty du\ u^{z}e^{-u}= \frac{z2^{z+1}}{24}\Gamma(z)
+	\]
+	Third term:
+	\[
+		-\frac{2^{z+3}(7)}{5760}\int_0^\infty du\ u^{z+2}e^{-u}= -\frac{7z(z+1)(z+2)2^{z+3}}{5760}\Gamma(z)
+	\]
+	Putting all these results together we arrive at
+	\[
+	\zeta(z) = \frac{1}{\Gamma(z)}\blr{\int_0^\infty dt\ t^{z-1}e^{-t/2}\plr{\frac{1}{2\sinh(t/2)}-\frac{1}{t}
+		+\frac{t}{24}-\frac{7t^3}{5760}}}
+		+\frac{2^{z-1}}{z-1}-\frac{z2^{z+1}}{24}+\frac{7z(z+1)(z+2)2^{z+3}}{5760}.
+	\]
+	Now we may evaluate this function at $\zeta(-3)$:
+	\ba
+		\zeta(-3) &= \frac{2^{-4}}{-4}-\frac{(-3)2^{-2}}{24}+\frac{7(-3)(-2)(-1)2^{0}}{5760}\\
+		& = -\frac{1}{64}+\frac{1}{32}-\frac{21}{2880}\\
+		& = \frac{1}{120}
+	\ea
+	\\
+	\\
+	% (b)
+	\item
+	The Casimir effect is a remarkable quantum mechanical phenomenon whereby two parallel mirrors, in vacuum,
+	attract one another because the mirrors influence the allowed quantum vacuum fluctuations between the
+	mirrors. The vacuum energy per unit surface area in the region between the mirrors is (the factor of 2 is
+	for the two physical polarizations of the light field)
+	\ba
+		\frac{E}{A} &= 2\sum \frac{1}{2}\h\omega \\
+		& = \h c \sum_{n=1}^\infty \int \frac{d^2k_\perp}{(2\pi)^2}\sqrt{\pfrac{n\pi}{L}^2+k^2_\perp}\\
+		& = \h c\sum_{n=1}^\infty \int \frac{d^2k_\perp}{(2\pi)^2}\frac{1}{\Gamma(-1/2)}\int_0^\infty \frac{dt}			
+		{t^{3/2}} e^{-t\plr{\pfrac{n\pi}{L}^2+k^2_\perp}}
+	\ea
+	Do the (Gaussian) $k_\perp$ integral, and then the (gamma function) $t$ integral, and use the result from 
+	part (a) to show that the force per unit area is 
+	\[
+		\frac{F}{A} = -\frac{\h c\pi^2}{2L^4}\zeta(-3) = -\frac{\h c\pi^2}{240L^2}
+	\]
+	Note that this tiny force has been recently measured with high precision [see papers by Lamoreaux, and
+	by Mohideen and Roy \href{a}{http://physics.aps.org/story/v2/st28} ], confirming both the dependence 	on the 
+	mirror separation $L$, and the
+	numerical coefficient (which is essentially given by $\zeta(-3)$; actually they used a slightly different geometry, 
+	but it is only a small correction to this idealized parallel plate example). 
+	\\
+	\\
+	\\
+	Starting with the Gaussian integral over all space
+	\[
+		 \int d^2k_\perp e^{-tk^2_\perp} = \plr{\sqrt\frac{\pi}{t}}^2 = \frac{\pi}{t}
+	\]
+	and substituting we have the $t$ integral
+	\[
+		T = \pi \int_0^\infty dt\ t^{-5/2} e^{-t\pfrac{n\pi}{L}^2}
+	\]
+	With substitution $ u = t\pfrac{n\pi}{L}^2$ we have
+	\ba
+		T & = \pi \pfrac{L}{n\pi}^2\pfrac{n\pi}{L}^{5} \int _0^\infty du\ u^{-5/2}e^{-u} \\
+		&= \pi \pfrac{n\pi}{L}^{3} \Gamma\plr{-\frac{3}{2}} \\
+		& = \pi \pfrac{n\pi}{L}^{3} \frac{\Gamma\plr{-\frac{1}{2}}}{\plr{-\frac{3}{2}}}.
+	\ea
+	Substituting into original expression
+	\[
+		\frac{E}{A} = -\frac{\h c\pi^2}{6L^3}\sum_{n=1}^\infty n^{3} =  -\frac{\h c\pi^2}{6L^2} \zeta(-3).
+	\]
+	To find the force, we use $F = -\del V = -\diff[E]{L}$ so that we finally arrive at
+	\[
+		\frac{F}{A}= -\diff{L}\pfrac{E}{A} = -\frac{\h c\pi^2}{2L^4}\zeta(-3) = -\frac{\h c\pi^2}{240L^4}.
+	\]
+		
+	\eenum
+\eenum
+\end{document}

@@ -1,0 +1,262 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 11\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 11}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.9]
+Let us study a single mode $a$ of an electromagnetic field under the usual cavity damping, so that the master
+equation reads
+\[
+	\dot\rho = \gamma(2a\rho a^\dag - a^\dag a\rho - \rho a^\dag a).
+\]
+Ignore the Hamiltonian evolution, which just unnecessarily complicates the argument. \\
+\benum
+\item
+Show that the normally ordered moments of the electromagnetic field $M_{p,q}(t) = \tr[\rho(t)a^{p\dag}a^q]$,
+with $p$ and $q$ being nonnegative integers, evolve in time according to $M_{p,q}(t) = 
+e^{-(p+q)\gamma t}M_{p,q}(0)$. \\
+\item
+According to a famous theorem by Glauber (paraphrased), the one and only state of the electromagnetic field such
+that $M_{p,q} = \alpha^{p*}\alpha^q$ for some complex number $\alpha$ and all nonnegative integers $p$, $q$ is the 
+coherent state $\ket \alpha$. Use this theorem to demonstrate that evolution according to the master equation (7.189)
+preserves a coherent state; i.e., a coherent state at one time, a coherent state at all others.
+\\ \\
+\eenum
+\benum
+\item
+We can express $M_{p,q}(t)$ as a first order ODE by taking its time derivative. This should lead to the form desired
+\ba
+	\dot M_{p,q}(t) &= \tr[\dot\rho(t)a^{p\dag}a^q]\\
+	&= \gamma \tr[2a\rho a^\dag a^{p\dag}a^q - a^\dag a\rho a^{p\dag}a^q - \rho a^\dag a a^{p\dag}a^q]\\
+	&= \gamma \tr[2a\rho a^\dag a^{p\dag}a^q - a\rho a^{p\dag}a^q a^\dag - \rho a^\dag a a^{p\dag}a^q]\\
+	&= \gamma\tr[2a\rho a^\dag a^{p\dag} a^q -\rho a^\dag[a,a^{p\dag}]a^q-a\rho a^{p\dag}[a^q,a^\dag]
+	- 2a\rho a^\dag a^{p\dag}a^q]\\
+	&= \gamma\tr[-q\rho a^{p\dag}a^q-p\rho a^{p\dag}a^q]\\
+	& = -\gamma(p+q)M_{p,q}(t)
+\ea
+Now we may solve the differential equation for $M_{p,q}(t)$ to find
+\[
+	M_{p,q}(t) = e^{-(p+q)\gamma t}M_{p,q}(0)
+\]
+\\
+\item
+According to Glauber's theorem, we have
+\[
+	\dot M_{p,q}(t) = 0\quad\text{for}\quad \rho = \ket\alpha\bra\alpha.
+\]
+\[
+	\Rightarrow 0 = -\gamma(p+q)\alpha^{*p}\alpha^q.
+\]
+Now for integers $p,q >0$ and $\alpha \ne 0$, this implies $\gamma = 0$, and thus $\dot\rho = 0$ for a coherent state.
+In the case that $\alpha = 0$, each term cancels in the master equation and still $\dot\rho = 0$. Coherent
+state is persevered.
+\eenum
+% #2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.12]
+In parametric downconversion photons from an incoming field are split in two. A stylistic but serviceable Hamiltonian
+for downconversion to a photon mode with the annihilation operator $a$ reads
+\[
+	H = \frac{\h\xi}{2}(aa+a^\dag a^\dag)
+\]
+where the parameter $\xi$ proportional to the amplitude of the driving field is real.
+\benum
+\item
+Write down the Heisenberg equations of motion for the operators $a(t)$ and $a^\dag(t)$.
+\item
+Solve these equations with the ansatz $a(t) = f(t)a(0)+g^*(t)a^\dag(0)$.
+\item
+Suppose the photon mode starts at $t=0$ in the vacuum state. Show that all time the photon
+is in a squeezed vacuum state, an eigenstate of an operator of the form (7.120) with eigenvalue 0. \\ \\
+\eenum
+\benum
+\item
+\[
+	\dot a = -\frac{i}{\h}[a,H] = -\frac{i\xi}{2}[a,a^\dag a^\dag] = -\frac{i\xi}{2}(2a^\dag) = -i\xi a^\dag
+\]
+\[
+	\Rightarrow \dot a^\dag = i\xi a
+\]
+\item
+The equation from (a) may be decoupled as
+\[
+	\difff{a}{*2t} = \xi^2a,\qquad \difff{a^\dag}{*2t} = \xi^2a^\dag.
+\]
+Using the ansatz we have
+\[
+	\difff{f(t)}{*2t}a(0)+ \difff{g^*(t)}{*2t}a^\dag(0) = \xi^2( f(t)a(0)+g^*(t)a^\dag(0)).
+\]
+Viewing differentiation as a linear operator, this implies
+\[
+	\Rightarrow \difff{f(t)}{*2t} = \xi^2 f(t)
+\]
+and likewise for $g^*(t)$. The general solution is
+\[
+	f(t) = A e^{\xi t} + Be^{-\xi t}
+\]
+and likewise 
+\[
+	g^*(t) = C e^{\xi t} + De^{-\xi t}.
+\]
+The coefficients from $f(t)$ may be related to those of $g(t)$ by 
+the first derivative relations of the ansatz
+\[
+	\diff[f(t)]{t} = -i\xi g(t),\qquad \diff[g^*(t)]{t} = -i\xi f^*(t).
+\]
+\[
+	\Rightarrow A = -iC^* \qquad B = -iD^*.
+\]
+\[
+	\Rightarrow C = -iA^* \qquad D = -iB^*.
+\]
+Initial conditions 
+\[
+	f(0) = 1,\qquad g(0) = 0.
+\]
+Now our solution is
+\[
+	f(t) = A e^{\xi t} + Be^{-\xi t},\qquad g^*(t) = i(A^* e^{\xi t} + B^*e^{-\xi t}).
+\]
+We may also take the commutator
+\ba
+	[a,a^\dag] &= [f(t)a(0)+g^*(t)a^\dag(0), f(t)^*a^\dag(0)+g(t)a(0)]\\
+	&= |f(t)|^2-|g(t)|^2\\
+	& = 
+\ea
+\[
+	a(t) = (A e^{\xi t} + Be^{-\xi t})a(0) + i(A^* e^{\xi t} + B^*e^{-\xi t})a^\dag(0)
+\]
+.....
+The final solution is
+\[
+	a(t) = a(0)\cosh(\xi t) - ia^\dag(0)\sinh(\xi t).
+\] \\
+\item
+The time evolution of the vacuum state is given as
+\[
+	\ket{\psi(t)} = e^{-iH t/\h}\ket 0
+\]
+and in the Schrodinger picture we have
+\[	
+	a = e^{-iH t/\h}a(t)e^{iH t/\h}.
+\]
+\emph{Unitary transformations preserve eigen-equations}\\ \\
+Using this, we act upon the time dependent state with the annihilation operator. If it annihilates, the state remained
+in the vacuum state.
+\ba
+	a\ket{\psi(t)} &= e^{-iH t/\h}a(t)e^{iH t/\h}e^{-iH t/\h}\ket 0\\
+	& = e^{-iH t/\h}a(t)\ket 0\\
+	& = 0
+\ea
+Thus the squeezed vacuum state 
+\[
+	\ket{\psi(t)} = e^{-iH t/\h}\ket 0 = \ket{0,\xi t}
+\]
+($A=0$ squeezed vacuum)\\ \\
+is an eigenstate of our $a$ with zero eigenvalue and matches the form of 7.120.
+\\
+\eenum
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[7.14]
+\benum
+\item
+Take an operator $F$ that satisfied $[F,F^\dag] = -C$. Show that the expectation value of the operator $F^\dag F$
+in any state satisfies $\braket{F^\dag F} \ge \braket C$. 
+\\ \\
+In a Heisenberg-like picture, a phase-insensitive linear amplifier of a boson mode (say, single mode of light) is 
+represented by the equation $a_0 = Ga_i+F$, where $a_i$ and $a_0$ are the input and output mode operators, the 
+amplitude gain satisfied $G>1$, and $F$ is an operator having to do with the internal degrees of freedom of the 
+amplifier. This being a Heisenberg-like picture, the state of the system $\ket\psi$, for the input mode and the
+internal degrees of freedom, is constant. Let us assume that the input and the amplifier are initially 
+uncorrelated, so that $\ket \psi$ is a direct product of the state of the input and of the amplifier. Finally,
+in order that the internal degrees of freedom do not generate a false signal at the output, let us assume that
+$\braket F = 0$.\\
+\item
+Show that, given a coherent input state $\ket\alpha$, the expectation value of the output is $G\alpha$. This is, 
+of course, as it should be for an amplifier with gain $G$.
+\item
+Now, the output operator $a_0$ must be a boson operator. Show that a non-trivial ``noise operator" $F$ 
+\emph{must} be present, and satisfies $[F,F^\dag] = 1-G^2$.
+\item
+Show that, for any input, the boson number at the output satisfies $\braket{a_0^\dag a_0}\ge
+G^2\braket{a^\dag_i a_i}+G^2-1$.
+\\ \\
+Under the present conditions (basically, no correlation between the input and the initial state of the 
+amplifier), the output is not just an amplified copy of the input, but the process of amplification invariably adds
+at least $G^2-1$ uncorrelated bosons to worsen the signal to noise ratio.\\ \\
+\eenum
+\benum
+\item
+Take the expectation value in an arbitrary normalized state $\ket \psi$
+\[
+		\braket{\psi|[F,F^\dag]|\psi} = -\braket{\psi|C|\psi} = -\braket{C}
+\]
+\be\label{1}
+	\Rightarrow \braket{F^\dag F} = \braket{C}+\braket{FF^\dag}
+\ee
+By virtue of the hermiticity of $[F,F^\dag]$, $\braket{C} \in \mathbb R$. Likewise $FF^\dag$ is hermitian so 
+$\braket{FF^\dag} \in \mathbb R$.  Moreover, $FF^\dag$ is a positive operator by 
+\[
+	(\psi,FF^\dag\psi) = (F^\dag\psi,F^\dag\psi) \equiv (\phi,\phi) \ge 0.
+\]
+Thus from \eqref 1 we have
+\[
+	\braket{F^\dag F} \ge \braket C.
+\]
+\\ \\
+\item
+The state $\ket\psi$ with coherent input $\ket \alpha$ may be written as $\ket\alpha\ket\phi$
+where $\ket\phi$ represents the (normalized and uncorrelated) internal degrees of freedom of the state. Taking the
+expectation value
+\ba
+	\bra\phi\bra\alpha a_0 \ket\alpha\ket\phi &= \bra\phi\bra\alpha(Ga_i+F) \ket\alpha\ket\phi \\
+	&= G\braket{\alpha|a_i|\alpha}+\braket{\phi|F|\phi} = G\alpha.
+\ea
+\\ \\
+\item 
+As a boson operator, $a_0$ must satisfy commutation relation
+\ba
+	[a_0,a_0^\dag] &= 1\\
+	& = [Ga_i+F,Ga_i^\dag+F^\dag]\\
+	& = G^2+[F,F^\dag].
+\ea
+Without the noise operator $F$ present in the definition of $a_0$, the output boson commutation relation cannot hold for $G\ne1$. Also note that photon operators and internal operators $F$ commute.  Thus we have
+\[
+	[F,F^\dag] = 1-G^2.
+\]\\ \\
+\item
+Given an arbitrary input, construct the general expectation value
+\ba
+	\braket{a_0^\dag a_0} &= \braket{(Ga_i^\dag+F^\dag)(Ga_i+F)} \\
+	&= G^2\braket{a_i^\dag a_i}+G\braket{a_i^\dag F}+G\braket{a_i F^\dag} +\braket{F^\dag F}\\
+	& = G^2\braket{a_i^\dag a_i}+G\braket{a_i^\dag F}+G\braket{a_i F^\dag} +\braket{FF^\dag - [F,F^\dag]}\\
+	&=G^2\braket{a_i^\dag a_i}+G\braket{a_i^\dag F}+G\braket{a_i F^\dag} +\braket{FF^\dag}+G^2-1.
+\ea
+As the input is not correlated to the initial state of the amplifier, we may utilize the assumption $\braket F = 0$
+to allow the cross terms to vanish
+\[
+	\braket{F} = 0 = \braket{F^\dag}^*  \Rightarrow \braket{F^\dag} = 0
+\]
+\[
+	\Rightarrow \braket{a_iF^\dag} = 0,\qquad \braket{a_i^\dag F} = 0.
+\]
+Just to be clear, because of no correlation, the expectation is between a product of states, which could be defined as
+arbitrary initial boson state $\ket \xi$ and internal state $\ket\phi$, so
+\[
+	\braket{a_iF^\dag} = \braket{\xi|a_i|\xi}\braket{\phi|F^\dag|\phi} = 0.
+\]
+Now eliminating the vanishing products in the expectation of the output number 
+\ba
+	\braket{a_0^\dag a_0} &= G^2\braket{a_i^\dag a_i}+\braket{FF^\dag}+G^2-1\\
+	& \ge G^2\braket{a_i^\dag a_i}+G^2-1.
+\ea
+by virtue of $FF^\dag$ as a positive operator.
+\eenum
+\eenum
+\end{document}

@@ -1,0 +1,307 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{General Relativity\\HW 4}
+\author{Matthew Phelps}
+\date{Due: Nov 1}
+
+\begin{document}
+\maketitle
+
+\benum
+% 1------------------------------------------------------------------------------------------------------------------------
+\item
+In the harmonic gauge,
+\be
+	g^{\mu\nu}\Gamma^\lambda_{\mu\nu} = 0
+\ee
+the linearized Einstein field equations 
+\[
+	 -\Box h_{\mu\nu} + h_\nu{}^{\alpha}{}_{,\mu\alpha} + h_{\mu\alpha}{}^{,\alpha}{}_{\nu} - h_{,\mu\nu} = 16\pi G T_{\mu\nu}
+\]
+reduce to
+\be
+	\Box h_{\mu\nu} = T_{\mu\nu} - \frac12 \eta_{\mu\nu}T^\lambda{}_\lambda.
+\ee
+Dominated by $h_{00}$, the relavent component of this equation is then
+\ba
+	\pd_\lambda \pd^\lambda h_{00} &= 16\pi G\plr{T_{00} -\frac12 \eta_{00}T^\lambda{}_\lambda}\\
+	-2(-\pd_t^2 + \del^2)\phi &= 16\pi G\plr{\rho +\frac12(-\rho+3p)}\\
+	\del^2\phi &= 4\pi G\plr{\rho +3p}.
+\ea
+where we have used $h_{00} = -2\phi$ with its time independence, and an energy-momentum tensor as that of a perfect fluid. In the limit that $\rho \gg p$, we recover the Newtonian potential. 
+% 2------------------------------------------------------------------------------------------------------------
+\item 
+\benum
+\item
+% (a)
+From (1), we may show that the linearized harmonic gauge condition takes the form
+\be
+	\pd^\mu h_{\mu\nu} = \frac12 \pd_\nu \eta^{\alpha\beta}h_{\alpha\beta}.
+\ee
+Since $h_{23}$ (and $h_{32}$) is the only non-zero component for our metric ($h$ also being traceless), this condition becomes
+\[
+	\pd_y (A(\sin(\omega(t-x))) = 0
+\]
+and
+\[
+	\pd_z (A\sin(\omega(t-x))) = 0
+\]
+both of which are clearly satisfied. Now, given that our metric satisfies the harmonic gauge, we check that it is also a valid solution to the linearized Einstein equations (2) (in the harmonic gauge)
+\[
+	(-\pd_t^2 + \del^2)h_{23} = (-\omega^2+\omega^2)h_{23} = 0 = T_{23}.
+\]	
+Our metric provides a solution for an EM tensor with no off-diagonal $T_{23}$ source (such as a perfect fluid). 
+\\ \\
+With the Riemann tensor given as
+\[
+	R_{\lambda\mu\nu\kappa} = \frac12 \blr{ \pd_\kappa\pd_\mu g_{\lambda\nu} - \pd_\kappa\pd_\lambda g_{\mu\nu}
+	-\pd_\nu\pd_\mu g_{\lambda\kappa} + \pd_\nu\pd_\lambda g_{\mu\kappa}}
+\]
+(noting that the quadratic first derivates of $g_{\mu\nu}$ vanish for $h_{\mu\nu}$ small), and the components of $g_{\mu\nu}$
+\[
+	g_{00} = -1,\quad g_{11} = g_{22} = g_{33} = 1,\quad g_{23} = g_{32} = A\sin(\omega(t-x)),
+\] 
+we can see that the only non-zero derivatives are
+\[
+	\pd_x\pd_t h_{23} = \omega^2h_{23},\quad \pd_t^2 h_{23} = -\omega^2 h_{23},\quad \pd_x^2 = -\omega^2 h_{23}.
+\]
+This leaves us with three possible components of $R_{\lambda\mu\nu\kappa}$ and its permutations
+\[
+	R_{0123} = R_{2301} = -R_{1023} = R_{1032} = -R_{0132} = .... = \frac12 \omega^2 h_{23}
+\]
+\[
+	R_{1123} = ... = -\frac12 \omega^2 h_{23}
+\]
+\[
+	R_{0023} = ... = -\frac12 \omega^2 h_{23}.
+\]
+There are $4!$ permutations for the first component above and $\bpm 4\\2 \epm$ permutations for the last two, and of course they obey the symmetry under two pair exchange and anti-symmetry under one pair exchange. All others are zero. 
+\\  \\
+\item
+% (b)
+First we see if the new components satisfy the gauge condition (3):
+\ba
+	-\pd_t h_{00}+\pd_x h_{01} &= -\frac12 \pd_t h_{00} \\
+	B &= B,
+\ea
+\ba
+	\pd_x h_{11} &= -\frac12 \pd_x h_{00} \\
+	-B &= -B.
+\ea
+As before, the equation for $h_{23}$ remains the same. For the other equations of motion, we note that the $\Box$ operator will zero the other components, i.e.
+\[
+	\Box h_{00} = 2\Box B(x-t) = 0,\qquad \Box h_{01} = \Box (-B(x-t)) = 0.
+\]
+We may remark that the metric of part (a) and (b) satisfy $\Box h_{\mu\nu}$ = 0, the homogeneous solution. Weinberg mentions that these solutions represent gravitational radiation coming in from infinity. I wonder why we have radiation coming in from infinity? 
+\\ \\ \\
+\item
+% (c)
+The Riemann tensor remains exactly the same as that in part (a) because we note that any two derivatives acting on the new $g_{00}$ and $g_{01}$ terms will vanish. Thus the curvature remains the same. 
+\\ 
+\item
+% (d)
+Given the most general coordinate transformation that keeps the field weak,
+\[
+	x^\mu \to x'^\mu = x^\mu + \xi^\mu(x)
+\]
+we have shown from the last homework that the metric $h_{\mu\nu}$ transforms as
+\[
+	h_{\mu\nu} \to h'_{\mu\nu} = h_{\mu\nu} -\pd_\nu \xi_\mu - \pd_\mu\xi_\nu.
+\]
+Our task now is to find the $\xi^\mu(x)$ that can affect the transformation of the metric from part (a) to part (b). Starting with $h_{23}$, this leads us to
+\[
+	\pd_y \xi_z = -\pd_z \xi_y.
+\]
+We recall this is precisely the condition of a Killing vector - a vector that leaves the metric unchanged (a symmetry). The condition on $h_{00}$ is
+\[
+	2B(x-t) = -2\pd_t \xi_0
+\]
+and that on $h_{01}$ is
+\[
+	-B(x-t) = -\pd_t \xi_1 -\pd_x \xi_0.
+\]
+Note that  apart from $h_{00}$ and $h_{01}$, all the other components of $\xi^\mu(x)$ will be killing vector of the appropriate indicies. 
+Now solving for $\xi_0$
+\[
+	\xi_{0}  = B(t^2/2-xt)+C_1(x,y,z)
+\]
+Now from the other equation we have
+\[
+	B(x-t) = \pd_t \xi_1 -Bt + C_2(x,y,z)
+\]
+and thus
+\[
+	\xi_1 = Bxt+C_2(x,y,z).
+\]
+Noting that we may choose to set the functions $C_1 = C_2 = 0$, we have the coordinate transformation that brings us from one metric to the other
+\[
+		x^\mu \to x'^\mu = x^\mu + \xi^\mu(x),\qquad \xi^\mu(x) = B(t^2/2-xt,xt,0,0).
+\]
+We note that there is still some residual gauge freedom in the harmonic gauge. \\
+\eenum
+% 3 -------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+\benum
+\item
+% (a)
+The general solution to the homogeneous linearized einstein equations in the harmonic gauge $\Box h_{\mu\nu} = 0$ is
+\[
+	h_{\mu\nu}(x) = e_{\mu\nu} \exp(ik_\lambda x^\lambda) + e^*_{\mu\nu} \exp(-ik_\lambda x^\lambda)
+\]
+where we must have
+\[
+	k_\lambda k^\lambda = 0,\qquad k_{\mu}e^\mu{}_\nu = \frac12 k_\nu e^\mu{}_\mu.
+\]
+For a wave propogating in the $z$-direction, $k = (k,0,0,k)$, these contraints yield the equations
+\[
+	e_{01} = -e_{31};\quad e_{02} = -e_{32};\quad e_{03} = -\frac12(e_{33}+e_00);\quad e_{22} = -e_{11}.
+\]
+As a polarization tensor, $e_{\mu\nu}$ only has two physical degrees of freedom. We can choose a coordinate transformation that puts these physical degrees of freedom into indidivual components by the following 
+\[
+	x^\mu \to x'^\mu = x^\mu + \xi^\mu(x)
+\]
+\[
+	e_{\mu\nu} \to e'_{\mu\nu} = e_{\mu\nu} + k_\mu \xi_\nu + k_\nu \xi_\mu
+\]
+where we speficially choose $\xi^\mu(x)$ to be
+\[
+	\xi_1 = -e_{13}/k;\quad \xi_2 = -e_{23}/k;\quad \xi_3 = e_{33}/2k;\quad \xi_0 = e_{00}/2k.
+\]
+Now, in the new system, all $e_{\mu\nu}$ vanish except $e_{11} = -e_{22}$ and $e_{12}$. Now, given that $e_{12} = 0$, this only leaves
+$e_11 = -e22\equiv h_+$, where
+\[
+	h_+ = e_{11}\exp(i(kz-\omega t)) + e^*_{11} \exp(-i(kz-\omega t)).
+\]
+Given that $e_{11}$ is complex, we may always express it as $e_{11} = A\exp(i\phi)$ and bring $h_+$ into the form
+\[
+	h_+ = \frac{e_{11}}{2} cos(kz-\omega t+\phi).
+\]
+The arbitrary phase $\phi$ may be set upon boundary conditions, and if we take it to be $\phi = \pi/2$ at $t,z = 0$, then we effectively have
+\[
+	h_+ = \tilde e_{11}\sin(\omega t- kz)
+\]
+where $\tilde e_{11} = e_{11}/2$ and $k=\omega$. Lastly, we form the line element $ds^2 = -g_{\mu\nu}dx^\mu dx^\nu$
+\[
+	ds^2 = dt^2 - (1+h_+)dx^2 - (1-h_+)dy^2 -dz^2.
+\]
+
+\item
+%(b)
+Given two particles, one placed at the origin, the other at $(0,\epsilon/2, \epsilon/2,0)$, to find the proper seperation between the particles, we integrate the proper distance
+\[
+	\Delta \tau = \int d\tau = \int \sqrt{ (1+h_+)dx^2 + (1-h_+)dy^2)}.
+\]
+Given that the second particle lies along a line bisecting the x-y plane, it lies along the line $y=x$ and so
+\[
+	\Delta \tau = \int_0^{\epsilon/2} \sqrt{(1+h_+)dx^2 + (1-h_+)dx^2} = \sqrt 2 \int_0^{\epsilon/2} \sqrt{dx^2} = \frac{\sqrt 2}{2}\epsilon.
+\]
+Thus we see that the proper distance is constant and independent of time under this particular metric of gravitational radiation. 
+\\
+\item
+% (c)
+Now taking $e_{12}$ as the only nonvanishing component, all other $h_{\mu\nu}$ vanish and the line element reads
+\[
+	ds^2 = dt^2 - dx^2 - dy^2 - h dxdy - dz^2.
+\]
+These arguments follow the same as for part (a) and $h$ is given as
+\[
+	h = \tilde e_{12}\sin(\omega t-kz).
+\]
+\item
+% (d)
+If we now take the proper distance under this metric for two particles aligned along either $x$ axis or the $y$ axis, seperated by a distance $\epsilon$, we have (taking along the $x$ axis for now)
+\[
+	\Delta \tau = \int d\tau =\int \sqrt{ dx^2 +dy^2 + hdxdy}\to \int_0^\epsilon \sqrt{dx^2} = \epsilon.
+\]
+When the particle is along an axis, the cross term $dxdy$ will vanish and take the factor of $h$ along with it. Thus the proper distance is constant and does not change in this configuation. 
+\item
+% (e) 
+Given the metric of part (b), we saw that particles along the line $y=x$ did not change proper distance. Suppose instead the lie along a line $y=mx$ instead. Then the proper distance will look like
+\[
+	 \sqrt{(1+m)+h_+(1-m)} \int dx.
+\]
+Clearly this distance will oscillate over time. If our particles are initially arrange in a circle, all points that do lie along the line $y=x$ will oscillate along their equilibrum position of a circle. The result will appear as an ellipse with semi-major axis along the line $y=x$. If we compare this 
+to the metric given in part $d$, for the line $y=mx$ for $m\ne 0$ we have another time dependent proper distance
+\[
+	\Delta \tau = \sqrt{ 1+m+h_+}\int dx^2 .
+\]
+Again, these points will oscillate along their equilibrium position of the circle. Here though, the semi-major axis lies along either the line $y=0$
+or $x=0$. The result is an ellipse who semi-major axis is shifted by a phase of $\pi/4$ relative to the metric of part (b). \newpage
+\eenum
+
+% 4 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+For a photon moving in the $x$ direction, its displacements in the $y,z$ directions are zero, and so the proper time take the form
+\[
+	d\tau^2 = -dt^2 +(1+h_+)dx^2 + (1-h_+)dy^2 + dz^2 \to -dt^2 + (1+h_+)dx^2.
+\]
+Since photons are massless, the move on the light cone (null geodesic) and thus
+\[
+	dt^2 = (1+h_+)dx^2
+\]
+or
+\[
+	\frac{dx}{dt} = \sqrt\frac{1}{1+h_+}.
+\]
+
+% 5 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+\benum
+\item
+% (a)
+For a spherically symmetric source, the quadropole moment is
+\[
+	D^{ij}  = \int d^3x\ x^ix^j T^{00}(\omega,\vect x) = \int d^3r\ x^ix^j \rho(\omega, r).
+\]
+Taking the COM as the origin, we have in polar coordinates
+\[
+	x = r\sin\theta\cos\phi,\quad y = r\sin\theta\sin\phi,\quad z = r\cos\theta.
+\]
+For any component, we will have 
+\[
+	D^{xy} = \int r^4 \rho(\omega,r)dr\int_0^\pi \sin\theta f(\theta)d\theta \int_0^{2\pi} g(\phi) d\phi
+\]
+From here we can note that for any cross terms $D_{xy}, D_{xz}, D_{yz}, ..$ the angular part over $\phi$ and $\theta$ will always vanish. Thus we only have diagonal elements. Moreover, they all take the same value, as we would expect with a spherical source. This can all be put into the form
+\[
+	D^{ij} = \frac{4\pi}{3}\delta^{ij}\int r^4 \rho(\omega, r).
+\]
+\item
+% (b)
+For this configuration, the position of the two particles may be expressed as
+\[
+	x^1 = -\frac{l_0}{2} - A\cos(\omega t),\qquad x^2 = \frac{l_0}{2}+A\cos(\omega t).
+\]
+The EM tensor is then
+\[
+	T^{00} = m[\delta(\vect x-\vect x_1)+\delta(\vect x-\vect x_2)]
+\]
+with the quad moment then being
+\[
+	D^{ij} = m(x^1_i x^1_j + x^2_i x^2_j).
+\]
+Only the $x$ terms are non-zero, being
+\[
+	D^{xx} = m[ (-\frac{l_0}{2} - A\cos(\omega t))^2 + ( \frac{l_0}{2} + A\cos(\omega t))^2] = 2m\blr{A^2\cos^2(\omega t) + Al_0\cos(\omega t)
+	+\frac{l_0^2}{4}}.
+\]
+\eenum
+% 6 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+Birkoff's theorem.
+\\ \\
+The metric outside a spherically symmetric source must be of the Schwarzchild solution
+\[
+	ds^2 = B(r)dt^2 - B^{-1}(r)dr^2-r^2d\theta^2-r^2\sin^2\theta d\phi^2.
+\]
+If we demand that our metric is no longer stationary, but only isotropic, the metric may take the more general form of
+\[
+	ds^2 = A(t,r)dt^2 - B(t,r)dr^2 -r^2d\theta^2-r^2\sin^2\theta d\phi^2.
+\]
+It so happens that when one solves the Einstein field equations in empty space (outside the source) to specify the coefficients $A(r,t)$ and $B(r,t)$, one finds, after a coordinate transformation, that the resulting metric is none other than the Schwarzchild metric! This is reasonable because the solution exterior to the source does not depend on the dynamics going on inside the source - a radially oscillating star will only be changing its stellar surface. Hence the total mass and spherical symmetry will remain, which is what the Schwarzchild solution probes. This is rather analogous to the situation in electrodynamics where we may treat the exterior solution of a spherical distribution of charge as a point source. 
+\\ \\
+Since the metric outside the source is stationary, there can be no graviational radiation. 
+\eenum
+
+
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 6}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[8.1]
+The leakage rate of photons from the interior of the sun is 
+\[
+	L = \frac{ (4\pi R^3/3)(aT^4)}{3R^2/lc}.
+\]
+Since in this problem we are only interested in proportionalities, this is
+\be
+	L \propto RT^4 l
+\ee
+where $l$ is the mean-free path length. This path length is
+\be
+	l\propto T^{3.5}/\rho^2\ \text{low to medium mass}
+\ee
+\be
+	l\propto 1/\rho\ \text{high to very high mass}.
+\ee
+We also have, from definition of average density,
+\[
+	\rho = M/V = M/(4/3\pi R^3)\propto M/R^3.
+\]
+From 5.9, we showed that the central pressure at the sun is given as
+\[
+	P_c = 19 G M^2/R^4 \propto M^2/R^4.
+\]
+For a stable star, this central pressure must be equal to the total pressure arising from gas and radiation. For stars with low to high mass, gas pressure dominates thus
+\[
+	P = nkT = \frac{N}{V}kT = \frac{M}{mV}kT = \frac{\rho}{m_i}kT \propto \rho T
+\]
+where $m$ is the mass of an effective gas molecule (individial species can be added seperately in which $\rho = \sum_i \rho_i$).
+For stars with very high mass, radiation pressure dominates, so
+\[
+	P = \frac13 n\braket{vp} = \frac13 n\braket{E} = \frac13 \mathcal E = \frac13 aT^4 \propto T^4.
+\]
+Equating the gravitational pressure to the total pressure for each scenario, we find
+\[
+	T \propto  M^2/(\rho R^4) = M/R\ \text{low to high mass}
+\]
+\[
+	T^4 = M^2/R^4  \ \text{very high mass}.
+\]
+Now we substitute this into the luminosity, to get the leakage rate dependence upon the mass,
+\[
+	L \propto RT^{7.5} (R^6/M^2) = M^{5.5}/R^{0.5}\ \text{low to medium mass}
+\]
+\[
+	L \propto RT^4/\rho = R^4 T^4/M = R^4 M^4/R^4M = M^3\ \text{high mass}
+\]
+\[
+	L \propto RT^4 = R^4 T^4/M = R^4(M^2/R^4)/M = M\ \text{very high mass}.
+\] 
+For low to medium mass stars, $ R\propto M$ and thus $L\propto M^5$. Since the masses of stars on the main sequences vary from low to high (very massive stars are quite rare), the range of luminosity varies from $L \propto M^3 - M^5$. Including the fact that very low mass stars are convective and do not follow the same luminosity relationship, is it reasonable to take a representative power of magnitude for stars on the main sequence as $L\propto M^4$, as this gives a good average compromise over the ranges of low to high mass stars. 
+\eenum
+\end{document}

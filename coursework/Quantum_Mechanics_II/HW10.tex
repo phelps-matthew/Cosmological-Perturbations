@@ -1,0 +1,426 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 10\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Dec. 2 }
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item{Dirac matrices and Helicity}
+
+	\benum
+	% (a)
+	\item
+	Verify that the Dirac matrices really do satisfy the anti-commutation relations:
+	\[
+		\{ \gamma_\mu,\gamma_\nu \} = 2g_{\mu\nu}
+	\]
+	% (b)
+	\item
+	Verify that the free Dirac hamiltonian commutes with the ``helicity" operator (the projection of the spin
+	along the direction of the momentum):
+	\[
+		\frac{\vec S\cdot\vec p}{|\vec p|}
+	\]			
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	Let's separate the space and time indices. With $\mu = \nu = 0$ we have
+	\[
+		\{ \gamma_0,\gamma_0 \} = 2\gamma_0^2 = 2\mathds 1.
+	\]
+	For $\nu = 0$ we note that
+	\[
+		\gamma_i \gamma_0 = \bpm 0 & \sigma_i \\ -\sigma_i & 0 \epm
+		 \bpm \mathds 1 & 0 \\ 0 & -\mathds 1\epm  = \bpm 0&-\sigma_i\\ -\sigma_i &0\epm
+		 = -\gamma_0\gamma_i
+	\]
+	Therefore
+	\[
+		\{ \gamma_i,\gamma_0 \} = 2\delta_{i 0} \mathds 1.
+	\]
+	Now for the space indices $i$, $j$,
+	\[
+		\gamma_i\gamma_j = 
+		\bpm 0 & \sigma_i \\ -\sigma_i & 0 \epm
+		\bpm 0 & \sigma_j \\ -\sigma_j & 0 \epm
+		= \bpm -\sigma_i\sigma_j & 0\\ 0 & -\sigma_i\sigma_j \epm
+	\]
+	hence
+	\[
+		\{ \gamma_i,\gamma_j \} =- \bpm \{ \sigma_i,\sigma_j\} & 0 \\ 0& \{\sigma_i,\sigma_j\}  \epm.
+	\]
+	Using the anti-commutation property of the Pauli matrices,
+	\[
+		\{ \sigma_i,\sigma_j \} = 2\delta_{ij}\mathds 1
+	\]
+	we have
+	\[
+		\{ \gamma_i,\gamma_j \} =
+		-2 \delta_{ij}\mathds 1.
+	\]
+	With our results,
+	\[
+		\{ \gamma_i,\gamma_0 \} = 2\delta_{i 0} \mathds 1;\qquad 
+		\{ \gamma_i,\gamma_j \} = -2\delta_{i j} \mathds 1,
+	\]
+	we see that we get back our Minkowski metric with a factor of 2
+	\[
+		\{ \gamma_\mu,\gamma_\nu \} = 2g_{\mu\nu}\mathds 1.
+	\]
+	\\
+	
+	% (b)
+	\item 
+	The free Dirac Hamiltonian is
+	\[
+		H = c\gamma^0\gamma^ip_i+\gamma^0mc^2
+	\]
+	or
+	\[
+		H = c\vec\alpha\cdot\vec p +\vec\beta mc^2
+	\]
+	Spin operators commute with position/momentum operators (identity in tensor product space). Commuting
+	with the Hamiltonian
+	\[
+		\left[ H, \frac{S_ip_i}{\sqrt{p^jp_j}} \right ] =
+		c\left[ \alpha^ip_i, \frac{S^ip_i}{\sqrt{p^jp_j}} \right ] +
+		 mc^2 \left[\gamma^0, \frac{S^ip_i}{\sqrt{p^jp_j}} \right ]
+	\]
+	First we note that with $[p_\mu,p_\nu] = 0$ we have
+	\[
+		\left[ p_i,\frac{1}{\sqrt{p^jp_j}}\right] \sim [p_i,p^jp_j] = 0
+	\]
+	Thus we can pull out the factor of $\frac{1}{|\vec p|}$
+	\[
+		c\left[ \alpha^ip_i, \frac{S^ip_i}{\sqrt{p^jp_j}} \right ] +
+		mc^2 \left[\gamma^0, \frac{S^ip_i}{\sqrt{p^jp_j}} \right ] = \frac{1}{|\vec p|} \plr{c
+		  [ \alpha^ip_i,S^jp_j  ] +
+		mc^2 [\gamma^0, S^jp_j ]}
+	\]
+	Looking at the first commutator
+	\ba
+		 [ \alpha^ip_i,S^jp_j  ] & = [\alpha^ip_i,S^j]p_j-S^j[\alpha^ip_i,p_j] \\
+		 & = [\alpha^ip_i,S^j]p_j \\
+		 & = p_ip_j[\alpha^i,S^j] \tag{1}
+	\ea
+	The components
+	of the spin operator are 
+	\[
+		S_i = \frac{\h}{2}\sigma_i \to  \frac{\h}{2} \bpm \sigma_i &0 \\ 0 &\sigma_i \epm.
+	\]
+	Using this we find the commutator of $\alpha_i$ with $S_j$
+	\ba
+		[\alpha_i,S_j] &= \frac{\h}{2} \left [ \bpm 0 & \sigma_i \\ \sigma_i & 0 \epm, 
+		\bpm \sigma_j &0 \\ 0 &\sigma_j \epm \right ] \\
+		& = \frac{\h}{2} \bpm 0 & [\sigma_i,\sigma_j] \\  [\sigma_i,\sigma_j] & 0 \epm \\
+		& = i\h \bpm 0& \epsilon^{ijk}\sigma_k \\ \epsilon^{ijk}\sigma_k & 0 \epm\tag{2}
+	\ea 
+	Using (1) and (2) we can construct the operator over all components of $\vec\alpha$ and $\vec S$ 
+	\ba
+		[\alpha^ip_i,S^jp_j] &= p_ip_j[\alpha^i,S^j] \\ 
+		& =i\h  \epsilon^{ijk}\,  p_ip_j \sigma_k \bpm 0 & \mathds 1 \\ \mathds 1 &0 \epm. \tag{3}
+	\ea
+	This sum is antisymmetric with respect to $ij$, and thus equates to zero when summed over all permutations. 
+	Hence all that remains is
+	\[
+		[\gamma^0,S^ip_i] = p_i[\gamma^0,S^i] = p_i \plr{ \gamma^0S^i - S^i\gamma^0} = 
+		p_i \plr{\gamma^0 S^i-\gamma^0 S^i} = 0. \tag{4}
+	\]
+	Therefore, using (3) and (4) we may conclude
+	\[
+		\left[ H, \frac{S_ip_i}{\sqrt{p^jp_j}} \right ] =0 .
+	\]
+	\eenum 
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{Lorentz transformation of the Dirac current }
+	
+	\benum
+	% (a)
+	\item 
+	Verify that with the transformation $\psi \to \mathcal M\psi$ derived in class, for an infinitesimal Lorentz
+	transformation, the Dirac current density $c\bar\psi\gamma^\mu \psi$ transforms as a vector under the 
+	Lorentz transformation: $j^\mu \to \Lambda^\mu_\nu j^\nu$.
+	\\ \\
+	I am going to re-derive the infinitesimal transformation matrix $\mathcal M$ in $\psi' = \mathcal M\psi$. \\
+	We require that the Dirac equation take the same form in all inertial frames of reference. Measurable
+	quantities in the unprimed frame relate to those in a primed frame via a Lorentz transformation:
+	\[
+		p_\mu = \Lambda_\mu^\nu p'_\nu
+	\]
+	\[
+		\psi = \mathcal M^{-1} \psi'. 
+	\]
+	Forming the Dirac equation
+	\ba
+		\gamma^\mu p_\mu \psi = mc\psi &\quad\Rightarrow\quad 
+		\gamma^\mu \Lambda^\nu_\mu p'_\nu \mathcal M^{-1} \psi' = mc\mathcal M^{-1}\psi'\\
+		&\quad\Rightarrow\quad \mathcal M \gamma^\mu \Lambda^\nu_\mu p'_\nu \mathcal M^{-1} \psi'
+		 = mc\mathcal \psi'.
+	\ea 
+	Now, for the Dirac equation to be Lorentz invariant we require
+	\[
+		\mathcal M\gamma^\mu\Lambda_\mu^\nu \mathcal M^{-1} = \gamma^\nu
+	\]
+	or
+	\[
+		\gamma^\mu\Lambda^\nu_\mu = \mathcal M^{-1}\gamma^\nu \mathcal M\tag{5}.
+	\]
+	From here on we work only to first order. The Lorentz transformation is then the identity plus a first
+	order (infinitesimal) change
+	\[
+		\Lambda^\nu_\mu = g_\mu^\nu +\Delta\omega_\mu^\nu
+	\]
+	If we take an infinitesimal Lorentz transformation along with its inverse
+	$(\Lambda^\rho_\mu)^{T} = (\Lambda_\mu^\rho)^{-1}$ we expect to obtain the identity
+	 \[
+	 	\Lambda^\mu_\nu\Lambda_\mu^\rho = g_\nu^\rho
+	\]
+	hence
+	\[
+		(g^\mu_\nu+\Delta\omega_\nu^\mu)(g^\rho_\mu+\Delta\omega_\mu^\rho)
+		= g_\nu^\rho
+	\]
+	From this, we deduce that the infinitesimal parameters of the Lorentz transformation
+	are antisymmetric
+	\[
+		\Delta\omega^{\rho\nu}+\Delta\omega^{\nu\rho} = 0,
+	\]
+	and thus given by $(n+1)n/2$ independent elements in $n=4$ dimensions. We now use these elements
+	to construct the transformation matrix $\mathcal M$. The $4\times 4$ matrix $\mathcal M$
+	can be viewed a function of the Lorentz parameters, and thus may be written to first order as
+	\[
+		\mathcal M = \mathds 1 -\frac{i}{4}\Delta\omega^{\alpha\beta}\sigma_{\alpha\beta}.
+	\]
+	The factor of $i$ ensures unitarity and in the limit that $\omega^{\alpha\beta} \to 0$ we obtain
+	the identity. 
+	\\ \\
+	Having $\mathcal M$, we go back and form (5) 
+	\[
+		\gamma^\mu(g^\nu_\mu+\Delta\omega_\mu^\nu) = 
+		\plr{\mathds 1 -\frac{i}{4}\Delta\omega^{\alpha\beta}\sigma_{\alpha\beta}}
+		\plr{\mathds 1 +\frac{i}{4}\Delta\omega^{\alpha\beta}\sigma_{\alpha\beta}}.
+	\]
+	To first order then
+	\[
+		\gamma^\mu\Delta\omega^\nu_\mu = \frac{i}{4}\Delta\omega^{\alpha\beta}[\sigma_{\alpha\beta}
+		,\gamma^\nu]\tag{6}.
+	\]
+	Using antisymmetry, we may re-express the left hand side of (6)
+	\[
+		\gamma^\mu\Delta\omega_\mu^\nu = g^{\mu\beta}\gamma_\beta\Delta\omega_\mu^\nu
+		= \Delta\omega^{\nu\beta} \gamma_\beta = 
+		\Delta\omega^{\alpha\beta}g^\nu_\alpha \gamma_\beta = \frac{1}{2}\Delta\omega^{\alpha\beta}
+		\plr{g_\alpha^\nu \gamma_\beta - g_\beta^\nu \gamma_\alpha}.
+	\]
+	Hence (6) becomes
+	\[
+		g^\nu_\alpha \gamma_\beta - g_\beta^\nu \gamma_\alpha = \frac{i}{2}
+		[\sigma_{\alpha\beta},\gamma^\nu]
+	\]
+	or
+	\[
+		\sigma_{\alpha\beta} = \frac{i}{2}[\gamma_\alpha,\gamma_\beta]. 
+	\]
+	We finally have an expression to first order for the spinor transformation matrix $\mathcal M$ 
+	in terms of the gamma matrices and Lorentz parameters
+	\[
+		\mathcal M = \mathds 1 +\frac{1}{8}\Delta\omega^{\alpha\beta}[\gamma_\alpha,
+		\gamma_\beta]\tag{7}.
+	\]
+	\\ \\
+	The current density is given as
+	\[
+		j^\mu = c\bar\psi\gamma^\mu\psi
+	\]
+	with
+	\[
+		\bar\psi = \psi^\dag\gamma^0.
+	\]
+	Under a Lorentz transformation $j^\mu \to j'^\mu$ and so
+	\ba
+		 j'^\mu &= \bar\psi'\gamma^\mu\psi' \\
+		& = \psi^\dag \mathcal M^\dag\gamma^0\gamma^\mu \mathcal M\psi\\
+		& = \bar\psi\gamma^0\mathcal M^\dag \gamma^0\gamma^\mu\mathcal M\psi.
+	\ea
+	Using
+	\[
+		\mathcal M^\dag = \gamma^0 \mathcal M^{-1}\gamma^0
+	\]
+	the current becomes 
+	\[
+		j'^\mu  =  \bar\psi \mathcal M^{-1}\gamma^\mu \mathcal M\psi.
+	\]
+	Recalling eq. (5) $( \gamma^\mu\Lambda^\nu_\mu = \mathcal M^{-1}\gamma^\nu \mathcal M)$ 
+	we finally have
+	\[
+		j^\mu\to j'^\mu = \Lambda_\nu^\mu j^\nu =  \Lambda^\mu_\nu(\bar\psi \gamma^\nu \psi).
+	\]
+	\\
+	\\
+	% (b)
+	\item
+	Verify that $ \partial_\alpha F^{\alpha\mu}$ also transforms the same way. Why is this important?
+	\\
+	\\
+	Under a Lorentz transformation, a tensor transforms as
+	\[
+		F^{\mu\nu} \to F'^{\mu\nu} = \Lambda_\alpha^\mu\Lambda_\beta^\nu F^{\alpha\beta}.
+	\]
+	The EM current density
+	\[
+		j^\nu = \partial_\mu F^{\mu\nu} = (-i\h)p_\mu F^{\mu\nu}
+	\]
+	transforms to
+	\ba
+		j'^\nu to&= (-i\h)p'_\mu F'^{\mu\nu}\\
+		& = (-i\h)\Lambda^\rho_\mu p_\rho\Lambda^\mu_\alpha \Lambda^\nu_\beta F^{\alpha\beta}\\
+		& = (-i\h)\Lambda^\rho_\mu\Lambda^\mu_\alpha p_\rho\Lambda^\nu_\beta F^{\alpha\beta} \\
+		& = (-i\h)g^\rho_\alpha p_\rho \Lambda^\nu_\beta F^{\alpha\beta} \\
+		& = (-i\h)p_\alpha \Lambda^\nu_\beta F^{\alpha\beta} \\
+		& = \Lambda_\beta^\nu (\partial_\alpha F^{\alpha\beta})\\
+		& = \Lambda^\nu_\beta j^\beta.
+	\ea
+	Hence the electromagnetic current density also transforms as a vector under a Lorentz transformation. 
+	This is important because we 
+	expect Maxwells equations $\partial_\mu F^{\mu\nu} = 0$ to be the same in differential inertial frames of 
+	reference, i.e. Lorentz invariant. Likewise, charge is conserved under a Lorentz transformation. 
+	
+	\eenum	
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{Spin Matrices}
+	
+	\benum
+	% (a)
+	\item 
+	Verify that the ``spin" matrices $\Sigma_{\mu\nu} \equiv \frac{i}{4}[\gamma_\mu,\gamma_\nu]$ satisfy 
+	the relation needed in the proof of Lorentz covariance of the Dirac equation:
+	\[
+		\plr{ g^\nu_\alpha \gamma_\beta - g^\nu_\beta\gamma_\alpha}= \frac{i}{4}[\Sigma_{\alpha\beta},\gamma^\nu]
+	\]
+	\\
+	\\
+	Noting that
+	\ba
+		[\gamma_\mu,\gamma_\nu] &= 2\gamma_\mu\gamma_\nu - \{\gamma_\mu,\gamma_\nu\} \\
+		& = 2(\gamma_\mu\gamma_\nu-g_{\mu\nu})
+	\ea
+	and that 
+	\[
+		\{\gamma^\mu,\gamma_\nu\} = \{g^{\mu\alpha}\gamma_\alpha,\gamma_\nu\} = 
+		g^{\mu\alpha}\{\gamma_\alpha,\gamma_\nu\} = 2g^{\mu\alpha}g_{\alpha\nu} = 2g^\mu_\nu
+	\]
+	we form the commutator of the Sigma matrix,
+	\ba
+		\frac{i}{4}[\Sigma_{\alpha\beta},\gamma^\nu] &= -\frac{1}{16}[[\gamma_\alpha,\gamma_\beta],\gamma^\nu] \\
+		& = \frac{1}{8}[\gamma^\nu,\gamma_\alpha\gamma_\beta + g_{\alpha\beta}]\\
+		& = \frac{1}{8}\plr{[\gamma^\nu,\gamma_\alpha\gamma_\beta]+[\gamma^\nu,g_{\alpha\beta}]}\\
+		& = \frac{1}{8}\plr{\gamma_\alpha[\gamma^\nu,\gamma_\beta]+[\gamma^\nu,\gamma_\alpha]\gamma_\beta
+		+0}\\
+		& = \frac{1}{8}\plr{\{\gamma_\alpha,\gamma^\nu\}\gamma_\beta -\gamma_\alpha
+		\{\gamma_\beta,\gamma^\nu\}}\\
+		& = \frac{1}{4}\plr{ g^\nu_\alpha\gamma_\beta - g^\nu_\beta\gamma_\alpha}.
+	\ea
+	If the Sigma matrix is normalized as $\Sigma_{\mu\nu} = i[\gamma_\mu,\gamma_\nu]$, then
+	we obtain the relation
+	\[
+		\frac{i}{4}[\Sigma_{\alpha\beta},\gamma^\nu] = g^\nu_\alpha\gamma_\beta - g^\nu_\beta\gamma_\alpha.
+	\]
+	\\
+	\\
+	% (b)
+	\item
+	Express $\Sigma_{0i}$ and $\Sigma_{ij}$ in terms of their $2\times 2$ sub-blocks using the Pauli matrices.
+	\\
+	\\
+	\\
+	For one time index, 
+	\[
+		\Sigma_{0i} = \frac{i}{4}[\gamma_0,\gamma_i] = \frac{i}{4} \blr{ \bpm 0 & -\sigma_i\\ -\sigma_i&0\epm
+		- \bpm 0 & \sigma_i \\ \sigma_i & 0\epm } = -\frac{i}{2} \bpm 0 & \sigma_i \\ \sigma_i & 0\epm.
+	\]
+	For $\Sigma_{ij}$, 
+	\[
+		\Sigma_{ij} = \frac{i}{4}\blr{ - \bpm \sigma_i\sigma_j & 0\\ 0 & \sigma_i\sigma_j \epm
+		+
+		 \bpm \sigma_j\sigma_i & 0\\ 0 & \sigma_j\sigma_i \epm}
+		 = -\frac{i}{4}\bpm [\sigma_i,\sigma_j] &0 \\ 0 & [\sigma_i,\sigma_j] \epm. 
+	\]
+	WIth the Pauli commutation relations
+	\[
+		[\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k
+	\]
+	this becomes
+	\[
+		\Sigma_{ij} = \frac{1}{2}\epsilon_{ij}^k \bpm \sigma_k & 0 \\ 0 & \sigma_k \epm.
+	\]
+	\\ \\
+	% (c)
+	\item
+	Define $K_i = \Sigma_{0i}$ and $J_i = \frac{1}{2}\epsilon_{ijk}\Sigma^{jk}$, and compute the commutators:
+	\[
+		[K_i,K_j];\qquad [K_i,J_j];\qquad [J_i,J_j]
+	\]
+	\\ \\
+	For $K_i$ we have
+	\[
+		K_i = -\frac{i}{2}\bpm 0 & \sigma_i \\ \sigma_i &0 \epm.
+	\]
+	For $J_i$ we have
+	\[
+		J_i = \frac{1}{2}\epsilon_{ijk}\Sigma^{jk} = \frac{1}{4}\epsilon_{ijk}\epsilon^{jkl}\bpm
+		\sigma_l & 0 \\ 0 & \sigma_l \epm.
+	\]
+	Using
+	\[
+		\epsilon_{ijk}\epsilon^{jkl} = \epsilon_{ijk}\epsilon^{ljk} = 2\delta_i^l 
+	\]
+	we then have
+	\[
+		J_i = \frac{1}{2}\bpm \sigma_i & 0 \\ 0 & \sigma_i \epm.
+	\]
+	\\
+	Commutators between the vector elements of $\vec J$ are
+	\[
+		[J_i,J_j] = \frac{1}{4}\bpm [\sigma_i,\sigma_j] & 0 \\ 0 & [\sigma_i,\sigma_j] \epm = 
+		\frac{i}{2}\epsilon_{ij}^k \bpm \sigma_k & 0\\ 0 & \sigma_k \epm =i \Sigma_{ij}
+		= i\epsilon_{ij}^kJ_k.
+	\]
+	Commutators between the vector elements of $\vec K$ are 
+	\[
+		[K_i,K_j] = -\frac{1}{4}\bpm [\sigma_i,\sigma_j]&0  \\  0&[\sigma_i,\sigma_j] \epm = 
+		-\frac{i}{2}\epsilon_{ij}^k \bpm \sigma_k&0 \\  0&\sigma_k  \epm = \epsilon_{ij}^k\Sigma_{ij}
+		= -i\epsilon_{ij}^kJ_k.
+	\]
+	Commutators between vector differing elements
+	\[
+		[K_i,J_j] = -\frac{i}{4}\bpm 0 & [\sigma_i,\sigma_j] \\ [\sigma_i,\sigma_j] & 0 \epm
+		= \frac{1}{2} \epsilon_{ij}^k\bpm 0 & \sigma_k \\ \sigma_k & 0 \epm = -i\epsilon^k_{ij}\Sigma_{0k}
+		= -i\epsilon_{ij}^kK_k.
+	\]
+	All together then
+	\[
+		[K_i,K_j] = -i\epsilon^k_{ij}J_k;\qquad [J_i,J_j] = i\epsilon_{ij}^kJ_k;\qquad [K_i,J_j] = -i\epsilon_{ij}^k K_k
+	\]
+	\\ \\
+	% (d)
+	\item
+	Comment on the results of the previous part.
+	\\ \\
+	We have 6 independent elements (two vectors) that are closed under commutation and thus form some sort of
+	group. The vector $\vec J$ appears to transform just like angular momentum. If we take $\vec J$ as the 
+	generators of angular momentum and $\vec K$ as generators of boosts, we form a representation 
+	of the Lorentz group in terms of Dirac matrices. Two successive rotations relate to a rotation about the third axis,
+	two successive boosts relate to a rotation (interesting), and a boost followed by rotation relates to a boost
+	about the untouched axis. I'm sure there is even much more that could be said about these
+	pairs of commutators from a group theory perspective. 
+	
+	\eenum
+	\eenum
+\end{document}

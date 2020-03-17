@@ -1,0 +1,343 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[top=1in,textheight=9in]{geometry}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{braket}
+\usepackage{enumitem}
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+
+\title{\begin{spacing}{1.2}Electrodynamics I\\HW 1\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: February 10}
+
+\begin{document}
+
+\maketitle
+
+% #1
+\begin{enumerate}
+  \item An infinite plane layer of thickness $a$ is charged to a volume density $\rho(x)$:
+  $$\rho(x) = \alpha x,\ \text{if}\ |x|\leq\frac{a}{2}$$
+  $$\rho(x) = 0,\ \text{if}\ |x|>\frac{a}{2}$$
+where $\alpha = const > 0$, $x$-axis is perpendicular to the layer surface, and the origin of coordinates $x=0$ is placed into the corner of the layer. Find everywhere the potential $\phi$ and the electric field $\vect E$, if their values are equal to zero at $x\rightarrow-\infty$.
+\\ \\\emph{Solution 1: Laplace's and Poisson's equation}\\ \\
+Let's first note the symmetry in our problem. It is easy to see that it symmetric in the $y$ and $z$ directions. In other words, for a potential $\Phi(\vect r) = \Phi(x,y,z)$
+$$\frac{\partial\Phi}{\partial y}=-E_y = 0$$
+$$\frac{\partial\Phi}{\partial z}= -E_z= 0.$$
+Thus $\Phi(\vect r) = \Phi(x)$ and $\vect E = E(x)\hat{\vect x}$. Next, let us once again state our boundary conditions:
+$$\Phi(-\infty) = 0\ \text{and}\ E(-\infty) = 0.$$
+Now, starting with the region $x\leq -a/2$ there is no charge distribution and so Laplace enters the scene:
+$$\nabla^2\Phi = \frac{d^2\Phi}{dx^2}=0$$
+$$\frac{d\Phi}{dx} = C_1$$
+However, since $E = -\frac{d\Phi}{dx} = C_1$, our boundary condition forces $C_1 = 0$.
+$$\frac{d\Phi}{dx} = 0\rightarrow \Phi(x) = C_2$$
+Boundary condition on $\Phi(x)$ also causes $C_2 = 0$. So we have 
+$$\Phi(x) = 0;\ E(x) = 0\ \text{for}\ x\leq-\frac{a}{2}.$$
+Moving next to the region $|x|\leq a/2$, we have charge density so we must use Poisson's equation:
+$$-\nabla^2\Phi = \frac{\rho}{\epsilon_0}\rightarrow\frac{d^2\Phi}{dx^2} = -\frac{\alpha x}{\epsilon_0}$$
+$$\frac{d\Phi}{dx} = -\frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}\right)+C_1$$
+$$E(x) = \frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}\right)-C_1$$
+Impose boundary condition on $E(x)$ first
+$$E_-(-\frac{a}{2}) = E_+(-\frac{a}{2}) $$
+$$ 0 = \frac{\alpha}{\epsilon_0}\frac{(-\frac{a}{2})^2}{2}-C_1$$
+$$C_1 = \frac{\alpha}{\epsilon_0}\frac{a^2}{8}$$
+Back to $\Phi$, where we will integrate once more
+$$\Phi(x) = -\frac{\alpha}{\epsilon_0}\left(\frac{x^3}{6}-\frac{a^2x}{8}\right)+C_2$$
+Impose boundary condition on $\Phi(x)$
+$$\Phi_-(-\frac{a}{2}) = \Phi_+(-\frac{a}{2})$$
+$$0 = -\frac{\alpha}{\epsilon_0}\left(-\frac{a^3}{48}+\frac{a^3}{16}\right)+C_2=-\frac{\alpha}{\epsilon_0}\frac{a^3}{24}+C_2$$
+$$C_2 = \frac{\alpha}{\epsilon_0}\frac{a^3}{24}$$
+So we have, for $|x|\leq-\frac{a}{2}$
+$$\Phi(x) = -\frac{\alpha}{\epsilon_0}\left(\frac{x^3}{6}-\frac{a^2x}{8}-\frac{a^3}{24}\right)$$
+$$E(x) = \frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}-\frac{a^2}{8}\right)$$
+Lastly, lets solve for the final reqion $x\geq a/2$ in which there is no charge
+$$\frac{d^2\Phi}{dx^2} = 0\rightarrow\frac{d\Phi}{dx} = C_1$$
+$$E(x) = -C_1$$
+Impose boundary conditions on $E(x)$
+$$E_-(\frac{a}{2}) = E_+(\frac{a}{2})$$
+$$0=-C_1$$
+Now to $\Phi$
+$$\frac{d\Phi}{dx} = 0\rightarrow\Phi(x) = C_2$$
+Impose boundaries on $\Phi(x)$
+$$\Phi_-(\frac{a}{2}) = \Phi_+(\frac{a}{2})$$
+$$\frac{\alpha}{\epsilon_0}\frac{4a^3}{48} = \frac{\alpha}{\epsilon_0}\frac{a^3}{12} = C_2$$
+Finally altogether we have
+\begin{align*}\Phi(x) &=
+\begin{cases}0\quad&x\leq\-\frac{a}{2}\\
+-\frac{\alpha}{\epsilon_0}\left(\frac{x^3}{6}-\frac{a^2x}{8}-\frac{a^3}{24}\right)\quad&|x|\leq\frac{a}{2}\\
+\frac{\alpha}{\epsilon_0}\frac{a^3}{12}\quad&x\geq\frac{a}{2}
+\end{cases} \\
+\\\vect E&=\begin{cases}0\quad&|x|\geq\frac{a}{2}\\
+\frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}-\frac{a^2}{8}\right)\quad&|x|\leq\frac{a}{2}
+\end{cases}
+\end{align*}
+%Solution 2
+\\ \\ \emph{Solution 2: Gauss's Law}\\ \\By Gauss's law, it can easily be shown that the electric field outside an infinite plane of surface density $\sigma$ perpendicular to the $x$-axis is 
+$$\vect E =\begin{cases}
+ \frac{\sigma}{2\epsilon_0}\hat{\vect x}&\ \text{if}\ x>0\\
+  -\frac{\sigma}{2\epsilon_0}\hat{\vect x}&\ \text{if}\ x<0\\
+ \end{cases}$$
+Note that due to the infinite symmetry, the electric field is independent of position. Using superposition, we should be able to find the electric field of a finite volume by adding up all the contributions of $\sigma$ by the relation $\rho(x)dx = d\sigma(x)$. Therefore the electric field outside the plane layer is 
+\begin{align*}E = \frac{\sigma_{eff}}{2\epsilon_0}=\frac{1}{2\epsilon_0}\int{d\sigma(x)}= \frac{1}{2\epsilon_0}\int_{-a/2}^{a/2}{dx\ \rho(x)}=0.
+\end{align*}
+Outside the plane layer, the electric field is zero since every contribution of $+\sigma$ is cancelled by an opposing $-\sigma$. Inside the layer, we again use superposition but we must be careful to note that at an arbitrary location $x$, the contribution in the upper half acts to push a positive test charge in the $-\hat{\vect x}$ direction, hence the minus sign in the second integral.
+\begin{align*}E(x) &= \frac{1}{2\epsilon_0}\left(\int_{-a/2}^{x}{dx'\ \rho(x')}-\int_{x}^{a/2}{dx'\ \rho(x')}\right)\\
+&=\frac{\alpha}{2\epsilon_0}\left[\left(\frac{x^2}{2}-\frac{a^2}{8}\right)-\left(\frac{a^2}{8}-\frac{x^2}{2}\right)\right]\\
+&=\frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}-\frac{a^2}{8}\right)
+\end{align*}
+At $x=0$, $E(x)$ is maximum and at $x=\pm\frac{a}{2}$, $E=0$ which is what we should physically expect. To calculate the potential, we start with the condition $\Phi(-\infty)=0$ and use
+\begin{align*}\Phi(x) &= -\int_{-\infty}^{x}{\vect E\cdot d\vect{l}} = -\int_{-\infty}^{-a/2}{\vect{E}\cdot d\vect{l}} - \int_{-a/2}^{x}{\vect E\cdot d\vect{l}}\\
+&= -\int_{-a/2}^{x}{\vect E\cdot d\vect{l}} = -\frac{\alpha}{2\epsilon_0}\int_{-a/2}^{x}{dx'\ (x^{'2}-\frac{a^2}{4})}\\
+&=-\frac{\alpha}{2\epsilon_0}\left[\left(\frac{x^3}{3}+\frac{a^3}{24}\right)-\left(\frac{a^2x}{4}+\frac{a^3}{8}\right)\right]\\
+&=-\frac{\alpha}{\epsilon_0}\left(\frac{x^3}{6} -\frac{a^2x}{8}-\frac{a^3}{24}\right)
+\end{align*}
+With a quick check we can see that
+$$\vect E = -\nabla \Phi = \frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}-\frac{a^2}{8}\right)\hat{\vect x}.$$
+In addition, $\Phi(x>\frac{a}{2}) = \Phi(\frac{a}{2}) = \frac{\alpha}{\epsilon_0}\frac{a^3}{12}$ since $\vect E\cdot d\vect l = 0$ for $x>\frac{a}{2}$ and $\Phi$ is continuous across the boundry. Altogether we have,
+\begin{align*}
+\vect E& = \begin{cases}\frac{\alpha}{\epsilon_0}\left(\frac{x^2}{2}-\frac{a^2}{8}\right)\hat{\vect x}&\quad |x|\leq\frac{a}{2}\\
+0&\quad |x|\geq\frac{a}{2}\end{cases}
+\\ \\\Phi & = \begin{cases} \frac{\alpha}{\epsilon_0}\frac{a^3}{12}&\quad x\geq \frac{a}{2}
+\\-\frac{\alpha}{\epsilon_0}\left(\frac{x^3}{6} -\frac{a^2x}{8}-\frac{a^3}{24}\right)&\quad |x|\leq\frac{a}{2}
+\\0&\quad x\leq-\frac{a}{2}\end{cases}
+\end{align*}
+
+  % #2
+  \item The plane $z=0$ is charged with the variable surface charge density $\sigma(x,y)$:
+  $$\sigma(x,y) = \sigma_0\sin(\alpha x)\sin(\beta y)$$
+  where $\sigma_0$, $\alpha$, and $\beta$ are positive constants. Determine the potential $\phi$ induced by this charge distribution.\\Hint: paragraphs 1.6 (Eq.1.23) and 2.9 from Jackson's book and properties of the ``delta"-function provide all formulas required for this problem.
+\\ \\\emph{Method 1:}\ Integrating over the surface, the potential can be calculated as
+  $$\Phi(\vect r')=k\sigma_0\int_{-\infty}^{\infty}{dxdydz\frac{\sin{\alpha x}\sin{\beta y}\ \delta(z)}{\sqrt{(x-x')^2+(y-y')^2 + (z-z')^{'2}}}}$$
+Turns out this integral is in fact solvable, though it no walk in the park. Evaluating $\delta(z)$, this becomes
+  $$\Phi(\vect r')=k\sigma_0\int_{-\infty}^{\infty}{dxdy\frac{\sin{\alpha x}\sin{\beta y}}{\sqrt{(x-x')^2+(y-y')^2 + z'^{'2}}}}.$$
+  Making a substitution $u = x-x'$ and $t = y-y'$ we then have
+  $$\Phi(\vect r')=k\sigma_0\int_{-\infty}^{\infty}{dudt\frac{\sin{(\alpha u +\alpha x')}\sin{(\beta t+\beta y')}}{\sqrt{u^2+t^2 + z'^{'2}}}}.$$
+  Now we can use the trig relation $\sin{(\theta+\phi)} = \sin\theta\cos\phi+\sin\phi\cos\phi$. Expanding out 
+ \begin{align*}\sin{(\alpha u +\alpha x')}\sin{(\beta t+\beta y')} =& \quad\sin{(\alpha x')}\sin{(\beta y')}[\cos{(\alpha u)}\cos{(\beta t)}]\\&+\sin{(\alpha x')}\cos{(\beta y')}[\sin{(\beta t)}\cos{(\alpha u)}]\\&+\sin{(\beta y')}\cos{(\alpha x')}[\sin{(\alpha u)}\cos{(\beta t)}]\\&+\cos{(\beta y')}\cos{(\alpha x')}[\sin{(\alpha u)}\sin{(\beta t)}].
+ \end{align*}
+ Notice that all terms outside the square brackets can be pulled out of the integrand. More importantly, however, since we are integrating over even bounds any term with a $\sin\theta$ in the integrand must vanish due to its odd nature (though $\sin{(\alpha u)}\sin{(\beta t)}$ is even, we integrate each variable separately so it still vanishes). Therefore we are only left with the first term $\sin{(\alpha x')}\sin{(\beta y')}[\cos{(\alpha u)}\cos{(\beta t)}]$. Our integral now becomes
+ $$\Phi(\vect r')=k\sigma_0\sin{(\alpha x')}\sin{(\beta y')}\int_{-\infty}^{\infty}{dudt\frac{\cos{(\alpha u)}\cos{(\beta t)}}{\sqrt{u^2+t^2 + z'^{'2}}}}.$$
+Lets first look at the $u$ integration:
+$$\int_{-\infty}^{\infty}{du\ \frac{\cos{(\alpha u)}}{\sqrt{u^2+t^2+z^2}}}$$
+ \\ \\\emph{Method 2: }Let's start with the potential on the surface, i.e. Poisson's equation
+ $$-\nabla^2\Phi(\vect r) = \frac{\rho(\vect r)}{\epsilon_0}$$
+\begin{equation}\frac{\partial \Phi^2}{\partial^2x}+\frac{\partial \Phi^2}{\partial^2y}+\frac{\partial \Phi^2}{\partial^2z} = -\sigma_0\sin(\alpha x)\sin(\beta y)\delta(z)\end{equation}
+Even though this is not homogeneous, we can still utilize separation of variables for this special charge distribution. We can be clever and pick our functions so that they match the RHS of eq. (1). Proceeding by separation of variables, 
+$$\Phi(x,y,z) = X(x)Y(y)Z(z)$$
+$$\frac{\partial^2\Phi}{\partial x^2} = Y(y)Z(z)\frac{\partial^2X}{\partial x^2}$$
+and so forth for the other partial derivatives. Dividing both sides of eq. (1) by $\Phi$, we arrive at
+$$\frac{1}{X}\frac{\partial^2X}{\partial x^2}+\frac{1}{Y}\frac{\partial^2Y}{\partial y^2}+\frac{1}{Z}\frac{\partial^2Z}{\partial z^2}=-\frac{\sigma_0}{\epsilon_0}\frac{\sin(\alpha x)\sin(\beta y)\delta(z)}{X(x)Y(y)Z(z)}.$$
+Diverging now from the typical separation procedure, we will specifically choose 
+$$X(x) = \sin(\alpha x);\quad Y(y) = \sin(\beta y)$$
+and leave $Z(z)$ yet undetermined. Using these equations, we deduce
+$$-(\alpha^2+\beta^2)+ \frac{1}{Z}\frac{\partial^2Z}{\partial z^2} = -\frac{\sigma_0}{\epsilon_0}\frac{\delta(z)}{Z(z)}$$
+\begin{equation}\frac{d^2Z}{dz^2}-(\alpha^2+\beta^2)Z = -\frac{\sigma_0}{\epsilon_0}\delta(z)\end{equation}
+We can employ some more cleverness to handle the delta-function here. First, let us solve for $|z| > 0$
+$$\frac{d^2Z}{dz^2}-(\alpha^2+\beta^2)Z = 0.$$
+Here we are essentially just solving Laplace's equation (i.e. region of no charge). Trying a solution of
+$$Z(z) = Ce^{\pm\sqrt{\alpha^2+\beta^2}|z|},$$
+our D.E. becomes 
+$$(\alpha^2+\beta^2)Z\left(\frac{d^2|z|}{dz^2}\right)-(\alpha^2+\beta^2)Z = 0.$$
+Let's take a detour to investigate $f(z) = |z|$. We know that $f(0)$ is undefined. If we think about taking the derivative, it not hard to imagine that this is equivalent to a modified step function $\Theta(z)$. Namely
+$$\frac{d|z|}{dz} = 2\Theta(z)-1$$
+And what would the derivative of $\Theta(z)$ be? None other than $\delta(z)$.
+$$\frac{d^2|z|}{dz^2} = \frac{d}{dz}\left(2\Theta(z)-1\right) = 2\delta(z)$$
+Isn't that fantastic? So we can easily see now that for $|z| > 0$, our proposed solution of $Z(z) = Ce^{\pm\sqrt{\alpha^2+\beta^2}|z|}$ is valid. However, we now need to think about our possible boundary conditions (though they have not been specified). We have a plane sheet of charge that varies in the both the $x$ and $y$ direction as $\sin(\alpha x)$ and $\sin(\beta y)$. Extended to infinity, we would suspect the total charge, $q_{enc}$ to tend toward zero. Therefore, we should expect the potential of $\Phi(z)$ as $z\rightarrow\infty$ to vanish. Consequently, 
+$$Z(z) = Ce^{-\sqrt{\alpha^2+\beta^2}|z|}.$$
+To solve for when $z\rightarrow 0$, we substitute this equation into our original D.E., eq. (2)
+$$2\delta(z)(\alpha^2+\beta^2)Z -(\alpha^2+\beta^2)Z = -\frac{\sigma_0}{\epsilon_0}\delta(z)$$
+Rearranging
+$$Ce^{-\sqrt{\alpha^2+\beta^2}|z|}(2\delta(z)-1) = \delta(z)\left(\frac{\sigma_0}{\epsilon_0(\alpha^2+\beta^2)}\right).
+$$
+In order to solve for $C$ we will do the following:
+$$\lim_{\epsilon\to0}{\int_{-\epsilon}^{+\epsilon}{dz\ Ce^{-\sqrt{\alpha^2+\beta^2}|z|}(2\delta(z)-1)}} = \lim_{\epsilon\to0}{\int_{-\epsilon}^{+\epsilon}{dz\ \delta(z)\frac{\sigma_0}{\epsilon_0(\alpha^2+\beta^2)}}}$$
+$$2C-\lim_{\epsilon\to0}{\int_{-\epsilon}^{+\epsilon}{dz\ Ce^{-\sqrt{\alpha^2+\beta^2}|z|}}} = \frac{\sigma_0}{\epsilon_0(\alpha^2+\beta^2)}$$
+Notice that the remaining integral does not have any singularities so $\epsilon = 0$ can be substituted directly into the integration limits, making it vanish. We then have, for all $z$
+$$C = \frac{\sigma_0}{2\epsilon_0(\alpha^2+\beta^2)}.$$
+Our final solution for the potential $\Phi$ is 
+$$\Phi(\vect r) = \frac{\sigma_0}{\epsilon_0(\alpha^2+\beta^2)}\sin(\alpha x)\sin(\beta y)e^{-\sqrt{\alpha^2+\beta^2}|z|}.$$
+From this, we can see that $\Phi(\infty) = 0$. To glance at the physics at play, lets look at $E_z$:
+$$E_z = -\frac{\partial\Phi}{\partial z} = \frac{\sigma_0}{\epsilon_0\sqrt{\alpha^2+\beta^2}}\sin(\alpha x)\sin(\beta y)e^{-\sqrt{\alpha^2+\beta^2}|z|}(2\Theta(z)-1)$$
+We can note that 
+$$2\Theta(z) - 1 = \begin{cases}\ \ 1\quad z>0\\\ \ 0\quad z=0\\-1\quad z< 0\end{cases}$$
+Therefore the electric field always points away from the plane and decays exponentially as we approach $\infty$.
+% #3
+\item The distribution of the electron-charge density $\rho(\vect r)$ in the hydrogen atom is described by the formula:
+$$\rho(\vect r) = \frac{e}{\pi a^3}\exp{\left(-\frac{2r}{a}\right)},$$
+where $\vect r$ is the radius-vector from the atomic nucleus (proton) to the electron position, $a = 0.52\times10^{-10}$ m is the Bohr radius, and $e=1.6\times10^{-16}$ C is the absolute value of electron charge. Find the electric field $\vect  E(r)$ and the energy of interaction $W_{int}$ between the electron and the nucleus.
+\\ \\First we use Gauss's law to find the electric field since $\vect E$ is uniformly radial,
+$$\oint_{\partial V}{\vect E\cdot d\vect A} = \frac{1}{\epsilon_0}\int_{V}{d^3r'\ \rho(\vect r')}$$
+$$|\vect E|4\pi r^2 = 4\pi\left(\frac{e}{\epsilon_0\pi a^3}\right)\int_{0}^{r}{dr'\ r^{'2}e^{-2r'/a}}$$
+\begin{align*}
+E(r) &=\frac{e}{r^2\epsilon_0\pi a^3}\int_{0}^{r}{dr'\ r^{'2}e^{-2r'/a}} = \frac{e}{r^2\epsilon_0\pi a^3}\left[r^2\left(\frac{-a}{2}\right)e^{-2r/a}+a\int_{0}^{r}{dr'\ re^{-2r'/a}}\right] \\
+&=\frac{e}{r^2\epsilon_0\pi a^3}\left[r^2\left(\frac{-a}{2}\right)e^{2r/a}+a\left(r\left(\frac{-a}{2}\right)e^{-2r/a}+\frac{a}{2}\left(\frac{-a}{2}e^{-2r/a}+\frac{a}{2}\right)\right)\right]\\
+&=\frac{e}{r^2\epsilon_0\pi a^3}\left[e^{-2r/a}\left(\frac{-ar^2}{2}-\frac{a^2r}{2}-\frac{a^3}{4}\right)-\frac{a^3}{4}\right]\\
+&=\frac{e}{4\pi\epsilon_0 r^2}\left[1-e^{-2r/a}\left(1+2\frac{r}{a}+2\frac{r^2}{a^2}\right)\right]
+\end{align*}
+Thus we finally have
+$$\vect E= E(r) \hat{\vect r} = \frac{e}{4\pi\epsilon_0 r^2}\left[1-e^{-2r/a}\left(1+2\frac{r}{a}+2\frac{r^2}{a^2}\right)\right]\hat{\vect r}.$$
+To determine the interaction energy, we must be careful in using
+\begin{equation}W=\frac{\epsilon_0}{2}\int{d^3r\ |\vect E|^2}\end{equation} 
+as this is always positive definite and, when dealing with point charges, this will include ``self-energy'' contributions resulting in the total energy and not the interaction energy. Alternatively, we can use
+\begin{equation}W = \frac{1}{2}\int_{V}{d^3r\ \rho(\vect r)\Phi(\vect r)}.\end{equation}
+Since this involves a differential charge distribution, the differential charge $dq_i$ at $r_i$ is vanishingly small and thus makes no ``self-energy'' contribution to the potential. In our situation of the electron density distribution in the hydrogen atom, our distribution is continuous and we would expect $\rho(\vect r)$ and $\Phi(\vect r)$ to both be negative, thus forming a positive definite integrand. So, in fact, it should be safe to use eq. (3). We will calculate the interaction energy by both means for completeness. Starting with eq. (3),
+\begin{align*}W&=\frac{\epsilon_0}{2}\int{d^3r\ |\vect E|^2}=\frac{4\pi\epsilon_0e^2}{32\pi^2\epsilon_0^2}\int_{0}^{\infty}{dr\ r^2  \frac{1}{r^4}\left[1-e^{-2r/a}\left(1+2\frac{r}{a}+2\frac{r^2}{a^2}\right)\right]^2}\\
+&=\frac{e^2}{8\pi\epsilon_0}\int_{0}^{\infty}{dr\ \left[1-e^{-2r/a}\left(1+2\frac{r}{a}+2\frac{r^2}{a^2}\right)\right]^2}\\
+&=\frac{e^2}{8\pi\epsilon_0}\left(\frac{5}{8a}\right)\\
+&=\frac{5e^2}{64\pi a\epsilon_0}
+\end{align*}
+Before using eq. (2), we must first find $\Phi(\vect r)$
+\begin{align*}\Phi(\vect r) &= -\int_{\infty}^{r}{\vect E\cdot \vect dl} = -\frac{e}{4\pi\epsilon_0}\int_{\infty}^{r}{dr'\ \frac{1}{r^{'2}}\left[1-e^{-2r'/a}\left(1+2\frac{r'}{a}+2\frac{r^{'2}}{a^2}\right)\right]}\\
+&=\frac{e}{4\pi\epsilon_0}\frac{1}{r}\left(1-\frac{e^{-2r/a}(a+r)}{a}\right)
+\end{align*}
+Now implementing eq. (4),
+\begin{align*}W &= \frac{1}{2}\int_{V}{d^3r\ \rho(\vect r)\Phi(\vect r)} = \frac{4\pi e^2}{8\pi^2\epsilon_0 a^3}\int_{0}^{\infty}{dr\ \frac{r^2}{r}\left(1-\frac{e^{-2r/a}(a+r)}{a}\right)e^{-2r/a}}\\
+&=\frac{4\pi e^2}{8\pi^2\epsilon_0a^3}\left(\frac{5a^2}{32}\right)\\
+&=\frac{5e^2}{64\pi a\epsilon_0}
+\end{align*}
+Thus we see that both eq. (3) and eq. (4) are valid. Given the electron density distribution $\rho(\vect r)$ we have
+$$\vect E= \frac{e}{4\pi\epsilon_0 r^2}\left[1-e^{-2r/a}\left(1+2\frac{r}{a}+2\frac{r^2}{a^2}\right)\right]\hat{\vect r}$$
+$$W_{int} = \frac{5e^2}{64\pi a\epsilon_0}.$$
+% #4 
+\item A point electric dipole with dipole moment $\vect p_1$ is placed at the origin of coordinates $\vect r =0$ and interacts with a second dipole $\vect p_2$. The position vector of the second dipole is $\vect r$. Determine the energy of interaction $U$ and the force $\vect F$ between these two dipoles. Which orientation of the dipoles and $\vect r$ provides a maximum of the interaction force $|\vect F|$ at fixed value of $r$? Answers should be written in the spherical system of coordinates, related to the first dipole.
+\\ \\Since this is a ``point" dipole, there is no separation between charges; however, the product $p = qd$ remains constant (as $d\rightarrow0$, $q\rightarrow\infty$). Given a dipole $\vect p$ located at the origin and oriented along the $z$-axis, the electric potential is given by
+\begin{equation}
+V_p(r,\theta) = \frac{\hat{\vect r}\cdot\vect p}{4\pi\epsilon_0r^2}
+\end{equation}
+and the electric field is thus
+\begin{equation}\vect E_p(r,\theta) = \frac{p}{4\pi\epsilon_0r^3}(2\cos\theta\hat{\vect r} +\sin\theta\hat{\vect\theta}).\end{equation}
+Alternatively, this can be written without reference to a particular choice of coordinate system by 
+\begin{equation} \vect E_p(\vect r) = \frac{1}{4\pi\epsilon_0}\frac{1}{r^3}[3(\vect p\cdot\hat{\vect r})\hat{\vect r}-\vect p]\end{equation}
+Also, given a dipole $\vect p$ and electric field $\vect E$, the force acting on the dipole is given by 
+\begin{equation}\vect F = \nabla_E{(\vect E\cdot\vect p})=(\vect p\cdot\nabla)\vect E.\end{equation}
+If the electric field is uniform, the force acting on $+q$ is cancelled by that acting on $-q$, however a torque will be induced given by
+$$\vect N = \vect P\times \vect E.$$
+If the field is non-uniform, eq. (8) can be used to calculate the force. In order to calculate the force between two dipoles $\vect p_1$ and $\vect p_2$ (a nonuniform field), we will use eq. (8). The force acting on $\vect p_2$ due to $\vect p_1$ is
+\begin{align*}
+\vect F &=(\vect p_2\cdot\nabla)\vect E= \left(p_{2r}\frac{\partial}{\partial r}+p_{2\theta}\frac{1}{r}\frac{\partial}{\partial \theta}\right)\frac{p_1}{4\pi\epsilon_0r^3}(2\cos\theta\hat{\vect r} +\sin\theta\hat{\vect\theta})
+\\&=\frac{1}{4\pi\epsilon_0}\left(\frac{-3p_1p_{2r}}{r^4}(2\cos\theta\hat{\vect r}+\sin\theta\hat{\vect \theta})+\frac{p_1p_{2\theta}}{r^4}(-2\sin\theta\hat{\vect r}+\cos\theta\hat{\vect\theta})\right)\\
+&=\frac{p_1}{4\pi\epsilon_0r^4}\left(-(6p_{2r}\cos\theta+2p_{2\theta}\sin\theta)\hat{\vect r}+(-3p_{2r}\sin\theta+p_{2\theta}\cos\theta)\hat{\vect \theta}\right)
+\end{align*}
+where $p_1 = |\vect p_1|$ and $r$ is the radial distance between the point dipoles. The force acting on $\vect p_1$ due to $\vect p_2$ is equal in magnitude and opposite in direction by Newton's third law ($\vect F_{12} = -\vect F_{21}$). At a fixed value of $r$ the magnitude of $\vect F$ is 
+$$|\vect F| =F_r^2+F_\theta^2\propto (6p_{2r}\cos\theta+2p_{2\theta}\sin\theta)^2+(-3p_{2r}\sin\theta+p_{2\theta}\cos\theta)^2$$
+Maximizing,
+$$\frac{dF}{d\theta}= 6p_{2r}p_{2\theta}\cos{2 \theta} + (-9p_{2r}^2 + p_{2\theta}^2) \sin{2 \theta}=0$$
+$$\tan{2\theta} = \frac{6p_{2r}p_{2\theta}}{p_{2\theta}^2-9p_{2r}^2}.$$
+The solution is a transcendental equation that can be used to find the maximum force given an angle $\theta$ or a given dipole moment $\vect p_2$. In order to find  the interaction energy, we first note that the energy of a dipole $\vect p$ within an electric field $\vect E$ is
+$$W = -\vect p\cdot\vect E$$
+The interaction energy can then be calculated as
+\begin{align*}W_{int} = -\vect p_1\cdot \vect E_{p2}=\frac{1}{4\pi\epsilon_0r^3}[\vect p_1\cdot\vect p_2-3(\vect p_1\cdot\hat{\vect r})(\vect p_2\cdot\hat{\vect r})]\end{align*}
+where $\vect E_{p2}$ was given by eq. (7) and once again $\vect r = r\hat{\vect r}$ is the difference vector between $\vect p_1$ and $\vect p_2$.
+% #5
+\item A point charge $q$ is placed at a distance $r$ from the center of a grounded conducting sphere of radius $a$. Determine the electrostatic energy $W$ of the interaction between the charge and sphere as a function of $r\ (r>a)$. How should the formula for $W$ be modified for the case of an isolated conducting sphere?
+\\ \\In order to find the potential outside the sphere, we can use the method of images for a different charge configuration that will also satisfie the boundary conditions, namely $V=0$ on the sphere. Our charge configuration will consist of the ``image" point charge with relative magnitude
+$$q'=-\frac{R}{b'}q$$
+which is placed at a distance 
+$$b=\frac{R^2}{b'}$$ from the center of the spherical conductor, where $b'$ is the distance from the center of the sphere to $q$. The potential is then given by
+\begin{equation}V(\vect r) = \frac{1}{4\pi\epsilon_0}\left(\frac{q}{r_1}+\frac{q'}{r_2}\right)\end{equation}
+where $r_1$ is the distance between $q$ and $r$ and $r_2$ is the distance between $q'$ and $r$. For any point on the sphere,
+$$r_1 = \sqrt{b^{'2}+a^2-2b'a\cos\theta}$$
+$$r_2 =\sqrt{b^2-a^2-2ba\cos\theta}$$
+Substituting $q'=-\frac{R}{b'}q$ and $b=\frac{R^2}{b'}$ into eq. (7), we arrive at 
+$$V(a) = \frac{q}{4\pi\epsilon_0}\left[\frac{1}{\sqrt{b^{'2}+a^2-2b'a\cos\theta}}-\frac{1}{\sqrt{b^{'2}+a^2-2b'a\cos\theta}}\right] = 0$$
+satisfying our boundary condition. Placing the center of the sphere at the origin and placing $q$ along the $z$-axis, eq. (9) can be shown to have the form 
+\begin{equation}V(\vect r) = \frac{q}{4\pi\epsilon_0}\left[\frac{1}{\sqrt{b'^2+r^2-2b'r\cos\theta}}-\frac{a/b'}{\sqrt{(a^2/b')^2+r^2-2(a^2/b')r\cos\theta}}\right]\end{equation}
+where $\theta$ is the polar angle. To find the energy of interaction, we can first find the force acting on the charge $q$ due to the sphere which will lead us to an expression for work. This is simplified by the method of images
+$$\vect F = \frac{1}{4\pi\epsilon_0}\frac{qq'}{(b'-b)^2}=\frac{1}{4\pi\epsilon_0}\left(-\frac{a}{b'}q^2\right)\frac{1}{(b'-a^2/b')^2}=-\frac{1}{4\pi\epsilon_0}\frac{q^2ab'}{(b'^2-a^2)^2}$$
+Using the notation of the original problem, we now substitute $b'=r$ representing the distance of the charge $q$ from the center of the sphere. Bringing in $q$ from infinity to a position $r$ from the sphere
+\begin{align*}W_{int}(r) &= -\int{\vect F\cdot \vect dl}=\frac{q^2a}{4\pi\epsilon_0}\int_{\infty}^{r}{dr'\ \frac{r'}{(r^{'2}-a^2)^2}}\\
+&=\frac{q^2a}{4\pi\epsilon_0}\left.\left(-\frac{1}{2}\frac{1}{(r^{'2}-a^2)}\right)\right|^r_\infty \\&= -\frac{1}{4\pi\epsilon_0}\frac{q^2a}{2(r^2-a^2)}
+\end{align*}
+For an isolated conducting sphere, the method of images must be changed to include a charge $q''$ placed at the center of the sphere with magnitude 
+$$q'' = -q'.$$ The expression for the force then becomes 
+\begin{align*} \vect F &= \frac{1}{4\pi\epsilon_0}q\left(\frac{q''}{r^2}+\frac{q'}{(r-b)^2}\right) =\frac{qq'}{4\pi\epsilon_0}\left(-\frac{1}{r^2}+\frac{1}{(r-b)^2}\right)
+\\&= \frac{qq'}{4\pi\epsilon_0}\frac{b(2r-b)}{r^2(r-b)^2} = -\frac{q^2a/r}{4\pi\epsilon_0}\frac{(a^2/r)(2r-a^2/r)}{r^2(r-a^2/r)^2}\\
+&=\frac{q^2}{4\pi\epsilon_0}\left(\frac{a}{r}\right)^3\frac{2r^2-a^2}{(r^2-a^2)^2} 
+\end{align*}
+Using the same expression for $W_{int}$,
+\begin{align*}W_{int}(r) &= \frac{q^2a^3}{4\pi\epsilon_0}\int_{\infty}^{r}{dr'\ \frac{2r^{'2}-a^2}{r^{'3}(r^{'2}-a^2)^2}}\\
+&=\frac{q^2a^3}{4\pi\epsilon_0}\left.\left(\frac{1}{2a^2r^{'2}-2r^{'4}}\right)\right|^r_\infty 
+\\&= \frac{1}{4\pi\epsilon_0}\frac{q^2a^3}{2r^2(a^2-r^2)}
+\end{align*}
+
+% #6
+\item 1.3 Jackson: Using Dirac delta functions in the appropriate coordinates, express the following charge distributions as three-dimensional charge densities $\rho(\vect x)$.
+\begin{enumerate}
+\item In spherical coordinates, a charge $Q$ uniformly distributed over a sphere shell of radius $R$.
+$$ \rho(r) = \delta(r-R)C$$
+$$Q = 4\pi\int{dr\ r^2\rho(r)} = 4\pi\int{dr\ r^2\delta(r-R)C} =4\pi R^2C$$
+$$C = \frac{Q}{4\pi R^2}$$
+$$\rho(r) = \delta(r-R)\frac{Q}{4\pi R^2}$$
+\item In cylindrical coordinates, a charge $\lambda$ per unit length uniformly distributed over a cylindrical surface of radius $b$.
+$$\rho(r) = \delta(r-b)C$$
+$$\lambda = 2\pi\int{dr\ r\rho(r)} =2\pi\int{dr\ r\delta(r-b)C} = 2\pi Cb$$
+$$C = \frac{\lambda}{2\pi b}$$
+$$\rho(r) = \delta(r-b)\frac{\lambda}{2\pi b}$$
+
+\item In cylindrical coordinates, a charge $Q$ spread uniformly over a flat circular disc of negligible thickness and radius $R$.
+$$\rho(r,z) = \delta(z-z_0)H(R-r)C$$
+where $H$ is the step function.
+\begin{align*}Q &= 2\pi\iint{dr\ dz\ r\rho(r,z)} = 2\pi\int{dz\ \delta(z-z_0)}\int{dr\ rH(R-r)C}\\
+&= 2\pi C\int_{0}^{R}{dr\ r} = \pi CR^2
+\end{align*}
+$$C = \frac{Q}{\pi R^2}$$
+$$\rho(r,z) = \delta(z-z_0)H(R-r)\frac{Q}{\pi R^2}$$
+
+\item The same as part (c), but using spherical coordinates.
+\\ \\We have to be careful here because when you lock $\theta$ and continue to integrate, you are no longer integrating an area (a wedge of fixed $\theta$ actually). With a fixed $\theta$, what we want is to integrate over $r\sin\theta drd\phi$ but instead we are integrating over $r^2\sin\theta drd\phi$. This is due to the fact that the differential volume element is $dr\cdot r\sin\theta d\phi\cdot rd\theta$ - the coupling of $r$ and $d\theta$ in the last element grows with $r$ and thus leads to a volume.
+$$\rho(r,\theta) =\frac{\delta(\theta -\pi/2)}{r}H(R-r)C$$
+\begin{align*}Q&=2\pi\iint{drd\theta r^2\sin\theta \rho(r,\theta)C}=2\pi C\iint{drd\theta\ r^2\sin\theta\frac{\delta(\theta-\pi/2)}{r}H(R-r)}\\
+&=2\pi C\int{dr\ rH(R-r)} = 2\pi C\int_{0}^{R}{dr\ r} = \pi C R^2
+\end{align*}
+$$C = \frac{Q}{\pi R^2}$$
+$$\rho(r,\theta) = \frac{\delta(\theta-\pi/2)}{r}H(R-r)\frac{Q}{\pi R^2}$$
+\end{enumerate}
+
+
+% #7
+\item 1.6 Jackson: A simple capacitor is a device formed by two insulated conductors adjacent to each other. If equal and opposite charges are placed on the conductors, there will be a certain difference of potential between them. The ratio of the magnitude of the charge on one conductor to the magnitude of the potential difference is called the capacitance (in SI units it is measured in farads). Using Gauss's law, calculate the capacitance of
+\begin{enumerate}
+\item two large, flat, conducting sheets of area $A$, separated by a small distance $d$;
+\\ \\Let's imagine a left sheet with charge $-q$ and a right sheet with charge $+q$ aligned along the $x$-axis, with the potential $\Phi(\infty) = 0$. Using Gauss's Law,
+$$\oint{\vect E\cdot d\vect A} = 2|\vect E|A=\frac{q}{\epsilon_0}$$
+$$|\vect E| = \frac{q}{2\epsilon_0A}$$ 
+Taking only the electric field going toward the left plate
+$$E_+(x) = -\frac{q}{2\epsilon_0A}$$
+For the left plate with charge $-q$ the flux is negative, but this is compensated by the negative charge, so we have the same result between the plates
+$$E_-(x) = -\frac{|q|}{2\epsilon_0A}$$
+Since $d$ is very small, this result is similar to that of an infinite plane. The total electric field between the plates is the sum
+$$E(x) = -\frac{|q|}{\epsilon_0A}$$
+The actual potential of the right plate doesn't matter, only the difference between them. Let's call the potential of the right plate $V_2$. 
+$$V=V_2-V_1=-\int_{0}^{d}{\vect E\cdot d\vect l} = \frac{qd}{\epsilon_0 A}$$ 
+Now using the provided definition of capacitance,
+$$C = \frac{q}{V} = \epsilon_0\frac{A}{d}$$
+\item two concentric conducting spheres with radii $a$, $b$ $(b>a)$;
+\\ \\I'm going to assume these are spherical shells here. Let's put $+q$ on sphere $b$ and $-q$ on sphere $a$. Applying Gauss's law to any spherical shell,
+$$E(4\pi r^2)= \frac{q}{\epsilon_0}$$
+$$\vect E = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{\vect r}$$
+This looks just like the electric field from a point charge at the center of a sphere! In between the spheres, we only have the electric field due to sphere $a$ because that is what our Gaussian surface enclosed. Now lets find the voltage difference between the two spheres $a$ and $b$.
+$$V_b-V_a = -\int_{a}^{b}{\vect E\cdot d\vect l} = \frac{q}{4\pi\epsilon_0}\int_{a}^{b}{dr\ \frac{1}{r^{2}}}=-\left.\frac{q}{4\pi\epsilon_0}\frac{1}{r}\right|_a^b$$
+$$V = V_b-V_a = \frac{q}{4\pi\epsilon_0}\left(\frac{1}{a}-\frac{1}{b}\right)$$
+And so our capacitance becomes
+$$C = 4\pi\epsilon_0\frac{ab}{b-a}$$
+\item two concentric conducting cylinders of length $L$, large compared to their radii $a$, $b$ $(b>a)$
+\\ \\Let's put $+q$ on cylinder $a$ and $-q$ on cylinder $b$. The electric field between the cylinders is given by
+$$E(2\pi r L) = \frac{q}{\epsilon_0}$$
+$$E = \frac{1}{2\pi\epsilon_0}\frac{q}{rL}$$
+Calculating the potential between the cylinders,
+$$V_a-V_b = -\frac{1}{2\pi\epsilon_0}\frac{q}{L}\int_{b}^{a}{dr\ \frac{1}{r}}=\frac{1}{2\pi\epsilon_0}\left.\frac{q}{L}\ln{r}\right|_a^b = \frac{1}{2\pi\epsilon_0}\frac{q}{L}\ln{\left(\frac{b}{a}\right)}$$
+And so the capacitance is
+$$C = \frac{2\pi\epsilon_0L}{\ln{\left(\frac{b}{a}\right)}}$$
+\item What is the inner diameter of the outer conductor in an air-filled coaxial cable whose center conductor is a cylindrical wire of diameter 1 mm and whose capacitance is $3\times 10^{-11}$ F/m? $3\times 10^{-12}$ F/m?
+\\ \\For air, $\frac{\epsilon_{air}}{\epsilon_0}\approx1$ so $\epsilon_{air}\approx\epsilon_0$. Using the equation derived above with the values of the problem
+$$3\times10^{-11} = \frac{2\pi8.85\times10^{-12}}{\ln{(b/0.005)}}$$
+$$b =(0.0005) e^{2\pi\frac{8.85\times 10^{-12}}{3\times10^{-11}}}=3.19\times10^{-3}$$
+$$d_1= 6.38\times10^{-3}$$
+$$d_2 = 1.12\times10^5$$
+To change the capacitance by $10^{-1}$ F/m, we must make the diameter $10^8$ times smaller!
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

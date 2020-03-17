@@ -1,0 +1,275 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{General Relativity\\HW 3}
+\author{Matthew Phelps}
+\date{Due: October 13}
+
+\begin{document}
+\maketitle
+
+\benum
+% 1------------------------------------------------------------------------------------------------------------------------
+\item
+\benum
+% (a)
+\item
+For a covariant vector $x_\lambda$, the geodesic equation is
+\ba
+	\frac{D U_\lambda}{D\tau} &= \frac{dU_\lambda}{d\tau} - \Gamma^{\alpha}_{\lambda\nu} U_\alpha U^\nu = 0\\
+	\frac{dU_\lambda}{d\tau} &= \frac12 g^{\alpha\beta}(\pd_\lambda g_{\beta\nu} + \pd_\nu g_{\lambda\beta}
+	- \pd_\beta g_{\lambda\nu})U_\alpha U^\nu\\
+	\frac{dU_\lambda}{d\tau} &= \frac12 g^{\alpha\beta} \pd_\lambda g_{\beta\nu} U_\alpha U^\nu
+\ea
+where in the last line the sum over symmetric $\beta,\nu$ terms cancel. We see that if 
+\[
+	\pd_\lambda g_{\beta\nu} = 0
+\]
+then
+\[
+	\frac{dU_\lambda}{d\tau} = 0,
+\]
+i.e. the velocity $dx_\lambda/d\tau$ is conserved. \\
+\item
+% (b)
+To show the quantity $\xi_\alpha U^\alpha$ is conserved along a geodesic, we seek to show that
+\[
+	\frac{d}{d\tau}(\xi_\alpha U^\alpha) = 0.
+\]
+This is a coordinate invariant quantity, and we may equivalently write it as the covariant derivative along a curve
+\[
+	\frac{D}{D\tau}(\xi_\alpha U^\alpha) = 0.
+\]
+Further, we can express this covariant derivative along a curve as 
+\[
+	\frac{D}{D\tau}(\xi_\alpha U^\alpha) = U^\beta (\xi_\alpha U^\alpha)_{;\beta}
+\]
+since 
+\[
+	\frac{d}{d\tau} = \frac{dx^\beta}{d\tau}\frac{\pd}{\pd x^\beta} = U^\beta\frac{\pd}{\pd x^\beta}.
+\]
+(We could have gone straight from $d/d\tau$ to the above actually). Now we evaluate the derivative
+\ba
+	 U^\beta (\xi_\alpha U^\alpha)_{;\beta} &= 0\\
+	 U^\beta U^\alpha \xi_{\alpha;\beta} + U^\beta \xi_\alpha U^\alpha{}_{;\beta} &= 0\\
+	U^\beta U^\alpha \xi_{\alpha;\beta}  + \xi_\alpha \frac{D}{D\tau}U^\alpha&=0.
+\ea
+Along a geodesic, we have $\frac{D}{D\tau}U^\alpha = 0$ and for $\xi_{\alpha;\beta} = -\xi_{\beta;\alpha}$, the first term will vanish. Thus we finally have
+\[
+	\frac{d}{d\tau} (\xi_\alpha U^\alpha) = 0.
+\]
+\item
+% (c)
+In the flat Minkowski spacetime, the Killing equation reduces to 
+\[
+	\pd_\alpha \xi_\beta =- \pd_\beta \xi_\alpha.
+\]
+Taking a further derivative of this equation
+\be
+	\pd_\sigma \pd_\alpha \xi_\beta + \pd_\sigma \pd_\beta \xi_\alpha = 0.
+\ee
+We want to determine if each term vanishes identically. This can be accomplished by cycling through indicies
+\be
+	\pd_\alpha \pd_\sigma \xi_\beta + \pd_\alpha \pd_\beta \xi_\mu = 0
+\ee
+\be	
+	\pd_\beta\pd_\alpha \xi_\sigma + \pd_\beta \pd_\mu \xi_\alpha = 0.
+\ee
+Since the partial derivatives commute, we add (1) and (2) and subtract (3) to arrive at
+\[
+	0 = \pd_\sigma \pd_\beta \xi_\alpha + \pd_\sigma \pd_\alpha \xi_\beta + \pd_\alpha \pd_\sigma \xi_\beta
+	+ \pd_\alpha \pd_\beta \xi_\sigma - \pd_\beta\pd_\alpha \xi_\sigma - \pd_\beta \pd_\sigma \xi_\alpha = 2\pd_		\sigma \pd_\alpha \xi_\beta .
+\]
+Hence $\xi_\alpha$ can be solved 
+\[
+	\frac{\pd^2 \xi_\alpha}{\pd x^\beta \pd x^\sigma} = 0
+\]
+\be
+	\to\quad \xi_\alpha = a_\alpha + b_{\alpha\beta}x^\beta.
+\ee
+To see what constraints are imposed on the coefficients $a$ and $b$, we substitute this into the (first order) Killing equation, in which we immediately see
+\[
+	b_{\alpha\beta} = -b_{\beta\alpha}.
+\]
+We can now decompose (4) into indepedent vector fields. Four come from the choice of four $a_\alpha$ with 
+$b_{\alpha\beta} = 0$, and six come from $a_\alpha = 0$ with the antisymmetric $b_{\alpha\beta}$. To clarify, each independent vector field is given in a basis where only one component of $a_\alpha$ \emph{or} one component of $b_{\alpha\beta}$ is nonzero. \\ \\
+Further, if we take each component to equal to unity, the four $a_\alpha$ represent (generators of) translation, the three spatial $b_{ij}$ represent rotation, and the three $b_{0i}$ represent boosts. \\
+\eenum
+% 2------------------------------------------------------------------------------------------------------------
+\item 
+\benum
+\item
+ % (a)
+ Given a metric $g_{\mu\nu}$ and the linear coordinate transformation $x^\alpha \to x'^\alpha = x^\alpha + \xi^\alpha(x)$, the metric transforms as
+ \ba
+ 	g_{\mu\nu} \to g'_{\mu\nu} &= \frac{\pd x^\alpha}{\pd x'^\mu}\frac{\pd x^\beta}{\pd x'^\nu}g_{\alpha\beta} \\
+	&= \plr{\delta^\alpha_\mu - \frac{\pd \xi^\alpha}{\pd x'^\mu}}\plr{ \delta^\beta_\nu - \frac{\pd \xi^\beta}{\pd x'^\nu}}
+	g_{\alpha\beta}\\
+	&= g_{\mu\nu} - \frac{\pd \xi^\alpha}{\pd x^\mu}g_{\alpha\nu} - \frac{\pd\xi^\beta}{\pd x^\nu}g_{\mu\beta} \\
+	& = g_{\mu\nu} - \pd_\mu \xi_\nu - \pd_\nu \xi_\mu.
+\ea
+Here we have only taken the field transformation $\xi^\alpha(x)$ up to linear order (which also entails $\frac{\pd\xi^\lambda}{\pd x'^\mu} = \frac{\pd \xi^\lambda}{\pd x^\mu}$).
+For the weak field 
+\[
+	g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}
+\]
+we see that this transformation amounts to 
+\[
+	h_{\mu\nu} \to h'_{\mu\nu} = h_{\mu\nu} - \pd_\mu \xi_\nu - \pd_\nu \xi_\mu.
+\]
+One can also view this as: in order for $h_{\mu\nu}$ to be small $h'_{\mu\nu}$ must also be small, in which the 
+$\pd_\mu \xi_\nu$ terms must be of the same order, with only linear terms surviving. 
+\\
+\item
+% (b)
+Based on the above, under a linear coordinate transformation, the weak field metric transforms as
+\ba
+	\bar h_{\mu\nu} \to \bar h'_{\mu\nu} &= h_{\mu\nu}' -\frac12 \eta_{\mu\nu} \eta_{\alpha\beta} h'^{\alpha\beta}\\
+	& = h_{\mu\nu} - \frac12\eta_{\mu\nu} h^{\lambda}{}_{\lambda} -\xi_{\mu,\nu}-\xi_{\nu,\mu} 
+	-\frac12\eta_{\mu\nu}\eta^{\alpha\beta}(-\xi_{\alpha,\beta}-\xi_{\beta,\alpha})\\
+	&= \bar h_{\mu\nu} -\xi_{\mu,\nu}-\xi_{\nu,\mu} + \eta_{\mu\nu}\xi^{\alpha}{}_{,\alpha}.
+\ea
+Raising indices
+\[
+	\bar h'^{\mu\nu} = \bar h^{\mu\nu} - \xi^{\mu,\nu} - \xi^{\nu,\mu} + \eta^{\mu\nu} \xi^{\alpha}{}_{,\alpha}
+\]
+and taking divergence 
+\[
+	\bar h'^{\mu\nu}{}_{,\nu} = \bar h^{\mu\nu}{}_{,\nu} - \xi^{\mu,\nu}{}_{,\nu} - \xi^{\nu,\mu}{}_{,\nu} + \eta^{\mu\nu} \xi^{\alpha}{}_{,\alpha \nu}.
+\]
+This simplifies to
+\ba
+	\bar h'^{\mu\nu}{}_{,\nu}  &=  \bar h^{\mu\nu}{}_{,\nu} - \xi^{\mu,\nu}{}_{\nu} - \xi^{\nu,\mu}{}_{\nu} +\xi^{\alpha,\nu}{}_{\alpha}\\
+ &=  \bar h^{\mu\nu}{}_{,\nu} - \xi^{\mu,\nu}{}_{\nu}.
+\ea
+In order for $\bar h'^{\mu\nu}{}_{,\nu}=0 $ we must find $\xi^\mu$ that satisfy
+\[
+	\bar h^{\mu\nu}{}_{,\nu} = \xi^{\mu,\nu}{}_{\nu} = \Box \xi^\mu.
+\]
+In summary, in order for us to impose the transverse gauge, it must always be possible to perform a coordinate transformation that can bring us into such a gauge. If we start with a metric $h_{\mu\nu}$ that is not tranverse, we see that if we choose the $\xi^\alpha$ specifically such that $\bar h^{\mu\nu}{}_{,\nu} =\Box \xi^\mu$, then the metric in the new coordinates will be transverse. The only question that remains is, given arbitrary $\bar h^{\mu\nu}$, are there always vector fields $\xi^\alpha$ that satisfy  $\bar h^{\mu\nu}{}_{,\nu} =\Box \xi^\mu$.
+The situation is analagous to the the Maxwell equations $\Box A^\mu = -J^\mu$, in which we should be able to construct integral solutions,
+which of course depend on the boundary conditions and can be advanced or retarded. So in theory they should be able to be constructed.\\ \\
+\item
+ % (c)
+ First we derive the linearized Einstein field equations. Given the metric
+ \[
+ 	g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}
+\]
+and keeping everything to first order in $h_{\mu\nu}$, the Ricci tensor is
+\[
+	R_{\mu\nu}^{(1)} = \pd_\nu \Gamma^\lambda_{\lambda\mu} - \pd_\lambda \Gamma^\lambda_{\mu\nu}
+\]
+and the Christoffel symbol is
+\[
+	{}^{(1)}\Gamma^\lambda_{\mu\nu} = \frac12 \eta^{\lambda\rho}\blr{
+	\pd_\mu h_{\rho\nu} + \pd_\nu h_{\rho\mu} - \pd_\rho h_{\mu\nu}}.
+\]
+We keep in mind here that we must raise indices with $\eta^{\mu\nu}$. Inserting the connection into the Ricci tensor (switching notation a bit) we have
+\[
+	R_{\mu\nu}^{(1)} = \frac12\plr{ -\Box h_{\mu\nu} + h_\nu{}^{\alpha}{}_{,\mu\alpha} + h_{\mu\alpha}{}^{,\alpha}{}_{\nu} - h_{,\mu\nu}}
+\]
+Taking the trace of this yields
+\[
+	R^{(1)\mu}{}_\mu = h^{\mu\alpha}{}_{,\mu\alpha} - \Box h^\lambda{}_\lambda.
+\]
+Now we can form the Einstein tensor
+\[
+	R_{\mu\nu}^{(1)}-\frac12\eta_{\mu\nu}R^{(1)\mu}{}_\mu = \frac12\plr{ 
+	 -\Box h_{\mu\nu} + h_\nu{}^{\alpha}{}_{,\mu\alpha} + h_{\mu\alpha}{}^{,\alpha}{}_{\nu} - h_{,\mu\nu} 
+	 -\eta_{\mu\nu}h^{\alpha\beta}{}_{,\alpha\beta} + \eta_{\mu\nu}\Box h}.
+\]
+The last two terms cancel and we are left with
+\[
+	 -\Box h_{\mu\nu} + h_\nu{}^{\alpha}{}_{,\mu\alpha} + h_{\mu\alpha}{}^{,\alpha}{}_{\nu} - h_{,\mu\nu} = 16\pi G T_{\mu\nu}.
+\]
+Now we must work with the negative trace tensor $\bar h_{\mu\nu}$. We perform the substitution
+\[
+	h_{\mu\nu} = \bar h_{\mu\nu}+\frac12 \eta_{\mu\nu} h
+\]
+in which the field equation now reads
+\[
+	-\Box \bar h_{\mu\nu} +\frac12 \eta_{\mu\nu}\Box \bar h + \bar h_{\nu}{}^\alpha{}_{,\mu\alpha} + \bar h_{\mu\alpha}{}^{,\alpha}{}_{\nu} - 
+	\eta_{\mu\nu}\bar h^{\alpha\beta}{}_{,\alpha\beta} = 16\pi G T_{\mu\nu}.
+\]
+In the transverse gauge, it is clear that the last three terms on the LHS will vanish and we are left with
+\[
+	\Box \bar h_{\mu\nu} = -16 \pi G T_{\mu\nu}. \\ \\
+\]
+\eenum 
+% 3 -------------------------------------------------------------------------------------------------------------------------------------------------------
+\item
+\benum
+\item
+% (a)
+We will model ideally the rotating body as that of a perfect fluid. As such we know
+\[
+	T^{\mu\nu} = (\rho +p)U^\mu U^\nu + g^{\mu\nu}p
+\]
+and we recall
+\[
+	U^i = \gamma v^i,\qquad U^0 = \gamma
+\]
+\[
+	\gamma = (1-v^2)^{-1/2}.
+\]
+The velocity here represents the velocity of fluid measured relative to some lab frame, which in this case should be the Lorentz frame at rest relative to C.O.M.  Since we don't have any more specific information about the type of matter we are working with, we will approximate it as an ideal fluid (ideal gas) in which 
+\[
+	p = nkT
+\]
+and thus on average
+\[
+	\braket p = nk \braket T \propto n m\braket{v(r)}^2.
+\]
+The point here is that in non-relativistic fluid motion, the pressure shall be negligable in comparison to the energy density. As such
+\[
+	T^{\mu\nu} = \rho U^\mu U^\nu.
+\]
+In addition, we should consider that in the nonrelativistic limit $\gamma \to 1$. Finally we use the angular velocity
+\[
+	\vect v = \omega x^1 \hat x^2 - \omega x^2 \hat x^1.
+\]
+The energy momentum tensor is thus (to first order in $\omega r$)
+\[
+	T^{\mu\nu} = \rho \bpm 1 & -\omega x^2 & \omega x^1 & 0 \\
+	-\omega x^2 & 0 & 0 &0\\
+	\omega x^1 &0 & 0& 0\\
+	0&0&0&0
+	\epm.
+\] 
+\item
+%(b)
+From question 2, we saw that the linearized Einstein field equations in trace-reversed $\bar h^{\mu\nu}$ (in transverse gauge) were
+\[
+	\Box h^{\mu\nu} = -16\pi G T^{\mu\nu}.
+\]
+Since all relevant quantities are time independent, this reduces to the following equations
+\[
+	\del^2 h^{00} = -16\pi G \rho
+\]s
+\[
+	\del^2 h^{01} = 16\pi G \rho (\omega x^2)
+\]
+\[
+	\del^2 h^{02} = -16\pi G \rho (\omega x^1).
+\]
+The first equation can be brought to the Newtonian poisson equation 
+\[
+	\del^2\phi = 4\pi G\rho
+\]
+by the substitution
+\[
+	h^{00} = -4\phi = 4\frac{GM}{r}.
+\]
+For the other terms, we use the integral solution. It will be useful to expand the denominator in the integral solution 
+\[
+	|\vect x-\vect y|^{-1} = \frac{1}{r}\blr{1+\frac{\vect x\cdot\vect y}{r}+\mathcal O\pfrac{1}{r^3}}.
+\]
+So for $h^{01}$
+\[
+	h^{01} = -4\rho\omega \int_0^{2\pi} \int_0^\pi \int_0^{r'} r^3 \plr{\frac{1}{r}\blr{1+\frac{\vect x\cdot\vect y}{r}+\mathcal O\pfrac{1}{r^3}}}
+	\sin^2\theta\sin\phi\  dr\ d\theta\ d\phi
+\]
+\eenum
+\eenum
+
+\end{document}

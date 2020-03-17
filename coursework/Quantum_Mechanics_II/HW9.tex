@@ -1,0 +1,488 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 9\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Nov. 18}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item{Review of Lorentz transformation in relativistic notation}
+	\\ \\
+	A Lorentz boost from the unprimed inertial frame to the primed inertial frame, moving with velocity $\vect v$
+	relative to the original frame, can be written as
+	\[
+		x_0' = \gamma\plr{x_0-\vec \beta\cdot \vec x},\qquad
+		\vec x' = \vec x+\frac{(\gamma-1)}{\beta^2}(\vec\beta\cdot\vec x)\vec\beta-\gamma\vec\beta x_0
+	\]	
+	where $\vect \beta = \frac{\vec v}{c}$ and $\gamma = \frac{1}{\sqrt{1-\beta^2}}$.
+	
+	\benum
+	% (a)
+	\item
+	Express this Lorentz transformation as a matrix equation
+	\[
+		x' = \Lambda x
+	\]
+	where $x$ is the 4-component column vector (and similarly for $x'$):
+	\[
+		\bpm x_0\\x_1\\x_2\\x_3 \epm
+	\]
+	Hence confirm simply that $x_\mu x^\mu$ is invariant under the Lorentz transformation.
+	\\ \\
+	First we compose the Lorentz transformation matrix - this can be done more or less by inspection. 
+	Denoting $\vec\beta = (\beta_1,\beta_2,\beta_3)$
+	\[
+		\bpm x'_0\\ x'_1\\ x'_2 \\ x'_3 \epm = 
+		\bpm
+		\gamma & -\gamma\beta_1 & -\gamma\beta_2 &-\gamma\beta_3\\
+		-\gamma\beta_1 & 1+\frac{(\gamma-1)}{\beta^2}\beta_1^2 & \frac{(\gamma-1)}{\beta^2}\beta_1\beta_2
+		& \frac{(\gamma-1)}{\beta^2}\beta_1\beta_3 \\
+		-\gamma\beta_2 & \frac{(\gamma-1)}{\beta^2}\beta_1\beta_2 &1+ \frac{(\gamma-1)}{\beta^2}\beta_2^2
+		& \frac{(\gamma-1)}{\beta^2}\beta_2\beta_3 \\
+		-\gamma\beta_3 & \frac{(\gamma-1)}{\beta^2}\beta_1\beta_3 & \frac{(\gamma-1)}{\beta^2}\beta_2\beta_3
+		& 1+\frac{(\gamma-1)}{\beta^2}\beta_3^2
+		\epm
+		\bpm x_0 \\ x_1  \\ x_2\\ x_3 \epm
+	\]
+	In tensor notation, this corresponds to
+	\[
+		x'^\mu = \Lambda_\nu^\mu x^\nu. 
+	\]
+	To show that the inner product is invariant under the Lorentz boost we need to show that
+	\[
+		x'_\mu x'^\mu = x_\mu x^\mu. 
+	\]
+	This can be formulated as
+	\ba
+		g_{\mu\nu} x'^\nu x'^\mu & = g_{\mu\nu}x^\nu x^\mu \\
+		g_{\mu\nu} \Lambda_\alpha ^\nu x^\alpha \Lambda_\beta^\mu x^\beta & = g_{\mu\nu}x^\nu x^\mu\\
+		\plr{g_{\mu\nu}\Lambda_\alpha^\nu \Lambda_\beta^\mu} x^\alpha x^\beta &= g_{\mu\nu}x^\nu x^\mu.
+	\ea
+	This implies
+	\ba
+		g_{\mu\nu}\Lambda_\alpha^\nu \Lambda_\beta^\mu & = g_{\alpha\beta}\\
+		\Lambda_\alpha^\nu \Lambda_{\nu\beta} &= g_{\alpha\beta} \\
+		\plr{\Lambda_\alpha^\nu \Lambda_{\nu\beta}} g^{\beta\mu} &= g_{\alpha\beta}g^{\beta\mu}\\
+		\Lambda_\alpha^\nu \Lambda_{\nu}^\mu &= \delta^\mu_\alpha
+	\ea 
+	Explicitly, 
+	\[
+		\sum_{\nu=0}^3 \Lambda_\alpha^\nu \Lambda_{\nu}^\mu = \delta^\mu_\alpha = 
+		\Lambda_\alpha^0\Lambda_0^\mu + \Lambda_\alpha^1\Lambda_1^\mu +
+		\Lambda_\alpha^2\Lambda_2^\mu + \Lambda_\alpha^3\Lambda_3^\mu.
+	\]
+	Lets test for $\alpha = \mu$. Since our Lorentz transformation matrix is symmetric,
+	we are essentially summing the squares of each element in a column to see if they each
+	equal unity
+	\[
+		\plr{\Lambda^0_\alpha}^2 + \plr{\Lambda^1_\alpha}^2 + \plr{\Lambda^2_\alpha}^2 +
+		\plr{\Lambda^3_\alpha}^2  = 1.
+	\]
+	For the time column ($\alpha = 0$)
+	\[
+		\Lambda^\nu_0\Lambda^0_\nu = \gamma^2 +\gamma^2(1+\beta^2) = 1
+	\]
+	For the other columns we also have
+	\[
+		\Lambda^\nu_i\Lambda^i_\nu = 1.
+	\]
+	We can continue to show that the product between any two columns in the transformation matrix must 
+	be zero unless they are the same column - this is due to the fact that a Lorentz boost 
+	is unitary (and thus orthogonal). Suffice to say, Lorentz boosts preserve the inner product and space-time 
+	interval, which is what we expect between two inertial frames of reference. 
+	\\
+	\\
+	% (b)
+	\item
+	Construct the Lorentz transformation matrix for two successive boosts, of velocities $\vec v$ and $\vec u$,
+	each aligned along the $x^1$ axis. Hence derive the relativistic velocity addition formula:
+	\[
+		w = \frac{u+v}{1+\frac{uv}{c^2}}
+	\]
+	\\
+	For a boost along the $x^1$ direction, we have $\vec\beta = (\beta,0,0)$ and our transformation
+	matrix goes as 
+	\[
+		\Lambda^\mu_\nu = \bpm \gamma & -\gamma \beta & 0 & 0
+		\\ -\gamma\beta &\gamma & 0 & 0 \\
+		0& 0& 1& 0 \\ 0 & 0& 0&1\epm
+	\]
+	As expected, only the $x^0$ and $x^1$ coordinates mix. We focus only on the transformation 
+	between these two components from hereon. With two successive boosts we have
+	\[
+		\Lambda_\beta^\alpha \Lambda_\nu^\beta x^\nu = x''^\mu = 
+		\bpm \gamma_v &-\gamma_v\beta_v \\ -\gamma_v\beta_v & \gamma_v \epm
+		\bpm \gamma_u &-\gamma_u\beta_u \\ -\gamma_u\beta_u & \gamma_u \epm
+		\bpm x^0 \\ x^1 \epm
+	\]
+	From here we make the substitutions
+	\[
+		\sinh \theta_v = \gamma_v\beta_v, \qquad \cosh\theta_v = \gamma_v
+	\]
+	and similarly for velocity $u$. This becomes
+	\ba
+		x''^\mu &= 
+		\bpm \cosh\theta_v & -\sinh\theta_v  \\ -\sinh\theta_v & \cosh\theta_v \epm
+		\bpm \cosh\theta_u & -\sinh\theta_u  \\ -\sinh\theta_u & \cosh\theta_u \epm
+		\bpm x^0 \\ x^1 \epm \\
+		&= \bpm \cosh(\theta_v+\theta_u) & -\sinh(\theta_v+\theta_u) \\
+		-\sinh(\theta_v+\theta_u) & \cos(\theta_v+\theta_u)\epm \bpm x^0 \\ x^1 \epm
+	\ea
+	We see that this is equivalent to a single boost of ``hyperbolic" velocity
+	\[
+		\theta_w = \theta_v+\theta_u.
+	\]
+	We can convert this to the actual relation between velocities by inverting our hyperbolic 
+	substitutions
+	\ba
+		\tanh\theta_w &= \frac{\tanh\theta_v+\tanh\theta_u}{1+\tanh\theta_v\tanh\theta_u}\\
+		& = \frac{\beta_v+\beta_u}{1+\beta_v\beta_u} = \beta_w
+	\ea
+	hence
+	\[
+		w = \frac{v+u}{1+\frac{vu}{c^2}}.
+	\]
+	\\
+	\\
+	% (c)
+	\item
+	Recalling that the field strength $F^{\mu\nu}$ is a tensor, compute the effect on the electric and
+	magnetic fields of a Lorentz transformation corresponding to a boost of velocity $\vec v$ along 
+	the $x^1$ axis. 
+	\\
+	\\
+	Under a Lorentz boost, the tensor transforms according to
+	\[
+		F'^{\mu\nu} = \Lambda_\alpha^\mu F^{\alpha\beta}\Lambda_\beta^\nu
+	\]
+	Using the boost found earlier, this becomes, in matrix form
+	\ba
+		F'^{\mu\nu} &= \bpm 
+		\gamma & -\gamma \beta & 0 & 0 \\
+		-\gamma\beta &\gamma & 0 & 0 \\
+		0 & 0& 1& 0\\
+		0 & 0& 0& 1 \epm
+		\bpm 
+		0& E_1&E_2&E_3 \\
+		-E_1& 0 & B_3 & -B_2 \\
+		-E_2 & -B_3 & 0 & B_1 \\
+		-E_3 & B_2 &-B_1& 0
+		\epm 
+		\bpm 
+		\gamma & -\gamma \beta & 0 & 0 \\
+		-\gamma\beta &\gamma & 0 & 0 \\
+		0 & 0& 1& 0\\
+		0 & 0& 0& 1 \epm \\
+		& = \bpm 
+		0 & E_1 &\gamma(E_2-\beta B_3) & \gamma(E_3+\beta B_2) \\
+		-E_1 &0 &\gamma(B_3-\beta E_2) & -\gamma (\beta E_3+B_2) \\
+		\gamma(\beta B_3-E_2)&\gamma(\beta E_2-B_3) & 0 & B_1 \\
+		-\gamma(E_3 +\beta B_2) & \gamma(\beta E_3+B_2) & -B_1 & 0
+		\epm
+	\ea
+	We find that the EM fields in the $x^1$ direction are unaffected - but components in the plane
+		orthogonal to the $x^1$-axis are mixed.
+		\\
+			
+	\eenum
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{Dirac matrices, Spin Matrices and Relativistic Total Angular Momentum }
+	\\ 
+	\benum
+	% (a)
+	\item 
+	Use the anti-commutation properties of the Pauli matrices to verify that the Dirac matrices really
+	do satisfy the anti-commutation relations:
+	\[
+		\{ \gamma_\mu,\gamma_\nu \} = 2g_{\mu\nu}
+	\]
+	\\
+	\\
+	Let's separate the space and time indices. With $\mu = \nu = 0$ we have
+	\[
+		\{ \gamma_0,\gamma_0 \} = 2\gamma_0^2 = 2\mathds 1.
+	\]
+	For $\nu = 0$ we note that
+	\[
+		\gamma_i \gamma_0 = \bpm 0 & \sigma_i \\ -\sigma_i & 0 \epm
+		 \bpm \mathds 1 & 0 \\ 0 & -\mathds 1\epm  = \bpm 0&-\sigma_i\\ -\sigma_i &0\epm
+		 = -\gamma_0\gamma_i
+	\]
+	Therefore
+	\[
+		\{ \gamma_i,\gamma_0 \} = 2\delta_{i 0} \mathds 1.
+	\]
+	Now for the space indices $i$, $j$,
+	\[
+		\gamma_i\gamma_j = 
+		\bpm 0 & \sigma_i \\ -\sigma_i & 0 \epm
+		\bpm 0 & \sigma_j \\ -\sigma_j & 0 \epm
+		= \bpm -\sigma_i\sigma_j & 0\\ 0 & -\sigma_i\sigma_j \epm
+	\]
+	hence
+	\[
+		\{ \gamma_i,\gamma_j \} =- \bpm \{ \sigma_i,\sigma_j\} & 0 \\ 0& \{\sigma_i,\sigma_j\}  \epm.
+	\]
+	Using the anti-commutation property of the Pauli matrices,
+	\[
+		\{ \sigma_i,\sigma_j \} = 2\delta_{ij}\mathds 1
+	\]
+	we have
+	\[
+		\{ \gamma_i,\gamma_j \} =
+		-2 \delta_{ij}\mathds 1.
+	\]
+	With our results,
+	\[
+		\{ \gamma_i,\gamma_0 \} = 2\delta_{i 0} \mathds 1;\qquad 
+		\{ \gamma_i,\gamma_j \} = -2\delta_{i j} \mathds 1,
+	\]
+	we see that we get back our Minkowski metric with a factor of 2
+	\[
+		\{ \gamma_\mu,\gamma_\nu \} = 2g_{\mu\nu}\mathds 1.
+	\]
+	\\ \\
+	% (b)
+	\item
+	The relativistic spin matrices are defined as $\sigma_{\mu\nu} \equiv \frac{i}{2}[ \gamma_\mu
+	,\gamma_\nu]$. Treat separately the cases where the space-time index is temporal or spatial, and 
+	compute $\sigma_{0i}$ and $\sigma_{ij}$. 
+	\\
+	\\
+	Most of the previous results apply here. Using $\gamma_0\gamma_i = -\gamma_i\gamma_0$, 
+	\[
+		\sigma_{0i} = \frac{i}{2}[\gamma_0,\gamma_i] = i\gamma_0\gamma_i = \sigma_i
+		\bpm 0 & \mathds 1 \\ \mathds 1 & 0\epm.
+	\]
+	For $\sigma_{ij}$, 
+	\[
+		\sigma_{ij} = \frac{i}{2}\blr{ - \bpm \sigma_i\sigma_j & 0\\ 0 & \sigma_i\sigma_j \epm
+		+
+		 \bpm \sigma_j\sigma_i & 0\\ 0 & \sigma_j\sigma_i \epm}
+		 = -\frac{i}{2}\bpm [\sigma_i,\sigma_j] &0 \\ 0 & [\sigma_i,\sigma_j] \epm. 
+	\]
+	With the Pauli commutation relations
+	\[
+		[\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k
+	\]
+	this becomes
+	\[
+		\sigma_{ij} = \bpm \epsilon_{ijk}\sigma_k & 0 \\ 0 & \epsilon_{ijk} \sigma_k \epm.
+	\]
+	
+	
+	% (c)
+	\item
+	The total 	relativistic angular momentum is defined to be
+	\[
+		\vec J = \vec L +\frac{\h}{2}\vec \Sigma
+	\]
+	where
+	\[
+		\vec \Sigma = \bpm \vec\sigma&0\\0&\vec\sigma \epm
+	\]
+	Show using the Dirac equation for an electron in a radially symmetric scalar potential, 
+	$\phi(r)$, that $\vec J$ is conserved.
+	\\ 
+	\\
+	\\
+	The Dirac equation for a particle in a spherically symmetric potential $\phi(r)$ can be expressed as
+	\[
+		i\h \pdiff[\psi]{t} = (c\vec \alpha \cdot \vec p +\vec \beta mc^2+\phi(r))\psi
+	\]
+	or as
+	\[
+		i\h \pdiff[\psi]{t} = (c\gamma^0\gamma^i p_i +\gamma^0 mc^2+\phi(r))\psi.
+	\]
+	In this form, the Schrodinger-like Hamiltonian can be seen to be
+	\[
+		H = c\gamma^0\gamma^i p_i +\gamma^0 mc^2+\phi(r).
+	\]
+	The Hamiltonian is a $4\times4$ matrix. To determine if $\vec J$ is conserved, it must commute 
+	with the Hamiltonian. We note that the Dirac matrices belong to a group of tensor operators and therefore
+	only act on the spinor components; similar reasoning applies the momentum and position operators. 
+	\\
+	\\
+	First lets analyze the potential part of the Hamiltonian. We know, either from other problems like the hydrogen
+	atom or by explicit 
+	calculation, that the orbital angular momentum operator commutes with any function of $r$
+	\[
+		[L_i,r] \sim [L_i, (x^2+y^2+z^2)] = 0.
+	\]
+	In addition, the spin angular momentum components are the identity in position space, so they too commute:
+	\[
+		[\Sigma_i,\phi(r)] = 0.
+	\]
+	Therefore the total angular momentum commutes with the potential
+	\[
+		[J_i,\phi(r)] = 0.
+	\]
+	Next we look at $\gamma^0$ with $\vec J$. The relevant commutator is
+	\[
+		\frac{\h}{2}mc^2[\gamma^0,\vec\Sigma] = \frac{\h}{2}mc^2
+		\blr{\bpm \mathds 1 &0 \\ 0& -\mathds 1 \epm 
+		\bpm \vec\sigma &0 \\ 0 &\vec\sigma \epm-\bpm \vec\sigma &0 \\ 0 &\vec\sigma \epm
+		\bpm \mathds 1 &0 \\ 0& -\mathds 1 \epm  } =0  .
+	\]
+	Lastly, we must look at the $c\gamma^0\gamma^i p_i $ (or $c\vec \alpha \cdot \vec p$) term with $\vec J$. Lets 
+	commute with the 
+	$z$ component of spin angular momentum
+	\ba
+		[c\vec \alpha \cdot \vec p , \frac{\h}{2}\Sigma_3] &= \frac{\h c}{2} [\alpha_ip^i, \Sigma_3] \\
+		& =  \frac{\h c}{2}\plr{ p_1[\alpha_1,\Sigma_3]+p_2[\alpha_2,\Sigma_3]+p_3[\alpha_3,\Sigma_3]}.
+	\ea
+	Individually, the commutators are
+	\ba
+		[\alpha_1,\Sigma_3] &= \blr{\bpm 0 &\sigma_1 \\ \sigma_1 & 0 \epm
+		\bpm \sigma_3 & 0 \\ 0 & \sigma_3 \epm-
+		\bpm \sigma_3 & 0 \\ 0 & \sigma_3 \epm \bpm 0 &\sigma_1 \\ \sigma_1 & 0 \epm} \\
+		& = \bpm 0&[\sigma_1,\sigma_3] \\ [\sigma_1,\sigma_3] &0 \epm \\
+		& = -2i\alpha_2.
+	\ea
+	Hence
+	\[
+		[\alpha_2,\Sigma_3] = 2i\alpha_1
+	\]
+	and
+	\[
+		[\alpha_3,\Sigma_3] = 0.
+	\]
+	In general we then have
+	\[
+		[\alpha_i,\Sigma_j] = \epsilon_{ijk} 2i \alpha_k.
+	\]
+	Now we can evaluate
+	\ba
+		[c\vec \alpha \cdot \vec p , \frac{\h}{2}\Sigma_3] = &
+		 i\h c\plr{ p_1[\alpha_1,\Sigma_3]+p_2[\alpha_2,\Sigma_3]+p_3[\alpha_3,\Sigma_3]}\\
+		 &= i\h c \plr{\alpha_1p_2-\alpha_2p_1} \\
+		 & = i\h c(\vec \alpha\times \vec p)_3
+	\ea
+	Therefore the more general result is
+	\be\label{1}
+		[c\vec \alpha \cdot \vec p , \frac{\h}{2}\Sigma_i] =  i\h c(\vec \alpha\times \vec p)_i.
+	\ee
+	\\
+	
+	Lastly we evaluate 
+	\[
+		[c\vec \alpha \cdot \vec p , L_i] = c[\alpha_i p^i,L_j].
+	\]
+	Looking at the case for $L_3$ 
+	\ba
+		[\alpha_1p_1+\alpha_2p_2+\alpha_3p_3,L_3] &= 
+		[\alpha_1p_1+\alpha_2p_2+\alpha_3p_3,(x_3p_2-x_2p_3)] \\
+		& = \alpha_1p_2[p_1,x_1]-\alpha_2p_1[p_2,x_2] \\
+		& = -i\h (\alpha_1p_2-\alpha_2p_1)\\
+		& =-i\h(\vec\alpha\times\vec p)_3
+	\ea
+	So in general we have
+	\be\label{2}
+		[c\vec \alpha \cdot \vec p , L_i] = -i\h c(\vec\alpha\times\vec p)_i.
+	\ee
+	Since \eqref 1 and \eqref 2 are the only non-zero contributions to the commutator with the Hamiltonian,
+	and because they are exactly equal and opposite, we conclude that the total angular momentum
+	commutes with the Hamiltonian
+	\[
+		[H,\vect J] =0
+	\]
+	and thus is a conserved quantity. 
+	\\ \\
+	
+	\eenum
+	
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{4-momentum in an electromagnetic field}
+	\\ \\
+	Defining the kinetic 4-momentum
+	\[
+		\pi_\mu \equiv c\plr{ p_\mu +\frac{e}{c}A_\mu}
+	\]
+	use the quantum mechanical relation $p_\mu \to i\h \pdiff{x^\mu}$ to commute the operator
+	\[
+		\plr{\gamma^\mu \pi_\mu}^2
+	\]
+	Express your answer in terms of the Klein-Gordan part, $\pi_\mu\pi^\mu$, and parts linear
+	in the electric and magnetic field.
+	\\
+	\\
+	\\
+	As the kinetic momentum operator is separate from the gamma spin matrices, we of course
+	have
+	\[
+		[\gamma^\mu,\pi_\nu] = 0
+	\]
+	and so we may write the product as 
+	\ba
+		\plr{\gamma^\mu \pi_\mu}^2 &= \gamma^\mu\gamma^\nu\pi_\mu\pi_\nu\\
+		& = \plr{\frac{1}{2}\{\gamma^\mu,\gamma^\nu\}+\frac{1}{2}[\gamma^\mu,\gamma^\nu]}\pi_\mu\pi_\nu \\
+		& = \plr{\frac{1}{2}(2g^{\mu\nu}\mathds 1) +\frac{1}{2}[\gamma^\mu,\gamma^\nu]}\pi_\mu\pi_\nu \\
+		& = \frac{1}{2}[\gamma^\mu,\gamma^\nu]\plr{\pi_\mu\pi_\nu} + \pi^\nu\pi_\nu\\
+		& =  \frac{1}{4}[\gamma^\mu,\gamma^\nu]\plr{\{ \pi_\mu,\pi_\nu\} +
+		[\pi_\mu,\pi_\nu]}+ \pi^\nu\pi_\nu\tag{3}
+	\ea
+	Lets first take the anti-commutator
+	\[
+		 \frac{1}{4}[\gamma^\mu,\gamma^\nu]\{ \pi_\mu,\pi_\nu\} .
+	\]
+	Naturally, the commutator is antisymmetric while the anti-commutator is symmetric. Thus 
+	as we sum over all $\mu$, $\nu$, it will vanish (in the case where $\mu = \nu$, the 
+	commutator of course also vanishes). For the kinetic momentum commutator
+	\ba
+		[\pi_\mu,\pi_\nu] &= i\h ce\plr{ \blr{\pdiff{x^\mu},A_\nu}+\blr{\pdiff{x^\nu},A_\mu}}\\
+		& = i\h c e\plr{\pdiff{x^\mu}A_\nu-\pdiff{x^\nu}A_\mu} \\
+		& = i\h c e F_{\mu\nu}.
+	\ea
+	We may now use this result to form 
+	\[
+		 \frac{1}{4}[\gamma^\mu,\gamma^\nu]\{ \pi_\mu,\pi_\nu\}  = \frac{ i\h c e }{4}
+		 [\gamma^\mu,\gamma^\nu]F_{\mu\nu}.
+	\]
+	In the case where $\mu = 0$, $\nu\ne0$ we have
+	\[
+		[\gamma^0,\gamma^\nu] = 2\sigma_\nu \bpm 0 &\mathds 1 \\ \mathds 1&0\epm
+	\]
+	so 
+	\ba
+		 \frac{ i\h c e }{4}
+		 [\gamma^0,\gamma^\nu]F_{0\nu} &= \frac{i\h c e}{2}\sigma_\nu F_{0\nu}
+		 \bpm 0 &\mathds 1 \\ \mathds 1&0\epm
+	\ea
+	The components of $F_{0\nu}$ are just the components of $\vec E$ so we may rewrite 
+	this as 
+	\be
+		 \frac{ i\h c e }{4}
+		 [\gamma^0,\gamma^\nu]F_{0\nu} =  \frac{ i\h c e }{2}\vec \sigma\cdot \vec E
+		 \bpm 0 &\mathds 1 \\ \mathds 1&0\epm \tag{4}
+	\ee
+	Similarly, for $\mu \ne 0$, $\nu = 0$, we have the same result due to antisymmetry
+	in the commutator canceling antisymmetry in the EM tensor. Lastly, 
+	for $\mu$, $\nu = 1,2,3$ we know that
+	\[
+		[\gamma^i,\gamma^j] = 2i\epsilon_{ijk}\sigma_k \bpm \mathds 1&0 \\ 0&\mathds 1\epm
+	\]
+	so
+	\[
+		 \frac{ i\h c e }{4}
+		 [\gamma^i,\gamma^j]F_{ij} = -\frac{ \h c e }{2}\epsilon_{ijk}\sigma_kF_{ij}
+		 \bpm \mathds 1&0 \\ 0&\mathds 1\epm.
+	\]
+	The off diagonal elements of $F_{ij}$ for $i$, $j = 1,2,3$ are precisely the components of the 
+	magnetic field so we have
+	\be
+		 \frac{ i\h c e }{4}
+		 [\gamma^i,\gamma^j]F_{ij} = \h c e (\vec\sigma\cdot\vec B)
+		 \bpm \mathds 1&0 \\ 0&\mathds 1\epm\tag{5}
+	\ee
+	Combining $(3)$, $(4)$, and $(5)$ we finally have 
+	\[
+		\plr{\gamma^\mu \pi_\mu}^2 = \pi_\mu\pi^\mu +\h e c 
+		\bpm \vec\sigma\cdot\vec B & i\vec \sigma\cdot \vec E \\
+		i\vec\sigma\cdot\vec E & \vec\sigma\cdot\vec B \epm.
+	\]
+\eenum
+\end{document}

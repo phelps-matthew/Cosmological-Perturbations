@@ -1,0 +1,274 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{Astrophysics \& Cosmology\\HW 1}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+
+% 1------------------------------------------------------------------------------------
+\item[18.3]
+From Newton's law of gravitation, the equations of motion for the sun of mass $m_1$ located at $\vect r_1$ and a planet of mass $m_2$ located at $\vect r_2$ are
+\be
+	m_1 \frac{d^2 \vect r_1}{dt^2} = \frac{Gm_1m_2}{r^3}\vect r
+\ee
+\be
+	 m_2\frac{d^2 \vect r_2}{dt^2} = -\frac{Gm_1m_2}{r^3}\vect r
+\ee
+where
+\[
+	\vect r= \vect r_2-\vect r_1.
+\]
+Adding these together
+\begin{align}
+	m_1 \frac{d^2 \vect r_1}{dt^2} + m_2\frac{d^2 \vect r_2}{dt^2} &=  \frac{Gm_1m_2}{r^3}\vect r- \frac{Gm_1m_2}{r^3}\vect r\\
+	\frac{d^2}{dt^2}\plr{ m_1 \vect r_1 + m_2 \vect r_2} &= 0\label{1}
+\end{align}
+Now define $m = m_1+m_2$ and center of mass,
+\[
+	\vect R = \sum_i m_i \vect r_i = \frac{m_1 \vect r_1 + m_2 \vect r_2}{m_1+m_2} = \frac{m_1\vect r_1 + m_2\vect r_2}{m}
+\]
+and we may rewrite (5) as
+\be
+	\frac{d^2}{dt^2}\plr{ m_1 \vect r_1 + m_2 \vect r_2} = m\frac{d^2}{dt^2} \plr{\frac{m_1\vect r_1 + m_2\vect r_2}{m}} = m\frac{d^2\vect R}{dt^2}=0.
+\ee
+To arrive at an equation of motion in terms of $\vect r$, let us modify (1) and (2) as
+\begin{align}
+	\frac{d^2 \vect r_1}{dt^2} - \frac{d^2 \vect r_2}{dt^2} &= \plr{\frac1{m_1} + \frac1{m_2}}\frac{Gm_1m_2}{r^3}\vect r\\
+	\frac{d^2}{dt^2}\plr{ \vect r_1-\vect r_2} &= \pfrac{m_1+m_2}{m_1m_2} \frac{Gm_1m_2}{r^3}\vect r \\
+	\frac{d^2\vect r}{dt^2} &= -\frac{G}{r^3}\vect r.
+\end{align}
+Lastly, we may find the euqation of motion relative to the center of mass $\vect R$ by defining vectors $\vect R_1 = \vect r_1 - \vect R$, $\vect R_2 = \vect r_2 -\vect R$. These can be expressed in terms of the separation vector $\vect r$ by
+\ba
+	\vect R_1 = \vect r_1 - \vect R &= \vect r_1 - \frac1{m_1+m_2} \plr{ m_1 \vect r_1 + m_2 \vect r_2}\\
+	&= \vect r_1 \pfrac{ m_1+m_2 - m_1}{m_1+m_2} -\vect r_2 \pfrac{m_2}{m_1+m_2}\\
+	&= -\pfrac{m_2}{m_1+m_2}\vect r
+\ea
+\ba
+	\vect R_2 = \vect r_2 - \vect R &= \vect r_2 - \frac1{m_1+m_2} \plr{ m_1 \vect r_1 + m_2 \vect r_2}\\
+	&= \vect r_2 \pfrac{ m_1+m_2 - m_2}{m_1+m_2} -\vect r_1 \pfrac{m_1}{m_1+m_2}\\
+	&= \pfrac{m_1}{m_1+m_2}\vect r
+\ea
+Looking at the above relation for $\vect R_1$ and $\vect R_2$, we see that the vectors are always opposite in direction and have magnitudes proportional to the opposite mass. For example if $m_1 > m_2$, $|\vect R_1| < |\vect R_2|$. This coincides with Figure 10.2 which illustrates a larger orbit for a small star than the large star (as seen by CM).\\ \\
+\item[18.4]
+Start with the equation of motion (8),
+\[
+	\frac{d^2 \vect r}{dt^2} = \frac{d}{dt}\vect v = -\frac{Gm}{r^3}\vect r
+\]
+take the cross product with $\vect r$
+\[
+	\vect r \times \frac{d}{dt} \vect v = -\frac{Gm}{r^2}(\vect r\times \vect r) =0.
+\]
+Now differentiate the LHS
+\ba
+	\frac{d}{dt}\plr{ \vect r \times \frac{d}{dt}\vect v} &= \frac{d}{dt}\plr{ \vect r \times \vect v} + \plr{\vect r\times \frac{d}{dt}\vect v}=0\\
+	&= \frac{d}{dt}\plr{ \vect r\times \vect v} = 0\\
+	& = \frac{d}{dt}\plr{\vect r\times m\vect v} = 0\\
+	& = \frac{d}{dt}\vect J = 0.
+\ea
+From the above, we see that angular momentum $\vect J$ is conserved. Since the area swept out by vector $\vect r$ from the Sun to the planet is proportional to the area of the parallelogram, and since the magnitude of the cross product gives the area of the parallelogram, the conservation of angular momentum implies Kepler's law of equal areas of equal times. Moreover, $d/dt \vect J = 0$ implies the direction of $\vect J$ is constant and thus all motion takes place in a plane. 
+\\ \\
+Taking the scalar product of (8) with $\vect v$
+\ba
+	\vect v \cdot \frac{d}{dt}\vect v  &= -\frac{Gm}{r^3}\plr{ \vect v\cdot \vect r}\\
+	\frac12 \frac{d}{dt}(\vect v\cdot \vect v)&= -\frac{Gm}{r^3}\plr{\frac12\frac{d}{dt}(\vect r\cdot \vect r)}\\
+	\frac12 \frac{d}{dt} |\vect v|^2 &= -\frac{Gm}{r^3}\plr{ \frac12 \frac{d}{dt}r^2}\\
+	\frac12 \frac{d}{dt} |\vect v|^2 &= -\frac{Gm}{r^3}\plr{r\frac{dr}{dt}}\\
+	\frac12 \frac{d}{dt} |\vect v|^2 &= \frac{d}{dt}\frac{Gm}{r}\\
+	\frac{d}{dt}\plr{ \frac12 |\vect v|^2 - \frac{Gm}{r}} &= 0.
+\ea
+Compared to Problem 3.1, here we have a conservation of energy for the effective one-body problem, defined in terms of the separation distance $\vect r$. The potential well is a central gravitational force of mass $m_1+m_2$ (as opposed to $-Gm_1m_2/r$) and the translational energy will include an $r_1r_2$ cross term from $|\vect v|^2$. Both forms of conservation of energy should contain the same information, right?
+\\ \\
+Moving to polar coordinates $r,\theta$, the velocity is
+\ba
+	\vect v = \frac{d}{dt}(r\vecth r) &= \dot r \vecth r + r \frac{d}{dt} \vecth r.
+\ea
+Let look at $\dot{\vecth r}$:
+\ba
+	 \frac{d}{dt} \vecth r &= \lim \ep\to 0\quad  \frac{ \vecth r(t+\ep) - \vecth r(t)}{\ep}\\
+	&=  \lim \ep\to 0\quad  \elr{\frac{ r\theta(t+\ep) - r\theta(t)}{\ep}}_{r=1}\vecth\theta\\
+	& = \dot\theta \vecth \theta.
+\ea
+We note that the change in the unit vector $\vecth r$ must lie in the $\vecth \theta$ direction.
+Now using this for the conservation of angular momentum
+\ba
+	\plr{ r \vecth r \times \vect v} &= \plr{ r\vecth r \times (\dot r\vecth r + r\dot\theta \vecth\theta)}\\
+	&= r^2\dot\theta (\vecth r\times \vecth \theta)\\
+	& = r^2\dot\theta \vecth z
+\ea
+where we have taken $\vecth z$ to be normal to the $r,\theta$ plane. 
+Thus 
+\[
+	\frac{d}{dt} \plr{ r^2 \dot\theta} = 0,\qquad J = r^2 \dot\theta.
+\]
+Now let us look at $|\vect v|^2$:
+\be
+	|\vect v|^2 = \vect v\cdot \vect v = (\dot r\vecth r + r\dot\theta \vecth\theta)\cdot (\dot r\vecth r + r\dot\theta \vecth\theta)= \dot r^2 + (r\dot\theta)^2 = 
+	\dot r^2+ \frac{J^2}{r^2}.
+\ee
+Using (9), we form the conservation of energy in polar coordinates:
+\be
+	\frac12 \pfrac{dr}{dt}^2 + \frac{J^2}{2r^2}-\frac{Gm}{r} = E.
+\ee
+In Keplar's law of equal areas of equal times, in a time $dt$, the radius vector sweeps out an area $dA$. Using the formula for the area of a triangle  $A = \frac12 bh$ we have one leg $h$ equal to $r$ and the the base of the triangle $b$ equal is the arc length $rd\theta$. Thus 
+\[
+	dA = \frac12 r^2d\theta, \qquad \frac{dA}{dt} = \frac12 r^2\dot\theta = \frac{J}{2}.
+\]
+This solves Keplers proportionality constant. 
+\\ \\
+In showing Kepler's first law, we first rewrite (10) as
+\[
+	\dot r = \plr{ 2E + \frac{2Gm}{r} - \frac{J^2}{r^2}}^{1/2}.
+\]
+Now divide by $J$
+\ba
+	\frac{1}{r^2} \frac{dr}{dt} \frac{dt}{d\theta} &= \plr{ \frac{2E}{J^2} + \frac{2Gm}{J^2r} - \frac{1}{r^2}}^{1/2}\\
+	\frac{1}{r^2} \frac{dr}{d\theta} &= \plr{ \frac{2E}{J^2} + \frac{2Gm}{J^2r} - \frac{1}{r^2}}^{1/2}.
+\ea
+Use a change in variable $u = 1/r$, $w = u - Gm/J^2$,
+\ba
+	\frac{1}{r^2} \frac{dr}{d\theta} &= \plr{ \frac{2E}{J^2} + \frac{2Gm}{J^2r} - \frac{1}{r^2}}^{1/2}\\
+	-\frac{du}{d\theta} &= \plr{ \frac{2E}{J^2} + u\frac{Gm}{J^2} - u^2}^{1/2}.
+\ea
+We can make another substitution $w = u - Gm/J^2$ in which it follows $dw = du$ (since $J$ is a constant of motion). The above is then
+\begin{align}
+	\frac{dw}{d\theta} &= -\blr{ \frac{2E}{J^2} + \pfrac{Gm}{J^2}^2 - \plr{\frac{1}{r^2}  + \pfrac{Gm}{J^2}^2 -\frac{2Gm}{J^2r}}}^{1/2}\\
+	\frac{dw}{d\theta}&= -(w_0^2 -w^2)^{1/2}
+\end{align}
+where $w_0 = \frac{2E}{J^2}+\pfrac{Gm}{J^2}^2$. \\ \\
+The solution to (12) is given by $w = w_0\cos\theta$, which we show below satisifies the differential equation:
+\ba
+	-w_0\sin\theta &= -(w_0^2-w_0^2\cos^2\theta)^{1/2} \\
+	-w_0\sin\theta &= -w_0(1-cos^2\theta)^{1/2}\\
+	\sin\theta &= \sin\theta.
+\ea
+Reverting our substitutions, we may express the solution to (12) in terms of $r$:
+\ba 
+	w &= w_0\cos\theta\\
+	\frac{1}{r} - \frac{Gm}{J^2} &= \plr{\frac{2E}{J^2} + \pfrac{Gm}{J^2}^2}^{1/2}\cos\theta\\
+	\frac1r &= \frac{Gm}{J^2}+\frac{Gm}{J^2} \plr{ \frac{2E}{J^2}\pfrac{J^2}{Gm}^2+1}^{1/2}\cos\theta\\
+	\frac1r &= \frac{1}{r_0}(1+\ep \cos\theta)
+\ea
+where $r_0 = J^2/Gm$ and $\ep = \plr{ 1+ 2EJ^2/G^2m^2}^{1/2}$.
+\\ \\
+The semi-major axis may be found by summing the the maxmimum radius $r_{max}$ with the minimum $r_{min}$ and dividing the results by 2. These locations occuar at $\theta = 0$ and $\theta = \pi$
+\ba
+	a &= \frac12 \plr{r_{max} +r_{min}}\\
+	&= \frac12 \plr{ \frac{r_0}{1+\ep}+\frac{r_0}{1-\ep}} \\
+	& = \frac{r_0}{1-\ep^2}.
+\ea
+With the eccentricity defined as $\ep^2 = 1-\frac{b^2}{a^2}$, we find the semi-minor axis to be
+\ba
+	\ep^2 &= 1 -\frac{b^2}{r_0^2}(1-\ep^2)^2\\
+	b^2&= \frac{r_0^2}{(1-\ep^2)}\\
+	b&= \frac{r_0}{(1-\ep^2)^{1/2}}.
+\ea
+\\ \\
+With the substitutions 
+\[
+	x = r\cos\theta + \ep a,\qquad y = r\sin\theta
+\]
+we transform the equation of an ellipse (relative to the origin)
+\[
+	x^2/a^2 + y^2/b^2 = 1
+\]
+into
+\ba
+	\frac{ r^2\cos^2\theta + 2\ep a r \cos\theta + \ep^2 a^2}{a^2} + \frac{r^2\sin^2\theta}{b^2} &= 1\\
+	r^2\cos^2\theta \frac{(1-\ep^2)^2}{r_0^2}+ 2r\cos\theta \frac{\ep(1-\ep^2)}{r_0} + \ep^2 + r^2\sin^2\theta\frac{(1-\ep^2)}{r_0^2} &= 1\\
+	\frac{r^2}{r_0^2}(\cos^2\theta+ \sin^2\theta)+ \ep \plr{ 2\frac{r}{r_0}\cos\theta} + \ep^2\plr{ 1 -2\frac{r^2}{r_0^2}\cos^2\theta - \frac{r^2}{r_0^2}\sin^2\theta}
+	- \ep^3 \frac{2r}{r_0}  \cos\theta + \ep^4 \frac{r^2}{r_0^2} \cos^2\theta &= 1\\
+		\frac{r^2}{r_0^2}(\cos^2\theta+ \sin^2\theta)+ \ep \plr{ 2\frac{r}{r_0}\cos\theta} + \ep^2\plr{ 1 -2\frac{r^2}{r_0^2}\cos^2\theta - \frac{r^2}{r_0^2}(1-\cos^2\theta)}
+	- \ep^3 \frac{2r}{r_0}  \cos\theta + \ep^4 \frac{r^2}{r_0^2} \cos^2\theta &= 1\\
+			\frac{r^2}{r_0^2}+ \ep \plr{ 2\frac{r}{r_0}\cos\theta} + \ep^2\plr{ 1 -\frac{r^2}{r_0^2}\cos^2\theta - \frac{r^2}{r_0^2}}
+	- \ep^3 \frac{2r}{r_0}  \cos\theta + \ep^4 \frac{r^2}{r_0^2} \cos^2\theta &= 1\\
+				\frac{r^2}{r_0^2}(1-\ep^2)+2\frac{r}{r_0}\cos\theta \ep (1-\ep^2)
+	- \ep^2(1-\ep^2) \frac{r^2}{r_0^2} \cos^2\theta &= 1-\ep^2\\
+	\frac{r^2}{r_0^2} + 2\frac{r}{r_0}\cos\theta \ep - \ep^2 \frac{r^2}{r_0^2}\cos^2\theta &= 1\\
+	\frac{r_0}{r}& = (1+\ep\cos\theta)\\
+	\frac{1}{r} &= \frac{1}{r_0}(1+\ep\cos\theta)			.	
+\ea
+Thus by starting with the cartesion form and doing the substitution, we arrive at $\frac{1}{r} = \frac{1}{r_0}(1+\ep\cos\theta)$.\\
+\\
+To get the area of an ellipse, we integrate
+\[
+	A = \int dxdy.
+\]
+With the substitution $x' = x/a$ and $y' = y/b$, we get the equation of a circle
+\[
+	x'^2 + y'^2 = 1
+\]
+which is easily integrated
+\ba
+	A = ab \int dx'dy' &= ab  \int_{-1}^1 dx' \int_{-\sqrt{1-x'^2}}^{\sqrt{1-x'^2}} dy'\\
+	&= ab \int_{-1}^1 2\sqrt{1-x^2}\  dx'\\
+	&=2ab \int_0^\pi  cos^2\theta\ d\theta \\
+	&= \pi ab.
+\ea
+Now we find the period
+\ba
+	\tau = \int dt = \int \frac{dt}{dA}dA = \frac2J \int dA &= \frac{2A}{J}= 2\pi \frac{ab}{J}
+\ea
+and square it
+\ba
+	\tau ^2 &= 4\pi^2 \frac{ a^4(1-\ep^2)}{J^2}\\
+	&= 4\pi^2 \frac{a^3 r_0}{J^2}\\
+	&= 4\pi^2 \frac{a^3}{Gm}
+\ea
+Now we calculate the periods for the following planets' semi-major axes: 0.387, 0.723, 1.00, 1.52, 5.20, 9.54, 19.2, 30.1, 39.4.
+\[
+	\frac{4\pi^2}{Gm_{sun}} = \frac{4\pi^2}{(6.67\times 10^{-8})(1.99\times 10^{33})(6.685\times 10^{-14})^3} = 9.96\times 10^{14}\ [\text s^2\text{AU}^{-3}].
+\]
+Now we multiply by
+\[
+	\frac{1}{3600*24*365} = 3.17\times 10^{-8}
+\]
+to get to time units in years. Thus
+\[
+	\tau =3.17\times 10^{-8} \sqrt{ a^3(9.96\times 10^{14})}.
+\]
+The resulting periods in Earth years are
+\ba
+	(0.387, 0.723, 1.00, 1.52, 5.20, 9.54, 19.2, 30.1, 39.4)\ [\text{AU}] &\\
+	\to (0.240, 0.615, 1.00, 1.874, 11.863, 29.478, 84.166, 165.211, 247.419)\ [\text{yr}].
+\ea
+\\
+\item[18.5]
+Starting with the total conserved energy of an orbit (in the Newtonian theory), we have
+\be
+	E = \frac12 \pfrac{dr}{dt}^2 + \frac{J^2}{2r^2}-\frac{Gm}{r}.
+\ee
+We recognize the first term as the kinetic energy, and we may combine the last two terms into an effective potential
+\[
+	V_{eff} = \frac{J^2}{2r^2}-\frac{Gm}{r}.
+\]
+$V_{eff}$ includes the contribution due to a ``centrifugal barrier'' and the gravitation potential. If we plot $V_{eff}$ against $r$ for various energies, we can graphically see the range of energies which allow elliptic, hyperbolic, and circular orbits. Only the elliptical and circular orbits are bound. In the special case of circular orbits, the radius must be constant, which only occurs at the minimum of the effective potential. Thus, the condition for closed orbits is that
+\ba
+	\frac{dV_{eff}}{dr} &= 0\\
+	\frac{J^2}{r^3} &= \frac{Gm}{r^2}\\
+	r&= \frac{J^2}{Gm}.
+\ea
+Now, since the radius is fixed in a circular orbit we may write this as the defining condition for the radius given angular momentum $J$
+\[
+	r_0 = \frac{J^2}{Gm}.
+\]
+Looking back at (13), we see that since $\dot r=0$ must hold, the energy for circular orbits is
+\[
+	E_0 = \frac{J^2}{2r_0^2}-\frac{Gm}{r_0}=-\frac{Gm}{2r_0}.
+\]
+With the eccentricity defined as
+\[
+	\ep = \plr{ 1+ \frac{2EJ^2}{G^2m^2}}^{1/2}
+\]
+we see that
+\ba
+	\frac{\ep^2}{2} &= \frac12 + \frac{EJ^2}{G^2m^2}\\
+	&= \frac{J^2}{G^2m^2}\plr{ E+\frac{G^2m^2}{2J^2}}\\
+	&= \frac{r_0}{Gm}\plr{ E-E_0}.
+\ea
+	\eenum
+\end{document}

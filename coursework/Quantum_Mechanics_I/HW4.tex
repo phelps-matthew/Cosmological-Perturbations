@@ -1,0 +1,1078 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics I\\HW 4\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: March 26}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item 
+ 	 Consider the 3-dimensional Schrodinger equation
+ 	 \[
+  		i\h\pdiff t\psi(\vect r,t) = H\psi(\vect r,t) = \blr{-\frac{\h^2}{2m}\plr{\pdifff{}{*2x}+\pdifff{}{*2y}+\pdifff{}{*2z}}+V(\vect r)}\psi(\vect r,t)
+ 	 \] 
+	 For a given time independent potential $V(\vect r)$ the Hamiltonian $H$ possesses a complete set of stationary solutions $\chi_j(\vect r,t)
+	 = \chi_i(\vect r)e^{-i\omega_j t}$ with energies $E_j = \h \omega_j$, where the eigenfunctions $\chi_j(\vect r)$ form an orthonormal set. In
+	 terms of the Green's functions $G(\vect r',t',\vect r,t)$ any general wave function at time $t'$ may be related to that at time $t$ according 
+	 to 
+	 
+	 \[
+	 	\psi(\vect r',t') = i\int d^3x\,G(\vect r',t',\vect r,t)\psi(\vect r,t).
+	\]
+	
+	\benum
+		% (a)
+		\item
+		For the above Schrodinger equation show that the function 
+		\[
+			G(\vect r',t',\vect r,t) = -i\sum_j e^{-i \omega_j(t'-t)} \chi_j(\vect r')\chi_j^*(\vect r)
+		\]
+		can serve as the Green's function.
+		\\
+		\\
+		On one hand, we can choose to substitute the given Green's function into the integral above and show that the RHS does indeed 
+		reduce to the LHS.
+		\[
+			\psi(\vect r',t') = \int d^3\vect r\,\sum_j e^{-i \omega_j(t'-t)} \chi_j(\vect r')\chi_j^*(\vect r)\psi(\vect r,t).
+		\]
+		In dirac notation, this becomes
+		\ba
+			\braket{\vect x'|\psi,t;t'} &= \int d^3\vect x\, \sum_a e^{-\frac{iE_a}{\h}(t'-t)}\braket{\vect x'|a}
+			\braket{a|\vect x}\braket{\vect x|\psi, t}\\
+			&= \sum e^{-\frac{iE_a}{\h}(t'-t)}\braket{\vect x'|a}\braket{a|\psi,t}\\
+			&= \bra{\vect x'}e^{\frac{-iH}{\h}(t'-t)}\plr{\sum \ket{a}\braket{a|\psi, t}}\\
+			&= \braket{\vect x'|U(t',t)|\psi, t}\\
+			& = \braket{\vect x'|\psi,t;t'}
+		\ea
+		where we have denoted the energy eigenkets $H\ket a = E_a\ket a$. I prefer dirac notation, but this relation could have also been
+		shown by substituting 
+		\[
+			\psi(\vect r, t) = \sum_j c_j\chi_j(\vect r)e^{-i\omega_j t}
+		\]
+		into the integral and using the orthogonality condition
+		\[
+			\int d^3\vect r\, \chi_j(\vect r)\chi^*_i(\vect r)	= \delta_{ij}.
+		\]		
+		\\
+		\\
+		\item
+		In terms of the Green's function it is convenient to define a \emph{retarded} Green's function which only propagates forward in time 
+		(viz. $t'>t$) according to 
+		\[
+			G^+(\vect r',t',\vect r,t) = \theta(t'-t)G(\vect r',t',\vect r, t)
+		\]
+		where $\theta$ is the usual Heaviside unit step function: $\theta(\tau) = 1$, $\tau > 0$; $\theta(\tau) = 0$, $\tau < 0$ which can be 
+		represented as the $\epsilon \to 0^+$ limit of the integral
+		\[
+			\theta(\tau) = -\frac{1}{2\pi i}\int_{-\infty}^{\infty} d\omega\, \frac{e^{i\omega \tau}}{\omega +i\epsilon}.
+		\]
+		Show that the Fourier transform of the retarded Green's function which is defined via
+		\[
+			G^+(\vect r',t',\vect r,t) = \frac{1}{2\pi}\int_{-\infty}^\infty d\omega\, G_\omega^+(\vect r',\vect r)e^{-i\omega(t'-t)}
+		\]	
+		can be written as
+		\[
+			G_\omega^+(\vect r',\vect r) = \sum_j\frac{\chi_i(\vect r')\chi_i^*(\vect r)}{\omega-\omega_j+i\epsilon}
+		\]	
+		where $\epsilon$ is small and positive.
+		\\
+		\\
+		To find $G^+_\omega(\vect r',\vect r)$ we should be able to take the inverse transform of $G^+(\vect r',t',\vect r,t)$. That is
+		\ba
+			G^+_\omega(\vect r',\vect r) &= \frac{1}{2\pi}\int_{-\infty}^\infty d(t'-t)\,G^+(\vect r',t',\vect r,t)e^{i\omega(t'-t)}\\
+			& =  \frac{1}{2\pi}\int_{-\infty}^\infty d(t'-t)\, \theta(t'-t)\plr{-i\sum_j e^{-i \omega_j(t'-t)} \chi_j(\vect r')\chi_j^*(\vect r)}e^{i\omega(t'-
+			t)}.
+		\ea
+		where we notice that our Green's function is only a function of the difference in time $t'-t$, hence the choice of integration variable. 	
+		From the step function, the integrand vanishes for $t'-t<0$ and is equal to unity for $t'-t>0$ thus we have
+		\ba
+			G^+_\omega(\vect r',\vect r) &=  \frac{1}{2\pi}\int_{0}^\infty d(t'-t)\, \plr{-i\sum_j e^{-i \omega_j(t'-t)} \chi_j(\vect r')
+			\chi_j^*(\vect r)}e^{i\omega(t'-t)}\\
+			&=\frac{-i}{2\pi}\sum_j \chi_j(\vect r')\chi_j^*(\vect r)\int_0^\infty d(t'-t)\,\exp\blr{i(\omega-\omega_j)(t'-t)}.
+		\ea
+		This is just an infinitely oscillating integrand that does not converge. We can however impose convergence by allowing $\omega$ to 
+		be complex. Specifically, $\omega \to \omega +i\epsilon$ where $\epsilon$ is small and \emph{positive}. In effect, our oscillating 
+		integrand is now modulated by a decaying exponential and thus will converge at infinity. 
+		\ba
+			&\int_0^\infty d(t'-t)\,\exp\blr{i(\omega+i\epsilon-\omega_j)(t'-t)}\\
+			&= \elr{\frac{\exp\blr{i(\omega-\omega_j+i\epsilon)(t'-t)}}{i(\omega-\omega_j+i\epsilon)}}_0^\infty\\
+			&= \frac{-1}{i(\omega-\omega_j+i\epsilon)}.
+		\ea
+		Substituting this result back in, for real $\omega$ we have
+		\[
+			G^+_\omega(\vect r',\vect r) = \lim_{\epsilon\to 0^+}\frac{1}{2\pi}\sum_j \frac{\chi_j(\vect r')\chi_j^*(\vect r)}{\omega - \omega_j+i
+			\epsilon}.
+		\]
+		\\
+		\emph{Could not figure out how to rid this $1/2\pi$.}
+		\\
+			
+			
+		% (c)
+		\item
+		Using the result of part (b), show that for a free particle case, where $V(\vect r) =0$, the retarded Green's function can be written in 
+		the closed form 
+		\[
+			G^+(\vect r',t',\vect r, t) = -i\theta(t'-t)\blr{\frac{m}{2\pi i\h(t'-t)}}^{3/2}\exp{\blr{\frac{im|\vect r-\vect r'|^2}{2\h (t'-t)}}}.
+		\]
+		\\
+		\\
+		I couldn't quite figure out how to implement part (b), but here I will try a different method. The retarded Green's function is very 
+		closely related to the propagator given in Sakurai (eq. 2.6.10) by
+		\[
+			G^+(\vect r',t',\vect r, t) = -i\theta(t'-t)K(\vect r',t',\vect r,t)
+		\]
+		where 
+		\[
+			K(\vect r',t',\vect r,t) = \sum_j e^{-i \omega_j(t'-t)} \chi_j(\vect r')\chi_j^*(\vect r).
+		\]
+		$K$ can also be cast into a very elegant form of
+		\[
+			K(\vect x',t',\vect x,t) = \braket{\vect x'|\exp\blr{\frac{-iH(t'-t)}{\h}}|\vect x}
+		\]
+		which is what we will use here. 
+		\\
+		\\
+		For the free particle, the momentum states are eigenstates of the Hamiltonian. Therefore, we can easily form the retarded Green's 
+		function in the momentum representation,
+		\ba
+			G^+(\vect p',t',\vect p,t) &= \theta(t'-t) \braket{\vect p'|\exp\blr{\frac{-iH(t'-t)}{\h}}|\vect p}\\
+			&= \theta(t'-t) \exp\blr{\frac{-i\vect p\cdot\vect p(t'-t)}{2m\h}}\delta(\vect p'-\vect p)\\
+			& = \theta(t'-t) \exp\blr{\frac{-i\vect p'\cdot\vect p'(t'-t)}{2m\h}}.
+		\ea
+		To find $G^+(\vect x',t',\vect x,t)$ we seek to find $\braket{\vect x'|\exp\blr{\frac{-iH(t'-t)}{\h}}|\vect x}$ which is related to $G^+$
+		in the $\vect p$ representation by a Fourier transform. To show this
+		\ba
+			\braket{\vect x'|\exp\blr{\frac{-iH(t'-t)}{\h}}|\vect x} &= \int d\vect p\, \braket{\vect x'|\vect p}\braket{\vect p|
+			\exp\blr{\frac{-iH(t'-t)}{\h}}|\vect x}\\
+			& = \int d\vect p\, \braket{\vect x'|\vect p}\braket{\vect p|\vect x}\exp\blr{\frac{-i|\vect{p}|^2(t'-t)}{2m\h}} \\
+			&=\frac{1}{(2\pi\h)^{3}}\int d\vect p\,  \exp\blr{\frac{i\vect p\cdot(\vect x'-\vect x)}{\h}}\exp\blr{\frac{-i|\vect{p}|^2(t'-t)}{2m
+			\h}}\\
+			&=\frac{1}{(2\pi)^{3}}\int d\vect k\, \exp\blr{i\vect k\cdot (\vect x'-\vect x)}\exp\blr{\frac{-i|\vect k|^2(t'-t)\h}{2m}}
+		\ea
+		
+		Here we can see that this integral is in its Fourier form. For some reason I had to convert to wave-vector space in order for the $\h$
+		in the second exponential argument to come out correctly. If we define 
+		\[
+			a^2 \equiv \frac{i\h(t'-t)}{2m};\quad \vect \xi \equiv p_i
+		\]
+		we can use the Fourier transform pair, defined in one dimension as
+		\[
+			\exp(-a^2x^2) = (a\sqrt 2)^{-1}\exp(-\xi^2/4a^2).
+		\]
+		When we apply the Fourier transform to all three dimensions, we have 
+		\[
+			\blr{\frac{m}{i\h(t'-t)}}^{3/2}\exp\blr{\frac{i(\vect x'-\vect x)^2 m}{2\h(t'-t)}}.
+		\]
+		Since the correct normalization constant for a 3-D Fourier transform is $\frac{1}{(2\pi)^{3/2}}$ we finish up with the correct answer of
+		\[
+			\braket{\vect x'|\exp\blr{\frac{-iH(t'-t)}{\h}}|\vect x} = \blr{\frac{m}{i2\pi\h(t'-t)}}^{3/2}\exp\blr{\frac{i|\vect x'-\vect x|^2 m}{2\h(t'-t)}}.
+		\]
+		Attaching the step function we finally have
+		\[
+			G(\vect r',t',\vect r,t) = -i\theta(t'-t)\blr{\frac{m}{i2\pi\h(t'-t)}}^{3/2}\exp\blr{\frac{i|\vect r'-\vect r|^2 m}{2\h(t'-t)}}.
+		\]
+	\eenum
+		
+
+% #2 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item 
+	The expectation value of an operator $\Omega(\vect r,\vect p)$ in a state $\psi(\vect r,t)$ is given by 
+	\[
+		\braket{\Omega} = \int d^3r\, \psi^*(\vect r,t)\,\Omega\,\psi(\vect r,t).
+	\]
+		
+	\benum
+		% (a)
+		\item
+		Show for any $\psi(\vect r, t)$ which obeys the Scrhodinger equation associated with the Hamiltonian $H = \frac{p^2}{2m} +V(\vect r)\
+		$ with real $V(\vect r)$ that Ehrenfest's theorem holds, i.e.
+		\[
+			\diff t\braket{\vect r} = \frac{\braket{\vect p}}{m};\quad \diff t\braket{\vect p}=\braket{\vect F} = -\braket{\diff[V]{r}}.
+		\]
+		\\
+		\\
+		We can prove Ehrenfest's theorem in integral form, but I prefer the method via Heisenberg's equation of motion (Sakurai p. 86)
+		\[
+			\diff[A]{t} = \frac{1}{i\h}[A,H].
+		\]
+		For the Hamiltonian
+		\[
+			H = \frac{\vect p^2}{2m}+V(\vect x)
+		\]
+		we have
+		\[
+			\diff[\vect x]{t} = \frac{1}{i\h}\frac{1}{2m}[\vect x,\vect p^2] = \frac{1}{i\h}\frac{1}{2m}\del \vect p^2 [\vect x,\vect p] = \frac{\vect p}
+			{m}
+		\]
+		\[
+			\diff[\vect p]{t} = \frac{1}{i\h}[\vect p,V(\vect x)] = \frac{1}{i\h}\del V(\vect x) [\vect p,\vect x] = -\del V(\vect x)
+		\]
+		\[
+			m\difff{\vect x}{*2t} = \diff[\vect p]{t}=-\del V(\vect x).
+		\]
+		Taking the expectation value of both sides with respect to a stationary Heisenberg state ket we then form
+		\[
+			m\difff{\braket{\vect x}}{*2t} = \diff[\braket{\vect p}]{t}=-\braket{\del V(\vect x)}
+		\]
+		which can now be interpreted in either the Schrodinger or Heisenberg picture since expectation values are equivalent in either 
+		representation. 
+		\\
+		% (b)
+		\item
+		In the presence of electromagnetism an appropriate Hamiltonian is 
+		\[
+			H = \frac{(\vect p -e\vect A)^2}{2m} - e\phi
+		\]
+		where $\vect A(\vect r,t)$ and $\phi(\vect r,t)$ are vector and scalar electromagnetism potentials. Derive the appropriate Ehrenfest's 
+		theorem for this case to explicitly obtain the Lorentz force law.
+		\\
+		\\
+		Classically, since we have a velocity dependent potential the mechanical momentum is not equivalent to the canonical momentum.
+		We expect the same to be true for the given Hamiltonian, which can easily be demonstrated by
+		\[
+			\frac{dx_i}{dt} = \frac{1}{i\h}[x_i,H] = \frac{(p_i-eA_i)}{m}.
+		\] 
+		To depict this difference, we denote the kinematical/mechanical momentum by
+		\[
+			\vect \Pi \equiv m\diff[\vect x]{t} = \vect p-e\vect A
+		\]
+		which have the commutation relation
+		\[
+			[\Pi_i,\Pi_j] = (i\h e)\epsilon_{ijk}B_k.
+		\]
+		We can use these to alternatively express our Hamiltonian as
+		\[
+			H = \frac{\vect \Pi^2}{2m}+e\phi.
+		\]
+		Okay, now onto finding the Lorentz force law. Beginning with
+		\ba
+			m\diff[x_i]{t} & = \frac{1}{i\h}[x_i, \frac 12\Pi_i^2+me\phi]\\
+			& = \frac{1}{i\h}\Pi_i[x,\Pi_i]\\
+			& = \Pi_i.
+		\ea
+		Continuing
+		\ba
+			m\difff{x_i}{*2t} &=  \diff[\Pi_i]{t} = \frac 1{i\h}[\Pi_i,\frac 1{2m} \sum_{j=1}^3\Pi_j^2+e\phi]- e \pdiff[A_i]{t}\\
+			&= \frac{1}{2mi\h}[\Pi_i,\sum_{j=1}^3\Pi_j^2]+\frac{1}{i\h}[\Pi_i,e\phi(x,t)]- e\pdiff[A_i]{t}.
+		\ea
+		Lets look at the terms separately. First off we have
+		\[
+			\frac{1}{i\h}[\Pi_i,e\phi(x,t)] = \frac{e}{i\h}[p_i,\phi(x_i,t)] = \frac{e}{i\h}[p_i,x_i]\del_i\phi = -e\del_i\phi.
+		\]
+		Next up
+		\ba
+			\frac{1}{2mi\h}[\Pi_i,\sum_{j=1}^3\Pi_j^2] &= \sum_{j=1}^3\frac{1}{2mi\h}[\Pi_i,\Pi_j^2] \\
+			&=  \sum_{j=1}^3\frac{1}{2mi\h}\plr{[\Pi_i,\Pi_j]\Pi_j+\Pi_j[\Pi_i,\Pi_j]}\\
+			&= \sum_{j=1}^3\frac{e}{2m}(\epsilon_{ijk}B_k\Pi_j+\epsilon_{ijk}\Pi_jB_k)\\
+			& =  \sum_{j=1}^3\frac{e}{2}(\epsilon_{ijk}B_k\diff[x_j]{t}+\epsilon_{ijk}\diff[x_j]{t}B_k)\\
+			& = \frac e2 \plr{\diff[\vect x]{t}\times\vect B-\vect B\times\diff[\vect x]{t}}_i
+		\ea
+		Putting them all together we have
+		\[
+			m\difff{x_i}{*2t} =e\blr{-\del_i\phi -\pdiff[A_i]{t}+\frac 12 \plr{\diff[\vect x]{t}\times\vect B-\vect B\times\diff[\vect x]{t}}_i}
+		\]
+		We recognize the left term on the RHS as the $i$th component of the electric field. Therefore, we can write this in total as
+		\[
+			m\difff{\vect x}{*2t} = e\blr{\vect E+\frac 12 \plr{\diff[\vect x]{t}\times\vect B-\vect B\times\diff[\vect x]{t}}}
+		\]
+		and form the appropriate Ehrenfest theorem by taking the expectation values of each side ($\vect E$ and $\vect B$ are position 			dependent, therefore they too act as operators)
+		\[
+			m\difff{\braket{\vect x}}{*2t} = e\blr{\braket{\vect E}+\frac 12 \plr{\diff[\braket{\vect x}]{t}\times\braket{\vect B}-\braket{\vect B}
+			\times\diff[\braket{\vect x}]{t}}}.
+		\]
+	\eenum
+	
+% #3 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item 
+	Consider the harmonic oscillator with
+	\[
+		L = \frac 12 m\dot{x}^2-\frac 12 m\omega^2x^2.
+	\]
+	For a general solution of classical equations of motion $x = A\cos(\omega t)+B\sin(\omega t)$, express the energy in terms of $A$ and
+	$B$. Now choose energy such that $x(0) =x_1$ and $x(\tau) = x_2$, and write energy in terms of $x_1$, $x_2$ and $\tau$. Show that the 	action for the classical trajectory is 
+	\[
+		S_{cl}(x_1,x_2,\tau) = \frac{m\omega}{2\sin(\omega \tau)}\blr{(x_1^2+x_2^2)\cos(\omega \tau)-2x_1x_2}.
+	\]
+	Now show that the propagator for the quantum harmonic oscillator is given by
+	\[
+		K(x',t,x,0) = A(t)\exp{\clr{\frac{im\omega}{2\h\sin(\omega \tau)}\blr{(x_1^2+x_2^2)\cos(\omega \tau)-2x_1x_2}}}
+	\]
+	where $A(t)$ is a function of time.
+	\\
+	\\
+	Using Euler-Lagrange equations
+	\[
+		\mathcal{L} = \frac 12 m\dot x^2-\frac 12 m\omega^2x^2;\quad \diff{t}\pdiff[\mathcal L]{\dot x}  = \pdiff[\mathcal L]{x}
+	\]
+	\[
+		m\ddot x = -\omega^2 x
+	\]
+	\[
+		x(t) = A\cos(\omega t)+B\sin(\omega t)
+	\]
+	\[
+		\dot x(t) = -A\omega\sin(\omega t)+B\omega\cos(\omega t)
+	\]
+	\[
+		E = \frac 12 m\dot x^2+\frac 12 m\omega^2x^2 = \frac 12 m \omega^2\plr{A^2+B^2}
+	\]
+	\[
+		x(0) = A = x_1;
+	\]
+	\[
+		x(\tau) = x_1\cos(\omega \tau)+B\sin(\omega \tau) = x_2
+	\]
+	\[
+		B = \frac{x_2-x_1\cos(\omega \tau)}{\sin(\omega \tau)}
+	\]
+	\ba
+		E &= \frac{1}{2}m\omega^2\blr{x_1^2+\frac{(x_2-x_1\cos(\omega \tau))^2}{\sin^2(\omega \tau)}}\\
+		&= \frac{1}{2}m\omega^2\blr{\frac{x_1^2(\sin^2(\omega \tau)+\cos^2(\omega \tau))-2x_1x_2\cos(\omega\tau) +x_2^2}{\sin^2(\omega
+		\tau)}}\\
+		& = \frac{1}{2}m\omega^2\blr{\frac{x_1^2+x_2^2-2x_1x_2\cos(\omega \tau)}{\sin^2(\omega\tau)}}
+	\ea
+	To find the classical action, we need to evaluate the integral
+	\ba
+		\int_0^\tau dt\, \mathcal{L} &= \int_0^\tau dt\,  \blr{\frac 12 m\dot x_{cl}^2-\frac 12 m\omega^2x_{cl}^2}\\
+		& = \frac{m\omega^2}{2}\int_0^\tau dt\, \clr{(A^2-B^2)[\sin^2(\omega t)-\cos^2(\omega t)]-4AB\sin(\omega t)\cos(\omega t)}\\
+		& = \frac{m\omega}{2}\blr{(A^2-B^2)\sin(\omega \tau)\cos(\omega\tau)-2AB\sin^2(\omega \tau)}\\
+		& = \frac{m\omega}{2}\plr{\frac{x_1^2(\sin^2(\omega\tau)-\cos^2(\omega\tau))-x_2^2+2x_1x_2\cos(\omega \tau)}{\sin(\omega
+		\tau)}}\cos(\omega\tau)\\
+		&\qquad+\frac{m\omega}{2}\plr{-2x_1x_2-2x_1^2\sin(\omega \tau)\cos(\omega\tau)}\\
+		& = \frac{m\omega}{2\sin(\omega\tau)}[x_1^2\sin^2(\omega\tau)\cos(\omega\tau)-x_1^2\cos^3(\omega\tau)\\
+		&\qquad-x_2^2\cos(\omega\tau)-2x_1x_2\cos^2(\omega\tau) - 2x_1x_2\sin^2(\omega\tau)+2x_1^2\sin^2(\omega\tau)\cos(\omega
+		\tau)]\\
+		& = \frac{m\omega}{2\sin(\omega\tau)}\blr{\plr{x_1^2+x_2^2}\cos(\omega\tau)-2x_1x_2}.
+	\ea
+	Therefore we have
+	\[
+		S_{cl}(x_1,x_2,\tau) = \frac{m\omega}{2\sin(\omega\tau)}\blr{(x_1^2+x_2^2)\cos(\omega\tau)-2x_1x_2}.
+	\]
+	\\
+	\\
+	To find the propagator of the harmonic oscillator
+	\ba
+		K(x'',t'';x',t') &= \braket{x''|\exp{\blr{-\frac{iH(t''-t')}{\h}}}|x'}\\
+		& = \sum_a\braket{x''|\exp\blr{\frac{-Ht''}{\h}}|a}\braket{a|\exp\blr{\frac{iHt'}{\h}}|x'}\\
+		& = \braket{x'',t''|x',t'}
+	\ea
+	we note that the last expression here is that of a path integral. That is
+	\[
+		\braket{x_N,t_n|x_1,t_1} = \int_{x_1}^{x_N}\mathcal{D}[x(t)]\,\exp\blr{\frac{i}{\h} \int_{t_1}^{t_N} dt\, \mathcal{L}_{classical}(x,\dot x)}
+	\]
+	where $\mathcal{D}[x(t)]$ is the path integral operator. Solving this path integral does not amount to simply substituting the classical action
+	we computed earlier because we must integrate over all possible paths. However, the best way to accomplish this will be to express all
+	paths relative to our classical trajectory:
+	\[
+		x(t) \to x_{cl}(t) +\eta(t),
+	\]
+	where the deviation from the classical trajectory $\eta(t)$ vanishes at the endpoints. As such, we can segregate our action integral as 
+	follows:
+	\ba
+		\int_0^\tau dt\, \mathcal{L}_{classical} & = \int_0^\tau dt\, \blr{\frac{1}{2}m(\dot x_{cl}+\dot\eta)^2-\frac{1}{2}m\omega^2
+		(x_{cl}+\eta)^2}\\
+		& = \int_0^\tau dt\, \blr{\frac{1}{2}m\dot x_{cl}^2-\frac{1}{2}m\omega^2x_{cl}^2}+\int_0^\tau dt\, \blr{\frac{1}{2}m\dot \eta^2-\frac{1}{2}
+		m\omega^2\eta^2}\\
+		&\quad + \int_0^\tau dt\, m\dot\eta\dot x_{cl}-m\omega^2\eta x_{cl}
+	\ea 
+	Integration by parts on the last integral yields
+	\[
+		\int_0^\tau dt\, m\dot\eta\dot x_{cl}-m\omega^2\eta x_{cl} = \elr{m\eta\dot x_{cl}}_0^\tau -\int_0^\tau dt\, m\ddot x_{cl}\eta -\int_0^\tau
+		dt\,m\omega^2x_{cl}\eta.
+	\]
+	Since $\eta(t)$ vanishes at the endpoints, we are left with
+	\[
+		\int_0^\tau dt\, \blr{\frac{1}{2}m\dot x_{cl}^2-\frac{1}{2}m\omega^2x_{cl}^2}+\int_0^\tau dt\, \blr{\frac{1}{2}m\dot \eta^2-\frac{1}{2}
+		m\omega^2\eta^2} + \int_0^\tau dt\, \eta(m\ddot x_{cl}-m\omega^2x_{cl}).
+	\]
+	Interestingly, the last integrand is the classical equation of motion for the harmonic oscillator, which we know must be precisely zero. As 
+	such, our action separates into a classical action (which we already computed) and that of the deviation from it
+	\[
+		\int_0^\tau dt\, \mathcal{L}_{classical} = \int_0^\tau dt\, \blr{\frac{1}{2}m\dot x_{cl}^2-\frac{1}{2}m\omega^2x_{cl}^2}+\int_0^\tau dt\, 	
+		\blr{\frac{1}{2}m\dot \eta^2-\frac{1}{2}m\omega^2\eta^2}.
+	\]
+	Our path integral is now
+	\[
+		\braket{x_2,\tau|x_1,0} = \exp\blr{\frac{i}{\h}S_{classical}}\int_{\eta(0)}^{\eta(\tau)}\mathcal{D}[\eta(t)]\,\exp\blr{\frac{i}{\h} \int_{0}^{\tau} 
+		dt\, \plr{\frac{1}{2}m\dot \eta^2-\frac{1}{2}m\omega^2\eta^2}}.
+	\]
+	By factoring out our classical action, we notice that the remaining path integral is independent of position. Rather it is a function of time 
+	$\tau$ only (with an $m$ and $k$ as well). Therefore, we can denote
+	\[
+		A(\tau) \equiv \int_{\eta(0)}^{\eta(\tau)}\mathcal{D}[\eta(t)]\,\exp\blr{\frac{i}{\h} \int_{0}^{\tau} dt\, \plr{\frac{1}{2}m\dot \eta^2
+		-\frac{1}{2}m\omega^2\eta^2}}.
+	\]
+	In conclusion, we can now express the propagator of the harmonic oscillator as
+	\[
+		K(x_2,\tau;x_1,0) =  A(\tau)\exp{\clr{\frac{im\omega}{2\h\sin(\omega \tau)}\blr{(x_1^2+x_2^2)\cos(\omega \tau)-2x_1x_2}}}
+	\]
+% #4 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Sakurai 2.28: Consider an electron confined to the \emph{interior} of a hollow cylindrical shell whose axis coincides with the $z$-axis. The 
+	wave function is required to vanish on the inner and outer walls, $\rho = \rho_a$ and $\rho_b$, and also at the top and bottom, $z=0$ and 
+	$L$.
+	 
+	 \benum
+	 	% (a)
+	 	\item
+		Find the energy eigenfunctions. (Do not bother with normalization.) Show that the energy eigenvalues are given by 
+                \[
+                		E_{lmn} = \left(\frac{\h^2}{2m_e}\right)\left[k^2_{mn}+\left(\frac{l\pi}{L}\right)^2\right]\quad(l=1,2,3,..\ m=0,1,2,..)
+		\]
+                where $k_{mn}$ is the $n$th root of the transcendental equation
+                \[
+                		J_m(k_{mn}\rho_b)N_m(k_{mn}\rho_a)-N_m(k_{mn}\rho_b)J_m(k_{mn}\rho_a)=0.
+		\]
+                \\ 
+                \\ 
+                In this problem, we have no potential and thus the TISE will have the form
+                \[
+                		-\frac{\h^2}{2m}\del^2\psi -E\psi = 0
+		\]
+                which can easily be cast into the form of the Helmholtz equation, namely
+                \[
+                		\del^2\psi +j^2\psi = 0
+		\]
+                where 
+                \[
+                		j\equiv \sqrt{\frac{2mE}{\h^2}}.
+		\]
+                Our task amounts to solving the TISE for the specified boundary conditions. To solve this particular PDE (cf. Arfken p. 421) we first 
+                write it down in cylindrical coordinates:
+                \[
+                		\frac 1\rho \frac{\partial}{\partial \rho}\left(\rho\frac{\partial \psi}{\partial\rho}\right)+\frac{1}{\rho^2}\frac{\partial^2\psi}{\partial
+			\phi^2}+ \frac{\partial^2\psi}{\partial z^2}+j^2\psi = 0.
+		\]
+                Observing that our differential operators are all additive, we try separation of variables,
+                \[
+                		\psi(\rho,\phi,z) = P(\rho)\Phi(\phi)Z(z).
+		\]
+                Substituting this in, we have
+                \[
+                		\frac {\Phi Z}{\rho} \frac{d}{d \rho}\left(\rho\frac{dP}{d\rho}\right)+\frac{PZ}{\rho^2}\frac{d^2\Phi}{d\phi^2}+P\Phi\frac{d^2Z}
+			{dz^2}+j^2P\Phi Z = 0
+		\]
+                \[
+                		\frac{1}{\rho P}\frac{d}{d\rho}\left(\rho\frac{dP}{d\rho}\right)+\frac{1}{\rho^2\Phi}\frac{d^2\Phi}{d\phi^2}+j^2 = -\frac{1}{Z}
+			\frac{d^2Z}{dz^2}.
+		\]
+                Since we have isolated some function $f(z)$ on the RHS, we choose to set it equal to $h^2$. I don't like the choices of separation 
+                variables here, but to conform to the final answer given in the text we will have to use some non-customary ones. The decision to 
+                choose $h^2$ to be positive requires some foresight on our boundary conditions. First observe that 
+                \[
+                		\frac{d^2Z}{dz^2} = \pm h^2Z.
+		\]
+                A positive coeffecient leads to a hyperbolic function while a negative leads to an oscillating exponential. Since the B.C.'s require 
+                $Z(z)$ to vanish at \emph{two} faces of the cylinder, we can certainly rule out the hyperbolic functions. Hence the choice of $h^2$ on 
+                the RHS of the D.E. As such we now have
+                \[
+                		Z(z)\propto e^{\pm ihz}.
+		\]
+                If we now denote a new constant 
+                \[
+                		k^2\equiv j^2-h^2
+		\]
+                we can reform our equation as
+                \[
+                		\frac{\rho}{P}\frac{d}{d\rho}\left(\rho\frac{dP}{d\rho}\right)+k^2\rho^2 = -\frac{1}{\Phi}\frac{d^2\Phi}{d\phi^2}.
+		\]
+                Lets use the separation constant $m^2$ for this one, in which we have
+                \[
+                		\frac{d^2\Phi}{d\phi^2} = -m^2\Phi;\quad\Phi(\phi)\propto e^{\pm im\phi}.
+		\]
+                In using $\phi$ as the azimuthal angle, we impose the B.C. of periodicity and find that $m$ must be an integer:
+                \[
+                		\Phi(\phi) = \Phi(\phi+2\pi)\rightarrow e^{\pm im\phi}=e^{\pm i(m+2\pi)\phi} = e^{\pm im\phi}+e^{\pm im2\pi}.
+		\]
+                For the $\rho$ dependence we are left with 
+                \begin{equation}\label{bde}\rho\frac{d}{d\rho}\left(\rho\frac{dP}{d\rho}\right)+(k^2\rho^2-m^2)P = 0.
+                \end{equation}
+                If we use a change of variable $x\equiv k\rho,$ this becomes Bessel's differential equation! The solutions to this equation are of 
+                course the Bessel functions of order $m$. The Bessel functions of the first, second, and third kind are denoted $J_m(x)$, $N_m(x)$, 
+                and $H_m(x)$ respectively. The last two are at times referred to as the Neumann and Hankel functions. The solution to our D.E. can 
+                formed as 
+                \[
+                		P(x) = C_1J_m(x)+C_2N_m(x)
+		\]
+                in which it can be shown that $J_m(x)$ and $N_m(x)$ are linearly independent. All together we now have
+                \[
+                		\psi(\rho,\phi,z) = (C_1J_m(k\rho)+C_2N_m(k\rho))e^{\pm ihz}e^{\pm im\phi}
+		\]
+                remembering that
+                \[
+                		j^2-h^2 = k^2\quad\text{and}\quad m=0,1,2,3,..
+		\]
+                Our boundary conditions state that $\psi$ must vanish at all surfaces of our cylinder:
+              	  \begin{enumerate}
+               		 \item $\psi(\rho,\phi,0) = \psi(\rho,\phi,L) = 0$
+              		  \item $\psi(\rho_a,\phi,z)=\psi(\rho_b,\phi,z) = 0$
+              	  \end{enumerate}
+               	We may want to note that we expect the wavefunction to be symmetric in $\phi$ from the cylindrical symmetry present. To be 	
+		precise, the square of the probability amplitude should be constant in $\phi$
+		\[
+                		|\Phi(\phi)|^2 = C.
+		\]
+		This can be accomplished if we specifically choose $e^{+im\phi}$ \emph{or} $e^{-im\phi}$ but not a linear combination of 
+		both. Moving onto the first B.C listed. our function for $z$ goes as
+                \[
+                		Z(z) = C_4e^{ihz}+C_5e^{-ihz}.
+		\]
+                In order to satisfy both B.C.'s, we will have to quantize $h$ and form a single trig function. That is,
+                \[
+                		C_4 = -C_5;\quad h = \frac{\pi l}{L}\quad\text{where}\quad l=0,1,2,3..
+		\]
+                which yields 
+                \[
+                		Z(z) = C_4\sin\left(\frac{l\pi}{L}z\right).
+		\]
+                For the last boundary condition, we simply need
+                \[
+                		P(k\rho_a) = P(k\rho_b) = 0
+		\]
+                or
+                \[
+                		C_1J_m(k\rho_a)+C_2N_m(k\rho_a) = 0
+		\]
+                \[
+                		C_1J_m(k\rho_b)+C_2N_m(k\rho_b) = 0.
+		\]
+                To satisfy these conditions, either we must fix $k$ to use the zero's of the Bessel functions or we must vary the coefficients. Since 
+                the zero's would be different for each equation (and for Bessel eqs. of the second kind), we conclude that we must vary the 
+                coefficients. For a non-zero solution of these two homogenous equations (functions of $C_1$ and $C_2$) to exist, the determinant 
+                must vanish (one equation must be linearly dependent on the other)
+                \[
+                		J_m(k\rho_b)N_m(k\rho_a)-J_m(k\rho_a)N_m(k\rho_b) = 0.
+		\]
+                Under what conditions will this vanish? The only factor we have not yet fixed is $k$ and so if $k$ is a root to this transcendental 
+                equation, then the determinant will vanish. In fact, we expect that there may be many roots to such an equation and so we can 
+                denote them as $k_{mn}$ where $n$ is the $n$th root and $m$ is the integer order of the Bessel functions. Going back to our B.C.'s 
+                we have
+                \[
+                		C_1J_m(k_{mn}\rho_a)+C_2N_m(k_{mn}\rho_a) = 0
+		\]
+                \[
+                		C_1J_m(k_{mn}\rho_b)+C_2N_m(k_{mn}\rho_b) = 0.
+		\]
+                Due to the linear dependence we created, the second equation is simply a constant multiple of the first; satisfying the first equation 
+                automatically takes care of the second. A feature of our homogenous system is that we have one equation and two unknowns. Thus 
+                our solutions will be parameterized (although here we will simply choose a constant and not deal with a parameterization variable, 
+                as we expect normalization to fix it anyway). Lets denote
+                \[
+                		C_1 = A
+		\]
+                in which we see that
+                \[
+                		C_2 = -A\frac{J_m(k_{mn}\rho_a)}{N_m(k_{mn}\rho_a)}.
+		\]
+                We now have the wavefunction. As for energy, remember that
+                \[
+                		j\equiv\sqrt{\frac{2mE}{\h^2}};\quad j^2-h^2 = k^2
+		\]
+                and so we have
+                \[
+                		\frac{2mE}{\h^2} = \left(\frac{l\pi }{L}\right)^2+k_{mn}^2
+		\]
+                \[
+                		 E = \left(\frac{\h^2}{2m_e}\right)\left[k_{mn}^2+\left(\frac{l\pi}{L}\right)^2\right].
+		\]
+                Finally we can express everything in full form as 
+                \[
+                		\psi(\rho,\phi,z) = \left[AJ_m(k_{mn}\rho)-A\tfrac{J_m(k_{mn}\rho_a)}{N_m(k_{mn}\rho_a)}N_m(k_{mn}\rho)\right]\sin\left(\frac{l	
+			\pi}{L}z\right)e^{\pm im\phi}
+		\]
+                \[
+                		E = \left(\frac{\h^2}{2m_e}\right)\left[k_{mn}^2+\left(\frac{l\pi}{L}\right)^2\right]
+		\]
+                where 
+                \[
+                		l=0,1,2,3,..\quad m=0,1,2,3,..
+		\]
+                and $k_{mn}$ is the $n$th root of the transcendental equation
+                \[
+                		J_m(k_{mn}\rho_b)N_m(k_{mn}\rho_a)-J_m(k_{mn}\rho_a)N_m(k_{mn}\rho_b) = 0.
+		\]
+                
+                % (b)
+                \item
+                Repeat the same problem when there is a uniform magnetic field $\vect B = B\vecth z$ for $0<\rho<\rho_a$. Note that the energy 
+                eigenvalues are influenced by the magnetic field even though the electron never "touches" the magnetic field. 
+                \\
+		\\
+		We start with the Hamiltonian for a time-independent magnetic field (no $\vect E$ field) defined as
+		\[
+			H = \frac{1}{2m_e}\plr{\vect p-\frac{e\vect A}{c}}^2.
+		\]
+		In interpreting such a Hamiltonian, we must remember that we require it to be hermitian. Therefore it can be written as
+		\[
+			H = \frac{1}{2m_e}\blr{p^2-\frac ec\plr{\vect p\cdot\vect A+\vect A\cdot\vect p}+\pfrac{e}{c}^2A^2}.
+		\]
+		Starting with the TISE we have
+		\[
+			\braket{\vect x|H|\psi} = E\braket{\vect x|\psi}.
+		\]
+		Putting it into wavefunction form
+		\ba
+			\braket{\vect x|H|\psi} &= \frac{1}{2m_e}\braket{\vect x|\blr{p^2-\frac ec\plr{\vect p\cdot\vect A+\vect A\cdot\vect p}+
+			\pfrac{e}{c}^2A^2}|\psi}\\
+			&= \frac{1}{2m_e}\blr{-\h^2\del^2+\pfrac{e}{c}^2A^2}\braket{\vect x|\psi}-\frac{e}{c}\braket{\vect x|\vect p\cdot\vect A+\vect A
+			\cdot\vect p|\psi}\\
+			&= \frac{1}{2m_e}\blr{-\h^2\del^2+\pfrac{e}{c}^2A^2+i\h\frac{e}{c}\plr{\del\cdot\vect A+\vect A\cdot\del}}\braket{\vect x|\psi}
+		\ea
+		where 
+		\[
+			\vect A = \pfrac{B\rho_a^2}{2\rho}\vecth \phi
+		\]
+		is the vector potential appropriate for $\vect B = B\vecth z$, which is given by Sakurai 2.7.62 and can be obtained via Stokes law. 
+		In cylindrical coordinates, the Hamiltonian operator becomes
+		\ba
+			H &= \frac{1}{2m_e}\blr{-\h^2\del^2+\pfrac{eB\rho_a^2}{2c\rho}^2+i\h\frac{e}{c}\plr{\frac{1}{\rho}\pdiff{\phi}\pfrac{B\rho_a^2}
+			{2\rho}+\pfrac{B\rho_a^2}{2\rho}\frac{1}{\rho}\pdiff{\phi}}}\\
+			& = \frac{1}{2m_e}\blr{-\h^2\del^2+\pfrac{eB\rho_a^2}{2c\rho}^2+i\h\frac{e}{c}\pfrac{B\rho_a^2}{\rho^2}\pdiff{\phi}}\\
+			& =  \frac{-\h^2}{2m_e}\blr{\frac 1\rho \frac{\partial}{\partial \rho}\left(\rho\frac{\partial }{\partial\rho}\right)+\frac{1}
+			{\rho^2}\frac{\partial^2}{\partial\phi^2}+ \frac{\partial^2}{\partial z^2}}+\frac{1}{2m_e}\pfrac{eB\rho_a^2}{2c\rho}^2+\frac{i\h}
+			{2m_e}\frac{e}{c}\pfrac{B\rho_a^2}{\rho^2}\pdiff{\phi}.
+		\ea
+		Notice that since $\vect A$ does not depend on $\phi$, $\del\cdot\vect A = \vect A\cdot\vect\del$. Now for the full Schrodinger 		
+		equation
+		\[
+			H\psi = E\psi
+		\]
+		\[
+			\frac{-\h^2}{2m_e}\blr{\frac 1\rho \frac{\partial}{\partial \rho}\left(\rho\frac{\partial\psi}{\partial\rho}\right)+\frac{1}
+			{\rho^2}\frac{\partial^2\psi}{\partial\phi^2}+ \frac{\partial^2\psi}{\partial z^2}}+\frac{1}{2m_e}\pfrac{eB\rho_a^2}{2c\rho}^2\psi
+			+\frac{i\h}{2m_e}\frac{e}{c}\pfrac{B\rho_a^2}{\rho^2}\pdiff[\psi]{\phi}=E\psi
+		\]
+		\[
+			\frac 1\rho \frac{\partial}{\partial \rho}\left(\rho\frac{\partial\psi}{\partial\rho}\right)+\frac{1}
+			{\rho^2}\frac{\partial^2\psi}{\partial\phi^2}+ \frac{\partial^2\psi}{\partial z^2}-\frac{1}{\h^2}\pfrac{eB\rho_a^2}{2c\rho}^2\psi+
+			\frac{2m_e}{\h^2}E\psi-\frac{i}{\h}\frac{e}{c}\pfrac{B\rho_a^2}{\rho^2}\pdiff[\psi]{\phi}=0
+		\]
+		\[
+			\frac 1\rho \frac{\partial}{\partial \rho}\left(\rho\frac{\partial\psi}{\partial\rho}\right)+\frac{1}
+			{\rho^2}\frac{\partial^2\psi}{\partial\phi^2}+ \frac{\partial^2\psi}{\partial z^2}-\blr{\frac{1}{\h^2}\frac{\alpha^2}{\rho^2}-
+			\frac{2m_e}{\h^2}E}\psi-\frac{i}{\h}\frac{2\alpha}{\rho^2}\pdiff[\psi]{\phi}=0
+		\]
+		where for convenience we denote
+		\[
+			\alpha \equiv \frac{e}{c}\pfrac{B\rho_a^2}{2}.
+		\]
+		Our only hope for solving this system is with separation of variables, which should be valid since no partial derivatives are coupled
+		together. We try a solution of the form
+		\[
+			\psi(\rho,\phi,z) = P(\rho)\Phi(\phi)Z(z)
+		\]
+		in which our TISE becomes
+		\ba
+			\frac {\Phi Z}{\rho} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\frac{PZ}
+			{\rho^2}\frac{\partial^2\Phi}{\partial\phi^2}+ P\Phi\frac{\partial^2Z}{\partial z^2}-\blr{\frac{1}{\h^2}\frac{\alpha^2}{\rho^2}-
+			\frac{2m_e}{\h^2}E}P\Phi Z\\
+			-\frac{i}{\h}PZ\pfrac{2\alpha}{\rho^2}\pdiff[\Phi]{\phi}=0.
+		\ea
+		
+		Now we divide by $\psi$
+		
+		\ba
+			\frac {1}{\rho P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\frac{1}
+			{\rho^2\Phi}\frac{\partial^2\Phi}{\partial\phi^2}+ \frac{1}{Z}\frac{\partial^2Z}{\partial z^2}-\frac{1}{\h^2}\frac{\alpha^2}{\rho^2}
+			+\frac{2m_e}{\h^2}E\\
+			-\frac{i}{\h}\frac{1}{\Phi}\pfrac{2\alpha}{\rho^2}\pdiff[\Phi]{\phi}=0
+		\ea
+		and isolate $Z$
+		\[
+			\frac {1}{\rho P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\frac{1}
+			{\rho^2\Phi}\frac{\partial^2\Phi}{\partial\phi^2}-\frac{i}{\h}\frac{1}{\Phi}\frac{2\alpha}{\rho^2}\pdiff[\Phi]{\phi} -\frac{1}
+			{\h^2}\frac{\alpha^2}{\rho^2}+\frac{2m_e}{\h^2}E = -\frac{1}{Z}\frac{\partial^2Z}{\partial z^2}.
+		\]
+		Setting the separation constant equal to $h^2$ we have for $Z(z)$
+		\[
+			-\frac{1}{Z}\frac{\partial^2Z}{\partial z^2} = h^2;\quad \difff{Z}{*2z} = -h^2 Z;\quad Z \propto e^{\pm ihz}.
+		\]
+		We chose $h^2$ such that we get a trigonometric form, just like part (a). Now we have 
+		\[
+			\frac {1}{\rho P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\frac{1}
+			{\rho^2\Phi}\frac{\partial^2\Phi}{\partial\phi^2}-\frac{i}{\h}\frac{1}{\Phi}\frac{2\alpha}{\rho^2}\pdiff[\Phi]{\phi} -\frac{1}
+			{\h^2}\frac{\alpha^2}{\rho^2}+\frac{2m_e}{\h^2}E - h^2 = 0.
+		\]
+		Lets multiply by $\rho^2$
+		\[
+			\frac {\rho}{P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\frac{1}
+			{\Phi}\frac{\partial^2\Phi}{\partial\phi^2}-\frac{i}{\h}\frac{2\alpha}{\Phi}\pdiff[\Phi]{\phi} -\frac{\alpha^2}
+			{\h^2}+\rho^2\plr{\frac{2m_e}{\h^2}E - h^2} = 0
+		\]
+		and isolate $\phi$
+		\[
+			\frac {\rho}{P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right) - \frac{\alpha^2}
+			{\h^2}+\rho^2\plr{\frac{2m_e}{\h^2}E - h^2} = -\frac{1}
+			{\Phi}\frac{\partial^2\Phi}{\partial\phi^2}+\frac{i}{\h}\frac{2\alpha}{\Phi}\pdiff[\Phi]{\phi}.
+		\]
+		Let's denote the separation constant by $b^2$. Contrary to part(a) we now have a different differential equation for $\Phi(\phi)$:
+		\[
+			-\frac{1}{\Phi}\frac{d^2\Phi}{d\phi^2}+\frac{i}{\h}\frac{2\alpha}{\Phi}\diff[\Phi]{\phi}= b^2
+		\]
+		\[
+			\frac{d^2\Phi}{d\phi^2}-\frac{i}{\h}2\alpha\diff[\Phi]{\phi}+ b^2\Phi=0.
+		\]
+		This can be solved by an exponential 
+		\[
+			\Phi(\phi) \propto e^{\pm ia\phi}
+		\]
+		Starting with $+ia$
+		\[
+			-a^2+ a\frac{2\alpha}{\h}+b^2 = 0;\quad a^2-a\frac{2\alpha}{\h}-b^2 = 0.
+		\]
+		Solving for $a$ we have
+		\ba
+			a &= \frac{1}{2}\plr{\frac{2\alpha}{\h}\pm\sqrt{\pfrac{2\alpha}{\h}^2+4b^2}}\\
+			& = \frac{\alpha}{\h}\pm\sqrt{\alpha^2/\h^2+b^2}.
+		\ea
+		Requiring periodic boundary conditions
+		\[
+			e^{\pm ia\phi} = e^{\pm ia(\phi+2\pi)}
+		\]
+		\[
+			e^{ia2\pi} = 1 \to 2\pi a = 2\pi j\quad\text{for}\quad j = 0,\pm1,\pm2,\pm3..,
+		\]
+		which allows us to solve for $b^2$ as
+		\[
+			j = \frac{\alpha}{\h}\pm\sqrt{\alpha^2/\h^2+b^2}
+		\]
+		\[
+			\plr{j-\frac{\alpha}{\h}}^2 = \frac{\alpha^2}{\h^2}+b^2
+		\]
+		\[
+			b^2 = j^2 -2j\frac{\alpha}{h}.
+		\]
+		We can express $a$ in terms of $j$ now as
+		\[
+			a = \frac{\alpha}{\h}\pm\sqrt{\alpha^2/\h^2+j^2 -2j\frac{\alpha}{h}}\quad\text{for}\quad j = 0,\pm1,\pm2,\pm3..
+		\]
+		As before, we must choose either $e^{+ia\phi}$ or $e^{-ia\phi}$. Thus our solution for $\Phi(\phi)$ is then
+		\[
+			\Phi(\phi) \propto \exp\blr{\pm i \plr{\frac{\alpha}{\h}\pm\sqrt{\alpha^2/\h^2+j^2 -2j\frac{\alpha}{h}}}\phi}.
+		\]
+		Back to the TISE we have
+		\[
+			\frac {\rho}{P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right) - \frac{\alpha^2}
+			{\h^2}+\rho^2\plr{\frac{2m_e}{\h^2}E - h^2} -j^2 +2j\frac{\alpha}{h}= 0 
+		\]
+		\[
+			\frac {\rho}{P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\rho^2\plr{\frac{2m_e}{\h^2}E - h^2}
+			-\plr{j-\frac{\alpha}{h}}^2= 0 
+		\]
+		\[
+			\frac {\rho}{P} \frac{\partial}{\partial \rho}\left(\rho\frac{\partial P}{\partial\rho}\right)+\rho^2\plr{\frac{2m_e}{\h^2}E - h^2}
+			-\plr{j-\frac{\alpha}{h}}^2= 0 .
+		\]
+		As a function of $\rho$ only, we seek to bring this to a form of Bessel's equation. Thus we denote
+		\[
+			k^2 \equiv \frac{2m_e}{\h^2}E-h^2;\quad m \equiv j-\frac{\alpha}{\h}.
+		\]
+		Now multiply by $P$
+		\[
+			\rho^2 \frac{\partial^2 P}{\partial \rho^2}+\rho\frac{\partial P}{\partial\rho}+P(\rho^2k^2-m^2)= 0 .
+		\]
+		If we make the substitution 
+		\[
+			x\equiv \rho k;\quad \to \quad \pdiff{\rho} = \pdiff{x}\pdiff[x]{\rho}=\pdiff{x}k
+		\]
+		we successfully arrive at Bessel's equation:
+		\[
+			x^2 \frac{\partial^2 P}{\partial x^2}+x\frac{\partial P}{\partial x}+P(x^2-m^2)= 0 .
+		\]
+		Notice that $m$ is not an integer here. Despite this, the solutions can still be written as
+                \[
+                		\psi(\rho,\phi,z) = (C_1J_m(k\rho)+C_2N_m(k\rho))e^{\pm ihz}e^{\pm ia\phi}.
+		\]
+		Nowe we impose boundary conditions:
+		  \begin{enumerate}
+               		 \item $\psi(\rho,\phi,0) = \psi(\rho,\phi,L) = 0$
+              		  \item $\psi(\rho_a,\phi,z)=\psi(\rho_b,\phi,z) = 0$
+              	  \end{enumerate}
+		For the first B.C. our function for $z$ goes as
+                \[
+                		Z(z) = C_4e^{ihz}+C_5e^{-ihz}.
+		\]
+                Just as before, we will have to quantize $h$ and form a single trig function. That is,
+                \[
+                		C_4 = -C_5;\quad h = \frac{\pi l}{L}\quad\text{where}\quad l=0,1,2,3..
+		\]
+                which yields 
+                \[
+                		Z(z) = C_4\sin\left(\frac{l\pi}{L}z\right).
+		\]
+                For the last boundary condition, we need
+                \[
+                		P(k\rho_a) = P(k\rho_b) = 0
+		\]
+                or
+                \[
+                		C_1J_m(k\rho_a)+C_2N_m(k\rho_a) = 0
+		\]
+                \[
+                		C_1J_m(k\rho_b)+C_2N_m(k\rho_b) = 0.
+		\]
+		As before, we require the determinant to vanish
+		\[
+                		J_m(k\rho_b)N_m(k\rho_a)-J_m(k\rho_a)N_m(k\rho_b) = 0.
+		\]
+		We can denote the roots to this transcendental equation as $k_{mn}$ where $n$ is the $n$th root and $m$ is the noninteger order 
+		of the Bessel functions. This yields our energy spectrum. Since the determinant is forced to be linearly dependent we denote
+                \[
+                		C_1 = A
+		\]
+                in which we see that
+                \[
+                		C_2 = -A\frac{J_m(k_{mn}\rho_a)}{N_m(k_{mn}\rho_a)}.
+		\]
+		We can now write our wavefunction as 
+		\[
+                		\psi(\rho,\phi,z) = \left[AJ_m(k_{mn}\rho)-A\tfrac{J_m(k_{mn}\rho_a)}{N_m(k_{mn}\rho_a)}N_m(k_{mn}\rho)\right]\sin\left(\frac{l	
+			\pi}{L}z\right)e^{\pm ia\phi}
+		\]
+		where 		
+		\ba
+			a &= \frac{\alpha}{\h}\pm\sqrt{\alpha^2/\h^2+j^2 -2j\frac{\alpha}{h}};\quad \alpha \equiv \frac{e}{c}\pfrac{B\rho_a^2}{2}\\
+			m& = j-\frac{e}{c}\frac{B\rho_a^2}{2\h};\quad\text{for}\quad j = 0,\pm1,\pm2,\pm3..
+		\ea
+		
+		To find our energy eigenvalues we recall our relations,
+		\[
+			k^2 \equiv \frac{2m_e}{\h^2}E-h^2;\quad h = \frac{\pi l}{L}\quad\text{where}\quad l=0,1,2,3..
+		\]
+		Therefore
+		\[
+                		E = \left(\frac{\h^2}{2m_e}\right)\left[k_{mn}^2+\left(\frac{l\pi}{L}\right)^2\right]
+		\]
+		where once again $k_{mn}$ is the $n$th root of the transcendental equation of order $m$ defined by
+		\[
+			m = j-\frac{e}{c}\frac{B\rho_a^2}{2\h}\quad \text{where}\quad j = 0,\pm1,\pm2,\pm3,...
+		\]
+		The energy eigenvalues appear to be same as before, however the disparity in the order $m$ of the Bessel function has caused a 
+		definite shift in the energy spectrum. 
+		\\
+                % (c)
+                \item
+                Compare, in particular, the ground state of the $B=0$ problem with that of the $B\ne 0$ problem. Show that if we require the ground-
+                state energy energy to be unchanged in the presence of $B$, we obtain ``flux quantization" 
+                \[
+                		\pi\rho_a^2B = \frac{2\pi N\h c}{e},\quad (N = 0,\pm 1,\pm 2,...).
+		\]
+		\\
+		The ground state of part (a) is given by the smallest root corresponding to the $m=0$ order transcendental equation (in terms of $
+		\phi$, this corresponds to the smallest number of oscillations). In order for the energy to be unchanged in the presence of the 
+		magnetic field, we require $m=0$ for the energy eigenvalues of part (b). Once $m=0$ is satisfied, the roots will be equivalent and 			so the energies will also be the same. Our requirement is
+		\[
+			0=m = j-\frac{e}{c}\frac{B\rho_a^2}{2\h}\quad \text{where}\quad j = 0,\pm1,\pm2,\pm3,...
+		\]
+		or
+		\[
+			\pi\rho_a^2B = \frac{2\pi N\h c}{e},\quad (N = 0,\pm 1,\pm 2,...).
+		\]
+		If the magnitude flux is equal to these quantized values, the ground state energies with and without the magnetic field will coincide. 
+		
+	\eenum
+% 5 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Sakurai 2.39: An electron moves in the presence of a uniform magnetic field in the $z$-direction $(\vect B = B\vecth z)$.
+	
+	\benum
+		% (a)
+		\item
+		Evaluate
+		\[
+			[\Pi_x,\Pi_y],
+		\]
+		where
+		\[
+			\Pi_x \equiv p_x-\frac{eA_x}{c},\quad\Pi_y \equiv p_y-\frac{eA_y}{c}
+		\]
+		\\
+		\\
+		Using the relations
+		\[
+			[\Pi_i,\Pi_j] = \pfrac{i\h e}{c}\epsilon_{ijk}B_k
+		\]
+		we can easily see that the only non-zero commutator for $\vect B = B\vecth z$ is
+		\[
+			[\Pi_x,\Pi_y]  = \pfrac{i\h e}{c}B.
+		\]
+		% (b)
+		\item 
+		By comparing the Hamiltonian and the commutation relation obtained in (a) with those of the one-dimensional oscillator problem, 
+		show how we can immediately write the energy eigenvalues as
+		\[
+			E_{k,n} = \frac{\h^2k^2}{2m}+\plr{\frac{|eB|\h}{mc}}\plr{n+\frac 12}
+		\]
+		where $\h k$ is the continuous eigenvalue of the $p_z$ operator and $n$ is a nonnegative integer including zero. 
+		\\
+		\\
+		The Hamiltonian for this system is 
+		\[
+			H = \frac{1}{2m}(\Pi_x^2+\Pi_y^2+\Pi_z^2).
+		\]
+		Since the only non-zero commutation of the mechanical momentum operators is $[\Pi_x,\Pi_y]$, we can see that 
+		\[
+			[\Pi_z,\Pi_x] = [\Pi_z,\Pi_y] = [\Pi_z,\Pi_z]= 0
+		\]
+		and thus
+		\[
+			[\Pi_z,f(\vect \Pi)] = 0.
+		\]
+		Therefore we have
+		\[
+			[\Pi_z,H] = 0
+		\]
+		which means that eigenkets of $\Pi_z$ are proportional to the energy eigenkets. Looking at the one-dimensional harmonic oscillator, 
+		we need to try to find some pair of operators that we can express our Hamiltonian with. Taking after the form of $a$ and $a^\dag$ of 
+		the harmonic oscillator, we find that the operators that do the job are 
+		\[
+			a= \sqrt{\frac{c}{2\h eB}}\plr{\Pi_x+i\Pi_y};\quad a^\dag =  \sqrt{\frac{c}{2\h eB}}\plr{\Pi_x-i\Pi_y}.
+		\]
+		Taking their product we have
+		\ba
+			aa^\dag &= \frac{c}{2\h eB}\plr{\Pi_x^2+\Pi_y^2 +i[\Pi_y,\Pi_x]}\\
+				     & =  \frac{c}{2\h eB}\plr{\Pi_x^2+\Pi_y^2 +\frac{\h e}{c}B}\\
+				     & = \frac{c}{2\h eB}\plr{\Pi_x^2+\Pi_y^2} +\frac{1}{2}
+		\ea
+		as well as
+		\[
+			a^\dag a = \frac{c}{2\h eB}\plr{\Pi_x^2+\Pi_y^2} -\frac{1}{2}.
+		\]
+		Notice that 
+		\[
+			[\Pi_z,aa^\dag] = [\Pi_z,a^\dag a] = 0
+		\]
+		and that the commutation relation for our operators is just like the S.H.O., 
+		\[
+			[a,a^\dag] = 1.
+		\]
+		By S.H.O. convention, we can denote 
+		\[
+			a^\dag a \equiv N
+		\]
+		and we can now form our Hamiltonian as
+		\[
+			H = \frac{\h e B}{cm}\plr{ N  +\frac{1}{2}}+\frac{1}{2m}\Pi_z^2
+		\]
+		Since we have shown that
+		\[
+			[\Pi_z,N] = [\Pi_z,H] = [N,H] = 0
+		\]
+		we have essentially found a set of three compatible operators. Therefore, we can label our simultaneous eigenstates by three 
+		different indices $\ket{E_n,n,p_z}$. To find the energy eigenvalues, lets first denote the eigenvalue for $N$ as
+		\[
+			N\ket{E_n,n,p_z} = n\ket{E_n,n,p_z}.
+		\]
+		At this point $n$ is still undetermined in value. In order to show that $n$ is an integer, lets develop some more relationships. Notice
+		that
+		\[
+			[N,a^\dag] = [a^\dag a,a^\dag] = a^\dag[a,a]+[a^\dag,a]a = -a
+		\]
+		and similarly
+		\[
+			[N,a^\dag] = a^\dag.
+		\]
+		To show the effect of creation and annihilation we form
+		\[
+			Na^\dag\ket{E_n,n,p_z} = ([N,a^\dag]+a^\dag N)\ket{E_n,n,p_z} = (n+1)a^\dag \ket{E_n,n,p_z}
+		\]
+		and
+		\[
+			Na\ket{E_n,n,p_z} = ([N,a]+a N)\ket{E_n,n,p_z} = (n-1)a\ket{E_n,n,p_z}
+		\]
+		which implies that $a\ket{E_n,n,p_z}$ is an eigenket of $N$ with eigenvalue decreased by one. Therefore we deduce that
+		\[
+			a\ket{E_n,n,p_z} = c\ket{E_n,n-1,p_z}.
+		\]
+		By requiring $\ket{E_n,n,p_z}$ and $\ket{E_n,n-1,p_z}$ to be normalized, we can determine $c$:
+		\[
+			\braket{E_n,n,p_z|a^\dag a|E_n,n,p_z} = |c|^2
+		\]
+		\[
+			\braket{E_n,n,p_z|a^\dag a|E_n,n,p_z} = \braket{E_n,n,p_z|N|E_n,n,p_z} = n 
+		\]
+		\[	
+			n = |c|^2.
+		\]
+		If we take $c$ to be real and positive (which still retains the original definition of $|c|^2$) we then have
+		\[
+			c=\sqrt{n}. 
+		\]
+		Thus the effect of the annihilation operator is
+		\[
+			a\ket{E_n,n,p_z} = \sqrt{n}\ket{E_n,n-1,p_z}.
+		\]
+		As such, we could continue annihilating indefinitely. However, we have the requirement the inner product be positive
+		\[
+			n=\braket{E_n,n,p_z|N|E_n,n,p_z}= (\bra{E_n,n,p_z}a^\dag)\cdot(a\ket{E_n,n,p_z}) \ge 0
+		\]
+		which forces us to conclude that $n$ must be a non-negative integer. A similar analysis can be done for the creation operator. 
+		\\
+		\\
+		Notice that the eigenkets of the Hamiltonian have been labeled by the $p_z$ index. What has allowed us to do so? Remembering 
+		that
+		\[
+			\Pi_z = p_z-\frac{e}{c}A_z,
+		\]
+		we note that simplest form of $\vect A$ that yields $\vect B = B\vecth z$ is 
+		\[
+			\vect A = (-By,0,0).
+		\]
+		In this form
+		\[
+			\Pi_z = p_z
+		\] 
+		and thus we have
+		\[
+			\Pi_z \ket{E_n,n,p_z} = p_z\ket{E_n,n,p_z}
+		\]
+		as desired. However, we know that we can compose the same magnetic field under any arbitrary gauge transformation, most 
+		especially those in which $\Pi_z \ne p_z$. Fortunately this does not pose as serious of a problem as it seems since we can show
+		that the energy eigenvalues are gauge invariant, as we expect they must be. To show this, lets denote the Hamiltonian before the 
+		gauge transformation as 
+		\[
+			H\ket a = E_a\ket a
+		\]
+		and the Hamiltonian after a gauge transformation $\vect A \to \vect A +\del \Lambda(\vect x)$ as
+		\[
+			H'\ket{a'} = E_a'\ket{a'}.
+		\]
+		Using Sakurai eq. 2.7.47 we can relate our energy eigenstate before and after a gauge transformation by
+		\[
+			\ket{a'} = U\ket{a} = \exp\blr{\frac{ie\Lambda(\vect x)}{\h c}}\ket a.
+		\]
+		Since $U$ is a unitary operator, we can form
+		\[
+			UHU^{-1}U\ket a = E_aU\ket a
+		\]
+		which shows that $U\ket a=  \ket{a'}$ is an eigenket of the unitary transform of $H$, $UHU^{-1}$. Since the eigenvalue is in fact 			that of an energy eigenvalue, $E_a$, we can deduce that $H$ and $H'$ are related by
+		\[
+			H' = UHU^{-1}.
+		\]
+		Thus we have shown that unitary equivalent observables have identical spectra! In conclusion we have
+		\[
+			H'\ket{a'} = E_a\ket{a'}.
+		\]
+		Essentially, we have the freedom to choose any gauge in our Hamiltonian since the energy eigenvalues are 
+		invariant under gauge transformations. Being a physical quantity, we expect energy to be gauge invariant in this situation. Now we 
+		can evaluate the eigenvalue of our Hamiltonian as
+		\ba
+			H\ket{E_n,n,p_z} &=  \blr{\frac{\h e B}{cm}\plr{ N  +\frac{1}{2}}+\frac{1}{2m}\Pi_z^2}\ket{E_n,n,p_z}\\
+			& =  \blr{\frac{\h e B}{cm}\plr{ n  +\frac{1}{2}}+\frac{1}{2m}p_z^2}\ket{E_n,n,p_z}.
+		\ea
+		Using DeBroglie's relationship for momentum, the energy eigenvalues for a charged particle in a uniform magnetic field are given
+		as
+		\[
+			E_{k,n} = \frac{\h^2k^2}{2m} + \pfrac{eB\h}{mc}\plr{n+\frac 12}
+		\]
+		where $p_z = \h k$ is continuous and $n = 0,1,2,3,..$. 
+	\eenum 
+	
+ \eenum
+ 
+ \end{document}

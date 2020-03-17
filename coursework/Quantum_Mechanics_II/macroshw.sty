@@ -1,0 +1,90 @@
+%List of Macros and Packages 
+\ProvidesPackage{macroshw} % Name of package
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage{mathtools} 
+\usepackage{setspace} % Nice spacing package - used in title 
+\usepackage{braket} % Dirac notation
+\usepackage{enumitem} % List environment 
+\usepackage{hyperref} % Links \href{link}{text}
+\usepackage{amssymb}
+\usepackage{graphicx} % For images
+\usepackage{float} % Allows placement of images in floating position
+\usepackage{amsfonts} % mathfrak and mathscr 
+\usepackage{dsfont}
+\usepackage{mathrsfs} % mthscr 
+
+\allowdisplaybreaks %Toggle for align environment to continue to next page or not
+\newcommand{\ds}{\displaystyle} %Displaystyle 
+\newcommand{\plr}[1]{\left(#1\right)} % encloses the argument using stretchable parentheses
+\newcommand{\clr}[1]{\left\{#1\right\}} % encloses the argument using stretchable parentheses
+\newcommand{\blr}[1]{\left[#1\right]} % encloses the argument using stretchable square brackets
+\newcommand{\elr}[1]{\left.#1\right|} % encloses the argument with evaluated at bar
+\newcommand{\pfrac}[2]{\plr{\frac{#1}{#2}}} % enclosed in parentheses
+\newcommand{\bfrac}[2]{\blr{\frac{#1}{#2}}} % enclosed in square brackets
+\newcommand{\benum}{\begin{enumerate}} % begin enumerate
+\newcommand{\eenum}{\end{enumerate}} % end enumerate
+\newcommand{\be}{\begin{equation}} % begin equation
+\newcommand{\ee}{\end{equation}} % end equation
+\def\ba#1\ea{\begin{align*}#1\end{align*}} % begin / end align
+\newcommand{\vect}[1]{\mathbf{#1}} % bold face vector
+\newcommand{\vecth}[1]{\hat{\mathbf{#1}}} % unit bold face vector 
+\newcommand{\h}{\hbar} % Planks constant 
+\newcommand{\del}{\nabla} % Del operator 
+\DeclareMathOperator{\sech}{sech} % Hyperbolic function - not included in math package
+\newcommand{\pdiff}[2][]{\frac{\partial#1}{\partial#2}} % Single partial derivative. First argument optional
+\newcommand{\diff}[2][]{\frac{d#1}{d#2}} % Single derivative. First argument optional
+%%
+\makeatletter 
+\newcommand{\pdifff}[2]{\begingroup 
+  \@tempswafalse\toks@={}\count@=\z@ 
+  \@for\next:=#2\do 
+    {\expandafter\check@var\next\@nil
+     \advance\count@\der@exp 
+     \if@tempswa 
+       \toks@=\expandafter{\the\toks@\,}% 
+     \else 
+       \@tempswatrue 
+     \fi 
+     \toks@=\expandafter{\the\expandafter\toks@\expandafter\partial\der@var}}% 
+  \frac{\partial\ifnum\count@=\@ne\else^{\number\count@}\fi#1}{\the\toks@}% 
+  \endgroup} 
+\def\check@var{\@ifstar{\mult@var}{\one@var}} 
+\def\mult@var#1#2\@nil{\def\der@var{#2^{#1}}\def\der@exp{#1}} 
+\def\one@var#1\@nil{\def\der@var{#1}\chardef\der@exp\@ne} 
+\makeatother % Multiple partial derivatives. Usage: \pdifff{f}{*{2}{x},y}
+%%
+\makeatletter 
+\newcommand{\difff}[2]{\begingroup 
+  \@tempswafalse\toks@={}\count@=\z@ 
+  \@for\next:=#2\do 
+    {\expandafter\check@var\next\@nil
+     \advance\count@\der@exp 
+     \if@tempswa 
+       \toks@=\expandafter{\the\toks@\,}% 
+     \else 
+       \@tempswatrue 
+     \fi 
+     \toks@=\expandafter{\the\expandafter\toks@\expandafter d \der@var}}% 
+  \frac{d\ifnum\count@=\@ne\else^{\number\count@}\fi#1}{\the\toks@}% 
+  \endgroup} 
+\def\check@var{\@ifstar{\mult@var}{\one@var}} 
+\def\mult@var#1#2\@nil{\def\der@var{#2^{#1}}\def\der@exp{#1}} 
+\def\one@var#1\@nil{\def\der@var{#1}\chardef\der@exp\@ne} 
+\makeatother % Multiple derivatives. Usage: \diff{f}{*{2}{x},y}
+\newcommand{\intasphere}{\int\limits_0^{2\pi}\int\limits_0^\pi\int\limits_0^\infty d\phi\, d\theta\,dr\, r^2\sin\theta\,} %Integration over all space in spherical coordinates
+\newcommand{\epo}{\epsilon_0} % Epsilon_0
+\newcommand{\w}{\omega} %Omega
+\newcommand{\kk}{\frac{1}{4\pi\epsilon_0}} % k = 1/4 pi epsilon_0
+\newcommand{\bpm}{\begin{pmatrix}} % Begin p matrix
+\newcommand{\epm}{\end{pmatrix}} % End p matrix
+\newcommand{\bbm}{\begin{bmatrix}} % Begin b matrix
+\newcommand{\ebm}{\end{bmatrix}} % End b matrix
+\newcommand{\bvm}{\begin{vmatrix}} % Begin v matrix (determinant)
+\newcommand{\evm}{\end{vmatrix}} % End v matrix
+\newcommand{\tr}{\text{Tr}}% Trace
+\newcommand{\figg}[2][width =50mm]{\begin{figure}[H]\centering\includegraphics[#1]{#2}\end{figure}} % Insert figure here (floating) with 
+%arguments imagename(2) and width(1)
+\newcommand{\ep}{\epsilon}
+\newcommand{\pd}{\partial}
+
+

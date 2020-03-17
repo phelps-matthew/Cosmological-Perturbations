@@ -1,0 +1,392 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 3\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Sept. 23}
+
+\begin{document}
+\maketitle
+
+\benum
+% 3.2  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item[\textbf{3.2}]
+	\benum
+		% (a)
+		\item
+		Suppose that in a gas-liquid phase transition the latent heat is a constant, that the volume of the liquid is negligible compared 
+		to the volume of the gas, and that the gas may be assumed ideal. Find the liquid-gas coexistence curve.
+		\\
+		\\
+		From the Clausius-Clapeyron equation we have
+		\[
+			\diff[p]{T} = \frac{\Delta q}{T\Delta v}
+		\]
+		where $\Delta q = T(s_{II}-s_I)$ is the latent heat and $\Delta v = v_{II}-v_I$ is the change in volume per particle under a phase
+		transition from gas ($I$) to liquid ($II$). Assuming the latent heat is constant, we set
+		\[	
+			\Delta q = -C.
+		\]
+		The negative sign arises due to heat being released during the transition. 
+		Further, if we assume the liquid volume is negligible in comparison to the gas volume $V_{II} \ll V_I$ we then have
+		\[
+			\Delta v = \frac{V_{II}}{N}-\frac{V_I}{N} \approx -\frac{V_I}{N}.
+		\]
+		Inserting these results into the C.C. equation
+		\[
+			\diff[p]{T} = \frac{CN}{TV_I}
+		\]
+		Since $V_I$ is the volume of the gas, which is assumed to be ideal, we may use the equation of state
+		\[
+			V_I = \frac{NkT}{p}
+		\]
+		and insert this into the C.C. equation to arrive at
+		\[
+			\diff[p]{T} = \frac{Cp}{kT^2}.
+		\]
+		Denoting the constant $\gamma \equiv C/k$, we see the relation
+		\[
+			\frac{dp}{p} = \gamma \frac{dT}{T^2}.
+		\]
+		Integrating both sides,
+		\[
+			\ln p = -\frac{\gamma}{T}+C_1
+		\]
+		or
+		\[
+			p(T) = C_2\exp\blr{-\frac{\gamma}{T}}. 
+		\]
+		\\
+		% (b)
+		\item
+		Find vapor pressure data for water as a function of temperature from, e.g, the \emph{CRC Handbook of Physics and Chemistry} 
+		(or some decent internet site). How good is the function form found in part (a)?
+		\\
+		\\
+		Here is a graph of the vapor pressure vs. temperature for water taken from Wikipedia. For (most) values $T<\gamma$, our result
+		 has the same exponential behavior as in the graph. It appears the critical point lies below $T=\gamma$. 
+		\figg[width=150mm]{hw3_2.png}
+		\eenum
+		
+		\phantom{}
+		\phantom{}
+		
+	
+	
+% 3.3 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{3.3}]
+	When a gas is subject to an external potential energy (per particle) $\Phi(\vect r)$, it may happen that the potential
+	varies little over the length scale in which the gas can find an equilibrium, and so the gas may be taken to behave
+	locally as if there were no confining potential at all. The gas simply has some equilibrium properties that vary as a 
+	function of position.
+	
+	\benum
+		% (a)
+		\item
+		Sketch a local equilibrium argument showing that at fixed temperature the equilibrium condition is
+		\[
+			\mu(\vect r) +\Phi(\vect r) = const.
+		\]
+		Hint: The external potential creates forces on the molecules, so this is really a question of mechanical equilibrium
+		between the forces from pressure and the form of the potential. 
+		\\
+		\\
+		For a system at fixed temperature constrained to a volume with a set number of particles, the Helmholtz free energy
+		$F$ will be at a minimum at thermodynamic equilibrium. If the volume is partitioned into two chambers $V_1$ and $V_2$
+		then the condition for equilibrium becomes
+		\[
+			\mu_1 = \mu_2. 
+		\]
+		For $\mu_1\ne \mu_2$, there will be diffusion of particles across the barrier. However, one can establish equilibrium by
+		applying an external potential equal to the difference between chemical potentials
+		\[
+			\mu_2-\mu_1 = -(\Phi_2-\Phi_1)
+		\]
+		or
+		\[	
+			\mu_2+\Phi_2 = \mu_1+\Phi_1.
+		\]
+		If we now take the chemical and external potentials as functions of position, then the condition for 
+		local equilibrium may be stated as
+		\[
+			\mu(\vect r)+\Phi(\vect r) = C
+		\]
+		for all $\vect r$ in the local neighborhood of some point $\vect r_0$, with $C$ being a constant. As such
+		\ba
+			&\bigg( \mu(\vect r_0 +\epsilon\vecth r)+\Phi(\vect r_0+\epsilon\vecth r)\bigg)  - \bigg(\mu(\vect r_0)+\Phi(\vect r_0) \bigg)\\
+			&= C-C \\
+			&= 0
+		\ea
+		for $-a<\epsilon<a$ where $a$ is some parameter defining locality. Beyond the local range, the total potential of the gas will take 
+		on a different constant value such that the equilibrium properties will vary overall as function of position. 
+		\\
+		\\
+		% (b)
+		\item
+		Suppose the atmosphere is at constant temperature $T$, and is made out of molecules of mass $m$. How does
+		the pressure vary as a function of height? (Expression for the ideal gas chemical potential was obtained in lectures,
+		or in the previous exercise set).
+		\\
+		\\
+		For the atmosphere to be in local equilibrium at constant temperature, we impose the equilibrium condition of part (a) namely
+		\[
+			\mu+mgz = C
+		\]
+		where $z$ denotes the altitude. Note that in the absence of gravity, the chemical potential of the atmosphere is independent
+		of $z$. For an ideal gas, the chemical potential can be derived starting from
+		\[
+			\mu = \frac{G}{N} = \frac{1}{N}\plr{U-TS+PV}.
+		\]
+		The internal energy for an ideal gas is
+		\[
+			U = xNkT+C_1
+		\]
+		where $x=3/2$ or $x=5/2$ for a monatomic or diatomic gas respectively. For the ideal gas entropy we have
+		\[
+			S = Nk(\ln V+x\ln T)+C_2.
+		\]
+		For reasons I'm not yet sure of, we will take 
+		\[
+			C_2 = Nk\ln N
+		\] 
+		such that
+		\ba
+			S &= Nk\ln\pfrac{VT^x}{N} \\
+			& = Nk\ln\pfrac{kT^{x+1}}{P}
+		\ea
+		Substituting these results into $\mu$ and using the ideal gas law we arrive at
+		\[
+			\mu = kT\blr{(x+1)+\ln\pfrac{p}{kT^{x+1}}}+C_1.
+		\]
+		Now imposing the equilibrium condition and solving for $P$ we have
+		\[
+			P(z) = kT^{x+1}\exp\blr{\frac{C_3}{kT}-(x+1)}\exp\blr{-\frac{mgz}{kT}}.
+		\]
+		Since $T$ and $x$ are constants, we may write this in a more suggestive form
+		\[
+			P(z) = P(0)\exp\blr{-\frac{z}{\zeta}}
+		\]
+		where $\zeta = kT/mg$ is the exponential decay constant. 
+		\\
+		\\
+	\eenum
+
+
+% 3.4 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{3.4}]
+	How hot does the air get in the pump when you try to put twice the atmospheric pressure in a bicycle tire at the ambient
+	temperature of $20^\circ$C? Hint: Assume that the compression is reversible (is that a good assumption for a usual hand
+	bicycle pump?) and takes place without exchange of heat with the environment (and this assumption?). Air is a diatomic gas.
+	\\
+	\\
+	\\
+	That the compression is reversible seems reasonable considering the slow rate at which pressure is changed from the limited 
+	compression volume of the hand pump. If the hand pump is plastic, it may be reasonably insulated and thus exchange little
+	heat with the environment as well. 
+	\\
+	\\
+	As a reversible process $dQ = TdS$ and since no heat is exchanged $dS=0$. Alternatively, at equilbirium entropy is at a maximum. If 
+	equilbrium is maintained under a transformation, the entropy cannot increase, thus $dS=0$. The change in entropy as the piston in
+	the pump compresses the air is
+	\[
+		\Delta S = Nk\blr{\ln \frac{V}{V_0}+x\ln \frac{T}{T_0}} = 0.
+	\]	
+	If we assume the air is an ideal diatomic gas, we may express this as
+	\[
+		\ln\pfrac{P_0}{P} +\frac{5}{2} \ln \pfrac{T}{T_0} = 0
+	\]
+	or
+	\ba
+		T&= T_0\pfrac{P}{P_0}^{2/5}\\
+		& = (273.15+20)\plr{2^{2/5}}\\
+		& = 386.814\ \text K\\
+		& = 113.66^\circ\text C
+	\ea
+	The air in the pump increases to a temperature of $113.66^\circ$C? 
+	\\
+	\\
+	\\
+% 3.5 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{3.5}]
+	Liquid quartz, if cooled slowly, crystallizes at a temperature $T_m$ and releases latent heat $\Delta q$. Under more rapid cooling 
+	conditions the liquid is supercooled and becomes glassy.
+	
+	\benum
+		% (a)
+		\item
+		As both phases of quartz are almost incompressible, there is no work input, and changes in internal energy satisfy 
+		$dE = TdS+\mu dN$. Use the extensivity connection to obtain the expression for $\mu$ in terms of $E,T,S$ and $N$. 
+		\\
+		\\
+		Starting with the differential form of $E$
+		\[
+			dE = TdS+\mu dN,
+		\]
+		we may construct a potential $F(T,N)$ by the Legendre transformation
+		\[
+			F = E-TS
+		\]
+		such that
+		\[
+			dF = -SdT+\mu dN.
+		\]
+		Being an extensive variable, the potential satisfies
+		\[
+			F(T,\lambda N) = \lambda F(T,N).
+		\]
+		Setting $\lambda = 1/N$, we have
+		\[
+			f(T) = \frac{1}{N} F(T,N).
+		\]
+		If we combine this with
+		\[
+			\plr{\pdiff[F]{N}}_T = \mu 
+		\]
+		we see that
+		\[
+			\mu = f(T) = \frac{1}{N}F(T,N)
+		\]
+		or
+		\[
+			\mu = \frac{1}{N}\plr{E-TS}.
+		\]
+		\\
+		% (b)
+		\item 
+		The heat capacity of crystalline quartz is approximately $C_X = \alpha T^3$, while that of glassy quartz is roughly
+		$C_G = \beta T$, where $\alpha$ and $\beta$ are constants.
+		\\
+		\\
+		Assuming that the third law of thermodynamics applies to both crystalline and glass phases, calculate the entropies of the two
+		phases at temperatures $T\le T_m$.
+		\\
+		\\
+		For a reversible process
+		\[
+			dS = \frac{\delta q}{T}.
+		\]
+		and the heat capacity is
+		\[
+			C_i = \frac{\delta q}{dT},
+		\]
+		thus
+		\[
+			dS = \frac{C_i}{T}dT
+		\]
+		or
+		\[
+			S(T,i) = S(0,i) +\int_0^{T} dT'\ \frac{C_i}{T'}
+		\]
+		where $i$ is variable held constant. Since no work is done by this incompressible system, we need not bother with $i$. 
+		For crystalline quartz,
+		\[
+			S(T) = S(0) + \alpha \frac{T^3}{3} 
+		\]
+		while for glassy quartz
+		\[
+			S(T) = S(0)+\beta T.
+		\]
+		Imposing the third law, that $S\to 0$ as $T\to 0$, we see that $S(0) =0$ for either phase. Thus
+		\[
+			S_X(T) = \alpha \frac{T^3}{3};\quad
+			S_G(T) = \beta T
+		\]
+		\\
+		% (c)
+		\item
+		At zero temperature, the local bonding structure is similar in glass and crystalline quartz, so that they have approximately
+		the same internal energy $E_0$. Calculate the internal energies of both phases at temperatures $T\le T_m$. 
+		\\
+		\\
+		From the Legendre transformation defined earlier, we may express the internal energy as
+		\[
+			E = TS+\mu N. 
+		\]
+		Inserting the appropriate entropies, we have
+		\[
+			E_X = \alpha \frac{T^4}{3}+\mu_X N
+		\]
+		\[
+			E_G = \beta T^2 + \mu_G N.
+		\]
+		If the chemical potentials (bonding structure) are similar at $T=0$, we see that the energies are approximately equal 
+		at $T=0$. If we keep $N$ fixed from $T=0 \to T_m$ and vary the temperature (entropy is a function of temperature), 
+		we may write the energies as 
+		\[
+			E_X = \alpha \frac{T^4}{3}+E_0
+		\]
+		\[
+			E_G = \beta T^2 + E_0.
+		\]
+		Also note that $N$ must be approximately the same for both phases to have equal energies at $T=0$. 
+		\\
+		\\
+		% (d)
+		\item
+		Use the condition of thermal equilibrium between two phases to compute the equilibrium melting temperature $T_m$
+		in terms of $\alpha$ and $\beta$. 
+		\\
+		\\
+		At $T=T_m$ both phases may exist in equilibrium. At this constant temperature, our potential $F(T,N)$ defined earlier
+		will be at a minimum for each phase individually. If we allow particles to move between phases, then 
+		$dN_X = -dN_G = dN$ so that
+		\[
+			dF = dF_X+dF_G  = \blr{\plr{\pdiff[F_X]{N}}_T-\plr{\pdiff[F_G]{N}}_T}dN = 0.
+		\]
+		Therefore our equilibrium condition is
+		\[
+			\mu_X = \mu_G.
+		\]
+		Expressing $\mu$ as in part (a) we have 
+		\[
+			\frac{E_X-TS_X	}{N_X} = \frac{E_G-TS_G}{N_G}.
+		\]	
+		If we start with an equal number of $N$ particles before reaching melting temperature, then $N_X=N_G$ and 
+		we can use the energy in its $E_0$ form 
+		\[
+			 \alpha \frac{T^4}{3}+E_0-\alpha \frac{T^4}{3} = \beta T^2 + E_0 -\beta T^2.
+		\]
+		This quantity seems to define a coexistence curve that holds for all $T$. To find the melting point, I guess
+		we need to find the temperature at which energies are equal? 
+		\\
+		\\
+		 \emph{How is one supposed to calculate the critical point?}
+		 \\
+		
+		Using
+		\[
+			E_X(T) = E_G(T)
+		\]
+		we have for the melting point
+		\[
+			T^2_m = \frac{3\beta}{\alpha}.
+		\]
+		% (e)
+		\item
+		Compute the latent heat $\Delta q$ in terms of $\alpha$ and $\beta$.
+		\\
+		\\
+		Latent heat may be calculated as
+		\[
+			\Delta q = T\plr{\frac{S_X}{N_X}-\frac{S_G}{N_G}}
+		\]
+		Once again assuming $N_X = N_G=N/2$ we have
+		\[
+			\Delta q = 0.
+		\]
+		This is the result for the phase transition between glassy and crystalline. However, I thought we are to find the 
+		latent heat in transitioning from liquid to solid, which would require the entropy of liquid quartz?
+		\\
+		% (f)
+		\item 
+		Is the result in the previous part correct? If not, which of the steps leading to it is most likely to be incorrect?
+		\\
+		\\
+		Part (e) suggests there is no heat required to transition in phase between glassy
+		and crystalline quartz at the melting point. I am having trouble judging the validity of the results
+		since they hinge upon the melting point of part (d). 
+		
+	\eenum
+	 
+\eenum
+\end{document}

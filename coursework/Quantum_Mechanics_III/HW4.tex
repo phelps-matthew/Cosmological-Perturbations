@@ -1,0 +1,196 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 4\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Feb. 15}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item[3.5]
+	In some three-dimensional matrix representation, a density operator reads
+	\[
+		\rho = \frac{1}{14}\bpm 1 & 2 & 3\\ 2 & 4 & 6 \\3 & 6& 9 \epm
+	\]
+	Is this a pure or a mixed state?
+	\\ \\ 	
+	Take the square of $\rho$
+	\[
+		\rho^2 = \bpm \ds \frac{1}{14} &\ds\frac{1}{7} &\ds \frac{3}{14} \\ \\
+		\ds\frac{1}{7} &\ds \frac{2}{7} & \ds\frac{3}{7} \\ \\
+		\ds\frac{3}{14} & \ds\frac{3}{7} & \ds\frac{9}{14}\epm
+		= \frac{1}{14}\bpm 1 & 2 & 3\\ 2 & 4 & 6 \\3 & 6& 9 \epm
+		=\rho
+	\]
+	Hence $\rho^2 = \rho \Rightarrow$ pure state. \\ \\
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[3.8]
+	
+	The \emph{no-cloning theorem}. In a quantum cloner, one starts with the system $S$ in an arbitrary
+	and possibly unknown state $\ket\psi$, prepares another identical system $S$ in a reference state
+	$\ket r$, and applies a unitary transformation $U$ in such a way that the copy of the system also
+	ends up in the state $\ket\psi: U\plr{ \ket\psi \otimes \ket r}  = \ket\psi \otimes \ket\psi$. But there is a problem:
+	Show that, if the dimension of the Hilbert space of the system $S$ is at least two, such a unitary
+	transformation does not exist. This problem presents all sorts of subtleties. To avoid these, assume that
+	all states you consider are normalized to unity. 
+	\\ \\
+	Assuming there exists a unitary operator $U: U\plr{ \ket\psi \otimes \ket r}  = \ket\psi \otimes \ket\psi$ for all 
+	normalized states $\ket \psi,\ket r \in \mathscr H$, let us take two arbitrary states $\ket \psi, \ket \phi \in \mathscr H$ and 		form two joint states $\ket \psi \ket r, \ket \phi\ket r \in \mathscr H \otimes \mathscr H$. Now take the inner products
+	of these joint states
+	\ba
+		\bra r \bra \psi \ket \phi \ket r &= \braket{\psi|\phi} \\
+		& = \bra r \bra \psi UU^\dag \ket \phi \ket r \\
+		& = \bra \psi \bra \psi \ket \phi \ket \phi \\
+		& = \braket{\psi|\phi}^2
+	\ea
+	So for two arbitrary states we find
+	\[
+			\braket{\psi|\phi} =  \braket{\psi|\phi}^2
+	\]
+	and taking the magnitudes ($|z^n| = |z|^n$)
+	\[
+		|\braket{\psi|\phi}| = |\braket{\psi|\phi}|^2
+	\]
+	This equality holds for $|\braket{\psi|\phi}| = 0$ or $|\braket{\psi|\phi}| = 1$, which implies they are orthogonal 
+	or the same state, respectively. If the dimension of the Hilbert space is at least $N=2$, then the inner
+	product of any two \emph{arbitrary} states $\ket \psi$ and $\ket \phi$ cannot be restricted to values of 
+	zero or unity, i.e. $0\le |\braket{\psi|\phi}| \le 1$. Thus, there cannot exist a unitary transformation that can
+	copy an arbitrary system. 
+	\\ \\
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[3.11]
+	Given $N$ orthonormal vectors $\{ \ket n \}$, let us compose of an equal mixture of them according to 
+	$\rho = \frac{1}{N} \sum_n \ket n\bra n$. Likewise define a density operator as a mixture of some other orthonormal
+	vectors $\{ \ket\alpha \}$, $\rho_\alpha = \sum_\alpha p_\alpha \ket\alpha \bra\alpha$, with
+	$p_\alpha >0$. The question is, when is $\rho = \rho_\alpha$?
+		
+	\benum
+	% (a)
+	\item
+	Show that if $\rho =\rho_\alpha$ is to hold true, the vectors $\{ \ket n\}$ and $\{ \ket\alpha \}$ must span 
+	the same subspace. There are therefore equally many of them. From now on, consider only this subspace as if 
+	it were the entire Hilbert space.
+	% (b)
+	\item
+	Suppose $\{ \ket n\}$ is a given orthonormal basis. We know that $\sum_n \ket n \bra n =1$ is a possible
+	``resolution" of the unit operator. Conversely, show that this is the only way to represent the unit operator as an 
+	expansion of the dyads $\ket n \bra m$ made of the vectors $\ket n$. 
+	% (c)
+	\item 
+	Characterize completely the mixtures $\rho_\alpha$ that reproduce the density operator $\rho$. 
+	\\ \\ 
+	\eenum
+	\benum
+	% (a)
+	\item
+	Denote the space spanned by $\{ \ket n\}$ as $\mathscr S$ and assume $\rho = \rho_\alpha$. Take an arbitrary vector 		from the orthogonal compliment space $\ket \psi \in \mathscr S_\perp$ and form the expectation value
+	\[
+		\braket{\psi|\rho|\psi} = \frac{1}{N} \sum_n |\braket{\psi|n}|^2 = \sum_\alpha p_\alpha |\braket{\psi|\alpha}|^2
+	\]
+	From orthogonality, $\braket{\psi|n} = 0$ for all $n$ and thus
+	\[
+		\sum_\alpha p_\alpha |\braket{\psi|\alpha}|^2 = 0.
+	\]
+	Since $\ket \psi$ is an arbitrary vector (orthogonal to $\ket\alpha$), each $\alpha$ term must vanish independently
+	\[
+		\braket{\psi|\alpha} = 0.
+	\]
+	This can only be true if $\{ \ket\alpha \}$ belongs to the orthogonal compliment of $\mathscr S_\perp$, i.e. belongs
+	to the space (or subspace) of $\mathscr S$. This implies that 
+	\[
+		\dim( \{ \ket\alpha \}) \le \dim(\{ \ket n\}).
+	\]
+	It remains to show that the spaces of $\{ \ket n\}$ and $\{ \ket \alpha \}$ are of the
+	same dimensionality.
+	\\ \\
+	Assume $\{ \ket \alpha \} \in \mathscr S_1$ where $\mathscr S_1$ is a subspace of $\mathscr S$
+	such that
+	\[
+		\dim \mathscr S_1 < \dim \mathscr S
+	\]
+	Now take a vector $\ket \phi \in \mathscr S$ that also lies in the orthogonal complement to $\mathscr S_1$ and
+	form the inner product
+	\[
+		\braket{\phi|\rho|\phi} = \frac{1}{N} \sum_{n} |\braket{\phi|n}|^2 = \braket{\phi|\rho_\alpha|\phi} = 0.
+	\]
+	Since $\sum_n |\braket{\phi|n}|^2 > 0$ for $\ket \phi \in \mathscr S \cap \mathscr S_1^\perp$ and since $\ket \phi$ 
+	is orthogonal to all $\ket \alpha$, we have a contradictory result. 
+	Hence we must have
+	\[
+		\dim \mathscr S_1 = \dim \mathscr S,
+	\]
+	and because both $\rho$ and $\rho_\alpha$ are composed of orthonormal vectors, they must span the entire space
+	so
+	\[
+		\mathscr S_1 = \mathscr S.
+	\]
+	\\ \\
+	
+	% (b)
+	\item
+	The most general expansion of dyads in a space $\mathscr H$ spanned by finite orthonormal basis $\{\ket n\}$ is
+	\[
+		A = \sum_{n.m} c_{nm} \ket n\bra m.
+	\]
+	If this operator were to act as the identity, it must have the property of $AA = A$:
+	\ba
+		A^2 &= \sum_{n,m} c_{nm}\ket n\bra m\plr{\sum_{n',m'} c_{n'm'}\ket{n'} \bra{m'}}\\
+		& = \sum_{n,m,n',m'} c_{nm}c_{n'm'}\ket n\bra{m'} \delta_{m,n'} \\
+		& = \sum_{n,m,m'} c_{nm}c_{mm'}\ket n\bra{m'} \\
+		& \overset{!}= \sum_{n.m} c_{nm} \ket n\bra m
+	\ea
+	The last equality can only be satisfied if
+	\[
+		c_{mm'} = \delta_{m,m'} \Rightarrow c_{nm} = \delta_{n,m}.
+	\]
+	Substituting this coefficient relation into A, we have
+	\[
+		A = \sum_{n,m} \delta_{n,m} \ket n\bra m = \sum_n \ket n\bra n.
+	\]
+	We may confirm that the result is indeed the unit operator: $A\ket\psi = \ket\psi$ for any $\ket \psi \in \mathscr H$. 
+	\\ \\ \\
+	\item 
+	% (c)
+	Given that $\{ \ket n_i \}$ and $\{ \ket \alpha_i \}$ are two (equal dimension) orthonormal sets that span $\mathscr H$, 		we may use the identity operator to expand one in terms of the other
+	\[
+		\ket n_i = \plr{ \sum_j \ket{\alpha_j}\bra{\alpha_j}}\ket{n_i} = \sum_j \braket{\alpha_j|n_i}\ket{\alpha_j} =
+		\sum_j c_{ij} \ket{\alpha_j}.
+	\]
+	The coefficients $c_{ij}$ form a matrix. To see its form, let's take the inner product
+	\[
+		\braket{n_{i'}|n_i} = \sum_j c^*_{ji'}\bra{\alpha_j}\plr{ \sum_k c_{ik} \ket{\alpha_k}} 
+		= \sum_{j,k} c^*_{ji'}c_{ik}\delta_{j,k} = \sum_j c^*_{ji'}c_{ij}
+	\]
+	thus we find
+	\be\label{1}
+		 \sum_j c_{ij}c^*_{ji'} = \delta_{i,i'}.
+	\ee
+	If we denote the matrix $(U)_{ij} = c_{ij}$ then \eqref 1 represents
+	\[
+		U^\dag U = 1.
+	\]
+	Together, with the adjoint of \eqref 1, we verify that $U$ is unitary
+	\[
+		UU^\dag = U^\dag U = 1.
+	\]
+	Equating the two density operators
+	\[
+		\rho = \frac{1}{N} \sum_i^N \ket{n_i}\bra{n_i} = 
+		\frac{1}{N}\sum_{i,j,j'}^N u_{ij}u^*_{j'i}\ket{\alpha_j}\bra{\alpha_{j'}} = \frac{1}{N}\sum_i^N \ket{\alpha_i}\bra{\alpha_i}\
+		\overset{!}= \sum_i^N p_i \ket{\alpha_i}\bra{\alpha_i} = \rho_\alpha.
+	\]
+	In summary, we see that the two density operator expansions are related by unitary matrix
+	\[
+		\ket{n_i} = U\ket{\alpha_i} = \sum_{j} (U)_{ij}\ket{\alpha_j} = \sum_j \braket{\alpha_j|n_i}\ket{\alpha_j}
+	\]
+	and that probabilities are evenly dispersed
+	\[
+		p_i = \frac{1}{N}.
+	\]
+	\eenum
+	\eenum
+
+\end{document}

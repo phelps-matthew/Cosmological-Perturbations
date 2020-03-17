@@ -1,0 +1,315 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{General Relativity\\HW 6}
+\author{Matthew Phelps}
+\date{Due: Nov 29}
+
+\begin{document}
+\maketitle
+
+\benum
+% 1------------------------------------------------------------------------------------------------------------------------
+\item
+If we are to try to describe relativistic gravity in terms of a scalar function, one that could then be compared to that of Newtonian gravity, let form a general metric in terms of such a scalar function as
+\[
+	d\tau^2 = \exp\pfrac{2\phi}{c^2}dt^2 - dl^2.
+\]
+Here the spatial part $dl$ may also include non-trivial metric components, but our focus is upon $g_{00}$ only, as it is the dominant term that appears in the non-relativistic limit of the Einstein field equations, i.e. the Newtonian Poisson equation, as $T_{00} = \rho$ implies the usage of $\del^2 g_{00} = -8\pi GT_{00}$. 
+\\ \\
+For the Schwarzchild metric,
+\[
+	\exp\pfrac{2\phi}{c^2} = \plr{ 1-\frac{2GM}{rc^2}}
+\]
+and thus
+\[
+	\phi_S  = \frac{c^2}{2} \ln\plr{1-\frac{2GM}{rc^2}}.
+\]
+We define this $\phi$ as the general relativistic potential. If $\phi = 0$, we recover Minkowski space. Now, we may expand the potential as a series in $-2GM/rc^2$
+\[
+	 \ln\plr{1-\frac{2GM}{rc^2}} = -\frac{2GM}{rc^2} - \frac12 \pfrac{2GM}{rc^2}^2 - \frac13 \pfrac{2GM}{rc^2}^3 - ...
+\]
+and so the potential expansion is 
+\[
+	\phi = -\frac{GM}{r} - \frac{1}{c^2}\pfrac{GM}{r}^2-\frac43\frac{1}{c^4} \pfrac{GM}{r}^3-...
+\]
+We see that the first order approximation to the Schwarzchild metric is given by the Newtonian potential
+\[
+	\phi_{N} = -\frac{GM}{R}.
+\]
+However, as $GM/r$ becomes larger, i.e. for strong gravitational fields, the Newtonian potential begins to fall short of effectively describing gravitation. In such a regime, we must have the full Schwarzchild potential given by the logarithm. \\ \\
+The leading order difference between the Newtonian and Schwarzchild potential is the quadratic term, so
+\[
+	\frac{|\phi_N-\phi_S|}{\phi_N} =\frac{(GM/rc^2)^2}{GM/rc^2} = \frac{GM}{rc^2} =0.01.
+\]
+This $1\%$ difference occurs at a radius of 
+\[
+	r= 100GM/c^2.
+\]
+\\ \\
+The min and max radii are
+\[
+	r_{min} = 2MG/c^2,\qquad r_{max} = 100MG/c^2.
+\]
+The volume in which stars may occupy is then
+\[
+	\frac43 \pi (r_{max}^3-r_{min}^3) = \frac43\pi[ (100MG/c^2)^3-(2MG/c^2)^2\approx \frac43\pi 10^6MG/c^2
+\]
+For a star of $M = 10^6 M_{\odot}$,
+\[
+	V_1 = 1.34\times 10^{34} \text m^3
+\]
+while for $M = 10^9 M_{\odot}$
+\[
+	V_2 = 10^9 V_1.
+\]
+Dividing these volumes by the radius of a normal star $r_{\odot} = 10^10 \text m$,
+we have as the number of stars that could fill such a volume
+\[
+	\frac{V_1}{V_{\odot}} = 3200 \approx 10^3\ \text{stars}
+\]
+\[
+	\frac{V_2}{V_{\odot}} =  10^9 \frac{V_1}{V_{\odot}}\approx 10^{12} \ \text{stars}.
+\]
+% 2------------------------------------------------------------------------------------------------------------
+\item 
+\benum
+\item
+% a
+Schwarzchild metric:
+\[
+	d\tau^2 = \plr{ 1-\frac{2MG}{r}}dt^2-\plr{ 1-\frac{2MG}{r}}^{-1}dr^2 - r^2 d\theta^2 - r^2\sin^2\theta d\phi^2
+\]
+For circular orbit $dr = d\theta = 0$, and we may choose coordinates such that the plane of precession has $\sin^2\theta = 1$. The remaining metric factors are
+\[
+	g_{00} = -\plr{1-\frac{2MG}{r}},\qquad g_{\phi\phi} = r^2.
+\]
+As we seek to integrate over one period, we need to relate $d\phi$ to $dt$. This can be accomplished by
+\be
+	\frac{d\phi}{d\tau}\frac{d\tau}{dt} = \frac{U^\phi}{U^0}.
+\ee
+Defining angular momentum $L\equiv U_\phi$ and energy $E \equiv -U_0$, (1) is
+\be
+	\frac{d\phi}{d\tau}\frac{d\tau}{dt}=\frac{p^\phi}{p^0} = \frac{L}{E}\frac{g^{\phi\phi}}{-g^{00}} = \frac{L}{E}\plr{\frac{1}{r^2\plr{1-2M/R}}}.
+\ee
+To determine $L/E$, we may use the energy relation 
+\be
+	g_{\mu\nu}p^\mu p^\nu = -m^2.
+\ee
+For the moment we generalize (3) to include radial motion - this will be useful to find orbital conditions. (3) yields an equation for $dr/d\tau$
+\be
+	\pfrac{dr}{d\tau}^2 = E^2- \plr{1-\frac{2M}{r}}\plr{1+\frac{L^2}{r^2}}
+\ee
+This equation looks quite similar to the total energy in a classical circular orbit, but here with effective potential
+\[
+	V(r) = \plr{1-\frac{2M}{r}}\plr{1+\frac{L^2}{r^2}}.
+\]
+For a stable circular orbit, we must have $E^2 = V$ and we must be at a minimum of $V(r)$, so
+\[
+	\frac{d}{dr}V(r)= 0,\qquad \frac{d^2}{dr^2}V(r) >0.
+\]
+This occurs at 
+\[
+	r = \frac{L^2}{2M}\plr{1+\sqrt{1-\frac{12M^2}{L^2}}},
+\]
+or in terms of $L$
+\be
+	L^2 = \frac{Mr}{1-3M/r}.
+\ee 
+Finally, using (4) and (5) we may solve for $L/E$ and substitute this into (2)
+\be
+	\frac{d\phi}{dt} = \pfrac{M}{r^3}^{1/2}.
+\ee
+Now we are able to integrate over one full period
+\ba
+	\tau &= \int d\tau = \int_0^{2\pi} \blr{ \plr{1-2M/r}dt^2-r^2d\phi^2}^{1/2}\\
+	&=  2\pi\blr{ \plr{1-2M/r}\frac{r^3}{M}-r^2}^{1/2}\\
+\ea
+For $r=10M$ this is
+\[
+	\tau = 20\pi M\sqrt 7.
+\]
+\item
+% (b)
+For a distant observer, the time elapsed between orbits is just the coordinate time $dt$. From (6)
+\[
+	dt = \pfrac{r^3}{M}^{1/2}d\phi
+\]
+and so, at $r=10M$, this is
+\[
+	t = 2\pi \sqrt{ 10^3 M^2} = 20\pi M\sqrt{10}.
+\]
+\item
+% (c)
+For another observer at rest but at the same orbtial radius, $d\phi =0$ and its proper time interval is given as
+\[
+	\tau = \int d\tau = \int dt\plr{1-\frac{2M}{r}}^{1/2}.
+\]
+Here $d\tau$ represents time oberserved in such a rest frame, while $dt$ represents the coordinate time as measured by a distant observer. However, from part (b) we know exactly that the coordinate time elapsed was $t = 20\pi M\sqrt{10}$: this serves as our integration bounnds.
+\[
+	\tau = \int_0^{20\pi M\sqrt{10}} dt \plr{1-\frac{2M}{r}}^{1/2} = 20\pi M \sqrt{10\pfrac45} = 40\pi \sqrt 2.
+\]
+\eenum
+% 3------------------------------------------------------------------------------------------------------------
+\item 
+\benum
+\item
+% (a)
+For a particle moving only radially, we may use (4) to find ($G=1$ units)
+\[
+	\frac{dr}{d\tau} = \sqrt{E^2-\plr{1-\frac{2M}{r}}}.
+\]
+To find the total proper time elapsed we have
+\be
+	\tau = \int d\tau = \int dr \blr{ E^2 - \plr{1-\frac{2M}{r}}}^{-1/2}
+\ee
+Rescaling this as $r' = r/M$ and for $E = 0.95$ we have
+\[
+	\tau =M \int_2^3 dr'\blr{E^2-\plr{1-\frac{2}{r'}}}^{-1/2} = 1.19M.
+\]
+\item 
+% (b)
+Using (7) for $0$ to $2M$, we have
+\[
+	\tau = 1.37M.
+\]
+Although the distance is twice as far, the rate at which time elapses increases towards the center of the black hole. 
+\item
+% (c)
+From earlier, 
+\[
+	U^r = \frac{dr}{d\tau} = \sqrt{E^2-\plr{1-\frac{2M}{r}}}
+\]
+and we also have
+\[
+	U^0 = \frac{dt}{d\tau} = g^{00}(-U_0) = \plr{1-\frac{2M}{r}}^{-1}E,
+\]
+with the other components vanishing for radial motion. At $r = 2.001 M$, these evaluate to
+\[
+	U^r = 0.95,\qquad U^0 = 1900.95.
+\]
+We see that an infinite coordinate time elapses when the particle finally reaches the event horizon. \\ \\
+\item
+% (d)
+To find the total redshift observed by a distant observer we must find the shift due to the doppler effect from the radial motion, as well as the graviational redshift due to spacetime curvature.\\
+\\
+The doppler shift is given by 
+\[
+	\frac{\lambda_o}{\lambda_e} = \pfrac{1+v}{1-v}^{1/2}
+\]
+where $\lambda_o$ is the observed wavelength, $\lambda_e$ is emitted, and $v$ is the receding relative (radial) velocity. These are $c=1$ units. From (c) we have 
+\[
+	v=\frac{dr}{dt} = 0.95/1900.95 = 5\times 10^{-4}\text m
+\]
+thus
+\[
+	\frac{\lambda_o}{\lambda_e} = 1.0005.
+\]
+Meanwhile, the gravitational redshift is given by
+\[
+	\frac{\lambda_o}{\lambda_e}  = \pfrac{g_{00}(x_o)}{g_{00}(x_e=2.001MG)}^{1/2}
+\]
+If we take our observation point to be far enough away that we reside in Minkowski space, then the above is
+\[
+	\frac{\lambda_o}{\lambda_e} = \plr{1-\frac{2M}{r_e}}^{-1/2} = 44.73.
+\]
+In term of the redshift then, we have
+\[
+	z = z_{\text{doppler}}+z_{\text{graviation}} = 0.0005+43.73 \approx 44.
+\]
+The gravitational redshift is extreme, but according to what we saw earlier (infinte time dilation at event horizon), this seems reasonable given a radius very near the event horizon. 
+\\
+\eenum
+% 4------------------------------------------------------------------------------------------------------------
+\item 
+The equation for geodesic deviation is
+\[
+	\frac{D^2\xi^\lambda}{D\tau^2} = R^\lambda_{\nu\mu\kappa}\xi^\mu U^\nu U^\kappa.
+\]
+If we choose a coordinate system that is always locally inertial, i.e. freely falling, then we know that $g_{\mu\nu}=\eta_{\mu\nu}$ and its first derivatives vanish and hence the affine connections also vanish. This means that in such a frame we may rewrite the deviation equation with covariant derivatives reducing to ordinary derivatives
+\[
+	\frac{d^2\xi^\lambda}{d\tau^2} = R^\lambda_{\nu\mu\kappa}\xi^\mu U^\nu U^\kappa.
+\]
+We should also note that in the local inertial frame, we may specifically choose among our Lorentz frames ie where the particle is at rest, that is
+\[
+	U^\alpha = U^0 = 1.
+\]
+In addition, we start in a frame where we are located intially at $\xi^\lambda = \xi^r$, all other components vanishing. \\ \\
+The condition on the four-velocity implies
+\[
+	d\tau = cdt,
+\] 
+and thus our deviation equation simplies to (using $\xi^\lambda = \xi^r\equiv \xi$)
+\[
+	\frac{d^2\xi^\lambda}{dt^2} = R^\lambda_{0r0}\xi c^2.
+\]
+Since the tidal force in the radial direction will be the largest, we restrict our attention to only this component
+\[
+	\frac{d^2\xi}{dt^2} = R^r_{0r0}\xi c^2.
+\]	
+Now for the Schwarzchild metric, we may calculate the Riemann tensor component
+\[
+	R^r_{0r0} = \frac{2MG}{r^3}
+\]
+and so we finally have an equation for the radial tidal force acting on a body at a radius $r$ from the center of a blackhole
+\[
+	\frac{d^2\xi}{dt^2} =  \frac{2MG}{r^3}\xi .
+\]	
+At the horizon $r = 2MG/c^2$, the force is
+\[
+	F = \frac{c^6}{4M^2G^2}\xi .
+\]
+For simplicity, let us take $\xi = 1\text m$, about half the height of a human. Equating this with the limiting force gradient
+\[
+	400= \frac{c^6}{4M^2G^2}
+\]
+or
+\[
+	M^2 = \frac{c^6}{1600 G^2}.
+\]
+This gives
+\[
+	M = 1.01\times 10^{34} \approx 5085 M_{\odot} \approx (10^3\text-10^4) M_{\odot}.
+\]
+\\ \\
+% 5------------------------------------------------------------------------------------------------------------
+\item 
+\benum
+\item 
+% a
+In geometrized units, we have $G=1$ and $c=1$. To convert from kg to m, we multiply by a factor of $G/c^2$. In these units
+\[
+	M_{\odot} = 1485\text m,\qquad \omega = 2\pi/T = 2.9\times 10^{-6}/c = 9.67 \times 10^{-15}\text m^{-1}
+\]
+The angular momentum is then
+\[
+	J = I\omega = \frac25 M_{\odot}R_{\odot}^2 = 2.814 \times 10^{6}\text m{}^2
+\]
+\item
+% (b)
+\[
+	a = J/M = 1894.95\text m
+\]
+\[
+	a/M = 1.276 \ >1
+\]
+No black hole.
+\item
+% (c)
+With the angular momentum of the electron arising solely from is quantum mechanical spin 1/2 angular momentum, we have
+\[
+	J = \h/2 = 2.612/2 \times 10^{-70} = 1.306 \times 10^{-70} \text m^2
+\]
+\[
+	m_e = 6.764\times 10^{-58}\text m
+\]
+\[
+	a/m_e = J/m_e^2 = 2.855 \times 10^{44} \ \gg 1.
+\]
+Need much larger mass or less angular momentum to become a black hole. 
+\eenum
+\eenum
+
+
+
+\end{document}

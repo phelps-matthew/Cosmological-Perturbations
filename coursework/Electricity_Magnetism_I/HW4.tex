@@ -1,0 +1,298 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Electrodynamics I\\HW 4\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: April 7}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ------------------------------------------------------------------------------------------------------------------------------------
+
+	\item
+	The center of a conducting sphere, carrying a charge $q$, lies on the plane boundary between two infinite homogeneous dielectrics with
+	permittivities $\epsilon_1$ and $\epsilon_2$. Determine the potential $\phi$ of the electric field and the charge distribution $\sigma$ on 
+	the sphere. 
+	\\
+	\\
+	Lets orient the dielectrics such that we have $\epsilon_1$ for $z\ge 0$ and $\epsilon_2$ for $z\le 0$. Since our dielectric is isotropic and 
+	uniform, then the induced polarization may be written as
+	\[
+		\vect P  = \epo \chi_e \vect E
+	\]
+	and the electric displacement is therefore
+	\[
+		\vect D = \epsilon_0 \vect E+\vect P = \epsilon \vect E=-\epsilon\del \Phi.
+	\]
+	Now we apply Gauss's law around the sphere:
+	\[
+		\oint \vect D\cdot d\vect S = q_f = q
+	\]
+	\[
+		 \vect D_1 \int_0^{\frac{\pi}{2}}\int_0^{2\pi} d\theta\,  d\phi\, r^2\sin\theta+\vect D_2 \int_{\frac{\pi}{2}}^\pi \int_0^{2\pi} 
+		d\theta\,  d\phi\, r^2\sin\theta = q
+	\]
+	\[
+		\vect D_1 +\vect D_2 = \frac{q}{2\pi r^2}.
+	\]
+	Alternatively, we could solve for the electric field since $\epsilon \vect E = \vect D$ to find
+	\[
+		\vect E = \frac{q}{2\pi(\epsilon_1+\epsilon_2)r^2}
+	\]
+	and then separately we have
+	\[
+		\vect D_1 = \frac{\epsilon_1 q}{2\pi(\epsilon_1+\epsilon_2)r^2}
+	\]
+	\[
+		\vect D_2 = \frac{\epsilon_2 q}{2\pi(\epsilon_1+\epsilon_2)r^2}.
+	\]
+	To find the potential, we can take the line integral setting $\Phi(\infty) = 0$:
+	\[
+		\Phi(r) = \int _r^\infty -\vect E\cdot d\vect l  = \int_r^\infty dr \, \frac{-q}{2\pi(\epsilon_1+\epsilon_2)r^2} =  
+		\frac{1}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{r}.
+	\]
+	Of course, the potential within in the sphere takes the value of the potential at the surface thus
+	\[
+		\Phi(r) = \begin{cases}\ds \frac{1}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{R}&\quad(r\le R)\\ \\
+		\ds \frac{1}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{r}&\quad (r \ge R)
+		\end{cases}
+	\]
+	Before we find the charge distribution on the sphere, note that the surface charge at the plane interface of $\epsilon_1$ and $\epsilon_2$ 	is zero as the polarization is perpendicular to the normal
+	\[
+		\sigma_b = \vect P\cdot \vecth n = 0 .
+	\]
+	Now for the charge distribution on the sphere, we must find both the free and bound surface charge density. The total free 
+	charge will simply be $q$, but there is additional bound charge at the interface of the sphere due to the polarization of the two 	
+	dielectrics. Using $\vect D\cdot \vecth n = \sigma_f$ we have
+	\[
+		\sigma_f = \begin{cases} \ds \frac{\epsilon_2 }{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{R^2}&\quad(z\le 0) \\ \\
+		\ds \frac{\epsilon_1 }{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{R^2}&\quad(z\ge 0)
+		\end{cases}
+	\]
+	To find the bound charge we use $\vect P\cdot \vecth n = \sigma_b$. Calculating $\vect P$ as
+	\[
+		\vect P = \vect D -\epsilon_0\vect E
+	\]
+	we have
+	\[
+		\vect P_1 = \frac{\epsilon_1-\epo}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{r^2}
+	\]
+	\[
+		\vect P_2 = \frac{\epsilon_2-\epo}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{r^2}.
+	\]
+	Therefore we find our bound charge distribution to be
+	\[
+		\sigma_b = \begin{cases} \ds \frac{-(\epsilon_2-\epo) }{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{R^2}&\quad(z\le 0) \\ \\
+		\ds \frac{-(\epsilon_1-\epo)}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{R^2}&\quad(z\ge 0)
+		\end{cases}
+	\]
+	(notice that $\vecth n$ of the dielectric points in the $-\vecth r$ direction). Some important details to remark on is that 
+	the total free charge surface density is equal to the free charge $q$ as expected:
+	\[
+			4\pi R^2 \sigma_f = q
+	\]
+	and that the total charge distribution is uniform on either hemisphere:
+	\[
+		\sigma_f+\sigma_b\quad (z\le 0)\  =\  \sigma_f+\sigma_b\quad(z\ge 0).
+	\]
+	This offers explanation as to why the potential is the same in either hemisphere. In summary, the total surface charge distribution
+	on the sphere is
+	\[
+		\sigma = \sigma_f+\sigma_b =  \frac{\epo}{2\pi(\epsilon_1+\epsilon_2)}\frac{q}{r^2}.
+	\]
+% #2--------------------------------------------------------------------------------------------------------------------------------------
+
+	\item 
+	A spherical capacitor whose electrodes have radii $a$ and $b$ is filled with a dielectric whose permitivity is given by 
+	$\epsilon(r) = \epsilon_c(a/r)^2$, where $r$ is the distance from the center and $\epsilon_c$ is constant. Calculate
+	the capacitance of the system. 
+	\\
+	\\
+	Using Gauss's law, the electric displacement outside the inner spherical shell can be given as 
+	\[
+		\oint \vect D\cdot d\vect S = q_f = q.
+	\]
+	Using $\vect D(r) = \epsilon(r)\vect E(r)$ we have
+	\[
+		\oint \vect \epsilon(r)\vect E(r)\cdot d\vect S = q.
+	\]	
+	Since the electric field is radially symmetric we have
+	\[
+		 \vect E = \frac{1}{4\pi r^2}\frac{q}{\epsilon(r)}\vecth r.
+	\]
+	To find the potential between the plates, we integrate 
+	\[
+		\int_b^a -\vect E\cdot d\vect l  = \Phi_b-\Phi_a
+	\]
+	\[
+		-\frac{q}{4\pi a^2\epsilon_c} \int_b^a dr\, \frac{r^2}{r^2} = (b-a)\frac{q}{4\pi a^2\epsilon_c}
+	\]
+	Now using $C = q/\Phi$ we have
+	\[
+		C = \frac{4\pi a^2\epsilon_c}{b-a}
+	\]
+	\\
+	\\
+	
+% #3 -------------------------------------------------------------------------------------------------------------------------------------------
+
+	\item
+	A point charge $q$ is placed at a distance $a$ from the plane, separating two infinite homogeneous dielectrics with permittivities 
+	$\epsilon_1$ and $\epsilon_2$. Determine the potential $\phi$.
+	\\
+	Hint: The method of images may be used to construct potentials in both dielectrics.
+	\\
+	\\
+	Within the dielectric mediums, we must find the laplace and poisson equations appropriate for a polarizable material, i.e.
+	\[
+		\del\cdot \vect D = \epsilon_1\del\cdot\vect E = -\epsilon_1\del^2\Phi = q\quad (z>0)
+	\]
+	\[
+		\del\cdot \vect D = \epsilon_2\del\cdot\vect E = -\epsilon_2\del^2\Phi = q\quad (z<0)
+	\]
+	subject to the boundary conditions
+	\[
+		(\vect D_2-\vect D_1)\cdot \vecth n_{21} = \sigma_f 
+	\]
+	\[
+		(\vect E_2-\vect E_1)\times \vecth n_{21} = 0.
+	\]
+	These boundary conditions follow from Gauss's law for $\vect D$ and the zero curl of $\vect E$. For this problem, such boundary 
+	conditions can be met by placing image charges in the allowed (opposite) regions and solving the potential in each
+	half space separately. The free surface charge density $\sigma_f$ should be zero for our configuration. Starting with the first region $	(z>0)$ the natural starting point is to place the image charge $q'$ at $z=-a$ to form a potential of
+	\[
+		\Phi_1(z>0) = \frac{1}{4\pi\epsilon_1}\plr{\frac{q}{R_1}+\frac{q'}{R_2}}
+	\]
+	where in cylindrical coordinates
+	\[
+		R_1 = [\rho^2+(a-z)^2]^{1/2};\quad R_2 = [\rho^2+(a+z)^2]^{1/2}.
+	\]
+	Now for $z<0$ where we have no charge, it is simplest to place a charge $q''$ at $z=a$ such that our potential is then
+	\[
+		\Phi_2(z<0) = \frac{1}{4\pi\epsilon_2}\frac{q''}{R_1}.
+	\]
+	To find the magnitudes of these charges, we must find the normal and tangental components of electric field and match our 
+	boundary conditions. Computing the field for $z>0$,
+	\ba
+		\vect E_1 \times \vecth n_{21} = -\del_\rho\Phi_1&= -\elr{\pdiff{\rho}\blr{\frac{1}{4\pi\epsilon_1}
+		\plr{\frac{q}{ [\rho^2+(a-z)^2]^{1/2}}+\frac{q'}{ [\rho^2+(a+z)^2]^{1/2}}}}}_{z=0}\vecth \rho\\
+		& = \frac{2\rho}{4\pi\epsilon_1}\plr{\frac{q}{(\rho^2+a^2)^{3/2}}+\frac{q'}{(\rho^2+a^2)^{3/2}}}\vecth \rho\\
+		& =  \frac{2\rho}{4\pi\epsilon_1}\plr{\frac{q+q'}{(\rho^2+a^2)^{3/2}}}\vecth \rho.
+	\ea
+	Similarly,
+	\[
+		\vect E_2 \times \vecth n_{21} =  \frac{\rho}{4\pi\epsilon_2}\plr{\frac{q''}{(\rho^2+a^2)^{3/2}}}.
+	\]
+	Now to find the tangental components,
+	\[
+		(\vect D_2-\vect D_1)\cdot \vecth n_{21} = (\epsilon_2 \vect E_2 - \epsilon_1 \vect E_1)\cdot \vecth n_{21} 
+	\]
+	we have
+	\ba
+		\epsilon_1\vect E_1\cdot \vecth n_{21} =  -\del_z\Phi_1&= -\elr{\pdiff{z}\blr{\frac{1}{4\pi\epsilon_1}
+		\plr{\frac{q}{ [\rho^2+(a-z)^2]^{1/2}}+\frac{q'}{ [\rho^2+(a+z)^2]^{1/2}}}}}_{z=0}\vecth z\\
+		&= \frac{1}{4\pi}
+		\elr{\plr{\frac{q(a-z)}{ [\rho^2+(a-z)^2]^{3/2}}+\frac{q'(a+z)}{ [\rho^2+(a+z)^2]^{3/2}}}}_{z=0}\\
+		&= \frac{1}{4\pi}\frac{a(q'-q)}{(\rho^2+a^2)^{3/2}}
+	\ea
+	Similarly, 
+	\[
+		\epsilon_2\vect E_2\cdot \vecth n_{21} = \frac{1}{4\pi}\frac{-aq''}{(\rho^2+a^2)^{3/2}}.
+	\]
+	Using these results in our boundary conditions we see that
+	\[
+		\frac{q''}{\epsilon_2} = \frac{q+q'}{\epsilon_1};\quad q'' = q-q'.
+	\]
+	Solving these two equations we find the image charges must be
+	\[
+		q' = -\pfrac{\epsilon_2-\epsilon_1}{\epsilon_2+\epsilon_1}q;\quad 
+		q'' = \pfrac{2\epsilon_2}{\epsilon_2+\epsilon_1}q.
+	\]
+	Therefore the potential is
+	\[
+		\Phi(\rho,z) = \begin{cases}
+		\ds \frac{1}{4\pi\epsilon_1}\plr{\frac{q}{ [\rho^2+(a-z)^2]^{1/2}}+\frac{-\pfrac{\epsilon_2-\epsilon_1}{\epsilon_2+\epsilon_1}
+		q}{ [\rho^2+(a+z)^2]^{1/2}}}&\quad z\ge 0 \\ \\
+		\ds  \frac{1}{4\pi\epsilon_2}\frac{\pfrac{2\epsilon_2}{\epsilon_2+\epsilon_1}q}{ [\rho^2+(a-z)^2]^{1/2}}&\quad z\le0
+		\end{cases}
+	\]
+	At $z=0$ it can be shown that the potential is continuous ($\Phi_1 = \Phi_2$). 
+% #4 -------------------------------------------------------------------------------------------------------------------------------------------
+
+	\item
+	An electric dipole of moment $p$ is placed in a homogeneous dielectric at the distance $z$ from the plane boundary of a semi-infinite
+	conductor. The dielectric permittivity is $\epsilon$. Find the energy of interaction $U$ between dipole and induced charges.
+	\\
+	\\
+	From question 3 we saw that the potential due to a point charge located above a plane interface of dielectrics $\epsilon_1$ and 
+	$\epsilon_2$ is given as:
+	\[
+		\Phi(\rho,z) = \begin{cases}
+		\ds \frac{1}{4\pi\epsilon_1}\plr{\frac{q}{ [\rho^2+(a-z)^2]^{1/2}}+\frac{-\pfrac{\epsilon_2-\epsilon_1}{\epsilon_2+\epsilon_1}
+		q}{ [\rho^2+(a+z)^2]^{1/2}}}&\quad z\ge 0 \\ \\
+		\ds  \frac{1}{4\pi\epsilon_2}\frac{\pfrac{2\epsilon_2}{\epsilon_2+\epsilon_1}q}{ [\rho^2+(a-z)^2]^{1/2}}&\quad z\le0
+		\end{cases}
+	\]
+	To replace the dielectric of $\epsilon_2$ by a conductor and we should be able to take the limit
+	\[
+		\lim_{\epsilon_2\to\infty}\Phi(\rho,z) = \Phi(\rho,z)_{conductor}.
+	\]
+	If we note that
+	\[
+		\lim_{\epsilon_2\to\infty} \pfrac{\epsilon_2-\epsilon_1}{\epsilon_2+\epsilon_1} = 1
+	\]
+	and 
+	\[
+		\lim_{\epsilon_2\to\infty} \pfrac{\epsilon_2}{\epsilon_2+\epsilon_1} = 1
+	\]
+	then we can see that our potential becomes
+	\[
+		\Phi(\rho,z) = \begin{cases}
+		\ds \frac{1}{4\pi\epsilon_1}\plr{\frac{q}{ [\rho^2+(a-z)^2]^{1/2}}+\frac{-q}{ [\rho^2+(a+z)^2]^{1/2}}}&\quad z\ge 0 \\ \\
+		\ds  0 &\quad z\le0.
+		\end{cases}
+	\]
+	This is exactly the potential for the common problem of a point charge and a grounded conductor! The only difference is the 
+	$\epsilon_1$ substitution for the usual $\epsilon_0$. This means that we can continue all analysis as applied to a vacuum as long 
+	as we remember to use $\epsilon_1$ appropriately. 
+	\\
+	\\
+	Since this has been proven for the point charge, we can easily extend our result to that of a dipole. Let us assume we have a dipole
+	located at a distance $z$ along the $z$-axis oriented at an arbitrary polar angle $\theta$. The potential and field of the
+	dipole near a conducting plane (a problem well discussed in class) has an image dipole with a $\rho$ component in the 
+	opposite direction. The field and potential can be solved, but it should not necessarily be needed for this problem. To find
+	the energy of interaction, we can use Jackson eq. 4.26
+	\[
+		W_{12}= \frac{\vect p_1\cdot \vect p_2 - 3(\vecth n\cdot \vect p_1)(\vecth n\cdot \vect p_2)}
+		{4\pi\epsilon_0|\vect x_1-\vect x_2|^3}
+	\]
+	where $\vecth n$ is in the direction $\vect x_1-\vect x_2$. Since this equation has been derived from the electric
+	field of a dipole, we can in fact replace $\epsilon_0$ with $\epsilon_1$ to account for our dielectric. To compute the inner 
+	products in the interaction energy equation, we first denote 
+	\[ 
+		\vect p_1 = p\cos\theta \vecth z + p\sin\theta \vecth\rho
+	\]
+	\[ 
+		\vect p_2 = p\cos\theta \vecth z  -p\sin\theta \vecth\rho
+	\]
+	and observe that
+	\[
+		\vecth n= \vecth z
+	\]
+	\[
+		|\vect x_1-\vect x_2| = 2z.
+	\]
+	Now we can carry on to calculating our the interaction energy
+	\ba
+		W_{12} &= \frac{1}{4\pi\epsilon_1}\frac{p^2(\cos^2\theta-\sin^2\theta)-3p^2\cos^2\theta}{8z^3}\\
+		& = \frac{1}{4\pi\epsilon_1}\frac{-p^2}{8z^3}(2\cos^2\theta+\sin^2\theta)\\
+		& =  \frac{1}{4\pi\epsilon_1}\frac{-p^2}{8z^3}(\cos^2\theta+1)\\
+		& = \frac{1}{4\pi\epsilon_1}\frac{-p^2}{16z^3}(3+\cos(2\theta)).
+	\ea
+	The interaction energy is negative, as we may expect when we have two opposite charges (two pairs actually). In the limit 
+	$z\to\infty$, the interaction energy vanishes. 
+\eenum
+
+\end{document}

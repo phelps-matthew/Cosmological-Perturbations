@@ -1,0 +1,222 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Stat Mech Winter 2014\end{spacing}}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item
+	Consider a classical ideal gas of $N$ particles in three dimensions confined to an external
+	potential $V(r) = K(r/r_0)^\alpha$, where $K>0$, $\alpha >0$, and $r_0>0$ are constants.
+	\benum
+	% (a)
+	\item
+	Show that the heat capacity is $C = \plr{\frac{3}{2}+\frac{3}{2}}Nk$.
+	% (b)
+	\item
+	Suppose the shape of the parameter of the potential $\alpha$ may be varied. Why is it that
+	the standard heat capacity of the free ideal gas $C_V = \frac{3}{2}Nk$ occurs in the limit
+	$\alpha \to \infty$?
+	\\ \\
+	\eenum
+	
+	\benum
+	%(a)
+	\item
+	The easiest way to find the heat capacity in this case is to use the overall method of
+	\[
+		C_V = k\beta^2\plr{\pdifff{}{*2\beta}}_V\ln Z
+	\]
+	Hence to find $Z$
+	\ba
+		Z_1 &= \frac{4\pi}{h^3}\int_{\infty}^{\infty}d^3p\int_0^\infty dr\ r^2
+		e^{-\beta\pfrac{p^2}{2m}}e^{-\beta K\pfrac{r}{r_0}^\alpha} \\
+		& = \frac{4\pi}{h^3}\pfrac{2\pi m}{\beta}^{3/2} \int_0^\infty dr\ r^2e^{-\beta K\pfrac{r}{r_0}^\alpha}
+	\ea
+	To extract the temperature dependence, we must convert this to a dimensionless integral
+	using $x = (\beta K)^{1/\alpha}\frac{r}{r_0}$
+	\ba
+		\int_0^\infty dr\ r^2e^{-\beta K\pfrac{r}{r_0}^\alpha} &= 
+		(\beta K)^{-3/\alpha}r_0^3 \int_0^\infty d\pfrac{(\beta K)^{1/\alpha}r}{r_0}\pfrac{(\beta K)^{1/\alpha }r}{r_0}^2
+		e^{\pfrac{(\beta K)^{1/\alpha }r}{r_0}^\alpha}.
+	\ea
+	If we denote the dimensionless integral by $I$, then we have
+	\[
+		Z_1 = \frac{4\pi}{h^3}(2\pi m)^{3/2}\beta^{-(3/2+3/\alpha)}K^{-3/\alpha}r_0^3
+	\]
+	and so
+	\[
+		\ln Z = N\ln Z_1 = N\ln\gamma -N\plr{\frac{3}{2}+\frac{3}{\alpha}} \ln (\beta)+\ln r_0^3
+	\]
+	\[
+		k\beta^2\pdifff{}{2*\beta} \ln Z = k\beta^2\plr{\frac{3}{2}+\frac{3}{\alpha}}\frac{1}{\beta^2}
+		= \plr{\frac{3}{2}+\frac{3}{\alpha}}Nk.
+	\]
+	\\ \\
+	%(b)
+	\item
+	If we look at the potential
+	\[
+		\lim_{\alpha\to\infty} V(r) = \begin{cases} 0& r<r_0 \\ \infty & r>r_0 \end{cases}
+	\]
+	and so we end up confined in a bound box of dimension $r_0^3$. Hence we recover the usual heat
+	capacity.
+	\\ 
+	\eenum
+
+% #2 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	\benum
+	% (a)
+	\item
+	For the two dimensional non-relativistic Bose gas with zero spin, calculate the chemical potential
+	as a function of temperature and (area) density.
+	% (b)
+	\item
+	Do we have critical density and do we need to add Bose-Einstein condensate at low temperatures, as
+	in the case of the three dimensional Bose gas?
+	\\ \\
+	\eenum
+	\benum
+	% (a)
+	\item
+	Dealing with Bosons, we are used to knowing the grand partition function and occupancy. A 
+	way to extract the chemical potential is to calculate $N$ for this 2D gas. This can be done by
+	integration. Remember that
+	\[
+		\braket{n_\vect k}_B = \frac{1}{e^{\beta(\ep_k-\mu)}-1}
+	\]
+	so in the limit of continuation
+	\[
+		N = \frac{L^2}{2\pi} \int_0^\infty dk\ \frac{k}{e^{\beta(\ep_k-\mu)}-1}
+	\]
+	Since it is nonrelativistic, the dispersion relation is
+	\[
+		\ep(\vect k) = \frac{\h^2 |\vect k|^2}{2m}
+	\]
+	and
+	\[
+		 d\ep = dk  \frac{\h^2}{m} k
+	\]
+	\[
+		k = \sqrt{\frac{2m \ep}{\h^2}}
+	\]
+	so
+	\[
+		k\ dk = \frac{m}{\h^2} d\ep.
+	\]
+	While we are here, we might as well generalize this for $D$ dimension for part (b). The density relations are
+	\[
+		k^{D-1} dk = k^{D-2}\ \frac{m}{\h^2} d\ep = \pfrac{2m\ep}{\h^2}^{(D-2)/2}\frac{m}{h^2}\ d\ep
+		= \frac{1}{2}\pfrac{2m}{\h^2}^{D/2}\ep^{(D-2)/2}\ d\ep.
+	\]
+	Back to the 2D integral
+	\ba
+		\int_0^\infty dk\ \frac{k}{e^{\beta(\ep_k-\mu)}-1} &= \frac{m}{\h^2} 
+		\int_0^\infty d\ep\ \frac{1}{e^{\beta(\ep-\mu)}-1}\\
+		& = \frac{m}{\h^2\beta} \int_{-\beta \mu}^{\infty} d(\beta(\ep-\mu)) \frac{1}{e^{\beta(\ep-\mu)}-1}
+		\\ 
+		& =  \frac{m}{\h^2\beta} \int_{-\beta \mu}^{\infty} d(\beta(\ep-\mu)) \frac{e^{-\beta(\ep-\mu)}}
+		{1-e^{-\beta(\ep-\mu)}} \\
+		& = \frac{m}{\h^2\beta} \int_{-\beta \mu}^{\infty} d(\beta(\ep-\mu))\ \pdiff{(\beta(\ep-\mu))} 
+		\ln(1-e^{-\beta(\ep-\mu)}) \\
+		& =  \frac{m}{\h^2\beta} \elr{\ln(1-e^{-\beta(\ep-\mu)})}_{-\beta\mu}^\infty \\
+		& = -\frac{m}{\h^2\beta} \ln\plr{1-e^{\beta\mu}} 
+	\ea
+	Gathering the rest of the constants we have
+	\[
+		N = -\frac{L^2}{2\pi} \pfrac{m}{\h^2\beta} \ln(1-e^{\beta\mu})
+	\]
+	solving for $\mu$
+	\[
+		\mu =kT\ln\plr{1-  e^{-\frac{2\pi \h^2\beta n}{m}}}
+	\]
+	This suggests that $-\infty < \mu < 0$, which, upon further reading, is not crazy. This means the system actually 
+	loses free energy as another particle input i.e., you have to do work to extract a particle out of the system. This
+	is characteristic to bosons. With fermions, it takes work to input a particle. 
+	\\ \\
+	% (b)
+	\item 
+	For a fixed temperature, the critical density is defined as the density at which 
+	\[
+		N_E(T,\mu=\ep_0) = N_C
+	\]
+	In this notation, it is the density of excited states (given by the integral) at $\mu = \ep_0$ where
+	$\ep_0 = 0$ in our case. It is the maximum density of the excited states. However, as we let $\mu \to \ep_0$
+	the ground state
+	\[
+		\braket{n_0} = \frac{1}{e^{\beta(\ep_0-\mu)}-1}
+	\]
+	becomes macroscopically large. If we assume that the chemical potential calculated in part (a) is 
+	the density of the excited states, then the critical density is given when $\mu = 0$ which leads to
+	\[
+		\ln\plr{1-\exp\plr{-\frac{2\pi\h^2 n}{kT}}} = 0.
+	\]
+	For a fixed temperature, this happens when
+	\[
+		n\to\infty.
+	\]
+	Hence we never approach a finite critical density and no condensate is formed. At low temperatures,
+	the excited density still does not converge (along with the ground state occupancy). Since both
+	quantities are always divergent as we let $\mu \to 0$, there is no need to separate the contributions.
+	Additionally, the excited state integral naturally includes the ground state and together they 
+	are not bounded by a particular density. 
+	\\ \\
+	\eenum
+			
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	For a non-realtivistic ideal degenerate ($T=0$) Fermi gas, find the average relative velocity
+	$|\vect v_1-\vect v_2|$ of the two particles.
+	\\ \\
+	At low temperature, states are occupied up to the fermi energy $\ep_F$. 
+	\\ \\
+	
+% #4 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	The dynamics of the vibrational normal modes of a solid made of $N$ atoms can be approximated in 
+	terms of uncoupled harmonic oscillators by the Hamiltonian 
+	\[
+		H = \sum_{j=1}^{3N} \frac{p_j^2}{2m} +\frac{1}{2}m\omega_j^2x_j^2.
+	\]
+	\benum
+	% (a)
+	\item
+	Calculate the canonical partition function $Z(T,N)$ of the system, determine its
+	internal energy $U$, and show that it can be written as 
+	\[
+		U(T,N) = \int_0^\infty \frac{1}{2}\h\omega \coth\plr{\frac{1}{2}\beta\h\omega}\sigma(\omega)
+		d\omega
+	\]
+	with the normal-mode vibrational frequency distribution $\sigma(\omega) = \sum_{j=1}^{3N}
+	\delta(\omega-\omega_j)$.
+	% (b)
+	\item
+	Consider the Einstein model of a solid where $\sigma(\omega) =\sum_{j=1}^{3N}
+	\delta(\omega-\omega_j)$ with $\omega_j =\omega_E \ \forall\  j$. Derive the expression for 
+	the heat capacity $C$. Show that $C$ satisfies the Dulong-Petit law for $T\gg T_E$, and 
+	vanishes exponentially for $T\ll T_E$ where $T_E = \h\omega_E/k_B$.
+	% (c)
+	\item
+	Consider the Debye model which assumes $\sigma(\omega) = 9N\omega^2/\omega_D^2$ if
+	$\omega \le \omega_D$ and zero otherwise, where the value of $\omega_D$ is fixed
+	by the normalization condition $\int_0^\infty \sigma(\omega)\ d\omega = 3N$. Derive the expression
+	for the heat capacity $C$. Show that $C$ satisfies the Dulong-Petit law for $T\gg T_D$, and
+	vanishes like $C=const\times T^n$ for $T\ll T_D$ where $T_D = \h\omega_D/k_B$.
+	\\
+	Remark: your calculation should determine the power $n$.
+	\\
+	Hint: you may encounter an integral of the type $\int_0^\infty dx\ x^4 e^x/(e^x-1)^2 = \frac{4\pi^4}{15}$.
+	% (d)
+	\item
+	What does the third law of thermodynamics imply for the heat capacity? Do the models of Einstein and Debye
+	discussed in part (b) and (c) satisfy the third law of thermodynamics?
+	\\ \\
+	\eenum
+	\eenum 
+\end{document}

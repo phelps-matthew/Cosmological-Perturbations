@@ -1,0 +1,421 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Stat Mech Winter 2015\end{spacing}}
+\author{Matthew Phelps}
+\date{}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 --------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item
+	You discover a new state of matter that has equation of state and internal energy given by
+	\[
+		p = A\frac{T^3}{V},\qquad U = BT^n\ln\frac{V}V_0 +f(T)
+	\]
+	where $A$, $B$, $n$, $V_0$ are constants while $f(T)$ only depends on the temperature. Find a
+	numerical value for $n$ and find a relation between the constants $B$ and $A$. \\
+	Hint: Find a Legendre transformation of the entropy $S(U,V)$ to a function that only depends on
+	$T$ and $V$. \\ \\
+	
+	We note that we have $p(T,V)$ and $U(T,V)$. From the first law we have $U(S,V)$. Ultimately we seek to 
+	relate $U$ to $p$. This can be achieved via some sort of Maxwell relation that derives $U$ and $p$ with
+	respect to $T$ and $V$. Hence we need some thermodynamic quantity that is a function of $(T,V)$ with 
+	$f(U(T,V),T,V)$ and $g(p(T,V),T,V)$ as the coefficients in the total derivative. From the first law, this suggests
+	we need to legendre transform the entropy, as this will remove the entropy out of the picture. Thus
+	we seek the transformation $S(U,V) \to W(T,V)$.
+	\[
+		dS(U,V) = \frac{dU}{T}+pdV
+	\]
+	Do the transformation
+	\[
+		W = S-\frac{U}{T}
+	\]
+	then
+	\[
+		dW(T,V) = dS-\frac{dU}{T}+\frac{U}{T^2}dT = \frac{U}{T^2}dT+pdV.
+	\]
+	Now we can use the maxwell relation
+	\[
+		\plr{\pdiff[p]{T}}_V = \plr{\pdiff[\pfrac{U}{T^2}]{V}}_T
+	\]
+	hence
+	\[
+		\frac{3AT^2}{V} = \frac{BT^{n-2}}{V}
+	\]
+	and since $A$ and $B$ are only constants
+	\[
+		3A = B;\qquad n=4.
+	\]
+	\\ \\ 
+% #2 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider a two-dimensional gas of noninteracting fermions with spin $s$ with energy dispersion given by
+	the usual relativistic expression for a particle of mass $m$
+	\[
+		\epsilon(\vect k) = \sqrt{(mc^2)^2+(\h c|\vect k|)^2}
+	\]
+	The gas consists of $N$ particles in an area $A$ and has number density $n = \frac{N}{A}$. 
+	\benum
+	% (a)
+	\item
+	Find an expression for the Fermi wave vector $k_F$ for this gas as a function of number density $n$.
+	
+	% (b)
+	\item
+	Show the expression for the total energy of the gas at $T=0$. Show that contains the (purely algebraic)
+	expression
+	\[
+		\int_{0}^{x_F} dx\ x\sqrt{x^2+1}.
+	\]
+	What is $x_F$?
+	
+	% (c)
+	\item
+	Consider the nonrelativistic limit $\h k_f \ll mc$. Find the lowest order terms in $x$ to obtain an expression
+	for the total energy valid in this limit. Express your answer in terms of $N$ and $A$ and show that it has 
+	the form $E = N(mc^2+\epsilon_{NR})$ where $\epsilon{NR}$ is the energy density of a nonrelativistic gas 
+	of fermions. 
+	
+	% (d)
+	\item
+	Now consider the ultrarelativistic limit $\h k_F \gg mc$. Obtain an expression for the total energy valid
+	in this limit.
+	\\ \\
+	\eenum 
+	
+	\benum
+	%(a)
+	\item
+	Fermi quantities are always given at $T=0$. The fermi energy represents the difference in energy between the 
+	lowest and highest energy of occupied states. At $T=0$, the occupation for fermions
+	\[
+		\braket{n_{\vect k}} = \frac{1}{e^{\beta(\ep_{\vect k} -\mu)} +1}
+	\]
+	becomes
+	\[
+		\theta(\mu-\epsilon_\vect k).
+	\]
+	The energy which equals the chemical potential is the fermi energy
+	\[
+		\mu(T=0) = \ep_F.
+	\]
+	We find the fermi wave vector by finding the particle number. Here I assume the states are quantized the
+	same as in the nonrelativistic case $\vect k = \frac{2\pi}{L}(n_1\vecth x_1 +n_2\vecth x_2)$ where the
+	$n$'s take on integer values. Hence we integrate over these values in the continuation
+	\[
+		\braket{N} = g\pfrac{L}{2\pi}^2\int_{\ep_\vect k < \ep_F} d^2k = \frac{gL^2}{2\pi} \int_0^{k_F} kdk.
+	\]
+	Our upper bound is the particular wavevector $|\vect k| = k_F$ such that $\ep(\vect k) = \ep_F$. As such
+	\[
+		n = \frac{gL^2}{4\pi}k_F^2
+	\]
+	\[
+		k_F = \pfrac{4\pi n}{g}^{1/2}.
+	\]
+	\\ \\
+	
+	% (b)
+	\item
+	To find the total energy, we integrate over all states
+	\[
+		\frac{gL^2}{2\pi} \int_0^{k_F} dk\  k\sqrt{(mc^2)^2+(\h c k)^2} = \frac{g}{2\pi}\pfrac{mcL}{\h}^2(mc^2)
+		\int_0^{x_F} dx\ x\sqrt{x^2+1}
+	\]
+	where $x = \frac{\h k}{mc}$ and so $x_F = \frac{\h k_F}{mc}$. 
+	\\ \\
+	
+	\item %(c)
+	For the nonrelativistic case $x\ll 1$, we may approximate the integral as
+	\ba
+		\frac{gL^2}{2\pi}\pfrac{mc}{\h}^2mc^2\int_0^{x_F} dx\ x\plr{1+\frac{1}2 x^2}
+		& = \frac{gL^2}{2\pi}\pfrac{mc}{\h}^2mc^2\plr{\frac{x_F^2}{2}+\frac{x_F^4}{8}} \\
+		& = \frac{gL^2}{2\pi}\pfrac{mc}{\h}^2mc^2\blr{\frac{1}{2}\pfrac{\h k_F}{mc}^2+\frac{1}{8}\pfrac{\h k_F}{mc}^4
+		} \\
+		& = N\pfrac{mc}{\h}^2mc^2\blr{ \pfrac{\h}{mc}^2+\pfrac{\h}{mc}^4\pfrac{k_F}{2}^2} \\
+		& = N\plr{mc^2+\frac{\h^2 k_F^2}{4m}}.
+	\ea
+	This last factor is indeed the nonrelativistic total energy per particle as can be shown by
+	\[
+		\frac{U}{N} = \frac{\frac{gL^2}{2\pi} \int_0^{k_F} dk\ k\pfrac{\h^2k^2}{2m}}{\frac{gL^2}{4\pi}k_F^2} =
+		\frac{\h^2 k_F^2}{4m} = \frac{\ep_F}{2}
+	\] \\ \\
+	
+	\item
+	% (d)
+	For the ultrarelativistic case, we would like to use $x \gg 1$. The limits in this problem rely on the fermi
+	wavevector, not just $\vect k$. So really this is more strict than the usual relativistic limit. We shall proceed
+	with the usual $x\gg 1$ since I'm not sure how to fufill the other approximation for small values of $k$. At
+	any rate, we may approximate the integrand as
+	\[
+		x\sqrt{x^2+1} = x^2\sqrt{\frac{1}{x^2}+1} \approx x^2\plr{1+\frac{1}{2x^2}} = \frac{1}{2}+x^2
+	\]
+	so our integral becomes
+	\ba
+		U &= \frac{gL^2}{2\pi}\pfrac{mc}{\h}^2mc^2\int_0^{x_F} dx\ \frac{1}{2}+x^2 \\
+		& =  \frac{gL^2}{2\pi}\pfrac{mc}{\h}^2mc^2\plr{\frac{x_F}{2}+\frac{x_F^3}{3}}
+	\ea
+	I don't think the simplification brings anything meaningful, so I leave as is. \\
+	*Interestingly, if we evaluate the integral in (b) and then take the limit as $x_F \gg 1$, we
+	obtain the same result as the approximation we did in (d). Perhaps this means $\h k \gg mc $ is a 
+	good approximation at the origin as well?* \\ \\ \\
+	\eenum
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	Consider the transverse modes of a quantum mechanical string of length $L$ and uniform mass
+	per unit length $\mu$ stretched with tension $F$ between two fixed points. The string is in thermal
+	equilibrium at temperature $T$. The transverse size of the string is negligible compared to its length,
+	and the effects of gravity on its motion are negligible. Consider the transverse displacement $\vect y$
+	of the string, small compared to $L$, such that is obeys the linear equation of motion
+	\[
+		\mu \difff{\vect y}{*2t} = F\difff{\vect y}{*2x}
+	\]
+	The solutions to this wave equations are of the form
+	\[
+		\vect y(x,t) = (a_k \vect e_1 +b_k\vecth e_2)\sin(kx-\omega t)
+	\]
+	where the sum is over all wavenumber $k$ values that obey the boundary conditions of the string, 
+	and $\omega = vk$ where $v = \sqrt{F/\mu}$ is the transverse velocity on the string.
+	\benum
+	% (a)
+	\item
+	What is the energy of a single quantum excitation in a mode with wavenumber $k$?
+	\item
+	% (b)
+	Write down the grand canonical partition function for the system.
+	% (c)
+	\item
+	What is the heat capacity $C$ of the system in the limit $kT\gg \h\omega_1$ is the frequency of the 
+	fundamental mode?
+	\\ \\ 
+	Hint: You may find the following integral to be useful:
+	\[
+		\int_0^\infty dx\ \frac{x}{e^x-1} = \frac{\pi^2}{6}.
+	\]
+	\\ \\
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	In some fashion, we are working with phonons here, which are to be massless bosons. As massless particles,
+	their relativistic energy is given as
+	\[
+		E = pv
+	\]
+	where $v = \sqrt{\frac{F}{\mu}}$. If the phonons are quantized as harmonic oscillators, then the energy is 
+	\[
+		E = \h\omega
+	\]
+	where $\frac{\omega}{k} = v$. From the boundary conditions, $k$ is quantized and we end up at
+	\[
+		E = \h \omega = \h v\frac{\pi}{L}n\qquad n=0,1,2,3,....
+	\]
+	This is not exactly clear. On the other hand, we can Fourier transform the wave equation, treating 
+	$\vect y(x,t)$ as a quantum mechanical wavefunction
+	\[
+		\int_{-\infty}^{\infty} dx\ e^{-ixp/\h}\pfrac{p}{\h}^2 \vect y(x,t) =-\frac{1}{v^2\h^2} 
+		\int_{-\infty}^{\infty} dx\ e^{-ixp\/h}\plr{i\h\pdiff{t}}^2 \vect y(x,t)
+	\]
+	Here we have turned the differential operator into $p$. Note that we (should) also be able to $i\h\pdiff{t}\psi
+	= E\psi$. Thus we can write everything as
+	\[
+		\pfrac{p}{\h}^2 \tilde{\vect y}(p,t) = -\pfrac{E}{v\h}^2\tilde{\vect y}(p,t).
+	\]
+	And we can deduce that
+	\[
+		E = pv = \h k v = \h v \frac{\pi}{L} n\qquad n=0,1,2,3,....
+	\]
+	where boundary conditions on $\lambda$ have been used. This is very sloppy admittedly. The energy of a single
+	quantum excitation would be $E = \h v\frac{\pi}{L}$.
+	\\ \\
+	
+	%(b)
+	\item
+	The wavevector $k$, given by integers, defines a single mode of oscillation. Each mode can support 
+	multiple ``excitations" i.e. phonons. This is quite analogous to photons in a cavity. In this case, we have two 
+	possible polarizations from the transverse vectors. The partition function of a single mode (and single polarization) 	is
+	\[
+		Z_\vect k = \sum_{n=0}^\infty e^{-\beta \h\omega_k n} = \frac{1}{1-e^{-\beta \omega_k}}. 
+	\]
+	I think the most straightforward way to find the grand canonical partition function is to use it in the form of
+	\[
+		\mathcal Z = \prod_i \sum_{n_i} e^{-\beta n_i(\ep_i-\mu)}
+	\]
+	where we sum over all possible occupation numbers $n_i$. For this boson case, this becomes
+	\[
+		\mathcal Z = \prod_i \frac{1}{1-e^{-\beta(\epsilon_i-\mu)}}.
+	\]
+	In this form, we have a product of individual grand partition functions corresponding to single energy states
+	indexed by $i$. But since we have two transverse modes, we must not forget to add in the degeneracy 
+	factor, thus
+	\[
+		\mathcal Z = \prod_i \pfrac{1}{1-e^{-\beta(\epsilon_i-\mu)}}^2.
+	\]
+	The single particle energy eigenstates $\ep_i$ are simply the different modes $\h \omega n$. Thus
+	\[
+		\prod_{n}^\infty \pfrac{1}{1-e^{-\beta(\h\omega n-\mu)}}^2
+	\]
+	In this form we may nicely compute $\Omega = -kT\ln \mathcal Z$. **Importantly, we must take care to
+	note that the number of phonons is not conserved. They can easily be absorbed or emitted (by the counter
+	part to the electron).** Thus $\mu$ is zero and we should have
+	\[
+		\mathcal Z = \prod_{n}^\infty \pfrac{1}{1-e^{-\beta(\h\omega n)}}^2.
+	\]
+	Since we have ignored the zero-point energy $\frac{1}2 \h\omega$, there should really be no discontinuity at the 	ground state.
+	\\ \\
+	
+	% (c)
+	\item
+	It would appear everything so far mimics what we typically expect for phonons trapped in some sort of
+	cavity. Based on the form of the partition function the occupancy should be same as the typical boson 
+	occupancy, apart from the degeneracy factor
+	\[
+		\braket{n_k} = \frac{2}{e^{\beta(\ep_k -\mu)}-1}.
+	\]
+	We proceed to compute the energy
+	\[
+		U = \sum_k \ep_k\braket{n_k} = \sum_{n=0}^{\infty} \frac{2\h\omega_1 n}{e^{\beta(\h\omega_1 n-\mu)}-1}
+	\]
+	where $\omega_1 = v\frac{\pi}{L}$. Another interesting way to derive the energy is to note that
+	\[
+		\mathcal Z = \tr(e^{-\beta(H}) = \sum_{N,k} \braket{N,k|e^{\beta H_k}|N,k}  = \braket{e^{-\beta H}}
+	\]
+	and thus
+	\[
+		-\pdiff{\beta} \ln \mathcal Z = \sum_{N,k} \frac{E_k e^{-\beta E_k}}{\mathcal Z} = \braket{H}.
+	\]
+	Now applying this general ($\mu =0$) relation to our specific partition function,
+	\[
+		-\pdiff{\beta} \plr{\ln \mathcal Z} = -\pdiff{\beta}\plr{\sum_n 2\ln\pfrac{1}{1-e^{-\beta(\h\omega_1 n)}}}
+		= \sum_{n=0}^{\infty} \frac{2\h\omega_1 n}{e^{\beta(\h\omega_1 n-\mu)}-1}.
+	\]
+	This is consistent, but note that it did not advance us towards calculating the energy in the end. To do so,
+	we move to the continuum (valid as $L\to \infty$, thermodynamic limit)
+	\[
+		U = \int_0^\infty dn\ \frac{2\h\omega_1 n}{e^{\beta(\h\omega_1 n)}-1} = \frac{1}{\beta^2\h\omega_1}
+		\int_0^\infty dx\ \frac{x}{e^x-1} = \frac{(kT)^2}{\h\omega_1}\frac{2\pi^2}{3}.
+	\]
+	To find the heat capacity
+	\[
+		C = \diff[U]{T} = \frac{k^2 T}{\h\omega_1}\frac{\pi^2}{3}
+	\]
+	In the limit $kT\gg \h\omega_1$ we mustn't ignore our integral. In this regime we have
+	\[
+		 \frac{1}{\beta^2\h\omega_1} \int_0^\infty dx\ \frac{x}{(1+x)-1} = \infty
+	\]
+	I'm not sure at this point. Typically with phonons, we have a maximum Debye mode that corresponds 
+	to a minimum wavelength that is twice the distance between atoms. But with this quantum mechanical string
+	I am not sure. In the event we knew the Debye frequency, we should replace the integral with
+	\[
+		U = \frac{1}{\beta^2\h\omega_1} \int_0^{x_D} dx\ \frac{x}{(1+x)-1} 
+		 = \frac{(kT)^2}{\h\omega_1}\pfrac{T_D}{T}^2 = \frac{k^2T_D^2}{\h\omega_1}.
+	\]
+	\\
+	\\
+	\eenum 
+% #4 ---------------------------------------------------------------------------------------------------------------------------------------------------
+	\item
+	A refrigerator consists of a system of a large number $N$ of distinguishable atoms placed in a variable
+	uniform external magnetic field of magnitude $B$. The atoms have a total electronic spin of $J$ and
+	maximum magnetic moment $\mu_{max} = \mu_0J$. The closed thermal cycle works as follows.
+	\benum
+	\item
+	The magnetic field is ramped up adiabatically until the temperature reaches $T_2$ at field $B_2$.
+	\item
+	The system is brought into thermal contact with the hot reservoir at temperature $T_2$, and the 
+	magnetic field is ramped up further to maximum field $B_{max}$ expelling $Q_2$ as heat.
+	\item
+	The system is removed from thermal contact with the hot reservoir and the magnetic field is
+	ramped adiabatically down until the temperature reaches $T_1$ at field $B_1$.
+	\item
+	The system is brought into thermal contact with the cold side at temperature $T_1$, and 
+	the magnetic field is ramped down to $B_{min}$, absorbing heat $Q_4$ at heat.
+	\item
+	The system is removed from thermal contact with the cold reservoir and step 1 resumes.
+	\\ \\
+	\eenum
+
+	The atoms interact with the external field but not with one another. The interaction of one atom with
+	the external field is given by $H_{int} = -\mu_0 m B$ where $m$ labels the projection of the atom's spin
+	onto the magnetic field axis.
+	
+	
+	\benum
+	% (a)
+	\item
+	What is the entropy of the system in the limit $B\to 0$ at fixed temperature? Hint: Use the expression
+	$S = -k\sum_i P_i\log P_i$ ($P_i$ is the probability for configuration $i$), and make a general argument
+	based on degeneracy of states. If you attempt to compute a closed form expression for $S$ at finite
+	$B$ and take the limit of large field, you will find the calculation to cumbersome. 
+	
+	% (b)
+	\item
+	What is the entropy of the system in the limit of strong field $B$ at fixed temperature? What is the field
+	strength $B_0$ that distinguishes the strong and weak field limits?
+	
+	%(c)
+	\item Suppose field $B_1 \ll B_0$ and $B_2\gg B_0$. During steps 1 and 3 the magnetic field $B$ is
+	changing when the system is not in thermal contact with either reservoir, so $\delta S = 0$
+	during those steps. Does this contradict the result from parts (a) and (b)? If not, what condition must
+	be satisfied?
+	
+	% (d)
+	\item
+	Derive the maximum theoretical efficiency that can be obtained using this refrigerator cycle, defined 
+	as $\epsilon = \frac{Q_2-Q_4}{Q_2}$. 
+	\\ \\
+	\eenum
+	
+	\benum
+	% (a)
+	\item
+	We can denote a configuration of the system with a specified energy as $E = -\mu_0 S_i B$ where 
+	$\mu_0S_i$ is the total magnetic moment for the entire system. We expect each energy configuration
+	to be degenerate, and so the partition function (fixed $N$) then becomes
+	\[
+		Z = \sum_i g_i e^{\beta\mu_0 S_i B} = \sum_{S_i=-NJ}^{NJ} g_i e^{\beta \mu_0 S_i B}.
+	\]
+	Note that our energy can vary from all spins aligned or anti-aligned with the magnetic field axis. If we
+	now form the entropy
+	\ba
+		S &= -k\tr(\rho\ln\rho) = \sum_i p_i\ln(p_i) = \frac{\sum_i g_ie^{\beta\mu_0S_iB}\ln(e^{\beta\mu_0S_iB}/Z)}{Z}\\
+		& = \frac{-k}{Z}\sum_i g_i e^{\beta\mu_0S_iB}\plr{\beta\mu_0S_iB-\ln Z} 
+	\ea
+	In the limit $B\to 0$, we see that $Z = \sum g_i = M$, the total number of distinct states. Our entropy
+	becomes in this limit
+	\[
+		\lim_{B\to 0}S = \frac{k}{Z}M\ln M = k\ln M.
+	\]
+	
+	% (b)
+	\item
+	As we take the limit to $B\to \infty$
+	\[
+		e^{\beta\mu_0S_iB} \begin{cases} 0&\qquad S_i < 0 \\ 1&\qquad S_i = 0 \\ \infty &\qquad S_i >0
+		\end{cases}.
+	\]
+	In the large $B$ limit, any probability contribution from a net anti-aligned spin decays toward zero, 
+	and configuration with a net positive spin increase exponentially. However, I was not able to evaluate this
+	limit. 
+	
+	% (c)
+	\item
+	
+	% (d)
+	\item
+	The efficiency is given by the ratio of heat taken away from the low temperature reservoir to the 
+	work input.
+	\[
+		W = (T_2-T_1)(S_2-S_1).
+	\]
+	The heat absorbed is $Q_1 = T_1\Delta S$
+	and thus
+	\[
+		\eta = \frac{Q_1}{W} = \frac{T_1}{T_2-T_1}
+	\]
+	\eenum
+	\eenum
+\end{document}

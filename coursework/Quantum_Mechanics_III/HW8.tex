@@ -1,0 +1,244 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 8\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Mar. 21}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[6.7]
+Consider Bosons as an example. By studying the expression $\hat n(\vect R)\psi^\dag(\vect r)\ket 0$, argue that the 
+effect of the field operator $\psi^\dag(\vect r)$ on the vacuum is to put a boson in the point $\vect r$ in space. 
+Multiple operators $\psi^\dag$ with different position arguments obviously work analogously, but how about
+$\psi^\dag(\vect r)\psi^\dag(\vect r)$?
+\\ \\
+Expanding out the operators in terms of creation/annihilation operators in terms of orthonormal basis $\{u_k\}$
+\ba
+		\hat n(\vect R)\psi^\dag(\vect r)\ket 0 &= \sum_{k_1, k_2, k_3}
+		u^*_{k_3}(\vect R)u_{k_2}(\vect R)u^*_{k_1}(\vect r)b_{k_3}^\dag b_{k_2}b^\dag_{k_1}\ket 0\\
+		& = \sum_{k_1, k_2, k_3}
+		u^*_{k_3}(\vect R)u_{k_2}(\vect R)u^*_{k_1}(\vect r)b_{k_3}^\dag \delta_{k_1,k_2}\ket 0\\
+		&= \sum_{k_2, k_3}
+		u^*_{k_3}(\vect R)\bigg(u_{k_2}(\vect R)u^*_{k_2}(\vect r)\bigg)b_{k_3}^\dag \ket 0\\
+		&= \sum_{k_3}
+		u^*_{k_3}(\vect R)\delta(\vect R-\vect r)b_{k_3}^\dag \ket 0\\
+		&=\delta(\vect R-\vect r) \sum_k u_k^*(\vect R)b_k^\dag\ket 0\\
+		& = \delta(\vect R-\vect r)\psi^\dag(\vect R)\ket 0.
+\ea
+Hence $\psi(\vect r)\ket 0$ is a non-zero eigenstate of the particle density operator only at $\vect R = \vect r$. Moreover, note that $b_k^\dag \ket 0=\ket{u_k}$ (a single particle state with all other $u_k$ unoccupied) and contract the expression with the position eigenstate $\bra{\vect r'}$
+\ba
+	\bra{\vect r'} \psi^\dag(\vect r)\ket 0 &=  \bra{\vect r'} \sum_k u_k^*(\vect r)b_k^\dag\ket 0\\
+	&=\sum_k u_k^*(\vect r)\braket{\vect r'|u_k}\\
+	& = \sum_k u_k^*(\vect r)u_k(\vect r')\\
+	& = \delta(\vect r-\vect r')\\
+	& = \braket{\vect r'|\vect r}
+\ea
+Thus  $\psi^\dag(\vect r)\ket 0$ represents a single localized state at position $\vect r$. If we take our basis 
+$\{ u_k\} $ 
+as the eigenstates of momentum $\{ \ket{\vect k}\}$ (quantized in a cubic box with periodic b.c.'s for example), we identity 
+$\psi^\dag(\vect r)\ket 0 = \sum_{\vect k} \braket{\vect k|\vect r}\ket{\vect k}$ as the familiar Fourier expansion of the position operator
+in terms of momentum, viz. a localized state is a linear superposition of all momentum states. \\ \\
+As for the next part,
+\ba
+	\hat n(\vect r')\psi^\dag(\vect r)\psi^\dag(\vect r)\ket 0 &= \sum_{k_1,k_2,k_3,k_4}
+	u^*_{k_4}(\vect r')u_{k_3}(\vect r')u^*_{k_2}(\vect r)u^*_{k_1}(\vect r) 
+	b_{k_4}^\dag b_{k_3}b^\dag_{k_2}b^\dag_{k_1}\ket 0\\
+	&= 
+	\sum_{k_1,k_2,k_3,k_4}
+	u^*_{k_4}(\vect r')u_{k_3}(\vect r')u^*_{k_2}(\vect r)u^*_{k_1}(\vect r) 
+	b_{k_4}^\dag(\delta_{k_2,k_3}+b^\dag_{k_2}b_{k_3})b^\dag_{k_1}\ket 0\\
+	&= 
+		\sum_{k_1,k_2,k_3,k_4}
+	u^*_{k_4}(\vect r')u_{k_3}(\vect r')u^*_{k_2}(\vect r)u^*_{k_1}(\vect r)b_{k_4}^\dag \bigg(
+	\delta_{k_2,k_3}b_{k_1}^\dag \ket 0+b^\dag_{k_2}b_{k_3}b^\dag_{k_1}\ket 0\bigg )\\
+	&= 
+		\sum_{k_1,k_2,k_4}
+	u^*_{k_4}(\vect r')u_{k_2}(\vect r')u^*_{k_2}(\vect r)u^*_{k_1}(\vect r)b^\dag_{k_4}b^\dag_{k_1}\ket 0\\
+	&\qquad +\sum_{k_1,k_2,k_4}u^*_{k_4}(\vect r')u_{k_1}(\vect r')u^*_{k_2}(\vect r)u^*_{k_1}(\vect r)
+	b_{k_4}^\dag b^\dag_{k_2}\ket 0\\
+	&= 
+		\delta(\vect r'-\vect r)\sum_{k_1,k_4}
+	u^*_{k_4}(\vect r')u^*_{k_1}(\vect r)b_{k_4}^\dag b_{k_1}^\dag \ket 0\\
+	&\qquad +\delta(\vect r'-\vect r)\sum_{k_2,k_4}u^*_{k_4}(\vect r')u^*_{k_2}(\vect r)
+	b_{k_4}^\dag b^\dag_{k_2}\ket 0\\
+	&= 2\delta(\vect r'-\vect r)\sum_{k_1,k_2} u_{k_2}^*(\vect r')u_{k_1}^*(\vect r)b_{k_2}^\dag b_{k_1}^\dag \ket 0\\
+	&= 2\delta(\vect r'-\vect r) \psi^\dag(\vect r')\psi^\dag(\vect r)\ket 0
+\ea
+We have formed an eigenstate of the particle density operator with eigenvalue 2 if and only if $\vect r'= \vect r$. This creates
+precisely two particles at position $\vect r$. \\ \\
+% #2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[6.8]
+Consider a spin-0 Bose gas; for a multicomponent gas there are analogous results, but we do not go into this. Just as one
+may write the Heisenberg equation of motion for the field operator, one can do it also for the particle density operator
+$\hat n(\vect r)$. Now, if it is possible to identify a many-body operator $\vecth j(\vect r)$ in such a way that the equation
+of continuity $\pdiff{t} \hat n(\vect r)+\del\cdot\vecth j(\vect r) = 0$ is valid, $\vecth j(\vect r)$ is evidently the quantum
+operator for the particle current density. Find it!
+\\ \\
+If we can find $\diff{t}\hat n$ then hopefully we can express this as a divergence of some vector quantity, thus finding
+the current density. Under second quantization, we may express our Hamiltonian 
+\[
+	H = \int d^3r\ \psi^\dag(\vect r)\blr{ -\frac{\h^2}{2m}\del^2+U(\vect r)}\psi(\vect r)+
+	\frac{2\pi\h^2 a}{m}\int d^3r\ \psi^\dag(\vect r)\psi^\dag(\vect r)\psi(\vect r)\psi(\vect r).
+\]
+We include the two body operator of the contact interaction model for added generality, though we will find it is independent of
+ $\diff{t}\hat n$.
+%Now take the commutator
+%\[
+%	 [\hat n,H] = \blr{\psi^\dag(\vect r)\psi(\vect r),\psi^\dag(\vect r')\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')
+%	 +\frac{2\pi\h^2 a}{m}\psi^\dag(\vect r')\psi^\dag(\vect r')\psi(\vect r')\psi(\vect r')}
+%\]
+%The first term is
+%\ba
+%	 \blr{\psi^\dag(\vect r)\psi(\vect r),\psi^\dag(\vect r')\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')}&=
+%	 \blr{\psi^\dag(\vect r)\psi(\vect r),\psi^\dag(\vect r')}\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')\\
+%	 &\quad+
+%	\psi^\dag(\vect r')  \blr{\psi^\dag(\vect r)\psi(\vect r),\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')}\\
+%	&=  \blr{\psi^\dag(\vect r)\psi(\vect r),\psi^\dag(\vect r')}\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')\\
+%	 &\quad+
+%	 \psi^\dag(\vect r') \plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')} \blr{\psi^\dag(\vect r)\psi(\vect r),\psi(\vect r')}
+%\ea
+%Note that $U(\vect r')$ is not an operator here. It is just a scalar function of position, originating inside the Hamiltonian
+%integral. Additionally, $\del'^2$ passes through $\psi(\vect r)$ and $\psi^\dag(\vect r)$. The two relavent commutors are
+%calculated as
+%\[
+%	 [\psi^\dag(\vect r)\psi(\vect r),\psi^\dag(\vect r')]= \psi^\dag(\vect r)[\psi(\vect r),\psi^\dag(\vect r')] = 
+%	 \psi^\dag(\vect r)\delta(\vect r-\vect r') 
+%\]
+%and
+%\[
+%	[\psi^\dag(\vect r)\psi(\vect r),\psi(\vect r')]= [\psi^\dag(\vect r),\psi(\vect r')]\psi(\vect r)
+%	= -\delta(\vect r-\vect r')\psi(\vect r).
+%\]
+%These results together give use the first commutator term
+%\ba
+%	 \blr{\psi^\dag(\vect r)\psi(\vect r),\psi^\dag(\vect r')\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')}&=
+%	 \psi^\dag(\vect r)\plr{ -\frac{\h^2}{2m}\del^2+U(\vect r)}\psi(\vect r) 
+%	 - \psi^\dag(\vect r)\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r)
+%\ea	
+%Thus
+%\[
+%	-i\h \pdiff{t}\psi^\dag (\vect r)=
+%	\blr{\frac{-\h^2}{2m}\del^2+U(\vect r)}\psi^\dag(\vect r)+\frac{4\pi\h^2 a}{m}
+%	\psi^\dag(\vect r)\hat n^\dag(\vect r)
+%\]
+%\ba
+%	 [\hat n,H] &= \delta(\vect r-\vect r')\psi^\dag(\vect r)\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\psi(\vect r')
+%	 -\psi^\dag(\vect r')\plr{ -\frac{\h^2}{2m}\del'^2+U(\vect r')}\delta(\vect r-\vect r')\psi(\vect r) \\
+%	 &= \psi^\dag(\vect r)\plr{ -\frac{\h^2}{2m}\del^2+U(\vect r)}\psi(\vect r)-
+%	 \psi^\dag(\vect r)\plr{ -\frac{\h^2}{2m}\del^2+U(\vect r)}\psi(\vect r) 
+%\ea
+Using the result derived in the script for $\pdiff{t}\psi(\vect r)$ along with its conjugate
+\ba
+	i\h\pdiff{t}(\psi^\dag(\vect r)\psi(\vect r)) &= i\h\plr{ \pdiff{t}\psi^\dag(\vect r)\psi(\vect r) +\psi^\dag(\vect r)
+	\pdiff{t}\psi(\vect r)}\\
+	&= -\blr{\frac{-\h^2}{2m}\del^2+U(\vect r)}\psi^\dag(\vect r)\psi(\vect r)-\frac{4\pi\h^2 a}{m}
+	\psi^\dag(\vect r)\hat n^\dag(\vect r)\psi(\vect r)\\
+	&\qquad + \psi^\dag(\vect r)\blr{\frac{-\h^2}{2m}\del^2+U(\vect r)}\psi(\vect r)+\frac{4\pi\h^2 a}{m}
+	\psi^\dag(\vect r)\hat n(\vect r)\psi(\vect r)
+\ea
+$\ ^\dag$Since $U(\vect r)$ commutes with the $\psi,\psi^\dag$ operators and $\hat n = \hat n^\dag$, this leaves us with
+\[
+	i\h\diff{t}\hat n = -\frac{\h^2}{2m}\bigg[\psi^\dag(\vect r)\del^2\psi(\vect r)-(\del^2\psi^\dag(\vect r))\psi(\vect r)\bigg].
+\]
+This can be more symmetrically arranged by noting that $\psi$ and $\psi^\dag$ are both evaluated at $\vect r$, 
+so their commutator vanishes
+\[
+	i\h\diff{t}\hat n = -\frac{\h^2}{2m}\bigg[\psi^\dag(\vect r)\del^2\psi(\vect r)-\psi(\vect r)\del^2\psi^\dag(\vect r)\bigg].
+\]
+We can express the right hand side in terms of a divergence
+\[
+	\del\cdot \plr{ \psi^\dag(\vect r)\del\psi(\vect r)-\psi(\vect r)\del\psi^\dag(\vect r)}=
+	\psi^\dag(\vect r)\del^2\psi(\vect r)-\psi(\vect r)\del^2\psi^\dag(\vect r).
+\]
+Cross terms from the derivative cancel from again $[\psi(\vect r),\psi^\dag(\vect r)] = 0$. Thus the particle 
+current density is 
+\[
+	\vecth j = -\frac{i\h}{2m}\plr{ \psi^\dag(\vect r)\del\psi(\vect r)-\psi(\vect r)\del\psi^\dag(\vect r)}.
+\]
+\\ \\
+$\ ^\dag$$U(\vect r)$ is actually just a scalar as a function of position. It originated in the integrand of the Hamiltonian 
+and the actual operators reside in the fields $\psi\sim a_{\vect k}$ and $\psi^\dag\sim a^\dag_{\vect k}$.
+\\ \\
+% #3 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+\item[6.10]	 
+In terms of plane-wave states labeled by the wave number $\vect k$, the Hamiltonian of a single-component Bose gas
+under the contact interaction model with scattering length $a$ reads
+\[
+	H = \sum_k \ep_k b_{\vect k}^\dag b_{\vect k}+\frac{2\pi\h^2 a}{mV}
+	\sum_{\substack{\vect k_1,\vect k_2,\vect k_3,\vect k_4\\ \vect k_1+\vect k_2 = \vect k_3+\vect k_4}}
+	b_{\vect k_1}^\dag b_{\vect k_2}^\dag b_{\vect k_3}b_{\vect k_4}
+\]
+In a noninteracting zero-temperature Bose-Einstein condensate all $N\gg 1$ atoms are in the state with $\vect k =0$.
+\benum
+% (a)
+\item
+Use perturbation theory to calculate the energy of the condensate to first order in the atom-atom interaction strength.
+\\ \\
+At $T=0$, all $N$ particles lie in the $\vect k=0$ state, which can be expressed as the Fock state $\ket\psi$
+\[
+	\ket\psi = \ket{N,0,0,...}.
+\]
+Treating the gas nonrelativistically (appropriate for a finite number of $N$ atoms with large masses), the dispersion 
+relation is
+\[
+	\ep_k = \frac{\h^2 k^2}{2m}
+\]
+and, consequently, the noninteracting contribution from the Hamiltonian is zero
+\[
+	H^0\ket\psi = \ep_0 \hat n_0 \ket\psi = 0\Rightarrow E^0 = 0.
+\]
+However, taking the contact interaction as a perturbation, we have the first order correction to the energy
+\[
+	E^1 = \frac{2\pi\h^2 a}{mV}
+	\sum_{\substack{\vect k_1,\vect k_2,\vect k_3,\vect k_4\\ \vect k_1+\vect k_2 = \vect k_3+\vect k_4}}
+	 \braket{\psi|b_{\vect k_1}^\dag b_{\vect k_2}^\dag b_{\vect k_3}b_{\vect k_4}|\psi}=
+	 \sum_{\vect k_1,\vect k_2,\vect k_3,\vect k_4}\delta_{\vect k_1+\vect k_2,\vect k_3+\vect k_4}
+	 \braket{\psi|b_{\vect k_1}^\dag b_{\vect k_2}^\dag b_{\vect k_3}b_{\vect k_4}|\psi}
+\]
+The expectation term
+\[
+	 \braket{\psi|b_{\vect k_1}^\dag b_{\vect k_2}^\dag b_{\vect k_3}b_{\vect k_4}|\psi}
+	 =  \braket{...,0,0,N||b_{\vect k_1}^\dag b_{\vect k_2}^\dag b_{\vect k_3}b_{\vect k_4}|N,0,0,...}
+\]
+can only be nonzero given that 
+\[
+	b^\dag_{\vect k_1}b^\dag_{\vect k_2}b_{\vect k_3}b_{\vect k_4}\ket{\psi} \to 
+	\delta_{\vect k_1,0}\delta_{\vect k_2,0}\delta_{\vect k_3,0}\delta_{\vect k_4,0}
+	b^\dag_{\vect k_1}b^\dag_{\vect k_2}b_{\vect k_3}b_{\vect k_4}\ket{\psi}.
+\]
+This still preserves the relation $\vect k_1+\vect k_2 = \vect k_3+\vect k_4$. Now our sum reduces to
+\ba
+	E^1 &=  \frac{2\pi\h^2 a}{mV}\braket{...,0,0,N| 
+	b^\dag_{0}b^\dag_{0}b_{0}b_{0}
+	|N,0,0,...} \\
+	&=  \frac{2\pi\h^2 a}{mV} \sqrt N\sqrt{N-1}\sqrt{N-1}\sqrt{N}\braket{...,0,0,N|N,0,0,...}\\
+	 &= \frac{2\pi\h^2 a}{mV} N(N-1)
+\ea
+% (b)
+\item
+What is the pressure of this weakly interacting condensate?
+\\ \\
+Although the usual thermodynamic quantities like entropy and pressure do not exist in a BEC condensate (in the thermodynamic limit), when we 
+add in interactions, they may. Proceeding on the assumption they do, we have the Helmholtz free energy $F(T,V)$,
+\[
+	F = U-TS
+\]
+and its relation to pressure
+\[
+	p=-\plr{\pdiff[F]{V}}_T.
+\]
+At $T=0$ then, $F=U$ and $p = -\pdiff[U]{V}$. Thus
+\[
+	p =  \frac{2\pi\h^2 a}{mV^2}(N^2-N) .
+\]
+For $N \gg 1$ this may be approximated as
+\[
+	p = \frac{2\pi\h^2 a}{mV^2}N^2 =  \frac{2\pi\h^2 a}{m}n^2.
+\]
+\eenum 
+\eenum
+\end{document}

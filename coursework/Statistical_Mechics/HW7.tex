@@ -1,0 +1,308 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{\begin{spacing}{1.2}Statistical Mechanics\\HW 7\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Oct. 28}
+
+\begin{document}
+\maketitle
+
+\benum
+% 7.1 ----------------------------------------------------------------------------------------------------------------------
+  	\item[\textbf{7.1}]
+	Prove the relationship for fermions that we wrote down in class:
+	\[
+		U = \sum_i \braket{n_i}\epsilon_i = \frac{3}{2}\frac{gVk_bT}{\lambda_{dB}^3}f_{\frac{5}{2}}(z)
+	\]
+	What is the explicit relationship with the grand potential? How would the same problem look like
+	for bosons?
+	\\
+	\\
+	The internal energy can be computed with 
+	\[	
+		E = \sum_i \braket{n_i}\epsilon_i.
+	\]
+	The eigenstates of the free Hamiltonian are momentum eigenstates. These can be normalized
+	via a box normalized. In three dimensions, the possible values of momentum are quantized
+	\[
+		\vect K = \frac{2\pi}{L}(k_1\vecth e_1+ k_2 \vecth e_2+k_3 \vecth e_3)
+	\]
+	where $k_1,k_2,k_3 = 0,\pm 1,\pm 2..$. 
+	The energies are then
+	\[
+		\epsilon_k = \frac{\h^2|k|^2}{2m}.
+	\]
+	Since the fermions have spin, the eigenstates are labeled by wavevector $\vect k$ and spin $m_s$
+	\[
+		\ket{i} = \ket{\vect k,m_s}.
+	\]
+	Since the spectrum is degenerate we have for degeneracy $g$
+	\[
+		E = \sum_i \braket{n_i}\epsilon_i = g\sum_\vect k \braket{n_i(\epsilon_k)}\epsilon_k
+	\]
+	Next we take the continuum limit of possible momentum eignstates
+	\[
+		E = \frac{gV}{(2\pi)^3}\int d^3k\ \frac{\epsilon_k}{z^{-1}e^{\beta\epsilon_k}+1}
+	\]
+	where we have used for fermions
+	\[
+		\braket{n_i} = \frac{1}{e^{\beta(\epsilon_i-\mu)}+1}.
+	\]
+	Putting in the explicit for of $\epsilon_k$ and doing a change of variable we arrive at
+	\ba
+		E &= \frac{gV}{2\pi^2}\frac{\h^2}{2m}
+		\pfrac{2mkT}{\h^2}^{5/2} \int dx\ x^4 \frac{ze^{-x^2}}{1+ze^{-x^2}} \\
+		 & = \frac{gV}{2\pi^2}\frac{\h^2}{2m}
+		\pfrac{2mkT}{\h^2}^{5/2} \int dx\ x^4 \plr{ze^{-x^2}-z^2e^{-2x^2}+z^3e^{-3x^2}}
+	\ea
+	For the Gaussian
+	\[
+		\int_0^\infty dx\ x^4 e^{-\lambda x^2} = \frac{3\sqrt\pi}{8\lambda^{5/2}}.
+	\]
+	This may be used to construct a function for the integral, namely
+	\[
+		f_\alpha(z)=\sum_{l=1}^\infty \frac{(-)^{l+1}z^l}{l^\alpha}.
+	\]
+	We can now express the whole integral as
+	\[
+		E = \frac{3}{2}\frac{gVk_bT}{\lambda_{dB}^3}f_{\frac{5}{2}}(z)
+	\]
+	where $\lambda = \sqrt{\frac{2\pi\h^2}{mkT}}$.
+	\\
+	\\
+	The grand potential is given as $\Omega = -kT\ln \mathcal Z$ and for fermions there are only
+	two occupation numbers 
+	$\mathcal Z = 1+ze^{-\beta\epsilon_i}$. Thus
+	\[
+		\ln\mathcal Z = \sum_i \ln(1+ze^{-\beta\epsilon_i}) = \frac{gV}{(2\pi)^3}\int d^3k\ 
+		\ln(1+ze^{\beta\epsilon_k}).
+	\]
+	We can expand this natural log as
+	\[
+		\ln\mathcal Z = \frac{gV}{2\pi^2}\int dk\  k^2(ze^{-
+		\beta\epsilon_k}-\frac{z^2}{2}e^{-2\beta\epsilon_k}+\frac{z^3}{3}e^{-3\beta\epsilon_k}-...)
+	\]
+	This time the Gaussian is
+	\[
+		\int_0^\infty dx\ x^2e^{-\lambda x^2} = \frac{\sqrt\pi}{4\lambda^{3/2}}
+	\]
+	and so we have the same special function as the energy
+	\[
+		\ln\mathcal Z = \frac{gV}{\lambda^3}f_{5/2}(z).
+	\]
+	Thus the grand potential is
+	\[
+		\Omega = -\frac{gVkT}{\lambda^3}f_{5/2}(z).
+	\]
+	Looking back at the energy we see that 
+	\[
+		\Omega = -\frac{2}{3} U
+	\]
+	\\
+	\\
+	For Bosons we must use the occupation number
+	\[
+		\braket{n_i} = \frac{1}{e^{\beta(\epsilon_i-\mu)}-1}.
+	\]
+	The same analysis proceeds up to the integration with a slightly different expansion
+	\ba
+		E &= \frac{gV}{(2\pi)^2}\frac{\h^2}{2m}
+		\pfrac{2mkT}{\h^2}^{5/2} \int dx\ x^4 \frac{ze^{-x^2}}{1-ze^{-x^2}} \\
+		 & = \frac{gV}{(2\pi)^2}\frac{\h^2}{2m}
+		\pfrac{2mkT}{\h^2}^{5/2} \int dx\ x^4 \plr{ze^{-x^2}+z^2e^{-2x^2}-z^3e^{-3x^2}}.
+	\ea
+	For Bosons the special function is
+	\[
+		g_\alpha(z) = \sum_{l=1}^\infty \frac{z^l}{l^\alpha}
+	\]
+	and the energy is thus
+	\[
+		E = \frac{3}{2}\frac{gVk_bT}{\lambda_{dB}^3}g_{\frac{5}{2}}(z).
+	\]
+	The grand partition function for bosons goes as
+	\[
+		\ln\mathcal Z = \sum_i \ln(1-ze^{-\beta\epsilon_i}) .
+	\]
+	Hence we may propagate the minus sign only to find the same result
+	\[
+		\Omega = -\frac{2}{3} U
+	\]
+	\\
+	\\
+% 7.2 -----------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{7.2}]
+	Take a system of $n$ adsorption sites, each of which may bind a molecule: putting a molecule to a site lowers the 
+	energy by $\epsilon$ compared to the energy of a molecule floating around in the environment. 
+	\\
+	\benum
+	\item
+	Given an environment where the molecules have temperature $T$ and chemical potential $\mu$, the 
+	grand partition
+	function for the molecules of the lattice gas is
+	\[
+		\mathcal Z = (1+e^{\beta(\epsilon+\mu)})^n
+	\]
+	Why?
+	\\
+	\\
+	Each adsorption site is distinguishable and it may only take e may take on are $0$ and $-\epsilon$.
+	The grand partition function is given as
+	\[
+		\mathcal Z= \sum_N z^NZ_N.
+	\]
+	For the canonical partition function, we may treat each site independently such that the
+	partition function factorizes:
+	\[	
+		Z = \prod_n Z_n = (1+e^{\beta \epsilon})^n.
+	\]
+	So
+	\[
+		\mathcal Z = \sum_N z^N(1+e^{\beta\epsilon})^n.
+	\]
+    	
+	\[
+		\mathcal Z = \prod_n (1+e^{\beta( \epsilon+\mu)}) = (1+e^{\beta( \epsilon+\mu)})^n
+	\]
+	\item
+	Show that the probability that a site is occupied by a molecule is $p = (1+e^{-\beta(\epsilon+\mu)})^{-1}$
+	\\
+	\\
+	We know the probability that the system is in specified state with energy $E_n$ in a canonical
+	ensemble is given by
+	\[
+		p_n = \frac{1}{Z}e^{-\beta E_n}.
+	\]
+	I will assume the same form for the grand canonical ensemble; however, to find the probability that 
+	only a single site is occupied, we must use the grand partition function 
+	of the single independent system, $\mathcal Z_i = (1+e^{\beta(\epsilon+\mu)})$.  
+	Thus
+	\[
+		p = \frac{e^{-\beta(-\epsilon-\mu)}}{\mathcal Z_i} 
+		= \frac{e^{\beta(\epsilon+\mu)}}{1+e^{\beta(\epsilon+\mu)}} = \frac{1}{1+e^{-\beta(\epsilon+\mu)}}
+	\]
+	Therefore
+	\[
+		p = (1+e^{-\beta(\epsilon+\mu)})^{-1}
+	\]
+	\\
+	
+	\eenum
+% 7.3 ------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{7.3}]
+	A system consists of two particles, each of which has two possible quantum states with energies
+	$\pm \epsilon/2$. Write down the canonical partition function if (a) the particles are distinguishable
+	; (b) the particles are bosons; (c) the particles are fermions.
+	\\
+	\\
+	\benum
+	\item
+	For two distinguishable particles, the partition function factorizes as
+	\[
+		Z = Z_1Z_2 = \plr{e^{-\beta \epsilon/2}+e^{\beta \epsilon/2}}^2. 
+	\] \\
+	
+	\item
+	For bosons, the particles are indistinguishable so it is the sum of all 4 distinct microstates
+	\[
+		Z = e^{-\beta\epsilon}+1+e^{\beta\epsilon}.
+	\]\\
+	
+	\item
+	For fermions, the particles are distinguishable and cannot occupy the same state
+	\[
+		Z = 1+1 = 2
+	\]
+	\\
+	\eenum
+% 7.4 ------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{7.4}]
+	Calculate the integrals
+	\[
+		I_1 = \int_0^\infty dx\ x^n e^{\lambda x},\qquad I_2= \int_0^\infty dx\ x^ne^{-\lambda x^2}
+	\]
+	For the purpose of this exercise, it is enough to find an algorithm for the values of the integrals in terms of 
+	$n = 0,1,2,...$ assuming $\lambda >0$. The results are good, however, for complex $\lambda$ with 
+	$Re(\lambda)>0$. 
+	\\
+	\\
+	For $n=0$ 
+	\[
+		I_1 = \frac{1}{\lambda}\qquad I_2 = \frac{\sqrt \pi}{2\sqrt \lambda}
+	\]
+	$n=1$
+	\[
+		I_1 = \frac{1}{\lambda^2}\qquad I_2 = \frac{1}{2 \lambda}
+	\]
+	$n=2$
+	\[
+		I_1 = \frac{2}{\lambda^3}\qquad I_2= \frac{\sqrt \pi}{4\lambda^{3/2}}
+	\]	
+	$n=3$
+	\[
+		I_1 = \frac{6}{\lambda^4}\qquad  I_2= \frac{1}{2\lambda^2}
+	\]
+	$n=4$
+	\[
+		I_1 = \frac{24}{\lambda^5}\qquad  I_2= \frac{3\sqrt\pi}{8\lambda^{5/2}}.
+	\]
+	Looking at these results and continuing onward we find that $I_2$ actually has the same dependence 
+	as the gamma function, where $\Gamma(1/2) =\sqrt\pi$. 
+	\[
+		I_1 = \frac{n!}{\lambda^{n+1}}
+	\]
+	and
+	\[
+		I_2= \frac{1}{2}\lambda^{\frac{-n+1}{2}}\Gamma\pfrac{n+1}{2}.
+	\]
+	\\
+% 7.5 -------------------------------------------------------------------------------------------------------------------------
+	\item[\textbf{7.5}]
+	
+	Show (e.g., by starting from the grand partition function) that the entropies of Bose-Einstein and Fermi-	Dirac
+	ideal gases are
+	\[
+		S = -k_b\sum_i\blr{\braket{n_i}\ln\braket{n_i}\mp(1\pm\braket{n_i})\ln(1\pm\braket{n_i})}
+	\]
+	\\
+	\\
+	We know that
+	\[
+		\Omega = -kT\ln\mathcal Z = 
+	\]
+	and that
+	\[
+		-\plr{\pdiff[\Omega]{T}}_{\mu,V} = S.
+	\]
+	So
+	\[
+		S = k\ln \mathcal Z +kT\pdiff[(\ln\mathcal Z)]{T}
+	\]
+	Also,
+	\[
+		\pdiff[]{T} = \pdiff[\beta]{T}\pdiff[]{\beta}\quad\to\quad \pdiff[]{T} = -\frac{\beta}{T}\pdiff[]{\beta}.
+	\]
+	Forming $S$, 
+	\ba
+	S &= k\sum_i \mp\ln(1\pm ze^{-\beta\epsilon_i})+k\beta \pdiff[]{\beta}\sum_i \pm\ln(1\pm ze^{-\beta
+	\epsilon_i})\\
+	& = k\sum_i \mp\ln(1\pm ze^{-\beta\epsilon_i})+
+	k\beta\sum_i \frac{\pm(\epsilon_i-\mu)}{1\pm ze^{-\beta\epsilon_i}}\\
+	& = k\sum_i \mp\ln(1\pm ze^{-\beta\epsilon_i})+
+	k\sum_i \frac{\pm\ln(1/\braket{n_i}-1)}{1\pm ze^{-\beta\epsilon_i}}
+	\ea
+	Continuing to use the occupation number for fermions
+	\[
+		\braket{n_i} = \frac{1}{e^{\beta(\epsilon_i-\mu)}+1}.
+	\]
+	and bosons
+	\[
+		\braket{n_i} = \frac{1}{e^{\beta(\epsilon_i-\mu)}-1}.
+	\]
+	we can finally arrive at
+	\[
+		S = -k_b\sum_i\blr{\braket{n_i}\ln\braket{n_i}\mp(1\pm\braket{n_i})\ln(1\pm\braket{n_i})}.
+	\]
+	
+\eenum
+\end{document}

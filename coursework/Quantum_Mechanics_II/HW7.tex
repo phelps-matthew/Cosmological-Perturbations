@@ -1,0 +1,414 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{mymacros}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics II\\HW 7\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Nov. 4}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	\item{Scattering from a radial square well potential}
+	\\
+	\\
+	Consider the finite radial square well potential:
+	\[
+		V(r) = -V_0,\quad r<R;\quad V(r)=0,\quad r>R
+	\]
+	\benum
+	% (a)
+	\item
+	Compute $\tan\delta_0$.
+	\\
+	\\
+	To find the phase shift, we can solve the radial Schrodinger equation, take the solution $R_l(r)$ at $r\to \infty$ and 
+	then identify the phase shift. We know that at $r\to\infty$ the form of our solution must be
+	\be\label{1}
+		R_l(r)\underset{r\to\infty}\longrightarrow \frac{A\sin\blr{kr-l\pi/2+\delta_l(k)}}{r}.
+	\ee
+	Here $\delta_l(k)$ is the potential dependent quantity that we seek to find, as it allows us to find the scattering
+	amplitude. 
+	\\
+	\\
+	Onwards to the problem, for $r<R$, the particle resides in potential $-V_0$
+	and the solution to radial equation is that of a free particle with a shift in energy, namely:
+	\[
+		R_l(r) = Aj_l(\alpha r)+Bn_l(\alpha r)
+	\]
+	with
+	\[
+		\alpha = \sqrt\frac{2m(E+V_0)}{\h^2}.
+	\]
+	However, the Neumann function is singular at the origin and so we set $B_l =0$. Thus
+	\[
+		R_l(r) = Aj_l(\alpha r)\qquad r<R. 
+	\]
+	Outside the well, we have a free particle and can include the Neumann function 
+	\[
+		R_l(r) = Cj_l(kr)+Dn_l(kr)\qquad r>R
+	\]
+	where
+	\[
+		k = \sqrt\frac{2mE}{\h^2}. 
+	\]
+	Taking boundary conditions of continuity of the wavefunction and its derivative at $r=R$
+	\[
+		Aj_l(\alpha R) = Cj_l(kR)+Dn_l(kR)
+	\]
+	\[
+		A\alpha j'_l(\alpha R) = Ckj'_l(kR)+Dkn'_l(kR).
+	\]
+	To find the form of $\delta_l$, we now take our solution at $r\to\infty$. The asymptotic forms of the sphereical
+	Bessels are
+	\[
+		j_l(r) \to \frac{\sin(r-l\pi/2)}{r};\qquad n_l(r)\to -\frac{\cos(r-l\pi/2)}{r}.
+	\]
+	Therefore
+	\ba
+		R_l(r)&\underset{r\to\infty}\longrightarrow \frac{1}{kr}\blr{C \sin(r-l\pi/2)-D\cos(r-l\pi/2)}\\
+		& = \frac{C}{kr}\blr{ \sin(r-l\pi/2)-\frac{D}{C}\cos(r-l\pi/2)}
+	\ea
+	We would like to put our asymptotic radial function in a form that resembles \eqref 1. One way we can do this is to 		assign $-\frac{C}{D} = \tan(\delta_l)$. The rationale is that the effect of the potential, represented by $\delta_l$,
+	manifests itself as the boundary conditions and thus in $\frac{C}{D}$. Proceeding
+	\ba
+		R_l(r)\underset{r\to\infty}\longrightarrow &= \frac{C}{kr}\blr{ \sin(r-l\pi/2)+\tan\delta_l\cos(r-l\pi/2)}\\
+		& = \frac{\sqrt{C^2+D^2}}{kr}\blr{\cos\delta_l\sin(r-l\pi/2)+\sin\delta_l \cos(r-l\pi/2)}\\
+		& = \frac{\sqrt{C^2+D^2}}{kr}\blr{\sin\plr{kr-\frac{l\pi}{2}+\delta_l}}.
+	\ea
+	Two identities were needed in the above: $\frac{1}{\cos x}= \sqrt{\tan^2x+1}$ and $\sin x\cos y = \frac{1}{2}
+	\plr{\sin(x+y)+\sin(x-y)}$. 
+	
+	Now we have the same form as \eqref 1 and all that remains is to find $\frac{D}{C}$.
+	As we will see, it is the relation between $C$ and $D$ that we are after.  This is accomplished by the following
+	series of painful-to-look-at algebraic steps:
+	\ba
+		& \frac{j_l(\alpha R)}{\alpha j'_l(\alpha R)} = \frac{Cj_l(kR)+Dn_l(kR)}{Ckj'_l(kR)+Dkn'_l(kR)} \\
+		\to\quad& \plr{Ckj'_l(kR)+Dkn'_l(kR)}\pfrac{j_l(\alpha R)}{\alpha j'_l(\alpha R)} = Cj_l(kR)+Dn_l(kR) \\
+		\to\quad&C\blr{ kj'_l(kR)\pfrac{j_l(\alpha R)}{\alpha j'_l(\alpha R)} -j_l(kR)}
+		= D\blr{ n_l(kR)-kn'_l(kR)\pfrac{j_l(\alpha R)}{\alpha j'_l(\alpha R)}}\\
+		\to \quad& \frac{D}{C} = \frac{kj'_l(kR)\pfrac{j_l(\alpha R)}{\alpha j'_l(\alpha R)} -j_l(kR)}
+		{ n_l(kR)-kn'_l(kR)\pfrac{j_l(\alpha R)}{\alpha j'_l(kR)}} \\
+		&= \frac{kj'_l(kR)j_l(\alpha R) -\alpha j_l(kR) j'_l(\alpha R)}
+		{ \alpha n_l(kR) j'_l(\alpha R)-kn'_l(kR)j_l(\alpha R)}
+	\ea
+	\\
+	\\
+	Thus
+	\be\label{2}
+		\tan\delta_l = -\frac{D}{C} = \frac{kj_l(\alpha R)j'_l(kR) -\alpha j_l(kR) j'_l(\alpha R)}
+		{ kj_l(\alpha R)n'_l(kR)-\alpha n_l(kR) j'_l(\alpha R)}.
+	\ee
+	To compute the S-wave we note
+	\[
+		j_0(x) = \frac{\sin x}{x};\qquad j_0'(x) = \frac{\cos x}{x}-\frac{\sin x}{x^2}
+	\]
+	\[
+		n_0(x) = -\frac{\cos x}{x};\qquad n_0'(x) = \frac{\sin x}{x}+\frac{\cos x}{x^2}
+	\]
+	and after some algebraic manipulation we arrive at
+	\[
+		\tan\delta_0 = \frac{k\sin(\alpha R)\cot(kR)-\alpha \cos(\alpha R)}{k\sin(\alpha R)+\alpha 
+		\cos(\alpha R)\cot(kR)}
+	\]
+	\\
+	% (b)
+	\item
+	The scattering length $a_s$, and effective range, $r_0$, are \textbf{defined} from the low energy limit of the
+	s-wave phase shift:
+	\[
+		k\cot\delta_0 \equiv -\frac{1}{a}+\frac{1}{2}r_0k^2+...,\quad k\to 0
+	\]
+	Find an expression for $a_s$ and for $r_0$, in terms of the momentum $k$ and the parameters of the 
+	potential.
+	\\
+	\\
+	\\
+	From part (a) we have
+	\[
+		k\cot\delta_0 =  \frac{k^2\sin(\alpha R)+\alpha k
+		\cos(\alpha R)\cot(kR)}{k\sin(\alpha R)\cot(kR)-\alpha \cos(\alpha R)}
+	\]
+	Using the fact that
+	\[
+		\alpha = \sqrt{k^2+\frac{2mV_0}{\h^2}}
+	\]
+	we may expand this function (using Mathematica) around $k=0$ up to second order. Denoting dimensionless 
+	constant
+	\[
+		\beta= \sqrt{\frac{2mV_0R^2}{\h^2}}
+	\]
+	we have
+	\[
+		k\cot\delta_0 \approx -\frac{1}{R\plr{\frac{\tan\beta}{\beta}-1}}+\frac{1}{2}
+		\blr{\frac{R\plr{\beta^2+\plr{\frac{3}{2}-3\beta^2}\sin(2\beta)+\beta(\beta^2-3)\cos(2\beta)}}
+		{3\beta(\sin\beta-\beta\cos\beta)^2}}k^2.
+	\]
+	Hence
+	\[
+		a_s = R\plr{\frac{\tan\beta}{\beta}-1}
+	\]
+	\\
+	\[
+		r_0 = \frac{R\plr{\beta^2+\plr{\frac{3}{2}-3\beta^2}\sin(2\beta)+\beta(\beta^2-3)\cos(2\beta)}}
+		{3\beta(\sin\beta-\beta\cos\beta)^2}.
+	\]
+	\\
+	\\	
+	% (c)
+	\item
+	Plot $a_s$ and $r_0$ as functions of the dimensionless ratio $\sqrt{2mV_0R^2/\h^2}$.
+	\\
+	\\
+	\figg[width=100mm]{7_1.pdf}
+	\phantom{}
+	\figg[width=100mm]{7_2.pdf}
+	% (d)
+	\item 
+	What is the physical meaning of the singularities in these plots?
+	\\
+	\\
+	The singularities all lie at positions where the scattering length $a_s$ undergoes a sign change. The change in sign 		corresponds to the existence of a bound state in the potential well. These periodic singularities occur at values
+	in which $\sin(\delta_0)$ is maximized in the scattering amplitude, i.e. resonant scattering
+	\[
+		\delta_0 = \plr{n+\frac{1}{2}}\frac{\pi}{2}.
+	\]
+	\phantom{}
+	\\
+	\\
+	\\
+	\phantom{}
+\eenum
+	
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{Born and Eikonal Approximations}
+	\\ \\
+	Consider the radially symmetric potential 
+	\[
+		V(r) = -V_0e^{-r^2/r_0^2}
+	\]
+	\benum
+	% (a)
+	\item 
+	Compute both the Born approximation and the Eikonal approximation for the scattering amplitude
+	$f_k(\theta)$ for $V(r)$.
+	\\
+	\\
+	\\
+	For a spherically symmetric potential, the Eikonal approximation (good for large $k$) is given as
+	\[
+		f(\theta) = -ik\int_0^\infty db'\ b' J_0(kb'\theta)\blr{e^{i\vect\chi(b')}-1}
+	\]
+	where
+	\[
+		\chi(\vect b') = -\frac{m}{\h^2 k} \int_{-\infty}^{\infty} dz'\ V(\vect b,z').
+	\]
+	In terms of the impact parameter $b$ and $z$ we have $r^2 = b^2+z'^2$ and the phase integral goes as
+	\ba
+		\chi(b') &= \frac{mV_0}{\h^2 k}e^{-b^2/r_0^2} \int_{-\infty}^{\infty} dz'\ e^{-z'^2/r_0^2} \\
+		& = \frac{mV_0}{\h^2 k}\sqrt\pi r_0 e^{-b^2/r_0^2} .
+	\ea
+	Looking at this double exponential
+	\[
+		\exp\blr{i\frac{mV_0}{\h^2 k}\sqrt\pi r_0\exp\plr{ e^{-b^2/r_0^2}}}
+	\] 
+	lets denote the dimensionless constants
+	\[
+		\gamma = \frac{mV_0}{\h^2}r_0^2
+	\]
+	\[
+		y = \frac{b}{r_0} 
+	\]
+	\[
+		\alpha = kr_0
+	\]
+	thus
+	\[
+		\exp\blr{i\sqrt\pi\gamma e^{-y^2}}.
+	\]
+	Our integral which we must integrate numerically is now
+	\[
+		f(\theta) = -ikr_0^2 \int_0^\infty dy\ y J_0(\alpha y \theta)\blr{\exp\blr{i\sqrt\pi\pfrac{\gamma}{\alpha} e^{-y^2}}-1}.
+	\]
+	or
+	\be\label{3}
+		\frac{|f(\theta)|}{r_0^2} = \alpha^2\left| 
+		\int_0^\infty dy\ y J_0(\alpha y \theta)\blr{\exp\blr{i\sqrt\pi\pfrac{\gamma}{\alpha} e^{-y^2}}-1}\right|^2.
+	\ee
+	\\
+	\\
+
+	Born Approximation:
+		\ba
+			f(\theta) &= \frac{2mV_0}{\h^2} \int_0^\infty dr\  r\frac{\sin(qr)}{q}\exp{\pfrac{-r^2}{r_0^2}}\\
+			& = \frac{2mV_0}{\h^2}\pfrac{\sqrt\pi r_0^3}{4}\exp\plr{-\frac{r_0^2q^2}{4}}\\
+			& = \frac{2mV_0}{\h^2}\pfrac{\sqrt\pi r_0^3}{4}\exp\blr{-r_0^2k^2\sin(\theta/2)^2}
+		\ea
+		\[
+			|f(\theta)|^2 = \frac{\pi r_0^2}{4}\pfrac{mV_0r_0^2}{\h^2}^2\exp\blr{-2r_0^2k^2\sin(\theta/2)^2}.
+		\]
+	In terms of dimensionless quantities
+	\be\label{4}
+		\frac{|f(\theta)|^2}{r_0^2} = \gamma^2\frac{\pi}{4}\exp\blr{-2\alpha^2\sin(\theta/2)^2}.
+	\ee
+	\\
+	% (b)
+	\item
+	Compare plots of the Born and Eikonal expression $|f_k(\theta)|^2$ as functions of the angle $\theta$,
+	at both low and high energies (choose some suitable values).
+	\\
+	\\
+	We plot the dimensionless functions of \eqref 3 and \eqref 4 for various values of $\alpha = kr_0$ 
+	and $\gamma = \frac{mV_0}{\h^2}r_0^2$. 
+	\\
+	\\
+	Low energy:
+	\figg[width=100mm]{7_41.pdf}
+	\figg[width=100mm]{7_42.pdf}
+	\figg[width=100mm]{7_43.pdf}
+	\phantom{}
+	Mid Energy:
+	\figg[width=100mm]{7_44.pdf}
+	\phantom{}
+	High Energy:
+	\figg[width=100mm]{7_45.pdf}
+	\figg[width=100mm]{7_47.pdf}
+	\figg[width=100mm]{7_46.pdf}
+	\phantom{}
+	We see that the Eikonal makes an excellent approximation to the Born approximation at high energies.
+	\\
+	\\ \\
+	\eenum
+
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item{Finite Radial Well}
+	Consider the finite radial square well potential:
+	\[
+		V(r) = -V_0,\quad r<a;\qquad V(r)=0,\quad r>a
+	\]
+	\benum
+	% (a)
+	\item
+	Show that the exact phase shifts are given by
+	\[
+		\tan\delta_l = \frac{kj_l(\alpha a)j'_l(ka)-\alpha j_l(ka)j'_l(\alpha a)}{kj_l(\alpha a)n'_l(ka)
+		-\alpha n_l(ka)j'_l(\alpha a)}
+	\]
+	where 
+	\[
+		k = \sqrt{2mE/ \h^2}; \qquad \alpha = \sqrt{2m(E+V_0)/\h^2}.
+	\]
+	\\
+	\\
+	This is given in \eqref 2 for $R=a$.
+	\\
+	\\
+	% (b)
+	\item 
+	Compute the Born approximation cross-section as a numerical integral, and plot as a function of $k$. 
+	\\
+	\\
+	Born approximation:
+	\[
+		|f(\theta)|^2 = \left|-\frac{2m}{\h^2}\int_0^\infty dr\ r\frac{\sin(qr)}{q}V(r)\right|^2
+	\]
+	with
+	\[
+		q = 2k\sin(\theta/2).
+	\]
+	For our potential
+	\ba
+		f(\theta) &= \frac{2mV_0}{\h^2} \int_0^a dr\  r\frac{\sin(qr)}{q}\\
+		& = \frac{2mV_0}{\h^2}\plr{\frac{\sin(aq)-aq\cos(aq)}{q^3}}
+	\ea
+	thus
+	\[
+			\diff[\sigma]{\Omega} = 4a^2\pfrac{mV_0a^2}{\h^2}^2\plr{\frac{\sin(aq)-aq\cos(aq)}{(qa)^3}}^2.
+	\]
+	and the total cross section is
+	\[
+		\sigma = 8\pi a^2\pfrac{mV_0a^2}{\h^2}^2\int_0^\pi  d\theta\, \sin\theta 
+		\plr{\frac{\sin(aq)-aq\cos(aq)}{(qa)^3}}^2.
+	\]
+	In our numerical integration, we will find the dimensionless quantity $F(ka) = F(\alpha)$
+	\[
+		\frac{\sigma}{8\pi a^2}\pfrac{mV_0a^2}{\h^2}^{-2} = F(\alpha) = 
+		\int_0^\pi  d\theta\, \sin\theta \plr{\frac{\sin(2\alpha \sin(\theta/2))-\alpha\cos(2\alpha \sin(\theta/2))}{(2\alpha
+		\sin(\theta/2))^3}}^2
+	\]
+	\figg[width=100mm]{7_22.pdf}
+	\phantom{}
+	% (c)
+	\item
+	Compare your Born approximation expression with a sum over the first few waves. How many partial waves do you 
+	need to get good agreement, and in what region of $k$?
+	\\
+	\\
+	The scattering amplitude is given in terms of partial waves as
+	\[
+		f(\theta) = \frac{1}{k}\sum_{l=0}^{\infty} (2l+1)e^{i\delta_l}\sin\delta_lP_l(\cos\theta)
+	\]
+	Perhaps what we could do is decompose the Born approximation for $f(\theta)$ in terms of Legendre polynomials
+	and find for what values of $l$ give a good approximation. The Born approximation can
+	be written as
+	\[
+		f(\theta,\alpha) =  \frac{2mV_0}{\h^2}\plr{\frac{\sin(aq)-aq\cos(aq)}{q^3}} =   \frac{2mV_0}{\h^2}g(\theta,\alpha)
+	\]
+	with 
+	\[
+		\alpha = ka.
+	\]
+	The decomposition is then
+	\[
+		f(\theta,\alpha) = \frac{2mV_0}{\h^2}\sum_{l=0}^{\infty} A_l(\alpha)P_l(\cos\theta)
+	\]
+	where
+	\[
+		A_l(\alpha)= \frac{2l+1}{2}\int_0^\pi d\theta\   \sin\theta\, g(\theta,\alpha) P_l(\cos\theta)
+	\]
+	If we look at a plot of $A_l(\alpha)$ for a sequence of $l$'s and different values of $\alpha$, we can come up
+	with an estimate of how many partial waves are needed:
+	\figg[width=100mm]{7_31.pdf}
+	\figg[width=100mm]{7_32.pdf}
+	\figg[width=100mm]{7_33.pdf}
+	\figg[width=100mm]{7_34.pdf}
+	\figg[width=100mm]{7_35.pdf}
+	
+	Assuming that the Born approximation is good, which is true when
+	\[
+		\frac{2m}{\h^2 k}\left|\int dr'\ e^{ikr'}\sin(kr')V(r')\right| \ll 1,
+	\]
+	we can see that in order for the partial waves to match the same $\theta$ behavior as the Born, we need an increasing
+	number of $l$'s as the energy gets higher. Hence, the S-wave dominates at low energy and at higher energy (forward 
+	scattering), we need higher orders of Legendre polynomials. Based on the graphs it appears that an approximation
+	for a good value of $l_{max}$ is 
+	\[
+		l_{max} \approx  ka.
+	\]
+	Now that I'm looking at it, I see that this is the same relation given in Shankar. For a potential with range $r_0$, 
+	particles at cylindrical radius $\rho > r_0$ are not affected. Given that the angular momentum is
+	\[
+		l\approx k\rho
+	\]
+	the condition for $l$ is then
+	\[
+		l_{max} = k\rho_{max} = kr_0.
+	\]
+	\\
+	% (d)
+	\item
+	How does your answer depend on the depth of the well and width of the well?
+	\\
+	\\
+	According the expansion of the Born approximation in terms of Legendre polynomials, the coefficients are
+	scaled by $V_0$. Hence, for 
+	\[
+		\frac{2mV_0}{\h^2} \gg 1
+	\]
+	higher orders of Legendre polynomials are needed to provide a good approximation. Since we have been using 
+	$\alpha = ka$, the same argument applies as in part (c); namely that as the width is increased, larger values
+	of $l$ are needed for a proper estimate. 
+	\eenum
+\eenum
+\end{document}

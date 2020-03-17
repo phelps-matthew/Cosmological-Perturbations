@@ -1,0 +1,247 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\HW 5\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: Feb. 22}
+
+\begin{document}
+\maketitle
+
+\benum
+% #1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  	 \item[4.1]
+	Starting from the Liouville-von Neumann equation, show that the property ``$\rho$ is a pure state" or ``$\rho$ is
+	a mixed state" is preserved in the time evolution of a closed system. In particular, if the system is in a mixed state at
+	some point in time, it will always be in a mixed state and can never be described by a state vector.  \\ \\
+	Form the Liouville-von Neumann equation for $\rho^2$
+	\ba
+		i\h \diff{t}\rho^2 = i\h(\dot\rho\rho +\rho\dot\rho) = \{[H,\rho],\rho\}.
+	\ea
+	Now take the trace
+	\ba
+		i\h \tr\plr{ \diff{t}\rho^2} &= \tr\plr{ [H,\rho]\rho } + \tr\plr{\rho [H,\rho] }\\
+		& = 2\tr([H,\rho]\rho)\\
+		& = 2\tr(H\rho^2)-2\tr(\rho H\rho)\\
+		& = 2\tr(H\rho^2)-2\tr(H\rho^2)\\
+		& = 0.
+	\ea
+	From $\tr(\diff{t}(\rho^2)) = 0$, we have for an infinitesimal variation in time $\delta t$
+	\[
+		\tr\pfrac{ \rho^2(t+\delta t)-\rho^2(t)}{\delta t} = 0
+	\]
+	\[
+		\Rightarrow \tr(\rho^2(t+\delta t)) = \tr(\rho^2(t))\quad \forall t.
+	\]
+	Hence, $\tr(\rho^2)$ is invariant under infinitesimal variations in time and so, for any reasonable smooth function
+	$\rho^2(t)$,
+	\[
+		\tr(\rho^2(t_0)) = \tr(\rho^2(t))\quad\forall t.
+	\]
+	Thus a pure state with $\tr(\rho^2) = 1$ will remain pure and a mixed state with $\tr(\rho^2)\ne 1$ will remain mixed.
+	\\ \\
+% 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[4.3]
+	
+	Imagine two spins prepared in a singlet state
+	\[
+		\ket\psi = \frac{1}{\sqrt 2}( \ket\uparrow_1 \ket\downarrow_2 - \ket\downarrow_1\ket\uparrow_2).
+	\]
+	The spins are then transported far apart, but so that the entangled state is preserved, and the value of the first spin is
+	measured ($\ket\downarrow$ or $\ket\uparrow$). Assume that the measurement result is not known at the site of
+	the second spin, for instance because at the time the site is outside the light cone of the the measurement. What
+	is the effect of the measurement on the state of the other spin?
+	\\ \\
+	Denote the projective measurements of up or down acting on spin system 1 as
+	\[
+		P_{1\uparrow} = \sum_{n=\uparrow,\downarrow} \ket\uparrow_1\ket n_2 \bra n_2\bra\uparrow_1
+	\]
+	\[
+		P_{1\downarrow} = \sum_{n=\uparrow,\downarrow} \ket\downarrow_1\ket n_2 \bra n_2\bra\downarrow_1.
+	\]
+	The probabilities of such measurements giving us up or down spin in system 1 are
+	\ba
+		P(\uparrow_1) &= \tr(\rho P_{1\uparrow}) \overset{\text{pure state}}= \braket{\psi|P_{1\uparrow}|\psi} = \frac{1}{\sqrt 
+		2}\bra\psi(\ket\uparrow_1\ket\downarrow_2) = \frac{1}{2} \\
+	\ea
+	and similarly,
+	\[
+		P(\downarrow_1) = \tr(\rho P_{1\downarrow}) = \frac{1}{2}.
+	\]
+	After a measurement on system 1 is made, the state transforms to 
+	\[
+		\rho \to \rho' = \sum_{k = \uparrow_1,\downarrow_1}P(k)\rho_k
+	\]
+	where
+	\[
+		\rho_k = \frac{\tr_1(P_k\rho P_k)}{P(k)}.
+	\]
+	Earlier we showed that
+	\[
+		P_{1\uparrow}\ket{\psi} = \frac{1}{\sqrt 2} \ket\uparrow_1\ket\downarrow_2
+	\]
+	and since $P_{1\uparrow}^\dag = P_{1\uparrow}$ 
+	\[
+		P_{1\uparrow}\ket\psi\bra\psi P_{1\uparrow} = \frac{1}{2}\ket\uparrow_1\ket\downarrow_2\bra\downarrow_2
+		\bra\uparrow_1.
+	\]
+	Similarly,
+	\[
+		P_{1\downarrow}\ket\psi\bra\psi P_{1\downarrow} = \frac{1}{2}\ket\downarrow_1\ket\uparrow_2\bra\uparrow_2
+		\bra\downarrow_1.
+	\]
+	Thus
+	\[
+		\rho_{\uparrow_1}=\frac{\tr_1(P_{1\uparrow}\rho P_{1\uparrow})}{P(\uparrow_1)} = 2\pfrac{1}{2}
+		\sum_{n = \uparrow,\downarrow} \bra n_1
+		(\ket\downarrow_1\ket\uparrow_2\bra\uparrow_2 \bra\downarrow_1)\ket n_1 = \ket\uparrow_2
+		\bra\uparrow_2
+	\]
+	similarly
+	\[
+		\rho_{\downarrow_1} = \ket\downarrow_2\bra\downarrow_2.
+	\]
+	Therefore the new state after measurement is
+	\[
+		\rho' = \frac{1}{2}\plr{ \ket\uparrow_2\bra\uparrow_2+\ket\downarrow_2\bra\downarrow_2}
+	\]
+	Without knowing the outcome of measurement on system 1, the state of the system 2 transforms into a mixed
+	ensemble of equal probabilities for being in state spin up/down. \\ \\
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[4.4]		
+	\benum
+	% (a)
+	\item
+	Suppose the observables $A$ and $B$ commute. Denote by $P_a$ and $P_b$ the orthogonal projections
+	to the subspaces associated with the eigenvalues $a$ of $A$ and $b$ of $B$. Show that $[P_a,P_b]=0$.
+	\\ \\
+	Define the operators $A$ and $B$ in terms of their respective projectors and eigenvalues
+	\[
+		A = \sum_a aP_a;\qquad B = \sum_b bP_b
+	\]
+	where here we are summing over all the possible eigenvalues $a$ and $b$ (respectively). 
+	For
+	\[
+		[A,B]=0
+	\]
+	we have
+	\[
+		\sum_{a,b}ab[P_a,P_b] = 0
+	\]
+	To retain the equality for general operators $A$ and $B$ the commutator must vanish identically
+	\[
+		[P_a,P_b] = 0.
+	\] \\ \\
+	% (b)
+	\item
+	Think of projective measurements of the observables $A$ and $B$ in succession. Show that the probability to
+	obtain the (eigen)value $a$ for $A$ and $b$ for $B$ is the same whether you measure $A$ first and then $B$,
+	or $B$ first and then $A$. 
+	\\ \\
+	This motivates the saying that commuting observables may be measured simultaneously. Note the relation between
+	joint and conditional probabilities of events $E_1$ and $E_2$, $P(E_1,E_2) = P(E_2|E_1)P(E_1)$.
+	\\ \\
+	Let's measure $A$ first. The probability of measuring eigenvalue a in an arbitrary state $\rho$ is given by
+	\[
+		P(a) = \tr(\rho P_a).
+	\]
+	Upon measurement, the state transforms into
+	\[
+		\rho \to \tilde\rho = \sum_a P(a)\rho_a
+	\]
+	where
+	\[
+		\rho_a = \frac{P_a \rho P_a}{P(a)}.
+	\]
+	This simplifies to
+	\[
+		\tilde \rho= \sum_a P_a\rho P_a.
+	\]
+	However, this is only true if we discard the result of measurement $A$. When an actual measurement is made
+	that gives us the eigenvalue $a$, the state must transform specifically to 
+	\[
+		\rho \to\rho' = P_a\rho P_a
+	\]
+	and the probability of obtaining such a result is $P(a)= \tr(\rho P_a)$. Now 
+	we make a measurement of $B$. The probability of measuring eigenvalue $b$ is then
+	\[
+		P(b) = \tr(\rho' P_b) = \tr(P_a\rho P_aP_b).
+	\]
+	Since the measurement of $B$ cannot affect the result of prior measurement $A$ (the state has already collapsed), the 		probabilities
+	are independent and the joint probability is given by the product 
+	\[
+		P_{(a,b)} = P(a)P(b) = \tr(\rho P_a)\tr\plr{ P_a\rho P_aP_b}.
+	\]
+	Similarly, the probability of measuring $b$ then $a$ is
+	\[
+		P_{(b,a)} = P(b)P(a) =  \tr(\rho P_b)\tr\plr{P_b\rho P_bP_a}
+	\]
+	Using the cyclic property of the trace, the projector property $P_n^2 = P_n$, and $[P_a,P_b] = 0$ we may rearrange 		each result
+	\[
+		P_{(a,b)} = \tr(\rho P_a)\tr(\rho P_b) = \tr(\rho P_b)\tr(\rho P_a) = P_{(b,a)}
+	\]
+	Thus the probabilities are the same in either order and so a pair of commuting observables cannot influence one another.
+	\\ \\
+	\eenum
+	
+	
+		
+% 4 ------------------------------------------------------------------------------------------------------------------------------------------------------
+	\item[4.8]
+	\benum
+	% (a)
+	\item
+	Suppose $E$ is a positive operator with the property that $\braket{\psi|E|\psi} \le 1$ for every normalized state
+	$\ket\psi$. Show that under these conditions $\braket{\psi|E|\psi} = 1$ actually implies $E\ket\psi = \ket\psi$.
+	\\ \\
+	Expand $\ket\psi$ in an orthonormal basis $\{ \ket n\}$ and take the inner product $\braket{\psi|E|\psi}$
+	\[
+		\braket{\psi|E|\psi} = \bra\psi \plr{E\sum_n \braket{n|\psi}\ket n} =  \sum_n \braket{\psi|E|n}\braket{n|\psi}
+		=1.
+	\]
+	The sum of the expansion coefficients of $\ket\psi$ in the $\{\ket n\}$ basis must also add to unity, so
+	\[
+		\sum_n |\braket{\psi|n}|^2 = 1 = \sum_n \braket{\psi|E|n}\braket{n|\psi}.
+	\]
+	Thus we have the relation
+	\[
+		\braket{\psi|E|n} = \braket{\psi|n}.
+	\]
+	For this to hold for any choice of orthonormal basis $\{\ket n\}$, $E$ must be the identity operator
+	\[
+		E\ket\psi = \ket\psi.
+	\]
+	\\ \\
+	% (b)
+	\item
+	Take two (of course, normalized) states $\ket\psi_1$ and $\ket\psi_2$. Assume that it is possible to construct an
+	experiment that can distinguish between these states without fail. A moment of thought will show that then a POVM
+	$\{ E_1,E_2\}$ must exist with the properties that $\braket{\psi_1|E_1|\psi_1} = 1$, $\braket{\psi_2|E_1|\psi_2} = 0$,
+	$\braket{\psi_1|E_1|\psi_1} = 0$, and $\braket{\psi_2|E_2|\psi_2} = 1$. Starting from this observation, show that
+	$\ket{\psi_1}$ and $\ket{\psi_2}$ must be orthogonal. Hint: Considering an arbitrary superposition
+	$\ket V = \lambda_1\ket{\psi_1} +\lambda_2\ket{\psi_2}$ may be helpful. 
+	\\ \\
+	For $\braket{\psi_1|E_1|\psi_1} = 1$, we have from part (a) that $E_1\ket{\psi_1} = \ket{\psi_1}$ and similarly for 
+	$E_2$. Also, as a POVM (with no missing measurements) we have $E_1+E_2 = 1$. Take the state 
+	$\ket V$ as defined above to be normalized: $|\lambda_1|^2+|\lambda_2|^2 = 1$. Now form
+	\ba
+		\braket{\psi_1|V} &= \braket{\psi_1|(E_1+E_2)|V} \\
+		\lambda_1 +\lambda_2 \braket{\psi_1|\psi_2} & = 
+		\lambda_1\braket{\psi_1|E|\psi_1} +\lambda_2\braket{\psi_1|E_1|\psi_2} +
+		\lambda_1\braket{\psi_1|E_2|\psi_1} +\lambda_2\braket{\psi_1|E_2|\psi_2}
+	\ea
+	Using the hermiticity (POVM) of $E_i$ and $E_i\ket{\psi_i} = \ket{\psi_i}$ we may reduce the above to
+	\ba
+		\lambda_1 + \lambda_2 \braket{\psi_1|\psi_2} &= \lambda_1\braket{\psi_1|\psi_2} + 2\lambda_2
+		\braket{\psi_1|\psi_2}\\
+		\braket{\psi_1|\psi_2} &= 2\braket{\psi_1|\psi_2}
+	\ea
+	This above line may only be true if 
+	\[
+		\braket{\psi_1|\psi_2} = 0
+	\]
+	i.e. $\ket\psi_1$ and $\ket\psi_2$ are orthogonal. 
+	\eenum
+\eenum
+
+\end{document}

@@ -1,0 +1,567 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{macroshw}
+
+\newcommand{\p}{\partial}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\cku}{c_{\ve k\uparrow}}
+\newcommand{\ckd}{c_{\ve k\downarrow}}
+\newcommand{\cmkd}{c_{-\ve k\downarrow}}
+\newcommand{\cmku}{c_{-\ve k\uparrow}}
+\newcommand{\ckup}{c_{\ve k'\uparrow}}
+\newcommand{\ckdp}{c_{\ve k'\downarrow}}
+\newcommand{\cmkdp}{c_{-\ve k'\downarrow}}
+\newcommand{\cmkup}{c_{-\ve k'\uparrow}}
+\newcommand{\cks}{c_{\ve k\sigma}}
+\newcommand{\dcku}{\dot c_{\ve k\uparrow}}
+\newcommand{\dckd}{\dot c_{\ve k\downarrow}}
+\newcommand{\dcmkd}{\dot c_{-\ve k\downarrow}}
+\newcommand{\dcmku}{\dot c_{-\ve k\uparrow}}
+\newcommand{\ve}{\textbf }
+
+
+\title{\begin{spacing}{1.2}Quantum Mechanics III\\ Final Exam\end{spacing}}
+\author{Matthew Phelps}
+\date{Due: May 4}
+
+\begin{document}
+\maketitle
+\benum
+
+\item Consider a two-dimensional Hilbert space spanned by the orthogonal vectors $|0\ra$ and $|1\ra$. Except for trivial transformations, the two most general vectors in this space with the angle $\theta$ between them can always be picked in the form $|\theta^\pm\ra=\cos(\theta/2)|0\ra\pm\sin(\theta/2)|1\ra$; for simplicity, choose $0\leq \theta\leq \pi/2$. For some quantum cryptography reasons, Alice sends one of these two states to Bob, each with probability $1/2$, so that the present problem treats the states $|\theta^\pm\ra$ equally; we are implicitly taking this into account below. Bob then tries to determine which of the two states it was. Also define the states $|\theta_\perp^\pm\ra,$ unique up to trivial transformations, that are orthogonal to the respective states $|\theta^\pm\ra$. 
+
+Now, for any $0\leq\alpha\leq 1$, $E_{\pm} = \alpha \ket{\theta^\mp_\perp}\bra{\theta^\mp_\perp}$ are positive operators that qualify as members of a POVM and would then have the property that Bob's measurement with the outcomes ``$\pm$" corresponding to the effects $E_\pm$ gives an affirmative result only if Alice sent the states $|\theta^\pm\ra$; such a result never misidentifies the state. However, $E_+$ and $E_-$ alone do not necessarily make a POVM. In general, there has to be a third measurement outcome ``0'' such that the probability for it is determined by some effect $E_0$. If there are several outcomes besides ``$+$" and ``$-$'', they can always be lumped into such a ``0''.
+
+\benum
+
+\item Show that $E_0=0$ only if $\alpha=1$ and $\theta=\pi/2$, and $E_0>0$ only if $\alpha\leq 1/(1+\cos\theta)$.
+	
+\item Show that if $E_0\neq 0$, neither $P_+=\la\theta^+|E_0|\theta^+\ra$, nor $P_-=\la\theta^-|E_0|\theta^-\ra$ can be equal to zero. One implication is that if $\theta<\pi/2$, there must be a measurement outcome that does not distinguish between the incoming states $|\theta^+\ra$ and $|\theta^-\ra$.
+\item Show that for a given angle $\theta$, the smallest possibly probability for an ambiguous result is $\cos\theta$. 
+\\ \\
+\eenum
+\benum 
+% (a)
+\item 
+Let us define the orthogonal vectors to $\ket{\theta^\pm}$ as
+\[
+	\ket{\theta^\pm_\perp} = \mp \sin(\theta/2) \ket 0 + \cos(\theta/2)\ket 1.
+\]
+These are unique up to a trivial transformation. Now, as a POVM
+\be\label{1}
+	\sum_k E_k = \alpha E_++\alpha E_- +E_0 = 1
+\ee
+and it follows that  $E_\pm$ may be expressed as $E_{\pm} = \alpha \ket{\theta^\mp_\perp}\bra{\theta^\mp_\perp}$. Thus in the $\ket 0$, $\ket 1$ basis, we express the POVM relation \eqref{1} as the matrix equation
+\[
+	\bpm 2\alpha \sin^2(\theta/2)+E_{00} & E_{01}\\
+	E_{10}&2\alpha \cos^2(\theta/2)+E_{11}
+	\epm = \bpm 1 & 0 \\ 0& 1\epm
+\]
+where $E_{ij} \equiv \braket{i|E_0|j}$ for $i,j = 0,1$. We immediately see the off-diagonal elements of $E_0$ must be zero and we are left
+with two equations:
+\be\label{2}
+	E_{00} = 1-2\alpha \sin^2(\theta/2)
+\ee
+\be\label{3}
+	E_{11} = 1-2\alpha \cos^2(\theta/2).
+\ee
+Setting each matrix element to zero and rearranging, we have
+\be\label{4}
+	\frac{1}{2} =\alpha \sin^2(\theta/2)
+\ee
+\be\label{5}
+	\frac{1}{2} = \alpha \cos^2(\theta/2).
+\ee
+Adding the two equations together
+\[
+	1 = \alpha(\cos^2(\theta/2)+\sin^2(\theta/2)) = \alpha.
+\]
+Substituting $\alpha = 1$ into \eqref 4 and \eqref 5 we see that for $\theta \in [0,\pi/2]$, the equations are only satisfied for $\theta = \pi/2$. Thus we have shown that $E_0 = 0$ only if $\alpha = 1$ and $\theta = \pi/2$.
+\\ \\
+
+Given that $E_0>0$ means that $E_0$ is positive operator (which includes the zero operator), it follows that the eigenvalues of $E_0$ must be non-negative. Thus we use $E_0$ in its diagonal form to give the following inequalities
+\[
+	1-2\alpha \sin^2(\theta/2) = 1-2\alpha(1-\cos\theta) \le 0
+\]
+\[
+	\Rightarrow \alpha \le \frac{1}{1+\cos\theta}
+\]
+and
+\[
+	1-2\alpha \cos^2(\theta/2) = 1-2\alpha(1+\cos\theta) \le 0
+\]
+\[
+	\Rightarrow \alpha \le \frac{1}{1-\cos\theta}.
+\]
+For $\theta \in [0,\pi/2]$ 
+\[
+	\frac{1}{1+\cos\theta} \le \frac{1}{1-\cos\theta}
+\]
+and so
+\[
+	\alpha \le \frac{1}{1+\cos\theta} \le \frac{1}{1-\cos\theta}.
+\]
+Thus for $E_0 >0$ we must have $\alpha \le 1/(1+\cos\theta)$. \\ \\
+% (b)
+\item
+Let us first compute the probabilities $P_\pm$:
+\ba
+	P_\pm &= \braket{\theta^\pm|E_0|\theta^\pm}\\
+	& = \bpm \cos(\theta/2) & \pm \sin(\theta/2) \epm 
+	\bpm 1-2\alpha\sin^2(\theta/2) & 0 \\ 0 & 1-2\alpha\cos^2(\theta/2) \epm
+	\bpm \cos(\theta/2) \\ \pm \sin(\theta/2) \epm\\
+	& = 1-4\alpha[\sin^2(\theta/2)\cos^2(\theta/2)]\\
+	& = 1-\alpha\sin^2\theta.
+\ea
+Given our range of $\alpha$ and $\theta$, the probability $P_\pm$ can only be zero for $\alpha = 1$, $\theta = \pi/2$ (easy to see from bounds of $\sin^2\theta$). 
+But these are precisely the conditions for $E_0 = 0$, which we take as false from the outset of this problem. Thus 
+we have shown for $E_0 \ne 0$, $P_\pm \ne 0$. Note that for $\theta < \pi /2$ we have a non-zero probability for 
+measuring ambiguous outcome ``0". 
+\\ \\
+% (c)
+\item
+From part (b), 
+\[
+	P_\pm = 1-\alpha\sin^2\theta.
+\]
+Since $E_0$ is a positive operator we may substitute our
+relation for $\alpha$ in part (a)
+\ba
+	\alpha &\le \frac{1}{1+\cos\theta}\\
+	1-\alpha\sin^2\theta &\ge 1-\frac{\sin^2\theta}{1+\cos\theta}\\
+	P_\pm &\ge \cos\theta
+\ea
+Thus the minimal probability for an ambiguous result occurs at $\cos\theta$. \\ \\
+\eenum
+
+% 2 ------------------------------------------------------------------------------------------------------------------------------------------------------
+\item Let us study relaxation terms in the two-level system as in the text, except that we generically denote the damping rates of the coherences by $\gamma$, not specifically $\Gamma/2$. In this example, also ignore the Liouville-von Neumann part of the time evolution, which has no effect on the present results anyway. Thus we have 
+\[\dot\rho_{11}=-\Gamma\rho_{11},\;\dot\rho_{00}=\Gamma\rho_{11},\;\dot\rho_{10}=-\gamma\rho_{10},\;\dot\rho_{01}=-\gamma\rho_{01}.\]
+
+\benum
+
+	\item By studying the time evolution of the density matrix $\rho_{ij}$ starting from a pure state, show that unless $\gamma\geq\Gamma/2$, a density matrix can always be found that does not stay positive under this time evolution.
+
+	\item In contrast, when $\gamma\geq\Gamma/2$, a positive density matrix always stays positive. Show this by giving Linblad operators from which you can derive the relaxation terms for this case. \\ \\
+%General mathematics hint: For a hermitian matrix, the determinant equals the product of the eigenvalues.
+\eenum
+\benum
+%(a)
+\item
+I will take the statement ``unless $A$, there exists a $B$" as equilvalent to ``if $\bar A$ then $B$", where 
+$A \equiv \gamma \ge \Gamma/2$ and $B$ denotes the existence of a non-positive density matrix. 
+\\ \\
+%Ignoring the Liouville Von Neumann contribution, the time evolution of our density operator goes as
+%\[
+%	\dot\rho = \mathcal L \rho = \sum_k [2L_k\rho L_k^\dag- L_k^\dag L_k \rho - \rho L_k^\dag L_k].
+%\]
+%where $\mathcal L$ is a positive trace preserving map acting on our density operator given in 
+%the proper Lindblad form for unspecified system operators $L_k$. For our two-level system $k=0,1$. 
+Denoting the matrix elements $\braket{i|\rho|j} = \rho_{ij}$ for $i,j = 0,1$ we may form the matrix of our density
+operator in the basis of our two-level system:
+\[
+	\rho(t) = \bpm \rho_{00}(t) &\rho_{01}(t) \\ \rho_{10}(t) & \rho_{11}(t) \epm.
+\]
+We seek to find a condition of positivity for this matrix. This can be accomplished by the following arguments. First
+note that the eigenvalues of a pure state are $0$ and $1$. Then, by being hermitian, the 
+determinant of the density matrix is given by the product of eigenvalues. Thus
+\[
+	\det[\rho(t)] = \rho_{00}(t)\rho_{11}(t) - \rho_{01}(t)\rho_{10}(t) = \prod_{i=0,1}\lambda_i = 0
+\]
+\be\label{6}
+	\Rightarrow \rho_{00}(t)\rho_{11}(t) =  \rho_{01}(t)\rho_{10}(t).
+\ee
+If our system starts in the pure state at time $t$, then $\det[\rho(t)] = 0$. If at a subsequent time 
+$t'$, $\det[\rho(t')] < 0$, then it follows that 
+\[
+	\elr{\plr{\diff{t} \det[\rho(t)]}}_{\tau} < 0
+\]
+for some time $t \le \tau \le t'$. Since the determinant was at negative at $t'$, this implies it was not a positive matrix. As such, the derivative of the determinant serves as a possible condition of positivity.
+\\ \\
+Proceeding with the determinant
+\ba
+	\diff{t}\det[\rho(t)] &= \diff{t}[ \rho_{00}(t)\rho_{11}(t) - \rho_{01}(t)\rho_{10}(t)]\\
+	& = \dot\rho_{00}(t)\rho_{11}(t) +\rho_{00}(t)\dot\rho_{11}(t)- \dot\rho_{01}(t)\rho_{10}(t)-\rho_{01}(t)
+	\dot\rho_{10}(t)\\
+	& = \Gamma\rho_{11}(t)^2-\Gamma\rho_{00}(t)\rho_{11}(t) +2\gamma\rho_{01}(t)\rho_{10}(t)\\
+	& =  \Gamma\rho_{11}(t)^2-\Gamma\rho_{00}(t)\rho_{11}(t) +2\gamma\rho_{00}(t)\rho_{11}(t)\\
+	& = \rho_{11}(t)\plr{ \Gamma \rho_{11}(t) +(2\gamma- \Gamma) \rho_{00}(t)}
+\ea
+If $\gamma < \Gamma/2$ we see that there clearly exists a $\rho_{00}(t)$ such 
+that the derivative becomes negative, and so our density operator is non-positive.
+\\ \\
+% (b)
+\item
+Time evolution following the Lindblad form goes as
+\[
+	\dot\rho = \mathcal L\rho = 
+	 \sum_k [2L_k\rho L_k^\dag- L_k^\dag L_k \rho - \rho L_k^\dag L_k].
+\]
+To attempt to recover the relaxation terms as given in the problem, let us first take the Lindblad operators
+\[
+	L_1 = \sqrt\frac{\Gamma}{2}\ket 0\bra 1,\qquad L_1^\dag = \sqrt\frac{\Gamma}{2} \ket 1\bra 0
+\]
+and
+\[
+	L_2 = \beta \ket 1\bra 1,\qquad L_2^\dag = \beta^*\ket 1\bra 1.
+\]
+Then evolving over time,
+\ba
+	\dot\rho &= \mathcal L \rho \\ &=  \frac{\Gamma}{2}( 2\ket 0\braket{1|\rho|1}\bra 0- \ket 1\bra 1\rho - \rho \ket 1\bra 1)\\
+	&\quad + |\beta|^2(2\ket 1\braket{1|\rho|1} \bra 1 - \ket 1\bra 1\rho - \rho\ket 1\bra 1).
+\ea
+Now take the matrix elements
+\[
+	\dot\rho_{00} = \Gamma \braket{1|\rho|1} = \Gamma \rho_{11}
+\]
+\[
+	\dot\rho_{01} = -\plr{\frac{\Gamma}{2}+|\beta|^2}\braket{0|\rho|1}
+	= -\plr{\frac{\Gamma}{2}+|\beta|^2} \rho_{01}
+\]
+\[
+	\dot\rho_{10} = -\plr{\frac{\Gamma}{2}+|\beta|^2}\braket{1|\rho|0}
+	= -\plr{\frac{\Gamma}{2}+|\beta|^2} \rho_{10}
+\]
+\[
+	\dot\rho_{11} = -\Gamma \braket{1|\rho|1} = -\Gamma \rho_{11}.
+\]
+If we choose $\beta$ such that
+\[
+	\beta = \sqrt{\gamma-\frac{\Gamma}{2}} \qquad\text{where}\qquad \gamma \ge \frac{\Gamma}{2}
+\]
+then $\beta \in \mathbb R$ and
+\[
+	|\beta|^2 = \plr{\gamma-\frac{\Gamma}{2}}.
+\]
+This yields the proper relaxation terms 
+\[
+	\dot\rho_{11} = -\Gamma \rho_{11},\quad \dot\rho_{00} = \Gamma\rho_{11},
+	\quad \dot\rho_{10} = -\gamma \rho_{10},\quad \dot\rho_{01} = -\gamma \rho_{01}
+\]
+
+Since they follow the Lindblad form, we are guaranteed that the map $\mathcal L$ acting upon $\rho$ is positive and trace preserving. To recap, for $\gamma \ge \frac{\Gamma}{2}$ we may always form Lindblad operators that give the appropriate
+relaxation terms, and thus our positive density matrix remains positive. \\ \\
+\eenum
+
+% 3 ------------------------------------------------------------------------------------------------------------------------------------------------------
+\item To avoid inessential complications, think of a one-component Fermi gas with the field operator $\psi(\ve r)$.
+
+\benum
+
+\item Show that $\psi(\ve r)\psi(\ve r)=0$.
+
+\item Take the positions $\ve r_i,i=1,\cdots,N$, all distinct: $i\neq j\implies \ve r_i\neq\ve r_j$. Argue that the state $|\psi\ra=\psi^\dagger(\ve r_1)\psi^\dagger(\ve r_2)\cdots\psi^\dagger(\ve r_N)|0\ra$ plausibly is a state with one particle at each position $\ve r_1, \cdots,\ve r_N$.
+
+\item Why does the condition $i\neq j\implies \ve r_i\neq \ve r_j$ matter?\\ \\
+\eenum
+\benum 
+% (a)
+\item
+Starting with the construction of the field operator
+\[
+	\psi(\vect r) = \sum_k u_k(\vect r)a_k,\qquad \text{where}\qquad \{a_k,a^\dag_{k'}\} = \delta_{kk'}
+\]
+it follows that
+\ba
+	\psi(\vect r)\psi(\vect r) &= \sum_{k,k'}u_k(\vect r)u_k'(\vect r)a_k a_k'\\
+	&=- \sum_{k,k'}u_k(\vect r)u_k'(\vect r)a_k' a_k\\
+	& = -\psi(\vect r)\psi(\vect r)
+\ea
+where we have used the anticommutation for $a_k, a_k'$. From the above, we must conclude
+\[
+	\psi(\vect r)\psi(\vect r) = 0.
+\]
+\\
+% (b)
+\item 
+First, let us construct a general identity regarding anticommutators. From the two relations
+\[
+	[A,BC] = \{A,B\}C-B\{A,C\}
+\]
+and
+\[
+	\{A,BC\} = \{A,B\} C - B[A,C],
+\]
+we may construct the anticommutation of a product of operators:
+\ba
+	\{a_1,a_2a_3...a_n\} &= \{a_1,a_2\}a_3...a_n-a_2[a_1,a_3...a_n]\\
+	& =  \{a_1,a_2\}a_3...a_n - a_2\plr{ \{a_1,a_3\}a_4...a_n-a_3\{a_1,a_4...a_n\}}\\
+	& = \{a_1,a_2\}a_3...a_n - a_2\{a_1,a_3\}a_4...a_n + a_2a_3\{a_1,a_4\}a_5...a_n
+	-a_2a_3a_4\{a_1,a_5\}a_6...a_n+.....
+\ea
+Note that we pick up a minus sign when we have an odd number of operators to the left of the anticommutator.
+\\ \\
+With this relation in hand, we proceed to apply the number operator to our state and take an anticommutator
+\ba
+	\hat n(\vect R) \ket \psi &= \psi^\dag(\vect R) \psi (\vect R) \psi^\dag(\vect r_1) \psi^\dag(\vect r_2)...
+	\psi^\dag(\vect r_N)\ket 0\\
+	& =\psi^\dag(\vect R)\bigg( \{\psi(\vect R),\psi^\dag(\vect r_1)\psi^\dag(\vect r_2)...\psi^\dag(\vect r_N)\}
+	-\psi^\dag(\vect r_1)\psi^\dag(\vect r_2)...\psi^\dag(\vect r_N)\psi(\vect R)\bigg) \ket 0\\
+	& = \psi^\dag(\vect R)\bigg( \{\psi(\vect R),\psi^\dag(\vect r_1)\psi^\dag(\vect r_2)...\psi^\dag(\vect r_N)\}
+		\bigg)\ket 0\\
+	& = \psi^\dag(\vect R)\bigg(
+		\{\psi(\vect R),\psi^\dag(\vect r_1)\}\psi^\dag(\vect r_2)...\psi^\dag(\vect r_n)
+		-\psi^\dag(\vect r_1)\{\psi(\vect R),\psi^\dag(\vect r_2)\}\psi^\dag(\vect r_3)...\psi^\dag(\vect r_n)\\ 
+		&\qquad\qquad+\psi^\dag(\vect r_1)\psi^\dag(\vect r_2) \{\psi(\vect R),\psi^\dag(\vect r_3)\}\psi^\dag(\vect r_4)...		\psi^\dag(\vect r_n)-...
+		\bigg)\ket 0\\
+	& = \psi^\dag(\vect R)\bigg(
+	\delta(\vect R-\vect r_1)\psi^\dag(\vect r_2)..\psi^\dag(\vect r_n)-
+	\delta(\vect R-\vect r_2)\psi^\dag(\vect r_1)\psi^\dag(\vect r_3)..\psi^\dag(\vect r_n)\\
+	&\qquad\qquad + \delta(\vect R-\vect r_3)\psi^\dag(\vect r_1)\psi^\dag(\vect r_2)\psi^\dag(\vect r_4)
+	..\psi^\dag(\vect r_n)-...\bigg)\ket 0\\
+	& =\bigg( \delta(\vect R-\vect r_1)\psi^\dag(\vect r_1)...\psi^\dag(\vect r_n)
+	- \delta(\vect R-\vect r_2)\psi^\dag(\vect r_2)\psi^\dag(\vect r_1)\psi^\dag(\vect r_3)...\psi^\dag(\vect r_n)\\
+	&\qquad\qquad +
+	\delta(\vect R-\vect r_3)\psi^\dag(\vect r_3)\psi^\dag(\vect r_1)\psi^\dag(\vect r_2)\psi^\dag(\vect r_4)...
+	\psi^\dag(\vect r_n)-...\bigg)\ket 0\\
+	& = \sum_i \delta(\vect R-\vect r_i) \psi^\dag(\vect r_1)...\psi^\dag(\vect r_n)\ket 0\\
+	\hat n(\vect R)\ket \psi& =  \sum_i \delta(\vect R-\vect r_i) \ket\psi
+\ea
+where in the third to last line we used the anticommutation relation $\{\psi^\dag(\vect r_i),\psi^\dag(\vect r_j)\} = 0$. This worked nicely because the minus signs are canceled exactly by the odd number of anticommutation operations.
+\\ \\
+We see that $\ket\psi$ is an eigenstate of the number operator with a non-zero eigenvalue only for $\vect R = \vect r_i$.
+This suggests the state $\ket\psi$ consists of a collection of quanta localized in space at each $\vect r_i$. We tend to call these particles.\\ 
+% (c)
+\item 
+By an analogous argument as that of part (a), we may easily show $\psi^\dag(\vect r)\psi^\dag(\vect r) = 0$.
+This suggests that we cannot place two quanta at the same localized position. This result is specific to fermions (well, 
+excluding a particular 1D Bose gas) and is in accordance with the Pauli exclusion principle. That is, since we take the state
+of a fermion system to be antisymmetric with respect to particle exchange, it follows that two fermions
+may not occupy the same position.\\ \\
+\eenum
+
+% 4 ------------------------------------------------------------------------------------------------------------------------------------------------------
+\item In a simplified but justifiable (never mind the details) model for conversion of two species of fermionic atoms $(\cku,\ckd)$ to bosonic molecules $(b)$ one may write the Hamiltonian
+\[\frac{H}{\hbar}=\sum_{\ve k,\sigma}\omega_k \cks^\dagger\cks+\delta b^\dagger b+\xi\sum_{\ve k}(b^\dagger \cku\cmkd+\cmkd^\dagger\cku^\dagger b)\] 
+
+\benum
+
+	\item Verify the Heisenberg equations of motion
+	\[\dot b=-i\delta b-i\xi\sum_{\ve k}\cku\cmkd,\;\;\dot c_{\ve k\uparrow}=-i\omega_k\cku+i\xi b\cmkd^\dagger,\;\; \dot c_{-\ve k\downarrow}=-i\omega_k\cmkd-i\xi b\cku^\dagger.\]
+	
+	\item Find the Heisenberg equations of motion for the operators $\cku^\dagger\cku,\;\cmkd^\dagger\cmkd$, and $\cku\cmkd$.
+	
+	\item You cannot make a mean field approximation for fermion operators, but at low temperatures when a BEC of the molecules is possible you may approximate the operator $b$ with a corresponding $c$-number $\beta$. You then find a closed set of equations for the amplitude $\beta$, the expectation values of the occupation numbers $P_\uparrow(\ve k)=\la \cku^\dagger\cku\ra$, and for the pairing amplitudes $C(\vect k) = \braket{ \cku\cmkd}$. Do it!
+
+\eenum
+
+You have here the essence of what is called two-channel theory of BEC-BCS crossover.
+\\
+\benum
+% (a)
+\item
+Starting with the boson operator
+\ba
+	\dot b &= -i[b,H] \\
+	& =-i\plr{ 
+	 \delta[b,b^\dag b] +\xi \sum_{\vect k} [b,b^\dag](\cku\cmkd)}\\
+	 &\boxed{\dot b =-i\delta b -i\xi \sum_{\vect k} \cku\cmkd}.
+\ea
+Spin up fermion operator:
+\ba
+	\dcku &= -i\blr{
+	\sum_{\vect k'} \omega_k' ([\cku,\ckup^\dag \ckup] +[\cku,\ckdp^\dag\ckdp]) +\xi \sum_{\vect k'}\plr{
+	b^\dag [\cku,\ckup\cmkdp]+[\cku,\cmkdp^\dag \ckup^\dag]b }}\\
+	&=-i \bigg[
+	\sum_{\vect k'} \omega_k'  \plr{\{\cku,\ckup^\dag\} \ckup - \ckup^\dag\{\cku,\ckup\}+
+	\{\cku, \ckdp^\dag\} \ckdp - \ckdp^\dag \{ \cku,\ckdp\} }\\
+	&\qquad +\xi \sum_{\vect k'} \plr{
+	\{\cku,\cmkdp^\dag \} \ckup^\dag b - \cmkd^\dag \{\cku,\ckup^\dag\} b}\bigg]\\
+	& = -i\sum_{\vect k'} \omega_k' \ckup\delta_{\vect k\vect k'} +
+	i\xi \sum_{\vect k'} \cmkdp^\dag b\delta_{\vect k\vect k'}\\
+	&  \boxed{\dcku =-i\omega_k \cku+i\xi b \cmkd^\dag} .
+\ea
+And similarly for the spin down ($-\vect k$):
+\ba
+	\dcmkd &= -i\blr{
+	\sum_{\vect k'} \omega_k' ([\cmkd,\ckup^\dag \ckup] +[\cmkd,\ckdp^\dag\ckdp]) +\xi \sum_{\vect k'}\plr{
+	b^\dag [\cmkd,\ckup\cmkdp]+[\cmkd,\cmkdp^\dag \ckup^\dag]b }}\\
+	&=-i \bigg[
+	\sum_{\vect k'} \omega_k'  \plr{
+	\{ \cmkd, \ckdp^\dag\} \ckdp -\ckdp^\dag \{ \cmkd,\ckdp\} }
+	+\xi \sum_{\vect k'} \plr{
+	\{ \cmkd,\cmkdp^\dag \} \ckup^\dag b - \cmkd^\dag \{\cmkd,\ckup^\dag\} b}\bigg]\\
+	& = -i\sum_{\vect k'} \omega_k' \ckdp\delta_{-\vect k\vect k'} 
+	-i\xi \sum_{\vect k'} \ckup^\dag b\delta_{\vect k\vect k'}\\
+	&\boxed{ \dcmkd  = -i\omega_k \cmkd-i\xi b \cku^\dag }
+\ea
+\\ 
+% (b)
+\item
+Lets start with $\cku^\dag \cku$:
+\ba
+	\diff{t} (\cku^\dag \cku) & = \dcku^\dag \cku + \cku^\dag \dcku\\
+	& = (i\omega_k \cku^\dag -i\xi b^\dag \cmkd)\cku+
+	\cku^\dag( -i\omega_k \cku+i\xi b \cmkd^\dag)\\
+	&=-i\xi( b^\dag \cmkd \cku -  b\cku^\dag \cmkd^\dag)\\
+	&\boxed{\diff{t} (\cku^\dag \cku) = i\xi( b^\dag \cku \cmkd-b\cmkd^\dag\cku^\dag)}.
+\ea
+Now for $\cmkd^\dag\cmkd$:
+\ba
+	\diff{t} (\cmkd^\dag \cmkd) & = \dcmkd^\dag \cmkd + \cmkd^\dag \dcmkd\\
+	& = (i\omega_k \cmkd^\dag + i\xi b^\dag \cku)\cmkd+
+	\cmkd^\dag(-i\omega_k \cmkd-i\xi b \cku^\dag)\\
+	& \boxed{\diff{t} (\cmkd^\dag \cmkd)= i\xi( b^\dag \cku \cmkd - b \cmkd^\dag \cku^\dag)}
+\ea
+Lastly for $\cku\cmkd$:
+\ba
+	\diff{t} (\cku \cmkd) & = \dcku \cmkd + \cku \dcmkd \\
+	& = (-i\omega_k \cku+i\xi b \cmkd^\dag)\cmkd+
+	\cku(-i\omega_k \cmkd-i\xi b \cku^\dag)\\
+	& = -2i\omega_k \cku \cmkd+i\xi b(\cmkd^\dag \cmkd - \cku\cku^\dag)\\
+	& \boxed{ \diff{t} (\cku \cmkd) =-2i\omega_k \cku \cmkd+i\xi b(\cmkd^\dag \cmkd - \cku\cku^\dag)}
+\ea
+\\	
+% (c)
+\item
+Relevant equation for the time derivative of expectation values:
+\[
+	\diff{t} \braket{ A} =  \frac{1}{i\h}\braket{[A,H]} = \braket{\dot A},
+\]
+assuming no explicit time dependence. We take the operator
+\[
+	b\to \beta \in \mathbb C
+\]
+then it follows that 
+\ba
+	\diff{t} P_\uparrow(\vect k) &= \diff{t} P_\downarrow(\vect k)\\
+	&= \diff{t}\braket{ \cku^\dag\cku}\\
+	&= i\xi \braket{ b^\dag \cku \cmkd-b\cmkd^\dag\cku^\dag }\\
+	& = i\xi (\beta^* \braket{ \cku \cmkd}-\beta \braket{ \cmkd^\dag \cku^\dag})\\
+	& = i\xi(\beta^*C(\vect k)-\beta C^*(\vect k))
+\ea
+\ba
+	\diff{t} C(\vect k) &= \diff{t} \braket{\cku\cmkd} \\
+	& = \braket{-2i\omega_k \cku \cmkd+i\xi b(\cmkd^\dag \cmkd - \cku\cku^\dag)}\\
+	& = -2i\omega_k C(\vect k) +i\xi \beta(P_\downarrow(\vect k)+ P_\uparrow(\vect k)-1)
+\ea
+\ba
+	\diff{t} \braket{b} &= -i\delta \beta -i\xi \sum_{\vect k}\braket{ \cku\cmkd} \\
+	& = -i\delta \beta - i\xi \sum_{\vect k} C(\vect k)\\
+	&= 0.
+\ea
+Thus we end up with the following three equations
+\be\label{7}
+	\beta = -\frac{\xi}{\delta} \sum_{\vect k} C(\vect k)
+\ee
+\be\label{8}
+	\diff{t}P_{\uparrow,\downarrow}(\vect k) = i\xi[\beta^*C(\vect k)-\beta C^*(\vect k)]
+\ee
+\be\label{9}
+	\diff{t} C(\vect k) = -2i\omega C(\vect k)+i\xi \beta[P_{\uparrow}(\vect k)+P_{\downarrow}(\vect k) -1].
+\ee
+To see that these are indeed closed, one approach may be to take the second derivative of \eqref 9, substitute in derivates from \eqref 8 and then substitute equation \eqref 7 for $\beta$. This gives a closed form second order differential equation
+for $C(\vect k)$. Once solved, $\beta$ is then defined, and subsequently $P_{\uparrow,\downarrow}(\vect k)$ may
+be solved as a first order equation. The only trouble I see here is that our $C(\vect k)$ differential equation
+will be defined in terms of a summation of different $\vect k$ modes. 
+\newpage
+\eenum
+% 5 ------------------------------------------------------------------------------------------------------------------------------------------------------
+\item Let us study a trapped Bose-Einstein condensate of $N$ atoms with contact interactions (scattering length $a$) in an isotropic harmonic oscillator potential $(U=\frac{1}{2} m\omega^2\ve r^2)$ semiclassically using a {\it variational} ansatz for the macroscopic wave function $\psi(\ve r)$, or the form
+\[\psi(\ve r)\propto \exp\left[-\frac{\ve r^2}{4L^2}\right].\]
+
+The variational parameter $L$ is the root-mean square width of the condensate in the $x$ (and $y$ and $z$) direction.
+
+\benum
+
+	\item Show that in the harmonic oscillator units (with $\hbar=m=\omega=1$) the energy per particle of the condensate is
+	\[\frac{E}{N}=\frac{3L+12L^5+2aN/\sqrt{\pi}}{8L^3}\]
+	
+	\item This line of reasoning suggests that if the scattering length is negative, the condensate collapses if the atom number is large enough, namely if
+	\[ N\geq\frac{2^{3/2}\pi^{1/2}}{5^{5/4}|a|}\simeq\frac{0.67}{|a|}.\]
+	
+	Here, too, $a$ is in the harmonic oscillator units; with all of the dimensional parameters restored, we would have $\left|a/\sqrt{\hbar/m\omega}\right|$ in the denominator. Produce the full argument.
+	
+\eenum
+Even if the result is not necessarily numerically very accurate, it is found empirically that a trapped condensate with a negative scattering length appears to be stable up to some critical atom number, and promptly disappears at higher atom numbers.
+
+\benum
+
+	\item[(c)] What is the qualitative physics: What stabilizes the condensate against collapse for small atom numbers, and why does the atom number make a difference?\\ \\
+
+\eenum
+\benum
+% (a)
+\item
+We may calculate the energy of the BEC via the Kamiltonian,
+\[
+	K = H - \mu N
+\]
+where, instead of proceeding with second quantization, we semi-classically compute the observables using the macroscopic wavefunction 
+\[
+	\psi(\vect r) = C \exp\left[-\frac{\ve r^2}{4L^2}\right].
+\]
+ Accordingly, the Kamiltonian consists of the kinetic energy, chemical potential,
+and atom-atom interaction energy, given by
+\ba
+	H - \mu N
+	& = \int dV\  \psi^\dag \plr{ -\frac{\h^2}{2m}\del^2+\frac{1}{2}m\omega^2r^2 - \mu}\psi
+	+ \frac{2\pi a \h^2}{m} \int dV\ \psi^\dag \psi^\dag \psi\psi.
+\ea
+In our natural harmonic oscillator units, this is then
+\ba
+    	K& = 4\pi C^2 \int_0^\infty dr\ r^2\plr{ \exp\blr{ -\frac{r^2}{2L^2}}\plr{\frac{r^2-6L^2}{4L^4} +\frac{1}{2}r^2
+	-\mu}} + 4\pi (2\pi a)C^4 \int dr\ r^2  \exp\blr{ -\frac{r^2}{L^2}} \\
+	& = 2\sqrt 2 (\pi^{3/2}) C^2\blr{ L^3\plr{ \frac{3}{2}L^2 - \mu+\frac{\sqrt 2}{2}\pi aC^2} + \frac{3}{8}L}.
+\ea
+From here, we explicitly substitute our normalization,
+\[
+	\int dV\ \psi^\dag \psi = N\quad\Rightarrow\quad C^2 = \frac{N}{2\sqrt 2 \pi^{3/2}L^3},
+\]
+into the Kamiltonian 
+\[
+	K = N\blr{ \frac{3}{2}L^2- \mu+\frac{aN}{4L^3\sqrt \pi}}+ \frac{3N}{8L^2}.
+\]
+Then, the energy is easily found as
+\[
+	E = K +\mu N
+\]
+in which the energy per particle is
+\[
+	\frac{E}{N} = \blr{ \frac{3}{2}L^2+\frac{aN}{4\sqrt\pi L^3}}+\frac{3}{8L^2},
+\]
+which simplifies to
+\[
+	\boxed{\frac{E}{N}=\frac{3L+12L^5+2aN/\sqrt{\pi}}{8L^3}}.
+\]
+\\ \\
+% (b)
+\item
+As we take $L\to \infty$, the energy per particle becomes very large. However, the behavior as $L\to 0$
+depends on the strength and sign of the $aN$ term. For scattering length $a\ge0$ (repulsive interaction),
+the energy assumes a stable equilibrium at a minimum, as depicted below:
+\figg[width=100mm]{1.pdf}
+However for a negative scattering length $a<0$ (attractive interaction), the local minimum disappears at a critical $aN\le \lambda_c$. 
+Here is an illustration as $aN$ decreases:
+\figg[width=100mm]{2.pdf}
+\figg[width=100mm]{3.pdf}
+\figg[width=100mm]{4.pdf}
+
+The critical point corresponds to a minimum with a saddle point inflection. For a fixed (negative) scattering length,
+the critical density can be found by taking first and second derivatives of the energy to zero:
+\[
+	\elr{\diff{L}\pfrac{E}{N}}_{aN_c} = \frac{3}{4}\elr{\pfrac{L^5-L-\frac{aN}{\sqrt\pi}}{L^4}}_{aN_c}=0
+\]
+\[
+	\elr{\difff{}{*2L}\pfrac{E}{N}}_{aN_c} = \elr{\plr{3+\frac{9}{4L^4} +\frac{3aN}{\sqrt\pi L^5}}}_{aN_c}=0.
+\]
+Solving these two equations simultaneously for $aN_c$, we find
+\[
+	aN_c =- \frac{2^{3/2}\pi^{1/2}}{5^{5/4}} .
+\]
+As evident from the graphs, for $N \ge N_c$, the energy per particle becomes unbounded from below and the BEC becomes unstable (collapses). Thus our condition for the onset of instability is then
+\[
+	 |a|N \ge \frac{2^{3/2}\pi^{1/2}}{5^{5/4}} \simeq 0.67
+\]
+\\ \\
+% (c)
+\item
+Given our confining harmonic potential, the kinetic energy of the BEC ground state counteracts
+the attractive scattering potential and effectively stabilizes the condensate. This is true only for small enough attractive interactions. As the 
+the attractive interaction energy increases, i.e. by adding more atoms or increasing $|a|$,
+the attractive interaction will eventually overcome the kinetic energy and make the condensate unstable.
+
+\eenum
+\eenum
+
+\end{document}
