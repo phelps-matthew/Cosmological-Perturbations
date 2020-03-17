@@ -38,7 +38,7 @@ In perturbing the Einstein equations around a cosmological background (i.e., Rob
 
 ## Undergrad Research
 
-In the gifs below, the blue arrow represents the magnetic field of a nanoparticle (magnetiziation vector, specifically). The green and red vectors are estatic and oscillating external magnetic fields, respectively. The equations that describe the motion of the nanoparticles magnetic field (blue vector) are non-linear and have to be solved numerically. 
+In the gifs below, the blue arrow represents the magnetic field of a nanoparticle (magnetiziation vector, specifically). The green and red vectors are static and oscillating external magnetic fields, respectively. The equations that describe the motion of the nanoparticles magnetic field (blue vector) are non-linear and have to be solved numerically. 
 
 In fact, the form of these equations make many parallels to equations that describe a physical pendulum.
 
