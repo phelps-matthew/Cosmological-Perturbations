@@ -8,6 +8,7 @@ Ever wonder what a PhD in physics *actually* might look like? Look no further! H
   - <a href="research_highlights/Fluctuations_Summary_Matthew.pdf">Fluctuations Summary</a>: Inlcudes many useful methods specific to dynamics in conformal gravity
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; radiation decay of a binary star system within conformal gravity
   - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the SVT decomposition from a more group-theoretic point of view; generalizes well beyond cosmology
+  - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology
 * `research_bulk`
   - Organized by year, these pdf's represent day to day work output
   - Incorporates output of calculations performed in Mathematica
