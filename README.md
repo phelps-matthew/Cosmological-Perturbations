@@ -56,6 +56,6 @@ If we increase the magnitude of the oscillating field (red vector) to a critical
 
 Owing to the nonlinear nature of the magnetization equations, we have effectively identified an unexpected mechanism by which we can tune the transient response!
 
-Here is our publication on these results: <a href="extra/undergrad_research/CSURF_Presentation/Final_paper.pdf">Tunable  transient  decay  times  in  nonlinear  systems:   applicationto magnetic precession</a>
+Here is our publication on these results - <a href="extra/undergrad_research/CSURF_Presentation/Final_paper.pdf">Tunable transient  decay times in nonlinear systems: application to magnetic precession</a>
 
 
