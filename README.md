@@ -2,27 +2,27 @@
 Ever wonder what a PhD in theoretical physics *actually* might look like? Look no further! Here is a complete representation of my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of nicely formatted pdf's.
 
 ## Contents
-* `research_highlights`
+* Research Highlights
   - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT decomposition Theorem</a>: Most recent publication that analyzes the cosmological decomposition theorem (61 pages)
   - <a href="research_highlights/Cosmological_Perturbations_II.pdf">Cosmological Perturbations II</a>: Publication regarding cosmological perturbations in a theory of gravitation called conformal gravity (39 pages)
   - <a href="research_highlights/Fluctuations_Summary_Matthew.pdf">Fluctuations Summary</a>: Inlcudes many useful methods specific to dynamics in conformal gravity
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; radiation decay of a binary star system within conformal gravity
   - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the SVT decomposition from a more group-theoretic point of view; generalizes well beyond cosmology
   - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology
-* `research_bulk`
+* `Research Bulk
   - Organized by year, these pdf's represent day-to-day work output
   - Incorporates output of calculations performed in Mathematica
   - Presented weekly/bi-weekly to research group
-* `mathematica`
+* Mathematica
   - Contains day-to-day calculations performed in Mathematica; generating equations, varying geometries, decomposing perturbations, and extensive simplification methods
   - Simplifying equations in general relativity requires software capable of symbolic tensor calculus
   - The third party package called [xAct](http://www.xact.es/index.html) allows one to take covariant derivatives, refactor dummy indicies, expand into Christoffel's, etc
   - `SVT3_RW.nb`, `SVT4_General.nb`, and `3_1_Splitting.nb` are the most heavily used modules, continually modified over multiple years
   - Unfortunately GitHub does not render Mathematica files; even worse, Mathematica is not open-source; in the future I may try to host them within jupyter notebooks on my server - we'll see!
-* `coursework`
+* Coursework
   - Consists of all completed graduate course assignments spanning about 10 classes
   - Includes many solved problems for prelim exam preparation
-* `extra`
+* Extra
   - Contains reference papers
   - Undergrad research publication, presentation, and Mathematica files
 
