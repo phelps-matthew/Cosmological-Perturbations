@@ -45,9 +45,14 @@ The equations in fact make many parallels to that of an inverted pendulum.
 
 
 Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field.
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx0_Precession.gif"  width="400">
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx0_FT.gif"  width="400">
 
+However, if we add in an oscillating field in the x-direction, we see the natural frequency has some persistance.
+<img src="/extra/undergrad_research/CSURF_Presentation/extra/hx100.gif"  width="400">
 <img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
 
-However, we found found a suprising non-linear effect 
+At a critical strength, we can infact lengthen the decay time by a factor of 10^2.
+<img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400">
+<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx430_FT.gif"  width="400">
 
-<img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
