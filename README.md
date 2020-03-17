@@ -41,10 +41,7 @@ The blue arrow is the magnetiziation vector of a magnetic nanoparticle. The red 
 
 The equations in fact make many parallels to that of an inverted pendulum.
 
-<img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400">
-
-
-Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field.
+Normally, the natural frequency mode will decay quickly in the presence of an external magnetic field. We see here that it eventually lines up with the green vector.
 <img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx0_Precession.gif"  width="400">
 <img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx0_FT.gif"  width="400">
 
@@ -52,7 +49,9 @@ However, if we add in an oscillating field in the x-direction, we see the natura
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx100.gif"  width="400">
 <img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx100_FT.gif"  width="400">
 
-At a critical strength, we can infact lengthen the decay time by a factor of 10^2.
+If we increase the magnitude of the oscillating field (red vector) to a critical strength, we can infact increase the decay time by a factor of 10^4.
 <img src="/extra/undergrad_research/CSURF_Presentation/extra/hx430.gif"  width="400">
 <img src="/extra/undergrad_research/CSURF_Presentation/presentation_figures/gifs/hx430_FT.gif"  width="400">
+
+Owing to the nonlinear nature of the magnetization equations, we have effectively identified a mechanism where we can tune the transient response!
 
