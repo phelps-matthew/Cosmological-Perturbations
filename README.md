@@ -1,6 +1,8 @@
 # &#129680; Cosmological-Perturbations
 Ever wonder what a PhD in theoretical physics *actually* might look like? Look no further! Here is a complete representation of my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of nicely formatted pdf's.
 
+[What did I research?](what-did-i-research-?)
+
 ## Contents
 * Research Highlights
   - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT decomposition Theorem</a>: Most recent publication that analyzes the cosmological decomposition theorem (61 pages)
