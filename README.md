@@ -1,5 +1,5 @@
 # &#129680; Cosmological-Perturbations
-If you've ever wondered what a PhD in theoretical physics might actually entail, look no further! Here is a complete representation of my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of nicely formatted pdf's. Feel free to explore and/or make use of it!
+If you've ever wondered what a PhD in theoretical physics might *actually* entail, look no further! Here is a complete representation of my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of nicely formatted pdf's. Feel free to explore and/or make use of it!
  
 [What did I research?](#research-summary)
 
