@@ -29,7 +29,7 @@ Ever wonder what a PhD in theoretical physics *actually* might look like? Look n
 
 ## What did I research?
 ### High-level
-My research mainly focused around analyzing the equations that describe the large scale evolution of the universe. Physcists that study the unvierse as a whole are called cosmologists. Don't trust a cosmologist to do your hair - leave that to cosmetologists! Cosmologists can be contrasted with astrophysicists who study more localized events happening in the universe - black holes, galaxies, star formation, etc. 
+My research mainly focused around analyzing the equations that describe the large scale evolution of the universe. Physicists that study the unvierse as a whole are called cosmologists. Don't trust a cosmologist to do your hair - leave that to cosmetologists! Cosmologists can be contrasted with astrophysicists who study more localized events happening in the universe - black holes, galaxies, star formation, etc. 
 
 Getting back to the research, a large part of my work dealt with what is called the *cosmological decomposition theorem*. Essentially, this is a method regularly used by the cosmology/astrophysics community to simplify and solve the equations that describe the dynamics of the universe. My research uncovered many inherent limitations to the decomposition theorem and formulated new approaches that cast the equations into a reduced form that is readily solvable. 
 
