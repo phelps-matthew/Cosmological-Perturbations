@@ -7,7 +7,7 @@ Ever wonder what a PhD in theoretical physics *actually* might look like? Look n
   - <a href="research_highlights/Cosmological_Perturbations_II.pdf">Cosmological Perturbations II</a>: Publication regarding cosmological perturbations in a theory of gravitation called conformal gravity (39 pages)
   - <a href="research_highlights/Fluctuations_Summary_Matthew.pdf">Fluctuations Summary</a>: Inlcudes many useful methods specific to dynamics in conformal gravity
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; radiation decay of a binary star system within conformal gravity
-  - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the SVT decomposition from a more group-theoretic point of view; generalizes well beyond cosmology
+  - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the scalar, vector, tensor (SVT) decomposition from a group-theoretic point of view; generalizes well beyond cosmology
   - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology
 * Research Bulk
   - Organized by year, these pdf's represent day-to-day work output
