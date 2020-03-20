@@ -1,7 +1,7 @@
 # &#129680; Cosmological-Perturbations
 Ever wonder what a PhD in theoretical physics *actually* might look like? Look no further! Here is a complete representation of my 6 years of research and coursework. All compactified into a single repo. Thankfully, I adopted LaTeX early on and used it for everything, so most of the output consists of nicely formatted pdf's.
 
-* [What did I research?](#asdf)
+* [What did I research?](#what-did-i-research-)
 
 ## Contents
 * Research Highlights
@@ -29,7 +29,7 @@ Ever wonder what a PhD in theoretical physics *actually* might look like? Look n
   - Undergrad research publication, presentation, and Mathematica files
 
 
-## asdf
+## What did I research?
 ### High-level
 My research mainly focused around analyzing the equations that describe the large scale evolution of the universe. Physicists that study the unvierse as a whole are called cosmologists. Don't trust a cosmologist to do your hair - leave that to cosmetologists! Cosmologists can be contrasted with astrophysicists who study more localized events happening in the universe - black holes, galaxies, star formation, etc. 
 
