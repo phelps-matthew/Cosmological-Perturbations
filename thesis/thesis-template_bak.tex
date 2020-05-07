@@ -1,0 +1,74 @@
+\documentclass[12pt, letterpaper, center, noupper]{uconnthesis}
+
+\ThesisLineSpacing{1}
+\usepackage[square,sort,comma,numbers]{natbib}
+\bibliographystyle{plainurl} %permits urls within bibliography
+\renewcommand{\bibsection}{} %removes double header for bibliography section
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+%\usepackage[varg]{txfonts}
+%\usepackage[nointegrals]{wasysym}
+\usepackage{graphicx}
+%\usepackage[colorlinks=true]{hyperref}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!70!black}, urlcolor={blue!80!black}}
+\graphicspath{{Figs/}}
+\setcounter{tocdepth}{2}
+\allowdisplaybreaks
+
+\begin{document}
+
+\abstract{
+In the theory of cosmological perturbations \cite{phelps_2019}, \cite{amarasinghe_2019} extensive methods of simplifying the equations of motion and eliminating non-physical gauge modes are required in order to construct the perturbative solutions. One approach is to fix the gauge freedom by imposing coordinate constraints. In the context of conformal gravity, we aim to continue work done in obtaining solutions to the cosmological fluctuation equations \cite{mannheim_2012} by constructing a gauge condition that is conformally invariant. Determination of the appropriate gauge would permit the full set of exact solutions to the fluctuations equations to be obtained. Another method used  extensively in cosmology is the scalar, vector, tensor (SVT) decomposition\cite{ellis_maartens_maccallum_2009}. Here the perturbed metric is decomposed in terms of SO(3) representations whereby it is asserted that the scalars, vectors, and tensors decouple within the equations of motion. We aim to investigate issues of gauge invariance and asymptotic behavior in an integral formalism of the SVT decomposition. Moreover, we propose to characterize the role of boundary conditions in the SVT separation of the equations of motion.
+}
+
+\title{Cosmological Fluctuations in Standard and Conformal Gravity}
+\author{Matthew Phelps}
+\submityear{2020}
+\authorspreviousdegreelong{
+B.S., University of Colorado Colorado Springs, 2014
+}
+\authorspreviousdegreeshort{B.S.}
+
+\MajorAdvisor{Philip Mannheim}
+\AssociateAdvisorA{Alex Kovner}
+\AssociateAdvisorB{Vasili Kharschenko}
+
+%\dedication{
+%Dedication goes here.
+%}
+
+\acknowledgements{
+Insert acknowledgments here.
+}
+
+%\maketitle
+%\frontmatter
+\tableofcontents
+%\listoffigures
+%\listoftables
+\mainmatter
+
+% Chapters of the thesis
+\input{Chapters/Intro.tex}
+\input{Chapters/Formalism.tex}
+\input{Chapters/SVT_Basis.tex}
+\input{Chapters/Solutions.tex}
+\input{Chapters/Gauges.tex}
+\input{Chapters/Conclusions.tex}
+
+% All the references are located in here
+\input{Chapters/References.tex}
+
+% Appendices: Place them after references
+\appendix
+\input{Chapters/AppendixA_Projections.tex}
+\input{Chapters/AppendixB_Cosmologies.tex}
+%\input{Chapters/Table.tex}
+
+\end{document}
+
+
+
+
+
+

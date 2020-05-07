@@ -1,0 +1,665 @@
+
+\chapter{SVT by Projection}
+\label{aa:svt_projection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The $3+1$ Decomposition}
+\label{aas:3_1_decomp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The standard covariant $3+1$ decomposition of a symmetric rank two tensor $T_{\mu\nu}$ in a 4-dimensional geometry with metric $g_{\mu\nu}$ is constructed by introducing a 4-vector $U^{\mu}$ that obeys $g_{\mu\nu}U^{\mu}U^{\nu}=-1$ and a projector 
+%
+\begin{eqnarray}
+P_{\mu\nu}=g_{\mu\nu}+U_{\mu}U_{\nu}
+\label{E1}
+\end{eqnarray}
+%
+that obeys
+%
+\begin{eqnarray}
+U_{\mu}P^{\mu\nu}=0, \qquad P_{\mu\nu}P^{\mu\nu}=g_{\mu\nu}P^{\mu\nu}=3,\qquad P_{\mu\sigma}P^{\sigma}_{\phantom{\sigma}\nu}=P_{\mu\nu}.
+\label{E2}
+\end{eqnarray}
+%
+In terms of the projector we can write
+%
+\begin{eqnarray}
+T_{\mu\nu}&=&g_{\mu}^{\phantom{\mu}\sigma}g_{\nu}^{\phantom{\nu}\tau}T_{\sigma\tau}=
+P_{\mu}^{\phantom{\mu}\sigma}P_{\nu}^{\phantom{\nu}\tau}T_{\sigma\tau}
+-U_{\mu}U^{\sigma}P_{\nu}^{\phantom{\nu}\tau}T_{\sigma\tau}
+\nonumber\\
+&&
+-P_{\mu}^{\phantom{\mu}\sigma}U_{\nu}U^{\tau}T_{\sigma\tau}
++U_{\mu}U_{\nu}U^{\sigma}U^{\tau}T_{\sigma\tau}.
+\label{E3}
+\end{eqnarray}
+%
+On introducing
+%
+\begin{eqnarray}
+\rho&=&U^{\sigma}U^{\tau}T_{\sigma\tau},\qquad p=\frac{1}{3}P^{\sigma\tau}T_{\sigma\tau},\qquad 
+q_{\mu}=-P_{\mu}^{\phantom{\mu}\sigma}U^{\tau}T_{\sigma\tau},
+\nonumber\\
+\pi_{\mu\nu}&=&\left[\frac{1}{2}P_{\mu}^{\phantom{\mu}\sigma}P_{\nu}^{\phantom{\nu}\tau}
++\frac{1}{2}P_{\nu}^{\phantom{\nu}\sigma}P_{\mu}^{\phantom{\mu}\tau}
+-\frac{1}{3}P_{\mu\nu}P^{\sigma\tau}\right]T_{\sigma\tau},
+\label{E4}
+\end{eqnarray}
+%
+which obey
+%
+\begin{eqnarray}
+U^{\mu}q_{\mu}=0,\qquad U^{\nu}\pi_{\mu\nu}=0,\qquad \pi_{\mu\nu}=\pi_{\nu\mu},\qquad g^{\mu\nu}\pi_{\mu\nu}=P^{\mu\nu}\pi_{\mu\nu}=0,
+\label{E5}
+\end{eqnarray}
+%
+we can rewrite $T_{\mu\nu}$ as
+%
+\begin{eqnarray}
+T_{\mu\nu}=(\rho+p)U_{\mu}U_{\nu}+pg_{\mu\nu}+U_{\mu}q_{\nu}+U_{\nu}q_{\mu}+\pi_{\mu\nu},
+\label{E6}
+\end{eqnarray}
+%
+a familiar form that may for instance be found in \cite{ellis_maartens_maccallum_2009}. As constructed, the ten-component $T_{\mu\nu}$ has been covariantly decomposed into two one-component 4-scalars, one three-component  4-vector that is orthogonal to $U_{\mu}$ and one five-component traceless, rank two tensor that is also orthogonal  to $U_{\mu}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vector Fields}
+\label{aas:vector_fields}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+One of the key virtues of the  SVT3 and SVT4 formalisms is that both of them enable us to construct fluctuation equations that are gauge invariant. Thus  while a general $h_{\mu\nu}$ has ten components, because of the freedom to impose four coordinate transformations only six of the components are physical. Both the SVT3 and SVT4 formalisms then automatically provide fluctuation equations that only depend on six combinations of the terms in the SVT3 or SVT4 expansions of $h_{\mu\nu}$. Since the SVT3 and SVT4 components are related to the components of $h_{\mu\nu}$ via integral relations such as that given in (\ref{2.12}), viz. 
+%
+\begin{eqnarray}
+B=\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},\quad B_i=h_{0i}-\tilde{\nabla}_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
+\label{A.1a}
+\end{eqnarray}
+%
+the SVT3 and SVT4 components are intrinsically non-local, with their very existence requiring that the associated integrals exist. Thus asymptotic boundary conditions are built into their very existence. Interestingly, as discussed in \cite{mannheim_2005} and \cite{amarasinghe_2019},  there is another way to implement gauge invariance using non-local operators, namely to use a projection operator approach.   We now show that this approach is equivalent to the SVT approach.
+
+To discuss the application of the projection operator approach to rank two tensors such as $h_{\mu\nu}$ we first apply it to a four-dimensional gauge field $A_{\mu}$. Thus in analog to (\ref{A.1a}) we set
+%
+\begin{eqnarray}
+A_{\mu}&=&A^T_{\mu}+\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})\partial^{\alpha}A_{\alpha}=A^T_{\mu}+A^L_{\mu},
+\\
+A^T_{\mu}&=&A_{\mu}-\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})\partial^{\alpha}A_{\alpha},\quad A_{\mu}^L=\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})\partial^{\alpha}A_{\alpha},
+\nonumber
+\label{A.2a}
+\end{eqnarray}
+%
+where $\partial_{\mu}\partial^{\mu}D(x-x^{\prime})=\delta^4(x-x^{\prime})$, where $A^T_{\mu}$ obeys the transverse condition $\partial^{\mu}A^T_{\mu}=0$, and where $A_{\mu}^L$ is longitudinal. The utility of this expansion is that under  $A_{\mu}\rightarrow A_{\mu}+\partial_{\mu}\chi$ the transverse $A^T_{\mu}$ transforms as 
+%
+\begin{eqnarray}
+A^T_{\mu}\rightarrow&& A_{\mu}+\partial_{\mu}\chi-\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})\partial^{\alpha}A_{\alpha}
+-\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})\partial^{\alpha}\partial_{\alpha}\chi 
+\nonumber\\
+&&=A_{\mu}^T,
+\label{A.3a}
+\end{eqnarray}
+%
+assuming integration by parts. Thus with integration by parts the transverse $A^T_{\mu}$ is automatically gauge invariant. In addition we note that $A_{\mu}^T$ obeys 
+%
+\begin{eqnarray}
+\partial_{\nu}\partial^{\nu}A^T_{\mu}=\partial_{\nu}\partial^{\nu}A_{\mu}-\partial_{\mu}\partial^{\nu}A_{\nu}=\partial^{\nu}F_{\nu\mu}.
+\label{A.4a}
+\end{eqnarray}
+%
+Thus just as with the use of the non-local SVT formalism for gravity, the use of the non-local $A_{\mu}^T$ enables us to write the Maxwell equations entirely in terms of gauge-invariant quantities. With $A_{\mu}^L$ being the derivative of a scalar function it is pure gauge, and thus cannot appear in the gauge-invariant Maxwell equations. Moreover, while there may be an integration by parts issue for $A_{\mu}^T$, there is none for $\partial_{\nu}\partial^{\nu}A^T_{\mu}$ as it is equal to the gauge-invariant quantity $\partial_{\nu}\partial^{\nu}A_{\mu}-\partial_{\mu}\partial^{\alpha}A_{\alpha}$, just as it must be since the Maxwell equations are gauge invariant.
+In the SVT language, with (\ref{A.1a}) and (\ref{A.2a}) only involving scalars and vectors, we can think of (\ref{A.1a}) as an SV3 decomposition of the 3-component $h_{0i}$, and (\ref{A.2a}) as an SV4 decomposition of the 4-component $A_{\mu}$.
+
+An alternate way of understanding these results is to introduce a projection operator
+%
+\begin{equation}
+\Pi_{\mu\nu}=\eta_{\mu\nu}-\frac{\partial}{\partial x^{\mu}}\int
+d^4x^{\prime}D(x-x^{\prime})\frac{\partial}{\partial x^{\prime \nu}},
+\label{A.5a}
+\end{equation}
+%
+as we can then rewrite $A_{\mu}^T$  as 
+%
+\begin{equation}
+A_{\mu}^{T}=\Pi_{\mu\nu}A^{\nu}.
+\label{A.6a}
+\end{equation}
+%
+As introduced, $\Pi_{\mu\nu}$ obeys the projector algebra relations
+%
+\begin{align}
+\Pi_{\mu\nu}\Pi^{\nu}_{\phantom{\sigma}\sigma}
+&=\Pi_{\mu\sigma},
+\nonumber \\
+\Pi_{\mu\nu}A^{T \nu}&= A^{T}_{\mu}-\partial_{\mu}\int
+d^4x^{\prime}D(x-x^{\prime})
+\partial_{\nu}A^{T\nu}(x^{\prime})=A^{T}_{\mu},
+\nonumber \\
+\Pi_{\mu\nu}A^{L \nu}&=\partial_{\mu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\nu}A^{\nu}(x^{\prime})
+-\partial_{\mu}\int
+d^4x^{\prime}D(x-x^{\prime})\times
+\nonumber\\
+&\qquad
+\partial_{\nu}\partial^{\nu}\int
+d^4x^{\prime\prime}D(x^{\prime}-x^{\prime\prime})
+\partial_{\sigma}A^{\sigma}(x^{\prime\prime})=0.
+\label{A.7a}
+\end{align}
+%
+In the SVT4 language we set  $A_{\mu}=A_{\mu}^T+\partial_{\mu}A$, and can thus identify 
+%
+\begin{eqnarray}
+A_{\mu}^T=  \Pi_{\mu\nu}A^{\nu},\quad A_{\mu}^L=\partial_{\mu}A=(\eta_{\mu\nu}-\Pi_{\mu\nu})A^{\nu}.
+\label{A.8a}
+\end{eqnarray}
+%
+For vector fields the SVT formalism is thus equivalent to the projector formalism.  Having now established this equivalence for vector fields, we turn now to tensor fields.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}
+\label{aas:tt_long_flat_proj}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For tensor fields we introduce 4-dimensional flat  spacetime transverse and longitudinal projection operators \cite{mannheim_2005,amarasinghe_2019}: 
+%
+\begin{eqnarray}
+T_{\mu\nu\sigma\tau}&=&\eta_{\mu\sigma}\eta_{\nu\tau}
+-\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})
+\eta_{\nu\tau}\partial_{\sigma}
+-\partial_{\nu}\int d^4x^{\prime}D(x-x^{\prime})
+\eta_{\mu\sigma}\partial_{\tau}
+\nonumber \\
+&+&\partial_{\mu}\partial_{\nu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}\int
+d^4x^{\prime\prime}D(x^{\prime}-x^{\prime\prime})
+\partial_{\tau},
+\nonumber\\
+L_{\mu\nu\sigma\tau}&=&\partial_{\mu}\int d^4x^{\prime}D(x-x^{\prime})
+\eta_{\nu\tau}\partial_{\sigma}
++\partial_{\nu}\int d^4x^{\prime}D(x-x^{\prime})
+\eta_{\mu\sigma}\partial_{\tau}
+\nonumber \\
+&-&\partial_{\mu}\partial_{\nu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}\int
+d^4x^{\prime\prime}D(x^{\prime}-x^{\prime\prime})
+\partial_{\tau}.
+\label{A.9a}
+\end{eqnarray}
+%
+As constructed, these projectors obey a standard projector algebra
+%
+\begin{eqnarray}
+&&T_{\mu\nu\sigma\tau}T^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}=
+T_{\mu\nu\alpha\beta},\quad
+L_{\mu\nu\sigma\tau}L^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+=L_{\mu\nu\alpha\beta},
+\nonumber \\
+&&T_{\mu\nu\sigma\tau}L^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}=
+0,\quad
+L_{\mu\nu\sigma\tau}T^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+=0,\quad L_{\mu\nu\sigma\tau}
++T_{\mu\nu\sigma\tau}
+=\eta_{\mu\sigma}\eta_{\nu\tau}.
+\label{A.10a}
+\end{eqnarray}
+% 
+In terms of these projectors we define transverse and longitudinal components $h^{T}_{\mu\nu}$ and $h^{L}_{\mu\nu}$ of $h_{\mu\nu}$ according to
+% 
+\begin{eqnarray}
+T_{\mu\nu\sigma\tau}h^{\sigma\tau}&=&h^{T}_{\mu\nu}=h_{\mu\nu}
+-\partial_{\mu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}
+h^{\sigma}_{\phantom{\sigma}\nu}(x^{\prime})  
+\nonumber\\
+&&
+-\partial_{\nu}\int d^4x^{\prime}D(x-x^{\prime})
+\partial_{\kappa}h^{\kappa}_{\phantom{\kappa}\mu}(x^{\prime})
+\nonumber \\
+&&+\partial_{\mu}\partial_{\nu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}\int
+d^4x^{\prime\prime}D(x^{\prime}-x^{\prime\prime})
+\partial_{\kappa}h^{\sigma\kappa}(x^{\prime\prime}),
+\nonumber\\
+L_{\mu\nu\sigma\tau}h^{\sigma\tau}&=&h^{L}_{\mu\nu}=\partial_{\mu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}
+h^{\sigma}_{\phantom{\sigma}\nu}(x^{\prime}) 
++\partial_{\nu}\int d^4x^{\prime}D(x-x^{\prime})
+\partial_{\kappa}h^{\kappa}_{\phantom{\kappa}\mu}(x^{\prime})
+\nonumber \\
+&&-\partial_{\mu}\partial_{\nu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}\int
+d^4x^{\prime\prime}D(x^{\prime}-x^{\prime\prime})
+\partial_{\kappa}h^{\sigma\kappa}(x^{\prime\prime}).
+\label{A.11a}
+\end{eqnarray}
+%
+Assuming integration by parts these components obey
+%
+\begin{eqnarray}
+\partial_{\nu}h^{T\mu\nu}
+=0,\quad 
+\partial_{\nu}h^{L\mu\nu}=\partial_{\nu}h^{\mu\nu}.
+\label{A.12a}
+\end{eqnarray}
+% 
+With $h^{T}_{\mu\nu}$ transforming as $h^{T}_{\mu\nu}\rightarrow h^{T}_{\mu\nu}$ under $h_{\mu\nu}\rightarrow h_{\mu\nu}-\partial_{\mu}\epsilon_{\nu}-\partial_{\nu}\epsilon_{\mu}$ as long as we can integrate by parts, we see that, as introduced, $h^{T}_{\mu\nu}$ is both transverse and gauge invariant. 
+
+On evaluation we obtain 
+%
+\begin{align}
+&&\frac{1}{2}[\partial_{\mu}\partial_{\nu}h^{T}
++\partial_{\alpha}\partial^{\alpha}h_{\mu\nu}^{T}]
+-\frac{1}{2}\eta_{\mu\nu}\partial_{\sigma}\partial^{\sigma}
+h^{T}
+=\frac{1}{2}[\partial_{\mu}\partial_{\nu}h
+-\partial_{\mu}\partial_{\lambda}h^{\lambda}_{\phantom{\lambda}\nu}
+-\partial_{\nu}\partial_{\lambda}h^{\lambda}_{\phantom{\lambda}\mu} 
+\nonumber\\
+&&\qquad
++\partial_{\alpha}\partial^{\alpha}h_{\mu\nu}]
+-\frac{1}{2}\eta_{\mu\nu}[\partial_{\alpha}\partial^{\alpha}h
+-\partial_{\sigma}\partial_{\lambda}h^{\sigma\lambda}],
+\label{A.13a}
+\end{align}
+%
+where $h^{T}$ is given by
+%
+\begin{equation}
+h^{T}=\eta^{\alpha\beta}h_{\alpha\beta}^{T}
+=h -\partial_{\nu}\int
+d^4x^{\prime}D(x-x^{\prime})\partial_{\sigma}
+h^{\sigma\nu}(x^{\prime}),
+\label{A.14a}
+\end{equation}
+%
+with $h=\eta^{\alpha\beta}h_{\alpha\beta}$. On recognizing the right-hand side of  (\ref{A.13a}) as $\delta R_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}\delta R=\delta G_{\mu\nu}$,
+we obtain 
+%
+\begin{eqnarray}
+&&\delta G_{\mu\nu}=\tfrac{1}{2}[\partial_{\mu}\partial_{\nu}h^{T}
++\partial_{\alpha}\partial^{\alpha}h_{\mu\nu}^{T}]
+-\frac{1}{2}\eta_{\mu\nu}\partial_{\sigma}\partial^{\sigma}
+h^{T}.
+\label{A.15a}
+\end{eqnarray}
+%
+We thus write the perturbed Einstein tensor entirely in terms of the non-local, gauge invariant, six degree of freedom $h_{\mu\nu}^T$.
+
+To make contact with the SVT4 expansion we insert
+%
+\begin{eqnarray}
+h_{\mu\nu}=-2\eta_{\mu\nu}\chi+2\partial_{\mu}\partial_{\nu}F
++ \partial_{\mu}F_{\nu}+\partial_{\nu}F_{\mu}+2F_{\mu\nu}
+\label{A.16a}
+\end{eqnarray}
+%
+into $h_{\mu\nu}^T$,  to obtain
+%
+\begin{eqnarray}
+h^T_{\mu\nu}=-2\eta_{\mu\nu}\chi+2F_{\mu\nu}+2\partial_{\mu}\partial_{\nu}\int d^4D(x-x^{\prime})\chi(x^{\prime}),\quad h^T=-6\chi.
+\label{A.17a}
+\end{eqnarray}
+%
+With $\delta G_{\mu\nu}$ being written in terms of the projected $h^T_{\mu\nu}$, we see that it is written in terms of the SVT4 $F_{\mu\nu}$ and $\chi$. However as written, $h_{\mu\nu}^T$ contains an integral term in (\ref{A.17a}). To eliminate it we extend transverse projection to transverse-traceless projection.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}
+\label{aas:tt_proj}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In \cite{mannheim_2005} and \cite{amarasinghe_2019} two further projectors were introduced
+%
+\begin{eqnarray}
+Q_{\mu\nu\sigma\tau}&=&\frac{1}{3}\left[\eta_{\mu\nu}
+-\partial_{\mu}\partial_{\nu}\int d^4x^{\prime}D(x-x^{\prime})\right]
+\left[\eta_{\sigma\tau}-\partial^{\prime}_{\sigma}\int
+d^4x^{\prime\prime}D(x^{\prime}-x^{\prime\prime})\partial^{\prime\prime}_{\tau}\right],
+\nonumber\\
+P_{\mu\nu\sigma\tau}&=&T_{\mu\nu\sigma\tau}-Q_{\mu\nu\sigma\tau}.
+\label{A.18a}
+\end{eqnarray}
+%  
+They obey the projector algebra
+%
+\begin{eqnarray}
+T_{\mu\nu\sigma\tau}Q^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+&=&Q_{\mu\nu\alpha\beta},\quad
+Q_{\mu\nu\sigma\tau}T^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+=Q_{\mu\nu\alpha\beta},\quad
+Q_{\mu\nu\sigma\tau}Q^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+=Q_{\mu\nu\alpha\beta}, 
+\nonumber\\
+P_{\mu\nu\sigma\tau}Q^{\sigma\tau\alpha\beta}&=&0,\quad
+Q_{\mu\nu\sigma\tau}P^{\sigma\tau\alpha\beta}=0,\quad
+P_{\mu\nu\sigma\tau}P^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+=P_{\mu\nu\alpha\beta}.
+\label{A.19a}
+\end{eqnarray}
+%
+The projector $P_{\mu\nu\sigma\tau}$ projects out the traceless piece of $h^T_{\mu\nu}$, while $Q_{\mu\nu\sigma\tau}$ projects out its complement, and they implement
+%
+\begin{eqnarray}
+P_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}h^T_{\sigma\tau}=h^{T\theta}_{\mu\nu},\quad 
+Q_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}h^T_{\sigma\tau}
+=h^T_{\mu\nu}-h^{T\theta}_{\mu\nu},
+\label{A.20a}
+\end{eqnarray}
+% 
+with $h^{T\theta}_{\mu\nu}$ being both traceless and transverse. With $Q_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}$ implementing $Q_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}h^L_{\sigma\tau}=0$, $P_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}$ implements $P_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}h^L_{\sigma\tau}=0$ as well, to thus implement 
+%
+\begin{eqnarray}
+P_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}h_{\sigma\tau}=h^{T\theta}_{\mu\nu}.
+\label{A.21a}
+\end{eqnarray}
+%
+$P_{\mu\nu\sigma\tau}$ is thus a traceless projector not just for the transverse $h_{\mu\nu}^T$ but for the full $h_{\mu\nu}$ as well. We can thus introduce its complementary projection operator $U_{\mu\nu\sigma\tau}=\eta_{\mu\sigma}\eta_{\nu\tau}-P_{\mu\nu\sigma\tau}$, as it obeys
+%
+\begin{eqnarray}
+P_{\mu\nu\sigma\tau}U^{\sigma\tau\alpha\beta}&=&0,\quad
+U_{\mu\nu\sigma\tau}P^{\sigma\tau\alpha\beta}=0,\quad
+U_{\mu\nu\sigma\tau}U^{\sigma\tau}_{\phantom{\sigma\tau}\alpha\beta}
+=U_{\mu\nu\alpha\beta},
+\nonumber\\
+U_{\mu\nu}^{\phantom{\mu\nu}\sigma\tau}h_{\sigma\tau}&=&h_{\mu\nu}-h^{T\theta}_{\mu\nu}=
+h^{L\theta}_{\mu\nu}+\frac{1}{3}\eta_{\mu\nu}\eta^{\sigma\tau}h_{\sigma\tau} 
+\nonumber\\
+&&
+-\frac{1}{3}\partial_{\mu}\partial_{\nu}\int d^4y D(x-y)\eta^{\sigma\tau}h_{\sigma\tau},
+\label{A.22a}
+\end{eqnarray}
+% 
+
+Given (\ref{A.20a}) and (\ref{A.18a}) we obtain 
+%
+\begin{eqnarray}
+h^{T\theta}_{\mu\nu}= h^{T}_{\mu\nu}-\frac{1}{3}\eta_{\mu\nu}\eta^{\sigma\kappa}h^{T}_{\sigma\kappa}
++\frac{1}{3}\partial_{\mu}\partial_{\nu}\int d^4y D(x-y)\eta^{\sigma\kappa}h^{T}_{\sigma\kappa},
+\label{A.23a}
+\end{eqnarray}
+%
+Inserting (\ref{A.17a}) into (\ref{A.23a}) yields
+%
+\begin{eqnarray}
+h^{T\theta}_{\mu\nu}=2F_{\mu\nu},
+\label{A.24a}
+\end{eqnarray}
+%
+with $\chi$ dropping out. Finally, in terms of $h^{T\theta}_{\mu\nu}$ we can rewrite (\ref{A.15a}) as 
+%
+\begin{eqnarray}
+&&\delta G_{\mu\nu}=
+\tfrac{1}{2}\partial_{\alpha}\partial^{\alpha}h_{\mu\nu}^{T\theta}
+-\tfrac{1}{3}\eta_{\mu\nu}\partial_{\sigma}\partial^{\sigma}h^{T}
++\tfrac{1}{3}\partial_{\mu}\partial_{\nu}h^{T}.
+\label{A.25a}
+\end{eqnarray}
+%
+Then with 
+%
+\begin{eqnarray}
+F_{\mu\nu}=\tfrac{1}{2}h_{\mu\nu}^{T\theta}, \quad \chi=-\tfrac{1}{6}h^{T},
+\label{A.26a}
+\end{eqnarray}
+%
+we can rewrite (\ref{A.25a}) as 
+%
+\begin{eqnarray}
+\delta G_{\mu\nu}&=&\partial_{\alpha}\partial^{\alpha}F_{\mu\nu}+2\eta_{\mu\nu}\partial_{\alpha}\partial^{\alpha}\chi-2\partial_{\mu}\partial_{\nu}\chi.
+\label{A.27a}
+\end{eqnarray}
+%
+We recognize (\ref{A.27a}) as the expression for $\delta G_{\mu\nu}$ as given in (\ref{3.10}) when $D=4$, and with $h^T_{\mu\nu}$ and thus $h^{T\theta}_{\mu\nu}$ and $h^T$ being gauge invariant, we confirm that given integration by parts $F_{\mu\nu}$ and $\chi$ are gauge invariant, just as noted in Sec. \ref{SS612}. Thus with (\ref{A.26a})
+we establish the equivalence of the  SVT4 decomposition and the projection operator technique.
+
+As a further example of this equivalence we note that for conformal gravity fluctuations around a flat spacetime background (\ref{13.18}) takes the form
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}&=&\frac{1}{2}\bigg{(}\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}K_{\mu\nu}
+-\partial_{\sigma}\partial^{\sigma}\partial_{\mu}\partial^{\alpha}K_{\alpha\nu}
+-\partial_{\sigma}\partial^{\sigma}\partial_{\nu}\partial^{\alpha}K_{\alpha\mu} 
+\nonumber\\
+&&
++\frac{2}{3}\partial_{\mu}\partial_{\nu}\partial^{\alpha}\partial^{\beta}K_{\alpha\beta}+\frac{1}{3}\eta_{\mu\nu}\partial_{\sigma}\partial^{\sigma}\partial^{\alpha}\partial^{\beta}K_{\alpha\beta}\bigg{)},
+\label{A.28a}
+\end{eqnarray} 
+%
+where all derivatives are four-dimensional derivatives with respect to a flat Minkowski metric, and where $K_{\mu\nu}$ is given by $K_{\mu\nu}=h_{\mu\nu}-(1/4)\eta_{\mu\nu}\eta^{\alpha\beta}h_{\alpha\beta}$. Inserting (\ref{A.11a}) and (\ref{A.23a}) into (\ref{A.28a}) yields
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}&=&\frac{1}{2}\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}h^{T\theta}_{\mu\nu}.
+\label{A.29a}
+\end{eqnarray} 
+%
+With the insertion of (\ref{A.16a}) into (\ref{A.28a}) yielding 
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}&=&\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}F_{\mu\nu},
+\label{A.30a}
+\end{eqnarray} 
+%
+(cf. (\ref{13.20}) with $\Omega=1$), we recover (\ref{A.24a}), and again confirm the equivalence of the  SVT4 decomposition and the projection operator technique.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}
+\label{aas:tt_long_curved_proj}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For curved spacetime with background metric $g_{\mu\nu}$ it is convenient to  define a 2-index propagator
+%
+\begin{equation} 
+[g^{\nu}_{\phantom{\nu}\beta}\nabla_{\tau}\nabla^{\tau}
++\nabla_{\beta}\nabla^{\nu}]D^{\beta}_{\phantom{\beta}\sigma}
+(x,x^{\prime}) =g^{\nu}_{\phantom{\nu}\sigma}(-g)^{-1/2}\delta^4
+(x-x^{\prime}).
+\label{A.31a}
+\end{equation}
+%
+In terms of it we introduce \cite{mannheim_2005}
+% 
+\begin{eqnarray} 
+T_{\mu\nu\sigma\tau}&=&g_{\mu\sigma}g_{\nu\tau}- \nabla_{\mu}\int
+d^4x^{\prime}(-g)^{1/2}
+D_{\nu\sigma}(x,x^{\prime})
+\nabla_{\tau}  
+\nonumber\\
+&&
+-\nabla_{\nu}\int
+d^4x^{\prime}(-g)^{1/2}
+D_{\mu\sigma}(x,x^{\prime})\nabla_{\tau},
+\nonumber \\
+L_{\mu\nu\sigma\tau}&=&\nabla_{\mu}\int
+d^4x^{\prime}(-g)^{1/2}
+D_{\nu\sigma}(x,x^{\prime})
+\nabla_{\tau} 
++\nabla_{\nu}\int
+d^4x^{\prime}(-g)^{1/2}
+D_{\mu\sigma}(x,x^{\prime})
+\nabla_{\tau}.
+\nonumber\\
+\label{A.32a}
+\end{eqnarray}
+%
+These projection operators close on the projector algebra given in (\ref{A.10a}). As such, they effect
+$T_{\mu\nu\sigma\tau}h^{\sigma\tau}=
+h^{T}_{\mu\nu}$ and $L_{\mu\nu\sigma\tau}h^{\sigma\tau}=
+h^{L}_{\mu\nu}$, where
+%
+\begin{equation} 
+h^{T}_{\mu\nu}=h_{\mu\nu}-\nabla_{\mu}\int
+d^4x^{\prime}(-g)^{1/2}
+D^{\nu}_{\phantom{\nu}\sigma}(x,x^{\prime})
+\nabla_{\tau}h^{\sigma\tau}  
+-\nabla_{\nu}\int
+d^4x^{\prime}(-g)^{1/2}
+D^{\mu}_{\phantom{\mu}\sigma}(x,x^{\prime})
+\nabla_{\tau}h^{\sigma\tau},
+\label{A.33a}
+\end{equation}
+% 
+%
+\begin{equation} 
+h^{L}_{\mu\nu}=\nabla_{\mu}\int
+d^4x^{\prime}(-g)^{1/2}
+D^{\nu}_{\phantom{\nu}\sigma}(x,x^{\prime})
+\nabla_{\tau}h^{\sigma\tau} 
++\nabla_{\nu}\int
+d^4x^{\prime}(-g)^{1/2}
+D^{\mu}_{\phantom{\mu}\sigma}(x,x^{\prime})
+\nabla_{\tau}h^{\sigma\tau}.
+\label{A.34a}
+\end{equation}
+% 
+
+The utility of constructing these projected states is that under a gauge transformation $h_{\mu\nu}$ transforms into $h_{\mu\nu}-\nabla_{\mu}\epsilon_{\nu}-\nabla_{\nu}\epsilon_{\mu}$. However, we see that this is precisely the structure of $h^{L}_{\mu\nu}$. The longitudinal component of $h_{\mu\nu}$ can thus be removed by a gauge transformation, and the fluctuation Einstein equations can only depend on the 6-component $h^{T}_{\mu\nu}$. However, unlike the flat background case where one can write $\delta G_{\mu\nu}$ itself entirely in terms of $h^T_{\mu\nu}$, in the curved background case there must be a background $T_{\mu\nu}$, and thus it is only in the full $\delta G_{\mu\nu}+8\pi G \delta T_{\mu\nu}$ that the metric fluctuations can be described entirely by $h^T_{\mu\nu}$. If we introduce a quantity $\delta T^T_{\mu\nu}$ in which the dependence on $\epsilon_{\mu}$ has been excluded (i.e. under a gauge transformation $\delta T_{\mu\nu}\rightarrow \delta T^T_{\mu\nu}$ plus a function of $\epsilon_{\mu}$, and this function of $\epsilon_{\mu}$ cancels against an identical function of $\epsilon_{\mu}$ in $\delta G_{\mu\nu}$), then following the commuting of some derivatives,  the fluctuation equations take the form \cite{mannheim_2005}
+%
+\begin{eqnarray} 
+\delta G_{\mu\nu}+8\pi G \delta T_{\mu\nu}
+&=&\frac{1}{2}[\nabla_{\mu}\nabla_{\nu}h^{T}
++R^{\sigma}_{\phantom{\sigma}\mu}h_{\sigma\nu}^{T}
++R^{\sigma}_{\phantom{\sigma}\nu}h_{\sigma\mu}^{T}
+-2R_{\mu\lambda\nu\sigma}h^{T\lambda\sigma}
++\nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}^{T}]
+\nonumber \\
+&-&\frac{1}{2}R^{\sigma}_{\phantom{\sigma}\sigma}h^{T}_{\mu\nu}
++\frac{1}{ 2}g_{\mu\nu}R_{\alpha\beta}h^{T\alpha\beta}
+-\frac{1}{2}g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}h^{T}
++8\pi G \delta T^T_{\mu\nu}=0.
+\nonumber\\
+\label{A.35a}
+\end{eqnarray}
+% 
+The SVT4 fluctuations around a de Sitter background as given in (\ref{6.16}) to (\ref{6.19}) and around a general Robertson-Walker background as given in (\ref{12.9}) are special cases of (\ref{A.35a}), with the only metric fluctuations that appear in (\ref{6.19}) and (\ref{12.9}) being $F_{\mu\nu}$ and $\chi$, viz. just the six degrees of freedom associated with $h^T_{\mu\nu}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}
+\label{aas:tt_curved_proj}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Rather than generalize the general curved spacetime transverse and longitudinal projection technique to the general transverse-traceless case, we have instead  found it more convenient to generalize the SVTD discussion given in Secs. \ref{SS612} and \ref{SS522} to general curved spacetime background fluctuations. To this end we take $h_{\mu\nu}$ to be of the form:
+%
+\begin{eqnarray}
+h_{\mu\nu} &=& 2F_{\mu\nu}+W_{\mu\nu}+S_{\mu\nu},
+\label{A.36a}
+\end{eqnarray}
+%
+where
+%
+\begin{align}
+W_{\mu\nu} &=\nabla_\mu W_\nu + \nabla_\nu W_\mu - \frac{2}{D}g_{\mu\nu}\nabla^\alpha W_\alpha,
+\nonumber\\
+S_{\mu\nu}&=\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\int d^Dx^{\prime}[-g(x^{\prime})]^{1/2}D^{(D)}(x,x^{\prime}) h(x^{\prime}),
+\label{A.37a}
+\end{align}
+%
+with $D(x,x^{\prime})$ obeying
+%
+\begin{eqnarray}
+\nabla_\alpha \nabla^\alpha D^{(D)}(x,x^{\prime}) =[-g(x)]^{-1/2}\delta^{(D)}(x-x^{\prime}).
+\label{A.38a}
+\end{eqnarray}
+%
+From (\ref{A.37a}) we obtain
+%
+\begin{eqnarray}
+g^{\mu\nu}W_{\mu\nu}=0,\quad g^{\mu\nu}S_{\mu\nu}=h,
+\label{A.39a}
+\end{eqnarray}
+%
+%
+\begin{eqnarray}
+\nabla^\nu h_{\mu\nu} &=& \nabla^\nu W_{\mu\nu} + \nabla^\nu S_{\mu\nu}
+\label{A.40a}
+\end{eqnarray}
+%
+as the conditions that $F_{\mu\nu}$ be transverse and traceless. From (\ref{A.40a}) we obtain 
+%
+\begin{align}
+\left[g_{\nu\alpha} \nabla_\beta \nabla^\beta +\nabla_\alpha \nabla_\nu - \frac{2}{D}\nabla_\nu\nabla_\alpha\right] W^\alpha
+&=\nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}(\nabla_\nu \nabla_\alpha\nabla^\alpha 
+\nonumber\\
+&- \nabla_\alpha\nabla^\alpha \nabla_\nu)\times
+\nonumber\\
+&
+\int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D^{(D)}(x,x^{\prime}) h(x^{\prime}),
+\label{A.41a}
+\end{align}
+%
+and by commuting derivatives can rewrite (\ref{A.41a}) as
+%
+\begin{align}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]&W^\alpha
+= \nabla^\alpha h_{\alpha\nu} - \frac{1}{D-1}R_{\nu\alpha}\nabla^\alpha \times
+\nonumber\\
+&\int d^Dx^{\prime}[-g(x^{\prime})]^{1/2}D^{(D)}(x,x^{\prime}) h(x^{\prime}).
+\label{A.42a}
+\end{align}
+%
+
+To solve for $W_{\mu}$ it is convenient to use the bitensor formalism in which we define $G_{\alpha}^{(D)\beta}(x,x^{\prime})=e^a_{\alpha}(x)e^{\beta}_a(x^{\prime})$ where the D-dimensional $e^a_{\alpha}(x)$ vierbeins obey $g_{\mu\nu}(x)=\eta_{ab}e^{a}_{\mu}(x)e^{b}_{\nu}(x)$, with $a$ and $b$ referring to a fixed D-dimensional basis. With this bitensor definition $e^a_{\alpha}(x)$ and $e^{\beta}_a(x^{\prime})$ are acting in separate spaces, but  at $x=x^{\prime}$ we obtain $G_{\alpha}^{(D)\beta}(x,x)=g_{\alpha}^{\phantom{\alpha}\beta}(x)$. On the introducing the propagator that satisfies 
+%
+\begin{eqnarray}
+\left[g_{\nu\alpha}\nabla_\beta\nabla^\beta + \left(\frac{D-2}{D}\right)\nabla_\nu \nabla_\alpha - R_{\nu\alpha}\right]D_{(D)}^{\alpha\gamma}(x,x^{\prime}) &=& G_{\nu}^{(D)\gamma}(x,x^{\prime}) [-g(x^{\prime})]^{-1/2}\times
+\nonumber\\
+&& \delta^{(D)}(x-x^{\prime}),
+\label{A.43a}
+\end{eqnarray}
+%
+we can solve for $W_{\mu}$ as
+%
+\begin{eqnarray}
+W_{\mu}(x) &=& \int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D_{\mu}^{(D)\sigma}(x,x^{\prime})\bigg[ \nabla^{\rho}_{x^{\prime}} h_{\sigma\rho}(x^{\prime})-
+\frac{1}{D-1}R_{\sigma\rho}(x^{\prime})\nabla^{\rho}_{x^{\prime}} \times
+\nonumber\\
+&&\int d^Dx^{\prime\prime}[-g(x^{\prime\prime})]^{1/2} D^{(D)}(x^{\prime},x^{\prime\prime}) h(x^{\prime\prime})\bigg].
+\label{A.44a}
+\end{eqnarray}
+%
+
+Next we decompose $W_{\mu}$ into transverse and longitudinal components viz.
+%
+\begin{eqnarray}
+W_{\mu} &=&W^T_{\mu}+W^L_{\mu}=F_{\mu}+\nabla_{\mu}H,\quad  \nabla^{\mu}F_{\mu}=0,
+\nonumber\\
+ H&=&\int d^Dx^{\prime}[-g(x^{\prime})]^{1/2}D^{(D)}(x,x^{\prime})\nabla^\sigma W_\sigma(x^{\prime}),
+\label{A.45a}
+\end{eqnarray}
+%
+with $h_{\mu\nu}$ then taking the form
+%
+\begin{align}
+h_{\mu\nu}&= 2F_{\mu\nu} + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2 \nabla_\mu\nabla_\nu H - \frac{2}{D}g_{\mu\nu}\nabla_\alpha \nabla^\alpha H 
+\nonumber\\
+&+\frac{1}{D-1}\left( g_{\mu\nu}\nabla_\alpha \nabla^\alpha - \nabla_\mu\nabla_\nu\right)\int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D^{(D)}(x,x^{\prime}) h(x^{\prime}).
+\label{A.46a}
+\end{align}
+%
+Upon further defining
+%
+\begin{align}
+F &= H - \frac{1}{2(D-1)} \int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D^{(D)}(x,x^{\prime}) h(x^{\prime}),
+\nonumber\\
+\chi &= \frac{1}{D}\nabla_\alpha\nabla^\alpha H - \frac{1}{2(D-1)}\nabla_\alpha\nabla^\alpha\int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D^{(D)}(x,x^{\prime}) h(x^{\prime}),
+\label{A.47a}
+\end{align}
+%
+we may express $h_{\mu\nu}$ in the SVTD form:
+%
+\begin{eqnarray}
+h_{\mu\nu} &=& -2g_{\mu\nu}\chi + 2\nabla_\mu\nabla_\nu F + \nabla_\mu F_\nu + \nabla_\nu F_\mu + 2F_{\mu\nu}
+\label{A.48a},
+\end{eqnarray}
+%
+where
+%
+\begin{align}
+\chi &= \frac{1}{D}\nabla^\sigma W_{\sigma}  - \frac{1}{2(D-1)}h,
+\nonumber\\
+F_{\mu} &= W_{\mu}^T=W_{\mu} -\nabla_\mu \int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D^{(D)}(x,x^{\prime})\nabla^{\sigma}W_\sigma(x^{\prime}),
+\nonumber\\
+F &= \int d^Dx^{\prime}[-g(x^{\prime})]^{1/2} D^{(D)}(x,x^{\prime}) \left(\nabla^\sigma W_{\sigma}(x^{\prime})  - \frac{1}{2(D-1)}h(x^{\prime})\right),
+\nonumber\\
+2F_{\mu\nu} &= h_{\mu\nu}+2g_{\mu\nu}\chi - 2\nabla_\mu\nabla_\nu F - \nabla_\mu F_\nu - \nabla_\nu F_{\mu}.
+\label{A.49a}
+\end{align}
+%
+We thus generalize the SVTD approach to the arbitrary D-dimensional curved spacetime background.
+
+

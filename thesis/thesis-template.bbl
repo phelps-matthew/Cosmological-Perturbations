@@ -1,0 +1,165 @@
+\begin{thebibliography}{27}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Weinberg(1972)]{weinberg_1972}
+Steven Weinberg.
+\newblock \emph{Gravitation and cosmology principles and applications of the
+  general theory of relativity}.
+\newblock Wiley, 1972.
+
+\bibitem[Mannheim(2012)]{mannheim_2012}
+Philip~D. Mannheim.
+\newblock Cosmological perturbations in conformal gravity.
+\newblock \emph{Physical Review D}, 85\penalty0 (12), May 2012.
+
+\bibitem[Mannheim and Kazanas(1988)]{mannheim_kazanas_1988}
+Philip~D. Mannheim and Demosthenes Kazanas.
+\newblock Energy-momentum tensor of fields in the standard cosmology.
+\newblock \emph{General Relativity and Gravitation}, 20\penalty0 (3):\penalty0
+  201–220, 1988.
+
+\bibitem[Mannheim and Kazanas(1989)]{mannheim_kazanas_1989}
+Philip~D. Mannheim and Demosthenes Kazanas.
+\newblock Exact vacuum solution to conformal weyl gravity and galactic rotation
+  curves.
+\newblock \emph{The Astrophysical Journal}, 342:\penalty0 635, 1989.
+
+\bibitem[Mannheim(1990)]{mannheim_1990}
+Philip~D. Mannheim.
+\newblock Conformal cosmology with no cosmological constant.
+\newblock \emph{General Relativity and Gravitation}, 22\penalty0 (3):\penalty0
+  289–298, 1990.
+
+\bibitem[Mannheim(2006)]{mannheim_2006}
+P~Mannheim.
+\newblock Alternatives to dark matter and dark energy.
+\newblock \emph{Progress in Particle and Nuclear Physics}, 56\penalty0
+  (2):\penalty0 340–445, 2006.
+
+\bibitem[Bach(1921)]{bach_1921}
+Rudolf Bach.
+\newblock Zur weylschen relativisic theorie und der weylschen erweiterung des
+  krummungstensorbegriffs.
+\newblock \emph{Mathematische Zeitschrift}, 9\penalty0 (1-2):\penalty0
+  110–135, 1921.
+
+\bibitem[Mannheim(1998)]{mannheim_1998}
+Philip~D. Mannheim.
+\newblock Implications of cosmic repulsion for gravitational theory.
+\newblock \emph{Physical Review D}, 58\penalty0 (10), Sep 1998.
+
+\bibitem[Mannheim(2007)]{mannheim_2007}
+Philip~D. Mannheim.
+\newblock Solution to the ghost problem in fourth order derivative theories.
+\newblock \emph{Foundations of Physics}, 37\penalty0 (4-5):\penalty0 532–571,
+  2007.
+
+\bibitem[Riegert(1984)]{riegert_1984a}
+Ronald~J. Riegert.
+\newblock The particle content of linearized conformal gravity.
+\newblock \emph{Physics Letters A}, 105\penalty0 (3):\penalty0 110–112, 1984.
+
+\bibitem[Mannheim(2000)]{mannheim_2000}
+Philip~D. Mannheim.
+\newblock Attractive and repulsive gravity.
+\newblock \emph{Foundations of Physics}, 30\penalty0 (5):\penalty0 709–746,
+  2000.
+
+\bibitem[Mannheim and O’Brien(2012)]{mannheim_obrien_2012}
+Philip~D. Mannheim and James~G. O’Brien.
+\newblock Fitting galactic rotation curves with conformal gravity and a global
+  quadratic potential.
+\newblock \emph{Physical Review D}, 85\penalty0 (12), Dec 2012.
+
+\bibitem[Mannheim and O’Brien(2011)]{mannheim_obrien_2011}
+Philip~D. Mannheim and James~G. O’Brien.
+\newblock Impact of a global quadratic potential on galactic rotation curves.
+\newblock \emph{Physical Review Letters}, 106\penalty0 (12), 2011.
+
+\bibitem[O’Brien and Mannheim(2012)]{obrien_mannheim_2012}
+James~G. O’Brien and Philip~D. Mannheim.
+\newblock Fitting dwarf galaxy rotation curves with conformal gravity.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  421\penalty0 (2):\penalty0 1273–1282, 2012.
+
+\bibitem[Mannheim and Kazanas(1994)]{mannheim_kazanas_1994}
+Philip~D. Mannheim and Demosthenes Kazanas.
+\newblock Newtonian limit of conformal gravity and the lack of necessity of the
+  second order poisson equation.
+\newblock \emph{General Relativity and Gravitation}, 26\penalty0 (4):\penalty0
+  337–361, 1994.
+
+\bibitem[Mannheim(2017)]{mannheim_2017}
+Philip~D. Mannheim.
+\newblock Mass generation, the cosmological constant problem, conformal
+  symmetry, and the higgs boson.
+\newblock \emph{Progress in Particle and Nuclear Physics}, 94:\penalty0
+  125–183, 2017.
+
+\bibitem[Kodama and Sasaki(1984)]{kodama_sasaki_1984}
+Hideo Kodama and Misao Sasaki.
+\newblock Cosmological perturbation theory.
+\newblock \emph{Progress of Theoretical Physics Supplement}, 78:\penalty0
+  1–166, 1984.
+
+\bibitem[Bardeen(1980)]{bardeen_1980}
+James~M. Bardeen.
+\newblock Gauge-invariant cosmological perturbations.
+\newblock \emph{Physical Review D}, 22\penalty0 (8):\penalty0 1882–1905,
+  1980.
+
+\bibitem[Amarasinghe et~al.(2019)Amarasinghe, Phelps, and
+  Mannheim]{amarasinghe_2019}
+Asanka Amarasinghe, Matthew~G. Phelps, and Philip~D. Mannheim.
+\newblock Cosmological perturbations in conformal gravity. ii.
+\newblock \emph{Physical Review D}, 99\penalty0 (8), 2019.
+
+\bibitem[Phelps et~al.(2019)Phelps, Amarasinghe, and Mannheim]{phelps_2019}
+Matthew~G. Phelps, Asanka Amarasinghe, and Philip~D. Mannheim.
+\newblock Three-dimensional and four-dimensional scalar, vector, tensor
+  cosmological fluctuations and the cosmological decomposition theorem, 2019.
+
+\bibitem[Bender and Mannheim(2008)]{bender_mannheim_2008a}
+Carl~M. Bender and Philip~D. Mannheim.
+\newblock No-ghost theorem for the fourth-order derivative pais-uhlenbeck
+  oscillator model.
+\newblock \emph{Physical Review Letters}, 100\penalty0 (11), 2008.
+
+\bibitem[Bander and Itzykson(1966)]{bander_itzykson_1966}
+M.~Bander and C.~Itzykson.
+\newblock Group theory and the hydrogen atom (ii).
+\newblock \emph{Reviews of Modern Physics}, 38\penalty0 (2):\penalty0
+  346–358, Jan 1966.
+
+\bibitem[Mukhanov(1992)]{mukhanov_1992}
+V~Mukhanov.
+\newblock Theory of cosmological perturbations.
+\newblock \emph{Physics Reports}, 215\penalty0 (5-6):\penalty0 203–333, 1992.
+
+\bibitem[Bertschinger(2001)]{bertschinger_2000}
+Edmund Bertschinger.
+\newblock {Cosmological perturbation theory and structure formation}.
+\newblock In \emph{{Cosmology 2000}}, pages 1--25, 1 2001.
+
+\bibitem[Mannheim(2011)]{mannheim_2011}
+Philip~D. Mannheim.
+\newblock Making the case for conformal gravity.
+\newblock \emph{Foundations of Physics}, 42\penalty0 (3):\penalty0 388–420,
+  2011.
+
+\bibitem[Ellis et~al.(2009)Ellis, Maartens, and
+  Maccallum]{ellis_maartens_maccallum_2009}
+George Ellis, Roy Maartens, and Malcolm Maccallum.
+\newblock \emph{Relativistic Cosmology}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Mannheim(2005)]{mannheim_2005}
+Philip~D Mannheim.
+\newblock \emph{Brane-Localized Gravity}.
+\newblock World Scientific, 2005.
+
+\end{thebibliography}

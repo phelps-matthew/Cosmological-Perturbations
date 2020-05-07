@@ -1,0 +1,867 @@
+
+\chapter{Constructing and Imposing Gauge Conditions}
+\label{c:constructing_gauge_conditions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Conformal Gauge and General Solutions in Conformal Gravity}
+\label{s:conformal_gauge_sols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Conformal Gauge}
+\label{ss:conformal_gauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In general in order to impose a coordinate gauge condition, we recall that since $h^{\mu\nu}$ and $h_{\mu\nu}$ transform into $h^{\mu\nu}-\nabla^{\nu}\epsilon^{\mu}-\nabla^{\mu}\epsilon^{\nu}$ and $h_{\mu\nu}-\nabla_{\nu}\epsilon_{\mu}-\nabla_{\mu}\epsilon_{\nu}$ under a perturbative coordinate gauge transformation of the form $x^{\mu}\rightarrow x^{\mu}+\epsilon^{\mu}(x)$ (all covariant derivatives being taken with respect to the background $g_{(0)}^{\mu\nu}$), we see that under the same transformation $K^{\mu\nu}$ transforms as  
+%
+\begin{eqnarray}
+K^{\mu\nu}\rightarrow K^{\mu\nu}-\nabla^{\nu}\epsilon^{\mu}-\nabla^{\mu}\epsilon^{\nu}+\frac{1}{2}g_{(0)}^{\mu\nu}\nabla_{\alpha}\epsilon^{\alpha}.
+\label{AP17}
+\end{eqnarray}
+% 
+With the covariant derivative of the fluctuation being given as  
+%
+\begin{eqnarray}
+\nabla_{\nu}K^{\mu\nu}=
+\partial_{\nu}K^{\mu\nu}
++K^{\nu\sigma}g_{(0)}^{\mu\rho}\partial_{\nu}g^{(0)}_{\rho\sigma}
+-\frac{1}{2}K^{\nu\sigma}g_{(0)}^{\mu\rho}\partial_{\rho}g^{(0)}_{\nu\sigma}
++\frac{1}{2}K^{\mu\sigma}g_{(0)}^{\nu\rho}\partial_{\sigma}g^{(0)}_{\rho\nu},
+\label{AP18}
+\end{eqnarray}
+% 
+and recalling that $K^{\nu\sigma}g^{(0)}_{\nu\sigma}=0$, we find that under a conformal transformation $\nabla_{\nu}K^{\mu\nu}$ transforms as
+%
+\begin{eqnarray}
+\nabla_{\nu}K^{\mu\nu}\rightarrow \Omega^{-2}\nabla_{\nu}K^{\mu\nu}+4\Omega^{-3}K^{\mu\sigma}\partial_{\sigma}\Omega,
+\label{AP19}
+\end{eqnarray}
+% 
+with a transverse gauge condition $\nabla_{\nu}K^{\mu\nu}=0$ not being conformal invariant. To identify a coordinate gauge condition that is conformal invariant, we note that under a conformal transformation the quantity $K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}$ transforms as
+%
+\begin{eqnarray}
+K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}
+\rightarrow \Omega^{-2}K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}
++8\Omega^{-3}K^{\mu\nu}\partial_{\nu}\Omega.
+\label{AP20}
+\end{eqnarray}
+%
+Consequently, we obtain
+%
+\begin{eqnarray}
+\nabla_{\nu}K^{\mu\nu}-\frac{1}{2} K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}&\rightarrow &\Omega^{-2}\left[\nabla_{\nu}K^{\mu\nu}
+-\frac{1}{2} K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}\right]
+\nonumber\\
+&=&\overline{\nabla_{\nu}K^{\mu\nu}}-\frac{1}{2} \bar{K}^{\mu\nu}\bar{g}_{(0)}^{\alpha\beta}\partial_{\nu}\bar{g}^{(0)}_{\alpha\beta},
+\label{AP21}
+\end{eqnarray}
+% 
+where $\overline{\nabla_{\nu}K^{\mu\nu}}$ is evaluated in a geometry with metric $\bar{g}^{(0)}_{\mu\nu}$ according to 
+%
+\begin{eqnarray}
+\overline{\nabla_{\nu}K^{\mu\nu}}=
+\partial_{\nu}\bar{K}^{\mu\nu}
++\bar{K}^{\nu\sigma}\bar{g}_{(0)}^{\mu\rho}\partial_{\nu}\bar{g}^{(0)}_{\rho\sigma}
+-\frac{1}{2}\bar{K}^{\nu\sigma}\bar{g}_{(0)}^{\mu\rho}\partial_{\rho}\bar{g}^{(0)}_{\nu\sigma}
++\frac{1}{2}\bar{K}^{\mu\sigma}\bar{g}_{(0)}^{\nu\rho}\partial_{\sigma}\bar{g}^{(0)}_{\rho\nu}.
+\label{AP22}
+\end{eqnarray}
+% 
+The quantity $\nabla_{\nu}K^{\mu\nu}- K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}/2$ thus transforms into itself under a conformal transformation, and we shall refer to the condition
+%
+\begin{eqnarray}
+&&\nabla_{\nu}K^{\mu\nu}=\frac{1}{2}K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta},
+\nonumber\\
+&&\partial_{\nu}K^{\mu\nu}+\Gamma^{\mu(0)}_{\nu\sigma}K^{\sigma\nu}
++\Gamma^{\nu(0)}_{\nu\sigma}K^{\mu\sigma}=K^{\mu\nu}\Gamma^{\alpha(0)}_{\alpha\nu},
+\nonumber\\
+&&\partial_{\nu}K^{\mu\nu}+\Gamma^{\mu(0)}_{\nu\sigma}K^{\sigma\nu}=0,
+\label{AP23}
+\end{eqnarray}
+%
+as the conformal gauge. (In (\ref{AP23}) we have written the gauge condition in three equivalent forms, forms which will be convenient for use in the following.) 
+
+While (\ref{AP23}) is left invariant under a local conformal transformation, we note that when the background is flat Minkowski ($g^{(0)}_{\alpha\beta}=\eta_{\alpha\beta}$), (\ref{AP23}) reduces to the transverse condition $\partial_{\nu}K^{\mu\nu}=0$. We are thus able to construct fluctuations around a conformal to flat background in the conformal gauge by conformally transforming fluctuations around a flat background in the transverse gauge, a remarkably convenient and straightforward procedure.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fluctuation Equations Around an Arbitrary Background}
+\label{ss:fluctuation_eqns_around_arb_background_cgauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Setting up the Fluctuation Equations}
+\label{sss:setting_up_fluctuation_eqns_cgauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to perturb $W_{\mu\nu}$ we have found it convenient to use the identity
+%
+\begin{eqnarray}
+\nabla_{\beta}\nabla_{\nu}T_{\lambda \mu}=\nabla_{\nu}\nabla_{\beta}T_{\lambda \mu}+R_{\lambda\sigma\nu\beta}T^{\sigma}_{\phantom{\sigma}\mu}-R_{\sigma\mu\nu\beta}T_{\lambda}^{\phantom{\lambda}\sigma}
+\label{AP41}
+\end{eqnarray}
+%
+obeyed by any rank two tensor, so that we can write $W^{\mu\nu}$ as 
+%                                                                               
+\begin{eqnarray}
+W_{\mu \nu}&=&
+-\frac{1}{6}g_{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}
++\nabla_{\beta}\nabla^{\beta}R_{\mu\nu}                    
+-\frac{1}{3}\nabla_{\mu}\nabla_{\nu}R^{\alpha}_{\phantom{\alpha}\alpha}  
+-R^{\beta\sigma} R_{\sigma\mu\beta\nu}   
+\nonumber\\
+&-&R^{\beta\sigma} R_{\sigma\nu\beta\mu}  
++\frac{1}{2}g_{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}                                            
++\frac{2}{3}R^{\alpha}_{\phantom{\alpha}\alpha}R_{\mu\nu}                              
+-\frac{1}{6}g_{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})^2.
+\label{AP42}
+\end{eqnarray}                                 
+%
+On taking the metric to be the completely general $g_{\mu\nu}+h_{\mu\nu}$, where here we take $g_{\mu\nu}$ to denote any general background metric (i.e. one not necessarily conformal to flat) and $\delta g_{\mu\nu}=h_{\mu\nu}$ to denote any general fluctuation, perturbing $W^{\mu\nu}$ then gives (following a machine calculation)
+%
+\begin{eqnarray}
+&&\delta W_{\mu\nu}(h_{\mu\nu})=\tfrac{1}{2} h_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  g_{\mu \nu} h^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\beta \gamma} -  \tfrac{2}{3} h^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + \tfrac{1}{3} g_{\mu \nu} h^{\alpha \beta} R_{\alpha \beta} R
+\nonumber\\
+&& -  \tfrac{1}{6} h_{\mu \nu} R^2 
++ h^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \beta \nu \gamma} + h^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \gamma \nu \beta} -  \tfrac{1}{6} h_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R -  h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu} 
+\nonumber\\
+&&+ \tfrac{1}{6} g_{\mu \nu} h^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R + \tfrac{1}{6} g_{\mu \nu} h^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta} 
++ \tfrac{1}{3} h^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}R_{\alpha \beta}
++\tfrac{1}{3} R \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+\nonumber\\
+&& + R_{\mu \beta \nu \gamma} \nabla_{\alpha}\nabla^{\gamma}h^{\alpha \beta} + R_{\mu \gamma \nu \beta} \nabla_{\alpha}\nabla^{\gamma}h^{\alpha \beta} -  \tfrac{1}{3} R \nabla_{\alpha}\nabla_{\mu}h_{\nu}{}^{\alpha} -  \tfrac{1}{3} R \nabla_{\alpha}\nabla_{\nu}h_{\mu}{}^{\alpha} 
+\nonumber\\
+&&-  \tfrac{1}{6} \nabla_{\alpha}h_{\mu \nu} \nabla^{\alpha}R 
++ \tfrac{1}{6} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}h_{\alpha}{}^{\beta} -  \nabla_{\alpha}h^{\alpha \beta} \nabla_{\beta}R_{\mu \nu} -  \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} 
+\nonumber\\
+&&+ \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}h_{\mu}{}^{\beta} 
+-  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}h_{\mu \nu} 
++ \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}h_{\nu}{}^{\beta} 
+\nonumber\\
+&&-  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}h_{\mu \alpha} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}h_{\nu \alpha} + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu} 
+-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla_{\mu}h_{\nu}{}^{\alpha} 
+\nonumber\\
+&&
+-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla_{\nu}h_{\mu}{}^{\alpha} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\mu}h_{\alpha}{}^{\beta} + R^{\alpha \beta} \nabla_{\beta}\nabla_{\mu}h_{\nu \alpha} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\nu}h_{\alpha}{}^{\beta} 
+\nonumber\\
+&&+ R^{\alpha \beta} \nabla_{\beta}\nabla_{\nu}h_{\mu \alpha} 
++ \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}h_{\mu}{}^{\alpha} 
+-  \nabla_{\beta}R_{\nu \alpha} \nabla^{\beta}h_{\mu}{}^{\alpha} + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}h_{\nu}{}^{\alpha} 
+\nonumber\\
+&&-  \nabla_{\beta}R_{\mu \alpha} \nabla^{\beta}h_{\nu}{}^{\alpha} -  g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla_{\beta}h_{\alpha}{}^{\gamma} 
++ \tfrac{2}{3} g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}h_{\alpha \beta} 
+-  R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}h^{\alpha \beta} 
+\nonumber\\
+&&+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta} + \tfrac{1}{3} g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}h^{\alpha \beta} -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}h^{\alpha \beta} 
++ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}h_{\nu \alpha} 
+\nonumber\\
+&&
+-  \tfrac{1}{6} R^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}h_{\alpha \beta} -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}h^{\alpha \beta} + \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}h^{\alpha \beta} + \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}h_{\mu \alpha} 
+\nonumber\\
+&&+ \tfrac{1}{3} \nabla_{\mu}h^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta} 
+-  \tfrac{1}{2} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}h_{\alpha \beta} 
++ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
++\tfrac{2}{3} R_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h 
+\nonumber\\
+&&-  \tfrac{1}{3} g_{\mu \nu} R \nabla_{\alpha}\nabla^{\alpha}h + \tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}\nabla_{\nu}\nabla_{\mu}h 
+-  \tfrac{1}{12} g_{\mu \nu} \nabla_{\alpha}h \nabla^{\alpha}R + \tfrac{1}{2} \nabla_{\alpha}R_{\mu \nu} \nabla^{\alpha}h 
+\nonumber\\
+&&
++ \tfrac{1}{2} g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}h -  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h -  R_{\mu \alpha \nu \beta} \nabla^{\beta}\nabla^{\alpha}h + \tfrac{1}{3} R \nabla_{\nu}\nabla_{\mu}h 
+\nonumber\\
+&&-  \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h.
+\label{AP43}
+\end{eqnarray}
+%
+In (\ref{AP43}) all covariant derivatives are evaluated with respect to the background $g_{\mu\nu}$, and $R$ denotes $R^{\alpha}_{\phantom{\alpha}\alpha}$.
+Eq. (\ref{AP43}) contains 62 terms, of which 10 depend on the trace $h=g^{\mu\nu}h_{\mu\nu}$, 
+On substituting $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ in (\ref{AP43}), $\delta W_{\mu\nu}(h_{\mu\nu})$ breaks into two pieces, a $K_{\mu\nu}$-dependent piece with 52 terms and an $h=g_{\mu\nu}h^{\mu\nu}$-dependent piece with 19 terms, and with $\delta W_{\mu\nu}(h_{\mu\nu})=\delta W_{\mu\nu}(K_{\mu\nu})+\delta W_{\mu\nu}(h)$ they are of the form 
+%
+\begin{eqnarray}
+&&\delta W_{\mu\nu}(K_{\mu\nu})=\tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  g_{\mu \nu} K^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\beta \gamma} -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} 
+\nonumber\\
+&&+ \tfrac{1}{3} g_{\mu \nu} K^{\alpha \beta} R_{\alpha \beta} R -  \tfrac{1}{6} K_{\mu \nu} R^2 
++ K^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \beta \nu \gamma} 
++ K^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \gamma \nu \beta} -  \tfrac{1}{6} K_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R 
+\nonumber\\
+&&-  K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu} + \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R + \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta} 
++ \tfrac{1}{3} K^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}R_{\alpha \beta}
+\nonumber\\
+&&
++\tfrac{1}{3} R \nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} + R_{\mu \beta \nu \gamma} \nabla_{\alpha}\nabla^{\gamma}K^{\alpha \beta} + R_{\mu \gamma \nu \beta} \nabla_{\alpha}\nabla^{\gamma}K^{\alpha \beta} -  \tfrac{1}{3} R \nabla_{\alpha}\nabla_{\mu}K_{\nu}{}^{\alpha} 
+\nonumber\\
+&&-  \tfrac{1}{3} R \nabla_{\alpha}\nabla_{\nu}K_{\mu}{}^{\alpha} 
+-  \tfrac{1}{6} \nabla_{\alpha}K_{\mu \nu} \nabla^{\alpha}R 
++ \tfrac{1}{6} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}K_{\alpha}{}^{\beta} -  \nabla_{\alpha}K^{\alpha \beta} \nabla_{\beta}R_{\mu \nu} 
+\nonumber\\
+&&-  \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} + \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} + \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}K_{\mu}{}^{\beta} 
+-  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu} 
+\nonumber\\
+&&
++ \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\alpha}K_{\nu}{}^{\beta} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}K_{\mu \alpha} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}K_{\nu \alpha} + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} 
+\nonumber\\
+&&-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla_{\mu}K_{\nu}{}^{\alpha} 
+-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla_{\nu}K_{\mu}{}^{\alpha} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\beta}\nabla_{\mu}K_{\alpha}{}^{\beta} + R^{\alpha \beta} \nabla_{\beta}\nabla_{\mu}K_{\nu \alpha} 
+\nonumber\\
+&&-  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\beta}\nabla_{\nu}K_{\alpha}{}^{\beta} 
++ R^{\alpha \beta} \nabla_{\beta}\nabla_{\nu}K_{\mu \alpha} 
++ \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}K_{\mu}{}^{\alpha} 
+-  \nabla_{\beta}R_{\nu \alpha} \nabla^{\beta}K_{\mu}{}^{\alpha} 
+\nonumber\\
+&&+ \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}K_{\nu}{}^{\alpha} -  \nabla_{\beta}R_{\mu \alpha} \nabla^{\beta}K_{\nu}{}^{\alpha} -  g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla_{\beta}K_{\alpha}{}^{\gamma} 
++ \tfrac{2}{3} g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}K_{\alpha \beta} 
+\nonumber\\
+&&
+-  R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}K^{\alpha \beta} + \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} + \tfrac{1}{3} g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}K^{\alpha \beta} 
+\nonumber\\
+&&-  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}K^{\alpha \beta} 
++ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}K_{\nu \alpha} 
+-  \tfrac{1}{6} R^{\alpha \beta} \nabla_{\mu}\nabla_{\nu}K_{\alpha \beta} 
+-  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}K^{\alpha \beta}  
+\nonumber\\
+&&+ \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}K^{\alpha \beta} 
++ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}K_{\mu \alpha} + \tfrac{1}{3} \nabla_{\mu}K^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta} 
+-  \tfrac{1}{2} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}K_{\alpha \beta}
+\nonumber\\
+&&+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta},
+\label{AP44}
+\end{eqnarray}
+%
+%
+\begin{eqnarray}
+&&\delta W_{\mu\nu}(h)=- \tfrac{1}{8} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} h -  \tfrac{1}{6} R_{\mu \nu} R h + \tfrac{1}{24} g_{\mu \nu} R^2 h + \tfrac{1}{2} R^{\alpha \beta} R_{\mu \alpha \nu \beta} h
+\nonumber\\
+&& -  \tfrac{1}{4} h \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} + \tfrac{1}{24} g_{\mu \nu} h \nabla_{\alpha}\nabla^{\alpha}R 
++ \tfrac{1}{12} h \nabla_{\nu}\nabla_{\mu}R
++\tfrac{1}{4} \nabla_{\alpha}\nabla^{\alpha}\nabla_{\nu}\nabla_{\mu}h
+\nonumber\\
+&& -  \tfrac{1}{4} \nabla_{\alpha}R_{\mu \nu} \nabla^{\alpha}h -  \tfrac{1}{2} R_{\mu \alpha \nu \beta} \nabla^{\beta}\nabla^{\alpha}h + \tfrac{1}{4} \nabla_{\mu}R_{\nu \alpha}\nabla^{\alpha}h  -  \tfrac{1}{4} \nabla_{\alpha}R_{\nu}{}^{\alpha} \nabla_{\mu}h
+\nonumber\\
+&& + \tfrac{1}{4} R_{\nu}{}^{\alpha} \nabla_{\mu}\nabla_{\alpha}h
+ + \tfrac{1}{4} \nabla_{\nu}R_{\mu \alpha} \nabla^{\alpha}h + \tfrac{1}{8} \nabla_{\nu}R\nabla_{\mu}h  -  \tfrac{1}{4} \nabla_{\alpha}R_{\mu}{}^{\alpha} \nabla_{\nu}h + \tfrac{1}{8} \nabla_{\mu}R \nabla_{\nu}h +
+ \nonumber\\
+ && \tfrac{1}{4} R_{\mu}{}^{\alpha} \nabla_{\nu}\nabla_{\alpha}h  
+-  \tfrac{1}{4} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h.
+\label{AP45}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Decoupling of the Trace of the Fluctuation}
+\label{sss:decoupling_trace_cgauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given the identity 
+%
+\begin{eqnarray}
+\nabla_{\kappa}\nabla_{\nu}V_{\lambda}-\nabla_{\nu}\nabla_{\kappa}V_{\lambda}=V^{\sigma}R_{\lambda\sigma\nu\kappa}
+\label{AP46}
+\end{eqnarray}
+%
+that is obeyed by any vector, on setting $V_{\lambda}=\nabla_{\lambda}h$ in (\ref{AP46})  and $T_{\lambda\mu}=\nabla_{\lambda}\nabla_{\mu}h$ in (\ref{AP41}) we obtain
+%
+\begin{eqnarray}
+\nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
+&=&g^{\alpha\beta}\nabla_{\nu}[\nabla_{\alpha}\nabla_{\mu}\nabla_{\beta}h
++R_{\beta\sigma\alpha\mu}\nabla^{\sigma}h]
+\nonumber\\
+&=&g^{\alpha\beta}\nabla_{\nu}[\nabla_{\alpha}\nabla_{\beta}\nabla_{\mu}h
++R_{\beta\sigma\alpha\mu}\nabla^{\sigma}h]
+\nonumber\\
+&=&g^{\alpha\beta}[\nabla_{\alpha}\nabla_{\nu}\nabla_{\beta}\nabla_{\mu}h
++R_{\beta\sigma\alpha\nu}\nabla^{\sigma}\nabla_{\mu}h
+-R_{\sigma\mu\alpha\nu}\nabla_{\beta}\nabla^{\sigma}h
+\nonumber\\
+&&
++R_{\beta\sigma\alpha\mu}\nabla_{\nu}\nabla^{\sigma}h
++\nabla_{\nu}R_{\beta\sigma\alpha\mu}\nabla^{\sigma}h]
+\nonumber\\
+&=&g^{\alpha\beta}[\nabla_{\alpha}[\nabla_{\beta}\nabla_{\nu}\nabla_{\mu}h
++R_{\mu\sigma\beta\nu}\nabla^{\sigma}h]
++R_{\beta\sigma\alpha\nu}\nabla^{\sigma}\nabla_{\mu}h
+\nonumber\\
+&&
+-R_{\sigma\mu\alpha\nu}\nabla_{\beta}\nabla^{\sigma}h
++R_{\beta\sigma\alpha\mu}\nabla_{\nu}\nabla^{\sigma}h
++\nabla_{\nu}R_{\beta\sigma\alpha\mu}\nabla^{\sigma}h].
+\label{AP47}
+\end{eqnarray}
+%
+On recalling that 
+%
+\begin{eqnarray}
+\nabla^{\nu}R_{\nu\mu\kappa\eta}=\nabla_{\kappa}R_{\mu\eta}-\nabla_{\eta}R_{\mu\kappa},
+\label{AP48}
+\end{eqnarray}
+%
+we obtain
+%
+\begin{eqnarray}
+&&\nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h-\nabla_{\alpha}\nabla^{\alpha}\nabla_{\nu}\nabla_{\mu}h
+=R_{\mu\sigma\alpha\nu}\nabla^{\alpha}\nabla^{\sigma}h
++\nabla_{\mu}R_{\nu\sigma}\nabla^{\sigma}h
+-\nabla_{\sigma}R_{\nu\mu}
+\nabla^{\sigma}h\nonumber\\
+&&+R_{\sigma\nu}\nabla^{\sigma}\nabla_{\mu}h
+-R_{\sigma\mu\alpha\nu}\nabla^{\alpha}\nabla^{\sigma}h
++R_{\sigma\mu}\nabla_{\nu}\nabla^{\sigma}h
++\nabla_{\nu}R_{\sigma\mu}\nabla^{\sigma}h.
+\label{AP49}
+\end{eqnarray}
+%
+Then with $\nabla^{\alpha}R_{\mu\alpha}=(1/2)\nabla _{\mu}R$ we find that the 12 terms in (\ref{AP45}) that involve a gradient of $h$ all cancel identically. Finally, comparing the remaining 7 terms in (\ref{AP45}) with a background $W_{\mu\nu}$ that is of the form given in (\ref{AP42}), we find that $\delta W_{\mu\nu}(h)$ reduces to the remarkably simple
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}(h)=-\frac{1}{4}W_{\mu\nu}h.
+\label{AP50}
+\end{eqnarray}
+%
+Now we had noted above that  the condition $\delta W_{\mu\nu}(h)=-\frac{1}{4}W_{\mu\nu}h$ is required on general grounds. We thus recover this condition, and not only do we see that (\ref{AP50}) is generic, its recovery provides a nice internal  check on our calculations. 
+
+To confirm this result it is instructive to also look at the fluctuation in the Weyl tensor itself. About an arbitrary background it is found to evaluate to $\delta C_{\lambda\mu\nu\kappa}=\delta C_{\lambda\mu\nu\kappa}(K_{\mu\nu})+\delta C_{\lambda\mu\nu\kappa}(h)$, where
+%
+\begin{eqnarray}
+&&\delta C_{\lambda\mu\nu\kappa}(K_{\mu\nu})=- \tfrac{1}{6} g_{\kappa \mu} g_{\lambda \nu} K^{\alpha \beta} R_{\alpha \beta} + \tfrac{1}{6} g_{\kappa \lambda} g_{\mu \nu} K^{\alpha \beta} R_{\alpha \beta} + \tfrac{1}{2} K_{\mu \nu} R_{\kappa \lambda} -  \tfrac{1}{2} K_{\lambda \nu} R_{\kappa \mu}  
+\nonumber\\
+&&-  \tfrac{1}{2} K_{\kappa \mu} R_{\lambda \nu} 
++ \tfrac{1}{2} K_{\kappa \lambda} R_{\mu \nu} -  \tfrac{1}{6} g_{\mu \nu} K_{\kappa \lambda} R 
++ \tfrac{1}{6} g_{\lambda \nu} K_{\kappa \mu} R + \tfrac{1}{6} g_{\kappa \mu} K_{\lambda \nu} R -  \tfrac{1}{6} g_{\kappa \lambda} K_{\mu \nu} R 
+\nonumber\\
+&& + K_{\lambda}{}^{\alpha} R_{\kappa \nu \mu \alpha} + \tfrac{1}{4} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}K_{\kappa \lambda} -  \tfrac{1}{4} g_{\lambda \nu} \nabla_{\alpha}\nabla^{\alpha}K_{\kappa \mu} 
+-  \tfrac{1}{4} g_{\kappa \mu} \nabla_{\alpha}\nabla^{\alpha}K_{\lambda \nu}  
+\nonumber\\
+&&
++ \tfrac{1}{4} g_{\kappa \lambda} \nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} 
+-  \tfrac{1}{4} g_{\mu \nu} \nabla_{\alpha}\nabla_{\kappa}K_{\lambda}{}^{\alpha} + \tfrac{1}{4} g_{\lambda \nu} \nabla_{\alpha}\nabla_{\kappa}K_{\mu}{}^{\alpha} -  \tfrac{1}{4} g_{\mu \nu} \nabla_{\alpha}\nabla_{\lambda}K_{\kappa}{}^{\alpha}  
+\nonumber\\
+&&
+ + \tfrac{1}{4} g_{\kappa \mu} \nabla_{\alpha}\nabla_{\lambda}K_{\nu}{}^{\alpha} 
++ \tfrac{1}{4} g_{\lambda \nu} \nabla_{\alpha}\nabla_{\mu}K_{\kappa}{}^{\alpha} -  \tfrac{1}{4} g_{\kappa \lambda} \nabla_{\alpha}\nabla_{\mu}K_{\nu}{}^{\alpha} + \tfrac{1}{4} g_{\kappa \mu} \nabla_{\alpha}\nabla_{\nu}K_{\lambda}{}^{\alpha}  
+\nonumber\\
+&&-  \tfrac{1}{4} g_{\kappa \lambda} \nabla_{\alpha}\nabla_{\nu}K_{\mu}{}^{\alpha} 
+-  \tfrac{1}{6} g_{\kappa \mu} g_{\lambda \nu} \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} 
++ \tfrac{1}{6} g_{\kappa \lambda} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} 
+-  \tfrac{1}{2} \nabla_{\kappa}\nabla_{\lambda}K_{\mu \nu}  
+\nonumber\\
+&&+ \tfrac{1}{2} \nabla_{\kappa}\nabla_{\mu}K_{\lambda \nu} 
++ \tfrac{1}{2} \nabla_{\kappa}\nabla_{\nu}K_{\lambda \mu}  
+- \tfrac{1}{2} \nabla_{\nu}\nabla_{\kappa}K_{\lambda \mu} + \tfrac{1}{2} \nabla_{\nu}\nabla_{\lambda}K_{\kappa \mu} 
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}K_{\kappa \lambda},
+\nonumber\\
+\label{AP51}
+\end{eqnarray}
+%
+%
+\begin{eqnarray}
+\delta C_{\lambda\mu\nu\kappa}(h)&=&\bigg[\tfrac{1}{8} g_{\mu \nu}  R_{\kappa \lambda} -  \tfrac{1}{8} g_{\lambda \nu} R_{\kappa \mu} -  \tfrac{1}{8} g_{\kappa \mu}  R_{\lambda \nu} +\tfrac{1}{8} g_{\kappa \lambda}  R_{\mu \nu}  
+\nonumber\\
+&&+ \tfrac{1}{24} g_{\kappa \mu} g_{\lambda \nu}  R -  \tfrac{1}{24} g_{\kappa \lambda} g_{\mu \nu}  R -  \tfrac{1}{4}  R_{\kappa \nu \lambda \mu}\bigg]h
+\nonumber\\
+&=&\frac{1}{4}hC_{\lambda\mu\nu\kappa}.
+\label{AP52}
+\end{eqnarray}
+%
+Thus if the background Weyl tensor is zero, $\delta C_{\lambda\mu\nu\kappa}$ is independent of $h$. However, if the background Weyl tensor is zero, then according to (\ref{AP3}) $\delta W^{\mu\nu}$ is given by 
+%
+\begin{eqnarray}
+\delta W^{\mu\nu}=2\nabla_{\kappa}\nabla_{\lambda}\delta C^{\mu\lambda\nu\kappa}-
+R_{\kappa\lambda}\delta C^{\mu\lambda\nu\kappa},
+\label{AP53}
+\end{eqnarray}
+%
+to thus then also be independent of $h$. Thus when the background Weyl tensor is zero  (in which case the background $W_{\mu\nu}$ is zero too), we confirm that $\delta W_{\mu\nu}$ is  independent of $h$, just as required by (\ref{AP50}). With the dependence of $\delta W_{\mu\nu}$ on $K_{\mu\nu}$ being fully specified in (\ref{AP44}) (in any background), we can now impose the conformal gauge condition and evaluate the structure of $\delta W^{\mu\nu}$ in the conformal to flat background case.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Preparing to Implement the Conformal Gauge Condition}
+\label{sss:preparing_cgauge_condition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To bring (\ref{AP44}) to a form in which we can apply the conformal gauge condition given in (\ref{AP23}) we need to commute differential operators as per (\ref{AP41}) and (\ref{AP46}).  On doing the needed commutations for $\delta W_{\mu\nu}^{}(K_{\mu\nu})$ we obtain the 59 term
+%
+\begin{eqnarray}
+&&\delta W_{\mu\nu}^{}(K_{\mu\nu})=\tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  \tfrac{1}{2} K_{\nu}{}^{\alpha} R_{\alpha \beta} R_{\mu}{}^{\beta} -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + K^{\alpha \beta} R_{\mu \alpha} R_{\nu \beta}  
+\nonumber\\
+&&-  \tfrac{1}{2} K_{\mu}{}^{\alpha} R_{\alpha \beta} R_{\nu}{}^{\beta} + \tfrac{1}{3} g_{\mu \nu} K^{\alpha \beta} R_{\alpha \beta} R 
++ \tfrac{1}{3} K_{\nu}{}^{\alpha} R_{\mu \alpha} R + \tfrac{1}{3} K_{\mu}{}^{\alpha} R_{\nu \alpha} R -  \tfrac{1}{6} K_{\mu \nu} R^2  
+\nonumber\\
+&&-  g_{\mu \nu} K^{\alpha \beta} R^{\gamma \kappa} R_{\alpha \gamma \beta \kappa} -  \tfrac{2}{3} K^{\alpha \beta} R R_{\mu \alpha \nu \beta} -  K_{\nu}{}^{\alpha} R^{\beta \gamma} R_{\mu \beta \alpha \gamma} + 2 K^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \gamma \nu \beta} 
+\nonumber\\
+&&+ 2 K^{\alpha \beta} R_{\alpha \gamma \beta \kappa} R_{\mu}{}^{\gamma}{}_{\nu}{}^{\kappa} -  K_{\mu}{}^{\alpha} R^{\beta \gamma} R_{\nu \beta \alpha \gamma} + \tfrac{1}{3} R \nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} -  \tfrac{1}{6} K_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R  
+\nonumber\\
+&&+ \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\alpha}\nabla_{\beta}K_{\mu}{}^{\beta} + \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\alpha}\nabla_{\beta}K_{\nu}{}^{\beta} 
+-  \tfrac{1}{6} \nabla_{\alpha}K_{\mu \nu} \nabla^{\alpha}R + \tfrac{1}{6} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}K_{\alpha}{}^{\beta} 
+\nonumber\\
+&& -  \nabla_{\alpha}K^{\alpha \beta} \nabla_{\beta}R_{\mu \nu} -  \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} + \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} -  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu} 
+\nonumber\\
+&&-  K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu} + \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R + \tfrac{1}{2} K_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\mu \alpha} + \tfrac{1}{2} K_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\nu \alpha}  
+\nonumber\\
+&&+ \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} 
+-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha}  
+\nonumber\\
+&&-  g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\gamma}K_{\alpha}{}^{\gamma}  
++ \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}K_{\mu}{}^{\alpha} + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}K_{\nu}{}^{\alpha} 
++ \tfrac{2}{3} g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}K_{\alpha \beta} 
+\nonumber\\
+&& - 2 R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}K^{\alpha \beta} + \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta} -  K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\mu \alpha \nu \beta}  
+\nonumber\\
+&&+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} 
++ \tfrac{1}{3} g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}K^{\alpha \beta} - 2 \nabla_{\gamma}R_{\mu \alpha \nu \beta} \nabla^{\gamma}K^{\alpha \beta} 
+\nonumber\\
+&&+ R_{\mu \beta \nu \gamma} \nabla^{\gamma}\nabla_{\alpha}K^{\alpha \beta} + R_{\mu \gamma \nu \beta} \nabla^{\gamma}\nabla_{\alpha}K^{\alpha \beta} -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}K^{\alpha \beta} 
++ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}K_{\nu \alpha} 
+\nonumber\\
+&&-  \tfrac{1}{3} R \nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\mu}\nabla_{\beta}K_{\alpha}{}^{\beta} + R^{\alpha \beta} \nabla_{\mu}\nabla_{\beta}K_{\nu \alpha} -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}K^{\alpha \beta}  
+\nonumber\\
+&&+ \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}K^{\alpha \beta} 
++ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}K_{\mu \alpha} + \tfrac{1}{3} \nabla_{\mu}K^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta} -  \tfrac{1}{3} R \nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha}  
+\nonumber\\
+&&-  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\nu}\nabla_{\beta}K_{\alpha}{}^{\beta} + R^{\alpha \beta} \nabla_{\nu}\nabla_{\beta}K_{\mu \alpha} -  \tfrac{2}{3} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}K_{\alpha \beta} 
++ \tfrac{1}{3} K^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta} 
+\nonumber\\
+&& + \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}.
+\label{AP54}
+\end{eqnarray}
+%
+
+As a check on (\ref{AP54}), we note that if we take the background to be flat,  (\ref{AP54}) reduces to 
+\begin{eqnarray}
+\delta W_{\mu\nu}^{}(K_{\mu\nu})&=&\tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha}  
+\nonumber\\
+&&+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}.
+\end{eqnarray}
+ With $K_{\mu\nu}$ being traceless, when written in a flat Minkowski coordinate system we recognize this expression as being (\ref{AP24}), just as it should be.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fluctuations Around a Conformal to Flat Minkowski Background}
+\label{ss:fluctuations_around_conformal_flat_cgauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Implementing the Conformal Gauge Condition}
+\label{sss:implementing_cgauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+While we can obtain great simplification of the 59-term (\ref{AP54}) by imposing a conformal gauge condition, we can also achieve great simplification by evaluating (\ref{AP54}) directly in the metric given in (\ref{AP6}) without introducing any gauge condition at all, and even without restricting $\Omega(x)$ in any way. We do this in Appendix \ref{SF}, and  even though the rewriting of (\ref{AP54}) in the metric given in (\ref{AP6}) initially expands it to 151 terms, we are able to reduce it first to the five-term (\ref{F2}) and then to the one-term (\ref{F3}). In this section we evaluate (\ref{AP54}) in the conformal to flat background given in (\ref{AP6}) with $\Omega(x)$ again arbitrary by implementing the conformal gauge condition $\nabla_{\nu}K^{\mu\nu}=(1/2)K^{\mu\nu}g^{\alpha\beta}\partial_{\nu}g_{\alpha\beta}$ given in (\ref{AP23}). This will also lead to a one-term expression, viz. (\ref{AP61}). In the  $g_{\mu\nu}=\Omega^2(x)\eta_{\mu\nu}$ background  the gauge condition $\nabla_{\nu}K^{\mu\nu}=\frac{1}{2}K^{\mu\nu}g^{\alpha\beta}\partial_{\nu}g_{\alpha\beta}$ takes the form
+%
+\begin{eqnarray}
+\nabla_{\nu}K^{\mu\nu}-\frac{1}{2}K^{\mu\nu}\Omega^{-2}\eta^{\alpha\beta}\eta_{\alpha\beta}\partial_{\nu}\Omega^2&=&\nabla_{\nu}K^{\mu\nu}-4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega 
+\nonumber\\
+&=&\partial_{\nu}K^{\mu\nu}+6\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega-4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega
+\nonumber\\
+&=&\partial_{\nu}K^{\mu\nu}+2\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega=\Omega^{-2}\partial_{\nu}(\Omega^{2}K^{\mu\nu}) 
+\nonumber\\
+&=&0. 
+\label{AP55}
+\end{eqnarray}
+%
+If we extract out a factor of $\Omega^2(x)$ from the fluctuation by setting $K^{\mu\nu}=\Omega^{-2}(x)k^{\mu\nu}$,  $K_{\mu\nu}=\Omega^{2}(x)k_{\mu\nu}$ (where indices on $k^{\mu\nu}$ and $k_{\mu\nu}=\eta_{\mu\alpha}\eta_{\nu\beta}k^{\alpha\beta}$ are raised and lowered with $\eta_{\mu\nu}$ alone), (\ref{AP55}) can then be written in the simple transverse form $\partial_{\nu}k^{\mu\nu}=0$, with our gauge condition being such that the conformal factor dependence factors right out. In (\ref{AP55}) we are taking $\Omega(x)$ to be a general function of the coordinates not just in order to be as general as possible but so that we can encompass as a special case Robertson-Walker geometries with general spatial curvature $k$, since as we show in Appendix \ref{SA}, while $\Omega(x)$ will only depend on the time coordinate $t$ if $k$ is zero, for non-zero spatial curvature $\Omega(x)$ will depend on both $t$ and the radial coordinate $r$.
+
+
+However before evaluating (\ref{AP54}) in  a conformal to flat Minkowski geometry in the conformal gauge given in (\ref{AP55}), we note that the condition 
+%
+\begin{eqnarray}
+\nabla_{\nu}K^{\mu\nu}=4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega
+\label{AP56}
+\end{eqnarray}
+% 
+just happens to have the form of a covariant gauge condition for a background metric $\Omega^2(x) g_{\mu\nu}$ with any $g_{\mu\nu}$. Thus we can proceed covariantly, and following quite a bit of algebra find that when (\ref{AP56}) is imposed in a conformal to flat but not necessarily Minkowski background (the flat background could for instance be the polar coordinate geometry $ds^2=dt^2-dr^2-r^2d\theta^2-r^2\sin^2\theta d\phi^2$) (\ref{AP54}) takes  form
+%
+\begin{eqnarray}
+&&\delta W_{\mu\nu}=\frac{1}{2}\Omega^{-4}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}K_{\mu \nu}-  4\Omega^{-5} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}K_{\mu \nu} \tilde{\nabla}^{\beta}\tilde{\nabla}^{\alpha}\Omega 
+\nonumber\\
+&&- 2\Omega^{-5}  \tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}K_{\mu \nu}-  4 \Omega^{-5}\tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\tilde{\nabla}_{\alpha}K_{\mu \nu}  
+\nonumber\\
+&&-  \Omega^{-5}K_{\mu \nu} \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\Omega -  4\Omega^{-5} \tilde{\nabla}_{\alpha}K_{\mu \nu} \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\tilde{\nabla}^{\alpha}\Omega + 6\Omega^{-6} \tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}K_{\mu \nu}  
+\nonumber\\
+&&+ 12\Omega^{-6} \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}K_{\mu \nu} \tilde{\nabla}^{\beta}\Omega
++ 3\Omega^{-6} K_{\mu \nu} \tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\Omega  
+\nonumber\\
+&&+ 12 \Omega^{-6}\tilde{\nabla}_{\alpha}K_{\mu \nu} \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\Omega 
++ 24\Omega^{-6}  \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}K_{\mu \nu} \tilde{\nabla}^{\beta}\tilde{\nabla}_{\alpha}\Omega 
+\nonumber\\
+&&
++ 6\Omega^{-6} K_{\mu \nu} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\beta}\tilde{\nabla}^{\alpha}\Omega 
++ 12\Omega^{-6} K_{\mu \nu} \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\tilde{\nabla}_{\alpha}\Omega  
+\nonumber\\
+&&-  24 \Omega^{-7}K_{\mu \nu} \tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\Omega 
+-  48\Omega^{-7}  \tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}K_{\mu \nu} \tilde{\nabla}^{\beta}\Omega 
+\nonumber\\
+&&
+-  48\Omega^{-7}  K_{\mu \nu} \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\beta}\Omega 
++ 60\Omega^{-8} K_{\mu \nu} \tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\Omega \tilde{\nabla}^{\beta}\Omega
+\label{AP57}
+\end{eqnarray}
+%
+without approximation. In (\ref{AP57}) we have introduced the symbol $\tilde{\nabla}_{\alpha}$ (with Greek index) to denote the covariant derivative with respect to the flat but not necessarily Minkowski background $g_{\mu\nu}$ alone so that $\tilde{\nabla}^{\alpha}$ is equal to $g^{\alpha\beta}\tilde{\nabla}_{\alpha}$ and not to $\Omega^{-2}g^{\alpha\beta}\tilde{\nabla}_{\alpha}$. Quite  remarkably, we find that the 17 terms in (\ref{AP57}) can be factored into just a single term, viz.
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\Omega^{-2}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}(\Omega^{-2}K_{\mu\nu})
+=\frac{1}{2}\Omega^{-2}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}k_{\mu\nu},
+\label{AP58}
+\end{eqnarray}
+%
+where we have set $k_{\mu\nu}=\Omega^{-2}(x)K_{\mu\nu}$. As written, (\ref{AP58}) describes fluctuations around any geometry that is conformal to any flat background metric as written in  the  $\nabla_{\nu}K^{\mu\nu}=4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega$ gauge. If we set $\Omega(x)=1$  (\ref{AP58}) also describes fluctuations around any flat background geometry in the transverse gauge $\nabla_{\nu}K^{\mu\nu}=0$ as per 
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}K_{\mu\nu}.
+\label{AP59}
+\end{eqnarray}
+%
+As such (\ref{AP59}) would apply to fluctuations around a flat geometry as written in any general but not necessarily flat Minkowski coordinate system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Obtaining the Fluctuation Equations in the Conformal Gauge}
+\label{sss:obtaining_fluctuation_eqns_in_cgauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Despite their simple forms neither (\ref{AP58}) nor (\ref{AP59}) are of straightforward use since they involve covariant derivatives that mix the various components of $K_{\mu\nu}$. However, (\ref{AP58}) and (\ref{AP59}) also apply in the gauge given in (\ref{AP55}) that is of interest to us here. Thus for conformal gauge fluctuations around a conformal to flat geometry that is Minkowski the fluctuation equations take the form 
+%
+\begin{eqnarray}
+&&\delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\Omega^{-4}\partial_{\beta}\partial^{\beta}\partial_{\alpha}\partial^{\alpha}K_{\mu \nu}-  4\Omega^{-5} \partial_{\beta}\partial_{\alpha}K_{\mu \nu} \partial^{\beta}\partial^{\alpha}\Omega 
+\nonumber\\
+&&- 2\Omega^{-5}  \partial_{\alpha}\partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}K_{\mu \nu}-  4 \Omega^{-5}\partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}\partial_{\alpha}K_{\mu \nu}  
+-  \Omega^{-5}K_{\mu \nu} \partial_{\beta}\partial^{\beta}\partial_{\alpha}\partial^{\alpha}\Omega 
+\nonumber\\
+&& -  4\Omega^{-5} \partial_{\alpha}K_{\mu \nu} \partial_{\beta}\partial^{\beta}\partial^{\alpha}\Omega 
++ 6\Omega^{-6} \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}K_{\mu \nu} + 12\Omega^{-6} \partial^{\alpha}\Omega \partial_{\beta}\partial_{\alpha}K_{\mu \nu} \partial^{\beta}\Omega 
+\nonumber\\
+&&+ 3\Omega^{-6} K_{\mu \nu} \partial_{\alpha}\partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}\Omega + 12 \Omega^{-6}\partial_{\alpha}K_{\mu \nu} \partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}\Omega+ 24\Omega^{-6}  \partial^{\alpha}\Omega \partial_{\beta}K_{\mu \nu} \partial^{\beta}\partial_{\alpha}\Omega  
+\nonumber\\
+&&+ 6\Omega^{-6} K_{\mu \nu} \partial_{\beta}\partial_{\alpha}\Omega \partial^{\beta}\partial^{\alpha}\Omega 
++ 12\Omega^{-6} K_{\mu \nu} \partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}\partial_{\alpha}\Omega -  24 \Omega^{-7}K_{\mu \nu} \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}\partial^{\beta}\Omega  
+\nonumber\\
+&&-  48\Omega^{-7}  \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}K_{\mu \nu} \partial^{\beta}\Omega-  48\Omega^{-7}  K_{\mu \nu} \partial^{\alpha}\Omega \partial_{\beta}\partial_{\alpha}\Omega \partial^{\beta}\Omega 
+\nonumber\\
+&&
++ 60\Omega^{-8} K_{\mu \nu} \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}\Omega \partial^{\beta}\Omega,
+\label{AP60}
+\end{eqnarray}
+%
+with (\ref{AP60})  simplifying to 
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}(\Omega^{-2}K_{\mu\nu})
+=\frac{1}{2}\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}k_{\mu\nu}.
+\label{AP61}
+\end{eqnarray}
+%
+We recognize (\ref{AP61}) as precisely being of the form given earlier on general grounds in  (\ref{AP30}). As we see, despite the fact that the $g_{\mu\nu}=\Omega^2(x)\eta_{\mu\nu}$ background is not itself flat, in (\ref{AP60}) and (\ref{AP61}) all derivatives are flat Minkowski, i.e. associated with the metric $ds^2=-\eta_{\alpha\beta}dx^{\alpha}dx^{\beta}=dt^2-dx^2-dy^2-dz^2$. Moreover, and even more significantly, (\ref{AP60}) and (\ref{AP61}) are diagonal in the $(\mu,\nu)$ indices. Thus with our choice of gauge, in a conformal to flat Minkowski background $\delta W_{\mu\nu}$ is diagonalized in the tensor indices. We thus see the power of conformal symmetry since our starting point was the 62 term $\delta W_{\mu\nu}(h_{\mu\nu})$ given in (\ref{AP43}). Eq. (\ref{AP61}) is our main result. It is exact without approximation, and is to be used to monitor cosmological fluctuations in the conformal gravity theory.
+
+\subsection{Calculation Summary}
+\label{ss:summary_cgauge}
+
+
+For the benefit of the reader we briefly summarize the steps in our calculation. We start with a general $W_{\mu\nu}$ in the convenient form given in (\ref{AP42}). We perturb $W_{\mu\nu}$ to first order around a general background  with metric $g_{\mu\nu}$ and take the perturbed metric to be of the form  $g_{\mu\nu}+\delta g_{\mu\nu}=g_{\mu\nu}+h_{\mu\nu}$. Recalling  that $\delta R^{\lambda}_{\phantom{\lambda}\mu\nu\kappa}=
+\partial \delta\Gamma^{\lambda}_{\mu\nu}/\partial x^{\kappa}
++\Gamma^{\lambda}_{\kappa\sigma}\delta\Gamma^{\sigma}_{\mu\nu}
+-\Gamma^{\sigma}_{\mu\kappa}\delta\Gamma^{\lambda}_{\nu\sigma}
+-\partial \delta\Gamma^{\lambda}_{\mu\kappa}/\partial x^{\nu}
+-\Gamma^{\lambda}_{\nu\sigma}\delta\Gamma^{\sigma}_{\mu\kappa}
++\Gamma^{\sigma}_{\mu\nu}\delta\Gamma^{\lambda}_{\kappa\sigma}=
+\nabla_{\kappa}\delta\Gamma^{\lambda}_{\mu\nu}
+-\nabla_{\nu}\delta\Gamma^{\lambda}_{\mu\kappa}$, where $\delta\Gamma^{\lambda}_{\mu\nu}=(1/2)g^{\lambda \rho}[\nabla_{\nu}\delta g_{\rho\mu}+\nabla_{\mu}\delta g_{\rho\nu}-\nabla_{\rho}\delta g_{\mu\nu}]$, on evaluating $\delta W_{\mu\nu}$ to lowest order in $\delta g_{\mu\nu}$ we obtain (\ref{AP43}). 
+
+Since our interest is in traceless fluctuations, in (\ref{AP43}) we set  $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ where $h=g^{\mu\nu}h_{\mu\nu}$ and $g^{\mu\nu}K_{\mu\nu}=0$. This leads us to two contributions to $\delta W_{\mu\nu}$, viz. $\delta W_{\mu\nu}(K_{\mu\nu})$ as given in (\ref{AP44}) and $\delta W_{\mu\nu}(h)$ as given in (\ref{AP45}). Using properties of manipulations of covariant derivatives we find that $\delta W_{\mu\nu}(h)=-(1/4)W_{\mu\nu}h$ as exhibited in (\ref{AP50}). This allows to establish that $\delta W_{\mu\nu}(h)$ vanishes if the background $W_{\mu\nu}$ vanishes, just as is the case in background Robertson-Walker and de Sitter cosmologies. 
+
+For background cosmologies in which the background $W_{\mu\nu}$ vanishes, $\delta W_{\mu\nu}$ reduces to $\delta W_{\mu\nu}(K_{\mu\nu})$, with $\delta W_{\mu\nu}$ thus only being dependent on the traceless fluctuation $K_{\mu\nu}$ as per (\ref{AP44}). Using further properties of manipulations of covariant derivatives we rewrite (\ref{AP44}) in the form given in (\ref{AP54}), a form in which we can readily implement the conformal gauge condition given in (\ref{AP23}). On implementing this gauge condition we find that for fluctuations around background geometries that are conformal to flat (such as Robertson-Walker and de Sitter) $\delta W_{\mu\nu}(K_{\mu\nu})$ reduces to (\ref{AP61}), our main result. In order to actually implement all of these various steps we had to quite extensively adapt the $xAct$ tensor calculus software package in order to perform the conformal gravity calculations symbolically on a computer.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robertson Walker Radiation Era Conformal Gravity Solution}
+\label{s:rw_radiation_conformal_gravity_sol}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In terms of practical applications of the conformal gravity theory we note that we have studied the current era conformal cosmology associated with (\ref{A17}), with very good non-fine-tuned, negative $k$  driven fits to the accelerating universe Hubble plot data having been presented in \cite{mannheim_2006,mannheim_2017}. Similarly, very good non-fine-tuned, negative $k$ driven fits  to the galactic rotation curves of 138 spiral galaxies have been presented in \cite{mannheim_2011,mannheim_2012, obrien_mannheim_2012}, fits in which no galactic dark matter is needed at all. (The essence of these rotation curve fits is that in the conformal gravity theory a test particle in a galaxy is affected by both the local galactic field and the global cosmological field, with the systematics of galactic rotation curves being found to be sensitive to the spatial curvature of the Universe -- in fact it is this global cosmological effect that removes the need for the presence of dark matter within galaxies in the conformal theory.) We shall thus consider conformal gravity fluctuations in Robertson-Walker cosmologies with negative $k$.
+
+
+In conformal gravity fitting to the current era Hubble plot the cosmological constant term is found to dominate over the perfect fluid contribution. However in the early universe it has to be the other way round with a not-yet-red-shifted radiation era perfect fluid being the dominant contribution since $a(t)$ is small and $A/a^4(t)$ is large. Moreover, if the $A/a^4(t)$ radiation contribution is dominant, then since $k$ is given by $k=-\dot{a}^2-2A/a^2S_0^2$ when the $\alpha$ contribution in (\ref{A18}) is negligible, we are led right back to our observationally  preferred negative $k$. (This line of reasoning for  fixing the sign of $k$ is essentially the same as the one  used in (\ref{AP40}) above.) Thus for studying fluctuation growth in the early universe the only relevant solution for $a(t)$ is the $a(t,\alpha=0,k<0,A>0)$ one. For this solution, on setting $k=-1/L^2$, $d^2=2AL^4/S_0^2$, and $L^2a^2(t)=(d^2+t^2)$, we obtain
+%
+\begin{eqnarray}
+\tau=L\int_0^t \frac{dt}{(d^2+t^2)^{1/2}}=L~{\rm arc sinh}\left(\frac{t}{d}\right),\qquad t=d\sinh p,
+\label{B1}
+\end{eqnarray}
+%
+where $p=\tau/L$. Now according to (\ref{AP29}) fluctuations around a flat background would grow linearly in the relevant time variable, which according to the $k<0$ (\ref{A14}) is $p^{\prime}$. If we define $\Omega(p,\chi)=La(p)(\cosh p+\cosh \chi)$, we can write (\ref{A14}) in the form
+%
+\begin{eqnarray}
+ds^2=\Omega^2(p,\chi)\left[dp^{\prime 2}-dx^{\prime 2} -dy^{\prime 2} -dz^{\prime 2}\right].
+\label{B2}
+\end{eqnarray}
+%
+And with fluctuation $\delta W_{\mu\nu}$ being given in (\ref{AP61}) as 
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}=(1/2)\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}k_{\mu\nu}
+\end{eqnarray}
+%
+ where $k_{\mu\nu}=\Omega^{-2}(x)K_{\mu\nu}$, following
+(\ref{AP29}) we can write the solution to $\delta W_{\mu\nu}=0$ in the primed-variable form
+%
+\begin{eqnarray}
+k_{\mu\nu}=A^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+A^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}},
+\label{B3}
+\end{eqnarray}
+%
+where $\eta^{\mu\nu}k^{\prime}_{\mu}k^{\prime}_{\nu}=0$. Then with the conformal gauge condition being of the form $\partial^{\prime}_{\nu}k^{\mu\nu}=0$ in this case (where $k^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}k_{\alpha\beta}$), we obtain 
+%
+\begin{eqnarray}
+&&ik^{\prime \nu}\left[A^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}-A^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}-(n^{\prime}\cdot x^{\prime})B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}\right]
+\nonumber\\
+&&+n^{\prime\nu}\left[B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}\right]=0.
+\label{B4}
+\end{eqnarray}
+%
+With this relation holding for all $x^{\prime}$ we obtain
+%
+\begin{eqnarray}
+&&ik^{\prime \nu}A^{\prime}_{\mu\nu}+n^{ \prime\nu}B^{\prime}_{\mu\nu}=0,\quad ik^{\prime \nu}B^{\prime}_{\mu\nu}=0, 
+\nonumber\\
+&&
+-ik^{\prime \nu}A^{\prime *}_{\mu\nu}+n^{ \prime\nu}B^{\prime *}_{\mu\nu}=0,\quad -ik^{\prime \nu}B^{\prime *}_{\mu\nu}=0.
+\label{B5}
+\end{eqnarray}
+%
+With the $B^{\prime}_{\mu\nu}$ term being leading in (\ref{B3}) at large $n^{\prime}\cdot x^{\prime}$, we can ignore the non-leading $A^{\prime}_{\mu\nu}$ modes, and treat the $B^{\prime}_{\mu\nu}$ modes as obeying the transverse momentum space condition  $ik^{\prime \nu}B^{\prime}_{\mu\nu}=0$, $-ik^{\prime \nu}B^{\prime *}_{\mu\nu}=0$. Since the gauge condition $\partial^{\prime}_{\nu}k^{\mu\nu}=0$ takes this momentum space form, it means that all of the components of the $B^{\prime}_{\mu\nu}$ modes have the same $(n^{\prime}\cdot x^{\prime})e^{ik^{\prime}\cdot x^{\prime}}$ leading behavior in coordinate space. And with $n^{\prime \mu}=(1,0,0,0)$, the modes grow linearly in the relevant time variable $p^{\prime}$ associated with (\ref{B2}).
+
+To determine the structure of these solutions in the comoving coordinate system we need to both reexpress $\Omega(p,\chi)$ in terms of the comoving coordinates $(t,r)$ and transform the components of the fluctuation $K_{\mu\nu}$ to the comoving coordinate system. For the $\Omega(p,\chi)$ term first  we note that fluctuations around the conformal to flat, $k<0$ Robertson-Walker geometry grow as $\Omega^2(p,\chi)p^{\prime}$ as per (\ref{AP61}). Thus  from (\ref{A14}), (\ref{A11}), and (\ref{B1}) we find that $\Omega^2(p,\chi)p^{\prime}$ grows as
+%
+\begin{eqnarray}
+\Omega^2(p,\chi)p^{\prime}&=&L^2a^2(p)(\cosh p+\cosh \chi)^2p^{\prime}=L^2a^2(p)\sinh p (\cosh p+\cosh \chi)
+\nonumber\\
+&=&(d^2+t^2)\frac{t}{d}\left[\left(1+\frac{t^2}{d^2}\right)^{1/2}+\left(1+\frac{r^2}{L^2}\right)^{1/2}\right].
+\label{B6}
+\end{eqnarray}
+%
+$\Omega^2(p,\chi)p^{\prime}$ thus starts off linearly in $t$ when $t\ll d$, and subsequently then grows as $t^4$ when $t\gg d$. Thus in the conformal to flat Minkowski coordinate system given in (\ref{A14}) all the components of $K_{\mu\nu}$ grow as $t^4$ when $t \gg d$.
+
+To transform the fluctuation itself we note that transforming from (\ref{A14}) to (\ref{A13}) has no effect on the $p^{\prime}$ behavior. However transforming  the spatial coordinates from the Cartesian (\ref{A14}) to the polar (\ref{A13}) does introduce a dependence on $r^{\prime}$ wherever there is an angular component, and thus it does introduce a dependence on the comoving $t$. Specifically, in terms of the $K_{x^{\prime}x^{\prime}}$ type fluctuations in the (\ref{A14}) coordinate system, in the (\ref{A13}) coordinate system we can set 
+%
+\begin{align}
+K_{\theta\theta}&=(r^{\prime}\cos\theta\cos\phi)^2K_{x^{\prime}x^{\prime}}+(r^{\prime}\cos\theta\sin\phi)^2K_{y^{\prime}y^{\prime}}+(r^{\prime}\sin\theta)^2K_{z^{\prime}z^{\prime}}
+\nonumber\\
+&=\frac{\sinh^2\chi}{(\cosh p+\cosh \chi)^2}[\cos^2\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos^2\theta\sin^2\phi K_{y^{\prime}y^{\prime}}+\sin^2\theta K_{z^{\prime}z^{\prime}}]
+\nonumber\\
+&=\frac{r^2d^2}{[L(d^2+t^2)^{1/2}+d(L^2+r^2)^{1/2}]^2}\times
+\nonumber\\
+&\qquad[\cos^2\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos^2\theta\sin^2\phi K_{y^{\prime}y^{\prime}}+\sin^2\theta K_{z^{\prime}z^{\prime}}],
+\nonumber\\
+K_{r^{\prime}\theta}&=r^{\prime}\cos\theta\sin\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+r^{\prime}\cos\theta\sin\theta\sin^2\phi K_{y^{\prime}y^{\prime}}-r^{\prime}\sin\theta\cos\theta K_{z^{\prime}z^{\prime}}
+\nonumber\\
+&=\frac{\sinh\chi}{(\cosh p+\cosh \chi)}\times 
+\nonumber\\
+&\qquad[\cos\theta\sin\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos\theta\sin\theta\sin^2\phi K_{y^{\prime}y^{\prime}}-\sin\theta\cos\theta K_{z^{\prime}z^{\prime}}],
+\nonumber\\
+K_{p^{\prime}\theta}&=r^{\prime}\cos\theta\cos\phi K_{p^{\prime}x^{\prime}}+r^{\prime}\cos\theta\sin\phi K_{p^{\prime}y^{\prime}}-r^{\prime}\sin\theta K_{p^{\prime}z^{\prime}}
+\nonumber\\
+&=\frac{\sinh\chi}{(\cosh p+\cosh \chi)}[\cos\theta\cos\phi K_{p^{\prime}x^{\prime}}+\cos\theta\sin\phi K_{p^{\prime}y^{\prime}}-\sin\theta K_{p^{\prime}z^{\prime}}],
+\label{B7}
+\end{align}
+%
+with analogous expressions for $K_{\theta\phi}$, $K_{\phi\phi}$, $K_{r^{\prime}\phi}$ and $K_{p^{\prime}\phi}$. The $r^{\prime}=\sinh \chi/(\cosh p +\cosh \chi)$ prefactor in (\ref{B7}) has the property that at large $t$ it behaves  as $t^0$ if $p=\chi$, viz. $t=r$ with both $t$ and $r$ large (lightlike case), and as $t^{-1}$ if $p\gg \chi$, viz. $t \gg r$ (timelike case).
+
+To transform from (\ref{A13}) to (\ref{A10}) we need to transform from $(p^{\prime}, r^{\prime})$ to $(p,\chi)$. To transform from (\ref{A10}) to the comoving Robertson-Walker metric given (\ref{A4}) we need to transform from $(p,\chi)$ to $(t,r)$. Since the angular sector is unaffected by the transformation from (\ref{A13}) to (\ref{A4}), the angular sector fluctuations $K_{\theta\theta}$, $K_{\theta  \phi}$, $K_{\phi\phi}$ associated with the comoving Robertson-Walker geometry given in (\ref{A4}) will thus grow as $t^4$ itself as modified by the prefactor in (\ref{B7}), and thus as $t^4$ for the lightlike case (the solutions to $\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}[\Omega^{-2}(x)K_{\mu\nu}]=0$ as given in  (\ref{B3}) are lightlike), and as $t^2$ for the timelike case. With the $ds^2=0$ light cone being both general coordinate invariant and conformal invariant, lightlike modes associated with the (\ref{A14}) metric will transform into lightlike modes associated with the metric (\ref{A4}). A $t^4$ growth for lightlike modes is a quite substantial growth rate, a growth rate that is not achievable in standard Einstein gravity if one uses the same radiation matter source. 
+
+Since in transforming from one coordinate system to another the transformation is effected by 
+%
+\begin{eqnarray}
+K_{\mu\nu}=\frac{\partial x^{\prime \alpha}}{\partial x^{\mu}}\frac{\partial x^{\prime\beta}}{\partial x^{\nu}}K^{\prime}_{\alpha\beta},
+\label{B8}
+\end{eqnarray}
+%
+the transformations between the $(p^{\prime}, r^{\prime})$, $(p,\chi)$ and $(t,r)$ coordinate systems are effected by
+%
+\begin{eqnarray}
+&&\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=\frac{1+\cosh p\cosh\chi}{[\cosh p+\cosh\chi]^2},\qquad
+\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=-\frac{\sinh p\sinh\chi}{[\cosh p+\cosh\chi]^2}, 
+\nonumber\\
+&& \frac{\partial p}{\partial t}=\frac{1}{La(t)},\qquad \frac{\partial \chi}{\partial r}=\frac{1}{L\cosh\chi}.
+\label{B9}
+\end{eqnarray}
+%
+
+Discussion of (\ref{B9}) depends on whether $p=\chi$ or $p\gg \chi$. Since according to (\ref{B1}) $t=d\sinh p$ when $La(t)=(d^2+t^2)^{1/2}$, at large $t$ we see that  when $p=\chi$ (i.e. both $p$ and $\chi$ then being large) we have 
+%
+\begin{eqnarray}
+\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=1,\qquad
+\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=1,\qquad \frac{\partial p}{\partial t}=\frac{1}{t},\qquad \frac{\partial \chi}{\partial r}=\frac{d}{Lt}.
+\label{B10}
+\end{eqnarray}
+%
+Thus going from (\ref{A13}) to (\ref{A10}) ($(p^{\prime},r^{\prime})$ to $(p,\chi)$) will involve no suppression. Then in going from (\ref{A10}) to the comoving (\ref{A4}) ($(p,\chi)$ to $(t,r)$) we will get a $1/t^2$ suppression in the $K_{tt}$, $K_{tr}$ and $K_{rr}$ sectors, a $1/t$ suppression for $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$, and no suppression for $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$ since in this case the prefactor in (\ref{B7}) behaves as $t^0$. Finally, incorporating the $t^4$ dependence of $\Omega^2(p,\chi)p^{\prime}$, we find that overall $K_{tt}$, $K_{tr}$ and $K_{rr}$  grow as $t^2$, $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$ grow as $t^3$, and $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$ grow as $t^4$. Thus all seven of the $K_{tt}$, $K_{tr}$, $K_{rr}$, $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$ are suppressed with respect to $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$, so the leading growth will be the $t^4$ growth associated with the angular $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$. 
+
+
+Similarly,  at large $p\gg \chi$ the transformations behave as 
+%
+\begin{eqnarray}
+&&\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=\frac{d\cosh\chi}{t},\qquad
+\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=-\frac{d\sinh\chi}{t}, 
+\nonumber\\
+&& \frac{\partial p}{\partial t}=\frac{1}{t},\qquad \frac{\partial \chi}{\partial r}=\frac{1}{L\cosh\chi}.
+\label{B11}
+\end{eqnarray}
+%
+Thus in going from (\ref{A13}) to (\ref{A10}) we will get a $1/t^2$ suppression in the $K_{pp}$, $K_{p\chi}$ and $K_{\chi\chi}$ sectors, a $1/t$ suppression in the $K_{p\theta}$, $K_{p\phi}$, $K_{\chi\theta}$, and $K_{\chi\phi}$ sectors, and no suppression in the $K_{\theta\theta}$, $K_{\theta  \phi}$, $K_{\phi\phi}$ sectors. Then in going from (\ref{A10}) to the comoving (\ref{A4}) we will get an additional $1/t^2$ suppression in the $K_{tt}$ sector,  and an additional  $1/t$ suppression in the $K_{tr}$, $K_{t\theta}$, $K_{t\phi}$ sectors. Thus in going from (\ref{A13}) to (\ref{A4}) we get a net $1/t^4$ suppression for  $K_{tt}$,  a net $1/t^3$ suppression for  $K_{tr}$, a net $1/t^2$ suppression for  $K_{rr}$, $K_{t\theta}$, $K_{t\phi}$, a net $1/t$ suppression for  $K_{r\theta}$ and $K_{r\phi}$, and no suppression for $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$. Finally, incorporating the $t^4$ dependence of $\Omega^2(p,\chi)p^{\prime}$ and including the prefactor in (\ref{B7}), we find that overall $K_{tt}\sim t^0$, $K_{tr}\sim t^1$, $K_{t\theta}\sim t^1$, $K_{t\phi}\sim t^1$, while $K_{rr}\sim t^2$, $K_{r\theta}\sim t^2$, $K_{r\phi}\sim t^2$,  $K_{\theta\theta}\sim t^2$, $K_{\theta\phi}\sim t^2$ and $K_{\phi\phi}\sim t^2$. Thus the leading growth will grow as $t^2$. To understand this pattern we note that when $\chi$ is negligible then so is $r$, and the spatial part of the metric in (\ref{A4}) effectively becomes flat. Consequently,  $K_{tr}$, $K_{t\theta}$ and $K_{t\phi}$ all then have the same time behavior (viz. $t^1$), and $K_{rr}$, $K_{r\theta}$, $K_{r\phi}$,  $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$  all have the same time behavior (viz. $t^2$), with $t^2$ being the leading growth.
+
+To compare with the results obtained in \cite{mannheim_2012}, we note that there we imposed a  transverse gauge condition and had restricted to modes that obeyed the synchronous condition $K_{0\mu}=0$. We had worked in a spherical polar coordinate basis for the modes, and in the angular sector had obtained 
+%
+\begin{eqnarray}
+K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\cosh^2[(p+\chi)/2]\cosh^2[(p-\chi)/2]
+\\
+&\times&\bigg{[}2\alpha^{(-)}_{\theta\theta}+\beta^{(-)}_{\theta\theta}\tanh[(p+\chi)/2]+\beta^{(-)}_{\theta\theta}{\rm tanh}[(p-\chi)/2]\bigg{]}
+\nonumber\\
+&\times&\bigg{[}\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2]\bigg{]}\frac{\exp[-iq(p^{\prime}-r^{\prime})]}{\sin^2\theta},
+\nonumber
+\label{B12}
+\end{eqnarray}
+%
+where $\alpha^{(-)}_{\theta\theta}$ and $\beta^{(-)}_{\theta\theta}$ are constants and $q$ is the radial momentum of the mode. For our purposes here we note that is more convenient to solve the radial equation not in terms of $e^{iqr^{\prime}}$ functions, but in terms of spherical Bessel functions instead, with the relevant one being $j_0(qr^{\prime})=\sin(qr^{\prime})/qr^{\prime}$. We thus replace (\ref{B12}) by
+%
+\begin{eqnarray}
+K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\cosh^2[(p+\chi)/2]\cosh^2[(p-\chi)/2]
+\\
+&\times&\bigg{[}2\alpha^{(-)}_{\theta\theta}+\beta^{(-)}_{\theta\theta}\tanh[(p+\chi)/2]+\beta^{(-)}_{\theta\theta}{\rm tanh}[(p-\chi)/2]\bigg{]}
+\nonumber\\
+&\times&\bigg{[}\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2]\bigg{]}\frac{\exp[-iqp^{\prime}]}{\sin^2\theta}qr^{\prime}j_0(qr^{\prime}),
+\nonumber
+\label{B13}
+\end{eqnarray}
+%
+With $r^{\prime}$ being given by $r^{\prime}=(\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2])/2=\sinh\chi/(\cosh p+\cosh \chi)$,  we can thus set: 
+%
+\begin{eqnarray}
+K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\bigg{[}\alpha^{(-)}_{\theta\theta}
++\beta^{(-)}_{\theta\theta}\frac{\sinh p}{\cosh p +\cosh \chi}\bigg{]}\sinh^2\chi\frac{\exp[-iqp^{\prime}]}{\sin^2\theta}qj_0(qr^{\prime}).
+\nonumber\\
+\label{B14}
+\end{eqnarray}
+%
+Thus, for the lightlike $p=\chi$ case (where $r^{\prime}\rightarrow 1/2$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^4$, while for the timelike $p\gg \chi$ case (where $r^{\prime}\rightarrow 0$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^2$, just as found above. (The timelike $t^2$ growth had been incorrectly given in \cite{mannheim_2012}.) Interestingly, in \cite{mannheim_2012}  we had only considered a particular class of solutions, namely those with $K_{tt}=0$, $K_{tr}=0$, $K_{t\theta}=0$ and $K_{t\phi}=0$. We now see that for both $p=\chi$ and $p \gg \chi$, all of the modes that obey the synchronous condition $K_{0\mu}=0$  are non-leading, with the angular modes respectively being leading or coleading in the two cases.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Compact Expressions for $\delta G_{\mu\nu}$ in Specific Gauges}
+\label{s:compact_expressions_ein}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+For the conformal to flat Minkowski line element  $ds^2=- \Omega^2(x)(\eta_{\mu\nu}+f_{\mu\nu})dx^{\mu}dx^{\nu}$, where $\Omega(x)$ is an arbitrary function of $x_{\mu}$, the Einstein tensor fluctuation  $\delta G_{\mu\nu}$ is given by (\ref{AP76}). We introduce $k_{\mu\nu}=f_{\mu\nu}-(1/4)\eta^{\alpha\beta}f_{\alpha\beta}$ with $\eta^{\mu\nu}k_{\mu\nu}=0$, and rewrite (\ref{AP76}) as 
+%
+\begin{eqnarray}
+\delta G_{\mu\nu}&=&- \tfrac{1}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}f + \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}k_{\mu \nu} \partial_{\beta}\Omega + \eta^{\beta \alpha} k_{\mu \nu} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega  
+\nonumber\\
+&&+ \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\alpha}k_{\mu \nu} -  \tfrac{1}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \partial_{\beta}\partial_{\alpha}f 
+- 2 \eta^{\alpha \beta} k_{\mu \nu} \Omega^{-1} \partial_{\beta}\partial_{\alpha}\Omega -  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\mu}k_{\nu \alpha}  
+\nonumber\\
+&&-  \tfrac{1}{2} \eta^{\alpha \beta} \partial_{\beta}\partial_{\nu}k_{\mu \alpha} + 2 \eta^{\alpha \beta} \eta^{\gamma \kappa} \eta_{\mu \nu} \Omega^{-1} \partial_{\beta}\Omega \partial_{\kappa}k_{\alpha \gamma} 
+-  \eta^{\alpha \gamma} \eta^{\beta \kappa} \eta_{\mu \nu} k_{\alpha \beta} \Omega^{-2} \partial_{\gamma}\Omega \partial_{\kappa}\Omega 
+\nonumber\\
+&& + \tfrac{1}{2} \eta^{\alpha \beta} \eta^{\gamma \kappa} \eta_{\mu \nu} \partial_{\kappa}\partial_{\beta}k_{\alpha \gamma} + 2 \eta^{\alpha \beta} \eta^{\gamma \kappa} \eta_{\mu \nu} k_{\alpha \gamma} \Omega^{-1} \partial_{\kappa}\partial_{\beta}\Omega -  \eta^{\alpha \beta} \Omega^{-1} \partial_{\beta}\Omega \partial_{\mu}k_{\nu \alpha} 
+\nonumber\\
+&&-  \eta^{\alpha \beta} \Omega^{-1} \partial_{\beta}\Omega \partial_{\nu}k_{\mu \alpha} -  \tfrac{1}{4} \Omega^{-1} \partial_{\mu}\Omega \partial_{\nu}f -  \tfrac{1}{4} \Omega^{-1} \partial_{\mu}f \partial_{\nu}\Omega + \tfrac{1}{4} \partial_{\nu}\partial_{\mu}f,
+\label{D1}
+\end{eqnarray}
+%
+where $f$ denotes $\eta^{\alpha\beta}f_{\alpha\beta}$. We have considered gauges of the form:
+%
+\begin{eqnarray}
+\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu f+ R \Omega^{-1} f\partial_\nu \Omega,
+\label{D2}
+\end{eqnarray}
+%
+where $J$, $P$, and $R$ are constants. For various choices of these parameters we can simplify the structure of $\delta G_{\mu\nu}$, and on taking  $J = -2$, $P = 1/2$, $R = 0$, viz. on setting
+%
+\begin{eqnarray}
+\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = -2 \Omega^{-1}  \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + \tfrac{1}{2} \partial_\nu f,
+\label{D3}
+\end{eqnarray}
+%
+we find that when $\Omega$ is only a function of the conformal time $\tau$, $\delta G_{\mu\nu}$ evaluates  to 
+%
+\begin{eqnarray}
+\delta G_{00}&=&
+(3 \Omega^{-2} \dot{\Omega}^2 -  \Omega^{-1} \ddot{\Omega} + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} -  \Omega^{-1} \dot{\Omega} \partial_{0}) k_{00} - \tfrac{1}{4} ( \Omega^{-1} \dot{\Omega} \partial_{0} + \partial_{0} \partial_{0}) f,
+\nonumber\\
+\delta G_{0i}&=&
+(\Omega^{-1} \ddot{\Omega} + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} -  \Omega^{-1} \dot{\Omega} \partial_{0}) k_{0i} - \tfrac{1}{4}  (\Omega^{-1} \dot{\Omega} \partial_{i} +\partial_{i} \partial_{0}) f,
+\nonumber\\
+\delta G_{ij}&=&
+\delta_{ij}(-2 \Omega^{-2} \dot{\Omega}^2 + \Omega^{-1} \ddot{\Omega}) k_{00} + (- \Omega^{-2} \dot{\Omega}^2 + 2 \Omega^{-1} \ddot{\Omega} + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}  
+\nonumber\\
+&&-  \Omega^{-1} \dot{\Omega} \partial_{0}) k_{ij}, 
+- \tfrac{1}{4} (\delta_{ij} \Omega^{-1} \dot{\Omega} \partial_{0} + \partial_{i} \partial_{j}) f,
+\nonumber\\
+\eta^{\mu\nu}\delta G_{\mu\nu}&=&(-10\Omega^{-2} \dot{\Omega}^2 +6  \Omega^{-1} \ddot{\Omega})k_{00}- \tfrac{1}{4}  (2\Omega^{-1} \dot{\Omega} \partial_{0} +\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}) f,
+\label{D4}
+\end{eqnarray}
+%
+where the dot denotes the derivative with respect to $\tau$, and $\partial_0$ denotes $\partial_{\tau}$. While not diagonal in the $(\mu,\nu)$ indices, we note that $\delta G_{\mu\nu}$ is close to being so, since apart from  the $k_{00}$ and $f$ dependence  $\delta G_{\mu\nu}$ otherwise would be. Moreover, the ten fluctuation equations contained in  $\delta G_{\mu\nu}=-8\pi G \delta T_{\mu\nu}$ can be solved completely once $\delta T_{\mu\nu}$ is specified, since from the $\delta G_{00}$ and $\eta^{\mu\nu}\delta G_{\mu\nu}$ equations one can determine $k_{00}$ and $f$, and then from the other $\delta G_{\mu\nu}$ equations one can determine all the other components of $k_{\mu\nu}$. 
+
+
+For completeness we note that if the background is the inflationary universe de Sitter geometry where $\Omega(\tau)=1/H\tau$ with $H$ constant, (\ref{D4}) takes the form
+%
+\begin{eqnarray}
+\delta G_{00}&=&
+(\tau^{-2} + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + \tau^{-1} \partial_{0}) k_{00} + \tfrac{1}{4} (\tau^{-1} \partial_{0} -   \partial_{0} \partial_{0}) f,
+\nonumber\\
+\delta G_{0i}&=&
+(2 \tau^{-2} + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + \tau^{-1} \partial_{0}) k_{0i} + \tfrac{1}{4} ( \tau^{-1} \partial_{i} -  \partial_{i} \partial_{0}) f,
+\nonumber\\
+\delta G_{ij}&=&
+(3 \tau^{-2} + \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu} + \tau^{-1} \partial_{0}) k_{ij} + \tfrac{1}{4} (\delta_{ij} \tau^{-1} \partial_{0} -   \partial_{i} \partial_{j}) f,
+\nonumber\\
+\eta^{\mu\nu}\delta G_{\mu\nu}&=&2\tau^{-2}k_{00}+ \tfrac{1}{4}  (2\tau^{-1}\partial_{0} -\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}) f.
+\label{D5}
+\end{eqnarray}
+%
+As we see, by incorporating $\Omega(\tau)$ into both the background and the fluctuation we obtain very compact forms for $\delta G_{\mu\nu}$  in (\ref{D4}) and (\ref{D5}), with the $\delta G_{\mu\nu}=-8\pi G \delta T_{\mu\nu}$ fluctuation equations then being completely integrable.
+
+We have found one further convenient decomposition of $\delta G_{\mu\nu}$, namely the gauge choice $J=-4$, $R=2P-3/2$, $P$ arbitrary. For a de Sitter background this gauge choice leads to
+%
+\begin{eqnarray}
+\delta G_{00}&=&(-2 \tau^{-2}
++ \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
++ 3 \tau^{-1} \partial_{0}) k_{00}
++ \big[(\tfrac{3}{4} -  P) \tau^{-2} 
+\nonumber\\
+&&
++ \tfrac{1}{4}(1-2P) \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
++ P \tau^{-1} \partial_{0}
++( \tfrac{1}{4} -P)\partial^2_{0}\big]f,
+\nonumber\\
+\delta G_{0i}&=&\tau^{-1} \partial_{i} k_{00}
++ (\tau^{-2}
++ \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
++ 2 \tau^{-1} \partial_{0}) k_{0i}
++ \big[(P- \tfrac{1}{2}) \tau^{-1} \partial_{i} 
+\nonumber\\
+&&
++ (\tfrac{1}{4}-P) \partial_{i} \partial_{0} \big]f,
+\nonumber\\
+\delta G_{ij}&=&\delta_{ij}\tau^{-2} k_{00}
++\tau^{-1} \partial_{j} k_{0i}
++ \tau^{-1} \partial_{i} k_{0j}
++ (3 \tau^{-2}
++ \tfrac{1}{2} \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
++ \tau^{-1} \partial_{0}) k_{ij}
+\nonumber\\
+&+& \delta_{ij}\left[(\tfrac{3}{4}-P) \tau^{-2}
++ \tfrac{1}{4}(2P-1) \eta^{\mu \nu} \partial_{\mu} \partial_{\nu}
++(P-1)\tau^{-1} \partial_{0}\right]f 
+\nonumber\\
+&&
++ (\tfrac{1}{4}-P) \partial_{i} \partial_{j}f.
+\\
+\eta^{\alpha\beta}\delta G_{\alpha\beta}&=&(P-\tfrac{3}{4})( \eta^{\alpha\beta}\partial_{\alpha}\partial_{\beta}f +4\tau^{-1}\partial_0 f-6\tau^{-2}f)=(P-\tfrac{3}{4})\tau^2 \eta^{\alpha\beta}\partial_{\alpha}\partial_{\beta}(\tau^{-2}f).
+\nonumber
+\label{D6}
+\end{eqnarray}
+%
+In this gauge $\eta^{\mu\nu}\delta G_{\mu\nu}=\Omega^2g^{\mu\nu}\delta G_{\mu\nu}$ depends on the trace $f$ of the fluctuation alone. One can immediately solve for $f$ and then proceed to the other components of the fluctuation in turn. As we see,  the quantity $\eta^{\alpha\beta}\delta G_{\alpha\beta}$ takes the form of the flat space free massless particle wave operator acting on $\tau^{-2} f$, with the equation $g^{\mu\nu}\delta G_{\mu\nu}=-8\pi G g^{\mu\nu}\delta T_{\mu\nu}$ immediately being integrable with the $D^{(4)}(x-y)$ propagator that obeys $\eta^{\alpha\beta}\partial_{\alpha}\partial_{\beta}D^{(4)}(x-y)=\delta^4(x-y)$ as
+%
+\begin{eqnarray}
+f=\eta^{\mu\nu}f_{\mu\nu}=-\frac{8\pi G}{(P-\tfrac{3}{4})}\tau^2(x) \int d^4yD^{(4)}(x-y)\tau^{-2}(y)\eta^{\mu\nu}\delta T_{\mu\nu}(y),
+\label{D7}
+\end{eqnarray}
+%
+where $\tau(x)=x^0$, $\tau(y)=y^0$.
+
+
+
+

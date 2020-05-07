@@ -1,0 +1,907 @@
+
+\chapter{Scalar, Vector, Tensor (SVT) Decomposition}
+\label{c:scalar_vector_tensor_basis}
+
+In the field of perturbative cosmology, it is standard to first introduce a 3+1 decomposition of the metric perturbation followed by a decomposition into SO(3) scalars, vectors, and tensors (the SVT decomposition)\cite{Ellis2012}. For fluctuations around a Minkowski background the decomposition takes the form
+
+In studying cosmological fluctuations it is very convenient to use the SVT decomposition of the fluctuations because it readily incorporates gauge  invariance  \cite{bardeen_1980}.
+
+doing it all in flat, decomposition theorem, gauge invariants, 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVT3}
+\label{s:svt3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+The discussion of the three dimensional SVT expansion begins by taking a flat background geometry of the form $ds^2=dt^2-\delta_{ij}dx^idx^j$ where $\delta_{ij}$ represents a generic flat 3-space metric (equating to the Kronecker delta for a Minkowski background). Upon introducing a metric fluctuation $h_{\mu\nu}$ and performing a 3+1 decomposition, the geometry may be written as
+%
+%%%%%%%%
+	\footnote{In application to cosmological backgrounds, we will find it convenient to decompose the fluctuation around a conformal to flat background by incorporating an explicit factor of $\Omega^2(x)$, with the perturbed geometry taking the form
+	\begin{eqnarray}
+	ds^2 &=& \Omega^2(x) \bigg[ (1+2\phi) dt^2 -2(\tilde{\nabla}_i B +B_i)dt dx^i - [(1-2\psi)\delta_{ij} +2\tilde{\nabla}_i\tilde{\nabla}_j E
+	\nonumber\\
+	&& + \tilde{\nabla}_i E_j + \tilde{\nabla}_j E_i + 2E_{ij}]dx^i dx^j\bigg].
+	\label{AP62}
+	\end{eqnarray}
+	%
+	Here $\Omega(x)$ is an arbitrary function of the coordinates, where $\tilde{\nabla}_i=\partial/\partial x^i$ (with Latin index) and  $\tilde{\nabla}^i=\delta^{ij}\tilde{\nabla}_j$ (not $\Omega^{-2}\delta^{ij}\tilde{\nabla}_j$) are defined with respect to the background 3-space metric $\delta_{ij}$. SVT3 elements obey the same relations as in \eqref{APsvt3_rel}, i.e. transverse and traceless with respect to the background 3-space metric.}
+%%%%%%%%
+%
+\begin{eqnarray}
+ds^2 &=&(-\eta_{\mu\nu}-h_{\mu\nu})dx^{\mu}dx^{\nu}
+\nonumber\\
+&=&(1+2\phi) dt^2 -2(\tilde{\nabla}_i B +B_i)dt dx^i - [(1-2\psi)\delta_{ij} +2\tilde{\nabla}_i\tilde{\nabla}_j E 
+\nonumber\\
+&&+ \tilde{\nabla}_i E_j + \tilde{\nabla}_j E_i + 2E_{ij}]dx^i dx^j,
+\label{2.1}
+\end{eqnarray}
+%
+where $\tilde{\nabla}_i=\partial/\partial x^i$ and  $\tilde{\nabla}^i=\delta^{ij}\tilde{\nabla}_j$  (with Latin indices) are defined with respect to the background three-space metric $\delta_{ij}$. In addition, the SVT3 components within (\ref{2.1}) are required to obey
+%
+\begin{eqnarray}
+\delta^{ij}\tilde{\nabla}_j B_i = 0,\quad \delta^{ij}\tilde{\nabla}_j E_i = 0, \quad E_{ij}=E_{ji},\quad \delta^{jk}\tilde{\nabla}_kE_{ij} = 0, \quad \delta^{ij}E_{ij} = 0.
+\label{2.2}
+\label{APsvt3_rel}
+\end{eqnarray}
+%
+As written, (\ref{2.1}) contains ten elements, whose transformations are defined with respect to the background spatial sector as four 3-dimensional scalars ($\phi$, $B$, $\psi$, $E$), two transverse 3-dimensional vectors ($B_i$, $E_i$) each with two independent degrees of freedom, and one symmetric 3-dimensional transverse-traceless tensor ($E_{ij}$) with two degrees of freedom. A la, the scalar, vector, tensor (SVT) decomposition. 
+
+To implement the decomposition of $h_{\mu\nu}$ to the SVT3 form in \eqref{2.1}, we utilize transverse and transverse-traceless projection operators as applied to tensor and vector components to yield a decomposition into scalars, vectors, and tensors. Both the 3+1 decomposition and projection operators have been derived in developed in detail within Appendix \ref{aa:svt_projection}.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SVT3 in Terms of $h_{\mu\nu}$ in a Conformal Flat Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Following \cite{amarasinghe_2019, phelps_2019} and making use of the projection operators in Appendix \ref{aa:svt_projection}, we express the ten degrees of freedom of the SVT3 components in a conformal to flat background in terms of the original fluctuations $h_{\mu\nu}$. First we introduce the 3-dimensional Green's function obeying
+%
+\begin{eqnarray}
+\delta^{ij}\tilde{\nabla}_i\tilde{\nabla}_jD^{(3)}(\mathbf{x}-\mathbf{y})=\delta^3(\mathbf{x}-\mathbf{y}).
+\label{AP64}
+\end{eqnarray}
+%
+Upon setting $h_{\mu\nu}=\Omega^2(x)f_{\mu\nu}$, the line element of (\ref{AP62}) takes the form 
+%
+\begin{eqnarray}
+ds^2&=&-[\Omega^2(x)\eta_{\alpha\beta}+h_{\alpha\beta}]dx^{\alpha}dx^{\beta}
+\nonumber\\
+&=&-\Omega^2(x)[\eta_{\alpha\beta}+f_{\alpha\beta}]dx^{\alpha}dx^{\beta}
+\nonumber\\
+&=&\Omega^2(x)\left[dt^2-\delta_{ij}dx^idx^j-f_{00}dt^2-2f_{0i}dtdx^i-f_{ij}dx^idx^j\right],
+\nonumber\\
+\delta^{ij}f_{ij}&=&-6\psi+2\tilde{\nabla}_i\tilde{\nabla}^iE,
+\tilde{\nabla}^jf_{ij}=-2\tilde{\nabla}_i\psi+2\tilde{\nabla}_i\tilde{\nabla}_k\tilde{\nabla}^kE+\tilde{\nabla}_k\tilde{\nabla}^kE_{i},
+\nonumber\\
+\tilde{\nabla}^i \tilde{\nabla}^jf_{ij}&=&-2\tilde{\nabla}_k\tilde{\nabla}^k\psi+2\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}E
+\nonumber\\
+&=&\frac{4}{3}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}E+\frac{1}{3}\tilde{\nabla}_k\tilde{\nabla}^k\delta^{ij}f_{ij}
+\nonumber\\
+&=&4\tilde{\nabla}_k\tilde{\nabla}^k\psi+\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{ij}f_{ij}),
+\nonumber\\
+2\phi&=&-f_{00},\qquad
+B=\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^if_{0i},\qquad B_i=f_{0i}-\tilde{\nabla}_iB,
+\nonumber\\
+\psi&=&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^k\tilde{\nabla}_y^{\ell}f_{k\ell}-\frac{1}{4}\delta^{k\ell}f_{k\ell},
+\nonumber\\
+\qquad
+E&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\left[\frac{3}{4}\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}f_{k\ell}-\frac{1}{4}\delta^{k\ell}f_{k\ell}\right],
+\nonumber\\
+E_i&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\bigg{[}\tilde{\nabla}_y^jf_{ij}
+-\tilde{\nabla}^y_i\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}f_{k\ell}\bigg{]},
+\nonumber\\
+2E_{ij}&=&f_{ij}+2\psi\delta_{ij} -2\tilde{\nabla}_i\tilde{\nabla}_j E - \tilde{\nabla}_i E_j - \tilde{\nabla}_j E_i, 
+\label{AP65}
+\end{eqnarray}
+%
+One may readily check that $B_i$, $E_i$, and $E_{ij}$ are indeed transverse by applying appropriate derivatives, thus confirming their obeying (\ref{APsvt3_rel}).
+%%%%%
+ \footnote{In (\ref{AP65}) a symbol such as $\tilde{\nabla}_y^i$, $y$ indicates that the derivative is taken with respect to the $y$ coordinate and likewise for other latin coordinates.}
+ %%%%%
+The integral form of the inversions of the SVT3 components is unique up to integration by parts, which plays a role in the analysis of asymptotic behavior, discussed in detail within Sect. \ref{ss:gauge_struct_svt3}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SVT3 in Terms of the Traceless $k_{\mu\nu}$ in a Conformal Flat Background}
+\label{ss:svt3_in_terms_of_k_mu_nu}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We have shown in Sect. \ref{s:conformal_gravity} that in conformal to flat backgrounds, the perturbed Bach tensor $\delta W_{\mu\nu}$ may be expressed entirely in terms of the traceless $K_{\mu\nu}$. As such, it will prove useful to be able to express the SVT components in terms of the traceless part of $f_{\mu\nu}$. Defining $K_{\mu\nu}=\Omega^2k_{\mu\nu}$, we have
+\begin{eqnarray}
+K_{\mu\nu}=h_{\mu\nu}-(1/4)\Omega^2\eta_{\mu\nu}\Omega^{-2}\eta^{\alpha\beta}h_{\alpha\beta}=h_{\mu\nu}-(1/4)\eta_{\mu\nu}\eta^{\alpha\beta}h_{\alpha\beta},
+\end{eqnarray}
+whereby we factor out the conformal factor to form the traceless $k_{\mu\nu}$ as
+\begin{eqnarray}
+k_{\mu\nu}=f_{\mu\nu}-(1/4)\eta_{\mu\nu}[-f_{00}+\delta^{ij}f_{ij}].
+\end{eqnarray}
+%
+Substituting $f_{\mu\nu}$ in terms of this $k_{\mu\nu}$, we obtain from \eqref{AP65} the following integral relations for the SVT components:
+\begin{eqnarray}
+k_{00}&=&\frac{3}{4}f_{00}+\frac{1}{4}\delta^{k\ell}f_{k\ell},\qquad k_{0i}=f_{0i},\qquad k_{ij}=f_{ij}+\frac{1}{4}\delta_{ij}f_{00}-\frac{1}{4}\delta_{ij}\delta^{k\ell}f_{k\ell},
+\nonumber\\
+\phi&=&-\frac{1}{2}f_{00},\qquad
+B=\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ik_{0i},\qquad B_i=k_{0i}-\tilde{\nabla}_iB,
+\nonumber\\
+\psi&=&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^k\tilde{\nabla}_y^{\ell}k_{k\ell}-\frac{3}{4}k_{00}+\frac{1}{2}f_{00},
+\nonumber\\
+\qquad
+E&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\left[\frac{3}{4}\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}k_{k\ell}-\frac{1}{4}k_{00}\right],
+\nonumber\\
+E_i&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\bigg{[}\tilde{\nabla}_y^jk_{ij}
+-\tilde{\nabla}^y_i\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}k_{k\ell}\bigg{]},
+\nonumber\\
+2E_{ij}&+&2\tilde{\nabla}_i\tilde{\nabla}_j E +\tilde{\nabla}_i E_j +\tilde{\nabla}_j E_i
+=k_{ij}-\frac{1}{2}\delta_{ij}k_{00}
+\nonumber\\
+&&\qquad\qquad\qquad\qquad\qquad\qquad+\frac{1}{2}\delta_{ij}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^k\tilde{\nabla}_y^{\ell}k_{k\ell}.
+\label{AP66}
+\end{eqnarray}
+%
+Here can see that all SVT3 components can be expressed in terms of $k_{\mu\nu}$ along with a single component of $f_{\mu\nu}=\Omega^{-2}(x)h_{\mu\nu}$, namely $f_{00}$.  Recalling that $\delta W_{\mu\nu}$ can only depend on $k_{\mu\nu}$, we note that the combination $\phi+\psi$ is independent of $f_{00}$ and only depends on $k_{\mu\nu}$. Hence, we expect this coupled combination to be associated with the scalar SVT component of conformal gravity. Indeed, we confirm such a relation later in Sect. \ref{ss:deltaW_conformal_flat_SVT3}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Structure and Asymptotic Behavior}
+\label{ss:gauge_struct_svt3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To determine  the relevant gauge invariant SVT3 combinations we would in general need to manipulate the relations between the SVT components and the components of $h_{\mu\nu}$ in some general given background, and we will actually do so below. However since for a flat background $T_{\mu\nu}$ and thus $\delta T_{\mu\nu}$ are both zero, for fluctuations around a flat Minkowski background  we can read off the relevant combinations from the perturbed Einstein tensor itself as it is then gauge invariant, with it being of the form   (see e.g. \cite{amarasinghe_2019})
+%
+\begin{eqnarray}
+\delta G_{00}&=&- 2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
+\nonumber\\
+\delta G_{0i}&=&- 2 \tilde{\nabla}_{i}\dot{\psi}+ \tfrac{1}{2} \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(B_{i} -  \dot{E}_{i}),
+\nonumber\\
+\delta G_{ij}&=&- 2 \delta_{ij} \ddot{\psi} -  \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E})+ \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi 
+	\nonumber\\
+&&
++ \tilde{\nabla}_{j}\tilde{\nabla}_{i}(\phi+\dot{B} -  \ddot{E})
+-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi
++ \tfrac{1}{2} \tilde{\nabla}_{i}(\dot{B}_{j} - \ddot{E}_{j}) + \tfrac{1}{2} \tilde{\nabla}_{j}(\dot{B}_{i}  
+- \ddot{E}_{i})
+\nonumber\\
+&&- \ddot{E}_{ij} + \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E_{ij},
+\nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu}&=&-\delta G_{00}+\delta^{ij}\delta G_{ij}=4 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi -6\ddot{\psi}-2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E}),
+\nonumber\\
+\label{2.3}
+\end{eqnarray}
+
+%
+where here and throughout we use the notation given in \cite{weinberg_1972}, and where the dot denotes the time derivative $\partial/\partial x^0$. While a general fluctuation $h_{\mu\nu}$ would have ten components, because of the freedom to make four gauge transformations on the coordinates, the above $\delta G_{\mu\nu}$ can only depend on six of them, with the six being given by the combinations $\psi$, $\phi+\dot{B}  -\ddot{E}$, $B_{i} -  \dot{E}_{i}$, and $E_{ij}$. Since for fluctuations around flat the perturbed $\delta G_{\mu\nu}$ is invariant under the gauge transformation $h_{\mu\nu}\rightarrow h_{\mu\nu}-\partial_{\mu}\epsilon_{\nu}-\partial_{\nu}\epsilon_{\mu}$, one ordinarily takes these six combinations to be gauge invariant. However, the gauge invariance of $\delta G_{\mu\nu}$ entails that only when taken with the various derivatives that appear in (\ref{2.3}) will these combinations be gauge invariant. Thus for instance it is $\delta G_{00}$ that is gauge invariant, and thus it is $\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi$ that is necessarily gauge invariant rather then $\psi$ itself. 
+
+
+To see why a gauge invariance issue might arise, it is instructive to express each of the various SVT3 components in terms  of combinations of the original components of $h_{\mu\nu}$, and to expressly do so without referencing the Einstein equations at all. We follow the derivation given in \cite{amarasinghe_2019}, and given only the definitions of various combinations of the SVT3 fluctuation components  in terms of the $h_{\mu\nu}$ as
+%
+\begin{eqnarray}
+2\phi&=&-h_{00},\quad B_i+\tilde{\nabla}_iB=h_{0i},
+\nonumber\\
+h_{ij}&=&-2\psi\delta_{ij} +2\tilde{\nabla}_i\tilde{\nabla}_j E + \tilde{\nabla}_i E_j + \tilde{\nabla}_j E_i + 2E_{ij},
+\label{2.4}
+\end{eqnarray}
+%
+we obtain
+%
+\begin{eqnarray}
+\delta^{ij}h_{ij}&=&-6\psi+2\tilde{\nabla}_i\tilde{\nabla}^iE,\quad
+\tilde{\nabla}^jh_{ij}=-2\tilde{\nabla}_i\psi+2\tilde{\nabla}_i\tilde{\nabla}_k\tilde{\nabla}^kE+\tilde{\nabla}_k\tilde{\nabla}^kE_{i},
+\nonumber\\
+\tilde{\nabla}^i \tilde{\nabla}^jh_{ij}&=&-2\tilde{\nabla}_k\tilde{\nabla}^k\psi+2\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}E,
+\label{2.5}
+\end{eqnarray}
+%
+and can thus set 
+%
+\begin{eqnarray}
+\tilde{\nabla}_k\tilde{\nabla}^k\psi&=&\frac{1}{4} \left[\tilde{\nabla}^i \tilde{\nabla}^jh_{ij}-\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{ij}h_{ij})\right],
+\nonumber\\
+\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}E&=&\frac{3}{4} \tilde{\nabla}^i \tilde{\nabla}^jh_{ij}-\frac{1}{4}\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{ij}h_{ij}),
+\nonumber\\
+\tilde{\nabla}_k\tilde{\nabla}^kB&=&\tilde{\nabla}^kh_{0k},
+\nonumber\\
+\tilde{\nabla}_k\tilde{\nabla}^kB_i&=&\tilde{\nabla}_k\tilde{\nabla}^kh_{0i}-\tilde{\nabla}_i\tilde{\nabla}^kh_{0k},
+\nonumber\\
+\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}E_i&=&\tilde{\nabla}_k\tilde{\nabla}^k\nabla^jh_{ij}-\nabla_i\tilde{\nabla}^k\tilde{\nabla}^{\ell}h_{k\ell},
+\nonumber\\
+\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}&=&\frac{1}{2}\big[\tilde{\nabla}_k\tilde{\nabla}^kh_{ij}-\tilde{\nabla}_i\tilde{\nabla}^kh_{kj}-\tilde{\nabla}_j\tilde{\nabla}^kh_{ki}
+\nonumber\\
+&&+\tilde{\nabla}_i\tilde{\nabla}_j(\delta^{k\ell}h_{k\ell})\big]+\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi
+\nonumber\\
+&&+\tilde{\nabla}_i\tilde{\nabla}_j\psi,
+\nonumber\\
+\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}&=&
+\frac{1}{2} \tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\big[\tilde{\nabla}_k\tilde{\nabla}^kh_{ij}-\tilde{\nabla}_i\tilde{\nabla}^kh_{kj}-\tilde{\nabla}_j\tilde{\nabla}^kh_{ki}
+\nonumber\\
+&&+\tilde{\nabla}_i\tilde{\nabla}_j(\delta^{k\ell}h_{k\ell})\big]+\frac{1}{4}\left[\delta_{ij}\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}+\tilde{\nabla}_i\tilde{\nabla}_j \right]\times
+\nonumber\\
+&&\left[\tilde{\nabla}^m \tilde{\nabla}^nh_{mn}-\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{mn}h_{mn}) \right],
+\nonumber\\
+\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \tilde{\nabla}_k\tilde{\nabla}^k(B_i-\dot{E}_i)&=&
+\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kh_{0i}
+-\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_i\tilde{\nabla}^kh_{0k}
+-\partial_0\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}^jh_{ij}
+\nonumber\\
+&&+\partial_0\tilde{\nabla}_{i}\tilde{\nabla}^{k}\tilde{\nabla}^{\ell}h_{k\ell},
+\nonumber\\
+\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})&=&
+-\tfrac{1}{2}\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}h_{00}
++\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\partial_0\tilde{\nabla}^kh_{0k}
+-\tfrac{3}{4}\partial_0^2\tilde{\nabla}^i\tilde{\nabla}^jh_{ij}
+\nonumber\\
+&&+\tfrac{1}{4}\partial_0^2\tilde{\nabla}_{k}\tilde{\nabla}^{k}(\delta^{ij}h_{ij}).
+\label{2.6}
+\end{eqnarray}
+%
+As we see, we need to go to fairly high derivatives in order to be able to express each of the SVT3 components entirely in terms of combinations of components of the $h_{\mu\nu}$.
+
+Given (\ref{2.6}) one can readily check that under a gauge transformation $h_{\mu\nu}\rightarrow h_{\mu\nu}-\partial_{\mu}\epsilon_{\nu}-\partial_{\nu}\epsilon_{\mu}$ the combinations  $\tilde{\nabla}_k\tilde{\nabla}^k\psi $, $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$, $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^k(B_i-\dot{E}_i)$ and $ \tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})$ are gauge invariant. Thus, as we noted above, it is not the quantities $\psi$, $E_{ij}$, $B_i-\dot{E}_i$ and $\phi+\dot{B}-\ddot{E}$ themselves that are necessarily gauge invariant. Rather, it is their derivatives that are  gauge invariant. Comparison with (\ref{2.3}) shows that it is the quantity $\tilde{\nabla}_k\tilde{\nabla}^k\psi$ that appears in $\delta G_{00}$ and that it is the combination $ \tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ that appears in  $\delta G_{ij}$. Thus these  combinations are automatically gauge invariant.
+
+
+Now we could integrate the relevant equations in (\ref{2.6}) in order to check gauge invariance for $\psi$, $\phi+\dot{B}-\ddot{E}$, $B_{i}-\dot{E_i}$ and $E_{ij}$ themselves, since we can set
+
+%
+\begin{eqnarray}
+\psi&=&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\left[\tilde{\nabla}_y^k \tilde{\nabla}_y^{\ell}h_{k\ell}-\tilde{\nabla}^y_m\tilde{\nabla}_y^m(\delta^{k\ell}h_{k\ell})\right],
+\nonumber\\
+\phi+\dot{B}-\ddot{E}&=&-\frac{1}{2} h_{00}
++\partial_0\left[\int d^3y D^{(3)}(\mathbf x - \mathbf y) \tilde\nabla^k_y h_{0k}\right]
+\nonumber\\
+&-&\partial_0^2\bigg[\int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)\times
+\nonumber\\
+&&\left[ \frac{3}{4} \tilde{\nabla}^i \tilde{\nabla}^jh_{ij}-\frac{1}{4}\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{ij}h_{ij})
+\right]\bigg]
+\nonumber\\
+&=&-\tfrac{1}{2}\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \tilde{\nabla}_k\tilde{\nabla}^k\int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)h_{00}
+\nonumber\\
+&+&\partial_0\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)\nabla^k_z h_{0k}
+\nonumber\\
+&-&\partial_0^2\bigg[\int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)\times
+\nonumber\\
+&&\left[ \frac{3}{4} \tilde{\nabla}^i \tilde{\nabla}^jh_{ij}-\frac{1}{4}\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{ij}h_{ij})
+\right]\bigg],
+\label{2.7}
+\end{eqnarray}
+%
+and 
+%
+\begin{eqnarray}
+B_i &-&\dot{E}_i= \int d^3y D^{(3)}(\mathbf x - \mathbf y)\left[ \tilde\nabla^k_y \tilde\nabla_k^y h_{0i}
+- \tilde\nabla_i^y \tilde\nabla^k_y h_{0k} \right]
+\nonumber\\
+&-&\partial_0\left[\int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)
+\left[ \tilde\nabla^k_z \tilde\nabla_k^z \tilde\nabla^j_z h_{ij}-\tilde\nabla_i^z \tilde\nabla^k_z \tilde\nabla^{\ell}_z h_{k\ell}\right]\right]
+\nonumber\\
+&=&\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)\left[ \tilde\nabla^k_z \tilde\nabla_k^z h_{0i}
+- \tilde\nabla_i^z \tilde\nabla^k_z h_{0k} \right]
+\nonumber\\
+&-&\partial_0\left[\int d^3y D^{(3)}(\mathbf x - \mathbf y) \int d^3z D^{(3)}(\mathbf y - \mathbf z)
+\left[ \tilde\nabla^k_z \tilde\nabla_k^z \tilde\nabla^j_z h_{ij}-\tilde\nabla_i^z \tilde\nabla^k_z \tilde\nabla^{\ell}_z h_{k\ell}\right]\right],
+\nonumber\\
+E_{ij}&=&\frac{1}{2}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\left[\tilde{\nabla}^y_k\tilde{\nabla}_y^kh_{ij}-\tilde{\nabla}^y_i\tilde{\nabla}_y^kh_{kj}-\tilde{\nabla}^y_j\tilde{\nabla}_y^kh_{ki}+\tilde{\nabla}^y_i\tilde{\nabla}^y_j(\delta^{k\ell}h_{k\ell})\right]
+\nonumber\\
+&+&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\left[\delta_{ij}\tilde{\nabla}^y_{\ell}\tilde{\nabla}_y^{\ell}+\tilde{\nabla}^y_i\tilde{\nabla}^y_j\right]\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\times
+\nonumber\\
+&&\left[\tilde{\nabla}_z^m \tilde{\nabla}_z^{n}h_{mn}-\tilde{\nabla}^z_k\tilde{\nabla}_z^k(\delta^{mn}h_{mn})\right],
+\label{2.8}
+\end{eqnarray}
+%
+where $D^{(3)}(\mathbf{x}-\mathbf{y})$ obeys 
+%
+\begin{eqnarray}
+\delta^{ij}\tilde{\nabla}_i\tilde{\nabla}_jD^{(3)}(\mathbf{x}-\mathbf{y})&=&\delta^3(\mathbf{x}-\mathbf{y}),\quad
+D^{(3)}(\mathbf{x}-\mathbf{y})=-\frac{1}{4\pi |\mathbf{x}-\mathbf{y}|},
+\nonumber\\
+\int d^3\mathbf{y}e^{i\mathbf{q}\cdot\mathbf{y}}D^{(3)}(\mathbf{x}-\mathbf{y})&=&-\frac{e^{i\mathbf{q}\cdot\mathbf{x}}}{q^2},
+\label{2.9}
+\end{eqnarray}
+%
+where $q^2=\delta^{ij}q_{i}q_{j}$, and where in a symbol such as $\tilde{\nabla}_y^i$ for instance the $y$ indicates that the derivative is taken with respect to the $y$ coordinate.
+
+However, there initially is a shortcoming to (\ref{2.7}) and (\ref{2.8}), since while $\psi$ and $E_{ij}$ are manifestly gauge invariant as is (they are expressed in terms of the gauge-invariant flat 3-space $\delta R_{ij}$ and $\delta^{ij}\delta R_{ij}$), to show the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i -\dot{E}_i$ we would need to be able to integrate by parts. (For $\phi+\dot{B}-\ddot{E}$  we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \tilde{\nabla}_k\tilde{\nabla}^k$ and $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside the double integral, while for $B_i-\dot{E}_i$ we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside.) Similarly, to show that $B_i -\dot{E}_i$ and $E_{ij}$ are transverse we would also need to be able to integrate by parts. Thus we would either have to put constraints on how $h_{\mu\nu}$ is to behave asymptotically, or restrict to requiring in the $E_{ij}$ sector that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be gauge invariant and that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse, or in the $E_{ij}$ plus $\psi$ sector restrict to requiring that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ be gauge invariant and that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse. 
+
+However, if we take $h_{\mu\nu}$  to be localized in space and oscillating in time, in the integrals given in (\ref{2.7}) and (\ref{2.8}) we then can integrate by parts. To be specific, suppose for each mode in a localized packet we set $h_{ij}=\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ where in this case $\omega(q)$ is not necessarily equal to $q$, and where $\epsilon_{ij}(q)$ is a polarization tensor, as constrained by the restriction that there be none of the $\delta(q)$ or $\delta(q)/q$ type terms that appear in (\ref{1.8}). For such a fluctuation the representative quantities $\psi$ and $E_{ij}$ as given in (\ref{2.7}) and (\ref{2.8}) then evaluate to
+%
+\begin{eqnarray}
+\psi&=&e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\frac{[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^2},
+\nonumber\\
+E_{ij}&=&e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\bigg{[}\frac{[q^2\epsilon_{ij}(q)-q_iq^k\epsilon_{kj}(q)-q_jq^k\epsilon_{ki}(q)+q_iq_j\delta^{k\ell}\epsilon_{k\ell}(q)]}{2q^2}
+\nonumber\\
+&+&\frac{(\delta_{ij}q^2+q_iq_j)[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^4}\bigg{]},
+\label{2.10}
+\end{eqnarray}
+%
+and one can readily check that $\tilde{\nabla}^jE_{ij}=0$. Thus for a wave packet  $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ (which for a choice of $a_q$ could be localized), we obtain 
+%
+\begin{eqnarray}
+\psi&=&\sum_qa_qe^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\frac{[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^2},
+\nonumber\\
+E_{ij}&=&\sum_qa_qe^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\bigg{[}\frac{[q^2\epsilon_{ij}(q)-q_iq^k\epsilon_{kj}(q)-q_jq^k\epsilon_{ki}(q)+q_iq_j\delta^{k\ell}\epsilon_{k\ell}(q)]}{2q^2}
+\nonumber\\
+&+&\frac{(\delta_{ij}q^2+q_iq_j)[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^4}\bigg{]},
+\label{2.11}
+\end{eqnarray}
+%
+and again $\tilde{\nabla}^jE_{ij}=0$. Now, for fluctuations around flat spacetime the set of all $e^{i\mathbf{q}\cdot\mathbf{x}-i\omega (q)t}$ plane waves is complete. Thus since any mode could be expanded as a general sum $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ over the plane waves, (\ref{2.11}) holds for the complete basis. Hence absent any $\delta(q)$ or $\delta (q)/q$ type terms we can  integrate by parts.
+
+
+By the same token we can also integrate the other SVT3 components, and obtain 
+%
+\begin{eqnarray}
+2\phi&=&-h_{00},\quad
+B=\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
+\nonumber\\
+B_i&=&h_{0i}-\tilde{\nabla}_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
+\nonumber\\
+E&=&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\left[3\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}h_{k\ell}-\tilde{\nabla}^z_k\tilde{\nabla}_z^k(\delta^{k\ell}h_{k\ell})\right],
+\nonumber\\
+E_i&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\left[\tilde{\nabla}^z_k\tilde{\nabla}_z^k\nabla_z^jh_{ij}-\nabla^z_i\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}h_{k\ell}\right]
+\label{2.12}
+\end{eqnarray}
+%
+While it immediately follows that $\tilde{\nabla}^iB_i=0$,  we need to be able to integrate by parts in order to be able to show that $\nabla^iE_i=0$. However, from (\ref{2.4}) and (\ref{2.6}) we can show directly that both $\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})$ and $\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(B_i-\dot{E}_i)$ are gauge invariant, with the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ themselves then following if we define $B$, $B_i$, $E$ and $E_i$ according to (\ref{2.12}). Thus modulo issues of integrations by parts, we establish that for fluctuations around flat spacetime all of the six $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ quantities that appear in $\delta G_{\mu\nu}$ as given in (\ref{2.3}) are gauge invariant. (In counting components $E_{ij}$ and $B_i-\dot{E_i}$ each have two components.)
+
+Now we had noted in \hyperref[c:decomposition_theorem]{Ch. 4} that we would need spatially asymptotic boundary conditions in order to be able to obtain a decomposition theorem for the SVT3 basis. We now see that we need this very same asymptotic condition in order to make transverseness and gauge invariance compatible. In fact, we actually need such boundary conditions in order to establish the SVT3 decomposition in the first place. Specifically, suppose that we are given some general vector $A_i$ and we want to extract out its transverse and longitudinal components and set $A_i=V_i+\partial_iL$. With $\partial_iV^i=0$ it follows that
+%
+\begin{eqnarray}
+\partial_i\partial^iL=\partial_iA^i.
+\label{2.13}
+\end{eqnarray}
+%
+Given (\ref{1.9}), the general  solution to (\ref{2.13}) is of the the form 
+%
+\begin{eqnarray}
+L({\bf x})&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_jA^j({\bf y})\\
+\nonumber\\
+&&+\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right],
+\label{2.14}
+\end{eqnarray}
+%
+from which it follows that 
+%
+\begin{eqnarray}
+A_i({\bf x})&=&V_i({\bf x})+\partial^x_iL=V_i({\bf x})+\partial^x_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_jA^j({\bf y})
+\nonumber\\
+&+&\partial^x_i\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right].
+\label{2.15}
+\end{eqnarray}
+%
+Now with the $\partial^x_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)$ term being the derivative of a scalar, initially it would appear that this term is longitudinal. However, applying $\partial_x^i$ to (\ref{2.15}) gives 
+%
+\begin{eqnarray}
+&&\partial_x^i\partial^x_i\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right]=0.
+\label{2.16}
+\end{eqnarray}
+%
+And thus in fact $\partial_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)$ is transverse. However, we had already defined $V_i$ as the transverse part of $A_i$, and thus $A_i$ could not have a second transverse piece, so that the surface term must be zero. And thus our very ability to write $A_i$ as
+%
+\begin{eqnarray}
+A_i({\bf x})=V_i({\bf x})+\partial_iL=V_i({\bf x})+\partial_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_jA^j({\bf y})
+\label{2.17}
+\end{eqnarray}
+%
+in the first place presupposes that the surface term in (\ref{2.15}) is zero, viz.
+%
+\begin{eqnarray}
+&&\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right]
+=0,
+\label{2.18}
+\end{eqnarray}
+%
+with $A_i$ thus needing to be well-behaved at spatial infinity. 
+
+Moreover, not only would  $A_i({\bf x})$ need to be asymptotically bounded so that we could uniquely decompose it into transverse and longitudinal components, as we noted for the SVT3 example given in \hyperref[c:decomposition_theorem]{Ch. 4} this is also a necessary condition for the decomposition theorem to be valid. To be specific, we note that if we take the theory to be just fluctuations around a flat background with no matter energy-momentum tensor, we can separate the various gauge-invariant combinations that appear in (\ref{2.3}) by taking derivatives of $\Delta G_{\mu\nu}=\delta G_{\mu\nu}+8\pi G \delta T_{\mu\nu}$ ($=\delta G_{\mu\nu}$ if $\delta T_{\mu\nu}=0$), to obtain
+%
+\begin{eqnarray}
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
+\nonumber\\
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(\phi+\dot{B}  -\ddot{E}),
+\nonumber\\
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(B_i-\dot{E}_i),
+\nonumber\\
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(-\ddot{E}_{ij}+\delta^{ef} \tilde{\nabla}_{e}\tilde{\nabla}_{f}E_{ij}),
+\label{2.19}
+\end{eqnarray}
+%
+and note that just as in (\ref{2.6}), we need to go to fourth-order derivatives. With the decomposition theorem requiring
+%
+\begin{eqnarray}
+0&=&- 2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
+\nonumber\\
+0&=&- 2 \tilde{\nabla}_{i}\dot{\psi},
+\nonumber\\
+0&=&\tfrac{1}{2} \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(B_{i} -  \dot{E}_{i}),
+\nonumber\\
+0&=&-2 \delta_{ij} \ddot{\psi} -  \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E})+ \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi 
+\nonumber\\
+&& +\tilde{\nabla}_{j}\tilde{\nabla}_{i}(\phi+\dot{B} -  \ddot{E}) - \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi,
+\nonumber\\
+0&=&\tfrac{1}{2} \tilde{\nabla}_{i}(\dot{B}_{j} - \ddot{E}_{j}) + \tfrac{1}{2} \tilde{\nabla}_{j}(\dot{B}_{i} 
+- \ddot{E}_{i}),
+\nonumber\\
+0&=&- \ddot{E}_{ij} + \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E_{ij}
+\label{2.20}
+\end{eqnarray}
+%
+in this case, we see that if for any quantity $D$ that obeys  $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}D=0$ (or $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}\delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}D=0$) we impose spatial boundary conditions on $D$ so that $D$ (or $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}D$) vanishes,  the decomposition theorem will then follow for the $\delta G_{\mu\nu}$ associated with fluctuations around a flat Minkowski background. In this paper we will explore the degree to which this will also be the case for SVT3 fluctuations around some cosmologically interesting backgrounds where the fluctuation equations are more complicated than in the flat background case.
+
+As we will see immediately in \hyperref[s:svt4]{SVT4}, we will also need an asymptotic condition in order to establish the very existence of an SVT4 decomposition for the individual components of the fluctuations. However, this is not in general sufficient to provide for a decomposition theorem for the fluctuation equation itself in the SVT4 case. So we turn now to analyze the SVT4 case in detail. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SVTD}
+\label{s:svtd}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The discussion given above is not manifestly covariant as the SVT3 components are defined with respect to a three-dimensional subspace of four-dimensional spacetime. (The gauge invariance of the SVT3 formalism shows that it is covariant, just not manifestly so.) It would thus be instructive to develop a formalism that is manifestly covariant, one in which the SVT components are defined with respect to the full space rather than a subspace of it. To this end we adapt the discussion we gave in \cite{amarasinghe_2019}, and so as to be as general as possible consider the SVTD basis in a D-dimensional space.  With Greek indices that range over the full D-dimensional space we first construct a symmetric rank two tensor $F_{\mu\nu}$  that is transverse and traceless in the full D-dimensional space. (Our previously introduced $E_{ij}$ was only transverse and traceless in a 3-dimensional subspace.) The $F_{\mu\nu}$ tensor will have $D(D+1)/2-D-1=(D+1)(D-2)/2$ components, and thus for the full $h_{\mu\nu}$ we need $D+1$ additional pieces of information. For our purposes here we can provide the needed information while at the same time simplifying the discussion given in \cite{amarasinghe_2019} by introducing a D-dimensional  vector $W_{\mu}$, with the one extra needed piece of information being provided by $h=g^{\mu\nu}h_{\mu\nu}$. In terms of this $W_{\mu}$ and $h$ we have found it very convenient to define a general $h_{\mu\nu}$ fluctuation around a flat D-dimensional space to be of the form
+%
+\begin{eqnarray}
+h_{\mu\nu}=2F_{\mu\nu}+\nabla_{\nu}W_{\mu}+\nabla_{\mu}W_{\nu}+\frac{2-D}{D-1}\nabla_{\mu}\nabla_{\nu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}
+\nonumber\\
+-\frac{g_{\mu\nu}}{D-1}(\nabla^{\alpha}W_{\alpha}-h)-\frac{\nabla_{\mu}\nabla_{\nu}}{D-1}\int d^DyD^{(D)}(x-y)h,
+\label{3.1}
+\end{eqnarray}
+%
+where the flat spacetime $D^{(D)}(x-y)$ obeys 
+%
+\begin{eqnarray}
+g^{\mu\nu}\nabla_{\mu}\nabla_{\nu}D^{(D)}(x-y)=\delta^{(D)}(x-y).
+\label{3.2}
+\end{eqnarray}
+%
+As with the SVT3 case discussed in Sec. \ref{S2}, implicit in the form given for $h_{\mu\nu}$  is that the now D-dimensional integrals exist, with $\nabla^{\alpha}W_{\alpha}$ being sufficiently well-behaved at infinity.
+To make the $F_{\mu\nu}$ that is defined by (\ref{3.1}) be transverse and traceless requires D+1 conditions, D to be supplied by $W_{\mu}$ and one  to be supplied by $h$. Taking the trace of (\ref{3.1}) shows that as defined $F_{\mu\nu}$ already is traceless (because of the way that $h$ has judiciously been introduced in (\ref{3.1})), while applying $\nabla^{\nu}$  to (\ref{3.1}) yields
+%
+\begin{eqnarray}
+\nabla^{\nu}h_{\nu\mu}=\nabla_{\alpha}\nabla^{\alpha}W_{\mu},
+\label{3.3}
+\end{eqnarray}
+% 
+to thus fix the D components of $W_{\mu}$. The assumed boundedness of $\nabla^{\alpha}W_{\alpha}$ thus correlates with the boundedness of $h_{\mu\nu}$, and  for any sufficiently bounded $W_{\mu}$ that obeys (\ref{3.3}) the D-dimensional rank two tensor $F_{\mu\nu}$ is transverse and traceless.
+
+On now applying $\nabla_{\alpha}\nabla^{\alpha}$ to (\ref{3.1}) we obtain
+%
+\begin{eqnarray}
+\nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}&=&2\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}+\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}+\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\frac{2-D}{D-1}\nabla_{\mu}\nabla_{\nu}\nabla^{\alpha}W_{\alpha}
+\nonumber\\
+&-&\frac{g_{\mu\nu}}{D-1}(\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h)-\frac{\nabla_{\mu}\nabla_{\nu}}{D-1}h,
+\label{3.4}
+\end{eqnarray}
+%
+and on rearranging we obtain
+%
+\begin{eqnarray}
+&&\nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h
+\nonumber\\
+&=&2\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}+\frac{2-D}{D-1}\nabla_{\mu}\nabla_{\nu}[\nabla^{\alpha}W_{\alpha}-h]
+\nonumber\\
+&&-\frac{g_{\mu\nu}}{D-1}(\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h).
+\label{3.5}
+\end{eqnarray}
+%
+Now $\nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h$ and $\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h$ are both gauge invariant (the first term is equal to the D-dimensional fluctuation $2\delta R_{\mu\nu}$ around flat spacetime and the second to $-\delta R$). Now since
+%
+\begin{eqnarray}
+\nabla_{\beta}\nabla^{\beta}[\nabla^{\alpha}W_{\alpha}-h]=\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h,
+\label{3.6}
+\end{eqnarray}
+%
+we define
+%
+\begin{eqnarray}
+\nabla^{\alpha}W_{\alpha}-h=\int d^DyD^{(D)}(x-y)[\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h],
+\label{3.7}
+\end{eqnarray}
+%
+and with this solution we see that  $\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}$ is gauge invariant. However as with $E_{ij}$ in the SVT3 case, to show that $\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}$ is transverse requires that we can integrate by parts.
+
+We now make the following definitions
+%
+\begin{eqnarray}
+2\chi&=&\frac{1}{D-1}[\nabla^{\alpha}W_{\alpha}-h],\quad 
+\quad 2F=\frac{1}{D-1}\int d^DyD^{(D)}(x-y)[D\nabla^{\alpha}W_{\alpha}-h],
+\nonumber\\
+F_{\mu}&=&W_{\mu}-\nabla_{\mu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}.
+\label{3.8}
+\end{eqnarray}
+%
+From (\ref{3.8})  it follows that  $\nabla^{\mu}F_{\mu}=0$, with, as per (\ref{3.7}),  $\chi$ being the integral of a gauge-invariant function so that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is automatically gauge invariant. Given (\ref{3.8}) we can rewrite (\ref{3.1}) as 
+%
+\begin{eqnarray}
+h_{\mu\nu}=-2g_{\mu\nu}\chi+2\nabla_{\mu}\nabla_{\nu}F
++ \nabla_{\mu}F_{\nu}+\nabla_{\nu}F_{\mu}+2F_{\mu\nu},
+\label{3.9}
+\end{eqnarray}
+%
+to thus write $h_{\mu\nu}$ in an SVTD  basis. In a general D-dimensional basis $F_{\mu\nu}$ has $(D+1)(D-2)/2$ components, the transverse $F_{\mu}$ has $D-1$ components, the two scalars $\chi$ and $F$ each have one component, and together they comprise the $D(D+1)/2$ components of a general $h_{\mu\nu}$. If we set $D=3$, we recognize (\ref{3.9}) as the spatial piece of SVT3 given in (\ref{2.1}), just as it should be.
+
+Now in a fluctuation around flat D-dimensional spacetime $\delta G_{\mu\nu}$ can only contain $D(D+1)/2-D=D(D-1)/2$ independent gauge-invariant combinations. With $F_{\mu\nu}$ having $(D+1)(D-2)/2$ components and $\chi$ having one, viz. precisely a total of $D(D-1)/2$, and  with the derivatives of both them being gauge invariant, it follows that $\delta G_{\mu\nu}$ can only depend on $F_{\mu\nu}$ and $\chi$. And given (\ref{3.8}) and (\ref{3.9}), via (\ref{3.5}), (\ref{3.6}) and (\ref{3.7}) we obtain  the following gauge-invariant relations
+%
+\begin{eqnarray}
+2\nabla_{\alpha}\nabla^{\alpha}\chi&=&\frac{1}{D-1}\left[\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h\right],
+\nonumber\\
+2\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu}&=&\nabla_{\beta}\nabla^{\beta}\left[\nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h\right]
+\nonumber\\
+&+&\frac{1}{D-1}\left[(D-2)\nabla_{\mu}\nabla_{\nu}+g_{\mu\nu}\nabla_{\gamma}\nabla^{\gamma}\right][\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h],
+\nonumber\\
+\delta R_{\mu\nu}&=&\frac{1}{2}[2\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}+2(2-D)\nabla_{\mu}\nabla_{\nu}\chi-2g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}\chi],
+\nonumber\\
+ \delta R&=&2(1-D)\nabla_{\alpha}\nabla^{\alpha}\chi,
+\nonumber\\
+\delta G_{\mu\nu}&=&\delta R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}g^{\alpha\beta}\delta R_{\alpha\beta}=\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}
+\nonumber\\
+&&+(D-2)(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu})\chi,
+\nonumber\\
+g^{\mu\nu}\delta G_{\mu\nu}&=&(D-2)(D-1)\nabla_{\alpha}\nabla^{\alpha}\chi,
+\label{3.10}
+\end{eqnarray}
+%
+kinematic relations that hold without the imposition of any fluctuation equation of motion. As we see, $\delta G_{\mu\nu}$ nicely depends  on just $F_{\mu\nu}$ and $\chi$, and one can readily check that $\delta G_{\mu\nu}$ automatically obeys $\nabla^{\nu}\delta G_{\mu\nu}=0$.  And with all the components of $\delta G_{\mu\nu}$ being gauge invariant for fluctuations around a D-dimensional flat spacetime,  from the expression for $g^{\mu\nu}\delta G_{\mu\nu}$  we can infer only that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is gauge invariant. And on then applying $\nabla_{\alpha}\nabla^{\alpha}$ to the $\delta G_{\mu\nu}$ equation we can infer only that $\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu}$ is gauge invariant. As noted before, we can only proceed from these conditions to the gauge invariance of $\chi$ and $F_{\mu\nu}$ themselves if we can integrate by parts, and we explore this point further in the Appendix (see also the discussion following (\ref{A.27a})). In the Appendix we also provide a generalization of the SVTD approach to the general D-dimensional curved spacetime background.
+
+
+In $D=4$ we note that $F_{\mu\nu}$ has five components and $\chi$ has one. Since in a fluctuation around a flat four spacetime $\delta G_{\mu\nu}$ can only contain six independent gauge-invariant combinations, it can only depend on $F_{\mu\nu}$ and $\chi$. Thus using a manifestly covariant formalism we replace the six gauge-invariant combinations $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ used in SVT3 by the six gauge-invariant combinations $F_{\mu\nu}$ and $\chi$ used in SVT4. This is an altogether more compact set of gauge-invariant combinations, with $\delta G_{\mu\nu}$ as given in (\ref{3.10}) being altogether simpler than its form given in (\ref{2.3}). And being simpler to write down, it is also simpler to solve. However, before looking at solutions to the SVT4 fluctuation equations it is instructive to relate the SVT4 and SVT3 bases and determine which SVT4 components correspond to which SVT3 components.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Structure and Asymptotic Behavior($D=4$)}
+\label{S1e}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Now even though classifying the scalar, vector, tensor expansion of the fluctuations according to their behavior under three-dimensional rotations is not manifestly covariant, it is in fact covariant as it leads to fluctuation equations that are gauge invariant, something we will explicitly demonstrate below in some specific cases. Nonetheless, it would be of value to classify the scalar, vector, tensor expansion according to a behavior that is manifestly covariant, i.e. according to an expansion that is classified according to four-dimensional general coordinate scalars, vectors and tensors. We introduced such an SVT4 expansion in \cite{Amarasinghe2018} and will develop it in detail in the body of the text below. And in fact we will find that when written in the SVT4 basis the fluctuation equations are simpler than when written according to SVT3. However, for the moment we note only that for fluctuations around a four-dimensional flat Minkowski background the SVT4 expansion takes the form 
+%
+\begin{eqnarray}
+h_{\mu\nu}=-2\eta_{\mu\nu}\chi+2\partial_{\mu}\partial_{\nu}F
++ \partial_{\mu}F_{\nu}+\partial_{\nu}F_{\mu}+2F_{\mu\nu},
+\label{1.32a}
+\end{eqnarray}
+%
+where 
+%
+\begin{eqnarray}
+\partial_{\mu} F^{\mu}= 0, \quad F_{\mu\nu}=F_{\nu\mu},\quad \partial^{\nu}F_{\mu\nu} = 0, \quad \eta^{\mu\nu}F_{\mu\nu} = 0.
+\label{1.33a}
+\end{eqnarray}
+%
+As written, (\ref{1.32a}) contains ten elements, whose transformations are defined with respect to the background as two four-dimensional scalars ($\chi$, $F$) each with one degree of freedom, one transverse four-dimensional vector  ($F_{\mu}$) with three independent degrees of freedom, and one symmetric four-dimensional transverse-traceless tensor ($F_{\mu\nu}$) with five degrees of freedom. Since the gauge-invariant equations have to  contain a total of six gauge-invariant degrees of freedom, they must contain the five-component $F_{\mu\nu}$ and one combination of the five other components that appear in (\ref{1.33a}) (without $F_{\mu\nu}$ we cannot get to six). As we will see, for fluctuations around a flat background the gauge-invariant combinations will be $F_{\mu\nu}$ and $\chi$. For fluctuations around a curved background the gauge-invariant combinations must again include the five-component $F_{\mu\nu}$, but in general the sixth gauge-invariant combination will be a linear combination of the other five components that appear in (\ref{1.33a}) (see (\ref{6.54}) below for a specific example).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relating SVT3 to SVT4}
+\label{s:relating_svt3_to_svt4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+As constructed, for fluctuations around a flat four-dimensional background the SVT4 $F_{\mu\nu}$ has five independent components. When decomposed in an SVT3 basis it must contain a two-component transverse-traceless three-space rank two tensor, a two-component transverse three-space vector and a one-component three-space scalar. Moreover, assuming we can integrate by parts, all of these components must be gauge invariant. Thus the SVT3 rank two tensor associated with $F_{\mu\nu}$ must be $E_{ij}$ and the SVT3 vector must be  $B_i-\dot{E}_i$. However, this does not uniquely specify the three-space structure of the scalar component of $F_{\mu\nu}$ or of that of $\chi$, as gauge invariance alone does not provide sufficient information to enable us to determine what particular linear combinations of  $\psi$ and  $\phi+\dot{B}-\ddot{E}$ we should associate with each of them. Moreover, comparing the SVT3 and SVT4 expansions of $\delta G_{\mu\nu}$ as given in (\ref{2.3}) and (\ref{3.10}) respectively also does not enable us to uniquely specify the needed scalar combinations. We thus require another gauge-invariant gravitational fluctuation tensor, one in which the various combinations appear in a different way. We thus need to construct the fluctuation equations associated with varying a pure metric gravitational action other than the Einstein-Hilbert one, since any such fluctuation equations would still be gauge invariant. Moreover, it would be very helpful if we could find a fluctuation equation that only involved $F_{\mu\nu}$ and not $\chi$ or $F$ or $F_{\mu}$. Such a fluctuation equation is provided by the conformal gravity theory, since its underlying conformal symmetry requires that the gravitational fluctuation tensor,  labelled $\delta W_{\mu\nu}$, be traceless, to thus only depend on five rather than six gauge-invariant quantities, to thus necessarily not possess one of the SVT3 scalars.
+
+
+Conformal gravity has been advanced \cite{mannheim_kazanas_1989,mannheim_kazanas_1994,mannheim_2006,mannheim_2012,mannheim_2017} as a possible candidate alternative to standard Einstein gravity, and while we will study some of its implications for cosmology below, for the moment our interest is only in the fact that it provides us with a convenient gauge-invariant quantity $\delta W_{\mu\nu}$. As such, conformal gravity is a pure metric theory of gravity that possesses all of the general coordinate invariance and equivalence principle structure of standard gravity while augmenting it with an additional symmetry, local conformal invariance, in which  the action is left invariant under local conformal transformations on the metric of the form $g_{\mu\nu}(x)\rightarrow e^{2\alpha(x)}g_{\mu\nu}(x)$ with arbitrary local phase $\alpha(x)$. Under such a symmetry a gravitational action that is to be a polynomial function of the Riemann tensor is uniquely prescribed, and with use of the Gauss-Bonnet theorem is given by (see e.g. \cite{mannheim_2006}) 
+%
+\begin{eqnarray}
+I_{\rm W}&=&-\alpha_g\int d^4x\, (-g)^{1/2}C_{\lambda\mu\nu\kappa}
+C^{\lambda\mu\nu\kappa}
+\nonumber\\
+&\equiv& -2\alpha_g\int d^4x\, (-g)^{1/2}\left[R_{\mu\kappa}R^{\mu\kappa}-\frac{1}{3} (R^{\alpha}_{\phantom{\alpha}\alpha})^2\right].
+\label{4.1}
+\end{eqnarray}
+% 
+Here $\alpha_g$ is a dimensionless  gravitational coupling constant, and
+%
+\begin{eqnarray}
+C_{\lambda\mu\nu\kappa}&=& R_{\lambda\mu\nu\kappa}
+-\frac{1}{2}\left(g_{\lambda\nu}R_{\mu\kappa}-
+g_{\lambda\kappa}R_{\mu\nu}-
+g_{\mu\nu}R_{\lambda\kappa}+
+g_{\mu\kappa}R_{\lambda\nu}\right)
+\nonumber\\
+&&+\frac{1}{6}R^{\alpha}_{\phantom{\alpha}\alpha}\left(
+g_{\lambda\nu}g_{\mu\kappa}-
+g_{\lambda\kappa}g_{\mu\nu}\right)
+\label{4.2}
+\end{eqnarray}
+% 
+is the conformal Weyl tensor. The conformal Weyl tensor has two features that are not possessed by the Einstein tensor, namely that it that vanishes in geometries that are conformal to flat (this precisely being the case for  the Robertson-Walker and de Sitter geometries that are of relevance to cosmology, with the background $T_{\mu\nu}$ then being zero),  and that for any metric $g_{\mu\nu}(x)$ it transforms as  $C^{\lambda}_{\phantom{\lambda}\mu\nu\kappa} \rightarrow  C^{\lambda}_{\phantom{\lambda}\mu\nu\kappa}$ under $g_{\mu\nu}(x)\rightarrow e^{2\alpha(x)}g_{\mu\nu}(x)$, with all derivatives of $\alpha(x)$ dropping out. With all of these derivatives dropping out $I_{\rm W}$ is locally conformal invariant.
+
+With the Weyl action $I_{\rm W}$ given in  (\ref{4.1}) being a fourth-order derivative function of the metric, functional variation with respect to the metric $g_{\mu\nu}(x)$ generates fourth-order derivative gravitational equations of motion of the form \cite{mannheim_2006} 
+%
+\begin{eqnarray}
+-\frac{2}{(-g)^{1/2}}\frac{\delta I_{\rm W}}{\delta g_{\mu\nu}}&=&4\alpha_g W^{\mu\nu}=4\alpha_g\left[2\nabla_{\kappa}\nabla_{\lambda}C^{\mu\lambda\nu\kappa}-
+R_{\kappa\lambda}C^{\mu\lambda\nu\kappa}\right]
+\nonumber\\
+&=&4\alpha_g\left[W^{\mu
+	\nu}_{(2)}-\frac{1}{3}W^{\mu\nu}_{(1)}\right]=T^{\mu\nu},
+\label{4.3}
+\end{eqnarray}
+% 
+where the functions $W^{\mu \nu}_{(1)}$ and $W^{\mu \nu}_{(2)}$ (respectively associated with the $(R^{\alpha}_{\phantom{\alpha}\alpha})^2$ and $R_{\mu\kappa}R^{\mu\kappa}$ terms in (\ref{4.1})) are given by
+%                                                                               
+\begin{eqnarray}
+W^{\mu \nu}_{(1)}&=&
+2g^{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}                                             
+-2\nabla^{\nu}\nabla^{\mu}R^{\alpha}_{\phantom{\alpha}\alpha}                          
+-2 R^{\alpha}_{\phantom{\alpha}\alpha}R^{\mu\nu}                              
++\frac{1}{2}g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})^2,
+\nonumber\\
+W^{\mu \nu}_{(2)}&=&
+\frac{1}{2}g^{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}
++\nabla_{\beta}\nabla^{\beta}R^{\mu\nu}                    
+-\nabla_{\beta}\nabla^{\nu}R^{\mu\beta}                       
+-\nabla_{\beta}\nabla^{\mu}R^{\nu \beta}                          
+- 2R^{\mu\beta}R^{\nu}_{\phantom{\nu}\beta}
+\nonumber\\
+&&+\frac{1}{2}g^{\mu\nu}R_{\alpha\beta}R^{\alpha\beta},
+\label{4.4}
+\end{eqnarray}                                 
+%
+and where $T^{\mu\nu}$ is the conformal invariant, and thus traceless, energy-momentum tensor associated with a conformal matter source.  Since $W^{\mu\nu}=W^{\mu
+	\nu}_{(2)}-(1/3)W^{\mu\nu}_{(1)}$, known as the Bach tensor \cite{bach_1921},  is obtained from an action that is both general coordinate invariant and conformal invariant, in consequence, and without needing to impose any equation of motion or stationarity condition, $W^{\mu\nu}$ is automatically covariantly conserved and traceless and obeys $\nabla_{\nu}W^{\mu\nu}=0$, $g_{\mu\nu}W^{\mu\nu}=0$ on every variational path used for the functional variation of $I_{\rm W}$. Even though conformal gravity is a fourth-order derivative theory, we should note that as a quantum theory  it does not possess any of the negative norm ghost states that such higher-derivative theories are thought to have, to thus be unitary  \cite{bender_mannheim_2008a}. 
+
+For fluctuations around a four-dimensional flat spacetime the gravitational $\delta W_{\mu\nu}$  takes the form \cite{mannheim_2006}
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}&=&\frac{1}{2}(\eta^{\rho}_{\phantom{\rho} \mu} \partial^{\alpha}\partial_{\alpha}-\partial^{\rho}\partial_{\mu})
+(\eta^{\sigma}_{\phantom{\sigma} \nu} \partial^{\beta}\partial_{\beta}-
+\partial^{\sigma}\partial_{\nu})K_{\rho \sigma}
+\nonumber\\
+&&- \frac{1}{6}(\eta_{\mu \nu} \partial^{\gamma}\partial_{\gamma}-
+\partial_{\mu}\partial_{\nu})(\eta^{\rho \sigma} \partial^{\delta}\partial_{\delta}-
+\partial^{\rho}\partial^{\sigma})K_{\rho\sigma},
+\label{4.5}
+\end{eqnarray}
+%
+where $K_{\mu\nu}=h_{\mu\nu}-(1/4)g_{\mu\nu}h$. Evaluating (\ref{4.5}) in the SVT3 basis given in (\ref{2.1}) gives \cite{amarasinghe_2019}
+%
+\begin{eqnarray}
+\delta W_{00}  &=& -\frac{2}{3} \delta^{mn}\delta^{\ell k}\tilde{\nabla}_m\tilde{\nabla}_n\tilde{\nabla}_{\ell}\tilde{\nabla}_k (\phi + \psi +\dot{B}-\ddot{E}),
+\nonumber\\	
+\delta W_{0i} &=&  -\frac{2}{3} \delta^{mn}\tilde{\nabla}_i\tilde{\nabla}_m\tilde{\nabla}_n\partial_0(\phi +\psi +\dot{B}-\ddot{E})
++\frac{1}{2}\bigg[\delta^{mn}\delta^{\ell k}\tilde{\nabla}_m\tilde{\nabla}_n\tilde{\nabla}_{\ell}\tilde{\nabla}_k(B_i - \dot{E}_i)
+\nonumber\\
+&& -  \delta^{\ell k}\tilde{\nabla}_{\ell}\tilde{\nabla}_k \partial_0^2(B_i - \dot{E}_i)\bigg],
+\nonumber\\	
+\delta W_{ij}  &=& \frac{1}{3}\bigg{[} \delta_{ij}\delta^{\ell k}\tilde{\nabla}_{\ell}\tilde{\nabla}_k  \partial_0^2(\phi+ \psi+\dot{B}-\ddot{E}) + \delta^{\ell k}\tilde{\nabla}_{\ell}\tilde{\nabla}_k \tilde{\nabla}_i\tilde{\nabla}_j (\phi + \psi +\dot{B}-\ddot{E}) 
+\nonumber\\
+&&- \delta_{ij} \delta^{mn}\delta^{\ell k}\tilde{\nabla}_m\tilde{\nabla}_n\tilde{\nabla}_{\ell}\tilde{\nabla}_k(\phi + \psi +\dot{B}-\ddot{E}) -3\tilde{\nabla}_i\tilde{\nabla}_j \partial_0^2(\phi + \psi +\dot{B}-\ddot{E})\bigg{] }
+\nonumber\\
+&&+\frac{1}{2}\bigg[ \delta^{\ell k}\tilde{\nabla}_{\ell}\tilde{\nabla}_k \tilde{\nabla}_i   \partial_0(B_j - \dot{E}_j)+ \delta^{\ell k}\tilde{\nabla}_{\ell}\tilde{\nabla}_k \tilde{\nabla}_j \partial_0(B_i - \dot{E}_i) - \tilde{\nabla}_i\partial_0^3(B_j - \dot{E}_j)
+\nonumber\\
+&&-\tilde{\nabla}_j\partial_0^3(B_i - \dot{E}_i)\bigg] +\left[\delta^{mn}\tilde{\nabla}_m\tilde{\nabla}_n-\partial_0^2\right]^2E_{ij},
+\label{4.6}
+\end{eqnarray}
+%
+with $\delta W_{\mu\nu}$ being gauge invariant on its own since for fluctuations around flat spacetime the background $T_{\mu\nu}$ and thus the fluctuation $\delta T_{\mu\nu}$ are both zero. Similarly,  evaluating (\ref{4.5}) in the SVT4 basis given in (\ref{3.9}) gives 
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}=\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu},
+\label{4.7}
+\end{eqnarray}
+%
+an expression that we note is structurally  simpler than its Einstein $\delta G_{\mu\nu}$ counterpart given  in (\ref{3.10}). 
+
+
+Because of its tracelessness, in both SVT3 and SVT4 $\delta W_{\mu\nu}$ only contains five gauge-invariant combinations. And from its SVT3 structure we can now unambiguously identify $\phi + \psi +\dot{B}-\ddot{E}$ as the three-dimensional scalar piece of $F_{\mu\nu}$. In addition, from (\ref{3.10}) we can identify $\chi$ according to $3\nabla_{\alpha}\nabla^{\alpha}\chi=-\delta^{ij}\tilde{\nabla}_i\tilde{\nabla}_j(\phi  +\psi +\dot{B}-\ddot{E})+3\delta^{ij}\tilde{\nabla}_{i}\tilde{\nabla}_{j}\psi-3\ddot{\psi}$, where we recall that for fluctuations around flat $\psi$ is gauge invariant on its own. Thus from the three-dimensional perspective, for fluctuations around flat spacetime $F_{\mu\nu}$ contains $E_{ij}$, $B_i-\dot{E}_i$ and $\phi + \psi +\dot{B}-\ddot{E}$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Decomposition Theorem and Boundary Conditions}
+\label{s:decomposition_theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+One of the key features of this present study is in exploring the role that these very same boundary conditions play in establishing the so-called decomposition theorem. Specifically, in attempts to solve cosmological  evolution fluctuation equations that have been presented in the literature appeal is commonly made to the decomposition theorem in which it is assumed that the fluctuation equations are solved independently by the separate scalar, vector and tensor sectors, so that these sectors then evolve independently. Thus for the schematic example in which the fluctuation equations  take the generic flat space form
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SVT3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{eqnarray}
+B_i+\partial_iB=C_i+\partial_iC,
+\label{1.3}
+\end{eqnarray}
+%
+where the $B$ and $B_i$ are given by (\ref{1.1}), and where the $C$ and $C_i$ are functions given by the evolution equations with $C_i$ obeying  $\partial_iC^i=0$, the decomposition theorem requires that one set
+%
+\begin{eqnarray}
+B_i= C_i,\quad \partial_iB=\partial_iC.
+\label{1.4}
+\end{eqnarray}
+%
+However, (\ref{1.4}) does not follow from (\ref{1.3}), since on applying $\partial^i$ and $\epsilon^{ijk}\partial_j$  to (\ref{1.3}) we obtain 
+%
+\begin{eqnarray}
+\partial^i\partial_i(B-C)=0,\quad \epsilon^{ijk}\partial_j(B_k-C_k)=0,
+\label{1.5}
+\end{eqnarray}
+%
+and from this we can only conclude that $B$ and $C$ can differ by any function $B-C=D$ that obeys $\partial^i\partial_iD=0$, while $B_k$ and $C_k$ can differ by any function $B_k-C_k=D_k$ that obeys $\epsilon^{ijk}\partial_jD_k=0$, i.e. by any $D_k$ that can be written as the gradient of a scalar. Thus in (\ref{1.5}) we have separated the various scalar and vector components that are present in (\ref{1.3}), to thus obtain a decomposition for the components. However, we cannot proceed from (\ref{1.5}) to (\ref{1.4}) without providing some further information, and as we show below, in order to do so in this particular case we will only need to impose spatially asymptotic boundary conditions of the type that we referred to above.
+
+
+We would like to state again that in obtaining (\ref{1.5}) we have not obtained (\ref{1.4}) itself, viz. the conditions that would be required by the decomposition theorem, but have instead obtained a derivative version of it. As we will see below, in the various cosmological models that we shall study it will be characteristic that while the scalar, vector and tensor combinations can indeed be separated, they can only be separated at a higher-derivative level. And not only that, in some cases they only separate at a quite high derivative level. The objective of this paper is to first seek the relevant higher-derivative level at which the general scalar, vector and tensor combinations do indeed separate in some relevant cosmological models, and to then seek conditions such as asymptotic boundary conditions under which the scalar, vector and tensor combinations might then separate at the level of the equations of motion themselves. In not all of the cases that we study will this prove to be the case. The analyses of all of the various cosmological models of interest involve many steps, with the most straightforward for the reader being the SVT3 analysis of fluctuations around a de Sitter background that we provide in Sec. \ref{S7}. 
+
+
+However, before getting into the complexity of actual cosmological models, and so as to give the reader a sense of what is needed in order to derive the decomposition theorem, in this introduction we shall provide a few generic examples that do not involve the need to go to a particularly high derivative level. Thus for (\ref{1.5}) itself for instance we now show that in order to be able to proceed from (\ref{1.5}) to (\ref{1.4}) we need to impose asymptotic boundary conditions. Specifically, since three-dimensional plane waves form a complete basis for the operator $\partial_i\partial^i$, we can write a general solution for $B-C=D$ in the form
+%
+\begin{eqnarray}
+D=\sum _{\bf k}a_{\bf k}e^{i\textbf{k}\cdot \textbf{x}},
+\label{1.6}
+\end{eqnarray}
+%
+where the $a_{\bf k}$ are constrained to obey 
+%
+\begin{eqnarray}
+{\bf k}^2a_{\bf k}=0.
+\label{1.7}
+\end{eqnarray}
+%
+However, in and of itself (\ref{1.7}) does not lead to $a_{\bf k}=0$ (and thus to $D=0$) as this is not the only allowed solution to (\ref{1.7}). Rather, since $k^2\delta(k)=0$, $k^2\delta(k)/k=0$ we can set
+%
+\begin{eqnarray}
+a_{\bf k}&=&\alpha_k\delta(k_x)\delta(k_y)\delta(k_z)
+\nonumber\\
+&&+\beta_k\left[\frac{\delta (k_x)\delta (k_y)\delta (k_z)}{k_x}+\frac{\delta (k_x)\delta (k_y)\delta (k_z)}{k_y}+\frac{\delta (k_x)\delta (k_y)\delta (k_z)}{k_z}\right],
+\label{1.8}
+\end{eqnarray}
+%
+where $\alpha_k$ and $\beta_k$ are constants. Inserting the $\alpha_k$ term  into (\ref{1.6}) would remove the ${\bf x}$ dependence from $D$ and provide a constant $D$ that would then not vanish at spatial infinity. Inserting the $\beta_k$ term  into (\ref{1.6}) would provide a $D$ that grows linearly in ${\bf x}$, to thus also not vanish at spatial infinity. Thus a spatially convergent  form for $D$ that would, for instance  be provided by taking  $a_{\bf k}$ to be a convergent $\exp(-{\bf k}^2a^2)$ Gaussian in momentum space would be excluded, with  $\partial_i\partial^iD=0$ having no localized solutions at all. If we can exclude non-zero $D$, we can set $B=C$, and thus via (\ref{1.3})  can set $B_i=C_i$.  A spatially asymptotic boundary condition is thus needed in order to recover a decomposition theorem. Consequently, we can correlate the establishing of the decomposition theorem with the very existence of the SVT3 basis in the first place as both require asymptotic boundary conditions.
+
+
+Further insight into the role of boundary conditions can be provided by studying the behavior of $\partial_i\partial^iD=0$ in coordinate space. To this end  we recall the identity
+%
+\begin{eqnarray}
+A \partial_i\partial^iB-B \partial_i\partial^iA=\partial_i(A\partial^iB-B\partial^iA).
+\label{1.9}
+\end{eqnarray}
+%
+Taking the generic $A$, like $D$, to be a function that obeys $\partial_i\partial^iA=0$ and taking $B$ to be the propagator $D^{(3)}(\mathbf{x}-\mathbf{y})$ that obeys 
+%
+\begin{eqnarray}
+\partial_i\partial^iD^{(3)}(\mathbf{x}-\mathbf{y})=\delta^3(\mathbf{x}-\mathbf{y}),
+\label{1.10}
+\end{eqnarray}
+%
+enables us to write $A$ as an asymptotic surface term of the form 
+%
+\begin{eqnarray}
+A({\bf x}) =\int dS_y^i\left[A({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iA({\bf y})\right],
+\label{1.11}
+\end{eqnarray}
+%
+as integrated over a closed surface $S$. The vanishing of the asymptotic surface term then makes $A$ vanish identically. Thus the two non-trivial solutions to $\partial_i\partial^iA=0$, viz. $A$  is a constant or of the form ${\bf n}\cdot {\bf x}$ where ${\bf n}$ is a reference vector (the coordinate analogs of  (\ref{1.8})), are then excluded by an asymptotic boundary condition. Requiring that the asymptotic surface term in (\ref{1.11}) vanish then forces the only solution to $\partial_i\partial^iA=0$ to be $A=0$.
+
+In cosmology where it is convenient to use  polar coordinates, one has to adapt (\ref{1.11}). When written  in polar coordinates with still flat metric $\gamma_{ij}$ and metric determinant $\gamma$, (\ref{1.11}) is replaced by 
+
+%
+\begin{eqnarray}
+A(\textbf{x})=\int dS\left[A(\mathbf{y})\frac{\partial D^{(3)}(\mathbf{x},\mathbf{y})}{\partial  n} -D^{(3)}(\mathbf{x},\mathbf{y})\frac{\partial A(\mathbf{y})}{\partial n}\right],
+\label{1.12a}
+\end{eqnarray}
+%
+where $\partial/\partial n$ is the out-directed normal derivative on the surface S, and the propagator obeys
+%
+\begin{eqnarray}
+\nabla_i\nabla^iD^{(3)}(\mathbf{x},\mathbf{y})=\gamma^{-1/2}\delta^3(\mathbf{x}-\mathbf{y}).
+\label{1.13a}
+\end{eqnarray}
+%
+For $D^{(3)}(\mathbf{x},\mathbf{y})=-1/4\pi|\mathbf{x}-\mathbf{y}|$, (\ref{1.12a}) takes the form
+%
+\begin{eqnarray}
+A(\textbf{x})=\frac{1}{4\pi} \int dS\left[\frac{1}{|\mathbf{x}-\mathbf{y}|}\frac{\partial A(\mathbf{y})}{\partial n}-
+A(\mathbf{y})\frac{\partial}{\partial  n}\frac{1}{|\mathbf{x}-\mathbf{y}|}\right].
+\label{1.14a}
+\end{eqnarray}
+%
+The asymptotic surface term will thus vanish if $A(\mathbf{y})$ behaves as $1/r^{n}$ where $n$ is positive.
+
+\emph{from end of svt3 gauge structure}\\
+Moreover, not only would  $A_i({\bf x})$ need to be asymptotically bounded so that we could uniquely decompose it into transverse and longitudinal components, as we noted for the SVT3 example given in \hyperref[c:decomposition_theorem]{Ch. 4} this is also a necessary condition for the decomposition theorem to be valid. To be specific, we note that if we take the theory to be just fluctuations around a flat background with no matter energy-momentum tensor, we can separate the various gauge-invariant combinations that appear in (\ref{2.3}) by taking derivatives of $\Delta G_{\mu\nu}=\delta G_{\mu\nu}+8\pi G \delta T_{\mu\nu}$ ($=\delta G_{\mu\nu}$ if $\delta T_{\mu\nu}=0$), to obtain
+%
+\begin{eqnarray}
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
+\nonumber\\
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(\phi+\dot{B}  -\ddot{E}),
+\nonumber\\
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(B_i-\dot{E}_i),
+\nonumber\\
+0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(-\ddot{E}_{ij}+\delta^{ef} \tilde{\nabla}_{e}\tilde{\nabla}_{f}E_{ij}),
+\label{2.19}
+\end{eqnarray}
+%
+and note that just as in (\ref{2.6}), we need to go to fourth-order derivatives. With the decomposition theorem requiring
+%
+\begin{eqnarray}
+0&=&- 2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
+\nonumber\\
+0&=&- 2 \tilde{\nabla}_{i}\dot{\psi},
+\nonumber\\
+0&=&\tfrac{1}{2} \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(B_{i} -  \dot{E}_{i}),
+\nonumber\\
+0&=&-2 \delta_{ij} \ddot{\psi} -  \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E})+ \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi 
+\nonumber\\
+&& +\tilde{\nabla}_{j}\tilde{\nabla}_{i}(\phi+\dot{B} -  \ddot{E}) - \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi,
+\nonumber\\
+0&=&\tfrac{1}{2} \tilde{\nabla}_{i}(\dot{B}_{j} - \ddot{E}_{j}) + \tfrac{1}{2} \tilde{\nabla}_{j}(\dot{B}_{i} 
+- \ddot{E}_{i}),
+\nonumber\\
+0&=&- \ddot{E}_{ij} + \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E_{ij}
+\label{2.20}
+\end{eqnarray}
+%
+in this case, we see that if for any quantity $D$ that obeys  $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}D=0$ (or $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}\delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}D=0$) we impose spatial boundary conditions on $D$ so that $D$ (or $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}D$) vanishes,  the decomposition theorem will then follow for the $\delta G_{\mu\nu}$ associated with fluctuations around a flat Minkowski background. In this paper we will explore the degree to which this will also be the case for SVT3 fluctuations around some cosmologically interesting backgrounds where the fluctuation equations are more complicated than in the flat background case.
+
+As we will see immediately in \hyperref[s:svt4]{SVT4}, we will also need an asymptotic condition in order to establish the very existence of an SVT4 decomposition for the individual components of the fluctuations. However, this is not in general sufficient to provide for a decomposition theorem for the fluctuation equation itself in the SVT4 case. So we turn now to analyze the SVT4 case in detail. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SVT4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To see whether this basis can also lead to a decomposition theorem we consider a four-dimensional analog of (\ref{1.3}): 
+%
+\begin{eqnarray}
+F_{\mu}+\partial_{\mu}F=C_{\mu}+\partial_{\mu}C,
+\label{1.34a}
+\end{eqnarray}
+%
+where the $F$ and $F_{\mu}$ are given by (\ref{1.32a}), and where the $C$ and $C_{\mu}$ are functions given by the evolution equations with $C_{\mu}$ obeying  $\partial_{\mu}C^{\mu}=0$. For the decomposition theorem to hold one has to be able to set
+%
+\begin{eqnarray}
+F_{\mu}= C_{\mu},\quad \partial_{\mu}F=\partial_{\mu}C.
+\label{1.35a}
+\end{eqnarray}
+%
+However, (\ref{1.35a}) does not follow from (\ref{1.34a}), since on applying $\partial_{\mu}$  and $\epsilon_{\mu\nu\sigma\tau}n^{\nu}\partial^{\sigma}$ ($n^{\nu}$ is a reference vector) we obtain
+%
+\begin{eqnarray}
+\partial_{\mu}\partial^{\mu}(F-C)=0,\quad \epsilon_{\mu\nu\sigma\tau}n^{\nu}\partial^{\sigma}(F^{\tau}-C^{\tau})=0.
+\label{1.36a}
+\end{eqnarray}
+%
+While we thus have a decomposition of components, this time we do not get a decomposition theorem in the form given in (\ref{1.35a}) since $F-C$ need not be zero as it could  be equal to an arbitrary function $D$ that is harmonic and thus unconstrained. Specifically, since the set of four-dimensional plane waves provides a complete basis for the $\partial_{\mu}\partial^{\mu}$ operator, in general we can set  
+%
+\begin{eqnarray}
+D=\sum _{\bf k}a_{\bf k}e^{i\textbf{k}\cdot \textbf{x}-ikt},
+\label{1.37a}
+\end{eqnarray}
+%
+where $k=|{\bf k}|$. However, unlike the $a_{\bf k}$ in (\ref{1.6}) which obey $k_ik^ia_{\bf k}=0$, this time there is no constraint on the $a_{\bf k}$ at all, as the $a_{\bf k}$ obey $k_{\mu}k^{\mu}a_{\bf k}=0$ where $k_{\mu}k^{\mu}={\bf k}^2-k^2$ is identically equal to zero because of the Minkowski signature of the spacetime. Moreover, without violating $\partial_{\mu}\partial^{\mu}D=0$ we can set $a_{\bf k}=\exp(-a^2{\bf k}\cdot{\bf k})$, with the real part of $D$ thus being localized in space according to
+%
+\begin{eqnarray}
+{\rm Re}[D]={\rm Re}\left[\int \frac{d^3k}{(2\pi)^3}e^{-a^2k^2+i\textbf{k}\cdot \textbf{x}-ikt}\right]=
+\frac{1}{16\pi^{3/2}a^3}\left[\frac{r+t}{r}e^{-(r+t)^2/4a^2}+\frac{r-t}{r}e^{-(r-t)^2/4a^2}\right],
+\label{1.38a}
+\end{eqnarray}
+%
+and thus not being constrained by any spatially asymptotic boundary condition at all (as $r\rightarrow \infty$
+${\rm Re}[D]$ falls off as $\exp(-r^2)$, both for fixed $t$ and for points on the light cone where $r=\pm t$), while even being well-behaved at $r=0$. Thus because of the Minkowski signature there in general is no decomposition theorem. And whether there might be one in any given situation has to be explored on a case by case basis, and we will do this below in the body of the text for some characteristic cosmological models. In fact for SVT4 fluctuations around a de Sitter background for instance we will actually find that we do not in general get a decomposition theorem, though we will find that one can still get one not via boundary conditions at all but via initial conditions instead. However, the appropriate initial conditions have to be chosen extremely judiciously, and there would appear to be no rationale for making such a choice other than a desire to recover the decomposition theorem.
+
+The status of the decomposition theorem changes completely  if we bring in an external source $\delta \bar{T}_{\mu\nu}$ as above, with (\ref{1.34a}) being replaced by 
+%
+\begin{eqnarray}
+F_{\mu}-C_{\mu}+\partial_{\mu}F-\partial_{\mu}C=\bar{C}_{\mu}+\partial_{\mu}\bar{C}.
+\label{1.39a}
+\end{eqnarray}
+%
+Then, since now it is $\delta \bar{T}_{\mu\nu}$ that is causing the perturbation in the first place $F-C$ must be proportional to $\bar{C}$, so there now is no harmonic function ambiguity. Thus in the scalar sector we have
+%
+\begin{eqnarray}
+\partial_{\mu}\partial^{\mu}(F-C-\bar{C})=0, 
+\label{1.40a}
+\end{eqnarray}
+%
+with solution $F-C-\bar{C}=0$. Consequently,  the decomposition theorem in the form 
+%
+\begin{eqnarray}
+F_{\mu}-C_{\mu}= \bar{C}_{\mu},\quad \partial_{\mu}(F-C)=\partial_{\mu}\bar{C}
+\label{1.41a}
+\end{eqnarray}
+% 
+then follows, doing so in fact without any need to impose any boundary or initial condition at all.
+
+When the background is not flat we will need to generalize the SVT3 (\ref{1.1}) and SVT4 (\ref{1.32a}). One way  is to simply covariantize them with the use of covariant derivatives instead of ordinary derivatives and the use of a curved space metric instead of the flat space one, as discussed below. However, for cosmology the interesting geometries are de Sitter and Robertson-Walker, and they just happen to be conformal to flat, i.e. for them one can find coordinate systems in which the background metric is written as $ds^2=\Omega^2({\bf x},t)[dt^2-dx^2-dy^2-dz^2]$ where $\Omega ({\bf x},t)$ is an appropriate conformal factor. Thus for such geometries we can replace (\ref{1.1}) and (\ref{1.32a}) by 
+%
+\begin{eqnarray}
+ds^2 &=&\Omega^2({\bf x},t)\left[(1+2\phi) dt^2 -2(\partial_i B +B_i)dt dx^i - [(1-2\psi)\delta_{ij} +2\partial_i\partial_j E + \partial_i E_j + \partial_j E_i + 2E_{ij}]dx^i dx^j\right],
+\label{1.42a}
+\end{eqnarray}
+%
+%
+\begin{eqnarray}
+h_{\mu\nu}=\Omega^2({\bf x},t)\left[-2\eta_{\mu\nu}\chi+2\partial_{\mu}\partial_{\nu}F
++ \partial_{\mu}F_{\nu}+\partial_{\nu}F_{\mu}+2F_{\mu\nu}\right].
+\label{1.43a}
+\end{eqnarray}
+%
+We shall have occasion to use these fluctuation metrics in the study of specific cosmological models that we provide in this paper.

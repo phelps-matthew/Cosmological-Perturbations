@@ -1,0 +1,572 @@
+
+\chapter{Formalism}
+\label{c:formalism}
+
+Before we can enter the discussion of the technical methods used to decompose and simplify the cosmological fluctuation equations, we must first introduce the necessary formalism describing the interaction of gravitation and matter. The general procedure, repeated for both standard and conformal gravity, consists of varying a classical gravitational action (a general coordinate scalar) with respect to the metric, with stationary solutions yielding the equations of motion. The metric is then decomposed into zeroth and first order contributions where we obtain the background and perturbed fluctuation equations, respectively. Serving as a prototypical example of what is to come, we illustrate the form of the fluctuation equations in their simplest configuration, namely within a source-less Minkowski background geometry. Following convention \cite{weinberg_1972}, we impose a standard gauge condition (e.g, the harmonic or transverse gauge), allowing us to solve the equations of motion exactly.
+
+In the case of conformal gravity, there are particular properties not shared within Einstein gravity \cite{mannheim_2012} that deserve special attention which are also explored here. Namely, the additional symmetry contained within conformal gravity permits extremely useful transformation properties and directly leads to very compact equations of motion (with one less degree of freedom) if the background metric itself can be shown the exhibit the same underlying symmetry properties. In addition, for matter actions relevant to conformal gravity (actions necessarily possessing conformal invariance) we explore two non-trivial geometries \cite{mannheim_kazanas_1988, mannheim_kazanas_1989, mannheim_1990} in which the background energy momentum tensor may be shown to vanish. We contrast the separation of gauge invariance within each sector (i.e. the gravitational and matter sector) with Einstein gravity, as applied to the equations of motion within the presence of non-trivial vacuum geometries.
+
+Finally, we provide an overview of the spacetime geometries studied in cosmology and their underlying motivations. Via coordinate transformations, each of the cosmological geometries of interest can be cast into a conformal to flat form, a detail whose importance cannot be understated and serves a crucial role in the development and solution of the fluctuation equations throughout this work.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Einstein Gravity}
+\label{s:einstein_gravity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The formulation of the Einstein field equations first begins by introducing the Einstein-Hilbert action \cite{weinberg_1972}
+\begin{eqnarray}
+I_{\text{EH}} = -\frac{1}{16\pi G} \int d^4x (-g)^{1/2}  g^{\mu\nu}R_{\mu\nu}.
+\end{eqnarray}
+Variation of this action with respect to $g_{\mu\nu}$ yields the Einstein tensor
+\begin{eqnarray}
+\frac{16\pi G}{(-g)^{1/2}} \frac{\delta I_{\text{EH}}}{\delta g_{\mu\nu}}= G^{\mu\nu} = R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R^\alpha{}_\alpha.
+\label{Eintensor}
+\end{eqnarray}
+Upon specification of a matter action, $I_\text{M}$, an energy momentum tensor may likewise be constructed by variation with respect to the metric,
+\begin{eqnarray}
+\frac{2}{(-g)^{1/2}} \frac{ \delta I_\text{M}}{\delta g_{\mu\nu}} = T_{\mu\nu}. 
+\end{eqnarray}
+Requiring the total gravitational + matter action $I_{\text{EH}}+I_\text{M}$ to be stationary under variation of $g_{\mu\nu}$ then yields the Einstein equations of motion
+\begin{eqnarray}
+R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R^\alpha{}_\alpha = -8\pi G T^{\mu\nu}.
+\label{EinEOM}
+\end{eqnarray}
+The Einstein tensor itself is covariantly conserved via the Bianchi identities,
+\begin{eqnarray}
+\nabla_\mu R^{\mu\nu} = \frac{1}{2}\nabla^\nu R^\mu{}_\mu \implies \nabla_\mu G^{\mu\nu} = 0.
+\end{eqnarray}
+
+As a first step towards describing fluctuations in the universe, we may decompose the metric $g_{\mu\nu}(x)$ into a background metric and a first order perturbation according to
+\begin{eqnarray}
+g_{\mu\nu}(x) = g_{\mu\nu}^{(0)}(x) + h_{\mu\nu}(x),\qquad g^{\mu\nu}h_{\mu\nu} \equiv h,
+\end{eqnarray}
+whereby $G_{\mu\nu}$ can be decomposed as
+\begin{eqnarray}
+G_{\mu\nu} = G_{\mu\nu}(g_{\mu\nu}^{(0)}) + \delta G_{\mu\nu}(h_{\mu\nu}).
+\end{eqnarray}
+By virtue of the Bianchi identities, the 10 components of the symmetric $G_{\mu\nu}$ can be reduced to 6 independent components in total. In terms of perturbations of the curvature tensors, the decomposition of $G_{\mu\nu}$ takes the form
+\begin{eqnarray}
+G_{\mu\nu}^{(0)} &=& R_{\mu\nu}^{(0)} -\frac{1}{2} g_{\mu\nu}^{(0)} R_\alpha^{(0)\alpha}
+\label{Einzero}
+\\
+\delta G_{\mu\nu} &=& \delta R_{\mu\nu} - \frac{1}{2} h_{\mu\nu} R_\alpha^{(0)\alpha} -\frac{1}{2}g_{\mu\nu}\delta R^\alpha{}_\alpha.
+\label{Einone}
+\end{eqnarray}
+Under a coordinate transformation of the form $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\epsilon^\mu$ of $\mathcal O(h)$, the perturbed metric transforms as
+\begin{eqnarray}
+h_{\mu\nu} \to h_{\mu\nu} + \nabla_\mu \epsilon_\mu + \nabla_\mu \epsilon_\nu. 
+\label{gaugeh}
+\end{eqnarray}
+For every solution $h_{\mu\nu}$ to $\delta G_{\mu\nu}+8\pi G \delta T_{\mu\nu}$, a transformed $h'_{\mu\nu}=h_{\mu\nu} + \nabla_\mu \epsilon_\mu + \nabla_\mu \epsilon_\nu$ will also serve as a solution - hence the set of four functions $\epsilon^\mu$ serve to define the gauge freedom under coordinate transformation. If the gauge is fixed, the initial 10 components of the symmetric $h_{\mu\nu}$ are reduced to 6 individual components. As will be discussed later, one can also construct gauge invariant quantities as functions of the $h_{\mu\nu}$ and express the field equations entirely in terms of 6 gauge invariant functions (see Ch. \ref{c:scalar_vector_tensor_basis}).
+
+As regards the perturbed gravitational and energy momentum tensors, under $x^\mu \to x^\mu - \epsilon^\mu(x)$ they transform as
+\begin{eqnarray}
+\delta G_{\mu\nu} \to \delta G_{\mu\nu} + {}^{(0)}G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}G^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  G^{(0)}_{\mu\nu} \epsilon^\lambda
+\nonumber\\
+\delta T_{\mu\nu} \to \delta T_{\mu\nu} + {}^{(0)}T^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}T^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  T^{(0)}_{\mu\nu} \epsilon^\lambda.
+\label{gaugetranstensor}
+\end{eqnarray}
+If $G_{\mu\nu}^{(0)}=0$, then $\delta G_{\mu\nu}$ will be separately gauge invariant. On the other hand, if $ G_{\mu\nu}^{(0)} \ne 0$, then it is only $\delta G_{\mu\nu} + 8\pi G \delta T_{\mu\nu}$ that is gauge invariant by virtue of the background equations of motion. (The transformation behavior of tensors under the gauge transformation as given in \eqref{gaugetranstensor}, otherwise known as the Lie derivative, is in fact generic to all tensors defined on the manifold. One can check that it readily holds for \eqref{gaugeh}). 
+
+With aim towards a description of fluctuations in the universe, let us perturb the metric around an arbitrary background according to
+\begin{eqnarray}
+ds^2=g_{\mu\nu}dx^\mu dx^\nu = (g^{(0)}_{\mu\nu} + h_{\mu\nu} + \mathcal O(h^2)+ ...)dx^\mu dx^\nu.
+\end{eqnarray}
+The zeroth order $G_{\mu\nu}^{(0)}$ is given as \eqref{Einzero} and the first order fluctuation evaluates to 
+\begin{eqnarray}
+\delta G_{\mu\nu} &=& 
+- \tfrac{1}{2} h_{\mu \nu } R + \tfrac{1}{2} g_{\mu \nu } h^{\alpha \beta } R_{\alpha \beta } + \tfrac{1}{2} \nabla_{\alpha }\nabla^{\alpha }h_{\mu \nu } -  \tfrac{1}{2} g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }h \nonumber\\
+&& -  \tfrac{1}{2} \nabla_{\alpha }\nabla_{\mu }h_{\nu }{}^{\alpha } -  \tfrac{1}{2} \nabla_{\alpha }\nabla_{\nu }h_{\mu }{}^{\alpha } + \tfrac{1}{2} g_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }h^{\alpha \beta } + \tfrac{1}{2} \nabla_{\mu }\nabla_{\nu }h.
+\label{dEin}
+\end{eqnarray}
+(Here the covariant derivatives $\nabla$ are defined with respect to the background $g_{\mu\nu}^{(0)}$ and all curvature tensors are taken as zeroth order). For the purpose of illustrating gauge fixing and, later, the SVT decomposition, we evaluate \eqref{dEin} within a Minkowski background viz.
+\begin{eqnarray}
+ds^2 &=& (\eta_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu, \qquad \eta_{\mu\nu} = \text{diag}(-1,1,1,1),\qquad G^{(0)}_{\mu\nu} = 0
+\nonumber\\
+\delta G_{\mu\nu} &=& \tfrac{1}{2} \nabla_{\alpha }\nabla^{\alpha }h_{\mu \nu } -  \tfrac{1}{2} g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }h -  \tfrac{1}{2} \nabla_{\alpha }\nabla_{\mu }h_{\nu }{}^{\alpha } -  \tfrac{1}{2} \nabla_{\alpha }\nabla_{\nu }h_{\mu }{}^{\alpha } 
+\nonumber\\
+&&+ \tfrac{1}{2} g_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }h^{\alpha \beta } + \tfrac{1}{2} \nabla_{\mu }\nabla_{\nu }h.
+\label{dEinflat}
+\end{eqnarray}
+In then taking $\delta T_{\mu\nu}=0$, the equations of motion describing the gravitational fluctuations in an empty universe (vacuum) are given by 
+\begin{eqnarray}
+0=\tfrac{1}{2} \nabla_{\alpha }\nabla^{\alpha }h_{\mu \nu } -  \tfrac{1}{2} g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }h + \tfrac{1}{2} g_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }h^{\alpha \beta } -  \tfrac{1}{2} \nabla_{\mu }\nabla_{\alpha }h_{\nu }{}^{\alpha }
+\nonumber\\
+ -  \tfrac{1}{2} \nabla_{\nu }\nabla_{\alpha }h_{\mu }{}^{\alpha } + \tfrac{1}{2} \nabla_{\nu }\nabla_{\mu }h.
+\label{dEinflatEOM}
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fluctuations Around Flat in the Harmonic Gauge}
+\label{ss:fluctuations_around_flat_in_the_harmonic_gauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to solve \eqref{dEinflatEOM}, we have two general approaches: a). Use the coordinate freedom in $h_{\mu\nu}$ to impose a specific gauge, typically one in which the equations of motion are most simplified
+b). Determine gauge invariant quantities as functions of $h_{\mu\nu}$ and express the equation of motion entirely in terms of the gauge invariants. 
+
+As an example of using method a) to solve \eqref{dEinflatEOM}, we may select coordinates that satisfy the harmonic gauge condition \cite{weinberg_1972}
+\begin{eqnarray}
+\nabla^\mu h_{\mu\nu} - \tfrac{1}{2}\nabla_\nu h = 0,
+\end{eqnarray} 
+whereby \eqref{dEinflatEOM} reduces to 
+\begin{eqnarray}
+0= \tfrac{1}{2} \nabla_{\alpha }\nabla^{\alpha } \left(h_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} h\right).
+\end{eqnarray}
+The trace defines a solution for $h$ whereafter $h_{\mu\nu}$ can be solved as $\nabla_\alpha\nabla^\alpha h_{\mu\nu} = 0$. 
+
+We will see that method b) is facilitated by the use of the scalar, vector, tensor decomposition as discussed in detail within Ch. \ref{c:scalar_vector_tensor_basis}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conformal Gravity}
+\label{s:conformal_gravity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Conformal gravity is a candidate theory of gravitation based on a pure metric action that is not only invariant under local Lorentz transformations (to thus possess the properties of general coordinate invariance and adherenace to the equivalence principle as found in Einstein gravity) but also invariant under local conformal transformations (i.e. transformations of the form $g_{\mu\nu}(x) \to e^{2\alpha(x)}g_{\mu\nu}(x)$ with $\alpha(x)$ arbitrary). Such a metric action that obeys these symmetries is uniquely prescribed and is given by a polynomial function of the Riemann tensor \cite{mannheim_2006}
+%
+\begin{eqnarray}
+I_{\rm W}&=&-\alpha_g\int d^4x\, (-g)^{1/2}C_{\lambda\mu\nu\kappa}
+C^{\lambda\mu\nu\kappa}
+\nonumber\\
+&&\equiv -2\alpha_g\int d^4x\, (-g)^{1/2}\left[R_{\mu\kappa}R^{\mu\kappa}-\frac{1}{3} (R^{\alpha}_{\phantom{\alpha}\alpha})^2\right],
+\label{AP1}
+\end{eqnarray}
+% 
+where $\alpha_g$ is a dimensionless  gravitational coupling constant, and
+%
+\begin{eqnarray}
+C_{\lambda\mu\nu\kappa}&=& R_{\lambda\mu\nu\kappa}
+-\frac{1}{2}\left(g_{\lambda\nu}R_{\mu\kappa}-
+g_{\lambda\kappa}R_{\mu\nu}-
+g_{\mu\nu}R_{\lambda\kappa}+
+g_{\mu\kappa}R_{\lambda\nu}\right)
+\nonumber\\
+&&+\frac{1}{6}R^{\alpha}_{\phantom{\alpha}\alpha}\left(
+g_{\lambda\nu}g_{\mu\kappa}-
+g_{\lambda\kappa}g_{\mu\nu}\right)
+\label{AP2}
+\end{eqnarray}
+% 
+is the conformal Weyl tensor \cite{bach_1921}. Under conformal transformation $g_{\mu\nu}(x) \to e^{2\alpha(x)}g_{\mu\nu}(x)$, the Weyl tensor transforms as $C^\lambda{}_{\mu\nu\kappa} \to C^\lambda{}_{\mu\nu\kappa}$. As the tracless component of the Riemann tensor, $C_{\lambda\mu\nu\kappa}$ vanishes in geometries that are conformal to flat. 
+
+As described in \cite{mannheim_2012}, conformal invariance requires that there be no intrinsic mass scales at the level of the Lagrangian; rather, mass scales must come from the vacuum via spontaneous symmetry breaking. In such a process, particles may localize and bind into inhomogeneities comprising astrophysical objects of interest (e.g. stars and galaxies). With inhomogeneities violating the conformal symmetry in the spacetime geometry, the transition from a cosmological background geometry to the cosmological fluctuations associated with inhomogeneities corresponds to a shift from conformal to flat geometries to non-conformal flat geometries. However, when decomposed into a background and first order contribution, the underlying conformal symmetry contained within the background allows one to tame the complexity of the fluctuations due to the transformation properties of the Weyl tensor.
+
+Variation the Weyl action (\ref{AP1}) with respect to the metric $g_{\mu\nu}(x)$ yields the fourth-order derivative gravitational equations of motion \cite{mannheim_2006} \cite{mannheim_1998}
+%
+\begin{eqnarray}
+-\frac{2}{(-g)^{1/2}}\frac{\delta I_{\rm W}}{\delta g_{\mu\nu}}&=&4\alpha_g W^{\mu\nu}=4\alpha_g\left[2\nabla_{\kappa}\nabla_{\lambda}C^{\mu\lambda\nu\kappa}-
+R_{\kappa\lambda}C^{\mu\lambda\nu\kappa}\right]
+\nonumber\\
+&=&4\alpha_g\left[W^{\mu
+	\nu}_{(2)}-\frac{1}{3}W^{\mu\nu}_{(1)}\right]=T^{\mu\nu},
+\label{AP3}
+\end{eqnarray}
+% 
+where tensors $W^{\mu \nu}_{(1)}$ and $W^{\mu \nu}_{(2)}$ are given by
+%                                                                               
+\begin{eqnarray}
+W^{\mu \nu}_{(1)}&=&
+2g^{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}                                             
+-2\nabla^{\nu}\nabla^{\mu}R^{\alpha}_{\phantom{\alpha}\alpha}                          
+-2 R^{\alpha}_{\phantom{\alpha}\alpha}R^{\mu\nu}                              
++\frac{1}{2}g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})^2,
+\nonumber\\
+W^{\mu \nu}_{(2)}&=&
+\frac{1}{2}g^{\mu\nu}\nabla_{\beta}\nabla^{\beta}R^{\alpha}_{\phantom{\alpha}\alpha}
++\nabla_{\beta}\nabla^{\beta}R^{\mu\nu}                    
+-\nabla_{\beta}\nabla^{\nu}R^{\mu\beta}                       
+-\nabla_{\beta}\nabla^{\mu}R^{\nu \beta}  
+\nonumber\\            
+&-& 2R^{\mu\beta}R^{\nu}_{\phantom{\nu}\beta}                                    
++\frac{1}{2}g^{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}.
+\label{AP4}
+\end{eqnarray}     
+Here $T^{\mu\nu}$ is the conformal invariant matter source energy-momentum tensor. With $I_{\rm W}$ being both general coordinate invariant and conformal invariant, $W^{\mu\nu}$ is automatically covariantly conserved and traceless and obeys $\nabla_{\nu}W^{\mu\nu}=0$, $g_{\mu\nu}W^{\mu\nu}=0$ (i.e. without needing to impose any equation of motion or stationarity, thus holding on every variational path).                            
+
+Upon first glance, the fourth order \eqref{AP4} takes a considerably more complex form in comparison to the relatively terse second order Einstein equations
+%
+\begin{eqnarray}
+-\frac{1}{8\pi G}\left(R^{\mu\nu} -\frac{1}{2}g^{\mu\nu}R^{\alpha}_{\phantom{\alpha}\alpha}\right)=T^{\mu\nu}.
+\label{AP5}
+\end{eqnarray}
+%
+However, in solving the vacuum equations associated with \eqref{AP4}, two types of solutions arise: those associated with a vanishing Weyl tensor and those associated with a vanishing Ricci tensor. As a consequence of the former, since all cosmological relevant geometries of interest can be expressed in the conformal to flat form, 
+%
+\begin{eqnarray}
+ds^2=-\Omega^2(t,x,y,z)\eta_{\mu\nu}x^{\mu}x^{\nu}=\Omega^2(t,x,y,z)[dt^2-dx^2-dy^2-dz^2],
+\label{AP6}
+\end{eqnarray}
+%
+for appropriate choices of the conformal factor $\Omega(t,x,y,z)$ they serve as vacuum solutions. Regarding the latter, solutions with vanishing Ricci tensor necessarily encompass all vacuum solutions to Einstein gravity. In this sense, the set of solutions to the vacuum equations in conformal gravity forms a superset of all such vacuum equations in Einstein gravity. As a particular example, both gravitational theories admit the Schwarzschild solution exterior to a static, spherically symmetric source \cite{mannheim_kazanas_1988}, with the Schwarzschild  solution geometry not expressible in conformal to flat form. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conformal Invariance}
+\label{ss:conformal_invariance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+With the Weyl action \eqref{AP1} being locally conformal invariant, $W^{\mu\nu}(x)$ possesses the transformation property that upon a conformal transformation of the form
+%
+\begin{eqnarray}
+g_{\mu\nu}(x)\rightarrow \Omega^2(x) g_{\mu\nu}(x)=\bar{g}_{\mu\nu}(x),\qquad
+g^{\mu\nu}(x)\rightarrow \Omega^{-2}(x) g^{\mu\nu}(x)=\bar{g}^{\mu\nu}(x),
+\label{AP7}
+\end{eqnarray}
+% 
+$W^{\mu\nu}(x)$ and $W_{\mu\nu}(x)$ transform as 
+%
+\begin{eqnarray}
+W^{\mu\nu}(x)\rightarrow \Omega^{-6}(x) W^{\mu\nu}(x)=\bar{W}^{\mu\nu}(x),
+\nonumber\\
+W_{\mu\nu}(x)\rightarrow \Omega^{-2}(x) W_{\mu\nu}(x)=\bar{W}_{\mu\nu}(x),
+\label{AP8}
+\end{eqnarray}
+%
+where the functional dependence of $\bar{W}_{\mu\nu}(x)$ on $\bar{g}_{\mu\nu}(x)$ is equivalent to that of
+$W_{\mu\nu}(x)$ on $g_{\mu\nu}(x)$. To be noted is that (\ref{AP8}) holds regardless of whether or not the metric $g_{\mu\nu}(x)$ is conformal to flat. If we further decompose $g_{\mu\nu}(x)$ and $\bar{g}_{\mu\nu}(x)$ into a background metric and a first order perturbation according to
+%
+\begin{eqnarray}
+ds^2&=&-[g^{(0)}_{\mu\nu}+h_{\mu\nu}]dx^{\mu}dx^{\nu},\qquad g_{\mu\nu}(x)=g^{(0)}_{\mu\nu}(x)+h_{\mu\nu}(x),
+\nonumber\\ 
+g^{\mu\nu}(x)&=&g_{(0)}^{\mu\nu}(x)-h^{\mu\nu}(x),\qquad
+\bar{g}_{\mu\nu}(x)=\bar{g}^{(0)}_{\mu\nu}(x)+\bar{h}_{\mu\nu}(x),
+\nonumber\\
+\bar{g}^{\mu\nu}(x)&=&\bar{g}_{(0)}^{\mu\nu}(x)-\bar{h}^{\mu\nu}(x),
+\label{AP9}
+\end{eqnarray}
+% 
+then $W_{\mu\nu}(x)$ and $\bar{W}_{\mu\nu}(x)$ will decompose as 
+%
+\begin{eqnarray}
+W_{\mu\nu}(g_{\mu\nu})&=& W^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+\delta W_{\mu\nu}(h_{\mu\nu}),
+\nonumber\\
+\bar{W}_{\mu\nu}(\bar{g}_{\mu\nu})&=&\bar{W}^{(0)}_{\mu\nu}(\bar{g}^{(0)}_{\mu\nu})+\delta \bar{W}_{\mu\nu}(\bar{h}_{\mu\nu}).
+\label{AP10}
+\end{eqnarray}
+%
+To clarify, within \eqref{AP10} $W_{\mu\nu}(h_{\mu\nu})$ is evaluated in a background geometry with metric $g^{(0)}_{\mu\nu}(x)$, whereas $\bar{W}_{\mu\nu}(\bar{h}_{\mu\nu})$ is evaluated in a background geometry with metric $\bar{g}^{(0)}_{\mu\nu}(x)$. 
+
+Since the gravitational sector $W_{\mu\nu}$ is conformal invariant, the matter sector $T_{\mu\nu}$ must necessarily also transform as $\Omega^{-2}(x) T_{\mu\nu}(x)=\bar{T}_{\mu\nu}(x)$. Repeating a decomposition into background and first order components, we obtain for the energy momentum tensor
+%
+\begin{eqnarray}
+T_{\mu\nu}(g_{\mu\nu})= T^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+\delta T_{\mu\nu}(h_{\mu\nu}),\qquad
+\bar{T}_{\mu\nu}(\bar{g}_{\mu\nu})=\bar{T}^{(0)}_{\mu\nu}(\bar{g}^{(0)}_{\mu\nu})+\delta \bar{T}_{\mu\nu}(\bar{h}_{\mu\nu}).
+\label{AP11}
+\end{eqnarray}
+%
+The utility of the conformal transformation properties described allow us to find solutions around conformally transformed geometries using only knowledge of the form of the solution around the original geometry. Specifically, if we know how to solve for fluctuations $h_{\mu\nu}(x)$ around a background $g^{(0)}_{\mu\nu}(x)$, (that is, if $g^{(0)}_{\mu\nu}(x)$ is such a geometry that solutions to $\delta W_{\mu\nu}(h_{\mu\nu})=\delta T_{\mu\nu}(h_{\mu\nu})/4\alpha_g$ may be found apriori) then we can find obtain solutions to  $\delta \bar{W}_{\mu\nu}(\bar{h}_{\mu\nu})=\delta \bar{T}_{\mu\nu}(\bar{h}_{\mu\nu})/4\alpha_g$  for fluctuations $\bar{h}_{\mu\nu}(x)$ around a background metric $\bar{g}^{(0)}_{\mu\nu}(x)$ by defining 
+%
+\begin{eqnarray}
+\bar{h}_{\mu\nu}(x)=\Omega^2(x)h_{\mu\nu}(x),\qquad \delta \bar{W}_{\mu\nu}(\bar{h}_{\mu\nu})=\Omega^{-2}(x)\delta W_{\mu\nu}(h_{\mu\nu}).
+\label{AP12}
+\end{eqnarray}
+%
+Implementing conformal gravity solutions found in past work (e.g. \cite{mannheim_2006}), one can use the determined structure of the fluctuations around a flat background to construct the fluctuations around any background that is conformal to flat by virtue of \eqref{AP12}. As mentioned, since all cosmologically relevant background geometries can be cast into the conformal to flat form, the conformal transformation properties give rise to an extremely convenient and powerful methodology to solving that fluctuation equations, despite the fourth-order nature and expansive form of the gravitational equations of motion.
+
+We can continue to use conformal invariance (i.e. under a conformal transformation of general metric $g_{\mu\nu}\rightarrow \Omega^2(x)g_{\mu\nu}$ the Bach tensor  $W_{\mu\nu}$ transforms as $W_{\mu\nu}\rightarrow \Omega^{-2}(x)W_{\mu\nu}$) to determine the trace depedendent properties of $W_{\mu\nu}$. Taking $h$ as a first order perturbation in the metric and using the conformal transformation properties, we find up to first order 
+\begin{align}
+W_{\mu\nu}\left(g^{(0)}_{\mu\nu} + \frac h4 g^{(0)}_{\mu\nu}\right) &=W_{\mu\nu}\left[\left(1+\frac h4\right)g^{(0)}_{\mu\nu} \right]= W_{\mu\nu}^{(0)}(g^{(0)}_{\mu\nu}) +\delta W_{\mu\nu}\left(\frac h4g^{(0)}_{\mu\nu}\right)\nonumber \\
+&=\left(1-\frac h4\right)W_{\mu\nu}(g^{(0)}_{\mu\nu}) \nonumber,
+\end{align}
+and hence
+\begin{eqnarray}
+-\frac h4 W_{\mu\nu}(g_{\mu\nu}^{(0)}) = \delta W_{\mu\nu}\left(\frac h4 g^{(0)}_{\mu\nu}\right)\label{wtrace1},
+\end{eqnarray}
+or, in its full form
+\begin{align}
+\delta W_{\mu\nu}(\tfrac{h}{4}g^{(0)}_{\mu\nu}) &= - \tfrac{1}{4} h (- \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta}  \nonumber\\
+&\qquad- \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha} 
+\nonumber\\
+&\qquad-  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha} + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R)  
+\nonumber\\
+&= -\tfrac{h}{4}W_{\mu\nu}(g^{(0)}_{\mu\nu}). 
+\label{dwtrace1}
+\end{align}
+To take make full use of the dependence of $\delta W_{\mu\nu}$ on $h$ we introduce the quantity $K_{\mu\nu}(x)$ defined as 
+%
+\begin{eqnarray}
+K_{\mu\nu}(x)=h_{\mu\nu}(x)-\frac{1}{4}g^{(0)}_{\mu\nu}(x)g_{(0)}^{\alpha\beta}h_{\alpha\beta},
+\label{AP13}
+\end{eqnarray}
+%
+with $K_{\mu\nu}$ being traceless with respect to the background metric $g_{(0)}^{\mu\nu}$.
+Substituting \eqref{AP13} into $\delta W_{\mu\nu}(h_{\mu\nu})$ we obtain
+\begin{eqnarray}
+\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}\left(K_{\mu\nu}+\frac h4g^{(0)}_{\mu\nu}\right)= \delta W_{\mu\nu}(K_{\mu\nu}) +\delta W_{\mu\nu}\left(\frac h4g^{(0)}_{\mu\nu}\right)\label{wtrace2}.
+\end{eqnarray}
+If we work in a background that is conformal to flat, then \eqref{wtrace1} will vanish which implies from \eqref{wtrace2} that
+\begin{eqnarray}
+\delta W_{\mu\nu}(h_{\mu\nu}) = \delta W_{\mu\nu}(K_{\mu\nu}).
+\end{eqnarray}
+Hence in a conformal to flat geometry, the trace of $h_{\mu\nu}$ not only decouples but also vanishes, with the fluctuation equations being able to be entirely expressed in terms of the nine component $K_{\mu\nu}$.
+
+We may also find a relationship between $h_{\mu\nu}$ and the trace of the fluctuation $\delta W_{\mu\nu}$ itself. First, we note that the tracelessness of $W_{\mu\nu}$ implies
+\begin{eqnarray}
+g^{\mu\nu}W_{\mu\nu}(g_{\mu\nu}) = \left({ g^{(0)\mu\nu}-h^{\mu\nu}}\right)\left({ W^{(0)}_{\mu\nu}+ \delta W_{\mu\nu}}\right)=0.
+\end{eqnarray}
+To first order this equates to,
+\begin{eqnarray}
+-h^{\mu\nu}W^{(0)}_{\mu\nu} + g^{(0)\mu\nu}\delta W_{\mu\nu} = 0
+\end{eqnarray}
+and thus we obtain
+\begin{eqnarray}
+g^{(0)\mu\nu}\delta W_{\mu\nu}(h_{\mu\nu}) = h^{\mu\nu}W_{\mu\nu}(g^{(0)}_{\mu\nu}).
+\end{eqnarray}
+For reference, we state the full form of the above as
+\begin{align}
+g^{(0)}{}^{\mu\nu}\delta W_{\mu\nu} &= h^{\mu \nu} (- \tfrac{1}{6} g_{\mu \nu} R^2 + \tfrac{1}{2} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} + \tfrac{2}{3} R R_{\mu \nu} - 2 R^{\alpha \beta} R_{\mu \alpha \nu \beta}
+\nonumber\\
+&\qquad -  \tfrac{1}{6} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R  +\nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} -  \nabla_{\mu}\nabla^{\alpha}R_{\nu \alpha} -  \nabla_{\nu}\nabla^{\alpha}R_{\mu \alpha} 
+\nonumber\\
+&\qquad + \tfrac{2}{3} \nabla_{\nu}\nabla_{\mu}R) \nonumber\\
+&=h^{\mu\nu}W_{\mu\nu}(g^{(0)}_{\mu\nu})
+\end{align}
+Consequently, in a conformal to flat background, the trace of the fluctuation tensor itself will vanish. 
+
+Owing to this decoupling of the trace, for conformal to flat backgrounds one may substitute the usage of (\ref{AP10}) instead by the usage of
+%
+\begin{eqnarray}
+W_{\mu\nu}(g_{\mu\nu})&=& W^{(0)}_{\mu\nu}(g^{(0)}_{\mu\nu})+\delta W_{\mu\nu}(K_{\mu\nu}),
+\nonumber\\
+\bar{W}_{\mu\nu}(\bar{g}_{\mu\nu})&=&\bar{W}^{(0)}_{\mu\nu}(\bar{g}^{(0)}_{\mu\nu})+\delta\bar{W}_{\mu\nu}(\bar{K}_{\mu\nu}),
+\label{AP14}
+\end{eqnarray}
+%
+where
+%
+\begin{eqnarray}
+\bar{g}^{(0)}_{\mu\nu}(x)=\Omega^2(x)g^{(0)}_{\mu\nu}(x),
+\label{AP15}
+\end{eqnarray}
+% 
+%
+\begin{eqnarray}
+\bar{K}_{\mu\nu}(x)=\Omega^2(x)K_{\mu\nu}(x).
+\label{AP16}
+\end{eqnarray}
+% 
+Consequently, in the context of conformal gravity, when constructing fluctuations in a $\bar{g}^{(0)}_{\mu\nu}$ background from the fluctuations in a $g^{(0)}_{\mu\nu}$ background that is conformal to flat, we here on utilize (\ref{AP16}) rather than (\ref{AP12}). 
+
+Summarizing the conformal properties of conformal gravity, we have shown that for fluctuations around a conformal to flat background, we can reduce the equations to a dependence on the traceless $K_{\mu\nu}$ without needing to make any reference to the actual detailed form of the fluctuation equations at all. Given that one also possesses the freedom to make four general coordinate transformations, one can further reduce the nine-component $K_{\mu\nu}$ to five independent components, all without needing to make any reference to the fluctuation equations. Any further reduction in the number of independent components of $K_{\mu\nu}$ can only be achieved through use of residual gauge invariances or the structure of the fluctuation equations themselves. Within Ch. \ref{c:constructing_gauge_conditions} we make use of the coordinate freedom and implement a particular gauge condition (motivated by its conformal transformation properties) that yields fluctuation equations in which there is no mixing of any of the components of $K_{\mu\nu}$ with each other.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fluctuations Around Flat in the Transverse Gauge}
+\label{ss:fluctuations_around_flat_in_the_tranverse_gauge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To illustrate the use of gauge conditions within conformal gravity, we investiage fluctuations around a Minkowski background. In such a background it was found in \cite{mannheim_2006}, that $\delta W_{\mu\nu}$ takes the form, prior to imposing any gauge conditions
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}&=&\frac{1}{2}(\eta^{\rho}_{\phantom{\rho} \mu} \partial^{\alpha}\partial_{\alpha}-\partial^{\rho}\partial_{\mu})
+(\eta^{\sigma}_{\phantom{\sigma} \nu} \partial^{\beta}\partial_{\beta}-
+\partial^{\sigma}\partial_{\nu})K_{\rho \sigma}
+\nonumber\\
+&-& 
+\frac{1}{6}(\eta_{\mu \nu} \partial^{\gamma}\partial_{\gamma}-
+\partial_{\mu}\partial_{\nu})(\eta^{\rho \sigma} \partial^{\delta}\partial_{\delta}-
+\partial^{\rho}\partial^{\sigma})K_{\rho\sigma}.
+\label{AP24}
+\end{eqnarray}
+%
+Within a flat background, the Lie derivative of $K^{\mu\nu}$ leads to $\partial_{\nu}K^{\mu\nu}\rightarrow \partial_{\nu}K^{\mu\nu}-\partial_{\nu}\partial^{\nu}\epsilon^{\mu}-\partial^{\mu}\partial_{\nu}\epsilon^{\nu}/2$ and $\partial_{\mu}\partial_{\nu}K^{\mu\nu}\rightarrow \partial_{\mu}\partial_{\nu}K^{\mu\nu}-3\partial_{\mu}\partial^{\mu}\partial_{\nu}\epsilon^{\nu}/2$. Hence, in order to construct a gauge condition $\partial_{\nu}K^{\mu\nu} = f^\mu$ for arbitrary $f^\mu$, we can solve for $\partial_{\nu}\epsilon^{\nu}$ and then for $\epsilon^{\mu}$ in order to set $\partial_{\nu}K^{\mu\nu}=f^\mu$. If we elect to select an $f^\mu$ such that $\partial_{\mu}K^{\mu\nu}=0$ (i.e. the transverse gauge condition), then (\ref{AP24}) reduces to the remarkably compact and simple form
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}=\frac{1}{2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}K_{\mu \nu}.
+\label{AP25}
+\end{eqnarray}
+%
+Note that the tensor components of $K_{\mu\nu}$ that were coupled in (\ref{AP24}) are now completely decoupled in (\ref{AP25}). (This may be constrasted with conformal to flat fluctuations in Einstein gravity where, as we as far as we aware, there is no gauge in which such a complete decoupling occurs. In Sect. \ref{s:compact_expressions_ein} we present a selection of gauges that yield maximal simplification and decoupling, with it being evident that a complete decoupling is prevented only by the presence of the trace $h$ of the metric fluctuation).
+
+To solve $4\alpha_g \delta W_{\mu\nu} = \delta T_{\mu\nu}$ with its associated \eqref{AP25}, we define the fourth-order derivative Green's function which obeys
+%
+\begin{eqnarray}
+\partial_{\alpha}\partial^{\alpha} \partial_{\beta}\partial^{\beta}D(x-x^{\prime})=\delta^4(x-x^{\prime}),
+\label{AP26}
+\end{eqnarray}
+%
+in which the solution (in the transverse gauge) is given by 
+%
+\begin{eqnarray}
+K_{\mu\nu}(x)=\frac{1}{2\alpha_g}\int d^4x^{\prime}D(x-x^{\prime})\delta T_{\mu\nu}(x^{\prime}).
+\label{AP27}
+\end{eqnarray}
+%
+
+The retarded Green's function  solution to (\ref{AP26}) \cite{mannheim_2007} is given by
+%
+\begin{eqnarray}
+D^{(FO)}(x-x^{\prime})=\frac{1}{8\pi}\theta (t-t^{\prime}-|{\bf x}-{\bf x}^{\prime}|),
+\label{AP28}
+\end{eqnarray}
+%
+with $\theta (t-t^{\prime}-|{\bf x}-{\bf x}^{\prime}|)$ vanishing outside the light cone. 
+
+The solutions to the fourth order wave equation $\partial_{\alpha}\partial^{\alpha} \partial_{\beta}\partial^{\beta}K_{\mu \nu}=0$ may be solved in terms of momentum eiginstates, given by \cite{riegert_1984a,mannheim_2012}
+%
+\begin{eqnarray}
+K_{\mu\nu}=A_{\mu\nu}e^{ik\cdot x}+(n\cdot x)B_{\mu\nu}e^{ik\cdot x}+A^*_{\mu\nu}e^{-ik\cdot x}+(n\cdot x)B^*_{\mu\nu}e^{-ik\cdot x},
+\label{AP29}
+\end{eqnarray}
+%
+where $k_0^2={\bf k}^2$, where $A_{\mu\nu}$ and $B_{\mu\nu}$ are polarization tensors, and where $n^{\mu}=(1,0,0,0)$ is a unit timelike vector.  With $n\cdot x=t$, we see that fluctuations around a flat background grow linearly in time. In total, given $\delta T_{\mu\nu}$, (\ref{AP27}) can be solved completely, and for a localized $\delta T_{\mu\nu}$ the asymptotic solution for $K_{\mu\nu}$ is given by (\ref{AP29}). (In Sect. \ref{s:rw_radiation_conformal_gravity_sol}, we analogously construct the eigenstate solutions to the wave equation within a curved Robertson Walker radiation era ($k=-1$) background to find solutions with leading time behavior of $t^4$.) 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{On the Energy Momentum Tensor}
+\label{ss:on_the_energy_momentum_tensor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The matter field $T^{\mu\nu}$ in conformal gravity is behaves in a different nature in comparison to standard Einstein gravity. The root of the difference of the energy momentum tensor between the two theories stems from the statement that $4\alpha_gW^{\mu\nu}=T^{\mu\nu}$ must be conformally invariant, from which it follows that $T^{\mu\nu}$ must transform in the same manner under conformal transformations as $W^{\mu\nu}$. Consequently, in conformal to flat cosmological backgrounds where $W^{\mu\nu}$ vanishes, $T^{\mu\nu}$ must also vanish. However, in the literature two ways in which it could vanish non-trivially have been identified, one involving a conformally coupled scalar field \cite{mannheim_1990}, and the other involving a conformal perfect fluid \cite{mannheim_2000}.
+
+In the case of a conformally coupled scalar field $S(x)$ we define the matter action as
+%                                                                               
+\begin{eqnarray}
+I_S&=&-\int d^4x(-g)^{1/2}\left[\frac{1}{2}\nabla_{\mu}S
+\nabla^{\mu}S-\frac{1}{12}S^2R^\mu_{\phantom         
+	{\mu}\mu}+\lambda_S S^4\right]
+\label{AP32}
+\end{eqnarray}                                 
+% 
+where  $\lambda_S$ is a dimensionless coupling constant. As written, the $I_{\rm S}$ action is the most general curved space matter action for the $S(x)$ field that is invariant under both general coordinate transformations and local conformal transformations of the form
+$S(x)\rightarrow e^{-\alpha(x)}S(x)$,  $g_{\mu\nu}(x)\rightarrow e^{2\alpha(x)}g_{\mu\nu}(x)$ \cite{mannheim_1990}. Variation of $I_S$ with respect to  $S(x)$ yields the scalar field equation of motion
+%                                                                               
+\begin{eqnarray}
+\nabla_{\mu}\nabla^{\mu}S+\frac{1}{6}SR^\mu_{\phantom{\mu}\mu}
+-4\lambda_S S^3=0,
+\label{AP33}
+\end{eqnarray}                                 
+%                                                               
+while variation with respect to the metric yields the matter field energy-momentum tensor 
+%                                                                               
+\begin{eqnarray}
+T_{\rm S}^{\mu \nu}&=&\frac{2}{3}\nabla^{\mu} \nabla^{\nu} S
+-\frac{1}{6}g^{\mu\nu}\nabla_{\alpha}S\nabla^{\alpha}S
+-\frac{1}{3}S\nabla^{\mu}\nabla^{\nu}S
+\nonumber \\             
+&+&\frac{1}{3}g^{\mu\nu}S\nabla_{\alpha}\nabla^{\alpha}S                           
+-\frac{1}{6}S^2\left(R^{\mu\nu}
+-\frac{1}{2}g^{\mu\nu}R^\alpha_{\phantom{\alpha}\alpha}\right)-g^{\mu\nu}\lambda_S S^4. 
+\label{AP34}
+\end{eqnarray}                                 
+% 
+By using \eqref{AP33} within \eqref{AP34}, the energy-momentum tensor obeys the expected traceless condition
+\begin{eqnarray}
+g_{\mu\nu}T_{\rm S}^{\mu\nu}=0.
+\end{eqnarray}
+%
+If we take the scalar field as the spontaneously broken non-zero constant expectation value $S_0$, the scalar field wave equation and the energy-momentum tensor reduce to the form
+%                                                                               
+\begin{eqnarray}
+R^\alpha_{\phantom{\alpha}\alpha}&=&24\lambda_S S_0^2,
+\nonumber\\
+T_{\rm S}^{\mu \nu}&=& 
+-\frac{1}{6} S_0^2\left(R^{\mu\nu}-\frac{1}{2}g^{\mu\nu}
+R^\alpha_{\phantom{\alpha}\alpha}\right)-g^{\mu\nu}\lambda_S S_0^4
+\nonumber\\
+&=&-\frac{1}{6} S_0^2\left(R^{\mu\nu}-\frac{1}{4}g^{\mu\nu}
+R^\alpha_{\phantom{\alpha}\alpha}\right).
+\label{AP35}
+\end{eqnarray}                                 
+%  
+Now, in a de Sitter ($dS_4$) geometry defined by
+\begin{eqnarray}
+R^{\lambda\mu\sigma\nu}&=&K[g^{\mu \sigma}g^{\lambda \nu}-g^{\mu \nu}g^{\lambda \sigma}],\qquad R^{\mu\nu}=-3Kg^{\mu\nu}
+\nonumber\\
+R^\alpha_{\phantom{\alpha}\alpha}&=&-12K,\qquad R^{\mu\nu}=(1/4)g^{\mu\nu}
+R^\alpha_{\phantom{\alpha}\alpha},
+\end{eqnarray}
+since $W^{\mu \nu}$ vanishes identically, $T_{\rm S}^{\mu \nu}$ will also  vanish identically in the same geometry. And with curvature constant $K$ being taken as $K=-2\lambda_S S_0^2$ we find that though $W^{\mu\nu}$ and $T^{\mu\nu}$ both vanish identically, as noted in \cite{mannheim_1990}, the conformal cosmology governed by $4\alpha_gW^{\mu\nu}=T^{\mu\nu}$ admits of a non-trivial de Sitter geometry solution, with a non-vanishing four-curvature $K=-2\lambda_S S_0^2$.
+
+To discuss another avenue in which $T^{\mu\nu}$ can vanish non-trivially \cite{mannheim_2000}, we set $\lambda_S=0$ within $I_S$ (an operation which still preserves the conformal invariance of $I_S$), and we evaluate the scalar field wave equation in a generic Robertson-Walker geometry defined as
+%
+\begin{eqnarray}
+ds^2=dt^2-a^2(t)\left[\frac{dr^2}{1-kr^2}+r^2d\theta^2+r^2\sin^2\theta d\phi^2\right]
+=dt^2-a^2(t)\gamma_{ij}dx^idx^j.
+\label{AP36}
+\end{eqnarray}
+%
+As discussed in \cite{mannheim_2000}, solutions to the scalar field wave equation (\ref{AP33}) within the Roberston Walker geometry obey
+%
+\begin{eqnarray}
+\frac{1}{f(p)}\left[\frac{d^2f}{dp^2}+kf(p)\right]=\frac{1}{g(r,\theta,\phi)}\gamma^{-1/2}\partial_i[\gamma^{1/2}\gamma^{ij}\partial_jg(r,\theta,\phi)]=-\lambda^2,
+\label{AP37}
+\end{eqnarray}
+%
+where $p=\int dt/a(t)$, $S=f(p)g(r,\theta,\phi)/a(t)$, $\gamma^{ij}$ is the metric of the spatial part of the Robertson-Walker metric, and $\lambda^2$ is a separation constant. Inspection of (\ref{AP37}) reveals that $f(p)$ obeys a harmonic oscillator equation with characteristic frequencies $\omega^2=\lambda^2+k$. In addition, we may look for separable solutions in $g(r,\theta,\phi)$ viz.
+\begin{eqnarray}
+g(r,\theta,\phi)=g^{\ell}_{\lambda}(r)Y^m_{\ell}(\theta,\phi),
+\end{eqnarray}
+with $g^{\ell}_{\lambda}(r)$ necessarily obeying
+%
+\begin{eqnarray}
+\left[(1-kr^2)\frac{\partial^2}{\partial r^2}+\frac{(2-3kr^2)}{r}\frac{\partial}{\partial r}-\frac{\ell(\ell+1)}{r^2}+\lambda^2\right]g^{\ell}_{\lambda}(r)=0.
+\label{AP38}
+\end{eqnarray}
+%
+From here, we proceed with an interesting step and perform an incoherent averaging over all allowed spatial modes associated with a given $\omega$. Upon calculating the sum over all modes, for each $\omega$ we obtain  \cite{mannheim_2000}  
+%
+\begin{eqnarray}
+T_S^{\mu\nu}=\frac{\omega^2(g^{\mu\nu}+4U^{\mu}U^{\nu})}{6\pi^2a^4(t)}=
+\frac{(\lambda^2+k^2)(g^{\mu\nu}+4U^{\mu}U^{\nu})}{6\pi^2a^4(t)},
+\label{AP39}
+\end{eqnarray}
+%
+where $U^{\mu}$ is a unit timelike vector. With \eqref{AP39} being traceless, the incoherent averaging over the spatial modes has yielded an energy momentum tensor of the perfect fluid form, namely
+\begin{eqnarray}
+T_S^{\mu\nu} = (\rho+p)U^\mu U^\nu + p g^{\mu\nu},\qquad \rho = 3p,
+\end{eqnarray}
+for appropriate values of $\rho$ and $p$. Inspecting \eqref{AP39}, we see that if $\omega^2=0$, $T^{\mu\nu}_S=0$ and if $\omega^2=\lambda^2+k$, we can satisfy $T^{\mu\nu}_S=0$ non-trivially if and only if $k$ is negative. Thus, we proceed with $k$ negative. In performing an incoherent averaging for $T^{00}_S$ (recalling that we are taking $\omega =0$ here), we obtain \cite{mannheim_2000}
+%
+\begin{eqnarray}
+T_S^{00}=\frac{1}{6}\sum_{\ell,m}\left[\sum _{i=1}^3\gamma^{ii}|\partial_i(g^{\ell}_{(-k)^{1/2}}Y^{m}_{\ell}(\theta,\phi))|^2+k|g^{\ell}_{(-k)^{1/2}}Y^{m}_{\ell}(\theta,\phi)|^2\right].
+\label{AP40}
+\end{eqnarray}
+%
+It has been shown in \cite{mannheim_2000} that the sum in (\ref{AP40}) in fact vanishes identically. With scalar field modes providing a positive contribution to $T^{\mu\nu}_S$, the negative contributions of the gravitational field from its negative spatial curvature serve to cancel the scalar modes identically, resulting in a vanishing $T^{00}_S$.
+As regards the solutions to (\ref{AP38}), with negative $k$ these are determined to be associated Legendre functions. Despite $T^{\mu\nu}_S$ vanishing non-trivially, (\ref{AP38}) still contains an infinite number of solutions, each labelled with a different $\ell$ and $m$. Hence, we shown that $T^{\mu\nu}_S$ admits of a non-trival vacuum solution that can be obtained by taking an incoherent average over the spatial modes associated with the solutions of the scalar field.
+
+While the choice of negative $k$ may warrant concern in the standard treatment of gravitation and cosmology, where the universe geometry is phenomenologically taken as $k=0$, in conformal gravity it poses no such restriction as evidenced in past work \cite{mannheim_obrien_2012,mannheim_obrien_2011,obrien_mannheim_2012,mannheim_kazanas_1988,mannheim_kazanas_1989,mannheim_kazanas_1994}. In applications of conformal gravity to astrophysical and cosmological data it has been found that phenomenologically $k$ should be negative. Specifically, in previous works within conformal cosmology negative $k$ fits to the accelerating universe Hubble plot data have been presented in \cite{mannheim_2006,mannheim_2017}, along with negative $k$ conformal gravity fits to galactic rotation curves  presented in \cite{mannheim_2006,mannheim_2017}.
+
+A last aspect worth mentioning in regards to the difference between the matter source in conformal and Einstein gravity concerns the interplay of gauge invariance. While a background $T^{\mu\nu}$ may vanish, this does not necessarily imply that its perturbation will also vanish (with its vanishing dependent upon the vanishing of $\delta W^{\mu\nu}$, which in all cosmological applications is necessarily non-zero). Now, in standard Einstein gravity with a non-zero background $T^{\mu\nu}$, neither the fluctuation in the background Einstein tensor or the fluctuation in the background $T^{\mu\nu}$ will separately be gauge invariant. It is only the perturbation of the entire $R^{\mu\nu} -g^{\mu\nu}R^{\alpha}_{\phantom{\alpha}\alpha}/2+8\pi GT^{\mu\nu}$ that is gauge invariant. Namely, one must impose the background equations of motion to the fluctuation equations to ensure gauge invariance. Moreover, there are no nontrivial background solutions to $G^{\mu\nu}_{(0)}=0$ - all solutions demand a vanishing curvature tensor. However, within conformal gravity, any background that is conformal to flat will cause the background fluctuations to vanish and we have identified two scenarios in which the $T^{\mu\nu}_S$ itself vanishes non-trivially. Consequently, the background equations of motion serve no role in enforcing gauge invariance within $4\alpha_g\delta W^{\mu\nu} = \delta T^{\mu\nu}$, and thus $\delta W^{\mu\nu}$ and $\delta T^{\mu\nu}$ are separately gauge invariant.  Specifically, we shall find that in any background that is conformal to flat, $\delta W^{\mu\nu}$ can be expressed entirely in terms of the gauge invariant components of the metric. Through the following chapters, we will illustrate the role of gauge invariance explicitly in both standard and conformal gravity using a Scalar, Vector, Tensor formulation as well as through the imposition of gauge conditions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cosmological Geometries}
+\label{s:cosmological_geometries}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The cosmological principle asserts that on a large enough scale, the structure of spacetime is homogeneous and isotropic. Allowing for expansion or contraction of the universe over time, the generic metric that satisfies these criteria is the Friedmann–Lemaître–Robertson–Walker (FLRW, commonly cited as RW) \cite{kodama_sasaki_1984} metric
+\begin{eqnarray}
+ds^2 = -dt^2 + a(t)^2\left[ \frac{dr^2}{1-kr^2} + r^2d\theta^2 + r^2\sin^2\theta d\theta^2\right]. 
+\label{FRLW}
+\end{eqnarray}
+Here the scale factor $a(t)$ describes the expansion of space in the universe and $k \in \{-1,0,1\}$ describes the global geometry of the universe, being spatially hyperbolic, flat, or spherical respectively. 
+
+In a universe dominated by a cosmological constant (as relevant to inflation), one may solve the Einstein equations $G_{\mu\nu} = -8\pi G \Lambda g_{\mu\nu}$ to determine the requisite metric. For $\Lambda > 0$, the solution is the deSitter geometry (and $\Lambda < 0$ the anti deSitter geometry), which describes a maximally symmetric space with curvature tensors of the form
+\begin{eqnarray}
+R_{\lambda\mu\nu\kappa} = \Lambda (g_{\lambda\nu}g_{\nu\kappa}-g_{\lambda\kappa}g_{\mu\nu}),
+\qquad R_{\mu\kappa} = -3\Lambda g_{\mu\kappa},\qquad R=-12\Lambda.
+\end{eqnarray} 
+With deSitter space possessing higher symmetry than the most general FLRW space (i.e. more Killing vectors), it is in fact a special case of Roberston Walker as can be seen in the choice of coordinates 
+\begin{eqnarray}
+ds^2 = -dt^2 + e^{2\Lambda t} (dr^2 + r^2d\theta^2 + r^2\sin^2\theta d\phi^2),
+\end{eqnarray}
+which corresponds to $k=0$, $a(t) = e^{2\Lambda t}$ within \eqref{FRLW} and further discussed within Appendix \ref{abs:ds4} and Appendix \ref{abs:ds4_ads4_radiation}.
+
+A remarkable aspect about the Roberston Walker geometry (and $dS_4$ or $AdS_4$ by extension) is that in each global geometry (hyperbolic, flat, spherical) the space can be written in conformal to flat form. As a simple example, if we take the $k=0$ (flat 3-space) metric of \eqref{FRLW} according to
+\begin{eqnarray}
+ds^2 = -dt^2 + a(t)^2\left[ dr^2 + r^2d\theta^2 + r^2\sin^2\theta d\theta^2\right],
+\end{eqnarray}
+then in transforming the time coordinate via $\tau = \int \frac{dt}{a(t)}$, the geometry may be written in the form
+\begin{eqnarray}
+ds^2 = a(\tau^2)( -d\tau^2 + dr^2 + r^2d\theta^2 + r^2\sin^2\theta d\phi^2). 
+\end{eqnarray}
+If we are interested in the $k=-1/L^2$ hyperbolic space, a proper choice of coordinates allows the Roberston Walker to be expressed as
+\begin{eqnarray}
+ds^2=\frac{4L^2 a^2(p',r')}{[1-(p'+r')^2][1-(p'-r')^2]} \left[ -dp'^2 + dr'^2+r'^2 d\theta^2 + r'^2 \sin^2\theta d\phi^2\right]
+\end{eqnarray}
+whereas for the $k=1/L^2$ spherical 3-space \eqref{FRLW} takes the form
+\begin{eqnarray}
+ds^2=\frac{4L^2 a^2(p',r')}{[1+(p'+r')^2][1+(p'-r')^2]} \left[ -dp'^2 + dr'^2+r'^2 d\theta^2 + r'^2 \sin^2\theta d\phi^2\right].
+\end{eqnarray}
+The coordinate transformations necessary to bring the co-moving Roberston Walker forms into the conformal to flat basis are given in detail within Appendix \ref{ab:cosmologies}, including the conformal factors relevant to the radation era.
+
+As mentioned at the end of Sect. \ref{ss:on_the_energy_momentum_tensor}, since all the cosmological geometries of interest possess a coordinate expression where the space is conformal to flat, within such geometries the background Bach tensor vanishes $W^{(0)}_{\mu\nu} = 0$ to thus render $\delta W_{\mu\nu}$ to independently be a gauge invariant tensor, i.e. without reference to the equation of motion 
+%

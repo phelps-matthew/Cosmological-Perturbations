@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis-template.aux
+The style file: uconn_unsrtnat.bst
+Database file #1: bibliography.bib
+Warning--I didn't find a database entry for "Ellis2012"
+Warning--I didn't find a database entry for "Amarasinghe2018"
+Warning--I didn't find a database entry for "Mannheim2006"
+Warning--I didn't find a database entry for "Mannheim1998"
+You've used 27 entries,
+            2425 wiz_defined-function locations,
+            740 strings with 8409 characters,
+and the built_in function-call counts, 8780 in all, are:
+= -- 795
+> -- 303
+< -- 25
++ -- 138
+- -- 84
+* -- 657
+:= -- 1441
+add.period$ -- 80
+call.type$ -- 27
+change.case$ -- 51
+chr.to.int$ -- 27
+cite$ -- 27
+duplicate$ -- 430
+empty$ -- 814
+format.name$ -- 129
+if$ -- 1834
+int.to.chr$ -- 1
+int.to.str$ -- 28
+missing$ -- 29
+newline$ -- 142
+num.names$ -- 81
+pop$ -- 135
+preamble$ -- 1
+purify$ -- 27
+quote$ -- 0
+skip$ -- 310
+stack$ -- 0
+substring$ -- 493
+swap$ -- 65
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 180
+warning$ -- 0
+while$ -- 73
+width$ -- 0
+write$ -- 352
+(There were 4 warnings)

@@ -1,0 +1,205 @@
+
+\chapter{Conformal to Flat Cosmological Geometries}
+\label{ab:cosmologies}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robertson-Walker $k=0$}
+\label{abs:rw_k=0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to apply (\ref{AP61}) to cosmology we need to write the Robertson-Walker and de Sitter background geometries in a conformal to flat Minkowski form. For a $k=0$ Robertson-Walker background the comoving coordinate system metric takes the form
+% 
+\begin{eqnarray}
+ds^2({\rm comoving})=dt^2-a^2(t)[dx^2+dy^2+dz^2].
+\label{A}
+\end{eqnarray}
+%
+The straightforward introduction of the conformal time
+% 
+\begin{eqnarray}
+d\tau=\int \frac{dt}{a(t)}
+\label{A2}
+\end{eqnarray}
+%
+then allows us to write the conformal time metric as
+% 
+\begin{eqnarray}
+ds^2({\rm conformal~time})=a^2(\tau)[d\tau^2-dx^2-dy^2-dz^2].
+\label{A3}
+\end{eqnarray}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robertson-Walker $k>0$}
+\label{abs:rw_klt0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For a $k>0$ or a $k<0$ Robertson-Walker background the comoving and conformal time coordinate system metrics take the form
+% 
+\begin{eqnarray}
+ds^2({\rm comoving})&=&dt^2-a^2(t)\left[\frac{dr^2}{1-kr^2}+r^2d\theta^2+r^2\sin^2\theta d\phi^2\right],
+\nonumber\\
+ds^2({\rm conformal~time})&=&a^2(\tau)\left[d\tau^2-\frac{dr^2}{1-kr^2}-r^2d\theta^2-r^2\sin^2\theta d\phi^2\right].
+\label{A4}
+\end{eqnarray}
+%
+
+
+To bring the RW geometries with non-zero $k$ to a conformal to flat form requires coordinate transformations that involve both $\tau$ and $r$. For the $k>0$ case first, it is convenient to set $k=1/L^2$, and introduce $\sin \chi=r/L$, with the conformal time metric given in (\ref{A4}) then taking the form
+%
+\begin{eqnarray}
+ds^2=L^2a^2(p)\left[dp^2-d\chi^2 -\sin^2\chi d\theta^2-\sin^2\chi \sin^2\theta d\phi^2\right],
+\label{A5}
+\end{eqnarray}
+%
+where $p=\tau/L$. Following e.g. \cite{mannheim_2012} we introduce
+%
+\begin{eqnarray}
+p^{\prime}+r^{\prime}&=&\tan[(p+\chi)/2],\qquad p^{\prime}-r^{\prime}=\tan[(p-\chi)/2],
+\nonumber\\
+p^{\prime}&=&\frac{\sin p}{\cos p+\cos \chi},\qquad r^{\prime}=\frac{\sin \chi}{\cos p+\cos \chi},
+\label{A6}
+\end{eqnarray}
+%
+so that
+%
+\begin{eqnarray}
+dp^{\prime 2}-dr^{\prime 2}&=&\frac{1}{4}[dp^2-d\chi^2]\sec^2[(p+\chi)/2]\sec^2[(p-\chi)/2],
+\\
+\frac{1}{4}(\cos p +\cos \chi)^2&=&\cos^2[(p+\chi)/2]\cos^2[(p-\chi)/2]
+\nonumber\\
+&=&\frac{1}{[1+(p^{\prime}+r^{\prime})^2][1+(p^{\prime}-r^{\prime})^2]}.
+\label{A7}
+\end{eqnarray}
+%
+With these transformations the $k>0$ line element then takes the conformal to flat form
+%
+\begin{eqnarray}
+ds^2=\frac{4L^2a^2(p)}{[1+(p^{\prime}+r^{\prime})^2][1+(p^{\prime}-r^{\prime})^2]}\left[dp^{\prime 2}-dr^{\prime 2} -r^{\prime 2}d\theta^2-r^{\prime 2} \sin^2\theta d\phi^2\right].
+\label{A8}
+\end{eqnarray}
+%
+To bring the spatial sector  of (\ref{A8}) to Cartesian coordinates we set  $x^{\prime}=r^{\prime}\sin\theta\cos\phi$, $y^{\prime}=r^{\prime}\sin\theta\sin\phi$, $z^{\prime}=r^{\prime}\cos\theta$ and thus bring the line element to the form  
+%
+\begin{eqnarray}
+ds^2=L^2a^2(p)(\cos p+\cos \chi)^2\left[dp^{\prime 2}-dx^{\prime 2} -dy^{\prime 2} -dz^{\prime 2} \right],
+\label{A9}
+\end{eqnarray}
+%
+where now $r^{\prime}=(x^{\prime 2}+ y^{\prime 2}+z^{\prime 2})^{1/2}$. With these transformations (\ref{A9}) is now in the form given in (\ref{AP6}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robertson-Walker $k<0$}
+\label{abs:rw_kgt0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+For the $k<0$ case, it is convenient to set $k=-1/L^2$, and introduce ${\rm sinh} \chi=r/L$, with the conformal time metric given in (\ref{A4}) then taking the form
+%
+\begin{eqnarray}
+ds^2=L^2a^2(p)\left[dp^2-d\chi^2 -{\rm sinh}^2\chi d\theta^2-{\rm sinh}^2\chi \sin^2\theta d\phi^2\right],
+\label{A10}
+\end{eqnarray}
+%
+where $p=\tau/L$. Next we introduce
+%
+\begin{eqnarray}
+p^{\prime}+r^{\prime}&=&\tanh[(p+\chi)/2],\qquad p^{\prime}-r^{\prime}=\tanh[(p-\chi)/2],
+\nonumber\\
+ p^{\prime}&=&\frac{\sinh p}{\cosh p+\cosh \chi},\qquad r^{\prime}=\frac{\sinh \chi}{\cosh p+\cosh \chi},
+\label{A11}
+\end{eqnarray}
+%
+so that
+%
+\begin{eqnarray}
+dp^{\prime 2}-dr^{\prime 2}&=&\frac{1}{4}[dp^2-d\chi^2]{\rm sech}^2[(p+\chi)/2]{\rm sech}^2[(p-\chi)/2],
+\nonumber\\
+\frac{1}{4}(\cosh p+\cosh \chi)^2&=&{\rm \cosh}^2[(p+\chi)/2]{\rm \cosh}^2[(p-\chi)/2]
+\nonumber\\
+&=&\frac{1}{[1-(p^{\prime}+r^{\prime})^2][1-(p^{\prime}-r^{\prime})^2]}.
+\label{A12}
+\end{eqnarray}
+%
+With these transformations the line element takes the conformal to flat form
+%
+\begin{eqnarray}
+ds^2=\frac{4L^2a^2(p)}{[1-(p^{\prime}+r^{\prime})^2][1-(p^{\prime}-r^{\prime})^2]}\left[dp^{\prime 2}-dr^{\prime 2} -r^{\prime 2}d\theta^2-r^{\prime 2} \sin^2\theta d\phi^2\right].
+\label{A13}
+\end{eqnarray}
+%
+The spatial sector can then be written in Cartesian form
+%
+\begin{eqnarray}
+ds^2=L^2a^2(p)(\cosh p+\cosh \chi)^2\left[dp^{\prime 2}-dx^{\prime 2} -dy^{\prime 2} -dz^{\prime 2}\right],
+\label{A14}
+\end{eqnarray}
+%
+where again $r^{\prime}=(x^{\prime 2}+ y^{\prime 2}+z^{\prime 2})^{1/2}$.  We note that in transforming from (\ref{A4}) to (\ref{A9}) or to (\ref{A14}) we have only made coordinate transformations and not made any conformal transformation. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$dS_4$ and $AdS_4$ Background Solutions}
+\label{abs:ds4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+While the conformal to flat Minkowski structures given in (\ref{A3}), (\ref{A9}) and (\ref{A14}) are purely kinematical, the explicit form of $a(t)$ can be determined once a dynamics has been specified. Thus in regard to a de Sitter or anti-de Sitter cosmology, a de Sitter or an anti-de Sitter geometry is  just a particular case of a Robertson-Walker geometry in which $a(t)$ has a specific assigned value for each possible choice of  spatial 3-curvature $k$. On writing the  maximally 4-symmetric geometry condition $R_{\mu\nu}=-3\alpha g_{\mu\nu}$ in Robertson-Walker form one obtains 
+%
+\begin{eqnarray} 
+\dot{a}^2(t) +k=\alpha  a^2(t).
+\label{A15}
+\end{eqnarray}
+%
+(In terms of the scalar field model described in (\ref{AP32}) -- (\ref{AP35}) we have $K=\alpha =-2\lambda_{S}S^2_0$.) Here $\alpha$ is positive for de Sitter and negative for anti-de Sitter. Allowable solutions to (\ref{A15}) depend on the values of $\alpha$ and $k$, and are of the form (see e.g. \cite{Mannheim2006})
+%
+\begin{eqnarray}
+a(t,\alpha>0,k<0)&=&\left(-\frac{k}{\alpha}\right)^{1/2}
+\sinh(\alpha^{1/2}t),
+\nonumber \\
+a(t,\alpha>0,k=0)&=&a(t=0)\exp(\alpha^{1/2}t),
+\nonumber \\
+a(t,\alpha>0,k>0)&=&\left(\frac{k}{\alpha}\right)^{1/2}\cosh(\alpha^{1/2}t),
+\nonumber \\
+a(t,\alpha=0,k<0)&=&(-k)^{1/2}t,
+\nonumber \\
+a(t,\alpha<0,k<0)&=&\left(\frac{k}{\alpha}\right)^{1/2}\sin((-\alpha)^{1/2}t).
+\label{A16}
+\end{eqnarray}
+%
+In these solutions (\ref{A3}), (\ref{A9}), and (\ref{A14}) all apply  to a de Sitter or an anti-de Sitter cosmology.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}
+\label{abs:ds4_ads4_radiation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For Robertson-Walker cosmologies we note that with slight modification we can extend the scalar field model given above to include a perfect fluid, with the energy-momentum tensor then being given by \cite{mannheim_1998}
+%                                                                               
+\begin{eqnarray}
+T_{\rm S}^{\mu \nu}&=&(\rho+p)U_{\mu}U_{\nu}+pg_{\mu\nu} 
+-\frac{1}{6} S_0^2\left(R^{\mu\nu}-\frac{1}{2}g^{\mu\nu}
+R^\alpha_{\phantom{\alpha}\alpha}\right)-g^{\mu\nu}\lambda_S S_0^4,
+\label{A17}
+\end{eqnarray}                                 
+%
+with the background conformal cosmology still obeying $T_{\rm S}^{\mu \nu}=0$ since the background  Robertson-Walker geometry continues to obey $W_{\mu\nu}=0$.  On taking the perfect fluid energy-momentum tensor to be traceless radiation  (viz. $\rho=3p$, $\rho=A/a^4(t)$, $A>0$) as needed in the early universe, and with $\alpha =-2\lambda_{S}S^2_0$ as before, the evolution equation takes the form
+%                                                                               
+\begin{eqnarray}
+\dot{a}^2+k&=&\alpha a^2-\frac{2A}{S_0^2a^2},
+\label{A18}
+\end{eqnarray}                                 
+% 
+with allowed solutions to the cosmology being given by  \cite{Mannheim1998} 
+%
+\begin{eqnarray}
+a(t,\alpha>0,k<0,A>0)&=&\left(-\frac{k(\beta-1)}{2\alpha}-\frac{k\beta}{\alpha}\sinh^2(\alpha^{1/2}t)\right)^{1/2},
+\nonumber \\
+a(t,\alpha>0,k=0,A>0)&=&\left(-\frac{A}{\lambda_S S_0^4}\right)^{1/4}\cosh^{1/2}(2\alpha^{1/2}t),
+\nonumber \\
+a(t,\alpha>0,k>0,A>0)&=&\left(\frac{-k(\beta-1)}{2\alpha}+\frac{k\beta}{\alpha}\cosh^2(\alpha^{1/2}t)\right)^{1/2},
+\nonumber\\
+a(t,\alpha=0,k<0,A>0)&=&\left(-\frac{2A}{kS_0^2}-kt^2\right)^{1/2},
+\nonumber \\
+a(t,\alpha<0,k<0,A>0)&=&\left(-\frac{k(\beta-1)}{2\alpha}+\frac{k\beta}{\alpha}\sin^2((-\alpha)^{1/2}t)\right)^{1/2},
+\label{A19}
+\end{eqnarray}
+%
+where $\beta=(1+8A\alpha/k^2S_0^2)^{1/2}$.
