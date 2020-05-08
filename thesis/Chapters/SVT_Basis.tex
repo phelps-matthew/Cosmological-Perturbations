@@ -167,7 +167,7 @@ where the dot denotes the time derivative $\partial/\partial x^0$. As mentioned,
 However, with these identifications, there still remains a degree of ambiguity as to whether the combinations listed form the gauge invariants, or whether it is in fact derivative combinations that are truly gauge invariant. Here one must proceed carefully, as the gauge invariance of $\delta G_{\mu\nu}$ entails that only when taken with the various derivatives that appear in (\ref{2.3}) will these combinations be gauge invariant. For example, we may only state definitively that $\delta G_{00}$ is gauge invariant (hence $\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi$). The gauge invariance of $\psi$ itself cannot be assumed through the analysis on $\delta G_{\mu\nu}$ alone.
 
 
-To further investigate gauge invariance issues, we express each of the various SVT3 components in terms  of combinations of the original components of $h_{\mu\nu}$. Such a procedure has been derived in \cite{amarasinghe_2019} and is to be contrasted with the integral formulations in \eqref{AP65}. Specifically, in \eqref{AP65} we mentioned uniqueness up to integration by parts, whereas here such issues are avoided as we merely apply sequences of derivatives to $h_{\mu\nu}$ to form the requisite gauge invariant structure, and afterward analyze which SVT combinations are formed as a result. The gauge invariants take the following form: using the defintion
+To further investigate gauge invariance issues, we express each of the various SVT3 components in terms  of combinations of the original components of $h_{\mu\nu}$. Such a procedure has been derived in \cite{amarasinghe_2019} and is to be contrasted with the integral formulations in \eqref{AP65}. Specifically, in \eqref{AP65} we mentioned uniqueness up to integration by parts, whereas here such issues are avoided as we merely apply sequences of derivatives to $h_{\mu\nu}$ to form the requisite gauge invariant structure, and afterward analyze which SVT combinations are formed as a result. The gauge invariants take the following form: using the definition
 %
 \begin{eqnarray}
 2\phi&=&-h_{00},\quad B_i+\tilde{\nabla}_iB=h_{0i},
@@ -335,28 +335,39 @@ E_{ij}&=&\sum_qa_qe^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\bigg{[}\frac{[q^2\
 \label{2.11}
 \end{eqnarray}
 %
-where again $\tilde{\nabla}^jE_{ij}=0$. Since the set of all $e^{i\mathbf{q}\cdot\mathbf{x}-i\omega (q)t}$ plane waves is complete for fluctuations around flat, any mode can be expanded as a general sum $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$, with it following that (\ref{2.11}) then holds for the complete plane wave basis. Hence, by constructing the $\psi$ and $E_{ij}$ in a localized plane-wave basis, we confirm the tranverse relation $\tilde\nabla^j E_{ij} = 0$ without encountering issues related to integration by parts.
+where again $\tilde{\nabla}^jE_{ij}=0$. Since the set of all $e^{i\mathbf{q}\cdot\mathbf{x}-i\omega (q)t}$ plane waves is complete for fluctuations around flat, any mode can be expanded as a general sum $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$, with it following that (\ref{2.11}) then holds for the complete plane wave basis. Hence, by constructing the $\psi$ and $E_{ij}$ in a localized plane-wave basis, we confirm the transverse relation $\tilde\nabla^j E_{ij} = 0$ without encountering issues related to integration by parts.
 
+While we have demonstrated the role asymptotic behavior plays within tradeoff of transverse behavior vs. gauge invariance, it is also of importance to consider under conditions the SVT3 decomposition of $h_{\mu\nu}$ may be afforded in the first place. We revisit the SVT3 derivation constructed in \cite{amarasinghe_2019} with an eye towards boundary conditions and asymptotic behavior. 
 
-
-
-Now we had noted in \hyperref[c:decomposition_theorem]{Ch. 4} that we would need spatially asymptotic boundary conditions in order to be able to obtain a decomposition theorem for the SVT3 basis. We now see that we need this very same asymptotic condition in order to make transverseness and gauge invariance compatible. In fact, we actually need such boundary conditions in order to establish the SVT3 decomposition in the first place. Specifically, suppose that we are given some general vector $A_i$ and we want to extract out its transverse and longitudinal components and set $A_i=V_i+\partial_iL$. With $\partial_iV^i=0$ it follows that
+Let us suppose that we are given a general vector $A_i$ and we desire to extract out its transverse and longitudinal components, to thereby construct a relation $A_i=V_i+\partial_iL$ where $\partial_iV^i=0$. Applying $\partial^i$, it follows that
 %
 \begin{eqnarray}
 \partial_i\partial^iL=\partial_iA^i.
 \label{2.13}
 \end{eqnarray}
 %
-Given (\ref{1.9}), the general  solution to (\ref{2.13}) is of the the form 
+Recalling the Green's identity
+%
+\begin{eqnarray}
+A \partial_i\partial^iB-B \partial_i\partial^iA=\partial_i(A\partial^iB-B\partial^iA),
+\label{1.9}
+\end{eqnarray}
+and introducing the Green's function
+%
+\begin{eqnarray}
+\partial_i\partial^i D(\mathbf x-\mathbf y) = \delta^3(\mathbf x- \mathbf y),
+\end{eqnarray}
+%
+the general  solution to (\ref{2.13}) is of the form 
 %
 \begin{eqnarray}
 L({\bf x})&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_jA^j({\bf y})\\
 \nonumber\\
-&&+\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right],
+&&+\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right].
 \label{2.14}
 \end{eqnarray}
 %
-from which it follows that 
+Now utilizing $A_i = V_i + \partial_i L$, it follows that 
 %
 \begin{eqnarray}
 A_i({\bf x})&=&V_i({\bf x})+\partial^x_iL=V_i({\bf x})+\partial^x_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_jA^j({\bf y})
@@ -388,45 +399,6 @@ in the first place presupposes that the surface term in (\ref{2.15}) is zero, vi
 \end{eqnarray}
 %
 with $A_i$ thus needing to be well-behaved at spatial infinity. 
-
-Moreover, not only would  $A_i({\bf x})$ need to be asymptotically bounded so that we could uniquely decompose it into transverse and longitudinal components, as we noted for the SVT3 example given in \hyperref[c:decomposition_theorem]{Ch. 4} this is also a necessary condition for the decomposition theorem to be valid. To be specific, we note that if we take the theory to be just fluctuations around a flat background with no matter energy-momentum tensor, we can separate the various gauge-invariant combinations that appear in (\ref{2.3}) by taking derivatives of $\Delta G_{\mu\nu}=\delta G_{\mu\nu}+8\pi G \delta T_{\mu\nu}$ ($=\delta G_{\mu\nu}$ if $\delta T_{\mu\nu}=0$), to obtain
-%
-\begin{eqnarray}
-0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
-\nonumber\\
-0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(\phi+\dot{B}  -\ddot{E}),
-\nonumber\\
-0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(B_i-\dot{E}_i),
-\nonumber\\
-0&=&\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a} \delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}(-\ddot{E}_{ij}+\delta^{ef} \tilde{\nabla}_{e}\tilde{\nabla}_{f}E_{ij}),
-\label{2.19}
-\end{eqnarray}
-%
-and note that just as in (\ref{2.6}), we need to go to fourth-order derivatives. With the decomposition theorem requiring
-%
-\begin{eqnarray}
-0&=&- 2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
-\nonumber\\
-0&=&- 2 \tilde{\nabla}_{i}\dot{\psi},
-\nonumber\\
-0&=&\tfrac{1}{2} \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(B_{i} -  \dot{E}_{i}),
-\nonumber\\
-0&=&-2 \delta_{ij} \ddot{\psi} -  \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E})+ \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi 
-\nonumber\\
-&& +\tilde{\nabla}_{j}\tilde{\nabla}_{i}(\phi+\dot{B} -  \ddot{E}) - \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi,
-\nonumber\\
-0&=&\tfrac{1}{2} \tilde{\nabla}_{i}(\dot{B}_{j} - \ddot{E}_{j}) + \tfrac{1}{2} \tilde{\nabla}_{j}(\dot{B}_{i} 
-- \ddot{E}_{i}),
-\nonumber\\
-0&=&- \ddot{E}_{ij} + \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E_{ij}
-\label{2.20}
-\end{eqnarray}
-%
-in this case, we see that if for any quantity $D$ that obeys  $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}D=0$ (or $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}\delta^{cd} \tilde{\nabla}_{c}\tilde{\nabla}_{d}D=0$) we impose spatial boundary conditions on $D$ so that $D$ (or $\delta^{ab} \tilde{\nabla}_{a}\tilde{\nabla}_{b}D$) vanishes,  the decomposition theorem will then follow for the $\delta G_{\mu\nu}$ associated with fluctuations around a flat Minkowski background. In this paper we will explore the degree to which this will also be the case for SVT3 fluctuations around some cosmologically interesting backgrounds where the fluctuation equations are more complicated than in the flat background case.
-
-As we will see immediately in \hyperref[s:svt4]{SVT4}, we will also need an asymptotic condition in order to establish the very existence of an SVT4 decomposition for the individual components of the fluctuations. However, this is not in general sufficient to provide for a decomposition theorem for the fluctuation equation itself in the SVT4 case. So we turn now to analyze the SVT4 case in detail. 
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
