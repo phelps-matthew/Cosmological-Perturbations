@@ -414,7 +414,7 @@ We defined Greek indices to range over the full D-dimensional space and begin wi
 %%%%%%%%%%%%%%%%%%%%%%%%
 \footnote{The previously introduced $E_{ij}$ was only transverse and traceless in a 3-dimensional subspace.}
 %%%%%%%%%%%%%%%%%%%%%%%%
-Accounting for the dimensionality and the transverse traceless constraints, $F_{\mu\nu}$ tensor will have $D(D+1)/2-D-1=(D+1)(D-2)/2$ components. To facilitate the decomposition, we introduce a D-dimensional  vector $W_{\mu}$, with the one extra needed piece of information being provided by $h=g^{\mu\nu}h_{\mu\nu}$. In terms of this $W_{\mu}$ and $h$ we have found it very convenient to define a general $h_{\mu\nu}$ fluctuation around a flat D-dimensional space to be of the form
+Accounting for the dimensionality and the transverse traceless constraints, $F_{\mu\nu}$ tensor will have $D(D+1)/2-D-1=(D+1)(D-2)/2$ components. To facilitate the decomposition, we introduce a D-dimensional  vector $W_{\mu}$. In terms of this $W_{\mu}$ and $h$, and motivated by \cite{mannheim_2005}, we define the general $h_{\mu\nu}$ fluctuation around a flat D-dimensional space to be of the form
 %
 \begin{eqnarray}
 h_{\mu\nu}=2F_{\mu\nu}+\nabla_{\nu}W_{\mu}+\nabla_{\mu}W_{\nu}+\frac{2-D}{D-1}\nabla_{\mu}\nabla_{\nu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}
@@ -430,17 +430,17 @@ g^{\mu\nu}\nabla_{\mu}\nabla_{\nu}D^{(D)}(x-y)=\delta^{(D)}(x-y).
 \label{3.2}
 \end{eqnarray}
 %
-As with the SVT3 case discussed in Sec. \ref{S2}, implicit in the form given for $h_{\mu\nu}$  is that the now D-dimensional integrals exist, with $\nabla^{\alpha}W_{\alpha}$ being sufficiently well-behaved at infinity.
-To make the $F_{\mu\nu}$ that is defined by (\ref{3.1}) be transverse and traceless requires D+1 conditions, D to be supplied by $W_{\mu}$ and one  to be supplied by $h$. Taking the trace of (\ref{3.1}) shows that as defined $F_{\mu\nu}$ already is traceless (because of the way that $h$ has judiciously been introduced in (\ref{3.1})), while applying $\nabla^{\nu}$  to (\ref{3.1}) yields
+Parallel to the SVT3 asymptotic behavior discussed in Sec. \ref{ss:gauge_struct_svt3}, it is implied in the form of $h_{\mu\nu}$ that the D-dimensional integrals exist, specifically with $\nabla^{\alpha}W_{\alpha}$ being sufficiently well-behaved at infinity.
+To make the $F_{\mu\nu}$ that is defined by (\ref{3.1}) be transverse and traceless requires D+1 conditions, D to be supplied by $W_{\mu}$ and one  to be supplied by $h$. Given the defined \eqref{3.1}, one may take the trace and confirm that $F_{\mu\nu}$ is traceless as written. To assess whether $F_{\mu\nu}$ is transverse, we apply $\nabla^{\nu}$  to (\ref{3.1}) yielding
 %
 \begin{eqnarray}
-\nabla^{\nu}h_{\nu\mu}=\nabla_{\alpha}\nabla^{\alpha}W_{\mu},
+\nabla^{\nu}h_{\nu\mu}=\nabla_{\alpha}\nabla^{\alpha}W_{\mu}.
 \label{3.3}
 \end{eqnarray}
 % 
-to thus fix the D components of $W_{\mu}$. The assumed boundedness of $\nabla^{\alpha}W_{\alpha}$ thus correlates with the boundedness of $h_{\mu\nu}$, and  for any sufficiently bounded $W_{\mu}$ that obeys (\ref{3.3}) the D-dimensional rank two tensor $F_{\mu\nu}$ is transverse and traceless.
+Thus \eqref{3.3} serves to define the as yet determined $D$ components of $W_\mu$ in terms of the $h_{\mu\nu}$. Questions on the asymptotic behavior of $\nabla^{\alpha}W_{\alpha}$ are thus directly linked the asymptotic behavior of $h_{\mu\nu}$. Hence, for a $W_{\mu}$ that obeys (\ref{3.3}) and is sufficiently bounded, the D-dimensional rank two tensor $F_{\mu\nu}$ is transverse and traceless.
 
-On now applying $\nabla_{\alpha}\nabla^{\alpha}$ to (\ref{3.1}) we obtain
+Uponj applying $\nabla_{\alpha}\nabla^{\alpha}$ to (\ref{3.1}) we obtain
 %
 \begin{eqnarray}
 \nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}&=&2\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}+\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}+\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\frac{2-D}{D-1}\nabla_{\mu}\nabla_{\nu}\nabla^{\alpha}W_{\alpha}
@@ -460,7 +460,19 @@ and on rearranging we obtain
 \label{3.5}
 \end{eqnarray}
 %
-Now $\nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h$ and $\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h$ are both gauge invariant (the first term is equal to the D-dimensional fluctuation $2\delta R_{\mu\nu}$ around flat spacetime and the second to $-\delta R$). Now since
+Now in flat spacetime, we note that the perturbed curvature tensors $\delta R$ and $\delta R_{\mu\nu}$ are independelty gauge invariant. Thus, armed with the SVTD formalism, we use these to determine the gauge invariants
+%
+\begin{eqnarray}
+2\delta R_{\mu\nu} = \nabla_{\alpha}\nabla^{\alpha}h_{\mu\nu}-\nabla_{\nu}\nabla^{\alpha}h_{\alpha\mu}-\nabla_{\mu}\nabla^{\alpha}h_{\alpha\nu}+\nabla_{\mu}\nabla_{\nu}h
+\label{dricci}
+\end{eqnarray}
+%
+%
+\begin{eqnarray}
+-\delta R = \nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h.
+\label{driccis}
+\end{eqnarray}
+Making use of
 %
 \begin{eqnarray}
 \nabla_{\beta}\nabla^{\beta}[\nabla^{\alpha}W_{\alpha}-h]=\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h,
@@ -474,9 +486,9 @@ we define
 \label{3.7}
 \end{eqnarray}
 %
-and with this solution we see that  $\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}$ is gauge invariant. However as with $E_{ij}$ in the SVT3 case, to show that $\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}$ is transverse requires that we can integrate by parts.
+and with this solution and reference to \eqref{dricci} and \eqref{driccis} we see that  $\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}$ is thus gauge invariant. However, we note again that parallel to the discussion the SVT3 tensor $E_{ij}$, to show that $\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}$ is transverse requires that we one can justify an integrate by parts.
 
-We now make the following definitions
+For the remaining SVTD components, we make the following definitions
 %
 \begin{eqnarray}
 2\chi&=&\frac{1}{D-1}[\nabla^{\alpha}W_{\alpha}-h],\quad 
@@ -486,7 +498,7 @@ F_{\mu}&=&W_{\mu}-\nabla_{\mu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}.
 \label{3.8}
 \end{eqnarray}
 %
-From (\ref{3.8})  it follows that  $\nabla^{\mu}F_{\mu}=0$, with, as per (\ref{3.7}),  $\chi$ being the integral of a gauge-invariant function so that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is automatically gauge invariant. Given (\ref{3.8}) we can rewrite (\ref{3.1}) as 
+As constructed, within (\ref{3.8}) $F_\mu$ is defined such that $\nabla^{\mu}F_{\mu}=0$. As for $\chi$, we note with (\ref{3.7}) we find that  $\chi$ is the integral of a gauge-invariant function so that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is also automatically gauge invariant. Finally, with (\ref{3.8}) we can express (\ref{3.1}) in terms of the SVTD quantities as
 %
 \begin{eqnarray}
 h_{\mu\nu}=-2g_{\mu\nu}\chi+2\nabla_{\mu}\nabla_{\nu}F
@@ -494,9 +506,9 @@ h_{\mu\nu}=-2g_{\mu\nu}\chi+2\nabla_{\mu}\nabla_{\nu}F
 \label{3.9}
 \end{eqnarray}
 %
-to thus write $h_{\mu\nu}$ in an SVTD  basis. In a general D-dimensional basis $F_{\mu\nu}$ has $(D+1)(D-2)/2$ components, the transverse $F_{\mu}$ has $D-1$ components, the two scalars $\chi$ and $F$ each have one component, and together they comprise the $D(D+1)/2$ components of a general $h_{\mu\nu}$. If we set $D=3$, we recognize (\ref{3.9}) as the spatial piece of SVT3 given in (\ref{2.1}), just as it should be.
+to thus complete the SVTD basis decomposition of $h_{\mu\nu}$. In a general D-dimensional basis $F_{\mu\nu}$ has $(D+1)(D-2)/2$ components, the transverse $F_{\mu}$ has $D-1$ components, the two scalars $\chi$ and $F$ each have one component, and together they comprise the $D(D+1)/2$ components of a general $h_{\mu\nu}$. If we  elect to take $D=3$, (i.e. a decomposition of $h_{ij}$) we can then recognize (\ref{3.9}) as the spatial piece of SVT3 given in (\ref{2.1}), providing a check on our results.
 
-Now in a fluctuation around flat D-dimensional spacetime $\delta G_{\mu\nu}$ can only contain $D(D+1)/2-D=D(D-1)/2$ independent gauge-invariant combinations. With $F_{\mu\nu}$ having $(D+1)(D-2)/2$ components and $\chi$ having one, viz. precisely a total of $D(D-1)/2$, and  with the derivatives of both them being gauge invariant, it follows that $\delta G_{\mu\nu}$ can only depend on $F_{\mu\nu}$ and $\chi$. And given (\ref{3.8}) and (\ref{3.9}), via (\ref{3.5}), (\ref{3.6}) and (\ref{3.7}) we obtain  the following gauge-invariant relations
+Counting the degrees of freedom of the fluctuation $\delta G_{\mu\nu}$ around flat D-dimensional we arrive at a total of $D(D+1)/2-D=D(D-1)/2$ independent gauge-invariant combinations. For the SVTD components, $F_{\mu\nu}$ has $(D+1)(D-2)/2$ components and $\chi$ has one. That is, the combination of $\chi$ and $F_{\mu\nu}$ precisely forms a total of $D(D-1)/2$. Moreoever with the derivatives of both them being gauge invariant, we deduce that $\delta G_{\mu\nu}$ can only depend on $F_{\mu\nu}$ and $\chi$. Applying appropriate derivatives to the quantities given (\ref{3.8}) and (\ref{3.9}), we indeed form the following gauge invariant relations
 %
 \begin{eqnarray}
 2\nabla_{\alpha}\nabla^{\alpha}\chi&=&\frac{1}{D-1}\left[\nabla^{\alpha}\nabla^{\beta}h_{\alpha\beta}-\nabla_{\alpha}\nabla^{\alpha}h\right],
@@ -513,11 +525,11 @@ Now in a fluctuation around flat D-dimensional spacetime $\delta G_{\mu\nu}$ can
 \nonumber\\
 &&+(D-2)(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu})\chi,
 \nonumber\\
-g^{\mu\nu}\delta G_{\mu\nu}&=&(D-2)(D-1)\nabla_{\alpha}\nabla^{\alpha}\chi,
+g^{\mu\nu}\delta G_{\mu\nu}&=&(D-2)(D-1)\nabla_{\alpha}\nabla^{\alpha}\chi.
 \label{3.10}
 \end{eqnarray}
 %
-kinematic relations that hold without the imposition of any fluctuation equation of motion. As we see, $\delta G_{\mu\nu}$ nicely depends  on just $F_{\mu\nu}$ and $\chi$, and one can readily check that $\delta G_{\mu\nu}$ automatically obeys $\nabla^{\nu}\delta G_{\mu\nu}=0$.  And with all the components of $\delta G_{\mu\nu}$ being gauge invariant for fluctuations around a D-dimensional flat spacetime,  from the expression for $g^{\mu\nu}\delta G_{\mu\nu}$  we can infer only that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is gauge invariant. And on then applying $\nabla_{\alpha}\nabla^{\alpha}$ to the $\delta G_{\mu\nu}$ equation we can infer only that $\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu}$ is gauge invariant. As noted before, we can only proceed from these conditions to the gauge invariance of $\chi$ and $F_{\mu\nu}$ themselves if we can integrate by parts, and we explore this point further in the Appendix (see also the discussion following (\ref{A.27a})). In the Appendix we also provide a generalization of the SVTD approach to the general D-dimensional curved spacetime background.
+As written, we confirm that $\delta G_{\mu\nu}$ indeed depends upon only $F_{\mu\nu}$ and $\chi$, with one readily being able to check that $\delta G_{\mu\nu}$ obeys conservation $\nabla^{\nu}\delta G_{\mu\nu}=0$. Close inspection of the components of $\delta G_{\mu\nu}$ reveals that only infer that from $g^{\mu\nu}\delta G_{\mu\nu}$ that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is alone gauge invariant. However, by applying $\nabla_{\alpha}\nabla^{\alpha}$ to the $\delta G_{\mu\nu}$ equation we can then additionally deduce that $\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu}$ is gauge invariant. Importantly, we note that $F_{\mu\nu}$ nor $\nabla_\alpha\nabla^\alpha F_{\mu\nu}$ may be determined to gauge invariant without consideration issues related to its asymptotic behavior.  We will continue a discussion of the role of gauge invariance and boundedness in the following section. In addition, further detail of the SVTD construction, formalism, and gauge invariance is discussed within Appendex \ref{aa:svt_projection}. 
 
 
 In $D=4$ we note that $F_{\mu\nu}$ has five components and $\chi$ has one. Since in a fluctuation around a flat four spacetime $\delta G_{\mu\nu}$ can only contain six independent gauge-invariant combinations, it can only depend on $F_{\mu\nu}$ and $\chi$. Thus using a manifestly covariant formalism we replace the six gauge-invariant combinations $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ used in SVT3 by the six gauge-invariant combinations $F_{\mu\nu}$ and $\chi$ used in SVT4. This is an altogether more compact set of gauge-invariant combinations, with $\delta G_{\mu\nu}$ as given in (\ref{3.10}) being altogether simpler than its form given in (\ref{2.3}). And being simpler to write down, it is also simpler to solve. However, before looking at solutions to the SVT4 fluctuation equations it is instructive to relate the SVT4 and SVT3 bases and determine which SVT4 components correspond to which SVT3 components.
