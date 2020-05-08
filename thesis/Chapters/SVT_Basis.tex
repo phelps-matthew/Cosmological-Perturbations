@@ -167,7 +167,7 @@ where the dot denotes the time derivative $\partial/\partial x^0$. As mentioned,
 However, with these identifications, there still remains a degree of ambiguity as to whether the combinations listed form the gauge invariants, or whether it is in fact derivative combinations that are truly gauge invariant. Here one must proceed carefully, as the gauge invariance of $\delta G_{\mu\nu}$ entails that only when taken with the various derivatives that appear in (\ref{2.3}) will these combinations be gauge invariant. For example, we may only state definitively that $\delta G_{00}$ is gauge invariant (hence $\delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi$). The gauge invariance of $\psi$ itself cannot be assumed through the analysis on $\delta G_{\mu\nu}$ alone.
 
 
-To see why a gauge invariance issue might arise, it is instructive to express each of the various SVT3 components in terms  of combinations of the original components of $h_{\mu\nu}$, and to expressly do so without referencing the Einstein equations at all. We follow the derivation given in \cite{amarasinghe_2019}, and given only the definitions of various combinations of the SVT3 fluctuation components  in terms of the $h_{\mu\nu}$ as
+To further investigate gauge invariance issues, we express each of the various SVT3 components in terms  of combinations of the original components of $h_{\mu\nu}$. Such a procedure has been derived in \cite{amarasinghe_2019} and is to be contrasted with the integral formulations in \eqref{AP65}. Specifically, in \eqref{AP65} we mentioned uniqueness up to integration by parts, whereas here such issues are avoided as we merely apply sequences of derivatives to $h_{\mu\nu}$ to form the requisite gauge invariant structure, and afterward analyze which SVT combinations are formed as a result. The gauge invariants take the following form: using the defintion
 %
 \begin{eqnarray}
 2\phi&=&-h_{00},\quad B_i+\tilde{\nabla}_iB=h_{0i},
@@ -176,7 +176,7 @@ h_{ij}&=&-2\psi\delta_{ij} +2\tilde{\nabla}_i\tilde{\nabla}_j E + \tilde{\nabla}
 \label{2.4}
 \end{eqnarray}
 %
-we obtain
+we apply derivatives to obtain the relations
 %
 \begin{eqnarray}
 \delta^{ij}h_{ij}&=&-6\psi+2\tilde{\nabla}_i\tilde{\nabla}^iE,\quad
@@ -186,7 +186,7 @@ we obtain
 \label{2.5}
 \end{eqnarray}
 %
-and can thus set 
+which then allow us to form the gauge invariants, taking the form
 %
 \begin{eqnarray}
 \tilde{\nabla}_k\tilde{\nabla}^k\psi&=&\frac{1}{4} \left[\tilde{\nabla}^i \tilde{\nabla}^jh_{ij}-\tilde{\nabla}_k\tilde{\nabla}^k(\delta^{ij}h_{ij})\right],
@@ -228,12 +228,9 @@ and can thus set
 \label{2.6}
 \end{eqnarray}
 %
-As we see, we need to go to fairly high derivatives in order to be able to express each of the SVT3 components entirely in terms of combinations of components of the $h_{\mu\nu}$.
+Given (\ref{2.6}) one can readily check that under a gauge transformation $h_{\mu\nu}\rightarrow h_{\mu\nu}-\partial_{\mu}\epsilon_{\nu}-\partial_{\nu}\epsilon_{\mu}$ the combinations  $\tilde{\nabla}_k\tilde{\nabla}^k\psi $, $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$, $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^k(B_i-\dot{E}_i)$ and $ \tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})$ are gauge invariant. We see here that it was in fact necessary to apply higher order derivatives than found in $\delta G_{\mu\nu}$ in order to express each of the SVT3 components entirely in terms of combinations of components of the $h_{\mu\nu}$. Hence, we repeat that it is not the quantities $\psi$, $E_{ij}$, $B_i-\dot{E}_i$ and $\phi+\dot{B}-\ddot{E}$ themselves that are necessarily gauge invariant; rather, it is their derivatives that are  gauge invariant. In comparing \eqref{2.6} to (\ref{2.3}) we see that it is the quantity $\tilde{\nabla}_k\tilde{\nabla}^k\psi$ that appears in $\delta G_{00}$ and that it is the combination $ \tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ that appears in  $\delta G_{ij}$. Thus these  combinations are automatically gauge invariant.
 
-Given (\ref{2.6}) one can readily check that under a gauge transformation $h_{\mu\nu}\rightarrow h_{\mu\nu}-\partial_{\mu}\epsilon_{\nu}-\partial_{\nu}\epsilon_{\mu}$ the combinations  $\tilde{\nabla}_k\tilde{\nabla}^k\psi $, $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$, $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^k(B_i-\dot{E}_i)$ and $ \tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})$ are gauge invariant. Thus, as we noted above, it is not the quantities $\psi$, $E_{ij}$, $B_i-\dot{E}_i$ and $\phi+\dot{B}-\ddot{E}$ themselves that are necessarily gauge invariant. Rather, it is their derivatives that are  gauge invariant. Comparison with (\ref{2.3}) shows that it is the quantity $\tilde{\nabla}_k\tilde{\nabla}^k\psi$ that appears in $\delta G_{00}$ and that it is the combination $ \tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ that appears in  $\delta G_{ij}$. Thus these  combinations are automatically gauge invariant.
-
-
-Now we could integrate the relevant equations in (\ref{2.6}) in order to check gauge invariance for $\psi$, $\phi+\dot{B}-\ddot{E}$, $B_{i}-\dot{E_i}$ and $E_{ij}$ themselves, since we can set
+To touch basis with \eqref{AP65}, we could proceed to integrate the relevant equations in (\ref{2.6}) in order to check gauge invariance for $\psi$, $\phi+\dot{B}-\ddot{E}$, $B_{i}-\dot{E_i}$ and $E_{ij}$ themselves, since we can set
 
 %
 \begin{eqnarray}
@@ -281,19 +278,19 @@ E_{ij}&=&\frac{1}{2}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\left[\tilde{\nabla}^
 \label{2.8}
 \end{eqnarray}
 %
-where $D^{(3)}(\mathbf{x}-\mathbf{y})$ obeys 
+where we make use of the flat space Green's function $D^{(3)}(\mathbf{x}-\mathbf{y})$ obeying 
 %
 \begin{eqnarray}
 \delta^{ij}\tilde{\nabla}_i\tilde{\nabla}_jD^{(3)}(\mathbf{x}-\mathbf{y})&=&\delta^3(\mathbf{x}-\mathbf{y}),\quad
 D^{(3)}(\mathbf{x}-\mathbf{y})=-\frac{1}{4\pi |\mathbf{x}-\mathbf{y}|},
 \nonumber\\
-\int d^3\mathbf{y}e^{i\mathbf{q}\cdot\mathbf{y}}D^{(3)}(\mathbf{x}-\mathbf{y})&=&-\frac{e^{i\mathbf{q}\cdot\mathbf{x}}}{q^2},
+\int d^3\mathbf{y}e^{i\mathbf{q}\cdot\mathbf{y}}D^{(3)}(\mathbf{x}-\mathbf{y})&=&-\frac{e^{i\mathbf{q}\cdot\mathbf{x}}}{q^2}.
 \label{2.9}
 \end{eqnarray}
 %
-where $q^2=\delta^{ij}q_{i}q_{j}$, and where in a symbol such as $\tilde{\nabla}_y^i$ for instance the $y$ indicates that the derivative is taken with respect to the $y$ coordinate.
+(Here $q^2=\delta^{ij}q_{i}q_{j}$, and in $\tilde{\nabla}_y^i$ the $y$ indicates that the derivative is taken with respect to the $y$ coordinate, and likewise for other coordinate choices.)
 
-However, there initially is a shortcoming to (\ref{2.7}) and (\ref{2.8}), since while $\psi$ and $E_{ij}$ are manifestly gauge invariant as is (they are expressed in terms of the gauge-invariant flat 3-space $\delta R_{ij}$ and $\delta^{ij}\delta R_{ij}$), to show the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i -\dot{E}_i$ we would need to be able to integrate by parts. (For $\phi+\dot{B}-\ddot{E}$  we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \tilde{\nabla}_k\tilde{\nabla}^k$ and $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside the double integral, while for $B_i-\dot{E}_i$ we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside.) Similarly, to show that $B_i -\dot{E}_i$ and $E_{ij}$ are transverse we would also need to be able to integrate by parts. Thus we would either have to put constraints on how $h_{\mu\nu}$ is to behave asymptotically, or restrict to requiring in the $E_{ij}$ sector that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be gauge invariant and that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse, or in the $E_{ij}$ plus $\psi$ sector restrict to requiring that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ be gauge invariant and that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse. 
+As eluded to below \eqref{AP65}, there however is an issues within (\ref{2.7}) and (\ref{2.8}), since while $\psi$ and $E_{ij}$ are manifestly gauge invariant as is (they are expressed in terms of the gauge-invariant flat 3-space $\delta R_{ij}$ and $\delta^{ij}\delta R_{ij}$), to show the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i -\dot{E}_i$ we would need to be able to integrate by parts. (For $\phi+\dot{B}-\ddot{E}$  we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \tilde{\nabla}_k\tilde{\nabla}^k$ and $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside the double integral, while for $B_i-\dot{E}_i$ we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside.) Similarly, to show that $B_i -\dot{E}_i$ and $E_{ij}$ are transverse we would also need to be able to integrate by parts. Thus we would either have to put constraints on how $h_{\mu\nu}$ is to behave asymptotically, or restrict to requiring in the $E_{ij}$ sector that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be gauge invariant and that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse, or in the $E_{ij}$ plus $\psi$ sector restrict to requiring that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ be gauge invariant and that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse. 
 
 However, if we take $h_{\mu\nu}$  to be localized in space and oscillating in time, in the integrals given in (\ref{2.7}) and (\ref{2.8}) we then can integrate by parts. To be specific, suppose for each mode in a localized packet we set $h_{ij}=\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ where in this case $\omega(q)$ is not necessarily equal to $q$, and where $\epsilon_{ij}(q)$ is a polarization tensor, as constrained by the restriction that there be none of the $\delta(q)$ or $\delta(q)/q$ type terms that appear in (\ref{1.8}). For such a fluctuation the representative quantities $\psi$ and $E_{ij}$ as given in (\ref{2.7}) and (\ref{2.8}) then evaluate to
 %
