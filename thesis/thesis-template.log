@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  8 MAY 2020 10:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  8 MAY 2020 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -383,23 +383,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
-
+(./thesis-template.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-] [1] [2] [3] (./thesis-template.toc
-[4]
+]
 Overfull \hbox (5.54599pt too wide) in paragraph at lines 72--72
  [][] [][][]\OT1/cmr/m/n/12 Transverse and Lon-gi-tu-di-nal Pro-jec-tion Op-er-
 a-tors for Curved Space- 
@@ -409,7 +405,7 @@ a-tors for Curved Space-
 \tf@toc=\write4
 \openout4 = `thesis-template.toc'.
 
- [5] (./Chapters/Intro.tex
+ [2] (./Chapters/Intro.tex
 Chapter 1.
 ) (./Chapters/Formalism.texpdfTeX warning (ext4): destination with the same ide
 ntifier (name{page.1}) has been already used, duplicate ignored
@@ -537,24 +533,23 @@ LaTeX Warning: Reference `S7' on page 34 undefined on input line 710.
 LaTeX Warning: Hyper reference `c:decomposition_theorem' on page 36 undefined o
 n input line 788.
 
-[36]
+[36] [37]
 Overfull \hbox (49.82332pt too wide) in alignment at lines 861--865
  [][][] []
  []
 
-[37]
 
 LaTeX Warning: Reference `1.1' on page 38 undefined on input line 893.
 
 
 LaTeX Warning: Reference `1.1' on page 38 undefined on input line 893.
 
-
+[38]
 Overfull \hbox (117.0736pt too wide) in alignment at lines 895--898
  [][][] []
  []
 
-[38]) (./Chapters/Solutions.tex [39]
+) (./Chapters/Solutions.tex [39]
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1009,38 +1004,50 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  )
-(\end occurred when \iffalse on line 59 was incomplete)
-(\end occurred when \iffalse on line 55 was incomplete) 
+(\end occurred when \iffalse on line 59 was incomplete) 
 Here is how much of TeX's memory you used:
- 9438 strings out of 483183
- 133626 string characters out of 5966293
- 443110 words of memory out of 5000000
- 23478 multiletter control sequences out of 15000+600000
- 542095 words of font info for 61 fonts, out of 8000000 for 9000
+ 9435 strings out of 483183
+ 133643 string characters out of 5966293
+ 442932 words of memory out of 5000000
+ 23477 multiletter control sequences out of 15000+600000
+ 542097 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,13n,47p,3339b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb>
-Output written on thesis-template.pdf (146 pages, 739166 bytes).
+ 37i,13n,47p,3339b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): n
+ame{equation.3.4.46} has been referenced but does not exist, replaced by a fixe
+d one
+
+pdfTeX warning (dest): name{equation.3.3.39} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.3.2.27} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.3.1.21} has been referenced but does not e
+xist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb>
+Output written on thesis-template.pdf (141 pages, 743888 bytes).
 PDF statistics:
- 2555 PDF objects out of 2984 (max. 8388607)
- 2365 compressed objects within 24 object streams
- 812 named destinations out of 1000 (max. 500000)
+ 2540 PDF objects out of 2984 (max. 8388607)
+ 2354 compressed objects within 24 object streams
+ 811 named destinations out of 1000 (max. 500000)
  457 words of extra memory for PDF output out of 10000 (max. 10000000)
 
