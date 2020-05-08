@@ -292,18 +292,39 @@ D^{(3)}(\mathbf{x}-\mathbf{y})=-\frac{1}{4\pi |\mathbf{x}-\mathbf{y}|},
 
 As eluded to below \eqref{AP65}, there remains however an issue within (\ref{2.7}) and (\ref{2.8}). Specifically, since $\psi$ and $E_{ij}$ are manifestly gauge invariant as is (they are expressed in terms of the gauge-invariant flat 3-space $\delta R_{ij}$ and $\delta^{ij}\delta R_{ij}$), in order to show the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i -\dot{E}_i$ we would need to be able to integrate by parts (i.e., for $\phi+\dot{B}-\ddot{E}$  we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell} \tilde{\nabla}_k\tilde{\nabla}^k$ and $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside the double integral, while for $B_i-\dot{E}_i$ we would need to bring $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}$ inside, and similarly to show tranverness for $B_i -\dot{E}_i$ and $E_{ij}$ we need to be able to integrate by parts.) Consequently, we are then forced to one of three scenarios. Either a) we must put constraints on how $h_{\mu\nu}$ is to behave asymptotically, or b) restrict to requiring in the $E_{ij}$ sector that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be gauge invariant and that only $\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse or c) in the $E_{ij}$ plus $\psi$ sector restrict to requiring that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}-\delta_{ij}\tilde{\nabla}_k\tilde{\nabla}^k\psi-\tilde{\nabla}_i\tilde{\nabla}_j\psi$ be gauge invariant and that only $\tilde{\nabla}_k\tilde{\nabla}^kE_{ij}$ be transverse. 
 
-However, if we take $h_{\mu\nu}$  to be localized in space and oscillating in time, in the integrals given in (\ref{2.7}) and (\ref{2.8}) we then can integrate by parts. To be specific, suppose for each mode in a localized packet we set $h_{ij}=\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ where in this case $\omega(q)$ is not necessarily equal to $q$, and where $\epsilon_{ij}(q)$ is a polarization tensor, as constrained by the restriction that there be none of the $\delta(q)$ or $\delta(q)/q$ type terms that appear in (\ref{1.8}). For such a fluctuation the representative quantities $\psi$ and $E_{ij}$ as given in (\ref{2.7}) and (\ref{2.8}) then evaluate to
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\footnote{
+	In a similar manner, we may also integrate the remaining SVT3 components, obtaining
+	%
+	\begin{eqnarray}
+	2\phi&=&-h_{00},\quad
+	B=\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
+	\nonumber\\
+	B_i&=&h_{0i}-\tilde{\nabla}_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
+	\nonumber\\
+	E&=&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\left[3\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}h_{k\ell}-\tilde{\nabla}^z_k\tilde{\nabla}_z^k(\delta^{k\ell}h_{k\ell})\right],
+	\nonumber\\
+	E_i&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\left[\tilde{\nabla}^z_k\tilde{\nabla}_z^k\nabla_z^jh_{ij}-\nabla^z_i\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}h_{k\ell}\right]
+	\label{2.12}
+	\end{eqnarray}
+	%
+	As constructed, we see that $\tilde{\nabla}^iB_i=0$. However to show $\nabla^iE_i=0$, we need to be able to integrate by parts. Using (\ref{2.4}) and (\ref{2.6}) directly, we can then show that both $\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})$ and $\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(B_i-\dot{E}_i)$ are gauge invariant, with the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ themselves then following when defining $B$, $B_i$, $E$ and $E_i$ according to (\ref{2.12}). Hence, granted the freedom to integrate by parts, we can show that for fluctuations around flat spacetime all of the six $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ quantities that appear in $\delta G_{\mu\nu}$ as given in (\ref{2.3}) are gauge invariant.
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To see how method a), constraining the asymptotic behavior of $h_{\mu\nu}$, may resolve the issues of integration by parts, we shall take $h_{\mu\nu}$  to be localized in space and oscillating in time. Specifically, for each mode we will set $h_{ij}=\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ with $\omega(q)$ as yet undefined (and thus not necessarily equal to $q$), and where $\epsilon_{ij}(q)$ serves as the polarization tensor. As a localized packet, we constrain the form of the polarization tensor by excluding any functional dependence of the form $\delta(q)$ or $\delta(q)/q$. Thus, referring to \eqref{2.7} and \eqref{2.8}, for spatially localized fluctuations comprising a single mode, the quantities $\psi$ and $E_{ij}$ given in (\ref{2.7}) and (\ref{2.8}) evaluate to
 %
 \begin{eqnarray}
 \psi&=&e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\frac{[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^2},
 \nonumber\\
 E_{ij}&=&e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\bigg{[}\frac{[q^2\epsilon_{ij}(q)-q_iq^k\epsilon_{kj}(q)-q_jq^k\epsilon_{ki}(q)+q_iq_j\delta^{k\ell}\epsilon_{k\ell}(q)]}{2q^2}
 \nonumber\\
-&+&\frac{(\delta_{ij}q^2+q_iq_j)[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^4}\bigg{]},
+&+&\frac{(\delta_{ij}q^2+q_iq_j)[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^4}\bigg{]}.
 \label{2.10}
 \end{eqnarray}
 %
-and one can readily check that $\tilde{\nabla}^jE_{ij}=0$. Thus for a wave packet  $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ (which for a choice of $a_q$ could be localized), we obtain 
+With application of $\tilde\nabla^j$, one may confirm the transverse relation $\tilde{\nabla}^jE_{ij}=0$. To construct a wave packet, we sum over all modes viz. $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$, to then obtain
 %
 \begin{eqnarray}
 \psi&=&\sum_qa_qe^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\frac{[q^kq^{\ell}\epsilon_{k\ell}(q)-q^2\delta^{k\ell}\epsilon_{k\ell}(q)]}{4q^2},
@@ -314,24 +335,10 @@ E_{ij}&=&\sum_qa_qe^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}\bigg{[}\frac{[q^2\
 \label{2.11}
 \end{eqnarray}
 %
-and again $\tilde{\nabla}^jE_{ij}=0$. Now, for fluctuations around flat spacetime the set of all $e^{i\mathbf{q}\cdot\mathbf{x}-i\omega (q)t}$ plane waves is complete. Thus since any mode could be expanded as a general sum $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$ over the plane waves, (\ref{2.11}) holds for the complete basis. Hence absent any $\delta(q)$ or $\delta (q)/q$ type terms we can  integrate by parts.
+where again $\tilde{\nabla}^jE_{ij}=0$. Since the set of all $e^{i\mathbf{q}\cdot\mathbf{x}-i\omega (q)t}$ plane waves is complete for fluctuations around flat, any mode can be expanded as a general sum $h_{ij}=\sum_qa_q\epsilon_{ij}(q)e^{i\mathbf{q}\cdot\mathbf{x}-i\omega(q) t}$, with it following that (\ref{2.11}) then holds for the complete plane wave basis. Hence, by constructing the $\psi$ and $E_{ij}$ in a localized plane-wave basis, we confirm the tranverse relation $\tilde\nabla^j E_{ij} = 0$ without encountering issues related to integration by parts.
 
 
-By the same token we can also integrate the other SVT3 components, and obtain 
-%
-\begin{eqnarray}
-2\phi&=&-h_{00},\quad
-B=\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
-\nonumber\\
-B_i&=&h_{0i}-\tilde{\nabla}_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\tilde{\nabla}_y^ih_{0i},
-\nonumber\\
-E&=&\frac{1}{4}\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\left[3\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}h_{k\ell}-\tilde{\nabla}^z_k\tilde{\nabla}_z^k(\delta^{k\ell}h_{k\ell})\right],
-\nonumber\\
-E_i&=&\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\int d^3zD^{(3)}(\mathbf{y}-\mathbf{z})\left[\tilde{\nabla}^z_k\tilde{\nabla}_z^k\nabla_z^jh_{ij}-\nabla^z_i\tilde{\nabla}_z^k\tilde{\nabla}_z^{\ell}h_{k\ell}\right]
-\label{2.12}
-\end{eqnarray}
-%
-While it immediately follows that $\tilde{\nabla}^iB_i=0$,  we need to be able to integrate by parts in order to be able to show that $\nabla^iE_i=0$. However, from (\ref{2.4}) and (\ref{2.6}) we can show directly that both $\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(\phi+\dot{B}-\ddot{E})$ and $\tilde{\nabla}_k\tilde{\nabla}^k\tilde{\nabla}_{\ell}\tilde{\nabla}^{\ell}(B_i-\dot{E}_i)$ are gauge invariant, with the gauge invariance of $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ themselves then following if we define $B$, $B_i$, $E$ and $E_i$ according to (\ref{2.12}). Thus modulo issues of integrations by parts, we establish that for fluctuations around flat spacetime all of the six $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ quantities that appear in $\delta G_{\mu\nu}$ as given in (\ref{2.3}) are gauge invariant. (In counting components $E_{ij}$ and $B_i-\dot{E_i}$ each have two components.)
+
 
 Now we had noted in \hyperref[c:decomposition_theorem]{Ch. 4} that we would need spatially asymptotic boundary conditions in order to be able to obtain a decomposition theorem for the SVT3 basis. We now see that we need this very same asymptotic condition in order to make transverseness and gauge invariance compatible. In fact, we actually need such boundary conditions in order to establish the SVT3 decomposition in the first place. Specifically, suppose that we are given some general vector $A_i$ and we want to extract out its transverse and longitudinal components and set $A_i=V_i+\partial_iL$. With $\partial_iV^i=0$ it follows that
 %
