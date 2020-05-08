@@ -396,7 +396,25 @@ itself. To allow $V_i(x)$ to serve as the unique transverse component of $A_i(x)
 \label{s:svtd}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The discussion given above is not manifestly covariant as the SVT3 components are defined with respect to a three-dimensional subspace of four-dimensional spacetime. (The gauge invariance of the SVT3 formalism shows that it is covariant, just not manifestly so.) It would thus be instructive to develop a formalism that is manifestly covariant, one in which the SVT components are defined with respect to the full space rather than a subspace of it. To this end we adapt the discussion we gave in \cite{amarasinghe_2019}, and so as to be as general as possible consider the SVTD basis in a D-dimensional space.  With Greek indices that range over the full D-dimensional space we first construct a symmetric rank two tensor $F_{\mu\nu}$  that is transverse and traceless in the full D-dimensional space. (Our previously introduced $E_{ij}$ was only transverse and traceless in a 3-dimensional subspace.) The $F_{\mu\nu}$ tensor will have $D(D+1)/2-D-1=(D+1)(D-2)/2$ components, and thus for the full $h_{\mu\nu}$ we need $D+1$ additional pieces of information. For our purposes here we can provide the needed information while at the same time simplifying the discussion given in \cite{amarasinghe_2019} by introducing a D-dimensional  vector $W_{\mu}$, with the one extra needed piece of information being provided by $h=g^{\mu\nu}h_{\mu\nu}$. In terms of this $W_{\mu}$ and $h$ we have found it very convenient to define a general $h_{\mu\nu}$ fluctuation around a flat D-dimensional space to be of the form
+While the SVT3 formalism presented thus far has demonstrated that the gauge invariant SVT3 quantities are covariant, one may note that these quantities have been defined with respect to the three-dimensional subspace of the full four-dimensional spacetime. With the general $h_{\mu\nu}$ behaving under coordinate transformation as
+%
+\begin{eqnarray}
+h_{\mu\nu} \to h_{\mu\nu}' = \frac{\partial x'^\alpha}{\partial x^\mu}\frac{\partial x'^\beta}{\partial x^\nu} h_{\alpha\beta},
+\end{eqnarray}
+%
+we see that a quantity such as $h_{00} = -2\phi$ may transform into a scalar involving vector components. To see this, let us form the four vector $h_{0\mu}$, which in terms of SVT3 components takes the form
+\begin{eqnarray}
+h_{0\mu} = \begin{pmatrix}-2\phi\\B_1 + \tilde\nabla_1 B\\B_2 + \tilde\nabla_2 B\\B_3 + \tilde\nabla_3. B\end{pmatrix}
+\end{eqnarray}
+Now, with the full four-dimensional coordinate transformation mixing each of the four components of $h_{0\mu}$, we see that the transformation of $\phi$ may induce a contribution due to a vector $B_i$. 
+
+Thus to decompose the $h_{\mu\nu}$ into a set of scalars, vectors, and tensors that remain closed under the Poincare group, we must develop a formalism that matches the underlying space-time dimensionality; namely an SVT4 formalism. We proceed to do so here in a flat spacetime, following the series of steps given within \cite{phelps_2019}. It is no additional overhead to generalize this to $D$ dimensions here, with even further generalization to arbitrary curved spacetimes found in detail within Appendix \ref{aa:svt_projection}.
+
+We defined Greek indices to range over the full D-dimensional space and begin with the construction of a symmetric rank two tensor $F_{\mu\nu}$, taken to be transverse and traceless in the full D-dimensional space.
+%%%%%%%%%%%%%%%%%%%%%%%%
+\footnote{The previously introduced $E_{ij}$ was only transverse and traceless in a 3-dimensional subspace.}
+%%%%%%%%%%%%%%%%%%%%%%%%
+Accounting for the dimensionality and the transverse traceless constraints, $F_{\mu\nu}$ tensor will have $D(D+1)/2-D-1=(D+1)(D-2)/2$ components. To facilitate the decomposition, we introduce a D-dimensional  vector $W_{\mu}$, with the one extra needed piece of information being provided by $h=g^{\mu\nu}h_{\mu\nu}$. In terms of this $W_{\mu}$ and $h$ we have found it very convenient to define a general $h_{\mu\nu}$ fluctuation around a flat D-dimensional space to be of the form
 %
 \begin{eqnarray}
 h_{\mu\nu}=2F_{\mu\nu}+\nabla_{\nu}W_{\mu}+\nabla_{\mu}W_{\nu}+\frac{2-D}{D-1}\nabla_{\mu}\nabla_{\nu}\int d^DyD^{(D)}(x-y)\nabla^{\alpha}W_{\alpha}
