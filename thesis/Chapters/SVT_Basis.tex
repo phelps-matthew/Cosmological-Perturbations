@@ -376,30 +376,20 @@ A_i({\bf x})&=&V_i({\bf x})+\partial^x_iL=V_i({\bf x})+\partial^x_i\int d^3yD^{(
 \label{2.15}
 \end{eqnarray}
 %
-Now with the $\partial^x_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)$ term being the derivative of a scalar, initially it would appear that this term is longitudinal. However, applying $\partial_x^i$ to (\ref{2.15}) gives 
+Upon applying $\partial_x^i$ to (\ref{2.15}), we obtain
 %
 \begin{eqnarray}
-&&\partial_x^i\partial^x_i\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right]=0.
+&&\partial_x^i\partial^x_i\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right]=0,
 \label{2.16}
 \end{eqnarray}
 %
-And thus in fact $\partial_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)$ is transverse. However, we had already defined $V_i$ as the transverse part of $A_i$, and thus $A_i$ could not have a second transverse piece, so that the surface term must be zero. And thus our very ability to write $A_i$ as
+to thus establish that $\partial_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)$ is transverse. At this point, we appear to have constructed two transverse components - both $V_i$ and 
 %
 \begin{eqnarray}
-A_i({\bf x})=V_i({\bf x})+\partial_iL=V_i({\bf x})+\partial_i\int d^3yD^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_jA^j({\bf y})
-\label{2.17}
+\partial_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)
 \end{eqnarray}
 %
-in the first place presupposes that the surface term in (\ref{2.15}) is zero, viz.
-%
-\begin{eqnarray}
-&&\int dS_y^i\left[L({\bf y})\partial^y_iD^{(3)}(\mathbf{x}-\mathbf{y})-D^{(3)}(\mathbf{x}-\mathbf{y})\partial^y_iL({\bf y})\right]
-=0,
-\label{2.18}
-\end{eqnarray}
-%
-with $A_i$ thus needing to be well-behaved at spatial infinity. 
-
+itself. To allow $V_i(x)$ to serve as the unique transverse component of $A_i(x)$, we must then require that $\partial_i\int dS^i(L\partial_iD^{(3)}-D^{(3)}\partial_iL)$ vanish. Consequently, we see that we must inadvertently impose a constraint on $A_i$, namely that $A_i$ be spatially asymptotically well-behaved. Thus, the unique decomposition of $A_i$ into longitudinal and traverse components necessarily entails an assumption regarding the asymptotic behavior of $A_i$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SVTD}
@@ -515,7 +505,7 @@ kinematic relations that hold without the imposition of any fluctuation equation
 In $D=4$ we note that $F_{\mu\nu}$ has five components and $\chi$ has one. Since in a fluctuation around a flat four spacetime $\delta G_{\mu\nu}$ can only contain six independent gauge-invariant combinations, it can only depend on $F_{\mu\nu}$ and $\chi$. Thus using a manifestly covariant formalism we replace the six gauge-invariant combinations $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ used in SVT3 by the six gauge-invariant combinations $F_{\mu\nu}$ and $\chi$ used in SVT4. This is an altogether more compact set of gauge-invariant combinations, with $\delta G_{\mu\nu}$ as given in (\ref{3.10}) being altogether simpler than its form given in (\ref{2.3}). And being simpler to write down, it is also simpler to solve. However, before looking at solutions to the SVT4 fluctuation equations it is instructive to relate the SVT4 and SVT3 bases and determine which SVT4 components correspond to which SVT3 components.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Gauge Structure and Asymptotic Behavior($D=4$)}
+\subsection{Gauge Structure and Asymptotic Behavior ($D=4$)}
 \label{S1e}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
