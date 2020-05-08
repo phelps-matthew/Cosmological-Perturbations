@@ -508,6 +508,13 @@ h_{\mu\nu}=-2g_{\mu\nu}\chi+2\nabla_{\mu}\nabla_{\nu}F
 %
 to thus complete the SVTD basis decomposition of $h_{\mu\nu}$. In a general D-dimensional basis $F_{\mu\nu}$ has $(D+1)(D-2)/2$ components, the transverse $F_{\mu}$ has $D-1$ components, the two scalars $\chi$ and $F$ each have one component, and together they comprise the $D(D+1)/2$ components of a general $h_{\mu\nu}$. If we  elect to take $D=3$, (i.e. a decomposition of $h_{ij}$) we can then recognize (\ref{3.9}) as the spatial piece of SVT3 given in (\ref{2.1}), providing a check on our results.
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge Structure ($D=4$)}
+\label{S1e}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 Counting the degrees of freedom of the fluctuation $\delta G_{\mu\nu}$ around flat D-dimensional we arrive at a total of $D(D+1)/2-D=D(D-1)/2$ independent gauge-invariant combinations. For the SVTD components, $F_{\mu\nu}$ has $(D+1)(D-2)/2$ components and $\chi$ has one. That is, the combination of $\chi$ and $F_{\mu\nu}$ precisely forms a total of $D(D-1)/2$. Moreoever with the derivatives of both them being gauge invariant, we deduce that $\delta G_{\mu\nu}$ can only depend on $F_{\mu\nu}$ and $\chi$. Applying appropriate derivatives to the quantities given (\ref{3.8}) and (\ref{3.9}), we indeed form the following gauge invariant relations
 %
 \begin{eqnarray}
@@ -519,7 +526,7 @@ Counting the degrees of freedom of the fluctuation $\delta G_{\mu\nu}$ around fl
 \nonumber\\
 \delta R_{\mu\nu}&=&\frac{1}{2}[2\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}+2(2-D)\nabla_{\mu}\nabla_{\nu}\chi-2g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}\chi],
 \nonumber\\
- \delta R&=&2(1-D)\nabla_{\alpha}\nabla^{\alpha}\chi,
+\delta R&=&2(1-D)\nabla_{\alpha}\nabla^{\alpha}\chi,
 \nonumber\\
 \delta G_{\mu\nu}&=&\delta R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}g^{\alpha\beta}\delta R_{\alpha\beta}=\nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}
 \nonumber\\
@@ -529,32 +536,11 @@ g^{\mu\nu}\delta G_{\mu\nu}&=&(D-2)(D-1)\nabla_{\alpha}\nabla^{\alpha}\chi.
 \label{3.10}
 \end{eqnarray}
 %
-As written, we confirm that $\delta G_{\mu\nu}$ indeed depends upon only $F_{\mu\nu}$ and $\chi$, with one readily being able to check that $\delta G_{\mu\nu}$ obeys conservation $\nabla^{\nu}\delta G_{\mu\nu}=0$. Close inspection of the components of $\delta G_{\mu\nu}$ reveals that only infer that from $g^{\mu\nu}\delta G_{\mu\nu}$ that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is alone gauge invariant. However, by applying $\nabla_{\alpha}\nabla^{\alpha}$ to the $\delta G_{\mu\nu}$ equation we can then additionally deduce that $\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu}$ is gauge invariant. Importantly, we note that $F_{\mu\nu}$ nor $\nabla_\alpha\nabla^\alpha F_{\mu\nu}$ may be determined to gauge invariant without consideration issues related to its asymptotic behavior.  We will continue a discussion of the role of gauge invariance and boundedness in the following section. In addition, further detail of the SVTD construction, formalism, and gauge invariance is discussed within Appendex \ref{aa:svt_projection}. 
+As written, we confirm that $\delta G_{\mu\nu}$ indeed depends upon only $F_{\mu\nu}$ and $\chi$, with one readily being able to check that $\delta G_{\mu\nu}$ obeys conservation $\nabla^{\nu}\delta G_{\mu\nu}=0$. Inspection of the components of $\delta G_{\mu\nu}$ reveals that only infer that from $g^{\mu\nu}\delta G_{\mu\nu}$ that $\nabla_{\alpha}\nabla^{\alpha}\chi$ is alone gauge invariant. However, by applying $\nabla_{\alpha}\nabla^{\alpha}$ to the $\delta G_{\mu\nu}$ equation we can then additionally deduce that $\nabla_{\alpha}\nabla^{\alpha}\nabla_{\beta}\nabla^{\beta}F_{\mu\nu}$ is gauge invariant. Importantly, we note that $F_{\mu\nu}$ nor $\nabla_\alpha\nabla^\alpha F_{\mu\nu}$ may be determined to gauge invariant without consideration issues related to its asymptotic behavior.  We will continue a discussion of the role of gauge invariance and boundedness in the following section. In addition, further detail of the SVTD construction, formalism, and gauge invariance is discussed within Appendex \ref{aa:svt_projection}. 
 
+Demonstrated in \eqref{3.10}, we also observe that when written in the SVT4 basis the fluctuation equations take a considerably simpler form than when written according to the SVT3 basis (a result that will continue to carry over when we study the SVT4 fluctuation equations in curved background within Ch. \ref{c:construction_and_solution_of_svt}). Hence, by implementing the covariant formalism we have effectively replaced the six gauge-invariant combinations $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ of SVT3 by the six gauge-invariant combinations $F_{\mu\nu}$ and $\chi$ of SVT4. Consequently, the SVTD approach has provided a more compact set of gauge-invariant combinations and equations within $\delta G_{\mu\nu}$ and will prove to be simpler to solve, hence justfying the beneficial utility of matching the fundamental transformation group associated with GR.
 
-In $D=4$ we note that $F_{\mu\nu}$ has five components and $\chi$ has one. Since in a fluctuation around a flat four spacetime $\delta G_{\mu\nu}$ can only contain six independent gauge-invariant combinations, it can only depend on $F_{\mu\nu}$ and $\chi$. Thus using a manifestly covariant formalism we replace the six gauge-invariant combinations $\psi$, $E_{ij}$,  $\phi+\dot{B}-\ddot{E}$ and $B_i-\dot{E}_i$ used in SVT3 by the six gauge-invariant combinations $F_{\mu\nu}$ and $\chi$ used in SVT4. This is an altogether more compact set of gauge-invariant combinations, with $\delta G_{\mu\nu}$ as given in (\ref{3.10}) being altogether simpler than its form given in (\ref{2.3}). And being simpler to write down, it is also simpler to solve. However, before looking at solutions to the SVT4 fluctuation equations it is instructive to relate the SVT4 and SVT3 bases and determine which SVT4 components correspond to which SVT3 components.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Gauge Structure and Asymptotic Behavior ($D=4$)}
-\label{S1e}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-Now even though classifying the scalar, vector, tensor expansion of the fluctuations according to their behavior under three-dimensional rotations is not manifestly covariant, it is in fact covariant as it leads to fluctuation equations that are gauge invariant, something we will explicitly demonstrate below in some specific cases. Nonetheless, it would be of value to classify the scalar, vector, tensor expansion according to a behavior that is manifestly covariant, i.e. according to an expansion that is classified according to four-dimensional general coordinate scalars, vectors and tensors. We introduced such an SVT4 expansion in \cite{Amarasinghe2018} and will develop it in detail in the body of the text below. And in fact we will find that when written in the SVT4 basis the fluctuation equations are simpler than when written according to SVT3. However, for the moment we note only that for fluctuations around a four-dimensional flat Minkowski background the SVT4 expansion takes the form 
-%
-\begin{eqnarray}
-h_{\mu\nu}=-2\eta_{\mu\nu}\chi+2\partial_{\mu}\partial_{\nu}F
-+ \partial_{\mu}F_{\nu}+\partial_{\nu}F_{\mu}+2F_{\mu\nu},
-\label{1.32a}
-\end{eqnarray}
-%
-where 
-%
-\begin{eqnarray}
-\partial_{\mu} F^{\mu}= 0, \quad F_{\mu\nu}=F_{\nu\mu},\quad \partial^{\nu}F_{\mu\nu} = 0, \quad \eta^{\mu\nu}F_{\mu\nu} = 0.
-\label{1.33a}
-\end{eqnarray}
-%
-As written, (\ref{1.32a}) contains ten elements, whose transformations are defined with respect to the background as two four-dimensional scalars ($\chi$, $F$) each with one degree of freedom, one transverse four-dimensional vector  ($F_{\mu}$) with three independent degrees of freedom, and one symmetric four-dimensional transverse-traceless tensor ($F_{\mu\nu}$) with five degrees of freedom. Since the gauge-invariant equations have to  contain a total of six gauge-invariant degrees of freedom, they must contain the five-component $F_{\mu\nu}$ and one combination of the five other components that appear in (\ref{1.33a}) (without $F_{\mu\nu}$ we cannot get to six). As we will see, for fluctuations around a flat background the gauge-invariant combinations will be $F_{\mu\nu}$ and $\chi$. For fluctuations around a curved background the gauge-invariant combinations must again include the five-component $F_{\mu\nu}$, but in general the sixth gauge-invariant combination will be a linear combination of the other five components that appear in (\ref{1.33a}) (see (\ref{6.54}) below for a specific example).
+For geometries more general than flat spacetime, since the gauge-invariant equations must contain a total of six gauge-invariant degrees of freedom, they must be comprised of the five-component $F_{\mu\nu}$ and some combination of the five other components that appear in (\ref{3.9}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
