@@ -4,48 +4,47 @@ The top-level auxiliary file: thesis-template.aux
 The style file: uconn_unsrtnat.bst
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "Ellis2012"
-Warning--I didn't find a database entry for "Amarasinghe2018"
 Warning--I didn't find a database entry for "Mannheim2006"
 Warning--I didn't find a database entry for "Mannheim1998"
-You've used 27 entries,
+You've used 26 entries,
             2425 wiz_defined-function locations,
-            740 strings with 8409 characters,
-and the built_in function-call counts, 8780 in all, are:
-= -- 795
-> -- 303
-< -- 25
-+ -- 138
-- -- 84
-* -- 657
-:= -- 1441
-add.period$ -- 80
-call.type$ -- 27
-change.case$ -- 51
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 430
-empty$ -- 814
-format.name$ -- 129
-if$ -- 1834
+            731 strings with 8200 characters,
+and the built_in function-call counts, 8490 in all, are:
+= -- 769
+> -- 288
+< -- 24
++ -- 132
+- -- 80
+* -- 636
+:= -- 1391
+add.period$ -- 77
+call.type$ -- 26
+change.case$ -- 49
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 415
+empty$ -- 791
+format.name$ -- 122
+if$ -- 1774
 int.to.chr$ -- 1
-int.to.str$ -- 28
-missing$ -- 29
-newline$ -- 142
-num.names$ -- 81
-pop$ -- 135
+int.to.str$ -- 27
+missing$ -- 28
+newline$ -- 137
+num.names$ -- 78
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 26
 quote$ -- 0
-skip$ -- 310
+skip$ -- 297
 stack$ -- 0
-substring$ -- 493
-swap$ -- 65
+substring$ -- 491
+swap$ -- 63
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
+type$ -- 173
 warning$ -- 0
-while$ -- 73
+while$ -- 71
 width$ -- 0
-write$ -- 352
-(There were 4 warnings)
+write$ -- 339
+(There were 3 warnings)

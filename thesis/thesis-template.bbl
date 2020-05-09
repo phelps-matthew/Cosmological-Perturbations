@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -123,11 +123,10 @@ Matthew~G. Phelps, Asanka Amarasinghe, and Philip~D. Mannheim.
 \newblock Three-dimensional and four-dimensional scalar, vector, tensor
   cosmological fluctuations and the cosmological decomposition theorem, 2019.
 
-\bibitem[Bender and Mannheim(2008)]{bender_mannheim_2008a}
-Carl~M. Bender and Philip~D. Mannheim.
-\newblock No-ghost theorem for the fourth-order derivative pais-uhlenbeck
-  oscillator model.
-\newblock \emph{Physical Review Letters}, 100\penalty0 (11), 2008.
+\bibitem[Mannheim(2005)]{mannheim_2005}
+Philip~D Mannheim.
+\newblock \emph{Brane-Localized Gravity}.
+\newblock World Scientific, 2005.
 
 \bibitem[Bander and Itzykson(1966)]{bander_itzykson_1966}
 M.~Bander and C.~Itzykson.
@@ -156,10 +155,5 @@ Philip~D. Mannheim.
 George Ellis, Roy Maartens, and Malcolm Maccallum.
 \newblock \emph{Relativistic Cosmology}.
 \newblock Cambridge University Press, 2009.
-
-\bibitem[Mannheim(2005)]{mannheim_2005}
-Philip~D Mannheim.
-\newblock \emph{Brane-Localized Gravity}.
-\newblock World Scientific, 2005.
 
 \end{thebibliography}
