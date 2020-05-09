@@ -12,15 +12,41 @@
 \subsection{The Conformal Gauge}
 \label{ss:conformal_gauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As discussed in Sect. \ref{ss:fluctuations_around_flat_in_the_harmonic_gauge}, we recall that under an infinitesimal transformation of coordinates of the form
+%
+\begin{eqnarray}
+x^{\mu}\rightarrow x^{\mu}+\epsilon^{\mu}(x),
+\label{liecoord}
+\end{eqnarray}
+%
+the metric perturbation $h_{\mu\nu}$ will transform as
+%
+\begin{eqnarray}
+h_{\mu\nu}-\nabla_{\nu}\epsilon_{\mu}-\nabla_{\mu}\epsilon_{\nu},
+\label{covarh}
+\end{eqnarray}
+%
+with contravariant components transforming similarly as
+%
+\begin{eqnarray}
+h^{\mu\nu}-\nabla^{\nu}\epsilon^{\mu}-\nabla^{\mu}\epsilon^{\nu}.
+\label{contrah}
+\end{eqnarray}
+%
+Here all covariant derivatives are taken with respect to the background metric $g_{\mu\nu}^{(0)}$. For every solution $h_{\mu\nu}$ that satisfies the fluctuation equations (i.e. $\delta G_{\mu\nu} = \delta T_{\mu\nu}$ or $\delta W_{\mu\nu} = \delta T_{\mu\nu}$), there exists a transformed $h'_{\mu\nu}$ that will also serve as a solution. Thus with the freedom of fixing the four possible arbitrary space-time functions $\epsilon^\mu(x)$, one may eliminate the four gauge degrees of freedom within $h_{\mu\nu}$ by imposing a gauge condition satisfying four equations. Within Ch. \ref{c:formalism} we have already explored the form of the Einstein fluctuation equations in the harmonic gauge as well as the conformal gravity fluctuation equations in the transverse gauge.
 
-In general in order to impose a coordinate gauge condition, we recall that since $h^{\mu\nu}$ and $h_{\mu\nu}$ transform into $h^{\mu\nu}-\nabla^{\nu}\epsilon^{\mu}-\nabla^{\mu}\epsilon^{\nu}$ and $h_{\mu\nu}-\nabla_{\nu}\epsilon_{\mu}-\nabla_{\mu}\epsilon_{\nu}$ under a perturbative coordinate gauge transformation of the form $x^{\mu}\rightarrow x^{\mu}+\epsilon^{\mu}(x)$ (all covariant derivatives being taken with respect to the background $g_{(0)}^{\mu\nu}$), we see that under the same transformation $K^{\mu\nu}$ transforms as  
+In continuing the discussion within conformal gravity, we also recall that in background that are conformal to flat, the gravitational sector fluctuation $\delta W_{\mu\nu}$ (the Bach tensor, analogous to the Einstein tensor) depends only upon the trace free contribution of $h_{\mu\nu}$, to thus be able to be expressed entirely in terms of the 9 component $K_{\mu\nu}$, obeying $K^{\nu\sigma}g^{(0)}_{\nu\sigma}=0$. Our focus is then to determine the most appropriate gauge condition as applied to $K_{\mu\nu}$. As we have seen in Sect. \ref{ss:fluctuations_around_flat_in_the_tranverse_gauge} that imposition of the transverse gauge (i.e. $\nabla^\mu K_{\mu\nu} = 0$) was effective in reducing the fluctuation equations into a readily solvable form within a flat space background. However, the analogous imposition of the transverse gauge in curved conformal to flat backgrounds does not provide the same degree of reduction. Rather, in the more general background, the fluctuations take a form where tensor components are tightly coupled, and no simple solution is immediately available. 
+
+In an attempt to remedy the situation, we seek to find a gauge condition that makes contact with the desirable behavior within the flat space background. That is, we want a gauge condition that reduces to the transverse gauge if the background geometry is flat. As the content of this work concerns cosmology, even more specifically we desire a gauge condition that is suitable for conformal to flat backgrounds. The space of all conformal flat backgrounds is in fact quite large, with cosmologically relevant geometries only comprising a small subspace of all possible conformal flat metrics. The above gauge constraint criteria will in fact be satisfied if we can find a gauge condition that is conformally covariant (i.e. invariant under conformal transformation up to an overall scale factor). 
+
+To this end, we first note that under the first order coordinate transform of \eqref{liecoord}, $K^{\mu\nu}$ transforms as
 %
 \begin{eqnarray}
 K^{\mu\nu}\rightarrow K^{\mu\nu}-\nabla^{\nu}\epsilon^{\mu}-\nabla^{\mu}\epsilon^{\nu}+\frac{1}{2}g_{(0)}^{\mu\nu}\nabla_{\alpha}\epsilon^{\alpha}.
 \label{AP17}
 \end{eqnarray}
 % 
-With the covariant derivative of the fluctuation being given as  
+With the transverse gauge serving as a starting point, we find its behavior under coordinate transformation, which takes the from
 %
 \begin{eqnarray}
 \nabla_{\nu}K^{\mu\nu}=
@@ -31,14 +57,14 @@ With the covariant derivative of the fluctuation being given as
 \label{AP18}
 \end{eqnarray}
 % 
-and recalling that $K^{\nu\sigma}g^{(0)}_{\nu\sigma}=0$, we find that under a conformal transformation $\nabla_{\nu}K^{\mu\nu}$ transforms as
+Under a conformal transformation $\nabla_{\nu}K^{\mu\nu}$ transforms as
 %
 \begin{eqnarray}
-\nabla_{\nu}K^{\mu\nu}\rightarrow \Omega^{-2}\nabla_{\nu}K^{\mu\nu}+4\Omega^{-3}K^{\mu\sigma}\partial_{\sigma}\Omega,
+\nabla_{\nu}K^{\mu\nu}\rightarrow \Omega^{-2}\nabla_{\nu}K^{\mu\nu}+4\Omega^{-3}K^{\mu\sigma}\partial_{\sigma}\Omega.
 \label{AP19}
 \end{eqnarray}
 % 
-with a transverse gauge condition $\nabla_{\nu}K^{\mu\nu}=0$ not being conformal invariant. To identify a coordinate gauge condition that is conformal invariant, we note that under a conformal transformation the quantity $K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}$ transforms as
+Hence, as alluded to, the transverse gauge condition $\nabla_{\nu}K^{\mu\nu}=0$ is not conformal invariant. To determine such a coordinate gauge condition that is conformal invariant, we refer to \cite{amarasinghe_2019} and note that under a conformal transformation the quantity $K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}$ transforms as
 %
 \begin{eqnarray}
 K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}
@@ -47,17 +73,17 @@ K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}
 \label{AP20}
 \end{eqnarray}
 %
-Consequently, we obtain
+Hence, it then follows that 
 %
 \begin{eqnarray}
 \nabla_{\nu}K^{\mu\nu}-\frac{1}{2} K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}&\rightarrow &\Omega^{-2}\left[\nabla_{\nu}K^{\mu\nu}
 -\frac{1}{2} K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}\right]
 \nonumber\\
-&=&\overline{\nabla_{\nu}K^{\mu\nu}}-\frac{1}{2} \bar{K}^{\mu\nu}\bar{g}_{(0)}^{\alpha\beta}\partial_{\nu}\bar{g}^{(0)}_{\alpha\beta},
+&=&\overline{\nabla_{\nu}K^{\mu\nu}}-\frac{1}{2} \bar{K}^{\mu\nu}\bar{g}_{(0)}^{\alpha\beta}\partial_{\nu}\bar{g}^{(0)}_{\alpha\beta}.
 \label{AP21}
 \end{eqnarray}
 % 
-where $\overline{\nabla_{\nu}K^{\mu\nu}}$ is evaluated in a geometry with metric $\bar{g}^{(0)}_{\mu\nu}$ according to 
+Here, we clarify that $\overline{\nabla_{\nu}K^{\mu\nu}}$ is to be evaluated in a geometry with metric $\bar{g}^{(0)}_{\mu\nu}$ according to 
 %
 \begin{eqnarray}
 \overline{\nabla_{\nu}K^{\mu\nu}}=
@@ -68,7 +94,7 @@ where $\overline{\nabla_{\nu}K^{\mu\nu}}$ is evaluated in a geometry with metric
 \label{AP22}
 \end{eqnarray}
 % 
-The quantity $\nabla_{\nu}K^{\mu\nu}- K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}/2$ thus transforms into itself under a conformal transformation, and we shall refer to the condition
+We see that we have achieved the desired result, with the quantity $\nabla_{\nu}K^{\mu\nu}- K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta}/2$ conformal covariance. Expressed in three equivalent forms, the gauge condition
 %
 \begin{eqnarray}
 &&\nabla_{\nu}K^{\mu\nu}=\frac{1}{2}K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\nu}g^{(0)}_{\alpha\beta},
@@ -80,28 +106,28 @@ The quantity $\nabla_{\nu}K^{\mu\nu}- K^{\mu\nu}g_{(0)}^{\alpha\beta}\partial_{\
 \label{AP23}
 \end{eqnarray}
 %
-as the conformal gauge. (In (\ref{AP23}) we have written the gauge condition in three equivalent forms, forms which will be convenient for use in the following.) 
+is aptly referred to as the conformal gauge.
 
-While (\ref{AP23}) is left invariant under a local conformal transformation, we note that when the background is flat Minkowski ($g^{(0)}_{\alpha\beta}=\eta_{\alpha\beta}$), (\ref{AP23}) reduces to the transverse condition $\partial_{\nu}K^{\mu\nu}=0$. We are thus able to construct fluctuations around a conformal to flat background in the conformal gauge by conformally transforming fluctuations around a flat background in the transverse gauge, a remarkably convenient and straightforward procedure.
+As a check, we note that when the background is flat Minkowski ($g^{(0)}_{\alpha\beta}=\eta_{\alpha\beta}$), (\ref{AP23}) indeed reduces to the transverse condition $\partial_{\nu}K^{\mu\nu}=0$. Hence we may construct fluctuations around a conformal to flat background in the conformal gauge by conformally transforming fluctuations around a flat background in the transverse gauge. Such a method is not shared within standard Einstein gravity, but in conformal gravity it will be prove to be very beneficial in simplifying the fluctuation equations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fluctuation Equations Around an Arbitrary Background}
+\subsection{$\delta W_{\mu\nu}$ in an Arbitrary Background}
 \label{ss:fluctuation_eqns_around_arb_background_cgauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Setting up the Fluctuation Equations}
+\subsubsection{Composing the Fluctuation Equations}
 \label{sss:setting_up_fluctuation_eqns_cgauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In order to perturb $W_{\mu\nu}$ we have found it convenient to use the identity
+With the conformal gauge in hand, we proceed in a sequence of steps in order to implement it with the fluctuation equations. Prior to perturbing $W_{\mu\nu}$ we present a useful identity
 %
 \begin{eqnarray}
-\nabla_{\beta}\nabla_{\nu}T_{\lambda \mu}=\nabla_{\nu}\nabla_{\beta}T_{\lambda \mu}+R_{\lambda\sigma\nu\beta}T^{\sigma}_{\phantom{\sigma}\mu}-R_{\sigma\mu\nu\beta}T_{\lambda}^{\phantom{\lambda}\sigma}
+\nabla_{\beta}\nabla_{\nu}T_{\lambda \mu}=\nabla_{\nu}\nabla_{\beta}T_{\lambda \mu}+R_{\lambda\sigma\nu\beta}T^{\sigma}_{\phantom{\sigma}\mu}-R_{\sigma\mu\nu\beta}T_{\lambda}^{\phantom{\lambda}\sigma},
 \label{AP41}
 \end{eqnarray}
 %
-obeyed by any rank two tensor, so that we can write $W^{\mu\nu}$ as 
+which holds for any rank two tensor. We then express $W^{\mu\nu}$ as 
 %                                                                               
 \begin{eqnarray}
 W_{\mu \nu}&=&
@@ -117,7 +143,7 @@ W_{\mu \nu}&=&
 \label{AP42}
 \end{eqnarray}                                 
 %
-On taking the metric to be the completely general $g_{\mu\nu}+h_{\mu\nu}$, where here we take $g_{\mu\nu}$ to denote any general background metric (i.e. one not necessarily conformal to flat) and $\delta g_{\mu\nu}=h_{\mu\nu}$ to denote any general fluctuation, perturbing $W^{\mu\nu}$ then gives (following a machine calculation)
+We set the metric as the most general $g_{\mu\nu}+h_{\mu\nu}$, where $g_{\mu\nu}$ denotes an arbitrary background metric and $\delta g_{\mu\nu}=h_{\mu\nu}$ an arbitrary and general fluctuation. Upon perturbing $W^{\mu\nu}$ we then obtain
 %
 \begin{eqnarray}
 &&\delta W_{\mu\nu}(h_{\mu\nu})=\tfrac{1}{2} h_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  g_{\mu \nu} h^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\beta \gamma} -  \tfrac{2}{3} h^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + \tfrac{1}{3} g_{\mu \nu} h^{\alpha \beta} R_{\alpha \beta} R
@@ -173,9 +199,9 @@ On taking the metric to be the completely general $g_{\mu\nu}+h_{\mu\nu}$, where
 \label{AP43}
 \end{eqnarray}
 %
-In (\ref{AP43}) all covariant derivatives are evaluated with respect to the background $g_{\mu\nu}$, and $R$ denotes $R^{\alpha}_{\phantom{\alpha}\alpha}$.
-Eq. (\ref{AP43}) contains 62 terms, of which 10 depend on the trace $h=g^{\mu\nu}h_{\mu\nu}$, 
-On substituting $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ in (\ref{AP43}), $\delta W_{\mu\nu}(h_{\mu\nu})$ breaks into two pieces, a $K_{\mu\nu}$-dependent piece with 52 terms and an $h=g_{\mu\nu}h^{\mu\nu}$-dependent piece with 19 terms, and with $\delta W_{\mu\nu}(h_{\mu\nu})=\delta W_{\mu\nu}(K_{\mu\nu})+\delta W_{\mu\nu}(h)$ they are of the form 
+Here we clarify that all covariant derivatives are evaluated with respect to the background $g_{\mu\nu}$ (and use a more compact notation where the Ricci scalar $R$ denotes $R^{\alpha}_{\phantom{\alpha}\alpha}$.) Inspecting (\ref{AP43}), we observe a total of 62 different terms, with ten of these depending on the trace $h=g^{\mu\nu}h_{\mu\nu}$. 
+
+We now substitute $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ in (\ref{AP43}) and, as anticipated and discussed in Sect. \ref{ss:conformal_invariance}, we find that $\delta W_{\mu\nu}(h_{\mu\nu})$ breaks into two pieces; one that depends only on $K_{\mu\nu}$ comprising 52 terms and one that depends only on $h=g_{\mu\nu}h^{\mu\nu}$ with 19 total terms. These two separate components have been obtained and take the form
 %
 \begin{eqnarray}
 &&\delta W_{\mu\nu}(K_{\mu\nu})=\tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  g_{\mu \nu} K^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\beta \gamma} -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} 
@@ -246,17 +272,16 @@ On substituting $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ in (\ref{AP43}), $\delt
 \end{eqnarray}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Decoupling of the Trace of the Fluctuation}
+\subsubsection{Trace Properties}
 \label{sss:decoupling_trace_cgauge}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Given the identity 
+Within Sect. \ref{ss:conformal_invariance}, we illustrated an important property of the trace of the fluctation, here given within \eqref{AP45}, where we have demonstrated its form being able to represent as proportional to the background $W_{\mu\nu}$. To show and verify such a form, we first note the identity 
 %
 \begin{eqnarray}
 \nabla_{\kappa}\nabla_{\nu}V_{\lambda}-\nabla_{\nu}\nabla_{\kappa}V_{\lambda}=V^{\sigma}R_{\lambda\sigma\nu\kappa}
 \label{AP46}
 \end{eqnarray}
 %
-that is obeyed by any vector, on setting $V_{\lambda}=\nabla_{\lambda}h$ in (\ref{AP46})  and $T_{\lambda\mu}=\nabla_{\lambda}\nabla_{\mu}h$ in (\ref{AP41}) we obtain
+which holds for any vector $V_{\lambda}$. Upon setting $V_{\lambda}=\nabla_{\lambda}h$ and $T_{\lambda\mu}=\nabla_{\lambda}\nabla_{\mu}h$ in (\ref{AP41}) we obtain
 %
 \begin{eqnarray}
 \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
@@ -285,14 +310,14 @@ that is obeyed by any vector, on setting $V_{\lambda}=\nabla_{\lambda}h$ in (\re
 \label{AP47}
 \end{eqnarray}
 %
-On recalling that 
+Recalling the curvature relation 
 %
 \begin{eqnarray}
 \nabla^{\nu}R_{\nu\mu\kappa\eta}=\nabla_{\kappa}R_{\mu\eta}-\nabla_{\eta}R_{\mu\kappa},
 \label{AP48}
 \end{eqnarray}
 %
-we obtain
+it then follows that 
 %
 \begin{eqnarray}
 &&\nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h-\nabla_{\alpha}\nabla^{\alpha}\nabla_{\nu}\nabla_{\mu}h
@@ -307,16 +332,14 @@ we obtain
 \label{AP49}
 \end{eqnarray}
 %
-Then with $\nabla^{\alpha}R_{\mu\alpha}=(1/2)\nabla _{\mu}R$ we find that the 12 terms in (\ref{AP45}) that involve a gradient of $h$ all cancel identically. Finally, comparing the remaining 7 terms in (\ref{AP45}) with a background $W_{\mu\nu}$ that is of the form given in (\ref{AP42}), we find that $\delta W_{\mu\nu}(h)$ reduces to the remarkably simple
+Finally, using the Bianchi identity $\nabla^{\alpha}R_{\mu\alpha}=(1/2)\nabla _{\mu}R$ we thus observe that all twelve terms within (\ref{AP45}) that contain the gradient of $h$ must all cancel. For those seven terms that remain, we can further observe that they are directly equivalent to the definition of the background $W_{\mu\nu}$. Thus, the trace component $\delta W_{\mu\nu}(h)$ reduces to the extremely compact form of
 %
 \begin{eqnarray}
 \delta W_{\mu\nu}(h)=-\frac{1}{4}W_{\mu\nu}h.
 \label{AP50}
 \end{eqnarray}
 %
-Now we had noted above that  the condition $\delta W_{\mu\nu}(h)=-\frac{1}{4}W_{\mu\nu}h$ is required on general grounds. We thus recover this condition, and not only do we see that (\ref{AP50}) is generic, its recovery provides a nice internal  check on our calculations. 
-
-To confirm this result it is instructive to also look at the fluctuation in the Weyl tensor itself. About an arbitrary background it is found to evaluate to $\delta C_{\lambda\mu\nu\kappa}=\delta C_{\lambda\mu\nu\kappa}(K_{\mu\nu})+\delta C_{\lambda\mu\nu\kappa}(h)$, where
+To gain further insight into the form of \eqref{AP50}, it is instructive to consider the fluctuation of the Weyl tensor itself. In evaluating the perturbed Weyl tensor around an arbitrary background, iwe obtain $\delta C_{\lambda\mu\nu\kappa}=\delta C_{\lambda\mu\nu\kappa}(K_{\mu\nu})+\delta C_{\lambda\mu\nu\kappa}(h)$, where
 %
 \begin{eqnarray}
 &&\delta C_{\lambda\mu\nu\kappa}(K_{\mu\nu})=- \tfrac{1}{6} g_{\kappa \mu} g_{\lambda \nu} K^{\alpha \beta} R_{\alpha \beta} + \tfrac{1}{6} g_{\kappa \lambda} g_{\mu \nu} K^{\alpha \beta} R_{\alpha \beta} + \tfrac{1}{2} K_{\mu \nu} R_{\kappa \lambda} -  \tfrac{1}{2} K_{\lambda \nu} R_{\kappa \mu}  
@@ -344,11 +367,12 @@ To confirm this result it is instructive to also look at the fluctuation in the 
 &&+ \tfrac{1}{2} \nabla_{\kappa}\nabla_{\mu}K_{\lambda \nu} 
 + \tfrac{1}{2} \nabla_{\kappa}\nabla_{\nu}K_{\lambda \mu}  
 - \tfrac{1}{2} \nabla_{\nu}\nabla_{\kappa}K_{\lambda \mu} + \tfrac{1}{2} \nabla_{\nu}\nabla_{\lambda}K_{\kappa \mu} 
--  \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}K_{\kappa \lambda},
+-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}K_{\kappa \lambda}
 \nonumber\\
 \label{AP51}
 \end{eqnarray}
 %
+and
 %
 \begin{eqnarray}
 \delta C_{\lambda\mu\nu\kappa}(h)&=&\bigg[\tfrac{1}{8} g_{\mu \nu}  R_{\kappa \lambda} -  \tfrac{1}{8} g_{\lambda \nu} R_{\kappa \mu} -  \tfrac{1}{8} g_{\kappa \mu}  R_{\lambda \nu} +\tfrac{1}{8} g_{\kappa \lambda}  R_{\mu \nu}  
@@ -359,7 +383,7 @@ To confirm this result it is instructive to also look at the fluctuation in the 
 \label{AP52}
 \end{eqnarray}
 %
-Thus if the background Weyl tensor is zero, $\delta C_{\lambda\mu\nu\kappa}$ is independent of $h$. However, if the background Weyl tensor is zero, then according to (\ref{AP3}) $\delta W^{\mu\nu}$ is given by 
+Inspection of \eqref{AP52} reveals that if the background Weyl tensor $C_{\lambda\mu\nu\kappa}$ is zero then it follows that $\delta C_{\lambda\mu\nu\kappa}$ has no dependence upon $h$. Given a vanishing background Weyl tensor, we may also observe that from (\ref{AP3}) $\delta W^{\mu\nu}$ can therebfore be expressed as
 %
 \begin{eqnarray}
 \delta W^{\mu\nu}=2\nabla_{\kappa}\nabla_{\lambda}\delta C^{\mu\lambda\nu\kappa}-
@@ -367,14 +391,14 @@ R_{\kappa\lambda}\delta C^{\mu\lambda\nu\kappa},
 \label{AP53}
 \end{eqnarray}
 %
-to thus then also be independent of $h$. Thus when the background Weyl tensor is zero  (in which case the background $W_{\mu\nu}$ is zero too), we confirm that $\delta W_{\mu\nu}$ is  independent of $h$, just as required by (\ref{AP50}). With the dependence of $\delta W_{\mu\nu}$ on $K_{\mu\nu}$ being fully specified in (\ref{AP44}) (in any background), we can now impose the conformal gauge condition and evaluate the structure of $\delta W^{\mu\nu}$ in the conformal to flat background case.
+and thereby also be independent of $h$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Preparing to Implement the Conformal Gauge Condition}
-\label{sss:preparing_cgauge_condition}
+\subsubsection{Differential Commutations}
+\label{sss:imposing_cgauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To bring (\ref{AP44}) to a form in which we can apply the conformal gauge condition given in (\ref{AP23}) we need to commute differential operators as per (\ref{AP41}) and (\ref{AP46}).  On doing the needed commutations for $\delta W_{\mu\nu}^{}(K_{\mu\nu})$ we obtain the 59 term
+Before we can express (\ref{AP44}) as a form ready for application of the conformal gauge condition, we must first commute the differential operators as per (\ref{AP41}) and (\ref{AP46}).  On performing the commutations for $\delta W_{\mu\nu}^{}(K_{\mu\nu})$ we obtain
 %
 \begin{eqnarray}
 &&\delta W_{\mu\nu}^{}(K_{\mu\nu})=\tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  \tfrac{1}{2} K_{\nu}{}^{\alpha} R_{\alpha \beta} R_{\mu}{}^{\beta} -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + K^{\alpha \beta} R_{\mu \alpha} R_{\nu \beta}  
@@ -421,17 +445,17 @@ To bring (\ref{AP44}) to a form in which we can apply the conformal gauge condit
 \end{eqnarray}
 %
 
-As a check on (\ref{AP54}), we note that if we take the background to be flat,  (\ref{AP54}) reduces to 
+Comprising 59 terms, we note that when evaluated within a flat background, (\ref{AP54}) reduces to 
 \begin{eqnarray}
 \delta W_{\mu\nu}^{}(K_{\mu\nu})&=&\tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha}  
 \nonumber\\
 &&+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}.
 \end{eqnarray}
- With $K_{\mu\nu}$ being traceless, when written in a flat Minkowski coordinate system we recognize this expression as being (\ref{AP24}), just as it should be.
+Hence, \eqref{AP54} reduces to the result of \eqref{AP24}, namely the simplified flat fluctuation equations without any imposition of a gauge condition - such a result provides an affirmative check on our calculation thus far.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fluctuations Around a Conformal to Flat Minkowski Background}
+\subsection{$\delta W_{\mu\nu}$ in a Conformal to Flat Minkowski Background}
 \label{ss:fluctuations_around_conformal_flat_cgauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -440,7 +464,7 @@ As a check on (\ref{AP54}), we note that if we take the background to be flat,  
 \label{sss:implementing_cgauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-While we can obtain great simplification of the 59-term (\ref{AP54}) by imposing a conformal gauge condition, we can also achieve great simplification by evaluating (\ref{AP54}) directly in the metric given in (\ref{AP6}) without introducing any gauge condition at all, and even without restricting $\Omega(x)$ in any way. We do this in Appendix \ref{SF}, and  even though the rewriting of (\ref{AP54}) in the metric given in (\ref{AP6}) initially expands it to 151 terms, we are able to reduce it first to the five-term (\ref{F2}) and then to the one-term (\ref{F3}). In this section we evaluate (\ref{AP54}) in the conformal to flat background given in (\ref{AP6}) with $\Omega(x)$ again arbitrary by implementing the conformal gauge condition $\nabla_{\nu}K^{\mu\nu}=(1/2)K^{\mu\nu}g^{\alpha\beta}\partial_{\nu}g_{\alpha\beta}$ given in (\ref{AP23}). This will also lead to a one-term expression, viz. (\ref{AP61}). In the  $g_{\mu\nu}=\Omega^2(x)\eta_{\mu\nu}$ background  the gauge condition $\nabla_{\nu}K^{\mu\nu}=\frac{1}{2}K^{\mu\nu}g^{\alpha\beta}\partial_{\nu}g_{\alpha\beta}$ takes the form
+With \eqref{AP54} now being ready for insertion of the conformal gauge, we evaluate (\ref{AP54}) in the conformal to flat background given in (\ref{AP6}) recalling that we take $\Omega(x)$ to be a completely general and arbitrary spacetime function. In the  $g_{\mu\nu}=\Omega^2(x)\eta_{\mu\nu}$ background  the gauge condition $\nabla_{\nu}K^{\mu\nu}=\frac{1}{2}K^{\mu\nu}g^{\alpha\beta}\partial_{\nu}g_{\alpha\beta}$ takes the form
 %
 \begin{eqnarray}
 \nabla_{\nu}K^{\mu\nu}-\frac{1}{2}K^{\mu\nu}\Omega^{-2}\eta^{\alpha\beta}\eta_{\alpha\beta}\partial_{\nu}\Omega^2&=&\nabla_{\nu}K^{\mu\nu}-4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega 
@@ -453,17 +477,18 @@ While we can obtain great simplification of the 59-term (\ref{AP54}) by imposing
 \label{AP55}
 \end{eqnarray}
 %
-If we extract out a factor of $\Omega^2(x)$ from the fluctuation by setting $K^{\mu\nu}=\Omega^{-2}(x)k^{\mu\nu}$,  $K_{\mu\nu}=\Omega^{2}(x)k_{\mu\nu}$ (where indices on $k^{\mu\nu}$ and $k_{\mu\nu}=\eta_{\mu\alpha}\eta_{\nu\beta}k^{\alpha\beta}$ are raised and lowered with $\eta_{\mu\nu}$ alone), (\ref{AP55}) can then be written in the simple transverse form $\partial_{\nu}k^{\mu\nu}=0$, with our gauge condition being such that the conformal factor dependence factors right out. In (\ref{AP55}) we are taking $\Omega(x)$ to be a general function of the coordinates not just in order to be as general as possible but so that we can encompass as a special case Robertson-Walker geometries with general spatial curvature $k$, since as we show in Appendix \ref{SA}, while $\Omega(x)$ will only depend on the time coordinate $t$ if $k$ is zero, for non-zero spatial curvature $\Omega(x)$ will depend on both $t$ and the radial coordinate $r$.
-
-
-However before evaluating (\ref{AP54}) in  a conformal to flat Minkowski geometry in the conformal gauge given in (\ref{AP55}), we note that the condition 
+We can factor out a contribution of $\Omega^2(x)$ from the fluctuation by setting $K^{\mu\nu}=\Omega^{-2}(x)k^{\mu\nu}$ and $K_{\mu\nu}=\Omega^{2}(x)k_{\mu\nu}$. For clarification, here indices on $k^{\mu\nu}$ and $k_{\mu\nu}=\eta_{\mu\alpha}\eta_{\nu\beta}k^{\alpha\beta}$ are raised and lowered with $\eta_{\mu\nu}$. As a result, (\ref{AP55}) can thus be expressed as the familiar transverse form $\partial_{\nu}k^{\mu\nu}=0$, noting that the conformal gauge condition is such that there is no longer a dependence upon the conformal factor. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\footnote{Within (\ref{AP55}) we note that we have taken $\Omega(x)$ to be a general function of the coordinates so that we additionally encompass the special case of Robertson-Walker geometries with arbitrary spatial curvature $k$. As given in Appendix \ref{ab:cosmologies}, $\Omega(x)$ will only depend on the time coordinate $t$ for $k=0$, while for $k\ne 0$, $\Omega(x)$ will depend on both $t$ and the radial coordinate $r$.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Before we alas evaluate the (\ref{AP54}) within a conformal Minkowski background in the conformal gauge given in (\ref{AP55}), we observe that the gauge condition 
 %
 \begin{eqnarray}
 \nabla_{\nu}K^{\mu\nu}=4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega
 \label{AP56}
 \end{eqnarray}
 % 
-just happens to have the form of a covariant gauge condition for a background metric $\Omega^2(x) g_{\mu\nu}$ with any $g_{\mu\nu}$. Thus we can proceed covariantly, and following quite a bit of algebra find that when (\ref{AP56}) is imposed in a conformal to flat but not necessarily Minkowski background (the flat background could for instance be the polar coordinate geometry $ds^2=dt^2-dr^2-r^2d\theta^2-r^2\sin^2\theta d\phi^2$) (\ref{AP54}) takes  form
+in fact possesses the same form of a covariant gauge condition for a background metric $\Omega^2(x) g_{\mu\nu}$ with any $g_{\mu\nu}$. Hence our treatment is fully covariant. It follows that when (\ref{AP56}) is imposed in a conformal to flat but not necessarily Minkowski background (e.g. polar coordinates of the form $ds^2=dt^2-dr^2-r^2d\theta^2-r^2\sin^2\theta d\phi^2$) then (\ref{AP54}) will take the form
 %
 \begin{eqnarray}
 &&\delta W_{\mu\nu}=\frac{1}{2}\Omega^{-4}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}K_{\mu \nu}-  4\Omega^{-5} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}K_{\mu \nu} \tilde{\nabla}^{\beta}\tilde{\nabla}^{\alpha}\Omega 
@@ -487,11 +512,11 @@ just happens to have the form of a covariant gauge condition for a background me
 \nonumber\\
 &&
 -  48\Omega^{-7}  K_{\mu \nu} \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\beta}\Omega 
-+ 60\Omega^{-8} K_{\mu \nu} \tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\Omega \tilde{\nabla}^{\beta}\Omega
++ 60\Omega^{-8} K_{\mu \nu} \tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}^{\alpha}\Omega \tilde{\nabla}_{\beta}\Omega \tilde{\nabla}^{\beta}\Omega.
 \label{AP57}
 \end{eqnarray}
 %
-without approximation. In (\ref{AP57}) we have introduced the symbol $\tilde{\nabla}_{\alpha}$ (with Greek index) to denote the covariant derivative with respect to the flat but not necessarily Minkowski background $g_{\mu\nu}$ alone so that $\tilde{\nabla}^{\alpha}$ is equal to $g^{\alpha\beta}\tilde{\nabla}_{\alpha}$ and not to $\Omega^{-2}g^{\alpha\beta}\tilde{\nabla}_{\alpha}$. Quite  remarkably, we find that the 17 terms in (\ref{AP57}) can be factored into just a single term, viz.
+Here we have introduced $\tilde{\nabla}_{\alpha}$ to denote the covariant derivative with respect to the flat (but not necessarily Minkowski) background $g_{\mu\nu}$ such that $\tilde{\nabla}^{\alpha}$ is equal to $g^{\alpha\beta}\tilde{\nabla}_{\alpha}$. Observing \eqref{AP57}, we remarkably find that the 17 terms can be factored into one single compact expression
 %
 \begin{eqnarray}
 \delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\Omega^{-2}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}(\Omega^{-2}K_{\mu\nu})
@@ -499,21 +524,20 @@ without approximation. In (\ref{AP57}) we have introduced the symbol $\tilde{\na
 \label{AP58}
 \end{eqnarray}
 %
-where we have set $k_{\mu\nu}=\Omega^{-2}(x)K_{\mu\nu}$. As written, (\ref{AP58}) describes fluctuations around any geometry that is conformal to any flat background metric as written in  the  $\nabla_{\nu}K^{\mu\nu}=4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega$ gauge. If we set $\Omega(x)=1$  (\ref{AP58}) also describes fluctuations around any flat background geometry in the transverse gauge $\nabla_{\nu}K^{\mu\nu}=0$ as per 
+where we we again note that $k_{\mu\nu}=\Omega^{-2}(x)K_{\mu\nu}$. Thus (\ref{AP58}) embodies the representation of fluctuations around a geometry that is conformal to an arbitrary flat background metric, within the  $\nabla_{\nu}K^{\mu\nu}=4\Omega^{-1}K^{\mu\nu}\partial_{\nu}\Omega$ gauge. Upon setting $\Omega(x)=1$,  (\ref{AP58}) reconciles our result within Sect. \ref{ss:fluctuations_around_flat_in_the_tranverse_gauge} as a representation of the fluctuation equations around a flat background geometry in the transverse gauge $\nabla_{\nu}K^{\mu\nu}=0$ as 
 %
 \begin{eqnarray}
 \delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\tilde{\nabla}_{\alpha}\tilde{\nabla}^{\alpha}\tilde{\nabla}_{\beta}\tilde{\nabla}^{\beta}K_{\mu\nu}.
 \label{AP59}
 \end{eqnarray}
 %
-As such (\ref{AP59}) would apply to fluctuations around a flat geometry as written in any general but not necessarily flat Minkowski coordinate system.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Obtaining the Fluctuation Equations in the Conformal Gauge}
+\subsubsection{Further Fluctuation Reduction}
 \label{sss:obtaining_fluctuation_eqns_in_cgauge}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Despite their simple forms neither (\ref{AP58}) nor (\ref{AP59}) are of straightforward use since they involve covariant derivatives that mix the various components of $K_{\mu\nu}$. However, (\ref{AP58}) and (\ref{AP59}) also apply in the gauge given in (\ref{AP55}) that is of interest to us here. Thus for conformal gauge fluctuations around a conformal to flat geometry that is Minkowski the fluctuation equations take the form 
+Although the forms of (\ref{AP58}) and (\ref{AP59}) are exceedingly simple, from a practical perspective, these are not of straightforward use since they involve covariant derivatives that mix the various components of $K_{\mu\nu}$. To fix this issue, we note that (\ref{AP58}) and (\ref{AP59}) also apply in the gauge given in (\ref{AP55}). Hence within the conformal gauge, fluctuations around a conformal to Minkowski geometry take the partial derivative form
 %
 \begin{eqnarray}
 &&\delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\Omega^{-4}\partial_{\beta}\partial^{\beta}\partial_{\alpha}\partial^{\alpha}K_{\mu \nu}-  4\Omega^{-5} \partial_{\beta}\partial_{\alpha}K_{\mu \nu} \partial^{\beta}\partial^{\alpha}\Omega 
@@ -532,11 +556,11 @@ Despite their simple forms neither (\ref{AP58}) nor (\ref{AP59}) are of straight
 &&-  48\Omega^{-7}  \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}K_{\mu \nu} \partial^{\beta}\Omega-  48\Omega^{-7}  K_{\mu \nu} \partial^{\alpha}\Omega \partial_{\beta}\partial_{\alpha}\Omega \partial^{\beta}\Omega 
 \nonumber\\
 &&
-+ 60\Omega^{-8} K_{\mu \nu} \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}\Omega \partial^{\beta}\Omega,
++ 60\Omega^{-8} K_{\mu \nu} \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial_{\beta}\Omega \partial^{\beta}\Omega.
 \label{AP60}
 \end{eqnarray}
 %
-with (\ref{AP60})  simplifying to 
+Inspection of \eqref{AP60} reveals that it remarkably simplifies to
 %
 \begin{eqnarray}
 \delta W_{\mu\nu}(K_{\mu\nu})=\frac{1}{2}\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}(\Omega^{-2}K_{\mu\nu})
@@ -544,25 +568,32 @@ with (\ref{AP60})  simplifying to
 \label{AP61}
 \end{eqnarray}
 %
-We recognize (\ref{AP61}) as precisely being of the form given earlier on general grounds in  (\ref{AP30}). As we see, despite the fact that the $g_{\mu\nu}=\Omega^2(x)\eta_{\mu\nu}$ background is not itself flat, in (\ref{AP60}) and (\ref{AP61}) all derivatives are flat Minkowski, i.e. associated with the metric $ds^2=-\eta_{\alpha\beta}dx^{\alpha}dx^{\beta}=dt^2-dx^2-dy^2-dz^2$. Moreover, and even more significantly, (\ref{AP60}) and (\ref{AP61}) are diagonal in the $(\mu,\nu)$ indices. Thus with our choice of gauge, in a conformal to flat Minkowski background $\delta W_{\mu\nu}$ is diagonalized in the tensor indices. We thus see the power of conformal symmetry since our starting point was the 62 term $\delta W_{\mu\nu}(h_{\mu\nu})$ given in (\ref{AP43}). Eq. (\ref{AP61}) is our main result. It is exact without approximation, and is to be used to monitor cosmological fluctuations in the conformal gravity theory.
+As written, (\ref{AP61}) may be recognized as being of the exact form given within Sect. \ref{ss:conformal_invariance} based on grounds on conformal invariance and transformation properties of the Bach tensor. Regardless of the $g_{\mu\nu}=\Omega^2(x)\eta_{\mu\nu}$ background not being flat, in (\ref{AP60}) and (\ref{AP61}) all derivatives are flat Minkowski (i.e. associated with the metric $ds^2=-\eta_{\alpha\beta}dx^{\alpha}dx^{\beta}=dt^2-dx^2-dy^2-dz^2$). In terms of these partial derivatives, we observe a significant feature in that (\ref{AP60}) and (\ref{AP61}) are diagonal in the $(\mu,\nu)$ indices (i.e. there is no mixing of the components of $k_{\mu\nu}$ from the different operator).  Consequently, the reductive significance of conformal symmetry is exemplified in our starting point with a the 62 term $\delta W_{\mu\nu}(h_{\mu\nu})$ given in (\ref{AP43}) and arriving at the single term (\ref{AP61}).
 
 \subsection{Calculation Summary}
 \label{ss:summary_cgauge}
 
-
-For the benefit of the reader we briefly summarize the steps in our calculation. We start with a general $W_{\mu\nu}$ in the convenient form given in (\ref{AP42}). We perturb $W_{\mu\nu}$ to first order around a general background  with metric $g_{\mu\nu}$ and take the perturbed metric to be of the form  $g_{\mu\nu}+\delta g_{\mu\nu}=g_{\mu\nu}+h_{\mu\nu}$. Recalling  that $\delta R^{\lambda}_{\phantom{\lambda}\mu\nu\kappa}=
+As we have covered numerous steps in the derivation of the fluctuations within conformal gravity, we provide a summary overview of the procedure given. We began with a general $W_{\mu\nu}$ in the form of in (\ref{AP42}) and then perturbed $W_{\mu\nu}$ to first order around a general background  with metric $g_{\mu\nu}$ with a perturbed metric of the form  $g_{\mu\nu}+\delta g_{\mu\nu}=g_{\mu\nu}+h_{\mu\nu}$. With the identity 
+%
+\begin{eqnarray}
+\delta R^{\lambda}_{\phantom{\lambda}\mu\nu\kappa}&=&
 \partial \delta\Gamma^{\lambda}_{\mu\nu}/\partial x^{\kappa}
 +\Gamma^{\lambda}_{\kappa\sigma}\delta\Gamma^{\sigma}_{\mu\nu}
 -\Gamma^{\sigma}_{\mu\kappa}\delta\Gamma^{\lambda}_{\nu\sigma}
 -\partial \delta\Gamma^{\lambda}_{\mu\kappa}/\partial x^{\nu}
 -\Gamma^{\lambda}_{\nu\sigma}\delta\Gamma^{\sigma}_{\mu\kappa}
-+\Gamma^{\sigma}_{\mu\nu}\delta\Gamma^{\lambda}_{\kappa\sigma}=
++\Gamma^{\sigma}_{\mu\nu}\delta\Gamma^{\lambda}_{\kappa\sigma}
+\nonumber\\
+&=&
 \nabla_{\kappa}\delta\Gamma^{\lambda}_{\mu\nu}
--\nabla_{\nu}\delta\Gamma^{\lambda}_{\mu\kappa}$, where $\delta\Gamma^{\lambda}_{\mu\nu}=(1/2)g^{\lambda \rho}[\nabla_{\nu}\delta g_{\rho\mu}+\nabla_{\mu}\delta g_{\rho\nu}-\nabla_{\rho}\delta g_{\mu\nu}]$, on evaluating $\delta W_{\mu\nu}$ to lowest order in $\delta g_{\mu\nu}$ we obtain (\ref{AP43}). 
+-\nabla_{\nu}\delta\Gamma^{\lambda}_{\mu\kappa},
+\end{eqnarray}
+%
+where $\delta\Gamma^{\lambda}_{\mu\nu}=(1/2)g^{\lambda \rho}[\nabla_{\nu}\delta g_{\rho\mu}+\nabla_{\mu}\delta g_{\rho\nu}-\nabla_{\rho}\delta g_{\mu\nu}]$, we then evaluate $\delta W_{\mu\nu}$ to lowest order in $\delta g_{\mu\nu}$ to obtain (\ref{AP43}). 
 
-Since our interest is in traceless fluctuations, in (\ref{AP43}) we set  $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ where $h=g^{\mu\nu}h_{\mu\nu}$ and $g^{\mu\nu}K_{\mu\nu}=0$. This leads us to two contributions to $\delta W_{\mu\nu}$, viz. $\delta W_{\mu\nu}(K_{\mu\nu})$ as given in (\ref{AP44}) and $\delta W_{\mu\nu}(h)$ as given in (\ref{AP45}). Using properties of manipulations of covariant derivatives we find that $\delta W_{\mu\nu}(h)=-(1/4)W_{\mu\nu}h$ as exhibited in (\ref{AP50}). This allows to establish that $\delta W_{\mu\nu}(h)$ vanishes if the background $W_{\mu\nu}$ vanishes, just as is the case in background Robertson-Walker and de Sitter cosmologies. 
+To address trace simplifications, in (\ref{AP43}) we set  $h_{\mu\nu}=K_{\mu\nu}+(1/4)g_{\mu\nu}h$ where $h=g^{\mu\nu}h_{\mu\nu}$ and $g^{\mu\nu}K_{\mu\nu}=0$, from which it follows that $\delta W_{\mu\nu}$ may be expressed as two contributions viz. $\delta W_{\mu\nu}(K_{\mu\nu})$ in (\ref{AP44}) and $\delta W_{\mu\nu}(h)$ in (\ref{AP45}). Commuting covariant derivatives we observed and confirmed that $\delta W_{\mu\nu}(h)=-(1/4)W_{\mu\nu}h$ as shown in (\ref{AP50}). Consequently, this has established that $\delta W_{\mu\nu}(h)$ will vanish if the background $W_{\mu\nu}$ vanishes (a result that applied to the backgrounds of Robertson-Walker and de Sitter cosmologies).
 
-For background cosmologies in which the background $W_{\mu\nu}$ vanishes, $\delta W_{\mu\nu}$ reduces to $\delta W_{\mu\nu}(K_{\mu\nu})$, with $\delta W_{\mu\nu}$ thus only being dependent on the traceless fluctuation $K_{\mu\nu}$ as per (\ref{AP44}). Using further properties of manipulations of covariant derivatives we rewrite (\ref{AP44}) in the form given in (\ref{AP54}), a form in which we can readily implement the conformal gauge condition given in (\ref{AP23}). On implementing this gauge condition we find that for fluctuations around background geometries that are conformal to flat (such as Robertson-Walker and de Sitter) $\delta W_{\mu\nu}(K_{\mu\nu})$ reduces to (\ref{AP61}), our main result. In order to actually implement all of these various steps we had to quite extensively adapt the $xAct$ tensor calculus software package in order to perform the conformal gravity calculations symbolically on a computer.
+For geometries in which the background $W_{\mu\nu}$ vanishes, $\delta W_{\mu\nu}$ reduces to $\delta W_{\mu\nu}(K_{\mu\nu})$, with $\delta W_{\mu\nu}$ to then only be dependent on the traceless fluctuation $K_{\mu\nu}$ as given in (\ref{AP44}). With further commutation of covariant derivatives we then expressed (\ref{AP44}) in the form given in (\ref{AP54}). Now in a form ready for conformal gauge implementation, we apply condition (\ref{AP23}) within a conformal flat background to yield $\delta W_{\mu\nu}(K_{\mu\nu})$ given as (\ref{AP61}), the main result of this section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Robertson Walker Radiation Era Conformal Gravity Solution}
