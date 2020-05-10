@@ -1,7 +1,7 @@
 
 \chapter{Constructing and Imposing Gauge Conditions}
 \label{c:constructing_gauge_conditions}
-In the context of conformal gravity, we continue work done in obtaining solutions to the cosmological fluctuation equations \cite{mannheim_2012} by constructing a gauge condition that is conformally invariant. Referred to as the conformal gauge, we find that in backgrounds that are conformal to flat, the conformal gravity cosmological fluctuation equations can be brought to an exceedingly simple form, comprised only of a single term. This calculation requires a series of many steps which are given in detail within the chapter, consisting of first motivating and constructing the conformal gauge, composing the fluctuation equations and using curvature identities and covariant derivatives to reduce its form, and finally imposing the conformal gauge itself, with expansion of covariant derivatives into flat Minkowski partial derivatives to yield \eqref{AP61}, one of the seminal results of this thesis. Using the conformal properties detailed in Sect. \ref{ss:conformal_invariance}, we find the extra degree of symmetry afforded by conformal invariance provides significant simplifications regarding the trace and moreover allows a very straightforward treatment of the entire cosmological fluctuations.
+In the context of conformal gravity, we continue work done in obtaining solutions to the cosmological fluctuation equations \cite{mannheim_2012} by constructing a gauge condition that is invariant under conformal transformations. Referred to as the conformal gauge, we find that in backgrounds that are conformal to flat, the conformal gravity cosmological fluctuation equations can be brought to an exceedingly simple form, comprised only of a single term. This calculation requires a series of many steps which are given in detail within the chapter, consisting of first motivating and constructing the conformal gauge, composing the fluctuation equations and using curvature identities and covariant derivatives to reduce its form, and finally imposing the conformal gauge itself, with expansion of covariant derivatives into flat Minkowski partial derivatives to yield \eqref{AP61}, one of the seminal results of this thesis. Using the conformal properties detailed in Sect. \ref{ss:conformal_invariance}, we find the extra degree of symmetry afforded by conformal invariance provides significant simplifications regarding the trace and moreover allows a very straightforward treatment of the entire cosmological fluctuation equations.
 
 Such a streamlined approach may be contrasted with the Einstein fluctuations, which are also studied here in Sect. \ref{s:compact_expressions_ein} within differing choices of gauges. Specifically, we form a generalized gauge constraint and vary the coefficients in order to cast $\delta G_{\mu\nu}$ into as reduced and compact form possible, permitting readily solvable integral solutions to be obtained in some simple choices of background geometry (de Sitter and Minkowski). We find that is the coupling of the trace of the fluctuations that prevents the Einstein fluctuation equations from being able to be completely decoupled, unlike the case of conformal gravity where the trace is efficiently isolated as a consequence of conformal invariance.
 
@@ -39,7 +39,7 @@ h^{\mu\nu}-\nabla^{\nu}\epsilon^{\mu}-\nabla^{\mu}\epsilon^{\nu}.
 %
 Here all covariant derivatives are taken with respect to the background metric $g_{\mu\nu}^{(0)}$. For every solution $h_{\mu\nu}$ that satisfies the fluctuation equations (i.e. $\delta G_{\mu\nu} = \delta T_{\mu\nu}$ or $\delta W_{\mu\nu} = \delta T_{\mu\nu}$), there exists a transformed $h'_{\mu\nu}$ that will also serve as a solution. Thus with the freedom of fixing the four possible arbitrary space-time functions $\epsilon^\mu(x)$, one may eliminate the four gauge degrees of freedom within $h_{\mu\nu}$ by imposing a gauge condition satisfying four equations. Within Ch. \ref{c:formalism} we have already explored the form of the Einstein fluctuation equations in the harmonic gauge as well as the conformal gravity fluctuation equations in the transverse gauge.
 
-In continuing the discussion within conformal gravity, we also recall that in background that are conformal to flat, the gravitational sector fluctuation $\delta W_{\mu\nu}$ (the Bach tensor, analogous to the Einstein tensor) depends only upon the trace free contribution of $h_{\mu\nu}$, to thus be able to be expressed entirely in terms of the 9 component $K_{\mu\nu}$, obeying $K^{\nu\sigma}g^{(0)}_{\nu\sigma}=0$. Our focus is then to determine the most appropriate gauge condition as applied to $K_{\mu\nu}$. As we have seen in Sect. \ref{ss:fluctuations_around_flat_in_the_tranverse_gauge} that imposition of the transverse gauge (i.e. $\nabla^\mu K_{\mu\nu} = 0$) was effective in reducing the fluctuation equations into a readily solvable form within a flat space background. However, the analogous imposition of the transverse gauge in curved conformal to flat backgrounds does not provide the same degree of reduction. Rather, in the more general background, the fluctuations take a form where tensor components are tightly coupled, and no simple solution is immediately available. 
+In continuing the discussion within conformal gravity, we also recall that in background that are conformal to flat, the gravitational sector fluctuation $\delta W_{\mu\nu}$ (the Bach tensor, analogous to the Einstein tensor) depends only upon the trace free contribution of $h_{\mu\nu}$, to thus be able to be expressed entirely in terms of the 9 component $K_{\mu\nu}$, obeying $K^{\nu\sigma}g^{(0)}_{\nu\sigma}=0$. Our focus is then to determine the most appropriate gauge condition as applied to $K_{\mu\nu}$. We have seen in Sect. \ref{ss:fluctuations_around_flat_in_the_tranverse_gauge} that imposition of the transverse gauge (i.e. $\nabla^\mu K_{\mu\nu} = 0$) was effective in reducing the fluctuation equations into a readily solvable form within a flat space background. However, the analogous imposition of the transverse gauge in curved conformal to flat backgrounds does not provide the same degree of reduction. Rather, in the more general background, the fluctuations take a form where tensor components are tightly coupled, and no simple solution is immediately available. 
 
 In an attempt to remedy the situation, we seek to find a gauge condition that makes contact with the desirable behavior within the flat space background. That is, we want a gauge condition that reduces to the transverse gauge if the background geometry is flat. As the content of this work concerns cosmology, even more specifically we desire a gauge condition that is suitable for conformal to flat backgrounds. The space of all conformal flat backgrounds is in fact quite large, with cosmologically relevant geometries only comprising a small subspace of all possible conformal flat metrics. The above gauge constraint criteria will in fact be satisfied if we can find a gauge condition that is conformally covariant (i.e. invariant under conformal transformation up to an overall scale factor). 
 
@@ -599,175 +599,6 @@ To address trace simplifications, in (\ref{AP43}) we set  $h_{\mu\nu}=K_{\mu\nu}
 
 For geometries in which the background $W_{\mu\nu}$ vanishes, $\delta W_{\mu\nu}$ reduces to $\delta W_{\mu\nu}(K_{\mu\nu})$, with $\delta W_{\mu\nu}$ to then only be dependent on the traceless fluctuation $K_{\mu\nu}$ as given in (\ref{AP44}). With further commutation of covariant derivatives we then expressed (\ref{AP44}) in the form given in (\ref{AP54}). Now in a form ready for conformal gauge implementation, we apply condition (\ref{AP23}) within a conformal flat background to yield $\delta W_{\mu\nu}(K_{\mu\nu})$ given as (\ref{AP61}), the main result of this section.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Robertson Walker Radiation Era Conformal Gravity Solution}
-\label{s:rw_radiation_conformal_gravity_sol}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Motivated by the excellent agreement between the fits to the galactic rotation curves of 138 spiral galaxies presented in \cite{mannheim_2011,mannheim_2012, obrien_mannheim_2012} and to fits of the accelerating universe Hubble plot data presented in \cite{mannheim_2006,mannheim_2017}, we thus consider conformal gravity fluctuations in Robertson-Walker cosmologies with negative $k$.
-
-In the conformal gravity fitting of the current era Hubble plot, we note that the cosmological constant term is found to dominate over the perfect fluid contribution \cite{mannheim_1990}. However in the early universe a not-yet-red-shifted radiation era perfect fluid is the dominant contribution since $a(t)$ is small and $A/a^4(t)$ is large. Moreover, if the $A/a^4(t)$ radiation contribution is dominant, then since $k$ is given by $k=-\dot{a}^2-2A/a^2S_0^2$ when the $\alpha$ contribution in (\ref{A18}) is negligible, we are led right back to the phenomenologically preferred negative $k$. Thus for studying fluctuation growth in the early universe the only relevant solution for $a(t)$ is the $a(t,\alpha=0,k<0,A>0)$ one. For this solution, on setting $k=-1/L^2$, $d^2=2AL^4/S_0^2$, and $L^2a^2(t)=(d^2+t^2)$, we obtain
-%
-\begin{eqnarray}
-\tau=L\int_0^t \frac{dt}{(d^2+t^2)^{1/2}}=L~{\rm arc sinh}\left(\frac{t}{d}\right),\qquad t=d\sinh p,
-\label{B1}
-\end{eqnarray}
-%
-where $p=\tau/L$. Now according to (\ref{AP29}) fluctuations around a flat background would grow linearly in the relevant time variable, which according to the $k<0$ (\ref{A14}) is $p^{\prime}$. If we define $\Omega(p,\chi)=La(p)(\cosh p+\cosh \chi)$, we can write (\ref{A14}) in the form
-%
-\begin{eqnarray}
-ds^2=\Omega^2(p,\chi)\left[dp^{\prime 2}-dx^{\prime 2} -dy^{\prime 2} -dz^{\prime 2}\right].
-\label{B2}
-\end{eqnarray}
-%
-And with fluctuation $\delta W_{\mu\nu}$ being given in (\ref{AP61}) as 
-%
-\begin{eqnarray}
-\delta W_{\mu\nu}=(1/2)\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}k_{\mu\nu}
-\end{eqnarray}
-%
- where $k_{\mu\nu}=\Omega^{-2}(x)K_{\mu\nu}$, following
-(\ref{AP29}) we can write the solution to $\delta W_{\mu\nu}=0$ in the primed-variable form
-%
-\begin{eqnarray}
-k_{\mu\nu}=A^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+A^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}},
-\label{B3}
-\end{eqnarray}
-%
-where $\eta^{\mu\nu}k^{\prime}_{\mu}k^{\prime}_{\nu}=0$. Then with the conformal gauge condition being of the form $\partial^{\prime}_{\nu}k^{\mu\nu}=0$ in this case (where $k^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}k_{\alpha\beta}$), we obtain 
-%
-\begin{eqnarray}
-&&ik^{\prime \nu}\left[A^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}-A^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}-(n^{\prime}\cdot x^{\prime})B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}\right]
-\nonumber\\
-&&+n^{\prime\nu}\left[B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}\right]=0.
-\label{B4}
-\end{eqnarray}
-%
-With this relation holding for all $x^{\prime}$ we obtain
-%
-\begin{eqnarray}
-&&ik^{\prime \nu}A^{\prime}_{\mu\nu}+n^{ \prime\nu}B^{\prime}_{\mu\nu}=0,\quad ik^{\prime \nu}B^{\prime}_{\mu\nu}=0, 
-\nonumber\\
-&&
--ik^{\prime \nu}A^{\prime *}_{\mu\nu}+n^{ \prime\nu}B^{\prime *}_{\mu\nu}=0,\quad -ik^{\prime \nu}B^{\prime *}_{\mu\nu}=0.
-\label{B5}
-\end{eqnarray}
-%
-With the $B^{\prime}_{\mu\nu}$ term being leading in (\ref{B3}) at large $n^{\prime}\cdot x^{\prime}$, we can ignore the non-leading $A^{\prime}_{\mu\nu}$ modes, and treat the $B^{\prime}_{\mu\nu}$ modes as obeying the transverse momentum space condition  $ik^{\prime \nu}B^{\prime}_{\mu\nu}=0$, $-ik^{\prime \nu}B^{\prime *}_{\mu\nu}=0$. Since the gauge condition $\partial^{\prime}_{\nu}k^{\mu\nu}=0$ takes this momentum space form, it means that all of the components of the $B^{\prime}_{\mu\nu}$ modes have the same $(n^{\prime}\cdot x^{\prime})e^{ik^{\prime}\cdot x^{\prime}}$ leading behavior in coordinate space. And with $n^{\prime \mu}=(1,0,0,0)$, the modes grow linearly in the relevant time variable $p^{\prime}$ associated with (\ref{B2}).
-
-To determine the structure of these solutions in the comoving coordinate system we need to both reexpress $\Omega(p,\chi)$ in terms of the comoving coordinates $(t,r)$ and transform the components of the fluctuation $K_{\mu\nu}$ to the comoving coordinate system. For the $\Omega(p,\chi)$ term first  we note that fluctuations around the conformal to flat, $k<0$ Robertson-Walker geometry grow as $\Omega^2(p,\chi)p^{\prime}$ as per (\ref{AP61}). Thus  from (\ref{A14}), (\ref{A11}), and (\ref{B1}) we find that $\Omega^2(p,\chi)p^{\prime}$ grows as
-%
-\begin{eqnarray}
-\Omega^2(p,\chi)p^{\prime}&=&L^2a^2(p)(\cosh p+\cosh \chi)^2p^{\prime}=L^2a^2(p)\sinh p (\cosh p+\cosh \chi)
-\nonumber\\
-&=&(d^2+t^2)\frac{t}{d}\left[\left(1+\frac{t^2}{d^2}\right)^{1/2}+\left(1+\frac{r^2}{L^2}\right)^{1/2}\right].
-\label{B6}
-\end{eqnarray}
-%
-$\Omega^2(p,\chi)p^{\prime}$ thus starts off linearly in $t$ when $t\ll d$, and subsequently then grows as $t^4$ when $t\gg d$. Thus in the conformal to flat Minkowski coordinate system given in (\ref{A14}) all the components of $K_{\mu\nu}$ grow as $t^4$ when $t \gg d$.
-
-To transform the fluctuation itself we note that transforming from (\ref{A14}) to (\ref{A13}) has no effect on the $p^{\prime}$ behavior. However transforming  the spatial coordinates from the Cartesian (\ref{A14}) to the polar (\ref{A13}) does introduce a dependence on $r^{\prime}$ wherever there is an angular component, and thus it does introduce a dependence on the comoving $t$. Specifically, in terms of the $K_{x^{\prime}x^{\prime}}$ type fluctuations in the (\ref{A14}) coordinate system, in the (\ref{A13}) coordinate system we can set 
-%
-\begin{align}
-K_{\theta\theta}&=(r^{\prime}\cos\theta\cos\phi)^2K_{x^{\prime}x^{\prime}}+(r^{\prime}\cos\theta\sin\phi)^2K_{y^{\prime}y^{\prime}}+(r^{\prime}\sin\theta)^2K_{z^{\prime}z^{\prime}}
-\nonumber\\
-&=\frac{\sinh^2\chi}{(\cosh p+\cosh \chi)^2}[\cos^2\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos^2\theta\sin^2\phi K_{y^{\prime}y^{\prime}}+\sin^2\theta K_{z^{\prime}z^{\prime}}]
-\nonumber\\
-&=\frac{r^2d^2}{[L(d^2+t^2)^{1/2}+d(L^2+r^2)^{1/2}]^2}\times
-\nonumber\\
-&\qquad[\cos^2\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos^2\theta\sin^2\phi K_{y^{\prime}y^{\prime}}+\sin^2\theta K_{z^{\prime}z^{\prime}}],
-\nonumber\\
-K_{r^{\prime}\theta}&=r^{\prime}\cos\theta\sin\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+r^{\prime}\cos\theta\sin\theta\sin^2\phi K_{y^{\prime}y^{\prime}}-r^{\prime}\sin\theta\cos\theta K_{z^{\prime}z^{\prime}}
-\nonumber\\
-&=\frac{\sinh\chi}{(\cosh p+\cosh \chi)}\times 
-\nonumber\\
-&\qquad[\cos\theta\sin\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos\theta\sin\theta\sin^2\phi K_{y^{\prime}y^{\prime}}-\sin\theta\cos\theta K_{z^{\prime}z^{\prime}}],
-\nonumber\\
-K_{p^{\prime}\theta}&=r^{\prime}\cos\theta\cos\phi K_{p^{\prime}x^{\prime}}+r^{\prime}\cos\theta\sin\phi K_{p^{\prime}y^{\prime}}-r^{\prime}\sin\theta K_{p^{\prime}z^{\prime}}
-\nonumber\\
-&=\frac{\sinh\chi}{(\cosh p+\cosh \chi)}[\cos\theta\cos\phi K_{p^{\prime}x^{\prime}}+\cos\theta\sin\phi K_{p^{\prime}y^{\prime}}-\sin\theta K_{p^{\prime}z^{\prime}}],
-\label{B7}
-\end{align}
-%
-with analogous expressions for $K_{\theta\phi}$, $K_{\phi\phi}$, $K_{r^{\prime}\phi}$ and $K_{p^{\prime}\phi}$. The $r^{\prime}=\sinh \chi/(\cosh p +\cosh \chi)$ prefactor in (\ref{B7}) has the property that at large $t$ it behaves  as $t^0$ if $p=\chi$, viz. $t=r$ with both $t$ and $r$ large (lightlike case), and as $t^{-1}$ if $p\gg \chi$, viz. $t \gg r$ (timelike case).
-
-To transform from (\ref{A13}) to (\ref{A10}) we need to transform from $(p^{\prime}, r^{\prime})$ to $(p,\chi)$. To transform from (\ref{A10}) to the comoving Robertson-Walker metric given (\ref{A4}) we need to transform from $(p,\chi)$ to $(t,r)$. Since the angular sector is unaffected by the transformation from (\ref{A13}) to (\ref{A4}), the angular sector fluctuations $K_{\theta\theta}$, $K_{\theta  \phi}$, $K_{\phi\phi}$ associated with the comoving Robertson-Walker geometry given in (\ref{A4}) will thus grow as $t^4$ itself as modified by the prefactor in (\ref{B7}), and thus as $t^4$ for the lightlike case (the solutions to $\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}[\Omega^{-2}(x)K_{\mu\nu}]=0$ as given in  (\ref{B3}) are lightlike), and as $t^2$ for the timelike case. With the $ds^2=0$ light cone being both general coordinate invariant and conformal invariant, lightlike modes associated with the (\ref{A14}) metric will transform into lightlike modes associated with the metric (\ref{A4}). A $t^4$ growth for lightlike modes is a quite substantial growth rate, a growth rate that is not achievable in standard Einstein gravity if one uses the same radiation matter source. 
-
-Since in transforming from one coordinate system to another the transformation is effected by 
-%
-\begin{eqnarray}
-K_{\mu\nu}=\frac{\partial x^{\prime \alpha}}{\partial x^{\mu}}\frac{\partial x^{\prime\beta}}{\partial x^{\nu}}K^{\prime}_{\alpha\beta},
-\label{B8}
-\end{eqnarray}
-%
-the transformations between the $(p^{\prime}, r^{\prime})$, $(p,\chi)$ and $(t,r)$ coordinate systems are effected by
-%
-\begin{eqnarray}
-&&\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=\frac{1+\cosh p\cosh\chi}{[\cosh p+\cosh\chi]^2},\qquad
-\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=-\frac{\sinh p\sinh\chi}{[\cosh p+\cosh\chi]^2}, 
-\nonumber\\
-&& \frac{\partial p}{\partial t}=\frac{1}{La(t)},\qquad \frac{\partial \chi}{\partial r}=\frac{1}{L\cosh\chi}.
-\label{B9}
-\end{eqnarray}
-%
-
-Discussion of (\ref{B9}) depends on whether $p=\chi$ or $p\gg \chi$. Since according to (\ref{B1}) $t=d\sinh p$ when $La(t)=(d^2+t^2)^{1/2}$, at large $t$ we see that  when $p=\chi$ (i.e. both $p$ and $\chi$ then being large) we have 
-%
-\begin{eqnarray}
-\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=1,\qquad
-\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=1,\qquad \frac{\partial p}{\partial t}=\frac{1}{t},\qquad \frac{\partial \chi}{\partial r}=\frac{d}{Lt}.
-\label{B10}
-\end{eqnarray}
-%
-Thus going from (\ref{A13}) to (\ref{A10}) ($(p^{\prime},r^{\prime})$ to $(p,\chi)$) will involve no suppression. Then in going from (\ref{A10}) to the comoving (\ref{A4}) ($(p,\chi)$ to $(t,r)$) we will get a $1/t^2$ suppression in the $K_{tt}$, $K_{tr}$ and $K_{rr}$ sectors, a $1/t$ suppression for $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$, and no suppression for $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$ since in this case the prefactor in (\ref{B7}) behaves as $t^0$. Finally, incorporating the $t^4$ dependence of $\Omega^2(p,\chi)p^{\prime}$, we find that overall $K_{tt}$, $K_{tr}$ and $K_{rr}$  grow as $t^2$, $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$ grow as $t^3$, and $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$ grow as $t^4$. Thus all seven of the $K_{tt}$, $K_{tr}$, $K_{rr}$, $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$ are suppressed with respect to $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$, so the leading growth will be the $t^4$ growth associated with the angular $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$. 
-
-
-Similarly,  at large $p\gg \chi$ the transformations behave as 
-%
-\begin{eqnarray}
-&&\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=\frac{d\cosh\chi}{t},\qquad
-\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=-\frac{d\sinh\chi}{t}, 
-\nonumber\\
-&& \frac{\partial p}{\partial t}=\frac{1}{t},\qquad \frac{\partial \chi}{\partial r}=\frac{1}{L\cosh\chi}.
-\label{B11}
-\end{eqnarray}
-%
-Thus in going from (\ref{A13}) to (\ref{A10}) we will get a $1/t^2$ suppression in the $K_{pp}$, $K_{p\chi}$ and $K_{\chi\chi}$ sectors, a $1/t$ suppression in the $K_{p\theta}$, $K_{p\phi}$, $K_{\chi\theta}$, and $K_{\chi\phi}$ sectors, and no suppression in the $K_{\theta\theta}$, $K_{\theta  \phi}$, $K_{\phi\phi}$ sectors. Then in going from (\ref{A10}) to the comoving (\ref{A4}) we will get an additional $1/t^2$ suppression in the $K_{tt}$ sector,  and an additional  $1/t$ suppression in the $K_{tr}$, $K_{t\theta}$, $K_{t\phi}$ sectors. Thus in going from (\ref{A13}) to (\ref{A4}) we get a net $1/t^4$ suppression for  $K_{tt}$,  a net $1/t^3$ suppression for  $K_{tr}$, a net $1/t^2$ suppression for  $K_{rr}$, $K_{t\theta}$, $K_{t\phi}$, a net $1/t$ suppression for  $K_{r\theta}$ and $K_{r\phi}$, and no suppression for $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$. Finally, incorporating the $t^4$ dependence of $\Omega^2(p,\chi)p^{\prime}$ and including the prefactor in (\ref{B7}), we find that overall $K_{tt}\sim t^0$, $K_{tr}\sim t^1$, $K_{t\theta}\sim t^1$, $K_{t\phi}\sim t^1$, while $K_{rr}\sim t^2$, $K_{r\theta}\sim t^2$, $K_{r\phi}\sim t^2$,  $K_{\theta\theta}\sim t^2$, $K_{\theta\phi}\sim t^2$ and $K_{\phi\phi}\sim t^2$. Thus the leading growth will grow as $t^2$. To understand this pattern we note that when $\chi$ is negligible then so is $r$, and the spatial part of the metric in (\ref{A4}) effectively becomes flat. Consequently,  $K_{tr}$, $K_{t\theta}$ and $K_{t\phi}$ all then have the same time behavior (viz. $t^1$), and $K_{rr}$, $K_{r\theta}$, $K_{r\phi}$,  $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$  all have the same time behavior (viz. $t^2$), with $t^2$ being the leading growth.
-
-To compare with the results obtained in \cite{mannheim_2012}, we note that there we imposed a  transverse gauge condition and had restricted to modes that obeyed the synchronous condition $K_{0\mu}=0$. We had worked in a spherical polar coordinate basis for the modes, and in the angular sector had obtained 
-%
-\begin{eqnarray}
-K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\cosh^2[(p+\chi)/2]\cosh^2[(p-\chi)/2]
-\\
-&\times&\bigg{[}2\alpha^{(-)}_{\theta\theta}+\beta^{(-)}_{\theta\theta}\tanh[(p+\chi)/2]+\beta^{(-)}_{\theta\theta}{\rm tanh}[(p-\chi)/2]\bigg{]}
-\nonumber\\
-&\times&\bigg{[}\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2]\bigg{]}\frac{\exp[-iq(p^{\prime}-r^{\prime})]}{\sin^2\theta},
-\nonumber
-\label{B12}
-\end{eqnarray}
-%
-where $\alpha^{(-)}_{\theta\theta}$ and $\beta^{(-)}_{\theta\theta}$ are constants and $q$ is the radial momentum of the mode. For our purposes here we note that is more convenient to solve the radial equation not in terms of $e^{iqr^{\prime}}$ functions, but in terms of spherical Bessel functions instead, with the relevant one being $j_0(qr^{\prime})=\sin(qr^{\prime})/qr^{\prime}$. We thus replace (\ref{B12}) by
-%
-\begin{eqnarray}
-K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\cosh^2[(p+\chi)/2]\cosh^2[(p-\chi)/2]
-\\
-&\times&\bigg{[}2\alpha^{(-)}_{\theta\theta}+\beta^{(-)}_{\theta\theta}\tanh[(p+\chi)/2]+\beta^{(-)}_{\theta\theta}{\rm tanh}[(p-\chi)/2]\bigg{]}
-\nonumber\\
-&\times&\bigg{[}\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2]\bigg{]}\frac{\exp[-iqp^{\prime}]}{\sin^2\theta}qr^{\prime}j_0(qr^{\prime}),
-\nonumber
-\label{B13}
-\end{eqnarray}
-%
-With $r^{\prime}$ being given by $r^{\prime}=(\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2])/2=\sinh\chi/(\cosh p+\cosh \chi)$,  we can thus set: 
-%
-\begin{eqnarray}
-K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\bigg{[}\alpha^{(-)}_{\theta\theta}
-+\beta^{(-)}_{\theta\theta}\frac{\sinh p}{\cosh p +\cosh \chi}\bigg{]}\sinh^2\chi\frac{\exp[-iqp^{\prime}]}{\sin^2\theta}qj_0(qr^{\prime}).
-\nonumber\\
-\label{B14}
-\end{eqnarray}
-%
-Thus, for the lightlike $p=\chi$ case (where $r^{\prime}\rightarrow 1/2$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^4$, while for the timelike $p\gg \chi$ case (where $r^{\prime}\rightarrow 0$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^2$, just as found above. (The timelike $t^2$ growth had been incorrectly given in \cite{mannheim_2012}.) Interestingly, in \cite{mannheim_2012}  we had only considered a particular class of solutions, namely those with $K_{tt}=0$, $K_{tr}=0$, $K_{t\theta}=0$ and $K_{t\phi}=0$. We now see that for both $p=\chi$ and $p \gg \chi$, all of the modes that obey the synchronous condition $K_{0\mu}=0$  are non-leading, with the angular modes respectively being leading or coleading in the two cases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Imposing Specific Gauges within $\delta G_{\mu\nu}$}
@@ -911,6 +742,176 @@ f=\eta^{\mu\nu}f_{\mu\nu}=-\frac{8\pi G}{(P-\tfrac{3}{4})}\tau^2(x) \int d^4yD^{
 \end{eqnarray}
 %
 where it is implied that $\tau(x)=x^0$, $\tau(y)=y^0$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robertson Walker Radiation Era Conformal Gravity Solution}
+\label{s:rw_radiation_conformal_gravity_sol}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Motivated by the excellent agreement between the fits to the galactic rotation curves of 138 spiral galaxies presented in \cite{mannheim_2011,mannheim_2012, obrien_mannheim_2012} and to fits of the accelerating universe Hubble plot data presented in \cite{mannheim_2006,mannheim_2017}, we thus consider conformal gravity fluctuations in Robertson-Walker cosmologies with negative $k$.
+
+In the conformal gravity fitting of the current era Hubble plot, we note that the cosmological constant term is found to dominate over the perfect fluid contribution \cite{mannheim_1990}. However in the early universe a not-yet-red-shifted radiation era perfect fluid is the dominant contribution since $a(t)$ is small and $A/a^4(t)$ is large. Moreover, if the $A/a^4(t)$ radiation contribution is dominant, then since $k$ is given by $k=-\dot{a}^2-2A/a^2S_0^2$ when the $\alpha$ contribution in (\ref{A18}) is negligible, we are led right back to the phenomenologically preferred negative $k$. Thus for studying fluctuation growth in the early universe the only relevant solution for $a(t)$ is the $a(t,\alpha=0,k<0,A>0)$ one. For this solution, on setting $k=-1/L^2$, $d^2=2AL^4/S_0^2$, and $L^2a^2(t)=(d^2+t^2)$, we obtain
+%
+\begin{eqnarray}
+\tau=L\int_0^t \frac{dt}{(d^2+t^2)^{1/2}}=L~{\rm arc sinh}\left(\frac{t}{d}\right),\qquad t=d\sinh p,
+\label{B1}
+\end{eqnarray}
+%
+where $p=\tau/L$. Now according to (\ref{AP29}) fluctuations around a flat background would grow linearly in the relevant time variable, which according to the $k<0$ (\ref{A14}) is $p^{\prime}$. If we define $\Omega(p,\chi)=La(p)(\cosh p+\cosh \chi)$, we can write (\ref{A14}) in the form
+%
+\begin{eqnarray}
+ds^2=\Omega^2(p,\chi)\left[dp^{\prime 2}-dx^{\prime 2} -dy^{\prime 2} -dz^{\prime 2}\right].
+\label{B2}
+\end{eqnarray}
+%
+And with fluctuation $\delta W_{\mu\nu}$ being given in (\ref{AP61}) as 
+%
+\begin{eqnarray}
+\delta W_{\mu\nu}=(1/2)\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}k_{\mu\nu}
+\end{eqnarray}
+%
+where $k_{\mu\nu}=\Omega^{-2}(x)K_{\mu\nu}$, following
+(\ref{AP29}) we can write the solution to $\delta W_{\mu\nu}=0$ in the primed-variable form
+%
+\begin{eqnarray}
+k_{\mu\nu}=A^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+A^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}},
+\label{B3}
+\end{eqnarray}
+%
+where $\eta^{\mu\nu}k^{\prime}_{\mu}k^{\prime}_{\nu}=0$. Then with the conformal gauge condition being of the form $\partial^{\prime}_{\nu}k^{\mu\nu}=0$ in this case (where $k^{\mu\nu}=\eta^{\mu\alpha}\eta^{\nu\beta}k_{\alpha\beta}$), we obtain 
+%
+\begin{eqnarray}
+&&ik^{\prime \nu}\left[A^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+(n^{\prime}\cdot x^{\prime})B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}-A^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}-(n^{\prime}\cdot x^{\prime})B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}\right]
+\nonumber\\
+&&+n^{\prime\nu}\left[B^{\prime}_{\mu\nu}e^{ik^{\prime}\cdot x^{\prime}}+B^{\prime *}_{\mu\nu}e^{-ik^{\prime}\cdot x^{\prime}}\right]=0.
+\label{B4}
+\end{eqnarray}
+%
+With this relation holding for all $x^{\prime}$ we obtain
+%
+\begin{eqnarray}
+&&ik^{\prime \nu}A^{\prime}_{\mu\nu}+n^{ \prime\nu}B^{\prime}_{\mu\nu}=0,\quad ik^{\prime \nu}B^{\prime}_{\mu\nu}=0, 
+\nonumber\\
+&&
+-ik^{\prime \nu}A^{\prime *}_{\mu\nu}+n^{ \prime\nu}B^{\prime *}_{\mu\nu}=0,\quad -ik^{\prime \nu}B^{\prime *}_{\mu\nu}=0.
+\label{B5}
+\end{eqnarray}
+%
+With the $B^{\prime}_{\mu\nu}$ term being leading in (\ref{B3}) at large $n^{\prime}\cdot x^{\prime}$, we can ignore the non-leading $A^{\prime}_{\mu\nu}$ modes, and treat the $B^{\prime}_{\mu\nu}$ modes as obeying the transverse momentum space condition  $ik^{\prime \nu}B^{\prime}_{\mu\nu}=0$, $-ik^{\prime \nu}B^{\prime *}_{\mu\nu}=0$. Since the gauge condition $\partial^{\prime}_{\nu}k^{\mu\nu}=0$ takes this momentum space form, it means that all of the components of the $B^{\prime}_{\mu\nu}$ modes have the same $(n^{\prime}\cdot x^{\prime})e^{ik^{\prime}\cdot x^{\prime}}$ leading behavior in coordinate space. And with $n^{\prime \mu}=(1,0,0,0)$, the modes grow linearly in the relevant time variable $p^{\prime}$ associated with (\ref{B2}).
+
+To determine the structure of these solutions in the comoving coordinate system we need to both reexpress $\Omega(p,\chi)$ in terms of the comoving coordinates $(t,r)$ and transform the components of the fluctuation $K_{\mu\nu}$ to the comoving coordinate system. For the $\Omega(p,\chi)$ term first  we note that fluctuations around the conformal to flat, $k<0$ Robertson-Walker geometry grow as $\Omega^2(p,\chi)p^{\prime}$ as per (\ref{AP61}). Thus  from (\ref{A14}), (\ref{A11}), and (\ref{B1}) we find that $\Omega^2(p,\chi)p^{\prime}$ grows as
+%
+\begin{eqnarray}
+\Omega^2(p,\chi)p^{\prime}&=&L^2a^2(p)(\cosh p+\cosh \chi)^2p^{\prime}=L^2a^2(p)\sinh p (\cosh p+\cosh \chi)
+\nonumber\\
+&=&(d^2+t^2)\frac{t}{d}\left[\left(1+\frac{t^2}{d^2}\right)^{1/2}+\left(1+\frac{r^2}{L^2}\right)^{1/2}\right].
+\label{B6}
+\end{eqnarray}
+%
+$\Omega^2(p,\chi)p^{\prime}$ thus starts off linearly in $t$ when $t\ll d$, and subsequently then grows as $t^4$ when $t\gg d$. Thus in the conformal to flat Minkowski coordinate system given in (\ref{A14}) all the components of $K_{\mu\nu}$ grow as $t^4$ when $t \gg d$.
+
+To transform the fluctuation itself we note that transforming from (\ref{A14}) to (\ref{A13}) has no effect on the $p^{\prime}$ behavior. However transforming  the spatial coordinates from the Cartesian (\ref{A14}) to the polar (\ref{A13}) does introduce a dependence on $r^{\prime}$ wherever there is an angular component, and thus it does introduce a dependence on the comoving $t$. Specifically, in terms of the $K_{x^{\prime}x^{\prime}}$ type fluctuations in the (\ref{A14}) coordinate system, in the (\ref{A13}) coordinate system we can set 
+%
+\begin{align}
+K_{\theta\theta}&=(r^{\prime}\cos\theta\cos\phi)^2K_{x^{\prime}x^{\prime}}+(r^{\prime}\cos\theta\sin\phi)^2K_{y^{\prime}y^{\prime}}+(r^{\prime}\sin\theta)^2K_{z^{\prime}z^{\prime}}
+\nonumber\\
+&=\frac{\sinh^2\chi}{(\cosh p+\cosh \chi)^2}[\cos^2\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos^2\theta\sin^2\phi K_{y^{\prime}y^{\prime}}+\sin^2\theta K_{z^{\prime}z^{\prime}}]
+\nonumber\\
+&=\frac{r^2d^2}{[L(d^2+t^2)^{1/2}+d(L^2+r^2)^{1/2}]^2}\times
+\nonumber\\
+&\qquad[\cos^2\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos^2\theta\sin^2\phi K_{y^{\prime}y^{\prime}}+\sin^2\theta K_{z^{\prime}z^{\prime}}],
+\nonumber\\
+K_{r^{\prime}\theta}&=r^{\prime}\cos\theta\sin\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+r^{\prime}\cos\theta\sin\theta\sin^2\phi K_{y^{\prime}y^{\prime}}-r^{\prime}\sin\theta\cos\theta K_{z^{\prime}z^{\prime}}
+\nonumber\\
+&=\frac{\sinh\chi}{(\cosh p+\cosh \chi)}\times 
+\nonumber\\
+&\qquad[\cos\theta\sin\theta\cos^2\phi K_{x^{\prime}x^{\prime}}+\cos\theta\sin\theta\sin^2\phi K_{y^{\prime}y^{\prime}}-\sin\theta\cos\theta K_{z^{\prime}z^{\prime}}],
+\nonumber\\
+K_{p^{\prime}\theta}&=r^{\prime}\cos\theta\cos\phi K_{p^{\prime}x^{\prime}}+r^{\prime}\cos\theta\sin\phi K_{p^{\prime}y^{\prime}}-r^{\prime}\sin\theta K_{p^{\prime}z^{\prime}}
+\nonumber\\
+&=\frac{\sinh\chi}{(\cosh p+\cosh \chi)}[\cos\theta\cos\phi K_{p^{\prime}x^{\prime}}+\cos\theta\sin\phi K_{p^{\prime}y^{\prime}}-\sin\theta K_{p^{\prime}z^{\prime}}],
+\label{B7}
+\end{align}
+%
+with analogous expressions for $K_{\theta\phi}$, $K_{\phi\phi}$, $K_{r^{\prime}\phi}$ and $K_{p^{\prime}\phi}$. The $r^{\prime}=\sinh \chi/(\cosh p +\cosh \chi)$ prefactor in (\ref{B7}) has the property that at large $t$ it behaves  as $t^0$ if $p=\chi$, viz. $t=r$ with both $t$ and $r$ large (lightlike case), and as $t^{-1}$ if $p\gg \chi$, viz. $t \gg r$ (timelike case).
+
+To transform from (\ref{A13}) to (\ref{A10}) we need to transform from $(p^{\prime}, r^{\prime})$ to $(p,\chi)$. To transform from (\ref{A10}) to the comoving Robertson-Walker metric given (\ref{A4}) we need to transform from $(p,\chi)$ to $(t,r)$. Since the angular sector is unaffected by the transformation from (\ref{A13}) to (\ref{A4}), the angular sector fluctuations $K_{\theta\theta}$, $K_{\theta  \phi}$, $K_{\phi\phi}$ associated with the comoving Robertson-Walker geometry given in (\ref{A4}) will thus grow as $t^4$ itself as modified by the prefactor in (\ref{B7}), and thus as $t^4$ for the lightlike case (the solutions to $\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}[\Omega^{-2}(x)K_{\mu\nu}]=0$ as given in  (\ref{B3}) are lightlike), and as $t^2$ for the timelike case. With the $ds^2=0$ light cone being both general coordinate invariant and conformal invariant, lightlike modes associated with the (\ref{A14}) metric will transform into lightlike modes associated with the metric (\ref{A4}). A $t^4$ growth for lightlike modes is a quite substantial growth rate, a growth rate that is not achievable in standard Einstein gravity if one uses the same radiation matter source. 
+
+Since in transforming from one coordinate system to another the transformation is effected by 
+%
+\begin{eqnarray}
+K_{\mu\nu}=\frac{\partial x^{\prime \alpha}}{\partial x^{\mu}}\frac{\partial x^{\prime\beta}}{\partial x^{\nu}}K^{\prime}_{\alpha\beta},
+\label{B8}
+\end{eqnarray}
+%
+the transformations between the $(p^{\prime}, r^{\prime})$, $(p,\chi)$ and $(t,r)$ coordinate systems are effected by
+%
+\begin{eqnarray}
+&&\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=\frac{1+\cosh p\cosh\chi}{[\cosh p+\cosh\chi]^2},\qquad
+\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=-\frac{\sinh p\sinh\chi}{[\cosh p+\cosh\chi]^2}, 
+\nonumber\\
+&& \frac{\partial p}{\partial t}=\frac{1}{La(t)},\qquad \frac{\partial \chi}{\partial r}=\frac{1}{L\cosh\chi}.
+\label{B9}
+\end{eqnarray}
+%
+
+Discussion of (\ref{B9}) depends on whether $p=\chi$ or $p\gg \chi$. Since according to (\ref{B1}) $t=d\sinh p$ when $La(t)=(d^2+t^2)^{1/2}$, at large $t$ we see that  when $p=\chi$ (i.e. both $p$ and $\chi$ then being large) we have 
+%
+\begin{eqnarray}
+\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=1,\qquad
+\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=1,\qquad \frac{\partial p}{\partial t}=\frac{1}{t},\qquad \frac{\partial \chi}{\partial r}=\frac{d}{Lt}.
+\label{B10}
+\end{eqnarray}
+%
+Thus going from (\ref{A13}) to (\ref{A10}) ($(p^{\prime},r^{\prime})$ to $(p,\chi)$) will involve no suppression. Then in going from (\ref{A10}) to the comoving (\ref{A4}) ($(p,\chi)$ to $(t,r)$) we will get a $1/t^2$ suppression in the $K_{tt}$, $K_{tr}$ and $K_{rr}$ sectors, a $1/t$ suppression for $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$, and no suppression for $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$ since in this case the prefactor in (\ref{B7}) behaves as $t^0$. Finally, incorporating the $t^4$ dependence of $\Omega^2(p,\chi)p^{\prime}$, we find that overall $K_{tt}$, $K_{tr}$ and $K_{rr}$  grow as $t^2$, $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$ grow as $t^3$, and $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$ grow as $t^4$. Thus all seven of the $K_{tt}$, $K_{tr}$, $K_{rr}$, $K_{t\theta}$, $K_{t\phi}$, $K_{r\theta}$ and $K_{r\phi}$ are suppressed with respect to $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$, so the leading growth will be the $t^4$ growth associated with the angular $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$. 
+
+
+Similarly,  at large $p\gg \chi$ the transformations behave as 
+%
+\begin{eqnarray}
+&&\frac{\partial p^{\prime }}{\partial p}=\frac{\partial r^{\prime }}{\partial \chi}=\frac{d\cosh\chi}{t},\qquad
+\frac{\partial p^{\prime }}{\partial \chi}=\frac{\partial r^{\prime }}{\partial p}=-\frac{d\sinh\chi}{t}, 
+\nonumber\\
+&& \frac{\partial p}{\partial t}=\frac{1}{t},\qquad \frac{\partial \chi}{\partial r}=\frac{1}{L\cosh\chi}.
+\label{B11}
+\end{eqnarray}
+%
+Thus in going from (\ref{A13}) to (\ref{A10}) we will get a $1/t^2$ suppression in the $K_{pp}$, $K_{p\chi}$ and $K_{\chi\chi}$ sectors, a $1/t$ suppression in the $K_{p\theta}$, $K_{p\phi}$, $K_{\chi\theta}$, and $K_{\chi\phi}$ sectors, and no suppression in the $K_{\theta\theta}$, $K_{\theta  \phi}$, $K_{\phi\phi}$ sectors. Then in going from (\ref{A10}) to the comoving (\ref{A4}) we will get an additional $1/t^2$ suppression in the $K_{tt}$ sector,  and an additional  $1/t$ suppression in the $K_{tr}$, $K_{t\theta}$, $K_{t\phi}$ sectors. Thus in going from (\ref{A13}) to (\ref{A4}) we get a net $1/t^4$ suppression for  $K_{tt}$,  a net $1/t^3$ suppression for  $K_{tr}$, a net $1/t^2$ suppression for  $K_{rr}$, $K_{t\theta}$, $K_{t\phi}$, a net $1/t$ suppression for  $K_{r\theta}$ and $K_{r\phi}$, and no suppression for $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$. Finally, incorporating the $t^4$ dependence of $\Omega^2(p,\chi)p^{\prime}$ and including the prefactor in (\ref{B7}), we find that overall $K_{tt}\sim t^0$, $K_{tr}\sim t^1$, $K_{t\theta}\sim t^1$, $K_{t\phi}\sim t^1$, while $K_{rr}\sim t^2$, $K_{r\theta}\sim t^2$, $K_{r\phi}\sim t^2$,  $K_{\theta\theta}\sim t^2$, $K_{\theta\phi}\sim t^2$ and $K_{\phi\phi}\sim t^2$. Thus the leading growth will grow as $t^2$. To understand this pattern we note that when $\chi$ is negligible then so is $r$, and the spatial part of the metric in (\ref{A4}) effectively becomes flat. Consequently,  $K_{tr}$, $K_{t\theta}$ and $K_{t\phi}$ all then have the same time behavior (viz. $t^1$), and $K_{rr}$, $K_{r\theta}$, $K_{r\phi}$,  $K_{\theta\theta}$, $K_{\theta\phi}$ and $K_{\phi\phi}$  all have the same time behavior (viz. $t^2$), with $t^2$ being the leading growth.
+
+To compare with the results obtained in \cite{mannheim_2012}, we note that there we imposed a  transverse gauge condition and had restricted to modes that obeyed the synchronous condition $K_{0\mu}=0$. We had worked in a spherical polar coordinate basis for the modes, and in the angular sector had obtained 
+%
+\begin{eqnarray}
+K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\cosh^2[(p+\chi)/2]\cosh^2[(p-\chi)/2]
+\\
+&\times&\bigg{[}2\alpha^{(-)}_{\theta\theta}+\beta^{(-)}_{\theta\theta}\tanh[(p+\chi)/2]+\beta^{(-)}_{\theta\theta}{\rm tanh}[(p-\chi)/2]\bigg{]}
+\nonumber\\
+&\times&\bigg{[}\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2]\bigg{]}\frac{\exp[-iq(p^{\prime}-r^{\prime})]}{\sin^2\theta},
+\nonumber
+\label{B12}
+\end{eqnarray}
+%
+where $\alpha^{(-)}_{\theta\theta}$ and $\beta^{(-)}_{\theta\theta}$ are constants and $q$ is the radial momentum of the mode. For our purposes here we note that is more convenient to solve the radial equation not in terms of $e^{iqr^{\prime}}$ functions, but in terms of spherical Bessel functions instead, with the relevant one being $j_0(qr^{\prime})=\sin(qr^{\prime})/qr^{\prime}$. We thus replace (\ref{B12}) by
+%
+\begin{eqnarray}
+K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\cosh^2[(p+\chi)/2]\cosh^2[(p-\chi)/2]
+\\
+&\times&\bigg{[}2\alpha^{(-)}_{\theta\theta}+\beta^{(-)}_{\theta\theta}\tanh[(p+\chi)/2]+\beta^{(-)}_{\theta\theta}{\rm tanh}[(p-\chi)/2]\bigg{]}
+\nonumber\\
+&\times&\bigg{[}\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2]\bigg{]}\frac{\exp[-iqp^{\prime}]}{\sin^2\theta}qr^{\prime}j_0(qr^{\prime}),
+\nonumber
+\label{B13}
+\end{eqnarray}
+%
+With $r^{\prime}$ being given by $r^{\prime}=(\tanh[(p+\chi)/2]-\tanh[(p-\chi)/2])/2=\sinh\chi/(\cosh p+\cosh \chi)$,  we can thus set: 
+%
+\begin{eqnarray}
+K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\bigg{[}\alpha^{(-)}_{\theta\theta}
++\beta^{(-)}_{\theta\theta}\frac{\sinh p}{\cosh p +\cosh \chi}\bigg{]}\sinh^2\chi\frac{\exp[-iqp^{\prime}]}{\sin^2\theta}qj_0(qr^{\prime}).
+\nonumber\\
+\label{B14}
+\end{eqnarray}
+%
+Thus, for the lightlike $p=\chi$ case (where $r^{\prime}\rightarrow 1/2$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^4$, while for the timelike $p\gg \chi$ case (where $r^{\prime}\rightarrow 0$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^2$, just as found above. (The timelike $t^2$ growth had been incorrectly given in \cite{mannheim_2012}.) Interestingly, in \cite{mannheim_2012}  we had only considered a particular class of solutions, namely those with $K_{tt}=0$, $K_{tr}=0$, $K_{t\theta}=0$ and $K_{t\phi}=0$. We now see that for both $p=\chi$ and $p \gg \chi$, all of the modes that obey the synchronous condition $K_{0\mu}=0$  are non-leading, with the angular modes respectively being leading or coleading in the two cases.
 
 
 
