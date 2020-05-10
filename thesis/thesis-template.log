@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  9 MAY 2020 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  9 MAY 2020 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -392,17 +392,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-]
+] [2]
 Overfull \hbox (5.54599pt too wide) in paragraph at lines 72--72
  [][] [][][]\OT1/cmr/m/n/12 Transverse and Lon-gi-tu-di-nal Pro-jec-tion Op-er-
 a-tors for Curved Space- 
  []
 
-)
+[3])
 \tf@toc=\write4
 \openout4 = `thesis-template.toc'.
 
- [2] (./Chapters/Intro.tex
+ [4] (./Chapters/Intro.tex
 Chapter 1.
 ) (./Chapters/Formalism.texpdfTeX warning (ext4): destination with the same ide
 ntifier (name{page.1}) has been already used, duplicate ignored
@@ -418,28 +418,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.18 \end{eqnarray}
-                    [2
+l.8 
+     [2
 
 
-] [3] [4] [5] [6] [7] [8] [9] [10] [11]
+]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23 \end{eqnarray}
+                    [3]pdfTeX warning (ext4): destination with the same identif
+ier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 \end{eqnarray}
+                    [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+[16] [17] [18]
 Overfull \hbox (0.71957pt too wide) in paragraph at lines 436--440
 \OT1/cmr/m/n/12 while vari-a-tion with re-spect to the met-ric yields the mat-t
 er field energy-momentum
  []
 
-[12] [13] [14] [15]
+[19] [20] [21] [22] [23] [24]
 Overfull \hbox (5.31537pt too wide) in paragraph at lines 568--570
 \OT1/cmr/m/n/12 The co-or-di-nate trans-for-ma-tions nec-es-sary to bring the c
 o-moving Rober-ston Walker
  []
 
-) (./Chapters/SVT_Basis.tex [16]
+[25]) (./Chapters/SVT_Basis.tex [26]
 Chapter 3.
-[17
+[27
 
 
-] [18]
+] [28] [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 57.
@@ -460,7 +471,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 57.
 
-[19]
+[30] [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 109.
@@ -481,7 +492,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 109.
 
-[20] [21] [22] [23] [24] [25] [26] [27] [28]
+[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]
 Overfull \hbox (0.24677pt too wide) in paragraph at lines 513--516
 \OT1/cmr/m/n/12 to thus com-plete the SVTD ba-sis de-com-po-si-tion of $\OML/cm
 m/m/it/12 h[]$\OT1/cmr/m/n/12 . In a gen-eral D-dimensional
@@ -495,18 +506,18 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 520.
 
-[29] [30]
+[46] [47] [48]
 Overfull \hbox (5.86815pt too wide) in paragraph at lines 559--560
 \OT1/cmr/m/n/12 trans-verse trace-less ten-sor $\OML/cmm/m/it/12 F[]$ \OT1/cmr/
 m/n/12 is com-prised of five in-de-pen-dent com-po-nents. Count-
  []
 
-
+[49] [50]
 Overfull \hbox (2.34076pt too wide) in alignment at lines 576--592
  [][][] []
  []
 
-[31] [32] [33] [34] [35] [36]) (./Chapters/Solutions.tex [37]
+[51] [52] [53] [54] [55] [56] [57] [58]) (./Chapters/Solutions.tex [59]
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -520,75 +531,75 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 11.
 
-[38
+[60
 
 
-] [39]
+] [61] [62]
 
-LaTeX Warning: Reference `S1' on page 40 undefined on input line 159.
+LaTeX Warning: Reference `S1' on page 63 undefined on input line 159.
 
-[40]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 198.
-
+[63] [64]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 198.
 
-[41] [42] [43] [44] [45] [46] [47] [48]
 
-LaTeX Warning: Reference `S13' on page 49 undefined on input line 636.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 198.
 
-[49]
+[65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75]
+
+LaTeX Warning: Reference `S13' on page 76 undefined on input line 636.
+
+[76]
 Overfull \hbox (0.78069pt too wide) in paragraph at lines 657--661
 \OT1/cmr/m/n/12 With the 3-space sec-tor of the back-ground ge-om-e-try be-ing 
 max-i-mally 3-symmetric,
  []
 
-
+[77]
 Overfull \hbox (1.71419pt too wide) in alignment at lines 702--714
  [][][] []
  []
 
-[50] [51] [52]
+[78] [79] [80] [81]
 
-LaTeX Warning: Reference `SS522' on page 53 undefined on input line 902.
+LaTeX Warning: Reference `SS522' on page 82 undefined on input line 902.
 
-[53] [54] [55] [56] [57] [58] [59]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1322.
-
+[82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1322.
 
 
-LaTeX Warning: Reference `S1' on page 60 undefined on input line 1329.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1322.
 
 
-LaTeX Warning: Reference `S11' on page 60 undefined on input line 1329.
+LaTeX Warning: Reference `S1' on page 94 undefined on input line 1329.
 
-[60] [61] [62] [63]
 
-LaTeX Warning: Reference `S1' on page 64 undefined on input line 1453.
+LaTeX Warning: Reference `S11' on page 94 undefined on input line 1329.
 
-[64]
+[94] [95] [96] [97] [98]
+
+LaTeX Warning: Reference `S1' on page 99 undefined on input line 1453.
+
+[99]
 Overfull \hbox (1.90602pt too wide) in alignment at lines 1526--1541
  [][][] []
  []
 
-[65] [66] [67] [68] [69] [70]
+[100] [101] [102] [103] [104] [105] [106] [107] [108] [109]
 
-LaTeX Warning: Reference `S10' on page 71 undefined on input line 1820.
+LaTeX Warning: Reference `S10' on page 110 undefined on input line 1820.
 
-[71] [72]
+[110] [111]
 Overfull \hbox (0.59856pt too wide) in alignment at lines 1867--1873
  [][][] []
  []
 
-[73]
+[112]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1894.
@@ -613,53 +624,54 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1894.
 
-[74]
+[113] [114]
 
-LaTeX Warning: Reference `4.3' on page 75 undefined on input line 1950.
-
-
-LaTeX Warning: Reference `4.4' on page 75 undefined on input line 1950.
-
-[75]
-
-LaTeX Warning: Reference `4.3' on page 76 undefined on input line 1995.
-
-[76] [77]
-
-LaTeX Warning: Reference `SS522' on page 78 undefined on input line 2107.
+LaTeX Warning: Reference `4.3' on page 115 undefined on input line 1950.
 
 
-LaTeX Warning: Reference `1.42a' on page 78 undefined on input line 2125.
+LaTeX Warning: Reference `4.4' on page 115 undefined on input line 1950.
 
-[78] [79]
+[115]
 
-LaTeX Warning: Reference `1.42a' on page 80 undefined on input line 2215.
+LaTeX Warning: Reference `4.3' on page 116 undefined on input line 1995.
 
-[80]
+[116] [117] [118] [119]
 
-LaTeX Warning: Reference `S9' on page 81 undefined on input line 2235.
+LaTeX Warning: Reference `SS522' on page 120 undefined on input line 2107.
+
+[120]
+
+LaTeX Warning: Reference `1.42a' on page 121 undefined on input line 2125.
+
+[121] [122]
+
+LaTeX Warning: Reference `1.42a' on page 123 undefined on input line 2215.
+
+[123] [124]
+
+LaTeX Warning: Reference `S9' on page 125 undefined on input line 2235.
 
 
-LaTeX Warning: Reference `S10' on page 81 undefined on input line 2235.
+LaTeX Warning: Reference `S10' on page 125 undefined on input line 2235.
 
 
-LaTeX Warning: Reference `S11' on page 81 undefined on input line 2235.
+LaTeX Warning: Reference `S11' on page 125 undefined on input line 2235.
 
-[81]
+[125] [126] [127]
 Overfull \hbox (3.21458pt too wide) in alignment at lines 2287--2296
  [][][] []
  []
 
-[82]
+[128]
 Overfull \hbox (2.61261pt too wide) in paragraph at lines 2326--2330
 \OT1/cmr/m/n/12 with the elim-i-na-tion of the gauge pa-ram-e-ters lead-ing di-
 rectly to the gauge-invariant
  []
 
 
-LaTeX Warning: Reference `S1' on page 83 undefined on input line 2355.
+LaTeX Warning: Reference `S1' on page 129 undefined on input line 2355.
 
-[83] [84]
+[129] [130] [131] [132]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 2420.
@@ -672,14 +684,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 2420.
 
-[85] [86]
+[133] [134]
 Overfull \hbox (17.02104pt too wide) in paragraph at lines 2530--2532
 []\OT1/cmr/m/n/12 As well as the above for-mu-la-tion, which in-volves the Gree
 n's func-tion $\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/c
 mr/m/n/12 )$,
  []
 
-[87] [88]
+[135] [136] [137] [138]
 Overfull \hbox (4.93271pt too wide) in paragraph at lines 2672--2676
 \OT1/cmr/m/n/12 (To ob-tain this so-lu-tion for $\OML/cmm/m/it/12 ^^_$ \OT1/cmr
 /m/n/12 it is more straight-for-ward to use $\OML/cmm/m/it/12 ds[] \OT1/cmr/m/n
@@ -687,29 +699,29 @@ Overfull \hbox (4.93271pt too wide) in paragraph at lines 2672--2676
 S/cmsy/m/n/12 ^^@
  []
 
-[89] [90] [91] [92]
+[139] [140] [141] [142] [143] [144]
 
-LaTeX Warning: Reference `S1' on page 93 undefined on input line 2911.
+LaTeX Warning: Reference `S1' on page 145 undefined on input line 2911.
 
-[93]
+[145] [146]
 Overfull \hbox (4.9572pt too wide) in alignment at lines 2934--2959
  [][][] []
  []
 
-[94]
+[147]
 
-LaTeX Warning: Reference `S14' on page 95 undefined on input line 3006.
+LaTeX Warning: Reference `S14' on page 148 undefined on input line 3006.
 
-[95] [96] [97] [98]
+[148] [149] [150] [151] [152] [153]
 
-LaTeX Warning: Reference `4.3' on page 99 undefined on input line 3188.
+LaTeX Warning: Reference `4.3' on page 154 undefined on input line 3188.
 
-[99] [100]
+[154] [155] [156]
 Overfull \hbox (1.2428pt too wide) in alignment at lines 3288--3297
  [][][] []
  []
 
-[101]
+[157] [158]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 3358.
@@ -734,118 +746,117 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 3358.
 
-
+[159]
 Overfull \hbox (12.66112pt too wide) in paragraph at lines 3371--3375
 \OT1/cmr/m/n/12 where all deriva-tives are four-dimensional deriva-tives with r
 e-spect to a flat Minkowski
  []
 
-[102]) (./Chapters/Gauges.tex [103]
+) (./Chapters/Gauges.tex [160] [161]
 Chapter 5.
-[104
+[162
 
 
-] [105]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 114.
-
+] [163] [164] [165] [166]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 114.
+(hyperref)                removing `math shift' on input line 118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 114.
+(hyperref)                removing `\delta' on input line 118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 114.
+(hyperref)                removing `subscript' on input line 118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\nu' on input line 114.
+(hyperref)                removing `\mu' on input line 118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 114.
-
-[106] [107] [108] [109]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 458.
+(hyperref)                removing `\nu' on input line 118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 458.
+(hyperref)                removing `math shift' on input line 118.
+
+[167] [168] [169] [170] [171] [172] [173]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 462.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 458.
+(hyperref)                removing `\delta' on input line 462.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 458.
+(hyperref)                removing `subscript' on input line 462.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\nu' on input line 458.
+(hyperref)                removing `\mu' on input line 462.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 458.
+(hyperref)                removing `\nu' on input line 462.
 
-[110] [111]
-Overfull \hbox (0.16647pt too wide) in alignment at lines 542--561
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 462.
+
+[174] [175] [176]
+Overfull \hbox (0.16647pt too wide) in alignment at lines 546--565
  [][][] []
  []
 
-[112] [113] [114] [115] [116] [117]
+[177] [178] [179] [180] [181] [182] [183] [184] [185] [186]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 770.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 770.
+(hyperref)                removing `math shift' on input line 773.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 770.
+(hyperref)                removing `\delta' on input line 773.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 770.
+(hyperref)                removing `subscript' on input line 773.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\nu' on input line 770.
+(hyperref)                removing `\mu' on input line 773.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 770.
+(hyperref)                removing `\nu' on input line 773.
 
 
-LaTeX Warning: Reference `AP76' on page 118 undefined on input line 775.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 773.
 
 
-LaTeX Warning: Reference `AP76' on page 118 undefined on input line 775.
-
-[118]
-Overfull \hbox (1.24954pt too wide) in alignment at lines 848--885
+Overfull \hbox (2.95287pt too wide) in alignment at lines 779--792
  [][][] []
  []
 
-[119]) (./Chapters/Conclusions.tex [120]
+[187] [188] [189]
+Overfull \hbox (1.24954pt too wide) in alignment at lines 867--904
+ [][][] []
+ []
+
+[190]) (./Chapters/Conclusions.tex [191]
 Chapter 6.
-) (./Chapters/References.tex [121
+) (./Chapters/References.tex [192
 
 
-] (./thesis-template.bbl [122
+] (./thesis-template.bbl [193
 
 
-] [123]))
-(./Chapters/AppendixA_Projections.tex [124]
+] [194]))
+(./Chapters/AppendixA_Projections.tex [195]
 Chapter A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -855,19 +866,19 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 6.
 
-[125
+[196
 
 
-] [126] [127] [128]
+] [197] [198] [199]
 Overfull \hbox (6.30396pt too wide) in paragraph at lines 343--347
 \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12 h[]$ \OT1/cmr/m/n/12 be-ing both trace-l
 ess and trans-verse. With $\OML/cmm/m/it/12 Q[]$ \OT1/cmr/m/n/12 im-ple-ment-in
 g $\OML/cmm/m/it/12 Q[]h[] \OT1/cmr/m/n/12 =
  []
 
-[129]
+[200]
 
-LaTeX Warning: Reference `SS612' on page 130 undefined on input line 408.
+LaTeX Warning: Reference `SS612' on page 201 undefined on input line 408.
 
 
 Overfull \hbox (12.66112pt too wide) in paragraph at lines 421--425
@@ -875,7 +886,7 @@ Overfull \hbox (12.66112pt too wide) in paragraph at lines 421--425
 e-spect to a flat Minkowski
  []
 
-[130]
+[201]
 Overfull \hbox (1.73087pt too wide) detected at line 494
  $\OML/cmm/m/it/12 h[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 h[] \OMS/cmsy/m/n/12 
 ^^@ r[] [] \OML/cmm/m/it/12 d[]x[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm
@@ -886,14 +897,14 @@ ML/cmm/m/it/12 g\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 x; x[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 r[]\OML/cmm/m/it/12 h[];$  
  []
 
-[131]
+[202]
 
-LaTeX Warning: Reference `SS612' on page 132 undefined on input line 536.
+LaTeX Warning: Reference `SS612' on page 203 undefined on input line 536.
 
 
-LaTeX Warning: Reference `SS522' on page 132 undefined on input line 536.
+LaTeX Warning: Reference `SS522' on page 203 undefined on input line 536.
 
-[132] [133]) (./Chapters/AppendixB_Cosmologies.tex [134]
+[203] [204]) (./Chapters/AppendixB_Cosmologies.tex [205]
 Chapter B.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -911,7 +922,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 32.
 
-[135
+[206
 
 
 ]
@@ -929,7 +940,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 91.
 
-[136]
+[207]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 140.
@@ -955,7 +966,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 140.
 
 
-Package natbib Warning: Citation `Mannheim2006' on page 137 undefined on input 
+Package natbib Warning: Citation `Mannheim2006' on page 208 undefined on input 
 line 151.
 
 
@@ -982,9 +993,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 170.
 
-[137]
+[208]
 
-Package natbib Warning: Citation `Mannheim1998' on page 138 undefined on input 
+Package natbib Warning: Citation `Mannheim1998' on page 209 undefined on input 
 line 190.
 
 )
@@ -992,13 +1003,13 @@ line 190.
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-[138]
+[209]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
  (./thesis-template.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
 Package rerunfilecheck Info: File `thesis-template.out' has not changed.
-(rerunfilecheck)             Checksum: 5E695DD6B25EED5D6AED5E462319DCEC;4485.
+(rerunfilecheck)             Checksum: D8FC6CED13926BC3A99A2F99F286D309;4474.
 
 
 LaTeX Warning: There were undefined references.
@@ -1010,9 +1021,9 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  )
 (\end occurred when \iffalse on line 59 was incomplete) 
 Here is how much of TeX's memory you used:
- 9414 strings out of 483183
- 133379 string characters out of 5966293
- 442006 words of memory out of 5000000
+ 9486 strings out of 483183
+ 133962 string characters out of 5966293
+ 436167 words of memory out of 5000000
  23461 multiletter control sequences out of 15000+600000
  542097 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1036,10 +1047,10 @@ ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb>
-Output written on thesis-template.pdf (140 pages, 746191 bytes).
+Output written on thesis-template.pdf (213 pages, 794562 bytes).
 PDF statistics:
- 2514 PDF objects out of 2984 (max. 8388607)
- 2329 compressed objects within 24 object streams
- 806 named destinations out of 1000 (max. 500000)
+ 2841 PDF objects out of 2984 (max. 8388607)
+ 2581 compressed objects within 26 object streams
+ 878 named destinations out of 1000 (max. 500000)
  457 words of extra memory for PDF output out of 10000 (max. 10000000)
 

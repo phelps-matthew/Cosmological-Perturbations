@@ -1,7 +1,11 @@
 
 \chapter{Constructing and Imposing Gauge Conditions}
 \label{c:constructing_gauge_conditions}
+In the context of conformal gravity, we continue work done in obtaining solutions to the cosmological fluctuation equations \cite{mannheim_2012} by constructing a gauge condition that is conformally invariant. Referred to as the conformal gauge, we find that in backgrounds that are conformal to flat, the conformal gravity cosmological fluctuation equations can be brought to an exceedingly simple form, comprised only of a single term. This calculation requires a series of many steps which are given in detail within the chapter, consisting of first motivating and constructing the conformal gauge, composing the fluctuation equations and using curvature identities and covariant derivatives to reduce its form, and finally imposing the conformal gauge itself, with expansion of covariant derivatives into flat Minkowski partial derivatives to yield \eqref{AP61}, one of the seminal results of this thesis. Using the conformal properties detailed in Sect. \ref{ss:conformal_invariance}, we find the extra degree of symmetry afforded by conformal invariance provides significant simplifications regarding the trace and moreover allows a very straightforward treatment of the entire cosmological fluctuations.
 
+Such a streamlined approach may be contrasted with the Einstein fluctuations, which are also studied here in Sect. \ref{s:compact_expressions_ein} within differing choices of gauges. Specifically, we form a generalized gauge constraint and vary the coefficients in order to cast $\delta G_{\mu\nu}$ into as reduced and compact form possible, permitting readily solvable integral solutions to be obtained in some simple choices of background geometry (de Sitter and Minkowski). We find that is the coupling of the trace of the fluctuations that prevents the Einstein fluctuation equations from being able to be completely decoupled, unlike the case of conformal gravity where the trace is efficiently isolated as a consequence of conformal invariance.
+
+To demonstrate a concrete application of the fluctuation equations in conformal gravity, in Sect. \ref{s:rw_radiation_conformal_gravity_sol} we evaluate and solve the fluctuations in a $k=-1$ Robertson Walker radiation era cosmology. Here we find that gravitational perturbations have a leading order time behavior $\propto t^4$, which can be contrasted with the exponential $e^t$ leading order behavior (with $t$ the comoving time) canonically found in treatment of the standard model inflationary era. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Conformal Gauge and General Solutions in Conformal Gravity}
@@ -600,10 +604,9 @@ For geometries in which the background $W_{\mu\nu}$ vanishes, $\delta W_{\mu\nu}
 \label{s:rw_radiation_conformal_gravity_sol}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In terms of practical applications of the conformal gravity theory we note that we have studied the current era conformal cosmology associated with (\ref{A17}), with very good non-fine-tuned, negative $k$  driven fits to the accelerating universe Hubble plot data having been presented in \cite{mannheim_2006,mannheim_2017}. Similarly, very good non-fine-tuned, negative $k$ driven fits  to the galactic rotation curves of 138 spiral galaxies have been presented in \cite{mannheim_2011,mannheim_2012, obrien_mannheim_2012}, fits in which no galactic dark matter is needed at all. (The essence of these rotation curve fits is that in the conformal gravity theory a test particle in a galaxy is affected by both the local galactic field and the global cosmological field, with the systematics of galactic rotation curves being found to be sensitive to the spatial curvature of the Universe -- in fact it is this global cosmological effect that removes the need for the presence of dark matter within galaxies in the conformal theory.) We shall thus consider conformal gravity fluctuations in Robertson-Walker cosmologies with negative $k$.
+Motivated by the excellent agreement between the fits to the galactic rotation curves of 138 spiral galaxies presented in \cite{mannheim_2011,mannheim_2012, obrien_mannheim_2012} and to fits of the accelerating universe Hubble plot data presented in \cite{mannheim_2006,mannheim_2017}, we thus consider conformal gravity fluctuations in Robertson-Walker cosmologies with negative $k$.
 
-
-In conformal gravity fitting to the current era Hubble plot the cosmological constant term is found to dominate over the perfect fluid contribution. However in the early universe it has to be the other way round with a not-yet-red-shifted radiation era perfect fluid being the dominant contribution since $a(t)$ is small and $A/a^4(t)$ is large. Moreover, if the $A/a^4(t)$ radiation contribution is dominant, then since $k$ is given by $k=-\dot{a}^2-2A/a^2S_0^2$ when the $\alpha$ contribution in (\ref{A18}) is negligible, we are led right back to our observationally  preferred negative $k$. (This line of reasoning for  fixing the sign of $k$ is essentially the same as the one  used in (\ref{AP40}) above.) Thus for studying fluctuation growth in the early universe the only relevant solution for $a(t)$ is the $a(t,\alpha=0,k<0,A>0)$ one. For this solution, on setting $k=-1/L^2$, $d^2=2AL^4/S_0^2$, and $L^2a^2(t)=(d^2+t^2)$, we obtain
+In the conformal gravity fitting of the current era Hubble plot, we note that the cosmological constant term is found to dominate over the perfect fluid contribution \cite{mannheim_1990}. However in the early universe a not-yet-red-shifted radiation era perfect fluid is the dominant contribution since $a(t)$ is small and $A/a^4(t)$ is large. Moreover, if the $A/a^4(t)$ radiation contribution is dominant, then since $k$ is given by $k=-\dot{a}^2-2A/a^2S_0^2$ when the $\alpha$ contribution in (\ref{A18}) is negligible, we are led right back to the phenomenologically preferred negative $k$. Thus for studying fluctuation growth in the early universe the only relevant solution for $a(t)$ is the $a(t,\alpha=0,k<0,A>0)$ one. For this solution, on setting $k=-1/L^2$, $d^2=2AL^4/S_0^2$, and $L^2a^2(t)=(d^2+t^2)$, we obtain
 %
 \begin{eqnarray}
 \tau=L\int_0^t \frac{dt}{(d^2+t^2)^{1/2}}=L~{\rm arc sinh}\left(\frac{t}{d}\right),\qquad t=d\sinh p,
@@ -767,12 +770,28 @@ K_{\theta\theta}(t,r,\theta,\phi)&=&L^2a^2(t)\bigg{[}\alpha^{(-)}_{\theta\theta}
 Thus, for the lightlike $p=\chi$ case (where $r^{\prime}\rightarrow 1/2$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^4$, while for the timelike $p\gg \chi$ case (where $r^{\prime}\rightarrow 0$ at large $p$) $K_{\theta\theta}(t,r,\theta,\phi)$ grows like $t^2$, just as found above. (The timelike $t^2$ growth had been incorrectly given in \cite{mannheim_2012}.) Interestingly, in \cite{mannheim_2012}  we had only considered a particular class of solutions, namely those with $K_{tt}=0$, $K_{tr}=0$, $K_{t\theta}=0$ and $K_{t\phi}=0$. We now see that for both $p=\chi$ and $p \gg \chi$, all of the modes that obey the synchronous condition $K_{0\mu}=0$  are non-leading, with the angular modes respectively being leading or coleading in the two cases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compact Expressions for $\delta G_{\mu\nu}$ in Specific Gauges}
+\section{Imposing Specific Gauges within $\delta G_{\mu\nu}$}
 \label{s:compact_expressions_ein}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-For the conformal to flat Minkowski line element  $ds^2=- \Omega^2(x)(\eta_{\mu\nu}+f_{\mu\nu})dx^{\mu}dx^{\nu}$, where $\Omega(x)$ is an arbitrary function of $x_{\mu}$, the Einstein tensor fluctuation  $\delta G_{\mu\nu}$ is given by (\ref{AP76}). We introduce $k_{\mu\nu}=f_{\mu\nu}-(1/4)\eta^{\alpha\beta}f_{\alpha\beta}$ with $\eta^{\mu\nu}k_{\mu\nu}=0$, and rewrite (\ref{AP76}) as 
+With  background plus fluctuation metric of the form $ds^2=\Omega^2(x)[dt^2-\delta_{ij}dx^idx^j]-\Omega^2(x)f_{\mu\nu}dx^{\mu}dx^{\nu}$, the fluctuation in the Einstein tensor is given by 
+%
+\begin{eqnarray}
+&&\delta G_{\mu\nu}=- \tfrac{1}{2}\tilde{\nabla}_{\alpha}\tilde{\nabla}_{\mu}f_{\nu}{}^{\alpha} -  \tfrac{1}{2} \tilde{\nabla}_{\alpha}\tilde{\nabla}_{\nu}f_{\mu}{}^{\alpha} -  \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1}\tilde{\nabla}_{\alpha}f \tilde{\nabla}_{\beta}\Omega + \eta^{\alpha \beta} \Omega^{-1} \tilde{\nabla}_{\alpha}f_{\mu \nu} \tilde{\nabla}_{\beta}\Omega
+\nonumber\\
+&& + \eta^{\beta \alpha} f_{\mu \nu} \Omega^{-2}\tilde{\nabla}_{\alpha}\Omega \tilde{\nabla}_{\beta}\Omega 
+-  \tfrac{1}{2} \eta^{\alpha \beta} \eta_{\mu \nu} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}f + \tfrac{1}{2} \eta_{\mu \nu}\tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}f^{\alpha \beta} + \tfrac{1}{2} \eta^{\alpha \beta} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}f_{\mu \nu}
+\nonumber\\
+&& + 2 \eta_{\mu \nu} f^{\alpha \beta} \Omega^{-1} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}\Omega - 2 \eta^{\alpha \beta} f_{\mu \nu} \Omega^{-1} \tilde{\nabla}_{\beta}\tilde{\nabla}_{\alpha}\Omega 
++ 2 \eta^{\alpha \gamma} \eta_{\mu \nu} \Omega^{-1} \tilde{\nabla}_{\beta}f_{\alpha}{}^{\beta} \tilde{\nabla}_{\gamma}\Omega 
+\nonumber\\
+&&-  \eta^{\alpha \gamma} \eta^{\beta \kappa} \eta_{\mu \nu} f_{\alpha \beta} \Omega^{-2} \tilde{\nabla}_{\gamma}\Omega\tilde{\nabla}_{\kappa}\Omega -  \eta^{\alpha \beta} \Omega^{-1}\tilde{\nabla}_{\beta}\Omega \tilde{\nabla}_{\mu}f_{\nu \alpha} -  \eta^{\alpha \beta} \Omega^{-1}\tilde{\nabla}_{\beta}\Omega \tilde{\nabla}_{\nu}f_{\mu \alpha} 
+\nonumber\\
+&&+ \tfrac{1}{2} \tilde{\nabla}_{\nu}\tilde{\nabla}_{\mu}f,
+\label{AP76}
+\end{eqnarray}
+%
+where $\Omega(x)$ is an arbitrary function of $x_{\mu}$. In our exploration of various gauges below, we make use of the trace free contribution of the conformally factored metric perturbation $k_{\mu\nu}=f_{\mu\nu}-(1/4)\eta^{\alpha\beta}f_{\alpha\beta}$ where the tracelessness is defined with respect to the background $\eta^{\mu\nu}k_{\mu\nu}=0$. With the substitution of $k_{\mu\nu}$, we may express (\ref{AP76}) as 
 %
 \begin{eqnarray}
 \delta G_{\mu\nu}&=&- \tfrac{1}{4} \eta^{\alpha \beta} \eta_{\mu \nu} \Omega^{-1} \partial_{\alpha}\Omega \partial_{\beta}f + \eta^{\alpha \beta} \Omega^{-1} \partial_{\alpha}k_{\mu \nu} \partial_{\beta}\Omega + \eta^{\beta \alpha} k_{\mu \nu} \Omega^{-2} \partial_{\alpha}\Omega \partial_{\beta}\Omega  
@@ -789,21 +808,21 @@ For the conformal to flat Minkowski line element  $ds^2=- \Omega^2(x)(\eta_{\mu\
 \label{D1}
 \end{eqnarray}
 %
-where $f$ denotes $\eta^{\alpha\beta}f_{\alpha\beta}$. We have considered gauges of the form:
+with $f$ denoting $\eta^{\alpha\beta}f_{\alpha\beta}$. As our goal is to reduce the \eqref{D1} into as compact form as possible, we explore a most general set of possible gauges with variable coefficients in the form of the gauge condition
 %
 \begin{eqnarray}
-\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu f+ R \Omega^{-1} f\partial_\nu \Omega,
+\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = \Omega^{-1} J \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + P \partial_\nu f+ R \Omega^{-1} f\partial_\nu \Omega.
 \label{D2}
 \end{eqnarray}
 %
-where $J$, $P$, and $R$ are constants. For various choices of these parameters we can simplify the structure of $\delta G_{\mu\nu}$, and on taking  $J = -2$, $P = 1/2$, $R = 0$, viz. on setting
+Here $J$, $P$, and $R$ represent the constant coefficients of which we will vary. On taking  $J = -2$, $P = 1/2$, $R = 0$ the gauge condition becomes
 %
 \begin{eqnarray}
-\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = -2 \Omega^{-1}  \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + \tfrac{1}{2} \partial_\nu f,
+\eta^{\alpha\beta}\partial_{\alpha}k_{\beta\nu} = -2 \Omega^{-1}  \eta^{\alpha\beta}k_{\nu\alpha}\partial_\beta \Omega + \tfrac{1}{2} \partial_\nu f.
 \label{D3}
 \end{eqnarray}
 %
-we find that when $\Omega$ is only a function of the conformal time $\tau$, $\delta G_{\mu\nu}$ evaluates  to 
+If we elect to take an $\Omega$  that is strictly dependent upon conformal time $\tau$, then evaluation of $\delta G_{\mu\nu}$ leads to
 %
 \begin{eqnarray}
 \delta G_{00}&=&
@@ -822,10 +841,10 @@ we find that when $\Omega$ is only a function of the conformal time $\tau$, $\de
 \label{D4}
 \end{eqnarray}
 %
-where the dot denotes the derivative with respect to $\tau$, and $\partial_0$ denotes $\partial_{\tau}$. While not diagonal in the $(\mu,\nu)$ indices, we note that $\delta G_{\mu\nu}$ is close to being so, since apart from  the $k_{00}$ and $f$ dependence  $\delta G_{\mu\nu}$ otherwise would be. Moreover, the ten fluctuation equations contained in  $\delta G_{\mu\nu}=-8\pi G \delta T_{\mu\nu}$ can be solved completely once $\delta T_{\mu\nu}$ is specified, since from the $\delta G_{00}$ and $\eta^{\mu\nu}\delta G_{\mu\nu}$ equations one can determine $k_{00}$ and $f$, and then from the other $\delta G_{\mu\nu}$ equations one can determine all the other components of $k_{\mu\nu}$. 
+where as usual a dot denotes a derivative with respect to $\tau$, and where $\partial_0$ denotes $\partial_{\tau}$. We see that $\delta G_{\mu\nu}$ is now expressed in a form that nearly decouples each tensor component, with it being the $k_{00}$ and $f$ dependence  $\delta G_{\mu\nu}$ that prevents it from doing so. However, one can solve the equations exactly once $\delta T_{\mu\nu}$ is specified, as one can use the $\delta G_{00}$ and $\eta^{\mu\nu}\delta G_{\mu\nu}$ equations to can determine $k_{00}$ and $f$, and then from $\delta G_{\mu\nu}$ one can determine all remaining components of $k_{\mu\nu}$. 
 
 
-For completeness we note that if the background is the inflationary universe de Sitter geometry where $\Omega(\tau)=1/H\tau$ with $H$ constant, (\ref{D4}) takes the form
+To illustrate an example, if the background is the de Sitter geometry, i.e. where we set $\Omega(\tau)=1/H\tau$ with $H$ constant, then (\ref{D4}) takes the form
 %
 \begin{eqnarray}
 \delta G_{00}&=&
@@ -841,9 +860,9 @@ For completeness we note that if the background is the inflationary universe de 
 \label{D5}
 \end{eqnarray}
 %
-As we see, by incorporating $\Omega(\tau)$ into both the background and the fluctuation we obtain very compact forms for $\delta G_{\mu\nu}$  in (\ref{D4}) and (\ref{D5}), with the $\delta G_{\mu\nu}=-8\pi G \delta T_{\mu\nu}$ fluctuation equations then being completely integrable.
+These equations form a compact set of reduced terms, a form which was possible by the explicit incorporation of the conformal factor $\Omega(\tau)$ into both the background and the fluctuation (which also holds for (\ref{D4}). Hence, in this gauge the $\delta G_{\mu\nu}=-8\pi G \delta T_{\mu\nu}$ fluctuation equations facilitate a readily integrable solution.
 
-We have found one further convenient decomposition of $\delta G_{\mu\nu}$, namely the gauge choice $J=-4$, $R=2P-3/2$, $P$ arbitrary. For a de Sitter background this gauge choice leads to
+Another convenient decomposition of $\delta G_{\mu\nu}$ corresponds to the gauge choice $J=-4$, $R=2P-3/2$, with $P$ arbitrary. In the de Sitter background, the fluctuations take the form
 %
 \begin{eqnarray}
 \delta G_{00}&=&(-2 \tau^{-2}
@@ -884,14 +903,14 @@ We have found one further convenient decomposition of $\delta G_{\mu\nu}$, namel
 \label{D6}
 \end{eqnarray}
 %
-In this gauge $\eta^{\mu\nu}\delta G_{\mu\nu}=\Omega^2g^{\mu\nu}\delta G_{\mu\nu}$ depends on the trace $f$ of the fluctuation alone. One can immediately solve for $f$ and then proceed to the other components of the fluctuation in turn. As we see,  the quantity $\eta^{\alpha\beta}\delta G_{\alpha\beta}$ takes the form of the flat space free massless particle wave operator acting on $\tau^{-2} f$, with the equation $g^{\mu\nu}\delta G_{\mu\nu}=-8\pi G g^{\mu\nu}\delta T_{\mu\nu}$ immediately being integrable with the $D^{(4)}(x-y)$ propagator that obeys $\eta^{\alpha\beta}\partial_{\alpha}\partial_{\beta}D^{(4)}(x-y)=\delta^4(x-y)$ as
+We see conveniently that $\eta^{\mu\nu}\delta G_{\mu\nu}=\Omega^2g^{\mu\nu}\delta G_{\mu\nu}$ depends only upon the trace $f$ of the fluctuation. Hence we can foremost solve for $f$ and then proceed to the other components of the fluctuation in turn. We may further observe the component $\eta^{\alpha\beta}\delta G_{\alpha\beta}$ takes the form of the flat space free massless particle wave operator acting on $\tau^{-2} f$. Hence, we may solve $g^{\mu\nu}\delta G_{\mu\nu}=-8\pi G g^{\mu\nu}\delta T_{\mu\nu}$ via integration by the $D^{(4)}(x-y)$ Green's function obeying $\eta^{\alpha\beta}\partial_{\alpha}\partial_{\beta}D^{(4)}(x-y)=\delta^4(x-y)$. We thus can form the exact integral solution as
 %
 \begin{eqnarray}
 f=\eta^{\mu\nu}f_{\mu\nu}=-\frac{8\pi G}{(P-\tfrac{3}{4})}\tau^2(x) \int d^4yD^{(4)}(x-y)\tau^{-2}(y)\eta^{\mu\nu}\delta T_{\mu\nu}(y),
 \label{D7}
 \end{eqnarray}
 %
-where $\tau(x)=x^0$, $\tau(y)=y^0$.
+where it is implied that $\tau(x)=x^0$, $\tau(y)=y^0$.
 
 
 
