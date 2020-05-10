@@ -11,7 +11,7 @@
 \subsection{$dS_4$}
 \label{ss:ds4_svt3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In the SVT3 background de Sitter case one can write the background and fluctuation metric in the conformal to flat form
+In the SVT3 formulation within a de Sitter background, the background and fluctuation metric can be expressed in the conformal to flat form
 %
 \begin{eqnarray}
 ds^2 &=&\frac{1}{H^2\tau^2}\bigg{[}(1+2\phi) d\tau^2 -2(\tilde{\nabla}_i B +B_i)d\tau dx^i - [(1-2\psi)\delta_{ij} +2\tilde{\nabla}_i\tilde{\nabla}_j E 
@@ -21,7 +21,7 @@ ds^2 &=&\frac{1}{H^2\tau^2}\bigg{[}(1+2\phi) d\tau^2 -2(\tilde{\nabla}_i B +B_i)
 \end{eqnarray}
 %
 where the $\tilde{\nabla}_{i}$ denote derivatives with respect to the flat 3-space $\delta_{ij}dx^idx^j$ metric.
-In terms of the SVT3 form for the fluctuations the components of the perturbed $\delta G_{\mu\nu}$ are given by (see e.g. \cite{amarasinghe_2019})
+In terms of the SVT3 form for the fluctuations the components of the perturbed $\delta G_{\mu\nu}$ are given by \cite{amarasinghe_2019}
 %
 \begin{eqnarray}
 \delta G_{00}&=&-\frac{6}{\tau}\dot{\psi}-\frac{2}{\tau}\tilde{\nabla}^2(\tau \psi +B-\dot{E}),
@@ -620,7 +620,7 @@ Similarly, in the $V$,$V_i$ sector we recognize the two equations that appear in
 \subsection{General Roberston Walker}
 \label{ss:general_rw_svt3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Setting up the Equations}
+\subsubsection{Constructing the Fluctuations}
 \label{sss:setting_up_the_equations}
 
 
@@ -1074,7 +1074,7 @@ Thus with (\ref{9.27}), (\ref{9.28}), (\ref{9.31}), (\ref{9.40}) together with (
 With (\ref{9.27}) only involving $\alpha +2\dot{\Omega}\Omega^{-1}\gamma$, with (\ref{9.31}) only involving 
 $B_i-\dot{E}_i$, and with (\ref{9.40}) only involving $E_{ij}$, and with all components of $\Delta_{\mu\nu}$ being gauge invariant, we recognize $C=\alpha +2\dot{\Omega}\Omega^{-1}\gamma$, $B_i-\dot{E}_i$ and $E_{ij}$ as being gauge invariant. With $B_i-\dot{E}_i$ being gauge invariant, from (\ref{9.23}) we recognize $V_i$ as being gauge invariant too. While we have identified some gauge-invariant quantities we note that by manipulating $\Delta_{\mu\nu}$ so as to obtain derivative expressions in which each of these quantities appears on its own, we cannot establish the gauge invariance of all 11 of the fluctuation variables this way since $\Delta_{\mu\nu}$ only has 10 components. However, just as with fluctuations around flat spacetime, in analog to (\ref{2.6}) below we shall obtain derivative relations between the SVT3 fluctuations and the $h_{\mu\nu}$ fluctuations by manipulating  (\ref{9.2}). As we show below, this will enable us  to establish the gauge invariance of the remaining fluctuation quantities.
 
-\subsubsection{What is Needed to get a Decomposition Theorem}
+\subsubsection{Decomposition Theorem Requirements}
 \label{sss:what_is_needed_decomposition_theorem_svt3}
 
 To get a decomposition theorem for $\Delta_{\mu\nu}=0$ we would require 
@@ -1123,7 +1123,7 @@ With $\tilde{\gamma}_{ij}$ and $\tilde{\nabla}_{i}\tilde{\nabla}_j$ not being eq
 %
 We recognize the equations for the components of the fluctuations as being derivatives of the relations that are required of the decomposition theorem. We thus need to see if we can find boundary conditions that would force the solutions to the higher-derivative fluctuation equations to obey (\ref{9.41}) and (\ref{9.42}).
 
-\subsubsection{Establishing Gauge Invariance}
+\subsubsection{Gauge Invariance}
 \label{sss:establishing_gauge_invariance}
 
 Starting with (\ref{9.2}), setting $h_{\mu\nu}=\Omega^2(\tau)f_{\mu\nu}$,  $f=\tilde{\gamma}^{ij}f_{ij}=-6\psi+2\tilde{\nabla}_i\tilde{\nabla}^iE$ and taking appropriate derivatives, then following quite a bit of algebra we obtain
@@ -1225,7 +1225,7 @@ h_{ij}&=&\Omega^2(\tau)f_{ij}=\Omega^2(\tau)[-2\psi\tilde{\gamma}_{ij} +2\tilde{
 into them. And one can check their gauge invariance by inserting $h_{\mu\nu}\rightarrow h_{\mu\nu}-\nabla_{\mu}\epsilon_{\nu}-\nabla_{\mu}\epsilon_{\mu}$ into them. We thus establish that the metric fluctuations $\alpha$, $\gamma$, $B_i-\dot{E}_i$ and $E_{ij}$ are gauge invariant. And from  (\ref{9.13}), (\ref{9.22}), (\ref{9.23}) and (\ref{9.28}) can thus establish that the matter fluctuations $\delta \hat{\rho}$, $\hat{V}$, $V_i$ and $\delta \hat{p}$ are gauge invariant too. Interestingly, we see that in going from fluctuations around flat to fluctuations around Robertson-Walker with arbitrary $k$ and arbitrary dependence of $\Omega(\tau)$ on $\tau$ the gauge-invariant metric fluctuation combinations $\alpha$, $\gamma$, $B_i-\dot{E}_i$ and $E_{ij}$  remain the same, though $\gamma$ does depend generically on $\Omega(\tau)$. 
 
 
-\subsubsection{Solving the Background}
+\subsubsection{Background Solution}
 \label{sss:solving_the_background_svt3}
 
 In order to actually solve the fluctuation equations we will need to determine the appropriate background $\Omega(\tau)$, and we will also need to deal with the fact that, as noted above,  the fluctuation equations contain more degrees of freedom (11) than there are evolution equations (10). For the background first we note that no matter what the value of $k$, from (\ref{9.10}) we see that if $\rho=3p$ then $\rho=3/\Omega^4$,  as written in a convenient normalization (one which differs from the one used in Sec. \ref{S8}), while if $p=0$ we have $\rho=3/\Omega^3$. Once we specify a background equation of state that relates $\rho$ and $p$ we can solve for $\Omega (\tau)$ and $t=\int \Omega(\tau)d\tau$. We thus obtain 
@@ -1259,7 +1259,7 @@ p=0,~k=1:&&\quad \Omega=\sin^2(\tau/2),\quad p=0,\quad \rho=3/\sin^6(\tau/2),
 %
 For $p=0$ and $k=\pm 1$ we cannot obtain $a(t)$ in a closed form. Consequently one ordinarily only determines $a(t)$ in parametric form. As we see, the conformal time $\tau$ can serve as the appropriate parameter.
 
-\subsubsection{Relating $\delta\rho$ and $\delta p$}
+\subsubsection{Relation between $\delta\rho$ and $\delta p$}
 \label{sss:relating_dp_drho_svt3}
 
 To reduce the number of fluctuation variables from 11 to 10 we follow kinetic theory, and first consider a relativistic flat spacetime ideal $N$ particle classical gas of spinless particles each of mass $m$ in a volume $V$ at a temperature $T$. As discussed for instance in \cite{mannheim_2006}, for this
@@ -1814,7 +1814,7 @@ All of these solutions are bounded at $\chi=\infty$ and all $\hat{T}^{(2)}_{\ell
 
 A similar outcome occurs for $A_T=6$, and even though we do not evaluate the $A_T=6$ solutions explicitly, according to (\ref{10.35b}) all solutions to $(\tilde{\nabla}_a\tilde{\nabla}^a+6)T_{11}=0$ with $A_T=6$ are bounded at $\chi=\infty$ (behaving as $e^{-3\chi}\cos(\surd{3}\chi)$ and $e^{-3\chi}\sin(\surd{3}\chi)$), with one set of these solutions being well-behaved at $\chi=0$ for all $\ell \geq 2$.  Thus if implement (\ref{9.40}) by $(\tilde{\nabla}_a\tilde{\nabla}^a+6)T_{ij}=0$,  we are not forced to $T_{ij}=0$, with the decomposition theorem again not following in the tensor sector.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Recovering the Decomposition Theorem}
+\subsubsection{Decomposition Theorem Analysis}
 \label{ss:recovering_decomposition_theorem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In Sec. \ref{S10} we have seen that there are realizations of the evolution equations in the scalar, vector, and tensor sectors that would not lead to a decomposition theorem in those sectors. However, equally there are other realizations that given the boundary conditions would lead to a decomposition theorem. Thus we need to determine which realizations are the relevant ones. To this end we look not at the individual higher-derivative equations obeyed by the separate scalar, vector, and tensor sectors, but at how these various sectors interface with each other in the original second-order $\Delta_{\mu\nu}=0$ equations themselves. Any successful such interface would require that all the terms in $\Delta_{\mu\nu}=0$ would have to have the same $\chi$ behavior. Noting that the scalar modes appear with two $\tilde{\nabla}$ derivatives in $\Delta_{ij}=0$, the vector sector appears with one $\tilde{\nabla}$ derivative and the tensor appears with none, we need to compare derivatives of scalars with vectors and derivatives of vectors with tensors. 
