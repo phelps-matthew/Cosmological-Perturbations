@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {4.2}SVT4}{84}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Minkowski}{84}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}$dS_4$}{85}{subsection.4.2.2}%
-\contentsline {subsubsection}{Defining the SVT4 Fluctuations Without a Conformal Factor}{85}{section*.13}%
+\contentsline {subsubsection}{SVT4 $dS_4$ Basis Without a Conformal Factor}{85}{section*.13}%
 \contentsline {subsubsection}{Application of SVT4 to de Sitter Fluctuation Equations}{88}{section*.14}%
 \contentsline {subsubsection}{Defining the SVT4 Fluctuations With a Conformal Factor}{94}{section*.15}%
 \contentsline {subsubsection}{Some General Comments}{98}{section*.16}%
