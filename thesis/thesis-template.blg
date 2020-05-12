@@ -3,12 +3,11 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis-template.aux
 The style file: uconn_unsrtnat.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "Ellis2012"
 Warning--I didn't find a database entry for "Mannheim2006"
 Warning--I didn't find a database entry for "Mannheim1998"
 You've used 26 entries,
             2425 wiz_defined-function locations,
-            731 strings with 8200 characters,
+            729 strings with 8182 characters,
 and the built_in function-call counts, 8490 in all, are:
 = -- 769
 > -- 288
@@ -47,4 +46,4 @@ warning$ -- 0
 while$ -- 71
 width$ -- 0
 write$ -- 339
-(There were 3 warnings)
+(There were 2 warnings)

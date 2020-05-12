@@ -106,22 +106,38 @@ Hideo Kodama and Misao Sasaki.
 \newblock \emph{Progress of Theoretical Physics Supplement}, 78:\penalty0
   1–166, 1984.
 
+\bibitem[Ellis et~al.(2009)Ellis, Maartens, and
+  Maccallum]{ellis_maartens_maccallum_2009}
+George Ellis, Roy Maartens, and Malcolm Maccallum.
+\newblock \emph{Relativistic Cosmology}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Bertschinger(2001)]{bertschinger_2000}
+Edmund Bertschinger.
+\newblock {Cosmological perturbation theory and structure formation}.
+\newblock In \emph{{Cosmology 2000}}, pages 1--25, 1 2001.
+
 \bibitem[Bardeen(1980)]{bardeen_1980}
 James~M. Bardeen.
 \newblock Gauge-invariant cosmological perturbations.
 \newblock \emph{Physical Review D}, 22\penalty0 (8):\penalty0 1882–1905,
   1980.
 
-\bibitem[Amarasinghe et~al.(2019)Amarasinghe, Phelps, and
-  Mannheim]{amarasinghe_2019}
-Asanka Amarasinghe, Matthew~G. Phelps, and Philip~D. Mannheim.
-\newblock Cosmological perturbations in conformal gravity. ii.
-\newblock \emph{Physical Review D}, 99\penalty0 (8), 2019.
+\bibitem[Mukhanov(1992)]{mukhanov_1992}
+V~Mukhanov.
+\newblock Theory of cosmological perturbations.
+\newblock \emph{Physics Reports}, 215\penalty0 (5-6):\penalty0 203–333, 1992.
 
 \bibitem[Phelps et~al.(2019)Phelps, Amarasinghe, and Mannheim]{phelps_2019}
 Matthew~G. Phelps, Asanka Amarasinghe, and Philip~D. Mannheim.
 \newblock Three-dimensional and four-dimensional scalar, vector, tensor
   cosmological fluctuations and the cosmological decomposition theorem, 2019.
+
+\bibitem[Amarasinghe et~al.(2019)Amarasinghe, Phelps, and
+  Mannheim]{amarasinghe_2019}
+Asanka Amarasinghe, Matthew~G. Phelps, and Philip~D. Mannheim.
+\newblock Cosmological perturbations in conformal gravity. ii.
+\newblock \emph{Physical Review D}, 99\penalty0 (8), 2019.
 
 \bibitem[Mannheim(2005)]{mannheim_2005}
 Philip~D Mannheim.
@@ -134,26 +150,10 @@ M.~Bander and C.~Itzykson.
 \newblock \emph{Reviews of Modern Physics}, 38\penalty0 (2):\penalty0
   346–358, Jan 1966.
 
-\bibitem[Mukhanov(1992)]{mukhanov_1992}
-V~Mukhanov.
-\newblock Theory of cosmological perturbations.
-\newblock \emph{Physics Reports}, 215\penalty0 (5-6):\penalty0 203–333, 1992.
-
-\bibitem[Bertschinger(2001)]{bertschinger_2000}
-Edmund Bertschinger.
-\newblock {Cosmological perturbation theory and structure formation}.
-\newblock In \emph{{Cosmology 2000}}, pages 1--25, 1 2001.
-
 \bibitem[Mannheim(2011)]{mannheim_2011}
 Philip~D. Mannheim.
 \newblock Making the case for conformal gravity.
 \newblock \emph{Foundations of Physics}, 42\penalty0 (3):\penalty0 388–420,
   2011.
-
-\bibitem[Ellis et~al.(2009)Ellis, Maartens, and
-  Maccallum]{ellis_maartens_maccallum_2009}
-George Ellis, Roy Maartens, and Malcolm Maccallum.
-\newblock \emph{Relativistic Cosmology}.
-\newblock Cambridge University Press, 2009.
 
 \end{thebibliography}

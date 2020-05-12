@@ -62,18 +62,18 @@
 \contentsline {subsection}{\numberline {5.1.4}Calculation Summary}{113}{subsection.5.1.4}%
 \contentsline {section}{\numberline {5.2}Imposing Specific Gauges within $\delta G_{\mu \nu }$}{114}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Robertson Walker Radiation Era Conformal Gravity Solution}{116}{section.5.3}%
-\contentsline {chapter}{\numberline {6.}Conclusions}{122}{chapter.6}%
-\contentsline {chapter}{Bibliography}{123}{section*.24}%
-\contentsline {chapter}{\numberline {A.}SVT by Projection}{126}{chapter.A}%
-\contentsline {section}{\numberline {A.1}The $3+1$ Decomposition}{126}{appendix.A.1}%
-\contentsline {section}{\numberline {A.2}Vector Fields}{127}{appendix.A.2}%
-\contentsline {section}{\numberline {A.3}Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}{128}{appendix.A.3}%
-\contentsline {section}{\numberline {A.4}Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}{130}{appendix.A.4}%
-\contentsline {section}{\numberline {A.5}Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}{132}{appendix.A.5}%
-\contentsline {section}{\numberline {A.6}D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}{133}{appendix.A.6}%
-\contentsline {chapter}{\numberline {B.}Conformal to Flat Cosmological Geometries}{136}{chapter.B}%
-\contentsline {section}{\numberline {B.1}Robertson-Walker $k=0$}{136}{appendix.B.1}%
-\contentsline {section}{\numberline {B.2}Robertson-Walker $k>0$}{136}{appendix.B.2}%
-\contentsline {section}{\numberline {B.3}Robertson-Walker $k<0$}{137}{appendix.B.3}%
-\contentsline {section}{\numberline {B.4}$dS_4$ and $AdS_4$ Background Solutions}{138}{appendix.B.4}%
-\contentsline {section}{\numberline {B.5}$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}{139}{appendix.B.5}%
+\contentsline {chapter}{\numberline {6.}Conclusions}{121}{chapter.6}%
+\contentsline {chapter}{Bibliography}{122}{section*.24}%
+\contentsline {chapter}{\numberline {A.}SVT by Projection}{125}{chapter.A}%
+\contentsline {section}{\numberline {A.1}The $3+1$ Decomposition}{125}{appendix.A.1}%
+\contentsline {section}{\numberline {A.2}Vector Fields}{126}{appendix.A.2}%
+\contentsline {section}{\numberline {A.3}Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}{127}{appendix.A.3}%
+\contentsline {section}{\numberline {A.4}Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}{129}{appendix.A.4}%
+\contentsline {section}{\numberline {A.5}Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}{131}{appendix.A.5}%
+\contentsline {section}{\numberline {A.6}D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}{132}{appendix.A.6}%
+\contentsline {chapter}{\numberline {B.}Conformal to Flat Cosmological Geometries}{135}{chapter.B}%
+\contentsline {section}{\numberline {B.1}Robertson-Walker $k=0$}{135}{appendix.B.1}%
+\contentsline {section}{\numberline {B.2}Robertson-Walker $k>0$}{135}{appendix.B.2}%
+\contentsline {section}{\numberline {B.3}Robertson-Walker $k<0$}{136}{appendix.B.3}%
+\contentsline {section}{\numberline {B.4}$dS_4$ and $AdS_4$ Background Solutions}{137}{appendix.B.4}%
+\contentsline {section}{\numberline {B.5}$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}{138}{appendix.B.5}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  10 MAY 2020 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  12 MAY 2020 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -835,16 +835,16 @@ Overfull \hbox (1.24954pt too wide) in alignment at lines 698--735
  [][][] []
  []
 
-[115] [116] [117] [118] [119] [120]) (./Chapters/Conclusions.tex [121]
+[115] [116] [117] [118] [119]) (./Chapters/Conclusions.tex [120]
 Chapter 6.
-) (./Chapters/References.tex [122
+) (./Chapters/References.tex [121
 
 
-] (./thesis-template.bbl [123
+] (./thesis-template.bbl [122
 
 
-] [124]))
-(./Chapters/AppendixA_Projections.tex [125]
+] [123]))
+(./Chapters/AppendixA_Projections.tex [124]
 Chapter A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -854,19 +854,19 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 6.
 
-[126
+[125
 
 
-] [127] [128] [129]
+] [126] [127] [128]
 Overfull \hbox (6.30396pt too wide) in paragraph at lines 343--347
 \OT1/cmr/m/n/12 with $\OML/cmm/m/it/12 h[]$ \OT1/cmr/m/n/12 be-ing both trace-l
 ess and trans-verse. With $\OML/cmm/m/it/12 Q[]$ \OT1/cmr/m/n/12 im-ple-ment-in
 g $\OML/cmm/m/it/12 Q[]h[] \OT1/cmr/m/n/12 =
  []
 
-[130]
+[129]
 
-LaTeX Warning: Reference `SS612' on page 131 undefined on input line 408.
+LaTeX Warning: Reference `SS612' on page 130 undefined on input line 408.
 
 
 Overfull \hbox (12.66112pt too wide) in paragraph at lines 421--425
@@ -874,7 +874,7 @@ Overfull \hbox (12.66112pt too wide) in paragraph at lines 421--425
 e-spect to a flat Minkowski
  []
 
-[131]
+[130]
 Overfull \hbox (1.73087pt too wide) detected at line 494
  $\OML/cmm/m/it/12 h[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 h[] \OMS/cmsy/m/n/12 
 ^^@ r[] [] \OML/cmm/m/it/12 d[]x[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm
@@ -885,14 +885,14 @@ ML/cmm/m/it/12 g\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 x; x[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 r[]\OML/cmm/m/it/12 h[];$  
  []
 
-[132]
+[131]
 
-LaTeX Warning: Reference `SS612' on page 133 undefined on input line 536.
+LaTeX Warning: Reference `SS612' on page 132 undefined on input line 536.
 
 
-LaTeX Warning: Reference `SS522' on page 133 undefined on input line 536.
+LaTeX Warning: Reference `SS522' on page 132 undefined on input line 536.
 
-[133] [134]) (./Chapters/AppendixB_Cosmologies.tex [135]
+[132] [133]) (./Chapters/AppendixB_Cosmologies.tex [134]
 Chapter B.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -910,7 +910,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 32.
 
-[136
+[135
 
 
 ]
@@ -928,7 +928,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 91.
 
-[137]
+[136]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 140.
@@ -954,7 +954,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 140.
 
 
-Package natbib Warning: Citation `Mannheim2006' on page 138 undefined on input 
+Package natbib Warning: Citation `Mannheim2006' on page 137 undefined on input 
 line 151.
 
 
@@ -981,9 +981,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 170.
 
-[138]
+[137]
 
-Package natbib Warning: Citation `Mannheim1998' on page 139 undefined on input 
+Package natbib Warning: Citation `Mannheim1998' on page 138 undefined on input 
 line 190.
 
 )
@@ -991,7 +991,7 @@ line 190.
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-[139]
+[138]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
  (./thesis-template.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
@@ -1009,10 +1009,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  )
 (\end occurred when \iffalse on line 59 was incomplete) 
 Here is how much of TeX's memory you used:
- 9415 strings out of 483183
- 133379 string characters out of 5966293
- 442055 words of memory out of 5000000
- 23460 multiletter control sequences out of 15000+600000
+ 9409 strings out of 483183
+ 133322 string characters out of 5966293
+ 441782 words of memory out of 5000000
+ 23457 multiletter control sequences out of 15000+600000
  542097 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,13n,47p,3339b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1035,10 +1035,10 @@ ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb>
-Output written on thesis-template.pdf (141 pages, 749096 bytes).
+Output written on thesis-template.pdf (140 pages, 746161 bytes).
 PDF statistics:
- 2522 PDF objects out of 2984 (max. 8388607)
- 2336 compressed objects within 24 object streams
- 808 named destinations out of 1000 (max. 500000)
+ 2505 PDF objects out of 2984 (max. 8388607)
+ 2320 compressed objects within 24 object streams
+ 805 named destinations out of 1000 (max. 500000)
  449 words of extra memory for PDF output out of 10000 (max. 10000000)
 
