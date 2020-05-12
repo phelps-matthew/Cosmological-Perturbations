@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  12 MAY 2020 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  12 MAY 2020 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1003,7 +1003,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
 Package rerunfilecheck Info: File `thesis-template.out' has not changed.
-(rerunfilecheck)             Checksum: 84425F06A3AAFEA822E0DB697FB3E235;4384.
+(rerunfilecheck)             Checksum: 9C76C60C83A1E3857A09827DF54EB5BB;4389.
 
 
 LaTeX Warning: There were undefined references.
@@ -1017,7 +1017,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
 Here is how much of TeX's memory you used:
  9413 strings out of 483183
  133403 string characters out of 5966293
- 441810 words of memory out of 5000000
+ 441815 words of memory out of 5000000
  23460 multiletter control sequences out of 15000+600000
  542097 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1041,7 +1041,7 @@ ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb>
-Output written on thesis-template.pdf (140 pages, 746426 bytes).
+Output written on thesis-template.pdf (140 pages, 746447 bytes).
 PDF statistics:
  2507 PDF objects out of 2984 (max. 8388607)
  2322 compressed objects within 24 object streams

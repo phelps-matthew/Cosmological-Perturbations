@@ -49,7 +49,7 @@
 \contentsline {subsubsection}{The Background}{100}{section*.17}%
 \contentsline {subsubsection}{The SVT4 Fluctuations}{101}{section*.18}%
 \contentsline {subsection}{\numberline {4.2.4}$\delta W_{\mu \nu }$ Conformal to Flat}{102}{subsection.4.2.4}%
-\contentsline {chapter}{\numberline {5.}Constructing and Imposing Gauge Conditions}{104}{chapter.5}%
+\contentsline {chapter}{\numberline {5.}Construction and Imposition of Gauge Conditions}{104}{chapter.5}%
 \contentsline {section}{\numberline {5.1}The Conformal Gauge and General Solutions in Conformal Gravity}{105}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}The Conformal Gauge}{105}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}$\delta W_{\mu \nu }$ in an Arbitrary Background}{107}{subsection.5.1.2}%
