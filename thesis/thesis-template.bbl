@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -149,6 +149,11 @@ M.~Bander and C.~Itzykson.
 \newblock Group theory and the hydrogen atom (ii).
 \newblock \emph{Reviews of Modern Physics}, 38\penalty0 (2):\penalty0
   346–358, Jan 1966.
+
+\bibitem[Weinberg(2008)]{weinberg_2008}
+Steven Weinberg.
+\newblock \emph{Cosmology}.
+\newblock Oxford University, 2008.
 
 \bibitem[Mannheim(2011)]{mannheim_2011}
 Philip~D. Mannheim.

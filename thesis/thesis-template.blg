@@ -5,45 +5,45 @@ The style file: uconn_unsrtnat.bst
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "Mannheim2006"
 Warning--I didn't find a database entry for "Mannheim1998"
-You've used 26 entries,
+You've used 27 entries,
             2425 wiz_defined-function locations,
-            729 strings with 8182 characters,
-and the built_in function-call counts, 8490 in all, are:
-= -- 769
-> -- 288
-< -- 24
-+ -- 132
-- -- 80
-* -- 636
-:= -- 1391
-add.period$ -- 77
-call.type$ -- 26
-change.case$ -- 49
-chr.to.int$ -- 26
-cite$ -- 26
-duplicate$ -- 415
-empty$ -- 791
-format.name$ -- 122
-if$ -- 1774
+            733 strings with 8225 characters,
+and the built_in function-call counts, 8730 in all, are:
+= -- 789
+> -- 295
+< -- 25
++ -- 136
+- -- 82
+* -- 647
+:= -- 1433
+add.period$ -- 80
+call.type$ -- 27
+change.case$ -- 50
+chr.to.int$ -- 27
+cite$ -- 27
+duplicate$ -- 431
+empty$ -- 815
+format.name$ -- 125
+if$ -- 1824
 int.to.chr$ -- 1
-int.to.str$ -- 27
-missing$ -- 28
-newline$ -- 137
-num.names$ -- 78
-pop$ -- 131
+int.to.str$ -- 28
+missing$ -- 30
+newline$ -- 142
+num.names$ -- 81
+pop$ -- 140
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 27
 quote$ -- 0
-skip$ -- 297
+skip$ -- 307
 stack$ -- 0
-substring$ -- 491
-swap$ -- 63
+substring$ -- 493
+swap$ -- 65
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 173
+type$ -- 177
 warning$ -- 0
-while$ -- 71
+while$ -- 73
 width$ -- 0
-write$ -- 339
+write$ -- 351
 (There were 2 warnings)
