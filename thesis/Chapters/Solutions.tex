@@ -2,6 +2,50 @@
 \chapter{Construction and Solution of SVT Fluctuation Equations}
 \label{c:construction_and_solution_of_svt}
 
+We now apply the SVT3 and SVT4 decompositions of $h_{\mu\nu}$ developed in detail within Ch. \ref{c:scalar_vector_tensor_basis} to the fluctuation equations themselves and proceed to find exact solutions within backgrounds relevant to cosmology. Of particular importance, for each background geometry we analyze the conditions necessary for the decomposition theorem (cf. Sec. \ref{s:decomposition_theorem}) to hold. Repeatedly, we find that a separation of the scalar, vector, and tensor sectors of the fluctuations may be generically achieved (i.e. without any assumptions) by application of higher derivatives which effectively project out the transverse and longitudinal components. Hence, for each geometry we may achieve an SVT separation at the equation level in terms of fourth or higher order fluctuation equations. Once this achieved, we may then analyze precisely which conditions may be required in order to recover the naive decomposition one obtains when immediately separating scalars, vectors, and tensors at the outset. Since one cannot validate the decomposition theorem in general for arbitrary backgrounds, we evaluate the SVT3 and SVT4 fluctuations for a number of specific geometries. 
+
+As for the cases we 
+solve equations, Determine conditions required for decomposition theorem. Does not hold unless further input. by going to higher derivatives. See if we can impose asymptotic boundary conditions. 
+
+start introducing perfect fluid source. RW k=0 radiation. Determine matter + gravitaional gauge invariants. $\tau^2 e_ij$ sector goes as $t^{1/2}$, decomp follows w/ spatially asympt. bc's.
+
+generalize to all RW, perturb perfect fluid, requires equation of state. identify gauge invariants, use many vuarvature relations, commutations 4th order. seek help from svt in terms of $h_{\mu\nu}$ to determine gauge invariants here. In order to solve, need to determine $\Omega(\tau)$ and reduce 11 dof's to 10. We then determine the form of $\Omega(\tau)$ in all curvatures in radiation and matter dominated. Reduce from 11 to 10 by specifying equation of state. We interpolate btween radiation and matter: transition between two eras is complicationed, but propto $p=w\rho$ in high temp (radiation) and low temp (matter). Transition era = recombination. $p=w\rho$ not always valid. Solve by suming over complete basis of modes associated with propagation of spinless massive particle in chosen $g_{\mu\nu}$ background. Complicated, but not done here generally. 
+
+k=-1 RW general As the implications of boundary conditions are very sensitive to the sign of the coefficient of $k$, and we will need to monitor both positive and negative coefficient cases below. In implementing evolution equations that involve products of derivative operators such as the generic $(\tilde{\nabla}^2+\alpha)(\tilde{\nabla}^2+\beta)F=0$ . scalar sector checks out given good behavior (bounded) at infinity and origin. Seem to find vector that is bounded, well behaved at both, but does not obey decomp theorem. see end of vector section. Same for tensor sector.
+
+n Sec. \ref{ss:rw_k=-1_svt3} we have seen that there are realizations of the evolution equations in the scalar, vector, and tensor sectors that would not lead to a decomposition theorem in those sectors. However, equally there are other realizations that given the boundary conditions would lead to a decomposition theorem. Thus we need to determine which realizations are the relevant ones. To this end we look not at the individual higher-derivative equations obeyed by the separate scalar, vector, and tensor sectors, but at how these various sectors interface with each other in the original second-order $\Delta_{\mu\nu}=0$ equations themselves. Any successful such interface would require that all the terms in $\Delta_{\mu\nu}=0$ would have to have the same $\chi$ behavior. Noting that the scalar modes appear with two $\tilde{\nabla}$ derivatives in $\Delta_{ij}=0$, the vector sector appears with one $\tilde{\nabla}$ derivative and the tensor appears with none, we need to compare derivatives of scalars with vectors and derivatives of vectors with tensors. 
+
+If we force bc that vector and tensor modes vanish at $\chi=\infty$ instead of limiting to a constant value, then decomp holds. 
+
+compute svt3 conformal gravity, instead working in conformal flat. Imposing boundary conditions leads to simple evolution equations. We can invert svt3 quantities in terms of $\delta W_{\mu\nu}$, to serve as alternative integral relations in the RW background. 
+
+SVT4 minkowski, delta G is purely gauge invariant in zero background. Evaluate in ds4 w/o conformal factor. Make use of SVTD in constant 3 space. For scalar $\chi$ to obey decomp theorem, require very particular solution. General solution not at all forced to $\chi =0$; specific solution to the full evolution equations. No compelling reason to choose so. $F_{\mu\nu}$ and $\chi$ can still be localized in space, thus no spatially asymptotic bc could affect them. Completely solvable though. Could enforce decomp theorem with judiciously choosing IC's at an intial time. No compelling rationale for doing so. 
+
+ds4 with a conformal factor. GI mixes scalars and vectors. Introduce $U^\mu$ to express covariantly. Find exact solutions. Again, same story. 
+
+Do SVT4 desitter in conformal gravity. Simple structure, in fact TT sector has same form as standard Einstein gravity. Find relation between the two. Below, and also for flat space. Decomp is automatic, only $F_{\mu\nu}$. 
+\begin{eqnarray}
+\delta W_{\mu\nu}=(\nabla_{\alpha}\nabla^{\alpha}-4H^2)(\delta G_{\mu\nu}+\delta T_{\mu\nu})^{T\theta}.
+\end{eqnarray}
+
+By introducing timelike $U^\mu$ can express generalized SVT4 RW flucations in compact covariant form. Same story with decomp. 
+
+dW conformal to flat. Beautiful super simple. 
+\begin{eqnarray}
+\delta W_{\mu\nu}&=&\Omega^{-2}\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}F_{\mu\nu}.
+\end{eqnarray} 
+
+by looking at ds4 svt4 we saw mixing, and thus one shold only look for decomp theorem for gauge invariants and not for seaprate scalar vector, tensors sects and gauage invariance can in general intertwine them. We present example occuring in SVT3 to show not just artifact of SVT4. 
+
+ads svt3 mixing. 
+\begin{eqnarray}
+\delta = \phi -\psi + \dot B - \ddot E + \frac{2}{z}(\tilde\nabla_3 E + E_3),
+\end{eqnarray}
+
+General conformal to flat. $eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E)$ Spatially dependent $\Omega(x)$ leads to inseperable gauge invariant not foudn in non-conformal geoms. Procedure is one must first determine GI's, then separate, not other way around. For some geoms no choice of coords can undo intertwiing (if conformal factor pulled out). To express the $\eta$ in terms of a curvature invariant, one cannot make recourse to $\delta W_{\mu\nu}$, however, in traceless radiation we can take $\delta(g_{\mu\nu}G^{\mu\nu}$ to determine $\eta$ in terms of the $h_{\mu\nu}$. 
+
+Using gauge freedom, imposing gauge, we can decouple intertwining in gauge invariants. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SVT3}
 \label{s:svt3_construction}
@@ -398,6 +442,7 @@ we find that the $\tau$ dependence of $f_k(\tau)$ is given by $j_1(k\tau/\surd{3
 %
 \begin{eqnarray}
 \gamma&=&\sum_{\bf k}[a_1({\bf k})j_1(k\tau/\surd{3})+b_1({\bf k})y_1(k\tau/\surd{3})]e^{i{\bf k}\cdot{\bf x}} +{\rm delta~function~terms},
+\nonumber\\
 \label{8.24}
 \end{eqnarray}
 %
@@ -431,7 +476,7 @@ The $\tau$ dependence of $d_k(\tau)$ is thus given by $j_1(k\tau/\surd{3})/\tau$
 \begin{eqnarray}
 \alpha&=&\frac{1}{\tau}\sum_{\bf k}[m_1({\bf k})j_1(k\tau/\surd{3})+n_1({\bf k})y_1(k\tau/\surd{3})]e^{i{\bf k}\cdot{\bf x}}
 \nonumber\\
-&& +{\rm delta~function~terms},
+&& + {\rm delta~function~terms},
 \label{8.28}
 \end{eqnarray}
 %
@@ -453,13 +498,13 @@ Having determined $\alpha$ and $\gamma$, we can now determine $\delta p-16\psi/\
 &=&\sum_{\bf k}\left[\frac{8}{\tau^4}\left(\frac{2}{\tau}+\frac{\partial}{\partial \tau}\right)
 +\frac{8k^2}{3\tau^3}\right]\left[a_1({\bf k})j_1(k\tau/\surd{3})+b_1({\bf k})y_1(k\tau/\surd{3})\right]e^{i{\bf k}\cdot{\bf x}}
 \nonumber\\
-&& +{\rm delta~function~terms}
+&& + {\rm delta~function~terms}
 \nonumber\\
 &=&\sum_{\bf k}a_1({\bf k})\left[\frac{8k}{\tau^4\surd{3}}j_0(k\tau/\surd{3})+\frac{8k^2}{3\tau^3}j_1(k\tau/\surd{3})\right]
 \nonumber\\
 &&+\sum_{\bf k}b_1({\bf k})\left[\frac{8k}{\tau^4\surd{3}}y_0(k\tau/\surd{3})+\frac{8k^2}{3\tau^3}y_1(k\tau/\surd{3})\right]
 \nonumber\\
-&&+{\rm delta~function~terms}.
+&&+ {\rm delta~function~terms}.
 \label{8.30}
 \end{eqnarray}
 %
@@ -1661,7 +1706,7 @@ Finally, for $A_V=-1$, viz. $\nu=i\surd{3}$, $f(\nu^2)=e^{\chi\surd{3}},e^{-\chi
 \label{10.30b}
 \end{eqnarray}
 %
-All of these solutions are bounded at $\chi=\infty$ and all $\hat{V}^{(1)}_{\ell}(A_V=-1)-\hat{V}^{(2)}_{\ell}(A_V=-1)$ with $\ell\geq 1$ are well-behaved at $\chi=0$.  Thus if implement (\ref{9.31}) by $(\tilde{\nabla}_a\tilde{\nabla}^a-1)V_i=0$,  we are not forced to $V_i=0$, with the decomposition theorem not then following in this sector.
+All of these solutions are bounded at $\chi=\infty$ and all $\hat{V}^{(1)}_{\ell}(A_V=-1)-\hat{V}^{(2)}_{\ell}(A_V=-1)$ with $\ell\geq 1$ are well-behaved at $\chi=0$.  Thus if we implement (\ref{9.31}) by $(\tilde{\nabla}_a\tilde{\nabla}^a-1)V_i=0$,  we are not forced to $V_i=0$, with the decomposition theorem not then following in this sector.
 
 
 
@@ -1791,7 +1836,7 @@ We recognize (\ref{10.36b}) as being (\ref{10.3b}), and can set $\nu^2=A_T-3$ in
 \label{10.37b}
 \end{align}
 %
-All of these solutions are bounded at $\chi=\infty$ and all $\hat{T}^{(2)}_{\ell}(A_T=2)$ with $\ell\geq 2$ are well-behaved at $\chi=0$.  Thus if implement (\ref{9.40}) by $(\tilde{\nabla}_a\tilde{\nabla}^a+2)T_{ij}=0$,  we are not forced to $T_{ij}=0$, with the decomposition theorem not then following in the tensor sector.
+All of these solutions are bounded at $\chi=\infty$ and all $\hat{T}^{(2)}_{\ell}(A_T=2)$ with $\ell\geq 2$ are well-behaved at $\chi=0$.  Thus if we implement (\ref{9.40}) by $(\tilde{\nabla}_a\tilde{\nabla}^a+2)T_{ij}=0$,  we are not forced to $T_{ij}=0$, with the decomposition theorem not then following in the tensor sector.
 
 For $A_T=3$ we see that $\nu^2=0$. However in the vector case discussed above where $\nu^2=A_V-2$, $\nu^2$ would also obey $\nu^2=0$ if $A_V=2$. Thus for $A_T=3$ we can obtain the solutions to $(\tilde{\nabla}_a\tilde{\nabla}^a+3)T_{11}=0$ directly from (\ref{10.26b}), and after implementing $h^{11}_{\ell}=\alpha_{\ell}/\sinh\chi$ we obtain 
 %
@@ -1812,7 +1857,7 @@ For $A_T=3$ we see that $\nu^2=0$. However in the vector case discussed above wh
 %
 All of these solutions are bounded at $\chi=\infty$ and all $\hat{T}^{(2)}_{\ell}(A_T=3)$ with $\ell\geq 2$ are well-behaved at $\chi=0$.  Thus if implement (\ref{9.40}) by $(\tilde{\nabla}_a\tilde{\nabla}^a+3)T_{ij}=0$,  we are not forced to $T_{ij}=0$, with the decomposition theorem not then following.
 
-A similar outcome occurs for $A_T=6$, and even though we do not evaluate the $A_T=6$ solutions explicitly, according to (\ref{10.35b}) all solutions to $(\tilde{\nabla}_a\tilde{\nabla}^a+6)T_{11}=0$ with $A_T=6$ are bounded at $\chi=\infty$ (behaving as $e^{-3\chi}\cos(\surd{3}\chi)$ and $e^{-3\chi}\sin(\surd{3}\chi)$), with one set of these solutions being well-behaved at $\chi=0$ for all $\ell \geq 2$.  Thus if implement (\ref{9.40}) by $(\tilde{\nabla}_a\tilde{\nabla}^a+6)T_{ij}=0$,  we are not forced to $T_{ij}=0$, with the decomposition theorem again not following in the tensor sector.
+A similar outcome occurs for $A_T=6$, and even though we do not evaluate the $A_T=6$ solutions explicitly, according to (\ref{10.35b}) all solutions to $(\tilde{\nabla}_a\tilde{\nabla}^a+6)T_{11}=0$ with $A_T=6$ are bounded at $\chi=\infty$ (behaving as $e^{-3\chi}\cos(\surd{3}\chi)$ and $e^{-3\chi}\sin(\surd{3}\chi)$), with one set of these solutions being well-behaved at $\chi=0$ for all $\ell \geq 2$.  Thus if we implement (\ref{9.40}) by $(\tilde{\nabla}_a\tilde{\nabla}^a+6)T_{ij}=0$,  we are not forced to $T_{ij}=0$, with the decomposition theorem again not following in the tensor sector.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Decomposition Theorem Analysis}
 \label{ss:recovering_decomposition_theorem}
@@ -2100,246 +2145,7 @@ where again $\alpha = \phi + \psi + \dot B - \ddot E$. These equations can be in
 %
 With this separation of the gauge-invariant combinations we again have the decomposition theorem. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Gauge Invariants and the Decomposition Theorem}
-\label{ss:gauge_invariants_decomp_theorem}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In the SVT4 study of fluctuations around a de Sitter background that we presented in Sec. \ref{ss:ds4_svt4} we had found that one of the gauge-invariant combinations was given by $\alpha=\dot{F}+\tau \chi +F_0$ (see (\ref{6.54})). In this combination $F$ and $\chi$ are scalars while $F_0$ is the fourth component of the vector $F_{\mu}$. In solving the fluctuation equations in this case we actually solved for the gauge-invariant combinations and not for the individual scalar, vector and tensor sectors. In the solution we found that $\alpha=0$.  Thus would entail only that  $\dot{F}+\tau \chi =-F_0$. However, decomposition with respect to scalars, vectors and tensors would in addition entail that $\dot{F}+\tau \chi=0$, and $F_0=0$, something that would not be warranted as it is not required by the fluctuation equations, while moreover not being a gauge-invariant decomposition of the 
-gauge-invariant $\alpha$. Thus given this example we in general see that one should only look for a decomposition theorem for gauge-invariant combinations and not look for one for the separate scalar, vector and tensor sectors as gauge invariance can in general intertwine them. Since it might perhaps be thought that this is an artifact of using SVT4 we now present two examples in which it occurs in SVT3. One is fluctuations around an anti de Sitter background, and the other is fluctuations around a completely general conformal to flat background.
 
-\subsubsection{Fluctuations Around an Anti de Sitter Background}
-\label{sss:fluctuations_around_ads4}
-For an anti de Sitter background in four dimensions we have
-%
-\begin{eqnarray}
-ds^2 &=& \Omega^2(z)\left[ dt^2 - dx^2-dy^2-dz^2\right]= -g_{\mu\nu}dx^{\mu} dx^{\nu},\quad
-\Omega(z) = \frac{1}{Hz},
-\nonumber\\
-R_{\lambda\mu\nu\kappa} &=& -H^2(g_{\mu\nu}g_{\lambda\kappa} -g_{\lambda\nu}g_{\mu\kappa}),
-\quad R_{\mu\kappa} =3H^2 g_{\mu\kappa},\quad R = 12H^2,
-\nonumber\\
-G_{\mu\nu} &=& -3H^2 g_{\mu\nu},\quad T_{\mu\nu} = 3H^2 g_{\mu\nu}.
-\label{14.1}
-\end{eqnarray}
-%
-We take the fluctuations to have the standard SVT3 form of
-%
-\begin{eqnarray}
-ds^2 &=&- \Omega^2(z)\left( \eta_{\mu\nu}+ f_{\mu\nu}\right) dx^\mu dx^\nu,
-\nonumber\\
-f_{00} &=& -2 \phi,\quad f_{0i} = \tilde\nabla_i B + B_i,\quad \tilde{\nabla}^iB_i=0,
-\nonumber\\
-f_{ij} &=& -2 \psi \delta_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j
-+ \tilde\nabla_i E_j + 2E_{ij},
-\nonumber\\
-\tilde{\nabla}^iE_i&=&0,\quad \tilde{\nabla}^iE_{ij}=0,\quad \delta^{ij}E_{ij}=0, 
-\label{14.2}
-\end{eqnarray}
-%
-where $\tilde{\nabla}_i$ and $\tilde{\nabla}^i=\delta^{ij}\tilde{\nabla}_j$ are defined with respect to a flat three-dimensional background $\eta_{ij}dx^idx^j=\delta_{ij}dx^idx^j$.
-
-On defining
-%
-\begin{eqnarray}
-\alpha &=& \phi +\psi+\dot B - \ddot E, \quad \delta = \phi -\psi + \dot B - \ddot E + \frac{2}{z}(\tilde\nabla_3 E + E_3),
-\label{14.3}
-\end{eqnarray}
-%
-following some algebra we find that the components of 
-\begin{eqnarray}
-\Delta_{\mu\nu}=\delta G_{\mu\nu}+\delta T_{\mu\nu}=\delta G_{\mu\nu}+ 3\Omega^2 H^2 f_{\mu\nu}
-\end{eqnarray}
-are given by 
-\begin{eqnarray}
-g^{\mu\nu}\Delta_{\mu\nu}&=& -12 H^2 \alpha - 3 H^2 z^2 \overset{..}{\alpha} + 3 H^2 z^2 \overset{..}{\delta} + 12 H^2 \delta + H^2 z^2 \tilde\nabla^{2}{}\alpha - 3 H^2 z^2 \tilde\nabla^{2}{}\delta 
-\nonumber \\ 
-&& + 6 H^2 z \tilde{\nabla}_{3}\delta +6 H^2 z (\dot{B}_3-\ddot{E}_3)+24 H^2 E_{33},
-\nonumber\\ 
-\delta^{ij}\Delta_{ij}&=& -9 z^{-2} \alpha - 3 \overset{..}{\alpha} + 3 \overset{..}{\delta} + 9 z^{-2} \delta - 2 \tilde\nabla^{2}{}\delta + z^{-1} \tilde{\nabla}_{3}\alpha + 5 z^{-1} \tilde{\nabla}_{3}\delta 
-\nonumber\\
-&&+6 z^{-1} (\dot{B}_3-\ddot{E}_3)+18 z^{-2} E_{33},
-\nonumber\\ 
-\Delta_{00}&=& 3 z^{-2} \alpha - 3 z^{-2} \delta -  \tilde\nabla^{2}{}\alpha + \tilde\nabla^{2}{}\delta + z^{-1} \tilde{\nabla}_{3}\alpha -  z^{-1} \tilde{\nabla}_{3}\delta -6 z^{-2} E_{33},
-\nonumber\\ 
-\Delta_{11}&=& -3 z^{-2} \alpha -  \overset{..}{\alpha} + \overset{..}{\delta} + 3 z^{-2} \delta -  \tilde\nabla^{2}{}\delta + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\delta + z^{-1} \tilde{\nabla}_{3}\alpha + z^{-1} \tilde{\nabla}_{3}\delta 
-\nonumber\\
-&&+2 z^{-1} (\dot{B}_3-\ddot{E}_3) + \tilde{\nabla}_{1}(\dot{B}_1-\ddot{E}_1)
-- \overset{..}{E}_{11} + 6 z^{-2} E_{33} + \tilde\nabla^{2}{}E_{11} 
-\nonumber\\
-&&+ 4 z^{-1} \tilde{\nabla}_{1}E_{13} - 2 z^{-1} \tilde{\nabla}_{3}E_{11},
-\nonumber\\ 
-\Delta_{22}&=& -3 z^{-2} \alpha -  \overset{..}{\alpha} + \overset{..}{\delta} + 3 z^{-2} \delta -  \tilde\nabla^{2}{}\delta + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\delta + z^{-1} \tilde{\nabla}_{3}\alpha + z^{-1} \tilde{\nabla}_{3}\delta 
-\nonumber\\
-&&+2 z^{-1} (\dot{B}_3-\ddot{E}_3) + \tilde{\nabla}_{2}(\dot{B}_2-\ddot{E}_2)  - \overset{..}{E}_{22}+ 6 z^{-2} E_{33} + \tilde\nabla^{2}{}E_{22} 
-\nonumber\\
-&&+ 4 z^{-1} \tilde{\nabla}_{2}E_{23} - 2 z^{-1} \tilde{\nabla}_{3}E_{22},
-\nonumber\\ 
-\Delta_{33}&=& -3 z^{-2} \alpha -  \overset{..}{\alpha} + \overset{..}{\delta} + 3 z^{-2} \delta -  \tilde\nabla^{2}{}\delta -  z^{-1} \tilde{\nabla}_{3}\alpha + 3 z^{-1} \tilde{\nabla}_{3}\delta + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\delta 
-\nonumber\\
-&&+2 z^{-1} (\dot{B}_3-\ddot{E}_3) + \tilde{\nabla}_{3}(\dot{B}_3-\ddot{E}_3)
-\nonumber \\ 
-&&  -\overset{..}{E}_{33}+ 6 z^{-2} E_{33} + \tilde\nabla^{2}{}E_{33} + 2 z^{-1} \tilde{\nabla}_{3}E_{33},
-\nonumber\\ 
-\Delta_{01}&=& - \tilde{\nabla}_{1}\dot{\alpha} + \tilde{\nabla}_{1}\dot{\delta}+\tfrac{1}{2} \tilde\nabla^{2}{}(B_1-\dot{E}_1) + z^{-1} \tilde{\nabla}_{1}(B_3-\dot{E}_3) -  z^{-1} \tilde{\nabla}_{3}(B_1-\dot{E}_1)
-\nonumber\\
-&&+2 z^{-1} \dot{E}_{13},
-\nonumber\\ 
-\Delta_{02}&=& - \tilde{\nabla}_{2}\dot{\alpha} + \tilde{\nabla}_{2}\dot{\delta}+\tfrac{1}{2} \tilde\nabla^{2}{}(B_2-\dot{E}_2) + z^{-1} \tilde{\nabla}_{2}(B_3-\dot{E}_3) -  z^{-1} \tilde{\nabla}_{3}(B_2-\dot{E}_2)
-\nonumber\\
-&&+2 z^{-1} \dot{E}_{23},
-\nonumber\\ 
-\Delta_{03}&=& - z^{-1} \dot{\alpha} + z^{-1} \dot{\delta} -  \tilde{\nabla}_{3}\dot{\alpha} + \tilde{\nabla}_{3}\dot{\delta}+\tfrac{1}{2} \tilde\nabla^{2}{}(B_3-\dot{E}_3)+2 z^{-1} \dot{E}_{33},
-\nonumber\\ 
-\Delta_{12}&=& \tilde{\nabla}_{2}\tilde{\nabla}_{1}\delta +\tfrac{1}{2} \tilde{\nabla}_{1}(\dot{B}_2-\ddot{E}_2) + \tfrac{1}{2} \tilde{\nabla}_{2}(\dot{B}_1-\ddot{E}_1)- \overset{..}{E}_{12} + \tilde\nabla^{2}{}E_{12}
-\nonumber\\
-&& + 2 z^{-1} \tilde{\nabla}_{1}E_{23} 
-+ 2 z^{-1} \tilde{\nabla}_{2}E_{13} - 2 z^{-1} \tilde{\nabla}_{3}E_{12},
-\nonumber\\ 
-\Delta_{13}&=& - z^{-1} \tilde{\nabla}_{1}\alpha + z^{-1} \tilde{\nabla}_{1}\delta + \tilde{\nabla}_{3}\tilde{\nabla}_{1}\delta +\tfrac{1}{2} \tilde{\nabla}_{1}(\dot{B}_3-\ddot{E}_3) + \tfrac{1}{2} \tilde{\nabla}_{3}(\dot{B}_1-\ddot{E}_1)
-\nonumber\\
-&&- \overset{..}{E}_{13} 
-+ \tilde\nabla^{2}{}E_{13} + 2 z^{-1} \tilde{\nabla}_{1}E_{33},
-\nonumber\\ 
-\Delta_{23}&=& - z^{-1} \tilde{\nabla}_{2}\alpha + z^{-1} \tilde{\nabla}_{2}\delta + \tilde{\nabla}_{3}\tilde{\nabla}_{2}\delta +\tfrac{1}{2} \tilde{\nabla}_{2}(\dot{B}_3-\ddot{E}_3) + \tfrac{1}{2} \tilde{\nabla}_{3}(\dot{B}_2-\ddot{E}_2)
-\nonumber\\
-&&- \overset{..}{E}_{23} 
-+ \tilde\nabla^{2}{}E_{23} + 2 z^{-1} \tilde{\nabla}_{2}E_{33},
-\label{14.4} 
-\end{eqnarray}
-%
-where $\tilde\nabla^{2} = \delta^{ab} \tilde\nabla_a\tilde\nabla_b$. With $\Delta_{\mu\nu}$ being gauge invariant we recognize $\alpha$, $\delta$, $B_i-\dot{E}_i$ and $E_{ij}$ as being gauge invariant. We thus see that one of the gauge-invariant combinations, viz. $\delta$, depends on both scalars and vectors. Since our only purpose here is in establishing that one of the gauge-invariant SVT3 combinations does depend on both scalars and vectors, we shall not seek to solve $\Delta_{\mu\nu}=0$ in this particular case. Though if we were to we would only find expressions for $\alpha$, $\delta$, $B_i-\dot{E}_i$ and $E_{ij}$, and not for the separate scalar and vector components of $\delta$.
-
-\subsubsection{Fluctuations Around a General Conformal to Flat Background}
-\label{sss:fluctuations_around_general_conformal_flat}
-
-In \cite{amarasinghe_2019} it was shown that for the arbitrary conformal to flat SVT3 fluctuations of the form
-%
-\begin{eqnarray}
-ds^2 &=&\Omega^2({\bf x},t)\bigg[(1+2\phi) dt^2 -2(\partial_i B +B_i)dt dx^i - [(1-2\psi)\delta_{ij} +2\partial_i\partial_j E 
-\nonumber\\
-&&+ \partial_i E_j + \partial_j E_i + 2E_{ij}]dx^i dx^j\bigg]
-\label{14.5}
-\end{eqnarray}
-%
-with general $\Omega({\bf x},t)$, the metric sector gauge-invariant combinations are
-%
-\begin{eqnarray}
-\alpha &=& \phi +\psi+\dot B - \ddot E, \quad \eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E),
-\nonumber\\
-&& B_i-\dot E_i,\quad E_{ij}.
-\label{14.6}
-\end{eqnarray}
-%
-Of these invariant combinations three are independent of $\Omega$ altogether and have been encountered frequently throughout this study, while only one, viz. $\eta$, actually depends on $\Omega$ at all. (For specific choices of $\Omega$ the quantity $-\Omega\dot{\Omega}^{-1}\eta$ reduces to the previously introduced $\beta$ in the de Sitter (\ref{7.3}) and to $\gamma$ in the Robertson-Walker (\ref{8.7}) and (\ref{9.2}), while $\alpha-2\eta$ reduces to the anti de Sitter $\delta$ given in (\ref{14.3}).) The invariant $\alpha$ involves scalars alone, the invariant $B_i-E_i$ involves vectors alone, the invariant $E_{ij}$  involves tensors alone, and only the invariant $\eta$ actually involves more than just one of the scalar, vector and tensor sets of modes, with it specifically involving both scalars and vectors. While $\eta$ must always involve scalars, if $\Omega$ has a spatial dependence $\eta$ will also involve the vector $E_i$. A spatial dependence for $\Omega$ is  encountered in our study of anti de Sitter fluctuations as shown in (\ref{14.3}), and is also encountered in SVT3 fluctuations around a Robertson-Walker background with $k\neq 0$,  where the background Robertson-Walker metric as shown in (\ref{13.6}) for $k<0$ (and in \cite{amarasinghe_2019} for $k>0$) is written in a conformal to flat form, with the conformal factor expressly being a function of both time and space coordinates. Thus in such cases we must expect $\Delta_{\mu\nu}$ to depend on $\eta$ itself and not be separable in separate scalar and vector sectors. While this issue is met for $k\neq 0$ Robertson-Walker fluctuations when the background metric is written in the conformal to flat form given in (\ref{13.6}), we note that it is not in fact met for fluctuations around a background Robertson-Walker geometry with metric $ds^2=\Omega^2(\tau)[d\tau^2-dr^2/(1-kr^2)-r^2d\theta^2-r^2\sin^2\theta d\phi^2]$ as given in (\ref{9.1}), since with $\Omega$ only depending on $\tau$ in that case, the gauge-invariant $\gamma = - \dot\Omega^{-1}\Omega \psi + B - \dot E$ as given in (\ref{9.12}) does not involve the vector sector modes. While one can of course transform the background metric given in (\ref{13.6}) into the background metric given in (\ref{9.1}) by a coordinate transformation with fluctuations around the two metrics thus describing the same physics, the very structure of (\ref{14.6}) shows that one cannot simply separate in scalar, vector tensor components at will. Rather one must first separate in gauge-invariant combinations, and only if these combinations turn out not to intertwine any of the scalar, vector and tensor sectors could one then separate in each of the scalar, vector and tensor sectors. Moreover, while one can find a form for the background metric in which there is no such intertwining in the $k\neq 0$ Robertson-Walker case (for $k=0$ $\Omega$ only depends on $\tau$ and so there is no intertwining), this only occurs because of the specific purely $\tau$-dependent form that  the $k\neq 0$ $\Omega$ just happens to take.  For more complicated $\Omega$ there would be no coordinate transformation that would eliminate the intertwining, and so it is of interest to study the spatially dependent $\Omega$ situation in and of itself.
-
-While we of course do not need to explicitly solve for fluctuations around a $k\neq 0$ Robertson-Walker metric when written in a conformal to flat form since in Secs. \ref{ss:general_rw_svt3}, \ref{ss:rw_k=-1_svt3}, and \ref{ss:recovering_decomposition_theorem} we already have solved for fluctuations around the same geometry when written in the general coordinate equivalent form given in (\ref{9.1}), it is nonetheless of interest to explore the structure of fluctuations around the conformal to flat form for a $k\neq 0$ Robertson-Walker geometry. In particular it is of interest to show that the $\eta$ invariant given in (\ref{14.6}) actually behaves quite differently from all the other invariants.   In (\ref{9.43a}) to (\ref{9.47a}) we had obtained some kinematic relations (i.e., relations that do not involve the evolution equations) that express the gauge-invariant combinations in terms of the  $f_{\mu\nu}$ components of the fluctuation metric. Inspection of these relations and of (\ref{9.12}) shows there is  only one, viz. that for the relevant $\eta$ in that case, that depends on $\Omega$. Now the relations given  in (\ref{9.43a}) to (\ref{9.47a}) were derived for fluctuations around the (\ref{9.1}) metric. If we now set $k=0$ in these relations so that the $\tilde{\nabla}$ derivative now refers to flat spacetime, we would anticipate that for fluctuations around (\ref{13.6}) the relations for the gauge-invariant combinations that do not involve $\Omega$ might be replaced by 
-
-%
-\begin{align}
-\tilde{\nabla}^b\tilde{\nabla}_b\tilde{\nabla}^a\tilde{\nabla}_a\alpha&=-\frac{1}{2}\tilde{\nabla}^b\tilde{\nabla}_b\tilde{\nabla}^i\tilde{\nabla}_if_{00}
-+\frac{1}{4}\tilde{\nabla}^a\tilde{\nabla}_a\left(-\tilde{\nabla}^b\tilde{\nabla}_bf+\tilde{\nabla}^m\tilde{\nabla}^nf_{mn}\right)
-\nonumber\\
-&
-+\partial_0\tilde{\nabla}^b\tilde{\nabla}_b\tilde{\nabla}^if_{0i}
--\frac{1}{4}\partial^2_0\left(3\tilde{\nabla}^m\tilde{\nabla}^nf_{mn}-\tilde{\nabla}^a\tilde{\nabla}_af\right),
-\label{14.7}
-\end{align}
-%
-%
-\begin{align}
-\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^i\tilde{\nabla}_i(B_j-\dot{E_j})&=\tilde{\nabla}^i\tilde{\nabla}_i (\tilde{\nabla}^a\tilde{\nabla}_af_{0j}-\tilde{\nabla}_j\tilde{\nabla}^af_{0a})
--\partial_0\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^if_{ij}
-\nonumber\\
-&
-+\partial_0\tilde{\nabla}_j\tilde{\nabla}^a\tilde{\nabla}^bf_{ab},
-\label{14.8}
-\end{align}
-%
-%
-\begin{align}
-2\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^b\tilde{\nabla}_bE_{ij}
-&=\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^b\tilde{\nabla}_bf_{ij}
-+\tfrac{1}{2}\tilde{\nabla}_i\tilde{\nabla}_j\left[\tilde{\nabla}^a\tilde{\nabla}^bf_{ab}+\tilde{\nabla}^a\tilde{\nabla}_af\right]
-\nonumber\\
-&-\tilde{\nabla}^a\tilde{\nabla}_a(\tilde{\nabla}_i\tilde{\nabla}^bf_{jb}+\tilde{\nabla}_j\tilde{\nabla}^bf_{ib})
-\nonumber\\
-&
-+\tfrac{1}{2}\tilde{\gamma}_{ij}\left[\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^b\tilde{\nabla}^cf_{bc}
--\tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^bf\right],
-\label{14.9}
-\end{align}
-%
-(where $f=\delta^{ab}f_{ab}$), with $\alpha$ still being given by (\ref{14.6}). Explicit calculation shows that this anticipation is actually borne out, with (\ref{14.7}), (\ref{14.8}) and (\ref{14.9}) being found to hold for the fluctuations given in (\ref{14.5}), no matter how arbitrary $\Omega$ might be. 
-
-Now in our discussion of the fluctuations associated with the conformal gravity $\delta W_{\mu\nu}$ we had obtained the relations given in (\ref{13.10}) and their inversion as given in (\ref{13.13}), (\ref{13.14}) and (\ref{13.15}). We now note that these relations involve the same gauge-invariant combinations as the ones that appear in (\ref{14.7}), (\ref{14.8}) and (\ref{14.9}), viz. $\alpha$, $B_i-\dot{E_i}$ and $E_{ij}$, with $\eta$ not appearing. That $\eta$ could not appear in $\delta W_{\mu\nu}$ is because $W_{\mu\nu}$ is traceless so that on allowing for four coordinate transformations $\delta W_{\mu\nu}$ can only involve five quantities (a one-component $\alpha$, a two-component $B_i-\dot{E}_i$, and a two-component $E_{ij}$). In this sense then we should think of $\alpha$, $B_i-\dot{E_i}$ and $E_{ij}$ as a unit, with $\eta$ needing to be treated independently.
-
-Since $W_{\mu\nu}$ is zero in a conformal to flat background, it is associated with a background $T_{\mu\nu}$ that is zero, with $\delta W_{\mu\nu}$ then being gauge invariant on its own as $\delta T^{\mu\nu}$ is then zero. Thus to determine a gauge-invariant relation that does involve $\eta$ we should look for a purely geometric gauge-invariant fluctuation relation that does not involve $\delta T_{\mu\nu}$. However, none is immediately available as we have already used up $\delta W_{\mu\nu}$, and in general a fluctuation such as $\delta G_{\mu\nu}$ would not be gauge invariant on its own. However, there is one situation in which not $\delta G_{\mu\nu}$ but  $\delta(g^{\mu\nu}G_{\mu\nu})$ is gauge invariant on its own, namely in the radiation era where $T_{\mu\nu}$, and thus $G_{\mu\nu}$, are traceless, with $\delta (g^{\mu\nu}T_{\mu\nu})$ then being zero, and with the quantity $\delta(g^{\mu\nu}G_{\mu\nu})$ then being gauge invariant on its own.
-
-Thus in a radiation era conformal to flat $k\neq 0$ Robertson-Walker background case as given by (\ref{14.5}) we evaluate 
-%
-\begin{eqnarray}
-g^{\mu\nu}G_{\mu\nu}=6\ddot{\Omega}\Omega^{-3}-6\Omega^{-3}\tilde{\nabla}_a\tilde{\nabla}^a\Omega=0,
-\label{14.10}
-\end{eqnarray}
-%
-and on setting $\ddot{\Omega}=\tilde{\nabla}_a\tilde{\nabla}^a\Omega$ obtain 
-%
-\begin{eqnarray}
-\delta(g^{\mu\nu} G_{\mu\nu})&=& -6 \dot{\alpha} \dot{\Omega} \Omega^{-3} - 12 \dot{\eta} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \alpha \Omega^{-3} - 6 \overset{..}{\eta} \Omega^{-2} - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha 
-\nonumber\\
-&&+ 6 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\eta  - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\alpha
- + 12 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\eta
-\\
- && -12 (B^{a}-\dot{E}^a) \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} - 6 (\dot{B}^{a}-\ddot{E}^a) \Omega^{-3} \tilde{\nabla}_{a}\Omega +12 E^{ab} \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega,
- \nonumber
-\label{14.11}
-\end{eqnarray}
-%
-where $\alpha$, $B_i-\dot{E}_i$ and $E_{ij}$ are as before, with $\eta$ now being given by the form given in (\ref{14.6}). We thus establish that in the conformal to flat case the appropriate $\eta$ is indeed given by the spatially-dependent $\eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E)$, just as required.
-
-\subsubsection{Taking Advantage of the Gauge Freedom}
-\label{sss:taking_advantage_gauge_freedom}
-
-In \cite{amarasinghe_2019} infinitesimal gauge transformations of the form 
-%
-\begin{eqnarray}
-\bar{h}_{\mu\nu}=h_{\mu\nu}-\nabla _{\mu}\epsilon_{\nu}-\nabla _{\nu}\epsilon_{\mu}
-\label{14.12}
-\end{eqnarray}
-% 
-acting on the conformal to flat (\ref{14.5}) with arbitrary $\Omega$ were considered. On introducing gauge parameters
-%
-\begin{eqnarray}
-\epsilon_{\mu}=\Omega^2(x)f_{\mu},\quad f_{0}=-T,\quad f_i=L_i+\tilde{\nabla}_iL,\quad \delta^{ij}\tilde{\nabla}_jL_i=\tilde{\nabla}^iL_i=0,
-\label{14.13}
-\end{eqnarray}
-%
-the following transformation relations were found
-%
-\begin{eqnarray}
-\bar{\phi}&=&\phi-\dot{T}-\Omega^{-1}[T\partial_0+(L_i+\tilde{\nabla}_iL)\delta^{ij}\partial_j]\Omega,\quad \bar{B}=B+T-\dot{L},
-\nonumber\\
- \bar{\psi}&=&\psi+\Omega^{-1}[T\partial_0+(L_i+\tilde{\nabla}_iL)\delta^{ij}\partial_j]\Omega,
-\nonumber\\
-\bar{E}&=&E-L,\quad \bar{B}_i=B_i-\dot{L}_i,\quad \bar{E}_i=E_i-L_i, \quad \bar{E}_{ij}=E_{ij},
-\label{14.14}
-\end{eqnarray}
-%
-with the elimination of the gauge parameters leading directly to the gauge-invariant combinations shown in (\ref{14.6}). We now specialize to a particular gauge, and pick the gauge parameters so that 
-%
-\begin{eqnarray}
-L_i=E_i,\quad L=E, \quad B+T-\dot{L}=0.
-\label{14.15}
-\end{eqnarray}
-%
-With this choice (\ref{14.6}) simplifies to
-%
-\begin{eqnarray}
-\alpha &=& \phi +\psi, \quad \eta=\psi ,\quad B_i,\quad E_{ij},
-\label{14.16}
-\end{eqnarray}
-%
-and now $\eta$ only depends on scalars. The combinations given in (\ref{14.16}) constitute the longitudinal or conformal-Newtonian gauge, a gauge that is often considered in cosmological perturbation theory (see e.g. \cite{mukhanov_1992, bertschinger_2000}). We thus see that using the gauge freedom one can find gauges in which there is no intertwining of scalars and vectors, so that for them a decomposition theorem in the separate scalar, vector and tensor sectors is achievable.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SVT4}
@@ -3385,3 +3191,244 @@ where the derivatives and the transverse and tracelessness  $\partial^{\mu}F_{\m
 \end{eqnarray} 
 %
 This expression is remarkable not just in its simplicity but in the fact that all components of $F_{\mu\nu}$ are completely decoupled from each other, with (\ref{13.20}) being diagonal in the $\mu,\nu$ indices. Since (\ref{13.20}) only contains $F_{\mu\nu}$ with none of $\chi$, $F$ or $F_{\mu}$ appearing  in it, unlike in the Einstein gravity SVT4 case where one needs initial conditions to establish the decomposition theorem, in the conformal gravity SVT4 case the decomposition theorem is automatic.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge Invariants, SVT Mixing, and the Decomposition Theorem}
+\label{s:gauge_invariants_decomp_theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In the SVT4 study of fluctuations around a de Sitter background that we presented in Sec. \ref{ss:ds4_svt4} we had found that one of the gauge-invariant combinations was given by $\alpha=\dot{F}+\tau \chi +F_0$ (see (\ref{6.54})). In this combination $F$ and $\chi$ are scalars while $F_0$ is the fourth component of the vector $F_{\mu}$. In solving the fluctuation equations in this case we actually solved for the gauge-invariant combinations and not for the individual scalar, vector and tensor sectors. In the solution we found that $\alpha=0$ thus would entail only that  $\dot{F}+\tau \chi =-F_0$. However, decomposition with respect to scalars, vectors and tensors would in addition entail that $\dot{F}+\tau \chi=0$, and $F_0=0$, something that would not be warranted as it is not required by the fluctuation equations, while moreover not being a gauge-invariant decomposition of the 
+gauge-invariant $\alpha$. Thus given this example we in general see that one should only look for a decomposition theorem for gauge-invariant combinations and not look for one for the separate scalar, vector and tensor sectors as gauge invariance can in general intertwine them. Since it might perhaps be thought that this is an artifact of using SVT4 we now present two examples in which it occurs in SVT3. One is fluctuations around an anti de Sitter background, and the other is fluctuations around a completely general conformal to flat background.
+
+\subsection{SVT3 Fluctuations Around an Anti de Sitter Background}
+\label{ss:fluctuations_around_ads4}
+For an anti de Sitter background in four dimensions we have
+%
+\begin{eqnarray}
+ds^2 &=& \Omega^2(z)\left[ dt^2 - dx^2-dy^2-dz^2\right]= -g_{\mu\nu}dx^{\mu} dx^{\nu},\quad
+\Omega(z) = \frac{1}{Hz},
+\nonumber\\
+R_{\lambda\mu\nu\kappa} &=& -H^2(g_{\mu\nu}g_{\lambda\kappa} -g_{\lambda\nu}g_{\mu\kappa}),
+\quad R_{\mu\kappa} =3H^2 g_{\mu\kappa},\quad R = 12H^2,
+\nonumber\\
+G_{\mu\nu} &=& -3H^2 g_{\mu\nu},\quad T_{\mu\nu} = 3H^2 g_{\mu\nu}.
+\label{14.1}
+\end{eqnarray}
+%
+We take the fluctuations to have the standard SVT3 form of
+%
+\begin{eqnarray}
+ds^2 &=&- \Omega^2(z)\left( \eta_{\mu\nu}+ f_{\mu\nu}\right) dx^\mu dx^\nu,
+\nonumber\\
+f_{00} &=& -2 \phi,\quad f_{0i} = \tilde\nabla_i B + B_i,\quad \tilde{\nabla}^iB_i=0,
+\nonumber\\
+f_{ij} &=& -2 \psi \delta_{ij} + 2\tilde\nabla_i\tilde\nabla_j E + \tilde\nabla_i E_j
++ \tilde\nabla_i E_j + 2E_{ij},
+\nonumber\\
+\tilde{\nabla}^iE_i&=&0,\quad \tilde{\nabla}^iE_{ij}=0,\quad \delta^{ij}E_{ij}=0, 
+\label{14.2}
+\end{eqnarray}
+%
+where $\tilde{\nabla}_i$ and $\tilde{\nabla}^i=\delta^{ij}\tilde{\nabla}_j$ are defined with respect to a flat three-dimensional background $\eta_{ij}dx^idx^j=\delta_{ij}dx^idx^j$.
+
+On defining
+%
+\begin{eqnarray}
+\alpha &=& \phi +\psi+\dot B - \ddot E, \quad \delta = \phi -\psi + \dot B - \ddot E + \frac{2}{z}(\tilde\nabla_3 E + E_3),
+\label{14.3}
+\end{eqnarray}
+%
+following some algebra we find that the components of 
+\begin{eqnarray}
+\Delta_{\mu\nu}=\delta G_{\mu\nu}+\delta T_{\mu\nu}=\delta G_{\mu\nu}+ 3\Omega^2 H^2 f_{\mu\nu}
+\end{eqnarray}
+are given by 
+\begin{eqnarray}
+g^{\mu\nu}\Delta_{\mu\nu}&=& -12 H^2 \alpha - 3 H^2 z^2 \overset{..}{\alpha} + 3 H^2 z^2 \overset{..}{\delta} + 12 H^2 \delta + H^2 z^2 \tilde\nabla^{2}{}\alpha - 3 H^2 z^2 \tilde\nabla^{2}{}\delta 
+\nonumber \\ 
+&& + 6 H^2 z \tilde{\nabla}_{3}\delta +6 H^2 z (\dot{B}_3-\ddot{E}_3)+24 H^2 E_{33},
+\nonumber\\ 
+\delta^{ij}\Delta_{ij}&=& -9 z^{-2} \alpha - 3 \overset{..}{\alpha} + 3 \overset{..}{\delta} + 9 z^{-2} \delta - 2 \tilde\nabla^{2}{}\delta + z^{-1} \tilde{\nabla}_{3}\alpha + 5 z^{-1} \tilde{\nabla}_{3}\delta 
+\nonumber\\
+&&+6 z^{-1} (\dot{B}_3-\ddot{E}_3)+18 z^{-2} E_{33},
+\nonumber\\ 
+\Delta_{00}&=& 3 z^{-2} \alpha - 3 z^{-2} \delta -  \tilde\nabla^{2}{}\alpha + \tilde\nabla^{2}{}\delta + z^{-1} \tilde{\nabla}_{3}\alpha -  z^{-1} \tilde{\nabla}_{3}\delta -6 z^{-2} E_{33},
+\nonumber\\ 
+\Delta_{11}&=& -3 z^{-2} \alpha -  \overset{..}{\alpha} + \overset{..}{\delta} + 3 z^{-2} \delta -  \tilde\nabla^{2}{}\delta + \tilde{\nabla}_{1}\tilde{\nabla}_{1}\delta + z^{-1} \tilde{\nabla}_{3}\alpha + z^{-1} \tilde{\nabla}_{3}\delta 
+\nonumber\\
+&&+2 z^{-1} (\dot{B}_3-\ddot{E}_3) + \tilde{\nabla}_{1}(\dot{B}_1-\ddot{E}_1)
+- \overset{..}{E}_{11} + 6 z^{-2} E_{33} + \tilde\nabla^{2}{}E_{11} 
+\nonumber\\
+&&+ 4 z^{-1} \tilde{\nabla}_{1}E_{13} - 2 z^{-1} \tilde{\nabla}_{3}E_{11},
+\nonumber\\ 
+\Delta_{22}&=& -3 z^{-2} \alpha -  \overset{..}{\alpha} + \overset{..}{\delta} + 3 z^{-2} \delta -  \tilde\nabla^{2}{}\delta + \tilde{\nabla}_{2}\tilde{\nabla}_{2}\delta + z^{-1} \tilde{\nabla}_{3}\alpha + z^{-1} \tilde{\nabla}_{3}\delta 
+\nonumber\\
+&&+2 z^{-1} (\dot{B}_3-\ddot{E}_3) + \tilde{\nabla}_{2}(\dot{B}_2-\ddot{E}_2)  - \overset{..}{E}_{22}+ 6 z^{-2} E_{33} + \tilde\nabla^{2}{}E_{22} 
+\nonumber\\
+&&+ 4 z^{-1} \tilde{\nabla}_{2}E_{23} - 2 z^{-1} \tilde{\nabla}_{3}E_{22},
+\nonumber\\ 
+\Delta_{33}&=& -3 z^{-2} \alpha -  \overset{..}{\alpha} + \overset{..}{\delta} + 3 z^{-2} \delta -  \tilde\nabla^{2}{}\delta -  z^{-1} \tilde{\nabla}_{3}\alpha + 3 z^{-1} \tilde{\nabla}_{3}\delta + \tilde{\nabla}_{3}\tilde{\nabla}_{3}\delta 
+\nonumber\\
+&&+2 z^{-1} (\dot{B}_3-\ddot{E}_3) + \tilde{\nabla}_{3}(\dot{B}_3-\ddot{E}_3)
+\nonumber \\ 
+&&  -\overset{..}{E}_{33}+ 6 z^{-2} E_{33} + \tilde\nabla^{2}{}E_{33} + 2 z^{-1} \tilde{\nabla}_{3}E_{33},
+\nonumber\\ 
+\Delta_{01}&=& - \tilde{\nabla}_{1}\dot{\alpha} + \tilde{\nabla}_{1}\dot{\delta}+\tfrac{1}{2} \tilde\nabla^{2}{}(B_1-\dot{E}_1) + z^{-1} \tilde{\nabla}_{1}(B_3-\dot{E}_3) -  z^{-1} \tilde{\nabla}_{3}(B_1-\dot{E}_1)
+\nonumber\\
+&&+2 z^{-1} \dot{E}_{13},
+\nonumber\\ 
+\Delta_{02}&=& - \tilde{\nabla}_{2}\dot{\alpha} + \tilde{\nabla}_{2}\dot{\delta}+\tfrac{1}{2} \tilde\nabla^{2}{}(B_2-\dot{E}_2) + z^{-1} \tilde{\nabla}_{2}(B_3-\dot{E}_3) -  z^{-1} \tilde{\nabla}_{3}(B_2-\dot{E}_2)
+\nonumber\\
+&&+2 z^{-1} \dot{E}_{23},
+\nonumber\\ 
+\Delta_{03}&=& - z^{-1} \dot{\alpha} + z^{-1} \dot{\delta} -  \tilde{\nabla}_{3}\dot{\alpha} + \tilde{\nabla}_{3}\dot{\delta}+\tfrac{1}{2} \tilde\nabla^{2}{}(B_3-\dot{E}_3)+2 z^{-1} \dot{E}_{33},
+\nonumber\\ 
+\Delta_{12}&=& \tilde{\nabla}_{2}\tilde{\nabla}_{1}\delta +\tfrac{1}{2} \tilde{\nabla}_{1}(\dot{B}_2-\ddot{E}_2) + \tfrac{1}{2} \tilde{\nabla}_{2}(\dot{B}_1-\ddot{E}_1)- \overset{..}{E}_{12} + \tilde\nabla^{2}{}E_{12}
+\nonumber\\
+&& + 2 z^{-1} \tilde{\nabla}_{1}E_{23} 
++ 2 z^{-1} \tilde{\nabla}_{2}E_{13} - 2 z^{-1} \tilde{\nabla}_{3}E_{12},
+\nonumber\\ 
+\Delta_{13}&=& - z^{-1} \tilde{\nabla}_{1}\alpha + z^{-1} \tilde{\nabla}_{1}\delta + \tilde{\nabla}_{3}\tilde{\nabla}_{1}\delta +\tfrac{1}{2} \tilde{\nabla}_{1}(\dot{B}_3-\ddot{E}_3) + \tfrac{1}{2} \tilde{\nabla}_{3}(\dot{B}_1-\ddot{E}_1)
+\nonumber\\
+&&- \overset{..}{E}_{13} 
++ \tilde\nabla^{2}{}E_{13} + 2 z^{-1} \tilde{\nabla}_{1}E_{33},
+\nonumber\\ 
+\Delta_{23}&=& - z^{-1} \tilde{\nabla}_{2}\alpha + z^{-1} \tilde{\nabla}_{2}\delta + \tilde{\nabla}_{3}\tilde{\nabla}_{2}\delta +\tfrac{1}{2} \tilde{\nabla}_{2}(\dot{B}_3-\ddot{E}_3) + \tfrac{1}{2} \tilde{\nabla}_{3}(\dot{B}_2-\ddot{E}_2)
+\nonumber\\
+&&- \overset{..}{E}_{23} 
++ \tilde\nabla^{2}{}E_{23} + 2 z^{-1} \tilde{\nabla}_{2}E_{33},
+\label{14.4} 
+\end{eqnarray}
+%
+where $\tilde\nabla^{2} = \delta^{ab} \tilde\nabla_a\tilde\nabla_b$. With $\Delta_{\mu\nu}$ being gauge invariant we recognize $\alpha$, $\delta$, $B_i-\dot{E}_i$ and $E_{ij}$ as being gauge invariant. We thus see that one of the gauge-invariant combinations, viz. $\delta$, depends on both scalars and vectors. Since our only purpose here is in establishing that one of the gauge-invariant SVT3 combinations does depend on both scalars and vectors, we shall not seek to solve $\Delta_{\mu\nu}=0$ in this particular case. Though if we were to we would only find expressions for $\alpha$, $\delta$, $B_i-\dot{E}_i$ and $E_{ij}$, and not for the separate scalar and vector components of $\delta$.
+
+\subsection{SVT3 Fluctuations Around a General Conformal to Flat Background}
+\label{ss:fluctuations_around_general_conformal_flat}
+
+In \cite{amarasinghe_2019} it was shown that for the arbitrary conformal to flat SVT3 fluctuations of the form
+%
+\begin{eqnarray}
+ds^2 &=&\Omega^2({\bf x},t)\bigg[(1+2\phi) dt^2 -2(\partial_i B +B_i)dt dx^i - [(1-2\psi)\delta_{ij} +2\partial_i\partial_j E 
+\nonumber\\
+&&+ \partial_i E_j + \partial_j E_i + 2E_{ij}]dx^i dx^j\bigg]
+\label{14.5}
+\end{eqnarray}
+%
+with general $\Omega({\bf x},t)$, the metric sector gauge-invariant combinations are
+%
+\begin{eqnarray}
+\alpha &=& \phi +\psi+\dot B - \ddot E, \quad \eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E),
+\nonumber\\
+&& B_i-\dot E_i,\quad E_{ij}.
+\label{14.6}
+\end{eqnarray}
+%
+Of these invariant combinations three are independent of $\Omega$ altogether and have been encountered frequently throughout this study, while only one, viz. $\eta$, actually depends on $\Omega$ at all. (For specific choices of $\Omega$ the quantity $-\Omega\dot{\Omega}^{-1}\eta$ reduces to the previously introduced $\beta$ in the de Sitter (\ref{7.3}) and to $\gamma$ in the Robertson-Walker (\ref{8.7}) and (\ref{9.2}), while $\alpha-2\eta$ reduces to the anti de Sitter $\delta$ given in (\ref{14.3}).) The invariant $\alpha$ involves scalars alone, the invariant $B_i-E_i$ involves vectors alone, the invariant $E_{ij}$  involves tensors alone, and only the invariant $\eta$ actually involves more than just one of the scalar, vector and tensor sets of modes, with it specifically involving both scalars and vectors. While $\eta$ must always involve scalars, if $\Omega$ has a spatial dependence $\eta$ will also involve the vector $E_i$. A spatial dependence for $\Omega$ is  encountered in our study of anti de Sitter fluctuations as shown in (\ref{14.3}), and is also encountered in SVT3 fluctuations around a Robertson-Walker background with $k\neq 0$,  where the background Robertson-Walker metric as shown in (\ref{13.6}) for $k<0$ (and in \cite{amarasinghe_2019} for $k>0$) is written in a conformal to flat form, with the conformal factor expressly being a function of both time and space coordinates. Thus in such cases we must expect $\Delta_{\mu\nu}$ to depend on $\eta$ itself and not be separable in separate scalar and vector sectors. While this issue is met for $k\neq 0$ Robertson-Walker fluctuations when the background metric is written in the conformal to flat form given in (\ref{13.6}), we note that it is not in fact met for fluctuations around a background Robertson-Walker geometry with metric $ds^2=\Omega^2(\tau)[d\tau^2-dr^2/(1-kr^2)-r^2d\theta^2-r^2\sin^2\theta d\phi^2]$ as given in (\ref{9.1}), since with $\Omega$ only depending on $\tau$ in that case, the gauge-invariant $\gamma = - \dot\Omega^{-1}\Omega \psi + B - \dot E$ as given in (\ref{9.12}) does not involve the vector sector modes. While one can of course transform the background metric given in (\ref{13.6}) into the background metric given in (\ref{9.1}) by a coordinate transformation with fluctuations around the two metrics thus describing the same physics, the very structure of (\ref{14.6}) shows that one cannot simply separate in scalar, vector tensor components at will. Rather one must first separate in gauge-invariant combinations, and only if these combinations turn out not to intertwine any of the scalar, vector and tensor sectors could one then separate in each of the scalar, vector and tensor sectors. Moreover, while one can find a form for the background metric in which there is no such intertwining in the $k\neq 0$ Robertson-Walker case (for $k=0$ $\Omega$ only depends on $\tau$ and so there is no intertwining), this only occurs because of the specific purely $\tau$-dependent form that  the $k\neq 0$ $\Omega$ just happens to take.  For more complicated $\Omega$ there would be no coordinate transformation that would eliminate the intertwining, and so it is of interest to study the spatially dependent $\Omega$ situation in and of itself.
+
+While we of course do not need to explicitly solve for fluctuations around a $k\neq 0$ Robertson-Walker metric when written in a conformal to flat form since in Secs. \ref{ss:general_rw_svt3}, \ref{ss:rw_k=-1_svt3}, and \ref{ss:recovering_decomposition_theorem} we already have solved for fluctuations around the same geometry when written in the general coordinate equivalent form given in (\ref{9.1}), it is nonetheless of interest to explore the structure of fluctuations around the conformal to flat form for a $k\neq 0$ Robertson-Walker geometry. In particular it is of interest to show that the $\eta$ invariant given in (\ref{14.6}) actually behaves quite differently from all the other invariants.   In (\ref{9.43a}) to (\ref{9.47a}) we had obtained some kinematic relations (i.e., relations that do not involve the evolution equations) that express the gauge-invariant combinations in terms of the  $f_{\mu\nu}$ components of the fluctuation metric. Inspection of these relations and of (\ref{9.12}) shows there is  only one, viz. that for the relevant $\eta$ in that case, that depends on $\Omega$. Now the relations given  in (\ref{9.43a}) to (\ref{9.47a}) were derived for fluctuations around the (\ref{9.1}) metric. If we now set $k=0$ in these relations so that the $\tilde{\nabla}$ derivative now refers to flat spacetime, we would anticipate that for fluctuations around (\ref{13.6}) the relations for the gauge-invariant combinations that do not involve $\Omega$ might be replaced by 
+
+%
+\begin{align}
+\tilde{\nabla}^b\tilde{\nabla}_b\tilde{\nabla}^a\tilde{\nabla}_a\alpha&=-\frac{1}{2}\tilde{\nabla}^b\tilde{\nabla}_b\tilde{\nabla}^i\tilde{\nabla}_if_{00}
++\frac{1}{4}\tilde{\nabla}^a\tilde{\nabla}_a\left(-\tilde{\nabla}^b\tilde{\nabla}_bf+\tilde{\nabla}^m\tilde{\nabla}^nf_{mn}\right)
+\nonumber\\
+&
++\partial_0\tilde{\nabla}^b\tilde{\nabla}_b\tilde{\nabla}^if_{0i}
+-\frac{1}{4}\partial^2_0\left(3\tilde{\nabla}^m\tilde{\nabla}^nf_{mn}-\tilde{\nabla}^a\tilde{\nabla}_af\right),
+\label{14.7}
+\end{align}
+%
+%
+\begin{align}
+\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^i\tilde{\nabla}_i(B_j-\dot{E_j})&=\tilde{\nabla}^i\tilde{\nabla}_i (\tilde{\nabla}^a\tilde{\nabla}_af_{0j}-\tilde{\nabla}_j\tilde{\nabla}^af_{0a})
+-\partial_0\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^if_{ij}
+\nonumber\\
+&
++\partial_0\tilde{\nabla}_j\tilde{\nabla}^a\tilde{\nabla}^bf_{ab},
+\label{14.8}
+\end{align}
+%
+%
+\begin{align}
+2\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^b\tilde{\nabla}_bE_{ij}
+&=\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^b\tilde{\nabla}_bf_{ij}
++\tfrac{1}{2}\tilde{\nabla}_i\tilde{\nabla}_j\left[\tilde{\nabla}^a\tilde{\nabla}^bf_{ab}+\tilde{\nabla}^a\tilde{\nabla}_af\right]
+\nonumber\\
+&-\tilde{\nabla}^a\tilde{\nabla}_a(\tilde{\nabla}_i\tilde{\nabla}^bf_{jb}+\tilde{\nabla}_j\tilde{\nabla}^bf_{ib})
+\nonumber\\
+&
++\tfrac{1}{2}\tilde{\gamma}_{ij}\left[\tilde{\nabla}^a\tilde{\nabla}_a\tilde{\nabla}^b\tilde{\nabla}^cf_{bc}
+-\tilde{\nabla}_a\tilde{\nabla}^a\tilde{\nabla}_b\tilde{\nabla}^bf\right],
+\label{14.9}
+\end{align}
+%
+(where $f=\delta^{ab}f_{ab}$), with $\alpha$ still being given by (\ref{14.6}). Explicit calculation shows that this anticipation is actually borne out, with (\ref{14.7}), (\ref{14.8}) and (\ref{14.9}) being found to hold for the fluctuations given in (\ref{14.5}), no matter how arbitrary $\Omega$ might be. 
+
+Now in our discussion of the fluctuations associated with the conformal gravity $\delta W_{\mu\nu}$ we had obtained the relations given in (\ref{13.10}) and their inversion as given in (\ref{13.13}), (\ref{13.14}) and (\ref{13.15}). We now note that these relations involve the same gauge-invariant combinations as the ones that appear in (\ref{14.7}), (\ref{14.8}) and (\ref{14.9}), viz. $\alpha$, $B_i-\dot{E_i}$ and $E_{ij}$, with $\eta$ not appearing. That $\eta$ could not appear in $\delta W_{\mu\nu}$ is because $W_{\mu\nu}$ is traceless so that on allowing for four coordinate transformations $\delta W_{\mu\nu}$ can only involve five quantities (a one-component $\alpha$, a two-component $B_i-\dot{E}_i$, and a two-component $E_{ij}$). In this sense then we should think of $\alpha$, $B_i-\dot{E_i}$ and $E_{ij}$ as a unit, with $\eta$ needing to be treated independently.
+
+Since $W_{\mu\nu}$ is zero in a conformal to flat background, it is associated with a background $T_{\mu\nu}$ that is zero, with $\delta W_{\mu\nu}$ then being gauge invariant on its own as $\delta T^{\mu\nu}$ is then zero. Thus to determine a gauge-invariant relation that does involve $\eta$ we should look for a purely geometric gauge-invariant fluctuation relation that does not involve $\delta T_{\mu\nu}$. However, none is immediately available as we have already used up $\delta W_{\mu\nu}$, and in general a fluctuation such as $\delta G_{\mu\nu}$ would not be gauge invariant on its own. However, there is one situation in which not $\delta G_{\mu\nu}$ but  $\delta(g^{\mu\nu}G_{\mu\nu})$ is gauge invariant on its own, namely in the radiation era where $T_{\mu\nu}$, and thus $G_{\mu\nu}$, are traceless, with $\delta (g^{\mu\nu}T_{\mu\nu})$ then being zero, and with the quantity $\delta(g^{\mu\nu}G_{\mu\nu})$ then being gauge invariant on its own.
+
+Thus in a radiation era conformal to flat $k\neq 0$ Robertson-Walker background case as given by (\ref{14.5}) we evaluate 
+%
+\begin{eqnarray}
+g^{\mu\nu}G_{\mu\nu}=6\ddot{\Omega}\Omega^{-3}-6\Omega^{-3}\tilde{\nabla}_a\tilde{\nabla}^a\Omega=0,
+\label{14.10}
+\end{eqnarray}
+%
+and on setting $\ddot{\Omega}=\tilde{\nabla}_a\tilde{\nabla}^a\Omega$ obtain 
+%
+\begin{eqnarray}
+\delta(g^{\mu\nu} G_{\mu\nu})&=& -6 \dot{\alpha} \dot{\Omega} \Omega^{-3} - 12 \dot{\eta} \dot{\Omega} \Omega^{-3} - 12 \overset{..}{\Omega} \alpha \Omega^{-3} - 6 \overset{..}{\eta} \Omega^{-2} - 2 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha 
+\nonumber\\
+&&+ 6 \Omega^{-2} \tilde{\nabla}_{a}\tilde{\nabla}^{a}\eta  - 6 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\alpha
++ 12 \Omega^{-3} \tilde{\nabla}_{a}\Omega \tilde{\nabla}^{a}\eta
+\\
+&& -12 (B^{a}-\dot{E}^a) \Omega^{-3} \tilde{\nabla}_{a}\dot{\Omega} - 6 (\dot{B}^{a}-\ddot{E}^a) \Omega^{-3} \tilde{\nabla}_{a}\Omega +12 E^{ab} \Omega^{-3} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega,
+\nonumber
+\label{14.11}
+\end{eqnarray}
+%
+where $\alpha$, $B_i-\dot{E}_i$ and $E_{ij}$ are as before, with $\eta$ now being given by the form given in (\ref{14.6}). We thus establish that in the conformal to flat case the appropriate $\eta$ is indeed given by the spatially-dependent $\eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E)$, just as required.
+
+\subsection{Imposition of SVT Gauge Conditions}
+\label{ss:taking_advantage_gauge_freedom}
+
+In \cite{amarasinghe_2019} infinitesimal gauge transformations of the form 
+%
+\begin{eqnarray}
+\bar{h}_{\mu\nu}=h_{\mu\nu}-\nabla _{\mu}\epsilon_{\nu}-\nabla _{\nu}\epsilon_{\mu}
+\label{14.12}
+\end{eqnarray}
+% 
+acting on the conformal to flat (\ref{14.5}) with arbitrary $\Omega$ were considered. On introducing gauge parameters
+%
+\begin{eqnarray}
+\epsilon_{\mu}=\Omega^2(x)f_{\mu},\quad f_{0}=-T,\quad f_i=L_i+\tilde{\nabla}_iL,\quad \delta^{ij}\tilde{\nabla}_jL_i=\tilde{\nabla}^iL_i=0,
+\label{14.13}
+\end{eqnarray}
+%
+the following transformation relations were found
+%
+\begin{eqnarray}
+\bar{\phi}&=&\phi-\dot{T}-\Omega^{-1}[T\partial_0+(L_i+\tilde{\nabla}_iL)\delta^{ij}\partial_j]\Omega,\quad \bar{B}=B+T-\dot{L},
+\nonumber\\
+\bar{\psi}&=&\psi+\Omega^{-1}[T\partial_0+(L_i+\tilde{\nabla}_iL)\delta^{ij}\partial_j]\Omega,
+\nonumber\\
+\bar{E}&=&E-L,\quad \bar{B}_i=B_i-\dot{L}_i,\quad \bar{E}_i=E_i-L_i, \quad \bar{E}_{ij}=E_{ij},
+\label{14.14}
+\end{eqnarray}
+%
+with the elimination of the gauge parameters leading directly to the gauge-invariant combinations shown in (\ref{14.6}). We now specialize to a particular gauge, and pick the gauge parameters so that 
+%
+\begin{eqnarray}
+L_i=E_i,\quad L=E, \quad B+T-\dot{L}=0.
+\label{14.15}
+\end{eqnarray}
+%
+With this choice (\ref{14.6}) simplifies to
+%
+\begin{eqnarray}
+\alpha &=& \phi +\psi, \quad \eta=\psi ,\quad B_i,\quad E_{ij},
+\label{14.16}
+\end{eqnarray}
+%
+and now $\eta$ only depends on scalars. The combinations given in (\ref{14.16}) constitute the longitudinal or conformal-Newtonian gauge, a gauge that is often considered in cosmological perturbation theory (see e.g. \cite{mukhanov_1992, bertschinger_2000}). We thus see that using the gauge freedom one can find gauges in which there is no intertwining of scalars and vectors, so that for them a decomposition theorem in the separate scalar, vector and tensor sectors is achievable.

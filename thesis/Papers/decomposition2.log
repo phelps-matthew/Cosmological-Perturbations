@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  12 MAY 2020 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  12 MAY 2020 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -288,7 +288,6 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 11.
 \GPT@outputbox=\box55
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
@@ -426,11 +425,11 @@ Package rerunfilecheck Info: File `decomposition2.out' has not changed.
 Here is how much of TeX's memory you used:
  9029 strings out of 483183
  123192 string characters out of 5966293
- 436774 words of memory out of 5000000
+ 435403 words of memory out of 5000000
  23370 multiletter control sequences out of 15000+600000
  539636 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,12n,39p,3306b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,37p,3306b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texli
@@ -453,7 +452,7 @@ lic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9
 .pfb>
-Output written on decomposition2.pdf (63 pages, 640086 bytes).
+Output written on decomposition2.pdf (63 pages, 638691 bytes).
 PDF statistics:
  1799 PDF objects out of 2073 (max. 8388607)
  1693 compressed objects within 17 object streams

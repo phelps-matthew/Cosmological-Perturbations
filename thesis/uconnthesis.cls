@@ -554,14 +554,14 @@ TT\fi %
 	\else
 		
 		% copyright, p.1, if twoside adds extra empty page
-		%\setcounter{page}{1}		
+		%\setcounter{page}{2}		
 		\begin{center}
 			\vspace*{50pt}
 			Copyright by\\
 			\vspace{10pt}
 			\@author \\
-			\vspace{\fill}
 			\@submityear\par
+			\vspace{\fill}
 		\end{center}
 		\if@twoside\new@tpage\addtocounter{page}{-1}\fi
 
