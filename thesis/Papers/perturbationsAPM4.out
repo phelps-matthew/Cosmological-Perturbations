@@ -1,0 +1,55 @@
+\BOOKMARK [1][-]{section*.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.2}{Formalism and Coordinate and Conformal Invariance}{}% 2
+\BOOKMARK [2][-]{section*.3}{General Formalism}{section*.2}% 3
+\BOOKMARK [2][-]{section*.4}{Conformal Invariance}{section*.2}% 4
+\BOOKMARK [2][-]{section*.5}{Implications of Coordinate Invariance}{section*.2}% 5
+\BOOKMARK [2][-]{section*.6}{Fluctuations Around Flat in the Transverse Gauge}{section*.2}% 6
+\BOOKMARK [2][-]{section*.7}{Fluctuations Around Conformal to Flat}{section*.2}% 7
+\BOOKMARK [2][-]{section*.8}{The Nature of Fluctuations in the Energy-Momentum Tensor}{section*.2}% 8
+\BOOKMARK [1][-]{section*.9}{Fluctuation Equations Around an Arbitrary Background}{}% 9
+\BOOKMARK [2][-]{section*.10}{Setting up the Fluctuation Equations}{section*.9}% 10
+\BOOKMARK [2][-]{section*.11}{Decoupling of the Trace of the Fluctuation}{section*.9}% 11
+\BOOKMARK [2][-]{section*.12}{Preparing to Implement the Conformal Gauge Condition}{section*.9}% 12
+\BOOKMARK [1][-]{section*.13}{Fluctuations Around a Conformal to Flat Minkowski Background}{}% 13
+\BOOKMARK [2][-]{section*.14}{Implementing the Conformal Gauge Condition}{section*.13}% 14
+\BOOKMARK [2][-]{section*.15}{Obtaining the Fluctuation Equations in the Conformal Gauge}{section*.13}% 15
+\BOOKMARK [2][-]{section*.16}{Summary of the Calculation}{section*.13}% 16
+\BOOKMARK [1][-]{section*.17}{SVT Decomposition of the Fluctuations}{}% 17
+\BOOKMARK [2][-]{section*.18}{The SVT Decomposition}{section*.17}% 18
+\BOOKMARK [2][-]{section*.19}{SVT in Terms of h}{section*.17}% 19
+\BOOKMARK [2][-]{section*.20}{SVT in Terms of the Traceless k}{section*.17}% 20
+\BOOKMARK [2][-]{section*.21}{Gauge Structure of the SVT Decomposition}{section*.17}% 21
+\BOOKMARK [1][-]{section*.22}{Conformal Gravity SVT Fluctuations in a Conformal to Flat Minkowski Background}{}% 22
+\BOOKMARK [1][-]{section*.23}{SVT Decomposition of G with Conformal factor \(t\)}{}% 23
+\BOOKMARK [1][-]{section*.24}{Conformal to Flat Minkowski Cosmological Backgrounds}{}% 24
+\BOOKMARK [2][-]{section*.25}{Robertson-Walker Metric with k=0 Written in Conformal to Flat Form}{section*.24}% 25
+\BOOKMARK [2][-]{section*.26}{Robertson-Walker Metric with k>0 Written in Conformal to Flat Form}{section*.24}% 26
+\BOOKMARK [2][-]{section*.27}{Robertson-Walker Metric with k<0 Written in Conformal to Flat Form}{section*.24}% 27
+\BOOKMARK [2][-]{section*.28}{Conformal Cosmological Background Solutions with a Cosmological Constant}{section*.24}% 28
+\BOOKMARK [2][-]{section*.29}{Conformal Cosmological Background Solutions with a Cosmological Constant and a Radiation Fluid}{section*.24}% 29
+\BOOKMARK [1][-]{section*.30}{Early Universe Fluctuations around Conformal to Flat Minkowski Backgrounds}{}% 30
+\BOOKMARK [2][-]{section*.31}{Transforming Solutions from Conformal to Flat to Comoving}{section*.30}% 31
+\BOOKMARK [2][-]{section*.32}{Comparison with SVT}{section*.30}% 32
+\BOOKMARK [1][-]{section*.33}{SVT Decomposition of G with General \(x\)}{}% 33
+\BOOKMARK [1][-]{section*.34}{Compact Expressions for G in some Specific Gauges}{}% 34
+\BOOKMARK [1][-]{section*.35}{First Principles Derivation of the SVT Decomposition by Projection}{}% 35
+\BOOKMARK [2][-]{section*.36}{The 3+1 Decomposition}{section*.35}% 36
+\BOOKMARK [2][-]{section*.37}{Transverse and Longitudinal Components for the Vector Sector}{section*.35}% 37
+\BOOKMARK [2][-]{section*.38}{Transverse and Longitudinal Components for the Tensor Sector}{section*.35}% 38
+\BOOKMARK [2][-]{section*.39}{Transverse-Traceless and Longitudinal-Traceless Components for the Tensor Sector}{section*.35}% 39
+\BOOKMARK [2][-]{section*.40}{The SVT Basis}{section*.35}% 40
+\BOOKMARK [2][-]{section*.41}{Projector Algebra}{section*.35}% 41
+\BOOKMARK [2][-]{section*.42}{General Form of the Fluctuation Equations}{section*.35}% 42
+\BOOKMARK [1][-]{section*.43}{Projection technique for fluctuations around a general conformal to flat Minkowski background}{}% 43
+\BOOKMARK [1][-]{section*.44}{On the Unitarity of Quantum Conformal Gravity}{}% 44
+\BOOKMARK [2][-]{section*.45}{The Nature of the Problem}{section*.44}% 45
+\BOOKMARK [2][-]{section*.46}{Lack of Normalizability of the Energy Eigenstates}{section*.44}% 46
+\BOOKMARK [2][-]{section*.47}{Lack of Hermiticity of the Hamiltonian}{section*.44}% 47
+\BOOKMARK [2][-]{section*.48}{The Resolution of the Problem \205 Continuing into the Complex Plane}{section*.44}% 48
+\BOOKMARK [2][-]{section*.49}{Implementation of the Complex Plane Continuation for Operators}{section*.44}% 49
+\BOOKMARK [2][-]{section*.50}{Antilinear Symmetry}{section*.44}% 50
+\BOOKMARK [2][-]{section*.51}{The Positive Definite V-norm}{section*.44}% 51
+\BOOKMARK [2][-]{section*.52}{Extension to include Loop Diagrams}{section*.44}% 52
+\BOOKMARK [2][-]{section*.53}{Fundamentality of CPT Symmetry}{section*.44}% 53
+\BOOKMARK [2][-]{section*.54}{Conclusion}{section*.44}% 54
+\BOOKMARK [1][-]{section*.55}{References}{}% 55

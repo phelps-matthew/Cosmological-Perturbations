@@ -3,47 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis-template.aux
 The style file: uconn_unsrtnat.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "Mannheim2006"
-Warning--I didn't find a database entry for "Mannheim1998"
-You've used 27 entries,
+You've used 30 entries,
             2425 wiz_defined-function locations,
-            733 strings with 8225 characters,
-and the built_in function-call counts, 8730 in all, are:
-= -- 789
-> -- 295
-< -- 25
-+ -- 136
-- -- 82
-* -- 647
-:= -- 1433
-add.period$ -- 80
-call.type$ -- 27
-change.case$ -- 50
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 431
-empty$ -- 815
-format.name$ -- 125
-if$ -- 1824
+            750 strings with 8715 characters,
+and the built_in function-call counts, 9696 in all, are:
+= -- 879
+> -- 324
+< -- 28
++ -- 150
+- -- 90
+* -- 720
+:= -- 1591
+add.period$ -- 89
+call.type$ -- 30
+change.case$ -- 56
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 478
+empty$ -- 906
+format.name$ -- 138
+if$ -- 2026
 int.to.chr$ -- 1
-int.to.str$ -- 28
-missing$ -- 30
-newline$ -- 142
-num.names$ -- 81
-pop$ -- 140
+int.to.str$ -- 31
+missing$ -- 33
+newline$ -- 157
+num.names$ -- 90
+pop$ -- 152
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 30
 quote$ -- 0
-skip$ -- 307
+skip$ -- 342
 stack$ -- 0
-substring$ -- 493
-swap$ -- 65
+substring$ -- 553
+swap$ -- 71
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 177
+type$ -- 198
 warning$ -- 0
-while$ -- 73
+while$ -- 81
 width$ -- 0
-write$ -- 351
-(There were 2 warnings)
+write$ -- 390

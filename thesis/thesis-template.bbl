@@ -1,9 +1,62 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Weinberg(2008)]{weinberg_2008}
+Steven Weinberg.
+\newblock \emph{Cosmology}.
+\newblock Oxford University, 2008.
+
+\bibitem[Lifshitz(2017)]{lifshitz_2017}
+E.~Lifshitz.
+\newblock Republication of: On the gravitational stability of the expanding
+  universe.
+\newblock \emph{General Relativity and Gravitation}, 49\penalty0 (2), 2017.
+
+\bibitem[Bardeen(1980)]{bardeen_1980}
+James~M. Bardeen.
+\newblock Gauge-invariant cosmological perturbations.
+\newblock \emph{Physical Review D}, 22\penalty0 (8):\penalty0 1882–1905,
+  1980.
+
+\bibitem[Bertschinger(2001)]{bertschinger_2000}
+Edmund Bertschinger.
+\newblock {Cosmological perturbation theory and structure formation}.
+\newblock In \emph{{Cosmology 2000}}, pages 1--25, 1 2001.
+
+\bibitem[Ellis et~al.(2009)Ellis, Maartens, and
+  Maccallum]{ellis_maartens_maccallum_2009}
+George Ellis, Roy Maartens, and Malcolm Maccallum.
+\newblock \emph{Relativistic Cosmology}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Mukhanov(1992)]{mukhanov_1992}
+V~Mukhanov.
+\newblock Theory of cosmological perturbations.
+\newblock \emph{Physics Reports}, 215\penalty0 (5-6):\penalty0 203–333, 1992.
+
+\bibitem[York(1973)]{york_1973}
+James~W. York.
+\newblock Conformally invariant orthogonal decomposition of symmetric tensors
+  on riemannian manifolds and the initial‐value problem of general
+  relativity.
+\newblock \emph{Journal of Mathematical Physics}, 14\penalty0 (4):\penalty0
+  456–464, 1973.
+
+\bibitem[Hu and Dodelson(2002)]{hu_dodelson_2002}
+Wayne Hu and Scott Dodelson.
+\newblock Cosmic microwave background anisotropies.
+\newblock \emph{Annual Review of Astronomy and Astrophysics}, 40\penalty0
+  (1):\penalty0 171–216, 2002.
+
+\bibitem[Kodama and Sasaki(1984)]{kodama_sasaki_1984}
+Hideo Kodama and Misao Sasaki.
+\newblock Cosmological perturbation theory.
+\newblock \emph{Progress of Theoretical Physics Supplement}, 78:\penalty0
+  1–166, 1984.
 
 \bibitem[Weinberg(1972)]{weinberg_1972}
 Steven Weinberg.
@@ -100,34 +153,6 @@ Philip~D. Mannheim.
 \newblock \emph{Progress in Particle and Nuclear Physics}, 94:\penalty0
   125–183, 2017.
 
-\bibitem[Kodama and Sasaki(1984)]{kodama_sasaki_1984}
-Hideo Kodama and Misao Sasaki.
-\newblock Cosmological perturbation theory.
-\newblock \emph{Progress of Theoretical Physics Supplement}, 78:\penalty0
-  1–166, 1984.
-
-\bibitem[Ellis et~al.(2009)Ellis, Maartens, and
-  Maccallum]{ellis_maartens_maccallum_2009}
-George Ellis, Roy Maartens, and Malcolm Maccallum.
-\newblock \emph{Relativistic Cosmology}.
-\newblock Cambridge University Press, 2009.
-
-\bibitem[Bertschinger(2001)]{bertschinger_2000}
-Edmund Bertschinger.
-\newblock {Cosmological perturbation theory and structure formation}.
-\newblock In \emph{{Cosmology 2000}}, pages 1--25, 1 2001.
-
-\bibitem[Bardeen(1980)]{bardeen_1980}
-James~M. Bardeen.
-\newblock Gauge-invariant cosmological perturbations.
-\newblock \emph{Physical Review D}, 22\penalty0 (8):\penalty0 1882–1905,
-  1980.
-
-\bibitem[Mukhanov(1992)]{mukhanov_1992}
-V~Mukhanov.
-\newblock Theory of cosmological perturbations.
-\newblock \emph{Physics Reports}, 215\penalty0 (5-6):\penalty0 203–333, 1992.
-
 \bibitem[Phelps et~al.(2019)Phelps, Amarasinghe, and Mannheim]{phelps_2019}
 Matthew~G. Phelps, Asanka Amarasinghe, and Philip~D. Mannheim.
 \newblock Three-dimensional and four-dimensional scalar, vector, tensor
@@ -149,11 +174,6 @@ M.~Bander and C.~Itzykson.
 \newblock Group theory and the hydrogen atom (ii).
 \newblock \emph{Reviews of Modern Physics}, 38\penalty0 (2):\penalty0
   346–358, Jan 1966.
-
-\bibitem[Weinberg(2008)]{weinberg_2008}
-Steven Weinberg.
-\newblock \emph{Cosmology}.
-\newblock Oxford University, 2008.
 
 \bibitem[Mannheim(2011)]{mannheim_2011}
 Philip~D. Mannheim.
