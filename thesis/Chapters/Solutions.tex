@@ -4,47 +4,38 @@
 
 We now apply the SVT3 and SVT4 decompositions of $h_{\mu\nu}$ developed in detail within Ch. \ref{c:scalar_vector_tensor_basis} to the fluctuation equations themselves and proceed to find exact solutions within backgrounds relevant to cosmology. Of particular importance, for each background geometry we analyze the conditions necessary for the decomposition theorem (cf. Sec. \ref{s:decomposition_theorem}) to hold. Repeatedly, we find that a separation of the scalar, vector, and tensor sectors of the fluctuations may be generically achieved (i.e. without any assumptions) by application of higher derivatives which effectively project out the transverse and longitudinal components. Hence, for each geometry we may achieve an SVT separation at the equation level in terms of fourth or higher order fluctuation equations. Once this achieved, we may then analyze precisely which conditions may be required in order to recover the naive decomposition one obtains when immediately separating scalars, vectors, and tensors at the outset. Since one cannot validate the decomposition theorem in general for arbitrary backgrounds, we evaluate the SVT3 and SVT4 fluctuations for a number of specific geometries. 
 
-As for the cases we 
-solve equations, Determine conditions required for decomposition theorem. Does not hold unless further input. by going to higher derivatives. See if we can impose asymptotic boundary conditions. 
+As for the specific geometries, we first evaluate SVT3 decompositions of $\Delta_{\mu\nu}=\delta G_{\mu\nu}+\delta T_{\mu\nu}=0$ (with $8\pi G = 1$), starting with a de Sitter background. Here we solve the fluctuation equations $\Delta_{\mu\nu} = 0$ exactly, finding that the decomposition theorem can be recovered by imposing spatially asymptotic boundary conditions upon the SVT3 components. 
 
-start introducing perfect fluid source. RW k=0 radiation. Determine matter + gravitaional gauge invariants. $\tau^2 e_ij$ sector goes as $t^{1/2}$, decomp follows w/ spatially asympt. bc's.
+With de Sitter serving as the simplest geometry, we then proceed to solve the fluctuations in a Robertson Walker geometry with $k=0$ in the radiation era. Here the gauge invariants necessarily include contributions from both the matter sector $\delta T_{\mu\nu}$, in this case a traceless perfect fluid, and the SVT functions of $h_{\mu\nu}$ within the gravitational sector $\delta G_{\mu\nu}$. Once again, the decomposition theorem is maintained upon the imposition of good asymptotic spatial behavior. In this particular background, we recover the familiar \cite{weinberg_2008} solution of the transverse traceless sector $\tau^2 E_{ij}$ being proportional to comoving time $t^{1/2}$. 
 
-generalize to all RW, perturb perfect fluid, requires equation of state. identify gauge invariants, use many vuarvature relations, commutations 4th order. seek help from svt in terms of $h_{\mu\nu}$ to determine gauge invariants here. In order to solve, need to determine $\Omega(\tau)$ and reduce 11 dof's to 10. We then determine the form of $\Omega(\tau)$ in all curvatures in radiation and matter dominated. Reduce from 11 to 10 by specifying equation of state. We interpolate btween radiation and matter: transition between two eras is complicationed, but propto $p=w\rho$ in high temp (radiation) and low temp (matter). Transition era = recombination. $p=w\rho$ not always valid. Solve by suming over complete basis of modes associated with propagation of spinless massive particle in chosen $g_{\mu\nu}$ background. Complicated, but not done here generally. 
+To generalize the Roberston Walker case, we tackle a more complex set of equations corresponding to a Roberston Walker background with arbitrary 3-curvature and a perfect fluid form with unspecified equation of state. To simplify the fluctuations, we make heavy use of various curvature identities involving appropriate commutations of covariant derivatives. From the structure of the fluctuations, a series of gauge invariants are readily identified; however, to determine the full set, recourse must be made to inversions of the SVT3 quantities in terms of higher derivatives of $h_{\mu\nu}$, which is developed in detail. In addition, the relationship between the background density $\rho$ and pressure $p$ is investigated. In the high temperature limit radiation era, we have $p = \frac{1}{3}\rho$ and in the low temperature limit matter dominated era we have $p=0$. While the equation of state at the limits may obey $p=w\rho$ for $w$ constant, in the transition between the two eras (as appropriate for recombination, for example) we show that the equation of state does not take such a simple form and is altogether more complicated. However, to assess the validity of the decomposition theorem, the relationship between $\rho$ and $p$ need not be explicitly assigned. 
 
-k=-1 RW general As the implications of boundary conditions are very sensitive to the sign of the coefficient of $k$, and we will need to monitor both positive and negative coefficient cases below. In implementing evolution equations that involve products of derivative operators such as the generic $(\tilde{\nabla}^2+\alpha)(\tilde{\nabla}^2+\beta)F=0$ . scalar sector checks out given good behavior (bounded) at infinity and origin. Seem to find vector that is bounded, well behaved at both, but does not obey decomp theorem. see end of vector section. Same for tensor sector.
+A concrete application of the developed general SVT3 Roberston Walker case is constructed in the $k=-1$ cosmology. Here it can be shown that one can find realizations of the evolution equations in the scalar, vector, and tensor sectors that would not lead to a decomposition theorem in those respective sectors. However, if we force boundary conditions such that vector and tensor modes vanish at $\chi=\infty$ instead of limiting to a constant value (and in addition are well behaved at the origin), then it follows that decomposition theorem holds. 
 
-n Sec. \ref{ss:rw_k=-1_svt3} we have seen that there are realizations of the evolution equations in the scalar, vector, and tensor sectors that would not lead to a decomposition theorem in those sectors. However, equally there are other realizations that given the boundary conditions would lead to a decomposition theorem. Thus we need to determine which realizations are the relevant ones. To this end we look not at the individual higher-derivative equations obeyed by the separate scalar, vector, and tensor sectors, but at how these various sectors interface with each other in the original second-order $\Delta_{\mu\nu}=0$ equations themselves. Any successful such interface would require that all the terms in $\Delta_{\mu\nu}=0$ would have to have the same $\chi$ behavior. Noting that the scalar modes appear with two $\tilde{\nabla}$ derivatives in $\Delta_{ij}=0$, the vector sector appears with one $\tilde{\nabla}$ derivative and the tensor appears with none, we need to compare derivatives of scalars with vectors and derivatives of vectors with tensors. 
+In addition to standard Einstein gravity, we construct and solve the SVT3 fluctuations within conformal gravity, determining that the imposition of boundary conditions leads to very simple forms for the evolution equations in a conformal to Minkowski background. Interestingly, one can also invert five of the SVT3 relations in terms of $\delta W_{\mu\nu}$, to thus serve as a convenient alternative SVT3 formulation comprised of integral functions of a curvature invariant (i.e. the Bach tensor).
 
-If we force bc that vector and tensor modes vanish at $\chi=\infty$ instead of limiting to a constant value, then decomp holds. 
+The discussion is then steered towards the SVT4 Einstein fluctuation equations as applied to de Sitter and Robertson Walker backgrounds, where an analogous procedure is carried through, namely solving the evolution equations exactly and determining the necessary conditions for the decomposition to hold. In contrast to the SVT3 fluctuations, here we find sets of solutions that are well behaved at the both the origin and infinity but nonetheless violate the decomposition theorem. To satisfy such a decomposition theorem, one would have to make a judicious choice of initial conditions at an initial time. Absent any compelling reason to do so, we conclude the decomposition theorem does in fact not hold in the SVT4 formulation.
 
-compute svt3 conformal gravity, instead working in conformal flat. Imposing boundary conditions leads to simple evolution equations. We can invert svt3 quantities in terms of $\delta W_{\mu\nu}$, to serve as alternative integral relations in the RW background. 
-
-SVT4 minkowski, delta G is purely gauge invariant in zero background. Evaluate in ds4 w/o conformal factor. Make use of SVTD in constant 3 space. For scalar $\chi$ to obey decomp theorem, require very particular solution. General solution not at all forced to $\chi =0$; specific solution to the full evolution equations. No compelling reason to choose so. $F_{\mu\nu}$ and $\chi$ can still be localized in space, thus no spatially asymptotic bc could affect them. Completely solvable though. Could enforce decomp theorem with judiciously choosing IC's at an intial time. No compelling rationale for doing so. 
-
-ds4 with a conformal factor. GI mixes scalars and vectors. Introduce $U^\mu$ to express covariantly. Find exact solutions. Again, same story. 
-
-Do SVT4 desitter in conformal gravity. Simple structure, in fact TT sector has same form as standard Einstein gravity. Find relation between the two. Below, and also for flat space. Decomp is automatic, only $F_{\mu\nu}$. 
+In evaluating the conformal gravity cosmological fluctuations in a de Sitter background, we find $\delta W_{\mu\nu}$ takes a conveniently simple form, to only depend on the transverse traceless $F_{\mu\nu}$, with the decomposition theorem being automatic. Additionally, one finds that $\delta W_{\mu\nu}$ may be related directly to the standard Einstein transverse traceless sector viz.
 \begin{eqnarray}
-\delta W_{\mu\nu}=(\nabla_{\alpha}\nabla^{\alpha}-4H^2)(\delta G_{\mu\nu}+\delta T_{\mu\nu})^{T\theta}.
+\delta W_{\mu\nu}&=&(\nabla_{\alpha}\nabla^{\alpha}-4H^2)(\delta G_{\mu\nu}+\delta T_{\mu\nu})^{T\theta}
+\nonumber\\
+&=&(\nabla_{\alpha}\nabla^{\alpha}-4H^2)(\nabla_{\alpha}\nabla^{\alpha}-2H^2)F_{\mu\nu}
+\nonumber,
 \end{eqnarray}
-
-By introducing timelike $U^\mu$ can express generalized SVT4 RW flucations in compact covariant form. Same story with decomp. 
-
-dW conformal to flat. Beautiful super simple. 
+with $H= \frac{\dot a}{a}$. In continuing to evaluate conformal gravity SVT4 fluctuations in a general conformal to flat background, we show that despite the presence of a non-vanshing spatial 3-curvature, the evolution equations may still be expressed in the extremely compact and readily solvable form
 \begin{eqnarray}
-\delta W_{\mu\nu}&=&\Omega^{-2}\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}F_{\mu\nu}.
-\end{eqnarray} 
-
-by looking at ds4 svt4 we saw mixing, and thus one shold only look for decomp theorem for gauge invariants and not for seaprate scalar vector, tensors sects and gauage invariance can in general intertwine them. We present example occuring in SVT3 to show not just artifact of SVT4. 
-
-ads svt3 mixing. 
-\begin{eqnarray}
-\delta = \phi -\psi + \dot B - \ddot E + \frac{2}{z}(\tilde\nabla_3 E + E_3),
+\delta W_{\mu\nu}&=&\Omega^{-2}\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}F_{\mu\nu},
 \end{eqnarray}
+a form which has a direct corresponce to the solution \eqref{AP61} as developed in Sec. \ref{ss:fluctuations_around_conformal_flat_cgauge} where the conformal gauge has been used to reduce the traceless $K_{\mu\nu}$ to five independent degrees of freedom. Once again, in conformal gravity the decomposition theorem automatically holds without any auxiliary assumptions concerning asymptotic behavior.
 
-General conformal to flat. $eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E)$ Spatially dependent $\Omega(x)$ leads to inseperable gauge invariant not foudn in non-conformal geoms. Procedure is one must first determine GI's, then separate, not other way around. For some geoms no choice of coords can undo intertwiing (if conformal factor pulled out). To express the $\eta$ in terms of a curvature invariant, one cannot make recourse to $\delta W_{\mu\nu}$, however, in traceless radiation we can take $\delta(g_{\mu\nu}G^{\mu\nu}$ to determine $\eta$ in terms of the $h_{\mu\nu}$. 
-
-Using gauge freedom, imposing gauge, we can decouple intertwining in gauge invariants. 
+In analyzing the SVT4 fluctuations in a de Sitter geometry with a conformal factor (Sec. \ref{sss:svt4_without_conformal_factor}), we find that the SVT4 scalar gauge invariant necessarily involves a contribution from the vector sector. In maintaining gauge invariance, one therefore must conclude that the decomposition can only apply to gauge invariant quantities themselves, not the separation of independent scalars, vectors, and tensors. In fact, such a construction is not novel to SVT4 itself and is shown to apply to SVT3 as exemplified in an anti de Sitter or conformal to flat backgrounds with a spatially dependent conformal factor, (i.e. $\Omega(\tau, x^i)$). For instance, in such a conformal to flat background the scalar gauge invariant is given by 
+%
+\begin{eqnarray}
+\eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E),
+\end{eqnarray}
+%
+with the presence of the $E_i$ vector illustrating such mixing. However, the intertwining of scalars and vectors can be avoided if one opts to fix the gauge freedom by selecting a specific choice of coordinate constraints corresponding to the conformal-Newtonian gauge \cite{bertschinger_2000}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SVT3}
@@ -2151,7 +2142,7 @@ With this separation of the gauge-invariant combinations we again have the decom
 \section{SVT4}
 \label{s:svt4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-As well as discuss SVT3 fluctuations around general Robertson-Walker backgrounds in Einstein gravity,  it is of interest to discuss SVT4 fluctuations  as well.
+We now proceed to carry through a similar analysis as performed in the SVT3 fluctuations, but now as applied to the SVT4 formulation. We will again construct the evolution equations in de Sitter and Robertson Walker geometries, separate the scalar, vector, and tensor sectors by applying derivatives, and analyze the necessary conditions for the decomposition theorem to hold, with the discussion beginning with Einstein gravity and afterward focusing on conformal gravity. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Minkowski}
 \label{ss:minkowski_svt4}
@@ -2192,16 +2183,16 @@ With  $\delta \bar{T}_{\mu\nu}$ obeying $\nabla^{\nu}\delta \bar{T}_{\mu\nu}=0$,
 \label{5.4}
 \end{eqnarray}
 %
-The idea behind the decomposition theorem is that the tensor and scalar sectors of (\ref{5.4}) satisfy (\ref{5.4}) independently, so that one can set 
+With the idea behind the decomposition theorem being that the tensor and scalar sectors of (\ref{5.4}) satisfy (\ref{5.4}) independently, so that one can set 
 %
 \begin{eqnarray}
 \nabla_{\alpha}\nabla^{\alpha}F_{\mu\nu}&=&-8 \pi G\nabla_{\alpha}\nabla^{\alpha}\bar{F}_{\mu\nu},
 \nonumber\\
-(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu})\chi&=&-8 \pi G(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu})\bar{\chi}. 
+(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu})\chi&=&-8 \pi G(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu})\bar{\chi},
 \label{5.5}
 \end{eqnarray}
 %
-To see whether this is the case we take the trace of (\ref{5.4}), to obtain 
+to see whether this is the case we take the trace of (\ref{5.4}), to obtain 
 %
 \begin{eqnarray}
 \nabla_{\alpha}\nabla^{\alpha}\chi=-8 \pi G\nabla_{\alpha}\nabla^{\alpha}\bar{\chi}. 
