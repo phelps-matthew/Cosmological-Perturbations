@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -58,16 +58,126 @@ Hideo Kodama and Misao Sasaki.
 \newblock \emph{Progress of Theoretical Physics Supplement}, 78:\penalty0
   1–166, 1984.
 
-\bibitem[Weinberg(1972)]{weinberg_1972}
-Steven Weinberg.
-\newblock \emph{Gravitation and cosmology principles and applications of the
-  general theory of relativity}.
-\newblock Wiley, 1972.
+\bibitem[Mannheim(2006)]{mannheim_2006}
+P~Mannheim.
+\newblock Alternatives to dark matter and dark energy.
+\newblock \emph{Progress in Particle and Nuclear Physics}, 56\penalty0
+  (2):\penalty0 340–445, 2006.
 
 \bibitem[Mannheim(2012)]{mannheim_2012}
 Philip~D. Mannheim.
 \newblock Cosmological perturbations in conformal gravity.
 \newblock \emph{Physical Review D}, 85\penalty0 (12), May 2012.
+
+\bibitem[Mannheim(2017)]{mannheim_2017}
+Philip~D. Mannheim.
+\newblock Mass generation, the cosmological constant problem, conformal
+  symmetry, and the higgs boson.
+\newblock \emph{Progress in Particle and Nuclear Physics}, 94:\penalty0
+  125–183, 2017.
+
+\bibitem[Bender and Mannheim(2008{\natexlab{a}})]{bender_mannheim_2008a}
+Carl~M. Bender and Philip~D. Mannheim.
+\newblock No-ghost theorem for the fourth-order derivative pais-uhlenbeck
+  oscillator model.
+\newblock \emph{Physical Review Letters}, 100\penalty0 (11),
+  2008{\natexlab{a}}.
+
+\bibitem[Bender and Mannheim(2008{\natexlab{b}})]{bender_mannheim_2008b}
+Carl~M. Bender and Philip~D. Mannheim.
+\newblock Exactly solvablept-symmetric hamiltonian having no hermitian
+  counterpart.
+\newblock \emph{Physical Review D}, 78\penalty0 (2), 2008{\natexlab{b}}.
+
+\bibitem[Mannheim(2011)]{mannheim_2011}
+Philip~D. Mannheim.
+\newblock Making the case for conformal gravity.
+\newblock \emph{Foundations of Physics}, 42\penalty0 (3):\penalty0 388–420,
+  2011.
+
+\bibitem[Mannheim(2018)]{mannheim_2018}
+Philip~D. Mannheim.
+\newblock Appropriate inner product for pt-symmetric hamiltonians.
+\newblock \emph{Physical Review D}, 97\penalty0 (4), Jan 2018.
+
+\bibitem[Stelle(1977)]{stelle_1977}
+K.~S. Stelle.
+\newblock Renormalization of higher-derivative quantum gravity.
+\newblock \emph{Physical Review D}, 16\penalty0 (4):\penalty0 953–969, 1977.
+
+\bibitem[Stelle(1978)]{stelle_1978}
+K.~S. Stelle.
+\newblock Classical gravity with higher derivatives.
+\newblock \emph{General Relativity and Gravitation}, 9\penalty0 (4):\penalty0
+  353–371, 1978.
+
+\bibitem[Adler(1982)]{adler_1982}
+Stephen~L. Adler.
+\newblock Einstein gravity as a symmetry-breaking effect in quantum field
+  theory.
+\newblock \emph{Reviews of Modern Physics}, 54\penalty0 (3):\penalty0
+  729–766, Jan 1982.
+
+\bibitem[Lee and Nieuwenhuizen(1982)]{lee_nieuwenhuizen_1982}
+S.~C. Lee and P.~Van Nieuwenhuizen.
+\newblock Counting of states in higher-derivative field theories.
+\newblock \emph{Physical Review D}, 26\penalty0 (4):\penalty0 934–937, 1982.
+
+\bibitem[Zee(1983)]{zee_1983}
+A~Zee.
+\newblock Einstein gravity emerging from quantum weyl gravity.
+\newblock \emph{Annals of Physics}, 151\penalty0 (2):\penalty0 431–443, 1983.
+
+\bibitem[Riegert(1984{\natexlab{a}})]{riegert_1984a}
+Ronald~J. Riegert.
+\newblock The particle content of linearized conformal gravity.
+\newblock \emph{Physics Letters A}, 105\penalty0 (3):\penalty0 110–112,
+  1984{\natexlab{a}}.
+
+\bibitem[Riegert(1984{\natexlab{b}})]{riegert_1984b}
+Ronald~J. Riegert.
+\newblock Birkhoffs theorem in conformal gravity.
+\newblock \emph{Physical Review Letters}, 53\penalty0 (4):\penalty0 315–318,
+  1984{\natexlab{b}}.
+
+\bibitem[Teyssandier(1989)]{teyssandier_1989}
+P~Teyssandier.
+\newblock Linearised r r 2 gravity: a new gauge and new solutions.
+\newblock \emph{Classical and Quantum Gravity}, 6\penalty0 (2):\penalty0
+  219–229, Jan 1989.
+
+\bibitem['t~Hooft(2010{\natexlab{a}})]{hooft2010conformal}
+Gerard 't~Hooft.
+\newblock The conformal constraint in canonical quantum gravity,
+  2010{\natexlab{a}}.
+
+\bibitem['t~Hooft(2010{\natexlab{b}})]{hooft2010probing}
+Gerard 't~Hooft.
+\newblock Probing the small distance structure of canonical quantum gravity
+  using the conformal group, 2010{\natexlab{b}}.
+
+\bibitem[Hooft(2015)]{hooft_2015}
+Gerard~’T Hooft.
+\newblock Local conformal symmetry: The missing symmetry component for space
+  and time.
+\newblock \emph{International Journal of Modern Physics D}, 24\penalty0
+  (12):\penalty0 1543001, 2015.
+
+\bibitem[Maldacena(2011)]{maldacena2011einstein}
+Juan Maldacena.
+\newblock Einstein gravity from conformal gravity, 2011.
+
+\bibitem[O’Brien and Mannheim(2012)]{obrien_mannheim_2012}
+James~G. O’Brien and Philip~D. Mannheim.
+\newblock Fitting dwarf galaxy rotation curves with conformal gravity.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  421\penalty0 (2):\penalty0 1273–1282, 2012.
+
+\bibitem[Weinberg(1972)]{weinberg_1972}
+Steven Weinberg.
+\newblock \emph{Gravitation and cosmology principles and applications of the
+  general theory of relativity}.
+\newblock Wiley, 1972.
 
 \bibitem[Mannheim and Kazanas(1988)]{mannheim_kazanas_1988}
 Philip~D. Mannheim and Demosthenes Kazanas.
@@ -87,12 +197,6 @@ Philip~D. Mannheim.
 \newblock \emph{General Relativity and Gravitation}, 22\penalty0 (3):\penalty0
   289–298, 1990.
 
-\bibitem[Mannheim(2006)]{mannheim_2006}
-P~Mannheim.
-\newblock Alternatives to dark matter and dark energy.
-\newblock \emph{Progress in Particle and Nuclear Physics}, 56\penalty0
-  (2):\penalty0 340–445, 2006.
-
 \bibitem[Bach(1921)]{bach_1921}
 Rudolf Bach.
 \newblock Zur weylschen relativisic theorie und der weylschen erweiterung des
@@ -111,11 +215,6 @@ Philip~D. Mannheim.
 \newblock \emph{Foundations of Physics}, 37\penalty0 (4-5):\penalty0 532–571,
   2007.
 
-\bibitem[Riegert(1984)]{riegert_1984a}
-Ronald~J. Riegert.
-\newblock The particle content of linearized conformal gravity.
-\newblock \emph{Physics Letters A}, 105\penalty0 (3):\penalty0 110–112, 1984.
-
 \bibitem[Mannheim(2000)]{mannheim_2000}
 Philip~D. Mannheim.
 \newblock Attractive and repulsive gravity.
@@ -133,25 +232,12 @@ Philip~D. Mannheim and James~G. O’Brien.
 \newblock Impact of a global quadratic potential on galactic rotation curves.
 \newblock \emph{Physical Review Letters}, 106\penalty0 (12), 2011.
 
-\bibitem[O’Brien and Mannheim(2012)]{obrien_mannheim_2012}
-James~G. O’Brien and Philip~D. Mannheim.
-\newblock Fitting dwarf galaxy rotation curves with conformal gravity.
-\newblock \emph{Monthly Notices of the Royal Astronomical Society},
-  421\penalty0 (2):\penalty0 1273–1282, 2012.
-
 \bibitem[Mannheim and Kazanas(1994)]{mannheim_kazanas_1994}
 Philip~D. Mannheim and Demosthenes Kazanas.
 \newblock Newtonian limit of conformal gravity and the lack of necessity of the
   second order poisson equation.
 \newblock \emph{General Relativity and Gravitation}, 26\penalty0 (4):\penalty0
   337–361, 1994.
-
-\bibitem[Mannheim(2017)]{mannheim_2017}
-Philip~D. Mannheim.
-\newblock Mass generation, the cosmological constant problem, conformal
-  symmetry, and the higgs boson.
-\newblock \emph{Progress in Particle and Nuclear Physics}, 94:\penalty0
-  125–183, 2017.
 
 \bibitem[Phelps et~al.(2019)Phelps, Amarasinghe, and Mannheim]{phelps_2019}
 Matthew~G. Phelps, Asanka Amarasinghe, and Philip~D. Mannheim.
@@ -174,11 +260,5 @@ M.~Bander and C.~Itzykson.
 \newblock Group theory and the hydrogen atom (ii).
 \newblock \emph{Reviews of Modern Physics}, 38\penalty0 (2):\penalty0
   346–358, Jan 1966.
-
-\bibitem[Mannheim(2011)]{mannheim_2011}
-Philip~D. Mannheim.
-\newblock Making the case for conformal gravity.
-\newblock \emph{Foundations of Physics}, 42\penalty0 (3):\penalty0 388–420,
-  2011.
 
 \end{thebibliography}

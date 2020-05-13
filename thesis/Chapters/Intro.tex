@@ -4,97 +4,62 @@
 
 In the theory of cosmological fluctuations, the perturbative equations of motion have historically been acknowledged as forming a quite difficult and complex set of coupled non-linear differential tensor equations. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\footnote{For instance, within Weinberg's cosmology book \cite{weinberg_2008}, he notes that even after performing additional simplifications, the cosmological perturbative equations are still ``fearsomely complicated''.}
+\renewcommand{\baselinestretch}{1}
+\footnote{For instance, within Weinberg's cosmology book \cite{weinberg_2008}, he notes that even after performing additional simplifications, solving the cosmological perturbative equations is still ``fearsomely complicated''.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 As a result, extensive methods of simplifying the equations of motion and eliminating non-physical gauge modes have been continually developed in order to construct the perturbative solutions, with such methods broadly falling into one of two categories. 
 
 The first entails the construction and imposition of a suitable gauge condition that aims to reduce the equations of motion into a simplified form such that a solution is readily obtainable. Here, no further decomposition upon the fluctuations is performed, with solutions being expressed directly in terms of the metric tensor fluctuation and the energy momentum tensor components. While use of such gauges are quite effective at facilitating solutions within Minkowski background geometries, their efficacy begins to diminish when faced with backgrounds associated with a non-vanishing curvature tensor and hence backgrounds that are most relevant to the study of cosmology. However, we note that there are some interesting exceptions regarding a gauge's reductive power that can occur if one works within gravitational theories that possess additional symmetries in comparison to standard Einstein gravity; we will in fact explore such an alternative theory, namely conformal gravity, extensively throughout this work. 
 
-The second method of simplification of the equations of motion consists of decomposing the metric and matter fluctuations into a basis of scalars, vectors, and tensors. First developed by Lifshitz in 1946 \cite{lifshitz_2017}, the scalar, vector, tensor (SVT) basis is characterized according to how the fluctuations transform under three-dimensional rotations, and has become the de facto approach to modern treatments of cosmology \cite{bardeen_1980, bertschinger_2000, ellis_maartens_maccallum_2009, mukhanov_1992, york_1973, weinberg_2008}. In fact, such an SVT decomposition is deeply intertwined within the calculation of large scale observables in the universe such as dominant scalar field contribution within the cosmic microwave background power spectrum \cite{hu_dodelson_2002,kodama_sasaki_1984}. Within literature \cite{kodama_sasaki_1984, bardeen_1980, ellis_maartens_maccallum_2009}, the utilization of the SVT basis actually goes well beyond just a means of decomposing the perturbations, with its main efficacy rather coming from the assertion that within the equations of motion, the scalar, vector, and tensor sectors are to completely decouple. Such assertion is referred to as the \emph{cosmological decomposition theorem}.
+The second method of simplification of the equations of motion consists of decomposing the metric and matter fluctuations into a basis of scalars, vectors, and tensors. First developed by Lifshitz in 1946 \cite{lifshitz_2017}, the scalar, vector, tensor (SVT) basis is characterized according to how the fluctuations transform under three-dimensional rotations, and has become the de facto approach to modern treatments of cosmology \cite{bardeen_1980, bertschinger_2000, ellis_maartens_maccallum_2009, mukhanov_1992, york_1973, weinberg_2008} (as we later develop an SVT formalism appropriate for higher dimensions, we will refer to the canonical SVT basis as SVT3 when the three-dimensional nature warrants emphasis). In fact, such an SVT3 decomposition is deeply intertwined within the calculation of large scale observables in the universe such as the contributions of SVT3 scalar fields which dominate the cosmic microwave background power spectrum \cite{hu_dodelson_2002, weinberg_2008}. One of the primary features afforded by implementing the SVT3 basis, first developed in \cite{bardeen_1980}, is that one may readily construct particular combinations of scalars, vectors, and tensors that are invariant under gauge transformations. By collecting the set of six total gauge invariant quantities, one may then express the evolution equations entirely in terms of the gauge invariants, thus effectively identifying and removing non-physical modes from the prescription. 
 
-As the analysis of the cosmological decomposition theorem forms one of the primary focal points of this work, we motivation the investigation into its application by considering a representative example of a scalar-vector decomposition of two vectors fields into their transverse and longitudinal components via
+Within literature \cite{kodama_sasaki_1984, bardeen_1980, ellis_maartens_maccallum_2009}, the utilization of the SVT3 basis actually goes well beyond just a means of decomposing the perturbations and constructing gauge invariants, with one of its primary efficacies rather coming from the assertion that within the equations of motion, the scalar, vector, and tensor sectors are to completely decouple. Such assertion is referred to as the \emph{cosmological decomposition theorem}.
+
+As the analysis of the cosmological decomposition theorem forms one of the primary focal points of this work, we digress and briefly motivate an investigation into the applicability of the theorem by considering a representative example of a scalar-vector decomposition of two vectors fields into their transverse and longitudinal components via
 %
 \begin{eqnarray}
-B_i+\partial_iB=C_i+\partial_iC.
+A_i+\partial_iA=B_i+\partial_iB.
 \label{I.3}
 \end{eqnarray}
 %
-Here a transverse $B_i$ obeys $\partial^i B_i = 0$ and $C$ and $C_i$ are to represent functions given by the evolution equations with $C_i$ also transverse and thus obeying $\partial_iC^i=0$. According to the decomposition theorem, the vectors $B_i$ and $C_i$ are taken to decouple and evolve independent of the scalars, with an analogous statement holding for the scalars. Hence, the theorem implies
+Here a transverse $A_i$ obeys $\partial^i A_i = 0$ and $B$ and $B_i$ are to represent functions given by the evolution equations with $B_i$ also transverse and thus obeying $\partial_iB^i=0$. According to the decomposition theorem, the vectors $A_i$ and $B_i$ are taken to decouple and evolve independent of the scalars, with an analogous statement holding for the scalars. Hence, the theorem implies
 %
 \begin{eqnarray}
-B_i= C_i,\quad \partial_iB=\partial_iC.
+A_i= B_i,\quad \partial_iA=\partial_iB.
 \label{I.4}
 \end{eqnarray}
 %
 It is clear, however, that (\ref{I.4}) does not directly follow from (\ref{I.3}). Rather, if we apply $\partial^i$ and $\epsilon^{ijk}\partial_j$  to (\ref{I.3}) we obtain 
 %
 \begin{eqnarray}
-\partial^i\partial_i(B-C)=0,\quad \epsilon^{ijk}\partial_j(B_k-C_k)=0,
+\partial^i\partial_i(A-B)=0,\quad \epsilon^{ijk}\partial_j(A_k-B_k)=0.
 \label{I.5}
 \end{eqnarray}
 %
-and from this one can only conclude that $B$ and $C$ are defined up to an arbitrary scalar $D$ obeying $\partial^i\partial_iD=0$. For the vector sector analogously, $B_k$ and $C_k$ can only differ by any function $D_k$ that obeys $\epsilon^{ijk}\partial_jD_k=0$, i.e. an irrotational field $D_k$ expressed as the gradient of a scalar. In composing (\ref{I.5}) we have appropriately separated the scalar and vector components within(\ref{I.3}), obtaining a decomposition for the components that does not follow by proceeding from (\ref{I.5}) to (\ref{I.4}). Specifically, without providing some additional information or constraints, one cannot directly proceed from (\ref{I.5}) to (\ref{I.4}). However, given the imposition of such constraints, such a decomposition may be possible, with the constraints in fact needing to be in form of spatially asymptotic boundary conditions. Alternatively, if one were to elect to form a decomposition without the imposition of boundary condition or constraints, we see from \eqref{I.5} that we necessarily need to go to higher derivatives in order to establish the decomposition. Thus we will continue to investigate both branches of applying said decomposition theorem.
+Now from \eqref{I.5}, one may only conclude that $A$ and $B$ can be defined up to an arbitrary scalar $C$ obeying $\partial^i\partial_iC=0$. Similarly, for the transverse vectors, $A_k$ and $B_k$ can only differ by any function $C_k$ that obeys $\epsilon^{ijk}\partial_jC_k=0$, i.e. an irrotational field $C_k$ expressed as the gradient of a scalar. Thus, while we have achieved a separation of scalars and vectors in \eqref{I.5}, by virtue of applying higher derivatives, we conclude that \eqref{I.5} can only imply \eqref{I.4} if some additional information is provided. In the context of the full cosmological fluctuation equations, we shall investigate the requisite constraints that force an analogous \eqref{I.4} to follow from an analogous \eqref{I.5}. 
 
-	he application of the SVT decomposition 
+Returning to the discussion of the two broad methods used in solving the fluctuation equations, within this work we explore both in detail. In regard first to constructing and imposing appropriate gauge conditions, we find particularly useful implementations in the context of conformal gravity that permit the fluctuations to be expressed in a remarkably straightforward and simple form with an immediately obtainable solution. Within a maximally symmetric background (e.g. de Sitter), we also evaluate a broad range of gauges as applied to standard Einstein gravity.
 
+As for the SVT3 basis, the construction of the decomposition itself can be carried out by means of the transverse and longitudinal projector formalism which we have developed in Appendix \ref{aa:svt_projection}. In effect, each SVT3 scalar, vector, or tensor is defined in terms of non-local spatial integrals of the metric perturbation. With the very SVT3 definitions being intrinsically non-local, a number of considerations must be addressed in great detail pertaining to the interplay of spatially asymptotic behavior, the decomposition theorem, and gauge invariance. 
 
-the perturbative equations of motion have historically been acknowledged as forming a rather complex set of coupled non-linear differential tensor equations. For instance, within Weinberg's cosmology book \cite{weinberg_2008}, he notes that even after performing additional simplifications that these equations are still ``fearsomely complicated''. 
+To better match the underlying dimensionality of the spacetime geometry, one may also consider an SVTD decomposition as applied to the decomposition into scalars, vector, and tensors according to their transformations in $D$ dimensions. Specifically, we find implementation of an SVT4 formalism provides meaningful simplifications not shared within SVT3, with the fluctuation equations being able to be expressed in more compact and readily solvable forms. However, with an additional dimension, the role of asymptotic behavior within the issues of gauge invariance and the decomposition theorem must be separately revisited and carefully analyzed, separately from the SVT3 considerations. 
 
-
-
-
-
-
-extensive methods of simplifying the equations of motion and eliminating non-physical gauge modes are required in order to construct the perturbative solutions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-*touch on decomposition theorem. maybe a little mock example
-*conformal gravity - while we do not dig into details on qm here, has been proposed as a ... citations. dope as properties
-*overview section
-*imposing gauges or for intrinsic gauge invariants. difficult problem to solve, complicated fluctuations. as we move to curved spacetimes, solving not straightforward even with gauge constraints
-** SVT3, scalar modes, CMB power spectrum. then motivate SVT4. projectors
-* weinberg formidablly complicated
+As previously mentioned, the treatment of cosmological perturbations may proceed differently in comparison to standard Einstein gravitation if one works in a theory of gravitation that possesses additional symmetries. To this end, we carry out an analogous analysis of cosmological perturbations in the context of a conformally invariant (at the level of the action) theory of gravitation. Conformal gravity has been advanced as a candidate alternative to standard Einstein gravity and reviews of its status at both the classical and quantum levels may be found in \cite{mannheim_2006, mannheim_2012, mannheim_2017}. While our treatment of conformal gravity in this text is purely classical, the establishment of unitarity and the positivity of its inner product at the quantum level may be found in \cite{bender_mannheim_2008a, bender_mannheim_2008b, mannheim_2011, mannheim_2018}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\footnote{Additional studies of conformal gravity and of higher derivative gravity theories in general can be found in \cite{stelle_1977,stelle_1978,adler_1982,lee_nieuwenhuizen_1982,zee_1983,riegert_1984a,riegert_1984b,teyssandier_1989,hooft2010conformal,hooft2010probing,hooft_2015,maldacena2011einstein}.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Additional astrophysical and cosmological support for conformal gravity is motivated by the excellent agreement between fits to galactic rotation curves of 138 spiral galaxies presented in \cite{mannheim_2011,mannheim_2012, obrien_mannheim_2012} and to fits of the accelerating universe Hubble plot data presented in \cite{mannheim_2006,mannheim_2017}. With all cosmologically relevant backgrounds of interest being able to be expressed as conformal to flat geometries (cf. Appendix \ref{ab:cosmologies}), we shall find that despite the initially expansive form of the fourth order fluctuation equations, the invariance properties of the Bach tensor under conformal transformations enables remarkable reduction and simplification in both the SVT formalism as well as under the imposition of a specific gauge. Throughout this thesis, all constructions, solutions, and analysis of cosmological perturbations in standard Einstein gravity will be frequently contrasted with the analogous treatment in conformal gravity.  
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-solve equations, Determine conditions required for decomposition theorem. Does not hold unless further input. by going to higher derivatives. See if we can impose asymptotic boundary conditions. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Overview}
+\label{s:overview_intro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In Ch. \ref{c:formalism}, we first introduce the formalism within the theory of cosmological perturbations, starting with the gravitational action and ending with the first order perturbative equations of motion. A discussion of gauge transformations and imposition of gauge conditions in the context of the simplest background geometry (e.g. Minkowski) is performed. In Sec. \ref{s:conformal_gravity}, we introduce the theory of conformal gravity, with an important development pertaining to the unique conformal transformation properties contained within Sec. \ref{ss:conformal_invariance}. 
 
-start introducing perfect fluid source. RW k=0 radiation. Determine matter + gravitaional gauge invariants. $\tau^2 e_ij$ sector goes as $t^{1/2}$, decomp follows w/ spatially asympt. bc's.
+Next, the SVT formalism is developed in detail within Ch. \ref{c:scalar_vector_tensor_basis} in both three (SVT3) and $D$ dimensions (SVTD). Here we discuss correlations between gauge invariance and spatially asymptotic behavior, as well as provide a deeper exploration of the cosmological decomposition theorem. In addition, by referencing the gravitational tensor associated with conformal gravity, we effectively relate the SVT3 basis to the SVT4 basis.
 
-generalize to all RW, perturb perfect fluid, requires equation of state. identify gauge invariants, use many vuarvature relations, commutations 4th order. seek help from svt in terms of $h_{\mu\nu}$ to determine gauge invariants here. In order to solve, need to determine $\Omega(\tau)$ and reduce 11 dof's to 10. We then determine the form of $\Omega(\tau)$ in all curvatures in radiation and matter dominated. Reduce from 11 to 10 by specifying equation of state. We interpolate btween radiation and matter: transition between two eras is complicationed, but propto $p=w\rho$ in high temp (radiation) and low temp (matter). Transition era = recombination. $p=w\rho$ not always valid. Solve by suming over complete basis of modes associated with propagation of spinless massive particle in chosen $g_{\mu\nu}$ background. Complicated, but not done here generally. 
+With the SVT basis developed, in Ch. \ref{c:construction_and_solution_of_svt} we proceed to apply the decomposition to a variety of cosmologically relevant backgrounds in both the SVT3 and SVT4 basis. As one cannot generically prove the validity of the decomposition theorem within an arbitrary background, we must assess its applicibilty by solving the equations of motion exactly in each cosmological background separately, and we do so here for de Sitter and Robertson Walker geometries with arbitrary 3-curvature. In each case, a number of important issues are addressed related to gauge invariance, boundary conditions, and constraints needed to recover the decomposition theorem. In addition, we explore the mixing of the separate SVT components within gauge invariants around particular geometries and provide means to remedy such intertwining. 
 
-k=-1 RW general As the implications of boundary conditions are very sensitive to the sign of the coefficient of $k$, and we will need to monitor both positive and negative coefficient cases below. In implementing evolution equations that involve products of derivative operators such as the generic $(\tilde{\nabla}^2+\alpha)(\tilde{\nabla}^2+\beta)F=0$ . scalar sector checks out given good behavior (bounded) at infinity and origin. Seem to find vector that is bounded, well behaved at both, but does not obey decomp theorem. see end of vector section. Same for tensor sector.
-
-n Sec. \ref{ss:rw_k=-1_svt3} we have seen that there are realizations of the evolution equations in the scalar, vector, and tensor sectors that would not lead to a decomposition theorem in those sectors. However, equally there are other realizations that given the boundary conditions would lead to a decomposition theorem. Thus we need to determine which realizations are the relevant ones. To this end we look not at the individual higher-derivative equations obeyed by the separate scalar, vector, and tensor sectors, but at how these various sectors interface with each other in the original second-order $\Delta_{\mu\nu}=0$ equations themselves. Any successful such interface would require that all the terms in $\Delta_{\mu\nu}=0$ would have to have the same $\chi$ behavior. Noting that the scalar modes appear with two $\tilde{\nabla}$ derivatives in $\Delta_{ij}=0$, the vector sector appears with one $\tilde{\nabla}$ derivative and the tensor appears with none, we need to compare derivatives of scalars with vectors and derivatives of vectors with tensors. 
-
-If we force bc that vector and tensor modes vanish at $\chi=\infty$ instead of limiting to a constant value, then decomp holds. 
-
-compute svt3 conformal gravity, instead working in conformal flat. Imposing boundary conditions leads to simple evolution equations. We can invert svt3 quantities in terms of $\delta W_{\mu\nu}$, to serve as alternative integral relations in the RW background. 
-
-SVT4 minkowski, delta G is purely gauge invariant in zero background. Evaluate in ds4 w/o conformal factor. Make use of SVTD in constant 3 space. For scalar $\chi$ to obey decomp theorem, require very particular solution. General solution not at all forced to $\chi =0$; specific solution to the full evolution equations. No compelling reason to choose so. $F_{\mu\nu}$ and $\chi$ can still be localized in space, thus no spatially asymptotic bc could affect them. Completely solvable though. Could enforce decomp theorem with judiciously choosing IC's at an intial time. No compelling rationale for doing so. 
-
-ds4 with a conformal factor. GI mixes scalars and vectors. Introduce $U^\mu$ to express covariantly. Find exact solutions. Again, same story. 
-
-Do SVT4 desitter in conformal gravity. Simple structure, in fact TT sector has same form as standard Einstein gravity. Find relation between the two. Below, and also for flat space. Decomp is automatic, only $F_{\mu\nu}$. 
-\begin{eqnarray}
-\delta W_{\mu\nu}=(\nabla_{\alpha}\nabla^{\alpha}-4H^2)(\delta G_{\mu\nu}+\delta T_{\mu\nu})^{T\theta}.
-\end{eqnarray}
-
-By introducing timelike $U^\mu$ can express generalized SVT4 RW flucations in compact covariant form. Same story with decomp. 
-
-dW conformal to flat. Beautiful super simple. 
-\begin{eqnarray}
-\delta W_{\mu\nu}&=&\Omega^{-2}\partial_{\sigma}\partial^{\sigma}\partial_{\tau}\partial^{\tau}F_{\mu\nu}.
-\end{eqnarray} 
-
-by looking at ds4 svt4 we saw mixing, and thus one shold only look for decomp theorem for gauge invariants and not for seaprate scalar vector, tensors sects and gauage invariance can in general intertwine them. We present example occuring in SVT3 to show not just artifact of SVT4. 
-
-ads svt3 mixing. 
-\begin{eqnarray}
-\delta = \phi -\psi + \dot B - \ddot E + \frac{2}{z}(\tilde\nabla_3 E + E_3),
-\end{eqnarray}
-
-General conformal to flat. $eta=\psi -\Omega^{-1}\dot{\Omega}(B-\dot E)+\Omega^{-1}\tilde\nabla^i\Omega(E_i+\tilde\nabla_i E)$ Spatially dependent $\Omega(x)$ leads to inseperable gauge invariant not foudn in non-conformal geoms. Procedure is one must first determine GI's, then separate, not other way around. For some geoms no choice of coords can undo intertwiing (if conformal factor pulled out). To express the $\eta$ in terms of a curvature invariant, one cannot make recourse to $\delta W_{\mu\nu}$, however, in traceless radiation we can take $\delta(g_{\mu\nu}G^{\mu\nu}$ to determine $\eta$ in terms of the $h_{\mu\nu}$. 
-
-Using gauge freedom, imposing gauge, we can decouple intertwining in gauge invariants. 
+Finally, in Ch. \ref{c:constructing_gauge_conditions}, we explore the implementation of specific gauge conditions with an aim towards simplifying the fluctuations equations to a solvable form. In the conformal theory, we construct a gauge condition that retains its form under conformal transformation, whereby usage of such a gauge leads to a significant simplification of the equations of motion, leading to an equation of motion comprised of just a single term. Here we succinctly solve the fluctuation equations exactly within the large class of conformal to flat backgrounds, which automatically covers all cosmological geometries of interest. Lastly, we form a generalized gauge condition where upon variation of its various coefficients, we effectively reduce the Einstein equations of motion within a de Sitter background to a set of small compact expressions that can then be solved exactly. We note that in Einstein gravity, the components of the metric fluctuation cannot be decoupled entirely, with such an issue not arising in conformal gravity due to its unique trace properties arising from conformal invariance.
+ 
