@@ -7,9 +7,10 @@ Repeated entry---line 105 of file bibliography.bib
  : @article{mannheim_2018
  :                       , title={Unitarity of loop diagrams for the ghostlike 1/(k2−M12)−1/(k2−M22) propagator}, volume={98}, DOI={10.1103/physrevd.98.045014}, number={4}, journal={Physical Review D}, author={Mannheim, Philip D.}, year={2018}}
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Amarasinghe2018"
 You've used 44 entries,
             2425 wiz_defined-function locations,
-            825 strings with 10404 characters,
+            827 strings with 10434 characters,
 and the built_in function-call counts, 13963 in all, are:
 = -- 1268
 > -- 446

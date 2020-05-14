@@ -1,10 +1,21 @@
 \documentclass[aps]{revtex4}
-\usepackage{amsmath}
+\usepackage{amsmath, xcolor}
 \usepackage{amssymb}
 \usepackage{hyperref}
 \hypersetup{colorlinks,linkcolor=red,citecolor=cyan,anchorcolor=black} 
 \begin{document}
 \allowdisplaybreaks
+ 
+ % gruvbox it out
+ \pagecolor[HTML]{282828}
+ 
+ \makeatletter
+ \newcommand{\globalcolor}[1]{%
+ 	\color[HTML]{#1}\global\let\default@color\current@color
+ }
+ \makeatother
+ %\globalcolor{EBDBB2}
+ % stop gruvboxing it out
  
 \title{Cosmological perturbations in conformal gravity II}
 
@@ -13,7 +24,7 @@
 asanka.amarasinghe@uconn.edu, matthew.phelps@uconn.edu,\\ philip.mannheim@uconn.edu\\ }
 
 \date{December 31, 2018}
-
+\globalcolor{EBDBB2}
 \begin{abstract}
 
 
