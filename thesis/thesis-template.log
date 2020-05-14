@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  13 MAY 2020 23:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  14 MAY 2020 00:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -935,10 +935,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
 (\end occurred when \iffalse on line 60 was incomplete)
 (\end occurred when \iffalse on line 56 was incomplete) 
 Here is how much of TeX's memory you used:
- 9589 strings out of 483183
- 135904 string characters out of 5966293
+ 9590 strings out of 483183
+ 135912 string characters out of 5966293
  439684 words of memory out of 5000000
- 23511 multiletter control sequences out of 15000+600000
+ 23512 multiletter control sequences out of 15000+600000
  542095 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,13n,51p,3339b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -961,7 +961,7 @@ ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb>
-Output written on thesis-template.pdf (236 pages, 843178 bytes).
+Output written on thesis-template.pdf (236 pages, 843219 bytes).
 PDF statistics:
  3071 PDF objects out of 3580 (max. 8388607)
  2786 compressed objects within 28 object streams
