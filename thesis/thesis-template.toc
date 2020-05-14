@@ -1,80 +1,80 @@
 \contentsline {chapter}{\numberline {1.}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Overview}{4}{section.1.1}%
-\contentsline {chapter}{\numberline {2.}Formalism}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Einstein Gravity}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Fluctuations Around Flat in the Harmonic Gauge}{9}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Conformal Gravity}{9}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Conformal Invariance}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Fluctuations Around Flat in the Transverse Gauge}{14}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}On the Energy Momentum Tensor}{16}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Cosmological Geometries}{19}{section.2.3}%
-\contentsline {chapter}{\numberline {3.}Scalar, Vector, Tensor (SVT) Decomposition}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}SVT3}{22}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}SVT3 in Terms of $h_{\mu \nu }$ in a Conformal Flat Background}{23}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}SVT3 in Terms of the Traceless $k_{\mu \nu }$ in a Conformal Flat Background}{24}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Gauge Structure and Asymptotic Behavior}{25}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}SVTD}{31}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Gauge Structure ($D=4$)}{33}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Relating SVT3 to SVT4}{34}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Decomposition Theorem and Boundary Conditions}{36}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}SVT3}{37}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}SVT4}{40}{subsection.3.4.2}%
-\contentsline {chapter}{\numberline {4.}Construction and Solution of SVT Fluctuation Equations}{42}{chapter.4}%
-\contentsline {section}{\numberline {4.1}SVT3}{44}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}$dS_4$}{44}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Robertson Walker $k=0$ Radiation Era}{48}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}General Roberston Walker}{56}{subsection.4.1.3}%
-\contentsline {subsubsection}{Constructing the Fluctuations}{56}{section*.1}%
-\contentsline {subsubsection}{Decomposition Theorem Requirements}{62}{section*.2}%
-\contentsline {subsubsection}{Gauge Invariance}{63}{section*.3}%
-\contentsline {subsubsection}{Background Solution}{65}{section*.4}%
-\contentsline {subsubsection}{Relation between $\delta \rho $ and $\delta p$}{65}{section*.5}%
-\contentsline {subsection}{\numberline {4.1.4}Robertson Walker $k=-1$}{67}{subsection.4.1.4}%
-\contentsline {subsubsection}{The Scalar Sector}{67}{section*.6}%
-\contentsline {subsubsection}{The Vector Sector}{71}{section*.7}%
-\contentsline {subsubsection}{The Tensor Sector}{74}{section*.8}%
-\contentsline {subsubsection}{Decomposition Theorem Analysis}{78}{section*.9}%
-\contentsline {subsection}{\numberline {4.1.5}$\delta W_{\mu \nu }$ Conformal to Flat}{80}{subsection.4.1.5}%
-\contentsline {section}{\numberline {4.2}SVT4}{84}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Minkowski}{84}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}$dS_4$}{86}{subsection.4.2.2}%
-\contentsline {subsubsection}{SVT4 $dS_4$ Basis Without a Conformal Factor}{86}{section*.10}%
-\contentsline {subsubsection}{Application of SVT4 to de Sitter Fluctuation Equations}{89}{section*.11}%
-\contentsline {subsubsection}{Defining the SVT4 Fluctuations With a Conformal Factor}{95}{section*.12}%
-\contentsline {subsubsection}{Some General Comments}{99}{section*.13}%
-\contentsline {subsection}{\numberline {4.2.3}General Robertson Walker}{101}{subsection.4.2.3}%
-\contentsline {subsubsection}{The Background}{101}{section*.14}%
-\contentsline {subsubsection}{The SVT4 Fluctuations}{101}{section*.15}%
-\contentsline {subsection}{\numberline {4.2.4}$\delta W_{\mu \nu }$ Conformal to Flat}{103}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Gauge Invariants, SVT Mixing, and the Decomposition Theorem}{103}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}SVT3 Fluctuations Around an Anti de Sitter Background}{104}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}SVT3 Fluctuations Around a General Conformal to Flat Background}{106}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Imposition of SVT Gauge Conditions}{108}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5.}Construction and Imposition of Gauge Conditions}{110}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The Conformal Gauge and General Solutions in Conformal Gravity}{111}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}The Conformal Gauge}{111}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}$\delta W_{\mu \nu }$ in an Arbitrary Background}{113}{subsection.5.1.2}%
-\contentsline {subsubsection}{Composing the Fluctuation Equations}{113}{section*.16}%
-\contentsline {subsubsection}{Trace Properties}{115}{section*.17}%
-\contentsline {subsubsection}{Differential Commutations}{116}{section*.18}%
-\contentsline {subsection}{\numberline {5.1.3}$\delta W_{\mu \nu }$ in a Conformal to Flat Minkowski Background}{117}{subsection.5.1.3}%
-\contentsline {subsubsection}{Implementing the Conformal Gauge Condition}{117}{section*.19}%
-\contentsline {subsubsection}{Further Fluctuation Reduction}{119}{section*.20}%
-\contentsline {subsection}{\numberline {5.1.4}Calculation Summary}{119}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}Imposing Specific Gauges within $\delta G_{\mu \nu }$}{120}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Robertson Walker Radiation Era Conformal Gravity Solution}{122}{section.5.3}%
-\contentsline {chapter}{\numberline {6.}Conclusions}{127}{chapter.6}%
-\contentsline {chapter}{Bibliography}{132}{section*.21}%
-\contentsline {chapter}{\numberline {A.}SVT by Projection}{136}{chapter.A}%
-\contentsline {section}{\numberline {A.1}The $3+1$ Decomposition}{136}{appendix.A.1}%
-\contentsline {section}{\numberline {A.2}Vector Fields}{137}{appendix.A.2}%
-\contentsline {section}{\numberline {A.3}Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}{138}{appendix.A.3}%
-\contentsline {section}{\numberline {A.4}Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}{140}{appendix.A.4}%
-\contentsline {section}{\numberline {A.5}Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}{142}{appendix.A.5}%
-\contentsline {section}{\numberline {A.6}D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}{143}{appendix.A.6}%
-\contentsline {chapter}{\numberline {B.}Conformal to Flat Cosmological Geometries}{146}{chapter.B}%
-\contentsline {section}{\numberline {B.1}Robertson-Walker $k=0$}{146}{appendix.B.1}%
-\contentsline {section}{\numberline {B.2}Robertson-Walker $k>0$}{146}{appendix.B.2}%
-\contentsline {section}{\numberline {B.3}Robertson-Walker $k<0$}{147}{appendix.B.3}%
-\contentsline {section}{\numberline {B.4}$dS_4$ and $AdS_4$ Background Solutions}{148}{appendix.B.4}%
-\contentsline {section}{\numberline {B.5}$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}{149}{appendix.B.5}%
+\contentsline {section}{\numberline {1.1}Overview}{11}{section.1.1}%
+\contentsline {chapter}{\numberline {2.}Formalism}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Einstein Gravity}{14}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Fluctuations Around Flat in the Harmonic Gauge}{18}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Conformal Gravity}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Conformal Invariance}{21}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Fluctuations Around Flat in the Transverse Gauge}{27}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}On the Energy Momentum Tensor}{29}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Cosmological Geometries}{34}{section.2.3}%
+\contentsline {chapter}{\numberline {3.}Scalar, Vector, Tensor (SVT) Decomposition}{37}{chapter.3}%
+\contentsline {section}{\numberline {3.1}SVT3}{39}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}SVT3 in Terms of $h_{\mu \nu }$ in a Conformal Flat Background}{40}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}SVT3 in Terms of the Traceless $k_{\mu \nu }$ in a Conformal Flat Background}{42}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Gauge Structure and Asymptotic Behavior}{43}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}SVTD}{52}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Gauge Structure ($D=4$)}{57}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Relating SVT3 to SVT4}{59}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Decomposition Theorem and Boundary Conditions}{62}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}SVT3}{62}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}SVT4}{68}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {4.}Construction and Solution of SVT Fluctuation Equations}{70}{chapter.4}%
+\contentsline {section}{\numberline {4.1}SVT3}{75}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}$dS_4$}{75}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Robertson Walker $k=0$ Radiation Era}{80}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}General Roberston Walker}{90}{subsection.4.1.3}%
+\contentsline {subsubsection}{Constructing the Fluctuations}{90}{section*.1}%
+\contentsline {subsubsection}{Decomposition Theorem Requirements}{101}{section*.2}%
+\contentsline {subsubsection}{Gauge Invariance}{103}{section*.3}%
+\contentsline {subsubsection}{Background Solution}{105}{section*.4}%
+\contentsline {subsubsection}{Relation between $\delta \rho $ and $\delta p$}{106}{section*.5}%
+\contentsline {subsection}{\numberline {4.1.4}Robertson Walker $k=-1$}{109}{subsection.4.1.4}%
+\contentsline {subsubsection}{The Scalar Sector}{109}{section*.6}%
+\contentsline {subsubsection}{The Vector Sector}{115}{section*.7}%
+\contentsline {subsubsection}{The Tensor Sector}{120}{section*.8}%
+\contentsline {subsubsection}{Decomposition Theorem Analysis}{125}{section*.9}%
+\contentsline {subsection}{\numberline {4.1.5}$\delta W_{\mu \nu }$ Conformal to Flat}{128}{subsection.4.1.5}%
+\contentsline {section}{\numberline {4.2}SVT4}{134}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Minkowski}{135}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}$dS_4$}{138}{subsection.4.2.2}%
+\contentsline {subsubsection}{SVT4 $dS_4$ Basis Without a Conformal Factor}{138}{section*.10}%
+\contentsline {subsubsection}{Application of SVT4 to de Sitter Fluctuation Equations}{142}{section*.11}%
+\contentsline {subsubsection}{Defining the SVT4 Fluctuations With a Conformal Factor}{151}{section*.12}%
+\contentsline {subsubsection}{Some General Comments}{157}{section*.13}%
+\contentsline {subsection}{\numberline {4.2.3}General Robertson Walker}{161}{subsection.4.2.3}%
+\contentsline {subsubsection}{The Background}{161}{section*.14}%
+\contentsline {subsubsection}{The SVT4 Fluctuations}{162}{section*.15}%
+\contentsline {subsection}{\numberline {4.2.4}$\delta W_{\mu \nu }$ Conformal to Flat}{164}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Gauge Invariants, SVT Mixing, and the Decomposition Theorem}{166}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}SVT3 Fluctuations Around an Anti de Sitter Background}{167}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}SVT3 Fluctuations Around a General Conformal to Flat Background}{169}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Imposition of SVT Gauge Conditions}{174}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5.}Construction and Imposition of Gauge Conditions}{176}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The Conformal Gauge and General Solutions in Conformal Gravity}{178}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}The Conformal Gauge}{178}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}$\delta W_{\mu \nu }$ in an Arbitrary Background}{182}{subsection.5.1.2}%
+\contentsline {subsubsection}{Composing the Fluctuation Equations}{182}{section*.16}%
+\contentsline {subsubsection}{Trace Properties}{185}{section*.17}%
+\contentsline {subsubsection}{Differential Commutations}{187}{section*.18}%
+\contentsline {subsection}{\numberline {5.1.3}$\delta W_{\mu \nu }$ in a Conformal to Flat Minkowski Background}{189}{subsection.5.1.3}%
+\contentsline {subsubsection}{Implementing the Conformal Gauge Condition}{189}{section*.19}%
+\contentsline {subsubsection}{Further Fluctuation Reduction}{191}{section*.20}%
+\contentsline {subsection}{\numberline {5.1.4}Calculation Summary}{192}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Imposing Specific Gauges within $\delta G_{\mu \nu }$}{193}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Robertson Walker Radiation Era Conformal Gravity Solution}{197}{section.5.3}%
+\contentsline {chapter}{\numberline {6.}Conclusions}{204}{chapter.6}%
+\contentsline {chapter}{Bibliography}{208}{section*.21}%
+\contentsline {chapter}{\numberline {A.}SVT by Projection}{212}{chapter.A}%
+\contentsline {section}{\numberline {A.1}The $3+1$ Decomposition}{212}{appendix.A.1}%
+\contentsline {section}{\numberline {A.2}Vector Fields}{213}{appendix.A.2}%
+\contentsline {section}{\numberline {A.3}Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}{214}{appendix.A.3}%
+\contentsline {section}{\numberline {A.4}Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}{216}{appendix.A.4}%
+\contentsline {section}{\numberline {A.5}Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}{218}{appendix.A.5}%
+\contentsline {section}{\numberline {A.6}D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}{219}{appendix.A.6}%
+\contentsline {chapter}{\numberline {B.}Conformal to Flat Cosmological Geometries}{222}{chapter.B}%
+\contentsline {section}{\numberline {B.1}Robertson-Walker $k=0$}{222}{appendix.B.1}%
+\contentsline {section}{\numberline {B.2}Robertson-Walker $k>0$}{222}{appendix.B.2}%
+\contentsline {section}{\numberline {B.3}Robertson-Walker $k<0$}{223}{appendix.B.3}%
+\contentsline {section}{\numberline {B.4}$dS_4$ and $AdS_4$ Background Solutions}{224}{appendix.B.4}%
+\contentsline {section}{\numberline {B.5}$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}{225}{appendix.B.5}%
