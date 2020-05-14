@@ -10,26 +10,26 @@
 %\usepackage[nointegrals]{wasysym}
 \usepackage{graphicx}
 %\usepackage[colorlinks=true]{hyperref}
-%\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!70!black}, urlcolor={blue!80!black}}
-\hypersetup{colorlinks, linkcolor=[HTML]{83A598}, citecolor=[HTML]{CC241D}, urlcolor=[HTML]{458588}}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!70!black}, urlcolor={blue!80!black}}
+%\hypersetup{colorlinks, linkcolor=[HTML]{83A598}, citecolor=[HTML]{CC241D}, urlcolor=[HTML]{458588}}
 \graphicspath{{Figs/}}
 \setcounter{tocdepth}{2}
 \allowdisplaybreaks
 %
 % gruvbox it out
-\pagecolor[HTML]{282828}
-\makeatletter
-\newcommand{\globalcolor}[1]{%
-	\color[HTML]{#1}\global\let\default@color\current@color
-}
-\makeatother
+%\pagecolor[HTML]{282828}
+%\makeatletter
+%\newcommand{\globalcolor}[1]{%
+%	\color[HTML]{#1}\global\let\default@color\current@color
+%}
+%\makeatother
 % stop gruvboxing it out
 %
 \ThesisLineSpacing{2}
 \begin{document}
-\globalcolor{EBDBB2}
+%\globalcolor{EBDBB2}
 \abstract{
-In the theory of cosmological perturbations, methods of simplifying the equations of motion, eliminating non-physical gauge modes, and constructing the solutions broadly fall into one of two approaches. In the first approach, one first fixes the gauge freedom by imposing coordinate constraints and then solves the fluctuation equations directly in terms of the metric perturbation. In the context of conformal gravity, we implement this method by constructing a gauge condition that is invariant under conformal transformations, allowing the full set of exact solutions to be obtained within any background geometry that is conformal to flat (thus covering all cosmologically relevant geometries). With this construction, we show that in a radiation era Robertson-Walker cosmology, conformal gravity fluctuations grow as $t^4$. The other approach, standard within modern cosmology, is to decompose the metric perturbation into a basis of scalars, vectors, and tensors defined according to their transformation behavior under three-dimensional rotations. With this basis automatically facilitating gauge invariance, it is asserted that the scalar, vector, and tensor sectors decouple within the fluctuation equations themselves, à la the \textit{SVT decomposition theorem}. Here we investigate the status of the decomposition theorem by solving the fluctuation equations exactly within standard cosmologies as applied to both Einstein gravity and conformal gravity, finding that in general the various SVT gauge-invariant combinations only separate at a higher-derivative level. To achieve separation at the  level of the fluctuation equations themselves one must additionally impose spatial boundary conditions, with an exact form depending on the given background geometry. To match the underlying transformation group of GR and thus provide a manifestly covariant formalism, we introduce an alternate scalar, vector, tensor basis with components defined according to general four-dimensional coordinate transformations. In this basis, the fluctuation equations greatly simplify, and while one can again decouple them into separate  gauge-invariant  sectors  at  the  higher-derivative level, in  general  we  find  that  even  with boundary conditions we do not obtain a decomposition theorem in which the fluctuations separate at the level of the fluctuation equations themselves.
+In the theory of cosmological perturbations, methods of simplifying the equations of motion, eliminating non-physical gauge modes, and constructing the solutions broadly fall into one of two approaches. In the first approach, one first fixes the gauge freedom by imposing coordinate constraints and then solves the fluctuation equations directly in terms of the metric perturbation. In the context of conformal gravity, we implement this method by constructing a gauge condition that is invariant under conformal transformations, allowing the full set of exact solutions to be obtained within any background geometry that is conformal to flat (thus covering all cosmologically relevant geometries). With this construction, we show that in a radiation era Robertson-Walker cosmology, conformal gravity fluctuations grow as $t^4$. The other approach, standard within modern cosmology, is to decompose the metric perturbation into a basis of scalars, vectors, and tensors defined according to their transformation behavior under three-dimensional rotations. With this basis automatically facilitating gauge invariance, it is asserted that the scalar, vector, and tensor sectors decouple within the fluctuation equations themselves, à la the \textit{SVT decomposition theorem}. Here we investigate the status of the decomposition theorem by solving the fluctuation equations exactly within standard cosmologies as applied to both Einstein gravity and conformal gravity, finding that in general the various SVT gauge-invariant combinations only separate at a higher-derivative level. To achieve separation at the level of the fluctuation equations themselves one must additionally impose spatial boundary conditions, with an exact form depending on the given background geometry. To match the underlying transformation group of GR and thus provide a manifestly covariant formalism, we introduce an alternate scalar, vector, tensor basis with components defined according to general four-dimensional coordinate transformations. In this basis, the fluctuation equations greatly simplify, and while one can again decouple them into separate  gauge-invariant  sectors  at  the  higher-derivative level, in  general  we  find  that  even  with boundary conditions we do not obtain a decomposition theorem in which the fluctuations separate at the level of the fluctuation equations themselves.
 }
 
 \title{Cosmological Fluctuations in Standard and Conformal Gravity}
@@ -49,7 +49,15 @@ B.S., University of Colorado Colorado Springs, 2014
 }
 
 \acknowledgements{
-Insert acknowledgments here.
+To Philip Mannheim - Working under you will always be one of the great honors of my life. Your brilliance is outshined only by your love and driven curiosity of the field, which have served as a continual source of inspiration throughout. 
+To Ray Retherford - Not of my blood but forever my brother true and through. You were there everytime I needed you.
+To Micheala Poppick - Your unwavering support is nothing short of admirable and I am indebted to you for leading me to become a better person.
+To H. Perry Hatchfield, for helping me not lose touch of the most important aspects of myself amongst such a transformational time. Your taste in music may only be rivaled by the gods themselves.
+To Candost Akkaya, for injecting high doses of humor into an otherwise mechanical environment, and for so many parallel journeys we have shared together. 
+To Jason Hancock - Thank you for your faith in my abilities and treating me like an equal. Working with you was an unexpectedly great pleasure.
+To Lukasz Kuna - Our foray into the world of cryptocurrency could never be forgotten.
+To my past advisors, Robert Camley and Karen Livesey, for mastering the balance of challenging my mind while building my intellectual confidence.
+To all other faculty, friends, and to my family, I thank you for helping me through this entire journey.
 }
 
 \maketitle
