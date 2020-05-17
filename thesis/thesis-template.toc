@@ -65,16 +65,27 @@
 \contentsline {section}{\numberline {5.3}Robertson Walker Radiation Era Conformal Gravity Solution}{193}{section.5.3}%
 \contentsline {chapter}{\numberline {6.}Conclusions}{200}{chapter.6}%
 \contentsline {chapter}{Bibliography}{204}{section*.21}%
-\contentsline {chapter}{\numberline {A.}SVT by Projection}{208}{chapter.A}%
-\contentsline {section}{\numberline {A.1}The $3+1$ Decomposition}{208}{appendix.A.1}%
-\contentsline {section}{\numberline {A.2}Vector Fields}{209}{appendix.A.2}%
-\contentsline {section}{\numberline {A.3}Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}{210}{appendix.A.3}%
-\contentsline {section}{\numberline {A.4}Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}{212}{appendix.A.4}%
-\contentsline {section}{\numberline {A.5}Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}{214}{appendix.A.5}%
-\contentsline {section}{\numberline {A.6}D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}{215}{appendix.A.6}%
-\contentsline {chapter}{\numberline {B.}Conformal to Flat Cosmological Geometries}{218}{chapter.B}%
-\contentsline {section}{\numberline {B.1}Robertson-Walker $k=0$}{218}{appendix.B.1}%
-\contentsline {section}{\numberline {B.2}Robertson-Walker $k>0$}{218}{appendix.B.2}%
-\contentsline {section}{\numberline {B.3}Robertson-Walker $k<0$}{219}{appendix.B.3}%
-\contentsline {section}{\numberline {B.4}$dS_4$ and $AdS_4$ Background Solutions}{220}{appendix.B.4}%
-\contentsline {section}{\numberline {B.5}$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}{221}{appendix.B.5}%
+\contentsline {chapter}{\numberline {A.}SVT by Projection}{209}{chapter.A}%
+\contentsline {section}{\numberline {A.1}The $3+1$ Decomposition}{209}{appendix.A.1}%
+\contentsline {section}{\numberline {A.2}Vector Fields}{210}{appendix.A.2}%
+\contentsline {section}{\numberline {A.3}Transverse and Longitudinal Projection Operators for Flat Spacetime Tensor Fields}{211}{appendix.A.3}%
+\contentsline {section}{\numberline {A.4}Transverse-Traceless Projection Operators for Flat Spacetime Tensor Fields}{213}{appendix.A.4}%
+\contentsline {section}{\numberline {A.5}Transverse and Longitudinal Projection Operators for Curved Spacetime Tensor Fields}{215}{appendix.A.5}%
+\contentsline {section}{\numberline {A.6}D-dimensional SVTD Transverse-Traceless Projection Operators for Curved Spacetime Tensor Fields}{216}{appendix.A.6}%
+\contentsline {chapter}{\numberline {B.}Conformal to Flat Cosmological Geometries}{219}{chapter.B}%
+\contentsline {section}{\numberline {B.1}Robertson-Walker $k=0$}{219}{appendix.B.1}%
+\contentsline {section}{\numberline {B.2}Robertson-Walker $k>0$}{219}{appendix.B.2}%
+\contentsline {section}{\numberline {B.3}Robertson-Walker $k<0$}{220}{appendix.B.3}%
+\contentsline {section}{\numberline {B.4}$dS_4$ and $AdS_4$ Background Solutions}{221}{appendix.B.4}%
+\contentsline {section}{\numberline {B.5}$dS_4$ and $AdS_4$ Background Solutions - Radiation Era}{222}{appendix.B.5}%
+\contentsline {chapter}{\numberline {C.}Computational Methods}{223}{chapter.C}%
+\contentsline {section}{\numberline {C.1}GitHub Repository}{223}{appendix.C.1}%
+\contentsline {section}{\numberline {C.2}\textit {Mathematica} and \textit {xAct}}{223}{appendix.C.2}%
+\contentsline {section}{\numberline {C.3}Detailed Calculation Example}{225}{appendix.C.3}%
+\contentsline {subsection}{\numberline {C.3.1}Conformal Transformation and Perturbation of $G_{\mu \nu }$}{225}{subsection.C.3.1}%
+\contentsline {subsection}{\numberline {C.3.2}Background Equations of Motion}{226}{subsection.C.3.2}%
+\contentsline {subsection}{\numberline {C.3.3}$\delta G_{\mu \nu }$ and $\delta T_{\mu \nu }$ Fluctuations}{227}{subsection.C.3.3}%
+\contentsline {subsection}{\numberline {C.3.4}Field Equations}{229}{subsection.C.3.4}%
+\contentsline {subsection}{\numberline {C.3.5}Field Equations (Gauge Invariant Form)}{229}{subsection.C.3.5}%
+\contentsline {subsection}{\numberline {C.3.6}Conservation}{230}{subsection.C.3.6}%
+\contentsline {subsection}{\numberline {C.3.7}Higher Derivative Relations}{233}{subsection.C.3.7}%

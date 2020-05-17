@@ -3,50 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis-template.aux
 The style file: uconn_unsrtnat.bst
 Database file #1: bibliography.bib
-Repeated entry---line 105 of file bibliography.bib
- : @article{mannheim_2018
- :                       , title={Unitarity of loop diagrams for the ghostlike 1/(k2−M12)−1/(k2−M22) propagator}, volume={98}, DOI={10.1103/physrevd.98.045014}, number={4}, journal={Physical Review D}, author={Mannheim, Philip D.}, year={2018}}
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Amarasinghe2018"
-You've used 44 entries,
-            2425 wiz_defined-function locations,
-            827 strings with 10434 characters,
-and the built_in function-call counts, 13963 in all, are:
-= -- 1268
-> -- 446
-< -- 42
-+ -- 215
-- -- 124
-* -- 1034
-:= -- 2279
-add.period$ -- 128
-call.type$ -- 44
-change.case$ -- 84
-chr.to.int$ -- 41
-cite$ -- 44
-duplicate$ -- 687
-empty$ -- 1323
-format.name$ -- 192
-if$ -- 2920
+You've used 46 entries,
+            2431 wiz_defined-function locations,
+            843 strings with 11474 characters,
+and the built_in function-call counts, 15380 in all, are:
+= -- 1444
+> -- 460
+< -- 44
++ -- 223
+- -- 128
+* -- 1157
+:= -- 2494
+add.period$ -- 174
+call.type$ -- 46
+change.case$ -- 87
+chr.to.int$ -- 43
+cite$ -- 46
+duplicate$ -- 757
+empty$ -- 1469
+format.name$ -- 198
+if$ -- 3252
 int.to.chr$ -- 4
-int.to.str$ -- 45
-missing$ -- 44
-newline$ -- 224
-num.names$ -- 132
-pop$ -- 229
+int.to.str$ -- 47
+missing$ -- 45
+newline$ -- 274
+num.names$ -- 138
+pop$ -- 244
 preamble$ -- 1
-purify$ -- 44
+purify$ -- 46
 quote$ -- 0
-skip$ -- 493
+skip$ -- 517
 stack$ -- 0
-substring$ -- 791
-swap$ -- 108
+substring$ -- 828
+swap$ -- 113
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 296
+type$ -- 310
 warning$ -- 0
-while$ -- 117
+while$ -- 122
 width$ -- 0
-write$ -- 563
-(There was 1 error message)
+write$ -- 668

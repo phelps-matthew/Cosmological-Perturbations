@@ -58,3 +58,14 @@
 \BOOKMARK [1][-]{appendix.B.3}{Robertson-Walker k<0}{chapter.B}% 58
 \BOOKMARK [1][-]{appendix.B.4}{dS4 and AdS4 Background Solutions}{chapter.B}% 59
 \BOOKMARK [1][-]{appendix.B.5}{dS4 and AdS4 Background Solutions - Radiation Era}{chapter.B}% 60
+\BOOKMARK [0][-]{chapter.C}{Computational Methods}{}% 61
+\BOOKMARK [1][-]{appendix.C.1}{GitHub Repository}{chapter.C}% 62
+\BOOKMARK [1][-]{appendix.C.2}{Mathematica and xAct}{chapter.C}% 63
+\BOOKMARK [1][-]{appendix.C.3}{Detailed Calculation Example}{chapter.C}% 64
+\BOOKMARK [2][-]{subsection.C.3.1}{Conformal Transformation and Perturbation of G}{appendix.C.3}% 65
+\BOOKMARK [2][-]{subsection.C.3.2}{Background Equations of Motion}{appendix.C.3}% 66
+\BOOKMARK [2][-]{subsection.C.3.3}{G and T Fluctuations}{appendix.C.3}% 67
+\BOOKMARK [2][-]{subsection.C.3.4}{Field Equations}{appendix.C.3}% 68
+\BOOKMARK [2][-]{subsection.C.3.5}{Field Equations \(Gauge Invariant Form\)}{appendix.C.3}% 69
+\BOOKMARK [2][-]{subsection.C.3.6}{Conservation}{appendix.C.3}% 70
+\BOOKMARK [2][-]{subsection.C.3.7}{Higher Derivative Relations}{appendix.C.3}% 71
