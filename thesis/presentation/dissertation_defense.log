@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  17 MAY 2020 23:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  18 MAY 2020 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -101,8 +101,8 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/extsizes/size8.clo
+File: size8.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -402,6 +402,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count277
 \pdfmajorversion=\count278
+Package hyperref Info: Option `draft' set `true' on input line 4421.
 Package hyperref Info: Option `bookmarks' set `true' on input line 4421.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 4421.
 Package hyperref Info: Option `implicit' set `false' on input line 4421.
@@ -1048,22 +1049,22 @@ File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (./dissertation_defense.aux)
 \openout1 = `dissertation_defense.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1084,12 +1085,12 @@ LaTeX Font Info:    ... okay on input line 86.
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=11.0pt
+* \topskip=9.0pt
 * \footskip=14.22636pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=7.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1123,8 +1124,11 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box148
-Package hyperref Info: Link coloring OFF on input line 86.
 
+
+Package hyperref Warning: Draft mode on.
+
+Package hyperref Info: Link coloring OFF on input line 62.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1136,14 +1140,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count366
 )
-LaTeX Info: Redefining \ref on input line 86.
-LaTeX Info: Redefining \pageref on input line 86.
-LaTeX Info: Redefining \nameref on input line 86.
-
-(./dissertation_defense.out) (./dissertation_defense.out)
-\@outlinefile=\write5
-\openout5 = `dissertation_defense.out'.
-
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1169,24 +1168,19 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./dissertation_defense.nav)
-<Images/uconn-logo.png, id=22, 205.2639pt x 205.2639pt>
-File: Images/uconn-logo.png Graphic file (type png)
-<use Images/uconn-logo.png>
-Package pdftex.def Info: Images/uconn-logo.png  used on input line 96.
-(pdftex.def)             Requested size: 57.81621pt x 57.8149pt.
+<Images/uconn-logo.png, id=19, 205.2639pt x 205.2639pt>
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/uconn-logo.png>] 
-[2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 144
+LaTeX Font Info:    Trying to load font information for U+msa on input line 112
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 144
+LaTeX Font Info:    Trying to load font information for U+msb on input line 112
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1197,1290 +1191,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [5
 
-]
-<Images/scope.png, id=79, 435.87843pt x 568.37344pt>
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [6
-
- <./Images/scope.PNG>]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [7
+] [6
 
 ]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [8
+[7
 
 ]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [9
+\tf@nav=\write5
+\openout5 = `dissertation_defense.nav'.
 
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [10
+\tf@toc=\write6
+\openout6 = `dissertation_defense.toc'.
 
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [11
+\tf@snm=\write7
+\openout7 = `dissertation_defense.snm'.
 
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [12
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [13
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [14
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [15
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [16
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [17
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
- [18
-
-]
-File: Images/scope.png Graphic file (type png)
-<use Images/scope.png>
-Package pdftex.def Info: Images/scope.png  used on input line 192.
-(pdftex.def)             Requested size: 435.87737pt x 568.37206pt.
-
-[19
-
-] [20
-
-] [21
-
-] [22
-
-]
-<Images//1D_1/pic1.jpg, id=205, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic1.jpg Graphic file (type jpg)
-<use Images//1D_1/pic1.jpg>
-Package pdftex.def Info: Images//1D_1/pic1.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic1.jpg> <a0,fr0>
-<Images//1D_1/pic2.jpg, id=215, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic2.jpg Graphic file (type jpg)
-<use Images//1D_1/pic2.jpg>
-Package pdftex.def Info: Images//1D_1/pic2.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic2.jpg> <a0,fr1> <a0,fr2> <a0,fr3> <a0,fr4>
-<Images//1D_1/pic6.jpg, id=240, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic6.jpg Graphic file (type jpg)
-<use Images//1D_1/pic6.jpg>
-Package pdftex.def Info: Images//1D_1/pic6.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic6.jpg> <a0,fr5>
-<a0,fr6> <a0,fr7>
-<Images//1D_1/pic9.jpg, id=260, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic9.jpg Graphic file (type jpg)
-<use Images//1D_1/pic9.jpg>
-Package pdftex.def Info: Images//1D_1/pic9.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic9.jpg> <a0,fr8>
-<Images//1D_1/pic10.jpg, id=270, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic10.jpg Graphic file (type jpg)
-<use Images//1D_1/pic10.jpg>
-Package pdftex.def Info: Images//1D_1/pic10.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic10.jpg> <a0,fr9>
-<Images//1D_1/pic11.jpg, id=280, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic11.jpg Graphic file (type jpg)
-<use Images//1D_1/pic11.jpg>
-Package pdftex.def Info: Images//1D_1/pic11.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic11.jpg> <a0,fr10>
-<Images//1D_1/pic12.jpg, id=290, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic12.jpg Graphic file (type jpg)
-<use Images//1D_1/pic12.jpg>
-Package pdftex.def Info: Images//1D_1/pic12.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic12.jpg>
-<a0,fr11>
-<Images//1D_1/pic13.jpg, id=300, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic13.jpg Graphic file (type jpg)
-<use Images//1D_1/pic13.jpg>
-Package pdftex.def Info: Images//1D_1/pic13.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic13.jpg> <a0,fr12>
-<Images//1D_1/pic14.jpg, id=310, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic14.jpg Graphic file (type jpg)
-<use Images//1D_1/pic14.jpg>
-Package pdftex.def Info: Images//1D_1/pic14.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic14.jpg>
-<a0,fr13>
-<Images//1D_1/pic15.jpg, id=320, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic15.jpg Graphic file (type jpg)
-<use Images//1D_1/pic15.jpg>
-Package pdftex.def Info: Images//1D_1/pic15.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic15.jpg> <a0,fr14>
-<Images//1D_1/pic16.jpg, id=330, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic16.jpg Graphic file (type jpg)
-<use Images//1D_1/pic16.jpg>
-Package pdftex.def Info: Images//1D_1/pic16.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic16.jpg>
-<a0,fr15>
-<Images//1D_1/pic17.jpg, id=340, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic17.jpg Graphic file (type jpg)
-<use Images//1D_1/pic17.jpg>
-Package pdftex.def Info: Images//1D_1/pic17.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic17.jpg> <a0,fr16>
-<Images//1D_1/pic18.jpg, id=350, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic18.jpg Graphic file (type jpg)
-<use Images//1D_1/pic18.jpg>
-Package pdftex.def Info: Images//1D_1/pic18.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic18.jpg>
-<a0,fr17>
-<Images//1D_1/pic19.jpg, id=361, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic19.jpg Graphic file (type jpg)
-<use Images//1D_1/pic19.jpg>
-Package pdftex.def Info: Images//1D_1/pic19.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic19.jpg> <a0,fr18>
-<Images//1D_1/pic20.jpg, id=371, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic20.jpg Graphic file (type jpg)
-<use Images//1D_1/pic20.jpg>
-Package pdftex.def Info: Images//1D_1/pic20.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic20.jpg>
-<a0,fr19>
-<Images//1D_1/pic21.jpg, id=381, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic21.jpg Graphic file (type jpg)
-<use Images//1D_1/pic21.jpg>
-Package pdftex.def Info: Images//1D_1/pic21.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic21.jpg> <a0,fr20>
-<Images//1D_1/pic22.jpg, id=391, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic22.jpg Graphic file (type jpg)
-<use Images//1D_1/pic22.jpg>
-Package pdftex.def Info: Images//1D_1/pic22.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic22.jpg>
-<a0,fr21>
-<Images//1D_1/pic23.jpg, id=401, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic23.jpg Graphic file (type jpg)
-<use Images//1D_1/pic23.jpg>
-Package pdftex.def Info: Images//1D_1/pic23.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic23.jpg> <a0,fr22>
-<Images//1D_1/pic24.jpg, id=411, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic24.jpg Graphic file (type jpg)
-<use Images//1D_1/pic24.jpg>
-Package pdftex.def Info: Images//1D_1/pic24.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic24.jpg>
-<a0,fr23>
-<Images//1D_1/pic25.jpg, id=421, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic25.jpg Graphic file (type jpg)
-<use Images//1D_1/pic25.jpg>
-Package pdftex.def Info: Images//1D_1/pic25.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic25.jpg> <a0,fr24>
-<Images//1D_1/pic26.jpg, id=431, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic26.jpg Graphic file (type jpg)
-<use Images//1D_1/pic26.jpg>
-Package pdftex.def Info: Images//1D_1/pic26.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic26.jpg>
-<a0,fr25>
-<Images//1D_1/pic27.jpg, id=441, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic27.jpg Graphic file (type jpg)
-<use Images//1D_1/pic27.jpg>
-Package pdftex.def Info: Images//1D_1/pic27.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic27.jpg> <a0,fr26>
-<Images//1D_1/pic28.jpg, id=451, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic28.jpg Graphic file (type jpg)
-<use Images//1D_1/pic28.jpg>
-Package pdftex.def Info: Images//1D_1/pic28.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic28.jpg>
-<a0,fr27>
-<Images//1D_1/pic29.jpg, id=461, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic29.jpg Graphic file (type jpg)
-<use Images//1D_1/pic29.jpg>
-Package pdftex.def Info: Images//1D_1/pic29.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic29.jpg> <a0,fr28>
-<Images//1D_1/pic30.jpg, id=471, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic30.jpg Graphic file (type jpg)
-<use Images//1D_1/pic30.jpg>
-Package pdftex.def Info: Images//1D_1/pic30.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic30.jpg>
-<a0,fr29>
-<Images//1D_1/pic31.jpg, id=481, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic31.jpg Graphic file (type jpg)
-<use Images//1D_1/pic31.jpg>
-Package pdftex.def Info: Images//1D_1/pic31.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic31.jpg> <a0,fr30>
-<Images//1D_1/pic32.jpg, id=491, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic32.jpg Graphic file (type jpg)
-<use Images//1D_1/pic32.jpg>
-Package pdftex.def Info: Images//1D_1/pic32.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic32.jpg>
-<a0,fr31>
-<Images//1D_1/pic33.jpg, id=501, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic33.jpg Graphic file (type jpg)
-<use Images//1D_1/pic33.jpg>
-Package pdftex.def Info: Images//1D_1/pic33.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic33.jpg> <a0,fr32>
-<Images//1D_1/pic34.jpg, id=511, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic34.jpg Graphic file (type jpg)
-<use Images//1D_1/pic34.jpg>
-Package pdftex.def Info: Images//1D_1/pic34.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic34.jpg>
-<a0,fr33>
-<Images//1D_1/pic35.jpg, id=521, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic35.jpg Graphic file (type jpg)
-<use Images//1D_1/pic35.jpg>
-Package pdftex.def Info: Images//1D_1/pic35.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic35.jpg> <a0,fr34>
-<Images//1D_1/pic36.jpg, id=531, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic36.jpg Graphic file (type jpg)
-<use Images//1D_1/pic36.jpg>
-Package pdftex.def Info: Images//1D_1/pic36.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic36.jpg>
-<a0,fr35>
-<Images//1D_1/pic37.jpg, id=541, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic37.jpg Graphic file (type jpg)
-<use Images//1D_1/pic37.jpg>
-Package pdftex.def Info: Images//1D_1/pic37.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic37.jpg> <a0,fr36>
-<Images//1D_1/pic38.jpg, id=551, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic38.jpg Graphic file (type jpg)
-<use Images//1D_1/pic38.jpg>
-Package pdftex.def Info: Images//1D_1/pic38.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic38.jpg>
-<a0,fr37>
-<Images//1D_1/pic39.jpg, id=561, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic39.jpg Graphic file (type jpg)
-<use Images//1D_1/pic39.jpg>
-Package pdftex.def Info: Images//1D_1/pic39.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic39.jpg> <a0,fr38>
-<Images//1D_1/pic40.jpg, id=571, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic40.jpg Graphic file (type jpg)
-<use Images//1D_1/pic40.jpg>
-Package pdftex.def Info: Images//1D_1/pic40.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic40.jpg>
-<a0,fr39>
-<Images//1D_1/pic41.jpg, id=581, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic41.jpg Graphic file (type jpg)
-<use Images//1D_1/pic41.jpg>
-Package pdftex.def Info: Images//1D_1/pic41.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic41.jpg> <a0,fr40>
-<Images//1D_1/pic42.jpg, id=591, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic42.jpg Graphic file (type jpg)
-<use Images//1D_1/pic42.jpg>
-Package pdftex.def Info: Images//1D_1/pic42.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic42.jpg>
-<a0,fr41>
-<Images//1D_1/pic43.jpg, id=601, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic43.jpg Graphic file (type jpg)
-<use Images//1D_1/pic43.jpg>
-Package pdftex.def Info: Images//1D_1/pic43.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic43.jpg> <a0,fr42>
-<Images//1D_1/pic44.jpg, id=612, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic44.jpg Graphic file (type jpg)
-<use Images//1D_1/pic44.jpg>
-Package pdftex.def Info: Images//1D_1/pic44.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic44.jpg>
-<a0,fr43>
-<Images//1D_1/pic45.jpg, id=622, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic45.jpg Graphic file (type jpg)
-<use Images//1D_1/pic45.jpg>
-Package pdftex.def Info: Images//1D_1/pic45.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic45.jpg> <a0,fr44>
-<Images//1D_1/pic46.jpg, id=632, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic46.jpg Graphic file (type jpg)
-<use Images//1D_1/pic46.jpg>
-Package pdftex.def Info: Images//1D_1/pic46.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic46.jpg>
-<a0,fr45>
-<Images//1D_1/pic47.jpg, id=642, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic47.jpg Graphic file (type jpg)
-<use Images//1D_1/pic47.jpg>
-Package pdftex.def Info: Images//1D_1/pic47.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic47.jpg> <a0,fr46>
-<Images//1D_1/pic48.jpg, id=652, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic48.jpg Graphic file (type jpg)
-<use Images//1D_1/pic48.jpg>
-Package pdftex.def Info: Images//1D_1/pic48.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic48.jpg>
-<a0,fr47>
-<Images//1D_1/pic49.jpg, id=662, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic49.jpg Graphic file (type jpg)
-<use Images//1D_1/pic49.jpg>
-Package pdftex.def Info: Images//1D_1/pic49.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic49.jpg> <a0,fr48>
-<Images//1D_1/pic50.jpg, id=672, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic50.jpg Graphic file (type jpg)
-<use Images//1D_1/pic50.jpg>
-Package pdftex.def Info: Images//1D_1/pic50.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic50.jpg>
-<a0,fr49>
-<Images//1D_1/pic51.jpg, id=682, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic51.jpg Graphic file (type jpg)
-<use Images//1D_1/pic51.jpg>
-Package pdftex.def Info: Images//1D_1/pic51.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic51.jpg> <a0,fr50> <a0,fr51> <a0,fr52> <a0,fr53>
-<a0,fr54> <a0,fr55> <a0,fr56> <a0,fr57> <a0,fr58> <a0,fr59> <a0,fr60>
-<a0,fr61> <a0,fr62> <a0,fr63> <a0,fr64> <a0,fr65> <a0,fr66> <a0,fr67>
-<a0,fr68> <a0,fr69> <a0,fr70> <a0,fr71> <a0,fr72> <a0,fr73> <a0,fr74>
-<a0,fr75> <a0,fr76> <a0,fr77> <a0,fr78> <a0,fr79> <a0,fr80> <a0,fr81>
-<a0,fr82> <a0,fr83> <a0,fr84> <a0,fr85> <a0,fr86> <a0,fr87> <a0,fr88>
-<a0,fr89> <a0,fr90> <a0,fr91> <a0,fr92> <a0,fr93> <a0,fr94> <a0,fr95>
-<a0,fr96> <a0,fr97> <a0,fr98> <a0,fr99> <a0,fr100> <a0,fr101> <a0,fr102>
-<a0,fr103> <a0,fr104> <a0,fr105> <a0,fr106>
-<Images//1D_1/pic108.jpg, id=973, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic108.jpg Graphic file (type jpg)
-<use Images//1D_1/pic108.jpg>
-Package pdftex.def Info: Images//1D_1/pic108.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic108.jpg>
-<a0,fr107>
-<Images//1D_1/pic109.jpg, id=983, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic109.jpg Graphic file (type jpg)
-<use Images//1D_1/pic109.jpg>
-Package pdftex.def Info: Images//1D_1/pic109.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic109.jpg> <a0,fr108>
-<Images//1D_1/pic110.jpg, id=993, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic110.jpg Graphic file (type jpg)
-<use Images//1D_1/pic110.jpg>
-Package pdftex.def Info: Images//1D_1/pic110.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic110.jpg>
-<a0,fr109>
-<Images//1D_1/pic111.jpg, id=1003, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic111.jpg Graphic file (type jpg)
-<use Images//1D_1/pic111.jpg>
-Package pdftex.def Info: Images//1D_1/pic111.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic111.jpg> <a0,fr110>
-<Images//1D_1/pic112.jpg, id=1013, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic112.jpg Graphic file (type jpg)
-<use Images//1D_1/pic112.jpg>
-Package pdftex.def Info: Images//1D_1/pic112.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic112.jpg>
-<a0,fr111>
-<Images//1D_1/pic113.jpg, id=1023, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic113.jpg Graphic file (type jpg)
-<use Images//1D_1/pic113.jpg>
-Package pdftex.def Info: Images//1D_1/pic113.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic113.jpg> <a0,fr112>
-<Images//1D_1/pic114.jpg, id=1033, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic114.jpg Graphic file (type jpg)
-<use Images//1D_1/pic114.jpg>
-Package pdftex.def Info: Images//1D_1/pic114.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic114.jpg>
-<a0,fr113>
-<Images//1D_1/pic115.jpg, id=1043, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic115.jpg Graphic file (type jpg)
-<use Images//1D_1/pic115.jpg>
-Package pdftex.def Info: Images//1D_1/pic115.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic115.jpg> <a0,fr114>
-<Images//1D_1/pic116.jpg, id=1053, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic116.jpg Graphic file (type jpg)
-<use Images//1D_1/pic116.jpg>
-Package pdftex.def Info: Images//1D_1/pic116.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic116.jpg>
-<a0,fr115>
-<Images//1D_1/pic117.jpg, id=1063, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic117.jpg Graphic file (type jpg)
-<use Images//1D_1/pic117.jpg>
-Package pdftex.def Info: Images//1D_1/pic117.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic117.jpg> <a0,fr116>
-<Images//1D_1/pic118.jpg, id=1073, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic118.jpg Graphic file (type jpg)
-<use Images//1D_1/pic118.jpg>
-Package pdftex.def Info: Images//1D_1/pic118.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic118.jpg>
-<a0,fr117>
-<Images//1D_1/pic119.jpg, id=1083, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic119.jpg Graphic file (type jpg)
-<use Images//1D_1/pic119.jpg>
-Package pdftex.def Info: Images//1D_1/pic119.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic119.jpg> <a0,fr118>
-<Images//1D_1/pic120.jpg, id=1093, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic120.jpg Graphic file (type jpg)
-<use Images//1D_1/pic120.jpg>
-Package pdftex.def Info: Images//1D_1/pic120.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic120.jpg>
-<a0,fr119>
-<Images//1D_1/pic121.jpg, id=1103, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic121.jpg Graphic file (type jpg)
-<use Images//1D_1/pic121.jpg>
-Package pdftex.def Info: Images//1D_1/pic121.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic121.jpg> <a0,fr120>
-<Images//1D_1/pic122.jpg, id=1114, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic122.jpg Graphic file (type jpg)
-<use Images//1D_1/pic122.jpg>
-Package pdftex.def Info: Images//1D_1/pic122.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic122.jpg>
-<a0,fr121>
-<Images//1D_1/pic123.jpg, id=1124, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic123.jpg Graphic file (type jpg)
-<use Images//1D_1/pic123.jpg>
-Package pdftex.def Info: Images//1D_1/pic123.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic123.jpg> <a0,fr122>
-<Images//1D_1/pic124.jpg, id=1134, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic124.jpg Graphic file (type jpg)
-<use Images//1D_1/pic124.jpg>
-Package pdftex.def Info: Images//1D_1/pic124.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic124.jpg>
-<a0,fr123>
-<Images//1D_1/pic125.jpg, id=1144, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic125.jpg Graphic file (type jpg)
-<use Images//1D_1/pic125.jpg>
-Package pdftex.def Info: Images//1D_1/pic125.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic125.jpg> <a0,fr124>
-<Images//1D_1/pic126.jpg, id=1154, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic126.jpg Graphic file (type jpg)
-<use Images//1D_1/pic126.jpg>
-Package pdftex.def Info: Images//1D_1/pic126.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic126.jpg>
-<a0,fr125>
-<Images//1D_1/pic127.jpg, id=1164, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic127.jpg Graphic file (type jpg)
-<use Images//1D_1/pic127.jpg>
-Package pdftex.def Info: Images//1D_1/pic127.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic127.jpg> <a0,fr126>
-<Images//1D_1/pic128.jpg, id=1174, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic128.jpg Graphic file (type jpg)
-<use Images//1D_1/pic128.jpg>
-Package pdftex.def Info: Images//1D_1/pic128.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic128.jpg>
-<a0,fr127>
-<Images//1D_1/pic129.jpg, id=1184, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic129.jpg Graphic file (type jpg)
-<use Images//1D_1/pic129.jpg>
-Package pdftex.def Info: Images//1D_1/pic129.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic129.jpg> <a0,fr128>
-<Images//1D_1/pic130.jpg, id=1194, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic130.jpg Graphic file (type jpg)
-<use Images//1D_1/pic130.jpg>
-Package pdftex.def Info: Images//1D_1/pic130.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic130.jpg>
-<a0,fr129>
-<Images//1D_1/pic131.jpg, id=1204, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic131.jpg Graphic file (type jpg)
-<use Images//1D_1/pic131.jpg>
-Package pdftex.def Info: Images//1D_1/pic131.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic131.jpg> <a0,fr130>
-<Images//1D_1/pic132.jpg, id=1214, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic132.jpg Graphic file (type jpg)
-<use Images//1D_1/pic132.jpg>
-Package pdftex.def Info: Images//1D_1/pic132.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic132.jpg>
-<a0,fr131>
-<Images//1D_1/pic133.jpg, id=1224, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic133.jpg Graphic file (type jpg)
-<use Images//1D_1/pic133.jpg>
-Package pdftex.def Info: Images//1D_1/pic133.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic133.jpg> <a0,fr132>
-<Images//1D_1/pic134.jpg, id=1234, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic134.jpg Graphic file (type jpg)
-<use Images//1D_1/pic134.jpg>
-Package pdftex.def Info: Images//1D_1/pic134.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic134.jpg>
-<a0,fr133>
-<Images//1D_1/pic135.jpg, id=1244, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic135.jpg Graphic file (type jpg)
-<use Images//1D_1/pic135.jpg>
-Package pdftex.def Info: Images//1D_1/pic135.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic135.jpg> <a0,fr134>
-<Images//1D_1/pic136.jpg, id=1254, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic136.jpg Graphic file (type jpg)
-<use Images//1D_1/pic136.jpg>
-Package pdftex.def Info: Images//1D_1/pic136.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic136.jpg>
-<a0,fr135>
-<Images//1D_1/pic137.jpg, id=1264, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic137.jpg Graphic file (type jpg)
-<use Images//1D_1/pic137.jpg>
-Package pdftex.def Info: Images//1D_1/pic137.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic137.jpg> <a0,fr136>
-<Images//1D_1/pic138.jpg, id=1274, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic138.jpg Graphic file (type jpg)
-<use Images//1D_1/pic138.jpg>
-Package pdftex.def Info: Images//1D_1/pic138.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic138.jpg>
-<a0,fr137>
-<Images//1D_1/pic139.jpg, id=1284, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic139.jpg Graphic file (type jpg)
-<use Images//1D_1/pic139.jpg>
-Package pdftex.def Info: Images//1D_1/pic139.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic139.jpg> <a0,fr138>
-<Images//1D_1/pic140.jpg, id=1294, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic140.jpg Graphic file (type jpg)
-<use Images//1D_1/pic140.jpg>
-Package pdftex.def Info: Images//1D_1/pic140.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic140.jpg>
-<a0,fr139>
-<Images//1D_1/pic141.jpg, id=1304, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic141.jpg Graphic file (type jpg)
-<use Images//1D_1/pic141.jpg>
-Package pdftex.def Info: Images//1D_1/pic141.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic141.jpg> <a0,fr140>
-<Images//1D_1/pic142.jpg, id=1314, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic142.jpg Graphic file (type jpg)
-<use Images//1D_1/pic142.jpg>
-Package pdftex.def Info: Images//1D_1/pic142.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic142.jpg>
-<a0,fr141>
-<Images//1D_1/pic143.jpg, id=1324, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic143.jpg Graphic file (type jpg)
-<use Images//1D_1/pic143.jpg>
-Package pdftex.def Info: Images//1D_1/pic143.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic143.jpg> <a0,fr142>
-<Images//1D_1/pic144.jpg, id=1334, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic144.jpg Graphic file (type jpg)
-<use Images//1D_1/pic144.jpg>
-Package pdftex.def Info: Images//1D_1/pic144.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic144.jpg>
-<a0,fr143>
-<Images//1D_1/pic145.jpg, id=1344, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic145.jpg Graphic file (type jpg)
-<use Images//1D_1/pic145.jpg>
-Package pdftex.def Info: Images//1D_1/pic145.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic145.jpg> <a0,fr144>
-<Images//1D_1/pic146.jpg, id=1354, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic146.jpg Graphic file (type jpg)
-<use Images//1D_1/pic146.jpg>
-Package pdftex.def Info: Images//1D_1/pic146.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic146.jpg>
-<a0,fr145>
-<Images//1D_1/pic147.jpg, id=1365, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic147.jpg Graphic file (type jpg)
-<use Images//1D_1/pic147.jpg>
-Package pdftex.def Info: Images//1D_1/pic147.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic147.jpg> <a0,fr146>
-<Images//1D_1/pic148.jpg, id=1375, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic148.jpg Graphic file (type jpg)
-<use Images//1D_1/pic148.jpg>
-Package pdftex.def Info: Images//1D_1/pic148.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic148.jpg>
-<a0,fr147>
-<Images//1D_1/pic149.jpg, id=1385, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic149.jpg Graphic file (type jpg)
-<use Images//1D_1/pic149.jpg>
-Package pdftex.def Info: Images//1D_1/pic149.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic149.jpg> <a0,fr148>
-<Images//1D_1/pic150.jpg, id=1395, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic150.jpg Graphic file (type jpg)
-<use Images//1D_1/pic150.jpg>
-Package pdftex.def Info: Images//1D_1/pic150.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic150.jpg>
-<a0,fr149>
-<Images//1D_1/pic151.jpg, id=1405, 1003.75pt x 1001.7425pt>
-File: Images//1D_1/pic151.jpg Graphic file (type jpg)
-<use Images//1D_1/pic151.jpg>
-Package pdftex.def Info: Images//1D_1/pic151.jpg  used on input line 230.
-(pdftex.def)             Requested size: 1003.74756pt x 1001.74005pt.
- <./Images//1D_1/pic151.jpg> <a0,fr150> <a0,fr151> <a0,fr152>
-<a0,fr153> <a0,fr154> <a0,fr155> <a0,fr156> <a0,fr157> <a0,fr158> <a0,fr159>
-<a0,fr160> <a0,fr161> <a0,fr162> <a0,fr163> <a0,fr164> <a0,fr165> <a0,fr166>
-<a0,fr167> <a0,fr168> <a0,fr169> <a0,fr170> <a0,fr171> <a0,fr172> <a0,fr173>
-<a0,fr174> <a0,fr175> <a0,fr176> <a0,fr177> <a0,fr178> <a0,fr179> <a0,fr180>
-<a0,fr181> <a0,fr182> <a0,fr183> <a0,fr184> <a0,fr185> <a0,fr186> <a0,fr187>
-<a0,fr188> <a0,fr189> <a0,fr190> <a0,fr191> <a0,fr192> <a0,fr193> <a0,fr194>
-<a0,fr195> <a0,fr196> <a0,fr197> <a0,fr198> <a0,fr199> <a0,fr200> [23
-
-]
-<Images/graph_1.jpg, id=1704, 1003.75pt x 671.50874pt>
-File: Images/graph_1.jpg Graphic file (type jpg)
-<use Images/graph_1.jpg>
-Package pdftex.def Info: Images/graph_1.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
-
-<a1,fr0> <a1,fr1> <a1,fr2> <a1,fr3> <a1,fr4> <a1,fr5> <a1,fr6> <a1,fr7>
-<a1,fr8> <a1,fr9> <a1,fr10> <a1,fr11> <a1,fr12> <a1,fr13> <a1,fr14> <a1,fr15>
-<a1,fr16> <a1,fr17> <a1,fr18> <a1,fr19> <a1,fr20> <a1,fr21> <a1,fr22>
-<a1,fr23> <a1,fr24> <a1,fr25> <a1,fr26> <a1,fr27> <a1,fr28> <a1,fr29>
-<a1,fr30> <a1,fr31> <a1,fr32> <a1,fr33> <a1,fr34> <a1,fr35> <a1,fr36>
-<a1,fr37> <a1,fr38> <a1,fr39> <a1,fr40> <a1,fr41> <a1,fr42> <a1,fr43>
-<a1,fr44> <a1,fr45> <a1,fr46> <a1,fr47> <a1,fr48> <a1,fr49> <a1,fr50>
-<a1,fr51> <a1,fr52> <a1,fr53> <a1,fr54> <a1,fr55> <a1,fr56> <a1,fr57>
-<a1,fr58> <a1,fr59> <a1,fr60> <a1,fr61> <a1,fr62> <a1,fr63> <a1,fr64>
-<a1,fr65> <a1,fr66> <a1,fr67> <a1,fr68> <a1,fr69> <a1,fr70> <a1,fr71>
-<a1,fr72> <a1,fr73> <a1,fr74> <a1,fr75> <a1,fr76> <a1,fr77> <a1,fr78>
-<a1,fr79> <a1,fr80> <a1,fr81> <a1,fr82> <a1,fr83> <a1,fr84> <a1,fr85>
-<a1,fr86> <a1,fr87> <a1,fr88> <a1,fr89> <a1,fr90> <a1,fr91> <a1,fr92>
-<a1,fr93> <a1,fr94> <a1,fr95> <a1,fr96> <a1,fr97> <a1,fr98> <a1,fr99>
-<a1,fr100> <a1,fr101> <a1,fr102> <a1,fr103> <a1,fr104> <a1,fr105> <a1,fr106>
-<a1,fr107> <a1,fr108> <a1,fr109> <a1,fr110> <a1,fr111> <a1,fr112> <a1,fr113>
-<a1,fr114> <a1,fr115> <a1,fr116> <a1,fr117> <a1,fr118> <a1,fr119> <a1,fr120>
-<a1,fr121> <a1,fr122> <a1,fr123> <a1,fr124> <a1,fr125> <a1,fr126> <a1,fr127>
-<a1,fr128> <a1,fr129> <a1,fr130> <a1,fr131> <a1,fr132> <a1,fr133> <a1,fr134>
-<a1,fr135> <a1,fr136> <a1,fr137> <a1,fr138> <a1,fr139> <a1,fr140> <a1,fr141>
-<a1,fr142> <a1,fr143> <a1,fr144> <a1,fr145> <a1,fr146> <a1,fr147> <a1,fr148>
-<a1,fr149> <a1,fr150> <a1,fr151> <a1,fr152> <a1,fr153> <a1,fr154> <a1,fr155>
-<a1,fr156> <a1,fr157> <a1,fr158> <a1,fr159> <a1,fr160> <a1,fr161> <a1,fr162>
-<a1,fr163> <a1,fr164> <a1,fr165> <a1,fr166> <a1,fr167> <a1,fr168> <a1,fr169>
-<a1,fr170> <a1,fr171> <a1,fr172> <a1,fr173> <a1,fr174> <a1,fr175> <a1,fr176>
-<a1,fr177> <a1,fr178> <a1,fr179> <a1,fr180> <a1,fr181> <a1,fr182> <a1,fr183>
-<a1,fr184> <a1,fr185> <a1,fr186> <a1,fr187> <a1,fr188> <a1,fr189> <a1,fr190>
-<a1,fr191> <a1,fr192> <a1,fr193> <a1,fr194> <a1,fr195> <a1,fr196> <a1,fr197>
-<a1,fr198> <a1,fr199> <a1,fr200> [24
-
- <./Images/graph_1.jpg>]
-<Images/graph_2.jpg, id=2740, 1003.75pt x 671.50874pt>
-File: Images/graph_2.jpg Graphic file (type jpg)
-<use Images/graph_2.jpg>
-Package pdftex.def Info: Images/graph_2.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a2,fr0> <a2,fr1>
-<a2,fr2> <a2,fr3> <a2,fr4> <a2,fr5> <a2,fr6> <a2,fr7> <a2,fr8> <a2,fr9>
-<a2,fr10> <a2,fr11> <a2,fr12> <a2,fr13> <a2,fr14> <a2,fr15> <a2,fr16>
-<a2,fr17> <a2,fr18> <a2,fr19> <a2,fr20> <a2,fr21> <a2,fr22> <a2,fr23>
-<a2,fr24> <a2,fr25> <a2,fr26> <a2,fr27> <a2,fr28> <a2,fr29> <a2,fr30>
-<a2,fr31> <a2,fr32> <a2,fr33> <a2,fr34> <a2,fr35> <a2,fr36> <a2,fr37>
-<a2,fr38> <a2,fr39> <a2,fr40> <a2,fr41> <a2,fr42> <a2,fr43> <a2,fr44>
-<a2,fr45> <a2,fr46> <a2,fr47> <a2,fr48> <a2,fr49> <a2,fr50> <a2,fr51>
-<a2,fr52> <a2,fr53> <a2,fr54> <a2,fr55> <a2,fr56> <a2,fr57> <a2,fr58>
-<a2,fr59> <a2,fr60> <a2,fr61> <a2,fr62> <a2,fr63> <a2,fr64> <a2,fr65>
-<a2,fr66> <a2,fr67> <a2,fr68> <a2,fr69> <a2,fr70> <a2,fr71> <a2,fr72>
-<a2,fr73> <a2,fr74> <a2,fr75> <a2,fr76> <a2,fr77> <a2,fr78> <a2,fr79>
-<a2,fr80> <a2,fr81> <a2,fr82> <a2,fr83> <a2,fr84> <a2,fr85> <a2,fr86>
-<a2,fr87> <a2,fr88> <a2,fr89> <a2,fr90> <a2,fr91> <a2,fr92> <a2,fr93>
-<a2,fr94> <a2,fr95> <a2,fr96> <a2,fr97> <a2,fr98> <a2,fr99> <a2,fr100>
-<a2,fr101> <a2,fr102> <a2,fr103> <a2,fr104> <a2,fr105> <a2,fr106> <a2,fr107>
-<a2,fr108> <a2,fr109> <a2,fr110> <a2,fr111> <a2,fr112> <a2,fr113> <a2,fr114>
-<a2,fr115> <a2,fr116> <a2,fr117> <a2,fr118> <a2,fr119> <a2,fr120> <a2,fr121>
-<a2,fr122> <a2,fr123> <a2,fr124> <a2,fr125> <a2,fr126> <a2,fr127> <a2,fr128>
-<a2,fr129> <a2,fr130> <a2,fr131> <a2,fr132> <a2,fr133> <a2,fr134> <a2,fr135>
-<a2,fr136> <a2,fr137> <a2,fr138> <a2,fr139> <a2,fr140> <a2,fr141> <a2,fr142>
-<a2,fr143> <a2,fr144> <a2,fr145> <a2,fr146> <a2,fr147> <a2,fr148> <a2,fr149>
-<a2,fr150> <a2,fr151> <a2,fr152> <a2,fr153> <a2,fr154> <a2,fr155> <a2,fr156>
-<a2,fr157> <a2,fr158> <a2,fr159> <a2,fr160> <a2,fr161> <a2,fr162> <a2,fr163>
-<a2,fr164> <a2,fr165> <a2,fr166> <a2,fr167> <a2,fr168> <a2,fr169> <a2,fr170>
-<a2,fr171> <a2,fr172> <a2,fr173> <a2,fr174> <a2,fr175> <a2,fr176> <a2,fr177>
-<a2,fr178> <a2,fr179> <a2,fr180> <a2,fr181> <a2,fr182> <a2,fr183> <a2,fr184>
-<a2,fr185> <a2,fr186> <a2,fr187> <a2,fr188> <a2,fr189> <a2,fr190> <a2,fr191>
-<a2,fr192> <a2,fr193> <a2,fr194> <a2,fr195> <a2,fr196> <a2,fr197> <a2,fr198>
-<a2,fr199> <a2,fr200> [25
-
- <./Images/graph_2.jpg>]
-<Images/graph_3.jpg, id=3777, 1003.75pt x 671.50874pt>
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a3,fr0> <a3,fr1> <a3,fr2>
-<a3,fr3> <a3,fr4> <a3,fr5> <a3,fr6> <a3,fr7> <a3,fr8> <a3,fr9> <a3,fr10>
-<a3,fr11> <a3,fr12> <a3,fr13> <a3,fr14> <a3,fr15> <a3,fr16> <a3,fr17>
-<a3,fr18> <a3,fr19> <a3,fr20> <a3,fr21> <a3,fr22> <a3,fr23> <a3,fr24>
-<a3,fr25> <a3,fr26> <a3,fr27> <a3,fr28> <a3,fr29> <a3,fr30> <a3,fr31>
-<a3,fr32> <a3,fr33> <a3,fr34> <a3,fr35> <a3,fr36> <a3,fr37> <a3,fr38>
-<a3,fr39> <a3,fr40> <a3,fr41> <a3,fr42> <a3,fr43> <a3,fr44> <a3,fr45>
-<a3,fr46> <a3,fr47> <a3,fr48> <a3,fr49> <a3,fr50> <a3,fr51> <a3,fr52>
-<a3,fr53> <a3,fr54> <a3,fr55> <a3,fr56> <a3,fr57> <a3,fr58> <a3,fr59>
-<a3,fr60> <a3,fr61> <a3,fr62> <a3,fr63> <a3,fr64> <a3,fr65> <a3,fr66>
-<a3,fr67> <a3,fr68> <a3,fr69> <a3,fr70> <a3,fr71> <a3,fr72> <a3,fr73>
-<a3,fr74> <a3,fr75> <a3,fr76> <a3,fr77> <a3,fr78> <a3,fr79> <a3,fr80>
-<a3,fr81> <a3,fr82> <a3,fr83> <a3,fr84> <a3,fr85> <a3,fr86> <a3,fr87>
-<a3,fr88> <a3,fr89> <a3,fr90> <a3,fr91> <a3,fr92> <a3,fr93> <a3,fr94>
-<a3,fr95> <a3,fr96> <a3,fr97> <a3,fr98> <a3,fr99> <a3,fr100> <a3,fr101>
-<a3,fr102> <a3,fr103> <a3,fr104> <a3,fr105> <a3,fr106> <a3,fr107> <a3,fr108>
-<a3,fr109> <a3,fr110> <a3,fr111> <a3,fr112> <a3,fr113> <a3,fr114> <a3,fr115>
-<a3,fr116> <a3,fr117> <a3,fr118> <a3,fr119> <a3,fr120> <a3,fr121> <a3,fr122>
-<a3,fr123> <a3,fr124> <a3,fr125> <a3,fr126> <a3,fr127> <a3,fr128> <a3,fr129>
-<a3,fr130> <a3,fr131> <a3,fr132> <a3,fr133> <a3,fr134> <a3,fr135> <a3,fr136>
-<a3,fr137> <a3,fr138> <a3,fr139> <a3,fr140> <a3,fr141> <a3,fr142> <a3,fr143>
-<a3,fr144> <a3,fr145> <a3,fr146> <a3,fr147> <a3,fr148> <a3,fr149> <a3,fr150>
-<a3,fr151> <a3,fr152> <a3,fr153> <a3,fr154> <a3,fr155> <a3,fr156> <a3,fr157>
-<a3,fr158> <a3,fr159> <a3,fr160> <a3,fr161> <a3,fr162> <a3,fr163> <a3,fr164>
-<a3,fr165> <a3,fr166> <a3,fr167> <a3,fr168> <a3,fr169> <a3,fr170> <a3,fr171>
-<a3,fr172> <a3,fr173> <a3,fr174> <a3,fr175> <a3,fr176> <a3,fr177> <a3,fr178>
-<a3,fr179> <a3,fr180> <a3,fr181> <a3,fr182> <a3,fr183> <a3,fr184> <a3,fr185>
-<a3,fr186> <a3,fr187> <a3,fr188> <a3,fr189> <a3,fr190> <a3,fr191> <a3,fr192>
-<a3,fr193> <a3,fr194> <a3,fr195> <a3,fr196> <a3,fr197> <a3,fr198> <a3,fr199>
-<a3,fr200> [26
-
- <./Images/graph_3.jpg>]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a4,fr0> <a4,fr1> <a4,fr2> <a4,fr3>
-<a4,fr4> <a4,fr5> <a4,fr6> <a4,fr7> <a4,fr8> <a4,fr9> <a4,fr10> <a4,fr11>
-<a4,fr12> <a4,fr13> <a4,fr14> <a4,fr15> <a4,fr16> <a4,fr17> <a4,fr18>
-<a4,fr19> <a4,fr20> <a4,fr21> <a4,fr22> <a4,fr23> <a4,fr24> <a4,fr25>
-<a4,fr26> <a4,fr27> <a4,fr28> <a4,fr29> <a4,fr30> <a4,fr31> <a4,fr32>
-<a4,fr33> <a4,fr34> <a4,fr35> <a4,fr36> <a4,fr37> <a4,fr38> <a4,fr39>
-<a4,fr40> <a4,fr41> <a4,fr42> <a4,fr43> <a4,fr44> <a4,fr45> <a4,fr46>
-<a4,fr47> <a4,fr48> <a4,fr49> <a4,fr50> <a4,fr51> <a4,fr52> <a4,fr53>
-<a4,fr54> <a4,fr55> <a4,fr56> <a4,fr57> <a4,fr58> <a4,fr59> <a4,fr60>
-<a4,fr61> <a4,fr62> <a4,fr63> <a4,fr64> <a4,fr65> <a4,fr66> <a4,fr67>
-<a4,fr68> <a4,fr69> <a4,fr70> <a4,fr71> <a4,fr72> <a4,fr73> <a4,fr74>
-<a4,fr75> <a4,fr76> <a4,fr77> <a4,fr78> <a4,fr79> <a4,fr80> <a4,fr81>
-<a4,fr82> <a4,fr83> <a4,fr84> <a4,fr85> <a4,fr86> <a4,fr87> <a4,fr88>
-<a4,fr89> <a4,fr90> <a4,fr91> <a4,fr92> <a4,fr93> <a4,fr94> <a4,fr95>
-<a4,fr96> <a4,fr97> <a4,fr98> <a4,fr99> <a4,fr100> <a4,fr101> <a4,fr102>
-<a4,fr103> <a4,fr104> <a4,fr105> <a4,fr106> <a4,fr107> <a4,fr108> <a4,fr109>
-<a4,fr110> <a4,fr111> <a4,fr112> <a4,fr113> <a4,fr114> <a4,fr115> <a4,fr116>
-<a4,fr117> <a4,fr118> <a4,fr119> <a4,fr120> <a4,fr121> <a4,fr122> <a4,fr123>
-<a4,fr124> <a4,fr125> <a4,fr126> <a4,fr127> <a4,fr128> <a4,fr129> <a4,fr130>
-<a4,fr131> <a4,fr132> <a4,fr133> <a4,fr134> <a4,fr135> <a4,fr136> <a4,fr137>
-<a4,fr138> <a4,fr139> <a4,fr140> <a4,fr141> <a4,fr142> <a4,fr143> <a4,fr144>
-<a4,fr145> <a4,fr146> <a4,fr147> <a4,fr148> <a4,fr149> <a4,fr150> <a4,fr151>
-<a4,fr152> <a4,fr153> <a4,fr154> <a4,fr155> <a4,fr156> <a4,fr157> <a4,fr158>
-<a4,fr159> <a4,fr160> <a4,fr161> <a4,fr162> <a4,fr163> <a4,fr164> <a4,fr165>
-<a4,fr166> <a4,fr167> <a4,fr168> <a4,fr169> <a4,fr170> <a4,fr171> <a4,fr172>
-<a4,fr173> <a4,fr174> <a4,fr175> <a4,fr176> <a4,fr177> <a4,fr178> <a4,fr179>
-<a4,fr180> <a4,fr181> <a4,fr182> <a4,fr183> <a4,fr184> <a4,fr185> <a4,fr186>
-<a4,fr187> <a4,fr188> <a4,fr189> <a4,fr190> <a4,fr191> <a4,fr192> <a4,fr193>
-<a4,fr194> <a4,fr195> <a4,fr196> <a4,fr197> <a4,fr198> <a4,fr199> <a4,fr200>
-[27
-
-]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a5,fr0> <a5,fr1> <a5,fr2> <a5,fr3> <a5,fr4> <a5,fr5> <a5,fr6> <a5,fr7>
-<a5,fr8> <a5,fr9> <a5,fr10> <a5,fr11> <a5,fr12> <a5,fr13> <a5,fr14> <a5,fr15>
-<a5,fr16> <a5,fr17> <a5,fr18> <a5,fr19> <a5,fr20> <a5,fr21> <a5,fr22>
-<a5,fr23> <a5,fr24> <a5,fr25> <a5,fr26> <a5,fr27> <a5,fr28> <a5,fr29>
-<a5,fr30> <a5,fr31> <a5,fr32> <a5,fr33> <a5,fr34> <a5,fr35> <a5,fr36>
-<a5,fr37> <a5,fr38> <a5,fr39> <a5,fr40> <a5,fr41> <a5,fr42> <a5,fr43>
-<a5,fr44> <a5,fr45> <a5,fr46> <a5,fr47> <a5,fr48> <a5,fr49> <a5,fr50>
-<a5,fr51> <a5,fr52> <a5,fr53> <a5,fr54> <a5,fr55> <a5,fr56> <a5,fr57>
-<a5,fr58> <a5,fr59> <a5,fr60> <a5,fr61> <a5,fr62> <a5,fr63> <a5,fr64>
-<a5,fr65> <a5,fr66> <a5,fr67> <a5,fr68> <a5,fr69> <a5,fr70> <a5,fr71>
-<a5,fr72> <a5,fr73> <a5,fr74> <a5,fr75> <a5,fr76> <a5,fr77> <a5,fr78>
-<a5,fr79> <a5,fr80> <a5,fr81> <a5,fr82> <a5,fr83> <a5,fr84> <a5,fr85>
-<a5,fr86> <a5,fr87> <a5,fr88> <a5,fr89> <a5,fr90> <a5,fr91> <a5,fr92>
-<a5,fr93> <a5,fr94> <a5,fr95> <a5,fr96> <a5,fr97> <a5,fr98> <a5,fr99>
-<a5,fr100> <a5,fr101> <a5,fr102> <a5,fr103> <a5,fr104> <a5,fr105> <a5,fr106>
-<a5,fr107> <a5,fr108> <a5,fr109> <a5,fr110> <a5,fr111> <a5,fr112> <a5,fr113>
-<a5,fr114> <a5,fr115> <a5,fr116> <a5,fr117> <a5,fr118> <a5,fr119> <a5,fr120>
-<a5,fr121> <a5,fr122> <a5,fr123> <a5,fr124> <a5,fr125> <a5,fr126> <a5,fr127>
-<a5,fr128> <a5,fr129> <a5,fr130> <a5,fr131> <a5,fr132> <a5,fr133> <a5,fr134>
-<a5,fr135> <a5,fr136> <a5,fr137> <a5,fr138> <a5,fr139> <a5,fr140> <a5,fr141>
-<a5,fr142> <a5,fr143> <a5,fr144> <a5,fr145> <a5,fr146> <a5,fr147> <a5,fr148>
-<a5,fr149> <a5,fr150> <a5,fr151> <a5,fr152> <a5,fr153> <a5,fr154> <a5,fr155>
-<a5,fr156> <a5,fr157> <a5,fr158> <a5,fr159> <a5,fr160> <a5,fr161> <a5,fr162>
-<a5,fr163> <a5,fr164> <a5,fr165> <a5,fr166> <a5,fr167> <a5,fr168> <a5,fr169>
-<a5,fr170> <a5,fr171> <a5,fr172> <a5,fr173> <a5,fr174> <a5,fr175> <a5,fr176>
-<a5,fr177> <a5,fr178> <a5,fr179> <a5,fr180> <a5,fr181> <a5,fr182> <a5,fr183>
-<a5,fr184> <a5,fr185> <a5,fr186> <a5,fr187> <a5,fr188> <a5,fr189> <a5,fr190>
-<a5,fr191> <a5,fr192> <a5,fr193> <a5,fr194> <a5,fr195> <a5,fr196> <a5,fr197>
-<a5,fr198> <a5,fr199> <a5,fr200> [28
-
-]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a6,fr0> <a6,fr1> <a6,fr2> <a6,fr3>
-<a6,fr4> <a6,fr5> <a6,fr6> <a6,fr7> <a6,fr8> <a6,fr9> <a6,fr10> <a6,fr11>
-<a6,fr12> <a6,fr13> <a6,fr14> <a6,fr15> <a6,fr16> <a6,fr17> <a6,fr18>
-<a6,fr19> <a6,fr20> <a6,fr21> <a6,fr22> <a6,fr23> <a6,fr24> <a6,fr25>
-<a6,fr26> <a6,fr27> <a6,fr28> <a6,fr29> <a6,fr30> <a6,fr31> <a6,fr32>
-<a6,fr33> <a6,fr34> <a6,fr35> <a6,fr36> <a6,fr37> <a6,fr38> <a6,fr39>
-<a6,fr40> <a6,fr41> <a6,fr42> <a6,fr43> <a6,fr44> <a6,fr45> <a6,fr46>
-<a6,fr47> <a6,fr48> <a6,fr49> <a6,fr50> <a6,fr51> <a6,fr52> <a6,fr53>
-<a6,fr54> <a6,fr55> <a6,fr56> <a6,fr57> <a6,fr58> <a6,fr59> <a6,fr60>
-<a6,fr61> <a6,fr62> <a6,fr63> <a6,fr64> <a6,fr65> <a6,fr66> <a6,fr67>
-<a6,fr68> <a6,fr69> <a6,fr70> <a6,fr71> <a6,fr72> <a6,fr73> <a6,fr74>
-<a6,fr75> <a6,fr76> <a6,fr77> <a6,fr78> <a6,fr79> <a6,fr80> <a6,fr81>
-<a6,fr82> <a6,fr83> <a6,fr84> <a6,fr85> <a6,fr86> <a6,fr87> <a6,fr88>
-<a6,fr89> <a6,fr90> <a6,fr91> <a6,fr92> <a6,fr93> <a6,fr94> <a6,fr95>
-<a6,fr96> <a6,fr97> <a6,fr98> <a6,fr99> <a6,fr100> <a6,fr101> <a6,fr102>
-<a6,fr103> <a6,fr104> <a6,fr105> <a6,fr106> <a6,fr107> <a6,fr108> <a6,fr109>
-<a6,fr110> <a6,fr111> <a6,fr112> <a6,fr113> <a6,fr114> <a6,fr115> <a6,fr116>
-<a6,fr117> <a6,fr118> <a6,fr119> <a6,fr120> <a6,fr121> <a6,fr122> <a6,fr123>
-<a6,fr124> <a6,fr125> <a6,fr126> <a6,fr127> <a6,fr128> <a6,fr129> <a6,fr130>
-<a6,fr131> <a6,fr132> <a6,fr133> <a6,fr134> <a6,fr135> <a6,fr136> <a6,fr137>
-<a6,fr138> <a6,fr139> <a6,fr140> <a6,fr141> <a6,fr142> <a6,fr143> <a6,fr144>
-<a6,fr145> <a6,fr146> <a6,fr147> <a6,fr148> <a6,fr149> <a6,fr150> <a6,fr151>
-<a6,fr152> <a6,fr153> <a6,fr154> <a6,fr155> <a6,fr156> <a6,fr157> <a6,fr158>
-<a6,fr159> <a6,fr160> <a6,fr161> <a6,fr162> <a6,fr163> <a6,fr164> <a6,fr165>
-<a6,fr166> <a6,fr167> <a6,fr168> <a6,fr169> <a6,fr170> <a6,fr171> <a6,fr172>
-<a6,fr173> <a6,fr174> <a6,fr175> <a6,fr176> <a6,fr177> <a6,fr178> <a6,fr179>
-<a6,fr180> <a6,fr181> <a6,fr182> <a6,fr183> <a6,fr184> <a6,fr185> <a6,fr186>
-<a6,fr187> <a6,fr188> <a6,fr189> <a6,fr190> <a6,fr191> <a6,fr192> <a6,fr193>
-<a6,fr194> <a6,fr195> <a6,fr196> <a6,fr197> <a6,fr198> <a6,fr199> <a6,fr200>
-[29
-
-]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 230.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a7,fr0> <a7,fr1> <a7,fr2> <a7,fr3> <a7,fr4> <a7,fr5> <a7,fr6> <a7,fr7>
-<a7,fr8> <a7,fr9> <a7,fr10> <a7,fr11> <a7,fr12> <a7,fr13> <a7,fr14> <a7,fr15>
-<a7,fr16> <a7,fr17> <a7,fr18> <a7,fr19> <a7,fr20> <a7,fr21> <a7,fr22>
-<a7,fr23> <a7,fr24> <a7,fr25> <a7,fr26> <a7,fr27> <a7,fr28> <a7,fr29>
-<a7,fr30> <a7,fr31> <a7,fr32> <a7,fr33> <a7,fr34> <a7,fr35> <a7,fr36>
-<a7,fr37> <a7,fr38> <a7,fr39> <a7,fr40> <a7,fr41> <a7,fr42> <a7,fr43>
-<a7,fr44> <a7,fr45> <a7,fr46> <a7,fr47> <a7,fr48> <a7,fr49> <a7,fr50>
-<a7,fr51> <a7,fr52> <a7,fr53> <a7,fr54> <a7,fr55> <a7,fr56> <a7,fr57>
-<a7,fr58> <a7,fr59> <a7,fr60> <a7,fr61> <a7,fr62> <a7,fr63> <a7,fr64>
-<a7,fr65> <a7,fr66> <a7,fr67> <a7,fr68> <a7,fr69> <a7,fr70> <a7,fr71>
-<a7,fr72> <a7,fr73> <a7,fr74> <a7,fr75> <a7,fr76> <a7,fr77> <a7,fr78>
-<a7,fr79> <a7,fr80> <a7,fr81> <a7,fr82> <a7,fr83> <a7,fr84> <a7,fr85>
-<a7,fr86> <a7,fr87> <a7,fr88> <a7,fr89> <a7,fr90> <a7,fr91> <a7,fr92>
-<a7,fr93> <a7,fr94> <a7,fr95> <a7,fr96> <a7,fr97> <a7,fr98> <a7,fr99>
-<a7,fr100> <a7,fr101> <a7,fr102> <a7,fr103> <a7,fr104> <a7,fr105> <a7,fr106>
-<a7,fr107> <a7,fr108> <a7,fr109> <a7,fr110> <a7,fr111> <a7,fr112> <a7,fr113>
-<a7,fr114> <a7,fr115> <a7,fr116> <a7,fr117> <a7,fr118> <a7,fr119> <a7,fr120>
-<a7,fr121> <a7,fr122> <a7,fr123> <a7,fr124> <a7,fr125> <a7,fr126> <a7,fr127>
-<a7,fr128> <a7,fr129> <a7,fr130> <a7,fr131> <a7,fr132> <a7,fr133> <a7,fr134>
-<a7,fr135> <a7,fr136> <a7,fr137> <a7,fr138> <a7,fr139> <a7,fr140> <a7,fr141>
-<a7,fr142> <a7,fr143> <a7,fr144> <a7,fr145> <a7,fr146> <a7,fr147> <a7,fr148>
-<a7,fr149> <a7,fr150> <a7,fr151> <a7,fr152> <a7,fr153> <a7,fr154> <a7,fr155>
-<a7,fr156> <a7,fr157> <a7,fr158> <a7,fr159> <a7,fr160> <a7,fr161> <a7,fr162>
-<a7,fr163> <a7,fr164> <a7,fr165> <a7,fr166> <a7,fr167> <a7,fr168> <a7,fr169>
-<a7,fr170> <a7,fr171> <a7,fr172> <a7,fr173> <a7,fr174> <a7,fr175> <a7,fr176>
-<a7,fr177> <a7,fr178> <a7,fr179> <a7,fr180> <a7,fr181> <a7,fr182> <a7,fr183>
-<a7,fr184> <a7,fr185> <a7,fr186> <a7,fr187> <a7,fr188> <a7,fr189> <a7,fr190>
-<a7,fr191> <a7,fr192> <a7,fr193> <a7,fr194> <a7,fr195> <a7,fr196> <a7,fr197>
-<a7,fr198> <a7,fr199> <a7,fr200> [30
-
-]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 247.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a8,fr0> <a8,fr1> <a8,fr2> <a8,fr3>
-<a8,fr4> <a8,fr5> <a8,fr6> <a8,fr7> <a8,fr8> <a8,fr9> <a8,fr10> <a8,fr11>
-<a8,fr12> <a8,fr13> <a8,fr14> <a8,fr15> <a8,fr16> <a8,fr17> <a8,fr18>
-<a8,fr19> <a8,fr20> <a8,fr21> <a8,fr22> <a8,fr23> <a8,fr24> <a8,fr25>
-<a8,fr26> <a8,fr27> <a8,fr28> <a8,fr29> <a8,fr30> <a8,fr31> <a8,fr32>
-<a8,fr33> <a8,fr34> <a8,fr35> <a8,fr36> <a8,fr37> <a8,fr38> <a8,fr39>
-<a8,fr40> <a8,fr41> <a8,fr42> <a8,fr43> <a8,fr44> <a8,fr45> <a8,fr46>
-<a8,fr47> <a8,fr48> <a8,fr49> <a8,fr50> <a8,fr51> <a8,fr52> <a8,fr53>
-<a8,fr54> <a8,fr55> <a8,fr56> <a8,fr57> <a8,fr58> <a8,fr59> <a8,fr60>
-<a8,fr61> <a8,fr62> <a8,fr63> <a8,fr64> <a8,fr65> <a8,fr66> <a8,fr67>
-<a8,fr68> <a8,fr69> <a8,fr70> <a8,fr71> <a8,fr72> <a8,fr73> <a8,fr74>
-<a8,fr75> <a8,fr76> <a8,fr77> <a8,fr78> <a8,fr79> <a8,fr80> <a8,fr81>
-<a8,fr82> <a8,fr83> <a8,fr84> <a8,fr85> <a8,fr86> <a8,fr87> <a8,fr88>
-<a8,fr89> <a8,fr90> <a8,fr91> <a8,fr92> <a8,fr93> <a8,fr94> <a8,fr95>
-<a8,fr96> <a8,fr97> <a8,fr98> <a8,fr99> <a8,fr100> <a8,fr101> <a8,fr102>
-<a8,fr103> <a8,fr104> <a8,fr105> <a8,fr106> <a8,fr107> <a8,fr108> <a8,fr109>
-<a8,fr110> <a8,fr111> <a8,fr112> <a8,fr113> <a8,fr114> <a8,fr115> <a8,fr116>
-<a8,fr117> <a8,fr118> <a8,fr119> <a8,fr120> <a8,fr121> <a8,fr122> <a8,fr123>
-<a8,fr124> <a8,fr125> <a8,fr126> <a8,fr127> <a8,fr128> <a8,fr129> <a8,fr130>
-<a8,fr131> <a8,fr132> <a8,fr133> <a8,fr134> <a8,fr135> <a8,fr136> <a8,fr137>
-<a8,fr138> <a8,fr139> <a8,fr140> <a8,fr141> <a8,fr142> <a8,fr143> <a8,fr144>
-<a8,fr145> <a8,fr146> <a8,fr147> <a8,fr148> <a8,fr149> <a8,fr150> <a8,fr151>
-<a8,fr152> <a8,fr153> <a8,fr154> <a8,fr155> <a8,fr156> <a8,fr157> <a8,fr158>
-<a8,fr159> <a8,fr160> <a8,fr161> <a8,fr162> <a8,fr163> <a8,fr164> <a8,fr165>
-<a8,fr166> <a8,fr167> <a8,fr168> <a8,fr169> <a8,fr170> <a8,fr171> <a8,fr172>
-<a8,fr173> <a8,fr174> <a8,fr175> <a8,fr176> <a8,fr177> <a8,fr178> <a8,fr179>
-<a8,fr180> <a8,fr181> <a8,fr182> <a8,fr183> <a8,fr184> <a8,fr185> <a8,fr186>
-<a8,fr187> <a8,fr188> <a8,fr189> <a8,fr190> <a8,fr191> <a8,fr192> <a8,fr193>
-<a8,fr194> <a8,fr195> <a8,fr196> <a8,fr197> <a8,fr198> <a8,fr199> <a8,fr200>
-[31
-
-]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 247.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a9,fr0> <a9,fr1> <a9,fr2> <a9,fr3> <a9,fr4> <a9,fr5> <a9,fr6> <a9,fr7>
-<a9,fr8> <a9,fr9> <a9,fr10> <a9,fr11> <a9,fr12> <a9,fr13> <a9,fr14> <a9,fr15>
-<a9,fr16> <a9,fr17> <a9,fr18> <a9,fr19> <a9,fr20> <a9,fr21> <a9,fr22>
-<a9,fr23> <a9,fr24> <a9,fr25> <a9,fr26> <a9,fr27> <a9,fr28> <a9,fr29>
-<a9,fr30> <a9,fr31> <a9,fr32> <a9,fr33> <a9,fr34> <a9,fr35> <a9,fr36>
-<a9,fr37> <a9,fr38> <a9,fr39> <a9,fr40> <a9,fr41> <a9,fr42> <a9,fr43>
-<a9,fr44> <a9,fr45> <a9,fr46> <a9,fr47> <a9,fr48> <a9,fr49> <a9,fr50>
-<a9,fr51> <a9,fr52> <a9,fr53> <a9,fr54> <a9,fr55> <a9,fr56> <a9,fr57>
-<a9,fr58> <a9,fr59> <a9,fr60> <a9,fr61> <a9,fr62> <a9,fr63> <a9,fr64>
-<a9,fr65> <a9,fr66> <a9,fr67> <a9,fr68> <a9,fr69> <a9,fr70> <a9,fr71>
-<a9,fr72> <a9,fr73> <a9,fr74> <a9,fr75> <a9,fr76> <a9,fr77> <a9,fr78>
-<a9,fr79> <a9,fr80> <a9,fr81> <a9,fr82> <a9,fr83> <a9,fr84> <a9,fr85>
-<a9,fr86> <a9,fr87> <a9,fr88> <a9,fr89> <a9,fr90> <a9,fr91> <a9,fr92>
-<a9,fr93> <a9,fr94> <a9,fr95> <a9,fr96> <a9,fr97> <a9,fr98> <a9,fr99>
-<a9,fr100> <a9,fr101> <a9,fr102> <a9,fr103> <a9,fr104> <a9,fr105> <a9,fr106>
-<a9,fr107> <a9,fr108> <a9,fr109> <a9,fr110> <a9,fr111> <a9,fr112> <a9,fr113>
-<a9,fr114> <a9,fr115> <a9,fr116> <a9,fr117> <a9,fr118> <a9,fr119> <a9,fr120>
-<a9,fr121> <a9,fr122> <a9,fr123> <a9,fr124> <a9,fr125> <a9,fr126> <a9,fr127>
-<a9,fr128> <a9,fr129> <a9,fr130> <a9,fr131> <a9,fr132> <a9,fr133> <a9,fr134>
-<a9,fr135> <a9,fr136> <a9,fr137> <a9,fr138> <a9,fr139> <a9,fr140> <a9,fr141>
-<a9,fr142> <a9,fr143> <a9,fr144> <a9,fr145> <a9,fr146> <a9,fr147> <a9,fr148>
-<a9,fr149> <a9,fr150> <a9,fr151> <a9,fr152> <a9,fr153> <a9,fr154> <a9,fr155>
-<a9,fr156> <a9,fr157> <a9,fr158> <a9,fr159> <a9,fr160> <a9,fr161> <a9,fr162>
-<a9,fr163> <a9,fr164> <a9,fr165> <a9,fr166> <a9,fr167> <a9,fr168> <a9,fr169>
-<a9,fr170> <a9,fr171> <a9,fr172> <a9,fr173> <a9,fr174> <a9,fr175> <a9,fr176>
-<a9,fr177> <a9,fr178> <a9,fr179> <a9,fr180> <a9,fr181> <a9,fr182> <a9,fr183>
-<a9,fr184> <a9,fr185> <a9,fr186> <a9,fr187> <a9,fr188> <a9,fr189> <a9,fr190>
-<a9,fr191> <a9,fr192> <a9,fr193> <a9,fr194> <a9,fr195> <a9,fr196> <a9,fr197>
-<a9,fr198> <a9,fr199> <a9,fr200> [32
-
-]
-<Images/iv_1.jpg, id=11026, 142.3719pt x 134.904pt>
-File: Images/iv_1.jpg Graphic file (type jpg)
-<use Images/iv_1.jpg>
-Package pdftex.def Info: Images/iv_1.jpg  used on input line 272.
-(pdftex.def)             Requested size: 122.91406pt x 116.4701pt.
-<Images/iv_2.jpg, id=11027, 139.9629pt x 131.5314pt>
-File: Images/iv_2.jpg Graphic file (type jpg)
-<use Images/iv_2.jpg>
-Package pdftex.def Info: Images/iv_2.jpg  used on input line 272.
-(pdftex.def)             Requested size: 122.91406pt x 115.50914pt.
-
-Overfull \vbox (7.7015pt too high) detected at line 272
- []
-
-[33
-
- <./Images/iv_1.jpg> <./Images/iv_2.jpg>]
-File: Images/iv_1.jpg Graphic file (type jpg)
-<use Images/iv_1.jpg>
-Package pdftex.def Info: Images/iv_1.jpg  used on input line 272.
-(pdftex.def)             Requested size: 122.91406pt x 116.4701pt.
-File: Images/iv_2.jpg Graphic file (type jpg)
-<use Images/iv_2.jpg>
-Package pdftex.def Info: Images/iv_2.jpg  used on input line 272.
-(pdftex.def)             Requested size: 122.91406pt x 115.50914pt.
-
-Overfull \vbox (7.7015pt too high) detected at line 272
- []
-
-[34
-
-]
-File: Images/iv_1.jpg Graphic file (type jpg)
-<use Images/iv_1.jpg>
-Package pdftex.def Info: Images/iv_1.jpg  used on input line 272.
-(pdftex.def)             Requested size: 122.91406pt x 116.4701pt.
-File: Images/iv_2.jpg Graphic file (type jpg)
-<use Images/iv_2.jpg>
-Package pdftex.def Info: Images/iv_2.jpg  used on input line 272.
-(pdftex.def)             Requested size: 122.91406pt x 115.50914pt.
-
-Overfull \vbox (7.7015pt too high) detected at line 272
- []
-
-[35
-
-]
-<Images/graph_4.jpg, id=11051, 1003.75pt x 671.50874pt>
-File: Images/graph_4.jpg Graphic file (type jpg)
-<use Images/graph_4.jpg>
-Package pdftex.def Info: Images/graph_4.jpg  used on input line 297.
-(pdftex.def)             Requested size: 122.91406pt x 82.22723pt.
-
-Overfull \vbox (9.95183pt too high) detected at line 297
- []
-
-[36
-
- <./Images/graph_4.jpg>]
-File: Images/graph_4.jpg Graphic file (type jpg)
-<use Images/graph_4.jpg>
-Package pdftex.def Info: Images/graph_4.jpg  used on input line 297.
-(pdftex.def)             Requested size: 122.91406pt x 82.22723pt.
-
-Overfull \vbox (9.95183pt too high) detected at line 297
- []
-
-[37
-
-]
-File: Images/graph_4.jpg Graphic file (type jpg)
-<use Images/graph_4.jpg>
-Package pdftex.def Info: Images/graph_4.jpg  used on input line 297.
-(pdftex.def)             Requested size: 122.91406pt x 82.22723pt.
-
-Overfull \vbox (9.95183pt too high) detected at line 297
- []
-
-[38
-
-]
-File: Images/graph_3.jpg Graphic file (type jpg)
-<use Images/graph_3.jpg>
-Package pdftex.def Info: Images/graph_3.jpg  used on input line 321.
-(pdftex.def)             Requested size: 153.64493pt x 102.78148pt.
- <a10,fr0> <a10,fr1> <a10,fr2> <a10,fr3> <a10,fr4> <a10,fr5> <a10,fr6>
-<a10,fr7> <a10,fr8> <a10,fr9> <a10,fr10> <a10,fr11> <a10,fr12> <a10,fr13>
-<a10,fr14> <a10,fr15> <a10,fr16> <a10,fr17> <a10,fr18> <a10,fr19> <a10,fr20>
-<a10,fr21> <a10,fr22> <a10,fr23> <a10,fr24> <a10,fr25> <a10,fr26> <a10,fr27>
-<a10,fr28> <a10,fr29> <a10,fr30> <a10,fr31> <a10,fr32> <a10,fr33> <a10,fr34>
-<a10,fr35> <a10,fr36> <a10,fr37> <a10,fr38> <a10,fr39> <a10,fr40> <a10,fr41>
-<a10,fr42> <a10,fr43> <a10,fr44> <a10,fr45> <a10,fr46> <a10,fr47> <a10,fr48>
-<a10,fr49> <a10,fr50> <a10,fr51> <a10,fr52> <a10,fr53> <a10,fr54> <a10,fr55>
-<a10,fr56> <a10,fr57> <a10,fr58> <a10,fr59> <a10,fr60> <a10,fr61> <a10,fr62>
-<a10,fr63> <a10,fr64> <a10,fr65> <a10,fr66> <a10,fr67> <a10,fr68> <a10,fr69>
-<a10,fr70> <a10,fr71> <a10,fr72> <a10,fr73> <a10,fr74> <a10,fr75> <a10,fr76>
-<a10,fr77> <a10,fr78> <a10,fr79> <a10,fr80> <a10,fr81> <a10,fr82> <a10,fr83>
-<a10,fr84> <a10,fr85> <a10,fr86> <a10,fr87> <a10,fr88> <a10,fr89> <a10,fr90>
-<a10,fr91> <a10,fr92> <a10,fr93> <a10,fr94> <a10,fr95> <a10,fr96> <a10,fr97>
-<a10,fr98> <a10,fr99> <a10,fr100> <a10,fr101> <a10,fr102> <a10,fr103>
-<a10,fr104> <a10,fr105> <a10,fr106> <a10,fr107> <a10,fr108> <a10,fr109>
-<a10,fr110> <a10,fr111> <a10,fr112> <a10,fr113> <a10,fr114> <a10,fr115>
-<a10,fr116> <a10,fr117> <a10,fr118> <a10,fr119> <a10,fr120> <a10,fr121>
-<a10,fr122> <a10,fr123> <a10,fr124> <a10,fr125> <a10,fr126> <a10,fr127>
-<a10,fr128> <a10,fr129> <a10,fr130> <a10,fr131> <a10,fr132> <a10,fr133>
-<a10,fr134> <a10,fr135> <a10,fr136> <a10,fr137> <a10,fr138> <a10,fr139>
-<a10,fr140> <a10,fr141> <a10,fr142> <a10,fr143> <a10,fr144> <a10,fr145>
-<a10,fr146> <a10,fr147> <a10,fr148> <a10,fr149> <a10,fr150> <a10,fr151>
-<a10,fr152> <a10,fr153> <a10,fr154> <a10,fr155> <a10,fr156> <a10,fr157>
-<a10,fr158> <a10,fr159> <a10,fr160> <a10,fr161> <a10,fr162> <a10,fr163>
-<a10,fr164> <a10,fr165> <a10,fr166> <a10,fr167> <a10,fr168> <a10,fr169>
-<a10,fr170> <a10,fr171> <a10,fr172> <a10,fr173> <a10,fr174> <a10,fr175>
-<a10,fr176> <a10,fr177> <a10,fr178> <a10,fr179> <a10,fr180> <a10,fr181>
-<a10,fr182> <a10,fr183> <a10,fr184> <a10,fr185> <a10,fr186> <a10,fr187>
-<a10,fr188> <a10,fr189> <a10,fr190> <a10,fr191> <a10,fr192> <a10,fr193>
-<a10,fr194> <a10,fr195> <a10,fr196> <a10,fr197> <a10,fr198> <a10,fr199>
-<a10,fr200> [39
-
-] [40
-
-] [41
-
-]
-<Images/dfig1.png, id=12126, 949.04562pt x 482.80376pt>
-File: Images/dfig1.png Graphic file (type png)
-<use Images/dfig1.png>
-Package pdftex.def Info: Images/dfig1.png  used on input line 375.
-(pdftex.def)             Requested size: 245.83282pt x 125.06189pt.
- [42
-
- <./Images/dfig1.PNG>]
-File: Images/dfig1.png Graphic file (type png)
-<use Images/dfig1.png>
-Package pdftex.def Info: Images/dfig1.png  used on input line 375.
-(pdftex.def)             Requested size: 245.83282pt x 125.06189pt.
- [43
-
-]
-File: Images/dfig1.png Graphic file (type png)
-<use Images/dfig1.png>
-Package pdftex.def Info: Images/dfig1.png  used on input line 401.
-(pdftex.def)             Requested size: 245.83282pt x 125.06189pt.
- [44
-
-]
-File: Images/dfig1.png Graphic file (type png)
-<use Images/dfig1.png>
-Package pdftex.def Info: Images/dfig1.png  used on input line 401.
-(pdftex.def)             Requested size: 245.83282pt x 125.06189pt.
- [45
-
-] [46
-
-]
-[47
-
-] [48
-
-] [49
-
-] [50
-
-] [51
-
-]
-<Images/fig4.jpg, id=12201, 330.2739pt x 129.8451pt>
-File: Images/fig4.jpg Graphic file (type jpg)
-<use Images/fig4.jpg>
-Package pdftex.def Info: Images/fig4.jpg  used on input line 474.
-(pdftex.def)             Requested size: 307.28987pt x 120.81609pt.
- [52
-
- <./Images/fig4.jpg>] [53
-
-] [54
-
-]
-<Images/bfig1.png, id=12226, 518.43687pt x 429.10312pt>
-File: Images/bfig1.png Graphic file (type png)
-<use Images/bfig1.png>
-Package pdftex.def Info: Images/bfig1.png  used on input line 531.
-(pdftex.def)             Requested size: 245.83282pt x 203.47252pt.
- [55
-
- <./Images/bfig1.PNG>]
-File: Images/bfig1.png Graphic file (type png)
-<use Images/bfig1.png>
-Package pdftex.def Info: Images/bfig1.png  used on input line 531.
-(pdftex.def)             Requested size: 245.83282pt x 203.47252pt.
- [56
-
-]
-File: Images/bfig1.png Graphic file (type png)
-<use Images/bfig1.png>
-Package pdftex.def Info: Images/bfig1.png  used on input line 556.
-(pdftex.def)             Requested size: 245.83282pt x 203.47252pt.
- [57
-
-]
-File: Images/bfig1.png Graphic file (type png)
-<use Images/bfig1.png>
-Package pdftex.def Info: Images/bfig1.png  used on input line 556.
-(pdftex.def)             Requested size: 245.83282pt x 203.47252pt.
- [58
-
-] [59
-
-] [60
-
-]
-\tf@nav=\write6
-\openout6 = `dissertation_defense.nav'.
-
-\tf@toc=\write7
-\openout7 = `dissertation_defense.toc'.
-
-\tf@snm=\write8
-\openout8 = `dissertation_defense.snm'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 596.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 596.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (./dissertation_defense.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 596.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 596.
-Package rerunfilecheck Info: File `dissertation_defense.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 28605 strings out of 483183
- 586416 string characters out of 5966293
- 961200 words of memory out of 5000000
- 42644 multiletter control sequences out of 15000+600000
- 542976 words of font info for 65 fonts, out of 8000000 for 9000
+ 26177 strings out of 483183
+ 543410 string characters out of 5966293
+ 849569 words of memory out of 5000000
+ 40560 multiletter control sequences out of 15000+600000
+ 539304 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,17n,71p,865b,1185s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-s10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on dissertation_defense.pdf (60 pages, 5185012 bytes).
+ 54i,11n,71p,865b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on dissertation_defense.pdf (7 pages, 120193 bytes).
 PDF statistics:
- 12349 PDF objects out of 12825 (max. 8388607)
- 7440 compressed objects within 75 object streams
- 121 named destinations out of 1000 (max. 500000)
- 28356 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 90 words of extra memory for PDF output out of 10000 (max. 10000000)
 
