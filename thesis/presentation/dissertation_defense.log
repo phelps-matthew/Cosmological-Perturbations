@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  18 MAY 2020 14:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  18 MAY 2020 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,13 +1182,13 @@ Package pdftex.def Info: Images/uconn-logo.png  used on input line 76.
 ] [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126
+LaTeX Font Info:    Trying to load font information for U+msa on input line 129
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126
+LaTeX Font Info:    Trying to load font information for U+msb on input line 129
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1210,7 +1210,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <sphere_perturb.png, id=110, 634.37pt x 595.22375pt>
 File: sphere_perturb.png Graphic file (type png)
 <use sphere_perturb.png>
-Package pdftex.def Info: sphere_perturb.png  used on input line 274.
+Package pdftex.def Info: sphere_perturb.png  used on input line 277.
 (pdftex.def)             Requested size: 92.1879pt x 86.49142pt.
  [10
 
@@ -1226,6 +1226,15 @@ Package pdftex.def Info: sphere_perturb.png  used on input line 274.
 
 ] [16
 
+] [17
+
+] [18
+
+]
+[19
+
+] [20
+
 ]
 \tf@nav=\write6
 \openout6 = `dissertation_defense.nav'.
@@ -1236,41 +1245,38 @@ Package pdftex.def Info: sphere_perturb.png  used on input line 274.
 \tf@snm=\write8
 \openout8 = `dissertation_defense.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
-
-(./dissertation_defense.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 380.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 380.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+ (./dissertation_defense.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
 Package rerunfilecheck Info: File `dissertation_defense.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26287 strings out of 483183
- 545241 string characters out of 5966293
- 868513 words of memory out of 5000000
- 40629 multiletter control sequences out of 15000+600000
+ 26303 strings out of 483183
+ 545369 string characters out of 5966293
+ 864974 words of memory out of 5000000
+ 40637 multiletter control sequences out of 15000+600000
  539436 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  54i,15n,71p,865b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on dissertation_defense.pdf (16 pages, 1290707 bytes).
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb>
+Output written on dissertation_defense.pdf (20 pages, 1273265 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

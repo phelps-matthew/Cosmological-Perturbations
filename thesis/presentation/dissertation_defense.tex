@@ -85,7 +85,10 @@
 \begin{frame}{Overview}
 	\begin{itemize}
 		\item Introduction and Formalism
+		\item SVT3 Decomposition
+		\item SVTD Decomposition
 		\item Conformal Gravity
+		\item Computational Methods
 	\end{itemize}
 \end{frame}
 \endgroup
@@ -279,7 +282,7 @@
 
 \begin{frame}{Gauge Transformations}
 	\begin{itemize}
-		\item 	Under coordinate transformation $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\epsilon^\mu \sim \mathcal O(h)$, the peturbed metric transforms as
+		\item 	Under coordinate transformation $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\epsilon^\mu \sim \mathcal O(h)$, the perturbed metric transforms as
 			\begin{eqnarray*}
 				h_{\mu\nu} \to h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
 			\end{eqnarray*}
@@ -293,7 +296,7 @@
 				\delta T_{\mu\nu} \to \delta T_{\mu\nu} + {}^{(0)}T^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}T^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  T^{(0)}_{\mu\nu} \epsilon^\lambda.
 			\end{eqnarray*}
 		\item If background $G_{\mu\nu}^{(0)} = 0$ , then $\delta G_{\mu\nu}$ separately gauge invariant; likewise for vanishing background energy momentum tensor
-		\item If $G_{\mu\nu}^{(0)} \ne 0$, then only the entire $\Delta_{\mu\nu} = \delta G_{\mu\nu} + T_{\mu\nu}$ gauge invariant
+		\item If $G_{\mu\nu}^{(0)} \ne 0$, then only the entire $\Delta_{\mu\nu} = \delta G_{\mu\nu} + T_{\mu\nu}$ is gauge invariant
 	\end{itemize}
 
 
@@ -303,42 +306,122 @@
 % Slide  - Solving Equations of Motion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{}
-	Perturbed equations of motion $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled non-linear tensor PDE's
-	\\ \vspace{2mm}
-	Much effort involved in simplifying, decoupling, and solving them
-	\\ \vspace{2mm}
+\begin{frame}{Solution Methods}
+	\begin{itemize}
+		\item Perturbed field equations $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled non-linear tensor PDE's
+		\item
+		Much effort involved in simplifying, decoupling, and solving them
+	\end{itemize}
+	%
+	\begin{eqnarray*}
+		\delta G_{ij} &=& - \tfrac{1}{2} \overset{..}{h}_{ij} + \tfrac{1}{2} \overset{..}{h}_{00}{} \tilde{g}_{ij} + \tfrac{1}{2} \overset{..}{h} \tilde{g}_{ij} -  k \tilde{g}^{ba} \tilde{g}_{ij} h_{ab} + 3 k h_{ij} -  \dot{\Omega}^2 h_{ij} \Omega^{-2} -  \dot{\Omega}^2 \tilde{g}_{ij} h_{00}{} \Omega^{-2} 
+		\nonumber\\
+		&& -  \dot{h}_{ij} \dot{\Omega} \Omega^{-1}  + 2 \dot{h}_{00}{} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} + \dot{h} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} + 2 \overset{..}{\Omega} h_{ij} \Omega^{-1} + 2 \overset{..}{\Omega} \tilde{g}_{ij} h_{00}{} \Omega^{-1} 
+		\nonumber\\
+		&& + 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} h_{0}{}_{b} \Omega^{-2} \tilde{\nabla}_{a}\Omega  - 2 \dot{h}_{0}{}_{b} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega -  \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\dot{h}_{0}{}_{a} 
+		\nonumber\\
+		&& - 4 \tilde{g}^{ba} \tilde{g}_{ij} h_{0}{}_{a} \Omega^{-1} \tilde{\nabla}_{b}\dot{\Omega} + \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}h_{ij} - 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}h_{0}{}_{a}
+		\nonumber\\
+		&&  -  \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}h \tilde{\nabla}_{b}\Omega -  \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} h_{cd} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega  + \tilde{g}^{ba} h_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega 
+		\nonumber\\
+		&&+ \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{a}h_{ij} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}h - 2 \tilde{g}^{ba} h_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega  
+		\nonumber\\
+		&& -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{i}h_{ja} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{j}h_{ia} + 2 \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{d}h_{cb} 
+		\nonumber\\
+		&& + \tfrac{1}{2} \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} \tilde{\nabla}_{d}\tilde{\nabla}_{c}h_{ab}  + 2 \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} h_{ab} \Omega^{-1} \tilde{\nabla}_{d}\tilde{\nabla}_{c}\Omega + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{h}_{0}{}_{j} 
+		\nonumber\\
+		&& -  \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}h_{jb} + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}h_{0}{}_{j} + \tfrac{1}{2} \tilde{\nabla}_{j}\dot{h}_{0}{}_{i} -  \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{j}h_{ib}
+		\nonumber\\
+		&&  + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}h_{0}{}_{i} + \tfrac{1}{2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}h,
+	\end{eqnarray*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Solution Methods cont.}
 	Two main approaches
 	\begin{itemize}
 		\item Fix the gauge by constraining $h_{\mu\nu}$, e.g. transverse gauge $\nabla^\mu h_{\mu\nu} = 0$, then solve fluctuation equations directly in terms of $h_{\mu\nu}$
 		\begin{itemize}
 			\item Simplification usually not effective in more general curved backgrounds
+			\item Some exceptions for maximally symmetry spacetimes and in conformal gravity
 		\end{itemize}
 		\item Decompose $h_{\mu\nu}$ into a basis of scalars, vectors, and tensors, express in terms of gauge invariant combinations, and solve fluctuation equations with possible decoupling between modes 
 		\begin{itemize}
 			\item SVT Decomposition, de facto approach in modern cosmology
 		\end{itemize}
 	\end{itemize}
-	\tiny
-	\begin{eqnarray}
-		\delta G_{ij}&=& - \tfrac{1}{2} \overset{..}{f}_{ij} + \tfrac{1}{2} \overset{..}{f}_{00}{} \tilde{g}_{ij} + \tfrac{1}{2} \overset{..}{f} \tilde{g}_{ij} -  k \tilde{g}^{ba} \tilde{g}_{ij} f_{ab} + 3 k f_{ij} -  \dot{\Omega}^2 f_{ij} \Omega^{-2} -  \dot{\Omega}^2 \tilde{g}_{ij} f_{00}{} \Omega^{-2} 
-		\nonumber\\
-		&& -  \dot{f}_{ij} \dot{\Omega} \Omega^{-1}  + 2 \dot{f}_{00}{} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} + \dot{f} \dot{\Omega} \tilde{g}_{ij} \Omega^{-1} + 2 \overset{..}{\Omega} f_{ij} \Omega^{-1} + 2 \overset{..}{\Omega} \tilde{g}_{ij} f_{00}{} \Omega^{-1} 
-		\nonumber\\
-		&& + 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} f_{0}{}_{b} \Omega^{-2} \tilde{\nabla}_{a}\Omega  - 2 \dot{f}_{0}{}_{b} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega -  \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\dot{f}_{0}{}_{a} 
-		\nonumber\\
-		&& - 4 \tilde{g}^{ba} \tilde{g}_{ij} f_{0}{}_{a} \Omega^{-1} \tilde{\nabla}_{b}\dot{\Omega} + \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}f_{ij} \nonumber \\ 
-		&& - 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}f_{0}{}_{a} -  \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}f \tilde{\nabla}_{b}\Omega -  \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} f_{cd} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \nonumber \\ 
-		&& + \tilde{g}^{ba} f_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega + \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{a}f_{ij} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}f - 2 \tilde{g}^{ba} f_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \nonumber \\ 
-		&& -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{i}f_{ja} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{j}f_{ia} + 2 \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{d}f_{cb} 
-		\nonumber\\
-		&& + \tfrac{1}{2} \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} \tilde{\nabla}_{d}\tilde{\nabla}_{c}f_{ab}  + 2 \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} f_{ab} \Omega^{-1} \tilde{\nabla}_{d}\tilde{\nabla}_{c}\Omega + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{f}_{0}{}_{j} 
-		\nonumber\\
-		&& -  \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{i}f_{jb} + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{i}f_{0}{}_{j} + \tfrac{1}{2} \tilde{\nabla}_{j}\dot{f}_{0}{}_{i} -  \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{j}f_{ib}
-		\nonumber\\
-		&&  + \dot{\Omega} \Omega^{-1} \tilde{\nabla}_{j}f_{0}{}_{i} + \tfrac{1}{2} \tilde{\nabla}_{j}\tilde{\nabla}_{i}f,
-		\label{dg_conf31}
-	\end{eqnarray}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT3}
+	\begin{itemize}
+		\item Three-dimensional Scalar, Vector, Tensor Basis
+		\begin{itemize}
+			\item SVT3 Decomposition
+			\item Gauge Invariants in Minkowski background
+			\item de Sitter Solution
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT3 Decomposition}
+	\begin{itemize}
+		\item Decompose the metric perturbation $h_{\mu\nu}$ into a set of scalars, vectors, and tensors according to their transformation behavior under 3D rotations. Assuming a Minkowski background, for instance
+		\begin{eqnarray*}
+			ds^2 &=& g_{\mu\nu}dx^\mu dx^\nu = (g_{\mu\nu}^{(0)} + h_{\mu\nu})dx^\mu dx^\nu
+			\\
+			&=& (-1+h_{00})dt^2 + 2h_{0i}dtdx^i + (\tilde g_{ij} + h_{ij})dx^i dx^j
+			\\
+			&=& -(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
+			\\&&+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j,
+		\end{eqnarray*}
+		\begin{eqnarray*}
+			h_{00} &=& -2\phi,\qquad h_{0i} = B_i + \tilde\nabla_i B
+			\\
+			h_{ij} &=& -2\psi \delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij},
+		\end{eqnarray*}
+		with vectors and tensors obeying
+		\begin{eqnarray*}
+			\tilde\nabla^i B_i = \tilde\nabla^i E_i = 0,\quad E_{ij} = E_{ji},\quad\tilde\nabla^i E_{ij} = 0,\quad \delta^{ij}E_{ij} = 0.
+		\end{eqnarray*}
+	\item 10 components in total
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Einstein Minkowski
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT3 $\delta G_{\mu\nu}$ in Minkowski Background}
+	\begin{itemize}
+		\item Insert the SVT3 decomposed $h_{\mu\nu}$ into $\delta G_{\mu\nu}$
+	\end{itemize}
+	\begin{eqnarray*}
+	\delta G_{00}&=&- 2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi,
+	\nonumber\\
+	\delta G_{0i}&=&- 2 \tilde{\nabla}_{i}\dot{\psi}+ \tfrac{1}{2} \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(B_{i} -  \dot{E}_{i}),
+	\nonumber\\
+	\delta G_{ij}&=&- 2 \delta_{ij} \ddot{\psi} -  \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E})+ \delta^{ab} \delta_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi 
+	+ \tilde{\nabla}_{j}\tilde{\nabla}_{i}(\phi+\dot{B} -  \ddot{E}) 
+	\nonumber\\
+	&&-  \tilde{\nabla}_{j}\tilde{\nabla}_{i}\psi
+	+ \tfrac{1}{2} \tilde{\nabla}_{i}(\dot{B}_{j} - \ddot{E}_{j}) + \tfrac{1}{2} \tilde{\nabla}_{j}(\dot{B}_{i}  
+	- \ddot{E}_{i})- \ddot{E}_{ij} + \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}E_{ij},
+	\nonumber\\
+	g^{\mu\nu}\delta G_{\mu\nu}&=&-\delta G_{00}+\delta^{ij}\delta G_{ij}=4 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\psi -6\ddot{\psi}-2 \delta^{ab} \tilde{\nabla}_{b}\tilde{\nabla}_{a}(\phi+\dot{B}  -\ddot{E}),
+	\label{2.3}
+	\end{eqnarray*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -348,7 +431,6 @@
 \begin{frame}{}
 	
 \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,7 +438,6 @@
 \begin{frame}{}
 	
 \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -364,7 +445,6 @@
 \begin{frame}{}
 	
 \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,7 +452,6 @@
 \begin{frame}{}
 	
 \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
