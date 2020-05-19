@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  18 MAY 2020 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  19 MAY 2020 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,13 +944,35 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen322
 \l_MT_below_shortintertext_sep=\dimen323
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen324
+\captionmargin@=\dimen325
+\captionwidth=\dimen326
+\caption@tempdima=\dimen327
+\caption@indent=\dimen328
+\caption@parindent=\dimen329
+\caption@hangindent=\dimen330
+Package caption Info: beamer document class detected.
+)
+\c@caption@flags=\count360
+\c@continuedfloat=\count361
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowinset=\dimen324
-\pgfarrowlength=\dimen325
-\pgfarrowwidth=\dimen326
-\pgfarrowlinewidth=\dimen327
+\pgfarrowinset=\dimen331
+\pgfarrowlength=\dimen332
+\pgfarrowwidth=\dimen333
+\pgfarrowlinewidth=\dimen334
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
@@ -1037,7 +1059,7 @@ e.tex
 File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty)
-\hfuzz=\dimen328
+\hfuzz=\dimen335
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeWarsaw.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
@@ -1048,22 +1070,22 @@ File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (./dissertation_defense.aux)
 \openout1 = `dissertation_defense.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1101,16 +1123,16 @@ LaTeX Font Info:    ... okay on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count360
-\scratchdimen=\dimen329
+\scratchcounter=\count362
+\scratchdimen=\dimen336
 \scratchbox=\box147
-\nofMPsegments=\count361
-\nofMParguments=\count362
+\nofMPsegments=\count363
+\nofMParguments=\count364
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count363
-\MPscratchDim=\dimen330
-\MPnumerator=\count364
-\makeMPintoPDFobject=\count365
+\MPscratchCnt=\count365
+\MPscratchDim=\dimen337
+\MPnumerator=\count366
+\makeMPintoPDFobject=\count367
 \everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1123,7 +1145,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box148
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 63.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1134,11 +1156,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count366
+\c@section@level=\count368
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 63.
+LaTeX Info: Redefining \pageref on input line 63.
+LaTeX Info: Redefining \nameref on input line 63.
 
 (./dissertation_defense.out) (./dissertation_defense.out)
 \@outlinefile=\write5
@@ -1168,11 +1190,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictiona
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./dissertation_defense.nav)
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+ (./dissertation_defense.nav)
 <Images/uconn-logo.png, id=22, 205.2639pt x 205.2639pt>
 File: Images/uconn-logo.png Graphic file (type png)
 <use Images/uconn-logo.png>
-Package pdftex.def Info: Images/uconn-logo.png  used on input line 76.
+Package pdftex.def Info: Images/uconn-logo.png  used on input line 77.
 (pdftex.def)             Requested size: 57.81621pt x 57.8149pt.
  [1
 
@@ -1182,35 +1207,40 @@ Package pdftex.def Info: Images/uconn-logo.png  used on input line 76.
 ] [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 129
+LaTeX Font Info:    Trying to load font information for U+msa on input line 144
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 129
+LaTeX Font Info:    Trying to load font information for U+msb on input line 144
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+)
+<Images/hubble_deep.jpg, id=56, 746.79pt x 746.79pt>
+File: Images/hubble_deep.jpg Graphic file (type jpg)
+<use Images/hubble_deep.jpg>
+Package pdftex.def Info: Images/hubble_deep.jpg  used on input line 144.
+(pdftex.def)             Requested size: 153.64493pt x 153.6399pt.
+ [4
 
-] [5
+ <./Images/hubble_deep.jpg>] [5
 
 ] [6
 
 ] [7
 
-]
-[8
+] [8
 
 ] [9
 
 ]
-<sphere_perturb.png, id=110, 634.37pt x 595.22375pt>
+<sphere_perturb.png, id=111, 634.37pt x 595.22375pt>
 File: sphere_perturb.png Graphic file (type png)
 <use sphere_perturb.png>
-Package pdftex.def Info: sphere_perturb.png  used on input line 277.
+Package pdftex.def Info: sphere_perturb.png  used on input line 292.
 (pdftex.def)             Requested size: 92.1879pt x 86.49142pt.
  [10
 
@@ -1220,7 +1250,8 @@ Package pdftex.def Info: sphere_perturb.png  used on input line 277.
 
 ] [13
 
-] [14
+]
+[14
 
 ] [15
 
@@ -1230,10 +1261,7 @@ Package pdftex.def Info: sphere_perturb.png  used on input line 277.
 
 ] [18
 
-]
-[19
-
-] [20
+] [19
 
 ]
 \tf@nav=\write6
@@ -1245,22 +1273,22 @@ Package pdftex.def Info: sphere_perturb.png  used on input line 277.
 \tf@snm=\write8
 \openout8 = `dissertation_defense.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 488.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 488.
  (./dissertation_defense.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 488.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 488.
 Package rerunfilecheck Info: File `dissertation_defense.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26303 strings out of 483183
- 545369 string characters out of 5966293
- 864974 words of memory out of 5000000
- 40637 multiletter control sequences out of 15000+600000
- 539436 words of font info for 51 fonts, out of 8000000 for 9000
+ 27410 strings out of 483183
+ 565540 string characters out of 5966293
+ 883653 words of memory out of 5000000
+ 41736 multiletter control sequences out of 15000+600000
+ 539741 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,15n,71p,865b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,96p,865b,799s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/t
@@ -1273,10 +1301,10 @@ public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb>
-Output written on dissertation_defense.pdf (20 pages, 1273265 bytes).
+Output written on dissertation_defense.pdf (19 pages, 20351897 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
+ 240 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  44 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

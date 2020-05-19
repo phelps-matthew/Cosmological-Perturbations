@@ -1,5 +1,6 @@
 \documentclass[8pt]{beamer}
 \usepackage{units,multicol,booktabs,tikz,xparse,tikz-3dplot,animate,mathtools}
+\usepackage[labelformat=empty]{caption}
 \usetikzlibrary{arrows.meta,calc,shapes,angles,quotes,patterns}
 
 \graphicspath{{Images/}}
@@ -85,10 +86,12 @@
 \begin{frame}{Overview}
 	\begin{itemize}
 		\item Introduction and Formalism
-		\item SVT3 Decomposition
-		\item SVTD Decomposition
-		\item Conformal Gravity
+		\item Three Dimensional Scalar, Vector, Tensor Decomposition (SVT3)
+		\item Four Dimensional Scalar, Vector, Tensor Decomposition (SVT4)
+		\item Conformal Gravity (SVT and Conformal to Flat Backgrounds)
+		\item Conformal Gravity Robertson-Walker Radiation Era Solution
 		\item Computational Methods
+		\item Conclusions
 	\end{itemize}
 \end{frame}
 \endgroup
@@ -99,15 +102,17 @@
 
 \begingroup
 \Large
-\begin{frame}{Overview}
+\begin{frame}{Introduction and Formalism Overview}
 	\begin{itemize}
 		\item Introduction and Formalism
 		\begin{itemize}
-			%\large
+			\large{
 			\item Cosmological Geometries
 			\item Einstein Gravity
 			\item Perturbation Theory
 			\item Gauge Transformations
+			\item Solution Methods
+			}
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -118,6 +123,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Cosmological Geometries}
+	\begin{columns}
+	\begin{column}{0.5\linewidth}
 	\begin{itemize}
 		\item Cosmological Principle: Structure of spacetime is homoegenous and isotropic at large scales
 		\item Geometries: Robertson Walker (flat, spherical, hyperbolic), de Sitter ($dS_4 \subset \rm{RW}$)
@@ -126,6 +133,14 @@
 	\begin{eqnarray*}
 		ds^2 = \Omega(x)^2\big(-dt^2 + dx^2 + dy^2 + dz^2\big)
 	\end{eqnarray*}
+	\end{column}
+	\begin{column}{0.5\linewidth}
+		\begin{figure}
+			\includegraphics[width=\linewidth]{hubble_deep.jpg}
+			{\caption*{Hubble Ultra-Deep Field. NASA and the European Space Agency.}}
+		\end{figure}
+	\end{column}
+	\end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -263,7 +278,7 @@
 			\begin{figure}[t]
 				\includegraphics[width=\linewidth]{sphere_perturb.png}
 			\end{figure}
-			\footnotemark
+			%\footnotemark
 		\end{column}
 	\end{columns}
 	\vspace{1em}
@@ -273,7 +288,7 @@
 		\\
 		\Delta_{\mu\nu} &=& \delta G_{\mu\nu}^{(0)} + \delta T_{\mu\nu}^{(0)}=0
 	\end{eqnarray*}
-	\footnotetext{Walter, U. (2019). Correction to: Astronautics. In Astronautics (pp. C1–C1). Springer International Publishing.}
+	\let\thefootnote\relax\footnotetext{Walter, U. (2019). Correction to: Astronautics. In Astronautics (pp. C1–C1). Springer International Publishing.}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,7 +323,7 @@
 
 \begin{frame}{Solution Methods}
 	\begin{itemize}
-		\item Perturbed field equations $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled non-linear tensor PDE's
+		\item Perturbed field equations $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled tensor PDE's
 		\item
 		Much effort involved in simplifying, decoupling, and solving them
 	\end{itemize}
@@ -338,72 +353,66 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - 
+% Slide  - SVT3 Overview
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Solution Methods cont.}
-	Two main approaches
+\begingroup
+\Large
+\begin{frame}{SVT3 Overview}
 	\begin{itemize}
-		\item Fix the gauge by constraining $h_{\mu\nu}$, e.g. transverse gauge $\nabla^\mu h_{\mu\nu} = 0$, then solve fluctuation equations directly in terms of $h_{\mu\nu}$
+		\item Three-dimensional Scalar, Vector, Tensor Basis (SVT3)
 		\begin{itemize}
-			\item Simplification usually not effective in more general curved backgrounds
-			\item Some exceptions for maximally symmetry spacetimes and in conformal gravity
-		\end{itemize}
-		\item Decompose $h_{\mu\nu}$ into a basis of scalars, vectors, and tensors, express in terms of gauge invariant combinations, and solve fluctuation equations with possible decoupling between modes 
-		\begin{itemize}
-			\item SVT Decomposition, de facto approach in modern cosmology
+			\large{
+				\item SVT3 Decomposition
+				\item Einstein Fluctuations in a de Sitter Background
+				\item Integral Formalism
+			}
 		\end{itemize}
 	\end{itemize}
 \end{frame}
+\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{SVT3}
-	\begin{itemize}
-		\item Three-dimensional Scalar, Vector, Tensor Basis
-		\begin{itemize}
-			\item SVT3 Decomposition
-			\item Gauge Invariants in Minkowski background
-			\item de Sitter Solution
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - 
+% Slide  - SVT3 Decomposition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{SVT3 Decomposition}
+	Decompose the metric perturbation $h_{\mu\nu}$ into a set of scalars, vectors, and tensors according to their transformation behavior under 3D rotations
 	\begin{itemize}
-		\item Decompose the metric perturbation $h_{\mu\nu}$ into a set of scalars, vectors, and tensors according to their transformation behavior under 3D rotations. Assuming a Minkowski background, for instance
+		\item Define $h_{\mu\nu} = \Omega^2(x)f_{\mu\nu}$, perform 3 + 1 decomposition
 		\begin{eqnarray*}
 			ds^2 &=& g_{\mu\nu}dx^\mu dx^\nu = (g_{\mu\nu}^{(0)} + h_{\mu\nu})dx^\mu dx^\nu
 			\\
-			&=& (-1+h_{00})dt^2 + 2h_{0i}dtdx^i + (\tilde g_{ij} + h_{ij})dx^i dx^j
+			&=& \Omega^2(x)(\tilde g_{\mu\nu}^{(0)} + f_{\mu\nu})dx^\mu dx^\nu
 			\\
-			&=& -(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
-			\\&&+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j,
+			&=& \Omega^2(x)\big[(-1+f_{00})dt^2 + 2f_{0i}dtdx^i + (\tilde g_{ij} + f_{ij})\big]dx^i dx^j
+			\\
 		\end{eqnarray*}
+		\vspace{-8mm}
+		\item Decompose $f_{00}$, $f_{0i}$, and $f_{ij}$ in terms of 3-dimensional scalars, vectors, and tensors
 		\begin{eqnarray*}
-			h_{00} &=& -2\phi,\qquad h_{0i} = B_i + \tilde\nabla_i B
+			f_{00} &=& -2\phi,\qquad f_{0i} = B_i + \tilde\nabla_i B
 			\\
-			h_{ij} &=& -2\psi \delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij},
+			f_{ij} &=& -2\psi \delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij},
 		\end{eqnarray*}
 		with vectors and tensors obeying
 		\begin{eqnarray*}
 			\tilde\nabla^i B_i = \tilde\nabla^i E_i = 0,\quad E_{ij} = E_{ji},\quad\tilde\nabla^i E_{ij} = 0,\quad \delta^{ij}E_{ij} = 0.
 		\end{eqnarray*}
+		\begin{eqnarray*}
+			ds^2 &=& \Omega^2(x)\big[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
+			\\&&+ ((1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij})dx^i dx^j\big],
+		\end{eqnarray*}
+
 	\item 10 components in total
 	\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT3 Einstein Minkowski
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{SVT3 $\delta G_{\mu\nu}$ in Minkowski Background}
+\begin{frame}{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background}
 	\begin{itemize}
 		\item Insert the SVT3 decomposed $h_{\mu\nu}$ into $\delta G_{\mu\nu}$
 	\end{itemize}
@@ -425,18 +434,38 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - 
+% Slide  - Conformal Gravity
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{}
-	
+\begin{frame}{Conformal Gravity Intro.}
+	\begin{eqnarray*}
+		I_\text{W} &=& -\alpha_g \int d^4x (-g)^{1/2}C_{\lambda\mu\nu\kappa}C^{\lambda\mu\nu\kappa}
+		\nonumber\\
+		&\equiv& -2\alpha_g \int d^4x(-g)^{1/2}\left[R_{\mu\nu}R^{\mu\nu} - \tfrac{1}{3}(R^\alpha{}_\alpha)^2\right],
+		\label{IW}
+	\end{eqnarray*}
+	\begin{eqnarray*}
+		C_{\lambda\mu\nu\kappa}&=& R_{\lambda\mu\nu\kappa}
+		-\frac{1}{2}\left(g_{\lambda\nu}R_{\mu\kappa}-
+		g_{\lambda\kappa}R_{\mu\nu}-
+		g_{\mu\nu}R_{\lambda\kappa}+
+		g_{\mu\kappa}R_{\lambda\nu}\right)
+		\\
+		&&+\frac{1}{6}R^{\alpha}_{\phantom{\alpha}\alpha}\left(
+		g_{\lambda\nu}g_{\mu\kappa}-
+		g_{\lambda\kappa}g_{\mu\nu}\right)
+	\end{eqnarray*}
+	\begin{eqnarray*}
+		-\frac{2}{(-g)^{1/2}} \frac{\delta I_{\text{W}}}{\delta g_{\mu\nu}}= 4\alpha_gW^{\mu\nu} = 4\alpha_g \left[2\nabla_\kappa\nabla_\lambda C^{\mu\lambda\nu\kappa} - R_{\kappa\lambda}C^{\mu\lambda\nu\kappa}\right].
+		\label{Bachtensor}
+	\end{eqnarray*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{}
-	
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - 
