@@ -1,5 +1,5 @@
-\documentclass[8pt,draft]{beamer}
-\usepackage{units,multicol,booktabs,tikz,xparse,tikz-3dplot,animate,mathtools}
+\documentclass[8pt,aspectratio=1610,draft]{beamer}
+\usepackage{units,multicol,booktabs,tikz,xparse,tikz-3dplot,mathtools}
 \usepackage[labelformat=empty]{caption}
 \usetikzlibrary{arrows.meta,calc,shapes,angles,quotes,patterns}
 
@@ -269,7 +269,7 @@
 				\\ \\
 				\delta G_{\mu\nu} &=& \delta R_{\mu\nu} - \frac{1}{2} h_{\mu\nu} R_\alpha^{(0)\alpha} -\frac{1}{2}g_{\mu\nu}\delta R^\alpha{}_\alpha.
 			\end{eqnarray*}
-			\hspace{.04\linewidth}Likewise perturb $T_{\mu\nu}$ around background
+			\hspace{.03\linewidth}Likewise perturb $T_{\mu\nu}$ around background
 			\begin{eqnarray*}
 				T_{\mu\nu} &=& T_{\mu\nu}(g_{\mu\nu}^{(0)}) + \delta T_{\mu\nu}(h_{\mu\nu})
 			\end{eqnarray*}
@@ -399,11 +399,11 @@
 		\begin{eqnarray*}
 			\tilde\nabla^i B_i = \tilde\nabla^i E_i = 0,\quad E_{ij} = E_{ji},\quad\tilde\nabla^i E_{ij} = 0,\quad \delta^{ij}E_{ij} = 0.
 		\end{eqnarray*}
-		\begin{eqnarray*}
-			ds^2 &=& \Omega^2(x)\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
-			\\&&+ [(1-2\psi)\tilde g_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg],
-		\end{eqnarray*}
 	\end{itemize}
+	\begin{eqnarray*}
+		ds^2 = \Omega^2(x)\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
+		+ [(1-2\psi)\tilde g_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg]
+	\end{eqnarray*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -411,13 +411,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background}
+	\only<1>{
 	\begin{itemize}
-		\only<1>{\item de Sitter geometry
+		\item de Sitter geometry
+	\end{itemize}
 				\begin{eqnarray*}
-			ds^2 &=&\frac{1}{H^2\tau^2}\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
-			\\&&+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg],
+			ds^2 =\frac{1}{H^2\tau^2}\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
+			+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg]
 		\end{eqnarray*}
-		}
+	}
+	\begin{itemize}
 		\item Energy momentum tensor
 			\begin{eqnarray*}
 				T_{\mu\nu} = -3H^2g_{\mu\nu} \implies \delta T_{\mu\nu} = -3 H^2 h_{\mu\nu} =-3H^2\Omega(\tau)^2f_{\mu\nu} 
@@ -470,7 +473,7 @@
 	g^{\mu\nu}\Delta_{\mu\nu}&=&H^2[-6\tau(\ddot{\beta}-\dot{\alpha})+24(\dot{\beta}-\alpha)
 	+6\tau \tilde{\nabla}^2\beta-2\tau^2\tilde{\nabla}^2\alpha]=0,
 	\end{eqnarray*}
-	\hspace{0.1\linewidth}where
+	\hspace{0.06\linewidth}where
 	\begin{eqnarray*}
 	\alpha=\phi+\psi+\dot{B}-\ddot{E} ,\quad \beta=\tau\psi+B-\dot{E}, \quad B_i-\dot{E}_i,\quad E_{ij}.
 	\end{eqnarray*}
@@ -494,10 +497,12 @@
 		\end{eqnarray*}
 		\item Recap:
 		\begin{itemize}
+			\normalsize{
 			\item Perturb $\delta G_{\mu\nu}$ and $\delta T_{\mu\nu}$, evaluating in de Sitter background
 			\item Decompose $h_{\mu\nu}$ into SVT3 components, inserting into fields equations
 			\item Compose $\Delta_{\mu\nu} = \delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ to form evolution equations consisting entirely of gauge invariant quantities
 			\item Apply higher derivatives to decouple SVT3 representations, solve
+		}
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -525,12 +530,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{SVT3 Integral Formulation}
-	Decomposition of $A_i = A_i^T + \partial_i A^L$
+	Decomposition of $V_i = V_i^T + \partial_i V$
 	\begin{itemize}
-		\item Green's Identity
+		\item Longitudinal decomposition does not hold for any scalar. $\partial^i V_i = \partial_i\partial^i V$
+		\item Introduce Green's function $\partial_i \partial^i D(x-x') = \delta^3(x-x')$ and Green's identity
 		\begin{eqnarray*}
-			adf
+		V(x')\partial_i \partial^i D(x-x') = D(x-x')\partial_i \partial^i V(x') + \partial_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]
 		\end{eqnarray*}
+		\item Integrate
+		\begin{eqnarray*}
+		V(x) = \underbrace{\int_V d^3x' D(x-x')\partial_i \partial^i V(x')}_{\text{Non-Harmonic}} + \underbrace{\oint_{\partial V} dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]}_{\text{Harmonic}}
+		\end{eqnarray*}
+		\begin{eqnarray*}
+		V = V^{NH} + V^{H},\qquad \partial_i\partial^i V = \partial_i\partial^i V^H,\qquad \partial_i\partial^i V^{NH} = 0
+		\end{eqnarray*}
+		\item Need a $\partial_i V$ which could never be transverse
+		\begin{eqnarray*}
+		V \equiv V^{NH} &=& \int d^3x' D(x-x')\partial_i \partial^i V(x') = \int d^3x' D(x-x') \partial^i V_i(x')
+		\\
+		&\implies& \oint_{\partial V} dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')] = 0
+		\end{eqnarray*}
+		\item Transverse Longitudinal Decomposition
+		\begin{eqnarray*}
+		V_i = V_i^T + \partial_i V, \qquad \partial_i V = \partial_i \int d^3x' D(x-x')\partial^j V_j (x'),\qquad  V_i^T = V_i - \partial_i \int d^3x' D(x-x')\partial^j V_j (x')
+		\end{eqnarray*}
+		
 	\end{itemize}
 \end{frame}
 
