@@ -47,7 +47,7 @@ ds^2 &=& \Omega^2(\tau)\tilde g_{\mu\nu} dx^\mu dx^\nu,\qquad
 we need to determine the form of $\delta G_{\mu\nu}$ under conformal transformation. To this end, we begin with the full $G_{\mu\nu} = R_{\mu\nu} - \tfrac12 g_{\mu\nu} R$ and express the curvature tensors in terms of the Christoffel symbols,
 \begin{eqnarray}
 G_{\mu\nu} &=& - \Gamma^{\alpha }{}_{\mu \beta } \Gamma^{\beta }{}_{\alpha \nu } + \Gamma^{\alpha }{}_{\alpha \beta } \Gamma^{\beta }{}_{\mu \nu } + R_{\mu \nu } \nonumber \\ 
-&& -  \tfrac{1}{2} g_{\mu \nu } \bigl(g^{\alpha \beta } (\Gamma^{\gamma }{}_{\gamma \zeta } \Gamma^{\zeta }{}_{\alpha \beta } -  \Gamma^{\gamma }{}_{\alpha \zeta } \Gamma^{\zeta }{}_{\gamma \beta } + R[\partial ]_{\alpha \beta }
+&& -  \tfrac{1}{2} g_{\mu \nu } \bigl(g^{\alpha \beta } (\Gamma^{\gamma }{}_{\gamma \zeta } \Gamma^{\zeta }{}_{\alpha \beta } -  \Gamma^{\gamma }{}_{\alpha \zeta } \Gamma^{\zeta }{}_{\gamma \beta } + R_{\alpha \beta }
 \nonumber\\
 && -  \partial_{\alpha }\Gamma^{\gamma }{}_{\gamma \beta } + \partial_{\gamma }\Gamma^{\gamma }{}_{\alpha \beta })\bigr) + \partial_{\alpha }\Gamma^{\alpha }{}_{\mu \nu } -  \partial_{\mu }\Gamma^{\alpha }{}_{\alpha \nu }.
 \label{G_gamma}
@@ -104,9 +104,11 @@ representing the perturbed Einstein tensor in a generic conformal geometry. In o
 \nonumber\\
 && + 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} f_{0}{}_{b} \Omega^{-2} \tilde{\nabla}_{a}\Omega  - 2 \dot{f}_{0}{}_{b} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega -  \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\dot{f}_{0}{}_{a} 
 \nonumber\\
-&& - 4 \tilde{g}^{ba} \tilde{g}_{ij} f_{0}{}_{a} \Omega^{-1} \tilde{\nabla}_{b}\dot{\Omega} + \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}f_{ij} \nonumber \\ 
-&& - 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}f_{0}{}_{a} -  \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}f \tilde{\nabla}_{b}\Omega -  \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} f_{cd} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \nonumber \\ 
-&& + \tilde{g}^{ba} f_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega + \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{a}f_{ij} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}f - 2 \tilde{g}^{ba} f_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega \nonumber \\ 
+&& - 4 \tilde{g}^{ba} \tilde{g}_{ij} f_{0}{}_{a} \Omega^{-1} \tilde{\nabla}_{b}\dot{\Omega} + \tilde{g}^{ba} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}f_{ij} - 2 \dot{\Omega} \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{b}f_{0}{}_{a}
+\nonumber\\
+&&  -  \tilde{g}^{ba} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}f \tilde{\nabla}_{b}\Omega -  \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} f_{cd} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega \nonumber \\ 
+&& + \tilde{g}^{ba} f_{ij} \Omega^{-2} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{b}\Omega + \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{a}f_{ij} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{g}_{ij} \tilde{\nabla}_{b}\tilde{\nabla}_{a}f - 2 \tilde{g}^{ba} f_{ij} \Omega^{-1} \tilde{\nabla}_{b}\tilde{\nabla}_{a}\Omega  
+\nonumber\\
 && -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{i}f_{ja} -  \tfrac{1}{2} \tilde{g}^{ba} \tilde{\nabla}_{b}\tilde{\nabla}_{j}f_{ia} + 2 \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} \Omega^{-1} \tilde{\nabla}_{a}\Omega \tilde{\nabla}_{d}f_{cb} 
 \nonumber\\
 && + \tfrac{1}{2} \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} \tilde{\nabla}_{d}\tilde{\nabla}_{c}f_{ab}  + 2 \tilde{g}^{ca} \tilde{g}^{db} \tilde{g}_{ij} f_{ab} \Omega^{-1} \tilde{\nabla}_{d}\tilde{\nabla}_{c}\Omega + \tfrac{1}{2} \tilde{\nabla}_{i}\dot{f}_{0}{}_{j} 

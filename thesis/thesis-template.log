@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  16 MAY 2020 20:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  23 MAY 2020 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,76 +950,76 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 40.
 
 [225]
-Overfull \hbox (9.46089pt too wide) in alignment at lines 79--118
+Overfull \hbox (9.46089pt too wide) in alignment at lines 79--120
  [][][] []
  []
 
 [226]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `math shift' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 158.
+(hyperref)                removing `\delta' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 158.
+(hyperref)                removing `subscript' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 158.
+(hyperref)                removing `\mu' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\nu' on input line 158.
+(hyperref)                removing `\nu' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `math shift' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `math shift' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 158.
+(hyperref)                removing `\delta' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 158.
+(hyperref)                removing `subscript' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 158.
+(hyperref)                removing `\mu' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\nu' on input line 158.
+(hyperref)                removing `\nu' on input line 160.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `math shift' on input line 160.
 
 
-Overfull \hbox (5.99706pt too wide) in alignment at lines 161--212
+Overfull \hbox (5.99706pt too wide) in alignment at lines 163--214
  [][][] []
  []
 
 [227]
-Overfull \hbox (4.01646pt too wide) in alignment at lines 218--251
+Overfull \hbox (4.01646pt too wide) in alignment at lines 220--253
  [][][] []
  []
 
 [228]
-Overfull \hbox (3.11382pt too wide) in alignment at lines 258--284
+Overfull \hbox (3.11382pt too wide) in alignment at lines 260--286
  [][][] []
  []
 
 [229] [230] [231] [232]
-Overfull \hbox (1.76491pt too wide) in alignment at lines 451--501
+Overfull \hbox (1.76491pt too wide) in alignment at lines 453--503
  [][][] []
  []
 
@@ -1041,13 +1041,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
 (\end occurred when \iffalse on line 70 was incomplete)
 (\end occurred when \iffalse on line 66 was incomplete) 
 Here is how much of TeX's memory you used:
- 9662 strings out of 483183
- 136938 string characters out of 5966293
- 477433 words of memory out of 5000000
- 23548 multiletter control sequences out of 15000+600000
+ 9661 strings out of 483183
+ 136919 string characters out of 5966293
+ 477416 words of memory out of 5000000
+ 23547 multiletter control sequences out of 15000+600000
  542623 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,13n,60p,3341b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,13n,38p,3339b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
@@ -1068,7 +1068,7 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis-template.pdf (245 pages, 882940 bytes).
+Output written on thesis-template.pdf (245 pages, 882259 bytes).
 PDF statistics:
  3272 PDF objects out of 3580 (max. 8388607)
  2974 compressed objects within 30 object streams
