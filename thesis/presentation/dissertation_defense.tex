@@ -336,21 +336,23 @@
 
 \begin{frame}{Gauge Transformations}
 	\begin{itemize}
-		\item 	Under coordinate transformation $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\epsilon^\mu \sim \mathcal O(h)$, the perturbed metric transforms as
+		\item Coordinate invariance $x^\mu \to x'^\mu$
+		\begin{eqnarray}
+			g'_{\mu\nu} = \frac{\partial x^\alpha}{\partial x'^\mu}\frac{\partial x^\beta}{\partial x'^\nu}g_{\alpha\beta}
+		\end{eqnarray}
+		\item 	Under coordinate transformation $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\nabla_\mu \epsilon_\nu \sim \mathcal O(h)$
 			\begin{eqnarray}
-				h_{\mu\nu} \to h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+				h_{\mu\nu} &\to& h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+				\\ \nonumber\\
+				\delta G_{\mu\nu} &\to& \delta G_{\mu\nu} + {}^{(0)}G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}G^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  G^{(0)}_{\mu\nu} \epsilon^\lambda
+				\\ \nonumber\\
+				\delta T_{\mu\nu} &\to& \delta T_{\mu\nu} + {}^{(0)}T^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}T^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  T^{(0)}_{\mu\nu} \epsilon^\lambda.
 			\end{eqnarray}
 		\item 	For every solution $h_{\mu\nu}$ to $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$, a transformed $h'_{\mu\nu} = h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu$ will also serve as a solution
-		\item Set of four $\epsilon^\mu(x)$ define gauge freedom under coordinate transformation
-		\item 10 components in $h_{\mu\nu}$, 4 coordinate transformations, leads to 6 independent degrees of freedom
-		\item Under $x^\mu \to x^\mu - \epsilon^\mu(x)$, the perturbed tensors transform as
-			\begin{eqnarray}
-				\delta G_{\mu\nu} \to \delta G_{\mu\nu} + {}^{(0)}G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}G^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  G^{(0)}_{\mu\nu} \epsilon^\lambda
-				\nonumber\\
-				\delta T_{\mu\nu} \to \delta T_{\mu\nu} + {}^{(0)}T^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}T^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  T^{(0)}_{\mu\nu} \epsilon^\lambda.
-			\end{eqnarray}
-		\item If background $G_{\mu\nu}^{(0)} = 0$ , then $\delta G_{\mu\nu}$ separately gauge invariant; likewise for vanishing background energy momentum tensor
-		\item If $G_{\mu\nu}^{(0)} \ne 0$, then only the entire $\Delta_{\mu\nu} = \delta G_{\mu\nu} + T_{\mu\nu}$ is gauge invariant
+		%\item Set of four $\epsilon^\mu(x)$ define gauge freedom under coordinate transformation
+		%\item 10 components in $h_{\mu\nu}$, 4 coordinate transformations, leads to 6 independent degrees of freedom
+		%\item If background $G_{\mu\nu}^{(0)} = 0$ , then $\delta G_{\mu\nu}$ separately gauge invariant; likewise for vanishing background energy momentum tensor
+		%\item If $G_{\mu\nu}^{(0)} \ne 0$, then only the entire $\Delta_{\mu\nu} = \delta G_{\mu\nu} + T_{\mu\nu}$ is gauge invariant
 	\end{itemize}
 
 
@@ -361,11 +363,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Solution Methods}
-	\begin{itemize}
-		\item Perturbed field equations $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled tensor PDE's
-		\item
-		Much effort involved in simplifying, decoupling, and solving them
-	\end{itemize}
+	%\begin{itemize}
+		%\item Perturbed field equations $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled tensor PDE's
+		%\item Much effort involved in simplifying, decoupling, and solving them
+	%\end{itemize}
 	%
 	\begin{eqnarray}
 		\delta G_{ij} &=& - \tfrac{1}{2} \overset{..}{h}_{ij} + \tfrac{1}{2} \overset{..}{h}_{00}{} \tilde{g}_{ij} + \tfrac{1}{2} \overset{..}{h} \tilde{g}_{ij} -  k \tilde{g}^{ba} \tilde{g}_{ij} h_{ab} + 3 k h_{ij} -  \dot{\Omega}^2 h_{ij} \Omega^{-2} -  \dot{\Omega}^2 \tilde{g}_{ij} h_{00}{} \Omega^{-2} 
@@ -395,21 +396,21 @@
 % Slide  - SVT3 Overview
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begingroup
-\Large
-\begin{frame}{SVT3 Overview}
-	\begin{itemize}
-		\item Three-dimensional Scalar, Vector, Tensor Basis (SVT3)
-		\begin{itemize}
-			\large{
-				\item SVT3 Decomposition
-				\item Decouple Einstein Fluctuations in a de Sitter Background
-				\item Integral Formalism
-			}
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-\endgroup
+%\begingroup
+%\Large
+%\begin{frame}{SVT3 Overview}
+%	\begin{itemize}
+%		\item Three-dimensional Scalar, Vector, Tensor Basis (SVT3)
+%		\begin{itemize}
+%			\large{
+%				\item SVT3 Decomposition
+%				\item Decouple Einstein Fluctuations in a de Sitter Background
+%				\item Integral Formalism
+%			}
+%		\end{itemize}
+%	\end{itemize}
+%\end{frame}
+%\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - SVT3 Decomposition
@@ -1184,9 +1185,29 @@
 		\begin{itemize}
 			\item Non-local integrals
 			\item Incorporates asymptotic boundary conditions
+			\item Decouple gauge-invariant fluctuations with higher derivatives
 		\end{itemize}
-		\item SVTD in Maximally Symmetric Space
-		\item SVT4 Einstein de Sitter
+		\item SVTD Decomposition
+		\begin{itemize}
+			\item Generalize to dimension $D$
+			\item Generalize to curved backgrounds (maximally symmetric)
+			\item Einstein de Sitter $D=4$
+			\begin{eqnarray*}
+			\Delta_{\mu\nu}=(\nabla_{\alpha}\nabla^{\alpha}-2H^2)F_{\mu\nu}+2(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu}+3H^2g_{\mu\nu})\chi
+			\end{eqnarray*}
+		\end{itemize}
+		\item Conformal Gravity
+		\begin{itemize}
+			\item Fluctuation equation in conformal to flat backgrounds
+			\begin{eqnarray*}
+			\delta W_{\mu\nu}=\frac{1}{2}\Omega^{-2}\eta^{\sigma\rho}\eta^{\alpha\beta}\partial_{\sigma}\partial_{\rho} \partial_{\alpha}\partial_{\beta}[\Omega^{-2}h_{\mu\nu}]^{TT}=0
+			\end{eqnarray*} 
+			\item Roberston Walker $k=-1$ Radiation era
+			\begin{eqnarray*}
+			h_{\mu\nu}^{TT} \sim t^4
+			\end{eqnarray*}
+		\end{itemize}
+
 	\end{itemize}
 \end{frame}
 
