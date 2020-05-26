@@ -334,25 +334,31 @@
 % Slide  - Gauge Transformations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Gauge Transformations}
+\begin{frame}{Coordinate Invariance}
 	\begin{itemize}
-		\item Coordinate invariance $x^\mu \to x'^\mu$
+		\item Under $x^\mu \to x'^\mu$
 		\begin{eqnarray}
-			g'_{\mu\nu} = \frac{\partial x^\alpha}{\partial x'^\mu}\frac{\partial x^\beta}{\partial x'^\nu}g_{\alpha\beta}
+			g'_{\mu\nu}(x') = \frac{\partial x^\alpha}{\partial x'^\mu}\frac{\partial x^\beta}{\partial x'^\nu}g_{\alpha\beta}(x)
 		\end{eqnarray}
 		\item 	Under coordinate transformation $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\nabla_\mu \epsilon_\nu \sim \mathcal O(h)$
+		%it is conveinent to attribute the entire change in g_{\mu\nu}(x) to a change in the perturbation $h_{\mu\nu}$. 
 			\begin{eqnarray}
-				g'_{\mu\nu} &=& g_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
-				\\ \nonumber\\
-				g^{(0)}_{\mu\nu} + h'_{\mu\nu} &=& g^{(0)}_{\mu\nu} + h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
-				\\
-				h_{\mu\nu} &\to& h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
-				\\ \nonumber\\
+				g'_{\mu\nu}(x) - g_{\mu\nu}(x) &\equiv& \Delta h_{\mu\nu}(x)
+			\end{eqnarray}
+		% The field equations are thus to be invariant under the so call gauge transformation
+		\item Gauge transformation 
+				\begin{eqnarray}
+				h_{\mu\nu} \to h_{\mu\nu} + \Delta h_{\mu\nu} 
+				\end{eqnarray}
+				where $\Delta h_{\mu\nu} = \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu$
+		\item Transformation of fluctuation tensors themselves
+				\begin{eqnarray}
 				\delta G_{\mu\nu} &\to& \delta G_{\mu\nu} + {}^{(0)}G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}G^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  G^{(0)}_{\mu\nu} \epsilon^\lambda
 				\\ \nonumber\\
 				\delta T_{\mu\nu} &\to& \delta T_{\mu\nu} + {}^{(0)}T^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}T^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  T^{(0)}_{\mu\nu} \epsilon^\lambda.
+				\\ \nonumber\\
+				\Delta_{\mu\nu} &=& \delta G_{\mu\nu} + \delta T_{\mu\nu}
 			\end{eqnarray}
-		\item 	For every solution $h_{\mu\nu}$ to $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$, a transformed $h'_{\mu\nu} = h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu$ will also serve as a solution
 		%\item Set of four $\epsilon^\mu(x)$ define gauge freedom under coordinate transformation
 		%\item 10 components in $h_{\mu\nu}$, 4 coordinate transformations, leads to 6 independent degrees of freedom
 		%\item If background $G_{\mu\nu}^{(0)} = 0$ , then $\delta G_{\mu\nu}$ separately gauge invariant; likewise for vanishing background energy momentum tensor
@@ -557,7 +563,7 @@
 
 \begin{frame}{SVT3 Integral Formulation}
 	\begin{itemize}
-		\item What is the represenation of the SVT3 basis in terms of $h_{\mu\nu}$? Let's take a Minskowski background, 
+		\item What is the representation of the SVT3 basis in terms of $h_{\mu\nu}$? Let's take a Minskowski background, 
 		\begin{eqnarray}
 			h_{00} &=& -2\phi,\qquad h_{0i} = B_i + \partial_i B
 			\nonumber\\
