@@ -118,8 +118,8 @@
 		\item Four Dimensional Scalar, Vector, Tensor Decomposition (SVT4)
 		\item Conformal Gravity (SVT and Conformal to Flat Backgrounds)
 		\item Conformal Gravity Robertson-Walker Radiation Era Solution
-		\item Computational Methods
 		\item Conclusions
+		\item Computational Methods
 	\end{itemize}
 \end{frame}
 \endgroup
@@ -342,6 +342,10 @@
 		\end{eqnarray}
 		\item 	Under coordinate transformation $x^\mu \to x^\mu - \epsilon^\mu(x)$, with $\nabla_\mu \epsilon_\nu \sim \mathcal O(h)$
 			\begin{eqnarray}
+				g'_{\mu\nu} &=& g_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+				\\ \nonumber\\
+				g^{(0)}_{\mu\nu} + h'_{\mu\nu} &=& g^{(0)}_{\mu\nu} + h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
+				\\
 				h_{\mu\nu} &\to& h_{\mu\nu} + \nabla_\mu \epsilon_\nu + \nabla_\nu \epsilon_\mu
 				\\ \nonumber\\
 				\delta G_{\mu\nu} &\to& \delta G_{\mu\nu} + {}^{(0)}G^\lambda{}_\mu \nabla_\nu \epsilon_\lambda +  {}^{(0)}G^{\lambda}{}_{\nu}\nabla_\mu \epsilon_\mu + \nabla_\lambda  G^{(0)}_{\mu\nu} \epsilon^\lambda
@@ -1228,6 +1232,7 @@
 			\begin{itemize}
 				\item Mathematica + xAct
 				\item \url{https://github.com/phelpsmatthew/Cosmological-Fluctuations}
+				\item (Notebook demonstration)
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.6\linewidth}
