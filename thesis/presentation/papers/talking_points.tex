@@ -106,7 +106,7 @@
 	\item Now since $h_{\mu\nu}$ is a 4x4 symmetric rank 2 tensor it has 10 components, and with the four coordinate functions that define the vector field $\epsilon$, one can then use the coordinate freedom to reduce $h_{\mu\nu}$ to six independent components
 	\item Its also quite instructive to look at the transformation of the fluctuation tensors themselves
 	\item Here we note that if the background tensor vanishes, then the fluctuation tensors themselves are separately gauge invariant
-	\item However, if the background does not vanish, then it only the entire sum of $\delta G_{\mu\nu} + \delta T_{\mu\nu}$ that is gauge invariant. In Einstein gravity the background only vanishes in spaces where the Ricci tensor itself vanishes, and thus for non-flat cosmological geomtries, its only $\Delta_{\mu\nu}$ that is gauge invariant
+	\item However, if the background does not vanish, then it only the entire sum of $\delta G_{\mu\nu} + \delta T_{\mu\nu}$ that is gauge invariant. In Einstein gravity the background only vanishes in spaces where the Ricci tensor itself vanishes, and thus for non-flat cosmological geometries, its only $\Delta_{\mu\nu}$ that is gauge invariant
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,7 +115,10 @@
 
 \section{Solution Methods}
 \begin{itemize}
-	\item a
+	\item Now lets take a look at what the perturbed Einstein tensor looks like in a non-flat geometry
+	\item Here we have an expression for the spatial components of the Einstein tensor, and we can get a sense for 1) how many terms there are and 2) how tightly these terms are coupled together
+	\item In fact, if one were to expand out the contractions over dummy indices, and try to look at a single spatial component, like the radia component $\delta G_{rr}$, one would get an expression with about 3-5 times as many terms
+	\item So even after linearizing we require additional methods to simplify and decouple the fluctuation equations
 \end{itemize}
 
 
@@ -125,36 +128,68 @@
 
 \section{SVT3 Decomposition}
 \begin{itemize}
-	\item a
+	\item One such method, called the SVT3 decomposition, is to take $h_{\mu\nu}$ and decompose it into a basis of scalars, vectors, and tensors defined according to their transformation behavior under 3D rotations
+	\item To show this we are going to keep things generic and first factor out a conformal factor from $h_{\mu\nu}$ and express it in terms of the perturbation $f_{\mu\nu}$
+	\item Then we form the line element, here's our background and perturbation, and then here we do a 3+1 splitting to separate the time and spatial components
+	\item So now we want to define the time and space components of $f_{\mu\nu}$ in terms of scalars, vectors, and tensors
+	\item Hence we view $f_{00}$ as a 3-scalar, $f_{0i}$ as a 3-vector and $f_{ij}$ and a 3-tensor. $f_{00}$ just being a scalar, we redefine it in terms of a $\phi$, here we break up the 3 vector in to a transverse vector $B_i$ and the derivatives of a scalar $B$, and here we have two scalars $\psi$ and $E$, a transverse vector $E_i$ and a TT tensor $E_{ij}$. 
+	\item If we count up the components, we have 4 scalars, two two component transverse vectors $E_i$ and $B_i$, and one 2 component TT tensor $E_{ij}$, adding up to 10 in total
+	\item finally here the total line element in the SVT3 basis
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 1/3
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 1/4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 1/3}
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 1/4}
 \begin{itemize}
-	\item a
+	\item To see how the SVT3 decomposition may be helpful in solving the perturbation equations, we are going to evaluate the EFE's in the de Sitter background
+	\item As mentioned earlier, the de Sitter background can be expressed as a special case of the RW metric which here corresponds to choosing the scalar factor to have the form of $1/H\tau$
+	\item While the RW metric consists of a 3-space that is max. symm.,  the de Sitter space is actually maximally symmetric w.r.t. the full 4D spacetime and so its curvature tensors take this form
+	\item The E.M. tensor that gives rise to the desitter space is that which consists of just a cosmological constant - a simple constant background energy that drives the expansion of space
+	\item de Sitter is chosen here just to keep things relatively simple, but the same SVT3 decomposition can be carried out in a more generic RW space where one considers an energy momentum tensor consisting of a perfect fluid
+	\item So in perturbing the energy momentum tensor, we simply get a fluctuation proportional to $f_{\mu\nu}$
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 2/3
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 2/4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 2/3}
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 2/4}
 \begin{itemize}
-	\item a
+	\item Now we are going to insert the SVT3 decomposed $f_{\mu\nu}$ into $\delta G_{\mu\nu}$ to obtain eq 30
+	\item We see that in the SVT3 basis the number of terms we have to deal with has been reduced a little bit, but still quite a few remain
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 3/3
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 3/4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 3/3}
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 3/4}
 \begin{itemize}
-	\item a
+	\item To form the fluctuation equations, we need to add in $\delta T_{\mu\nu}$ to form the full $\Delta_{\mu\nu}$ here
+	\item A couple things to note: 
+	1) if we look at the various components, we can see for example that scalars are coupled to vectors here (in $\Delta_{00}$) and scalars, vectors, and tensors are still coupled together here ($\Delta_{ij}$)
+	2) We recall that $\Delta_{\mu\nu}$ must be entirely gauge invariant, and thus the specific combinations of the SVT3 quantities that appear in each component of $\Delta_{\mu\nu}$ must themselves be gauge invariant
+	\item Here we've identified the appropriate gauge invariant combinations, and if one counts the DOF, we see that there are two scalars, one 2-component transverse vector, and one 2 component TT tensor, totaling a set of 6 gauge invariants as expected from the gauge freedom from $\epsilon$ that we mentioned earlier
+	\item Now in order to actually solve these, we will need to decouple them, and we find that by applying appropriate higher derivatives, we can do so
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 4/4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 4/4}
+\begin{itemize}
+	\item Here we have a set of 6 decoupled equations in the 6 gauge invariants, in which we can solve 
+	\item So to give quick recap here, we first perturbed the Einstein and E.M. around a de Sitter background
+	\item Then we decomposed $h_{\mu\nu}$ into a basis of 3-scalars, 3-vectors, and 3-tensors
+	\item Inserted that $h_{\mu\nu}$ in the flucuation tensors
+	\item We formed the perturbed field equations, noting that they are entirely gauge invariant
+	\item We express the FE's in terms of the gauge invariant SVT3 combinations
+	\item Finally applied derivatives to decouple the SVT3 modes
+\end{itemize}
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - SVT3 Integral Formulation 1/4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
