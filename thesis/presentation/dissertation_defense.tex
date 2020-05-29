@@ -155,7 +155,7 @@
 	\begin{column}{0.5\linewidth}
 	\begin{itemize}
 		\item Cosmological Principle: Structure of spacetime is homoegenous and isotropic at large scales
-		\item Geometries: Robertson Walker (flat, spherical, hyperbolic), de Sitter ($dS_4 \subset \rm{RW}$)
+		\item Geometries: Robertson Walker, de Sitter ($dS_4 \subset \rm{RW}$)
 		\item All background geometries relevant to cosmology can be expressed as conformal to flat
 	\begin{eqnarray*}
 		ds^2 = \Omega(x)^2\big(-dt^2 + dx^2 + dy^2 + dz^2\big)
@@ -172,91 +172,46 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - Cosmological Geometries R.W. k=0
+% Slide  - Cosmological Geometries - Robertson Walker
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Cosmological Geometries R.W.}
+\begin{frame}{Cosmological Geometries - Robertson Walker}
+	\begin{columns}
+		\begin{column}{0.6\linewidth}
+			Comoving Robertson Walker geometry
+				\begin{eqnarray}
+				ds^2 &=& -dt^2 + a(t)^2 \tilde g_{ij}dx^i dx^j
+				\nonumber\\
+				&=& -dt^2 + a(t)^2\bigg[\frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
+				\end{eqnarray}
+		\end{column}
+		\begin{column}{0.4\linewidth}
+		\begin{figure}
+			\includegraphics[width=0.8\linewidth]{comoving4.png}
+		\end{figure}
+		\end{column}
+	\end{columns}
 	\begin{itemize}
-		\item Comoving Robertson Walker geometry:
-		\begin{eqnarray}
-		ds^2 &=& -dt^2 + a(t)^2 \tilde g_{ij}dx^i dx^j
-		\nonumber\\
-		&=& -dt^2 + a(t)^2\bigg[\frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
-		\end{eqnarray}
 		\item 3-Space Curvature Tensors,
 		\begin{eqnarray}
 		R_{ijkl} = k(\tilde g_{jk}\tilde g_{il} - \tilde g_{ik}\tilde g_{jl}), \qquad R_{ij} = -2k\tilde g_{ij}, \qquad R = -6k,\qquad k \in \{-1,0,1\}
 		\end{eqnarray}
-		\item Define the conformal time
-		\begin{eqnarray}
-		\tau = \int \frac{dt}{a(t)},
-		\end{eqnarray}
+		\item Define the conformal time $\tau = \int \frac{dt}{a(t)}$,
 	\end{itemize}
-	\only<1>{
 	\begin{eqnarray}
-		ds^2 = a(\tau)^2\bigg[-d\tau^2 + \frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
+	ds^2 = a(\tau)^2\bigg[-d\tau^2 + \frac{dr^2}{1-kr^2} + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
 	\end{eqnarray}
-	}
-	\only<2>{
+	\vspace{-3mm}
 	\begin{itemize}
-		\item Set $k=0$ (flat), simple conformal to flat form
+		\item Conformal to flat form
 	\end{itemize}
 	\begin{eqnarray}
-		\boxed{ds^2 = a(\tau)^2\bigg[-d\tau^2 + dr^2 + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]}
+		ds^2 &=& a(\tau)^2\big[-d\tau^2 + dr^2 + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\big]\qquad (k=0)
+		\\
+		ds^2 &=& \frac{4a^2(\tau)}{[1+(p'+r')^2][1+(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]\qquad (k=1)
+		\\
+		ds^2 &=& \frac{4a^2(\tau)}{[1-(p'+r')^2][1-(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]\qquad (k=-1)
 	\end{eqnarray}		
-	}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - Cosmological Geometries R.W. k=1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Cosmological Geometries R.W. $k=1$}
-	\begin{itemize}
-		\item $k=1$ (spherical)
-		\begin{eqnarray}
-		ds^2 = a(\tau)^2\bigg[-d\tau^2 + \frac{dr^2}{1-r^2} + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
-		\end{eqnarray}
-		\item Set $\sin\chi = r$, $p = \tau$,
-		\begin{eqnarray}
-		ds^2 = a(p)^2\bigg[-dp^2 + d\chi^2 + \sin^2\chi d\theta^2 + \sin^2\chi \sin^2\theta d\phi^2\bigg]
-		\end{eqnarray}
-		\item Introduce coordinates
-		\begin{eqnarray}
-		p' + r' &=& \tan[(p+\chi)/2],\quad p'-r'=\tan[(p-\chi)/2]
-		\nonumber\\
-		p' &=& \frac{\sin p}{\cos p + \cos \chi}, \quad r' = \frac{\sin\chi}{\cos p + \cos\chi}
-		\end{eqnarray}
-		\begin{eqnarray}
-		\implies \boxed{ds^2 = \frac{4a^2(p)}{[1+(p'+r')^2][1+(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]}
-		\end{eqnarray}
-	\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - Cosmological Geometries R.W. k=-1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Cosmological Geometries R.W. $k=-1$}
-	\begin{itemize}
-		\item $k=-1$ (hyperbolic) \textcolor{white}{\cite{phelps_2019}}\textcolor{white}{\cite{amarasinghe_2019}}
-		\begin{eqnarray}
-		ds^2 = a(\tau)^2\bigg[-d\tau^2 + \frac{dr^2}{1+r^2}  + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
-		\end{eqnarray}
-		\item Set $\sinh\chi = r$, $p = \tau$,
-		\begin{eqnarray}
-		ds^2 = a(p)^2\bigg[-dp^2 + d\chi^2 + \sinh^2\chi d\theta^2 + \sinh^2\chi \sin^2\theta d\phi^2\bigg]
-		\end{eqnarray} 
-		\item Introduce coordinates
-		\begin{eqnarray}
-		p' + r' &=& \tanh[(p+\chi)/2],\quad p'-r'=\tanh[(p-\chi)/2]
-		\nonumber\\
-		p' &=& \frac{\sinh p}{\cosh p + \cosh \chi}, \quad r' = \frac{\sinh\chi}{\cosh p + \cosh\chi}
-		\end{eqnarray}
-		\begin{eqnarray}
-		\implies \boxed{ds^2 = \frac{4a^2(p)}{[1-(p'+r')^2][1-(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]}
-		\end{eqnarray}
-	\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -269,15 +224,12 @@
 		\begin{eqnarray}
 		I_{\text{EH}} = -\frac{1}{16\pi G} \int d^4x (-g)^{1/2}  g^{\mu\nu}R_{\mu\nu}
 		\end{eqnarray}
-		\item 	Functional variation w.r.t $g_{\mu\nu}$ yields Einstein tensor,
 		\begin{eqnarray}
-		\frac{16\pi G}{(-g)^{1/2}} \frac{\delta I_{\text{EH}}}{\delta g_{\mu\nu}}= G^{\mu\nu} = R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R^\alpha{}_\alpha
-		\end{eqnarray}
-		\item 	Likewise, variation of matter action $I_{\rm M}$ w.r.t $g_{\mu\nu}$ yields Energy Momentum tensor
-		\begin{eqnarray}
+		\frac{16\pi G}{(-g)^{1/2}} \frac{\delta I_{\text{EH}}}{\delta g_{\mu\nu}}= G^{\mu\nu} = R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R^\alpha{}_\alpha,
+		\qquad
 		\frac{2}{(-g)^{1/2}} \frac{ \delta I_\text{M}}{\delta g_{\mu\nu}} = T_{\mu\nu}
 		\end{eqnarray}
-		\item 	Requiring sum of actions to be stationary gives us Einstein field equations
+		\item Einstein field equations
 		\begin{eqnarray}
 		R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R^\alpha{}_\alpha = -8\pi G T^{\mu\nu},
 		\label{EinEOM}
@@ -301,7 +253,7 @@
 			\begin{eqnarray}
 				g_{\mu\nu}(x) &=& g_{\mu\nu}^{(0)}(x) + h_{\mu\nu}(x),\qquad g^{\mu\nu}_{(0)}h_{\mu\nu} \equiv h
 				\\ \nonumber\\
-				G_{\mu\nu} &=& G_{\mu\nu}(g_{\mu\nu}^{(0)}) + \delta G_{\mu\nu}(h_{\mu\nu})
+				G_{\mu\nu} &=& G^{(0)}_{\mu\nu}(g_{\mu\nu}^{(0)}) + \delta G_{\mu\nu}(h_{\mu\nu})
 				\\ \nonumber\\
 				G_{\mu\nu}^{(0)} &=& R_{\mu\nu}^{(0)} -\frac{1}{2} g_{\mu\nu}^{(0)} R_\alpha^{(0)\alpha}
 				\label{Einzero}
@@ -312,7 +264,7 @@
 			\begin{eqnarray}
 				T_{\mu\nu} &=& T_{\mu\nu}(g_{\mu\nu}^{(0)}) + \delta T_{\mu\nu}(h_{\mu\nu})
 			\end{eqnarray}
-			\item Form background and first order equations of motion
+			\item Form background and first order field equations
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.3\linewidth}
@@ -334,8 +286,9 @@
 % Slide  - Gauge Transformations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Coordinate Invariance}
+\begin{frame}{Coordinate Transformations}
 	\begin{itemize}
+		% The Einstein field equations are covariant under general 4D coordinate transformations
 		\item Under $x^\mu \to x'^\mu$
 		\begin{eqnarray}
 			g'_{\mu\nu}(x') = \frac{\partial x^\alpha}{\partial x'^\mu}\frac{\partial x^\beta}{\partial x'^\nu}g_{\alpha\beta}(x)
@@ -377,7 +330,9 @@
 		%\item Perturbed field equations $\delta G_{\mu\nu} + \delta T_{\mu\nu} = 0$ form a rather complex and extensive set of coupled tensor PDE's
 		%\item Much effort involved in simplifying, decoupling, and solving them
 	%\end{itemize}
-	%
+	\begin{itemize}
+		\item Spatial components of the perturbed Einstein tensor
+	\end{itemize}
 	\begin{eqnarray}
 		\delta G_{ij} &=& - \tfrac{1}{2} \overset{..}{h}_{ij} + \tfrac{1}{2} \overset{..}{h}_{00}{} \tilde{g}_{ij} + \tfrac{1}{2} \overset{..}{h} \tilde{g}_{ij} -  k \tilde{g}^{ba} \tilde{g}_{ij} h_{ab} + 3 k h_{ij} -  \dot{\Omega}^2 h_{ij} \Omega^{-2} -  \dot{\Omega}^2 \tilde{g}_{ij} h_{00}{} \Omega^{-2} 
 		\nonumber\\
@@ -439,7 +394,9 @@
 		\end{eqnarray}
 		\item Decompose $f_{00}$, $f_{0i}$, and $f_{ij}$ in terms of 3-dimensional scalars, vectors, and tensors
 		\begin{eqnarray}
-			f_{00} &=& -2\phi,\qquad f_{0i} = B_i + \tilde\nabla_i B
+			f_{00} &=& -2\phi,
+			\nonumber\\
+			f_{0i} &=& B_i + \tilde\nabla_i B,
 			\nonumber\\
 			f_{ij} &=& -2\psi \tilde g_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij},
 		\end{eqnarray}
@@ -463,9 +420,12 @@
 	\begin{itemize}
 		\item de Sitter geometry
 	\end{itemize}
-				\begin{eqnarray}
+		\begin{eqnarray}
 			ds^2 =\frac{1}{H^2\tau^2}\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
 			+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg]
+		\end{eqnarray}
+		\begin{eqnarray}
+		R_{\lambda\mu\nu\kappa} = H^2 (g_{\mu\nu}g_{\lambda\kappa}-g_{\lambda\nu}g_{\mu\kappa}),\qquad  R_{\mu\kappa} = -3H^2 g_{\mu\kappa},\qquad R=-12H^2
 		\end{eqnarray}
 	}
 	\begin{itemize}
@@ -589,7 +549,7 @@
 		\end{eqnarray}
 		\item Integrate
 		\begin{eqnarray}
-		V(x) = \underbrace{\int_V d^3x' D(x-x')\partial_i \partial^i V(x')}_{\text{Non-Harmonic}} + \underbrace{\oint_{\partial V} dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]}_{\text{Harmonic}}
+		V(x) = \underbrace{\int d^3x' D(x-x')\partial_i \partial^i V(x')}_{\text{Non-Harmonic}} + \underbrace{\oint dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]}_{\text{Harmonic}}
 		\end{eqnarray}
 		\begin{eqnarray}
 		V = V^{NH} + V^{H},\qquad \partial_i\partial^i V = \partial_i\partial^i V^{NH},\qquad \partial_i\partial^i V^{H} = 0
@@ -721,7 +681,7 @@
 
 \begin{frame}{SVTD Integral Formulation - Maximally Symmetric Space}
 	\begin{itemize}
-		\item Maximally Symmetry Space
+		\item Maximally Symmetric Space
 		\begin{eqnarray}
 		R_{\lambda\mu\nu\kappa} = \frac{R}{D(1-D)} (g_{\lambda\nu}g_{\mu\kappa} - g_{\mu\nu}g_{\lambda\kappa}),\qquad  R_{\mu\kappa} = \frac{R}{D}g_{\mu\kappa},\qquad	R=H^2D(1-D) 
 		\end{eqnarray}
@@ -790,7 +750,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 1/3
+% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 1/2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{SVT4 $\delta G_{\mu\nu}$ in a de Sitter Background}
@@ -803,7 +763,7 @@
 	\begin{itemize}
 		\item Compose $\Delta_{\mu\nu} = \delta G_{\mu\nu} + \delta T_{\mu\nu}$, with $\delta T_{\mu\nu} = -3 H^2 h_{\mu\nu}$
 		\begin{eqnarray}
-		\Delta_{\mu\nu}=(\nabla_{\alpha}\nabla^{\alpha}-2H^2)F_{\mu\nu}+2(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu}+3H^2g_{\mu\nu})\chi
+		\Delta_{\mu\nu}=(\nabla_{\alpha}\nabla^{\alpha}-2H^2)F_{\mu\nu}+2(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu}+3H^2g_{\mu\nu})\chi=0
 		\end{eqnarray}
 		\item With trace and commutation relation
 		\begin{eqnarray}
@@ -817,9 +777,37 @@
 			(\nabla_{\alpha}\nabla^{\alpha}-4H^2)(\nabla_{\alpha}\nabla^{\alpha}-2H^2)F_{\mu\nu}=0.
 			\label{6.31a}
 		\end{eqnarray}
-		\item Compare to \hyperlink{svt3ds4}{\beamerbutton{SVT3 $dS_4$}}
 	\end{itemize}
-	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 2/2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT4 $\delta G_{\mu\nu}$ in a de Sitter Background}
+	\begin{itemize}
+		\item SVT3
+			\begin{eqnarray}
+			\Delta_{00}&=&-\frac{6}{\tau^2}(\dot{\beta}-\alpha)-\frac{2}{\tau}\tilde{\nabla}^2\beta=0,
+			\nonumber\\
+			\Delta_{0i}&=&\frac{1}{2}\tilde{\nabla}^2(B_i-\dot{E}_i)-\frac{2}{\tau}\tilde{\nabla}_i(\dot{\beta}-\alpha)=0,
+			\nonumber\\
+			\Delta_{ij}&=&\frac{\delta_{ij}}{\tau^2}\left[-2\tau(\ddot{\beta}-\dot{\alpha})+6(\dot{\beta}-\alpha)+\tau \tilde{\nabla}^2(2\beta-\tau \alpha)\right]
+			+\frac{1}{\tau}\tilde{\nabla}_i\tilde{\nabla}_j(-2 \beta +\tau\alpha)
+			\nonumber\\
+			&+&\frac{1}{2\tau}\tilde{\nabla}_i[-2(B_j-\dot{E}_j)+\tau(\dot{B}_j-\ddot{E}_j)]
+			+\frac{1}{2\tau}\tilde{\nabla}_j[-2(B_i-\dot{E}_i)+\tau(\dot{B}_i-\ddot{E}_i)]
+			\nonumber\\
+			&-&\ddot{E}_{ij}+\frac{2}{\tau}\dot{E}_{ij}+\tilde{\nabla}^2E_{ij}=0,
+			\nonumber\\
+			g^{\mu\nu}\Delta_{\mu\nu}&=&H^2[-6\tau(\ddot{\beta}-\dot{\alpha})+24(\dot{\beta}-\alpha)
+			+6\tau \tilde{\nabla}^2\beta-2\tau^2\tilde{\nabla}^2\alpha]=0
+			\end{eqnarray}
+		\item SVT4
+			\begin{eqnarray}
+			\Delta_{\mu\nu} = (\nabla_{\alpha}\nabla^{\alpha}-2H^2)F_{\mu\nu}+2(g_{\mu\nu}\nabla_{\alpha}\nabla^{\alpha}-\nabla_{\mu}\nabla_{\nu}+3H^2g_{\mu\nu})\chi=0
+			\end{eqnarray}
+	\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1234,7 +1222,7 @@
 
 \begin{frame}{Computational Methods}
 	\begin{columns}
-		\begin{column}{0.5\linewidth}
+		\hspace{3mm}\begin{column}{0.5\linewidth}
 			\begin{itemize}
 				\item Mathematica + xAct
 				\item \url{https://github.com/phelpsmatthew/Cosmological-Fluctuations}
@@ -1283,6 +1271,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Integral Formulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT3 Integral Formulation}
+	\begin{eqnarray}
+	V(x) &=&\int_V d^3x' D(x-x')\partial_i \partial^i V(x') + \oint_{\partial V} dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]
+	\\ 
+	\partial_k \partial^k V(x) &=& \partial_k \partial^k V(x) + \oint_{\partial V} dS_i[V(x')\partial^i \delta^3(x-x') - \delta^3(x-x')\partial^i V(x')]
+	\end{eqnarray}
+	Using 
+	\begin{eqnarray}
+	\int d^3x' V(x') \partial^i \delta^3(x-x') = \int d^3x' \partial^i V(x') \delta^3(x-x'),
+	\end{eqnarray}
+	the surface term vanishes identically.
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - SVT3 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds
@@ -1364,6 +1369,58 @@
 	\nonumber\\
 	&=& \delta W_{\mu\nu}
 	\end{eqnarray}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Cosmological Geometries R.W. k=1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cosmological Geometries R.W. $k=1$}
+	\begin{itemize}
+		\item $k=1$ (spherical)
+		\begin{eqnarray}
+		ds^2 = a(\tau)^2\bigg[-d\tau^2 + \frac{dr^2}{1-r^2} + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
+		\end{eqnarray}
+		\item Set $\sin\chi = r$, $p = \tau$,
+		\begin{eqnarray}
+		ds^2 = a(p)^2\bigg[-dp^2 + d\chi^2 + \sin^2\chi d\theta^2 + \sin^2\chi \sin^2\theta d\phi^2\bigg]
+		\end{eqnarray}
+		\item Introduce coordinates
+		\begin{eqnarray}
+		p' + r' &=& \tan[(p+\chi)/2],\quad p'-r'=\tan[(p-\chi)/2]
+		\nonumber\\
+		p' &=& \frac{\sin p}{\cos p + \cos \chi}, \quad r' = \frac{\sin\chi}{\cos p + \cos\chi}
+		\end{eqnarray}
+		\begin{eqnarray}
+		\implies \boxed{ds^2 = \frac{4a^2(p)}{[1+(p'+r')^2][1+(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]}
+		\end{eqnarray}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Cosmological Geometries R.W. k=-1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Cosmological Geometries R.W. $k=-1$}
+	\begin{itemize}
+		\item $k=-1$ (hyperbolic) \textcolor{white}{\cite{phelps_2019}}\textcolor{white}{\cite{amarasinghe_2019}}
+		\begin{eqnarray}
+		ds^2 = a(\tau)^2\bigg[-d\tau^2 + \frac{dr^2}{1+r^2}  + r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2\bigg]
+		\end{eqnarray}
+		\item Set $\sinh\chi = r$, $p = \tau$,
+		\begin{eqnarray}
+		ds^2 = a(p)^2\bigg[-dp^2 + d\chi^2 + \sinh^2\chi d\theta^2 + \sinh^2\chi \sin^2\theta d\phi^2\bigg]
+		\end{eqnarray} 
+		\item Introduce coordinates
+		\begin{eqnarray}
+		p' + r' &=& \tanh[(p+\chi)/2],\quad p'-r'=\tanh[(p-\chi)/2]
+		\nonumber\\
+		p' &=& \frac{\sinh p}{\cosh p + \cosh \chi}, \quad r' = \frac{\sinh\chi}{\cosh p + \cosh\chi}
+		\end{eqnarray}
+		\begin{eqnarray}
+		\implies \boxed{ds^2 = \frac{4a^2(p)}{[1-(p'+r')^2][1-(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]}
+		\end{eqnarray}
+	\end{itemize}
 \end{frame}
 
 \end{document}

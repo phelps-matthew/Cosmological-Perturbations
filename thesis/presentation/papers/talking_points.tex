@@ -1,0 +1,355 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[textwidth=7in, top=1in,textheight=9in]{geometry}
+\usepackage[fleqn]{mathtools} 
+\usepackage{amssymb,braket,hyperref,xcolor}
+\hypersetup{colorlinks, linkcolor={blue!50!black}, citecolor={red!50!black}, urlcolor={blue!80!black}}
+%\usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
+\setlength{\parindent}{0pt}
+\title{Dissertation Talking Points}
+\date{}
+\allowdisplaybreaks
+\begin{document} 
+\maketitle
+\noindent 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Title Page}
+\begin{itemize}
+	\item Thank you everyone for coming. Welcome to my dissertation defense on the topic Cosmological Perturbations as applied to both standard Einstein Gravity and Conformal gravity
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - TOC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Overview}
+\begin{itemize}
+	\item Alright so, to give an overview of what will be covered,
+	\item we will first form the necessary background of cosmological perturbation theory. Talking about the geometry of the universe, introduce einstein gravity, perturbations, and coordinate invariance
+	\item As an approach to simplify and solve the equations arising in cosmology, we're going to analyze something called the SVT decomp. in 3 dimensions and then perform some generalizations to four dimensions, demonstrating specific applications of both within a de Sitter background geometry
+	\item Then we'll cover a discussion of cosmological perturbations in conformal gravity, and demonstrate a calculation of the fluctuations in the early universe radiation era
+	\item Finally we'll wrap it up with overall conclusions and I'll demonstrate some of the computations involved in order to do the calculations that we'll see through this presentation
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Cosmological Geometries 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cosmological Geometries}
+\begin{itemize}
+	\item Let's first discuss the geometry that is relevant to cosmology. If we take a look at the distribution of matter in the universe, we will see something like this image taken from the hubble telescope (which I'll add in served as my desktop background for quite a number of years). 
+	\item What we observe is that no matter where you are in the universe and no matter what direction you look, the universe is the same on large scales. More specifically, while the structure of universe may be in-homogeneous on small scales, on a large scale the universe is statistically homogeneous and isotropic. These two features are embodied in what is called the cosmological principle. 
+	\item Based solely on arguments of homogeneity and isotropy, the large scale geometry of such a universe is described through the RW metric and de Sitter metric (of which one can show that de Sitter space is actually a subset of the RW geometry).
+	\item It of interest to note that with a proper choice of coordinates, the roberston walker geometries can all be expressed in a conformal to flat form
+	\item with this equation here showing the spacetime line element being expressed as a minkowski spacetime multiplied by an overall conformal factor
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Cosmological Geometries - Robertson Walker
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cosmological Geometries - Robertson Walker}
+\begin{itemize}
+	\item To see what the RW geometry entails, we have an expression for the spacetime line element in eq. (1), here in comoving coordinates. The geometry describes the expansion of space over time as characterized by the functional form of the scale factor $a(t)$
+	\item The comoving coordinates are at rest with respect to the hubble flow, and if we look at the figure here we can see that while the comoving distance between these two galaxies remains constant, the proper distance increases as space expands according to $a(t)$
+	\item The space itself that is expanding, referred to as the 3-space, is a space of uniform curvature, which can be represented by the curvature constant $k$, taking the values of $-1, 0, 1 $. These values correspond to hyperbolic, flat, or spherical space respectively.
+	\item Spaces of constant curvature are called maximally symmetric, where the curvature tensors take the specific form in eq(2). So here we have the Riemann tensor, which we might recall is the unique tensor composed of second order derivatives of the metric which measures the local curvature. We also have its contractions the ricci tensor, and the ricci scalar and we see that the ricci scalar is a constant in a max. symm. 3-space.
+	\item As mentioned before, with a proper choice of coordinates, the RW metric can be cast into a conformal to flat form
+	\item The simplest case is for $k=0$, in which if we define the conformal time $\tau$ and set $k=0$, then the line element take the form of eq (4), which we can recognize as conformal to a spherical polar flat metric
+	\item For $k=\pm 1$, we have to perform additional coord. transformations, and we just note that for these the conformal factor is a function of both space and time.
+	\item So this describes the geometry of the large scale universe, but in order to discuss the interaction of gravity and matter, one needs to introduce Einstein field equations, which we do now
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Einstein Gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Einstein Gravity}
+\begin{itemize}
+	\item One starts with the Einstein Hilbert action defined as the coordinate invariant integral over the Ricci scalar
+	\item Functional variation w.r.t. the metric yields the Einstein tensor $G_{\mu\nu}$, and likewise upon specification of a matter action, one obtains the energy momentum tensor
+	\item In requiring the sum of both the E.H. action and the matter action to be stationary with respect to arbitrary variations in the metric, we obtain the EFE's.
+	\item With (10) showing an identity that relates the derivative of the ricci tensor to its contraction, we can see that the Einstein tensor is conserved
+	\item In the EFE's the interaction of gravity and matter can be seen via the LHS being a pure function of the metric representing the curvature of space while the RHS defines the source of matter and energy
+	\item We'll now look at the linearization of the Einstein field equations according to cosmological perturbation theory
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Perturbation Theory
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cosmological Perturbation Theory}
+\begin{itemize}
+	\item So as discussed prior, on a large scale the universe is homogeneous and isotropic which we can think of as the smooth surface of this sphere.
+	\item Now in order to capture the departures from homogeneity and isotropy, things that are necessary in order to form localized structures in spacetime, we introduce small fluctuations on top of the otherwise smooth background. Thus we define the metric according to a background contribution and first order perturbation $h_{\mu\nu}$ 
+	\item If we then substitute the metric into $G_{\mu\nu}$, it then can be split into a background piece and fluctuation tensor
+	\item Upon similarly perturbing $T_{\mu\nu}$, we can then form the entire background field equations and first order fluctuation equations, where here we've combined them into the tensor $\Delta_{\mu\nu}$
+	\item The background equations serve to define the rate of expansion of space given the source, whereas the fluctuation equations describe the evolution of metric perturbations due to things like over densities arising from source
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Gauge Transformations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coordinate Transformations}
+\begin{itemize}	
+	\item So upon perturbing the EFE's, we will need to consider the effect of coordinate transformations
+	\item The field equations are covariant w.r.t. general coordinate transformations, with the metric transforming as in (18)
+	\item If we now consider an infinitesimal coordinate transformation with the vector field $\epsilon$ small in the same sense that $h$ is small, then it is conveinent to attribute the whole change in $g_{\mu\nu}$ to a change in the perturbation $h_{\mu\nu}$ 
+	\item The fluctuation eqns are then to be invariant under the so called gauge transformation of eq (20), where $\Delta h_{\mu\nu}$ is given by this symmetric sum of derivatives onto epsilon
+	\item Thus if $h_{\mu\nu}$ serves as a solution to the EFE's, then and $h'_{\mu\nu}$ defined by (20) will also serve as a solution
+	\item Now since $h_{\mu\nu}$ is a 4x4 symmetric rank 2 tensor it has 10 components, and with the four coordinate functions that define the vector field $\epsilon$, one can then use the coordinate freedom to reduce $h_{\mu\nu}$ to six independent components
+	\item Its also quite instructive to look at the transformation of the fluctuation tensors themselves
+	\item Here we note that if the background tensor vanishes, then the fluctuation tensors themselves are separately gauge invariant
+	\item However, if the background does not vanish, then it only the entire sum of $\delta G_{\mu\nu} + \delta T_{\mu\nu}$ that is gauge invariant. In Einstein gravity the background only vanishes in spaces where the Ricci tensor itself vanishes, and thus for non-flat cosmological geomtries, its only $\Delta_{\mu\nu}$ that is gauge invariant
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Solving Equations of Motion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Solution Methods}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Decomposition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 Decomposition}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 1/3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 1/3}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 2/3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 2/3}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 $\delta G_{\mu\nu}$ de Sitter 3/3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 $\delta G_{\mu\nu}$ in a de Sitter Background 3/3}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Integral Formulation 1/4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 Integral Formulation 1/4}
+\begin{itemize}
+	\item Show identical vanishing of surface term upon application of $\partial_i \partial^i$
+	\item Wording: Harmonic function, generalized  Laplacian. divergence of gradient. 
+	\item Think about conditions requires to vanish
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Integral Formulation 2/4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 Integral Formulation 2/4}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Integral Formulation 3/4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 Integral Formulation 3/4}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Integral Formulation 4/4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT3 Integral Formulation 4/4}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT4 Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT4 Setup}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide - SVTD Integral Formulaion - Max. Sym. Space 1/2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVTD Integral Formulation - Maximally Symmetric Space 1/2}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide - SVTD Integral Formulaion - Max. Sym. Space 2/2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVTD Integral Formulation - Maximally Symmetric Space 2/2}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 1/2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT4 $\delta G_{\mu\nu}$ in a de Sitter Background 1/2}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 2/2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT4 $\delta G_{\mu\nu}$ in a de Sitter Background 2/2}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Conformal Gravity Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conformal Gravity Introduction}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Conformal Invariance in Conformal Gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conformal Invariance in Conformal Gravity}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Trace Properties in Conformal Gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Trace Properties in Conformal Gravity}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 1/3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{$\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 1/3}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 2/3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{$\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 2/3}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT4 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 3/3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{SVT4 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 3/3}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Conformal Gravity Robertson-Walker Radiation Era
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conformal Gravity Robertson-Walker Radiation Era}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Conclusions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusions}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Computational Methods
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Computational Methods}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{References}
+\begin{itemize}
+	\item a
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Acknowledgments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acknowledgments}
+\begin{itemize}
+	\item To those who I've been involved with during my PhD I'd like to give some acknowledgments.
+	\item Foremost I want to thank my advisor Philip Mannheim for giving me this opportunity. Its been an honor for me to work for you and there are quite a number of lessons I've learned working under you that will always be with me with me
+	\item Thank you to my coadvisors for your flexbility and giving me direction from time to time
+	\item To my friend afar Ray Retherford, for helping me through difficult times, I hope to see you soon
+	\item To my partner Michaela Poppick and her continual support
+	\item and to my friends I've made while in Connecticut, its immensely difficult to imagine how I'd survive without you, special thanks to H Perry, Candost, Lukasz, Chen unit,
+	\item I also want to give thanks to Jason Hancock for having faith in me and giving me some degree of autonomy in developing the studio physics labs, Diego as well. Its honestly been a pleasure working with you
+	\item and to my family, your encouragement has meant alot to me, and finally to all other friends and faculty that I've had the pleasure to get to know, thank you all. 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - End
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The End}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
