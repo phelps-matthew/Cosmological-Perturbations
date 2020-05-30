@@ -76,7 +76,8 @@
 	\item In requiring the sum of both the E.H. action and the matter action to be stationary with respect to arbitrary variations in the metric, we obtain the EFE's.
 	\item With (10) showing an identity that relates the derivative of the ricci tensor to its contraction, we can see that the Einstein tensor is conserved
 	\item In the EFE's the interaction of gravity and matter can be seen via the LHS being a pure function of the metric representing the curvature of space while the RHS defines the source of matter and energy
-	\item We'll now look at the linearization of the Einstein field equations according to cosmological perturbation theory
+	\item Now one of the main difficulties in GR is that the FE's form a set of tightly coupled are non-linear PDE's where exact solutions are typically only found in very symmetric geometries. 
+	\item In order to be able to solve the FE's that describe the effects of cosmology, we are going to look at the first order perturbations of the Einstein field equations
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -425,7 +426,13 @@
 
 \section{Computational Methods}
 \begin{itemize}
-	\item a
+	\item So in composing the fluctuations equations in cosmology, there are numerous steps that pose a lot of difficulty if one were to do the calculations non-computationally, mostly due to the sheer number of terms and manipulations involved. 
+	\item To do them programatically, what one needs is a language capable of doing symbolic tensor calculus on manifolds. 
+	\item In terms of abstract symbolic computation, Mathematica is one of the most effective frameworks, however it doesn't natively include support for GR specific applications.
+	\item To remedy this, in the late 2000's, a physicist Jose Martin Garcia developed a package to be used within Mathematica called xAct, which is composed of a suite of free GR specific packages that implement state-of-the-art algorithms for fast manipulation of indices in a highly programmable and configurable form
+	\item All the calculations I've done using this package and additional programs I've coded are available at this github repository, where anyone is free to use or modify them
+	\item I'm going to very quickly show you one of the notebooks that I use extensively and some of the calculations involved
+	\item 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -434,7 +441,7 @@
 
 \section{References}
 \begin{itemize}
-	\item a
+	\item Here are the two papers this presentation is based on. Um, I remember that before i started doing anything in GR I would hear that doing those calculations could be quite the task of labor, and now with these two papers combined totaling 100 pages, I definitely think I appreciate that sentiment a lot more
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -443,12 +450,12 @@
 
 \section{Acknowledgments}
 \begin{itemize}
-	\item To those who I've been involved with during my PhD I'd like to give some acknowledgments.
+	\item So finally, to those who I've been involved with during my PhD I'd like to give some acknowledgments.
 	\item Foremost I want to thank my advisor Philip Mannheim for giving me this opportunity. Its been an honor for me to work for you and there are quite a number of lessons I've learned working under you that will always be with me with me
 	\item Thank you to my coadvisors for your flexbility and giving me direction from time to time
 	\item To my friend afar Ray Retherford, for helping me through difficult times, I hope to see you soon
 	\item To my partner Michaela Poppick and her continual support
-	\item and to my friends I've made while in Connecticut, its immensely difficult to imagine how I'd survive without you, special thanks to H Perry, Candost, Lukasz, Chen unit,
+	\item and to my friends I've made while in Connecticut, its immensely difficult to imagine how I'd survive without you, special thanks to Candost, H Perry, Lukasz, Chen unit,
 	\item I also want to give thanks to Jason Hancock for having faith in me and giving me some degree of autonomy in developing the studio physics labs, Diego as well. Its honestly been a pleasure working with you
 	\item and to my family, your encouragement has meant alot to me, and finally to all other friends and faculty that I've had the pleasure to get to know, thank you all. 
 \end{itemize}
