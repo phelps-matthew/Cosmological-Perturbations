@@ -30,7 +30,7 @@
 \section{Overview}
 \begin{itemize}
 	\item Alright so, to give an overview of what will be covered,
-	\item we will first form the necessary background of cosmological perturbation theory. Talking about the geometry of the universe, introduce einstein gravity, perturbations, and coordinate invariance
+	\item we will first form the necessary background of cosmological perturbation theory. Talking about the geometry of the universe, introduce Einstein gravity, perturbations, and coordinate invariance
 	\item As an approach to simplify and solve the equations arising in cosmology, we're going to analyze something called the SVT decomp. in 3 dimensions and then perform some generalizations to four dimensions, demonstrating specific applications of both within a de Sitter background geometry
 	\item Then we'll cover a discussion of cosmological perturbations in conformal gravity, and demonstrate a calculation of the fluctuations in the early universe radiation era
 	\item Finally we'll wrap it up with overall conclusions and I'll demonstrate some of the computations involved in order to do the calculations that we'll see through this presentation
@@ -56,9 +56,9 @@
 \section{Cosmological Geometries - Robertson Walker}
 \begin{itemize}
 	\item To see what the RW geometry entails, we have an expression for the spacetime line element in eq. (1), here in comoving coordinates. The geometry describes the expansion of space over time as characterized by the functional form of the scale factor $a(t)$
-	\item The comoving coordinates are at rest with respect to the hubble flow, and if we look at the figure here we can see that while the comoving distance between these two galaxies remains constant, the proper distance increases as space expands according to $a(t)$
+	\item The comoving coordinates are at rest with respect to the hubble flow, and if we look at the figure here we can see that the grid here represents the comoving coordinates. And if we assume these galaxies don't have any peculiar velocity, we can see that the comoving distance between the two galaxies remains constant, where as the proper distance increases as space expands according to $a(t)$
 	\item The space itself that is expanding, referred to as the 3-space, is a space of uniform curvature, which can be represented by the curvature constant $k$, taking the values of $-1, 0, 1 $. These values correspond to hyperbolic, flat, or spherical space respectively.
-	\item Spaces of constant curvature are called maximally symmetric, where the curvature tensors take the specific form in eq(2). So here we have the Riemann tensor, which we might recall is the unique tensor composed of second order derivatives of the metric which measures the local curvature. We also have its contractions the ricci tensor, and the ricci scalar and we see that the ricci scalar is a constant in a max. symm. 3-space.
+	\item Spaces of constant curvature are called maximally symmetric, where the spatial components of the curvature tensors take the specific form in eq(2). So here we have the Riemann tensor, which we might recall is the unique tensor composed of second order derivatives of the metric which measures the local curvature. We also have its contractions the Ricci tensor, and the Ricci scalar and we see that the Ricci scalar is a constant in a max. symm. 3-space.
 	\item As mentioned before, with a proper choice of coordinates, the RW metric can be cast into a conformal to flat form
 	\item The simplest case is for $k=0$, in which if we define the conformal time $\tau$ and set $k=0$, then the line element take the form of eq (4), which we can recognize as conformal to a spherical polar flat metric
 	\item For $k=\pm 1$, we have to perform additional coord. transformations, and we just note that for these the conformal factor is a function of both space and time.
@@ -101,7 +101,7 @@
 \begin{itemize}	
 	\item So upon perturbing the EFE's, we will need to consider the effect of coordinate transformations
 	\item The field equations are covariant w.r.t. general coordinate transformations, with the metric transforming as in (18)
-	\item If we now consider an infinitesimal coordinate transformation with the vector field $\epsilon$ small in the same sense that $h$ is small, then it is conveinent to attribute the whole change in $g_{\mu\nu}$ to a change in the perturbation $h_{\mu\nu}$ 
+	\item If we now consider an infinitesimal coordinate transformation with the vector field $\epsilon$ small in the same sense that $h$ is small, then it is convenient to attribute the whole change in $g_{\mu\nu}$ to a change in the perturbation $h_{\mu\nu}$ 
 	\item The fluctuation eqns are then to be invariant under the so called gauge transformation of eq (20), where $\Delta h_{\mu\nu}$ is given by this symmetric sum of derivatives onto epsilon
 	\item Thus if $h_{\mu\nu}$ serves as a solution to the EFE's, then and $h'_{\mu\nu}$ defined by (20) will also serve as a solution
 	\item Now since $h_{\mu\nu}$ is a 4x4 symmetric rank 2 tensor it has 10 components, and with the four coordinate functions that define the vector field $\epsilon$, one can then use the coordinate freedom to reduce $h_{\mu\nu}$ to six independent components
@@ -118,7 +118,7 @@
 \begin{itemize}
 	\item Now lets take a look at what the perturbed Einstein tensor looks like in a non-flat geometry
 	\item Here we have an expression for the spatial components of the Einstein tensor, and we can get a sense for 1) how many terms there are and 2) how tightly these terms are coupled together
-	\item In fact, if one were to expand out the contractions over dummy indices, and try to look at a single spatial component, like the radia component $\delta G_{rr}$, one would get an expression with about 3-5 times as many terms
+	\item In fact, if one were to expand out the contractions over dummy indices, and try to look at a single spatial component, like the radial component $\delta G_{rr}$, one would get an expression with about 3-5 times as many terms
 	\item So even after linearizing we require additional methods to simplify and decouple the fluctuation equations
 \end{itemize}
 
@@ -185,7 +185,7 @@
 	\item Here we have a set of 6 decoupled equations in the 6 gauge invariants, in which we can solve 
 	\item So to give quick recap here, we first perturbed the Einstein and E.M. around a de Sitter background
 	\item Then we decomposed $h_{\mu\nu}$ into a basis of 3-scalars, 3-vectors, and 3-tensors
-	\item Inserted that $h_{\mu\nu}$ in the flucuation tensors
+	\item Inserted that $h_{\mu\nu}$ in the fluctuation tensors
 	\item We formed the perturbed field equations, noting that they are entirely gauge invariant
 	\item We express the FE's in terms of the gauge invariant SVT3 combinations
 	\item Finally applied derivatives to decouple the SVT3 modes
@@ -216,7 +216,7 @@
 	\item Upon applying the laplacian to (37), one can show that the harmonic surface integral vanishes identically and so we are left only with the non-harmonic contribution
 	\item So in order form the derivative of a scalar which could never be transverse, we require the scalar to be non-harmonic, and thus we require the surface contribution to vanish; 
 	\item This means that the scalar $V$ must itself vanish asymptotically or decay sufficiently fast
-	\item So with this being the definition of $V$, we can now form the longitudinal component and finally arrive at this definition for the entire decompisition
+	\item So with this being the definition of $V$, we can now form the longitudinal component and finally arrive at this definition for the entire decomposition
 	\item Here we see we have defined the transverse and longitudinal components in terms of the vector field $V_i$ itself
 \end{itemize}
 
@@ -255,9 +255,9 @@
 	\item There are some shortcomings to this basis though. Recall that in the SVT3 basis, we had to do a 3+1 decomposition on both $h_{\mu\nu}$ and the fluctuation tensors themselves to give us a larger set of equations to solve. And since the full transformations of GR consist of general 4D coordinate transformations, something like this quantity $\phi$ which is proportional to $h_{00}$ will transform into linear combinations of any other SVT3 quantities if we do coordinate transformations in both time and space
 	\item It would be more natural to use a basis that is covariant with respect to the underlying transformation group of GR and it may lead to a simpler set of equations to solve. To construct such a basis, we seek to generalize the existing SVT3 basis in two ways
 	\item A) Generalize to $D=4$ to match GR transformations, in fact there is no additional overhead to generalize this to arbitrary dimension $D$, so we we'll do that \vspace{1mm}
-	\item And B) Generalize to curved space backgrounds beyond the Minkowski treatement that we showed for SVT3
+	\item And B) Generalize to curved space backgrounds beyond the Minkowski treatment that we showed for SVT3
 	\item When going to curved space, matters are a little more complicated as we cannot simply take the partial derivatives and carry them into covariant derivatives since curved space covariant derivatives no longer commute
-	\item From (50) we see that the commutatation is sensitive to the Riemann curvature tensor which is non-zero in the cosmological backgrounds, so the overall decomposition is going to have to take this into account
+	\item From (50) we see that the commutation is sensitive to the Riemann curvature tensor which is non-zero in the cosmological backgrounds, so the overall decomposition is going to have to take this into account
 	\item In four dimensions here is what the covariant decomposition would look like
 	\item We have two scalars, one 3 component transverse vector, and one 5 component TT tensor, adding up to 10 components in total
 	\item To address A) and B) here, we are going to show the covariant decomposition around a maximally symmetric de Sitter background. I'll add in that in our paper we've been able to formulate the decomposition around arbitrary $D$ dimensional curved spaces as well 
@@ -270,7 +270,7 @@
 \section{SVTD Integral Formulation - Maximally Symmetric Space 1/2}
 \begin{itemize}
 	\item Ok so again when we say a maximally symmetric space, we mean a space of constant curvature, where the curvature tensors take the form of eq. (53), and we see that the Ricci scalar is a constant
-	\item To form the TT projection, we introduce the curved space Green's function of (54), and with it one can then check that (55) is traceless and tranverse where the vector $W$ is defined in terms of $h$ within (55)
+	\item To form the TT projection, we introduce the curved space Green's function of (54), and with it one can then check that (55) is traceless and transverse where the vector $W$ is defined in terms of $h$ within (55)
 	\item To show transversness, one has to make use of all these commutation relations, which are proportional to the Ricci scalar
 \end{itemize}
 
@@ -282,7 +282,7 @@
 \begin{itemize}
 	\item Now in order to define the transverse vectors $F_{\mu}$ and the scalars $F$ and $\chi$, similar to before we can break up the vector $W$ into its transverse and longitudinal components, where introduce a different green's function here
 	\item Finally, we make the appropriate definition, and complete the SVTD representation to be able to form (61)
-	\item If we take $D=3$ and take the background to the flat krocker delta, the two green's function become equivalent and we recover the SVT3 decomposition
+	\item If we take $D=3$ and take the background to the flat Kronecker delta, the two green's function become equivalent and we recover the SVT3 decomposition
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -298,10 +298,10 @@
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 2/2
+% Slide  - SVT3 vs. SVT4 $\delta G_{\mu\nu}$ de Sitter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{SVT4 $\delta G_{\mu\nu}$ in a de Sitter Background 2/2}
+\section{SVT3 vs. SVT4 $\delta G_{\mu\nu}$ de Sitter}
 \begin{itemize}
 	\item So here we can compare the SVT4 basis to the SVT3 basis and find that not only is the SVT4 basis covariant w.r.t. the transformations of GR, it also provides a much more convenient and simpler formalism
 \end{itemize}
@@ -350,13 +350,32 @@
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 1/3
+% Slide  - $\delta W_{\mu\nu}$ General
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{$\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 1/3}
+\section{$\delta W_{\mu\nu}$}
 \begin{itemize}
 	\item So we are now going to construct the cosmological field equations in conformal gravity
 	\item We start off completely generically, not having yet specified a background, and we find a pretty extensive expression here for $\delta W_{\mu\nu}$, with 52 terms in the $K_{\mu\nu}$ sector and 19 in the trace sector
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - $\delta G_{\mu\nu}$ General
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{$\delta G_{\mu\nu}$}
+\begin{itemize}
+	\item It is especially complex if we compare this to a general standard second order Einstein fluctuation
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - $\delta W_{\mu\nu}$ General
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{$\delta W_{\mu\nu}$}
+\begin{itemize}
+	\item However as mentioned earlier, in geometries where the background Bach tensor vanishes, this trace dependent term entirely vanishes, so we are left with the fluctuation being a function only of $K_{\mu\nu}$ here
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -365,7 +384,7 @@
 
 \section{$\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 2/3}
 \begin{itemize}
-	\item Now we evaluate these expression in a conformal to Minkowski background, with an arbitrary conformal factor
+	\item Now we are going to evaluate these expression in a conformal to Minkowski background, with an arbitrary conformal factor
 	\item and we get a large number of terms here, 151 in total
 \end{itemize}
 
@@ -377,7 +396,7 @@
 \begin{itemize}
 	\item Despite its formidable form, we can express this set of terms in a rather compact form as a sequence of derivatives onto the conformal factor
 	\item However, even with this immense simplification, we see that the various components of $K_{\mu\nu}$ are still tightly coupled to each other and the solution is not immediately obvious
-	\item However, if we use what we have learned about the transverse traceless tensor projection, and form the integral expression in terms of $K_{\mu\nu}$, we see that these sequences of derivatives precisely gets rid of all the non-local integrals here and allows us to express the fluctuations as just one single term here
+	\item However, if we use what we have learned about the transverse traceless tensor projection, and form the integral expression in terms of $K_{\mu\nu}$, we see that these sequences of derivatives precisely get rid of all the non-local integrals here and allows us to express the fluctuations as just one single term here
 	\item So this equation here represents the fluctuation FE of conformal gravity and we that not only is it expressed a function of a 5 component TT tensor, but that each component of the TT tensor is completely decoupled from one another, and so the solution is readily obtainable
 \end{itemize}
 
@@ -388,7 +407,7 @@
 \section{SVT4 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds 3/3}
 \begin{itemize}
 	\item To touch basis on our earlier SVT4 decomposition, we can evaluate the conformal fluctuations in a conformal to flat background, where we then obtain the fluctuation equations here
-	\item With $F_{\mu\nu}$ being the TT component of $h_{\mu\nu}$, we see that the SVT4 basis nicely reconciles our previous result
+	\item With $F_{\mu\nu}$ being the TT component of $h_{\mu\nu}$, we see that the SVT4 basis nicely reconciles with our previous result
 \end{itemize}
 
 
@@ -398,10 +417,10 @@
 
 \section{Conformal Gravity Robertson-Walker Radiation Era}
 \begin{itemize}
-	\item To illustrate a solution of these equations in conformal gravity, we are going look at fluctuations in the early universe described by a radiation dominated perfect fluid. In the observational fits to the spiral galaxies and hubble data plots I mentioned earlier, one finds that phenomenologically, the $k=-1$ hyperbolic RW geometry is preferred, and here is its expression in comoving coordinates
+	\item To illustrate a solution of these equations in conformal gravity, we are going look at fluctuations in the early universe described by a radiation dominated perfect fluid. In the observational fits to the spiral galaxies and hubble data plots I mentioned earlier, one finds that phenomenologically, the $k=-1$ hyperbolic RW geometry is preferred in conformal gravity, and here is its expression in comoving coordinates
 	\item and here is the same geometry as expressed in conformal to flat coordinates
-	\item The plane wave solutions to this fourth order equation are given by a sum of polarization tensors $A_{\mu\nu}$ and $B_{\mu\nu}$, where here the $B_{\mu\nu}$ term has a prefactor proportional to the p' time coordinate in the conformal to flat coordinate basis
-	\item By doing appropriate coordinate transformations, one can show that the leading order time behavior of $h_{\mu\nu}^{TT}$ resides in the product of $\Omega^2$ time $p'$, and upon doing the necessary coordinate transformations to convert this to the comoving time $t$, we find that fluctuations grow as $t^4$. This can be contrasted with the einstein radiation era perfect fluid solutions where fluctuations grow as $t^{1/2}$
+	\item The plane wave solutions to this fourth order equation are given by a sum of polarization tensors $A_{\mu\nu}$ and $B_{\mu\nu}$, where here the $B_{\mu\nu}$ term has a prefactor $n\dot x$ which is proportional to the p' time coordinate in the conformal to flat coordinate basis
+	\item By doing appropriate coordinate transformations, one can show that the leading order time behavior of $h_{\mu\nu}^{TT}$ resides in the product of $\Omega^2$ time $p'$, and after carrying out all the necessary coordinate transformations to convert this to the comoving time $t$, we find that fluctuations grow as $t^4$. This can be contrasted with the einstein radiation era perfect fluid solutions where fluctuations grow as $t^{1/2}$
 	\item more comments on size of growth? 
 \end{itemize}
 
@@ -413,11 +432,11 @@
 \begin{itemize}
 	\item Alright so that completes the discussion of cosmological fluctuations
 	\item To summarize what we've covered here, uh
-	\item We presented an integral formalism to represent the SVT3 basis components in terms of $h_{\mu\nu}$, find that the SVT components are composed of nonlocal integrals and automatically incoprporate asymptotic boundary conditions
+	\item We presented an integral formalism to represent the SVT3 basis components in terms of $h_{\mu\nu}$, find that the SVT components are composed of nonlocal integrals and automatically incorporate asymptotic boundary conditions
 	\item After forming the fluctuation equations, we could effectively decouple the SVT modes by applying higher derivatives
-	\item We then generalized the SVT decompoisition to arbitrary doimension D and in a maximally symmetric curved space, finding that in $D=4$, the fluctuations are both simpler and covariant
+	\item We then generalized the SVT decomposition to arbitrary dimension D and in a maximally symmetric curved space, finding that in $D=4$, the fluctuations are both simpler and covariant
 	\item And finally we formulated the cosmological fluctuations as applied to conformal gravity
-	\item Here we saw that despite the rather formiddible fourth order nature of the theory, in conformal to flat backgrounds the equations take a remarkably simple form, whereby we demonstrated the growth of fluctuations going as $t^4$ in a radiation era early universe RW geometry
+	\item Here we saw that despite the rather formidable fourth order nature of the theory, in conformal to flat backgrounds the equations take a remarkably simple form, whereby we demonstrated the growth of fluctuations going as $t^4$ in a radiation era early universe RW geometry
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -426,13 +445,13 @@
 
 \section{Computational Methods}
 \begin{itemize}
+	\item So the vast majority of equations I presented had to be generated computationally, so I need to give a brief overview of how these calculation were performed
 	\item So in composing the fluctuations equations in cosmology, there are numerous steps that pose a lot of difficulty if one were to do the calculations non-computationally, mostly due to the sheer number of terms and manipulations involved. 
 	\item To do them programatically, what one needs is a language capable of doing symbolic tensor calculus on manifolds. 
 	\item In terms of abstract symbolic computation, Mathematica is one of the most effective frameworks, however it doesn't natively include support for GR specific applications.
-	\item To remedy this, in the late 2000's, a physicist Jose Martin Garcia developed a package to be used within Mathematica called xAct, which is composed of a suite of free GR specific packages that implement state-of-the-art algorithms for fast manipulation of indices in a highly programmable and configurable form
+	\item To remedy this, in the late 2000's, a physicist named Jose Martin Garcia developed a package to be used within Mathematica called xAct, which is composed of a suite of free GR specific packages that implement state-of-the-art algorithms for fast manipulation of indices in a highly programmable and configurable form
 	\item All the calculations I've done using this package and additional programs I've coded are available at this github repository, where anyone is free to use or modify them
 	\item I'm going to very quickly show you one of the notebooks that I use extensively and some of the calculations involved
-	\item 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -441,7 +460,7 @@
 
 \section{References}
 \begin{itemize}
-	\item Here are the two papers this presentation is based on. Um, I remember that before i started doing anything in GR I would hear that doing those calculations could be quite the task of labor, and now with these two papers combined totaling 100 pages, I definitely think I appreciate that sentiment a lot more
+	\item Here are the two papers this presentation is based on. Um, I remember that before i started doing anything in GR I would hear that calculations in GR could be quite the task of labor, and now with these two papers combined totaling 100 pages, I definitely think I appreciate that sentiment a lot more
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -451,13 +470,13 @@
 \section{Acknowledgments}
 \begin{itemize}
 	\item So finally, to those who I've been involved with during my PhD I'd like to give some acknowledgments.
-	\item Foremost I want to thank my advisor Philip Mannheim for giving me this opportunity. Its been an honor for me to work for you and there are quite a number of lessons I've learned working under you that will always be with me with me
-	\item Thank you to my coadvisors for your flexbility and giving me direction from time to time
+	\item Foremost I want to thank my advisor Philip Mannheim for giving me this opportunity. Its been an honor for me to work for you and I'm grateful that there are so lessons I've learned under you that will always be with me with me
+	\item Thank you to my co-advisors for your flexibility and giving me direction from time to time
 	\item To my friend afar Ray Retherford, for helping me through difficult times, I hope to see you soon
 	\item To my partner Michaela Poppick and her continual support
 	\item and to my friends I've made while in Connecticut, its immensely difficult to imagine how I'd survive without you, special thanks to Candost, H Perry, Lukasz, Chen unit,
 	\item I also want to give thanks to Jason Hancock for having faith in me and giving me some degree of autonomy in developing the studio physics labs, Diego as well. Its honestly been a pleasure working with you
-	\item and to my family, your encouragement has meant alot to me, and finally to all other friends and faculty that I've had the pleasure to get to know, thank you all. 
+	\item and to my family, your encouragement has meant a lot to me, and finally to all other friends and faculty that I've had the pleasure to get to know, thank you all. 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

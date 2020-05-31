@@ -196,6 +196,9 @@
 		\begin{eqnarray}
 		R_{ijkl} = k(\tilde g_{jk}\tilde g_{il} - \tilde g_{ik}\tilde g_{jl}), \qquad R_{ij} = -2k\tilde g_{ij}, \qquad R = -6k,\qquad k \in \{-1,0,1\}
 		\end{eqnarray}
+	\end{itemize}
+	\visible<2->{
+	\begin{itemize}
 		\item Define the conformal time $\tau = \int \frac{dt}{a(t)}$,
 	\end{itemize}
 	\begin{eqnarray}
@@ -211,7 +214,7 @@
 		ds^2 &=& \frac{4a^2(\tau)}{[1+(p'+r')^2][1+(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]\qquad (k=1)
 		\\
 		ds^2 &=& \frac{4a^2(\tau)}{[1-(p'+r')^2][1-(p'-r')^2]}[-dp'^2 + dr'^2 +r'^2 d\theta^2 + r'^2\sin^2\theta d\phi^2]\qquad (k=-1)
-	\end{eqnarray}		
+	\end{eqnarray}	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -505,6 +508,9 @@
 		\begin{eqnarray}
 		\tilde{\nabla}^4\left(-\ddot{E}_{ij}+\frac{2}{\tau}\dot{E}_{ij}+\tilde{\nabla}^2E_{ij}\right)=0.
 		\end{eqnarray}
+	\end{itemize}
+	\only<2->{
+	\begin{itemize}
 		\item Recap:
 		\begin{itemize}
 			\normalsize{
@@ -515,6 +521,7 @@
 		}
 		\end{itemize}
 	\end{itemize}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -545,6 +552,9 @@
 	Decomposition of $V_i = V_i^T + \partial_i V$
 	\begin{itemize}
 		\item Longitudinal decomposition does not hold for any scalar. $\partial^i V_i = \partial_i\partial^i V=0$
+	\end{itemize}
+	\visible<2->{
+	\begin{itemize}
 		\item Introduce a Green's function $\partial_i \partial^i D(x-x') = \delta^3(x-x')$ and use Green's identity
 		\begin{eqnarray}
 		V(x')\partial_i \partial^i D(x-x') = D(x-x')\partial_i \partial^i V(x') + \partial_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]
@@ -556,6 +566,10 @@
 		\begin{eqnarray}
 		V = V^{NH} + V^{H},\qquad \partial_i\partial^i V = \partial_i\partial^i V^{NH},\qquad \partial_i\partial^i V^{H} = 0
 		\end{eqnarray}
+	\end{itemize}
+	}
+	\visible<3->{
+	\begin{itemize}
 		\item Need a $\partial_i V$ which could never be transverse
 		\begin{eqnarray}
 		V \equiv V^{NH} &=& \int d^3x' D(x-x')\partial_i \partial^i V(x') = \int d^3x' D(x-x') \partial^i V_i(x')
@@ -566,8 +580,8 @@
 		\begin{eqnarray}
 		V_i = V_i^T + \partial_i V, \qquad \partial_i V = \partial_i \int d^3x' D(x-x')\partial^j V_j (x'),\qquad  V_i^T = V_i - \partial_i \int d^3x' D(x-x')\partial^j V_j (x')
 		\end{eqnarray}
-		
 	\end{itemize}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -614,6 +628,7 @@
 		h_{ij} &=& -2\psi \delta_{ij} + 2\partial_i \partial_j E + \partial_i E_j + \partial_j E_i + 2E_{ij}
 	\end{eqnarray}
 	\vspace{-3mm}
+	\visible<2->{
 	\begin{itemize}
 		\item Rank 2 tensor transverse traceless decomposition
 	\begin{eqnarray}
@@ -628,6 +643,10 @@
 	\begin{eqnarray}
 	W_i^T = W_i - \partial_i \int d^3x' D(x-x')\partial^k W_k
 	\end{eqnarray}
+	\end{itemize}
+	}
+	\visible<3->{
+	\begin{itemize}
 	\item Make definitions,
 	\end{itemize}
 	\begin{eqnarray}
@@ -640,6 +659,7 @@
 	-2 \delta_{ij}\underbrace{\left(\tfrac14\partial^k W_k-\tfrac14 \delta^{kl}h_{kl} \right)}_{\displaystyle\psi}
 	+2\partial_i\partial_j \underbrace{\int d^3x' D(x-x') \left(\tfrac34 \partial^k  W_{k}-\tfrac14 \delta^{kl}h_{kl} \right)}_{\displaystyle E}
 	\end{eqnarray}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -783,10 +803,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT4 $\delta G_{\mu\nu}$ de Sitter 2/2
+% Slide  - SVT3 vs. SVT4 $\delta G_{\mu\nu}$ de Sitter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{SVT4 $\delta G_{\mu\nu}$ in a de Sitter Background}
+\begin{frame}{SVT3 vs. SVT4 $\delta G_{\mu\nu}$ de Sitter}
 	\begin{itemize}
 		\item SVT3
 			\begin{eqnarray}
@@ -839,6 +859,9 @@
 			\nonumber\\
 			\text{under } g_{\mu\nu} &\to& \Omega^2(x)g_{\mu\nu},\quad C^\lambda{}_{\mu\nu\kappa} \to C^\lambda{}_{\mu\nu\kappa}
 		\end{eqnarray}
+		\end{itemize}
+		\visible<2->{
+		\begin{itemize}
 		\item Bach Tensor (Einstein Analog)
 		\begin{eqnarray}
 		-\frac{2}{(-g)^{1/2}}\frac{\delta I_{\rm W}}{\delta g_{\mu\nu}}&=&4\alpha_g W^{\mu\nu}=4\alpha_g\left[2\nabla_{\kappa}\nabla_{\lambda}C^{\mu\lambda\nu\kappa}-
@@ -847,7 +870,7 @@
 		\begin{eqnarray}
 		\boxed{4\alpha_g\left[W^{\mu
 			\nu}_{(2)}-\frac{1}{3}W^{\mu\nu}_{(1)}\right]=T^{\mu\nu}}
-			\quad \footnote{Compare to $R^{\mu\nu}-\frac{1}{2}g^{\mu\nu}R = T^{\mu\nu}$}
+			\quad \footnote{Compare to $R^{\mu\nu}-\frac{1}{2}g^{\mu\nu}R = T^{\mu\nu}$.\\ P Mannheim. Alternatives to dark matter and dark energy. \textit{Progress in Particle and Nuclear Physics}, 56(2):340–445, 2006.}
 		\end{eqnarray}
 		\begin{eqnarray}
 		W^{\mu \nu}_{(1)}&=&
@@ -867,6 +890,7 @@
 		\label{AP4}
 		\end{eqnarray} 
 	\end{itemize}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -926,13 +950,16 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds
+% Slide  - $\delta W_{\mu\nu}$ General
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{$\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds}
+\begin{frame}{$\delta W_{\mu\nu}$}
+	\visible<1>{
 	\begin{itemize}
-		\item General $\delta W_{\mu\nu}(K_{\mu\nu})$
+		\item General $\delta W_{\mu\nu}$
 	\end{itemize}
+	}
+	\visible<2->{
 	\begin{eqnarray}
 	&&\delta W_{\mu\nu}^{}(K_{\mu\nu})=\tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  \tfrac{1}{2} K_{\nu}{}^{\alpha} R_{\alpha \beta} R_{\mu}{}^{\beta} -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + K^{\alpha \beta} R_{\mu \alpha} R_{\nu \beta} -  \tfrac{1}{2} K_{\mu}{}^{\alpha} R_{\alpha \beta} R_{\nu}{}^{\beta} 
 	\nonumber\\
@@ -975,6 +1002,75 @@
 	&&-  \tfrac{1}{4} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h.
 	\label{AP45}
 	\end{eqnarray}
+	}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - $\delta G_{\mu\nu}$ General
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}{$\delta G_{\mu\nu}$}
+	\begin{eqnarray}
+	\delta G_{\mu\nu} &=& - \tfrac{1}{2} h_{\mu \nu } R + \tfrac{1}{2} g_{\mu \nu } h^{\alpha \beta } R_{\alpha \beta } + \tfrac{1}{2} \nabla_{\alpha }\nabla^{\alpha }h_{\mu \nu } -  \tfrac{1}{2} g_{\mu \nu } \nabla_{\alpha }\nabla^{\alpha }h
+	\nonumber\\
+	&& -  \tfrac{1}{2} \nabla_{\alpha }\nabla_{\mu }h_{\nu }{}^{\alpha } -  \tfrac{1}{2} \nabla_{\alpha }\nabla_{\nu }h_{\mu }{}^{\alpha } + \tfrac{1}{2} g_{\mu \nu } \nabla_{\beta }\nabla_{\alpha }h^{\alpha \beta } + \tfrac{1}{2} \nabla_{\mu }\nabla_{\nu }h
+	\end{eqnarray}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - $\delta W_{\mu\nu}$ General
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{$\delta W_{\mu\nu}$}
+	\visible<1>{
+		\begin{itemize}
+			\item General $\delta W_{\mu\nu}$
+		\end{itemize}
+	}
+	\visible<2->{
+		\begin{eqnarray}
+		&&\delta W_{\mu\nu}^{}(K_{\mu\nu})=\tfrac{1}{2} K_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} -  \tfrac{1}{2} K_{\nu}{}^{\alpha} R_{\alpha \beta} R_{\mu}{}^{\beta} -  \tfrac{2}{3} K^{\alpha \beta} R_{\alpha \beta} R_{\mu \nu} + K^{\alpha \beta} R_{\mu \alpha} R_{\nu \beta} -  \tfrac{1}{2} K_{\mu}{}^{\alpha} R_{\alpha \beta} R_{\nu}{}^{\beta} 
+		\nonumber\\
+		&&+ \tfrac{1}{3} g_{\mu \nu} K^{\alpha \beta} R_{\alpha \beta} R + \tfrac{1}{3} K_{\nu}{}^{\alpha} R_{\mu \alpha} R + \tfrac{1}{3} K_{\mu}{}^{\alpha} R_{\nu \alpha} R -  \tfrac{1}{6} K_{\mu \nu} R^2 -  g_{\mu \nu} K^{\alpha \beta} R^{\gamma \kappa} R_{\alpha \gamma \beta \kappa} -  \tfrac{2}{3} K^{\alpha \beta} R R_{\mu \alpha \nu \beta}
+		\nonumber\\
+		&& -  K_{\nu}{}^{\alpha} R^{\beta \gamma} R_{\mu \beta \alpha \gamma} + 2 K^{\alpha \beta} R_{\alpha}{}^{\gamma} R_{\mu \gamma \nu \beta} + 2 K^{\alpha \beta} R_{\alpha \gamma \beta \kappa} R_{\mu}{}^{\gamma}{}_{\nu}{}^{\kappa} -  K_{\mu}{}^{\alpha} R^{\beta \gamma} R_{\nu \beta \alpha \gamma} + \tfrac{1}{3} R \nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} 
+		\nonumber\\
+		&&-  \tfrac{1}{6} K_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}R + \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\alpha}\nabla_{\beta}K_{\mu}{}^{\beta} + \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\alpha}\nabla_{\beta}K_{\nu}{}^{\beta} 
+		-  \tfrac{1}{6} \nabla_{\alpha}K_{\mu \nu} \nabla^{\alpha}R + \tfrac{1}{6} g_{\mu \nu} \nabla^{\alpha}R \nabla_{\beta}K_{\alpha}{}^{\beta} 
+		\nonumber\\
+		&&-  \nabla_{\alpha}K^{\alpha \beta} \nabla_{\beta}R_{\mu \nu} -  \tfrac{2}{3} R_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} + \tfrac{1}{3} g_{\mu \nu} R \nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} -  R^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}K_{\mu \nu} 
+		-  K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R_{\mu \nu} 
+		\nonumber\\
+		&&+ \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\beta}\nabla_{\alpha}R + \tfrac{1}{2} K_{\nu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\mu \alpha} + \tfrac{1}{2} K_{\mu}{}^{\alpha} \nabla_{\beta}\nabla^{\beta}R_{\nu \alpha} + \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}K_{\mu \nu} 
+		-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha} 
+		\nonumber\\
+		&&-  \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha} -  g_{\mu \nu} R^{\alpha \beta} \nabla_{\beta}\nabla_{\gamma}K_{\alpha}{}^{\gamma} + \nabla_{\alpha}R_{\nu \beta} \nabla^{\beta}K_{\mu}{}^{\alpha} + \nabla_{\alpha}R_{\mu \beta} \nabla^{\beta}K_{\nu}{}^{\alpha} + \tfrac{2}{3} g_{\mu \nu} R^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}K_{\alpha \beta} 
+		\nonumber\\
+		&&- 2 R_{\mu \alpha \nu \beta} \nabla_{\gamma}\nabla^{\gamma}K^{\alpha \beta} + \tfrac{1}{6} g_{\mu \nu} K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\alpha \beta} -  K^{\alpha \beta} \nabla_{\gamma}\nabla^{\gamma}R_{\mu \alpha \nu \beta} + \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta} 
+		\nonumber\\
+		&&+ \tfrac{1}{3} g_{\mu \nu} \nabla_{\gamma}R_{\alpha \beta} \nabla^{\gamma}K^{\alpha \beta} - 2 \nabla_{\gamma}R_{\mu \alpha \nu \beta} \nabla^{\gamma}K^{\alpha \beta} + R_{\mu \beta \nu \gamma} \nabla^{\gamma}\nabla_{\alpha}K^{\alpha \beta} + R_{\mu \gamma \nu \beta} \nabla^{\gamma}\nabla_{\alpha}K^{\alpha \beta} -  \nabla_{\beta}R_{\nu \alpha} \nabla_{\mu}K^{\alpha \beta} 
+		\nonumber\\
+		&&+ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\mu}K_{\nu \alpha} -  \tfrac{1}{3} R \nabla_{\mu}\nabla_{\alpha}K_{\nu}{}^{\alpha} -  \tfrac{1}{2} R_{\nu}{}^{\alpha} \nabla_{\mu}\nabla_{\beta}K_{\alpha}{}^{\beta} + R^{\alpha \beta} \nabla_{\mu}\nabla_{\beta}K_{\nu \alpha} -  \nabla_{\beta}R_{\mu \alpha} \nabla_{\nu}K^{\alpha \beta} 
+		\nonumber\\
+		&&+ \tfrac{1}{3} \nabla_{\mu}R_{\alpha \beta} \nabla_{\nu}K^{\alpha \beta} 
+		+ \tfrac{1}{6} \nabla^{\alpha}R \nabla_{\nu}K_{\mu \alpha} + \tfrac{1}{3} \nabla_{\mu}K^{\alpha \beta} \nabla_{\nu}R_{\alpha \beta} -  \tfrac{1}{3} R \nabla_{\nu}\nabla_{\alpha}K_{\mu}{}^{\alpha} -  \tfrac{1}{2} R_{\mu}{}^{\alpha} \nabla_{\nu}\nabla_{\beta}K_{\alpha}{}^{\beta} 
+		\nonumber\\
+		&&+ R^{\alpha \beta} \nabla_{\nu}\nabla_{\beta}K_{\mu \alpha} -  \tfrac{2}{3} R^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}K_{\alpha \beta} 
+		+ \tfrac{1}{3} K^{\alpha \beta} \nabla_{\nu}\nabla_{\mu}R_{\alpha \beta} + \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}K^{\alpha \beta}
+		\label{AP54}
+		\end{eqnarray}
+		\begin{eqnarray}
+		&&\delta W_{\mu\nu}(h)=- \tfrac{1}{8} g_{\mu \nu} R_{\alpha \beta} R^{\alpha \beta} h -  \tfrac{1}{6} R_{\mu \nu} R h + \tfrac{1}{24} g_{\mu \nu} R^2 h + \tfrac{1}{2} R^{\alpha \beta} R_{\mu \alpha \nu \beta} h -  \tfrac{1}{4} h \nabla_{\alpha}\nabla^{\alpha}R_{\mu \nu} + \tfrac{1}{24} g_{\mu \nu} h \nabla_{\alpha}\nabla^{\alpha}R 
+		\nonumber\\
+		&&+ \tfrac{1}{12} h \nabla_{\nu}\nabla_{\mu}R
+		+\tfrac{1}{4} \nabla_{\alpha}\nabla^{\alpha}\nabla_{\nu}\nabla_{\mu}h -  \tfrac{1}{4} \nabla_{\alpha}R_{\mu \nu} \nabla^{\alpha}h -  \tfrac{1}{2} R_{\mu \alpha \nu \beta} \nabla^{\beta}\nabla^{\alpha}h + \tfrac{1}{4} \nabla_{\mu}R_{\nu \alpha}\nabla^{\alpha}h  -  \tfrac{1}{4} \nabla_{\alpha}R_{\nu}{}^{\alpha} \nabla_{\mu}h 
+		\nonumber\\
+		&&+ \tfrac{1}{4} R_{\nu}{}^{\alpha} \nabla_{\mu}\nabla_{\alpha}h + \tfrac{1}{4} \nabla_{\nu}R_{\mu \alpha} \nabla^{\alpha}h + \tfrac{1}{8} \nabla_{\nu}R\nabla_{\mu}h  -  \tfrac{1}{4} \nabla_{\alpha}R_{\mu}{}^{\alpha} \nabla_{\nu}h + \tfrac{1}{8} \nabla_{\mu}R \nabla_{\nu}h + \tfrac{1}{4} R_{\mu}{}^{\alpha} \nabla_{\nu}\nabla_{\alpha}h
+		\nonumber\\  
+		&&-  \tfrac{1}{4} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h.
+		\label{AP45}
+		\end{eqnarray}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -982,11 +1078,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{$\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds}
-	\only<1>{
+	\visible<1-2>{
 		\begin{itemize}
 			\item Evaluate \eqref{AP54} in a conformal to Minkowski background
 		\end{itemize}
-		
+	}
+	\only<2>{	
 		\begin{align}
 		\delta W_{\mu\nu}&=\Omega^{-5} \partial_{\alpha}\partial_{\nu}\partial^{\alpha}\Omega \partial_{\beta}K_{\mu}{}^{\beta} + \Omega^{-5} \partial_{\alpha}\partial_{\mu}\partial^{\alpha}\Omega \partial_{\beta}K_{\nu}{}^{\beta} + 2 \Omega^{-5} \partial^{\alpha}\partial_{\nu}\Omega \partial_{\beta}\partial_{\alpha}K_{\mu}{}^{\beta}
 		\nonumber\\
@@ -1023,7 +1120,7 @@
 		\nonumber
 		\end{align}
 	}
-	\only<2>{
+	\only<3>{
 		\begin{align}
 		&- 4 \Omega^{-5} \partial_{\beta}\partial_{\alpha}K_{\mu \nu} \partial^{\beta}\partial^{\alpha}\Omega + 6 K_{\mu \nu} \Omega^{-6} \partial_{\beta}\partial_{\alpha}\Omega \partial^{\beta}\partial^{\alpha}\Omega - 6 \Omega^{-6} \partial_{\alpha}K_{\nu \beta} \partial^{\alpha}\Omega \partial^{\beta}\partial_{\mu}\Omega 
 		\nonumber\\
@@ -1059,7 +1156,7 @@
 		\nonumber
 		\end{align}
 	}
-	\only<3>{
+	\only<4>{
 		\begin{align}
 		&+ 2 K^{\alpha \beta} \Omega^{-6} \partial_{\beta}\partial_{\nu}\partial_{\alpha}\Omega \partial_{\mu}\Omega - 60 K_{\nu \beta} \Omega^{-8} \partial_{\alpha}\Omega \partial^{\alpha}\Omega \partial^{\beta}\Omega \partial_{\mu}\Omega + 24 \Omega^{-7} \partial^{\alpha}\Omega \partial_{\beta}K_{\nu \alpha} \partial^{\beta}\Omega \partial_{\mu}\Omega 
 		\nonumber\\
@@ -1096,7 +1193,7 @@
 		\nonumber
 		\end{align}
 	}
-	\only<4>{
+	\visible<5->{
 		\begin{align}
 		&- 6 \Omega^{-6} \partial^{\alpha}\Omega \partial_{\beta}K_{\mu \alpha} \partial_{\nu}\partial^{\beta}\Omega + 2 \Omega^{-6} \partial^{\alpha}\Omega \partial^{\beta}\Omega \partial_{\nu}\partial_{\mu}K_{\alpha \beta} -  \tfrac{2}{3} \Omega^{-5} \partial^{\beta}\partial^{\alpha}\Omega \partial_{\nu}\partial_{\mu}K_{\alpha \beta} 
 		\nonumber\\
@@ -1105,6 +1202,8 @@
 		& - 8 K_{\alpha \beta} \Omega^{-7} \partial^{\alpha}\Omega \partial^{\beta}\Omega \partial_{\nu}\partial_{\mu}\Omega
 		\label<4>{eq:longbach}
 		\end{align}
+	}
+	\visible<6->{
 		\begin{itemize}
 			\item \eqref{eq:longbach} can be expressed as 
 			\begin{eqnarray}
@@ -1115,6 +1214,10 @@
 			&+&\frac{2}{3}\partial_{\mu}\partial_{\nu}\partial^{\alpha}\partial^{\beta}[\Omega^{-2}K_{\alpha\beta}]+\frac{1}{3}\eta_{\mu\nu}\partial_{\sigma}\partial^{\sigma}\partial^{\alpha}\partial^{\beta}[\Omega^{-2}K_{\alpha\beta}]\bigg{)}.
 			\label<4>{dwKTT}
 			\end{eqnarray}
+		\end{itemize}
+		}
+		\visible<7->{
+			\begin{itemize}
 			\item Consider $h_{\mu\nu}^{TT}$ in terms of $K_{\mu\nu}$
 			\begin{eqnarray}
 			\hspace{-0.05\linewidth}h_{\mu\nu}^{TT}&=&K_{\mu\nu}-\int d^4x' D^{(4)}(x-x')\partial_{\mu}\partial^{\alpha}K_{\alpha\nu}
@@ -1123,6 +1226,10 @@
 			&+&\frac{2}{3}\partial_{\mu}\partial_{\nu}\int d^4x' D^{(4)}(x-x')\int d^4x'' D^{(4)}(x'-x'')\partial^{\alpha}\partial^{\beta}K_{\alpha\beta}+\frac{1}{3}g_{\mu\nu}\int d^4x D^{(4)}(x-x')\partial^{\alpha}\partial^{\beta}K_{\alpha\beta}
 			\nonumber
 			\end{eqnarray}
+		\end{itemize}
+	}
+	\visible<8->{
+		\begin{itemize}
 			\item \eqref{dwKTT} can thus be expressed as
 			\begin{eqnarray}
 			\boxed{
@@ -1287,105 +1394,6 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT3 Integral Formulation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{SVT3 Integral Formulation}
-	\begin{eqnarray}
-	V(x) &=&\int_V d^3x' D(x-x')\partial_i \partial^i V(x') + \oint_{\partial V} dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]
-	\\ 
-	\partial_k \partial^k V(x) &=& \partial_k \partial^k V(x) + \oint_{\partial V} dS_i[V(x')\partial^i \delta^3(x-x') - \delta^3(x-x')\partial^i V(x')]
-	\end{eqnarray}
-	Using 
-	\begin{eqnarray}
-	\int d^3x' V(x') \partial^i \delta^3(x-x') = \int d^3x' \partial^i V(x') \delta^3(x-x'),
-	\end{eqnarray}
-	the surface term vanishes identically.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - SVT3 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{SVT3 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds}
-	\begin{eqnarray}
-	ds^2 = \Omega^2(x)\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
-	+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg]
-	\end{eqnarray}
-	\begin{itemize}
-		\item Fluctuation Equations $\delta W_{\mu\nu} = 0$, $\alpha=\phi + \psi +\dot{B}-\ddot{E}$
-		\begin{eqnarray}
-		\delta W_{00}  &=& -\frac{2}{3\Omega^2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha,
-		\nonumber\\	
-		\delta W_{0i} &=&  -\frac{2}{3\Omega^2} \tilde{\nabla}_i\tilde{\nabla}^a\tilde{\nabla}_a\partial_0\alpha
-		+\frac{1}{2\Omega^2}\left[\tilde{\nabla}_{b}\tilde{\nabla}^b(\tilde{\nabla}_a\tilde{\nabla}^a-\partial_0^2)(B_i - \dot{E}_i)\right],
-		\nonumber\\	
-		\delta W_{ij}  &=& \frac{1}{3\Omega^2}\bigg{[} \delta_{ij}\tilde{\nabla}_{b}\tilde{\nabla}^b (\partial_0^2 - \tilde{\nabla}_a\tilde{\nabla}^a) 
-		+(\tilde{\nabla}_{a}\tilde{\nabla}^a -3\partial_0^2)\tilde{\nabla}_i\tilde{\nabla}_j  
-		\bigg{] }\alpha
-		\\
-		&&+\frac{1}{2\Omega^2}\left[ \left[\tilde{\nabla}_{a}\tilde{\nabla}^a -\partial_0^2\right]\left[\tilde{\nabla}_i   \partial_0(B_j - \dot{E}_j)+ \tilde{\nabla}_j \partial_0(B_i - \dot{E}_i)\right] \right]
-		+\frac{1}{\Omega^2}\left[\tilde{\nabla}_a\tilde{\nabla}^a-\partial_0^2\right]^2E_{ij}.
-		\nonumber
-		\end{eqnarray}
-		%
-		\item Decouple by applying higher derivatives to vector and tensor components
-		\begin{eqnarray}
-		- \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha=0,
-		\qquad
-		\tilde\nabla_a \tilde\nabla^a \tilde\nabla_b \tilde\nabla^b\left[\tilde\nabla_c \tilde\nabla^c - \partial_0^2\right]^2E_{ij}=0,
-		\nonumber\\
-		- \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(\overset{..}{B}_{i}-\overset{...}{E}_{i}) + \tfrac{1}{2} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(B_{i} -\dot{E}_{i})=0
-		\end{eqnarray}
-	\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Slide  - Relating Conformal Gravity to Einstein Gravity
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Relating Conformal Gravity to Einstein Gravity}
-	\begin{eqnarray}
-	ds^2 &=& (\eta_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
-	\nonumber\\ \nonumber\\
-	\delta W_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
-	-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
-	+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
-	-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
-	\nonumber\\
-	&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
-	+ \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
-	+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
-	\nonumber\\\nonumber\\
-	\delta G_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
-	-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
-	+ \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
-	-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}
-	-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
-	+ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
-	\nonumber\\\nonumber\\
-	\delta G &=&  \nabla^\alpha \nabla^\beta h_{\alpha\beta} - \nabla_\alpha\nabla^\alpha h
-	\nonumber\\\nonumber\\
-	\delta G^{T\theta}_{\mu\nu} &=& \delta G_{\mu\nu} - \frac{1}{3}g_{\mu\nu}\delta G + \frac{1}{3}\nabla_\mu\nabla_\nu \int D \delta G
-	\nonumber\\ \nonumber\\
-	\nabla^2\delta  G^{T\theta}_{\mu\nu} &=& \nabla^2 \delta G_{\mu\nu} + \frac{1}{3}\left[ 
-	\nabla_\mu\nabla_\nu - g_{\mu\nu}\nabla^2\right]\delta G
-	\nonumber\\ \nonumber\\
-	\nabla^2 \delta G_{\mu\nu}^{T\theta} 
-	&=& \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
-	-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
-	+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
-	-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
-	\nonumber\\
-	&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
-	+ \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
-	+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
-	\nonumber\\
-	&=& \delta W_{\mu\nu}
-	\end{eqnarray}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slide  - Cosmological Geometries R.W. k=1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1438,6 +1446,105 @@
 \end{frame}
 
 \end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT3 $\delta W_{\mu\nu}$ in Conformal to Flat Backgrounds}
+	\begin{eqnarray}
+	ds^2 = \Omega^2(x)\bigg[-(1+2\phi)dt^2 + 2(B_i + \tilde\nabla_i B)dt dx^i 
+	+ [(1-2\psi)\delta_{ij} + 2\tilde\nabla_i \tilde\nabla_j E + \tilde\nabla_i E_j + \tilde\nabla_j E_i + 2E_{ij}]dx^i dx^j\bigg]
+	\end{eqnarray}
+	\begin{itemize}
+		\item Fluctuation Equations $\delta W_{\mu\nu} = 0$, $\alpha=\phi + \psi +\dot{B}-\ddot{E}$
+		\begin{eqnarray}
+		\delta W_{00}  &=& -\frac{2}{3\Omega^2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha,
+		\nonumber\\	
+		\delta W_{0i} &=&  -\frac{2}{3\Omega^2} \tilde{\nabla}_i\tilde{\nabla}^a\tilde{\nabla}_a\partial_0\alpha
+		+\frac{1}{2\Omega^2}\left[\tilde{\nabla}_{b}\tilde{\nabla}^b(\tilde{\nabla}_a\tilde{\nabla}^a-\partial_0^2)(B_i - \dot{E}_i)\right],
+		\nonumber\\	
+		\delta W_{ij}  &=& \frac{1}{3\Omega^2}\bigg{[} \delta_{ij}\tilde{\nabla}_{b}\tilde{\nabla}^b (\partial_0^2 - \tilde{\nabla}_a\tilde{\nabla}^a) 
+		+(\tilde{\nabla}_{a}\tilde{\nabla}^a -3\partial_0^2)\tilde{\nabla}_i\tilde{\nabla}_j  
+		\bigg{] }\alpha
+		\\
+		&&+\frac{1}{2\Omega^2}\left[ \left[\tilde{\nabla}_{a}\tilde{\nabla}^a -\partial_0^2\right]\left[\tilde{\nabla}_i   \partial_0(B_j - \dot{E}_j)+ \tilde{\nabla}_j \partial_0(B_i - \dot{E}_i)\right] \right]
+		+\frac{1}{\Omega^2}\left[\tilde{\nabla}_a\tilde{\nabla}^a-\partial_0^2\right]^2E_{ij}.
+		\nonumber
+		\end{eqnarray}
+		%
+		\item Decouple by applying higher derivatives to vector and tensor components
+		\begin{eqnarray}
+		- \tfrac{2}{3} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}\alpha=0,
+		\qquad
+		\tilde\nabla_a \tilde\nabla^a \tilde\nabla_b \tilde\nabla^b\left[\tilde\nabla_c \tilde\nabla^c - \partial_0^2\right]^2E_{ij}=0,
+		\nonumber\\
+		- \tfrac{1}{2} \tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(\overset{..}{B}_{i}-\overset{...}{E}_{i}) + \tfrac{1}{2} \tilde{\nabla}_{c}\tilde{\nabla}^{c}\tilde{\nabla}_{b}\tilde{\nabla}^{b}\tilde{\nabla}_{a}\tilde{\nabla}^{a}(B_{i} -\dot{E}_{i})=0
+		\end{eqnarray}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - SVT3 Integral Formulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{SVT3 Integral Formulation}
+	\begin{eqnarray}
+	V(x) &=&\int_V d^3x' D(x-x')\partial_i \partial^i V(x') + \oint_{\partial V} dS_i[V(x')\partial^i D(x-x') - D(x-x')\partial^i V(x')]
+	\\ 
+	\partial_k \partial^k V(x) &=& \partial_k \partial^k V(x) + \oint_{\partial V} dS_i[V(x')\partial^i \delta^3(x-x') - \delta^3(x-x')\partial^i V(x')]
+	\end{eqnarray}
+	\begin{eqnarray}
+	\int d^3x' V(x') \partial^i \delta^3(x-x') = \int d^3x' \partial^i V(x') \delta^3(x-x'),
+	\end{eqnarray}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide  - Relating Conformal Gravity to Einstein Gravity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Relating Conformal Gravity to Einstein Gravity}
+	\begin{eqnarray}
+	ds^2 &=& (\eta_{\mu\nu} + h_{\mu\nu})dx^\mu dx^\nu
+	\nonumber\\ \nonumber\\
+	\delta W_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+	-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
+	+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+	-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+	\nonumber\\
+	&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
+	+ \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
+	+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+	\nonumber\\\nonumber\\
+	\delta G_{\mu\nu}&=&\tfrac{1}{2} \nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+	-  \tfrac{1}{2} g_{\mu \nu} \nabla_{\alpha}\nabla^{\alpha}h
+	+ \tfrac{1}{2} g_{\mu \nu} \nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+	-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+	-  \tfrac{1}{2} \nabla_{\nu}\nabla_{\alpha}h_{\mu}{}^{\alpha}
+	+ \tfrac{1}{2} \nabla_{\nu}\nabla_{\mu}h
+	\nonumber\\\nonumber\\
+	\delta G &=&  \nabla^\alpha \nabla^\beta h_{\alpha\beta} - \nabla_\alpha\nabla^\alpha h
+	\nonumber\\\nonumber\\
+	\delta G^{T\theta}_{\mu\nu} &=& \delta G_{\mu\nu} - \frac{1}{3}g_{\mu\nu}\delta G + \frac{1}{3}\nabla_\mu\nabla_\nu \int D \delta G
+	\nonumber\\ \nonumber\\
+	\nabla^2\delta  G^{T\theta}_{\mu\nu} &=& \nabla^2 \delta G_{\mu\nu} + \frac{1}{3}\left[ 
+	\nabla_\mu\nabla_\nu - g_{\mu\nu}\nabla^2\right]\delta G
+	\nonumber\\ \nonumber\\
+	\nabla^2 \delta G_{\mu\nu}^{T\theta} 
+	&=& \tfrac{1}{2} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h_{\mu \nu}
+	-  \tfrac{1}{6} g_{\mu \nu} \nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}\nabla^{\alpha}h
+	+ \tfrac{1}{6} g_{\mu \nu} \nabla_{\gamma}\nabla^{\gamma}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+	-  \tfrac{1}{2} \nabla_{\mu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\nu}{}^{\alpha}
+	\nonumber\\
+	&& -  \tfrac{1}{2} \nabla_{\nu}\nabla_{\beta}\nabla^{\beta}\nabla_{\alpha}h_{\mu}{}^{\alpha}
+	+ \tfrac{1}{6} \nabla_{\nu}\nabla_{\mu}\nabla_{\alpha}\nabla^{\alpha}h
+	+ \tfrac{1}{3} \nabla_{\nu}\nabla_{\mu}\nabla_{\beta}\nabla_{\alpha}h^{\alpha \beta}
+	\nonumber\\
+	&=& \delta W_{\mu\nu}
+	\end{eqnarray}
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
