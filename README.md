@@ -10,7 +10,9 @@ If you've ever wondered what a PhD in theoretical physics might *actually* entai
   - <a href="research_highlights/Fluctuations_Summary_Matthew.pdf">Fluctuations Summary</a>: Inlcudes many useful methods specific to dynamics in conformal gravity
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; orbital decay of a binary star system within conformal gravity
   - <a href="research_highlights/Helicity_Decomposition_Matthew_v1.pdf">Helicity Decomposition</a>: Frames the scalar, vector, tensor (SVT) decomposition from a group-theoretic point of view; generalizes well beyond cosmology
-  - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology
+  - <a href="research_highlights/Thesis_Phelps_2020.pdf">Thesis</a>: Final thesis
+  - <a href="research_highlights/Disseratation_Defense.pdf">Dissertation Defense</a>: Presentation used in final defense
+  - Some other nice examples pertaining to boundary conditions and gauge invariance in cosmology, as well as my thesis and dissertation defense
 * Research Bulk
   - Organized by year, these pdf's represent day-to-day work output
   - Incorporates output of calculations performed in Mathematica
