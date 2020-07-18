@@ -5,7 +5,7 @@ If you've ever wondered what a PhD in theoretical physics might *actually* entai
 
 ## Contents
 * Research Highlights
-  - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT Decomposition Theorem</a>: Most recent publication that presents, among many other analyses, a 4D variation of the cosmological decomposition theorem (61 pages)
+  - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT Decomposition Theorem</a>: Most recent publication that presents a 4D variation of the cosmological decomposition theorem (61 pages)
   - <a href="research_highlights/Cosmological_Perturbations_II.pdf">Cosmological Perturbations II</a>: Publication regarding cosmological perturbations in a theory of gravitation called conformal gravity (39 pages)
   - <a href="research_highlights/Fluctuations_Summary_Matthew.pdf">Fluctuations Summary</a>: Inlcudes many useful methods specific to dynamics in conformal gravity
   - <a href="research_highlights/GR_waves_notes.pdf">GR Waves Notes</a>: Initial research into gravitational wave project; orbital decay of a binary star system within conformal gravity
