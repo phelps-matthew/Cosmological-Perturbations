@@ -33,9 +33,11 @@ If you've ever wondered what a PhD in theoretical physics might *actually* entai
 
 ## Research Summary
 ### Low-Detail
-My research mainly focused around analyzing the equations that describe the large scale evolution of the universe. Physicists that study the unvierse as a whole are called cosmologists. Don't trust a cosmologist to do your hair - leave that to cosmetologists! Cosmologists can be contrasted with astrophysicists who study more localized events happening in the universe - black holes, galaxies, star formation, etc. 
+My research mainly focused around composing methods that simplify the equations that describe the large scale evolution of the universe. Physicists that study the unvierse as a whole are called cosmologists. Don't trust a cosmologist to do your hair - leave that to cosmetologists! Cosmologists can be contrasted with astrophysicists who study more localized events happening in the universe - black holes, galaxies, star formation, etc. 
 
-Getting back to the research, a large part of my work dealt with formulating methods and approaches that transform the large set of complex equations that describe the dynamics of the universe into a form that 
+Getting back to the research, the equations that describe the dynamics of the universe over time, i.e. going from a ball of hot dense gas all the way to forming large scale structures like clusters of galaxies, are unfortunately very unwieldly and difficult to solve (even with a computer!). As such, a large part of my research has dealt with formulating methods that decompose the cosmological equations into simpler subsets of equations that are differentiated in their transformation behavior. 
+
+Getting back to the research, a large part of my work dealt with formulating methods and approaches that take the large set of equations that describe the dynamics of the universe and transform them into smaller, simpler subsets of equations which have particular transformation properties. 
 
 
 a large part of my work dealt with what is called the *cosmological decomposition theorem*. Essentially, this is a method regularly used by the cosmology/astrophysics community to simplify and solve the equations that describe the dynamics of the universe. My research uncovered many inherent limitations to the decomposition theorem and formulated new approaches that cast the equations into a reduced form that is readily solvable. 
