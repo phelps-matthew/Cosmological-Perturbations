@@ -4,6 +4,11 @@ If you've ever wondered what a PhD in theoretical physics might *actually* entai
 [What did I research?](#research-summary)
 
 ## Contents
+* Publications
+  - <a href="https://link.springer.com/article/10.1007/s10714-020-02757-0">Three-dimensional and four-dimensional scalar, vector, tensor cosmological fluctuations and the cosmological decomposition theorem</a>
+    * <a href="https://arxiv.org/pdf/1912.10448">arXiv</a> (no paywall)
+  - <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.083527">Cosmological perturbations in conformal gravity. II.</a>
+    * <a href="https://arxiv.org/pdf/1805.06807">arXiv</a> (no paywall)
 * Research Highlights
   - <a href="research_highlights/SVT_Decomposition_Theorem.pdf">SVT Decomposition Theorem</a>: Most recent publication that presents a 4D variation of the cosmological decomposition theorem (61 pages)
   - <a href="research_highlights/Cosmological_Perturbations_II.pdf">Cosmological Perturbations II</a>: Publication regarding cosmological perturbations in a theory of gravitation called conformal gravity (39 pages)
